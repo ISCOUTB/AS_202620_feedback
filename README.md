@@ -14,6 +14,17 @@ Este material vive en [`ISCOUTB/AS_202620_feedback`](https://github.com/ISCOUTB/
 abierto para que puedas leerlo, citarlo y proponer cambios. Si tienes delante una copia descargada,
 la versión que manda es la de ahí.
 
+## Cómo está organizado el repositorio
+
+```text
+README.md                      esta guía: cómo se evalúa y dónde está cada cosa
+CONTRATO.md                    lo que se exige en todas las entregas, con sus comandos
+EQUIPOS.md                     equipos, integrantes y enlace a la evaluación de cada uno
+fichas/                        una ficha por entrega calificada (18)
+plantillas/planilla-equipo.md  la planilla en blanco, para saber qué se consolida
+revisiones/2026-2/<equipo>/    la evaluación de cada equipo, entrega por entrega
+```
+
 ## Si eres estudiante
 
 ### Qué ocurre cuando entregas
@@ -24,6 +35,9 @@ la versión que manda es la de ahí.
    [CONTRATO.md](CONTRATO.md), criterio por criterio.
 3. El resultado es una matriz con un estado por criterio, la evidencia que lo respalda y la lista
    de lo que no se pudo verificar.
+4. Esa revisión se publica aquí mismo, en la carpeta de tu equipo: mira
+   [Evaluaciones publicadas](#evaluaciones-publicadas--2026-2). No hay que pedirla ni esperar a
+   que alguien la reenvíe.
 
 La revisión es **solo de lectura**. Nadie hace push, abre issues, comenta ni edita nada en el
 repositorio del equipo: el clon se hace en un directorio temporal y se descarta. Y tu código no se
@@ -61,9 +75,9 @@ te van a hacer.
 
 El agente **no califica**. Produce la matriz y, solo en las entregas con escala publicada (primer
 corte, segundo corte, proyecto final y cierre), un **nivel sugerido** marcado de forma explícita
-como propuesta. El profesor la revisa, la contrasta con la sustentación y con lo que conoce del
-equipo, y **es él quien fija la nota** en Moodle. Un hallazgo del agente que no se sostiene se cae
-ahí.
+como propuesta. Ese nivel **no se publica**: va al registro del profesor, que lo revisa, lo
+contrasta con la sustentación y con lo que conoce del equipo, y **fija la nota** en Moodle. Un
+hallazgo del agente que no se sostiene se cae ahí.
 
 En resumen: esto es un mecanismo de retroalimentación rápida, no un juez.
 
@@ -119,12 +133,15 @@ conviene que quede escrito —una redacción ambigua, un criterio que se puede a
 aprovecha al resto del curso. Es un complemento de la clase, no un sustituto: lo que necesite
 conversación se resuelve mejor cara a cara.
 
-Dos cosas que **no** van ahí, porque el repositorio es público: nada de notas, situaciones
-personales o discusiones sobre un equipo concreto. Eso es de la clase, del canal del curso o del
-correo, y ahí tiene mejor respuesta.
+Lo que conviene no llevar ahí, porque el repositorio es público: notas y asuntos personales. La
+evaluación de tu equipo está publicada y se puede discutir sin problema, pero lo que toque
+calificación o situación personal se resuelve mejor en clase, por el canal del curso o por correo.
 
-Tu revisión, además, es tuya: los informes se guardan fuera de control de versiones, porque llevan
-nombres, y no se publican en este repositorio ni en ningún otro.
+**Qué se publica de tu revisión, para que lo sepas de antemano.** Van los nombres del equipo y de
+sus integrantes, los hallazgos y la evidencia que los sostiene —hashes, rutas, comandos—, porque
+sin eso la retroalimentación no sería verificable. **No** van los correos con los que firmas tus
+commits, ni ninguna nota o nivel sugerido: lo primero es dato de contacto y no hace falta para
+evaluar arquitectura; lo segundo es del profesor.
 
 ## Índice de fichas
 
@@ -132,29 +149,69 @@ Una ficha por entrega calificada que se evalúa sobre el repositorio.
 
 | Semana | Entrega | `idnumber` | Ficha |
 |---:|---|---|---|
-| 1 | Evidencia S1 · Equipo, problema y repositorio | `arqsw:evidencia-s1` | [ficha](semana-01-evidencia-s1.md) |
-| 2 | Evidencia S2 · Escenarios de calidad y restricciones | `arqsw:evidencia-s2` | [ficha](semana-02-evidencia-s2.md) |
-| 3 | Evidencia S3 · Estrategia de solución y primer ADR | `arqsw:evidencia-s3` | [ficha](semana-03-evidencia-s3.md) |
-| 4 | Evidencia S4 · arc42, C4 y corte vertical | `arqsw:evidencia-s4` | [ficha](semana-04-evidencia-s4.md) |
-| 5 | Primer corte · reto de línea base arquitectónica | `arqsw:corte1` | [ficha](semana-05-corte1.md) |
-| 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | `arqsw:evidencia-s6` | [ficha](semana-06-evidencia-s6.md) |
-| 7 | Evidencia S7 · Contrato de API y prueba de contrato | `arqsw:evidencia-s7` | [ficha](semana-07-evidencia-s7.md) |
-| 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `arqsw:evidencia-s8` | [ficha](semana-08-evidencia-s8.md) |
-| 8 | Taller aplicado de despliegue | `arqsw:taller-docker` | [ficha](semana-08-taller-docker.md) |
-| 9 | Evidencia S9 · Generación verificada y trazable | `arqsw:evidencia-s9` | [ficha](semana-09-evidencia-s9.md) |
-| 10 | Segundo corte · reto aplicado sobre el MVP | `arqsw:corte2` | [ficha](semana-10-corte2.md) |
-| 11 | Evidencia S11 · Fallos parciales y decisión de extracción | `arqsw:evidencia-s11` | [ficha](semana-11-evidencia-s11.md) |
-| 12 | Evidencia S12 · Estrategia de datos y eventos | `arqsw:evidencia-s12` | [ficha](semana-12-evidencia-s12.md) |
-| 12 | Taller aplicado · Mensajes y consistencia | `arqsw:taller-mensajes` | [ficha](semana-12-taller-mensajes.md) |
-| 13 | Evidencia S13 · Modelado de amenazas y plan de mitigación | `arqsw:evidencia-s13` | [ficha](semana-13-evidencia-s13.md) |
-| 14 | Evidencia S14 · Medición de atributos de calidad | `arqsw:evidencia-s14` | [ficha](semana-14-evidencia-s14.md) |
-| 16 | Proyecto final · integración y desafío arquitectónico | `arqsw:final` | [ficha](semana-16-final.md) |
-| 17 | Aplicación de cambios y cierre arquitectónico | `arqsw:cierre` | [ficha](semana-17-cierre.md) |
+| 1 | Evidencia S1 · Equipo, problema y repositorio | `arqsw:evidencia-s1` | [ficha](fichas/semana-01-evidencia-s1.md) |
+| 2 | Evidencia S2 · Escenarios de calidad y restricciones | `arqsw:evidencia-s2` | [ficha](fichas/semana-02-evidencia-s2.md) |
+| 3 | Evidencia S3 · Estrategia de solución y primer ADR | `arqsw:evidencia-s3` | [ficha](fichas/semana-03-evidencia-s3.md) |
+| 4 | Evidencia S4 · arc42, C4 y corte vertical | `arqsw:evidencia-s4` | [ficha](fichas/semana-04-evidencia-s4.md) |
+| 5 | Primer corte · reto de línea base arquitectónica | `arqsw:corte1` | [ficha](fichas/semana-05-corte1.md) |
+| 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | `arqsw:evidencia-s6` | [ficha](fichas/semana-06-evidencia-s6.md) |
+| 7 | Evidencia S7 · Contrato de API y prueba de contrato | `arqsw:evidencia-s7` | [ficha](fichas/semana-07-evidencia-s7.md) |
+| 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `arqsw:evidencia-s8` | [ficha](fichas/semana-08-evidencia-s8.md) |
+| 8 | Taller aplicado de despliegue | `arqsw:taller-docker` | [ficha](fichas/semana-08-taller-docker.md) |
+| 9 | Evidencia S9 · Generación verificada y trazable | `arqsw:evidencia-s9` | [ficha](fichas/semana-09-evidencia-s9.md) |
+| 10 | Segundo corte · reto aplicado sobre el MVP | `arqsw:corte2` | [ficha](fichas/semana-10-corte2.md) |
+| 11 | Evidencia S11 · Fallos parciales y decisión de extracción | `arqsw:evidencia-s11` | [ficha](fichas/semana-11-evidencia-s11.md) |
+| 12 | Evidencia S12 · Estrategia de datos y eventos | `arqsw:evidencia-s12` | [ficha](fichas/semana-12-evidencia-s12.md) |
+| 12 | Taller aplicado · Mensajes y consistencia | `arqsw:taller-mensajes` | [ficha](fichas/semana-12-taller-mensajes.md) |
+| 13 | Evidencia S13 · Modelado de amenazas y plan de mitigación | `arqsw:evidencia-s13` | [ficha](fichas/semana-13-evidencia-s13.md) |
+| 14 | Evidencia S14 · Medición de atributos de calidad | `arqsw:evidencia-s14` | [ficha](fichas/semana-14-evidencia-s14.md) |
+| 16 | Proyecto final · integración y desafío arquitectónico | `arqsw:final` | [ficha](fichas/semana-16-final.md) |
+| 17 | Aplicación de cambios y cierre arquitectónico | `arqsw:cierre` | [ficha](fichas/semana-17-cierre.md) |
 
 **Tres actividades calificadas no tienen ficha, y es a propósito:** `arqsw:quiz1` y `arqsw:quiz2`
 son cuestionarios individuales que califica Moodle, y `arqsw:workshop-pares` califica la calidad
 de la revisión que hace cada estudiante sobre otros equipos, no un repositorio. Si alguna vez
 pasan a evaluarse sobre el repositorio, aquí faltará su ficha.
+
+## Evaluaciones publicadas · 2026-2
+
+Aquí está la revisión de cada equipo, tal como salió del barrido. Cada carpeta trae cuatro cosas:
+la **retroalimentación** en lenguaje llano (qué está bien, qué falta, qué corregir antes del
+corte), la **matriz** de cada entrega con el estado y la evidencia de cada criterio, y la
+**planilla** del equipo, que acumula lo que se arrastra de una semana a otra y las preguntas
+abiertas para la sustentación.
+
+Empieza por la retroalimentación; la matriz es para cuando quieras ver en qué se basa cada cosa.
+Lo que no está aquí es la nota: eso lo fija el profesor y se ve en Moodle.
+
+| Equipo | Repositorio | Retroalimentación | Matriz S1 | Matriz S2 | Planilla |
+|---|---|---|---|---|---|
+| AudioShare | [`AS_202620_AudioShare`](https://github.com/ISCOUTB/AS_202620_AudioShare) | [ver](revisiones/2026-2/AS_202620_AudioShare/feedback-s1-s2.md) | [ver](revisiones/2026-2/AS_202620_AudioShare/semana-01-evidencia-s1.md) | [ver](revisiones/2026-2/AS_202620_AudioShare/semana-02-evidencia-s2.md) | [ver](revisiones/2026-2/AS_202620_AudioShare/planilla.md) |
+| Calificación automática | [`AS_202620_Sistema-de-calificacion-automatica`](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica) | [ver](revisiones/2026-2/AS_202620_Sistema-de-calificacion-automatica/feedback-s1-s2.md) | [ver](revisiones/2026-2/AS_202620_Sistema-de-calificacion-automatica/semana-01-evidencia-s1.md) | [ver](revisiones/2026-2/AS_202620_Sistema-de-calificacion-automatica/semana-02-evidencia-s2.md) | [ver](revisiones/2026-2/AS_202620_Sistema-de-calificacion-automatica/planilla.md) |
+| CampusMarket | [`AS_202620_PROYECTO_CAMPUSMARKET`](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET) | [ver](revisiones/2026-2/AS_202620_PROYECTO_CAMPUSMARKET/feedback-s1-s2.md) | [ver](revisiones/2026-2/AS_202620_PROYECTO_CAMPUSMARKET/semana-01-evidencia-s1.md) | [ver](revisiones/2026-2/AS_202620_PROYECTO_CAMPUSMARKET/semana-02-evidencia-s2.md) | [ver](revisiones/2026-2/AS_202620_PROYECTO_CAMPUSMARKET/planilla.md) |
+| Clubs UTB | [`AS_202620_Clubs_UTB`](https://github.com/ISCOUTB/AS_202620_Clubs_UTB) | [ver](revisiones/2026-2/AS_202620_Clubs_UTB/feedback-s1-s2.md) | [ver](revisiones/2026-2/AS_202620_Clubs_UTB/semana-01-evidencia-s1.md) | [ver](revisiones/2026-2/AS_202620_Clubs_UTB/semana-02-evidencia-s2.md) | [ver](revisiones/2026-2/AS_202620_Clubs_UTB/planilla.md) |
+| DinamikUTB | [`AS_202620_DinamikUTB`](https://github.com/ISCOUTB/AS_202620_DinamikUTB) | [ver](revisiones/2026-2/AS_202620_DinamikUTB/feedback-s1-s2.md) | [ver](revisiones/2026-2/AS_202620_DinamikUTB/semana-01-evidencia-s1.md) | [ver](revisiones/2026-2/AS_202620_DinamikUTB/semana-02-evidencia-s2.md) | [ver](revisiones/2026-2/AS_202620_DinamikUTB/planilla.md) |
+| Drift | [`AS_202620_Drift`](https://github.com/ISCOUTB/AS_202620_Drift) | [ver](revisiones/2026-2/AS_202620_Drift/feedback-s1-s2.md) | [ver](revisiones/2026-2/AS_202620_Drift/semana-01-evidencia-s1.md) | [ver](revisiones/2026-2/AS_202620_Drift/semana-02-evidencia-s2.md) | [ver](revisiones/2026-2/AS_202620_Drift/planilla.md) |
+| ElMapita | [`AS_202620_ElMapita`](https://github.com/ISCOUTB/AS_202620_ElMapita) | [ver](revisiones/2026-2/AS_202620_ElMapita/feedback-s1-s2.md) | [ver](revisiones/2026-2/AS_202620_ElMapita/semana-01-evidencia-s1.md) | [ver](revisiones/2026-2/AS_202620_ElMapita/semana-02-evidencia-s2.md) | [ver](revisiones/2026-2/AS_202620_ElMapita/planilla.md) |
+| EnAgenda | [`AS_202620_EnAgenda`](https://github.com/ISCOUTB/AS_202620_EnAgenda) | [ver](revisiones/2026-2/AS_202620_EnAgenda/feedback-s1-s2.md) | [ver](revisiones/2026-2/AS_202620_EnAgenda/semana-01-evidencia-s1.md) | [ver](revisiones/2026-2/AS_202620_EnAgenda/semana-02-evidencia-s2.md) | [ver](revisiones/2026-2/AS_202620_EnAgenda/planilla.md) |
+| GimnasioUTB | [`AS_202620_GimnasioUTB`](https://github.com/ISCOUTB/AS_202620_GimnasioUTB) | [ver](revisiones/2026-2/AS_202620_GimnasioUTB/feedback-s1-s2.md) | [ver](revisiones/2026-2/AS_202620_GimnasioUTB/semana-01-evidencia-s1.md) | [ver](revisiones/2026-2/AS_202620_GimnasioUTB/semana-02-evidencia-s2.md) | [ver](revisiones/2026-2/AS_202620_GimnasioUTB/planilla.md) |
+| Grupo X | sin repositorio | [ver](revisiones/2026-2/grupo-x/feedback-s1-s2.md) | [ver](revisiones/2026-2/grupo-x/semana-01-evidencia-s1.md) | [ver](revisiones/2026-2/grupo-x/semana-02-evidencia-s2.md) | [ver](revisiones/2026-2/grupo-x/planilla.md) |
+| InvenTrack | [`AS_202620_InvenTrack`](https://github.com/ISCOUTB/AS_202620_InvenTrack) | [ver](revisiones/2026-2/AS_202620_InvenTrack/feedback-s1-s2.md) | [ver](revisiones/2026-2/AS_202620_InvenTrack/semana-01-evidencia-s1.md) | [ver](revisiones/2026-2/AS_202620_InvenTrack/semana-02-evidencia-s2.md) | [ver](revisiones/2026-2/AS_202620_InvenTrack/planilla.md) |
+| LaPlacita | [`AS_202620_LaPlacita`](https://github.com/ISCOUTB/AS_202620_LaPlacita) | [ver](revisiones/2026-2/AS_202620_LaPlacita/feedback-s1-s2.md) | [ver](revisiones/2026-2/AS_202620_LaPlacita/semana-01-evidencia-s1.md) | [ver](revisiones/2026-2/AS_202620_LaPlacita/semana-02-evidencia-s2.md) | [ver](revisiones/2026-2/AS_202620_LaPlacita/planilla.md) |
+| LostVault | [`AS_202620_LostVault`](https://github.com/ISCOUTB/AS_202620_LostVault) | [ver](revisiones/2026-2/AS_202620_LostVault/feedback-s1-s2.md) | [ver](revisiones/2026-2/AS_202620_LostVault/semana-01-evidencia-s1.md) | [ver](revisiones/2026-2/AS_202620_LostVault/semana-02-evidencia-s2.md) | [ver](revisiones/2026-2/AS_202620_LostVault/planilla.md) |
+| mapsutb | [`AS_202620_mapsutb`](https://github.com/ISCOUTB/AS_202620_mapsutb) | [ver](revisiones/2026-2/AS_202620_mapsutb/feedback-s1-s2.md) | [ver](revisiones/2026-2/AS_202620_mapsutb/semana-01-evidencia-s1.md) | [ver](revisiones/2026-2/AS_202620_mapsutb/semana-02-evidencia-s2.md) | [ver](revisiones/2026-2/AS_202620_mapsutb/planilla.md) |
+| PideUtb | [`AS_202620_PideUtb`](https://github.com/ISCOUTB/AS_202620_PideUtb) | [ver](revisiones/2026-2/AS_202620_PideUtb/feedback-s1-s2.md) | [ver](revisiones/2026-2/AS_202620_PideUtb/semana-01-evidencia-s1.md) | [ver](revisiones/2026-2/AS_202620_PideUtb/semana-02-evidencia-s2.md) | [ver](revisiones/2026-2/AS_202620_PideUtb/planilla.md) |
+| Recobra | [`AS_202620_Recobra`](https://github.com/ISCOUTB/AS_202620_Recobra) | [ver](revisiones/2026-2/AS_202620_Recobra/feedback-s1-s2.md) | [ver](revisiones/2026-2/AS_202620_Recobra/semana-01-evidencia-s1.md) | [ver](revisiones/2026-2/AS_202620_Recobra/semana-02-evidencia-s2.md) | [ver](revisiones/2026-2/AS_202620_Recobra/planilla.md) |
+| ROUTB | [`AS_202620_ROUTB`](https://github.com/ISCOUTB/AS_202620_ROUTB) | [ver](revisiones/2026-2/AS_202620_ROUTB/feedback-s1-s2.md) | [ver](revisiones/2026-2/AS_202620_ROUTB/semana-01-evidencia-s1.md) | [ver](revisiones/2026-2/AS_202620_ROUTB/semana-02-evidencia-s2.md) | [ver](revisiones/2026-2/AS_202620_ROUTB/planilla.md) |
+| ShareU | [`AS_202620_ShareU`](https://github.com/ISCOUTB/AS_202620_ShareU) | [ver](revisiones/2026-2/AS_202620_ShareU/feedback-s1-s2.md) | [ver](revisiones/2026-2/AS_202620_ShareU/semana-01-evidencia-s1.md) | [ver](revisiones/2026-2/AS_202620_ShareU/semana-02-evidencia-s2.md) | [ver](revisiones/2026-2/AS_202620_ShareU/planilla.md) |
+| TAIA | [`AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant`](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant) | [ver](revisiones/2026-2/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/feedback-s1-s2.md) | [ver](revisiones/2026-2/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/semana-01-evidencia-s1.md) | [ver](revisiones/2026-2/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/semana-02-evidencia-s2.md) | [ver](revisiones/2026-2/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/planilla.md) |
+| Tienda virtual UTB | [`AS_202620_TIENDA-VIRTUAL-UTB`](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB) | [ver](revisiones/2026-2/AS_202620_TIENDA-VIRTUAL-UTB/feedback-s1-s2.md) | [ver](revisiones/2026-2/AS_202620_TIENDA-VIRTUAL-UTB/semana-01-evidencia-s1.md) | [ver](revisiones/2026-2/AS_202620_TIENDA-VIRTUAL-UTB/semana-02-evidencia-s2.md) | [ver](revisiones/2026-2/AS_202620_TIENDA-VIRTUAL-UTB/planilla.md) |
+| TRACTAR | [`AS_202620_TRACTAR`](https://github.com/ISCOUTB/AS_202620_TRACTAR) | [ver](revisiones/2026-2/AS_202620_TRACTAR/feedback-s1-s2.md) | [ver](revisiones/2026-2/AS_202620_TRACTAR/semana-01-evidencia-s1.md) | [ver](revisiones/2026-2/AS_202620_TRACTAR/semana-02-evidencia-s2.md) | [ver](revisiones/2026-2/AS_202620_TRACTAR/planilla.md) |
+| uniTeam | [`AS_202620_uniTeam`](https://github.com/ISCOUTB/AS_202620_uniTeam) | [ver](revisiones/2026-2/AS_202620_uniTeam/feedback-s1-s2.md) | [ver](revisiones/2026-2/AS_202620_uniTeam/semana-01-evidencia-s1.md) | [ver](revisiones/2026-2/AS_202620_uniTeam/semana-02-evidencia-s2.md) | [ver](revisiones/2026-2/AS_202620_uniTeam/planilla.md) |
+| XALD | [`AS_202620_XALD`](https://github.com/ISCOUTB/AS_202620_XALD) | [ver](revisiones/2026-2/AS_202620_XALD/feedback-s1-s2.md) | [ver](revisiones/2026-2/AS_202620_XALD/semana-01-evidencia-s1.md) | [ver](revisiones/2026-2/AS_202620_XALD/semana-02-evidencia-s2.md) | [ver](revisiones/2026-2/AS_202620_XALD/planilla.md) |
+
+Si tu equipo no aparece, o si un archivo dice algo que no cuadra con tu repositorio, dilo en clase
+o abre un *issue*: se corrige.
 
 ## Para el docente
 
@@ -163,27 +220,39 @@ pasan a evaluarse sobre el repositorio, aquí faltará su ficha.
 procedimiento de revisión, con la advertencia de que **manda el aula** si divergen.
 
 **Qué se publica y qué no.** El remoto es `git@github.com:ISCOUTB/AS_202620_feedback.git`, y es
-**público**: lleva las fichas, el contrato, la planilla en blanco y este README, que es justo lo
-que el estudiante debe poder leer. El `.gitignore` deja fuera `revisiones/` y `EQUIPOS.md`, que
-llevan nombres de estudiantes. Por eso los enlaces a `EQUIPOS.md` de aquí abajo solo resuelven en
-la copia local, y es a propósito: antes de añadir un archivo nuevo, la pregunta es si puede leerlo
-cualquiera.
+**público**: van las fichas, el contrato, el listado de equipos y las revisiones de cada equipo,
+con nombres de equipo y de integrantes. Lo que el `.gitignore` deja fuera es el registro de
+trabajo del docente:
+
+| Se queda local | Por qué |
+|---|---|
+| `revisiones/2026-2/resumen-s1-s2.md` | tabla consolidada con la **nota sugerida de todos los equipos**: publicarla sería publicar un ranking |
+| `revisiones/2026-2/cierres.env` | regla local de cierres |
+| `revisiones/2026-2/_meta/` | volcados de la API, material de trabajo |
+
+Dos cosas más que no salen de aquí aunque el archivo sí se publique: los **correos** de los
+integrantes (se anotan como `correo omitido` en las revisiones) y la **nota sugerida** de cada
+entrega, que en la planilla aparece como `no se publica` y vive solo en el resumen local. Antes de
+añadir un archivo nuevo, la pregunta sigue siendo si puede leerlo cualquiera.
 
 ### Cómo se usa
 
 1. Localiza el repositorio del equipo (apartado «Descubrimiento de repositorios»).
 2. Abre la ficha de la entrega y pásasela al agente:
-   «Revisa `AS_202620_X` contra `materials/arqsw-kit-revision/semana-08-evidencia-s8.md`».
+   «Revisa `AS_202620_X` contra `fichas/semana-08-evidencia-s8.md`».
 3. El agente clona en el estado que se califica, recorre las instrucciones, rellena la matriz de
    la ficha más la **matriz transversal** de [CONTRATO.md](CONTRATO.md), y escribe el resultado en
-   `revisiones/2026-2/<equipo>/<tarea>.md`, fuera de control de versiones.
+   `revisiones/2026-2/<equipo>/<tarea>.md`, que sí se publica.
+4. Antes de empujar: sin correos y sin nota sugerida en los archivos publicados, y la nota al
+   resumen local. Añade el equipo al índice de [Evaluaciones publicadas](#evaluaciones-publicadas--2026-2)
+   si es su primera revisión.
 
 Lee [CONTRATO.md](CONTRATO.md) antes de la primera revisión: contiene lo que se exige en todas
 las entregas y los comandos base, y las fichas lo dan por leído.
 
-Más [EQUIPOS.md](EQUIPOS.md) —copia local, no publicada—, con los equipos, sus integrantes y el
-estado de cada repositorio, y [PLANILLA-equipo.md](PLANILLA-equipo.md), la hoja consolidada de un
-equipo a lo largo del semestre.
+Más [EQUIPOS.md](EQUIPOS.md), con los equipos, sus integrantes, el estado de cada repositorio y el
+enlace a su evaluación, y [la planilla en blanco](plantillas/planilla-equipo.md), que es la hoja
+consolidada de un equipo a lo largo del semestre.
 
 ### Descubrimiento de repositorios
 
@@ -228,8 +297,9 @@ git -C "$DIR" checkout corte-1     # o el hash del último commit anterior al ci
   citable el estado es No verificado.
 - **No inventar requisitos.** Si algo no está en la ficha, en el contrato ni en el aula, no se
   exige. La ficha resume la consigna; si divergen, manda el aula.
-- **Las revisiones van a `revisiones/<periodo>/<equipo>/<tarea>.md`**, ignorado por git: llevan
-  nombres de estudiantes y no entran al repositorio del despliegue.
+- **Las revisiones van a `revisiones/<periodo>/<equipo>/<tarea>.md`** y se publican. Escribirlas
+  pensando en que las lee el equipo: sin correos, sin nota sugerida y con evidencia citable en cada
+  fila, que es lo que hace discutible un hallazgo.
 
 ### Qué produce una revisión
 
@@ -238,7 +308,7 @@ git -C "$DIR" checkout corte-1     # o el hash del último commit anterior al ci
 2. La matriz de la ficha, rellena.
 3. La matriz transversal del contrato, rellena.
 4. En `corte1`, `corte2`, `final` y `cierre`, el **nivel sugerido** por criterio con su suma sobre
-   5,0, marcado como propuesta al docente.
+   5,0, marcado como propuesta al docente. Eso va al registro local, no al archivo publicado.
 5. Lo que quedó en No verificado, con qué haría falta para cerrarlo.
 
 ### Mantenimiento

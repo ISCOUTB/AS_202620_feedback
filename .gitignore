@@ -1,9 +1,9 @@
-# Informes de revisión: llevan nombres de estudiantes, no se publican.
-revisiones/
+# Registro consolidado del docente: notas sugeridas de todos los equipos.
+revisiones/2026-2/resumen-s1-s2.md
 
-# Copia de trabajo de la matrícula: nombres de estudiantes matriculados.
-# Se queda en el equipo del docente, como dice el propio archivo.
-EQUIPOS.md
+# Reglas y volcados de trabajo, no material de curso.
+revisiones/2026-2/cierres.env
+revisiones/2026-2/_meta/
 
 # Ruido del sistema y de la sincronización de OneDrive
 .DS_Store
