@@ -1,0 +1,13 @@
+# Informes de revisión: llevan nombres de estudiantes, no se publican.
+revisiones/
+
+# Copia de trabajo de la matrícula: nombres de estudiantes matriculados.
+# Se queda en el equipo del docente, como dice el propio archivo.
+EQUIPOS.md
+
+# Ruido del sistema y de la sincronización de OneDrive
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
+*.tmp
