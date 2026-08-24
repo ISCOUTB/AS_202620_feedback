@@ -10,7 +10,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_XALD` |
 | Integrantes y su usuario de GitHub | Xavier Yesid Garcia Diaz (xaviergarciadiaz20-commits) · Dilan Joan Gonzalez Bejarano (dilanbejarano011) · Luis Estheban Lozano Colmenares (colmenares2007-crypto) · Axel Jair Ruiz Bolano (axeljruiz717-hash) — correspondencias por los correos de los commits (nombres explícitos), por confirmar con el docente |
 | URL del sistema desplegado | sin URL (sin despliegue todavía) |
-| Última revisión | 2026-08-23 (S1 y S2) |
+| Última revisión | 2026-08-24 (S3 actualizada, commit `dc38992` ≤ cierre) |
 
 ## Estado por entrega
 
@@ -18,7 +18,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 |---:|---|---|---|---|---|
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `bf81545` · 2026-08-08T13:39:21-05:00 | 5/9 | 3.2 (propuesta) | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `8c37887` · 2026-08-16T13:45:27-05:00 | 1/9 | 1.4 (propuesta) | sí |
-| 3 | Evidencia S3 · Estrategia de solución y primer ADR | | | no aplica | |
+| 3 | Evidencia S3 · Estrategia de solución y primer ADR | `dc38992` · 2026-08-23T22:07:19-05:00 | 5/9 | no se publica | sí |
 | 4 | Evidencia S4 · arc42, C4 y corte vertical | | | no aplica | |
 | 5 | Primer corte · reto de línea base | `corte-1` | | | |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
@@ -39,33 +39,40 @@ Hoja consolidada del equipo a lo largo del semestre.
 
 | Hallazgo | Primera vez que se detectó | Sigue abierto | Qué se le dijo al equipo |
 |---|---|---|---|
-| Ficha del problema sin usuarios, sin alcance y sin tensiones de calidad enfrentadas | S1 | sí | completar la ficha (S2: sigue igual) |
+| Ficha del problema sin usuarios, sin alcance y sin tensiones de calidad enfrentadas | S1 | sí | completar la ficha |
 | Restos de edición de herramientas de IA («```[cite: 1]») en `docs/aspectos.md` | S1 | sí | limpiar el archivo |
 | Restricciones sin clase legal y con decisiones presentadas como restricciones | S2 | sí | clasificar técnicas/organizativas/legales con origen |
+| Escenarios de calidad de seis partes y árbol de utilidad ausentes del repositorio | S2 | sí | subirlos; sin árbol no se puede anclar la matriz comparativa |
+| Nombres de ADR fuera de convención (`ADR-NNN.md`) | S2 | sí | renombrar a `NNNN-titulo-en-kebab-case.md` |
+| `aspectos.md` con celdas ADR sin enlace y sin referencia al ADR-006 | S3 | sí | enlazar de verdad y añadir la fila del estilo |
+| `docs/ia.md` sin entradas del periodo S3 | S3 | sí | registrar el uso de IA de esta semana con rechazados y motivo |
+| Artefactos de build versionados (`.gradle/`, `build/`, `XALDAPP/.idea/`, `local.properties`) | S3 | sí | sacar del repo y completar `.gitignore` en la raíz |
+| Pruebas del esqueleto sin evidencia de verde (sin CI ni run) | S3 | sí | montar pipeline o aportar el run de `gradlew test` |
 
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | `ISCOUTB/AS_202620_XALD`, público (antes privado: EQUIPOS.md) |
-| Estructura mínima | Cumple | seis rutas presentes desde S2 (en S1 faltaban `docs/adr/` y `docs/c4/`) |
-| Convención de nombres de ADR | No cumple | `ADR-001.md`…`ADR-005.md` (deben ser `NNNN-titulo-en-kebab-case.md`) |
-| ADR aceptados sin reescribir | Cumple | creados una vez, sin ediciones posteriores |
-| `docs/ia.md` al día | Cumple | registra rechazos con motivo técnico |
-| Sin credenciales en el repositorio ni en el historial | Cumple | greps limpios |
-| Contribución de todos los integrantes | Cumple | 4 identidades = 4 integrantes, con PR en el historial |
-| Pipeline en verde | No verificado | sin pipeline todavía (no exigido aún) |
+| Estructura mínima | Cumple | seis rutas presentes; `docs/c4/` ahora en su carpeta |
+| Convención de nombres de ADR | No cumple | `ADR-001.md`…`ADR-006.md` (deben ser `NNNN-titulo-en-kebab-case.md`) |
+| ADR aceptados sin reescribir | Cumple | 001-005 sin ediciones posteriores; 006 editado el mismo día de creación (redacción) |
+| `docs/ia.md` al día | No cumple | sin commits en el periodo S3 (último 16-ago) |
+| Sin credenciales en el repositorio ni en el historial | Cumple | greps limpios; `local.properties` solo trae ruta de SDK (fuera del versionado de todas formas) |
+| Contribución de todos los integrantes | Cumple | 4 identidades = 4 integrantes |
+| Pipeline en verde | No verificado | sin pipeline; pruebas presentes pero verde no certificado |
 
 ## Contribución por integrante
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
-|---|---:|---:|---:|---|
-| Dilan Joan Gonzalez Bejarano | dilanbejarano011 | 28 | — | — | autor principal |
+|---|---|---|---:|---:|---:|---|
+| Dilan Joan Gonzalez Bejarano | dilanbejarano011 | 39 | — | — | autor principal; esqueleto y README (23/08) |
 | Luis Estheban Lozano Colmenares | colmenares2007-crypto | 17 | — | — | — |
-| Xavier Yesid Garcia Diaz | xaviergarciadiaz20-commits | 9 | — | — | actividad post-cierre el 23/08 (create/delete PROYECTO_XALD) |
-| Axel Jair Ruiz Bolano | axeljruiz717-hash | 4 | — | — | — |
+| Xavier Yesid Garcia Diaz | xaviergarciadiaz20-commits | 17 | — | — | ADR-006 y matriz (23/08) |
+| Axel Jair Ruiz Bolano | axeljruiz717-hash | 7 | — | — | matriz comparativa (23/08) |
 
 ## Preguntas abiertas para la sustentación
 
-- ¿Los commits del 23/08 («Create/Delete PROYECTO_XALD») fueron accidentales? Conviene aclararlo para no confundirlos con entregas.
 - ¿Dónde quedaron los escenarios de calidad de seis partes y el árbol de utilidad de la entrega S2?
+- ¿La suite `gradlew.bat -p XALDAPP test` pasa en verde en el entorno del equipo? (el README muestra una salida esperada, no un run verificado)
+- ¿Los commits del 23/08 («Create/Delete PROYECTO_XALD») fueron accidentales? Conviene aclararlo.

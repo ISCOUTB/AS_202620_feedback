@@ -1,4 +1,4 @@
-# Planilla de equipo · Arquitecturas de Software
+# Planilla de equipo · mapsutb
 
 ## Identificación
 
@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_mapsutb` |
 | Integrantes y su usuario de GitHub | Carlos Alberto Galvis Zuluaga · Carlos David Manrique Fals · Nerlis Nikol Otero Perez · Isabel Sofia Paez Matallana — cuentas observadas en el historial: `charlygz21`, `nerlis-otero`, `CarlosManrique-1397` (correspondencias por confirmar con el docente) |
 | URL del sistema desplegado | — |
-| Última revisión | 2026-08-23 (S2, commit `1cf15768`) |
+| Última revisión | 2026-08-24 (S3, commit `ed55eda` ≤ cierre) |
 
 ## Estado por entrega
 
@@ -16,7 +16,7 @@
 |---:|---|---|---|---|---|
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `7e56ad3` · 2026-08-09T23:27:46-05:00 | 5/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `1cf1576` · 2026-08-16T21:26:05-05:00 | 4/9 | no se publica | sí |
-| 3 | Evidencia S3 · Estrategia de solución y primer ADR | | | no aplica | |
+| 3 | Evidencia S3 · Estrategia de solución y primer ADR | `ed55eda` · 2026-08-23T21:44:05-05:00 | 5/9 | no se publica | sí |
 | 4 | Evidencia S4 · arc42, C4 y corte vertical | | | no aplica | |
 | 5 | Primer corte · reto de línea base | `corte-1` | | | |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
@@ -37,34 +37,41 @@
 
 | Hallazgo | Primera vez que se detectó | Sigue abierto | Qué se le dijo al equipo |
 |---|---|---|---|
-| Estructura fuera de convención: sin `docs/arc42/`, `docs/adr/`, `docs/c4/` | S1 | sí (S2: arc42 en un único `docs/arc42.md`, contexto en `docs/c4_contexto.md`) | Mover a la estructura mínima del contrato |
+| Estructura fuera de convención: `docs/arc42.md` único y `docs/c4_contexto.md` fuera de `docs/c4/` | S1 | sí | Mover a la estructura mínima del contrato |
 | Sin tensiones de calidad en la ficha (S1) → árbol de utilidad sin impacto/riesgo (S2) | S1 | sí | Priorizar atributos por impacto y riesgo y vincularlos a los escenarios |
-| Isabel Sofia Paez Matallana sin aparición en el historial | S1 | sí (3 identidades para 4 integrantes) | Confirmar acceso y contribución de la integrante |
+| Isabel Sofia Paez Matallana sin aparición en el historial | S1 | sí (S3: 3 identidades para 4 integrantes; toda la S3 de una sola cuenta) | Confirmar acceso y contribución de la integrante |
+| Etiqueta `corte-1` sobre el commit de S1 | S2 | sí | moverla al commit real del corte 1 |
+| `docs/aspectos.md` desactualizado («Sin ADR aún») y sin enlace al ADR 0001; `escenarios_calidad.md` con enlace roto al árbol | S3 | sí | actualizar la tabla y enlazar el ADR desde el escenario que lo motiva |
+| Sin matriz comparativa de los tres estilos contra el árbol de utilidad (el ADR la declina; el «corte anterior» no existe en el repo) | S3 | sí | escribir la matriz de estilos que pide la ficha |
+| Estructura de paquetes del ADR no materializada (`lib/` solo tiene `main.dart`; faltan carpetas y `.gitkeep`) | S3 | sí | crear las carpetas del ADR antes de la S4 |
+| `docs/ia.md` sin entradas del trabajo S3 | S3 | sí | registrar el uso de IA de la semana con rechazados y motivo |
+| Prueba de humo sin CI ni evidencia de verde | S3 | sí | pipeline o run aportado |
 
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | `github.com/ISCOUTB/AS_202620_mapsutb`, público (ls-remote sin auth) |
-| Estructura mínima | No cumple | Arc42 en archivo único; sin `docs/adr/` ni `docs/c4/` |
-| Convención de nombres de ADR | Cumple (vacuo) | Sin ADR todavía |
-| ADR aceptados sin reescribir | Cumple (vacuo) | Sin ADR |
-| `docs/ia.md` al día | No cumple en S2 | Único commit 2026-08-09; sin uso de IA registrado en S2 (sí tiene Aceptado/Rechazado) |
-| Sin credenciales en el repositorio ni en el historial | Cumple | git grep, .env y `log -S` sin coincidencias |
-| Contribución de todos los integrantes | No cumple | 3 identidades; sin cuenta para Isabel Sofia Paez Matallana |
-| Pipeline en verde | No verificado | Sin `.github/workflows/` (no exigido aún) |
+| Estructura mínima | No cumple | `docs/arc42.md` único; `docs/c4_contexto.md` fuera de `docs/c4/`; `docs/adr/` ya existe |
+| Convención de nombres de ADR | Cumple | `0001-patrones-de-diseno.md` |
+| ADR aceptados sin reescribir | Cumple | un solo commit sobre el ADR |
+| `docs/ia.md` al día | No cumple | tocado en S3 solo con cambio de saltos de línea; sin entradas nuevas |
+| Sin credenciales en el repositorio ni en el historial | Cumple | greps limpios |
+| Contribución de todos los integrantes | No cumple | 3 identidades; sin cuenta para Isabel Sofia Paez Matallana; S3 de una sola cuenta |
+| Pipeline en verde | No verificado | sin `.github/workflows/` ni evidencia de ejecución |
 
 ## Contribución por integrante
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
-|---|---|---:|---:|---:|---|
-| Carlos Alberto Galvis Zuluaga | ¿`charlygz21`? (confirmar) | 3 | — | — | Commits entre S1 y S2 |
-| Carlos David Manrique Fals | ¿`CarlosManrique-1397`? (confirmar) | 1 | — | — | Solo el commit de la entrega S2 |
-| Nerlis Nikol Otero Perez | ¿`nerlis-otero`? (confirmar) | 4 | — | — | Mayoría de la documentación S1 |
-| Isabel Sofia Paez Matallana | sin cuenta observada | 0 | — | — | Sin aparición en el historial hasta S2 |
+|---|---|---|---:|---:|---:|---|
+| Carlos Alberto Galvis Zuluaga | ¿`charlygz21`? (confirmar) | 3 | — | — | Commits de S1 |
+| Carlos David Manrique Fals | ¿`CarlosManrique-1397`? (confirmar) | 6 | — | — | toda la entrega S3 (21:32–21:44 del 23/08) |
+| Nerlis Nikol Otero Perez | ¿`nerlis-otero`? (confirmar) | 4 | — | — | documentación S1 |
+| Isabel Sofia Paez Matallana | sin cuenta observada | 0 | — | — | Sin aparición en el historial hasta S3 |
 
 ## Preguntas abiertas para la sustentación
 
 - ¿Isabel Sofia Paez Matallana tiene acceso al repositorio y cómo contribuirá?
 - ¿Dónde está el diagrama C4 de contexto (tabla no es diagrama)?
-- Etiqueta `corte-1` colocada sobre el commit de S1: ¿se moverá al commit del corte real?
+- ¿La app compila y la prueba de humo pasa en verde en el entorno del equipo? (sin CI ni evidencia)
+- ¿Cuándo se creará la estructura `lib/{adapters,repositories,strategies,services,features}` que declara el ADR?

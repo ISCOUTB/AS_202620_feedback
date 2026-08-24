@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_ShareU` |
 | Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo |
 | URL del sistema desplegado | — |
-| Última revisión | 2026-08-23 (S1 `8886d4e` + S2 `aa0659c`) |
+| Última revisión | 2026-08-24 (S3 actualizada tras el cierre, commit `0833272`) |
 
 ## Estado por entrega
 
@@ -16,7 +16,7 @@
 |---:|---|---|---|---|---|
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `8886d4e` · 2026-08-09T22:03:52-05:00 | 4/9 | no aplica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `aa0659c` · 2026-08-16T22:47:16-05:00 | 2/9 | no aplica | sí |
-| 3 | Evidencia S3 · Estrategia de solución y primer ADR | | | no aplica | |
+| 3 | Evidencia S3 · Estrategia de solución y primer ADR | `0833272` · 2026-08-23T22:46:30-05:00 | 6/9 | no se publica | sí |
 | 4 | Evidencia S4 · arc42, C4 y corte vertical | | | no aplica | |
 | 5 | Primer corte · reto de línea base | `corte-1` | | | |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
@@ -37,32 +37,36 @@
 
 | Hallazgo | Primera vez que se detectó | Sigue abierto | Qué se le dijo al equipo |
 |---|---|---|---|
-| Estructura sin montar: `docs/arc42/` (la plantilla está suelta en `docs/`), `docs/adr/` y `docs/c4/` inexistentes | S1 (08-09) | Sí, en S2 | Muevan la plantilla a `docs/arc42/` y creen `docs/adr/` y `docs/c4/` |
-| `docs/aspectos.md` sin la tabla de 8 columnas ni ID | S1 (08-09) | Sí, en S2 | Armen la tabla del curso y enlacen cada escenario desde su fila |
-| Luis Carlos Corredor Altamiranda sin aparición en el historial | S1 (08-09) | Sí, en S2 | El integrante debe contribuir con su cuenta para que la contribución individual sea verificable |
-| `docs/ia.md` sin registro de usos ni de lo rechazado (anuncia una tabla que no tiene entradas) | S1 (08-09) | Sí, en S2 | Registren cada uso con qué se aceptó y qué se rechazó y por qué |
-| Problema del proyecto cambiado entre semanas (EncuentraUTB → ShareU) | S2 (16-ago) | Sí | Revisar que toda la documentación hable del mismo problema para el corte 1 |
-| Tensiones de calidad sin declarar | S1 (08-09) | Sí, en S2 | Enfrenten dos atributos de calidad en la ficha del problema |
+| Estructura sin montar: `docs/arc42/` (la plantilla está suelta en `docs/`), `docs/adr/` y `docs/c4/` inexistentes | S1 (08-09) | Parcial: `docs/adr/` ya existe; siguen faltando `docs/arc42/` y `docs/c4/` | Muevan la plantilla a `docs/arc42/` y creen `docs/c4/` |
+| `docs/aspectos.md` sin la tabla de 8 columnas ni ID | S1 (08-09) | Sí, en S3 | Armen la tabla del curso y enlacen cada escenario desde su fila |
+| Luis Carlos Corredor Altamiranda sin aparición en el historial | S1 (08-09) | Sí (3 identidades para 4 integrantes en S3) | El integrante debe contribuir con su cuenta para que la contribución individual sea verificable |
+| `docs/ia.md` sin registro de usos ni de lo rechazado | S1 (08-09) | Parcial: dos entradas de S3, sin columna de rechazados y «pendientes de revisión» | Completen la columna de qué se rechazó y por qué |
+| Problema del proyecto cambiado entre semanas (EncuentraUTB → ShareU) | S2 (16-ago) | Sin evidencia nueva en S3 | Revisar que toda la documentación hable del mismo problema para el corte 1 |
+| Tensiones de calidad sin declarar | S1 (08-09) | Sin evidencia nueva en S3 | Enfrenten dos atributos de calidad en la ficha del problema |
+| README con la sección de arranque vacía y sin manifest de dependencias | S3 (cierre) | Sí | Documentar el comando único (p. ej. `uvicorn app.main:app`) y añadir `requirements.txt` |
+| ADR no enlazado desde `aspectos.md` ni desde el escenario | S3 (cierre) | Sí | Enlazar el ADR desde la fila del aspecto y desde el escenario de usabilidad |
+| Sin pipeline ni evidencia del verde | S3 (cierre) | Sí | Añadir workflow con la prueba y el run en verde |
+| Sin árbol de utilidad formal (la matriz compara contra el escenario de aspectos) | S3 (cierre) | Sí | Documentar el árbol de utilidad con sus escenarios para el corte 1 |
 
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
-| Nombre y visibilidad del repositorio | Cumple | `lsremote.txt:16`; público y con el nombre de la convención |
-| Estructura mínima | No cumple | `docs/arc42/` ausente (plantilla en `docs/`), `docs/adr/` y `docs/c4/` inexistentes en `aa0659c` |
-| Convención de nombres de ADR | Cumple | Sin ADR (no existe `docs/adr/`) |
-| ADR aceptados sin reescribir | Cumple | Sin ADR |
-| `docs/ia.md` al día | No cumple | Sin registro de usos ni rechazos |
-| Sin credenciales en el repositorio ni en el historial | Cumple | `git grep` §9 y `git log -S` sin coincidencias |
+| Nombre y visibilidad del repositorio | Cumple | Público y con el nombre de la convención |
+| Estructura mínima | No cumple | Faltan `docs/arc42/` (plantilla en `docs/`) y `docs/c4/` en `0833272` |
+| Convención de nombres de ADR | Cumple | `0001-estilo-arquitectonico.md` |
+| ADR aceptados sin reescribir | Cumple | Creación y ajuste el mismo día, antes del cierre |
+| `docs/ia.md` al día | No cumple | Entradas de S3 sin columna de rechazados |
+| Sin credenciales en el repositorio ni en el historial | Cumple | `git grep` §9 y `log -S` sin coincidencias |
 | Contribución de todos los integrantes | No cumple | 3 de 4 personas en el historial (falta Luis Carlos Corredor) |
-| Pipeline en verde | No aplica todavía | Sin `.github/workflows`; se espera desde el segundo corte |
+| Pipeline en verde | No verificado | Sin `.github/workflows`; prueba sin evidencia de ejecución |
 
 ## Contribución por integrante
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
-|---|---|---:|---:|---:|---|
-| Dayana Narvaez Vasquez | daynarvaez | 12 | | | Toda la S1 y parte de la S2 |
-| Nicolas Ivan Hernandez Hernandez | Nicolas-HH | 8 | | | Desde 10-ago |
+|---|---|---|---:|---:|---:|---|
+| Dayana Narvaez Vasquez | daynarvaez | 19 | | | Toda la S3: ADR, esqueleto, README, ia.md |
+| Nicolas Ivan Hernandez Hernandez | Nicolas-HH | 8 | | | S1 y S2 |
 | Steven David Contreras Orozco | steven | 1 | | | Solo 10-ago (README) |
 | Luis Carlos Corredor Altamiranda | sin cuenta observada | 0 | | | No aparece en el historial |
 
@@ -70,3 +74,4 @@
 
 - ¿Por qué cambió el problema del proyecto entre la semana 1 (EncuentraUTB) y la semana 2 (ShareU)?
 - ¿Luis Carlos Corredor Altamiranda tiene acceso al repositorio y con qué cuenta contribuirá?
+- ¿Por qué la sección «Esqueleto ejecutable — arranque» del README quedó sin el comando, y dónde está el manifest de dependencias de FastAPI?

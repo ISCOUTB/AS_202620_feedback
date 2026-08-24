@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_PideUtb` |
 | Integrantes y su usuario de GitHub | Daniela Sofia Arrieta Guardo · Santiago Jose Cuesta Maza · Ruddy Rodriguez Romero — cuentas observadas: `daniarriet`, `Santiago Cuesta`/`Santiago-C0` (misma persona, EQUIPOS.md:95); sin cuenta para Ruddy |
 | URL del sistema desplegado | — |
-| Última revisión | 2026-08-23 (S2, commit `9b5f214`) |
+| Última revisión | 2026-08-23 (S3, commit `b5f0310`) |
 
 ## Estado por entrega
 
@@ -16,7 +16,7 @@
 |---:|---|---|---|---|---|
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `48cfbe3` · 2026-08-08T15:12:35-05:00 | 4/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `9b5f214` · 2026-08-16T12:47:26-05:00 | 9/9 | no se publica | sí |
-| 3 | Evidencia S3 · Estrategia de solución y primer ADR | | | no aplica | |
+| 3 | Evidencia S3 · Estrategia de solución y primer ADR | `b5f0310` · 2026-08-23T19:42:42-05:00 | 5/9 | no se publica | sí |
 | 4 | Evidencia S4 · arc42, C4 y corte vertical | | | no aplica | |
 | 5 | Primer corte · reto de línea base | `corte-1` | | | |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
@@ -37,32 +37,36 @@
 
 | Hallazgo | Primera vez que se detectó | Sigue abierto | Qué se le dijo al equipo |
 |---|---|---|---|
-| Estructura fuera de convención: sin `docs/arc42/`, `docs/adr/`, `docs/c4/`; ficha en PDF | S1 | sí (S2: arc42.md en raíz) | Mover a la estructura mínima del contrato; ficha en Markdown |
+| Estructura fuera de convención: `arc42.md` en raíz, C4 dentro de arc42, sin `docs/c4/`, ficha en PDF | S1 | sí (S3: `docs/adr/` ya existe) | Mover arc42 y C4 a `docs/arc42/` y `docs/c4/`; ficha en Markdown |
 | `docs/ia.md` sin registro de lo rechazado | S1 | sí | Incluir la columna de rechazos con motivo en cada uso |
-| Ruddy Rodriguez Romero sin aparición en el historial | S1 | sí (2 personas de 3 en S2) | Confirmar acceso y contribución del integrante |
+| Ruddy Rodriguez Romero sin aparición en el historial | S1 | sí (2 personas de 3 en S3) | Confirmar acceso y contribución del integrante |
+| Sección 4 sin tácticas por escenario; matriz comparativa sin filas por escenario | S3 | sí | Ligar estrategia y matriz a ESC-01/02/03 del árbol de utilidad |
+| `docs/aspectos.md` sin enlace al ADR ni tabla de 8 columnas | S3 | sí | Completar la tabla de trazabilidad y enlazar el ADR desde el aspecto y el escenario |
+| Sin workflow ni evidencia de prueba en verde | S3 | sí | Añadir `.github/workflows/` con `pytest` y aportar el run |
 
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | Público hoy; estuvo privado al inicio (EQUIPOS.md:49-52) |
-| Estructura mínima | No cumple | `arc42.md` en raíz; sin `docs/adr/` ni `docs/c4/`; ficha en PDF |
-| Convención de nombres de ADR | Cumple (vacuo) | Sin ADR todavía |
-| ADR aceptados sin reescribir | Cumple (vacuo) | Sin ADR |
-| `docs/ia.md` al día | No cumple | Sí registra uso en S2, pero sin lo rechazado |
-| Sin credenciales en el repositorio ni en el historial | Cumple | git grep, .env y `log -S` sin coincidencias |
-| Contribución de todos los integrantes | No cumple | 2 de 3 personas en el historial |
-| Pipeline en verde | No verificado | Sin `.github/workflows/` (no exigido aún) |
+| Estructura mínima | No cumple | `arc42.md` en raíz; C4 dentro de arc42 §3.2; sin `docs/c4/`; ficha en PDF |
+| Convención de nombres de ADR | Cumple | `0001-estilo-arquitectonico.md` pasa el filtro; título temático (no decisión) |
+| ADR aceptados sin reescribir | Cumple | ADR creado en `b5f0310`, sin reescrituras |
+| `docs/ia.md` al día | No cumple | Actualizado en S3 (`b5f0310`), pero sin lo rechazado |
+| Sin credenciales en el repositorio ni en el historial | Cumple | git grep y `.env` sin coincidencias |
+| Contribución de todos los integrantes | No cumple | 2 personas (daniarriet; Santiago Cuesta=Santiago-C0) de 3 |
+| Pipeline en verde | No verificado | Sin `.github/workflows/` ni evidencia de ejecución |
 
 ## Contribución por integrante
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
-|---|---|---:|---:|---:|---|
+|---|---|---|---:|---:|---:|---|
 | Daniela Sofia Arrieta Guardo | ¿`daniarriet`? (confirmar) | 5 | — | — | Concentra la documentación S2 |
-| Santiago Jose Cuesta Maza | `Santiago Cuesta` / `Santiago-C0` (misma persona) | 4 | — | — | Todo el trabajo de S1 |
-| Ruddy Rodriguez Romero | sin cuenta observada | 0 | — | — | Sin aparición en el historial hasta S2 |
+| Santiago Jose Cuesta Maza | `Santiago Cuesta` / `Santiago-C0` (misma persona) | 5 | — | — | Entrega S3 completa (ADR, esqueleto, README) |
+| Ruddy Rodriguez Romero | sin cuenta observada | 0 | — | — | Sin aparición en el historial hasta S3 |
 
 ## Preguntas abiertas para la sustentación
 
 - ¿Ruddy Rodriguez Romero tiene acceso al repositorio y cómo contribuirá?
-- ¿Cuándo moverán la documentación a la estructura mínima (`docs/arc42/`, `docs/adr/`, `docs/c4/`) y la ficha a Markdown?
+- ¿Cuándo moverán `arc42.md` y el C4 a la estructura mínima y la ficha a Markdown?
+- ¿Quién ejecutó `pytest` en verde y pueden aportar la evidencia del run?

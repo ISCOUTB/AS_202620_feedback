@@ -10,7 +10,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB` |
 | Integrantes y su usuario de GitHub | Shalom Jhoanna Arrieta Marrugo (shalom-A26) · Levis Adrian Ortiz Cano (RAZOR7150) · Alejandro Patron Montero (pxtroniwnl) · Jasen Mihovil Yukopila Escobar (Jmyukopila) — correspondencias por los correos de los commits, por confirmar con el docente |
 | URL del sistema desplegado | sin URL (sin despliegue todavía) |
-| Última revisión | 2026-08-23 (S1 y S2) |
+| Última revisión | 2026-08-23 (S1 `d414ecf` + S2 `456365b` + S3 `f4602a3`) |
 
 ## Estado por entrega
 
@@ -18,7 +18,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 |---:|---|---|---|---|---|
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `d414ecf` · 2026-08-09T14:08:31-05:00 | 7/9 | 4.1 (propuesta) | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `456365b` · 2026-08-15T14:07:47-05:00 | 6/9 | 3.7 (propuesta) | sí |
-| 3 | Evidencia S3 · Estrategia de solución y primer ADR | | | no aplica | |
+| 3 | Evidencia S3 · Estrategia de solución y primer ADR | `f4602a3` · 2026-08-21T13:22:16-05:00 | 6/9 | no se publica | sí |
 | 4 | Evidencia S4 · arc42, C4 y corte vertical | | | no aplica | |
 | 5 | Primer corte · reto de línea base | `corte-1` | | | |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
@@ -39,9 +39,10 @@ Hoja consolidada del equipo a lo largo del semestre.
 
 | Hallazgo | Primera vez que se detectó | Sigue abierto | Qué se le dijo al equipo |
 |---|---|---|---|
-| `docs/aspectos.md` sin la tabla de 8 columnas del curso (tabla de 2 columnas, sin ID ni enlaces a escenarios) | S1 | sí | ajustar la tabla a las 8 columnas y enlazar cada escenario desde su fila (S2: sigue igual) |
-| `docs/ia.md` sin registro de «qué se rechazó y por qué» | S1 | sí | añadir la columna/entradas de rechazo con motivo técnico (S2: sin commits sobre el archivo en el periodo) |
-| Shalom Jhoanna Arrieta Marrugo sin commits en el historial | S1 (y S2) | sí | primer commit el 2026-08-21 (`f4602a3`, fuera del cierre S2); urge que aparezca antes del corte 1 |
+| `docs/aspectos.md` sin la tabla de 8 columnas del curso (tabla de 2 columnas, sin ID ni enlaces a escenarios) | S1 | sí | Ajustar la tabla a las 8 columnas, enlazar cada escenario y ahora también el ADR 0001 (S3: sigue igual, sin ADR) |
+| `docs/ia.md` sin registro de «qué se rechazó y por qué» | S1 | sí | Añadir las entradas de rechazo con motivo técnico (S3: el commit tocó el archivo, pero sigue sin rechazados) |
+| Shalom Jhoanna Arrieta Marrugo sin commits en el historial | S1 (y S2) | No (cerrado en S3: commit `f4602a3` 21-ago) | Primer commit el 2026-08-21 (ya dentro del cierre S3) |
+| Matriz comparativa de estilos genérica, no contra el árbol de utilidad | S3 (21-ago) | sí | Rehacer la tabla contra los escenarios del árbol: qué escenario mejora/empeora con cada estilo |
 
 ## Estado del contrato del repositorio
 
@@ -49,23 +50,24 @@ Hoja consolidada del equipo a lo largo del semestre.
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | `ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB`, público |
 | Estructura mínima | Cumple | seis rutas presentes; desviación: escenarios en `docs/escenarios-calidad.md` con arc42 §10 vacía |
-| Convención de nombres de ADR | Cumple | sin ADR todavía |
-| ADR aceptados sin reescribir | Cumple | sin ADR todavía |
-| `docs/ia.md` al día | No cumple | sin commits en el periodo S2 y sin registro de rechazos |
-| Sin credenciales en el repositorio ni en el historial | Cumple | greps limpios |
-| Contribución de todos los integrantes | No cumple | al cierre S2, 3 de 4 en el historial |
-| Pipeline en verde | No verificado | sin pipeline todavía (no exigido aún) |
+| Convención de nombres de ADR | Cumple | `0001-monolito-modular.md` |
+| ADR aceptados sin reescribir | Cumple | un solo commit sobre el ADR (`f4602a3`) |
+| `docs/ia.md` al día | No cumple | commit en el periodo, pero sin registro de rechazos con motivo |
+| Sin credenciales en el repositorio ni en el historial | Cumple | greps limpios; `compose.yaml:7` lleva contraseña de desarrollo del Postgres local |
+| Contribución de todos los integrantes | Cumple | 4 identidades consolidadas = 4 integrantes (Shalom ya aparece) |
+| Pipeline en verde | Cumple | run «Pruebas» success 2026-08-21T18:36Z (actions/runs/32514183233) |
 
 ## Contribución por integrante
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
-|---|---:|---:|---:|---|
-| Jasen Mihovil Yukopila Escobar | Jmyukopila (firma «Jasen» y «Jasen Yukopila», mismo correo) | 4 | — | — | toda la base de S1 |
+|---|---|---:|---:|---:|---|
+| Jasen Mihovil Yukopila Escobar | Jmyukopila (firma «Jasen» y «Jasen Yukopila», mismo correo) | 4 | — | — | base de S1 y S3 |
 | Levis Adrian Ortiz Cano | RAZOR7150 | 2 | — | — | — |
 | Alejandro Patron Montero | pxtroniwnl | 2 | — | — | S2 |
-| Shalom Jhoanna Arrieta Marrugo | shalom-A26 | 1 | — | — | primer commit 2026-08-21 (tras el cierre S2) |
+| Shalom Jhoanna Arrieta Marrugo | shalom-A26 | 1 | — | — | primer commit 2026-08-21 (S3) |
 
 ## Preguntas abiertas para la sustentación
 
 - ¿Los cuatro integrantes tienen acceso de escritura al repositorio? (sin API no se pudo listar colaboradores).
 - ¿Por qué la sección 10 del arc42 está vacía si los escenarios existen en `docs/escenarios-calidad.md`?
+- ¿El arranque real con `docker compose up --build` funciona en el entorno del equipo? (no ejecutado por regla del kit)

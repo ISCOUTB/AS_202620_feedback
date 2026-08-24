@@ -8,9 +8,9 @@ Hoja consolidada del equipo a lo largo del semestre.
 |---|---|
 | Equipo | TRACTAR |
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TRACTAR` |
-| Integrantes y su usuario de GitHub | Joriel Samir Barros Pena (sin cuentas en el historial) · Geronimo Alberto Cadena Garcia (sin cuentas) · Sebastian Garcia Devoz (firma con dos identidades de git: `correo omitido` y `correo omitido`) · Mateo Alfonso Millan Barraza (sin cuentas) |
+| Integrantes y su usuario de GitHub | Joriel Samir Barros Pena (sin cuentas en el historial) · Geronimo Alberto Cadena Garcia (sin cuentas) · Sebastian Garcia Devoz (firma con dos identidades de git, mismo correo, más el correo institucional) · Mateo Alfonso Millan Barraza (sin cuentas) |
 | URL del sistema desplegado | sin URL (sin despliegue todavía) |
-| Última revisión | 2026-08-23 (S1 y S2) |
+| Última revisión | 2026-08-24 (S3, commit `5f923cd`) |
 
 ## Estado por entrega
 
@@ -18,7 +18,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 |---:|---|---|---|---|---|
 | 1 | Evidencia S1 · Equipo, problema y repositorio | sin commits antes del cierre | — | no evaluable | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `0a23855` · 2026-08-16T20:05:46-05:00 | 6/9 | 3.7 (propuesta) | sí |
-| 3 | Evidencia S3 · Estrategia de solución y primer ADR | | | no aplica | |
+| 3 | Evidencia S3 · Estrategia de solución y primer ADR | `5f923cd` · 2026-08-23T22:40:51-05:00 | 7/9 | no se publica | sí |
 | 4 | Evidencia S4 · arc42, C4 y corte vertical | | | no aplica | |
 | 5 | Primer corte · reto de línea base | `corte-1` | | | |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
@@ -41,25 +41,29 @@ Hoja consolidada del equipo a lo largo del semestre.
 |---|---|---|---|
 | Solo una persona con commits (dos identidades de git del mismo integrante); 3 de 4 integrantes sin aparición en el historial | S1 (y S2) | sí | urgente para el proyecto final: la contribución individual se califica sobre el historial |
 | Documentos con restos de edición e incoherencias (ficha obsoleta «sin poder incluirlo a ISCOUTB», tabla de interesados con nombres de otro equipo, enlaces rotos en `aspectos.md`) | S2 | sí | revisar y consolidar antes del corte 1 |
+| Enlaces rotos en la documentación S3 (ADR → `10_requisitos_calidad.md` inexistente; `aspectos.md` → `arc42.md#qs-…` con ruta incorrecta) | S3 | sí | corregir las rutas al reorganizar los documentos |
+| Basura versionada (`__pycache__/*.pyc`, `db.sqlite3`); `.gitignore` solo ignora `venv/` | S3 | sí | ampliar `.gitignore` y purgar los binarios del repo |
+| `docs/ia.md` sin entradas del trabajo S3 ni rechazos con motivo | S3 | sí | registrar el uso de IA de cada entrega, incluyendo lo rechazado |
+| Test de salud sin CI ni evidencia de verde | S3 | sí | montar `.github/workflows/` o aportar el run |
 
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | `ISCOUTB/AS_202620_TRACTAR`, público (antes privado: EQUIPOS.md) |
-| Estructura mínima | Cumple | seis rutas presentes; `ficha_problema.md` en raíz y ADR «doc» como desviaciones |
-| Convención de nombres de ADR | No cumple | `docs/adr/doc` sin número, extensión ni título |
-| ADR aceptados sin reescribir | Cumple | sin ADR aceptados |
-| `docs/ia.md` al día | No cumple | sin rechazos concretos con motivo técnico |
+| Estructura mínima | No cumple | sin `docs/c4/` (C4 en `docs/arc42/images/`); `ficha_problema.md` en raíz |
+| Convención de nombres de ADR | Cumple | `0001-estilo-arquitectonico.md` |
+| ADR aceptados sin reescribir | Cumple | único commit sobre el ADR, el de creación |
+| `docs/ia.md` al día | No cumple | sin entradas del trabajo S3 ni rechazos con motivo técnico |
 | Sin credenciales en el repositorio ni en el historial | Cumple | greps limpios |
-| Contribución de todos los integrantes | No cumple | 1 persona con 15 commits; 3 sin commits |
+| Contribución de todos los integrantes | No cumple | 1 persona con 16 commits; 3 sin commits |
 | Pipeline en verde | No verificado | sin pipeline todavía (no exigido aún) |
 
 ## Contribución por integrante
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
-|---|---:|---:|---:|---|
-| Sebastian Garcia Devoz | dos identidades de git (correo omitido / correo omitido) | 15 | — | — | único autor del periodo |
+|---|---|---:|---:|---:|---|
+| Sebastian Garcia Devoz | dos identidades de git (mismo correo) + correo institucional | 16 | — | — | único autor del periodo |
 | Joriel Samir Barros Pena | — | 0 | — | — | sin commits |
 | Geronimo Alberto Cadena Garcia | — | 0 | — | — | sin commits |
 | Mateo Alfonso Millan Barraza | — | 0 | — | — | sin commits |
@@ -68,3 +72,4 @@ Hoja consolidada del equipo a lo largo del semestre.
 
 - ¿Tienen los cuatro integrantes acceso al repositorio? ¿Por qué solo uno ha empujado commits?
 - El diagrama C4: ¿se puede entregar como código (workspace.dsl) para poder revisar leyenda y flechas?
+- ¿La prueba `manage.py test` pasa en verde en el entorno del equipo? (sin pipeline ni evidencia; se comprobará con CI)
