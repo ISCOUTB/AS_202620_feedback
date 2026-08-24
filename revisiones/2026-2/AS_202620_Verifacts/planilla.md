@@ -1,10 +1,10 @@
-# Planilla de equipo · Verifacts (Grupo X)
+# Planilla de equipo · Verifacts
 
 ## Identificación
 
 | | |
 |---|---|
-| Equipo | Grupo X — Verifacts |
+| Equipo | Verifacts |
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Verifacts` |
 | Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md); historial: 1 sola cuenta (`PedroC1213`, sin atribuir) |
 | URL del sistema desplegado | |

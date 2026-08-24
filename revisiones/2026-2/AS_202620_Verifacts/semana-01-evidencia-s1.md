@@ -1,4 +1,4 @@
-# Evidencia S1 · Verifacts (Grupo X)
+# Evidencia S1 · Verifacts
 
 > **Excepción docente**: por decisión del profesor, esta evidencia se evalúa sobre el estado
 > actual del repositorio (HEAD `8ded7cf`, 2026-08-23), no sobre el commit al cierre
