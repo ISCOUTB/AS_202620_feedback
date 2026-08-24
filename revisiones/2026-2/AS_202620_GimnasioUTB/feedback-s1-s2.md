@@ -1,4 +1,4 @@
-# Feedback GimnasioUTB · Semanas 1 y 2 (para publicar en el foro)
+# Retroalimentación publicable · GimnasioUTB
 
 ## Semana 1 · Equipo, problema y repositorio
 
@@ -11,3 +11,14 @@ Lo que falta antes de que se convierta en deuda: declarar en la ficha las dos te
 Buen nivel de contenido: restricciones organizacionales y técnicas con justificación, árbol de utilidad con prioridades, y escenarios con las seis partes y medidas numéricas (destaca el escenario de rendimiento, que ya declara carga, umbral y método de medición).
 
 Correcciones para el corte 1: (1) seleccionen entre 3 y 5 escenarios — tienen 8; (2) monten la estructura de arc42 por secciones en `docs/arc42/` en lugar de un único archivo; (3) enlacen cada escenario desde su fila de aspectos; (4) entreguen el C4 preferiblemente como código (mermaid o PlantUML) y con leyenda; (5) registren en `ia.md` cada uso con lo que aceptaron y lo que rechazaron y por qué; y (6) revisen la categoría legal de las restricciones y el dato «equipo de 4 personas» (son 3).
+
+## Semana 3
+
+Qué está bien: ADR 0001 completo (contexto, alternativas descartadas con motivo, decisión y consecuencias), sección 4 del arc42 con matriz comparativa ligada a los escenarios ES1/ES7/ES8, esqueleto hexagonal por módulos y CI en verde.
+
+Qué corregir antes del corte 1 (semana 5):
+1. Enlacen el ADR 0001 desde `docs/aspectos.md` y desde los escenarios ES1/ES7/ES8: hoy solo es alcanzable desde la sección 4 del arc42.
+2. Conviertan `docs/aspectos.md` (aún en prosa) en la tabla ID·Aspecto·Requisito·C4·ADR·Código·Pruebas·Evidencia.
+3. Repartan el arc42 en `docs/arc42/` y el C4 en `docs/c4/` (estructura mínima, arrastrada desde S1).
+4. Corrijan la restricción OC5 («equipo de 4 personas»: son 3) en el arc42 y en el ADR.
+5. Registren en `docs/ia.md` qué se rechazó y por qué en cada uso.
