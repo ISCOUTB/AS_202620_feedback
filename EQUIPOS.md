@@ -36,7 +36,7 @@ llegue a la suya. Lo que no se publica son correos ni notas.
 | TRACTAR | `AS_202620_TRACTAR` | Joriel Samir Barros Pena · Geronimo Alberto Cadena Garcia · Sebastian Garcia Devoz · Mateo Alfonso Millan Barraza | [revisiones](revisiones/2026-2/AS_202620_TRACTAR/) |
 | uniTeam | `AS_202620_uniTeam` | Juan Jose Bustamante More · Julio Cesar Emiliani Ramos · Daniel Isaac Manjarres Herrera · Ian Novoa Carrillo | [revisiones](revisiones/2026-2/AS_202620_uniTeam/) |
 | XALD | `AS_202620_XALD` | Xavier Yesid Garcia Diaz · Dilan Joan Gonzalez Bejarano · Luis Estheban Lozano Colmenares · Axel Jair Ruiz Bolano | [revisiones](revisiones/2026-2/AS_202620_XALD/) |
-| Grupo X | **sin repositorio declarado** | Cristian David Cardeno Gulloso · Pedro Jose Castro Blanquicett · Julian Samuel Cabeza Pena | [revisiones](revisiones/2026-2/grupo-x/) |
+| Grupo X | `AS_202620_Verifacts` | Cristian David Cardeno Gulloso · Pedro Jose Castro Blanquicett · Julian Samuel Cabeza Pena | [revisiones](revisiones/2026-2/grupo-x/) |
 
 La lista recibida trae «Axe\`L Jair Ruiz Bolano», con un carácter que sobra. Aquí queda como
 **Axel**, que es lo que confirma la cuenta con la que ese integrante firma sus commits en
@@ -69,9 +69,10 @@ existe». El criterio de repositorio creado, público y con el nombre de la conv
 cumple** con el motivo, y el resto de la matriz en **No verificado** hasta que el equipo lo abra.
 No se revisa a ciegas ni se pide acceso privado: el curso exige repositorio público.
 
-Grupo X sigue sin repositorio en la lista recibida. Mientras no lo declare, su Evidencia S1 no
-tiene sobre qué evaluarse, y conviene resolverlo antes que ninguna otra cosa: sin repositorio no
-hay historial, y la contribución individual se califica sobre el historial en el proyecto final.
+Grupo X (Verifacts) entregó su repositorio tarde: `AS_202620_Verifacts` existe y es público,
+pero su primer commit es del 2026-08-18, posterior a los cierres de S1 (09-08) y S2 (16-08). Por
+excepción docente (solo por esta vez) sus evidencias S1 y S2 se evaluaron sobre el estado actual
+del repositorio; el resultado queda en su carpeta de `revisiones/`.
 
 ## Usuarios de GitHub vistos en el historial
 
@@ -103,6 +104,7 @@ la [planilla del equipo](plantillas/planilla-equipo.md).
 | `AS_202620_TIENDA-VIRTUAL-UTB` | Jmyukopila · RAZOR7150 · pxtroniwnl · shalom-A26 |
 | `AS_202620_TRACTAR` | Sebastian Garcia Devoz, con dos identidades de git |
 | `AS_202620_uniTeam` | super-gremlin · iansx |
+| `AS_202620_Verifacts` | PedroC1213 |
 | `AS_202620_XALD` | dilanbejarano011 · colmenares2007-crypto · xaviergarciadiaz20-commits · axeljruiz717-hash |
 
 **Una persona puede aparecer con dos identidades**, con nombre o correo distintos en el mismo
