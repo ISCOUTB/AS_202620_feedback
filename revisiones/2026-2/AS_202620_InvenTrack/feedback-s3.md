@@ -1,9 +1,7 @@
-# Feedback S3 · InvenTrack
+# Retroalimentación publicable · InvenTrack (S3)
 
-Qué está bien: cerraron todos los huecos del S3. El ADR 0001 ya es alcanzable desde `aspectos.md` (fila ASP-01) y desde el escenario ESC-01 que lo motiva, `docs/ia.md` registra qué se rechazó y por qué, agregaron el workflow de CI y está **en verde sobre el commit calificado** (run 32691253620), y los cuatro integrantes firmaron commits esta semana.
+Qué está bien: entrega completa: ADR 0001 con contexto, alternativas y consecuencias, matriz comparativa por escenario, esqueleto modular con arranque documentado, enlaces del ADR desde `aspectos.md` y ESC-01, `docs/ia.md` al día y CI en verde.
 
-Qué falta (antes del corte 1, semana 5):
-
-1. Ratifiquen el ADR 0001 como «Aceptado» (hoy dice «propuesto, pendiente de ratificación») y pongan al título H1 el verbo de la decisión.
-2. Mantengan el pipeline en verde en cada push y no dejen pasar fallos (el primer run falló y lo corrigieron rápido; bien).
-3. Confirmen con el docente la cuenta nueva del historial (atribución del cuarto integrante).
+Qué corregir antes del corte 1 (semana 5):
+1. Ratifiquen el ADR 0001 como «aceptado» (hoy dice «propuesto, pendiente de ratificación») y ajusten el título para que enuncie la decisión.
+2. Mantenimiento: conserven el pipeline en verde en cada entrega y sigan enlazando cada decisión desde su aspecto y su escenario.

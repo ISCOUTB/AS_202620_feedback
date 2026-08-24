@@ -1,8 +1,11 @@
-# Feedback S3 · ShareU
+# Retroalimentación publicable · ShareU (S3)
 
-- Gran avance de última hora: ADR 0001 con alternativas descartadas y consecuencias, matriz de los tres estilos contextualizada al escenario de usabilidad, esqueleto con los cinco módulos del ADR y prueba automatizada.
-- Lo urgente: la sección «Esqueleto ejecutable — arranque» del README quedó vacía. Escriban el comando único (p. ej. `uvicorn app.main:app --reload`) y añadan `requirements.txt` con fastapi y uvicorn; hoy el proyecto no se puede instalar desde el repo.
-- Enlacen el ADR desde `docs/aspectos.md` y desde el escenario que lo motiva, y conviertan aspectos en la tabla de 8 columnas del curso.
-- Muevan la plantilla a `docs/arc42/`, creen `docs/c4/` y documenten el árbol de utilidad con sus escenarios.
-- Completen `docs/ia.md` con la columna de qué se rechazó y por qué (las entradas de S3 están «pendientes de revisión»).
-- Añadan pipeline (o evidencien el run del verde) y que el cuarto integrante empiece a contribuir antes del corte 1.
+Qué está bien: la sección Solution Strategy liga la decisión al escenario de usabilidad con una matriz comparativa contextualizada, el ADR 0001 tiene contexto, alternativas descartadas con criterio de reapertura y consecuencias, y el esqueleto monta los cinco módulos del ADR con su router.
+
+Qué corregir antes del corte 1 (semana 5):
+1. El README termina en el encabezado «Esqueleto ejecutable — arranque» sin ningún comando debajo y no hay manifest de dependencias: documenten el comando único y añadan `requirements.txt`.
+2. Estructura mínima incompleta: muevan la plantilla suelta a `docs/arc42/` y creen `docs/c4/`.
+3. Enlacen el ADR desde `docs/aspectos.md` y desde el escenario que lo motiva; `aspectos.md` sigue sin la tabla de 8 columnas.
+4. Completen `docs/ia.md`: falta la columna de qué se rechazó y por qué, y las entradas de S3 quedaron «pendientes de revisión».
+5. Sin pipeline ni evidencia del verde para `tests/test_esqueleto.py`: añadan un workflow con el run.
+6. Asegúrense de que todos los integrantes contribuyan al historial con su cuenta antes del corte.

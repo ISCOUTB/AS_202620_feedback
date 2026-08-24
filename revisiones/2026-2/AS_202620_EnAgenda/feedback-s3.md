@@ -1,12 +1,11 @@
-# Feedback S3 · EnAgenda
+# Retroalimentación publicable · EnAgenda (S3)
 
-Qué está bien: recuperaron la documentación de S3. La sección 4 ya elige la estrategia (monolito modular) con límites y consecuencias, el ADR 0001 es una decisión de estilo aceptada con contexto, tres alternativas con motivo, decisión y consecuencias, hay matriz comparativa propia y `aspectos.md` ya usa la tabla de 8 columnas.
+Qué está bien: la sección 4 ya elige el monolito modular con límites y consecuencias, el ADR es una decisión de estilo aceptada con alternativas motivadas y `aspectos.md` ya usa la tabla de 8 columnas.
 
-Qué falta (antes del corte 1, semana 5):
-
-1. El esqueleto no existe: el ADR promete `src/` con 6 módulos y pruebas en `tests/`, y el repositorio solo tiene un script demo en `docs/` y un `main.py` que importa un módulo que no existe. El README no documenta comando de arranque ni de prueba.
-2. Construyan el esqueleto real con la estructura del ADR, una prueba en verde y el comando único en el README.
-3. Renombren el ADR a `0001-usar-monolito-modular.md` (sin espacio, y con el nombre de lo que decide); arreglen los enlaces internos rotos.
-4. La matriz debe comparar fila por fila contra sus escenarios EC-01…EC-05.
-5. Enlacen el ADR desde la columna ADR de `aspectos.md` y desde los escenarios que lo motivan.
-6. Todos los integrantes deben aparecer en el historial de la semana.
+Qué corregir antes del corte 1 (semana 5):
+1. El esqueleto prometido no existe: creen `src/` con los módulos del ADR (eventos, invitaciones, tareas, agenda, presupuesto, panel, compartido) y retiren los scripts sueltos de `docs/` (`main.py` importa un módulo inexistente).
+2. Documenten en el README el comando único de arranque y agreguen una prueba en verde: el ADR promete `tests/` y hoy no hay ninguna.
+3. Renombren el ADR a algo como `0001-usar-monolito-modular.md`: el nombre actual tiene espacio, no pasa el filtro y ya no corresponde a lo que decide; arreglen los enlaces internos rotos.
+4. La matriz comparativa no referencia los escenarios EC-01…EC-05: pongan una fila por escenario del árbol de utilidad.
+5. Hagan alcanzable el ADR: la columna ADR de `aspectos.md` sigue «Pendiente» y `10-requisitos-de-calidad .md` no lo enlaza.
+6. Repartan la contribución: en S3 faltó un integrante en el historial (2 de 3).

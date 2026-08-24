@@ -1,11 +1,9 @@
-# Feedback S3 · ROUTB
+# Retroalimentación publicable · ROUTB (S3)
 
-Lo que está bien: el ADR 0001 es completo (contexto, alternativas con motivo de descarte, decisión, consecuencias con riesgos y trazabilidad), la matriz de decisión compara los tres estilos contra su propio árbol de utilidad, la sección 4 de arc42 da tácticas concretas por objetivo priorizado, y los paquetes del backend reflejan el monolito modular con módulos por dominio. `docs/ia.md` es referencia de cómo registrar uso de IA.
+Qué está bien: la sección 4 da tácticas concretas ligadas a las prioridades del árbol de utilidad, el ADR 0001 compara los tres estilos contra el árbol con juicios por atributo y descarta alternativas con motivo, los paquetes del backend respetan el monolito modular del ADR y `docs/ia.md` registra la semana con lo aceptado y rechazado.
 
 Qué corregir antes del corte 1 (semana 5):
-
-- Enlazar el ADR desde el escenario de calidad que lo motiva (tabla 10.2); hoy solo se llega desde aspectos, §4 y §9.
-- Documentar en el README el arranque con **un solo comando** (hoy son 6 pasos de instalación y pasos de ejecución separados).
-- Añadir un workflow `.github/workflows/` que ejecute `pytest` y aportar el run en verde.
-- Revisar el C4 de contexto (leyenda y flechas etiquetadas, pendiente desde S2).
-- Detalle: hay una fila duplicada en la tabla de trazabilidad del ADR.
+1. Falta el enlace del ADR desde el escenario motivador: la tabla de escenarios 10.2 no enlaza la decisión (solo lo hace `aspectos.md`).
+2. El README documenta la instalación y el arranque en pasos separados; dejen un único comando documentado.
+3. La prueba `backend/tests/test_health.py` existe, pero sin workflow ni evidencia del run: añadan `.github/workflows/` con `pytest` y suban el verde.
+4. Revisen el C4 de contexto (`docs/c4/context.md`): quedaron pendientes desde S2 la leyenda y las etiquetas de las flechas.

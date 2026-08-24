@@ -1,9 +1,9 @@
-# Feedback S3 · TAIA (para publicar en el foro)
+# Retroalimentación publicable · TAIA (S3)
 
-Buen trabajo de base: la sección 4 de arc42 sí liga estrategias concretas a sus escenarios S1-S5 y la matriz compara los tres estilos contra SU árbol de utilidad, no contra ventajas genéricas. El esqueleto es coherente con la decisión (módulos con domain/application/adapters) y el README documenta el arranque.
+Qué está bien: la sección 4 liga la estrategia a los escenarios S1–S5 con mecanismos concretos, la matriz del ADR compara los tres estilos contra su árbol de utilidad con justificación por escenario, `run.bat` documenta el arranque en un solo comando y los paquetes `domain/application/adapters` por módulo coinciden con el ADR.
 
-Falta antes del corte 1:
-1. Renombrar `docs/adr/0001.md` a `0001-<titulo-en-kebab-case>.md` y darle título H1 y sección de contexto.
-2. Corregir los enlaces rotos: `aspectos.md`, README y el escenario S1 apuntan a `0001-estilo-arquitectonico.md`, que no existe; el enlace del escenario es un placeholder.
-3. Completar la Entrada 03 de `docs/ia.md` (falta aceptado/rechazado).
-4. Montar el workflow de CI para que la prueba corra en cada push; hoy no hay `.github/workflows/` y el verde no es verificable.
+Qué corregir antes del corte 1 (semana 5):
+1. Renombren `docs/adr/0001.md` a la convención `0001-<kebab-case>.md` y corrijan los enlaces rotos que apuntan a `0001-estilo-arquitectonico.md` (en `aspectos.md` y README) y el placeholder `ruta/al/escenario.md`.
+2. El ADR no tiene título que enuncie la decisión ni sección de contexto: complétenlos.
+3. Completen la entrada 03 de `docs/ia.md` anotando qué se aceptó y qué se rechazó con su motivo.
+4. Monten un workflow para que `backend/tests/test_entrega3.py` corra en cada push y quede evidencia del verde.

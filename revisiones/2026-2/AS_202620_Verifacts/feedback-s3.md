@@ -1,12 +1,12 @@
-# Feedback S3 · Verifacts (para publicar en el foro)
+# Retroalimentación publicable · Verifacts (S3)
 
-Avances reales: el ADR 0001 tiene contexto, alternativas descartadas con motivo, decisión y consecuencias; la estructura de paquetes (`api`, `analysis`, `content`, `scoring`) es coherente con el monolito modular; la prueba de health existe y `run.py` permite arrancar. La documentación arc42 quedó organizada en carpetas y ya subieron los escenarios de calidad.
+Qué está bien: el ADR 0001 tiene contexto, alternativas descartadas con motivo, decisión y consecuencias, la estructura de paquetes coincide con el monolito modular y la documentación arc42 quedó organizada en carpetas.
 
-Falta antes del corte 1:
-1. Respetar el cierre: 15 commits entraron después de la medianoche (borrado y recreación de documentos) y no se califican.
-2. Tácticas concretas por escenario en la §4 (hoy son principios genéricos) y matriz comparativa anclada a las ramas del árbol de utilidad.
-3. Enlazar el ADR desde `aspectos.md` y desde el escenario que lo motiva.
-4. Documentar en el README el comando único de arranque (hoy termina en la creación del venv).
-5. Título del ADR como decisión («Usar monolito modular») y estado «aceptado».
-6. `docs/IA.md` debe registrar los usos de IA con aceptado/rechazado, no la estrategia del producto.
-7. Urgente: que contribuyan los tres integrantes antes del corte 1.
+Qué corregir antes del corte 1 (semana 5):
+1. Completar la sección 4 de arc42 con tácticas concretas ligadas a cada escenario Q-01…Q-05 (hoy son principios genéricos).
+2. Rehacer `docs/matriz-estilos.md` contra las ramas de su árbol de utilidad, escenario por escenario.
+3. Enlazar el ADR desde `docs/aspectos.md` y desde el escenario que lo motiva, y convertir `docs/IA.md` en el registro de uso de IA (aceptado/rechazado con motivo).
+4. Documentar el comando único de arranque en el README (existe `run.py`, no se menciona) y acomodar la estructura mínima (`docs/c4/`).
+5. Contribución: los tres integrantes deben aparecer en el historial antes del corte 1.
+
+Ojo: parte del trabajo llegó después del cierre y no contó para esta entrega; la próxima vez asegúrense de empujar antes de la medianoche del domingo.

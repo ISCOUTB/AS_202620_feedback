@@ -1,10 +1,10 @@
-# Feedback S3 · mapsutb (para publicar en el foro)
+# Retroalimentación publicable · mapsutb (S3)
 
-Buena entrega de esqueleto: Flutter arranca con `./scripts/start.sh`, hay prueba de humo en `test/app_smoke_test.dart`, y el ADR 0001 documenta cada patrón (Adapter, Repository, Strategy, Observer) con alternativas descartadas, motivo y consecuencias. La estrategia de solución liga cada escenario a un patrón concreto.
+Qué está bien: estrategia de solución ligada a los objetivos de calidad, ADR 0001 con alternativa descartada y motivo por patrón, y arranque con un solo comando documentado (`scripts/start.sh`).
 
-Falta antes del corte 1:
-1. La matriz comparativa de los tres estilos (capas, hexagonal, monolito modular) contra el árbol de utilidad: la ficha S3 la pide y no existe en el repositorio.
-2. Materializar la estructura que declara el ADR: `lib/` solo tiene `main.dart`; creen las carpetas `adapters/`, `repositories/`, `strategies/`, `services/` y `features/` (con `.gitkeep`).
-3. Actualizar `aspectos.md` (todavía dice «Sin ADR aún») y enlazar el ADR desde el escenario que lo motiva.
-4. Evidenciar la prueba en verde (pipeline o run) y registrar el uso de IA de esta semana en `docs/ia.md`.
-5. Mover la etiqueta `corte-1` al commit real del corte y contribuir todos los integrantes: el historial sigue sin una integrante.
+Qué corregir antes del corte 1 (semana 5):
+1. Escriban la matriz comparativa de los tres estilos contra el árbol de utilidad: la ficha la pide y hoy no existe en el repositorio.
+2. Materialicen la estructura que declara el ADR en `lib/` (carpetas `adapters/`, `repositories/`, `strategies/`, `services/`, `features/` con `.gitkeep`): hoy solo está `main.dart`.
+3. Actualicen `docs/aspectos.md` (todavía dice «Sin ADR aún») y enlacen el ADR desde el escenario que lo motiva; reparen el enlace roto en `docs/escenarios_calidad.md`.
+4. Registren el uso de IA de esta semana en `docs/ia.md` y evidencien la prueba en verde (pipeline o run).
+5. Contribuyan todos los integrantes (esta semana solo aparecieron tres cuentas) y regularicen `docs/arc42/` y `docs/c4/`.

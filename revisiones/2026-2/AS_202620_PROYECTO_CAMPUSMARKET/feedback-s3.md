@@ -1,7 +1,7 @@
-# Feedback S3 · CampusMarket
+# Retroalimentación publicable · CampusMarket (S3)
 
-- Cierre de S3 redondo: el push de última hora dejó el ADR 0001 completo y enlazado, el esqueleto backend con los cuatro módulos del ADR, el comando único en el README y la prueba automatizada con pipeline en verde (4 runs con éxito).
-- El ADR es de referencia: contexto ligado a EC-03, alternativas descartadas con motivo, decisión, tácticas con costos y consecuencias.
-- Para cerrar antes del corte 1: actualicen `docs/ia.md` con los usos de esta semana (17-23 ago) y la columna de qué se rechazó y por qué.
-- Unifiquen la identidad de git duplicada (dos nombres para la misma cuenta) para que el historial sea limpio.
-- El frontend sigue siendo la plantilla Flutter por defecto: en S4 lleven los mismos módulos del backend al cliente.
+Qué está bien: el ADR 0001 está completo y enlazado desde `aspectos.md` y EC-03, la sección 4 trae tácticas ligadas a los escenarios, la matriz comparativa evalúa los tres estilos contra su árbol de utilidad y el esqueleto backend arranca con un comando único con su prueba en CI en verde.
+
+Qué corregir antes del corte 1 (semana 5):
+1. `docs/ia.md`: quedó sin entradas de la semana 3 (17–23 ago) y sin la columna de qué se rechazó y por qué; pónganlo al día.
+2. El frontend sigue siendo la plantilla Flutter por defecto: lleven en S4 los mismos módulos del backend para que la estructura del ADR quede materializada en todo el sistema.

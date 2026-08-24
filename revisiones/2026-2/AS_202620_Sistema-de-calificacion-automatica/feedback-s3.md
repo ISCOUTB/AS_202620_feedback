@@ -1,6 +1,10 @@
-# Feedback S3 · Calificación automática
+# Retroalimentación publicable · Calificación automática (S3)
 
-- Cierre de documentación excelente: matriz de los tres estilos por escenario (§4.1), tácticas con su registro (§4.2), tercer ADR (stack) bien justificado, tabla de aspectos con enlaces y la ficha del problema por fin en el repo.
-- Enlaces resueltos: el ADR ahora es alcanzable desde las filas de aspectos y desde los escenarios EC-04/EC-05.
-- Lo que no contó: el esqueleto ejecutable y el README del stack entraron 1-2 horas DESPUÉS del cierre de S3. Lo tardío no califica: en S4 el esqueleto debe llegar con el run del pipeline en verde y dentro del plazo.
-- Para el corte 1: suban el run de CI en verde sobre la prueba del esqueleto, completen C4 niveles 2-3 y los ADR anunciados (umbral de confianza, validación SymPy, auditoría).
+Qué está bien: la documentación quedó sólida: sección 4 con tácticas por escenario, matriz comparativa contra el árbol (§4.1), tres ADR con convención, alternativas descartadas y reemplazo correcto del 0001, y enlaces al ADR desde `aspectos.md` y desde EC-04/EC-05.
+
+Qué corregir antes del corte 1 (semana 5):
+1. Al cierre, el README seguía con el checklist «[ ] Código» sin marcar: no había comando de arranque documentado.
+2. Al cierre no existían la prueba ni el pipeline, y los paquetes de los 7 módulos del ADR-0002 no estaban en el repo.
+3. Para S4 traigan el esqueleto con sus módulos y el run en verde dentro del plazo de la entrega.
+
+Ojo: parte del trabajo llegó después del cierre y no contó para esta entrega; la próxima vez asegúrense de empujar antes de la medianoche del domingo.
