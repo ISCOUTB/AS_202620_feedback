@@ -22,7 +22,7 @@ CONTRATO.md                    lo que se exige en todas las entregas, con sus co
 EQUIPOS.md                     equipos, integrantes y enlace a la evaluación de cada uno
 fichas/                        una ficha por entrega calificada (18)
 plantillas/planilla-equipo.md  la planilla en blanco, para saber qué se consolida
-revisiones/2026-2/<equipo>/    la evaluación de cada equipo, entrega por entrega
+revisiones/2026-2/<repositorio>/  la evaluación de cada equipo, entrega por entrega
 ```
 
 ## Si eres estudiante
@@ -195,7 +195,6 @@ Lo que no está aquí es la nota: eso lo fija el profesor y se ve en Moodle.
 | ElMapita | [`AS_202620_ElMapita`](https://github.com/ISCOUTB/AS_202620_ElMapita) | [ver](revisiones/2026-2/AS_202620_ElMapita/feedback-s1-s2.md) | [ver](revisiones/2026-2/AS_202620_ElMapita/semana-01-evidencia-s1.md) | [ver](revisiones/2026-2/AS_202620_ElMapita/semana-02-evidencia-s2.md) | [ver](revisiones/2026-2/AS_202620_ElMapita/planilla.md) |
 | EnAgenda | [`AS_202620_EnAgenda`](https://github.com/ISCOUTB/AS_202620_EnAgenda) | [ver](revisiones/2026-2/AS_202620_EnAgenda/feedback-s1-s2.md) | [ver](revisiones/2026-2/AS_202620_EnAgenda/semana-01-evidencia-s1.md) | [ver](revisiones/2026-2/AS_202620_EnAgenda/semana-02-evidencia-s2.md) | [ver](revisiones/2026-2/AS_202620_EnAgenda/planilla.md) |
 | GimnasioUTB | [`AS_202620_GimnasioUTB`](https://github.com/ISCOUTB/AS_202620_GimnasioUTB) | [ver](revisiones/2026-2/AS_202620_GimnasioUTB/feedback-s1-s2.md) | [ver](revisiones/2026-2/AS_202620_GimnasioUTB/semana-01-evidencia-s1.md) | [ver](revisiones/2026-2/AS_202620_GimnasioUTB/semana-02-evidencia-s2.md) | [ver](revisiones/2026-2/AS_202620_GimnasioUTB/planilla.md) |
-| Grupo X | sin repositorio | [ver](revisiones/2026-2/grupo-x/feedback-s1-s2.md) | [ver](revisiones/2026-2/grupo-x/semana-01-evidencia-s1.md) | [ver](revisiones/2026-2/grupo-x/semana-02-evidencia-s2.md) | [ver](revisiones/2026-2/grupo-x/planilla.md) |
 | InvenTrack | [`AS_202620_InvenTrack`](https://github.com/ISCOUTB/AS_202620_InvenTrack) | [ver](revisiones/2026-2/AS_202620_InvenTrack/feedback-s1-s2.md) | [ver](revisiones/2026-2/AS_202620_InvenTrack/semana-01-evidencia-s1.md) | [ver](revisiones/2026-2/AS_202620_InvenTrack/semana-02-evidencia-s2.md) | [ver](revisiones/2026-2/AS_202620_InvenTrack/planilla.md) |
 | LaPlacita | [`AS_202620_LaPlacita`](https://github.com/ISCOUTB/AS_202620_LaPlacita) | [ver](revisiones/2026-2/AS_202620_LaPlacita/feedback-s1-s2.md) | [ver](revisiones/2026-2/AS_202620_LaPlacita/semana-01-evidencia-s1.md) | [ver](revisiones/2026-2/AS_202620_LaPlacita/semana-02-evidencia-s2.md) | [ver](revisiones/2026-2/AS_202620_LaPlacita/planilla.md) |
 | LostVault | [`AS_202620_LostVault`](https://github.com/ISCOUTB/AS_202620_LostVault) | [ver](revisiones/2026-2/AS_202620_LostVault/feedback-s1-s2.md) | [ver](revisiones/2026-2/AS_202620_LostVault/semana-01-evidencia-s1.md) | [ver](revisiones/2026-2/AS_202620_LostVault/semana-02-evidencia-s2.md) | [ver](revisiones/2026-2/AS_202620_LostVault/planilla.md) |
@@ -208,6 +207,7 @@ Lo que no está aquí es la nota: eso lo fija el profesor y se ve en Moodle.
 | Tienda virtual UTB | [`AS_202620_TIENDA-VIRTUAL-UTB`](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB) | [ver](revisiones/2026-2/AS_202620_TIENDA-VIRTUAL-UTB/feedback-s1-s2.md) | [ver](revisiones/2026-2/AS_202620_TIENDA-VIRTUAL-UTB/semana-01-evidencia-s1.md) | [ver](revisiones/2026-2/AS_202620_TIENDA-VIRTUAL-UTB/semana-02-evidencia-s2.md) | [ver](revisiones/2026-2/AS_202620_TIENDA-VIRTUAL-UTB/planilla.md) |
 | TRACTAR | [`AS_202620_TRACTAR`](https://github.com/ISCOUTB/AS_202620_TRACTAR) | [ver](revisiones/2026-2/AS_202620_TRACTAR/feedback-s1-s2.md) | [ver](revisiones/2026-2/AS_202620_TRACTAR/semana-01-evidencia-s1.md) | [ver](revisiones/2026-2/AS_202620_TRACTAR/semana-02-evidencia-s2.md) | [ver](revisiones/2026-2/AS_202620_TRACTAR/planilla.md) |
 | uniTeam | [`AS_202620_uniTeam`](https://github.com/ISCOUTB/AS_202620_uniTeam) | [ver](revisiones/2026-2/AS_202620_uniTeam/feedback-s1-s2.md) | [ver](revisiones/2026-2/AS_202620_uniTeam/semana-01-evidencia-s1.md) | [ver](revisiones/2026-2/AS_202620_uniTeam/semana-02-evidencia-s2.md) | [ver](revisiones/2026-2/AS_202620_uniTeam/planilla.md) |
+| Verifacts (Grupo X) | [`AS_202620_Verifacts`](https://github.com/ISCOUTB/AS_202620_Verifacts) | [ver](revisiones/2026-2/AS_202620_Verifacts/feedback-s1-s2.md) | [ver](revisiones/2026-2/AS_202620_Verifacts/semana-01-evidencia-s1.md) | [ver](revisiones/2026-2/AS_202620_Verifacts/semana-02-evidencia-s2.md) | [ver](revisiones/2026-2/AS_202620_Verifacts/planilla.md) |
 | XALD | [`AS_202620_XALD`](https://github.com/ISCOUTB/AS_202620_XALD) | [ver](revisiones/2026-2/AS_202620_XALD/feedback-s1-s2.md) | [ver](revisiones/2026-2/AS_202620_XALD/semana-01-evidencia-s1.md) | [ver](revisiones/2026-2/AS_202620_XALD/semana-02-evidencia-s2.md) | [ver](revisiones/2026-2/AS_202620_XALD/planilla.md) |
 
 Si tu equipo no aparece, o si un archivo dice algo que no cuadra con tu repositorio, dilo en clase
@@ -242,7 +242,7 @@ añadir un archivo nuevo, la pregunta sigue siendo si puede leerlo cualquiera.
    «Revisa `AS_202620_X` contra `fichas/semana-08-evidencia-s8.md`».
 3. El agente clona en el estado que se califica, recorre las instrucciones, rellena la matriz de
    la ficha más la **matriz transversal** de [CONTRATO.md](CONTRATO.md), y escribe el resultado en
-   `revisiones/2026-2/<equipo>/<tarea>.md`, que sí se publica.
+   `revisiones/2026-2/<repositorio>/<tarea>.md`, que sí se publica.
 4. Antes de empujar: sin correos y sin nota sugerida en los archivos publicados, y la nota al
    resumen local. Añade el equipo al índice de [Evaluaciones publicadas](#evaluaciones-publicadas--2026-2)
    si es su primera revisión.
@@ -297,7 +297,7 @@ git -C "$DIR" checkout corte-1     # o el hash del último commit anterior al ci
   citable el estado es No verificado.
 - **No inventar requisitos.** Si algo no está en la ficha, en el contrato ni en el aula, no se
   exige. La ficha resume la consigna; si divergen, manda el aula.
-- **Las revisiones van a `revisiones/<periodo>/<equipo>/<tarea>.md`** y se publican. Escribirlas
+- **Las revisiones van a `revisiones/<periodo>/<repositorio>/<tarea>.md`** y se publican. Escribirlas
   pensando en que las lee el equipo: sin correos, sin nota sugerida y con evidencia citable en cada
   fila, que es lo que hace discutible un hallazgo.
 

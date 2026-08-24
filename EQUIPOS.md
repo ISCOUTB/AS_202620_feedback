@@ -36,7 +36,7 @@ llegue a la suya. Lo que no se publica son correos ni notas.
 | TRACTAR | `AS_202620_TRACTAR` | Joriel Samir Barros Pena · Geronimo Alberto Cadena Garcia · Sebastian Garcia Devoz · Mateo Alfonso Millan Barraza | [revisiones](revisiones/2026-2/AS_202620_TRACTAR/) |
 | uniTeam | `AS_202620_uniTeam` | Juan Jose Bustamante More · Julio Cesar Emiliani Ramos · Daniel Isaac Manjarres Herrera · Ian Novoa Carrillo | [revisiones](revisiones/2026-2/AS_202620_uniTeam/) |
 | XALD | `AS_202620_XALD` | Xavier Yesid Garcia Diaz · Dilan Joan Gonzalez Bejarano · Luis Estheban Lozano Colmenares · Axel Jair Ruiz Bolano | [revisiones](revisiones/2026-2/AS_202620_XALD/) |
-| Grupo X | `AS_202620_Verifacts` | Cristian David Cardeno Gulloso · Pedro Jose Castro Blanquicett · Julian Samuel Cabeza Pena | [revisiones](revisiones/2026-2/grupo-x/) |
+| Grupo X | `AS_202620_Verifacts` | Cristian David Cardeno Gulloso · Pedro Jose Castro Blanquicett · Julian Samuel Cabeza Pena | [revisiones](revisiones/2026-2/AS_202620_Verifacts/) |
 
 La lista recibida trae «Axe\`L Jair Ruiz Bolano», con un carácter que sobra. Aquí queda como
 **Axel**, que es lo que confirma la cuenta con la que ese integrante firma sus commits en
@@ -44,8 +44,9 @@ La lista recibida trae «Axe\`L Jair Ruiz Bolano», con un carácter que sobra. 
 
 ## Estado de los repositorios
 
-**Los 22 repositorios responden y son públicos.** Comprobado contra la API de GitHub y con `git
-clone`, las dos cosas **sin autenticación**, que es como los ve el evaluador desde fuera.
+**Los 23 repositorios responden y son públicos.** Comprobado con `git ls-remote` y `git clone`,
+las dos cosas **sin autenticación**, que es como los ve el evaluador desde fuera. La API sin token
+está agotada para esta IP (403), así que los metadatos salen del protocolo git.
 
 `AS_202620_PideUtb`, `AS_202620_ShareU`, `AS_202620_TRACTAR` y `AS_202620_XALD` no eran visibles en
 la primera comprobación de este listado y ahora sí lo son. No eran repositorios nuevos: los cuatro
