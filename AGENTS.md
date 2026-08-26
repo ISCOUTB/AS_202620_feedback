@@ -9,6 +9,20 @@ Repositorio público `ISCOUTB/AS_202620_feedback`: kit de revisión (fichas y co
 revisiones publicadas de cada equipo. Los estudiantes lo leen; por eso hay reglas estrictas de
 qué se publica y qué no (ver «Publicación»).
 
+## Automatización (GitHub Actions)
+
+La revisión semanal corre sola desde la nube: `.github/workflows/revision-semanal.yml` se dispara
+el **viernes 12:00 COT** (pasada temprana, pre-cierre) y el **lunes 07:00 COT** (definitiva,
+post-cierre), más `workflow_dispatch` manual. El núcleo es `scripts/cron/evaluar-semana.py` con el
+calendario de `scripts/cron/calendario.json` y el LLM del secret `OPENCODE_GO_API_KEY`
+(endpoint `https://opencode.ai/zen/v1`). Escribe matrices, planillas, feedback, resumen y README,
+y hace commit+push a master. Guardas: `estado-sX.json` e informes completos impiden re-procesar
+semanas cerradas.
+
+**Rol del agente humano**: supervisar el output de Actions, corregir casos especiales (repo
+invisible, excepción docente, re-barridos inesperados) y mantener calendario y fichas. El
+procedimiento manual completo, por si hay que repetir algo a mano, sigue abajo.
+
 ## Ciclo semanal
 
 Cada entrega cierra el **domingo a medianoche (Colombia, UTC-5)**. El trabajo es:
@@ -61,17 +75,20 @@ ficha y cierres):
 >   evidencia; No verificado con motivo y qué haría falta.
 > - Consolidar identidades (2 correos = 1 persona); NO atribuir cuentas por parecido de nombre.
 > - Escribe `revisiones/<periodo>/<repo>/semana-0X-evidencia-sX.md` (encabezado, matriz de la
->   ficha, matriz transversal CONTRATO §11, recuento n/m SIN nota, pendientes, hallazgos),
->   actualiza `planilla.md` (fila de la semana, Sugerido = «no se publica») y añade la sección
->   de la semana a `feedback.md` (sin nombres, sin notas, sin correos).
+>   ficha, matriz transversal CONTRATO §11, recuento n/m con la nota sugerida marcada como
+>   propuesta al docente, pendientes, hallazgos), actualiza `planilla.md` (fila de la semana,
+>   Sugerido = nota propuesta) y añade la sección de la semana a `feedback.md` (sin nombres,
+>   sin correos).
 > - Al terminar, responde UNA línea por equipo: `<equipo> | <repo> | S<X> <hash8> <n>/<m> nota <x.x> | <hallazgos>`
->   con nota = 1 + 4×(n/m) (1 decimal). La nota SOLO va en esa línea: es registro local.
+>   con nota = 1 + 4×(n/m) (1 decimal), para el `resumen-sX.md` consolidado.
 
-### 4. Nota sugerida (regla local del docente)
+### 4. Nota sugerida (regla del docente, pública)
 
-`nota = 1 + 4 × (filas Cumple ÷ total)` sobre la matriz DE LA FICHA (la transversal no entra).
-Solo en `revisiones/<periodo>/resumen-sX.md`, **gitignored**. En los archivos publicados la
-planilla dice «no se publica» y el informe solo «n de m».
+`nota = 1 + 4 × (filas Cumple ÷ total)` sobre la matriz DE LA FICHA (la transversal no entra),
+redondeada a 1 decimal. **Por decisión del profesor se publica**, marcada siempre como «propuesta
+al docente; la nota final se fija en Moodle»: va en el informe (`Recuento y nota sugerida`), en la
+fila de la planilla y en el `resumen-sX.md` consolidado. En los cortes con escala publicada no se
+aplica la fórmula; el nivel sugerido lo propone la ficha del corte.
 
 ### 5. Re-barrido post-cierre
 
@@ -85,9 +102,10 @@ marcando «Revisión actualizada tras el cierre».
 git add README.md revisiones/ && git commit -m "Publicar revisión S<X> (N equipos)" && git push origin master
 ```
 
-Qué SÍ se publica: fichas, contrato, EQUIPOS, matrices, planillas y feedback. Qué NO: notas
-sugeridas, correos, `resumen-*.md`, `cierres.env`, `_meta/` (gitignored). Antes de empujar:
-`grep -rn "1 + 4" revisiones/` debe dar vacío.
+Qué SÍ se publica: fichas, contrato, EQUIPOS, matrices, planillas, feedback, resumen con notas
+sugeridas (marcadas como propuesta) y `estado-sX.json`. Qué NO: correos, `cierres.env`, `_meta/`
+(gitignored). Antes de empujar: `grep -rnE "[a-z0-9._%+-]+@[a-z0-9.-]+" revisiones/` debe dar
+vacío o solo correos de bots.
 
 ### 7. Mantener el README
 

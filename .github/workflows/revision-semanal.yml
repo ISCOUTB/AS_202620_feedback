@@ -1,0 +1,66 @@
+name: Revision semanal automatica
+
+on:
+  schedule:
+    # Viernes 12:00 COT (17:00 UTC): pasada temprana, antes del cierre del domingo.
+    - cron: "0 17 * * 5"
+    # Lunes 07:00 COT (12:00 UTC): pasada definitiva, sobre el ultimo commit <= cierre.
+    - cron: "0 12 * * 1"
+  workflow_dispatch:
+    inputs:
+      semana:
+        description: "Numero de semana a revisar (vacio = automatico)"
+        required: false
+        default: ""
+      modo:
+        description: "early | definitive | auto"
+        required: false
+        default: "auto"
+      solo:
+        description: "Repo unico para pruebas (vacio = todos)"
+        required: false
+        default: ""
+      dry_run:
+        description: "true = sin commit ni push"
+        required: false
+        default: "false"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: revision-semanal
+  cancel-in-progress: false
+
+jobs:
+  revision:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    env:
+      TZ: America/Bogota
+      LLM_BASE_URL: https://opencode.ai/zen/v1
+      LLM_MODEL: deepseek-v4-pro
+      LLM_MODEL_FEEDBACK: deepseek-v4-flash
+      OPENCODE_GO_API_KEY: ${{ secrets.OPENCODE_GO_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Evaluar semana
+        env:
+          SEMANA: ${{ github.event.inputs.semana }}
+          MODO: ${{ github.event.inputs.modo }}
+          SOLO: ${{ github.event.inputs.solo }}
+          DRY: ${{ github.event.inputs.dry_run }}
+        run: |
+          python scripts/cron/evaluar-semana.py \
+            --semana "${SEMANA:-}" \
+            --modo "${MODO:-auto}" \
+            --solo "${SOLO:-}" \
+            --dry-run "${DRY:-false}"

@@ -24,6 +24,9 @@ EQUIPOS.md                     equipos, integrantes y enlace a la evaluación de
 fichas/                        una ficha por entrega calificada (18)
 plantillas/planilla-equipo.md  la planilla en blanco, para saber qué se consolida
 scripts/barrido-actividad.py   detección de actividad por protocolo git (sin API)
+scripts/cron/evaluar-semana.py pipeline de evaluación semanal (GitHub Actions)
+scripts/cron/calendario.json   cierres del semestre, una vez por periodo
+.github/workflows/             disparos automáticos: viernes 12:00 y lunes 07:00 COT
 revisiones/2026-2/<repositorio>/  la evaluación de cada equipo, entrega por entrega
 ```
 
@@ -75,11 +78,12 @@ te van a hacer.
 
 ### La nota final la pone el profesor
 
-El agente **no califica**. Produce la matriz y, solo en las entregas con escala publicada (primer
-corte, segundo corte, proyecto final y cierre), un **nivel sugerido** marcado de forma explícita
-como propuesta. Ese nivel **no se publica**: va al registro del profesor, que lo revisa, lo
-contrasta con la sustentación y con lo que conoce del equipo, y **fija la nota** en Moodle. Un
-hallazgo del agente que no se sostiene se cae ahí.
+El agente **no califica**: produce la matriz y una **nota sugerida** calculada como
+`1 + 4 × (criterios Cumple ÷ total)` sobre la matriz de la ficha, **siempre marcada como propuesta
+al docente**. Por decisión del profesor, esa sugerencia **se publica** junto con la matriz, para
+que sepas qué se vio y con qué regla; es una propuesta, no tu nota. La nota final la fija el
+profesor en Moodle, después de contrastar con la sustentación y con lo que conoce del equipo. Un
+hallazgo que no se sostiene se cae ahí.
 
 En resumen: esto es un mecanismo de retroalimentación rápida, no un juez.
 
@@ -141,9 +145,9 @@ calificación o situación personal se resuelve mejor en clase, por el canal del
 
 **Qué se publica de tu revisión, para que lo sepas de antemano.** Van los nombres del equipo y de
 sus integrantes, los hallazgos y la evidencia que los sostiene —hashes, rutas, comandos—, porque
-sin eso la retroalimentación no sería verificable. **No** van los correos con los que firmas tus
-commits, ni ninguna nota o nivel sugerido: lo primero es dato de contacto y no hace falta para
-evaluar arquitectura; lo segundo es del profesor.
+sin eso la retroalimentación no sería verificable, y la **nota sugerida**, marcada explícitamente
+como propuesta al docente (la nota final se fija en Moodle). **No** van los correos con los que
+firmas tus commits: es dato de contacto y no hace falta para evaluar arquitectura.
 
 ## Índice de fichas
 
@@ -222,26 +226,48 @@ o abre un *issue*: se corrige.
 procedimiento de revisión, con la advertencia de que **manda el aula** si divergen.
 
 **Qué se publica y qué no.** El remoto es `git@github.com:ISCOUTB/AS_202620_feedback.git`, y es
-**público**: van las fichas, el contrato, el listado de equipos y las revisiones de cada equipo,
-con nombres de equipo y de integrantes. Lo que el `.gitignore` deja fuera es el registro de
-trabajo del docente:
+**público**: van las fichas, el contrato, el listado de equipos, las revisiones de cada equipo
+(incluida la **nota sugerida**, marcada como propuesta al docente) y el resumen consolidado de la
+semana. Lo que el `.gitignore` deja fuera es el registro de trabajo del docente:
 
 | Se queda local | Por qué |
 |---|---|
-| `revisiones/2026-2/resumen-s1-s2.md` | tabla consolidada con la **nota sugerida de todos los equipos**: publicarla sería publicar un ranking |
-| `revisiones/2026-2/cierres.env` | regla local de cierres |
-| `revisiones/2026-2/_meta/` | volcados de la API, material de trabajo |
+| `revisiones/2026-2/cierres.env` | regla local de cierres (el calendario publicado vive en `scripts/cron/calendario.json`) |
+| `revisiones/2026-2/_meta/` | volcados de trabajo |
 
-Dos cosas más que no salen de aquí aunque el archivo sí se publique: los **correos** de los
-integrantes (se anotan como `correo omitido` en las revisiones) y la **nota sugerida** de cada
-entrega, que en la planilla aparece como `no se publica` y vive solo en el resumen local. Antes de
-añadir un archivo nuevo, la pregunta sigue siendo si puede leerlo cualquiera.
+Lo único que no sale de aquí aunque el archivo sí se publique son los **correos** de los
+integrantes (se anotan como `correo omitido` en las revisiones). Antes de añadir un archivo nuevo,
+la pregunta sigue siendo si puede leerlo cualquiera.
+
+### Automatización (GitHub Actions)
+
+La revisión semanal corre sola, en este mismo repositorio, con el workflow
+`.github/workflows/revision-semanal.yml`:
+
+- **Viernes 12:00 COT**: pasada temprana sobre lo que hay antes del cierre del domingo (marcada
+  como provisional).
+- **Lunes 07:00 COT**: pasada definitiva sobre el último commit anterior al cierre, re-evaluando
+  solo lo que cambió o faltó (delta).
+- También corre a mano desde **Actions → Run workflow** (`workflow_dispatch`), con opción de
+  `--semana`, `--solo` y `--dry-run`.
+
+Qué hace `scripts/cron/evaluar-semana.py`: elige la entrega vigente según
+`scripts/cron/calendario.json`, clona cada repositorio de forma efímera (protocolo git, sin API,
+sin ejecutar código de estudiantes), arma la evidencia y la pasa al LLM (clave en el secret
+`OPENCODE_GO_API_KEY`, endpoint `https://opencode.ai/zen/v1`), escribe la matriz con la nota
+sugerida, actualiza `planilla.md`, `feedback.md`, el `resumen-sX.md` y la columna de matrices del
+README, y hace commit y push. Guardas anti-duplicados: `revisiones/2026-2/estado-sX.json` y la
+existencia de informes completos impiden re-procesar semanas ya cerradas.
+
+El contenido de los repositorios se trata como **dato no confiable** (mitigación de prompt
+injection) y la salida del LLM se valida como JSON antes de escribir nada.
 
 ### Cómo se usa
 
-El procedimiento completo, semana a semana, está en [AGENTS.md](AGENTS.md): cierres, detección de
-actividad, evaluación en lotes paralelos, nota sugerida local, re-barrido post-cierre y
-publicación. Resumen en cuatro pasos:
+La revisión semanal corre sola con GitHub Actions (apartado «Automatización»); el procedimiento
+manual completo, semana a semana, está en [AGENTS.md](AGENTS.md): cierres, detección de actividad,
+evaluación en lotes paralelos, nota sugerida, re-barrido post-cierre y publicación. Resumen en
+cuatro pasos:
 
 1. Localiza el repositorio del equipo (apartado «Descubrimiento de repositorios»).
 2. Abre la ficha de la entrega y pásasela al agente:
@@ -249,8 +275,8 @@ publicación. Resumen en cuatro pasos:
 3. El agente clona en el estado que se califica, recorre las instrucciones, rellena la matriz de
    la ficha más la **matriz transversal** de [CONTRATO.md](CONTRATO.md), y escribe el resultado en
    `revisiones/2026-2/<repositorio>/<tarea>.md`, que sí se publica.
-4. Antes de empujar: sin correos y sin nota sugerida en los archivos publicados, y la nota al
-   resumen local. Añade el equipo al índice de [Evaluaciones publicadas](#evaluaciones-publicadas--2026-2)
+4. Antes de empujar: sin correos en los archivos publicados; la nota sugerida va marcada como
+   propuesta al docente. Añade el equipo al índice de [Evaluaciones publicadas](#evaluaciones-publicadas--2026-2)
    si es su primera revisión.
 
 Lee [CONTRATO.md](CONTRATO.md) antes de la primera revisión: contiene lo que se exige en todas

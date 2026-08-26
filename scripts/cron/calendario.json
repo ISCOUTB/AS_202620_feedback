@@ -1,0 +1,24 @@
+{
+  "periodo": "2026-2",
+  "regla_cierre": "domingo a medianoche, Colombia (UTC-5)",
+  "entregas": [
+    {"semana": 1,  "id": "s1",  "ficha": "semana-01-evidencia-s1.md", "idnumber": "arqsw:evidencia-s1", "tipo": "evidencia", "cierre": "2026-08-10T05:00:00Z", "nota": "no"},
+    {"semana": 2,  "id": "s2",  "ficha": "semana-02-evidencia-s2.md", "idnumber": "arqsw:evidencia-s2", "tipo": "evidencia", "cierre": "2026-08-17T05:00:00Z", "nota": "no"},
+    {"semana": 3,  "id": "s3",  "ficha": "semana-03-evidencia-s3.md", "idnumber": "arqsw:evidencia-s3", "tipo": "evidencia", "cierre": "2026-08-24T05:00:00Z", "nota": "si"},
+    {"semana": 4,  "id": "s4",  "ficha": "semana-04-evidencia-s4.md", "idnumber": "arqsw:evidencia-s4", "tipo": "evidencia", "cierre": "2026-08-31T05:00:00Z", "nota": "si"},
+    {"semana": 5,  "id": "corte1", "ficha": "semana-05-corte1.md", "idnumber": "arqsw:corte1", "tipo": "corte", "cierre": "2026-09-07T05:00:00Z", "nota": "no"},
+    {"semana": 6,  "id": "s6",  "ficha": "semana-06-evidencia-s6.md", "idnumber": "arqsw:evidencia-s6", "tipo": "evidencia", "cierre": "2026-09-14T05:00:00Z", "nota": "si"},
+    {"semana": 7,  "id": "s7",  "ficha": "semana-07-evidencia-s7.md", "idnumber": "arqsw:evidencia-s7", "tipo": "evidencia", "cierre": "2026-09-21T05:00:00Z", "nota": "si"},
+    {"semana": 8,  "id": "s8",  "ficha": "semana-08-evidencia-s8.md", "idnumber": "arqsw:evidencia-s8", "tipo": "evidencia", "cierre": "2026-09-28T05:00:00Z", "nota": "si"},
+    {"semana": 8,  "id": "taller-docker", "ficha": "semana-08-taller-docker.md", "idnumber": "arqsw:taller-docker", "tipo": "taller", "cierre": "2026-09-28T05:00:00Z", "nota": "no"},
+    {"semana": 9,  "id": "s9",  "ficha": "semana-09-evidencia-s9.md", "idnumber": "arqsw:evidencia-s9", "tipo": "evidencia", "cierre": "2026-10-05T05:00:00Z", "nota": "si"},
+    {"semana": 10, "id": "corte2", "ficha": "semana-10-corte2.md", "idnumber": "arqsw:corte2", "tipo": "corte", "cierre": "2026-10-12T05:00:00Z", "nota": "no"},
+    {"semana": 11, "id": "s11", "ficha": "semana-11-evidencia-s11.md", "idnumber": "arqsw:evidencia-s11", "tipo": "evidencia", "cierre": "2026-10-19T05:00:00Z", "nota": "si"},
+    {"semana": 12, "id": "s12", "ficha": "semana-12-evidencia-s12.md", "idnumber": "arqsw:evidencia-s12", "tipo": "evidencia", "cierre": "2026-10-26T05:00:00Z", "nota": "si"},
+    {"semana": 12, "id": "taller-mensajes", "ficha": "semana-12-taller-mensajes.md", "idnumber": "arqsw:taller-mensajes", "tipo": "taller", "cierre": "2026-10-26T05:00:00Z", "nota": "no"},
+    {"semana": 13, "id": "s13", "ficha": "semana-13-evidencia-s13.md", "idnumber": "arqsw:evidencia-s13", "tipo": "evidencia", "cierre": "2026-11-02T05:00:00Z", "nota": "si"},
+    {"semana": 14, "id": "s14", "ficha": "semana-14-evidencia-s14.md", "idnumber": "arqsw:evidencia-s14", "tipo": "evidencia", "cierre": "2026-11-09T05:00:00Z", "nota": "si"},
+    {"semana": 16, "id": "final", "ficha": "semana-16-final.md", "idnumber": "arqsw:final", "tipo": "corte", "cierre": "2026-11-23T05:00:00Z", "nota": "no"},
+    {"semana": 17, "id": "cierre", "ficha": "semana-17-cierre.md", "idnumber": "arqsw:cierre", "tipo": "cierre", "cierre": "2026-11-30T05:00:00Z", "nota": "no"}
+  ]
+}
