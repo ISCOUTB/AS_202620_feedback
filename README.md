@@ -18,10 +18,12 @@ la versión que manda es la de ahí.
 
 ```text
 README.md                      esta guía: cómo se evalúa y dónde está cada cosa
+AGENTS.md                      procedimiento semanal para quien revisa (agente)
 CONTRATO.md                    lo que se exige en todas las entregas, con sus comandos
 EQUIPOS.md                     equipos, integrantes y enlace a la evaluación de cada uno
 fichas/                        una ficha por entrega calificada (18)
 plantillas/planilla-equipo.md  la planilla en blanco, para saber qué se consolida
+scripts/barrido-actividad.py   detección de actividad por protocolo git (sin API)
 revisiones/2026-2/<repositorio>/  la evaluación de cada equipo, entrega por entrega
 ```
 
@@ -236,6 +238,10 @@ entrega, que en la planilla aparece como `no se publica` y vive solo en el resum
 añadir un archivo nuevo, la pregunta sigue siendo si puede leerlo cualquiera.
 
 ### Cómo se usa
+
+El procedimiento completo, semana a semana, está en [AGENTS.md](AGENTS.md): cierres, detección de
+actividad, evaluación en lotes paralelos, nota sugerida local, re-barrido post-cierre y
+publicación. Resumen en cuatro pasos:
 
 1. Localiza el repositorio del equipo (apartado «Descubrimiento de repositorios»).
 2. Abre la ficha de la entrega y pásasela al agente:
