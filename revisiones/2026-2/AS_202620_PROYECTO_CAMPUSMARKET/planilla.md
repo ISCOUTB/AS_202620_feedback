@@ -62,7 +62,7 @@
 ## Contribución por integrante
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
-|---|---|---|---:|---:|---:|---|
+|---|---|---:|---:|---:|---|
 | Nilver Garcia Pimentel | `nilver-garcia` / `Nnigarp` (misma cuenta, consolidar) | 33 | — | — | Todo el esqueleto S3: backend, prueba, workflow, README |
 | Camilo Jose Martinez Berrio | ¿`camilixo92`? (confirmar) | 26 | — | — | Autor principal S1–S2; merges de PR #2, #3 y #5 |
 | Joshua Jose Tenorio Alvarez | ¿`Carulla-sd`? (confirmar) | 1 | — | — | Esqueleto Flutter inicial |

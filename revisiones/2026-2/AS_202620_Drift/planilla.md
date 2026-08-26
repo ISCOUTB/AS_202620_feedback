@@ -45,7 +45,7 @@
 ## Contribución por integrante
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
-|---|---|---|---:|---:|---:|---|
+|---|---|---:|---:|---:|---|
 | Luis Mario Perez Diaz | `lmpdiaz12` | 51 (S3) | — | — | Autor del ADR y de la mayor parte del periodo |
 | Mauricio Andres Fernandez Espinosa | `maufern4ndez` | 19 (S3) | — | — | — |
 | Joshua David Reyes Leones | `JoshuaR01` (+ `JoshXX`, mismo correo) | 18 (S3) | — | — | dos identidades consolidadas |

@@ -62,7 +62,7 @@
 ## Contribución por integrante
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
-|---|---|---|---:|---:|---:|---|
+|---|---|---:|---:|---:|---|
 | Keiner Enrique Mendivil Diaz | MKeinerrr | 22 (20+2, dos identidades) | | | Consolidado; autor de la entrega S3 |
 | Diego Jose Baron Ruiz | diegobrr999-commits | 6 | | | C4 en S2 |
 | Julian David Manjarrez Guzman | juliandmanjarrez-tech | 3 | | | C4 en S2 |

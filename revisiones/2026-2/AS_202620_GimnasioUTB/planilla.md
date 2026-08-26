@@ -47,7 +47,7 @@ Hoja consolidada del equipo GimnasioUTB. Se actualiza tras cada revisión.
 ## Contribución por integrante
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
-|---|---|---|---:|---:|---:|---|
+|---|---|---:|---:|---:|---|
 | Sebastian Felipe Caicedo Acosta | `sebastian-caicedo` + «Sebastian Felipe Caicedo Acosta» (mismo correo `caicedos@utb.edu.co`, consolidado) | 9 | 0 | — | Se incorporó en S3 (esqueleto, §4, ADR y CI); cerró el hallazgo de S1 |
 | Rodrigo Andres Facio Lince Beltran | RodrigoFacioLince (correo omitido) | 3 | 0 | — | Sin commits en S3 |
 | Pedro Luis Pallares De La Hoz | PedroPambi (correo omitido) | 9 | 0 | — | Documentó arranque y CI en README (último commit S3) |

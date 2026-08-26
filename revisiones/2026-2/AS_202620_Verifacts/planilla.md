@@ -50,7 +50,7 @@
 ## Contribución por integrante
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
-|---|---|---|---|---:|---:|---:|---|
+|---|---|---:|---:|---:|---|
 | Cristian David Cardeno Gulloso | `Cristian Cardeño` (sin atribuir por parecido de nombre) | 4 | | | todos tardíos (post-corte, 24-ago 00:xx) |
 | Pedro Jose Castro Blanquicett | sin atribuir (`PedroC1213` en el historial, 30 commits) | 30 | | | — |
 | Julian Samuel Cabeza Pena | sin aparición | 0 | | | — |

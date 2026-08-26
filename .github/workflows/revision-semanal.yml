@@ -2,6 +2,8 @@ name: Revision semanal automatica
 
 on:
   schedule:
+    # Media noche COT (05:00 UTC), todos los dias: re-sincroniza lo que cambio desde la pasada anterior.
+    - cron: "0 5 * * *"
     # Viernes 12:00 COT (17:00 UTC): pasada temprana, antes del cierre del domingo.
     - cron: "0 17 * * 5"
     # Lunes 07:00 COT (12:00 UTC): pasada definitiva, sobre el ultimo commit <= cierre.

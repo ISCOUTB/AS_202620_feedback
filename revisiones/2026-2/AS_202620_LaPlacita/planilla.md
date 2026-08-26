@@ -48,7 +48,7 @@ Hoja consolidada del equipo LaPlacita. Se actualiza tras cada revisión.
 ## Contribución por integrante
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
-|---|---|---|---:|---:|---:|---|
+|---|---|---:|---:|---:|---|
 | Mateo Josue Buendia Barrios | matbuendia (dos correos consolidados) | 3 | 0 | — | Sin commits en S3 |
 | Miguel Angel Isaza Montalvo | Isaza927 + `isaza927` (mismo correo, consolidado) | 21 | 0 | — | Motor de S3: esqueleto, §4, enlaces del ADR |
 | Samuel David Jimenez Alvarez | samulssl (correo omitido) | 18 | 0 | — | Creó el ADR 0001 (`bf94244`) |

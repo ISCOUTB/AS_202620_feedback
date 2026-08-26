@@ -63,7 +63,7 @@
 ## Contribución por integrante
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
-|---|---|---|---:|---:|---:|---|
+|---|---|---:|---:|---:|---|
 | Sebastian Canas Plata | scp1109 | 27 | — | — | Todo S1–S2, ADR 0003 y ficha del problema en S3; esqueleto tardío (01:58) |
 | Josue David Ortega De Arco | josueacademico17-source | 9 | — | — | Desde la semana 3 |
 | Maria Del Mar Restrepo Licona | Mariadelmar-restrepo | 1 | — | — | Primera aparición en S3 |

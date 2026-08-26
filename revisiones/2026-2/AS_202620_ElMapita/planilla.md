@@ -46,7 +46,7 @@
 ## Contribución por integrante
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
-|---|---|---|---:|---:|---:|---|
+|---|---|---:|---:|---:|---|
 | Angel Fabian Gutierrez Gomez | sin cuenta identificada | 0 (S3) | — | — | `RobotDRMX` sin atribuir (¿es él o Diego Rosales Garza?) |
 | Diego Rosales Garza | sin cuenta identificada | 0 (S3) | — | — | ídem |
 | Rodrigo Vazquez Rico | firma con su nombre | 0 (S3) | — | — | último commit en S2 |

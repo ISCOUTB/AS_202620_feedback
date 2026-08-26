@@ -45,7 +45,7 @@
 ## Contribución por integrante
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
-|---|---|---|---:|---:|---:|---|
+|---|---|---:|---:|---:|---|
 | Juan Jose Vargas Perez | `JuanchisV` (+ firma «Juan José Vargas Pérez») | 21 (S3) | — | — | Autor del ADR y del esqueleto |
 | Gillianis Del Carmen Perez Revolledo | `gillianisperez-prog` | 11 (S3) | — | — | Enlaces de escenarios en aspectos.md |
 | Luis Daniel Padilla Leottau | `Daniel-dev02` (+ firma «LUIS DANIEL») | 12 (S3) | — | — | README y merges de ramas |

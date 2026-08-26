@@ -61,7 +61,7 @@
 ## Contribución por integrante
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
-|---|---|---|---:|---:|---:|---|
+|---|---|---:|---:|---:|---|
 | Jose Faustino Espana Noriega | ¿`Fausto-4`? (correo `ganonimo2504`, sin confirmar) | 1 (via PR #3) | — | — | Apareció en S3 con «Add files via upload»; correspondencia por confirmar con el docente |
 | Roy Andres Gonzalez Blanco | «Roy Gonzalez» en commits (¿`RGBlanco18`?) — confirmar | 24 (HEAD) | 2 PR mergeados (#1, #3) | — | Principal autor; hace los merges |
 | Shamara Llorente Tapias | `shamarallorente-blip` (correo institucional `shllorente@utb.edu.co`) | 1 (via PR #1) | 0 | — | Autora del ADR 0001 |

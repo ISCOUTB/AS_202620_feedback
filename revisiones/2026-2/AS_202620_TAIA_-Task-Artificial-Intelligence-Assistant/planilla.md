@@ -63,7 +63,7 @@
 ## Contribución por integrante
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
-|---|---|---|---:|---:|---:|---|
+|---|---|---:|---:|---:|---|
 | Valeria Estefania Berrio Payares | val (2 identidades: `@email.com` y `@gmail.com`) | 8 (6+2, consolidadas) | | | Skeleton, arc42 §4 y ADR (22-ago) |
 | Deiner De Jesus Gonzalez Paredes | dei0811 | 4 | | | C4 (16-ago), ia.md y README (23-ago) |
 | Luis Eduardo Mendoza Angulo | luis20072002 | 1 | | | arc42 (15-ago) |

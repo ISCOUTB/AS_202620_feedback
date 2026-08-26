@@ -65,7 +65,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 ## Contribución por integrante
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
-|---|---|---|---:|---:|---:|---|
+|---|---|---:|---:|---:|---|
 | Dilan Joan Gonzalez Bejarano | dilanbejarano011 | 39 | — | — | autor principal; esqueleto y README (23/08) |
 | Luis Estheban Lozano Colmenares | colmenares2007-crypto | 17 | — | — | — |
 | Xavier Yesid Garcia Diaz | xaviergarciadiaz20-commits | 17 | — | — | ADR-006 y matriz (23/08) |

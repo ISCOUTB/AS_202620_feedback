@@ -64,7 +64,7 @@
 ## Contribución por integrante
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
-|---|---|---|---:|---:|---:|---|
+|---|---|---:|---:|---:|---|
 | Dayana Narvaez Vasquez | daynarvaez | 19 | | | Toda la S3: ADR, esqueleto, README, ia.md |
 | Nicolas Ivan Hernandez Hernandez | Nicolas-HH | 8 | | | S1 y S2 |
 | Steven David Contreras Orozco | steven | 1 | | | Solo 10-ago (README) |

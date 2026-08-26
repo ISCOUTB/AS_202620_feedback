@@ -62,7 +62,7 @@
 ## Contribución por integrante
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
-|---|---|---|---:|---:|---:|---|
+|---|---|---:|---:|---:|---|
 | Camilo Andres Conde Corrales | ¿`Cconde31`? (confirmar) | 12 | — | — | ADR nuevo y esqueleto en S3 |
 | Fernando Isacc Conde Herrera | sin cuenta observada (¿`Steamlinker`? — sin confirmar, correo `camilandre0510`) | 0 (¿o 1 vía `Steamlinker`?) | — | — | Atribución por confirmar |
 | Miguel Alejandro Iii Jacome Yanez | ¿`MiguelJacome`? (confirmar) | 4 | — | — | Sección 4 en S3 |

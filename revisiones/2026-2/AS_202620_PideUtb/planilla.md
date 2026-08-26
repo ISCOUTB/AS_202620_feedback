@@ -60,7 +60,7 @@
 ## Contribución por integrante
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
-|---|---|---|---:|---:|---:|---|
+|---|---|---:|---:|---:|---|
 | Daniela Sofia Arrieta Guardo | ¿`daniarriet`? (confirmar) | 5 | — | — | Concentra la documentación S2 |
 | Santiago Jose Cuesta Maza | `Santiago Cuesta` / `Santiago-C0` (misma persona) | 5 | — | — | Entrega S3 completa (ADR, esqueleto, README) |
 | Ruddy Rodriguez Romero | sin cuenta observada | 0 | — | — | Sin aparición en el historial hasta S3 |

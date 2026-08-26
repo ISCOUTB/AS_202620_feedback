@@ -63,7 +63,7 @@
 ## Contribución por integrante
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
-|---|---|---|---:|---:|---:|---|
+|---|---|---:|---:|---:|---|
 | Carlos Alberto Galvis Zuluaga | ¿`charlygz21`? (confirmar) | 3 | — | — | Commits de S1 |
 | Carlos David Manrique Fals | ¿`CarlosManrique-1397`? (confirmar) | 6 | — | — | toda la entrega S3 (21:32–21:44 del 23/08) |
 | Nerlis Nikol Otero Perez | ¿`nerlis-otero`? (confirmar) | 4 | — | — | documentación S1 |

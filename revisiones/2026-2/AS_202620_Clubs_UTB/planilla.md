@@ -46,7 +46,7 @@
 ## Contribución por integrante
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
-|---|---|---|---:|---:|---:|---|
+|---|---|---:|---:|---:|---|
 | Diego Andres Ramos De Avila | `Zavod Dev` (atribución sin confirmar) | 2 (S3) | — | — | Matriz comparativa y corrección de enlaces |
 | Luis Daniel Salas Reyes | `Luis-Salas-Reyes` | 2 (S3) | — | — | Autor del ADR y su revisión |
 | Hollman Jose De Orta Gonzalez | `deortahollman-star` | 1 (S3) | — | — | Matriz comparativa |

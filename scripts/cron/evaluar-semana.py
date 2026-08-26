@@ -442,6 +442,8 @@ def procesar_equipo(repo, equipo, entrada, contrato, ficha, modo, desde, solo_si
         if not nuevos and modo == "definitive" and not solo_sin_actividad:
             return {"repo": repo, "equipo": equipo["equipo"], "estado": "sin actividad nueva"}
         anterior = hash_publicado(entrada, repo)
+        if modo == "early" and anterior and hc and anterior.split(" ")[0] == hc.split(" ")[0]:
+            return {"repo": repo, "equipo": equipo["equipo"], "estado": "sin cambios desde la pasada anterior (%s)" % anterior[:7]}
         if modo == "definitive" and anterior and hc and hc.split(" ")[0] == anterior.split(" ")[0]:
             return {"repo": repo, "equipo": equipo["equipo"], "estado": "ya publicado (%s)" % anterior[:7]}
         ev, d2, err = evidencia_equipo(repo, hc, entrada["cierre"], desde)

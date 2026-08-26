@@ -49,7 +49,7 @@
 ## Contribución por integrante
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
-|---|---|---|---:|---:|---:|---|
+|---|---|---:|---:|---:|---|
 | Santiago Adolfo Camacho Hernandez | firma como «Santiago Adolfo Camacho Hernández» | 11 (S3) | — | — | Cierre de documentación S3 |
 | Vincent Cardona Castro | presumiblemente `cardonavincent26-design` (sin confirmar) | 6 (S3) | — | — | Esqueleto ejecutable (`be1bf24`) |
 | Elian Daniel Perea Vanegas | firma como «Elian Daniel Perea Vanegas» | 11 (S3) | — | — | Correcciones por feedback, estructura arc42 |
