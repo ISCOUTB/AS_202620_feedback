@@ -17,3 +17,7 @@ Qué está bien: el ADR 0001 está completo y enlazado desde `aspectos.md` y EC-
 Qué corregir antes del corte 1 (semana 5):
 1. `docs/ia.md`: quedó sin entradas de la semana 3 (17–23 ago) y sin la columna de qué se rechazó y por qué; pónganlo al día.
 2. El frontend sigue siendo la plantilla Flutter por defecto: lleven en S4 los mismos módulos del backend para que la estructura del ADR quede materializada en todo el sistema.
+
+## Semana 4 · S4
+
+Buen avance en documentación arc42, ADR y corte vertical. El README es claro y el arranque con un solo comando está bien documentado. Para la próxima entrega, completen la sección 3 de arc42, adjunten la URL del run de CI en verde y asegúrense de que la fila de aspectos.md esté completa y navegable. También sería útil incluir evidencia de SonarCloud. Los diagramas C4 como código son un acierto; verifiquen que los actores y contenedores coincidan entre niveles.

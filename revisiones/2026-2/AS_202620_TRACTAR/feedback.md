@@ -20,3 +20,7 @@ Qué corregir antes del corte 1 (semana 5):
 1. Completar la estructura mínima: crear `docs/c4/` para los diagramas C4 y mover `ficha_problema.md` a su carpeta.
 2. Contribución: tres de cuatro integrantes siguen sin commits; todos deben aparecer en el historial antes del corte 1.
 3. Registrar en `docs/ia.md` el trabajo de esta semana (ADR, matriz y esqueleto), incluyendo lo rechazado con motivo.
+
+## Semana 4 · S4
+
+El repositorio muestra avances en documentación inicial (arc42 parcial, ADR, aspectos) pero la evidencia S4 no cumple los requisitos: falta C4 nivel 2, corte vertical, prueba de recorrido completo y pipeline. Se recomienda completar arc42 secciones 4-6,9,10,12, crear docs/c4 con diagramas como código, implementar un flujo mínimo interfaz-lógica-persistencia con prueba automatizada, y configurar CI. También revisar autoría: solo un integrante aparece en el historial.

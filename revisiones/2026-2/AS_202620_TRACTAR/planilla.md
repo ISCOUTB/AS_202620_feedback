@@ -10,7 +10,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TRACTAR` |
 | Integrantes y su usuario de GitHub | Joriel Samir Barros Pena (sin cuentas en el historial) · Geronimo Alberto Cadena Garcia (sin cuentas) · Sebastian Garcia Devoz (firma con dos identidades de git, mismo correo, más el correo institucional) · Mateo Alfonso Millan Barraza (sin cuentas) |
 | URL del sistema desplegado | sin URL (sin despliegue todavía) |
-| Última revisión | 2026-08-24 (S3, commit `5f923cd`) |
+| Ultima revision | 2026-08-28 |
 
 ## Estado por entrega
 
@@ -19,7 +19,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 1 | Evidencia S1 · Equipo, problema y repositorio | sin commits antes del cierre | — | no evaluable | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `0a23855` · 2026-08-16T20:05:46-05:00 | 6/9 | 3.7 (propuesta) | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `5f923cd` · 2026-08-23T22:40:51-05:00 | 7/9 | no se publica | sí |
-| 4 | Evidencia S4 · arc42, C4 y corte vertical | | | no aplica | |
+| 4 | S4 | `5f923cd` (2026-08-23T22:40:51-05:00) | 0/10 | 1.0 | si |
 | 5 | Primer corte · reto de línea base | `corte-1` | | | |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |

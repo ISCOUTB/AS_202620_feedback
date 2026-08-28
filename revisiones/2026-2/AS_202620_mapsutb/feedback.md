@@ -20,3 +20,7 @@ Qué corregir antes del corte 1 (semana 5):
 3. Actualicen `docs/aspectos.md` (todavía dice «Sin ADR aún») y enlacen el ADR desde el escenario que lo motiva; reparen el enlace roto en `docs/escenarios_calidad.md`.
 4. Registren el uso de IA de esta semana en `docs/ia.md` y evidencien la prueba en verde (pipeline o run).
 5. Contribuyan todos los integrantes (esta semana solo aparecieron tres cuentas) y regularicen `docs/arc42/` y `docs/c4/`.
+
+## Semana 4 · S4
+
+El repositorio tiene una base documental inicial pero le faltan piezas clave de la semana 4. Completen las secciones 5, 6, 9, 10 y 12 de arc42, asegurando que la 9 enlace al ADR 0001 y la 10 sea coherente con los escenarios. Revisen la coherencia del C4: los actores del nivel 1 deben reaparecer en el nivel 2 y cada contenedor debe tener código. Implementen el corte vertical con interfaz, lógica y persistencia, y una prueba que lo recorra de punta a punta ejecutada en CI. Completen la fila de aspectos.md hasta Pruebas con rutas navegables. Añadan un pipeline de CI y análisis estático. Verifiquen que todos los integrantes contribuyan al historial.

@@ -26,4 +26,4 @@ Ojo: parte del trabajo llegó después del cierre y no contó para esta entrega;
 
 ## Semana 4 · S4
 
-El repositorio es visible y mantiene la estructura base; se reconoce el corte vertical con las tres capas y el ADR inicial. Para avanzar, completen arc42 con las secciones 5, 6, 9 y 12, agreguen el diagrama C4 de nivel 2, conviertan docs/aspectos.md en una tabla real con las ocho columnas, configuren un pipeline de CI que ejecute las pruebas, documenten en el README el comando único de arranque y registren usos concretos de IA con rechazos. También etiqueten el commit de entrega.
+El repositorio tiene una base inicial pero le faltan piezas clave de la semana 4. Completen las secciones 5, 6, 9 y 12 de arc42, agreguen el diagrama C4 de nivel 2, y conviertan docs/aspectos.md en una tabla real con las ocho columnas. El README debe incluir un comando único de arranque y reflejar el estado real del código. Configuren un pipeline de CI para ejecutar las pruebas y adjunten la URL del run en verde. Revisen el ADR para incluir trazabilidad y registren en docs/ia.md qué rechazaron y por qué. Con estos ajustes la evidencia quedará defendible.

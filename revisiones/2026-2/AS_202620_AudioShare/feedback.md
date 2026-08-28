@@ -24,4 +24,4 @@ Qué corregir antes del corte 1 (semana 5):
 
 ## Semana 4 · S4
 
-El repositorio tiene la estructura base y README, pero la evidencia S4 está incompleta: faltan secciones arc42 5,6,9,10 y glosario; solo hay C4 nivel 1; no hay corte vertical ni prueba de recorrido completo; la tabla de aspectos no es trazable; el ADR y el registro de IA están incompletos; y no hay pipeline. Completen estos elementos para el primer corte.
+El repositorio cumple identidad, estructura y README, pero la evidencia S4 está muy incompleta. Faltan secciones arc42 clave, el C4 nivel 2, el corte vertical y la prueba de recorrido completo. La tabla de aspectos no sigue el formato de 8 columnas y el ADR debe enunciar la decisión con trazabilidad completa. Prioriza completar arc42 5-6, 9-10 y 12, crear C4 nivel 2 coherente con el código, implementar un recorrido mínimo con persistencia y su prueba, y configurar CI. El arranque no se verificó por ejecución; asegúrate de que npm run dev funcione.

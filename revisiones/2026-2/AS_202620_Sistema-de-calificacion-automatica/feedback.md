@@ -22,3 +22,7 @@ Qué corregir antes del corte 1 (semana 5):
 3. Para S4 traigan el esqueleto con sus módulos y el run en verde dentro del plazo de la entrega.
 
 Ojo: parte del trabajo llegó después del cierre y no contó para esta entrega; la próxima vez asegúrense de empujar antes de la medianoche del domingo.
+
+## Semana 4 · S4
+
+El repositorio mantiene buena estructura y ADR, pero la evidencia S4 está incompleta. Falta redactar arc42 secciones 5 y 6, crear C4 nivel 2, implementar el corte vertical con su prueba automatizada, documentar el arranque en README y completar la fila A-01 de aspectos hasta Pruebas. Se recomienda priorizar el corte vertical y el C4 nivel 2 para la próxima entrega.
