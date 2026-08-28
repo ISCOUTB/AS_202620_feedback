@@ -21,3 +21,7 @@ Qué corregir antes del corte 1 (semana 5):
 2. El README documenta la instalación y el arranque en pasos separados; dejen un único comando documentado.
 3. La prueba `backend/tests/test_health.py` existe, pero sin workflow ni evidencia del run: añadan `.github/workflows/` con `pytest` y suban el verde.
 4. Revisen el C4 de contexto (`docs/c4/context.md`): quedaron pendientes desde S2 la leyenda y las etiquetas de las flechas.
+
+## Semana 4 · S4
+
+El repositorio cumple estructura e identidad, pero la evidencia S4 está incompleta: arc42 solo tiene secciones 1-2, falta C4 nivel 2, corte vertical y fila de aspectos completa. Se recomienda completar documentación y código antes del corte.

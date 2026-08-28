@@ -22,3 +22,7 @@ Qué corregir antes del corte 1 (semana 5):
 3. Repartan el arc42 en `docs/arc42/` y el C4 en `docs/c4/` (estructura mínima, arrastrada desde S1).
 4. Corrijan la restricción OC5 («equipo de 4 personas»: son 3) en el arc42 y en el ADR.
 5. Registren en `docs/ia.md` qué se rechazó y por qué en cada uso.
+
+## Semana 4 · S4
+
+El repositorio muestra avances en documentación inicial y esqueleto, pero faltan elementos clave de la semana 4. Completen las secciones 5, 6, 9, 10 y 12 del arc42. Implementen el corte vertical con interfaz, lógica y persistencia reales, y una prueba que lo recorra. Generen el diagrama C4 nivel 2 y aseguren coherencia con el código. Conviertan docs/aspectos.md en una tabla de 8 columnas con al menos una fila completa. Añadan análisis estático SonarCloud al pipeline y documenten en docs/ia.md los rechazos con motivo técnico. Reorganicen la estructura para usar docs/arc42/ y docs/c4/ como directorios.

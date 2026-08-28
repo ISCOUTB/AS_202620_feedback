@@ -21,3 +21,7 @@ Qué corregir antes del corte 1 (semana 5):
 4. Añadan un workflow en `.github/workflows/` que ejecute `pytest` y aporten el run en verde.
 5. Registren en `docs/ia.md` qué se rechazó y por qué; muevan `arc42.md` a `docs/arc42/` y el C4 a `docs/c4/`.
 6. Contribuyan todos los integrantes: esta semana solo aparecieron dos cuentas en el historial.
+
+## Semana 4 · S4
+
+El repositorio muestra avances en documentación inicial y arranque, pero la evidencia S4 requiere completar arc42 (secciones 1-6,9,10,12), agregar diagramas C4 nivel 1 y 2, implementar corte vertical con lógica y persistencia, y prueba automatizada del recorrido. La tabla de aspectos debe convertirse en tabla con columnas navegables. Revisar estructura de carpetas y participación de todos los integrantes. Incluir pipeline CI y registro de IA con rechazos.

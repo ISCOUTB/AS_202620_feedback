@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Recobra` |
 | Integrantes y su usuario de GitHub | Camilo Andres Conde Corrales · Fernando Isacc Conde Herrera · Miguel Alejandro Iii Jacome Yanez · Veronica Ubarne Reyes — cuentas observadas: `Cconde31`, `MiguelJacome`, `Steamlinker` (nueva, sin atribuir; correspondencias por confirmar con el docente) |
 | URL del sistema desplegado | — |
-| Última revisión | 2026-08-24 (S3 actualizada tras el cierre, commit `cb5c579`) |
+| Ultima revision | 2026-08-28 |
 
 ## Estado por entrega
 
@@ -17,7 +17,7 @@
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `da5c15d` · 2026-08-07T17:54:04-05:00 | 3/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `d2dac73` · 2026-08-16T23:44:54-05:00 | 4/9 | no se publica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `cb5c579` · 2026-08-23T23:44:12-05:00 | 4/9 | no se publica | sí |
-| 4 | Evidencia S4 · arc42, C4 y corte vertical | | | no aplica | |
+| 4 | S4 | `50d601c` (2026-08-25T09:14:56-05:00) | 2/10 | 1.8 | si |
 | 5 | Primer corte · reto de línea base | `corte-1` | | | |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |

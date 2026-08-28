@@ -21,3 +21,7 @@ Qué corregir antes del corte 1 (semana 5):
 2. La matriz comparativa usa criterios genéricos con puntaje 1–5: háganla contra el árbol de utilidad, fila por fila con los escenarios Q-01…Q-03 (qué mejora y qué empeora con cada estilo).
 3. Completen el enlace del ADR: la columna ADR de `docs/aspectos.md` sigue en «Pendiente» y el escenario Q-01 no lo enlaza (el ADR 0001 ya existe).
 4. Evidencien el verde de las pruebas: hoy no hay pipeline ni evidencia de ejecución; agreguen un workflow antes del corte.
+
+## Semana 4 · S4
+
+El repositorio cumple con la estructura mínima y la identidad. Se recomienda completar el diagrama C4 nivel 2 y asegurar que las secciones arc42 pendientes estén redactadas. Es necesario proporcionar evidencia de la ejecución del pipeline y del corte vertical para poder verificar esos criterios.

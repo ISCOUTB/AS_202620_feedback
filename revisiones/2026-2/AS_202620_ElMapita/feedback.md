@@ -23,3 +23,7 @@ Qué corregir antes del corte 1 (semana 5):
 4. `docs/ia.md` sigue vacío: registren usos reales y rechazos con motivo.
 5. Repartan la contribución: en S3 solo una cuenta firma commits; procuren que todos aparezcan en el historial.
 6. Evidencien el verde de las pruebas existentes con un pipeline o capturas de ejecución.
+
+## Semana 4 · S4
+
+El repositorio muestra avances en estructura y corte vertical, pero faltan evidencias clave. Completen las secciones 4-6, 9, 10 y 12 de arc42, agreguen el diagrama C4 nivel 2, llenen la fila de aspectos hasta Pruebas con enlaces válidos, registren el uso de IA y configuren un pipeline de CI. Asegúrense de que todos los integrantes contribuyan con commits identificables.

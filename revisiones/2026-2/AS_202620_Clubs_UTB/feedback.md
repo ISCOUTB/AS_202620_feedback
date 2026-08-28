@@ -23,3 +23,7 @@ Qué corregir antes del corte 1 (semana 5):
 4. Actualicen `docs/ia.md` (sin cambios desde el 9 de agosto) registrando usos y qué se rechazó y por qué, y borren el residuo `docs/adr/.temp`.
 
 Ojo: parte del trabajo llegó después del cierre y no contó para esta entrega; la próxima vez asegúrense de empujar antes de la medianoche del domingo.
+
+## Semana 4 · S4
+
+El repositorio es visible y mantiene la estructura base; se reconoce el corte vertical con las tres capas y el ADR inicial. Para avanzar, completen arc42 con las secciones 5, 6, 9 y 12, agreguen el diagrama C4 de nivel 2, conviertan docs/aspectos.md en una tabla real con las ocho columnas, configuren un pipeline de CI que ejecute las pruebas, documenten en el README el comando único de arranque y registren usos concretos de IA con rechazos. También etiqueten el commit de entrega.

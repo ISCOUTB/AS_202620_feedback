@@ -21,3 +21,7 @@ Qué corregir antes del corte 1 (semana 5):
 2. La matriz comparativa no referencia los escenarios E1–E5 del árbol de utilidad: digan qué escenario mejora o empeora con cada estilo.
 3. El ADR solo se enlaza desde el README: enlácenlo desde `docs/aspectos.md` (y pasen ese archivo a la tabla de 8 columnas) y desde los escenarios que lo motivan.
 4. Evidencien la prueba en verde: no hay pipeline ni evidencia de ejecución de `backend/tests/test_health.py`.
+
+## Semana 4 · S4
+
+Buen avance en documentación arc42: secciones 1-6, 10 y 12 redactadas con contenido propio. La estructura del repositorio cumple lo mínimo. Para la próxima entrega, prioricen implementar el corte vertical con código real (no solo .md), agregar una prueba e2e que lo ejercite y ejecutarla en CI. Corrijan la duplicación de ADR: el 0002 debe marcar al 0001 como reemplazado. Completen la fila de aspectos con enlaces verificables y documenten el arranque con un solo comando en el README.

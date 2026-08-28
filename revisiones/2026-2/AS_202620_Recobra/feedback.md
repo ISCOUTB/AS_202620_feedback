@@ -20,3 +20,7 @@ Qué corregir antes del corte 1 (semana 5):
 3. Enlacen el ADR desde `docs/aspectos.md` y desde el escenario que lo motiva; hoy solo se alcanza desde §4.3.
 4. Materialicen los paquetes `domain/ports` y `application/use-cases` que declaran el ADR y el README (solo existe el adaptador HTTP) y aporten evidencia del verde (workflow o run).
 5. Higiene del repo: saquen `node_modules/` con un `.gitignore` y registren el ADR anterior como «reemplazado» en lugar de borrarlo (contrato del curso).
+
+## Semana 4 · S4
+
+Buen avance en ADR, README y C4 como código. Para cumplir la evidencia S4, completen arc42 con secciones 5, 6, 9 y 12; corrijan el nivel 2 de C4 para incluir admin y auth; conviertan aspectos.md en tabla con las ocho columnas; agreguen CI y muestren el corte vertical con su prueba en verde. Además, eliminen node_modules del repositorio y roten el secreto encontrado.

@@ -21,3 +21,7 @@ Qué corregir antes del corte 1 (semana 5):
 2. Rehagan la matriz comparativa contra el árbol de utilidad: una fila por escenario (EC-01…EC-04) que diga qué mejora y qué empeora con cada estilo.
 3. Hagan alcanzable el ADR: enlácenlo desde `docs/aspectos.md` (además, con la tabla de 8 columnas) y desde el escenario que lo motiva; reemplacen el «EC-nn» del ADR por el escenario real.
 4. Registren en `docs/ia.md` qué se rechazó y por qué en cada uso (arrastrado desde S2).
+
+## Semana 4 · S4
+
+El repositorio tiene la estructura base y README, pero la evidencia S4 está incompleta: faltan secciones arc42 5,6,9,10 y glosario; solo hay C4 nivel 1; no hay corte vertical ni prueba de recorrido completo; la tabla de aspectos no es trazable; el ADR y el registro de IA están incompletos; y no hay pipeline. Completen estos elementos para el primer corte.

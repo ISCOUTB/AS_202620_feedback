@@ -20,3 +20,7 @@ Qué corregir antes del corte 1 (semana 5):
 3. Creen los paquetes que declara el ADR (`lib/core` y `lib/features/…` con `.gitkeep`): hoy solo existe `lib/main.dart`, y borren los archivos residuales `front_end` y `ejecutable` de la raíz.
 4. Actualicen `docs/ia.md` (última entrada del 08-ago) con los usos de S3 y lo rechazado con motivo; muevan el C4 a `docs/c4/`.
 5. Evidencien la prueba en verde (pipeline o run) antes del corte 1.
+
+## Semana 4 · S4
+
+El repositorio tiene una base sólida: estructura mínima, README claro, ADR inicial y corte vertical con tres capas. Sin embargo, faltan secciones clave de arc42 (5, 6, 9, 12) y el C4 nivel 2. La tabla de aspectos debe ajustarse a las ocho columnas exigidas y el ADR necesita trazabilidad. Añadan evidencia de CI en verde para las pruebas. Buen avance, pero completen la documentación arquitectónica.

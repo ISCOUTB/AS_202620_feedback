@@ -22,3 +22,7 @@ Qué corregir antes del corte 1 (semana 5):
 1. Rehacer `docs/matriz-comparativa-arquitectura.md` contra los escenarios de su árbol de utilidad: digan qué escenario mejora o empeora con cada estilo; hoy compara criterios genéricos.
 2. Enlazar el ADR 0001 desde `docs/aspectos.md` y desde el escenario de calidad que lo motiva.
 3. Registrar en `docs/ia.md` los usos de IA de esta semana, con lo aceptado y lo rechazado con motivo.
+
+## Semana 4 · S4
+
+El repositorio cumple identidad, estructura y README. Para la siguiente entrega, completen el C4 nivel 2, implementen el corte vertical con su prueba automatizada, y actualicen docs/aspectos.md a las 8 columnas. Revisen el ADR para incluir trazabilidad y el registro de IA para documentar rechazos. Añadan etiqueta corte-1 y configuren SonarCloud. La evidencia de arc42 está incompleta; asegúrense de que el archivo completo esté disponible.

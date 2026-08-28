@@ -19,3 +19,7 @@ Qué está bien: entrega completa: ADR 0001 con contexto, alternativas y consecu
 Qué corregir antes del corte 1 (semana 5):
 1. Ratifiquen el ADR 0001 como «aceptado» (hoy dice «propuesto, pendiente de ratificación») y ajusten el título para que enuncie la decisión.
 2. Mantenimiento: conserven el pipeline en verde en cada entrega y sigan enlazando cada decisión desde su aspecto y su escenario.
+
+## Semana 4 · S4
+
+El repositorio muestra avances en documentación inicial (arc42 secciones 1-3 y 10, C4 nivel 1, ADR-0001) y en estructura base, pero la evidencia S4 exige incrementos que aún no están: secciones 4-6, 9 y 12 de arc42, C4 nivel 2, corte vertical con lógica y persistencia, y prueba de recorrido completo. La fila de aspectos debe completarse con enlaces reales, no 'Pendiente'. Se recomienda priorizar la implementación del corte vertical mínimo (interfaz-lógica-persistencia) con su prueba automatizada y ejecutarla en CI, y completar las secciones faltantes de arc42. El arranque documentado y el registro de IA están bien encaminados.

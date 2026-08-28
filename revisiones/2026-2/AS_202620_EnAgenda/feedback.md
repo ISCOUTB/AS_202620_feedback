@@ -23,3 +23,7 @@ Qué corregir antes del corte 1 (semana 5):
 4. La matriz comparativa no referencia los escenarios EC-01…EC-05: pongan una fila por escenario del árbol de utilidad.
 5. Hagan alcanzable el ADR: la columna ADR de `aspectos.md` sigue «Pendiente» y `10-requisitos-de-calidad .md` no lo enlaza.
 6. Repartan la contribución: en S3 faltó un integrante en el historial (2 de 3).
+
+## Semana 4 · S4
+
+Buen avance en documentación arquitectónica: C4 nivel 1 y 2 coherentes, ADR bien formulado, registro de IA con rechazos justificados y secciones 2,3,10 de arc42 redactadas. Para cumplir la evidencia S4, falta completar las secciones 1,4,5,6,9 y 12 de arc42, implementar el corte vertical con código real (interfaz, lógica, persistencia), documentar el arranque con un solo comando en el README, completar la fila de aspectos hasta Pruebas y configurar CI con pruebas automatizadas. El glosario debe incluir términos propios del dominio, no la plantilla. Con estos ajustes, el repositorio estará listo para el primer corte.

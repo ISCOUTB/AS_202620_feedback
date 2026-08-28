@@ -24,3 +24,7 @@ Qué corregir antes del corte 1 (semana 5):
 3. Documentar en el README el comando único de arranque de la app (hoy solo está el de la prueba) y corregir el paquete `httpx2` de `requirements.txt`.
 4. Registrar en `docs/ia.md` el uso de IA de esta semana con lo rechazado y su motivo.
 5. Contribución: solo una persona firmó los commits de esta semana; todos los integrantes deben aparecer en el historial antes del corte 1.
+
+## Semana 4 · S4
+
+El repositorio muestra avances en documentación inicial (arc42 secciones 1-3, C4 nivel 1, ADR), pero la evidencia S4 requiere completar secciones 4-6 y glosario, agregar C4 nivel 2, implementar el corte vertical con persistencia y lógica, documentar arranque con un comando, y completar la tabla de aspectos hasta Pruebas. Revisen la convención de nombres de ADR y aseguren que todos los integrantes contribuyan. Configuren CI para evidenciar pruebas en verde.
