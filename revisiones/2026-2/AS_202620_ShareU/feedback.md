@@ -23,3 +23,7 @@ Qué corregir antes del corte 1 (semana 5):
 4. Completen `docs/ia.md`: falta la columna de qué se rechazó y por qué, y las entradas de S3 quedaron «pendientes de revisión».
 5. Sin pipeline ni evidencia del verde para `tests/test_esqueleto.py`: añadan un workflow con el run.
 6. Asegúrense de que todos los integrantes contribuyan al historial con su cuenta antes del corte.
+
+## Semana 4 · S4
+
+El repositorio tiene una base inicial pero faltan evidencias clave: el arc42 solo muestra la sección 1 redactada, el C4 nivel 2 está como imagen sin inspeccionar, el corte vertical no implementa lógica ni persistencia, y el README no documenta arranque. Se recomienda completar las secciones faltantes, convertir el C4 a código, implementar el recorrido mínimo con prueba y CI, y ajustar la tabla de aspectos al formato de columnas.

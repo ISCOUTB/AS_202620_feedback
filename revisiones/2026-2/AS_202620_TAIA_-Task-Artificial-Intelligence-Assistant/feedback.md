@@ -21,3 +21,7 @@ Qué corregir antes del corte 1 (semana 5):
 2. El ADR no tiene título que enuncie la decisión ni sección de contexto: complétenlos.
 3. Completen la entrada 03 de `docs/ia.md` anotando qué se aceptó y qué se rechazó con su motivo.
 4. Monten un workflow para que `backend/tests/test_entrega3.py` corra en cada push y quede evidencia del verde.
+
+## Semana 4 · S4
+
+El equipo muestra avances sólidos en documentación inicial: los diagramas C4 son coherentes y están como código, el README es claro y el registro de IA cumple. Sin embargo, la evidencia semanal queda incompleta en varios frentes críticos: las secciones 3-6, 9, 10 y 12 de arc42 no se pudieron verificar con la información disponible; el ADR no sigue la convención de nombre ni incluye trazabilidad; la fila de aspectos está llena de 'Pendiente' y con enlace roto; y no hay corte vertical ni pipeline de CI. Para la próxima entrega, prioricen completar arc42, corregir el ADR, implementar el recorrido interfaz-lógica-persistencia con su prueba automatizada y configurar GitHub Actions. El C4 nivel 2 debe reflejar el código real: si la app móvil aún no existe, indíquenlo o creen el directorio.

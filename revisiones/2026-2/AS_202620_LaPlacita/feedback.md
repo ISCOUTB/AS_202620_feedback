@@ -20,3 +20,7 @@ Qué corregir antes del corte 1 (semana 5):
 1. Ratifiquen el ADR 0001 como «aceptado» (hoy dice «propuesto»).
 2. Monten el pipeline en `.github/workflows/` para que la prueba en verde deje de descansar solo en la declaración de `docs/ia.md`.
 3. Enlacen la columna Requisito (RF-xx) de `docs/aspectos.md` a los escenarios correspondientes.
+
+## Semana 4 · S4
+
+El repositorio cumple identidad, estructura, ADR e IA. Sin embargo, la evidencia semanal está incompleta: falta el diagrama C4 de nivel 2, no hay prueba del corte vertical (solo health), y la tabla de aspectos tiene celdas pendientes. Además, el pipeline no incluye SonarCloud y el README no muestra claramente el comando de arranque. Se recomienda completar las secciones 5,6,9 y 12 de arc42, implementar el recorrido interfaz-lógica-persistencia con su prueba automatizada, y documentar el arranque en el README. Con estos ajustes, la entrega podrá defenderse en el corte.

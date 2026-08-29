@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant` |
 | Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo |
 | URL del sistema desplegado | — |
-| Última revisión | 2026-08-23 (S1 `76d4a91` + S2 `59590c9` + S3 `46257a03`) |
+| Ultima revision | 2026-08-29 |
 
 ## Estado por entrega
 
@@ -17,7 +17,7 @@
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `76d4a91` · 2026-08-07T03:34:26-05:00 | 6/9 | no aplica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `59590c9` · 2026-08-16T19:15:15-05:00 | 3/9 | no aplica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `46257a03` · 2026-08-23T16:47:00-05:00 | 5/9 | no se publica | sí |
-| 4 | Evidencia S4 · arc42, C4 y corte vertical | | | no aplica | |
+| 4 | S4 | `0f7f4bd` (2026-08-27T10:14:25-05:00) | 2/10 | 1.8 | si |
 | 5 | Primer corte · reto de línea base | `corte-1` | | | |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |

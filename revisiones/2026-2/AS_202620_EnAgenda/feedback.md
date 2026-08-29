@@ -26,4 +26,4 @@ Qué corregir antes del corte 1 (semana 5):
 
 ## Semana 4 · S4
 
-Buen avance en documentación arquitectónica: C4 nivel 1 y 2 coherentes, ADR bien formulado, registro de IA con rechazos justificados y secciones 2,3,10 de arc42 redactadas. Para cumplir la evidencia S4, falta completar las secciones 1,4,5,6,9 y 12 de arc42, implementar el corte vertical con código real (interfaz, lógica, persistencia), documentar el arranque con un solo comando en el README, completar la fila de aspectos hasta Pruebas y configurar CI con pruebas automatizadas. El glosario debe incluir términos propios del dominio, no la plantilla. Con estos ajustes, el repositorio estará listo para el primer corte.
+El equipo ha avanzado en documentación arquitectónica: ADR, C4 y sección 10 están bien. Sin embargo, faltan completar secciones 9 y 12 de arc42, agregar código fuente con corte vertical, documentar arranque en README, completar la fila de aspectos y configurar CI. Revisar el ADR para incluir trazabilidad completa. El registro de IA es ejemplar.

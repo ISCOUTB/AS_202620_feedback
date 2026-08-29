@@ -23,3 +23,7 @@ Qué corregir antes del corte 1 (semana 5):
 2. Renombrar los seis ADR a `NNNN-titulo-en-kebab-case.md`.
 3. En `docs/aspectos.md`, enlazar de verdad la columna ADR (incluido el ADR-006) y limpiar el resto `[cite: 1]`.
 4. Registrar en `docs/ia.md` el trabajo de esta semana con lo aceptado y lo rechazado con motivo.
+
+## Semana 4 · S4
+
+El repositorio tiene una base documental sólida en ADRs y C1, pero faltan piezas clave para esta semana. Completen el C4 nivel 2 con coherencia entre actores y contenedores, y documenten en el README un comando único de arranque de la app, no solo de pruebas. La tabla de aspectos debe ajustarse a las 8 columnas exigidas y completar al menos una fila hasta Pruebas con rutas reales. Revisen los ADRs para incluir opciones evaluadas y trazabilidad. Configuren un pipeline de CI que ejecute las pruebas y evidencie el corte vertical. Por último, asegúrense de que el arc42 contenga todas las secciones 1-6, 9, 10 y 12 redactadas, no solo las iniciales.

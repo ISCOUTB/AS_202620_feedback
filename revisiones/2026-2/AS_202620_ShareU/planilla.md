@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_ShareU` |
 | Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo |
 | URL del sistema desplegado | — |
-| Última revisión | 2026-08-24 (S3 actualizada tras el cierre, commit `0833272`) |
+| Ultima revision | 2026-08-29 |
 
 ## Estado por entrega
 
@@ -17,7 +17,7 @@
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `8886d4e` · 2026-08-09T22:03:52-05:00 | 4/9 | no aplica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `aa0659c` · 2026-08-16T22:47:16-05:00 | 2/9 | no aplica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `0833272` · 2026-08-23T22:46:30-05:00 | 6/9 | no se publica | sí |
-| 4 | Evidencia S4 · arc42, C4 y corte vertical | | | no aplica | |
+| 4 | S4 | `4fb8f3e` (2026-08-26T18:47:08-05:00) | 0/10 | 1.0 | si |
 | 5 | Primer corte · reto de línea base | `corte-1` | | | |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |

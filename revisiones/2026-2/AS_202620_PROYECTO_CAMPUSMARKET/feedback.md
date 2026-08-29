@@ -20,4 +20,4 @@ Qué corregir antes del corte 1 (semana 5):
 
 ## Semana 4 · S4
 
-Buen avance en documentación arc42, ADR y corte vertical. El README es claro y el arranque con un solo comando está bien documentado. Para la próxima entrega, completen la sección 3 de arc42, adjunten la URL del run de CI en verde y asegúrense de que la fila de aspectos.md esté completa y navegable. También sería útil incluir evidencia de SonarCloud. Los diagramas C4 como código son un acierto; verifiquen que los actores y contenedores coincidan entre niveles.
+Buen avance en documentación arc42 y C4, con corte vertical claramente trazado. Para cerrar la evidencia, completen el README con un comando único de arranque, verifiquen que el pipeline ejecute la prueba en verde y adjunten la URL del run, y aseguren que al menos una fila de aspectos esté completa hasta Pruebas. También revisen que docs/ia.md incluya qué se rechazó y por qué. Con eso la evidencia quedaría totalmente verificable.
