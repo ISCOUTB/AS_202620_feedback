@@ -27,4 +27,4 @@ Qué corregir antes del corte 1 (semana 5):
 
 ## Semana 4 · S4
 
-El repositorio muestra avances en documentación inicial (arc42 secciones 1-3, C4 nivel 1, ADR), pero la evidencia S4 requiere completar secciones 4-6 y glosario, agregar C4 nivel 2, implementar el corte vertical con persistencia y lógica, documentar arranque con un comando, y completar la tabla de aspectos hasta Pruebas. Revisen la convención de nombres de ADR y aseguren que todos los integrantes contribuyan. Configuren CI para evidenciar pruebas en verde.
+El repositorio muestra avances sólidos en estructura, corte vertical y documentación base. Se recomienda incluir en la evidencia los contenidos de las secciones 9, 10 y 12 de arc42 y los diagramas C4 para poder verificar su coherencia. También es necesario adjuntar la URL de un run de CI en verde que ejecute la prueba del corte vertical, y configurar SonarCloud para cumplir el criterio de pipeline. La tabla de aspectos y el README están bien logrados.

@@ -26,4 +26,4 @@ Ojo: parte del trabajo llegó después del cierre y no contó para esta entrega;
 
 ## Semana 4 · S4
 
-El repositorio tiene una base inicial pero le faltan piezas clave de la semana 4. Completen las secciones 5, 6, 9 y 12 de arc42, agreguen el diagrama C4 de nivel 2, y conviertan docs/aspectos.md en una tabla real con las ocho columnas. El README debe incluir un comando único de arranque y reflejar el estado real del código. Configuren un pipeline de CI para ejecutar las pruebas y adjunten la URL del run en verde. Revisen el ADR para incluir trazabilidad y registren en docs/ia.md qué rechazaron y por qué. Con estos ajustes la evidencia quedará defendible.
+El repositorio muestra avances en documentación y un corte vertical mínimo, pero faltan secciones clave de arc42 (6, 9, 12), el C4 nivel 2, la tabla de aspectos con trazabilidad y el arranque documentado. Se recomienda completar la documentación exigida, añadir el pipeline de CI y verificar la prueba en verde. La estructura general es adecuada, con una desviación menor en el nombre del directorio C4.

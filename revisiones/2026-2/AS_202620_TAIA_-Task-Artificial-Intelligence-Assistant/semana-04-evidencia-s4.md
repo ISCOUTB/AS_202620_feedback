@@ -5,7 +5,7 @@
 | Campo | Valor |
 |---|---|
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant` |
-| Estado revisado | `0f7f4bd` (2026-08-27T10:14:25-05:00) |
+| Estado revisado | `9df9d2a` (2026-08-29T18:51:30-05:00) |
 | Cierre | 2026-08-31T05:00:00Z |
 | Revisor | pipeline automatico (GitHub Actions) |
 
@@ -13,29 +13,29 @@
 
 | Criterio de evaluacion | Evidencia tecnica | Estado | Observaciones |
 |---|---|---|---|
-| arc42 secciones 1 a 6 redactadas, sin texto de plantilla | docs/arc42/arc42-template-EN.md solo muestra secciones 1 y 2 en el contenido disponible | No verificado | No se pudo comprobar la presencia y redacción de las secciones 3 a 6; haría falta listar los encabezados del archivo completo. |
-| arc42 sección 9 al día y enlazada con los ADR existentes | No se observa la sección 9 en el contenido parcial de docs/arc42/arc42-template-EN.md | No verificado | No se pudo verificar el enlace a docs/adr/0001.md; falta evidencia de la sección 9. |
-| arc42 sección 10 coherente con los escenarios de la semana 2 | No se observa la sección 10 en el contenido parcial | No verificado | No se pudo contrastar con docs/calidad/escenarios_calidad.md; falta evidencia. |
-| Glosario iniciado con términos del dominio | No se observa la sección 12 en el contenido parcial | No verificado | No se pudo comprobar la existencia de términos propios del sistema. |
-| C4 nivel 1 y nivel 2 presentes y coherentes entre sí | docs/c4/C4-C1.md y docs/c4/C4-C2.md contienen diagramas Mermaid con actores y contenedores coherentes | Cumple | Los actores externos (estudiante, Telegram, Gemini) reaparecen en ambos niveles; las flechas están etiquetadas. |
-| Límites del C4 nivel 2 correspondientes a la estructura del código | El contenedor 'App Móvil' no tiene código en el repositorio; 'API TAIA' corresponde a backend/ | No cumple | Falta el directorio de la app Flutter; solo backend/ está implementado. |
-| Corte vertical que atraviesa interfaz, lógica y persistencia | backend/app/main.py existe, pero los módulos solo contienen .gitkeep sin lógica ni persistencia | No cumple | No hay recorrido completo; solo endpoint de health. |
-| Arranque documentado con un solo comando | README.md declara requisitos y comando único: .\run.bat | Cumple | El comando está documentado y es ejecutable desde la raíz. |
-| Prueba automatizada del recorrido completo, en verde | backend/tests/test_entrega3.py existe, pero no hay evidencia de que cubra el corte vertical ni de CI | No cumple | No se encontró pipeline (.github/workflows) ni run en verde. |
-| Fila de docs/aspectos.md completa hasta la columna Pruebas | docs/aspectos.md fila A-01 tiene 'Pendiente' en C4, Código, Pruebas y Evidencia; enlace ADR roto | No cumple | La fila no está completa; el enlace apunta a adr/0001-estilo-arquitectonico.md inexistente. |
+| arc42 secciones 1 a 6 redactadas, sin texto de plantilla | docs/arc42/arc42-template-EN.md contiene secciones 1 y 2 redactadas; no se muestran secciones 3-6 en la evidencia | No verificado | Falta evidencia de secciones 3-6 y filtro de plantilla |
+| arc42 sección 9 al día y enlazada con los ADR existentes | No se observa sección 9 en docs/arc42/arc42-template-EN.md | No verificado | Sin contenido de sección 9 en la evidencia |
+| arc42 sección 10 coherente con los escenarios de la semana 2 | No se observa sección 10 en docs/arc42/arc42-template-EN.md | No verificado | Sin contenido de sección 10 en la evidencia |
+| Glosario iniciado con términos del dominio | No se observa sección 12 en docs/arc42/arc42-template-EN.md | No verificado | Sin contenido de sección 12 en la evidencia |
+| C4 nivel 1 y nivel 2 presentes y coherentes entre sí | docs/c4/C4-C1.md y docs/c4/C4-C2.md con código Mermaid; actores externos coinciden | Cumple | Diagramas como código, coherencia entre niveles verificada |
+| Límites del C4 nivel 2 correspondientes a la estructura del código | Contenedor API corresponde a backend/app/main.py; no existe directorio para App Móvil (Flutter) | No cumple | App Móvil dibujada sin código en el repositorio |
+| Corte vertical que atraviesa interfaz, lógica y persistencia | README.md declara 'no se implementa lógica de negocio'; backend/app/main.py solo endpoint /health | No cumple | No hay lógica ni persistencia implementadas |
+| Arranque documentado con un solo comando | README.md sección Ejecución: '.\run.bat' | Cumple | Comando declarado, no ejecutado |
+| Prueba automatizada del recorrido completo, en verde | backend/tests/test_entrega3.py solo prueba /health; sin URL de run | No cumple | No existe prueba del corte vertical |
+| Fila de docs/aspectos.md completa hasta la columna Pruebas | docs/aspectos.md fila A-01 con celdas C4, Código, Pruebas, Evidencia en 'Pendiente' | No cumple | Celdas no navegables, fila incompleta |
 
 ## Matriz transversal (CONTRATO §11)
 
 | Criterio | Evidencia | Estado | Observaciones |
 |---|---|---|---|
-| Identidad del repositorio | Repositorio público AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant en ISCOUTB; 4 autores en historial | Cumple | Los 4 integrantes declarados aparecen en git shortlog. |
-| Estructura mínima | Árbol contiene docs/arc42/, docs/adr/, docs/c4/, docs/aspectos.md, docs/ia.md, README.md | Cumple | Todas las rutas requeridas están presentes. |
-| Estado calificado (versionado) | Hash 0f7f4bd con fecha 2026-08-27T10:14:25-05:00, anterior al cierre 2026-08-31T05:00:00Z | Cumple | Commit vigente correcto para evidencia semanal. |
-| Convenciones de ADR | docs/adr/0001.md no sigue el patrón NNNN-titulo-en-kebab-case.md y carece de trazabilidad | No cumple | Falta título en el nombre y secciones de contexto/trazabilidad explícitas. |
-| Tabla de aspectos | docs/aspectos.md fila A-01 con celdas 'Pendiente' y enlace ADR roto | No cumple | La cadena de trazabilidad no es navegable. |
-| Registro de uso de IA | docs/ia.md con tres entradas, cada una incluye herramienta, aceptado y rechazado con motivo | Cumple | Cumple con el requisito de registrar rechazos. |
-| README | README.md incluye descripción, requisitos, comando de arranque único y pruebas | Cumple | Documento claro y completo. |
-| Pipeline y análisis estático | No existe .github/workflows/ en el árbol ni se proporcionan runs de CI | No cumple | Sin evidencia de ejecución automatizada. |
+| Identidad del repositorio | Repo AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant en ISCOUTB, visible true | Cumple | Nombre sigue patrón, público |
+| Estructura mínima | Árbol incluye README.md, docs/arc42/, docs/adr/, docs/c4/, docs/aspectos.md, docs/ia.md | Cumple | Estructura requerida presente |
+| Versionado y estado calificado | Commit 9df9d2a 2026-08-29T18:51:30-05:00 antes del cierre, sin etiqueta corte-1 | No cumple | Falta etiqueta; se revisa último commit |
+| Convenciones de ADR | docs/adr/0001-estilo-arquitectonico.md sin secciones explícitas de Consecuencias y Trazabilidad | No cumple | ADR incompleto según contrato |
+| Tabla de aspectos | docs/aspectos.md fila A-01 con celdas Pendiente | No cumple | Fila no defendible por huecos |
+| Registro de uso de IA | docs/ia.md con entradas 001-003, incluye Rechazado o modificado con motivos | Cumple | Registro con rechazos técnicos |
+| README | README.md con descripción, requisitos, comando .\run.bat y pytest | Cumple | Documento de arranque y prueba completo |
+| Pipeline y análisis estático | Árbol sin .github/workflows/ ni evidencia de runs | No cumple | No hay CI configurada |
 
 ## Recuento y nota sugerida
 
@@ -45,17 +45,15 @@
 
 ## No verificado / pendientes
 
-- arc42 secciones 3 a 6: falta listar encabezados del archivo completo.
-- arc42 sección 9: falta evidencia de su contenido y enlace a ADR.
-- arc42 sección 10: falta evidencia de coherencia con escenarios.
-- arc42 sección 12 (glosario): falta evidencia de términos del dominio.
-- Ejecución de pipeline: no se proporcionaron runs de CI.
+- Secciones arc42 3-6,9,10,12
+- Ejecución del comando de arranque
+- Etiqueta de versionado
+- Pruebas en CI
 
 ## Hallazgos para la planilla
 
-- ADR 0001 no sigue convención de nombre y carece de trazabilidad.
-- Fila A-01 de aspectos.md incompleta y con enlace roto.
-- No hay corte vertical implementado; solo endpoint de health.
-- No existe pipeline de CI ni análisis estático.
-- Contenedor App Móvil del C4 no tiene código en el repositorio.
-- Secciones 3-6, 9, 10 y 12 de arc42 no verificables con la evidencia disponible.
+- No hay corte vertical implementado
+- Fila de aspectos incompleta con celdas Pendiente
+- No hay pipeline de CI
+- ADR sin trazabilidad completa
+- Secciones arc42 3-6,9,10,12 no verificadas en evidencia

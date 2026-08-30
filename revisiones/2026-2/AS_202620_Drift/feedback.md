@@ -24,4 +24,4 @@ Qué corregir antes del corte 1 (semana 5):
 
 ## Semana 4 · S4
 
-Buen avance en documentación arc42: secciones 1-6, 10 y 12 redactadas con contenido propio. La estructura del repositorio cumple lo mínimo. Para la próxima entrega, prioricen implementar el corte vertical con código real (no solo .md), agregar una prueba e2e que lo ejercite y ejecutarla en CI. Corrijan la duplicación de ADR: el 0002 debe marcar al 0001 como reemplazado. Completen la fila de aspectos con enlaces verificables y documenten el arranque con un solo comando en el README.
+El repositorio muestra avances sólidos en documentación arc42 (secciones 1-5, 10 y glosario) y estructura mínima. Para la próxima entrega, asegúrense de incluir evidencia ejecutable: contenido de sección 6, diagramas C4, comando de arranque y URL de un run de CI en verde. Revisen la convención de ADR: el 0001 debe enlazar al 0002 como reemplazo. Completen la fila de aspectos con celdas navegables. Con eso podrán defender todos los criterios.

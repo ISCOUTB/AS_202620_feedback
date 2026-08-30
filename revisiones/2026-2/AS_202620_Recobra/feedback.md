@@ -23,4 +23,4 @@ Qué corregir antes del corte 1 (semana 5):
 
 ## Semana 4 · S4
 
-Buen avance en ADR, README y C4 como código. Para cumplir la evidencia S4, completen arc42 con secciones 5, 6, 9 y 12; corrijan el nivel 2 de C4 para incluir admin y auth; conviertan aspectos.md en tabla con las ocho columnas; agreguen CI y muestren el corte vertical con su prueba en verde. Además, eliminen node_modules del repositorio y roten el secreto encontrado.
+El repositorio muestra avances sólidos en ADR, README y coherencia de escenarios. Para cumplir la evidencia S4, completen las secciones 5 y 6 de arc42 con bloques de construcción y vista de ejecución, agreguen el diagrama C4 nivel 2, y completen la tabla de aspectos con las ocho columnas. Configuren un pipeline de CI y etiqueten el commit de corte. Retiren node_modules del control de versiones y revisen el secreto en dependencias. La documentación base está bien encaminada; falta cerrar los requisitos específicos de la semana.

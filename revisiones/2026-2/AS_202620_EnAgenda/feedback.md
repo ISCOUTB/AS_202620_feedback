@@ -26,4 +26,4 @@ Qué corregir antes del corte 1 (semana 5):
 
 ## Semana 4 · S4
 
-El equipo ha avanzado en documentación arquitectónica: ADR, C4 y sección 10 están bien. Sin embargo, faltan completar secciones 9 y 12 de arc42, agregar código fuente con corte vertical, documentar arranque en README, completar la fila de aspectos y configurar CI. Revisar el ADR para incluir trazabilidad completa. El registro de IA es ejemplar.
+El repositorio tiene buena documentación inicial y C4 coherente, pero falta el código fuente que respalde el corte vertical. Completen las secciones 1,4,5,6 y 9 de arc42, el glosario y la fila de aspectos con enlaces reales. Incluyan en el ADR la trazabilidad con commit/PR y pruebas. Agreguen al README un comando único de arranque y configuren un pipeline de CI. Etiqueten el commit de corte. Con estos ajustes la evidencia será defendible.

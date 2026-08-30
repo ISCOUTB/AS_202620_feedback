@@ -17,7 +17,7 @@
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `76d4a91` · 2026-08-07T03:34:26-05:00 | 6/9 | no aplica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `59590c9` · 2026-08-16T19:15:15-05:00 | 3/9 | no aplica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `46257a03` · 2026-08-23T16:47:00-05:00 | 5/9 | no se publica | sí |
-| 4 | S4 | `0f7f4bd` (2026-08-27T10:14:25-05:00) | 2/10 | 1.8 | si |
+| 4 | S4 | `9df9d2a` (2026-08-29T18:51:30-05:00) | 2/10 | 1.8 | si |
 | 5 | Primer corte · reto de línea base | `corte-1` | | | |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |

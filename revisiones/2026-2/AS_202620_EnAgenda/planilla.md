@@ -16,7 +16,7 @@ Hoja consolidada del equipo EnAgenda. Se actualiza tras cada revisión.
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 4 | S4 | `91bbaf5` (2026-08-28T20:43:32-05:00) | 2/10 | 1.8 | si |
+| 4 | S4 | `b8582c6` (2026-08-29T23:06:57-05:00) | 2/10 | 1.8 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `13f61b10` · 2026-08-09T05:34:14-05:00 | 8/9 | 4,6 * | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `5b6f7a8e` · 2026-08-16T23:33:20-05:00 | 5/9 | 3,2 * | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `c38adfb94` · 2026-08-23T23:49:01-05:00 | 3/9 | no se publica | sí (actualizada tras el cierre) |
