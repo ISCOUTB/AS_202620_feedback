@@ -12,12 +12,15 @@ qué se publica y qué no (ver «Publicación»).
 ## Automatización (GitHub Actions)
 
 La revisión semanal corre sola desde la nube: `.github/workflows/revision-semanal.yml` se dispara
-el **viernes 12:00 COT** (pasada temprana, pre-cierre) y el **lunes 07:00 COT** (definitiva,
-post-cierre), más `workflow_dispatch` manual. El núcleo es `scripts/cron/evaluar-semana.py` con el
-calendario de `scripts/cron/calendario.json` y el LLM del secret `OPENCODE_GO_API_KEY`
-(endpoint `https://opencode.ai/zen/v1`). Escribe matrices, planillas, feedback, resumen y README,
-y hace commit+push a master. Guardas: `estado-sX.json` e informes completos impiden re-procesar
-semanas cerradas.
+el **lunes 06:00 COT** (pasada definitiva **completa** con `deepseek-v4-pro`: re-evalúa los 23
+equipos sobre el último commit ≤ cierre) y el **miércoles y viernes 06:00 COT** (pasadas tempranas
+en delta con `deepseek-v4-flash`: solo equipos con commits nuevos, notas preliminares), más
+`workflow_dispatch` manual. El núcleo es `scripts/cron/evaluar-semana.py` con el calendario de
+`scripts/cron/calendario.json` y el LLM del secret `OPENCODE_GO_API_KEY` (suscripción OpenCode Go,
+endpoint `https://opencode.ai/zen/go/v1`). Escribe matrices, planillas, feedback, resumen y README,
+y hace commit+push a master. Cada informe lleva una sección **overall** que revisa el proyecto
+entero en HEAD, para notar entregas subidas tarde o correcciones posteriores al cierre. Guardas:
+`estado-sX.json` e informes definitivos impiden re-procesar semanas cerradas.
 
 **Rol del agente humano**: supervisar el output de Actions, corregir casos especiales (repo
 invisible, excepción docente, re-barridos inesperados) y mantener calendario y fichas. El
@@ -25,12 +28,13 @@ procedimiento manual completo, por si hay que repetir algo a mano, sigue abajo.
 
 ## Ciclo semanal
 
-Cada entrega cierra el **domingo a medianoche (Colombia, UTC-5)**. El trabajo es:
+Cada entrega cierra el **domingo a medianoche (Colombia, UTC-5)**. El trabajo automático es:
 
-1. **Pasada temprana (opcional)**: el mismo domingo antes de la medianoche, para dar feedback
-   rápido. Anotar que los hashes pueden cambiar.
-2. **Pasada definitiva**: después del cierre (lunes), sobre el último commit ≤ cierre. Es la que
-   queda publicada y la que cuenta.
+1. **Pasadas tempranas (miércoles y viernes 06:00 COT)**: revisión delta con `deepseek-v4-flash`
+   de los equipos con commits nuevos desde la pasada anterior; las notas quedan marcadas como
+   preliminares y pueden cambiar hasta el cierre.
+2. **Pasada definitiva (lunes 06:00 COT)**: evaluación completa de los 23 equipos con
+   `deepseek-v4-pro` sobre el último commit ≤ cierre. Es la que queda publicada y la que cuenta.
 
 ## Paso a paso
 
@@ -75,9 +79,10 @@ ficha y cierres):
 >   evidencia; No verificado con motivo y qué haría falta.
 > - Consolidar identidades (2 correos = 1 persona); NO atribuir cuentas por parecido de nombre.
 > - Escribe `revisiones/<periodo>/<repo>/semana-0X-evidencia-sX.md` (encabezado, matriz de la
->   ficha, matriz transversal CONTRATO §11, recuento n/m con la nota sugerida marcada como
->   propuesta al docente, pendientes, hallazgos), actualiza `planilla.md` (fila de la semana,
->   Sugerido = nota propuesta) y añade la sección de la semana a `feedback.md` (sin nombres,
+>   ficha, matriz transversal CONTRATO §11, sección **overall** del proyecto en HEAD, recuento
+>   n/m con la nota sugerida marcada como propuesta al docente, pendientes, hallazgos), actualiza
+>   `planilla.md` (fila de la semana, Sugerido = nota propuesta, tabla de contrato y arrastres con
+>   lo que dice el overall) y añade la sección de la semana a `feedback.md` (sin nombres,
 >   sin correos).
 > - Al terminar, responde UNA línea por equipo: `<equipo> | <repo> | S<X> <hash8> <n>/<m> nota <x.x> | <hallazgos>`
 >   con nota = 1 + 4×(n/m) (1 decimal), para el `resumen-sX.md` consolidado.
@@ -119,7 +124,8 @@ cada equipo y actualizar el árbol de estructura si cambió.
 
 - `feedback.md` — ÚNICO archivo de retroalimentación, una sección por semana (se añade, no se
   reemplaza). Sin nombres, notas, correos ni hashes.
-- `semana-0X-evidencia-sX.md` — matriz de la ficha + transversal + recuento n/m.
+- `semana-0X-evidencia-sX.md` — matriz de la ficha + transversal + recuento n/m + sección
+  **overall** (estado global del proyecto en HEAD).
 - `planilla.md` — acumulado del semestre: estado por entrega, lo que se arrastra, contrato,
   contribución.
 

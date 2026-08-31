@@ -17,7 +17,9 @@ vistazo qué se arrastra de una semana a otra.
 ## Estado por entrega
 
 Una fila por entrega con repositorio. «Criterios» es el recuento de la matriz de la ficha;
-«Sugerido» solo se rellena en las cuatro entregas con escala publicada.
+«Sugerido» se rellena en las entregas con escala publicada (nivel sugerido de la ficha) y, por
+decisión del profesor, en las evidencias semanales (nota sugerida `1 + 4 × (n/m)`, preliminar en
+las pasadas tempranas y propuesta al docente en la definitiva).
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|

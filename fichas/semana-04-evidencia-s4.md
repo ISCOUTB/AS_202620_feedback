@@ -109,9 +109,10 @@ de negocio más allá del corte vertical.
 
 Recuento: **n de m criterios cumplidos**, con m el número de filas de esta matriz.
 
-Las evidencias semanales **no tienen rúbrica publicada**: se califican con calificación directa
-sobre la escala UTB y la nota la fija el docente. El kit no propone nota aquí, porque sería
-calificar con una regla que el estudiante no vio.
+Las evidencias semanales no tienen rúbrica publicada: se califican con calificación directa
+sobre la escala UTB y la nota la fija el docente. La nota sugerida, `1 + 4 × (n/m)` sobre esta
+matriz, se publica como propuesta al docente (decisión del profesor): la nota final la fija el
+profesor en Moodle.
 
 Deja anotado para el primer corte, que sí tiene rúbrica: si los diagramas están como código, si
 cada ADR enlaza el commit que lo implementa y si ya hay alguna medición de línea base.

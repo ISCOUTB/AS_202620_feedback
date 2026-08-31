@@ -69,7 +69,9 @@ no exigir que exista caché si el equipo argumenta que no la necesita, siempre q
 Recuento: **n de m criterios cumplidos**, con m el número de filas de esta matriz.
 
 Las evidencias semanales **no tienen rúbrica publicada**: se califican con calificación directa
-sobre la escala UTB y la nota la fija el docente.
+sobre la escala UTB y la nota la fija el docente. La nota sugerida, `1 + 4 × (n/m)` sobre esta
+matriz, se publica como propuesta al docente (decisión del profesor): la nota final la fija el
+profesor en Moodle.
 
 Si la política de invalidación no existe, anótalo con la operación concreta que se rompe: es la
 observación que más sirve al equipo antes del proyecto final, y la que la revisión entre pares de

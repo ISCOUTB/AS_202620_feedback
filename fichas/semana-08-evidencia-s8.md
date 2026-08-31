@@ -97,7 +97,9 @@ del segundo corte; no dar por válida una captura del panel del proveedor como s
 Recuento: **n de m criterios cumplidos**, con m el número de filas de esta matriz.
 
 Las evidencias semanales **no tienen rúbrica publicada**: se califican con calificación directa
-sobre la escala UTB y la nota la fija el docente.
+sobre la escala UTB y la nota la fija el docente. La nota sugerida, `1 + 4 × (n/m)` sobre esta
+matriz, se publica como propuesta al docente (decisión del profesor): la nota final la fija el
+profesor en Moodle.
 
 Deja constancia de la hora exacta a la que comprobaste la URL. El criterio de MVP desplegado del
 segundo corte se juzga sobre un entorno que puede estar caído en el momento de la revisión y en

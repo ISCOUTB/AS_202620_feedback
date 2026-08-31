@@ -84,7 +84,9 @@ juzgar qué estilo eligieron, sino la coherencia entre el ADR, la matriz y la es
 Recuento: **n de m criterios cumplidos**, con m el número de filas de esta matriz.
 
 Las evidencias semanales **no tienen rúbrica publicada**: se califican con calificación directa
-sobre la escala UTB y la nota la fija el docente.
+sobre la escala UTB y la nota la fija el docente. La nota sugerida, `1 + 4 × (n/m)` sobre esta
+matriz, se publica como propuesta al docente (decisión del profesor): la nota final la fija el
+profesor en Moodle.
 
 Si el esqueleto no arranca, dilo en Observaciones con el error exacto: la semana 4 construye el
 corte vertical encima, y arrastrar el montaje roto es lo que hace que esa evidencia llegue tarde.

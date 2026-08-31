@@ -85,9 +85,10 @@ que solo un integrante haya empujado commits, siempre que el resto tenga acceso.
 
 Recuento: **n de m criterios cumplidos**, con m el número de filas de esta matriz.
 
-Las evidencias semanales **no tienen rúbrica publicada**: se califican con calificación directa
-sobre la escala UTB y la nota la fija el docente. El kit no propone nota aquí, porque sería
-calificar con una regla que el estudiante no vio.
+Las evidencias semanales no tienen rúbrica publicada: se califican con calificación directa
+sobre la escala UTB y la nota la fija el docente. La nota sugerida, `1 + 4 × (n/m)` sobre esta
+matriz, se publica como propuesta al docente (decisión del profesor): la nota final la fija el
+profesor en Moodle.
 
 Anota para las semanas siguientes cualquier integrante sin acceso a la organización: es el
 problema que más tarde se detecta y más caro sale, porque la contribución individual se califica

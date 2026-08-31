@@ -83,7 +83,9 @@ despliegue de la API, que es de la semana 8; no puntuar la cantidad de endpoints
 Recuento: **n de m criterios cumplidos**, con m el número de filas de esta matriz.
 
 Las evidencias semanales **no tienen rúbrica publicada**: se califican con calificación directa
-sobre la escala UTB y la nota la fija el docente.
+sobre la escala UTB y la nota la fija el docente. La nota sugerida, `1 + 4 × (n/m)` sobre esta
+matriz, se publica como propuesta al docente (decisión del profesor): la nota final la fija el
+profesor en Moodle.
 
 Para el segundo corte, criterio de dominio, interfaces y datos: la diferencia entre competente y
 sobresaliente está justamente en que exista prueba de contrato **que falle** cuando el proveedor

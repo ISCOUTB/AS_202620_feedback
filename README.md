@@ -26,7 +26,7 @@ plantillas/planilla-equipo.md  la planilla en blanco, para saber qué se consoli
 scripts/barrido-actividad.py   detección de actividad por protocolo git (sin API)
 scripts/cron/evaluar-semana.py pipeline de evaluación semanal (GitHub Actions)
 scripts/cron/calendario.json   cierres del semestre, una vez por periodo
-.github/workflows/             disparos automáticos: viernes 12:00 y lunes 07:00 COT
+.github/workflows/             disparos automáticos: lunes 06:00 COT (definitiva) y miércoles/viernes 06:00 COT (temprana)
 revisiones/2026-2/<repositorio>/  la evaluación de cada equipo, entrega por entrega
 ```
 
@@ -244,20 +244,21 @@ la pregunta sigue siendo si puede leerlo cualquiera.
 La revisión semanal corre sola, en este mismo repositorio, con el workflow
 `.github/workflows/revision-semanal.yml`:
 
-- **Viernes 12:00 COT**: pasada temprana sobre lo que hay antes del cierre del domingo (marcada
-  como provisional).
-- **Lunes 07:00 COT**: pasada definitiva sobre el último commit anterior al cierre, re-evaluando
-  solo lo que cambió o faltó (delta).
+- **Lunes 06:00 COT**: pasada definitiva completa: los 23 equipos con `deepseek-v4-pro`, sobre el
+  último commit anterior al cierre. Es la que queda publicada y la que cuenta.
+- **Miércoles y viernes 06:00 COT**: pasadas tempranas (delta) con `deepseek-v4-flash`, solo sobre
+  los equipos con commits nuevos; las notas quedan marcadas como preliminares.
 - También corre a mano desde **Actions → Run workflow** (`workflow_dispatch`), con opción de
-  `--semana`, `--solo` y `--dry-run`.
+  `--semana`, `--modo`, `--solo` y `--dry-run`.
 
 Qué hace `scripts/cron/evaluar-semana.py`: elige la entrega vigente según
-`scripts/cron/calendario.json`, clona cada repositorio de forma efímera (protocolo git, sin API,
-sin ejecutar código de estudiantes), arma la evidencia y la pasa al LLM (clave en el secret
-`OPENCODE_GO_API_KEY`, endpoint `https://opencode.ai/zen/v1`), escribe la matriz con la nota
-sugerida, actualiza `planilla.md`, `feedback.md`, el `resumen-sX.md` y la columna de matrices del
-README, y hace commit y push. Guardas anti-duplicados: `revisiones/2026-2/estado-sX.json` y la
-existencia de informes completos impiden re-procesar semanas ya cerradas.
+`scripts/cron/calendario.json`, clona cada repositorio de forma efímera (protocolo git; la API de
+GitHub se usa solo para los `actions/runs` de CI), arma la evidencia y la pasa al LLM (clave del
+secret `OPENCODE_GO_API_KEY`, suscripción OpenCode Go, endpoint `https://opencode.ai/zen/go/v1`),
+escribe la matriz con la nota sugerida, la sección **overall** del proyecto en HEAD, actualiza
+`planilla.md`, `feedback.md`, el `resumen-sX.md` y la columna de matrices del README, y hace commit
+y push. Guardas anti-duplicados: `revisiones/2026-2/estado-sX.json` junto con los informes
+definitivos impiden re-procesar semanas ya cerradas.
 
 El contenido de los repositorios se trata como **dato no confiable** (mitigación de prompt
 injection) y la salida del LLM se valida como JSON antes de escribir nada.
@@ -273,7 +274,8 @@ cuatro pasos:
 2. Abre la ficha de la entrega y pásasela al agente:
    «Revisa `AS_202620_X` contra `fichas/semana-08-evidencia-s8.md`».
 3. El agente clona en el estado que se califica, recorre las instrucciones, rellena la matriz de
-   la ficha más la **matriz transversal** de [CONTRATO.md](CONTRATO.md), y escribe el resultado en
+   la ficha más la **matriz transversal** de [CONTRATO.md](CONTRATO.md) y la sección **overall**
+   del proyecto en HEAD, y escribe el resultado en
    `revisiones/2026-2/<repositorio>/<tarea>.md`, que sí se publica.
 4. Antes de empujar: sin correos en los archivos publicados; la nota sugerida va marcada como
    propuesta al docente. Añade el equipo al índice de [Evaluaciones publicadas](#evaluaciones-publicadas--2026-2)
@@ -339,9 +341,11 @@ git -C "$DIR" checkout corte-1     # o el hash del último commit anterior al ci
    comandos se ejecutaron.
 2. La matriz de la ficha, rellena.
 3. La matriz transversal del contrato, rellena.
-4. En `corte1`, `corte2`, `final` y `cierre`, el **nivel sugerido** por criterio con su suma sobre
+4. La sección **overall**: el estado del proyecto entero revisado en HEAD, para notar entregas
+   subidas tarde o correcciones posteriores al cierre.
+5. En `corte1`, `corte2`, `final` y `cierre`, el **nivel sugerido** por criterio con su suma sobre
    5,0, marcado como propuesta al docente. Eso va al registro local, no al archivo publicado.
-5. Lo que quedó en No verificado, con qué haría falta para cerrarlo.
+6. Lo que quedó en No verificado, con qué haría falta para cerrarlo.
 
 ### Mantenimiento
 

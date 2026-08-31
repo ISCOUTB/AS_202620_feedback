@@ -2,12 +2,12 @@ name: Revision semanal automatica
 
 on:
   schedule:
-    # Media noche COT (05:00 UTC), todos los dias: re-sincroniza lo que cambio desde la pasada anterior.
-    - cron: "0 5 * * *"
-    # Viernes 12:00 COT (17:00 UTC): pasada temprana, antes del cierre del domingo.
-    - cron: "0 17 * * 5"
-    # Lunes 07:00 COT (12:00 UTC): pasada definitiva, sobre el ultimo commit <= cierre.
-    - cron: "0 12 * * 1"
+    # Lunes 06:00 COT (11:00 UTC): pasada definitiva completa con deepseek-v4-pro.
+    - cron: "0 11 * * 1"
+    # Miercoles 06:00 COT: pasada temprana (delta) con deepseek-v4-flash.
+    - cron: "0 11 * * 3"
+    # Viernes 06:00 COT: pasada temprana (delta) con deepseek-v4-flash.
+    - cron: "0 11 * * 5"
   workflow_dispatch:
     inputs:
       semana:
@@ -40,9 +40,9 @@ jobs:
     timeout-minutes: 300
     env:
       TZ: America/Bogota
-      LLM_BASE_URL: https://opencode.ai/zen/v1
-      LLM_MODEL: deepseek-v4-pro
-      LLM_MODEL_FEEDBACK: deepseek-v4-flash
+      LLM_BASE_URL: https://opencode.ai/zen/go/v1
+      LLM_MODEL_DEFINITIVE: deepseek-v4-pro
+      LLM_MODEL_EARLY: deepseek-v4-flash
       OPENCODE_GO_API_KEY: ${{ secrets.OPENCODE_GO_API_KEY }}
     steps:
       - uses: actions/checkout@v4
@@ -54,15 +54,23 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Elegir modo (schedule: lunes definitive, miercoles/viernes early)
+        if: github.event_name == 'schedule'
+        run: |
+          DOW=$(TZ=America/Bogota date +%u)
+          if [ "$DOW" = "1" ]; then MODO=definitive; else MODO=early; fi
+          echo "MODO=$MODO" >> "$GITHUB_ENV"
+
       - name: Evaluar semana
         env:
           SEMANA: ${{ github.event.inputs.semana }}
-          MODO: ${{ github.event.inputs.modo }}
           SOLO: ${{ github.event.inputs.solo }}
           DRY: ${{ github.event.inputs.dry_run }}
         run: |
+          MODO_EFECTIVO="${{ github.event.inputs.modo }}"
+          if [ "${{ github.event_name }}" = "schedule" ]; then MODO_EFECTIVO="$MODO"; fi
           python scripts/cron/evaluar-semana.py \
             --semana "${SEMANA:-}" \
-            --modo "${MODO:-auto}" \
+            --modo "${MODO_EFECTIVO:-auto}" \
             --solo "${SOLO:-}" \
             --dry-run "${DRY:-false}"

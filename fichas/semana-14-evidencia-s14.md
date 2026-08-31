@@ -71,7 +71,9 @@ medido y bien interpretado es evidencia válida.
 Recuento: **n de m criterios cumplidos**, con m el número de filas de esta matriz.
 
 Las evidencias semanales **no tienen rúbrica publicada**: se califican con calificación directa
-sobre la escala UTB y la nota la fija el docente.
+sobre la escala UTB y la nota la fija el docente. La nota sugerida, `1 + 4 × (n/m)` sobre esta
+matriz, se publica como propuesta al docente (decisión del profesor): la nota final la fija el
+profesor en Moodle.
 
 Esta es la última evidencia antes del proyecto final. Deja una lista corta de lo que el equipo
 tiene que cerrar antes de etiquetar `final`: arc42 completo con glosario, C4 de los tres niveles y

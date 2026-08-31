@@ -72,7 +72,9 @@ es válida y a menudo la correcta; no exigir mensajería, que es la semana 12.
 Recuento: **n de m criterios cumplidos**, con m el número de filas de esta matriz.
 
 Las evidencias semanales **no tienen rúbrica publicada**: se califican con calificación directa
-sobre la escala UTB y la nota la fija el docente.
+sobre la escala UTB y la nota la fija el docente. La nota sugerida, `1 + 4 × (n/m)` sobre esta
+matriz, se publica como propuesta al docente (decisión del profesor): la nota final la fija el
+profesor en Moodle.
 
 Deja anotado para el proyecto final, criterio de calidad y resiliencia: qué modos de fallo tienen
 prueba y cuáles solo están descritos. El nivel competente exige que los modos de fallo **se

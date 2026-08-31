@@ -71,7 +71,9 @@ mediciones ejecutadas, que llegan más adelante.
 Recuento: **n de m criterios cumplidos**, con m el número de filas de esta matriz.
 
 Las evidencias semanales **no tienen rúbrica publicada**: se califican con calificación directa
-sobre la escala UTB y la nota la fija el docente.
+sobre la escala UTB y la nota la fija el docente. La nota sugerida, `1 + 4 × (n/m)` sobre esta
+matriz, se publica como propuesta al docente (decisión del profesor): la nota final la fija el
+profesor en Moodle.
 
 Deja anotado, para el primer corte: cuántos escenarios tienen medida comprobable y si alguno
 declara ya **cómo** se medirá, con herramienta, carga y umbral. Es lo que separa el nivel

@@ -94,7 +94,9 @@ generativo exista.
 Recuento: **n de m criterios cumplidos**, con m el número de filas de esta matriz.
 
 Las evidencias semanales **no tienen rúbrica publicada**: se califican con calificación directa
-sobre la escala UTB y la nota la fija el docente.
+sobre la escala UTB y la nota la fija el docente. La nota sugerida, `1 + 4 × (n/m)` sobre esta
+matriz, se publica como propuesta al docente (decisión del profesor): la nota final la fija el
+profesor en Moodle.
 
 Esta evidencia es la que alimenta el criterio de trazabilidad del segundo corte y la política de
 uso de IA del curso: si aparece código generado que el equipo no puede explicar, no es un
