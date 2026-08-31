@@ -59,7 +59,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Elegir modo (schedule: lunes definitive, miercoles/viernes early)
+      - name: "Elegir modo (schedule: lunes definitive, miercoles/viernes early)"
         if: github.event_name == 'schedule'
         run: |
           DOW=$(TZ=America/Bogota date +%u)
