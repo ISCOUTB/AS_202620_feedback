@@ -25,7 +25,7 @@ Nota sugerida = 1 + 4 × (n/m) sobre la matriz de la ficha, **propuesta al docen
 | TAIA | `AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant` | `c087303` | 5/10 | 3.0 |
 | Tienda virtual UTB | `AS_202620_TIENDA-VIRTUAL-UTB` | `0d208a2` | 6/10 | 3.4 |
 | TRACTAR | `AS_202620_TRACTAR` | `2b16439` | 1/10 | 1.4 |
-| Verifacts | `AS_202620_Verifacts` | `-` | - | - |
+| Verifacts | `AS_202620_Verifacts` | `443e908` | 7/10 | 3.8 |
 | XALD | `AS_202620_XALD` | `0205e44` | 4/10 | 2.6 |
 | mapsutb | `AS_202620_mapsutb` | `f0d036a` | 5/10 | 3.0 |
 | uniTeam | `AS_202620_uniTeam` | `dc14298` | 6/10 | 3.4 |

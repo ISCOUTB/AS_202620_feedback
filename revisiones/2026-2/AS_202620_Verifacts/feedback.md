@@ -36,3 +36,14 @@ Qué corregir antes del corte 1 (semana 5):
 5. Contribución: los tres integrantes deben aparecer en el historial antes del corte 1.
 
 Ojo: parte del trabajo llegó después del cierre y no contó para esta entrega; la próxima vez asegúrense de empujar antes de la medianoche del domingo.
+
+## Semana 4 · S4
+
+Qué está bien: la documentación arc42 (1–6, 9, 10) está redactada con contenido propio, la sección 9 enlaza el ADR, el glosario tiene términos del dominio y los C4 de contexto y contenedores están como código Mermaid y son coherentes entre sí. El README documenta el arranque con un solo comando.
+
+Qué corregir antes del corte 1 (semana 5):
+1. El corte vertical al cierre solo cubría `GET /health` (sin lógica ni persistencia); el recorrido completo y su prueba llegaron después del cierre y no contaron para esta evidencia. Para el corte 1 ya está avanzado: asegúrense de empujar a tiempo.
+2. La tabla de `docs/aspectos.md` no usa las 8 columnas del curso (falta la cadena requisito-C4-ADR-código): rehacerla y hacer navegable la fila completa hasta Pruebas.
+3. Aportar evidencia de CI: la URL del run citada en `aspectos.md` da 404 y no hay runs visibles. Un enlace al run en verde (o ejecutar las pruebas en la sustentación) cierra la fila.
+4. Limpiar la basura versionada: `__pycache__/`, `*.pyc`, archivos duplicados `« (1).py»` y PDFs en la raíz (el `.gitignore` ya se corrigió, pero lo versionado sigue en el historial).
+5. Sigue pendiente desde S1: que el tercer integrante aparezca en el historial de commits.
