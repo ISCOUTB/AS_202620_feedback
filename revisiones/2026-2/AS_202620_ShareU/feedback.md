@@ -26,4 +26,4 @@ Qué corregir antes del corte 1 (semana 5):
 
 ## Semana 4 · S4
 
-El repositorio presenta la estructura mínima y archivos esperados, pero no fue posible verificar el contenido de la documentación ni la ejecución de pruebas. Se recomienda incluir en la entrega enlaces directos a los archivos relevantes y a los runs de CI para facilitar la revisión. Además, se observa que solo un integrante aparece en el historial; es necesario que todos los miembros contribuyan con commits para cumplir el criterio de autoría.
+El repositorio está en la organización, con el nombre correcto y el commit de la semana es anterior al cierre. Sin embargo, la revisión no pudo verificar el contenido de la documentación ni la ejecución de pruebas porque no hay runs de CI ni se aportaron lecturas de los archivos. Suban evidencia concreta: encabezados de arc42, diagramas C4, rutas del corte vertical, comando de arranque y URL del run en verde. Corrijan la ruta de docs/aspectos.md y aseguren que todos los integrantes aparezcan en el historial.

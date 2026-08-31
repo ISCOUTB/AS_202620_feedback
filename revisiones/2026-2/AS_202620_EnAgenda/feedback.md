@@ -26,4 +26,4 @@ Qué corregir antes del corte 1 (semana 5):
 
 ## Semana 4 · S4
 
-El repositorio tiene buena documentación inicial y C4 coherente, pero falta el código fuente que respalde el corte vertical. Completen las secciones 1,4,5,6 y 9 de arc42, el glosario y la fila de aspectos con enlaces reales. Incluyan en el ADR la trazabilidad con commit/PR y pruebas. Agreguen al README un comando único de arranque y configuren un pipeline de CI. Etiqueten el commit de corte. Con estos ajustes la evidencia será defendible.
+La entrega de la semana 4 está sólida en documentación arc42, glosario, C4 niveles 1 y 2, corte vertical y pruebas en CI. Para el primer corte, revisen la coherencia entre el C4 nivel 2 y el código real: el diagrama muestra API/Backend y Base de Datos, pero la implementación es un monolito Flask con repositorio en memoria; ajusten el diagrama o el código. Completen la celda C4 de docs/aspectos.md con rutas navegables a los diagramas. Agreguen SonarCloud al pipeline como exige el contrato. Eviten versionar archivos .pyc. Finalmente, verifiquen que las secciones 1, 4, 5 y 6 de arc42 estén completamente redactadas y sin texto de plantilla.

@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Recobra` |
 | Integrantes y su usuario de GitHub | Camilo Andres Conde Corrales · Fernando Isacc Conde Herrera · Miguel Alejandro Iii Jacome Yanez · Veronica Ubarne Reyes — cuentas observadas: `Cconde31`, `MiguelJacome`, `Steamlinker` (nueva, sin atribuir; correspondencias por confirmar con el docente) |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-08-28 |
+| Ultima revision | 2026-08-31 |
 
 ## Estado por entrega
 
@@ -17,7 +17,7 @@
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `da5c15d` · 2026-08-07T17:54:04-05:00 | 3/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `d2dac73` · 2026-08-16T23:44:54-05:00 | 4/9 | no se publica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `cb5c579` · 2026-08-23T23:44:12-05:00 | 4/9 | no se publica | sí |
-| 4 | S4 | `2268b33` (2026-08-30T22:34:56-05:00) | 3/10 | 2.2 | si |
+| 4 | S4 | `2268b33` (2026-08-30T22:34:56-05:00) | 2/10 | 1.8 | si |
 | 5 | Primer corte · reto de línea base | `corte-1` | | | |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
@@ -45,7 +45,12 @@
 | Matriz comparativa genérica, no contra el árbol de utilidad | S3 | parcial: nueva matriz ponderada en §4.2; sigue sin filas por escenario S1–S7 y `matriz_arquitectura.md` vieja contradice el ADR | Filas por escenario: qué mejora/empeora cada estilo; borrar o alinear la matriz vieja |
 | Sin esqueleto ejecutable (código, prueba, comando de arranque) | S3 | parcial: ya hay código, prueba y comando; faltan los paquetes `domain/` y `application/` declarados y evidencia del verde | Crear archivos en `domain/ports`, `application/use-cases` y el adaptador de persistencia; subir run del verde |
 | `node_modules/` completo versionado | S3 (cierre) | sí | Añadir `.gitignore` y sacarlo del historial; higiene de repo |
-
+| Implementar el corte vertical real (src/domain, src/application, src/infrastructure, tests/). | S4 | si | |
+| Corregir secciones 5 y 6 de arc42 y añadir la sección 9. | S4 | si | |
+| Completar tabla de aspectos con las 8 columnas. | S4 | si | |
+| Alinear C4 con el código real o reducir alcance. | S4 | si | |
+| Configurar CI y ejecutar pruebas en verde. | S4 | si | |
+| Eliminar node_modules del repositorio y rotar el token expuesto. | S4 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -57,7 +62,7 @@
 | `docs/ia.md` al día | Cumple | Entrada del 23-ago con rechazado/motivo; una sola fila y dos integrantes |
 | Sin credenciales en el repositorio ni en el historial | Cumple | git grep sin coincidencias; `.env.example` solo con puerto |
 | Contribución de todos los integrantes | No cumple | 3 identidades (Cconde31, MiguelJacome, Steamlinker) para 4 integrantes |
-| Pipeline en verde | No verificado | Sin `.github/workflows/`; prueba sin evidencia de ejecución |
+| Pipeline en verde | No cumple | Sin `.github/workflows/`; prueba sin evidencia de ejecución |
 
 ## Contribución por integrante
 

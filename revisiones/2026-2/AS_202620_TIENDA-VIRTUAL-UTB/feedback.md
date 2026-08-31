@@ -25,4 +25,10 @@ Qué corregir antes del corte 1 (semana 5):
 
 ## Semana 4 · S4
 
-Buen avance: C4 coherente, corte vertical documentado y arranque claro. Para cumplir completamente, completen la trazabilidad en el ADR, ajusten la tabla de aspectos a las 8 columnas requeridas, registren rechazos en ia.md y evidencien la ejecución del pipeline y SonarCloud. Aseguren que la prueba automatizada cubra el recorrido completo o aclaren su alcance.
+La S4 deja un corte vertical de catálogo funcional, con C4 niveles 1 y 2 coherentes con el código y pruebas en verde.
+Para el primer corte: verificar que las secciones 5, 6, 9, 10 y 12 del arc42 estén completas y sin texto de plantilla.
+Añadir al ADR 0001 la trazabilidad con el commit que lo implementa y las pruebas que lo cubren.
+Ajustar docs/aspectos.md a las 8 columnas del curso.
+Incorporar en docs/ia.md lo rechazado con su motivo técnico.
+Configurar SonarCloud en el pipeline.
+El arranque con un solo comando y la fila de disponibilidad hasta Pruebas ya están resueltos.

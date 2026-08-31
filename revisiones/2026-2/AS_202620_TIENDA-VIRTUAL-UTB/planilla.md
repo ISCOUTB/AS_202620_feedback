@@ -10,7 +10,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB` |
 | Integrantes y su usuario de GitHub | Shalom Jhoanna Arrieta Marrugo (shalom-A26) · Levis Adrian Ortiz Cano (RAZOR7150) · Alejandro Patron Montero (pxtroniwnl) · Jasen Mihovil Yukopila Escobar (Jmyukopila) — correspondencias por los correos de los commits, por confirmar con el docente |
 | URL del sistema desplegado | sin URL (sin despliegue todavía) |
-| Ultima revision | 2026-08-28 |
+| Ultima revision | 2026-08-31 |
 
 ## Estado por entrega
 
@@ -19,7 +19,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `d414ecf` · 2026-08-09T14:08:31-05:00 | 7/9 | 4.1 (propuesta) | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `456365b` · 2026-08-15T14:07:47-05:00 | 6/9 | 3.7 (propuesta) | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `f4602a3` · 2026-08-21T13:22:16-05:00 | 6/9 | no se publica | sí |
-| 4 | S4 | `0d208a2` (2026-08-29T21:37:39-05:00) | 4/10 | 2.6 | si |
+| 4 | S4 | `0d208a2` (2026-08-29T21:37:39-05:00) | 6/10 | 3.4 | si |
 | 5 | Primer corte · reto de línea base | `corte-1` | | | |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
@@ -43,7 +43,11 @@ Hoja consolidada del equipo a lo largo del semestre.
 | `docs/ia.md` sin registro de «qué se rechazó y por qué» | S1 | sí | Añadir las entradas de rechazo con motivo técnico (S3: el commit tocó el archivo, pero sigue sin rechazados) |
 | Shalom Jhoanna Arrieta Marrugo sin commits en el historial | S1 (y S2) | No (cerrado en S3: commit `f4602a3` 21-ago) | Primer commit el 2026-08-21 (ya dentro del cierre S3) |
 | Matriz comparativa de estilos genérica, no contra el árbol de utilidad | S3 (21-ago) | sí | Rehacer la tabla contra los escenarios del árbol: qué escenario mejora/empeora con cada estilo |
-
+| Verificar secciones 5, 6, 9, 10 y 12 del arc42 | S4 | si | |
+| Trazabilidad del ADR 0001 | S4 | si | |
+| Columnas de docs/aspectos.md | S4 | si | |
+| Columna de rechazos en docs/ia.md | S4 | si | |
+| SonarCloud en pipeline | S4 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

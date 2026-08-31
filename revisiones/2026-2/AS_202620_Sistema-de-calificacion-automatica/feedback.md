@@ -25,4 +25,4 @@ Ojo: parte del trabajo llegó después del cierre y no contó para esta entrega;
 
 ## Semana 4 · S4
 
-El repositorio mantiene buena estructura y ADR, pero la evidencia S4 está incompleta. Falta redactar arc42 secciones 5 y 6, crear C4 nivel 2, implementar el corte vertical con su prueba automatizada, documentar el arranque en README y completar la fila A-01 de aspectos hasta Pruebas. Se recomienda priorizar el corte vertical y el C4 nivel 2 para la próxima entrega.
+Buen avance: el corte vertical A-01 está construido y documentado, los ADRs son sólidos y el README permite arrancar con un solo comando. Para el primer corte, completen el C4 nivel 2 con su diagrama y actualicen la tabla de niveles; la fila A-01 de aspectos.md debe enlazar un contenedor C4 real, no 'C2 pendiente'. Suban evidencia del run de CI en verde (URL) para confirmar las 34+6 pruebas. Revisen que la sección 9 del arc42 cite los ADRs y que el glosario tenga términos del dominio. El resto de la documentación se ve coherente.

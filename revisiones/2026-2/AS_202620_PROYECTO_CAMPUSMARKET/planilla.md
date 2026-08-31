@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET` |
 | Integrantes y su usuario de GitHub | Nilver Garcia Pimentel · Camilo Jose Martinez Berrio · Joshua Jose Tenorio Alvarez — historial con tres identidades: `camilixo92`, `nilver-garcia` y `Nnigarp` (misma cuenta de GitHub, consolidar) y `Carulla-sd` (correspondencias por confirmar con el docente) |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-08-28 |
+| Ultima revision | 2026-08-31 |
 
 ## Estado por entrega
 
@@ -17,7 +17,7 @@
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `81ef5f1` · 2026-08-08T20:17:21-05:00 | 4/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `4f72799` · 2026-08-16T22:01:41-05:00 | 7/9 | no se publica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `4dd857a` · 2026-08-23T23:54:16-05:00 | 9/9 | no se publica | sí |
-| 4 | S4 | `f3f4367` (2026-08-30T22:55:30-05:00) | 8/10 | 4.2 | si |
+| 4 | S4 | `f3f4367` (2026-08-30T22:55:30-05:00) | 9/10 | 4.6 | si |
 | 5 | Primer corte · reto de línea base | `corte-1` | | | |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
@@ -45,7 +45,10 @@
 | README sin comando único de arranque | S3 | no (resuelto) | `python -m uvicorn backend.app.main:app --reload` documentado |
 | Sin prueba automatizada ni pipeline | S3 | no (resuelto) | `backend/tests/test_health.py` + workflow con 4 runs en verde |
 | Esqueleto Flutter por defecto, sin módulos del ADR | S3 | parcial | Backend con los 4 módulos; el frontend sigue siendo la plantilla Flutter por defecto |
-
+| Integrar SonarCloud al pipeline | S4 | si | |
+| Verificar arranque con un solo comando mediante ejecución | S4 | si | |
+| Enlazar ADR-0001 con commit que lo implementa | S4 | si | |
+| Definir medición de línea base | S4 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

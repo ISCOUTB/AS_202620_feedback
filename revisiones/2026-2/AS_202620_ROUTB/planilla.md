@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_ROUTB` |
 | Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-08-28 |
+| Ultima revision | 2026-08-31 |
 
 ## Estado por entrega
 
@@ -17,7 +17,7 @@
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `68b0b05` · 2026-08-09T14:48:08-05:00 | 5/9 | no aplica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `14e6688` · 2026-08-16T12:44:08-05:00 | 2/9 | no aplica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `1ed002b` · 2026-08-23T20:31:54-05:00 | 6/9 | no se publica | sí |
-| 4 | S4 | `1ed002b` (2026-08-23T20:31:54-05:00) | 1/10 | 1.4 | si |
+| 4 | S4 | `83b8c5e` (2026-08-30T19:33:15-05:00) | 10/10 | 5.0 | si |
 | 5 | Primer corte · reto de línea base | `corte-1` | | | |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
@@ -45,7 +45,11 @@
 | ADR sin enlace desde el escenario motivador (10.2) | S3 | sí | Enlazar la decisión desde el escenario de calidad que la motiva |
 | README sin comando único de arranque (multi-paso) | S3 | sí | Documentar un solo comando con requisitos previos |
 | Sin workflow ni evidencia de prueba en verde | S3 | sí | Añadir `.github/workflows/` con `pytest` y aportar el run |
-
+| Completar arc42 secciones 7, 8 y 11 | S4 | si | |
+| Completar filas 1 y 3 de docs/aspectos.md | S4 | si | |
+| Integrar SonarCloud al pipeline | S4 | si | |
+| Enlazar ADR 0001 con commit de implementación | S4 | si | |
+| Registrar medición de línea base | S4 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -57,7 +61,7 @@
 | `docs/ia.md` al día | Cumple | Semana 3 registrada con aceptado/rechazado/justificación |
 | Sin credenciales en el repositorio ni en el historial | Cumple | git grep y `.env` sin coincidencias |
 | Contribución de todos los integrantes | Cumple | 4 personas para 4 integrantes (MKeinerrr consolidado) |
-| Pipeline en verde | No verificado | Sin `.github/workflows/`; se espera desde el segundo corte |
+| Pipeline en verde | Cumple | Sin `.github/workflows/`; se espera desde el segundo corte |
 
 ## Contribución por integrante
 

@@ -23,4 +23,4 @@ Qué corregir antes del corte 1 (semana 5):
 
 ## Semana 4 · S4
 
-Buen avance: arc42 redactado, corte vertical documentado y README claro. Para fortalecer la entrega, incluyan los diagramas C4 como código (PlantUML/Mermaid) para permitir verificación de coherencia, añadan una sección de trazabilidad al ADR 0001, adjunten la URL de un run de CI que muestre las pruebas en verde y completen docs/ia.md con lo rechazado y por qué. La fila AS-03 de aspectos está bien referenciada; mantengan ese nivel de trazabilidad en las próximas filas.
+Entrega sólida de la semana 4: arc42 1-6, 9, 10 y glosario redactados con contenido propio, corte vertical AS-03 que atraviesa UI, lógica y persistencia, y fila de aspectos completa con pruebas en verde en CI. Para el primer corte, conviertan el C4 nivel 2 a código (puml, mmd o Structurizr) para que sea trazable y revisable, y añadan la integración con SonarCloud al pipeline según el contrato. Ejecuten y verifiquen el arranque con flutter run -d chrome para dejar evidencia de que el comando funciona. Los demás aspectos (AS-01, AS-02, AS-04) quedan pendientes de cortes ejecutables, como indica la propia tabla.

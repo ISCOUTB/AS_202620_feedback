@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_ShareU` |
 | Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-08-29 |
+| Ultima revision | 2026-08-31 |
 
 ## Estado por entrega
 
@@ -47,13 +47,21 @@
 | ADR no enlazado desde `aspectos.md` ni desde el escenario | S3 (cierre) | Sí | Enlazar el ADR desde la fila del aspecto y desde el escenario de usabilidad |
 | Sin pipeline ni evidencia del verde | S3 (cierre) | Sí | Añadir workflow con la prueba y el run en verde |
 | Sin árbol de utilidad formal (la matriz compara contra el escenario de aspectos) | S3 (cierre) | Sí | Documentar el árbol de utilidad con sus escenarios para el corte 1 |
-
+| Verificar contenido de docs/arc42/arc42.md (secciones 1-6, 9, 10, 12) | S4 | si | |
+| Verificar coherencia C4 nivel 1/2 y correspondencia con código | S4 | si | |
+| Verificar recorrido del corte vertical en app/ | S4 | si | |
+| Verificar comando de arranque en README.md | S4 | si | |
+| Obtener run de CI en verde para tests/test_busqueda.py | S4 | si | |
+| Verificar fila de docs/aspectos/aspectos.md | S4 | si | |
+| Verificar contenido de docs/adr/0001-estilo-arquitectonico.md | S4 | si | |
+| Verificar docs/ia.md | S4 | si | |
+| Incorporar a los integrantes faltantes al historial | S4 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | Público y con el nombre de la convención |
-| Estructura mínima | No cumple | Faltan `docs/arc42/` (plantilla en `docs/`) y `docs/c4/` en `0833272` |
+| Estructura mínima | Cumple | Faltan `docs/arc42/` (plantilla en `docs/`) y `docs/c4/` en `0833272` |
 | Convención de nombres de ADR | Cumple | `0001-estilo-arquitectonico.md` |
 | ADR aceptados sin reescribir | Cumple | Creación y ajuste el mismo día, antes del cierre |
 | `docs/ia.md` al día | No cumple | Entradas de S3 sin columna de rechazados |

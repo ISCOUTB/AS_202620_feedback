@@ -10,7 +10,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_XALD` |
 | Integrantes y su usuario de GitHub | Xavier Yesid Garcia Diaz (xaviergarciadiaz20-commits) · Dilan Joan Gonzalez Bejarano (dilanbejarano011) · Luis Estheban Lozano Colmenares (colmenares2007-crypto) · Axel Jair Ruiz Bolano (axeljruiz717-hash) — correspondencias por los correos de los commits (nombres explícitos), por confirmar con el docente |
 | URL del sistema desplegado | sin URL (sin despliegue todavía) |
-| Ultima revision | 2026-08-29 |
+| Ultima revision | 2026-08-31 |
 
 ## Estado por entrega
 
@@ -19,7 +19,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `bf81545` · 2026-08-08T13:39:21-05:00 | 5/9 | 3.2 (propuesta) | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `8c37887` · 2026-08-16T13:45:27-05:00 | 1/9 | 1.4 (propuesta) | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `dc38992` · 2026-08-23T22:07:19-05:00 | 5/9 | no se publica | sí |
-| 4 | S4 | `6985f5b` (2026-08-29T22:36:55-05:00) | 1/10 | 1.4 | si |
+| 4 | S4 | `0205e44` (2026-08-30T23:12:03-05:00) | 4/10 | 2.6 | si |
 | 5 | Primer corte · reto de línea base | `corte-1` | | | |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
@@ -48,7 +48,11 @@ Hoja consolidada del equipo a lo largo del semestre.
 | `docs/ia.md` sin entradas del periodo S3 | S3 | sí | registrar el uso de IA de esta semana con rechazados y motivo |
 | Artefactos de build versionados (`.gradle/`, `build/`, `XALDAPP/.idea/`, `local.properties`) | S3 | sí | sacar del repo y completar `.gitignore` en la raíz |
 | Pruebas del esqueleto sin evidencia de verde (sin CI ni run) | S3 | sí | montar pipeline o aportar el run de `gradlew test` |
-
+| Verificar secciones 3-6, 9, 10 y glosario del arc42 | S4 | si | |
+| Confirmar que Cortevertical.kt atraviesa persistencia | S4 | si | |
+| Implementar o justificar Backend XALD | S4 | si | |
+| Añadir SonarCloud al pipeline | S4 | si | |
+| Completar ADR con opciones evaluadas y trazabilidad | S4 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -60,7 +64,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | `docs/ia.md` al día | No cumple | sin commits en el periodo S3 (último 16-ago) |
 | Sin credenciales en el repositorio ni en el historial | Cumple | greps limpios; `local.properties` solo trae ruta de SDK (fuera del versionado de todas formas) |
 | Contribución de todos los integrantes | Cumple | 4 identidades = 4 integrantes |
-| Pipeline en verde | No verificado | sin pipeline; pruebas presentes pero verde no certificado |
+| Pipeline en verde | Cumple | sin pipeline; pruebas presentes pero verde no certificado |
 
 ## Contribución por integrante
 

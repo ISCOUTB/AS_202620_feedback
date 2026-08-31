@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_mapsutb` |
 | Integrantes y su usuario de GitHub | Carlos Alberto Galvis Zuluaga · Carlos David Manrique Fals · Nerlis Nikol Otero Perez · Isabel Sofia Paez Matallana — cuentas observadas en el historial: `charlygz21`, `nerlis-otero`, `CarlosManrique-1397` (correspondencias por confirmar con el docente) |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-08-28 |
+| Ultima revision | 2026-08-31 |
 
 ## Estado por entrega
 
@@ -17,7 +17,7 @@
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `7e56ad3` · 2026-08-09T23:27:46-05:00 | 5/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `1cf1576` · 2026-08-16T21:26:05-05:00 | 4/9 | no se publica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `ed55eda` · 2026-08-23T21:44:05-05:00 | 5/9 | no se publica | sí |
-| 4 | S4 | `f0d036a` (2026-08-30T22:53:06-05:00) | 3/10 | 2.2 | si |
+| 4 | S4 | `f0d036a` (2026-08-30T22:53:06-05:00) | 5/10 | 3.0 | si |
 | 5 | Primer corte · reto de línea base | `corte-1` | | | |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
@@ -46,7 +46,13 @@
 | Estructura de paquetes del ADR no materializada (`lib/` solo tiene `main.dart`; faltan carpetas y `.gitkeep`) | S3 | sí | crear las carpetas del ADR antes de la S4 |
 | `docs/ia.md` sin entradas del trabajo S3 | S3 | sí | registrar el uso de IA de la semana con rechazados y motivo |
 | Prueba de humo sin CI ni evidencia de verde | S3 | sí | pipeline o run aportado |
-
+| Actualizar ficha-problema.md, escenarios_calidad.md y aspectos.md al alcance sin RA | S4 | si | |
+| Limpiar plantilla arc42 en sección 5 | S4 | si | |
+| Implementar o declarar contenedores C2 sin código (panorámicas, plano) | S4 | si | |
+| Añadir CI con runs públicos que ejecuten las pruebas | S4 | si | |
+| Corregir mayúsculas en docs/Arc42 y docs/C4 | S4 | si | |
+| Crear etiqueta corte-1 | S4 | si | |
+| Registrar cambios de decisión en ADR nuevos, no editando aceptados | S4 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

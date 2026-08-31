@@ -24,4 +24,4 @@ Qué corregir antes del corte 1 (semana 5):
 
 ## Semana 4 · S4
 
-El repositorio cumple con la estructura mínima y la identidad. Se recomienda completar el diagrama C4 nivel 2 y asegurar que las secciones arc42 pendientes estén redactadas. Es necesario proporcionar evidencia de la ejecución del pipeline y del corte vertical para poder verificar esos criterios.
+La documentación arc42 y el C4 están bien avanzados y el corte vertical es trazable en el código. Para el primer corte: enlacen el ADR-0002 desde la sección 9 y añadan trazabilidad con commits y pruebas en los ADR. Ejecuten el pipeline y dejen visible el run en verde como evidencia de las pruebas. Completen la fila de aspectos con enlaces verificables. Eviten commits después del cierre; el arranque con start.bat debe quedar cerrado antes. El glosario y la coherencia C4-código son un buen punto de partida.

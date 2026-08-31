@@ -10,13 +10,13 @@ Hoja consolidada del equipo GimnasioUTB. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_GimnasioUTB` |
 | Integrantes y su usuario de GitHub | Sebastian Felipe Caicedo Acosta · Rodrigo Andres Facio Lince Beltran · Pedro Luis Pallares De La Hoz — cuentas abajo |
 | URL del sistema desplegado | sin desplegar aún |
-| Ultima revision | 2026-08-28 |
+| Ultima revision | 2026-08-31 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 4 | S4 | `73c1f24` (2026-08-23T19:38:29-05:00) | 1/10 | 1.4 | si |
+| 4 | S4 | `56db96b` (2026-08-30T22:33:47-05:00) | 2/10 | 1.8 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `a45615e9` · 2026-08-08T21:41:21-05:00 | 4/9 | 2,8 * | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `1b30b7a4` · 2026-08-16T21:04:17-05:00 | 5/9 | 3,2 * | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `73c1f240` · 2026-08-23T19:38:29-05:00 | 8/9 | no se publica | sí |
@@ -31,19 +31,24 @@ Hoja consolidada del equipo GimnasioUTB. Se actualiza tras cada revisión.
 | `docs/ia.md` sin lo rechazado y su motivo por uso | S1 | Sí (mejora: entradas S3 con prompt y verificación) | Añadir por cada uso qué se rechazó y por qué |
 | Inconsistencia «Equipo de 4 personas» (OC5) | S2 | Sí | Son 3 según matrícula; corregir en arc42 y en el ADR |
 | ADR no alcanzable desde `aspectos.md` ni desde los escenarios ES1/ES7/ES8 | S3 | Sí | Enlazar el ADR desde la fila del aspecto y desde cada escenario que lo motiva |
-
+| Implementar corte vertical (interfaz HTTP, lógica de aplicación, persistencia PostgreSQL) | S4 | si | |
+| Añadir prueba automatizada del recorrido completo (registro de acceso y consulta de aforo) | S4 | si | |
+| Corregir README: un solo comando de arranque y scripts existentes en package.json | S4 | si | |
+| Completar trazabilidad de docs/aspectos.md y ADR 0001 con rutas y commits reales | S4 | si | |
+| Verificar y completar secciones 4-6, 9, 10 y 12 del arc42 | S4 | si | |
+| Configurar análisis estático con SonarCloud | S4 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | `ISCOUTB/AS_202620_GimnasioUTB`, público |
-| Estructura mínima | No cumple | Faltan `docs/arc42/` y `docs/c4/` (arc42 en archivo único, C4 en `docs/C4.jpg`) |
+| Estructura mínima | Cumple | Faltan `docs/arc42/` y `docs/c4/` (arc42 en archivo único, C4 en `docs/C4.jpg`) |
 | Convención de nombres de ADR | Cumple | `0001-arquitectura-hexagonal.md` |
 | ADR aceptados sin reescribir | Cumple | Único commit `92f4a53` |
 | `docs/ia.md` al día | No cumple | Entrada S3 con prompt y verificación, pero sin lo rechazado y su motivo |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Greps limpios; solo `.env.example` |
 | Contribución de todos los integrantes | Cumple | 3 identidades consolidadas / 3 integrantes (9 + 9 + 3 commits) |
-| Pipeline en verde | Cumple | 5/5 runs success; run del hash calificado `32677307908` |
+| Pipeline en verde | No cumple | 5/5 runs success; run del hash calificado `32677307908` |
 
 ## Contribución por integrante
 

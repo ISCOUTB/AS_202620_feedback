@@ -22,4 +22,4 @@ Qué corregir antes del corte 1 (semana 5):
 
 ## Semana 4 · S4
 
-El corte vertical y la documentación base están bien encaminados. Falta completar arc42 (secciones 4-6,9,12), corregir ADR-0002 (extensión y reemplazo), alinear C4 nivel 2 con nivel 1 (Bandeja) y con código (Web/Db), y completar la fila de aspectos con pruebas reales. Incluyan URL de run de CI para verificar verde.
+La entrega S4 se evaluó en d7ba824, dentro del plazo, pero el equipo siguió subiendo cambios hasta las 06:23Z. En el commit calificado faltan secciones 4, 5, 6 y 12 de arc42, la sección 9 no está redactada y la fila de aspectos deja Pruebas pendiente. El C4 nivel 2 dibuja Web y Base de datos sin código. El corte vertical de productos y su prueba en verde son el punto fuerte. Se recomienda completar arc42 dentro del horario de la entrega, corregir el ADR-0002 duplicado y añadir evidencia de SonarCloud. Para el primer corte, mantengan los diagramas como código y enlacen cada ADR con su commit de implementación.

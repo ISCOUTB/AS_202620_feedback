@@ -23,4 +23,4 @@ Qué corregir antes del corte 1 (semana 5):
 
 ## Semana 4 · S4
 
-El repositorio tiene estructura base y arranque documentado, pero faltan piezas clave: completar arc42 sin texto de plantilla, agregar C4 nivel 2, implementar persistencia en el corte vertical, y una prueba que recorra interfaz-lógica-persistencia. La tabla de aspectos tiene huecos en varias filas. El ADR 0002 está vacío y mal nombrado. El pipeline solo ejecuta pytest; falta SonarCloud. Además, solo un integrante aparece en el historial: todos deben contribuir con commits. Revisar el registro de IA para incluir rechazos con motivo técnico.
+La entrega S4 quedó incompleta al cierre: arc42 solo cubre secciones 1-4, falta el C4 nivel 2, el corte vertical no llega a persistencia y no hay glosario. El commit posterior añade C4 nivel 2, ADR 0002, persistencia y pruebas, pero el pipeline de HEAD está en rojo. Revisen que la documentación se suba antes del cierre y que el CI quede en verde. Completen docs/ia.md con lo que se rechazó y por qué. Distribuyan el trabajo: el historial muestra un solo autor. La fila A-01 de aspectos es un buen inicio; extiendan la trazabilidad al resto.

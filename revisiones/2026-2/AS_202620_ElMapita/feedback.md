@@ -26,4 +26,4 @@ Qué corregir antes del corte 1 (semana 5):
 
 ## Semana 4 · S4
 
-El repositorio muestra avances en estructura y corte vertical, pero faltan evidencias clave. Completen las secciones 4-6, 9, 10 y 12 de arc42, agreguen el diagrama C4 nivel 2, llenen la fila de aspectos hasta Pruebas con enlaces válidos, registren el uso de IA y configuren un pipeline de CI. Asegúrense de que todos los integrantes contribuyan con commits identificables.
+Buen avance en documentación: C4 niveles 1 y 2 completos y coherentes, corte vertical con interfaz, lógica y persistencia, y README con arranque por script. El pipeline de CI está en rojo y las pruebas del recorrido completo siguen pendientes: las rutas citadas en docs/aspectos.md no existen. Se recomienda crear una prueba e2e del flujo de mapas y dejarla en verde, configurar SonarCloud y revisar la distribución de commits para que el historial refleje participación del equipo. También conviene verificar que las secciones 4-6, 9, 10 y 12 de arc42 estén redactadas con contenido propio.

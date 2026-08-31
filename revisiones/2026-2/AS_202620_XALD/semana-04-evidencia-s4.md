@@ -1,11 +1,11 @@
 # semana-04-evidencia-s4 · XALD
 
-> Pasada temprana (GitHub Actions, previa al cierre): los hashes son provisionales y pueden cambiar si el equipo empuja antes del cierre.
+> Revision automatica definitiva (GitHub Actions, posterior al cierre). Re-evaluada por cambio de hash calificado tras la pasada temprana.
 
 | Campo | Valor |
 |---|---|
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_XALD` |
-| Estado revisado | `6985f5b` (2026-08-29T22:36:55-05:00) |
+| Estado revisado | `0205e44` (2026-08-30T23:12:03-05:00) |
 | Cierre | 2026-08-31T05:00:00Z |
 | Revisor | pipeline automatico (GitHub Actions) |
 
@@ -13,48 +13,64 @@
 
 | Criterio de evaluacion | Evidencia tecnica | Estado | Observaciones |
 |---|---|---|---|
-| arc42 secciones 1 a 6 redactadas, sin texto de plantilla | docs/arc42/arc42-template-EN.md presente pero contenido truncado en la evidencia | No verificado | No se pudo comprobar secciones 3-6; solo se observan 1 y 2 en el extracto. |
-| arc42 sección 9 al día y enlazada con los ADR existentes | No visible en el extracto de arc42-template-EN.md | No verificado | Se requiere inspeccionar el archivo completo. |
-| arc42 sección 10 coherente con los escenarios de la semana 2 | No visible en el extracto | No verificado | Se requiere verificar la sección 10 y su correspondencia con escenarios. |
-| Glosario iniciado con términos del dominio | No visible sección 12 | No verificado | Se requiere confirmar presencia de glosario con términos propios. |
-| C4 nivel 1 y nivel 2 presentes y coherentes entre sí | docs/c4/c4.md solo contiene diagrama C1; menciona C2 pero no lo dibuja | No cumple | Falta el diagrama de nivel 2. |
-| Límites del C4 nivel 2 correspondientes a la estructura del código | No hay C4 nivel 2 para contrastar | No cumple | Sin nivel 2 no se puede verificar correspondencia. |
-| Corte vertical que atraviesa interfaz, lógica y persistencia | Existen módulos app, corefinanciero, parser, syncqueue, aigemini y test Cortevertical.kt, pero sin contenido | No verificado | No se pudo inspeccionar el código para confirmar las tres capas. |
-| Arranque documentado con un solo comando | README.md incluye comando PowerShell con variables de entorno y requisitos previos | Cumple | Comando declarado: $env:JAVA_HOME=...; $env:ANDROID_HOME=...; .\XALDAPP\gradlew.bat -p XALDAPP test |
-| Prueba automatizada del recorrido completo, en verde | .github/workflows/ci.yml ejecuta ./gradlew testDebugUnitTest, pero no hay URL de run | No verificado | Se requiere evidencia de ejecución en verde. |
-| Fila de docs/aspectos.md completa hasta la columna Pruebas | docs/aspectos.md tiene columnas CÓDIGO, PRUEBAS, EVIDENCIA con '*Pendiente*' en todas las filas | No cumple | Ninguna fila está completa. |
+| arc42 secciones 1 a 6 redactadas, sin texto de plantilla | docs/arc42/arc42-template-EN.md existe con secciones 1 y 2 redactadas en español | No verificado | El extracto del archivo no muestra las secciones 3 a 6; se necesita inspeccionar el archivo completo |
+| arc42 sección 9 al día y enlazada con los ADR existentes | docs/adr/0001-0006 existen | No verificado | La sección 9 no es visible en el extracto del arc42; no se pudo comprobar que cite los ADR |
+| arc42 sección 10 coherente con los escenarios de la semana 2 | El arc42 menciona ESC-01 a ESC-05 en Quality Goals | No verificado | La sección 10 no es visible en el extracto; no se pudo verificar su contenido |
+| Glosario iniciado con términos del dominio | docs/arc42/arc42-template-EN.md es el único archivo arc42 | No verificado | La sección 12 no es visible en el extracto; no se pudo comprobar el glosario |
+| C4 nivel 1 y nivel 2 presentes y coherentes entre sí | docs/c4/c1.md y docs/c4/c2.md con diagramas Mermaid, leyenda y flechas etiquetadas | Cumple | Actores externos (Usuario, Android/SMS, Gemini) y contenedores coherentes entre C1 y C2 |
+| Límites del C4 nivel 2 correspondientes a la estructura del código | Módulos :app, :parser, :corefinanciero, :syncqueue, :aigemini corresponden a directorios en XALDAPP/ | No cumple | El contenedor Backend XALD dibujado en C2 no tiene código en el repositorio |
+| Corte vertical que atraviesa interfaz, lógica y persistencia | README.md describe el flujo a través de los 5 módulos; Cortevertical.kt existe en XALDAPP/app/src/test/java/com/proyecto/xald/ | No verificado | No se pudo inspeccionar Cortevertical.kt para confirmar que invoca Coremanager.kt (persistencia) |
+| Arranque documentado con un solo comando | README.md sección 'Comandos de Ejecución y Verificación' con requisitos (JDK 17, Android SDK) y comando .\XALDAPP\gradlew.bat -p XALDAPP test | Cumple | Hay variantes para entornos sin variables configuradas, pero el comando de arranque es único |
+| Prueba automatizada del recorrido completo, en verde | XALDAPP/app/src/test/java/com/proyecto/xald/Cortevertical.kt; run Android CI 33352959352 success 2026-08-31T03:10:13Z ejecuta testDebugUnitTest | Cumple | El pipeline ejecutó la suite en verde antes del cierre |
+| Fila de docs/aspectos.md completa hasta la columna Pruebas | docs/aspectos.md fila A-01 con enlaces a RT-04, C1, ESC-03, ADR-0002/0003, Parser.kt y README sección corte vertical | Cumple | Cada celda de la fila A-01 apunta a un archivo existente |
 
 ## Matriz transversal (CONTRATO §11)
 
 | Criterio | Evidencia | Estado | Observaciones |
 |---|---|---|---|
-| Identidad del repositorio | repo AS_202620_XALD público; autores listados coinciden con 4 integrantes | Cumple | Sin observaciones |
-| Estructura mínima | docs/arc42, docs/adr, docs/c4, docs/aspectos.md, docs/ia.md, README.md presentes | Cumple | Sin observaciones |
-| Estado del repositorio calificado | hash 6985f5b fecha 2026-08-29T22:36:55-05:00 anterior al cierre; no se listan tags | No verificado | No se pudo comprobar existencia de etiqueta corte-1 |
-| Convenciones de ADR | ADRs 0001-0005 carecen de sección 'Opciones evaluadas' y trazabilidad explícita | No cumple | ADR-0006 sí las incluye; los demás no cumplen el formato completo. |
-| Tabla de aspectos | docs/aspectos.md con celdas CÓDIGO, PRUEBAS, EVIDENCIA en 'Pendiente' | No cumple | Filas con huecos no defendibles. |
-| Registro de uso de IA | docs/ia.md con tabla que incluye qué se rechazó y por qué | Cumple | Sin observaciones |
-| README | README.md describe sistema, requisitos y comando único | Cumple | Sin observaciones |
-| Pipeline y análisis estático | .github/workflows/ci.yml solo ejecuta pruebas, sin paso de SonarCloud | No cumple | Falta análisis estático requerido. |
+| Identidad del repositorio | Repositorio ISCOUTB/AS_202620_XALD visible; 4 cuentas en shortlog coinciden con los integrantes declarados | Cumple | Nombre y organización correctos |
+| Estructura mínima | docs/arc42/, docs/adr/ (6 ADR), docs/c4/, docs/aspectos.md, docs/ia.md y README.md presentes en HEAD | Cumple | El arc42 se entrega en un único archivo, permitido por la ficha |
+| Versionado (commit vigente al cierre) | Commit 0205e44 fechado 2026-08-30T23:12:03-05:00 (04:12Z), anterior al cierre 2026-08-31T05:00:00Z | Cumple | Sin etiqueta, pero es evidencia semanal y no requiere tag |
+| Convenciones de ADR | docs/adr/0001-0006 con nombres en kebab-case y contexto/decisión/consecuencias | No cumple | Carecen de opciones evaluadas (excepto 0006) y de trazabilidad a commits/pruebas exigida por el contrato |
+| Tabla de aspectos | docs/aspectos.md con fila A-01 completa hasta Pruebas y enlaces verificados | Cumple | Incluye columna ESCENARIO adicional a las 8 del contrato; las filas A-02 a A-05 tienen Pendiente |
+| Registro de uso de IA | docs/ia.md con tabla de contribuciones, decisiones y rechazos; 5 commits en su historial | Cumple | Incluye justificación de lo rechazado, como pide el contrato |
+| README y reproducibilidad | README.md con descripción, requisitos previos y comando de arranque | Cumple | El comando de arranque ejecuta las pruebas del corte vertical |
+| Pipeline y análisis estático | .github/workflows/ci.yml ejecuta testDebugUnitTest con éxito (run 33352959352) | No cumple | No hay configuración ni runs de SonarCloud en el repositorio |
+
+## Estado global del proyecto (overall · revisado en HEAD)
+
+Mira el repositorio **entero en su estado actual** (HEAD), no solo la evidencia del cierre: si el equipo subio tarde o corregio entregas anteriores, aqui se nota.
+
+- **HEAD revisado**: `0205e4407765ba9895025c332c5206815358ef7b 2026-08-30T23:12:03-05:00 Update ficha del problema.md`
+- **Veredicto**: con pendientes
+- Resumen: Entrega antes del cierre con C4 completo, CI en verde y aspectos con fila A-01 completa; quedan secciones arc42 sin verificar, un contenedor sin código y ADR sin trazabilidad.
+
+Pendientes que siguen abiertos:
+- Verificar secciones 3-6, 9, 10 y glosario del arc42
+- Confirmar que Cortevertical.kt atraviesa persistencia
+- Implementar o justificar Backend XALD
+- Añadir SonarCloud al pipeline
+- Completar ADR con opciones evaluadas y trazabilidad
 
 ## Recuento y nota sugerida
 
-1 de 10 criterios Cumple.
+4 de 10 criterios Cumple.
 
-**Nota sugerida (propuesta al docente, publicada por decision del profesor): 1.4 = 1 + 4 × (1/10).** La nota final la fija el profesor en Moodle.
+**Nota sugerida (propuesta al docente, publicada por decision del profesor): 2.6 = 1 + 4 × (4/10).** La nota final la fija el profesor en Moodle.
 
 ## No verificado / pendientes
 
-- arc42 secciones 3-6, 9, 10, 12: archivo truncado en evidencia
-- Corte vertical: no se inspeccionó código de MainActivity, Coremanager, persistencia
-- Prueba automatizada en verde: falta URL de run de CI
-- Etiqueta de versionado: no se listaron tags del repositorio
+- arc42 secciones 3 a 6: el extracto del archivo no las muestra
+- arc42 sección 9: no visible en el extracto
+- arc42 sección 10: no visible en el extracto
+- Glosario (sección 12): no visible en el extracto
+- Corte vertical: no se pudo inspeccionar Cortevertical.kt para confirmar el tramo de persistencia
 
 ## Hallazgos para la planilla
 
-- C4 nivel 2 ausente en docs/c4/c4.md
-- Tabla de aspectos incompleta: columnas Código, Pruebas y Evidencia en Pendiente
-- ADRs 0001-0005 no incluyen opciones evaluadas ni trazabilidad
-- Pipeline CI sin análisis estático SonarCloud
-- No se pudo verificar contenido completo de arc42 (secciones 3-6, 9, 10, 12)
-- No se pudo verificar corte vertical ni prueba en verde por falta de contenido de código y runs
+- Backend XALD dibujado en C1/C2 sin código correspondiente en el repositorio
+- ADR carecen de opciones evaluadas (excepto 0006) y de trazabilidad a commits/pruebas
+- Sin configuración ni ejecución de SonarCloud en el pipeline
+- README describe el corte vertical a través de 5 módulos pero la prueba solo menciona parser y DTO
+- docs/aspectos.md incluye columna ESCENARIO adicional a las 8 del contrato
+- El arc42 se entrega en un único archivo con nombre de plantilla; el extracto no permite verificar secciones 3-6, 9, 10 y glosario

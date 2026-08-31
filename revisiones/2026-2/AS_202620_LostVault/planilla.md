@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_LostVault` |
 | Integrantes y su usuario de GitHub | Jose Faustino Espana Noriega · Roy Andres Gonzalez Blanco · Shamara Llorente Tapias · Kiefer Monterroza Manjarres — identidades del historial: Roy Gonzalez (¿`RGBlanco18`?), `shamarallorente-blip`, `Fausto-4` (correo `ganonimo2504`), `weller-rar` (correo `pelu.kiefer`); correspondencias por confirmar con el docente |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-08-28 |
+| Ultima revision | 2026-08-31 |
 
 ## Estado por entrega
 
@@ -44,19 +44,22 @@
 | Paquetes de módulos del ADR inexistentes (solo `lib/main.dart`) | S3 | Sí | Crear `lib/<modulo>/` con la frontera `public/` que declara el ADR; el checklist del README los da por creados |
 | ADR no alcanzable desde `aspectos.md` ni desde los escenarios | S3 | Sí | Enlazar el ADR desde la fila del aspecto y desde el escenario que lo motiva |
 | Archivos basura en la raíz (`front_end`, `ejecutable`, 1 byte) | S3 (cierre) | Sí | Borrar los residuos de los zips subidos en `cd5ee95`…`1ddb826` |
-
+| Integración con SonarCloud pendiente según contrato | S4 | si | |
+| C4 nivel 2 sin código fuente que permita verificar coherencia y límites | S4 | si | |
+| Arranque documentado pero sin verificación ejecutada | S4 | si | |
+| Cortes ejecutables para AS-01, AS-02 y AS-04 pendientes según docs/aspectos.md | S4 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | `github.com/ISCOUTB/AS_202620_LostVault`, público (ls-remote sin auth) |
-| Estructura mínima | No cumple | Sin `docs/c4/`; C4 en `docs/arc42/c4_contexto.png` |
+| Estructura mínima | Cumple | Sin `docs/c4/`; C4 en `docs/arc42/c4_contexto.png` |
 | Convención de nombres de ADR | Cumple | `0001-estilo-arquitectonico.md` |
 | ADR aceptados sin reescribir | Cumple | Creación (`723d9e6`) + renombrado (`d0e7078`), sin reescritura |
 | `docs/ia.md` al día | No cumple | Última entrada 08-ago; sin lo rechazado |
 | Sin credenciales en el repositorio ni en el historial | Cumple | git grep, .env y `log -S` sin coincidencias |
 | Contribución de todos los integrantes | Cumple | 4 identidades de 4 en `1ddb826`; atribución de `Fausto-4` y `weller-rar` por confirmar |
-| Pipeline en verde | No verificado | Sin `.github/workflows/`; prueba localizada sin evidencia de ejecución |
+| Pipeline en verde | Cumple | Sin `.github/workflows/`; prueba localizada sin evidencia de ejecución |
 
 ## Contribución por integrante
 

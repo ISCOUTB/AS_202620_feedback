@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica` |
 | Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-08-28 |
+| Ultima revision | 2026-08-31 |
 
 ## Estado por entrega
 
@@ -17,7 +17,7 @@
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `4f6f568` · 2026-08-09T13:16:43-05:00 | 7/9 | no aplica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `d4302f4` · 2026-08-16T23:17:26-05:00 | 7/9 | no aplica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `dd422fb` · 2026-08-23T23:52:23-05:00 | 6/9 | no se publica | sí |
-| 4 | S4 | `e976c92` (2026-08-24T01:58:18-05:00) | 1/10 | 1.4 | si |
+| 4 | S4 | `cede35e` (2026-08-30T23:51:34-05:00) | 6/10 | 3.4 | si |
 | 5 | Primer corte · reto de línea base | `corte-1` | | | |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
@@ -46,7 +46,10 @@
 | Matriz comparativa de estilos contra el árbol de utilidad ausente | S3 | no (resuelto) | §4.1 con filas por EC-01…EC-07 |
 | ADR sin hipervínculo desde el escenario motivador EC-04 | S3 | no (resuelto) | EC-04 y EC-05 con enlaces al ADR |
 | 2 commits posteriores al cierre (`88294cc` 01:00, `e976c92` 01:58) | S3 (cierre) | registrado | Entregar dentro del cierre de la actividad; lo tardío no califica |
-
+| C4 nivel 2 incompleto en docs/c4/doc-c4.md | S4 | si | |
+| Fila A-01 de aspectos.md con C2 pendiente | S4 | si | |
+| Verificación de CI sin runs | S4 | si | |
+| Secciones 7 y 8 del arc42 pendientes (declarado) | S4 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -58,7 +61,7 @@
 | `docs/ia.md` al día | Cumple | Actualizado en S3 (`aa14dca`) con aceptado/rechazado/justificación |
 | Sin credenciales en el repositorio ni en el historial | Cumple | git grep y `.env` sin coincidencias |
 | Contribución de todos los integrantes | Cumple | 4 cuentas para 4 integrantes |
-| Pipeline en verde | No cumple | Sin código ni prueba al cierre; el esqueleto tardío trae prueba, pendiente de run en verde para S4 |
+| Pipeline en verde | No verificado | Sin código ni prueba al cierre; el esqueleto tardío trae prueba, pendiente de run en verde para S4 |
 
 ## Contribución por integrante
 

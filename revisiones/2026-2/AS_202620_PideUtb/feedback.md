@@ -24,4 +24,10 @@ Qué corregir antes del corte 1 (semana 5):
 
 ## Semana 4 · S4
 
-El repositorio no permite verificar la mayoría de criterios porque el árbol de archivos está truncado y no incluye docs/ ni código fuente. Se recomienda no versionar .venv-1 y subir evidencia completa de docs/arc42, docs/c4, docs/adr, docs/aspectos.md, docs/ia.md y README.md. El commit calificado es correcto en fecha. Falta confirmar organización y CI.
+La entrega documenta bien el arranque, el ADR y el corte vertical en el README, y el historial muestra participación de todo el equipo.
+Para el primer corte: suban los diagramas C4 como código en docs/c4/ y verifiquen que los contenedores coincidan con backend/app.
+Completen la tabla de aspectos con las columnas ID, C4, ADR, Código y Pruebas, y añadan al ADR la trazabilidad (commit que lo implementa y pruebas).
+Registren en docs/ia.md lo que rechazaron de la IA y por qué.
+No versionen el entorno virtual (.venv-1).
+Ejecuten las pruebas en CI y dejen el enlace al run en verde.
+El glosario y las secciones 1-6, 9, 10 y 12 de arc42 deben quedar visibles en docs/arc42/.

@@ -24,4 +24,4 @@ Qué corregir antes del corte 1 (semana 5):
 
 ## Semana 4 · S4
 
-Buen avance en documentación arc42 y estructura del repositorio. La sección 9 debe enlazar directamente a los ADR en docs/adr/. Falta configurar CI para evidenciar pruebas en verde. Se recomienda incluir contenido verificable de glosario, diagramas C4 y tabla de aspectos para futuras revisiones. El corte vertical está descrito pero necesita código citado que muestre persistencia.
+La documentación arc42 y los diagramas C4 están avanzados, pero el corte vertical no atraviesa persistencia y el C4 nivel 2 dibuja contenedores que aún no existen en el código. La sección 9 debe enlazar los ADR reales en docs/adr/ en lugar de repetirlos o crear ADR sin archivo. Completen la fila de aspectos con las columnas Requisito y C4, y citen la prueba del recorrido (tests/a01.test.ts) en la celda de Pruebas. El README debería declarar un único comando de arranque. Configuren integración continua y dejen evidencia del run en verde. Revisen que el ADR-0001 refleje el estado actual o creen uno nuevo si la decisión cambió.

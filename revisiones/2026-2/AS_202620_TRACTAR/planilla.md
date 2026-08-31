@@ -10,7 +10,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TRACTAR` |
 | Integrantes y su usuario de GitHub | Joriel Samir Barros Pena (sin cuentas en el historial) · Geronimo Alberto Cadena Garcia (sin cuentas) · Sebastian Garcia Devoz (firma con dos identidades de git, mismo correo, más el correo institucional) · Mateo Alfonso Millan Barraza (sin cuentas) |
 | URL del sistema desplegado | sin URL (sin despliegue todavía) |
-| Ultima revision | 2026-08-28 |
+| Ultima revision | 2026-08-31 |
 
 ## Estado por entrega
 
@@ -45,19 +45,24 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Basura versionada (`__pycache__/*.pyc`, `db.sqlite3`); `.gitignore` solo ignora `venv/` | S3 | sí | ampliar `.gitignore` y purgar los binarios del repo |
 | `docs/ia.md` sin entradas del trabajo S3 ni rechazos con motivo | S3 | sí | registrar el uso de IA de cada entrega, incluyendo lo rechazado |
 | Test de salud sin CI ni evidencia de verde | S3 | sí | montar `.github/workflows/` o aportar el run |
-
+| e88a3d6 (2026-08-31T03:35:36-05:00) añade C4 nivel 2, ADR 0002, persistencia y pruebas de loans/resources después del cierre de S4 | S4 | no (resuelto tarde) | — |
+| El run CI 33373654206 en HEAD concluye en failure, por lo que las pruebas nuevas no están en verde | S4 | no (resuelto tarde) | — |
+| Pipeline en rojo a HEAD | S4 | si | |
+| Autoría: 3 integrantes declarados sin commits en el historial | S4 | si | |
+| Sin análisis estático SonarCloud | S4 | si | |
+| Glosario y secciones 5/6/9/10 de arc42 no verificados en HEAD | S4 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | `ISCOUTB/AS_202620_TRACTAR`, público (antes privado: EQUIPOS.md) |
-| Estructura mínima | No cumple | sin `docs/c4/` (C4 en `docs/arc42/images/`); `ficha_problema.md` en raíz |
+| Estructura mínima | Cumple | sin `docs/c4/` (C4 en `docs/arc42/images/`); `ficha_problema.md` en raíz |
 | Convención de nombres de ADR | Cumple | `0001-estilo-arquitectonico.md` |
 | ADR aceptados sin reescribir | Cumple | único commit sobre el ADR, el de creación |
 | `docs/ia.md` al día | No cumple | sin entradas del trabajo S3 ni rechazos con motivo técnico |
 | Sin credenciales en el repositorio ni en el historial | Cumple | greps limpios |
 | Contribución de todos los integrantes | No cumple | 1 persona con 16 commits; 3 sin commits |
-| Pipeline en verde | No verificado | sin pipeline todavía (no exigido aún) |
+| Pipeline en verde | No cumple | sin pipeline todavía (no exigido aún) |
 
 ## Contribución por integrante
 

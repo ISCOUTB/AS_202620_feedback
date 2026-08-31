@@ -20,4 +20,4 @@ Qué corregir antes del corte 1 (semana 5):
 
 ## Semana 4 · S4
 
-El repositorio muestra un avance sólido en la documentación arc42, C4 y el corte vertical, con CI en verde y trazabilidad declarada. Para la próxima entrega, asegúrense de incluir evidencia explícita del contenido del glosario y de la fila de aspectos, y de integrar SonarCloud al pipeline para cumplir el contrato. La estructura y la coherencia entre diagramas y código son buenas; mantengan ese nivel de detalle.
+La evidencia S4 está sólida: arc42 1-6, 9, 10 y 12 redactados con contenido propio; C4 niveles 1 y 2 coherentes y versionados como código; corte vertical de publicaciones trazado desde la interfaz hasta SQLite con prueba en verde; y la fila ASP-05 de aspectos queda completa hasta Pruebas. Para el primer corte, integren SonarCloud al pipeline, enlacen cada ADR con el commit que lo implementa y añadan una medición de línea base. El arranque con un solo comando está bien documentado; conviene dejarlo verificado en un run o captura. Sigan manteniendo el registro de IA con lo rechazado y su motivo, que está bien logrado.

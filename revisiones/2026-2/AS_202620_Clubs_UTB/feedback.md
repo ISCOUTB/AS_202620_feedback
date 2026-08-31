@@ -26,4 +26,4 @@ Ojo: parte del trabajo llegó después del cierre y no contó para esta entrega;
 
 ## Semana 4 · S4
 
-La documentación arc42 está bien redactada y el corte vertical es claro y trazable. Se recomienda incluir términos del dominio en el glosario y simplificar el arranque a un solo comando. Es necesario adjuntar evidencia del pipeline en verde y completar el diagrama C4 nivel 2 con correspondencia al código existente.
+Entrega S4 completa en lo esencial: arc42 1-6, 9, 10 y glosario redactados; C4 niveles 1-2 coherentes; corte vertical que atraviesa interfaz, lógica y persistencia con prueba en verde; fila U2 de aspectos.md trazable hasta Pruebas. Para cerrar los pendientes: (1) unificar el arranque en un solo comando en el README; (2) configurar SonarCloud para el análisis estático del contrato; (3) declarar explícitamente que el contenedor Flutter aún no tiene código. El registro de IA y los ADR están bien llevados; continúen así.

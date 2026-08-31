@@ -10,7 +10,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_uniTeam` |
 | Integrantes y su usuario de GitHub | Julio Cesar Emiliani Ramos (commits con nombre propio) · Ian Novoa Carrillo (firma «Ian Novoa», correo omitido; la cuenta `iansx` del listado no aparece) · Juan Jose Bustamante More (sin commits atribuibles) · Daniel Isaac Manjarres Herrera (sin commits atribuibles). `super-gremlin` (noreply) sin atribuir a persona. |
 | URL del sistema desplegado | sin URL (sin despliegue todavía) |
-| Ultima revision | 2026-08-28 |
+| Ultima revision | 2026-08-31 |
 
 ## Estado por entrega
 
@@ -19,7 +19,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `4b4c5c0` · 2026-08-09T11:22:38-05:00 | 6/9 | 3.7 (propuesta) | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `ca7726a` · 2026-08-16T13:01:06-05:00 | 9/9 | 5.0 (propuesta) | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `ca44917` · 2026-08-23T13:38:40-05:00 | 5/9 | no se publica | sí |
-| 4 | S4 | `dc14298` (2026-08-29T11:49:10-05:00) | 5/10 | 3.0 | si |
+| 4 | S4 | `dc14298` (2026-08-29T11:49:10-05:00) | 6/10 | 3.4 | si |
 | 5 | Primer corte · reto de línea base | `corte-1` | | | |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
@@ -46,7 +46,9 @@ Hoja consolidada del equipo a lo largo del semestre.
 | README sin comando de arranque (solo documenta la prueba) y `requirements.txt` con el paquete inexistente `httpx2` | S3 (23-ago) | sí | documentar `uvicorn` y corregir dependencias |
 | `docs/ia.md` sin entradas del periodo S3 | S3 (23-ago) | sí | registrar el uso de IA de esta semana con rechazados y motivo |
 | Prueba sin CI: verde no verificable (solo lo declara el README) | S3 (23-ago) | sí | montar `.github/workflows/` o aportar evidencia de ejecución |
-
+| Confirmar contenido de secciones 9, 10 y 12 de arc42 | S4 | si | |
+| Aportar URL de run de CI en verde | S4 | si | |
+| Verificar contenido de docs/ia.md | S4 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

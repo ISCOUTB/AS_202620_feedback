@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant` |
 | Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-08-29 |
+| Ultima revision | 2026-08-31 |
 
 ## Estado por entrega
 
@@ -17,7 +17,7 @@
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `76d4a91` · 2026-08-07T03:34:26-05:00 | 6/9 | no aplica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `59590c9` · 2026-08-16T19:15:15-05:00 | 3/9 | no aplica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `46257a03` · 2026-08-23T16:47:00-05:00 | 5/9 | no se publica | sí |
-| 4 | S4 | `9df9d2a` (2026-08-29T18:51:30-05:00) | 2/10 | 1.8 | si |
+| 4 | S4 | `c087303` (2026-08-30T18:54:10-05:00) | 5/10 | 3.0 | si |
 | 5 | Primer corte · reto de línea base | `corte-1` | | | |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
@@ -46,7 +46,11 @@
 | ADR sin nombre de convención, sin título H1 ni contexto | S3 (23-ago) | Sí | Renombrar a `0001-<kebab-case>.md`, añadir título y contexto, y corregir los enlaces rotos |
 | Sin CI: no hay `.github/workflows/` y el verde de la prueba no es verificable | S3 (23-ago) | Sí | Montar workflow que corra `pytest` en cada push |
 | `docs/ia.md` Entrada 03 incompleta (sin aceptado/rechazado) | S3 (23-ago) | Sí | Completar la entrada con su motivo |
-
+| Ejecutar pytest y evidenciar run en verde | S4 | si | |
+| Completar trazabilidad del ADR-0001 | S4 | si | |
+| Verificar contenido de secciones arc42 3, 4, 9, 10 y 12 | S4 | si | |
+| Configurar CI/SonarCloud o evidenciar plataforma alternativa | S4 | si | |
+| Alinear C4 nivel 2 con el código actual | S4 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -58,7 +62,7 @@
 | `docs/ia.md` al día | No cumple | Entrada 03 (08-23) sin aceptado/rechazado |
 | Sin credenciales en el repositorio ni en el historial | Cumple | `git grep` §9 y `.env` sin coincidencias |
 | Contribución de todos los integrantes | Cumple | 4 identidades consolidadas = 4 integrantes |
-| Pipeline en verde | No cumple | Sin `.github/workflows/` y sin evidencia de ejecución |
+| Pipeline en verde | No verificado | Sin `.github/workflows/` y sin evidencia de ejecución |
 
 ## Contribución por integrante
 

@@ -24,4 +24,4 @@ Qué corregir antes del corte 1 (semana 5):
 
 ## Semana 4 · S4
 
-El repositorio muestra avances en documentación C4 y README, pero falta implementar el corte vertical y completar la trazabilidad. Se recomienda priorizar la implementación del recorrido interfaz-lógica-persistencia con su prueba automatizada y completar las celdas Pendiente de aspectos.md. También es necesario incluir pipeline de CI y completar las secciones arc42 faltantes.
+La entrega tiene un corte vertical claro (HTTP → caso de uso → dominio → persistencia en memoria) y la fila A-01 de aspectos está completa y navegable. Para el primer corte: (1) dejen visible el contenido de las secciones 3, 4, 9, 10 y 12 de arc42 y eliminen restos de plantilla (el archivo aún se llama template); (2) agreguen al ADR-0001 la trazabilidad exigida (requisito, C4, commit, pruebas); (3) ejecuten pytest y suban el run en verde o configuren GitHub Actions, porque hoy no hay evidencia de CI; (4) ajusten el C4 nivel 2 para marcar App Móvil y Base de Datos como objetivo, o no dibujarlas como contenedores actuales. El README documenta bien el arranque con run.bat. Sigan así.

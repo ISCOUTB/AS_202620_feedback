@@ -24,4 +24,4 @@ Qué corregir antes del corte 1 (semana 5):
 
 ## Semana 4 · S4
 
-El repositorio cumple estructura e identidad, pero la evidencia S4 está incompleta: arc42 solo tiene secciones 1-2, falta C4 nivel 2, corte vertical y fila de aspectos completa. Se recomienda completar documentación y código antes del corte.
+Entrega S4 completa y bien orientada: arc42 1-6, 9, 10 y 12 redactados con contenido propio, C4 niveles 1 y 2 como código, corte vertical de registro con prueba en CI en verde, y fila 2 de aspectos trazable hasta pruebas. Para el primer corte: completen las secciones 7, 8 y 11 de arc42, llenen los huecos de las filas 1 y 3 de aspectos, integren SonarCloud al pipeline, enlacen cada ADR con el commit que lo implementa y registren una medición de línea base. El glosario y los escenarios de calidad están bien alineados con el dominio.

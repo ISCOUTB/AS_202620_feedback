@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_PideUtb` |
 | Integrantes y su usuario de GitHub | Daniela Sofia Arrieta Guardo · Santiago Jose Cuesta Maza · Ruddy Rodriguez Romero — cuentas observadas: `daniarriet`, `Santiago Cuesta`/`Santiago-C0` (misma persona, EQUIPOS.md:95); sin cuenta para Ruddy |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-08-28 |
+| Ultima revision | 2026-08-31 |
 
 ## Estado por entrega
 
@@ -17,7 +17,7 @@
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `48cfbe3` · 2026-08-08T15:12:35-05:00 | 4/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `9b5f214` · 2026-08-16T12:47:26-05:00 | 9/9 | no se publica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `b5f0310` · 2026-08-23T19:42:42-05:00 | 5/9 | no se publica | sí |
-| 4 | S4 | `1636f20` (2026-08-30T22:17:18-05:00) | 0/10 | 1.0 | si |
+| 4 | S4 | `1636f20` (2026-08-30T22:17:18-05:00) | 1/10 | 1.4 | si |
 | 5 | Primer corte · reto de línea base | `corte-1` | | | |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
@@ -43,7 +43,13 @@
 | Sección 4 sin tácticas por escenario; matriz comparativa sin filas por escenario | S3 | sí | Ligar estrategia y matriz a ESC-01/02/03 del árbol de utilidad |
 | `docs/aspectos.md` sin enlace al ADR ni tabla de 8 columnas | S3 | sí | Completar la tabla de trazabilidad y enlazar el ADR desde el aspecto y el escenario |
 | Sin workflow ni evidencia de prueba en verde | S3 | sí | Añadir `.github/workflows/` con `pytest` y aportar el run |
-
+| C4 niveles 1 y 2 en docs/c4/ | S4 | si | |
+| Glosario (sección 12) y secciones 1-6, 9, 10 de arc42 verificables | S4 | si | |
+| Tabla de aspectos con columnas ID, C4, ADR, Código | S4 | si | |
+| Trazabilidad del ADR a commit y pruebas | S4 | si | |
+| docs/ia.md con lo rechazado | S4 | si | |
+| CI con pruebas en verde | S4 | si | |
+| Eliminar .venv-1 del repositorio | S4 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

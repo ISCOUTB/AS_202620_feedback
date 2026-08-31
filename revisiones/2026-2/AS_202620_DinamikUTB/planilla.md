@@ -8,13 +8,13 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_DinamikUTB` |
 | Integrantes y su usuario de GitHub | Luis Daniel Padilla Leottau (`Daniel-dev02`) · Gillianis Del Carmen Perez Revolledo (`gillianisperez-prog`) · Esteban Ramirez Rios (`Eramirezr`) · Juan Jose Vargas Perez (`JuanchisV`, firma también como «Juan José Vargas Pérez» con el mismo correo) |
 | URL del sistema desplegado | sin desplegar todavía |
-| Ultima revision | 2026-08-28 |
+| Ultima revision | 2026-08-31 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 4 | S4 | `3aa2399` (2026-08-28T01:01:01-05:00) | 0/10 | 1.0 | si |
+| 4 | S4 | `8558156` (2026-08-30T23:52:24-05:00) | 7/10 | 3.8 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `769f970` · 2026-08-09T21:24:49-05:00 | 7/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `58734e1c` · 2026-08-16T23:33:53-05:00 | 9/9 | no se publica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `fe52ab594` · 2026-08-23T23:20:33-05:00 | 5/9 | no se publica | sí (actualizada tras el cierre) |
@@ -29,7 +29,15 @@
 | Esteban sin commits en el periodo (S1; reaparece en S3) | S1 | cerrado en S3 (2 commits: `2c78be9`, `fe52ab5`) | Ver feedback S3 |
 | Matriz de estilos sin referencia a los escenarios del árbol de utilidad | S3 | sí | Ver feedback S3 |
 | `docs/aspectos.md` con la columna ADR en «Pendiente» aun existiendo el ADR 0001 (la tabla de 8 columnas y los enlaces a escenarios ya llegaron) | S3 | sí (parcialmente cerrado: tabla y enlaces a escenarios OK; columna ADR sigue pendiente) | Ver feedback S3 |
-
+| 4258407 Update start.bat (2026-08-31T00:07:55-05:00) | S4 | no (resuelto tarde) | — |
+| d87a771 Merge pull request #8 (2026-08-31T00:11:21-05:00) | S4 | no (resuelto tarde) | — |
+| 1308052 Update start.bat (2026-08-31T00:12:04-05:00) | S4 | no (resuelto tarde) | — |
+| 3c16fba Update start.bat (2026-08-31T00:13:28-05:00) | S4 | no (resuelto tarde) | — |
+| Enlazar ADR-0002 en sección 9 | S4 | si | |
+| Añadir trazabilidad commit/PR y pruebas en ADR | S4 | si | |
+| Evidencia de run de CI en verde | S4 | si | |
+| Verificar fila de aspectos.md | S4 | si | |
+| Verificar contenido de docs/ia.md | S4 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

@@ -26,4 +26,4 @@ Qué corregir antes del corte 1 (semana 5):
 
 ## Semana 4 · S4
 
-El repositorio muestra avances en estructura y documentación inicial. Para cumplir la evidencia S4, es prioritario completar el diagrama C4 nivel 2 y llenar las columnas Código, Pruebas y Evidencia de aspectos.md. Revisen que todos los ADR incluyan opciones evaluadas y trazabilidad. Agreguen análisis estático SonarCloud al pipeline. Asegúrense de que las secciones 3-6, 9, 10 y 12 de arc42 estén redactadas y verificables. El corte vertical y su prueba necesitan evidencia de ejecución en verde.
+El C4 en Mermaid es claro y coherente entre niveles, y los cinco módulos Gradle corresponden a la estructura dibujada. El CI ejecuta las pruebas en verde y la fila A-01 de aspectos está completa hasta Pruebas. Para el próximo corte: completar y verificar las secciones 3-6, 9, 10 y el glosario del arc42; asegurar que la prueba de corte vertical invoque explícitamente la persistencia; implementar o justificar el contenedor Backend XALD; añadir análisis estático con SonarCloud; y enriquecer los ADR con opciones evaluadas y trazabilidad a commits y pruebas.
