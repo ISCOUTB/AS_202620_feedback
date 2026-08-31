@@ -8,6 +8,11 @@ on:
     - cron: "0 11 * * 3"
     # Viernes 06:00 COT: pasada temprana (delta) con deepseek-v4-flash.
     - cron: "0 11 * * 5"
+  push:
+    branches:
+      - master
+    paths:
+      - "scripts/cron/disparo.json"
   workflow_dispatch:
     inputs:
       semana:
@@ -62,13 +67,21 @@ jobs:
           echo "MODO=$MODO" >> "$GITHUB_ENV"
 
       - name: Evaluar semana
-        env:
-          SEMANA: ${{ github.event.inputs.semana }}
-          SOLO: ${{ github.event.inputs.solo }}
-          DRY: ${{ github.event.inputs.dry_run }}
         run: |
-          MODO_EFECTIVO="${{ github.event.inputs.modo }}"
-          if [ "${{ github.event_name }}" = "schedule" ]; then MODO_EFECTIVO="$MODO"; fi
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            MODO_EFECTIVO="$MODO"
+          elif [ "${{ github.event_name }}" = "push" ]; then
+            if [ ! -f scripts/cron/disparo.json ]; then
+              echo "Push sin disparo.json: nada que evaluar."
+              exit 0
+            fi
+            eval "$(python -c 'import json;d=json.load(open("scripts/cron/disparo.json",encoding="utf-8"));print("MODO_EFECTIVO=%s" % d.get("modo","auto"));print("SEMANA=%s" % d.get("semana",""));print("SOLO=%s" % d.get("solo",""));print("DRY=%s" % d.get("dry","false"))')"
+          else
+            MODO_EFECTIVO="${{ github.event.inputs.modo }}"
+            SEMANA="${{ github.event.inputs.semana }}"
+            SOLO="${{ github.event.inputs.solo }}"
+            DRY="${{ github.event.inputs.dry_run }}"
+          fi
           python scripts/cron/evaluar-semana.py \
             --semana "${SEMANA:-}" \
             --modo "${MODO_EFECTIVO:-auto}" \
