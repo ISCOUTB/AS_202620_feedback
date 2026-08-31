@@ -1,6 +1,7 @@
 # Resumen de revision · Semana 4 · s4 (definitive)
 
 Generado por el pipeline automatico (GitHub Actions).
+Estado consolidado de los proyectos: [informe-estado-s4.md](informe-estado-s4.md).
 
 Nota sugerida = 1 + 4 × (n/m) sobre la matriz de la ficha, **propuesta al docente**.
 

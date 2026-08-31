@@ -188,7 +188,9 @@ corte), la **matriz** de cada entrega con el estado y la evidencia de cada crite
 abiertas para la sustentación.
 
 Empieza por la retroalimentación; la matriz es para cuando quieras ver en qué se basa cada cosa.
-Lo que no está aquí es la nota: eso lo fija el profesor y se ve en Moodle.
+Lo que no está aquí es la nota: eso lo fija el profesor y se ve en Moodle. El estado consolidado de
+todos los proyectos, semana a semana, está en el
+[informe de estado](revisiones/2026-2/informe-estado-s4.md).
 
 | Equipo | Repositorio | Retroalimentación | Matriz S1 | Matriz S2 | Matriz S3 | Matriz S4 | Planilla |
 |---|---|---|---|---|---|---|---|

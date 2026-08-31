@@ -38,6 +38,12 @@
 | Sin credenciales en el repositorio ni en el historial | git grep sin coincidencias; sin .env versionado | Cumple | — |
 | Contribucion de todos los integrantes | En 443e908: PedroC1213 (110 consolidados con dos identidades) y Cristian Cardeño (12); el tercer integrante declarado no aparece | No cumple | Mismo pendiente que S1-S3 |
 
+## Recuento y nota sugerida
+
+7 de 10 criterios Cumple.
+
+**Nota sugerida (propuesta al docente, publicada por decision del profesor): 3.8 = 1 + 4 × (7/10).** La nota final la fija el profesor en Moodle.
+
 ## Estado global del proyecto (overall · revisado en HEAD)
 
 - HEAD revisado: `d4723aa` (2026-08-31T11:24:47-05:00) — posterior al cierre
