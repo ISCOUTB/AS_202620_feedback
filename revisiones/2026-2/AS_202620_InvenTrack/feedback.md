@@ -22,4 +22,4 @@ Qué corregir antes del corte 1 (semana 5):
 
 ## Semana 4 · S4
 
-El repositorio muestra avances en documentación inicial (arc42 secciones 1-3 y 10, C4 nivel 1, ADR-0001) y en estructura base, pero la evidencia S4 exige incrementos que aún no están: secciones 4-6, 9 y 12 de arc42, C4 nivel 2, corte vertical con lógica y persistencia, y prueba de recorrido completo. La fila de aspectos debe completarse con enlaces reales, no 'Pendiente'. Se recomienda priorizar la implementación del corte vertical mínimo (interfaz-lógica-persistencia) con su prueba automatizada y ejecutarla en CI, y completar las secciones faltantes de arc42. El arranque documentado y el registro de IA están bien encaminados.
+El corte vertical y la documentación base están bien encaminados. Falta completar arc42 (secciones 4-6,9,12), corregir ADR-0002 (extensión y reemplazo), alinear C4 nivel 2 con nivel 1 (Bandeja) y con código (Web/Db), y completar la fila de aspectos con pruebas reales. Incluyan URL de run de CI para verificar verde.

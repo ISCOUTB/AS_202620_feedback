@@ -25,4 +25,4 @@ Qué corregir antes del corte 1 (semana 5):
 
 ## Semana 4 · S4
 
-El repositorio cumple identidad, estructura y README. Para la siguiente entrega, completen el C4 nivel 2, implementen el corte vertical con su prueba automatizada, y actualicen docs/aspectos.md a las 8 columnas. Revisen el ADR para incluir trazabilidad y el registro de IA para documentar rechazos. Añadan etiqueta corte-1 y configuren SonarCloud. La evidencia de arc42 está incompleta; asegúrense de que el archivo completo esté disponible.
+Buen avance: C4 coherente, corte vertical documentado y arranque claro. Para cumplir completamente, completen la trazabilidad en el ADR, ajusten la tabla de aspectos a las 8 columnas requeridas, registren rechazos en ia.md y evidencien la ejecución del pipeline y SonarCloud. Aseguren que la prueba automatizada cubra el recorrido completo o aclaren su alcance.

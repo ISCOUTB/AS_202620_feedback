@@ -16,7 +16,7 @@ Hoja consolidada del equipo LaPlacita. Se actualiza tras cada revisión.
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 4 | S4 | `d8cc718` (2026-08-28T14:43:46-05:00) | 0/10 | 1.0 | si |
+| 4 | S4 | `745e799` (2026-08-30T21:52:41-05:00) | 2/10 | 1.8 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `37f1deb8` · 2026-08-08T15:37:16-05:00 | 8/9 | 4,6 * | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `fa7e13bc` · 2026-08-15T18:13:29-05:00 | 5/9 | 3,2 * | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `014751df` · 2026-08-23T19:30:17-05:00 | 9/9 | no se publica | sí |

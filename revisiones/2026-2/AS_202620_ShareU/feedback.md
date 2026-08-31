@@ -26,4 +26,4 @@ Qué corregir antes del corte 1 (semana 5):
 
 ## Semana 4 · S4
 
-El repositorio tiene una base inicial pero faltan evidencias clave: el arc42 solo muestra la sección 1 redactada, el C4 nivel 2 está como imagen sin inspeccionar, el corte vertical no implementa lógica ni persistencia, y el README no documenta arranque. Se recomienda completar las secciones faltantes, convertir el C4 a código, implementar el recorrido mínimo con prueba y CI, y ajustar la tabla de aspectos al formato de columnas.
+El repositorio presenta la estructura mínima y archivos esperados, pero no fue posible verificar el contenido de la documentación ni la ejecución de pruebas. Se recomienda incluir en la entrega enlaces directos a los archivos relevantes y a los runs de CI para facilitar la revisión. Además, se observa que solo un integrante aparece en el historial; es necesario que todos los miembros contribuyan con commits para cumplir el criterio de autoría.

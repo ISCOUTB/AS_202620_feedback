@@ -23,4 +23,4 @@ Qué corregir antes del corte 1 (semana 5):
 
 ## Semana 4 · S4
 
-El repositorio tiene una base sólida: estructura mínima, README claro, ADR inicial y corte vertical con tres capas. Sin embargo, faltan secciones clave de arc42 (5, 6, 9, 12) y el C4 nivel 2. La tabla de aspectos debe ajustarse a las ocho columnas exigidas y el ADR necesita trazabilidad. Añadan evidencia de CI en verde para las pruebas. Buen avance, pero completen la documentación arquitectónica.
+Buen avance: arc42 redactado, corte vertical documentado y README claro. Para fortalecer la entrega, incluyan los diagramas C4 como código (PlantUML/Mermaid) para permitir verificación de coherencia, añadan una sección de trazabilidad al ADR 0001, adjunten la URL de un run de CI que muestre las pruebas en verde y completen docs/ia.md con lo rechazado y por qué. La fila AS-03 de aspectos está bien referenciada; mantengan ese nivel de trazabilidad en las próximas filas.

@@ -26,4 +26,4 @@ Ojo: parte del trabajo llegó después del cierre y no contó para esta entrega;
 
 ## Semana 4 · S4
 
-El repositorio muestra avances en documentación y un corte vertical mínimo, pero faltan secciones clave de arc42 (6, 9, 12), el C4 nivel 2, la tabla de aspectos con trazabilidad y el arranque documentado. Se recomienda completar la documentación exigida, añadir el pipeline de CI y verificar la prueba en verde. La estructura general es adecuada, con una desviación menor en el nombre del directorio C4.
+La documentación arc42 está bien redactada y el corte vertical es claro y trazable. Se recomienda incluir términos del dominio en el glosario y simplificar el arranque a un solo comando. Es necesario adjuntar evidencia del pipeline en verde y completar el diagrama C4 nivel 2 con correspondencia al código existente.

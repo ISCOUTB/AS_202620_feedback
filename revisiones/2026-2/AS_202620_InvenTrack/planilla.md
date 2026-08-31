@@ -16,7 +16,7 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 4 | S4 | `dd4ea1c` (2026-08-23T23:46:24-05:00) | 2/10 | 1.8 | si |
+| 4 | S4 | `d7ba824` (2026-08-30T23:39:33-05:00) | 3/10 | 2.2 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `06920209` · 2026-08-09T16:03:46-05:00 | 4/9 | 2,8 * | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `db90ff2f` · 2026-08-16T21:22:20-05:00 | 9/9 | 5,0 * | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `dd4ea1cb8` · 2026-08-23T23:46:24-05:00 | 9/9 | no se publica | sí (actualizada tras el cierre) |

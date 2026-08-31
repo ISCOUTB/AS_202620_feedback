@@ -24,4 +24,4 @@ Qué corregir antes del corte 1 (semana 5):
 
 ## Semana 4 · S4
 
-El repositorio muestra avances en documentación inicial y arranque, pero la evidencia S4 requiere completar arc42 (secciones 1-6,9,10,12), agregar diagramas C4 nivel 1 y 2, implementar corte vertical con lógica y persistencia, y prueba automatizada del recorrido. La tabla de aspectos debe convertirse en tabla con columnas navegables. Revisar estructura de carpetas y participación de todos los integrantes. Incluir pipeline CI y registro de IA con rechazos.
+El repositorio no permite verificar la mayoría de criterios porque el árbol de archivos está truncado y no incluye docs/ ni código fuente. Se recomienda no versionar .venv-1 y subir evidencia completa de docs/arc42, docs/c4, docs/adr, docs/aspectos.md, docs/ia.md y README.md. El commit calificado es correcto en fecha. Falta confirmar organización y CI.

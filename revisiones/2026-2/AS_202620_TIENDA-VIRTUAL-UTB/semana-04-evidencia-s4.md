@@ -1,11 +1,11 @@
 # semana-04-evidencia-s4 · Tienda virtual UTB
 
-> Pasada temprana (GitHub Actions, previa al cierre): los hashes son provisionales y pueden cambiar si el equipo empuja antes del cierre.
+> Revision automatica definitiva (GitHub Actions, posterior al cierre). Re-evaluada por cambio de hash calificado tras la pasada temprana.
 
 | Campo | Valor |
 |---|---|
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB` |
-| Estado revisado | `d4b6e43` (2026-08-25T09:50:26-05:00) |
+| Estado revisado | `0d208a2` (2026-08-29T21:37:39-05:00) |
 | Cierre | 2026-08-31T05:00:00Z |
 | Revisor | pipeline automatico (GitHub Actions) |
 
@@ -13,50 +13,48 @@
 
 | Criterio de evaluacion | Evidencia tecnica | Estado | Observaciones |
 |---|---|---|---|
-| arc42 secciones 1 a 6 redactadas, sin texto de plantilla | docs/arc42/arc42-template-EN.md (hash d4b6e43) muestra secciones 1-4; contenido truncado antes de secciones 5 y 6 | No verificado | No se pudo comprobar secciones 5 y 6; haría falta ver archivo completo. |
-| arc42 sección 9 al día y enlazada con los ADR existentes | No se observa sección 9 en el contenido proporcionado de docs/arc42/arc42-template-EN.md | No verificado | Contenido truncado; no se puede confirmar presencia o ausencia. |
-| arc42 sección 10 coherente con los escenarios de la semana 2 | No se observa sección 10 en el contenido proporcionado | No verificado | Contenido truncado; no se puede evaluar coherencia. |
-| Glosario iniciado con términos del dominio | No se observa sección 12 en el contenido proporcionado | No verificado | Contenido truncado; no se puede confirmar glosario. |
-| C4 nivel 1 y nivel 2 presentes y coherentes entre sí | docs/c4/context.md existe (nivel 1); no hay archivo de nivel 2 en docs/c4/ | No cumple | Falta diagrama C4 nivel 2. |
-| Límites del C4 nivel 2 correspondientes a la estructura del código | No existe C4 nivel 2; estructura de código solo tiene módulos vacíos (backend/app/modules/*/__init__.py) | No cumple | Sin nivel 2 no hay correspondencia que evaluar. |
-| Corte vertical que atraviesa interfaz, lógica y persistencia | README indica 'En esta entrega no se incluye lógica de negocio'; backend/app/main.py solo define salud; módulos sin lógica | No cumple | No hay recorrido interfaz-lógica-persistencia. |
-| Arranque documentado con un solo comando | README.md sección 'Arranque con un solo comando' declara requisito Docker y comando 'docker compose up --build' | Cumple | Cumple. |
-| Prueba automatizada del recorrido completo, en verde | backend/tests/test_health.py y test_architecture.py no ejercitan recorrido completo; no hay prueba de corte vertical | No cumple | Falta prueba de punta a punta. |
-| Fila de docs/aspectos.md completa hasta la columna Pruebas | docs/aspectos.md solo tiene tabla inicial de 2 columnas y tensiones; no tiene las 8 columnas requeridas | No cumple | Falta tabla de trazabilidad completa. |
+| arc42 secciones 1 a 6 redactadas, sin texto de plantilla | docs/arc42/arc42-template-EN.md (contenido truncado en evidencia) | No verificado | Se verifican secciones 1-3 redactadas; faltan 4-6 por truncamiento. |
+| arc42 sección 9 al día y enlazada con los ADR existentes | docs/arc42/arc42-template-EN.md (no visible sección 9) | No verificado | Contenido truncado; no se puede comprobar enlace a docs/adr/0001. |
+| arc42 sección 10 coherente con los escenarios de la semana 2 | docs/arc42/arc42-template-EN.md (no visible sección 10) | No verificado | No se puede contrastar con docs/escenarios-calidad.md. |
+| Glosario iniciado con términos del dominio | docs/arc42/arc42-template-EN.md (no visible sección 12) | No verificado | Falta ver términos propios del sistema. |
+| C4 nivel 1 y nivel 2 presentes y coherentes entre sí | docs/c4/context.md y docs/c4/container.md | Cumple | Actores y contenedores coinciden; flechas etiquetadas. |
+| Límites del C4 nivel 2 correspondientes a la estructura del código | docs/c4/container.md lista web, api, db; árbol muestra frontend/, backend/, compose.yaml | Cumple | Correspondencia directa con servicios de compose. |
+| Corte vertical que atraviesa interfaz, lógica y persistencia | README.md sección 'Corte vertical ejecutable'; rutas frontend/app/page.tsx, backend/app/modules/catalog/router.py, repository.py, models.py | Cumple | Recorrido documentado de extremo a extremo. |
+| Arranque documentado con un solo comando | README.md sección 'Arranque con un solo comando': docker compose up --build | Cumple | Requisitos previos declarados. |
+| Prueba automatizada del recorrido completo, en verde | backend/tests/test_catalog.py existe; .github/workflows/tests.yml configurado | No verificado | Falta URL de run de GitHub Actions que muestre ejecución en verde; la prueba no cubre frontend. |
+| Fila de docs/aspectos.md completa hasta la columna Pruebas | docs/aspectos.md tabla con 6 columnas, faltan ID y C4 | No cumple | La fila de disponibilidad tiene pruebas pero no cumple las 8 columnas del contrato. |
 
 ## Matriz transversal (CONTRATO §11)
 
 | Criterio | Evidencia | Estado | Observaciones |
 |---|---|---|---|
-| Identidad del repositorio | repo AS_202620_TIENDA-VIRTUAL-UTB, visible true, autores: RAZOR7150, Jasen Yukopila (mismo correo), pxtroniwnl, shalom-A26 = 4 integrantes | Cumple | Cumple. |
-| Estructura mínima | Árbol incluye docs/arc42/, docs/adr/0001..., docs/c4/context.md, docs/aspectos.md, docs/ia.md, README.md | Cumple | Cumple. |
-| Versionado (commit calificado) | No se evidencia etiqueta corte-1; hash calificado d4b6e43 (2026-08-25) | No cumple | Etiqueta ausente; se revisa último commit anterior al cierre. |
-| Convenciones de ADR | docs/adr/0001-monolito-modular.md sigue nombre, pero carece de sección de trazabilidad (requisito/aspecto, C4, commit/PR, pruebas) | No cumple | Falta trazabilidad en ADR. |
-| Tabla de aspectos | docs/aspectos.md no tiene las 8 columnas; solo tabla inicial de 2 columnas | No cumple | Falta estructura de trazabilidad. |
-| Registro de uso de IA | docs/ia.md tiene tabla con fecha, herramienta, propósito, resultado, validación, pero no columna 'qué se rechazó y por qué' | No cumple | Falta registro de rechazos. |
-| README | README.md incluye qué es, arranque con un solo comando, pruebas, requisitos | Cumple | Cumple. |
-| Pipeline y análisis estático | .github/workflows/tests.yml ejecuta pytest, pero no hay configuración de SonarCloud ni análisis estático | No cumple | Falta SonarCloud. |
+| Identidad del repositorio | visible true, repo AS_202620_TIENDA-VIRTUAL-UTB | Cumple | Nombre y visibilidad correctos; organización no explícita en evidencia. |
+| Estructura mínima | árbol incluye docs/arc42/, docs/adr/, docs/c4/, docs/aspectos.md, docs/ia.md, README.md | Cumple | Todas las rutas requeridas presentes. |
+| Estado del repositorio calificado | hash 0d208a2, fecha 2026-08-29T21:37:39-05:00, anterior al cierre 2026-08-31T05:00:00Z | Cumple | Commit vigente correcto. |
+| Convenciones de ADR | docs/adr/0001-monolito-modular.md sin sección de trazabilidad | No cumple | Falta enlace a requisito/aspecto, C4, commit y pruebas. |
+| Tabla de aspectos | docs/aspectos.md con columnas insuficientes | No cumple | Faltan ID y C4; no cumple las 8 columnas. |
+| Registro de uso de IA | docs/ia.md sin columna de rechazos | No cumple | No registra qué se rechazó y por qué. |
+| README | README.md con qué es, arranque y pruebas | Cumple | Cumple requisitos. |
+| Pipeline y análisis estático | .github/workflows/tests.yml presente, sin SonarCloud ni runs | No cumple | Falta evidencia de ejecución y análisis estático. |
 
 ## Recuento y nota sugerida
 
-1 de 10 criterios Cumple.
+4 de 10 criterios Cumple.
 
-**Nota sugerida (propuesta al docente, publicada por decision del profesor): 1.4 = 1 + 4 × (1/10).** La nota final la fija el profesor en Moodle.
+**Nota sugerida (propuesta al docente, publicada por decision del profesor): 2.6 = 1 + 4 × (4/10).** La nota final la fija el profesor en Moodle.
 
 ## No verificado / pendientes
 
-- arc42 secciones 5 y 6: contenido truncado
-- arc42 sección 9: contenido truncado
-- arc42 sección 10: contenido truncado
-- arc42 sección 12 (glosario): contenido truncado
+- arc42 secciones 5,6,9,10,12: contenido truncado, falta archivo completo
+- prueba automatizada en verde: falta URL de run de GitHub Actions
+- identidad organización: falta confirmar org ISCOUTB
+- pipeline ejecución: falta run de CI
 
 ## Hallazgos para la planilla
 
-- Falta C4 nivel 2
-- No hay corte vertical implementado
-- Tabla de aspectos no tiene columnas requeridas
-- ADR sin trazabilidad
-- Registro de IA sin rechazos
-- Pipeline sin SonarCloud
-- No hay etiqueta corte-1
-- Contenido de arc42 truncado en evidencia, secciones 5,6,9,10,12 no verificables
+- arc42 truncado en evidencia, secciones 5,6,9,10,12 no verificables
+- aspectos.md no tiene columnas ID y C4
+- ADR sin trazabilidad explícita
+- ia.md sin columna de rechazos
+- sin evidencia de ejecución de CI ni SonarCloud
+- prueba de recorrido completo no cubre frontend

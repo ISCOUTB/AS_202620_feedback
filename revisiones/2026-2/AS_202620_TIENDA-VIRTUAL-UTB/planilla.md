@@ -19,7 +19,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `d414ecf` · 2026-08-09T14:08:31-05:00 | 7/9 | 4.1 (propuesta) | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `456365b` · 2026-08-15T14:07:47-05:00 | 6/9 | 3.7 (propuesta) | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `f4602a3` · 2026-08-21T13:22:16-05:00 | 6/9 | no se publica | sí |
-| 4 | S4 | `d4b6e43` (2026-08-25T09:50:26-05:00) | 1/10 | 1.4 | si |
+| 4 | S4 | `0d208a2` (2026-08-29T21:37:39-05:00) | 4/10 | 2.6 | si |
 | 5 | Primer corte · reto de línea base | `corte-1` | | | |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |

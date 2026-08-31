@@ -24,4 +24,4 @@ Qué corregir antes del corte 1 (semana 5):
 
 ## Semana 4 · S4
 
-El repositorio muestra avances sólidos en documentación arc42 (secciones 1-5, 10 y glosario) y estructura mínima. Para la próxima entrega, asegúrense de incluir evidencia ejecutable: contenido de sección 6, diagramas C4, comando de arranque y URL de un run de CI en verde. Revisen la convención de ADR: el 0001 debe enlazar al 0002 como reemplazo. Completen la fila de aspectos con celdas navegables. Con eso podrán defender todos los criterios.
+El repositorio muestra avances en documentación arc42 y estructura. Falta incluir contenido verificable de secciones 6 y 9, C4, aspectos y README. La prueba del corte vertical es inexistente; se recomienda agregar test para search_games y ejecutarlo en CI. Revisar convención de ADR: 0002 debe marcar 0001 como reemplazado. Completar evidencia de arranque y pipeline.

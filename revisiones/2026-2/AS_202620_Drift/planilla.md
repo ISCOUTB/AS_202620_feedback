@@ -14,7 +14,7 @@
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 4 | S4 | `ff339e9` (2026-08-29T21:53:23-05:00) | 2/10 | 1.8 | si |
+| 4 | S4 | `4254f4a` (2026-08-30T19:13:01-05:00) | 3/10 | 2.2 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `b7ec296c` · 2026-08-09T22:59:42-05:00 | 4/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `23fb8c29` · 2026-08-16T22:39:37-05:00 | 6/9 | no se publica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `0d006bba` · 2026-08-23T18:05:58-05:00 | 5/9 | no se publica | sí |

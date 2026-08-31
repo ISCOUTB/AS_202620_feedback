@@ -20,4 +20,4 @@ Qué corregir antes del corte 1 (semana 5):
 
 ## Semana 4 · S4
 
-El repositorio cumple con la mayoría de criterios de la evidencia S4: arc42 redactado, C4 como código, corte vertical documentado y prueba en CI. Para fortalecer la entrega, incluyan el contenido de docs/arc42/12-glosario.md y docs/aspectos.md en futuras revisiones, y agreguen configuración de SonarCloud para cumplir el análisis estático del contrato. La trazabilidad y la coherencia entre diagramas y código son buenas.
+El repositorio muestra un avance sólido en la documentación arc42, C4 y el corte vertical, con CI en verde y trazabilidad declarada. Para la próxima entrega, asegúrense de incluir evidencia explícita del contenido del glosario y de la fila de aspectos, y de integrar SonarCloud al pipeline para cumplir el contrato. La estructura y la coherencia entre diagramas y código son buenas; mantengan ese nivel de detalle.
