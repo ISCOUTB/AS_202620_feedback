@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_LostVault` |
 | Integrantes y su usuario de GitHub | Jose Faustino Espana Noriega · Roy Andres Gonzalez Blanco · Shamara Llorente Tapias · Kiefer Monterroza Manjarres — identidades del historial: Roy Gonzalez (¿`RGBlanco18`?), `shamarallorente-blip`, `Fausto-4` (correo `ganonimo2504`), `weller-rar` (correo `pelu.kiefer`); correspondencias por confirmar con el docente |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-08-31 |
+| Ultima revision | 2026-09-02 |
 
 ## Estado por entrega
 
@@ -18,7 +18,7 @@
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `af94a30` · 2026-08-16T22:09:43-05:00 | 7/9 | no se publica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `1ddb826` · 2026-08-23T23:57:37-05:00 | 4/9 | no se publica | sí |
 | 4 | S4 | `952af8f` (2026-08-30T22:13:14-05:00) | 7/10 | 3.8 | si |
-| 5 | Primer corte · reto de línea base | `corte-1` | | | |
+| 5 | CORTE1 | `952af8f` (2026-08-30T22:13:14-05:00) | 0/12 | no aplica | si |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
@@ -48,6 +48,15 @@
 | C4 nivel 2 sin código fuente que permita verificar coherencia y límites | S4 | si | |
 | Arranque documentado pero sin verificación ejecutada | S4 | si | |
 | Cortes ejecutables para AS-01, AS-02 y AS-04 pendientes según docs/aspectos.md | S4 | si | |
+| Confirmar etiqueta corte-1 | S5 | si | |
+| Diagnóstico de la restricción asignada con línea base medida | S5 | si | |
+| ADR del reto con alternativas, fuerzas, decisión y consecuencias | S5 | si | |
+| Cambio implementado y ejecutable de extremo a extremo | S5 | si | |
+| Medición contrastada con umbral y reproducible | S5 | si | |
+| Trazabilidad del reto en docs/aspectos.md | S5 | si | |
+| Registro de IA del corte 1 en docs/ia.md | S5 | si | |
+| PDF de dos páginas en Moodle | S5 | si | |
+| SonarCloud en el pipeline | S5 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -59,7 +68,7 @@
 | `docs/ia.md` al día | No cumple | Última entrada 08-ago; sin lo rechazado |
 | Sin credenciales en el repositorio ni en el historial | Cumple | git grep, .env y `log -S` sin coincidencias |
 | Contribución de todos los integrantes | Cumple | 4 identidades de 4 en `1ddb826`; atribución de `Fausto-4` y `weller-rar` por confirmar |
-| Pipeline en verde | Cumple | Sin `.github/workflows/`; prueba localizada sin evidencia de ejecución |
+| Pipeline en verde | No cumple | Sin `.github/workflows/`; prueba localizada sin evidencia de ejecución |
 
 ## Contribución por integrante
 

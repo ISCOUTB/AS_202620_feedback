@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica` |
 | Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-08-31 |
+| Ultima revision | 2026-09-02 |
 
 ## Estado por entrega
 
@@ -18,7 +18,7 @@
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `d4302f4` · 2026-08-16T23:17:26-05:00 | 7/9 | no aplica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `dd422fb` · 2026-08-23T23:52:23-05:00 | 6/9 | no se publica | sí |
 | 4 | S4 | `cede35e` (2026-08-30T23:51:34-05:00) | 6/10 | 3.4 | si |
-| 5 | Primer corte · reto de línea base | `corte-1` | | | |
+| 5 | CORTE1 | `cede35e` (2026-08-30T23:51:34-05:00) | 1/12 | no aplica | si |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
@@ -50,6 +50,12 @@
 | Fila A-01 de aspectos.md con C2 pendiente | S4 | si | |
 | Verificación de CI sin runs | S4 | si | |
 | Secciones 7 y 8 del arc42 pendientes (declarado) | S4 | si | |
+| Confirmar etiqueta corte-1 | S5 | si | |
+| Contrastar diagnóstico con la restricción asignada | S5 | si | |
+| Medir línea base y resultado contra umbral | S5 | si | |
+| Evidenciar pipeline en verde | S5 | si | |
+| Completar trazabilidad de A-04 | S5 | si | |
+| Verificar contenido de docs/ia.md | S5 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

@@ -8,12 +8,13 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Drift` |
 | Integrantes y su usuario de GitHub | Jerry Daniel Buelvas Mejia (`JerryDBM`) · Mauricio Andres Fernandez Espinosa (`maufern4ndez`) · Luis Mario Perez Diaz (`lmpdiaz12`) · Joshua David Reyes Leones (`JoshuaR01` y `JoshXX`, mismo correo) |
 | URL del sistema desplegado | sin desplegar todavía |
-| Ultima revision | 2026-08-31 |
+| Ultima revision | 2026-09-02 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 5 | CORTE1 | `d7a61cc` (2026-08-31T20:45:45-05:00) | 0/12 | no aplica | si |
 | 4 | S4 | `4254f4a` (2026-08-30T19:13:01-05:00) | 7/10 | 3.8 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `b7ec296c` · 2026-08-09T22:59:42-05:00 | 4/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `23fb8c29` · 2026-08-16T22:39:37-05:00 | 6/9 | no se publica | sí |
@@ -34,6 +35,12 @@
 | ADR con trazabilidad y marcado de reemplazo | S4 | si | |
 | README con requisitos previos y comando de arranque | S4 | si | |
 | Evidencia de run de CI en verde | S4 | si | |
+| Verificar/crear etiqueta corte-1 | S5 | si | |
+| Registrar ADR del reto con alternativas y decisión | S5 | si | |
+| Medir línea base con procedimiento | S5 | si | |
+| Completar aspectos.md con 8 columnas | S5 | si | |
+| Añadir rechazos con motivo en ia.md | S5 | si | |
+| Evidenciar run de CI en verde | S5 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -45,7 +52,7 @@
 | `docs/ia.md` al día | Cumple | Commits 08-21/08-22; rechazo narrado en §3.1 con motivo. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Sin coincidencias. |
 | Contribución de todos los integrantes | Cumple | Los 4 firman en S3, con desbalance (51/19/18/9). |
-| Pipeline en verde | No cumple | Sin pipeline; prueba local sin evidencia de ejecución. |
+| Pipeline en verde | No verificado | Sin pipeline; prueba local sin evidencia de ejecución. |
 
 ## Contribución por integrante
 

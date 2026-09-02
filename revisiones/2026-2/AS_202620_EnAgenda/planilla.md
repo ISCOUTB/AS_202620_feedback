@@ -10,12 +10,13 @@ Hoja consolidada del equipo EnAgenda. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_EnAgenda` |
 | Integrantes y su usuario de GitHub | Eliab Josue Arnedo Conde · Jeimy Yulieth Mendez Altamiranda · Gabriela Morales Cancino — cuentas abajo |
 | URL del sistema desplegado | sin desplegar aún |
-| Ultima revision | 2026-08-31 |
+| Ultima revision | 2026-09-02 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 5 | CORTE1 | `1d01401` (2026-08-31T00:28:12-05:00) | 1/12 | no aplica | si |
 | 4 | S4 | `df724b8` (2026-08-30T23:57:42-05:00) | 8/10 | 4.2 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `13f61b10` · 2026-08-09T05:34:14-05:00 | 8/9 | 4,6 * | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `5b6f7a8e` · 2026-08-16T23:33:20-05:00 | 5/9 | 3,2 * | sí |
@@ -37,6 +38,12 @@ Hoja consolidada del equipo EnAgenda. Se actualiza tras cada revisión.
 | Agregar SonarCloud al pipeline. | S4 | si | |
 | Hacer navegable la celda C4 de docs/aspectos.md. | S4 | si | |
 | Verificar redacción de arc42 01, 04, 05 y 06. | S4 | si | |
+| Etiqueta corte-1 ausente | S5 | si | |
+| ADR del reto no creado | S5 | si | |
+| Diagnóstico y medición no localizados | S5 | si | |
+| Cadena de aspectos con huecos | S5 | si | |
+| C4 nivel 2 desactualizado | S5 | si | |
+| SonarCloud no configurado | S5 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -48,7 +55,7 @@ Hoja consolidada del equipo EnAgenda. Se actualiza tras cada revisión.
 | `docs/ia.md` al día | Cumple | Entradas del 07, 08, 15 y 17 de agosto con rechazos y motivos |
 | Sin credenciales en el repositorio ni en el historial | Cumple | `git grep` de secretos sin coincidencias; sin `.env` versionado |
 | Contribución de todos los integrantes | No cumple en S3 | 2 de 3 en el periodo: Daoisttl0FB3 (4), Jein-12 (5); Eliab 0 |
-| Pipeline en verde | Cumple | Sin `.github/workflows/` y sin ninguna prueba en el árbol |
+| Pipeline en verde | No cumple | Sin `.github/workflows/` y sin ninguna prueba en el árbol |
 
 ## Contribución por integrante
 

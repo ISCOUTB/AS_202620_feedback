@@ -31,3 +31,7 @@ Registren en docs/ia.md lo que rechazaron de la IA y por qué.
 No versionen el entorno virtual (.venv-1).
 Ejecuten las pruebas en CI y dejen el enlace al run en verde.
 El glosario y las secciones 1-6, 9, 10 y 12 de arc42 deben quedar visibles en docs/arc42/.
+
+## Semana 5 · CORTE1
+
+El repositorio tiene una base sólida: README claro, arranque reproducible y un corte vertical ejecutable con pruebas. Sin embargo, la entrega del corte 1 no se puede verificar completamente: falta confirmar la etiqueta corte-1, no se evidencia un ADR nuevo del reto ni la restricción asignada, y la tabla de aspectos no sigue las 8 columnas del contrato. Se recomienda: 1) crear y verificar la etiqueta en un commit anterior al cierre; 2) documentar la restricción recibida y su diagnóstico con línea base medida; 3) registrar un ADR del reto con alternativas, fuerzas, decisión, consecuencias y trazabilidad; 4) completar docs/arc42/ y docs/c4/; 5) añadir la columna Evidencia a docs/aspectos.md; 6) subir evidencia de CI (runs) y medición reproducible; 7) registrar en docs/ia.md la salida aceptada/corregida/rechazada de este corte. El trabajo de semanas anteriores está pendiente de completar en estos puntos.

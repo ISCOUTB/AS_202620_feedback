@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET` |
 | Integrantes y su usuario de GitHub | Nilver Garcia Pimentel · Camilo Jose Martinez Berrio · Joshua Jose Tenorio Alvarez — historial con tres identidades: `camilixo92`, `nilver-garcia` y `Nnigarp` (misma cuenta de GitHub, consolidar) y `Carulla-sd` (correspondencias por confirmar con el docente) |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-08-31 |
+| Ultima revision | 2026-09-02 |
 
 ## Estado por entrega
 
@@ -18,7 +18,7 @@
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `4f72799` · 2026-08-16T22:01:41-05:00 | 7/9 | no se publica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `4dd857a` · 2026-08-23T23:54:16-05:00 | 9/9 | no se publica | sí |
 | 4 | S4 | `f3f4367` (2026-08-30T22:55:30-05:00) | 9/10 | 4.6 | si |
-| 5 | Primer corte · reto de línea base | `corte-1` | | | |
+| 5 | CORTE1 | `f3f4367` (2026-08-30T22:55:30-05:00) | 0/12 | no aplica | si |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
@@ -49,6 +49,14 @@
 | Verificar arranque con un solo comando mediante ejecución | S4 | si | |
 | Enlazar ADR-0001 con commit que lo implementa | S4 | si | |
 | Definir medición de línea base | S4 | si | |
+| Etiqueta corte-1 | S5 | si | |
+| Diagnóstico de la restricción asignada | S5 | si | |
+| ADR del reto con alternativas y decisión | S5 | si | |
+| Implementación del cambio sobre el corte vertical | S5 | si | |
+| Pruebas y medición contra umbral | S5 | si | |
+| Trazabilidad del reto en docs/aspectos.md | S5 | si | |
+| Registro de IA del corte en docs/ia.md | S5 | si | |
+| PDF de dos páginas en Moodle | S5 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

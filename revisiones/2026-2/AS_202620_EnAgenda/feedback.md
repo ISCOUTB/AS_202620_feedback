@@ -27,3 +27,7 @@ Qué corregir antes del corte 1 (semana 5):
 ## Semana 4 · S4
 
 La entrega de la semana 4 está sólida en documentación arc42, glosario, C4 niveles 1 y 2, corte vertical y pruebas en CI. Para el primer corte, revisen la coherencia entre el C4 nivel 2 y el código real: el diagrama muestra API/Backend y Base de Datos, pero la implementación es un monolito Flask con repositorio en memoria; ajusten el diagrama o el código. Completen la celda C4 de docs/aspectos.md con rutas navegables a los diagramas. Agreguen SonarCloud al pipeline como exige el contrato. Eviten versionar archivos .pyc. Finalmente, verifiquen que las secciones 1, 4, 5 y 6 de arc42 estén completamente redactadas y sin texto de plantilla.
+
+## Semana 5 · CORTE1
+
+El repositorio tiene una base sólida de documentación y CI en verde, pero la entrega del corte 1 está incompleta: falta la etiqueta corte-1, el ADR del reto, el diagnóstico con línea base medida y el cambio implementado. Organicen la respuesta al reto como un ADR nuevo que enlace requisito, C4, código, pruebas y evidencia, y completen la fila de aspectos con rutas navegables. Revisen la coherencia del C4 nivel 2 con el código real y añadan SonarCloud al pipeline. El registro de IA está bien llevado; mantengan ese nivel de detalle.

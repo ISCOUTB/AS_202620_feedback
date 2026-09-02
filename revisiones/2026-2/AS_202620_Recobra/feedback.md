@@ -24,3 +24,7 @@ Qué corregir antes del corte 1 (semana 5):
 ## Semana 4 · S4
 
 La documentación avanza, pero el repositorio no contiene el código que el README describe: no hay src/ ni tests/ en el commit calificado. El corte vertical debe existir como código real, no solo como texto. Revisen la numeración de arc42: la sección 5 debe ser bloques de construcción y la 6 vista de ejecución; falta la sección 9 de decisiones. La tabla de aspectos necesita las columnas completas (ID, requisito, C4, ADR, código, pruebas, evidencia). El C4 dibuja Flutter y PostgreSQL que no tienen implementación; ajusten el diagrama o el alcance. No versionen node_modules y roten el token de Coveralls expuesto. Configuren CI para ejecutar las pruebas y dejen evidencia del run en verde.
+
+## Semana 5 · CORTE1
+
+El repositorio tiene una base sólida de semanas anteriores (README, ADR-0001, estructura hexagonal), pero la entrega del reto de corte 1 no está completa. Falta el ADR del reto, la medición de línea base y el resultado contrastado con el umbral. La tabla de aspectos no tiene las 8 columnas del contrato y no hay pipeline que ejecute las pruebas. Se recomienda: versionar solo código (node_modules no debe estar en git), rotar el token de Coveralls encontrado, confirmar la etiqueta corte-1, adjuntar el PDF de dos páginas en Moodle y registrar en docs/ia.md una salida de IA de este corte con su motivo técnico. También conviene equilibrar la participación en el historial.

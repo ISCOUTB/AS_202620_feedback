@@ -27,3 +27,7 @@ Qué corregir antes del corte 1 (semana 5):
 ## Semana 4 · S4
 
 El C4 en Mermaid es claro y coherente entre niveles, y los cinco módulos Gradle corresponden a la estructura dibujada. El CI ejecuta las pruebas en verde y la fila A-01 de aspectos está completa hasta Pruebas. Para el próximo corte: completar y verificar las secciones 3-6, 9, 10 y el glosario del arc42; asegurar que la prueba de corte vertical invoque explícitamente la persistencia; implementar o justificar el contenedor Backend XALD; añadir análisis estático con SonarCloud; y enriquecer los ADR con opciones evaluadas y trazabilidad a commits y pruebas.
+
+## Semana 5 · CORTE1
+
+El repositorio tiene una base sólida: estructura completa, CI en verde y registro de IA con justificaciones técnicas. Para el corte 1 falta hacer visible la respuesta al reto: incluyan en el repo o enlacen desde aspectos.md el diagnóstico con la restricción asignada, la línea base medida con su procedimiento, el ADR con alternativas y fuerzas, y la medición contra el umbral. Completen las celdas Pendiente de la tabla de aspectos para que la cadena sea navegable. Añadan la trazabilidad (requisito, C4, commit, pruebas) a cada ADR. Revisen la etiqueta corte-1 y asegúrense de que apunte al commit evaluado. El PDF de dos páginas debe recoger diagnóstico, decisión, cambio, medición y trazabilidad; sin él, esos criterios quedan sin verificar.

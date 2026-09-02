@@ -25,3 +25,7 @@ Qué corregir antes del corte 1 (semana 5):
 ## Semana 4 · S4
 
 Entrega S4 completa y bien orientada: arc42 1-6, 9, 10 y 12 redactados con contenido propio, C4 niveles 1 y 2 como código, corte vertical de registro con prueba en CI en verde, y fila 2 de aspectos trazable hasta pruebas. Para el primer corte: completen las secciones 7, 8 y 11 de arc42, llenen los huecos de las filas 1 y 3 de aspectos, integren SonarCloud al pipeline, enlacen cada ADR con el commit que lo implementa y registren una medición de línea base. El glosario y los escenarios de calidad están bien alineados con el dominio.
+
+## Semana 5 · CORTE1
+
+El repositorio conserva la base de semanas anteriores, pero la entrega del corte 1 no presenta avances del reto: no hay etiqueta corte-1, ni diagnóstico, ADR, implementación, pruebas o medición. Se recomienda: 1) crear la etiqueta en un commit anterior al cierre; 2) documentar el diagnóstico con línea base medible; 3) registrar el ADR del reto con alternativas y consecuencias; 4) implementar el cambio y añadir pruebas que cubran el escenario; 5) actualizar docs/aspectos.md y docs/ia.md; 6) configurar SonarCloud. La sustentación se evaluará en sesión.

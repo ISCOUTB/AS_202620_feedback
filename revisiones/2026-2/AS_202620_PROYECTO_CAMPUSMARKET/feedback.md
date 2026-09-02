@@ -21,3 +21,7 @@ Qué corregir antes del corte 1 (semana 5):
 ## Semana 4 · S4
 
 La evidencia S4 está sólida: arc42 1-6, 9, 10 y 12 redactados con contenido propio; C4 niveles 1 y 2 coherentes y versionados como código; corte vertical de publicaciones trazado desde la interfaz hasta SQLite con prueba en verde; y la fila ASP-05 de aspectos queda completa hasta Pruebas. Para el primer corte, integren SonarCloud al pipeline, enlacen cada ADR con el commit que lo implementa y añadan una medición de línea base. El arranque con un solo comando está bien documentado; conviene dejarlo verificado en un run o captura. Sigan manteniendo el registro de IA con lo rechazado y su motivo, que está bien logrado.
+
+## Semana 5 · CORTE1
+
+El repositorio no presenta trabajo del corte 1: no hay etiqueta corte-1, no hay ADR nuevo, no hay diagnóstico, cambio, medición ni pruebas del reto. La línea base de S4 está completa y el pipeline está en verde, pero eso ya estaba calificado. Para el corte 1 se espera: crear la etiqueta corte-1 sobre un commit anterior al cierre, documentar la restricción asignada y su impacto, registrar un ADR con alternativas y decisión, implementar el cambio, medir contra el umbral y actualizar trazabilidad e IA. El PDF de dos páginas debe adjuntarse en Moodle. La sustentación se evaluará en sesión.

@@ -24,3 +24,12 @@ Qué corregir antes del corte 1 (semana 5):
 ## Semana 4 · S4
 
 La entrega S4 quedó incompleta al cierre: arc42 solo cubre secciones 1-4, falta el C4 nivel 2, el corte vertical no llega a persistencia y no hay glosario. El commit posterior añade C4 nivel 2, ADR 0002, persistencia y pruebas, pero el pipeline de HEAD está en rojo. Revisen que la documentación se suba antes del cierre y que el CI quede en verde. Completen docs/ia.md con lo que se rechazó y por qué. Distribuyan el trabajo: el historial muestra un solo autor. La fila A-01 de aspectos es un buen inicio; extiendan la trazabilidad al resto.
+
+## Semana 5 · CORTE1
+
+El repositorio conserva una base sólida de semanas anteriores (corte vertical S4, ADR de estilo y stack, aspectos, CI en pytest), pero la entrega del corte 1 no se ve reflejada: falta el diagnóstico de la restricción asignada, el ADR del reto, el cambio implementado y la medición contra umbral.
+Revisen la trazabilidad: los enlaces a arc42 están rotos y la tabla de aspectos no es navegable de punta a punta.
+El registro de IA no muestra usos de este corte ni salidas rechazadas con motivo técnico.
+El pipeline carece de análisis estático (SonarCloud).
+Además, el historial muestra commits de un solo integrante; los demás deben contribuir para que la autoría sea visible.
+Para la sustentación, preparen: ¿cuál era la restricción asignada y cómo la diagnosticaron? ¿Qué alternativas descartaron y por qué? ¿Cómo se reproduce la medición contra el umbral?

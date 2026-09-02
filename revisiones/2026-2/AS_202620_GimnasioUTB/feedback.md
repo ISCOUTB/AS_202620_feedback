@@ -26,3 +26,7 @@ Qué corregir antes del corte 1 (semana 5):
 ## Semana 4 · S4
 
 La documentación de arquitectura (arc42, C4, ADR, aspectos, IA) muestra avance, pero el corte vertical que describe el README no está implementado: las carpetas del módulo aforo están vacías y no hay endpoints de aforo ni persistencia. El comando db:migrate mencionado no existe en package.json. La prueba automatizada solo cubre /health, no el recorrido completo. Revisen la trazabilidad: las celdas de aspectos y el ADR deben apuntar a archivos y commits reales. Para la próxima entrega, implementen el flujo de registro de acceso con su prueba de integración y alineen el README con los scripts reales. El C4 en código Mermaid es un buen punto de partida; mantengan esa práctica.
+
+## Semana 5 · CORTE1
+
+El repositorio conserva una línea base sólida de las semanas anteriores (estructura hexagonal, ADR 0001, CI en verde, README reproducible), pero la respuesta al reto del corte 1 no está presente: falta la etiqueta corte-1, el ADR de la restricción asignada, el diagnóstico con línea base medida, la implementación del cambio, la prueba asociada y la medición contra umbral. Para el siguiente corte, etiqueten el commit, documenten el reto con alternativas y consecuencias, y actualicen docs/ia.md y docs/aspectos.md con la trazabilidad completa. La sustentación definirá la nota del quinto criterio.

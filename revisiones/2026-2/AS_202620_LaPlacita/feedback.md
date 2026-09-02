@@ -24,3 +24,7 @@ Qué corregir antes del corte 1 (semana 5):
 ## Semana 4 · S4
 
 Buen avance: C4 como código, corte vertical con pruebas en CI verde y trazabilidad A-01 completa. Para el primer corte, alineen los contenedores del diagrama con lo implementado (Redis, PostgreSQL, App/Web Cliente y Portal aún no existen en el repo) y completen docs/ia.md con lo rechazado y su motivo. Revisen que los ADR pendientes enlacen el commit que los implementa. Las secciones 5-12 de arc42 no se pudieron verificar en esta revisión; asegúrense de que estén redactadas sin texto de plantilla.
+
+## Semana 5 · CORTE1
+
+El repositorio tiene una base sólida: estructura completa, CI en verde y README reproducible. Para el corte 1 falta lo esencial del reto: crear la etiqueta `corte-1`, declarar la restricción asignada y registrar el diagnóstico, la decisión y la medición. Completen la tabla de aspectos (celdas Pendiente), documenten en docs/ia.md qué salidas de IA rechazaron y por qué, y concreten SonarCloud. Sin esos elementos, la trazabilidad no se puede defender. El PDF de dos páginas debe entregarse en Moodle con los enlaces de trazabilidad.

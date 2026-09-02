@@ -27,3 +27,7 @@ Qué corregir antes del corte 1 (semana 5):
 ## Semana 4 · S4
 
 El repositorio está en la organización, con el nombre correcto y el commit de la semana es anterior al cierre. Sin embargo, la revisión no pudo verificar el contenido de la documentación ni la ejecución de pruebas porque no hay runs de CI ni se aportaron lecturas de los archivos. Suban evidencia concreta: encabezados de arc42, diagramas C4, rutas del corte vertical, comando de arranque y URL del run en verde. Corrijan la ruta de docs/aspectos.md y aseguren que todos los integrantes aparezcan en el historial.
+
+## Semana 5 · CORTE1
+
+El repositorio tiene la estructura base, README funcional y un esqueleto de monolito modular, pero la entrega del corte no responde al reto. No hay ADR del reto, diagnóstico con línea base, medición ni evidencia de pipeline. Revisen la restricción asignada, registren la decisión en un ADR nuevo, implementen el cambio y adjunten el PDF de dos páginas. Además, creen la etiqueta corte-1 y aseguren que todos los integrantes contribuyan al historial. La sustentación se evaluará en sesión.

@@ -26,3 +26,7 @@ Ojo: parte del trabajo llegó después del cierre y no contó para esta entrega;
 ## Semana 4 · S4
 
 Buen avance: el corte vertical A-01 está construido y documentado, los ADRs son sólidos y el README permite arrancar con un solo comando. Para el primer corte, completen el C4 nivel 2 con su diagrama y actualicen la tabla de niveles; la fila A-01 de aspectos.md debe enlazar un contenedor C4 real, no 'C2 pendiente'. Suban evidencia del run de CI en verde (URL) para confirmar las 34+6 pruebas. Revisen que la sección 9 del arc42 cite los ADRs y que el glosario tenga términos del dominio. El resto de la documentación se ve coherente.
+
+## Semana 5 · CORTE1
+
+El repositorio está bien organizado y los ADR 0004/0005 documentan decisiones con alternativas, fuerzas y consecuencias. La estructura, el README y la tabla de aspectos cumplen la forma esperada. Sin embargo, la entrega del corte 1 no permite verificar la etiqueta, la restricción asignada, la línea base medida, la ejecución del pipeline ni la trazabilidad completa del aspecto afectado. Completen la fila A-04, aporten la medición con procedimiento reproducible y dejen visible el run de CI en verde. La sustentación definirá el quinto criterio.

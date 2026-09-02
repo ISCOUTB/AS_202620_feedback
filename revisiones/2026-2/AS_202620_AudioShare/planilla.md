@@ -8,12 +8,13 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_AudioShare` |
 | Integrantes y su usuario de GitHub | Santiago Adolfo Camacho Hernandez (commits como «Santiago Adolfo Camacho Hernández») · Vincent Cardona Castro (presumiblemente `cardonavincent26-design`, sin confirmar) · Elian Daniel Perea Vanegas («Elian Daniel Perea Vanegas») · Yeiver Andres Verjel Perez («Yeiver Andrés Vergel Pérez») |
 | URL del sistema desplegado | sin desplegar todavía |
-| Ultima revision | 2026-08-31 |
+| Ultima revision | 2026-09-02 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 5 | CORTE1 | `dd2025c` (2026-09-01T09:56:35-05:00) | 0/12 | no aplica | si |
 | 4 | S4 | `24a5023` (2026-08-30T23:48:29-05:00) | 4/10 | 2.6 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `1c9ebb0a` · 2026-08-09T20:31:49-05:00 | 2/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `d0760fdf` · 2026-08-16T23:31:32-05:00 | 4/9 | no se publica | sí |
@@ -39,6 +40,14 @@
 | Fila de aspectos con columnas Requisito y C4 y prueba citada | S4 | si | |
 | README con un solo comando de arranque | S4 | si | |
 | Pipeline con run en verde | S4 | si | |
+| Confirmar etiqueta corte-1 | S5 | si | |
+| Obtener restricción asignada | S5 | si | |
+| Completar trazabilidad en docs/aspectos.md | S5 | si | |
+| Actualizar ADR 0001 a aceptado con implementación y pruebas | S5 | si | |
+| Agregar entrada de IA del corte 1 | S5 | si | |
+| Configurar pipeline y aportar runs | S5 | si | |
+| Conciliar C4 Nivel 2 con la implementación | S5 | si | |
+| Aportar medición de línea base y resultado contra umbral | S5 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -50,7 +59,7 @@
 | `docs/ia.md` al día | No cumple | Commit en S3 (`024ae34`) pero sin entradas de qué se rechazó y por qué. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Sin coincidencias; solo `.env.example`. |
 | Contribución de todos los integrantes | Cumple | 4 de 4 en S3: Santiago 11, Elian 11, Yeiver 7, Vincent 6. |
-| Pipeline en verde | No verificado | Prueba `tests/health.test.ts` y script `test`; sin workflow ni evidencia de ejecución. |
+| Pipeline en verde | No cumple | Prueba `tests/health.test.ts` y script `test`; sin workflow ni evidencia de ejecución. |
 
 ## Contribución por integrante
 

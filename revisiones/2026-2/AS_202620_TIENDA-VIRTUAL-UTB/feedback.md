@@ -32,3 +32,7 @@ Ajustar docs/aspectos.md a las 8 columnas del curso.
 Incorporar en docs/ia.md lo rechazado con su motivo técnico.
 Configurar SonarCloud en el pipeline.
 El arranque con un solo comando y la fila de disponibilidad hasta Pruebas ya están resueltos.
+
+## Semana 5 · CORTE1
+
+El repositorio está bien estructurado y el corte vertical arranca con un solo comando, pero la entrega del reto no se evidencia en el repositorio: no hay ADR nuevo, diagnóstico de la restricción ni medición. Sin conocer la restricción asignada no es posible validar el diagnóstico; asegúrense de citarla en el PDF y enlazarla desde la tabla de aspectos. La tabla de aspectos debe tener las 8 columnas del contrato para que la cadena sea navegable. Incorporen SonarCloud al pipeline; hoy solo corre pytest. Registren en docs/ia.md los usos de IA de este corte con al menos un descarte y su motivo técnico. Para la sustentación, preparen cómo justifican trade-offs, límites y consecuencias del reto.

@@ -10,7 +10,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TRACTAR` |
 | Integrantes y su usuario de GitHub | Joriel Samir Barros Pena (sin cuentas en el historial) · Geronimo Alberto Cadena Garcia (sin cuentas) · Sebastian Garcia Devoz (firma con dos identidades de git, mismo correo, más el correo institucional) · Mateo Alfonso Millan Barraza (sin cuentas) |
 | URL del sistema desplegado | sin URL (sin despliegue todavía) |
-| Ultima revision | 2026-08-31 |
+| Ultima revision | 2026-09-02 |
 
 ## Estado por entrega
 
@@ -20,7 +20,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `0a23855` · 2026-08-16T20:05:46-05:00 | 6/9 | 3.7 (propuesta) | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `5f923cd` · 2026-08-23T22:40:51-05:00 | 7/9 | no se publica | sí |
 | 4 | S4 | `2b16439` (2026-08-30T15:02:33-05:00) | 1/10 | 1.4 | si |
-| 5 | Primer corte · reto de línea base | `corte-1` | | | |
+| 5 | CORTE1 | `7cfb872` (2026-08-31T12:27:23-05:00) | 0/12 | no aplica | si |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
@@ -51,6 +51,14 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Autoría: 3 integrantes declarados sin commits en el historial | S4 | si | |
 | Sin análisis estático SonarCloud | S4 | si | |
 | Glosario y secciones 5/6/9/10 de arc42 no verificados en HEAD | S4 | si | |
+| Diagnóstico de la restricción asignada | S5 | si | |
+| ADR del reto con alternativas, fuerzas y consecuencias | S5 | si | |
+| Cambio implementado sobre el corte vertical | S5 | si | |
+| Medición reproducible contra umbral | S5 | si | |
+| Trazabilidad navegable en docs/aspectos.md | S5 | si | |
+| Análisis estático SonarCloud en pipeline | S5 | si | |
+| Registro de IA del corte con salidas rechazadas | S5 | si | |
+| Participación de los 4 integrantes en el historial | S5 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

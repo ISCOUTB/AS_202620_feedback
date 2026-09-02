@@ -23,3 +23,7 @@ Qué corregir antes del corte 1 (semana 5):
 ## Semana 4 · S4
 
 La entrega S4 se evaluó en d7ba824, dentro del plazo, pero el equipo siguió subiendo cambios hasta las 06:23Z. En el commit calificado faltan secciones 4, 5, 6 y 12 de arc42, la sección 9 no está redactada y la fila de aspectos deja Pruebas pendiente. El C4 nivel 2 dibuja Web y Base de datos sin código. El corte vertical de productos y su prueba en verde son el punto fuerte. Se recomienda completar arc42 dentro del horario de la entrega, corregir el ADR-0002 duplicado y añadir evidencia de SonarCloud. Para el primer corte, mantengan los diagramas como código y enlacen cada ADR con su commit de implementación.
+
+## Semana 5 · CORTE1
+
+El repositorio conserva la línea base de S1-S4, pero la respuesta al reto del corte 1 no aparece en el estado calificado: no hay ADR nuevo, diagnóstico con línea base, implementación, medición ni registro de IA de esta semana. El mensaje del commit head referencia ADR-0002 y ADR-0003 que no existen, lo que rompe la trazabilidad. Se recomienda crear los ADRs del reto con alternativas y consecuencias, medir el estado inicial antes de cambiar, implementar y probar el cambio, y registrar en docs/ia.md las salidas de IA aceptadas o rechazadas de este corte. También hace falta evidencia de SonarCloud. La sustentación se evaluará en sesión.

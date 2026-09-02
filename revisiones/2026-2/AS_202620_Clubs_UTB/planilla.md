@@ -8,12 +8,13 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Clubs_UTB` |
 | Integrantes y su usuario de GitHub | Hollman Jose De Orta Gonzalez (`deortahollman-star`) · Josh Robinson Ortega Castellon (`Josh4OP`) · Diego Andres Ramos De Avila (`Zavod Dev`, atribución sin confirmar) · Luis Daniel Salas Reyes (`Luis-Salas-Reyes`) |
 | URL del sistema desplegado | sin desplegar todavía |
-| Ultima revision | 2026-08-31 |
+| Ultima revision | 2026-09-02 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 5 | CORTE1 | `91323d6` (2026-08-30T23:21:56-05:00) | 0/12 | no aplica | si |
 | 4 | S4 | `91323d6` (2026-08-30T23:21:56-05:00) | 9/10 | 4.6 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `c92595ed` · 2026-08-09T13:25:24-05:00 | 2/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `69cfe68f` · 2026-08-16T18:33:10-05:00 | 7/9 | no se publica | sí |
@@ -33,6 +34,14 @@
 | Arranque con un solo comando en README | S4 | si | |
 | Análisis estático en SonarCloud | S4 | si | |
 | Código del contenedor Flutter pendiente (esperado para fases siguientes) | S4 | si | |
+| Etiqueta corte-1 ausente | S5 | si | |
+| ADR del reto no creado | S5 | si | |
+| Diagnóstico y línea base no documentados | S5 | si | |
+| Cambio no implementado | S5 | si | |
+| Medición no aportada | S5 | si | |
+| Tabla de aspectos incompleta | S5 | si | |
+| Registro IA sin entrada de S5 | S5 | si | |
+| Análisis estático SonarCloud ausente | S5 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -44,7 +53,7 @@
 | `docs/ia.md` al día | No cumple | Último commit `c92595e` (2026-08-09). |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Sin coincidencias. |
 | Contribución de todos los integrantes | Cumple | 4 de 4 en S3: Luis 2, Diego 2, Hollman 1, Josh 1 (Josh4OP = «Josh Ortega», mismo correo). |
-| Pipeline en verde | Cumple | Sin workflow; la prueba estaba vacía en el hash calificado (contenido tardío). |
+| Pipeline en verde | No cumple | Sin workflow; la prueba estaba vacía en el hash calificado (contenido tardío). |
 
 ## Contribución por integrante
 

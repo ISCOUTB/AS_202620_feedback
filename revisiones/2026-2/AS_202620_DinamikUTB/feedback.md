@@ -25,3 +25,7 @@ Qué corregir antes del corte 1 (semana 5):
 ## Semana 4 · S4
 
 La documentación arc42 y el C4 están bien avanzados y el corte vertical es trazable en el código. Para el primer corte: enlacen el ADR-0002 desde la sección 9 y añadan trazabilidad con commits y pruebas en los ADR. Ejecuten el pipeline y dejen visible el run en verde como evidencia de las pruebas. Completen la fila de aspectos con enlaces verificables. Eviten commits después del cierre; el arranque con start.bat debe quedar cerrado antes. El glosario y la coherencia C4-código son un buen punto de partida.
+
+## Semana 5 · CORTE1
+
+El repositorio tiene una base sólida: estructura completa, ADRs bien formados y README reproducible. Para el corte 1, asegúrense de que la etiqueta corte-1 exista y apunte a un commit anterior al cierre. Incluyan en el repositorio (no solo en el PDF) el diagnóstico de la restricción con línea base medida, el ADR del reto con alternativas y consecuencias, y la medición reproducible contra el umbral. Aporten enlaces a los runs de GitHub Actions en verde. Completen docs/ia.md con la salida aceptada/corregida/rechazada y su motivo técnico. Revisen que docs/aspectos.md tenga las 8 columnas navegables para la fila del aspecto tocado.

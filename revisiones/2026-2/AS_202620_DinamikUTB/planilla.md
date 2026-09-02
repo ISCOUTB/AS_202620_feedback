@@ -8,12 +8,13 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_DinamikUTB` |
 | Integrantes y su usuario de GitHub | Luis Daniel Padilla Leottau (`Daniel-dev02`) · Gillianis Del Carmen Perez Revolledo (`gillianisperez-prog`) · Esteban Ramirez Rios (`Eramirezr`) · Juan Jose Vargas Perez (`JuanchisV`, firma también como «Juan José Vargas Pérez» con el mismo correo) |
 | URL del sistema desplegado | sin desplegar todavía |
-| Ultima revision | 2026-08-31 |
+| Ultima revision | 2026-09-02 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 5 | CORTE1 | `10d50eb` (2026-09-01T01:23:25-05:00) | 0/12 | no aplica | si |
 | 4 | S4 | `8558156` (2026-08-30T23:52:24-05:00) | 7/10 | 3.8 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `769f970` · 2026-08-09T21:24:49-05:00 | 7/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `58734e1c` · 2026-08-16T23:33:53-05:00 | 9/9 | no se publica | sí |
@@ -38,6 +39,12 @@
 | Evidencia de run de CI en verde | S4 | si | |
 | Verificar fila de aspectos.md | S4 | si | |
 | Verificar contenido de docs/ia.md | S4 | si | |
+| Confirmar existencia de etiqueta corte-1 | S5 | si | |
+| Aportar PDF de dos páginas en Moodle | S5 | si | |
+| Conocer la restricción asignada para evaluar el diagnóstico | S5 | si | |
+| Aportar runs_ci del pipeline en verde | S5 | si | |
+| Completar docs/ia.md con salida aceptada/corregida/rechazada | S5 | si | |
+| Verificar navegabilidad de docs/aspectos.md | S5 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

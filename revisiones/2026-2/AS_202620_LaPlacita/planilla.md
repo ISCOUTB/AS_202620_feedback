@@ -10,12 +10,13 @@ Hoja consolidada del equipo LaPlacita. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_LaPlacita` |
 | Integrantes y su usuario de GitHub | Mateo Josue Buendia Barrios · Miguel Angel Isaza Montalvo · Samuel David Jimenez Alvarez · Jorge Alberto Martinez Castillo — cuentas abajo |
 | URL del sistema desplegado | sin desplegar aún |
-| Ultima revision | 2026-08-31 |
+| Ultima revision | 2026-09-02 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 5 | CORTE1 | `745e799` (2026-08-30T21:52:41-05:00) | 0/12 | no aplica | si |
 | 4 | S4 | `745e799` (2026-08-30T21:52:41-05:00) | 4/10 | 2.6 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `37f1deb8` · 2026-08-08T15:37:16-05:00 | 8/9 | 4,6 * | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `fa7e13bc` · 2026-08-15T18:13:29-05:00 | 5/9 | 3,2 * | sí |
@@ -36,6 +37,12 @@ Hoja consolidada del equipo LaPlacita. Se actualiza tras cada revisión.
 | docs/ia.md sin columna de rechazo | S4 | si | |
 | Trazabilidad ADR-0001/0003 pendiente | S4 | si | |
 | Verificación de secciones arc42 5-12 | S4 | si | |
+| Etiqueta corte-1 | S5 | si | |
+| Declarar restricción asignada | S5 | si | |
+| Completar trazabilidad en aspectos.md | S5 | si | |
+| Registrar motivos técnicos en ia.md | S5 | si | |
+| Configurar SonarCloud | S5 | si | |
+| Aportar mediciones reproducibles | S5 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -47,7 +54,7 @@ Hoja consolidada del equipo LaPlacita. Se actualiza tras cada revisión.
 | `docs/ia.md` al día | Cumple | Entradas del 23/08 con lo rechazado y su motivo |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Greps limpios |
 | Contribución de todos los integrantes | Cumple | 4 identidades consolidadas / 4 integrantes (53+21+18+3) |
-| Pipeline en verde | Cumple | Sin `.github/workflows/`; verde según declaración del equipo en `docs/ia.md` |
+| Pipeline en verde | No cumple | Sin `.github/workflows/`; verde según declaración del equipo en `docs/ia.md` |
 
 ## Contribución por integrante
 

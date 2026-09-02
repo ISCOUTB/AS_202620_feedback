@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_PideUtb` |
 | Integrantes y su usuario de GitHub | Daniela Sofia Arrieta Guardo · Santiago Jose Cuesta Maza · Ruddy Rodriguez Romero — cuentas observadas: `daniarriet`, `Santiago Cuesta`/`Santiago-C0` (misma persona, EQUIPOS.md:95); sin cuenta para Ruddy |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-08-31 |
+| Ultima revision | 2026-09-02 |
 
 ## Estado por entrega
 
@@ -18,7 +18,7 @@
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `9b5f214` · 2026-08-16T12:47:26-05:00 | 9/9 | no se publica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `b5f0310` · 2026-08-23T19:42:42-05:00 | 5/9 | no se publica | sí |
 | 4 | S4 | `1636f20` (2026-08-30T22:17:18-05:00) | 1/10 | 1.4 | si |
-| 5 | Primer corte · reto de línea base | `corte-1` | | | |
+| 5 | CORTE1 | `1636f20` (2026-08-30T22:17:18-05:00) | 0/12 | no aplica | si |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
@@ -50,6 +50,13 @@
 | docs/ia.md con lo rechazado | S4 | si | |
 | CI con pruebas en verde | S4 | si | |
 | Eliminar .venv-1 del repositorio | S4 | si | |
+| Confirmar etiqueta corte-1 | S5 | si | |
+| Documentar restricción y diagnóstico | S5 | si | |
+| Crear ADR del reto | S5 | si | |
+| Completar docs/arc42/ y docs/c4/ | S5 | si | |
+| Reestructurar docs/aspectos.md a 8 columnas | S5 | si | |
+| Evidencia de CI y medición | S5 | si | |
+| Entrada de IA del corte en docs/ia.md | S5 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

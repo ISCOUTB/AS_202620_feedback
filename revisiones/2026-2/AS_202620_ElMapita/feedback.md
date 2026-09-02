@@ -27,3 +27,7 @@ Qué corregir antes del corte 1 (semana 5):
 ## Semana 4 · S4
 
 Buen avance en documentación: C4 niveles 1 y 2 completos y coherentes, corte vertical con interfaz, lógica y persistencia, y README con arranque por script. El pipeline de CI está en rojo y las pruebas del recorrido completo siguen pendientes: las rutas citadas en docs/aspectos.md no existen. Se recomienda crear una prueba e2e del flujo de mapas y dejarla en verde, configurar SonarCloud y revisar la distribución de commits para que el historial refleje participación del equipo. También conviene verificar que las secciones 4-6, 9, 10 y 12 de arc42 estén redactadas con contenido propio.
+
+## Semana 5 · CORTE1
+
+El repositorio tiene una base sólida de documentación (arc42, C4, ADR-0001, README), pero la entrega del corte 1 no deja ver la respuesta al reto. Para el siguiente corte: (1) añadan el ADR del reto con alternativas, fuerzas, decisión y consecuencias ligadas al escenario de calidad; (2) completen docs/aspectos.md con rutas reales de código y pruebas, y evidencia de medición reproducible; (3) dejen un run de CI en verde que ejecute la prueba del cambio; (4) verifiquen que los tres integrantes aparezcan en el historial; (5) eliminen el archivo temporal de Word versionado. La sustentación se evaluará en sesión.

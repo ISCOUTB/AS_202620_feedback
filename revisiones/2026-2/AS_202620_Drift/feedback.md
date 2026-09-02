@@ -25,3 +25,7 @@ Qué corregir antes del corte 1 (semana 5):
 ## Semana 4 · S4
 
 El corte vertical ya atraviesa interfaz, lógica y persistencia, y la documentación arc42 está completa hasta la sección 12. Para el primer corte: añadan una prueba automatizada que ejercite el recorrido completo de búsqueda (no solo el health check) y evidencien el run en verde. Completen la tabla de trazabilidad de docs/aspectos.md con las columnas Requisito, C4, ADR, Código, Pruebas y Evidencia, verificando que cada enlace exista. Marquen el ADR-0001 como reemplazado por el 0002 y añadan trazabilidad (commit y pruebas) a ambos. Documenten en docs/ia.md lo que se rechazó de la IA y por qué. Incluyan en el README los requisitos previos y el comando único de arranque.
+
+## Semana 5 · CORTE1
+
+El repositorio tiene una base sólida de documentación y código, pero la respuesta al reto del corte 1 no aparece en el commit calificado. No se encontró un ADR nuevo que registre el diagnóstico de la restricción, las alternativas y la decisión, ni una medición de línea base con procedimiento reproducible. La tabla de aspectos no sigue el formato de 8 columnas del contrato, lo que impide recorrer la trazabilidad. El registro de IA documenta usos, pero no muestra qué salidas se rechazaron y por qué. El pipeline existe, pero no hay evidencia de un run en verde anterior a la etiqueta. Para la sustentación, preparen respuestas sobre la restricción asignada, el estado inicial medido y cómo verifican el umbral del escenario.

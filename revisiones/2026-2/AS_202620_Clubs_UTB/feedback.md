@@ -27,3 +27,7 @@ Ojo: parte del trabajo llegó después del cierre y no contó para esta entrega;
 ## Semana 4 · S4
 
 Entrega S4 completa en lo esencial: arc42 1-6, 9, 10 y glosario redactados; C4 niveles 1-2 coherentes; corte vertical que atraviesa interfaz, lógica y persistencia con prueba en verde; fila U2 de aspectos.md trazable hasta Pruebas. Para cerrar los pendientes: (1) unificar el arranque en un solo comando en el README; (2) configurar SonarCloud para el análisis estático del contrato; (3) declarar explícitamente que el contenedor Flutter aún no tiene código. El registro de IA y los ADR están bien llevados; continúen así.
+
+## Semana 5 · CORTE1
+
+El repositorio mantiene la línea base documental de semanas anteriores, pero la entrega del corte 1 no responde al reto: falta la etiqueta corte-1, no hay ADR nuevo, no se documenta diagnóstico con línea base medida, no hay implementación del cambio ni medición reproducible. Se recomienda crear la etiqueta, registrar la restricción asignada en un ADR con alternativas y consecuencias, implementar el cambio en el código con su prueba, y añadir la medición con herramienta y procedimiento. Completar la tabla de aspectos con la columna Evidencia y registrar el uso de IA de esta semana. El pipeline está en verde, pero debe ampliarse para cubrir el cambio del reto.

@@ -25,3 +25,17 @@ Qué corregir antes del corte 1 (semana 5):
 ## Semana 4 · S4
 
 La entrega tiene un corte vertical claro (HTTP → caso de uso → dominio → persistencia en memoria) y la fila A-01 de aspectos está completa y navegable. Para el primer corte: (1) dejen visible el contenido de las secciones 3, 4, 9, 10 y 12 de arc42 y eliminen restos de plantilla (el archivo aún se llama template); (2) agreguen al ADR-0001 la trazabilidad exigida (requisito, C4, commit, pruebas); (3) ejecuten pytest y suban el run en verde o configuren GitHub Actions, porque hoy no hay evidencia de CI; (4) ajusten el C4 nivel 2 para marcar App Móvil y Base de Datos como objetivo, o no dibujarlas como contenedores actuales. El README documenta bien el arranque con run.bat. Sigan así.
+
+## Semana 5 · CORTE1
+
+La entrega no muestra evidencia del reto de línea base en el repositorio.
+1) Crear la etiqueta corte-1 en el commit a calificar.
+2) Registrar la restricción asignada y su impacto en requisitos, C4 y código.
+3) Medir el estado inicial con herramienta y procedimiento.
+4) Escribir el ADR del reto con alternativas, fuerzas, decisión y consecuencias.
+5) Implementar el cambio y probarlo de extremo a extremo.
+6) Ejecutar las pruebas en CI y adjuntar el run.
+7) Contrastar el resultado con el umbral del escenario.
+8) Completar la fila del aspecto en aspectos.md.
+9) Registrar en ia.md la salida de IA de este corte.
+10) Entregar el PDF en Moodle.

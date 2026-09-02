@@ -25,3 +25,7 @@ Qué corregir antes del corte 1 (semana 5):
 ## Semana 4 · S4
 
 La documentación arc42 y los diagramas C4 están avanzados, pero el corte vertical no atraviesa persistencia y el C4 nivel 2 dibuja contenedores que aún no existen en el código. La sección 9 debe enlazar los ADR reales en docs/adr/ en lugar de repetirlos o crear ADR sin archivo. Completen la fila de aspectos con las columnas Requisito y C4, y citen la prueba del recorrido (tests/a01.test.ts) en la celda de Pruebas. El README debería declarar un único comando de arranque. Configuren integración continua y dejen evidencia del run en verde. Revisen que el ADR-0001 refleje el estado actual o creen uno nuevo si la decisión cambió.
+
+## Semana 5 · CORTE1
+
+El repositorio tiene una base sólida de documentación y un corte vertical ejecutable, pero la entrega del reto no deja evidencia verificable en el repositorio: falta la etiqueta, la restricción asignada, la medición de línea base y los runs de CI. Completen la trazabilidad de aspectos con las columnas del contrato, actualicen el ADR a aceptado con implementación y pruebas, y registren en docs/ia.md los usos de IA de este corte. Aseguren que el C4 de contenedores refleje la implementación real.

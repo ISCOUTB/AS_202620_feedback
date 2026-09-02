@@ -24,3 +24,7 @@ Qué corregir antes del corte 1 (semana 5):
 ## Semana 4 · S4
 
 Entrega sólida de la semana 4: arc42 1-6, 9, 10 y glosario redactados con contenido propio, corte vertical AS-03 que atraviesa UI, lógica y persistencia, y fila de aspectos completa con pruebas en verde en CI. Para el primer corte, conviertan el C4 nivel 2 a código (puml, mmd o Structurizr) para que sea trazable y revisable, y añadan la integración con SonarCloud al pipeline según el contrato. Ejecuten y verifiquen el arranque con flutter run -d chrome para dejar evidencia de que el comando funciona. Los demás aspectos (AS-01, AS-02, AS-04) quedan pendientes de cortes ejecutables, como indica la propia tabla.
+
+## Semana 5 · CORTE1
+
+La línea base del corte vertical AS-03 está sólida, ejecutable y con pruebas en verde. Para el reto de la semana 5 falta lo esencial: identificar la restricción asignada, registrar el diagnóstico con línea base medida, crear el ADR del reto con alternativas y consecuencias, implementar el cambio, medir contra el umbral y trazar la fila en docs/aspectos.md. También hace falta actualizar docs/ia.md con el uso de IA de este corte y confirmar la etiqueta corte-1. El PDF de dos páginas debe entregarse en Moodle con la trazabilidad completa. Revisen además la estructura de docs/aspectos.md para alinearla con las 8 columnas del contrato y agreguen SonarCloud al pipeline.

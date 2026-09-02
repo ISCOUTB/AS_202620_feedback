@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant` |
 | Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-08-31 |
+| Ultima revision | 2026-09-02 |
 
 ## Estado por entrega
 
@@ -18,7 +18,7 @@
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `59590c9` · 2026-08-16T19:15:15-05:00 | 3/9 | no aplica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `46257a03` · 2026-08-23T16:47:00-05:00 | 5/9 | no se publica | sí |
 | 4 | S4 | `c087303` (2026-08-30T18:54:10-05:00) | 5/10 | 3.0 | si |
-| 5 | Primer corte · reto de línea base | `corte-1` | | | |
+| 5 | CORTE1 | `c087303` (2026-08-30T18:54:10-05:00) | 0/12 | no aplica | si |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
@@ -51,6 +51,16 @@
 | Verificar contenido de secciones arc42 3, 4, 9, 10 y 12 | S4 | si | |
 | Configurar CI/SonarCloud o evidenciar plataforma alternativa | S4 | si | |
 | Alinear C4 nivel 2 con el código actual | S4 | si | |
+| Etiqueta corte-1 | S5 | si | |
+| PDF de dos páginas | S5 | si | |
+| Diagnóstico de la restricción con línea base medida | S5 | si | |
+| ADR del reto | S5 | si | |
+| Implementación del cambio | S5 | si | |
+| Prueba en CI | S5 | si | |
+| Medición contra umbral | S5 | si | |
+| Trazabilidad del reto en aspectos.md | S5 | si | |
+| Registro de IA del reto | S5 | si | |
+| Pipeline de CI | S5 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -62,7 +72,7 @@
 | `docs/ia.md` al día | No cumple | Entrada 03 (08-23) sin aceptado/rechazado |
 | Sin credenciales en el repositorio ni en el historial | Cumple | `git grep` §9 y `.env` sin coincidencias |
 | Contribución de todos los integrantes | Cumple | 4 identidades consolidadas = 4 integrantes |
-| Pipeline en verde | No verificado | Sin `.github/workflows/` y sin evidencia de ejecución |
+| Pipeline en verde | No cumple | Sin `.github/workflows/` y sin evidencia de ejecución |
 
 ## Contribución por integrante
 
