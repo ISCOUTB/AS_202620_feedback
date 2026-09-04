@@ -35,7 +35,7 @@
 | ADR aceptados no reescritos | Cumple | Historial con dos commits: creación (`723d9e6`) y renombrado (`d0e7078`); sin reescritura de contenido. |
 | `docs/ia.md` al día para la semana | No cumple | Última entrada del 08-ago; sin entradas de S3 y sin lo rechazado con motivo. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | `git grep` de secretos sin coincidencias (exit 1); sin `.env` versionado. |
-| Contribución de todos los integrantes | Cumple | 4 identidades / 4 integrantes: Roy Gonzalez 24; `shamarallorente-blip` 1 (PR #1); `Fausto-4` 1 (PR #3, correo `ganonimo2504`); `weller-rar` 1 (PR #4, correo `pelu.kiefer@gmail.com`, primera aparición en la actualización). Correspondencias por confirmar con el docente (Fausto-4→España, weller-rar→Monterroza parecen plausibles). |
+| Contribución de todos los integrantes | Cumple | 4 identidades / 4 integrantes: Roy Gonzalez 24; `shamarallorente-blip` 1 (PR #1); `Fausto-4` 1 (PR #3, correo `ganonimo2504`); `weller-rar` 1 (PR #4, correo `[correo omitido]`, primera aparición en la actualización). Correspondencias por confirmar con el docente (Fausto-4→España, weller-rar→Monterroza parecen plausibles). |
 
 ## Recuento
 

@@ -27,9 +27,4 @@ La entrega S4 quedó incompleta al cierre: arc42 solo cubre secciones 1-4, falta
 
 ## Semana 5 · CORTE1
 
-El repositorio conserva una base sólida de semanas anteriores (corte vertical S4, ADR de estilo y stack, aspectos, CI en pytest), pero la entrega del corte 1 no se ve reflejada: falta el diagnóstico de la restricción asignada, el ADR del reto, el cambio implementado y la medición contra umbral.
-Revisen la trazabilidad: los enlaces a arc42 están rotos y la tabla de aspectos no es navegable de punta a punta.
-El registro de IA no muestra usos de este corte ni salidas rechazadas con motivo técnico.
-El pipeline carece de análisis estático (SonarCloud).
-Además, el historial muestra commits de un solo integrante; los demás deben contribuir para que la autoría sea visible.
-Para la sustentación, preparen: ¿cuál era la restricción asignada y cómo la diagnosticaron? ¿Qué alternativas descartaron y por qué? ¿Cómo se reproduce la medición contra el umbral?
+Revisión preliminar antes del cierre: la base incluye corte vertical, C4, ADR y pruebas, pero todavía no aparece una respuesta identificable al reto del corte. Falta fijar la etiqueta, documentar la restricción asignada, medir el estado inicial, registrar alternativas y decisión, implementar el cambio y contrastar el resultado con el umbral. La fila de aspectos existente corresponde a la evidencia anterior y el registro de IA no se actualiza desde agosto. El historial sigue concentrado en una persona. Antes del cierre, conviertan esos elementos en una cadena navegable y preparen cómo justificarán la medición y las alternativas descartadas.

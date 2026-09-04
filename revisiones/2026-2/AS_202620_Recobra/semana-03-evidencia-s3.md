@@ -35,7 +35,7 @@
 | ADR aceptados no reescritos | No cumple | El ADR aceptado `docs/ADR/01-arquitectura-base.md` (decisión híbrida, `f45f002`) se **borró** en `cb5c579` y la decisión cambió a hexagonal puro sin marcarlo como «reemplazado» (CONTRATO §4). |
 | `docs/ia.md` al día para la semana | Cumple | Actualizado en `cb5c579` con entrada del 23-ago que incluye lo rechazado y su motivo. Observación: una sola fila llena, redactada como ejemplo, y solo dos integrantes citados. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | `git grep` §9 sin coincidencias (exit 1) fuera de `node_modules/`; `.env.example` solo con `PORT=3000`; sin `.env` versionado. |
-| Contribución de todos los integrantes | No cumple | 3 identidades / 4 integrantes: Cconde31 12 · MiguelJacome 4 · Steamlinker 1 (nueva, correo `camilandre0510@gmail.com`, sin atribuir). Un integrante sigue sin aparición. |
+| Contribución de todos los integrantes | No cumple | 3 identidades / 4 integrantes: Cconde31 12 · MiguelJacome 4 · Steamlinker 1 (nueva, correo `[correo omitido]`, sin atribuir). Un integrante sigue sin aparición. |
 
 ## Recuento
 

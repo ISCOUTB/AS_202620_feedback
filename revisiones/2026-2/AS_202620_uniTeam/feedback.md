@@ -28,3 +28,7 @@ Qué corregir antes del corte 1 (semana 5):
 ## Semana 4 · S4
 
 La entrega de la semana 4 está sólida en lo que se pudo verificar: C4 como código con coherencia entre niveles, corte vertical con las tres capas citadas, arranque con un solo comando y tabla de aspectos con enlaces navegables. Para cerrar los huecos de verificación, conviene que la sección 9 de arc42 cite explícitamente los ADR, que la sección 10 referencie los escenarios de calidad y que el glosario use términos propios del dominio. Aporten también la URL del run de CI en verde que ejecuta la prueba del recorrido completo; el badge del README no es evidencia de ejecución. El registro de IA debe mostrar lo aceptado y lo rechazado con su motivo. La medición de ESC-01 es un buen cierre y deja la línea base lista para el corte.
+
+## Semana 5 · CORTE1
+
+Revisión preliminar antes del cierre: el repositorio tiene una línea base reproducible, trazabilidad amplia y CI en verde. Todavía no permite identificar cuál es la restricción asignada ni qué ADR, cambio y resultado corresponden al reto del corte. Fijen la etiqueta, nombren explícitamente el reto, enlacen su diagnóstico con la línea base ya medida y aporten la medición posterior contra el mismo umbral. Registren también el uso de IA de esta etapa y confirmen la correspondencia entre las identidades de Git y los integrantes.

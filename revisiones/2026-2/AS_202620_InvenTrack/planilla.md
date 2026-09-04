@@ -10,13 +10,13 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_InvenTrack` |
 | Integrantes y su usuario de GitHub | Javier Alejandro Carta Lacharme · Esteban Javier Peluffo Marquez · Felix Andres Taborda Jimenez · Jose Gabriel Vargas Perez — cuentas abajo |
 | URL del sistema desplegado | sin desplegar aún |
-| Ultima revision | 2026-09-02 |
+| Ultima revision | 2026-09-03 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 5 | CORTE1 | `202e225` (2026-09-01T02:40:57-05:00) | 0/12 | no aplica | si |
+| 5 | Primer corte · reto de línea base | HEAD `ee484bf` (sin etiqueta) | 0/12 | subtotal técnico preliminar 0,00/4,00; sustentación pendiente | revisión manual preliminar 2026-09-03 |
 | 4 | S4 | `d7ba824` (2026-08-30T23:39:33-05:00) | 4/10 | 2.6 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `06920209` · 2026-08-09T16:03:46-05:00 | 4/9 | 2,8 * | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `db90ff2f` · 2026-08-16T21:22:20-05:00 | 9/9 | 5,0 * | sí |
@@ -39,12 +39,12 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 | Confirmar si arc42 secciones 4-6 y 12 quedaron redactadas a HEAD | S4 | si | |
 | Añadir evidencia de análisis estático SonarCloud | S4 | si | |
 | Completar celda de Pruebas en docs/aspectos.md | S4 | si | |
-| ADR del reto | S5 | si | |
-| Diagnóstico con línea base | S5 | si | |
-| Implementación del cambio | S5 | si | |
-| Prueba y medición | S5 | si | |
-| Registro de IA del corte | S5 | si | |
-| Referencias a ADR-0002/0003 rotas | S5 | si | |
+| Etiqueta `corte-1` ausente | S5 | Sí | Etiquetar el estado entregable antes del cierre. |
+| Respuesta al reto sin diagnóstico, ADR ni incremento identificado | S5 | Sí | Declarar la restricción, medir la línea base y registrar e implementar la decisión. |
+| Umbral de rendimiento definido sin medición ejecutada | S2 | Sí | Aportar herramienta, carga, procedimiento y resultado. |
+| Módulo de inventario de HEAD sin fila propia en `docs/aspectos.md` | S5 | Sí | Incorporarlo a la trazabilidad si corresponde al reto. |
+| Registro de IA sin entrada del Corte 1 | S5 | Sí | Registrar una salida y la decisión técnica adoptada. |
+| Enlace del README a `docs/c4/container.md` no existe | S5 | Sí | Corregirlo a `docs/c4/containers.md`. |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -52,11 +52,11 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 | Nombre y visibilidad del repositorio | Cumple | `ISCOUTB/AS_202620_InvenTrack`, público |
 | Estructura mínima | Cumple | Seis rutas presentes; arc42 en `docs/arc42/arc42-template-EN.md` |
 | Convención de nombres de ADR | Cumple | `0001-usar-monolito-modular-con-hexagonal-por-modulo.md`; placeholder eliminado |
-| ADR aceptados sin reescribir | Cumple | Estado «propuesto»; churn pre-aceptación anotado (borrado `1375411` y restaurado por merge) |
-| `docs/ia.md` al día | Cumple | Entrada S3 con «Rechazado / motivo» llena |
-| Sin credenciales en el repositorio ni en el historial | Cumple | Greps limpios |
-| Contribución de todos los integrantes | Cumple | 4 identidades consolidadas de 4; `jxviercarta-a11y` (Javier Carta, por confirmar) con 3 commits en S3 |
-| Pipeline en verde | No cumple | Run «Run Tests» success sobre `dd4ea1cb` (https://github.com/ISCOUTB/AS_202620_InvenTrack/actions/runs/32691253620) |
+| ADR aceptados sin reescribir | Cumple | Churn previo; aceptado en `45d2fa0` y sin cambios posteriores. |
+| `docs/ia.md` al día | No cumple | Última entrada de S4; falta Corte 1. |
+| Sin credenciales en el repositorio ni en el historial | Cumple | Escaneos limpios. |
+| Contribución de todos los integrantes | Cumple | Cuatro personas consolidadas para cuatro integrantes en HEAD. |
+| Pipeline en verde | Cumple | Run de HEAD `33811437677` en verde; no demuestra el reto. |
 
 ## Contribución por integrante
 
@@ -65,7 +65,7 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 | Javier Alejandro Carta Lacharme | `jxviercarta-a11y` (atribución por confirmar) | 3 (S3) | 0 | — | Apareció en S3 (ficha, README, C4) |
 | Esteban Javier Peluffo Marquez | Esteban Peluffo (correo omitido) | 3 (S3) | 0 | — | ia.md y entrega semanal |
 | Felix Andres Taborda Jimenez | FlexT21 + «Felix Taborda» (mismo noreply, consolidado) | 1 (S3) | 0 | — | Correspondencia por confirmar con el docente |
-| Jose Gabriel Vargas Perez | Josephva24 + «Jose Vargas» (mismo correo `jgabrielvp24@gmail.com`, consolidado) | 6 (S3) | 0 | — | ADR, esqueleto, workflow de CI y ajustes de trazabilidad |
+| Jose Gabriel Vargas Perez | Josephva24 + «Jose Vargas» (mismo correo `[correo omitido]`, consolidado) | 6 (S3) | 0 | — | ADR, esqueleto, workflow de CI y ajustes de trazabilidad |
 
 ## Preguntas abiertas para la sustentación
 

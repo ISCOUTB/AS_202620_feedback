@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET` |
 | Integrantes y su usuario de GitHub | Nilver Garcia Pimentel · Camilo Jose Martinez Berrio · Joshua Jose Tenorio Alvarez — historial con tres identidades: `camilixo92`, `nilver-garcia` y `Nnigarp` (misma cuenta de GitHub, consolidar) y `Carulla-sd` (correspondencias por confirmar con el docente) |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-02 |
+| Ultima revision | 2026-09-03 |
 
 ## Estado por entrega
 
@@ -18,7 +18,7 @@
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `4f72799` · 2026-08-16T22:01:41-05:00 | 7/9 | no se publica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `4dd857a` · 2026-08-23T23:54:16-05:00 | 9/9 | no se publica | sí |
 | 4 | S4 | `f3f4367` (2026-08-30T22:55:30-05:00) | 9/10 | 4.6 | si |
-| 5 | CORTE1 | `f3f4367` (2026-08-30T22:55:30-05:00) | 0/12 | no aplica | si |
+| 5 | Primer corte · reto de línea base | HEAD `f3f4367` (sin etiqueta) | 0/12 | subtotal técnico preliminar 0,00/4,00; sustentación pendiente | revisión manual preliminar 2026-09-03 |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
@@ -40,7 +40,7 @@
 | Historial con una sola identidad de commits (23/23) | S1 | no (S3: 3 personas; `nilver-garcia` y `Nnigarp` son la misma cuenta, consolidar) | Consolidar la identidad duplicada en git |
 | Estructura fuera de convención: archivos sueltos en `docs/` | S1 | no (S3 resuelto) | `docs/arc42/`, `docs/adr/` y `docs/c4/` ya existen |
 | `docs/aspectos.md` sin tabla ni enlaces | S1 | no (S3 resuelto) | Tabla de 8 columnas con enlaces funcionales |
-| `docs/ia.md` sin registro de lo rechazado | S1 | sí (sin entradas de S3 tampoco) | Incluir la columna de rechazos con motivo y las entradas del 17-23 ago |
+| `docs/ia.md` sin registro de lo rechazado | S1 | no (resuelto en S3/S4) | Mantener una entrada por semana con rechazo o corrección y motivo técnico |
 | ADR 0001 ausente aunque arc42 y aspectos.md lo enlazaban | S3 | no (resuelto en PR #5) | ADR completo y enlazado desde EC-03 y ASP-03 |
 | README sin comando único de arranque | S3 | no (resuelto) | `python -m uvicorn backend.app.main:app --reload` documentado |
 | Sin prueba automatizada ni pipeline | S3 | no (resuelto) | `backend/tests/test_health.py` + workflow con 4 runs en verde |
@@ -49,7 +49,7 @@
 | Verificar arranque con un solo comando mediante ejecución | S4 | si | |
 | Enlazar ADR-0001 con commit que lo implementa | S4 | si | |
 | Definir medición de línea base | S4 | si | |
-| Etiqueta corte-1 | S5 | si | |
+| Etiqueta `corte-1` ausente; HEAD sigue en S4 | S5 | sí | Crear la etiqueta sobre el commit real del corte antes del cierre |
 | Diagnóstico de la restricción asignada | S5 | si | |
 | ADR del reto con alternativas y decisión | S5 | si | |
 | Implementación del cambio sobre el corte vertical | S5 | si | |
@@ -65,10 +65,10 @@
 | Estructura mínima | Cumple | Las seis rutas presentes en `4dd857a` |
 | Convención de nombres de ADR | Cumple | `0001-usar-monolito-modular.md` |
 | ADR aceptados sin reescribir | Cumple | Un único commit (`dbdd9c4`) |
-| `docs/ia.md` al día | No cumple | Último commit 2026-08-16; sin entradas S3 ni columna de rechazos |
+| `docs/ia.md` al día | No cumple | Registro completo hasta S4; sin entrada de S5 |
 | Sin credenciales en el repositorio ni en el historial | Cumple | git grep y `.env` sin coincidencias |
 | Contribución de todos los integrantes | Cumple | 3 personas para 3 integrantes (`nilver-garcia`+`Nnigarp` = misma cuenta); correspondencia por confirmar |
-| Pipeline en verde | Cumple | 4 runs «Pruebas del backend» success; el último (32691690794) anterior al cierre |
+| Pipeline en verde | Cumple | Run de HEAD `f3f4367` en success; https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/actions/runs/33219659253 |
 
 ## Contribución por integrante
 

@@ -36,7 +36,7 @@
 | ADR aceptados no reescritos | `git log --follow -- docs/adr/0001-hexagonal.md`: `75aff08` (en revisión) → `2c316f4` (Aceptado) | Cumple | Aceptado en `2c316f4`; sin commits de reescritura posteriores a la aceptación. |
 | `docs/ia.md` al día para la semana | `git log -- docs/ia.md`: último commit `c92595e` 2026-08-09 | No cumple | Sin commits en S2 ni S3; sin registro de usos reales ni de rechazos. |
 | Sin credenciales en el repositorio ni en el historial | `git grep` de secretos (exit 1), sin `.env` versionado | Cumple | Sin coincidencias. |
-| Contribución de todos los integrantes | commits en S3: Luis-Salas-Reyes (2), Zavod Dev (2), deortahollman-star (1), Josh Ortega (1, mismo correo `joshortega@utb.edu.co` que `Josh4OP`) | Cumple | Los 4 integrantes firman commits dentro del periodo S3, consolidando las dos identidades de Josh. |
+| Contribución de todos los integrantes | commits en S3: Luis-Salas-Reyes (2), Zavod Dev (2), deortahollman-star (1), Josh Ortega (1, mismo correo `[correo omitido]` que `Josh4OP`) | Cumple | Los 4 integrantes firman commits dentro del periodo S3, consolidando las dos identidades de Josh. |
 
 ## Recuento
 

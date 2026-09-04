@@ -36,7 +36,7 @@
 | ADR aceptados no reescritos | `git log --follow -- docs/adr/...` | Cumple | El ADR está «propuesto» (no aceptado), así que el churn del 23-ago (borrado `1375411` y restauración por merge `6a5d0c4`, mismo contenido) no viola la regla de aceptados; queda anotado. |
 | `docs/ia.md` al día para la semana | `docs/ia.md` (tabla con columna «Rechazado / motivo») | Cumple | Corregido desde la primera revisión: la entrada S3 (22-ago) ahora registra qué se rechazó y por qué (estructuras y ADR genéricos rechazados hasta evaluarlos contra ESC-01…ESC-05). |
 | Sin credenciales en el repositorio ni en el historial | `git grep` de secretos (exit 1), sin `.env` versionado | Cumple | Sin coincidencias. |
-| Contribución de todos los integrantes | commits en S3: Josephva24+«Jose Vargas» (mismo correo `jgabrielvp24@gmail.com`) 6; Esteban Peluffo 3; FlexT21+«Felix Taborda» (mismo noreply) 1; jxviercarta-a11y 3 | Cumple | 4 identidades consolidadas de 4 integrantes. Apareció `jxviercarta-a11y` (3 commits en S3), cuenta atribuible a Javier Carta Lacharme — atribución por confirmar con el docente. |
+| Contribución de todos los integrantes | commits en S3: Josephva24+«Jose Vargas» (mismo correo `[correo omitido]`) 6; Esteban Peluffo 3; FlexT21+«Felix Taborda» (mismo noreply) 1; jxviercarta-a11y 3 | Cumple | 4 identidades consolidadas de 4 integrantes. Apareció `jxviercarta-a11y` (3 commits en S3), cuenta atribuible a Javier Carta Lacharme — atribución por confirmar con el docente. |
 
 ## Recuento
 

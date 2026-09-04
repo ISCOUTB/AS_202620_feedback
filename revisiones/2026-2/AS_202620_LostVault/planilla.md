@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_LostVault` |
 | Integrantes y su usuario de GitHub | Jose Faustino Espana Noriega · Roy Andres Gonzalez Blanco · Shamara Llorente Tapias · Kiefer Monterroza Manjarres — identidades del historial: Roy Gonzalez (¿`RGBlanco18`?), `shamarallorente-blip`, `Fausto-4` (correo `ganonimo2504`), `weller-rar` (correo `pelu.kiefer`); correspondencias por confirmar con el docente |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-02 |
+| Ultima revision | 2026-09-03 |
 
 ## Estado por entrega
 
@@ -18,7 +18,7 @@
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `af94a30` · 2026-08-16T22:09:43-05:00 | 7/9 | no se publica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `1ddb826` · 2026-08-23T23:57:37-05:00 | 4/9 | no se publica | sí |
 | 4 | S4 | `952af8f` (2026-08-30T22:13:14-05:00) | 7/10 | 3.8 | si |
-| 5 | CORTE1 | `952af8f` (2026-08-30T22:13:14-05:00) | 0/12 | no aplica | si |
+| 5 | Primer corte · reto de línea base | `corte-1` → `952af8f` | 1/12 | subtotal técnico preliminar 0,00/4,00; sustentación pendiente | revisión manual preliminar 2026-09-03 |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
@@ -76,7 +76,7 @@
 |---|---|---:|---:|---:|---|
 | Jose Faustino Espana Noriega | ¿`Fausto-4`? (correo `ganonimo2504`, sin confirmar) | 1 (via PR #3) | — | — | Apareció en S3 con «Add files via upload»; correspondencia por confirmar con el docente |
 | Roy Andres Gonzalez Blanco | «Roy Gonzalez» en commits (¿`RGBlanco18`?) — confirmar | 24 (HEAD) | 2 PR mergeados (#1, #3) | — | Principal autor; hace los merges |
-| Shamara Llorente Tapias | `shamarallorente-blip` (correo institucional `shllorente@utb.edu.co`) | 1 (via PR #1) | 0 | — | Autora del ADR 0001 |
+| Shamara Llorente Tapias | `shamarallorente-blip` (correo institucional `[correo omitido]`) | 1 (via PR #1) | 0 | — | Autora del ADR 0001 |
 | Kiefer Monterroza Manjarres | ¿`weller-rar`? (correo `pelu.kiefer`, sin confirmar) | 1 (via PR #4) | 0 | — | Primera aparición en la actualización S3 (PR #4: «Create ejecutable») |
 
 ## Preguntas abiertas para la sustentación

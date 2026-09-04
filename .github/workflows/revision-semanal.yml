@@ -2,7 +2,7 @@ name: Revision semanal automatica
 
 on:
   schedule:
-    # Lunes 06:00 COT (11:00 UTC): pasada definitiva completa con deepseek-v4-pro.
+    # Lunes 06:00 COT (11:00 UTC): pasada definitiva completa con deepseek-v4-flash.
     - cron: "0 11 * * 1"
     # Miercoles 06:00 COT: pasada temprana (delta) con deepseek-v4-flash.
     - cron: "0 11 * * 3"
@@ -41,8 +41,7 @@ jobs:
     env:
       TZ: America/Bogota
       LLM_BASE_URL: https://opencode.ai/zen/go/v1
-      LLM_MODEL_DEFINITIVE: deepseek-v4-pro
-      LLM_MODEL_EARLY: deepseek-v4-flash
+      LLM_MODEL: deepseek-v4-flash
       OPENCODE_GO_API_KEY: ${{ secrets.OPENCODE_GO_API_KEY }}
     steps:
       - uses: actions/checkout@v4

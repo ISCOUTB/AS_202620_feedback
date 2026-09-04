@@ -10,7 +10,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TRACTAR` |
 | Integrantes y su usuario de GitHub | Joriel Samir Barros Pena (sin cuentas en el historial) · Geronimo Alberto Cadena Garcia (sin cuentas) · Sebastian Garcia Devoz (firma con dos identidades de git, mismo correo, más el correo institucional) · Mateo Alfonso Millan Barraza (sin cuentas) |
 | URL del sistema desplegado | sin URL (sin despliegue todavía) |
-| Ultima revision | 2026-09-02 |
+| Ultima revision | 2026-09-03 |
 
 ## Estado por entrega
 
@@ -20,7 +20,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `0a23855` · 2026-08-16T20:05:46-05:00 | 6/9 | 3.7 (propuesta) | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `5f923cd` · 2026-08-23T22:40:51-05:00 | 7/9 | no se publica | sí |
 | 4 | S4 | `2b16439` (2026-08-30T15:02:33-05:00) | 1/10 | 1.4 | si |
-| 5 | CORTE1 | `7cfb872` (2026-08-31T12:27:23-05:00) | 0/12 | no aplica | si |
+| 5 | Primer corte · reto de línea base | HEAD `7cfb872` (sin etiqueta) | 0/12 | subtotal técnico preliminar 0,00/4,00; sustentación pendiente | revisión manual preliminar 2026-09-03 |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
@@ -63,14 +63,14 @@ Hoja consolidada del equipo a lo largo del semestre.
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
-| Nombre y visibilidad del repositorio | Cumple | `ISCOUTB/AS_202620_TRACTAR`, público (antes privado: EQUIPOS.md) |
-| Estructura mínima | Cumple | sin `docs/c4/` (C4 en `docs/arc42/images/`); `ficha_problema.md` en raíz |
-| Convención de nombres de ADR | Cumple | `0001-estilo-arquitectonico.md` |
-| ADR aceptados sin reescribir | Cumple | único commit sobre el ADR, el de creación |
-| `docs/ia.md` al día | No cumple | sin entradas del trabajo S3 ni rechazos con motivo técnico |
-| Sin credenciales en el repositorio ni en el historial | Cumple | greps limpios |
-| Contribución de todos los integrantes | No cumple | 1 persona con 16 commits; 3 sin commits |
-| Pipeline en verde | No cumple | sin pipeline todavía (no exigido aún) |
+| Nombre y visibilidad del repositorio | Cumple | El URL público responde con redirección al nombre actual del proyecto |
+| Estructura mínima | Cumple | seis rutas obligatorias presentes en HEAD |
+| Convención de nombres de ADR | Cumple | `0001-estilo-arquitectonico.md`, `0002-cambio-stack-fastapi-flutter.md` |
+| ADR aceptados sin reescribir | No cumple | decisiones aceptadas modificadas con el cambio de proyecto, sin reemplazo declarado |
+| `docs/ia.md` al día | No cumple | último cambio 2026-08-16; sin entrada S5 |
+| Sin credenciales en el repositorio ni en el historial | Cumple | barridos limpios |
+| Contribución de todos los integrantes | No cumple | una persona concentra las identidades; 3 integrantes sin commits |
+| Pipeline en verde | No verificado | workflow presente; la API redirigió y no dejó un run citable para este URL |
 
 ## Contribución por integrante
 

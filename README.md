@@ -246,7 +246,7 @@ la pregunta sigue siendo si puede leerlo cualquiera.
 La revisión semanal corre sola, en este mismo repositorio, con el workflow
 `.github/workflows/revision-semanal.yml`:
 
-- **Lunes 06:00 COT**: pasada definitiva completa: los 23 equipos con `deepseek-v4-pro`, sobre el
+- **Lunes 06:00 COT**: pasada definitiva completa: los 23 equipos con `deepseek-v4-flash`, sobre el
   último commit anterior al cierre. Es la que queda publicada y la que cuenta.
 - **Miércoles y viernes 06:00 COT**: pasadas tempranas (delta) con `deepseek-v4-flash`, solo sobre
   los equipos con commits nuevos; las notas quedan marcadas como preliminares.

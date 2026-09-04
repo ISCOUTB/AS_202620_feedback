@@ -19,8 +19,7 @@ KIT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))
 REV = os.path.join(KIT, "revisiones", "2026-2")
 
 LLM_BASE = os.environ.get("LLM_BASE_URL", "https://opencode.ai/zen/go/v1")
-LLM_MODEL_DEFINITIVE = os.environ.get("LLM_MODEL_DEFINITIVE", "deepseek-v4-pro")
-LLM_MODEL_EARLY = os.environ.get("LLM_MODEL_EARLY", "deepseek-v4-flash")
+LLM_MODEL = os.environ.get("LLM_MODEL", "deepseek-v4-flash")
 LLM_KEY = os.environ.get("OPENCODE_GO_API_KEY", "")
 
 MAX_TREE_ITEMS = 400
@@ -221,6 +220,10 @@ def llm_chat(system, user, model, temperature=0.2, max_tokens=8000):
         with urllib.request.urlopen(req, timeout=600) as r:
             data = json.loads(r.read().decode("utf-8"))
     return data["choices"][0]["message"]["content"]
+
+
+def modelo_evaluacion(modo):
+    return LLM_MODEL
 
 
 def parse_json_llm(texto):
@@ -721,7 +724,7 @@ def procesar_equipo(repo, equipo, entrada, contrato, ficha, modo, desde):
                     "hash": ev.get("hash_calificado", "-"), "nm": "sin actividad", "nota": "-",
                     "estado": "sin actividad %s" % entrada["id"]}
         user = prompt_evaluacion(ficha, contrato, equipo, ev, entrada, modo)
-        modelo = LLM_MODEL_DEFINITIVE if modo == "definitive" else LLM_MODEL_EARLY
+        modelo = modelo_evaluacion(modo)
         texto = llm_chat(SISTEMA, user, modelo)
         try:
             res = parse_json_llm(texto)
@@ -731,7 +734,7 @@ def procesar_equipo(repo, equipo, entrada, contrato, ficha, modo, desde):
             user2 = user + ("\n\nIMPORTANTE: tu respuesta anterior no era JSON valido (%s). "
                             "Responde de nuevo UNICAMENTE con el objeto JSON, sin comentarios ni markdown."
                             % str(ex)[:200])
-            texto = llm_chat(SISTEMA, user2, LLM_MODEL_EARLY)
+            texto = llm_chat(SISTEMA, user2, modelo_evaluacion(modo))
             res = parse_json_llm(texto)
             if "matriz_ficha" not in res:
                 raise ValueError("JSON sin matriz_ficha")

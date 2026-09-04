@@ -1,25 +1,25 @@
 # semana-05-corte1 · Tienda virtual UTB
 
-> Pasada temprana (GitHub Actions, previa al cierre): los hashes y la nota son preliminares y pueden cambiar si el equipo empuja antes del cierre.
+> Revisión manual preliminar completa realizada el 2026-09-03, antes del cierre. El equipo puede modificar el repositorio y la evaluacion definitiva debe repetirse despues de `2026-09-07T05:00:00Z`.
 
 | Campo | Valor |
 |---|---|
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB` |
 | Estado revisado | `0d401a9` (2026-09-01T09:30:26-05:00) |
 | Cierre | 2026-09-07T05:00:00Z |
-| Revisor | pipeline automatico (GitHub Actions) |
+| Revisor | revisión manual local, solo lectura; no se ejecutó código |
 
 ## Matriz de la ficha
 
 | Criterio de evaluacion | Evidencia tecnica | Estado | Observaciones |
 |---|---|---|---|
-| Etiqueta `corte-1` sobre un commit anterior al cierre | Commit 0d401a9 (2026-09-01T09:30:26-05:00) anterior al cierre; sin salida de `git tag --list` ni `git log -1 corte-1` | No verificado | El commit calificado es anterior al cierre y su mensaje es 'Corte 1', pero no se confirma la existencia de la etiqueta. |
+| Etiqueta `corte-1` sobre un commit anterior al cierre | Consulta manual `git tag --list`: no existe `corte-1`; se revisó el HEAD anterior al cierre | No cumple | Falta la etiqueta exigida por la ficha. |
 | PDF de dos páginas con diagnóstico, decisión, cambio, medición y trazabilidad | Adjunto en Moodle, no accesible desde el repositorio | No verificado | Lo resuelve el docente con la entrega en Moodle. |
 | Impacto de la restricción localizado en requisitos, C4 y código | No se suministró la restricción asignada al equipo; sin ella no se puede juzgar | No verificado | Falta la restricción asignada; en el repositorio no hay apartado de diagnóstico del reto. |
-| Línea base medida y verificable antes del cambio | No hay cifra con herramienta y procedimiento en el repositorio | No verificado | Sin la restricción no se sabe qué medir; no se halló medición baseline. |
+| Línea base medida y verificable antes del cambio | No hay cifra con herramienta y procedimiento en el repositorio | No cumple | Sin la restricción no se sabe qué medir; no se halló medición baseline. |
 | ADR del reto con alternativas, fuerzas, decisión y consecuencias | docs/adr/ solo contiene 0001-monolito-modular.md y .gitkeep | No cumple | No existe un ADR nuevo del reto; el único ADR es de la S3. |
 | Cambio implementado y ejecutable de extremo a extremo | No hay commit que implemente un ADR del reto; README.md documenta `docker compose up --build` para el corte vertical S4 | No cumple | Sin ADR del reto no hay cambio que implementar. |
-| Límites declarados conservados tras el cambio | docs/c4/context.md y container.md coinciden con la estructura de módulos, pero no hay cambio del reto | No verificado | No hay cambio del reto que evaluar. |
+| Límites declarados conservados tras el cambio | docs/c4/context.md y container.md coinciden con la estructura de módulos, pero no hay cambio del reto | No cumple | No hay cambio del reto que evaluar. |
 | Prueba que cubre el cambio, en verde en el pipeline | Run 'Pruebas' 33462227003 success (2026-09-01T02:21:21Z, https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/actions/runs/33462227003) ejecuta test_catalog/test_architecture/test_health; ninguna cubre un cambio del reto | No cumple | Los runs verdes son del corte vertical S4. |
 | Resultado contrastado con el umbral del escenario y reproducible | No se halló medición con herramienta, carga y procedimiento en el repositorio | No cumple | Falta la medición del reto contrastada con umbral. |
 | Cadena aspecto, requisito, C4, ADR, código, pruebas y evidencia navegable | docs/aspectos.md tiene 6 columnas y no hay fila del reto | No cumple | La fila de disponibilidad enlaza escenario→decisión→código→pruebas, pero faltan columnas ID/C4/Evidencia y no hay fila del reto. |
@@ -32,7 +32,7 @@
 |---|---|---|---|
 | Identidad del repositorio | Repo ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB visible; shortlog HEAD consolida 4 autores (RAZOR7150, Jasen/Jasen Yukopila, pxtroniwnl, shalom-A26) y README.md declara 4 integrantes | Cumple | Jasen y Jasen Yukopila se consolidan como una misma cuenta. |
 | Estructura mínima | Árbol HEAD incluye README.md, docs/arc42/arc42-template-EN.md, docs/adr/0001-monolito-modular.md, docs/c4/context.md, docs/c4/container.md, docs/aspectos.md, docs/ia.md | Cumple | Hay además .gitkeep en docs/adr y docs/c4, sin afectar la estructura. |
-| Estado del repositorio que se califica | Commit 0d401a9 (2026-09-01T09:30:26-05:00) anterior al cierre; sin salida de `git tag --list` | No verificado | No se puede confirmar la etiqueta `corte-1`; el commit calificado es anterior al cierre. |
+| Estado del repositorio que se califica | Consulta Git manual confirma que no existe la etiqueta `corte-1`; se identifica HEAD como estado preliminar | No cumple | Falta el estado versionado exigido por la ficha. |
 | Convenciones de ADR | docs/adr/0001-monolito-modular.md (2026-08-21) con contexto, alternativas, decisión, consecuencias y trazabilidad; nombre según convención | Cumple | Solo hay un ADR; no se observan reescrituras. |
 | Tabla de aspectos | docs/aspectos.md tiene columnas Aspecto, Escenario, Prioridad, Decisión, Ubicación, Pruebas; faltan ID, C4 y Evidencia como columnas separadas | No cumple | La cadena no es navegable en el formato de 8 columnas del contrato. |
 | Registro de uso de IA | docs/ia.md con tabla de fecha, herramienta, propósito, resultado, descartes y validación; 9 commits en el historial (último a8c5dcc 2026-08-31) | Cumple | Varias celdas de descartes quedan 'Sin declarar'. |
@@ -53,18 +53,26 @@ Pendientes que siguen abiertos:
 - Configurar SonarCloud en el pipeline.
 - Registrar en docs/ia.md los usos de IA del corte 1 con descartes y motivos.
 
-## Recuento y nota sugerida
+## Nivel de rúbrica sugerido
+
+| Criterio | Nivel sugerido | Puntaje | Evidencia que lo sostiene |
+|---|---|---:|---|
+| Diagnóstico del reto | Sin evidencia evaluable del reto | 0,00 | No se identifica una respuesta a la restricción nueva; la restricción asignada tampoco está disponible. |
+| Alternativas y decisión | Sin evidencia del reto | 0,00 | Los ADR visibles corresponden a decisiones de la línea base o son anteriores al inicio de S5. |
+| Aplicación sobre el corte vertical | Sin evidencia del reto | 0,00 | No hay cambio trazable a una restricción nueva. |
+| Pruebas, medición y trazabilidad | Sin evidencia del reto | 0,00 | Las pruebas o el CI de la línea base no demuestran una medición antes/después del reto. |
+| Sustentación del reto | Lo fija el docente | pendiente | No se puntúa desde el repositorio. |
+| **Subtotal técnico verificable** |  | **0,00 / 4,00** | No constituye el total sobre 5,00. |
+
+## Recuento
 
 0 de 12 criterios Cumple.
 
 ## No verificado / pendientes
 
-- Etiqueta `corte-1`: falta salida de `git tag --list` y `git log -1 corte-1`.
-- PDF de dos páginas: adjunto en Moodle, no accesible desde el repositorio.
-- Impacto de la restricción: falta conocer la restricción asignada al equipo.
-- Línea base medida: falta la restricción y el procedimiento de medición.
-- Límites conservados tras el cambio: no hay cambio del reto que evaluar.
-- Sustentación: se califica en sesión.
+- Coincidencia del diagnóstico con la restricción asignada, porque la asignación no está disponible en el kit.
+- PDF adjunto en Moodle.
+- Sustentación del reto.
 
 ## Hallazgos para la planilla
 
@@ -78,3 +86,9 @@ Pendientes que siguen abiertos:
 - Los runs de CI en verde cubren las pruebas del corte vertical S4, no un cambio del reto.
 - La tabla de aspectos marca rendimiento y usabilidad como parcialmente cubiertos, pendientes de orders/identity.
 - El apartado 11 del contrato no fue incluido en la entrada; la matriz transversal se evalúa con los criterios de las secciones 1-8 del contrato.
+
+## Preguntas para la sustentación
+
+1. ¿Cuál fue la restricción asignada y dónde se localiza su impacto en requisitos, C4 y código?
+2. ¿Cuál fue la cifra de línea base, con qué herramienta y procedimiento se obtuvo, y cuál fue el resultado posterior?
+3. ¿Qué ADR y commit implementan el reto, y qué prueba del pipeline demuestra el cambio?

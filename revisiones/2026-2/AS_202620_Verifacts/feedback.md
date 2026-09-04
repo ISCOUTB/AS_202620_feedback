@@ -47,3 +47,7 @@ Qué corregir antes del corte 1 (semana 5):
 3. Aportar evidencia de CI: la URL del run citada en `aspectos.md` da 404 y no hay runs visibles. Un enlace al run en verde (o ejecutar las pruebas en la sustentación) cierra la fila.
 4. Limpiar la basura versionada: `__pycache__/`, `*.pyc`, archivos duplicados `« (1).py»` y PDFs en la raíz (el `.gitignore` ya se corrigió, pero lo versionado sigue en el historial).
 5. Sigue pendiente desde S1: que el tercer integrante aparezca en el historial de commits.
+
+## Semana 5 · CORTE1
+
+Revisión preliminar antes del cierre: el repositorio mejoró la línea base con un recorrido completo y su prueba, pero todavía no presenta la respuesta al reto del primer corte. Falta crear la etiqueta, identificar la restricción asignada, medir el estado inicial, registrar la decisión en un ADR nuevo, implementar el cambio y comparar el resultado con el umbral. El PDF versionado tiene una sola página y describe la evidencia anterior, no el reto actual. También faltan un run público de CI, el registro de IA de esta etapa y contribución verificable del tercer integrante.

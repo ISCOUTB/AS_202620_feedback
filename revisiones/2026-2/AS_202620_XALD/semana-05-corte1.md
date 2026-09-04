@@ -1,76 +1,72 @@
-# semana-05-corte1 · XALD
+# Primer corte · reto de línea base arquitectónica · XALD
 
-> Pasada temprana (GitHub Actions, previa al cierre): los hashes y la nota son preliminares y pueden cambiar si el equipo empuja antes del cierre.
+> Revisión manual preliminar completa, realizada antes del cierre. El equipo puede cambiar el repositorio y la valoración debe repetirse después del 2026-09-07T05:00:00Z.
 
 | Campo | Valor |
 |---|---|
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_XALD` |
-| Estado revisado | `9a75929` (2026-08-31T18:20:56-05:00) |
+| Estado revisado | `6081fedef33d8e194e24a3b8d3261215a4d90120` (2026-09-03T20:41:50-05:00) |
+| Etiqueta `corte-1` | Ausente |
 | Cierre | 2026-09-07T05:00:00Z |
-| Revisor | pipeline automatico (GitHub Actions) |
+| Revisor | Revisión manual con Codex, sin ejecutar código estudiantil |
 
 ## Matriz de la ficha
 
-| Criterio de evaluacion | Evidencia tecnica | Estado | Observaciones |
+| Criterio de evaluación | Evidencia técnica | Estado | Observaciones |
 |---|---|---|---|
-| Etiqueta `corte-1` sobre un commit anterior al cierre | Hash calificado 9a75929 (2026-08-31T18:20:56-05:00) anterior al cierre; la evidencia no incluye salida de `git tag --list` ni `git log -1 corte-1`. | No verificado | Se necesita confirmar la existencia de la etiqueta; si falta, la fila de versionado transversal sería No cumple. |
-| PDF de dos páginas con diagnóstico, decisión, cambio, medición y trazabilidad | docs/.gitignore excluye *.pdf; no hay adjunto en el repositorio. | No verificado | El PDF se entrega en Moodle; no accesible desde la evidencia del repositorio. |
-| Impacto de la restricción localizado en requisitos, C4 y código | No se conoce la restricción asignada al equipo; docs/adr/0003-restriccion-os.md aborda una restricción de plataforma sin diagnóstico con línea base. | No verificado | Sin la restricción asignada no se puede juzgar si el diagnóstico localiza lo que debía. |
-| Línea base medida y verificable antes del cambio | No se halló en el repositorio una cifra con herramienta y procedimiento; docs/aspectos.md mantiene celdas 'Pendiente'. | No verificado | Podría estar en el PDF de Moodle; no verificable desde el repositorio. |
-| ADR del reto con alternativas, fuerzas, decisión y consecuencias | docs/adr/ contiene 6 ADR; ninguno incluye alternativas, fuerzas y trazabilidad completas (p.ej. 0003 solo contexto/decisión/consecuencias). | No verificado | No se identifica cuál es el ADR del reto sin la restricción asignada. |
-| Cambio implementado y ejecutable de extremo a extremo | README.md documenta arranque con `gradlew.bat -p XALDAPP test`; runs_ci en verde; el head es 'Update 0002-parsing-hibrido.md' (documentación). | No verificado | No se distingue un commit que implemente el cambio del reto sobre el corte vertical. |
-| Límites declarados conservados tras el cambio | docs/c4/c4.md declara 5 módulos y Backend XALD; el código tiene 5 módulos Gradle sin backend. | No verificado | Sin identificar el cambio del reto no se puede verificar la conservación de límites. |
-| Prueba que cubre el cambio, en verde en el pipeline | runs_ci 'Android CI' success (https://github.com/ISCOUTB/AS_202620_XALD/actions/runs/33352959352, 2026-08-31T03:10:13Z); existe XALDAPP/app/src/test/java/com/proyecto/xald/Cortevertical.kt. | No verificado | Hay runs en verde, pero no se sabe si la prueba cubre el cambio del reto. |
-| Resultado contrastado con el umbral del escenario y reproducible | No hay en el repositorio una medición con herramienta, carga y procedimiento. | No verificado | Depende del PDF o de arc42 sección 10; no verificable desde el repo. |
-| Cadena aspecto, requisito, C4, ADR, código, pruebas y evidencia navegable | docs/aspectos.md fila A-01 tiene Evidencia '*Pendiente*'; filas A-02 a A-05 tienen Código/Pruebas/Evidencia '*Pendiente*'. | No cumple | La cadena se rompe en la celda de evidencia; una fila con huecos no se puede defender. |
-| Salida de IA aceptada, corregida o rechazada con motivo técnico | docs/ia.md registra usos con decisión y justificación técnica; entradas de 2026-08-30 (hash 0d98e74) sobre corte vertical, CI y diagramas. | Cumple | Incluye aceptación, corrección y rechazo con motivos técnicos. |
-| Sustentación del reto | La sustentación se resuelve en sesión. | No verificado | Lo fija el docente; no verificable desde el repositorio. |
+| Etiqueta `corte-1` sobre un commit anterior al cierre | `git tag --list` no devolvió etiquetas; HEAD `6081fed` | No cumple | La valoración preliminar usa HEAD. |
+| PDF de dos páginas con diagnóstico, decisión, cambio, medición y trazabilidad | No hay PDF versionado y Moodle no está disponible | No verificado | Debe comprobarse en Moodle. |
+| Impacto de la restricción localizado en requisitos, C4 y código | `docs/adr/0003-restriccion-os.md:2-9` documenta Android como restricción, pero no hay diagnóstico que la identifique como reto S5 | No verificado | La restricción asignada no está en el kit. |
+| Línea base medida y verificable antes del cambio | `docs/arc42/arc42-template-EN.md:483-535` declara umbrales y herramientas, sin resultados medidos | No cumple | Definir cómo medir no demuestra una línea base. |
+| ADR del reto con alternativas, fuerzas, decisión y consecuencias | Los ADR 0001-0005 registran decisiones y consecuencias; ninguno se declara como reto S5 ni contiene la comparación completa exigida | No cumple | Falta un ADR identificable del corte. |
+| Cambio implementado y ejecutable de extremo a extremo | Los seis commits más recientes, de `ea868f9` a `6081fed`, son vacíos: el árbol de HEAD es idéntico al de `9a75929`; `README.md:10-43` describe pruebas de la línea base | No cumple | Los mensajes anuncian revisiones documentales, pero no contienen cambios ni implementan el reto. |
+| Límites declarados conservados tras el cambio | El C4 declara Backend XALD, pero el árbol de código en HEAD contiene los cinco módulos Android sin backend | No cumple | Ya existe una divergencia entre diseño e implementación. |
+| Prueba que cubre el cambio, en verde en el pipeline | `Cortevertical.kt` existe y el run `https://github.com/ISCOUTB/AS_202620_XALD/actions/runs/33352959352` fue exitoso; no cubre un cambio S5 identificable | No cumple | El verde de la base no prueba la respuesta al reto. |
+| Resultado contrastado con el umbral del escenario y reproducible | No se encontró resultado de medición, solo umbrales previstos | No cumple | Falta herramienta ejecutada, carga y resultado. |
+| Cadena aspecto, requisito, C4, ADR, código, pruebas y evidencia navegable | `docs/aspectos.md:7-11` mantiene `Pendiente` en evidencia y en varias celdas de código/pruebas | No cumple | Ninguna fila del reto llega completa hasta evidencia. |
+| Salida de IA aceptada, corregida o rechazada con motivo técnico | `docs/ia.md:9-19` registra decisiones generales; el commit `6081fed` titulado “revision de IA.MD” es vacío y no modifica el archivo | No cumple | No hay entrada atribuible al corte ni al reto nuevo. |
+| Sustentación del reto | Requiere la sesión con el equipo | No verificado | Lo fija el docente. |
 
 ## Matriz transversal (CONTRATO §11)
 
-| Criterio | Evidencia | Estado | Observaciones |
+| Criterio de evaluación | Evidencia técnica | Estado | Observaciones |
 |---|---|---|---|
-| Identidad del repositorio | Repositorio ISCOUTB/AS_202620_XALD visible y público; 4 identidades de git en el historial: xaviergarciadiaz20-commits, dilanbejarano011, colmenares2007-crypto, axeljruiz717-hash. | Cumple | Coinciden en número con los integrantes declarados; sin atribución por nombre. Sección 1 del contrato. |
-| Estructura mínima | Existen docs/arc42/, docs/adr/ (6 ADR), docs/c4/, docs/aspectos.md, docs/ia.md y README.md. | Cumple | Hay archivos adicionales y docs/c4/c4.md duplica C1/C2; no es ausencia. Sección 2 del contrato. |
-| Versionado y estado calificado | Hash calificado 9a75929 anterior al cierre; sin confirmación de la etiqueta corte-1. | No verificado | Si la etiqueta no existe, esta fila sería No cumple. Sección 3 del contrato. |
-| Convenciones de ADR | Los nombres de ADR siguen el patrón NNNN-kebab-case, pero ningún ADR incluye la trazabilidad (requisito, C4, commit, pruebas) exigida. | No cumple | Sección 4 del contrato: contexto, opciones, decisión, consecuencias y trazabilidad. |
-| Tabla de aspectos | docs/aspectos.md tiene celdas 'Pendiente' en Código/Pruebas/Evidencia (A-02 a A-05) y Evidencia en A-01. | No cumple | Una fila con huecos no se puede defender. Sección 5 del contrato. |
-| Registro de uso de IA | docs/ia.md con entradas de 2026-08-30 (hash 0d98e74) y motivos técnicos de aceptación/rechazo. | Cumple | Crece a lo largo del semestre. Sección 6 del contrato. |
-| README y reproducibilidad | README.md describe el sistema, el comando de arranque y la prueba; runs_ci 'Android CI' success. | Cumple | Requisitos previos declarados (JDK 17, Android SDK). Sección 7 del contrato. |
-| Pipeline, análisis estático y secretos | .github/workflows/ci.yml ejecuta testDebugUnitTest y los runs están en verde; no hay configuración de SonarCloud; sin coincidencias de secretos. | No cumple | El contrato sección 8 pide análisis estático en SonarCloud; no se evidencia en el repo. Secciones 8 y 9 del contrato. |
+| Repositorio en la organización, con el nombre de la convención y público | Clon anónimo de `ISCOUTB/AS_202620_XALD` | Cumple | Nombre y visibilidad correctos. |
+| Estructura mínima presente | Las seis rutas obligatorias están presentes en HEAD | Cumple | Hay desviaciones internas, pero no ausencia. |
+| Estado calificado identificable | HEAD `6081fed`, sin etiqueta `corte-1` | No cumple | En el corte se exige etiqueta. |
+| Nombres de ADR según la convención | `0001-patron-offline-first.md` a `0006-seleccion-de-estilo-arquitectonico.md` | Cumple | Convención corregida. |
+| ADR aceptados no reescritos | ADR aprobados 0001 y 0002 fueron modificados después de su aprobación (`4ca7f92` y otros) | No cumple | Los cambios debieron registrarse como reemplazo o ADR nuevo. |
+| `docs/ia.md` al día para la semana | No hay cambio efectivo atribuible al reto S5 | No cumple | Tanto `015655a` como el nuevo `6081fed`, titulados como actualización de IA, son commits vacíos. |
+| Sin credenciales en el repositorio ni en el historial | Barridos en HEAD e historial sin patrones de credenciales | Cumple | Sin hallazgos. |
+| Contribución de todos los integrantes | `git shortlog -sne HEAD` muestra las cuatro identidades documentadas en EQUIPOS.md | Cumple | Los cuatro integrantes tienen contribución visible. |
 
-## Estado global del proyecto (overall · revisado en HEAD)
+## Estado global del proyecto en HEAD
 
-Mira el repositorio **entero en su estado actual** (HEAD), no solo la evidencia del cierre: si el equipo subio tarde o corregio entregas anteriores, aqui se nota.
+- **HEAD revisado:** `6081fedef33d8e194e24a3b8d3261215a4d90120`, `revision de IA.MD`.
+- **Veredicto:** con pendientes de coherencia y sin respuesta S5 verificable.
+- El proyecto tiene código modular Android, C4, ADR, CI verde y participación de todo el equipo.
+- La documentación declara umbrales, pero no resultados medidos; la tabla de aspectos sigue incompleta.
+- El backend dibujado no aparece en el estado implementado y no existe etiqueta `corte-1`.
+- Los seis commits publicados el 3 de septiembre no cambian el árbol del repositorio; sus mensajes no constituyen evidencia de avance.
 
-- **HEAD revisado**: `9a759298810af932171c50a63e2121529a26b2bf 2026-08-31T18:20:56-05:00 Update 0002-parsing-hibrido.md`
-- **Veredicto**: con pendientes
-- Resumen: Proyecto con estructura, CI y registro de IA en orden, pero la respuesta al reto no es verificable desde el repositorio y persisten huecos de trazabilidad y ADR sin formato completo.
+## Nivel de rúbrica sugerido
 
-Pendientes que siguen abiertos:
-- Confirmar o crear la etiqueta corte-1 sobre el commit evaluado.
-- Completar las celdas Pendiente de docs/aspectos.md.
-- Añadir trazabilidad (requisito, C4, commit, pruebas) a los ADR.
-- Configurar análisis estático SonarCloud en el pipeline.
-- Entregar el PDF con diagnóstico, decisión, cambio, medición y trazabilidad.
+| Criterio | Nivel sugerido | Puntaje preliminar | Evidencia que lo sostiene |
+|---|---|---:|---|
+| Diagnóstico del reto | Insuficiente | 0,00 | No hay reto identificado ni línea base medida. |
+| Alternativas y decisión | Insuficiente | 0,00 | No existe ADR atribuible al reto S5. |
+| Aplicación sobre el corte vertical | Insuficiente | 0,00 | No se identifica cambio S5 y hay divergencia C4/código. |
+| Pruebas, medición y trazabilidad | Básico | 0,60 | Hay CI verde para la base, sin medición ni cadena completa del reto. |
+| Sustentación del reto | Pendiente del docente | — | No verificable desde el repositorio. |
+| **Subtotal técnico preliminar** |  | **0,60 / 4,00** | No es la nota final del corte. |
 
-## Recuento y nota sugerida
+## Recuento
 
-1 de 12 criterios Cumple.
+0 de 12 criterios de la ficha cumplen. El recuento no se convierte mediante la fórmula semanal porque este corte tiene rúbrica propia.
 
-## No verificado / pendientes
+## Pendientes y preguntas para la sustentación
 
-- Etiqueta corte-1: falta salida de git tag --list y git log -1 corte-1.
-- PDF de dos páginas: adjunto en Moodle no disponible en la evidencia.
-- Restricción asignada: no proporcionada; impide juzgar diagnóstico, ADR del reto y cambio.
-- Línea base y medición: no están en el repositorio; posiblemente en el PDF.
-- Prueba del cambio: hay runs verdes pero no se identifica el cambio del reto.
-
-## Hallazgos para la planilla
-
-- No se confirmó la existencia de la etiqueta corte-1 en la evidencia proporcionada.
-- docs/aspectos.md mantiene celdas 'Pendiente' en la fila A-01 y en A-02 a A-05.
-- Ningún ADR incluye la trazabilidad exigida (requisito, C4, commit, pruebas).
-- El workflow de CI no ejecuta análisis estático SonarCloud.
-- No hay en el repositorio un diagnóstico del reto con línea base medida ni medición contra umbral.
-- El C4 declara un Backend XALD sin código correspondiente en el árbol.
+- ¿Cuál fue la restricción asignada y qué cambio concreto responde a ella?
+- ¿Dónde está la línea base ejecutada y el resultado contra el umbral?
+- ¿Por qué el C4 muestra un backend que no aparece en el árbol implementado?
+- ¿Qué evidencia completa la fila del reto en `docs/aspectos.md`?

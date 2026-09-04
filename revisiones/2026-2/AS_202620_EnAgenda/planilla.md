@@ -10,13 +10,13 @@ Hoja consolidada del equipo EnAgenda. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_EnAgenda` |
 | Integrantes y su usuario de GitHub | Eliab Josue Arnedo Conde · Jeimy Yulieth Mendez Altamiranda · Gabriela Morales Cancino — cuentas abajo |
 | URL del sistema desplegado | sin desplegar aún |
-| Ultima revision | 2026-09-02 |
+| Ultima revision | 2026-09-03 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 5 | CORTE1 | `1d01401` (2026-08-31T00:28:12-05:00) | 1/12 | no aplica | si |
+| 5 | Primer corte · reto de línea base | HEAD `1d01401` (sin etiqueta) | 0/12 | subtotal técnico preliminar 0,00/4,00; sustentación pendiente | revisión manual preliminar 2026-09-03 |
 | 4 | S4 | `df724b8` (2026-08-30T23:57:42-05:00) | 8/10 | 4.2 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `13f61b10` · 2026-08-09T05:34:14-05:00 | 8/9 | 4,6 * | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `5b6f7a8e` · 2026-08-16T23:33:20-05:00 | 5/9 | 3,2 * | sí |
@@ -38,24 +38,23 @@ Hoja consolidada del equipo EnAgenda. Se actualiza tras cada revisión.
 | Agregar SonarCloud al pipeline. | S4 | si | |
 | Hacer navegable la celda C4 de docs/aspectos.md. | S4 | si | |
 | Verificar redacción de arc42 01, 04, 05 y 06. | S4 | si | |
-| Etiqueta corte-1 ausente | S5 | si | |
-| ADR del reto no creado | S5 | si | |
-| Diagnóstico y medición no localizados | S5 | si | |
-| Cadena de aspectos con huecos | S5 | si | |
-| C4 nivel 2 desactualizado | S5 | si | |
-| SonarCloud no configurado | S5 | si | |
+| Etiqueta `corte-1` ausente | S5 | Sí | Etiquetar el estado entregable antes del cierre. |
+| Respuesta al reto sin diagnóstico, ADR, cambio ni medición reproducible | S5 | Sí | Declarar la restricción, medir la línea base, registrar la decisión e implementar y medir el incremento. |
+| Cadena de `docs/aspectos.md` no navegable y evidencia pendiente | S5 | Sí | Crear la fila del reto con enlaces hasta código, prueba y resultado. |
+| C4 de contenedores desactualizado frente al monolito Flask y el repositorio en memoria | S4 | Sí | Alinear el diagrama con el estado ejecutable. |
+| Registro de IA sin entrada del Corte 1 | S5 | Sí | Registrar una salida aceptada, corregida o rechazada con motivo técnico. |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | `ISCOUTB/AS_202620_EnAgenda`, público, verificable sin autenticación |
-| Estructura mínima | Cumple | Con desviación de nombres (espacios antes de `.md`) |
-| Convención de nombres de ADR | No cumple | `0001-app-movil-y-web-de-invitaciones .md`: espacio y nombre que ya no corresponde al contenido (decide monolito modular) |
-| ADR aceptados sin reescribir | Cumple | El anterior estaba «propuesto»; reemplazado en `c38adfb` por la decisión de estilo ya «Aceptada» |
-| `docs/ia.md` al día | Cumple | Entradas del 07, 08, 15 y 17 de agosto con rechazos y motivos |
-| Sin credenciales en el repositorio ni en el historial | Cumple | `git grep` de secretos sin coincidencias; sin `.env` versionado |
-| Contribución de todos los integrantes | No cumple en S3 | 2 de 3 en el periodo: Daoisttl0FB3 (4), Jein-12 (5); Eliab 0 |
-| Pipeline en verde | No cumple | Sin `.github/workflows/` y sin ninguna prueba en el árbol |
+| Estructura mínima | Cumple | Las seis rutas del contrato están presentes en HEAD. |
+| Convención de nombres de ADR | Cumple | `0001-usar-monolito-modular.md`. |
+| ADR aceptados sin reescribir | Cumple | Aceptado en `c38adfb`; después solo fue renombrado. |
+| `docs/ia.md` al día | No cumple | La entrada más reciente corresponde a Semana 4; falta Corte 1. |
+| Sin credenciales en el repositorio ni en el historial | Cumple | Sin credenciales; coincidencias con `token` son identificadores de dominio y datos de prueba. |
+| Contribución de todos los integrantes | Cumple | Tres identidades consolidadas para tres integrantes en HEAD. |
+| Pipeline en verde | Cumple | Run de HEAD `33360647498` en verde; no demuestra todavía el reto. |
 
 ## Contribución por integrante
 

@@ -10,7 +10,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_uniTeam` |
 | Integrantes y su usuario de GitHub | Julio Cesar Emiliani Ramos (commits con nombre propio) · Ian Novoa Carrillo (firma «Ian Novoa», correo omitido; la cuenta `iansx` del listado no aparece) · Juan Jose Bustamante More (sin commits atribuibles) · Daniel Isaac Manjarres Herrera (sin commits atribuibles). `super-gremlin` (noreply) sin atribuir a persona. |
 | URL del sistema desplegado | sin URL (sin despliegue todavía) |
-| Ultima revision | 2026-08-31 |
+| Ultima revision | 2026-09-03 |
 
 ## Estado por entrega
 
@@ -20,7 +20,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `ca7726a` · 2026-08-16T13:01:06-05:00 | 9/9 | 5.0 (propuesta) | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `ca44917` · 2026-08-23T13:38:40-05:00 | 5/9 | no se publica | sí |
 | 4 | S4 | `dc14298` (2026-08-29T11:49:10-05:00) | 6/10 | 3.4 | si |
-| 5 | Primer corte · reto de línea base | `corte-1` | | | |
+| 5 | Primer corte · reto de línea base | HEAD `dc14298` (sin etiqueta) | 1/12 | subtotal técnico preliminar 0,60/4,00; sustentación pendiente | revisión manual preliminar 2026-09-03 |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
@@ -49,18 +49,20 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Confirmar contenido de secciones 9, 10 y 12 de arc42 | S4 | si | |
 | Aportar URL de run de CI en verde | S4 | si | |
 | Verificar contenido de docs/ia.md | S4 | si | |
+| Etiqueta `corte-1` y respuesta explícita a la restricción asignada | S5 | sí | fijar el estado y enlazar diagnóstico, ADR, cambio y evidencia |
+| Medición posterior al cambio comparada con la línea base | S5 | sí | existe línea base reproducible, falta el resultado del reto |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | `ISCOUTB/AS_202620_uniTeam`, público |
 | Estructura mínima | Cumple | seis rutas presentes |
-| Convención de nombres de ADR | No cumple | `ADR-00N-…`; el 003 con « (1)» |
-| ADR aceptados sin reescribir | Cumple | un commit por ADR; ADR-001 sin marca de reemplazado |
-| `docs/ia.md` al día | No cumple | sin commits en el periodo S3 (último 16-ago) |
-| Sin credenciales en el repositorio ni en el historial | Cumple | greps limpios |
-| Contribución de todos los integrantes | No cumple | 3 identidades para 4 integrantes; Bustamante y Manjarres sin cuenta atribuible |
-| Pipeline en verde | No verificado | sin `.github/workflows/`; el verde solo lo declara el README |
+| Convención de nombres de ADR | Cumple | cinco ADR con nombres `NNNN-titulo-en-kebab-case.md` |
+| ADR aceptados sin reescribir | Cumple | ADR 0001 declara reemplazo por 0002; los demás conservan su decisión |
+| `docs/ia.md` al día | No cumple | último cambio 2026-08-29, antes del periodo S5 |
+| Sin credenciales en el repositorio ni en el historial | Cumple | barridos limpios; menciones de token son identificadores de código |
+| Contribución de todos los integrantes | No verificado | identidades suficientes, pero dos no pueden atribuirse sin confirmación docente |
+| Pipeline en verde | Cumple | run de HEAD exitoso: `actions/runs/33263993238` |
 
 ## Contribución por integrante
 

@@ -12,7 +12,7 @@ qué se publica y qué no (ver «Publicación»).
 ## Automatización (GitHub Actions)
 
 La revisión semanal corre sola desde la nube: `.github/workflows/revision-semanal.yml` se dispara
-el **lunes 06:00 COT** (pasada definitiva **completa** con `deepseek-v4-pro`: re-evalúa los 23
+el **lunes 06:00 COT** (pasada definitiva **completa** con `deepseek-v4-flash`: re-evalúa los 23
 equipos sobre el último commit ≤ cierre) y el **miércoles y viernes 06:00 COT** (pasadas tempranas
 en delta con `deepseek-v4-flash`: solo equipos con commits nuevos, notas preliminares), más
 `workflow_dispatch` manual. El núcleo es `scripts/cron/evaluar-semana.py` con el calendario de
@@ -34,7 +34,7 @@ Cada entrega cierra el **domingo a medianoche (Colombia, UTC-5)**. El trabajo au
    de los equipos con commits nuevos desde la pasada anterior; las notas quedan marcadas como
    preliminares y pueden cambiar hasta el cierre.
 2. **Pasada definitiva (lunes 06:00 COT)**: evaluación completa de los 23 equipos con
-   `deepseek-v4-pro` sobre el último commit ≤ cierre. Es la que queda publicada y la que cuenta.
+   `deepseek-v4-flash` sobre el último commit ≤ cierre. Es la que queda publicada y la que cuenta.
 
 ## Paso a paso
 

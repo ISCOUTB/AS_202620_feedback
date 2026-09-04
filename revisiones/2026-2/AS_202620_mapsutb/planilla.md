@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_mapsutb` |
 | Integrantes y su usuario de GitHub | Carlos Alberto Galvis Zuluaga · Carlos David Manrique Fals · Nerlis Nikol Otero Perez · Isabel Sofia Paez Matallana — cuentas observadas en el historial: `charlygz21`, `nerlis-otero`, `CarlosManrique-1397` (correspondencias por confirmar con el docente) |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-08-31 |
+| Ultima revision | 2026-09-03 |
 
 ## Estado por entrega
 
@@ -18,7 +18,7 @@
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `1cf1576` · 2026-08-16T21:26:05-05:00 | 4/9 | no se publica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `ed55eda` · 2026-08-23T21:44:05-05:00 | 5/9 | no se publica | sí |
 | 4 | S4 | `f0d036a` (2026-08-30T22:53:06-05:00) | 5/10 | 3.0 | si |
-| 5 | Primer corte · reto de línea base | `corte-1` | | | |
+| 5 | Primer corte · reto de línea base | `corte-1` → `7e56ad3` (apunta a S1; HEAD `e113f83`) | 0/12 | subtotal técnico preliminar 0,00/4,00; sustentación pendiente | revisión manual preliminar 2026-09-03 |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
@@ -53,18 +53,23 @@
 | Corregir mayúsculas en docs/Arc42 y docs/C4 | S4 | si | |
 | Crear etiqueta corte-1 | S4 | si | |
 | Registrar cambios de decisión en ADR nuevos, no editando aceptados | S4 | si | |
+| Etiqueta `corte-1` fijada en el commit inicial de S1 | S5 | sí | Mover la etiqueta al commit real del corte antes del cierre |
+| Sin diagnóstico, línea base ni medición reproducible del reto | S5 | sí | Documentar procedimiento, carga, cifra inicial, umbral y resultado |
+| `docs/aspectos.md` contradice el alcance actual y no enlaza ADR, código ni pruebas | S5 | sí | Actualizar la cadena completa y hacerla navegable |
+| ADR 0001 reescrito y ADR 0002 con nombre fuera de convención | S5 | sí | Conservar ADR aceptados y usar `NNNN-titulo-en-kebab-case.md` |
+| Sin prueba específica del cambio ni workflow de CI | S5 | sí | Añadir prueba del reto y evidencia de run verde |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | `github.com/ISCOUTB/AS_202620_mapsutb`, público (ls-remote sin auth) |
-| Estructura mínima | No cumple | `docs/arc42.md` único; `docs/c4_contexto.md` fuera de `docs/c4/`; `docs/adr/` ya existe |
-| Convención de nombres de ADR | Cumple | `0001-patrones-de-diseno.md` |
-| ADR aceptados sin reescribir | Cumple | un solo commit sobre el ADR |
-| `docs/ia.md` al día | No cumple | tocado en S3 solo con cambio de saltos de línea; sin entradas nuevas |
+| Estructura mínima | No cumple | En HEAD usa `docs/Arc42/` y `docs/C4/`; la etiqueta S5 solo contiene README, aspectos e IA |
+| Convención de nombres de ADR | No cumple | `0002.md` no incluye título en kebab-case |
+| ADR aceptados sin reescribir | No cumple | `0001-patrones-de-diseno.md` tiene múltiples reescrituras posteriores a su creación |
+| `docs/ia.md` al día | No cumple | última entrada 30/08; sin registro del trabajo S5 |
 | Sin credenciales en el repositorio ni en el historial | Cumple | greps limpios |
-| Contribución de todos los integrantes | No cumple | 3 identidades; sin cuenta para Isabel Sofia Paez Matallana; S3 de una sola cuenta |
-| Pipeline en verde | No verificado | sin `.github/workflows/` ni evidencia de ejecución |
+| Contribución de todos los integrantes | Cumple | 4 personas consolidadas en HEAD; `i-matallana` usa dos correos |
+| Pipeline en verde | No verificado | Sin `.github/workflows/` ni URL de run |
 
 ## Contribución por integrante
 

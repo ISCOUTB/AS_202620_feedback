@@ -38,7 +38,7 @@ Recuento: **8 de 9 criterios cumplidos** (sin nota numérica: la fija el profeso
 | ADR aceptados no reescritos | Cumple | Único commit `92f4a53` (2026-08-23), creación; sin ediciones posteriores. |
 | `docs/ia.md` al día para la semana | No cumple | Entrada S3 (23-ago) con prompt, salida y verificación del equipo, y commits dentro del periodo (`a835f55`, `b49eeda`); pero sigue sin registrar qué se rechazó y por qué (la columna que mira primero el contrato). |
 | Sin credenciales en el repositorio ni en el historial | Cumple | `git grep` de secretos sin coincidencias; sin `.env` versionado (solo `.env.example`). |
-| Contribución de todos los integrantes | Cumple | 3 personas consolidadas / 3 integrantes: PedroPambi 9; `sebastian-caicedo` 8 + «Sebastian Felipe Caicedo Acosta» 1 (mismo correo `caicedos@utb.edu.co`, identidad consolidada = 9); RodrigoFacioLince 3. |
+| Contribución de todos los integrantes | Cumple | 3 personas consolidadas / 3 integrantes: PedroPambi 9; `sebastian-caicedo` 8 + «Sebastian Felipe Caicedo Acosta» 1 (mismo correo `[correo omitido]`, identidad consolidada = 9); RodrigoFacioLince 3. |
 
 ## No verificado / pendientes
 
