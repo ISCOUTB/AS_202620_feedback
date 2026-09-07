@@ -1,133 +1,110 @@
-# Primer corte · reto de línea base arquitectónica
+# Primer corte · compendio de la línea base arquitectónica
 
 | | |
 |---|---|
 | `idnumber` en Moodle | `arqsw:corte1` |
 | Semana | 5 |
 | Corte | Primer corte (actividad de corte) |
-| Tipo | grupal, nota única del equipo, con rúbrica de 5 criterios |
-| Qué sube el estudiante | enlace al repositorio en el commit etiquetado `corte-1` y un PDF de dos páginas |
-| Estado que se califica | la etiqueta `corte-1` |
+| Tipo | grupal, nota única del equipo |
+| Qué sube el estudiante | enlace al repositorio en el commit etiquetado `corte-1`, PDF exigido por el aula y `correcciones.md` en la raíz del repositorio |
+| Estado que se califica | la etiqueta `corte-1` o, si falta, el último commit anterior al cierre |
 | Acceso | requiere haber entregado la evidencia S4 |
 
-Antes de empezar, lee [CONTRATO.md](../CONTRATO.md). Su matriz transversal se rellena además de la
-de esta ficha.
+Antes de empezar, lee [CONTRATO.md](../CONTRATO.md) y las fichas de las evidencias S1 a S4. Su
+matriz transversal se rellena además de la de esta ficha.
 
-## Qué se pidió
+## Qué se evalúa
 
-El equipo responde a **una restricción nueva asignada** según su proyecto: diagnostica su
-impacto, compara alternativas, registra la decisión, implementa el cambio sobre el corte vertical
-y aporta pruebas y mediciones. El PDF de dos páginas recoge diagnóstico, decisión, cambio
-aplicado, medición y enlaces de trazabilidad.
+La **pasada definitiva y completa de la semana 5** es el compendio del primer corte: comprueba que
+el proyecto esté al día con lo pedido en S1, S2, S3 y S4 y que las correcciones anunciadas por el
+equipo estén realmente aplicadas. No se evalúa una supuesta «restricción nueva asignada» ni un
+reto distinto por equipo, salvo que el aula aporte explícitamente ese enunciado y su asignación.
 
-Dos reglas que cambian lo que hay que mirar:
+Las notas históricas de S1 a S4 no se reabren. La matriz de S5 sí valora el estado consolidado del
+proyecto al cierre: una carencia anterior todavía presente afecta el compendio; una corrección
+hecha antes del cierre puede cerrar el hallazgo para S5, con evidencia verificable.
 
-- **Las evidencias S1 a S4 son línea base y no se vuelven a calificar por existir.** Si un
-  artefacto anterior se deterioró, eso afecta a la coherencia del sistema, pero su nota ya está
-  puesta. Lo que se califica aquí es la respuesta al reto.
-- **La sustentación es el quinto criterio de la rúbrica** y no se puede verificar desde el
-  repositorio: se resuelve en la sesión, con nota única del equipo.
+Esta regla especial se aplica **solo a la evaluación definitiva completa de S5**. Las pasadas
+tempranas siguen siendo diagnósticos preliminares en delta y no deben cerrar ni rechazar
+correcciones de forma definitiva.
 
-Antes de revisar, consigue **cuál fue la restricción asignada a ese equipo**: sin ella no se
-puede juzgar si el diagnóstico localiza lo que debía.
+## `correcciones.md` en la raíz
 
-## Instrucciones para el agente de revisión
+En el estado calificado debe existir exactamente `correcciones.md` en la raíz del repositorio.
+El nombre mal escrito, una ubicación distinta o un archivo añadido después del cierre no cumplen
+esta fila.
 
-1. **Sitúate en la etiqueta.** Comprueba que existe y que apunta a un commit anterior al cierre.
-   Si no existe, revisa el último commit anterior al cierre y regístralo.
+El archivo debe responder de forma trazable a los hallazgos publicados en S1–S4 y, si existió una
+pasada temprana de S5, a sus hallazgos preliminares. Para cada corrección debe indicar:
+
+- hallazgo o fila que responde;
+- acción realizada, o motivo técnico para no aplicarla;
+- ruta y sección, prueba, commit o run de CI que permite verificarla;
+- estado declarado: corregida, parcial, pendiente o rechazada con justificación.
+
+`correcciones.md` es un índice de verificación, no evidencia suficiente por sí solo. Cada
+afirmación se contrasta con el archivo, historial, prueba o run citado. Si falta, se marca **No
+cumple** únicamente su fila y se continúa revisando el proyecto completo; no se invalida
+automáticamente toda la entrega.
+
+## Instrucciones para la revisión definitiva
+
+1. **Fija el estado calificado.** Comprueba que `corte-1` existe y apunta a un commit anterior o
+   igual al cierre. Si no existe, usa el último commit anterior al cierre y registra la ausencia.
    ```bash
    git -C "$DIR" tag --list
    git -C "$DIR" log -1 --format='%H %cI %s' corte-1
-   git -C "$DIR" checkout corte-1
+   git -C "$DIR" log -1 --until="$CIERRE_S5" --format='%H %cI %s'
    ```
-2. **Localiza la respuesta al reto en el historial.** Acota los commits entre la evidencia S4 y la
-   etiqueta: ahí está lo que se califica.
+2. **Comprueba `correcciones.md` en la raíz del estado calificado.** No uses el archivo de HEAD
+   si fue añadido después del cierre.
    ```bash
-   git -C "$DIR" log --format='%h %cI %an %s' --since="$INICIO_SEMANA_5" corte-1
+   git -C "$DIR" ls-tree --name-only corte-1
+   git -C "$DIR" show corte-1:correcciones.md
    ```
-3. **Diagnóstico.** Busca dónde el equipo declara qué parte del sistema y qué escenario de
-   calidad afecta la restricción, y con qué **estado inicial medido**. Puede estar en el PDF, en
-   arc42 sección 11 o en el propio ADR. Comprueba que la línea base sea verificable: una cifra
-   con su procedimiento, no una afirmación.
-4. **Alternativas y decisión.** Abre el ADR del reto y comprueba que registra alternativas,
-   fuerzas, decisión y consecuencias, y que la liga al escenario de calidad. Un ADR que solo
-   enuncia lo elegido cubre el nivel básico, no el competente.
-   ```bash
-   ls docs/adr/
-   git -C "$DIR" log --format='%h %cI %s' --diff-filter=A -- docs/adr/    # cuándo apareció cada ADR
-   ```
-5. **Cambio aplicado.** Sigue el ADR hasta el commit que lo implementa y comprueba que el cambio
-   funciona de extremo a extremo y que el arranque sigue siendo reproducible con el comando del
-   README. Verifica que los límites declarados en el C4 se conservan tras el cambio.
-6. **Pruebas.** Localiza la prueba que cubre el cambio y comprueba que el pipeline la ejecutó en
-   verde en un run anterior a la etiqueta.
-   ```bash
-   curl -s "https://api.github.com/repos/ISCOUTB/$REPO/actions/runs?per_page=30" \
-     | python -c "import json,sys;[print(r['created_at'],r['head_sha'][:8],r['conclusion'],r['html_url']) for r in json.load(sys.stdin)['workflow_runs']]"
-   ```
-7. **Medición contra umbral.** Comprueba que hay resultado contrastado con el umbral del escenario
-   y que la evidencia permite **reproducir** la medición: herramienta, carga y procedimiento. Una
-   captura sin procedimiento no es reproducible.
-8. **Cadena de trazabilidad.** Recorre la fila de `docs/aspectos.md` del aspecto tocado por el
-   reto, de punta a punta, comprobando cada celda. Cita dónde se rompe si se rompe.
-9. **Registro de IA.** Comprueba que `docs/ia.md` incluye al menos una salida **aceptada,
-   corregida o rechazada** con su motivo técnico, referida al trabajo de este corte.
-10. **Prepara la sustentación.** Deja escritas dos o tres preguntas concretas para el equipo,
-    salidas de lo que encontraste: un tramo sin prueba, una alternativa descartada sin motivo, una
-    medición no reproducible. El criterio 5 se califica en la sesión.
+3. **Recorre las revisiones publicadas S1–S4.** Construye una lista de hallazgos y verifica si
+   `correcciones.md` responde a cada uno. No aceptes una autoevaluación genérica de «Cumple».
+4. **Contrasta cada corrección.** Abre la ruta citada en `corte-1`, revisa el cambio en el historial
+   y busca la prueba o el run de CI correspondiente. Clasifica la respuesta como verificada,
+   parcial, pendiente, rechazada con fundamento o no sustentada.
+5. **Revisa el compendio S1–S4 en su estado actual.** Aplica las matrices de las cuatro fichas al
+   estado calificado, sin copiar sus notas históricas: problema y equipo; atributos de calidad y
+   restricciones; estrategia y ADR; arc42, C4 y corte vertical.
+6. **Revisa el contrato transversal.** Comprueba estructura, ADR, `docs/ia.md`, secretos,
+   contribución y CI de acuerdo con [CONTRATO.md](../CONTRATO.md).
+7. **Separa corte y HEAD.** La matriz S5 se decide con el estado calificado. En `overall`, revisa
+   HEAD para registrar correcciones o deterioros posteriores como hallazgo, sin cambiar la nota
+   del corte.
+8. **Deja trazabilidad en el informe.** Incluye una tabla específica para `correcciones.md` y cita
+   evidencia por cada conclusión. Añade preguntas de sustentación para lo que no pueda verificarse
+   desde el repositorio.
 
-**Qué no hacer aquí:** no recalificar arc42, C4 ni el corte vertical por existir, que es lo que
-midieron S2 a S4; no exigir despliegue en línea, que empieza en el segundo corte; no puntuar la
-sustentación desde el repositorio.
+## Matriz de cumplimiento S5
 
-## Matriz de cumplimiento
-
-| Criterio de evaluación | Evidencia técnica esperada | Estado (Cumple / No cumple) | Observaciones |
+| Criterio de evaluación | Evidencia técnica esperada | Estado (Cumple / No cumple / No verificado) | Observaciones |
 |---|---|---|---|
-| Etiqueta `corte-1` sobre un commit anterior al cierre | `git log -1 --format='%H %cI' corte-1` | | |
-| PDF de dos páginas con diagnóstico, decisión, cambio, medición y trazabilidad | documento adjunto en la entrega de Moodle | | |
-| Impacto de la restricción localizado en requisitos, C4 y código | apartado de diagnóstico citando elemento y escenario afectados | | |
-| Línea base medida y verificable antes del cambio | cifra con herramienta y procedimiento | | |
-| ADR del reto con alternativas, fuerzas, decisión y consecuencias | `docs/adr/NNNN-*.md` ligado al escenario de calidad | | |
-| Cambio implementado y ejecutable de extremo a extremo | commit que implementa el ADR y comando de arranque del README | | |
-| Límites declarados conservados tras el cambio | correspondencia del C4 con la estructura del código | | |
-| Prueba que cubre el cambio, en verde en el pipeline | ruta de la prueba y URL del run anterior a la etiqueta | | |
-| Resultado contrastado con el umbral del escenario y reproducible | medición con herramienta, carga y procedimiento | | |
-| Cadena aspecto, requisito, C4, ADR, código, pruebas y evidencia navegable | fila de `docs/aspectos.md` recorrida celda a celda | | |
-| Salida de IA aceptada, corregida o rechazada con motivo técnico | entrada de `docs/ia.md` de este corte | | |
-| Sustentación del reto | sesión de sustentación, no verificable desde el repositorio | No verificado | lo resuelve el docente en la sesión |
+| Estado de corte identificable y anterior al cierre | etiqueta `corte-1` o hash sustituto, con fecha | | |
+| `correcciones.md` existe en la raíz del estado calificado | `git show <hash>:correcciones.md` | | |
+| Correcciones trazables y contrastadas | cada hallazgo S1–S4 enlazado con evidencia real o justificación técnica | | |
+| S1 al día: equipo, problema y repositorio | matriz vigente de `semana-01-evidencia-s1.md` | | |
+| S2 al día: escenarios de calidad y restricciones | matriz vigente de `semana-02-evidencia-s2.md` | | |
+| S3 al día: estrategia de solución y decisiones | matriz vigente de `semana-03-evidencia-s3.md` | | |
+| S4 al día: arc42, C4 y corte vertical | matriz vigente de `semana-04-evidencia-s4.md` | | |
+| Corte vertical reproducible y coherente con la arquitectura | README, código, pruebas y correspondencia con C4 | | |
+| Pipeline y pruebas respaldan el estado calificado | ruta de pruebas y URL de run asociado al hash o anterior al corte | | |
+| Trazabilidad consolidada navegable | aspectos, requisitos, C4, ADR, código, pruebas y evidencias | | |
+| PDF u otro adjunto exigido por el aula | documento entregado en Moodle; No verificado si no está disponible | | |
+| Sustentación del corte | sesión de sustentación | No verificado | lo resuelve el docente en la sesión |
 
-## Nivel de rúbrica sugerido
+## Tabla obligatoria de seguimiento de correcciones
 
-Rúbrica desplegada en el aula, cinco criterios de máximo 1,00 cada uno. Los niveles puntúan
-0,00 · 0,60 · 0,80 · 1,00 y la suma **es** la nota en la escala UTB. Esto es una **propuesta al
-docente**, no una nota aplicada.
+| Origen | Hallazgo o fila | Respuesta en `correcciones.md` | Evidencia contrastada | Resultado |
+|---|---|---|---|---|
+| S1–S4 o preliminar S5 | | | | Verificada / Parcial / Pendiente / Rechazada con fundamento / No sustentada |
 
-| Criterio | Nivel sugerido | Puntaje | Evidencia que lo sostiene |
-|---|---|---:|---|
-| Diagnóstico del reto | | | |
-| Alternativas y decisión | | | |
-| Aplicación sobre el corte vertical | | | |
-| Pruebas, medición y trazabilidad | | | |
-| Sustentación del reto | lo fija el docente | | |
-| **Total** | | **/ 5,00** | |
+## Criterio para la propuesta al docente
 
-Anclas rápidas, tomadas de la rúbrica del aula:
-
-- **Diagnóstico.** Básico si describe el reto sin evidencia del estado inicial; competente si
-  localiza el impacto en requisitos, C4 y código con línea base verificable; sobresaliente si
-  además distingue síntomas, causas y supuestos y prioriza el riesgo con evidencia del proyecto.
-- **Alternativas y decisión.** Básico si compara dos alternativas en general; competente si el
-  ADR registra alternativas, fuerzas, decisión y consecuencias ligadas al escenario;
-  sobresaliente si además declara qué dato haría revisar la decisión y qué costo de reversión
-  acepta.
-- **Aplicación.** Básico si la implementación es parcial o exige pasos no documentados;
-  competente si funciona de extremo a extremo, arranca de forma reproducible y conserva los
-  límites declarados; sobresaliente si además degrada de forma controlada ante una condición
-  adversa pertinente.
-- **Pruebas, medición y trazabilidad.** Básico si hay prueba funcional que no demuestra el
-  escenario; competente si la cadena completa es navegable y contrasta el resultado con un
-  umbral; sobresaliente si además la evidencia permite reproducir la medición y muestra una
-  salida de IA aceptada, corregida o rechazada con justificación técnica.
-- **Sustentación.** Se califica en la sesión: competente exige que todos intervengan y justifiquen
-  trade-offs, límites y consecuencias sobre su sistema.
+La propuesta de S5 debe reflejar el estado consolidado del primer corte y usar la escala o rúbrica
+publicada en el aula. No inventes un reto, una restricción ni ponderaciones ausentes. Si la rúbrica
+del aula no está disponible, entrega la matriz y deja la nota o nivel como **No verificado** para
+que lo resuelva el docente.

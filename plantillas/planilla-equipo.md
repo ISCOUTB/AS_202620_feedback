@@ -27,7 +27,7 @@ las pasadas tempranas y propuesta al docente en la definitiva).
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | | | no aplica | |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | | | no aplica | |
 | 4 | Evidencia S4 · arc42, C4 y corte vertical | | | no aplica | |
-| 5 | Primer corte · reto de línea base | `corte-1` | | | |
+| 5 | Primer corte · compendio de la línea base | `corte-1` | | | |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |

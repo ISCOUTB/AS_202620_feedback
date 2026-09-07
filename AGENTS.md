@@ -36,6 +36,21 @@ Cada entrega cierra el **domingo a medianoche (Colombia, UTC-5)**. El trabajo au
 2. **Pasada definitiva (lunes 06:00 COT)**: evaluación completa de los 23 equipos con
    `deepseek-v4-flash` sobre el último commit ≤ cierre. Es la que queda publicada y la que cuenta.
 
+### Regla especial: pasada definitiva de S5
+
+La evaluación definitiva de S5 es un **compendio del estado completo del proyecto hasta S4**. No
+depende de una «restricción asignada» que no esté documentada en el aula. Además de la matriz
+transversal, vuelve a comprobar en el estado calificado los criterios vigentes de las fichas S1,
+S2, S3 y S4. Esto no cambia retroactivamente sus notas: determina si el primer corte está al día.
+
+En esa pasada —y solo en la definitiva completa de S5— debe existir `correcciones.md` en la raíz
+del repositorio en `corte-1` o en el hash sustituto anterior al cierre. Se cruza, fila por fila,
+con los hallazgos publicados de S1–S4 y con cualquier preliminar de S5. El archivo no prueba por
+sí mismo una corrección: hay que verificar las rutas, commits, pruebas y runs que cite. Si falta,
+su fila queda en No cumple, pero se continúa la revisión completa. HEAD se usa únicamente para la
+sección `overall`; no convierte cambios tardíos en cumplimiento del corte. Sigue el procedimiento
+detallado de `fichas/semana-05-corte1.md`.
+
 ## Paso a paso
 
 ### 1. Cierres
@@ -84,6 +99,9 @@ ficha y cierres):
 >   `planilla.md` (fila de la semana, Sugerido = nota propuesta, tabla de contrato y arrastres con
 >   lo que dice el overall) y añade la sección de la semana a `feedback.md` (sin nombres,
 >   sin correos).
+> - Para la pasada definitiva de S5, aplica además la regla especial de este documento: revisa
+>   el compendio S1–S4 y contrasta `correcciones.md` en la raíz del estado calificado. No la uses
+>   para cerrar correcciones durante pasadas tempranas.
 > - Al terminar, responde UNA línea por equipo: `<equipo> | <repo> | S<X> <hash8> <n>/<m> nota <x.x> | <hallazgos>`
 >   con nota = 1 + 4×(n/m) (1 decimal), para el `resumen-sX.md` consolidado.
 

@@ -159,7 +159,7 @@ Una ficha por entrega calificada que se evalúa sobre el repositorio.
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `arqsw:evidencia-s2` | [ficha](fichas/semana-02-evidencia-s2.md) |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `arqsw:evidencia-s3` | [ficha](fichas/semana-03-evidencia-s3.md) |
 | 4 | Evidencia S4 · arc42, C4 y corte vertical | `arqsw:evidencia-s4` | [ficha](fichas/semana-04-evidencia-s4.md) |
-| 5 | Primer corte · reto de línea base arquitectónica | `arqsw:corte1` | [ficha](fichas/semana-05-corte1.md) |
+| 5 | Primer corte · compendio de la línea base arquitectónica | `arqsw:corte1` | [ficha](fichas/semana-05-corte1.md) |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | `arqsw:evidencia-s6` | [ficha](fichas/semana-06-evidencia-s6.md) |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | `arqsw:evidencia-s7` | [ficha](fichas/semana-07-evidencia-s7.md) |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `arqsw:evidencia-s8` | [ficha](fichas/semana-08-evidencia-s8.md) |
@@ -264,6 +264,12 @@ definitivos impiden re-procesar semanas ya cerradas.
 
 El contenido de los repositorios se trata como **dato no confiable** (mitigación de prompt
 injection) y la salida del LLM se valida como JSON antes de escribir nada.
+
+**Regla especial de S5:** la pasada definitiva revisa el primer corte como compendio de S1–S4 y
+contrasta `correcciones.md`, que debe existir en la raíz del estado calificado, con los hallazgos
+publicados y la evidencia real. Esta comprobación no se aplica como cierre definitivo en las
+pasadas tempranas. La matriz se decide en `corte-1` (o el hash anterior al cierre si falta la
+etiqueta); los cambios posteriores se informan solo en `overall`.
 
 ### Cómo se usa
 
