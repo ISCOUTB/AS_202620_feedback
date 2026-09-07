@@ -6,9 +6,9 @@
 |---|---|
 | Equipo | CampusMarket |
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET` |
-| Integrantes y su usuario de GitHub | Nilver Garcia Pimentel · Camilo Jose Martinez Berrio · Joshua Jose Tenorio Alvarez — historial con tres identidades: `camilixo92`, `nilver-garcia` y `Nnigarp` (misma cuenta de GitHub, consolidar) y `Carulla-sd` (correspondencias por confirmar con el docente) |
+| Integrantes y su usuario de GitHub | Nilver Garcia Pimentel · Camilo Jose Martinez Berrio · Joshua Jose Tenorio Alvarez — cuentas consolidadas: `nilver-garcia`/`Nnigarp` (mismo id de cuenta, es una sola persona), `camilixo92`, `Carulla-sd` |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-03 |
+| Ultima revision | 2026-09-07 (revisión definitiva post-cierre) |
 
 ## Estado por entrega
 
@@ -18,7 +18,7 @@
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `4f72799` · 2026-08-16T22:01:41-05:00 | 7/9 | no se publica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `4dd857a` · 2026-08-23T23:54:16-05:00 | 9/9 | no se publica | sí |
 | 4 | S4 | `f3f4367` (2026-08-30T22:55:30-05:00) | 9/10 | 4.6 | si |
-| 5 | Primer corte · reto de línea base | HEAD `f3f4367` (sin etiqueta) | 0/12 | subtotal técnico preliminar 0,00/4,00; sustentación pendiente | revisión manual preliminar 2026-09-03 |
+| 5 | Primer corte · reto de línea base | `corte-1` → `8044215` (2026-09-06T21:05:15Z) | 9/12 | subtotal técnico 4,00/4,00; sustentación pendiente | revisión definitiva post-cierre 2026-09-07 |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
@@ -37,48 +37,49 @@
 
 | Hallazgo | Primera vez que se detectó | Sigue abierto | Qué se le dijo al equipo |
 |---|---|---|---|
-| Historial con una sola identidad de commits (23/23) | S1 | no (S3: 3 personas; `nilver-garcia` y `Nnigarp` son la misma cuenta, consolidar) | Consolidar la identidad duplicada en git |
-| Estructura fuera de convención: archivos sueltos en `docs/` | S1 | no (S3 resuelto) | `docs/arc42/`, `docs/adr/` y `docs/c4/` ya existen |
-| `docs/aspectos.md` sin tabla ni enlaces | S1 | no (S3 resuelto) | Tabla de 8 columnas con enlaces funcionales |
-| `docs/ia.md` sin registro de lo rechazado | S1 | no (resuelto en S3/S4) | Mantener una entrada por semana con rechazo o corrección y motivo técnico |
+| Historial con una sola identidad de commits (23/23) | S1 | no (S3: 3 personas; confirmado en S5 que `nilver-garcia`/`Nnigarp` son la misma cuenta) | Consolidar la identidad duplicada en git |
+| Estructura fuera de convención: archivos sueltos en `docs/` | S1 | no (S3 resuelto, confirmado en `corte-1`) | `docs/arc42/`, `docs/adr/` y `docs/c4/` ya existen |
+| `docs/aspectos.md` sin tabla ni enlaces | S1 | no (S3 resuelto; en S5 llegó a 6 filas con ASP-06 completo) | Tabla de 8 columnas con enlaces funcionales |
+| `docs/ia.md` sin registro de lo rechazado | S1 | no (resuelto en S3/S4, confirmado en S5) | Mantener una entrada por semana con rechazo o corrección y motivo técnico |
 | ADR 0001 ausente aunque arc42 y aspectos.md lo enlazaban | S3 | no (resuelto en PR #5) | ADR completo y enlazado desde EC-03 y ASP-03 |
 | README sin comando único de arranque | S3 | no (resuelto) | `python -m uvicorn backend.app.main:app --reload` documentado |
-| Sin prueba automatizada ni pipeline | S3 | no (resuelto) | `backend/tests/test_health.py` + workflow con 4 runs en verde |
-| Esqueleto Flutter por defecto, sin módulos del ADR | S3 | parcial | Backend con los 4 módulos; el frontend sigue siendo la plantilla Flutter por defecto |
-| Integrar SonarCloud al pipeline | S4 | si | |
-| Verificar arranque con un solo comando mediante ejecución | S4 | si | |
-| Enlazar ADR-0001 con commit que lo implementa | S4 | si | |
-| Definir medición de línea base | S4 | si | |
-| Etiqueta `corte-1` ausente; HEAD sigue en S4 | S5 | sí | Crear la etiqueta sobre el commit real del corte antes del cierre |
-| Diagnóstico de la restricción asignada | S5 | si | |
-| ADR del reto con alternativas y decisión | S5 | si | |
-| Implementación del cambio sobre el corte vertical | S5 | si | |
-| Pruebas y medición contra umbral | S5 | si | |
-| Trazabilidad del reto en docs/aspectos.md | S5 | si | |
-| Registro de IA del corte en docs/ia.md | S5 | si | |
-| PDF de dos páginas en Moodle | S5 | si | |
+| Sin prueba automatizada ni pipeline | S3 | no (resuelto) | `backend/tests/test_health.py` + workflow con runs en verde |
+| Esqueleto Flutter por defecto, sin módulos del ADR | S3 | no (resuelto en S4: módulos `usuarios/publicaciones/catalogo/administracion`) | Backend y frontend con los 4 módulos |
+| Integrar SonarCloud al pipeline | S4 | no (resuelto en S5: `.sonarcloud.properties` con proyecto oficial `ISCOUTB_AS_202620_PROYECTO_CAMPUSMARKET`; Quality Gate no verificado de forma independiente) | Confirmar en vivo el Quality Gate en la sustentación |
+| Verificar arranque con un solo comando mediante ejecución | S4 | no (resuelto: evidencia en `docs/evidencias/arranque-un-comando-2026-09-04.md`) | — |
+| Enlazar ADR-0001 con commit que lo implementa | S4 | no (resuelto: PR #5, commit `4dd857a`) | — |
+| Definir medición de línea base | S4 | no (resuelto en S5 junto con el reto) | — |
+| Diagnóstico de la restricción asignada (R-07) | S5 | no (resuelto: ADR-0002 y `docs/evidencias/linea-base-bloqueo-sqlite-2026-09-05.md`) | — |
+| ADR del reto con alternativas y decisión | S5 | no (resuelto: ADR-0002) | — |
+| Implementación del cambio sobre el corte vertical | S5 | no (resuelto: PR #28, commit `ff68cf2`) | — |
+| Pruebas y medición contra umbral | S5 | no (resuelto: `test_bloqueo_sqlite_degrada_controladamente_y_se_recupera`, `medir_bloqueo_sqlite.py`) | — |
+| Trazabilidad del reto en docs/aspectos.md | S5 | no (resuelto: fila ASP-06) | — |
+| Registro de IA del corte en docs/ia.md | S5 | no (resuelto: sección "Evidencia S5") | — |
+| PDF de dos páginas en Moodle | S5 | sin verificar | No disponible en el kit; confirmar en Moodle antes de cerrar la nota |
+| ASP-01 y ASP-02 sin materializar en el corte vertical | S5 | sí (declarado explícitamente por el equipo, no oculto) | Materializar en cortes siguientes o mantener la declaración explícita si se posponen |
+
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | Público (clon sin auth) |
-| Estructura mínima | Cumple | Las seis rutas presentes en `4dd857a` |
-| Convención de nombres de ADR | Cumple | `0001-usar-monolito-modular.md` |
-| ADR aceptados sin reescribir | Cumple | Un único commit (`dbdd9c4`) |
-| `docs/ia.md` al día | No cumple | Registro completo hasta S4; sin entrada de S5 |
+| Estructura mínima | Cumple | Las seis rutas presentes en `corte-1`, en minúsculas |
+| Convención de nombres de ADR | Cumple | `0001-usar-monolito-modular.md`, `0002-manejo-bloqueo-sqlite.md` |
+| ADR aceptados sin reescribir | Cumple | Un único commit para 0001 (`dbdd9c4`); 0002 es un archivo nuevo |
+| `docs/ia.md` al día | Cumple | Sección "Evidencia S5" con rechazos y motivo técnico |
 | Sin credenciales en el repositorio ni en el historial | Cumple | git grep y `.env` sin coincidencias |
-| Contribución de todos los integrantes | Cumple | 3 personas para 3 integrantes (`nilver-garcia`+`Nnigarp` = misma cuenta); correspondencia por confirmar |
-| Pipeline en verde | Cumple | Run de HEAD `f3f4367` en success; https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/actions/runs/33219659253 |
+| Contribución de todos los integrantes | Cumple | 3 personas consolidadas: Nilver Garcia (124), Camilo Martinez (26), Joshua Tenorio (19) |
+| Pipeline en verde | Cumple | Run del commit de la etiqueta (`80442158`) en success: https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/actions/runs/34059972075 |
 
 ## Contribución por integrante
 
-| Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
+| Integrante | Usuario de GitHub | Commits (HEAD) | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
 |---|---|---:|---:|---:|---|
-| Nilver Garcia Pimentel | `nilver-garcia` / `Nnigarp` (misma cuenta, consolidar) | 33 | — | — | Todo el esqueleto S3: backend, prueba, workflow, README |
-| Camilo Jose Martinez Berrio | ¿`camilixo92`? (confirmar) | 26 | — | — | Autor principal S1–S2; merges de PR #2, #3 y #5 |
-| Joshua Jose Tenorio Alvarez | ¿`Carulla-sd`? (confirmar) | 1 | — | — | Esqueleto Flutter inicial |
+| Nilver Garcia Pimentel | `nilver-garcia` / `Nnigarp` (misma cuenta, id 115980006) | 124+10+2 | — | — | Mayor volumen; ADR-0002 y reto S5 |
+| Camilo Jose Martinez Berrio | `camilixo92` | 26 | — | — | Autor principal S1–S2; merges de PR #2, #3, #5 |
+| Joshua Jose Tenorio Alvarez | `Carulla-sd` | 19 | — | — | Módulos de frontend |
 
 ## Preguntas abiertas para la sustentación
 
-- ¿Cuál cuenta corresponde a cada integrante (`camilixo92`, `nilver-garcia`/`Nnigarp`, `Carulla-sd`)?
-- ¿Cuándo modularizarán el frontend con la misma frontera de módulos del backend?
+- ¿Pueden mostrar en vivo el Quality Gate de SonarCloud para confirmar la afirmación de `correcciones.md`?
+- ¿Cuándo materializarán ASP-01 y ASP-02 en el corte vertical?

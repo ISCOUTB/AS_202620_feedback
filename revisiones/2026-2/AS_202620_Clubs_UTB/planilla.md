@@ -14,7 +14,7 @@
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 5 | Primer corte · reto de línea base | HEAD `91323d6` (sin etiqueta) | 0/12 | subtotal técnico preliminar 0,00/4,00; sustentación pendiente | revisión manual preliminar 2026-09-03 |
+| 5 | Primer corte · reto de línea base | sin etiqueta; último commit ≤ cierre `4ede977c` (2026-09-06T22:41:55-05:00) | 0/12 | 0,00/4,00 + sustentación pendiente | revisión definitiva post-cierre 2026-09-07 |
 | 4 | S4 | `91323d6` (2026-08-30T23:21:56-05:00) | 9/10 | 4.6 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `c92595ed` · 2026-08-09T13:25:24-05:00 | 2/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `69cfe68f` · 2026-08-16T18:33:10-05:00 | 7/9 | no se publica | sí |
@@ -34,14 +34,16 @@
 | Arranque con un solo comando en README | S4 | si | |
 | Análisis estático en SonarCloud | S4 | si | |
 | Código del contenedor Flutter pendiente (esperado para fases siguientes) | S4 | si | |
-| Etiqueta corte-1 ausente | S5 | si | |
-| ADR del reto no creado | S5 | si | |
-| Diagnóstico y línea base no documentados | S5 | si | |
-| Cambio no implementado | S5 | si | |
-| Medición no aportada | S5 | si | |
-| Tabla de aspectos incompleta | S5 | si | |
-| Registro IA sin entrada de S5 | S5 | si | |
-| Análisis estático SonarCloud ausente | S5 | si | |
+| Etiqueta corte-1 ausente | S5 | sí (al cierre de S5 sigue sin existir) | Se calificó el último commit ≤ cierre (`4ede977c`); se les dijo que deben crear la etiqueta antes del próximo corte. |
+| ADR del reto no creado | S5 | sí | Solo existe el ADR-0001 de arquitectura hexagonal; no hay ADR de una restricción nueva. |
+| Diagnóstico y línea base no documentados | S5 | sí | Sin restricción diagnosticada ni cifra de línea base en ningún artefacto. |
+| Cambio no implementado | S5 | sí (parcial) | Se agregó un endpoint de publicaciones con prueba y CI en verde, pero no está vinculado a ninguna restricción diagnosticada. |
+| Medición no aportada | S5 | sí | — |
+| Tabla de aspectos incompleta | S5 | sí | Sin columna Evidencia; la mayoría de filas siguen en "Pendiente". |
+| Registro IA sin entrada de S5 | S5 | sí | `docs/ia.md` no tiene commits desde S3-S4. |
+| Análisis estático SonarCloud ausente | S5 | sí | No se verificó badge ni run de SonarCloud en el estado revisado. |
+| ADR-0001 editado después de aceptado (`c6c46e3`, 30/08) sin ADR de reemplazo | S5 | sí | Corrige el hallazgo de S4 ("sin reescrituras"): sí hay una edición posterior a la aceptación; se les pidió escribir un ADR nuevo si la decisión cambia. |
+
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -49,7 +51,7 @@
 | Nombre y visibilidad del repositorio | Cumple | `AS_202620_Clubs_UTB`, público. |
 | Estructura mínima | Cumple | Las seis rutas existen; `docs/C4/` en mayúscula (desviación de ruta). |
 | Convención de nombres de ADR | Cumple | `0001-hexagonal.md` conforme; `docs/adr/.temp` residual a borrar. |
-| ADR aceptados sin reescribir | Cumple | Aceptado en `2c316f4`, sin reescrituras posteriores. |
+| ADR aceptados sin reescribir | No cumple | Aceptado en `2c316f4` (23/08); editado nuevamente en `c6c46e3` (30/08, "correción de feedback") sin ADR de reemplazo. Corrige la fila anterior, que solo había mirado hasta S4. |
 | `docs/ia.md` al día | No cumple | Último commit `c92595e` (2026-08-09). |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Sin coincidencias. |
 | Contribución de todos los integrantes | Cumple | 4 de 4 en S3: Luis 2, Diego 2, Hollman 1, Josh 1 (Josh4OP = «Josh Ortega», mismo correo). |

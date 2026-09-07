@@ -10,13 +10,13 @@ Hoja consolidada del equipo LaPlacita. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_LaPlacita` |
 | Integrantes y su usuario de GitHub | Mateo Josue Buendia Barrios · Miguel Angel Isaza Montalvo · Samuel David Jimenez Alvarez · Jorge Alberto Martinez Castillo — cuentas abajo |
 | URL del sistema desplegado | sin desplegar aún |
-| Ultima revision | 2026-09-03 |
+| Ultima revision | 2026-09-07 (definitiva, post-cierre) |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 5 | Primer corte · reto de línea base | HEAD `812d227` (sin etiqueta) | 0/12 | subtotal técnico preliminar 0,00/4,00; sustentación pendiente | revisión manual preliminar 2026-09-03 |
+| 5 | Primer corte · reto de línea base | `corte-1` → `50b92f8` (2026-09-06T22:45:05Z) | 10/12 | subtotal técnico 3,80/4,00; sustentación pendiente | revisión definitiva post-cierre 2026-09-07 |
 | 4 | S4 | `745e799` (2026-08-30T21:52:41-05:00) | 4/10 | 2.6 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `37f1deb8` · 2026-08-08T15:37:16-05:00 | 8/9 | 4,6 * | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `fa7e13bc` · 2026-08-15T18:13:29-05:00 | 5/9 | 3,2 * | sí |
@@ -31,18 +31,19 @@ Hoja consolidada del equipo LaPlacita. Se actualiza tras cada revisión.
 | Escenarios sin la parte «artefacto» | S2 | Cerrado en S3 (ESC-01…ESC-05 con artefacto) | Resuelto |
 | `aspectos.md` sin enlaces a los escenarios | S2 | Sí (parcial: ya es tabla de 8 columnas con enlaces al ADR y al código; la columna Requisito sigue sin enlazar a los escenarios) | Enlazar RF-xx a los escenarios correspondientes |
 | Ficha del problema sin dos tensiones de calidad (S1) | S1 | Cerrado en S2 parcialmente | Las tensiones aparecen implícitas en el arc42 (objetivos 1.2); declararlas explícitas si vuelven a pedirse |
-| ADR 0001 en estado «propuesto» | S3 | Sí | Ratificar y marcar como aceptado |
-| Sin pipeline: el verde descansa en evidencia declarada en `ia.md` | S3 | Sí | Añadir `.github/workflows/` antes del corte 1 |
+| ADR 0001 en estado «propuesto» | S3 | No (resuelto en el corte 1, `95ec841`) | Resuelto: ahora dice "aceptado (ratificado por ADR-0002)". |
+| Sin pipeline: el verde descansa en evidencia declarada en `ia.md` | S3 | No (resuelto en S4) | Pipeline añadido y en verde desde S4; confirmado en verde también en `corte-1`. |
 | Contenedores C4 sin código | S4 | si | |
 | docs/ia.md sin columna de rechazo | S4 | si | |
 | Trazabilidad ADR-0001/0003 pendiente | S4 | si | |
 | Verificación de secciones arc42 5-12 | S4 | si | |
-| Etiqueta corte-1 | S5 | si | |
-| Declarar restricción asignada | S5 | si | |
-| Completar trazabilidad en aspectos.md | S5 | si | |
-| Registrar motivos técnicos en ia.md | S5 | si | |
-| Configurar SonarCloud | S5 | si | |
-| Aportar mediciones reproducibles | S5 | si | |
+| Etiqueta `corte-1` | S5 | No (resuelto, `50b92f8` antes del cierre) | Resuelto. |
+| Declarar restricción asignada | S5 | No (resuelto: RES-05, aislamiento por establecimiento) | Resuelto, con ADR-0004 y línea base medida. |
+| Completar trazabilidad en aspectos.md | S5 | No (resuelto, fila A-02 completa) | Resuelto. |
+| Registrar motivos técnicos en ia.md | S5 | Parcial | Hay entrada del Corte 1, pero su columna Validación no cierra con el resultado final; completarla. |
+| Configurar SonarCloud | S5 | Parcial | `sonar-project.properties` y el paso en CI existen; falta activar `SONAR_TOKEN` para el análisis en vivo. |
+| Aportar mediciones reproducibles | S5 | No (resuelto, scripts/medir-aislamiento.js) | Resuelto: 2/2 línea base -> 0/300 post-cambio, reproducible. |
+
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -54,7 +55,7 @@ Hoja consolidada del equipo LaPlacita. Se actualiza tras cada revisión.
 | `docs/ia.md` al día | Cumple | Entradas del 23/08 con lo rechazado y su motivo |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Greps limpios |
 | Contribución de todos los integrantes | Cumple | 4 identidades consolidadas / 4 integrantes (53+21+18+3) |
-| Pipeline en verde | No cumple | Sin `.github/workflows/`; verde según declaración del equipo en `docs/ia.md` |
+| Pipeline en verde | Cumple | `.github/workflows/` presente desde S4; run sobre la etiqueta `corte-1` (`50b92f8`) exitoso. |
 
 ## Contribución por integrante
 

@@ -20,7 +20,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `456365b` · 2026-08-15T14:07:47-05:00 | 6/9 | 3.7 (propuesta) | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `f4602a3` · 2026-08-21T13:22:16-05:00 | 6/9 | no se publica | sí |
 | 4 | S4 | `0d208a2` (2026-08-29T21:37:39-05:00) | 6/10 | 3.4 | si |
-| 5 | Primer corte · reto de línea base | HEAD `0d401a9` (sin etiqueta) | 0/12 | subtotal técnico preliminar 0,00/4,00; sustentación pendiente | revisión manual preliminar 2026-09-03 |
+| 5 | Primer corte · reto de línea base | HEAD `20ab43f` (sin etiqueta corte-1; "Corte 1" 0d401a9 solo cambia el README) | 0/12 | subtotal técnico 0,00/4,00; sustentación pendiente | revisión definitiva post-cierre 2026-09-07 |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
@@ -48,10 +48,11 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Columnas de docs/aspectos.md | S4 | si | |
 | Columna de rechazos en docs/ia.md | S4 | si | |
 | SonarCloud en pipeline | S4 | si | |
-| Resolver el reto del corte 1: ADR con alternativas y consecuencias, diagnóstico con línea base, cambio implementado y medición contra umbral. | S5 | si | |
-| Completar docs/aspectos.md con las 8 columnas del contrato. | S5 | si | |
-| Configurar SonarCloud en el pipeline. | S5 | si | |
-| Registrar en docs/ia.md los usos de IA del corte 1 con descartes y motivos. | S5 | si | |
+| Resolver el reto del corte 1: ADR con alternativas y consecuencias, diagnóstico con línea base, cambio implementado y medición contra umbral. | S5 | si | Sigue sin resolverse: el commit "Corte 1" (0d401a9) solo agrega 2 líneas al README. |
+| Completar docs/aspectos.md con las 8 columnas del contrato. | S5 | si | Sigue pendiente; sin cambios en la ventana S4->cierre. |
+| Configurar SonarCloud en el pipeline. | S5 | si | Sigue pendiente; el workflow solo corre pytest. |
+| Registrar en docs/ia.md los usos de IA del corte 1 con descartes y motivos. | S5 | si | Sigue pendiente; la última actualización de ia.md (31-ago) no se refiere al reto. |
+
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -64,6 +65,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Sin credenciales en el repositorio ni en el historial | Cumple | greps limpios; `compose.yaml:7` lleva contraseña de desarrollo del Postgres local |
 | Contribución de todos los integrantes | Cumple | 4 identidades consolidadas = 4 integrantes (Shalom ya aparece) |
 | Pipeline en verde | No cumple | run «Pruebas» success 2026-08-21T18:36Z (actions/runs/32514183233) |
+| Etiqueta corte-1 (corte 1) | No cumple | `git tag --list` vacío; no existe ninguna etiqueta en el repositorio |
 
 ## Contribución por integrante
 

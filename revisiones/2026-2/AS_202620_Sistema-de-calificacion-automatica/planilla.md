@@ -46,16 +46,17 @@
 | Matriz comparativa de estilos contra el árbol de utilidad ausente | S3 | no (resuelto) | §4.1 con filas por EC-01…EC-07 |
 | ADR sin hipervínculo desde el escenario motivador EC-04 | S3 | no (resuelto) | EC-04 y EC-05 con enlaces al ADR |
 | 2 commits posteriores al cierre (`88294cc` 01:00, `e976c92` 01:58) | S3 (cierre) | registrado | Entregar dentro del cierre de la actividad; lo tardío no califica |
-| C4 nivel 2 incompleto en docs/c4/doc-c4.md | S4 | si | |
-| Fila A-01 de aspectos.md con C2 pendiente | S4 | si | |
-| Verificación de CI sin runs | S4 | si | |
-| Secciones 7 y 8 del arc42 pendientes (declarado) | S4 | si | |
-| Confirmar etiqueta corte-1 | S5 | si | |
-| Contrastar diagnóstico con la restricción asignada | S5 | si | |
-| Medir línea base y resultado contra umbral | S5 | si | |
-| Evidenciar pipeline en verde | S5 | si | |
-| Completar trazabilidad de A-04 | S5 | si | |
-| Verificar contenido de docs/ia.md | S5 | si | |
+| C4 nivel 2 incompleto en docs/c4/doc-c4.md | S4 | si | Corregido: el equipo demostró (correcciones_feedback.md, hallazgo 2) que el Nivel 2 ya estaba completo en cede35e; aceptado. |
+| Fila A-01 de aspectos.md con C2 pendiente | S4 | si | Resuelto para el corte 1: la fila A-01 ahora enlaza C4 Nivel 2 real, ADR 0002+0006, código y pruebas sin huecos. |
+| Verificación de CI sin runs | S4 | si | Corregido: 21+ runs en verde confirmados por curl a actions/runs, incluido uno sobre el commit calificado; aceptado (hallazgo 1 de correcciones_feedback.md). |
+| Secciones 7 y 8 del arc42 pendientes (declarado) | S4 | si | Fuera del alcance de esta revisión de corte 1 (evidencia S4, no recalificable); queda anotado. |
+| Confirmar etiqueta corte-1 | S5 | si | Confirmada: corte-1 -> 201acac, 2026-09-07T04:34:17Z, antes del cierre. |
+| Contrastar diagnóstico con la restricción asignada | S5 | si | La restricción de Moodle no llegó al equipo; se trabajó sobre R-06 (deuda declarada) con diagnóstico medido y aceptado. |
+| Medir línea base y resultado contra umbral | S5 | si | Resuelto: 100% de pérdida silenciosa medida antes del cambio, 0% después, dentro del umbral de 10s. |
+| Evidenciar pipeline en verde | S5 | si | Resuelto: run success sobre 201acacb a las 2026-09-07T04:43:04Z, antes del cierre. |
+| Completar trazabilidad de A-04 | S5 | si | No se revisó A-04 en este corte; el reto tocó A-01. Sigue abierto para A-04. |
+| Verificar contenido de docs/ia.md | S5 | si | Verificado: entrada 7 (2026-09-06) con 4 rechazos y motivo técnico, referida a este corte. |
+
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -68,15 +69,18 @@
 | Sin credenciales en el repositorio ni en el historial | Cumple | git grep y `.env` sin coincidencias |
 | Contribución de todos los integrantes | Cumple | 4 cuentas para 4 integrantes |
 | Pipeline en verde | No verificado | Sin código ni prueba al cierre; el esqueleto tardío trae prueba, pendiente de run en verde para S4 |
+| Etiqueta corte-1 (corte 1) | Cumple | `201acac`, 2026-09-07T04:34:17Z, antes del cierre |
 
 ## Contribución por integrante
 
-| Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
+| Integrante | Usuario de GitHub | Commits (a corte-1, `201acac`) | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
 |---|---|---:|---:|---:|---|
-| Sebastian Canas Plata | scp1109 | 27 | — | — | Todo S1–S2, ADR 0003 y ficha del problema en S3; esqueleto tardío (01:58) |
-| Josue David Ortega De Arco | josueacademico17-source | 9 | — | — | Desde la semana 3 |
-| Maria Del Mar Restrepo Licona | Mariadelmar-restrepo | 1 | — | — | Primera aparición en S3 |
-| Susana Marcela Rosales Castellar | SusanaRosales | 3 | — | — | Primera aparición en S3 |
+| Sebastian Canas Plata | scp1109 | 35 | — | — | Todo S1-S2, ADR 0003, ficha del problema en S3, reto del corte 1 (commit único) |
+| Josue David Ortega De Arco | josueacademico17-source | 16 | — | — | Desde la semana 3 |
+| Susana Marcela Rosales Castellar | SusanaRosales | 7 | — | — | Desde S3 |
+| Maria Del Mar Restrepo Licona | Mariadelmar-restrepo | 3 | — | — | Desde S3 |
+
+Corrección aceptada (hallazgo 8 de `correcciones_feedback.md`): la tabla anterior daba 27/9/1/3; `git shortlog -sn` sobre `cede35e` y `corte-1` confirma 34-35/16/7/3.
 
 ## Preguntas abiertas para la sustentación
 

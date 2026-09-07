@@ -18,7 +18,7 @@
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `aa0659c` · 2026-08-16T22:47:16-05:00 | 2/9 | no aplica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `0833272` · 2026-08-23T22:46:30-05:00 | 6/9 | no se publica | sí |
 | 4 | S4 | `27e1190` (2026-08-30T15:22:02-05:00) | 0/10 | 1.0 | si |
-| 5 | Primer corte · reto de línea base | HEAD `7c027f0` (sin etiqueta) | 0/12 | subtotal técnico preliminar 0,00/4,00; sustentación pendiente | revisión manual preliminar 2026-09-03 |
+| 5 | Primer corte · reto de línea base | `corte-1` `a5d08c1` (posterior al cierre; fallback admisible `1728495`) | 0/12 | subtotal técnico 0,00/4,00; sustentación pendiente | revisión definitiva post-cierre 2026-09-07 |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
@@ -56,14 +56,15 @@
 | Verificar contenido de docs/adr/0001-estilo-arquitectonico.md | S4 | si | |
 | Verificar docs/ia.md | S4 | si | |
 | Incorporar a los integrantes faltantes al historial | S4 | si | |
-| Responder al reto de restricción asignada | S5 | si | |
-| Crear ADR del reto con alternativas y decisión | S5 | si | |
-| Implementar el cambio y probarlo | S5 | si | |
-| Medir contra umbral | S5 | si | |
-| Subir PDF de dos páginas | S5 | si | |
-| Crear etiqueta corte-1 | S5 | si | |
-| Evidenciar pipeline en verde | S5 | si | |
-| Completar docs/ia.md y docs/aspectos.md | S5 | si | |
+| Responder al reto de restricción asignada | S5 | si | No hay diagnóstico ni ADR nuevo en el árbol del corte 1; sigue pendiente. |
+| Crear ADR del reto con alternativas y decisión | S5 | si | Solo existe el ADR 0001 de agosto; falta el ADR del reto. |
+| Implementar el cambio y probarlo | S5 | si | Ningún commit entre S4 y la etiqueta toca app/; sin cambio de código. |
+| Medir contra umbral | S5 | si | No hay archivo de medición ni procedimiento en el árbol. |
+| Subir PDF de dos páginas | S5 | si | No verificable desde el repositorio; depende de Moodle. |
+| Crear etiqueta corte-1 | S5 | si | Existe, pero apunta a un commit posterior al cierre (a5d08c1, +7h): corregir para el próximo corte. |
+| Evidenciar pipeline en verde | S5 | si | 0 runs de CI en la vida del repositorio (actions/runs total_count=0). |
+| Completar docs/ia.md y docs/aspectos.md | S5 | si | Ambos siguen fechados en S3-S4; sin entradas del reto de este corte. |
+
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -74,7 +75,8 @@
 | ADR aceptados sin reescribir | Cumple | Creación y ajuste el mismo día, antes del cierre |
 | `docs/ia.md` al día | No cumple | Entradas de S3 sin columna de rechazados |
 | Sin credenciales en el repositorio ni en el historial | Cumple | `git grep` §9 y `log -S` sin coincidencias |
-| Contribución de todos los integrantes | No cumple | 3 de 4 personas en el historial (falta Luis Carlos Corredor) |
+| Etiqueta corte-1 (corte 1) | No cumple | Existe pero apunta a un commit posterior al cierre (`a5d08c1`, +7h); fallback admisible `1728495` |
+| Contribución de todos los integrantes | Cumple | Corte 1 (post-cierre, 2026-09-07): los 4 integrantes tienen commits propios (Dayana 6, luiscorredor 2, Nicolas-HH 1, steven 1) |
 | Pipeline en verde | No verificado | Sin `.github/workflows`; prueba sin evidencia de ejecución |
 
 ## Contribución por integrante

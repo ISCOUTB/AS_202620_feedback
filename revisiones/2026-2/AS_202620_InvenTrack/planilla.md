@@ -10,13 +10,13 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_InvenTrack` |
 | Integrantes y su usuario de GitHub | Javier Alejandro Carta Lacharme · Esteban Javier Peluffo Marquez · Felix Andres Taborda Jimenez · Jose Gabriel Vargas Perez — cuentas abajo |
 | URL del sistema desplegado | sin desplegar aún |
-| Ultima revision | 2026-09-03 |
+| Ultima revision | 2026-09-07 (definitiva, post-cierre) |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 5 | Primer corte · reto de línea base | HEAD `ee484bf` (sin etiqueta) | 0/12 | subtotal técnico preliminar 0,00/4,00; sustentación pendiente | revisión manual preliminar 2026-09-03 |
+| 5 | Primer corte · reto de línea base | `corte-1` → `2988b03` (2026-09-06T23:35:40-05:00) | 3/12 | subtotal técnico 2,00/4,00 (ver hallazgo crítico: cambio no implementado); sustentación pendiente | revisión definitiva post-cierre 2026-09-07 |
 | 4 | S4 | `d7ba824` (2026-08-30T23:39:33-05:00) | 4/10 | 2.6 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `06920209` · 2026-08-09T16:03:46-05:00 | 4/9 | 2,8 * | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `db90ff2f` · 2026-08-16T21:22:20-05:00 | 9/9 | 5,0 * | sí |
@@ -39,12 +39,13 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 | Confirmar si arc42 secciones 4-6 y 12 quedaron redactadas a HEAD | S4 | si | |
 | Añadir evidencia de análisis estático SonarCloud | S4 | si | |
 | Completar celda de Pruebas en docs/aspectos.md | S4 | si | |
-| Etiqueta `corte-1` ausente | S5 | Sí | Etiquetar el estado entregable antes del cierre. |
-| Respuesta al reto sin diagnóstico, ADR ni incremento identificado | S5 | Sí | Declarar la restricción, medir la línea base y registrar e implementar la decisión. |
+| Etiqueta `corte-1` ausente | S5 | No (creada 2026-09-06, `2988b03`) | Resuelto. |
+| Respuesta al reto sin diagnóstico, ADR ni incremento identificado | S5 | Sí (más grave de lo esperado) | El equipo escribió ADR-0002, reporte de medición y trazabilidad completos sobre control de concurrencia (ASP-02), pero `git diff --stat` confirma que ningún archivo de `app/` cambió: el mecanismo de lock que describen no existe en el código y las cifras de medición no son reproducibles. Implementar realmente el mecanismo antes de sustentar. |
 | Umbral de rendimiento definido sin medición ejecutada | S2 | Sí | Aportar herramienta, carga, procedimiento y resultado. |
-| Módulo de inventario de HEAD sin fila propia en `docs/aspectos.md` | S5 | Sí | Incorporarlo a la trazabilidad si corresponde al reto. |
-| Registro de IA sin entrada del Corte 1 | S5 | Sí | Registrar una salida y la decisión técnica adoptada. |
-| Enlace del README a `docs/c4/container.md` no existe | S5 | Sí | Corregirlo a `docs/c4/containers.md`. |
+| Módulo de inventario de HEAD sin fila propia en `docs/aspectos.md` | S5 | No (resuelto) | ASP-02 ya tiene fila completa en `docs/aspectos.md`, aunque la celda de código no refleja un cambio real (ver hallazgo crítico). |
+| Registro de IA sin entrada del Corte 1 | S5 | No (resuelto) | `docs/ia.md` tiene entrada del 2026-09-06 para el Reto Corte 1 con rechazo explícito y motivo técnico. |
+| Enlace del README a `docs/c4/container.md` no existe | S5 | No verificado en esta revisión | No se reinspeccionó este enlace puntual; confirmar en el próximo corte. |
+
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -53,7 +54,7 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 | Estructura mínima | Cumple | Seis rutas presentes; arc42 en `docs/arc42/arc42-template-EN.md` |
 | Convención de nombres de ADR | Cumple | `0001-usar-monolito-modular-con-hexagonal-por-modulo.md`; placeholder eliminado |
 | ADR aceptados sin reescribir | Cumple | Churn previo; aceptado en `45d2fa0` y sin cambios posteriores. |
-| `docs/ia.md` al día | No cumple | Última entrada de S4; falta Corte 1. |
+| `docs/ia.md` al día | Cumple | Entrada del 2026-09-06 referida al Reto Corte 1, con rechazo y motivo técnico. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Escaneos limpios. |
 | Contribución de todos los integrantes | Cumple | Cuatro personas consolidadas para cuatro integrantes en HEAD. |
 | Pipeline en verde | Cumple | Run de HEAD `33811437677` en verde; no demuestra el reto. |

@@ -20,7 +20,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `ca7726a` · 2026-08-16T13:01:06-05:00 | 9/9 | 5.0 (propuesta) | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `ca44917` · 2026-08-23T13:38:40-05:00 | 5/9 | no se publica | sí |
 | 4 | S4 | `dc14298` (2026-08-29T11:49:10-05:00) | 6/10 | 3.4 | si |
-| 5 | Primer corte · reto de línea base | HEAD `dc14298` (sin etiqueta) | 1/12 | subtotal técnico preliminar 0,60/4,00; sustentación pendiente | revisión manual preliminar 2026-09-03 |
+| 5 | Primer corte · reto de línea base | sin etiqueta `corte-1`; fallback `dc14298` (2026-08-29T11:49:10-05:00, = HEAD) | 6/12 | subtotal técnico 2,80/4,00; sustentación pendiente | revisión definitiva post-cierre 2026-09-07 |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
@@ -49,8 +49,10 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Confirmar contenido de secciones 9, 10 y 12 de arc42 | S4 | si | |
 | Aportar URL de run de CI en verde | S4 | si | |
 | Verificar contenido de docs/ia.md | S4 | si | |
-| Etiqueta `corte-1` y respuesta explícita a la restricción asignada | S5 | sí | fijar el estado y enlazar diagnóstico, ADR, cambio y evidencia |
-| Medición posterior al cambio comparada con la línea base | S5 | sí | existe línea base reproducible, falta el resultado del reto |
+| Etiqueta `corte-1` y respuesta explícita a la restricción asignada | S5 | sí | fijar la etiqueta; el ADR 0005 (OIDC) es una respuesta plausible pero el equipo debe confirmar en sustentación si esa fue la restricción asignada |
+| Medición posterior al cambio comparada con la línea base | S5 | sí | falta cuantificar el estado inicial del defecto de autenticación y medir el resultado posterior contra el umbral de ESC-03 (100% denegado, auditoría ≤1s); ESC-01 mide un escenario distinto |
+| Registro de IA específico del cambio de autenticación (OIDC) | S5 | sí | `docs/ia.md` menciona el cambio pero sin una entrada de aceptado/corregido/rechazado con motivo técnico propia de esa pieza de trabajo |
+
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -61,7 +63,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | ADR aceptados sin reescribir | Cumple | ADR 0001 declara reemplazo por 0002; los demás conservan su decisión |
 | `docs/ia.md` al día | No cumple | último cambio 2026-08-29, antes del periodo S5 |
 | Sin credenciales en el repositorio ni en el historial | Cumple | barridos limpios; menciones de token son identificadores de código |
-| Contribución de todos los integrantes | No verificado | identidades suficientes, pero dos no pueden atribuirse sin confirmación docente |
+| Contribución de todos los integrantes | Cumple | en el estado calificado del corte 1, `JuanB` (10 commits: C4 nivel 2, README) es atribuible por iniciales a Juan Jose Bustamante More y `Daniel Manjarres Herrera` (4 commits: CI, dependencias) aparece con nombre propio; con Ian Novoa y Julio Cesar Emiliani ya confirmados, los cuatro integrantes tienen contribución visible. `super-gremlin` (15 commits) sigue sin atribuir a una persona, adicional a los cuatro. |
 | Pipeline en verde | Cumple | run de HEAD exitoso: `actions/runs/33263993238` |
 
 ## Contribución por integrante

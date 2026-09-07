@@ -6,9 +6,9 @@
 |---|---|
 | Equipo | ROUTB |
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_ROUTB` |
-| Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo |
+| Integrantes y su usuario de GitHub | Diego Jose Baron Ruiz (`diegobrr999-commits`) · Julian David Manjarrez Guzman (`juliandmanjarrez-tech`) · Keiner Enrique Mendivil Diaz (`MKeinerrr`, dos correos) · Junior Jose Orozco Atencio (`junior14700`) |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-03 |
+| Ultima revision | 2026-09-07 (revisión definitiva post-cierre) |
 
 ## Estado por entrega
 
@@ -18,7 +18,7 @@
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `14e6688` · 2026-08-16T12:44:08-05:00 | 2/9 | no aplica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `1ed002b` · 2026-08-23T20:31:54-05:00 | 6/9 | no se publica | sí |
 | 4 | S4 | `83b8c5e` (2026-08-30T19:33:15-05:00) | 10/10 | 5.0 | si |
-| 5 | Primer corte · reto de línea base | HEAD `83b8c5e` (sin etiqueta) | 0/12 | subtotal técnico preliminar 0,00/4,00; sustentación pendiente | revisión manual preliminar 2026-09-03 |
+| 5 | Primer corte · reto de línea base | `corte-1` → `493efdb` (2026-09-07T01:11:13Z) | 10/12 | subtotal técnico 3,20/4,00; sustentación pendiente | revisión definitiva post-cierre 2026-09-07 |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
@@ -37,51 +37,52 @@
 
 | Hallazgo | Primera vez que se detectó | Sigue abierto | Qué se le dijo al equipo |
 |---|---|---|---|
-| `docs/ia.md` sin contenido real | S1 (08-09) | no (S3 resuelto) | Ya registra semana 3 con aceptado/rechazado/justificación |
-| `docs/aspectos.md` sin 8 columnas ni enlaces | S1 (08-09) | no (S3 resuelto) | Ya tiene la tabla y enlaza el ADR |
-| Tensiones de calidad del problema sin declarar | S1 (08-09) | revisar en corte 1 | Enfrentar dos atributos de calidad en la ficha del problema |
-| Escenarios sin las seis partes y con medidas sin condición de carga | S2 (08-16) | no (S3 resuelto) | Tabla 10.2 con seis partes y cifras |
-| C4 de contexto sin leyenda ni flechas etiquetadas | S2 (08-16) | sí (verificar en S3) | Etiquetar relaciones y añadir leyenda |
-| ADR sin enlace desde el escenario motivador (10.2) | S3 | sí | Enlazar la decisión desde el escenario de calidad que la motiva |
-| README sin comando único de arranque (multi-paso) | S3 | sí | Documentar un solo comando con requisitos previos |
-| Sin workflow ni evidencia de prueba en verde | S3 | sí | Añadir `.github/workflows/` con `pytest` y aportar el run |
-| Completar arc42 secciones 7, 8 y 11 | S4 | si | |
-| Completar filas 1 y 3 de docs/aspectos.md | S4 | si | |
-| Integrar SonarCloud al pipeline | S4 | si | |
-| Enlazar ADR 0001 con commit de implementación | S4 | si | |
-| Registrar medición de línea base | S4 | si | |
-| Crear etiqueta corte-1 | S5 | si | |
-| Diagnóstico y línea base del reto | S5 | si | |
-| ADR del reto | S5 | si | |
-| Implementación y pruebas | S5 | si | |
-| Medición contra umbral | S5 | si | |
-| Completar celdas vacías de docs/aspectos.md | S5 | si | |
-| Configurar SonarCloud | S5 | si | |
-| Registrar uso de IA de la semana 5 | S5 | si | |
+| `docs/ia.md` sin contenido real | S1 (08-09) | no (S3 resuelto; en S5 hay entrada específica del reto) | Ya registra por semana con aceptado/rechazado/justificación |
+| `docs/aspectos.md` sin 8 columnas ni enlaces | S1 (08-09) | no (S3 resuelto; en S5 la fila 1 llega hasta la evidencia del reto) | Ya tiene la tabla y enlaza el ADR |
+| Tensiones de calidad del problema sin declarar | S1 (08-09) | sin verificar en esta pasada | Revisar en el próximo corte |
+| Escenarios sin las seis partes y con medidas sin condición de carga | S2 (08-16) | no (S3 resuelto) | Tabla con seis partes y cifras |
+| C4 de contexto sin leyenda ni flechas etiquetadas | S2 (08-16) | sin verificar en esta pasada | Revisar en el próximo corte |
+| ADR sin enlace desde el escenario motivador (10.2) | S3 | no (en S5, `docs/aspectos.md` enlaza los ADR desde cada fila) | — |
+| README sin comando único de arranque (multi-paso) | S3 | no (resuelto: `uvicorn app.main:app --reload` y `flutter run`) | — |
+| Sin workflow ni evidencia de prueba en verde | S3 | no (resuelto: `.github/workflows/ci.yml`, runs verdes) | — |
+| Completar arc42 secciones 7, 8 y 11 | S4 | sin verificar en esta pasada | Revisar en el próximo corte |
+| Completar filas 1 y 3 de docs/aspectos.md | S4 | no (resuelto en S5) | — |
+| Integrar SonarCloud al pipeline | S4 | parcial: **integrado pero consistentemente en rojo** desde el 05/09 | Corregir los hallazgos de SonarCloud; no basta con tener el workflow, tiene que pasar |
+| Enlazar ADR 0001 con commit de implementación | S4 | sin verificar en esta pasada | — |
+| Registrar medición de línea base | S4 | no (resuelto en S5) | — |
+| Crear etiqueta corte-1 | S5 | no (creada, antes del cierre) | — |
+| Diagnóstico y línea base del reto | S5 | no (resuelto, aunque sin confirmar que responda a la restricción asignada) | Confirmar en la sustentación cuál fue la restricción individual asignada |
+| ADR del reto | S5 | no (resuelto, nivel competente) | Añadir criterio de reconsideración y costo de reversión |
+| Implementación y pruebas | S5 | no (resuelto) | — |
+| Medición contra umbral | S5 | no (resuelto) | — |
+| Completar celdas vacías de docs/aspectos.md | S5 | no (resuelto) | — |
+| Configurar SonarCloud | S5 | sí, sigue en rojo | Resolver los hallazgos de SonarCloud antes del próximo corte |
+| Registrar uso de IA de la semana 5 | S5 | no (resuelto) | — |
+
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | Público y con el nombre de la convención |
-| Estructura mínima | Cumple | Las seis rutas presentes en `1ed002b` |
-| Convención de nombres de ADR | Cumple | `0001-usar-monolito-modular.md` con título que enuncia la decisión |
-| ADR aceptados sin reescribir | Cumple | 2 commits de construcción en S3, sin reescrituras posteriores |
-| `docs/ia.md` al día | Cumple | Semana 3 registrada con aceptado/rechazado/justificación |
-| Sin credenciales en el repositorio ni en el historial | Cumple | git grep y `.env` sin coincidencias |
-| Contribución de todos los integrantes | Cumple | 4 personas para 4 integrantes (MKeinerrr consolidado) |
-| Pipeline en verde | No cumple | Sin `.github/workflows/`; se espera desde el segundo corte |
+| Estructura mínima | Cumple | Las seis rutas presentes en `corte-1` |
+| Convención de nombres de ADR | Cumple | 0001, 0002, 0003 con título de la decisión en kebab-case |
+| ADR aceptados sin reescribir | Cumple | Sin reescrituras detectadas |
+| `docs/ia.md` al día | Cumple | Entrada de S5 fechada 05/09 |
+| Sin credenciales en el repositorio ni en el historial | Cumple | git grep sin secretos reales; sin `.env` |
+| Contribución de todos los integrantes | Cumple | 4 personas para 4 integrantes (MKeinerrr consolidado); muy concentrada en MKeinerrr |
+| Pipeline en verde | Cumple en pruebas / **No cumple en análisis estático** | `Backend CI`/`CI ROUTB` en verde, incluido el commit de la etiqueta; `SonarCloud` en `failure` en todas las ejecuciones vistas |
 
 ## Contribución por integrante
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
 |---|---|---:|---:|---:|---|
-| Keiner Enrique Mendivil Diaz | MKeinerrr | 22 (20+2, dos identidades) | | | Consolidado; autor de la entrega S3 |
-| Diego Jose Baron Ruiz | diegobrr999-commits | 6 | | | C4 en S2 |
-| Julian David Manjarrez Guzman | juliandmanjarrez-tech | 3 | | | C4 en S2 |
-| Junior Jose Orozco Atencio | junior14700 | 2 | | | Restricciones en S2 |
+| Keiner Enrique Mendivil Diaz | `MKeinerrr` | 31+2 (dos correos, consolidado) | | | Autor de casi todo el reto S5 |
+| Diego Jose Baron Ruiz | `diegobrr999-commits` | 6 | | | C4 en S2 |
+| Julian David Manjarrez Guzman | `juliandmanjarrez-tech` | 3 | | | C4 en S2 |
+| Junior Jose Orozco Atencio | `junior14700` | 2 | | | Restricciones en S2 |
 
 ## Preguntas abiertas para la sustentación
 
-- ¿Los 4 integrantes tenían acceso al repositorio desde la semana 1? (sin API no se listan colaboradores)
-- ¿Quién ejecutó `pytest` en verde y pueden aportar la evidencia del run?
-- ¿El C4 de contexto quedó con leyenda y flechas etiquetadas (pendiente de S2)?
+- ¿Cuál fue exactamente la restricción individual asignada al equipo?
+- ¿Por qué SonarCloud nunca pasó en verde y qué plan tienen para resolverlo?
+- ¿Cómo van a repartir mejor la contribución? Casi todo el reto S5 lo hizo una sola persona.

@@ -10,7 +10,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_XALD` |
 | Integrantes y su usuario de GitHub | Xavier Yesid Garcia Diaz (xaviergarciadiaz20-commits) · Dilan Joan Gonzalez Bejarano (dilanbejarano011) · Luis Estheban Lozano Colmenares (colmenares2007-crypto) · Axel Jair Ruiz Bolano (axeljruiz717-hash) — correspondencias por los correos de los commits (nombres explícitos), por confirmar con el docente |
 | URL del sistema desplegado | sin URL (sin despliegue todavía) |
-| Ultima revision | 2026-09-03 |
+| Ultima revision | 2026-09-07 · revisión definitiva post-cierre |
 
 ## Estado por entrega
 
@@ -20,7 +20,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `8c37887` · 2026-08-16T13:45:27-05:00 | 1/9 | 1.4 (propuesta) | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `dc38992` · 2026-08-23T22:07:19-05:00 | 5/9 | no se publica | sí |
 | 4 | S4 | `0205e44` (2026-08-30T23:12:03-05:00) | 4/10 | 2.6 | si |
-| 5 | Primer corte · reto de línea base | HEAD `6081fed` (sin etiqueta) | 0/12 | subtotal técnico preliminar 0,60/4,00; sustentación pendiente | revisión manual preliminar 2026-09-03 |
+| 5 | Primer corte · reto de línea base | etiqueta `corte-1` en `2861d8b` (2026-09-06T22:50:12-05:00, anterior al cierre) | 3/12 | subtotal técnico 0,60/4,00; sustentación pendiente | revisión definitiva post-cierre 2026-09-07 |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
@@ -53,11 +53,14 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Implementar o justificar Backend XALD | S4 | si | |
 | Añadir SonarCloud al pipeline | S4 | si | |
 | Completar ADR con opciones evaluadas y trazabilidad | S4 | si | |
-| Confirmar o crear la etiqueta corte-1 sobre el commit evaluado. | S5 | si | |
-| Completar las celdas Pendiente de docs/aspectos.md. | S5 | si | |
-| Añadir trazabilidad (requisito, C4, commit, pruebas) a los ADR. | S5 | si | |
-| Configurar análisis estático SonarCloud en el pipeline. | S5 | si | |
-| Entregar el PDF con diagnóstico, decisión, cambio, medición y trazabilidad. | S5 | si | |
+| Confirmar o crear la etiqueta corte-1 sobre el commit evaluado. | S5 | no (resuelto) | el equipo creó la etiqueta el 2026-09-06, antes del cierre |
+| Completar las celdas Pendiente de docs/aspectos.md. | S5 | sí | 4 de 5 filas siguen con Código/Pruebas/Evidencia en "Pendiente" en el estado etiquetado |
+| Añadir trazabilidad (requisito, C4, commit, pruebas) a los ADR. | S5 | no (resuelto) | los seis ADR ya tienen sección de trazabilidad y opciones evaluadas en el estado etiquetado |
+| Configurar análisis estático SonarCloud en el pipeline. | S5 | parcial | commits del 2026-09-06 corrigen hallazgos típicos de SonarCloud y docs/ia.md declara "Quality Gate Passed"; no se pudo confirmar en el dashboard |
+| Entregar el PDF con diagnóstico, decisión, cambio, medición y trazabilidad. | S5 | sí | no hay PDF versionado; falta además identificar la restricción nueva asignada, con línea base y medición posterior |
+| El pipeline de CI no dispara en `master` (rama por defecto), solo en `experimental`/`main`; el estado etiquetado no tiene un run propio | S5 (detectado en revisión definitiva) | sí | ajustar `on.push.branches` en `ci.yml` para incluir `master`, o cambiar la rama por defecto |
+| La prueba "corte vertical" (`Entornotest.kt`) es un `assertTrue(true)` trivial, no demuestra los 5 módulos interactuando | S5 (detectado en revisión definitiva) | sí | agregar una prueba que ejercite el flujo real de datos entre módulos |
+
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -65,11 +68,11 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Nombre y visibilidad del repositorio | Cumple | `ISCOUTB/AS_202620_XALD`, público (antes privado: EQUIPOS.md) |
 | Estructura mínima | Cumple | seis rutas presentes; `docs/c4/` ahora en su carpeta |
 | Convención de nombres de ADR | Cumple | seis ADR con nombres `NNNN-titulo-en-kebab-case.md` |
-| ADR aceptados sin reescribir | No cumple | ADR aprobados 0001 y 0002 fueron editados posteriormente sin reemplazo declarado |
-| `docs/ia.md` al día | No cumple | sin cambio efectivo posterior al inicio de S5 |
+| ADR aceptados sin reescribir | No cumple | persiste: `0002-parsing-hibrido.md` fue editado el 2026-08-30 después de su aceptación, sin declarar reemplazo |
+| `docs/ia.md` al día | Cumple | corrige la revisión preliminar: la última entrada (SonarCloud) está fechada en la ventana de commits previa a la etiqueta |
 | Sin credenciales en el repositorio ni en el historial | Cumple | greps limpios; `local.properties` solo trae ruta de SDK (fuera del versionado de todas formas) |
 | Contribución de todos los integrantes | Cumple | 4 identidades = 4 integrantes |
-| Pipeline en verde | Cumple | run Android CI exitoso citado en la matriz S5 |
+| Pipeline en verde | No verificado | corrige la revisión preliminar (que citaba un run de la base, no del reto): el workflow solo dispara en `experimental`/`main`; ningún commit de la noche del cierre (incluida la etiqueta) disparó un run en `master` |
 
 ## Contribución por integrante
 

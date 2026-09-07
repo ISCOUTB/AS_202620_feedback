@@ -32,3 +32,11 @@ La entrega de la semana 4 está sólida en lo que se pudo verificar: C4 como có
 ## Semana 5 · CORTE1
 
 Revisión preliminar antes del cierre: el repositorio tiene una línea base reproducible, trazabilidad amplia y CI en verde. Todavía no permite identificar cuál es la restricción asignada ni qué ADR, cambio y resultado corresponden al reto del corte. Fijen la etiqueta, nombren explícitamente el reto, enlacen su diagnóstico con la línea base ya medida y aporten la medición posterior contra el mismo umbral. Registren también el uso de IA de esta etapa y confirmen la correspondencia entre las identidades de Git y los integrantes.
+
+## Semana 5 · Primer corte (revisión definitiva, 2026-09-07)
+
+El repositorio no tiene la etiqueta `corte-1` y no cambió entre la revisión de antes del cierre y el cierre mismo. Dicho eso: encontramos un trabajo (la decisión de delegar la autenticación en un proveedor externo, en vez de confiar en una cabecera que cualquiera podía falsificar) que tiene toda la forma de una buena respuesta a una restricción — diagnóstico claro, comparación real de alternativas con sus costos, decisión documentada, implementación de punta a punta que arranca con un solo comando, y pruebas en verde. Lo evaluamos como su respuesta más probable al reto, aunque el repositorio no lo declara explícitamente como tal — en la sustentación conviene confirmar si esa fue, en efecto, la restricción asignada.
+
+Lo que le falta a esa respuesta para estar completa: (1) medir con una cifra cómo de explotable era el problema antes del cambio, no solo describirlo; (2) medir el resultado después del cambio y compararlo contra el umbral de ese escenario de seguridad; y (3) una entrada en el registro de uso de IA que hable puntualmente de esta pieza de trabajo (qué se aceptó, qué se corrigió o rechazó y por qué), no solo de las decisiones de otras semanas.
+
+Sobre la autoría: con esta revisión pudimos atribuir contribución a los cuatro integrantes declarados, algo que antes no se había podido confirmar del todo. Queda pendiente identificar a quién corresponde una cuenta adicional que aparece en el historial con más commits que cualquier otra.

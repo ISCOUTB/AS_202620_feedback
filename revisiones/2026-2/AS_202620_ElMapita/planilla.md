@@ -14,7 +14,7 @@
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 5 | Primer corte · reto de línea base | HEAD `4806374` (sin etiqueta) | 0/12 | subtotal técnico preliminar 0,00/4,00; sustentación pendiente | revisión manual preliminar 2026-09-03 |
+| 5 | Primer corte · reto de línea base | sin etiqueta; commit con mensaje "corte-1" `4806374a` (2026-09-01T08:39:54-06:00); sin actividad hasta el cierre | 0/12 | 0,00/4,00 + sustentación pendiente | revisión definitiva post-cierre 2026-09-07 |
 | 4 | S4 | `07b36f4` (2026-08-30T23:31:03-05:00) | 4/10 | 2.6 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `938d0206` · 2026-08-07T21:36:01-06:00 | 5/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `c5d9964c` · 2026-08-16T14:21:20-05:00 | 8/9 | no se publica | sí |
@@ -35,13 +35,15 @@
 | Pruebas del recorrido completo pendientes y rutas inexistentes en aspectos.md | S4 | si | |
 | Sin SonarCloud configurado | S4 | si | |
 | Autoría concentrada en una cuenta (9/11 commits) | S4 | si | |
-| ADR del reto | S5 | si | |
-| Línea base medida y verificable | S5 | si | |
-| Cadena de trazabilidad completa en docs/aspectos.md | S5 | si | |
-| Prueba en verde en pipeline | S5 | si | |
-| Medición reproducible contra umbral | S5 | si | |
-| Registro de IA con motivo técnico verificable | S5 | si | |
-| Confirmar etiqueta corte-1 | S5 | si | |
+| ADR del reto | S5 | sí | Único ADR sigue siendo el de estilo arquitectónico de la línea base; sin actividad en el repositorio desde el 2026-09-01. |
+| Línea base medida y verificable | S5 | sí | Las 4 filas de `docs/aspectos.md` siguen con Evidencia = "Pendiente". |
+| Cadena de trazabilidad completa en docs/aspectos.md | S5 | sí | Se rompe sistemáticamente en Pruebas y Evidencia. |
+| Prueba en verde en pipeline | S5 | sí (empeoró: confirmado en rojo) | Los 3 runs de CI disponibles, incluido el del commit calificado, están en `failure`. |
+| Medición reproducible contra umbral | S5 | sí | Sin ejecutar. |
+| Registro de IA con motivo técnico verificable | S5 | sí | `docs/ia.md` no tiene entradas posteriores al 2026-08-30. |
+| Confirmar etiqueta corte-1 | S5 | sí (se usó un commit con ese mensaje, no una etiqueta) | Se les explicó la diferencia entre `git commit -m "corte-1"` y `git tag corte-1`; deben crear la etiqueta real. |
+| Angel Fabian Gutierrez Gomez sin commits identificables | S5 | sí | Confirmado en el commit calificado: `git shortlog` solo muestra RobotDRMX, Rodrigo Vazquez Rico y dgarza2705 (Diego Rosales Garza, ahora identificado por su correo institucional). |
+
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -52,15 +54,15 @@
 | ADR aceptados sin reescribir | Cumple | Un solo commit de creación (`aa16382`). |
 | `docs/ia.md` al día | No cumple | Vacío (0 bytes); último commit 2026-08-07. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Coincidencias solo en tipos (`password: string`) y badge placeholder del boilerplate. |
-| Contribución de todos los integrantes | No cumple | 2 identidades para 3 integrantes; en S3 solo `RobotDRMX` (2 commits). |
-| Pipeline en verde | No verificado | Sin pipeline; pruebas locales sin evidencia de ejecución. |
+| Contribución de todos los integrantes | No cumple | Confirmado hasta el corte 1: `RobotDRMX` 12 commits (86%), `dgarza2705`/Diego Rosales Garza 1, Rodrigo Vazquez Rico 1; Angel Fabian Gutierrez Gomez sigue sin ningún commit identificable en todo el historial. |
+| Pipeline en verde | No cumple | `.github/workflows/ci.yml` existe y corrió; los 3 runs disponibles vía API están en `failure`, incluido el commit calificado del corte 1. |
 
 ## Contribución por integrante
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
 |---|---|---:|---:|---:|---|
 | Angel Fabian Gutierrez Gomez | sin cuenta identificada | 0 (S3) | — | — | `RobotDRMX` sin atribuir (¿es él o Diego Rosales Garza?) |
-| Diego Rosales Garza | sin cuenta identificada | 0 (S3) | — | — | ídem |
+| Diego Rosales Garza | `dgarza2705` (correo institucional, confirmado en el corte 1) | 1 (corte 1) | — | — | Único commit del periodo: actualización de C4/arc42/pipeline. |
 | Rodrigo Vazquez Rico | firma con su nombre | 0 (S3) | — | — | último commit en S2 |
 
 ## Preguntas abiertas para la sustentación

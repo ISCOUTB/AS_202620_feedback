@@ -29,3 +29,9 @@ La documentación arc42 y los diagramas C4 están avanzados, pero el corte verti
 ## Semana 5 · CORTE1
 
 El repositorio tiene una base sólida de documentación y un corte vertical ejecutable, pero la entrega del reto no deja evidencia verificable en el repositorio: falta la etiqueta, la restricción asignada, la medición de línea base y los runs de CI. Completen la trazabilidad de aspectos con las columnas del contrato, actualicen el ADR a aceptado con implementación y pruebas, y registren en docs/ia.md los usos de IA de este corte. Aseguren que el C4 de contenedores refleje la implementación real.
+
+## Semana 5 · Primer corte (revisión definitiva, 2026-09-07)
+
+Ya existe la etiqueta `corte-1` y apunta a un commit anterior al cierre: eso quedó resuelto. Pero, revisando el repositorio completo hasta esa etiqueta, no encontramos ninguna señal de que el equipo haya recibido o trabajado la restricción nueva que pedía este corte: no hay un ADR nuevo, no hay una cifra de línea base medida, no hay una prueba nueva, y el pipeline de integración continua corre en verde pero sobre el mismo contenido de siempre, no sobre un cambio del reto. Lo que sí se hizo en esta semana fue terminar de integrar el corte vertical (que en rigor pertenece a la semana anterior), ajustar diagramas C4 y hacer limpieza de README y de la versión de Node en el CI.
+
+Qué falta para la sustentación: quién puede explicar cuál fue la restricción asignada, qué se midió antes del cambio, qué decisión se tomó y con qué alternativas se comparó, y qué prueba demuestra que el cambio funciona — porque ninguna de esas cuatro cosas aparece hoy en el repositorio. Además, sigue pendiente conciliar el C4 de contenedores (describe cuatro contenedores) con la implementación real (un monolito de un solo proceso), y agregar en `docs/ia.md` una entrada propia de esta semana.

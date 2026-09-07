@@ -28,3 +28,14 @@ Entrega sólida de la semana 4: arc42 1-6, 9, 10 y glosario redactados con conte
 ## Semana 5 · CORTE1
 
 La línea base del corte vertical AS-03 está sólida, ejecutable y con pruebas en verde. Para el reto de la semana 5 falta lo esencial: identificar la restricción asignada, registrar el diagnóstico con línea base medida, crear el ADR del reto con alternativas y consecuencias, implementar el cambio, medir contra el umbral y trazar la fila en docs/aspectos.md. También hace falta actualizar docs/ia.md con el uso de IA de este corte y confirmar la etiqueta corte-1. El PDF de dos páginas debe entregarse en Moodle con la trazabilidad completa. Revisen además la estructura de docs/aspectos.md para alinearla con las 8 columnas del contrato y agreguen SonarCloud al pipeline.
+
+
+## Semana 5 · Primer corte (revisión definitiva, 2026-09-07)
+
+Se revisó de nuevo después del cierre y no hay cambios: el repositorio quedó exactamente igual a como estaba el 3 de septiembre, cuando se hizo la revisión preliminar. No hubo ningún commit nuevo entre esa fecha y el cierre del corte.
+
+Esto significa que sigue faltando todo lo que se pidió para el reto: identificar la restricción, medir cómo estaba el sistema antes, escribir un ADR con la decisión, hacer el cambio de código y medir el resultado. La línea base (corte vertical de seguridad, AS-03) sigue firme y probada, pero eso ya se evaluó en semanas anteriores.
+
+De paso, noten que un documento propio del equipo (`REVISION_CORREGIDA.md`, escrito en agosto) dice que ya habían eliminado unas carpetas residuales (`front_end`, `ejecutable`), pero esas carpetas todavía están en el repositorio.
+
+Antes de la sustentación, sería importante que el equipo pueda mostrar avance real sobre el reto, aunque sea parcial, y explicar qué pasó durante estos días adicionales.

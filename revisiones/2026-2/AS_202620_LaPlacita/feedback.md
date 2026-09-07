@@ -28,3 +28,12 @@ Buen avance: C4 como código, corte vertical con pruebas en CI verde y trazabili
 ## Semana 5 · CORTE1
 
 El repositorio tiene una base sólida: estructura completa, CI en verde y README reproducible. Para el corte 1 falta lo esencial del reto: crear la etiqueta `corte-1`, declarar la restricción asignada y registrar el diagnóstico, la decisión y la medición. Completen la tabla de aspectos (celdas Pendiente), documenten en docs/ia.md qué salidas de IA rechazaron y por qué, y concreten SonarCloud. Sin esos elementos, la trazabilidad no se puede defender. El PDF de dos páginas debe entregarse en Moodle con los enlaces de trazabilidad.
+
+
+## Semana 5 · Primer corte (revisión definitiva, 2026-09-07)
+
+Este fue, de lejos, el trabajo más completo de este corte: identificaron su restricción (que las operaciones de una tienda nunca deben tocar datos de otra), midieron cuántos accesos cruzados eran posibles antes de tocar el código, escribieron un ADR con tres alternativas comparadas y con criterios claros de cuándo revisar la decisión, cambiaron el código real en los cinco módulos del sistema, y volvieron a medir después del cambio con un script reproducible. La etiqueta `corte-1` quedó puesta antes del cierre, sobre un commit con el pipeline en verde.
+
+Dos cosas menores para pulir: la entrada del registro de IA de esta semana no cierra con el resultado final de la verificación (queda "pendiente de revisión"), y SonarCloud está configurado en el pipeline pero el análisis en vivo todavía no está activado (falta la clave real).
+
+Para la sustentación: expliquen qué pasaría si una tienda concentrara la mayoría del tráfico, como ustedes mismos anticipan en el ADR, y cierren el resultado de la verificación que quedó pendiente en el registro de IA.

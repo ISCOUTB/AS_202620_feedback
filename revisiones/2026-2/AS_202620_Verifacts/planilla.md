@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Verifacts` |
 | Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md); historial: `PedroC1213` (30 commits) y `Cristian Cardeño` (4 commits tardíos), sin atribuir oficialmente |
 | URL del sistema desplegado | |
-| Última revisión | 2026-09-03 · revisión manual preliminar completa S5 |
+| Última revisión | 2026-09-07 · revisión definitiva post-cierre; repositorio inaccesible desde la organización |
 
 ## Estado por entrega
 
@@ -18,7 +18,7 @@
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | HEAD `8ded7cf` (excepción docente) | 2/9 | 1,9 | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `8259b75` · 2026-08-23T23:50:00-05:00 | 4/9 | no se publica | sí |
 | 4 | Evidencia S4 · arc42, C4 y corte vertical | `443e908` · 2026-08-29T18:17:18-05:00 | 7/10 | 3.8 | sí |
-| 5 | Primer corte · reto de línea base | HEAD `8764f9f` (sin etiqueta) | 0/12 | subtotal técnico preliminar 0,00/4,00; sustentación pendiente | revisión manual preliminar 2026-09-03 |
+| 5 | Primer corte · reto de línea base | **repositorio inaccesible** (404 en la organización desde antes del cierre; último estado visto: `8764f9f`, 2026-09-02) | no evaluable | no evaluable — repositorio inaccesible | revisión definitiva post-cierre 2026-09-07 |
 
 ## Lo que se arrastra
 
@@ -42,12 +42,13 @@
 | Etiqueta `corte-1` y respuesta explícita al reto | S5 | sí | falta diagnóstico, ADR, cambio y evidencia del reto asignado |
 | Línea base y resultado reproducibles contra umbral | S5 | sí | la documentación reconoce que la medición P95 está pendiente |
 | Registro de IA del corte | S5 | sí | último cambio del archivo fue el 24-ago |
+| **El repositorio `ISCOUTB/AS_202620_Verifacts` desapareció de la organización** (404 vía API y clon; ausente de los 191 repos públicos listados de ISCOUTB) | S5 (detectado en la revisión definitiva) | sí — crítico | escalado al docente; el equipo debe restablecer el acceso público con el historial intacto antes de que se pueda calificar el corte 1 |
 
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
-| Nombre y visibilidad del repositorio | Cumple | público y con convención |
+| Nombre y visibilidad del repositorio | No cumple | el repositorio ya no existe en la organización ISCOUTB (404 vía API/clon; ausente de los 191 repos públicos listados el 2026-09-07); único repo público relacionado por nombre (`PedroC1213/Verifacts`) es un borrador ajeno de agosto, anterior al propio repositorio de curso |
 | Estructura mínima | Cumple | las seis rutas presentes (`docs/arc42/`, `docs/adr/`, `docs/c4/`, `aspectos.md`, `ia.md`, README); glosario numerado 11 en vez de 12 |
 | Convención de nombres de ADR | Cumple | `0001-estilo-arquitectonico.md` |
 | ADR aceptados sin reescribir | No cumple | el ADR aceptado fue modificado, borrado y recreado |

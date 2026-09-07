@@ -27,3 +27,14 @@ La entrega S4 se evaluó dentro del plazo, pero el equipo siguió subiendo cambi
 ## Semana 5 · Primer corte
 
 Revisión manual preliminar previa al cierre. El proyecto ya tiene módulos de productos e inventario, pruebas y CI en verde. Ese avance no está identificado como respuesta al reto nuevo: falta la etiqueta `corte-1`, declarar la restricción, medir la línea base, registrar alternativas y decisión, enlazar el incremento y contrastar el resultado con el umbral. Si el nuevo módulo de inventario responde al reto, incorpórenlo a una fila completa de `docs/aspectos.md` y a una prueba específica. Actualicen también `docs/ia.md` para el corte y corrijan el enlace del README al archivo real `docs/c4/containers.md`.
+
+
+## Semana 5 · Primer corte (revisión definitiva, 2026-09-07)
+
+Ya tienen la etiqueta `corte-1` sobre un commit anterior al cierre: bien.
+
+El diagnóstico, el ADR y el reporte de medición del reto de concurrencia están redactados con un nivel técnico muy alto: identifican síntoma, causa raíz y riesgo, comparan tres alternativas con sus ventajas y desventajas, y presentan una tabla de resultados con cifras concretas. El registro de uso de IA también quedó completo, con un rechazo explícito y bien argumentado.
+
+Pero hay un problema serio que hay que resolver antes de la sustentación: revisando el código del repositorio, el mecanismo que describen en el ADR (un lock por SKU) no aparece en ningún archivo. Los módulos de inventario no cambiaron entre la entrega anterior y esta etiqueta — solo se agregó una prueba nueva y la documentación. Las cifras de latencia que reportan tampoco tienen, en el repositorio, ningún código que las calcule. La prueba que sí existe pasa, pero no porque haya un mecanismo de exclusión mutua: simplemente verifica que el stock final quede correcto.
+
+Antes de sustentar, implementen de verdad el mecanismo que describieron (o documenten honestamente cuál es el estado real) y agreguen el código que efectivamente mida la latencia que están reportando. Traigan también, si la tienen, una cifra de línea base real (antes del cambio), no solo la afirmación de que el problema existía.

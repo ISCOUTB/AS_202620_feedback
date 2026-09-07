@@ -30,3 +30,13 @@ Buen avance: el corte vertical A-01 está construido y documentado, los ADRs son
 ## Semana 5 · CORTE1
 
 El repositorio está bien organizado y los ADR 0004/0005 documentan decisiones con alternativas, fuerzas y consecuencias. La estructura, el README y la tabla de aspectos cumplen la forma esperada. Sin embargo, la entrega del corte 1 no permite verificar la etiqueta, la restricción asignada, la línea base medida, la ejecución del pipeline ni la trazabilidad completa del aspecto afectado. Completen la fila A-04, aporten la medición con procedimiento reproducible y dejen visible el run de CI en verde. La sustentación definirá el quinto criterio.
+
+## Semana 5 · Primer corte (revisión definitiva, 2026-09-07)
+
+Se revisó de nuevo después del cierre, sobre la etiqueta `corte-1`, que sí existe y apunta a un commit dentro del plazo.
+
+Qué está bien: el reto quedó resuelto por completo. Midieron el problema antes de decidir (encontraron que, cuando la cola de trabajos se cae a mitad de un lote, el sistema perdía el reporte del 100% de las hojas), compararon cuatro alternativas con argumentos técnicos reales, tomaron una decisión documentada, la implementaron sin romper el arranque de un solo comando, y volvieron a medir para comprobar que el problema quedó resuelto (0% de pérdida) dentro del tiempo permitido. También corrigieron con datos varios señalamientos de la revisión anterior sobre semanas previas (el pipeline sí corría en verde, el diagrama C4 sí estaba completo, el registro de IA sí tenía contenido).
+
+Qué falta: todo el ejercicio del reto quedó en un solo commit muy grande, lo que dificulta ver el proceso paso a paso; en el futuro conviene dividir el trabajo en varios commits. Queda pendiente adjuntar el PDF de dos páginas en Moodle, y una de las pruebas nuevas tiene un hueco de cobertura que el propio equipo ya reconoció (una mutación que ninguna prueba detecta).
+
+Para la sustentación: preparen cómo justifican haber trabajado sobre la deuda declarada (R-06) al no recibir la restricción de Moodle, y qué tan bien encajaría la misma solución si la restricción real resulta ser otra.

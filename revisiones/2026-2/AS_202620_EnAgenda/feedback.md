@@ -31,3 +31,14 @@ La entrega de la semana 4 está sólida en documentación arc42, glosario, C4 ni
 ## Semana 5 · Primer corte
 
 Revisión manual preliminar previa al cierre. La línea base de invitaciones tiene aplicación, pruebas y CI en verde. La respuesta al reto nuevo aún no es identificable: falta la etiqueta `corte-1`, declarar la restricción, medir el estado inicial, registrar las alternativas y la decisión en un ADR nuevo, implementar el incremento y contrastar el resultado con el umbral. Completen una fila navegable en `docs/aspectos.md` hasta código, prueba y evidencia, y registren en `docs/ia.md` una salida del corte con su decisión y motivo técnico. Alineen también el C4 de contenedores con el monolito Flask y la persistencia en memoria que existen actualmente.
+
+
+## Semana 5 · Primer corte (revisión definitiva, 2026-09-07)
+
+Ya crearon la etiqueta `corte-1` sobre un commit anterior al cierre, y eso está bien: quedó un estado identificable para calificar.
+
+Lo que falta: el trabajo de la última noche antes del cierre se dedicó a corregir observaciones de la semana 4 (arreglar el diagrama C4 para que coincida con la aplicación Flask, y enlazar la fila de aspectos), y ustedes mismos lo dejan escrito con honestidad en su documento de correcciones: no llegaron a plantear ni resolver el reto propio del primer corte. Falta identificar la restricción nueva asignada, medir cómo estaba el sistema antes de tocarlo, escribir la decisión en un ADR nuevo, hacer el cambio sobre el corte vertical existente y medir el resultado contra un umbral.
+
+Dos cosas puntuales para corregir ya: el enlace de "Evidencia" en la fila de aspectos apunta a un archivo que no existe en el repositorio (el archivo real tiene otro nombre); y el registro de uso de IA no tiene ninguna entrada de esta semana, ni de las correcciones que sí hicieron el 6 de septiembre.
+
+Para la sustentación: lleven claro qué restricción les tocó, qué medida inicial tomaron y con qué procedimiento, y qué cambio de código (no solo de documentación) responde a esa restricción.

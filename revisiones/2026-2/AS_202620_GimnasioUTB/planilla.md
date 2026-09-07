@@ -10,13 +10,13 @@ Hoja consolidada del equipo GimnasioUTB. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_GimnasioUTB` |
 | Integrantes y su usuario de GitHub | Sebastian Felipe Caicedo Acosta · Rodrigo Andres Facio Lince Beltran · Pedro Luis Pallares De La Hoz — cuentas abajo |
 | URL del sistema desplegado | sin desplegar aún |
-| Ultima revision | 2026-09-03 |
+| Ultima revision | 2026-09-07 (definitiva, post-cierre) |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 5 | Primer corte · reto de línea base | HEAD `38f0031` (sin etiqueta) | 0/12 | subtotal técnico preliminar 0,00/4,00; sustentación pendiente | revisión manual preliminar 2026-09-03 |
+| 5 | Primer corte · reto de línea base | HEAD `9b9f7c8` (sin etiqueta `corte-1`) | 2/12 | subtotal técnico 0,60/4,00; sustentación pendiente | revisión definitiva post-cierre 2026-09-07 |
 | 4 | S4 | `56db96b` (2026-08-30T22:33:47-05:00) | 2/10 | 1.8 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `a45615e9` · 2026-08-08T21:41:21-05:00 | 4/9 | 2,8 * | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `1b30b7a4` · 2026-08-16T21:04:17-05:00 | 5/9 | 3,2 * | sí |
@@ -38,12 +38,13 @@ Hoja consolidada del equipo GimnasioUTB. Se actualiza tras cada revisión.
 | Completar trazabilidad de docs/aspectos.md y ADR 0001 con rutas y commits reales | S4 | si | |
 | Verificar y completar secciones 4-6, 9, 10 y 12 del arc42 | S4 | si | |
 | Configurar análisis estático con SonarCloud | S4 | si | |
-| Etiqueta `corte-1` ausente | S5 | Sí | Etiquetar el estado entregable antes del cierre. |
-| Respuesta al reto sin diagnóstico, ADR ni incremento identificado | S5 | Sí | Declarar la restricción, medir la línea base y registrar e implementar la decisión. |
+| Etiqueta `corte-1` ausente | S5 | Sí | Sigue sin existir a la fecha del cierre; se calificó el último commit ≤ cierre (`9b9f7c8`). Etiquetar el estado entregable en cortes futuros. |
+| Respuesta al reto sin diagnóstico, ADR ni incremento identificado | S5 | Sí | El trabajo previo al cierre (`7094a6c`..`9b9f7c8`) fue documental (README, aspectos, glosario, `correcciones.md`); sigue faltando diagnóstico, ADR, cambio de código y medición del reto. |
 | Prueba concurrente con PostgreSQL y medición contra umbral pendientes | S4 | Sí | Aportar herramienta, carga, procedimiento, resultado y run de CI del cambio. |
-| `docs/aspectos.md` no usa las ocho columnas del contrato ni contiene una fila del reto | S5 | Sí | Hacer navegable la cadena completa del reto. |
-| Registro de IA sin entrada del Corte 1 | S5 | Sí | Registrar una salida aceptada, corregida o rechazada con motivo técnico. |
-| ADR aceptado reescrito en commits posteriores | S5 | Sí | Mantener el ADR histórico y registrar cambios mediante otro ADR. |
+| `docs/aspectos.md` no usa las ocho columnas del contrato ni contiene una fila del reto | S5 | Parcial (S1 sí es navegable) | La fila de S1 ya es navegable de escenario a pruebas; falta una fila para el reto de Corte 1. |
+| Registro de IA sin entrada del Corte 1 | S5 | No (resuelto) | `docs/ia.md` ya tiene una entrada "Semana 5" (2026-09-06) con lo aceptado y lo rechazado con motivo técnico. |
+| ADR aceptado reescrito en commits posteriores | S5 | Sí | Confirmado: `92f4a53` (aceptado) fue editado en contenido por `c271073`,`b556737`,`59b6d3e`,`47a18d0` (2026-08-30). Mantener el ADR histórico y registrar cambios mediante otro ADR. |
+
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

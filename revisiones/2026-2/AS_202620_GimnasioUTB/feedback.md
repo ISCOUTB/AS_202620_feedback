@@ -30,3 +30,16 @@ La documentación de arquitectura (arc42, C4, ADR, aspectos, IA) muestra avance,
 ## Semana 5 · Primer corte
 
 Revisión manual preliminar previa al cierre. La línea base del backend tiene corte vertical, pruebas y CI en verde. Aún no se identifica la respuesta al reto nuevo: falta la etiqueta `corte-1`, declarar la restricción, medir el estado inicial, crear el ADR del reto, implementar el incremento y contrastarlo con el umbral. La prueba concurrente con persistencia real sigue pendiente y el C4 aún presenta aplicación, base de datos y mensajería no implementadas. Ajusten `docs/aspectos.md` a la cadena de ocho columnas, registren el uso de IA del corte y conserven los ADR aceptados como registros históricos en lugar de reescribirlos.
+
+
+## Semana 5 · Primer corte (revisión definitiva, 2026-09-07)
+
+Sigue sin existir la etiqueta `corte-1`: se revisó el último commit antes del cierre.
+
+Lo bueno: el registro de uso de IA quedó al día, con una entrada de esta semana que dice claramente qué se aceptó y qué se rechazó y por qué. Y la fila de trazabilidad del escenario de aforo (S1) sigue siendo navegable de punta a punta.
+
+Lo que falta: el trabajo antes del cierre fue limpieza de documentación (README, glosario, historial de correcciones), no una respuesta al reto propio del primer corte. No hay una restricción nueva diagnosticada, ni un ADR nuevo, ni un cambio de código, ni una medición contra un umbral.
+
+Una alerta seria: el ADR de arquitectura hexagonal, que ya estaba aceptado desde la semana 3, fue editado en su contenido varias veces después de aceptarse (cambiaron los escenarios de calidad que cita y las consecuencias). Un ADR aceptado no se edita: si la decisión evoluciona, se escribe un ADR nuevo que reemplaza al anterior, dejando un enlace.
+
+Para la sustentación: traigan la restricción asignada, la medida inicial del sistema antes de tocarlo, y expliquen por qué el ADR 0001 cambió de contenido después de aceptado.

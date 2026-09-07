@@ -1,88 +1,88 @@
 # Semana 5 · Primer corte · mapsutb
 
-> Revisión manual preliminar completa, realizada el 2026-09-03 antes del cierre. El equipo puede cambiar el repositorio hasta el 2026-09-07T05:00:00Z; el estado y la propuesta pueden cambiar en la pasada definitiva.
+> Revisión definitiva post-cierre — 2026-09-07. Reemplaza la revisión manual preliminar del 2026-09-03. Cierre: `2026-09-07T05:00:00Z`.
 
 | Campo | Valor |
 |---|---|
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_mapsutb` |
-| Estado revisado | etiqueta `corte-1` → `7e56ad372dbfebd8c7c38f74b19006e14f9e72e3` (2026-08-09T23:27:46-05:00) |
-| HEAD para el overall | `e113f833d08f307b44b8901e9a46ce85c40359e2` (2026-08-31T20:11:24-05:00) |
+| Estado calificado | etiqueta `corte-1` → `7e56ad372dbfebd8c7c38f74b19006e14f9e72e3` (2026-08-09T23:27:46-05:00) — **existe y es anterior al cierre**, pero corresponde al commit de evidencia S1 |
+| HEAD para el overall | `f40775df512ca3d35f07a804602076486c5bf3e1` (2026-09-06T22:35:28-05:00) |
 | Cierre | 2026-09-07T05:00:00Z |
-| Revisor | revisión manual con inspección Git; sin ejecutar código |
-| Alcance externo no disponible | restricción asignada y PDF de Moodle |
+| Comandos ejecutados | `git clone --filter=blob:none`; `git tag --list`; `git log -1 corte-1`; `git log -1 --until=cierre HEAD`; `git ls-tree -r corte-1`; `git log f0d036a..HEAD`; `git grep` (patrones de secretos); `git shortlog -sne HEAD`; búsqueda de `correcciones.md` en raíz de HEAD (no existe) |
+| Revisor | agente de revisión, solo lectura; no se ejecutó código del equipo |
+| Alcance externo no disponible | restricción asignada al equipo y PDF de Moodle |
 
-## Matriz de la ficha
+## Nota sobre la etiqueta
 
-| Criterio de evaluación | Evidencia técnica esperada | Estado | Observaciones |
-|---|---|---|---|
-| Etiqueta `corte-1` sobre un commit anterior al cierre | `git log -1 --format='%H %cI' corte-1` | No cumple | Existe, pero apunta al commit de S1 `7e56ad3`, no al trabajo del corte; el tag solo contiene `README.md` y tres documentos iniciales. |
-| PDF de dos páginas con diagnóstico, decisión, cambio, medición y trazabilidad | documento adjunto en la entrega de Moodle | No verificado | El adjunto de Moodle no está disponible en el kit. |
-| Impacto de la restricción localizado en requisitos, C4 y código | apartado de diagnóstico citando elemento y escenario afectados | No verificado | No se proporcionó la restricción asignada. Además, en el tag no hay C4 ni código y `docs/aspectos.md:7` deja ambos pendientes. |
-| Línea base medida y verificable antes del cambio | cifra con herramienta y procedimiento | No cumple | En el tag, `docs/aspectos.md:16` solo declara umbrales de 3 s y 5 m; no registra una medición ejecutada ni procedimiento. |
-| ADR del reto con alternativas, fuerzas, decisión y consecuencias | `docs/adr/NNNN-*.md` ligado al escenario de calidad | No cumple | El árbol del tag no contiene `docs/adr/`. |
-| Cambio implementado y ejecutable de extremo a extremo | commit que implementa el ADR y comando de arranque del README | No cumple | El tag no contiene código y `README.md:1` es solo el título del repositorio. |
-| Límites declarados conservados tras el cambio | correspondencia del C4 con la estructura del código | No cumple | El tag no contiene C4 ni código para contrastar. |
-| Prueba que cubre el cambio, en verde en el pipeline | ruta de la prueba y URL del run anterior a la etiqueta | No cumple | El tag no contiene pruebas ni workflow de CI. |
-| Resultado contrastado con el umbral del escenario y reproducible | medición con herramienta, carga y procedimiento | No cumple | No hay resultado medido en el tag; `docs/aspectos.md:16` enuncia un objetivo, no evidencia de medición. |
-| Cadena aspecto, requisito, C4, ADR, código, pruebas y evidencia navegable | fila de `docs/aspectos.md` recorrida celda a celda | No cumple | `docs/aspectos.md:7` tiene C4 por definir, sin ADR y código, pruebas y evidencia aún no iniciados. |
-| Salida de IA aceptada, corregida o rechazada con motivo técnico | entrada de `docs/ia.md` de este corte | No cumple | `docs/ia.md:9-10` registra usos del 07/08, previos al corte; no hay entrada de S5. |
-| Sustentación del reto | sesión de sustentación | No verificado | Lo resuelve el docente en la sesión. |
+`corte-1` sigue apuntando al mismo commit `7e56ad3` que en la revisión preliminar del 03/09: el equipo **no la movió** en la semana que tuvo para corregir. Ese commit es, literalmente, anterior al cierre — pero corresponde con claridad al estado de la evidencia S1 (solo `README.md`, `docs/ficha-problema.md`, `docs/aspectos.md`, `docs/ia.md`; nada de ADR, C4, código ni pruebas). Por la regla del protocolo para este caso ("apunta a un estado de una semana anterior"), se revisa igual el contenido de la etiqueta para la matriz de la ficha, y la fila de versionado de la matriz transversal queda en **No cumple**, con esta discrepancia como motivo.
+
+## Matriz de la ficha (evaluada sobre el contenido de `corte-1` = `7e56ad3`)
+
+| Criterio de evaluación | Estado | Observaciones |
+|---|---|---|
+| Etiqueta `corte-1` sobre un commit anterior al cierre | No cumple | Existe y es anterior al cierre (`7e56ad3`, 09/08), pero es el mismo commit de la evidencia S1: no contiene ninguna respuesta al reto. Sigue sin moverse tras la revisión preliminar. |
+| PDF de dos páginas con diagnóstico, decisión, cambio, medición y trazabilidad | No verificado | El adjunto de Moodle no está disponible en el kit. |
+| Impacto de la restricción localizado en requisitos, C4 y código | No verificado | No se dispone de la restricción asignada. En `corte-1` no hay C4 ni código (`git ls-tree -r corte-1`: solo 4 archivos); `docs/aspectos.md` en ese estado deja C4, ADR, código, pruebas y evidencia "Aún no iniciado". |
+| Línea base medida y verificable antes del cambio | No cumple | En `corte-1`, `docs/aspectos.md` solo declara el umbral objetivo (≤3 s, ≤5 m); no hay cifra medida ni procedimiento. |
+| ADR del reto con alternativas, fuerzas, decisión y consecuencias | No cumple | `corte-1` no tiene `docs/adr/`. |
+| Cambio implementado y ejecutable de extremo a extremo | No cumple | `corte-1` no tiene código (`lib/`) ni comando de arranque más allá del título del README. |
+| Límites declarados conservados tras el cambio | No cumple | No hay C4 ni código en `corte-1` para contrastar. |
+| Prueba que cubre el cambio, en verde en el pipeline | No cumple | `corte-1` no tiene `test/` ni `.github/workflows/`. |
+| Resultado contrastado con el umbral del escenario y reproducible | No cumple | No hay resultado medido en `corte-1`. |
+| Cadena aspecto→requisito→C4→ADR→código→pruebas→evidencia navegable | No cumple | `docs/aspectos.md` en `corte-1` tiene C4 "por definir", "Sin ADR aún" y código/pruebas/evidencia "Aún no iniciado": la fila A-01 no llega a ninguna parte. |
+| Salida de IA aceptada/corregida/rechazada con motivo técnico | No cumple | `docs/ia.md` en `corte-1` solo tiene las dos entradas del 07/08 (declarar/especificar), anteriores al periodo del corte. |
+| Sustentación del reto | No verificado | Lo resuelve el docente en la sesión. |
+
+**Recuento: 0 de 12.**
 
 ## Matriz transversal (CONTRATO §11)
 
-| Criterio de evaluación | Evidencia técnica esperada | Estado | Observaciones |
-|---|---|---|---|
-| Repositorio en la organización, con el nombre de la convención y público | URL `github.com/ISCOUTB/AS_202620_<PROYECTO>` y respuesta de la API sin autenticación | Cumple | El clon sin autenticación de `ISCOUTB/AS_202620_mapsutb` respondió el 2026-09-03. |
-| Estructura mínima presente | salida de `git ls-tree` con las seis rutas del apartado 2 | No cumple | En `corte-1` faltan `docs/arc42/`, `docs/adr/` y `docs/c4/`; solo están README, aspectos e IA. |
-| Estado calificado identificable | etiqueta de la entrega, o hash y `%cI` del último commit anterior al cierre | Cumple | `corte-1` identifica inequívocamente `7e56ad3` del 09/08, aunque es el estado equivocado para esta entrega. |
-| Nombres de ADR según la convención | `ls docs/adr` sin salida en el filtro del apartado 4 | No cumple | No existe directorio de ADR en el estado etiquetado. |
-| ADR aceptados no reescritos | historial de cada ADR anterior sin commits de reescritura, o reemplazo declarado | No cumple | No hay ADR en el estado etiquetado que permita demostrar esta regla. |
-| `docs/ia.md` al día para la semana | commits sobre el archivo dentro del periodo revisado, con lo rechazado y su motivo | No cumple | En `corte-1`, `docs/ia.md:9-10` solo contiene entradas del 07/08. |
-| Sin credenciales en el repositorio ni en el historial | `git grep` y `git log -S` sin coincidencias | Cumple | Búsquedas de patrones de secretos, `.env` versionado y llaves privadas sin coincidencias en HEAD. |
-| Contribución de todos los integrantes | `git shortlog -sne` con todos los integrantes del equipo | Cumple | En HEAD aparecen cuatro personas consolidadas: CarlosManrique-1397, i-matallana, charlygz21 y nerlis-otero; `i-matallana` usa dos correos. |
+| Criterio | Estado | Observaciones |
+|---|---|---|
+| a. Repositorio en la organización, con el nombre de la convención y público | Cumple | Clon sin autenticación de `ISCOUTB/AS_202620_mapsutb` responde el 2026-09-07. |
+| b. Estructura mínima presente | No cumple | En `corte-1` faltan `docs/arc42/`, `docs/adr/` y `docs/c4/` (solo README, ficha-problema, aspectos e ia). En HEAD existen pero como `docs/Arc42/` y `docs/C4/` (mayúsculas fuera de convención). |
+| c. Estado calificado identificable | No cumple | La etiqueta existe pero corresponde a un estado de una semana anterior (S1), no al corte 1; ver nota arriba. |
+| d. Nombres de ADR según la convención | No cumple | En HEAD, `docs/adr/0002.md` no lleva título en kebab-case (solo el número); `0001-patrones-de-diseno.md` sí cumple. En `corte-1` no hay ADR. |
+| e. ADR aceptados no reescritos | No cumple | `docs/adr/0001-patrones-de-diseno.md` fue reescrito en múltiples commits entre el 23/08 y el 31/08 sin dejarlo "reemplazado" con un ADR nuevo (confirmado también en HEAD actual). |
+| f. `docs/ia.md` al día para la semana | No cumple | Última entrada 30/08 (`docs/ia.md`, entrada "Verificar"); no hay entrada del trabajo de S5/corte-1 en HEAD `f40775d`. |
+| g. Sin credenciales en el repositorio ni en el historial | Cumple | `git grep` con los patrones del contrato sin coincidencias en HEAD; sin `.env` versionado. |
+| h. Contribución de todos los integrantes | Cumple | `git shortlog -sne HEAD`: CarlosManrique-1397 (41), i-matallana (37+2, dos correos = Isabel Paez Matallana), charlygz21 (13), nerlis-otero (6). Los cuatro integrantes tienen commits. |
 
-## Estado global del proyecto (overall · HEAD)
+## Estado global del proyecto (overall · HEAD `f40775d`)
 
-- HEAD `e113f833` incorpora trabajo posterior a la etiqueta: un flujo visible de zonas y ubicación simulada (`lib/main.dart:30-59`, `lib/services/ubicacion_service.dart:15-21`) y un ADR 0002 con alternativas y consecuencias (`docs/adr/0002.md:54-66`, `196-203`).
-- Ese avance no está entregado por la etiqueta. Tampoco prueba correspondencia con la restricción externa.
-- El diagnóstico y la trazabilidad global siguen desalineados: `docs/aspectos.md:7` aún habla de realidad aumentada, C4 por definir y ausencia de ADR, mientras el ADR 0002 descarta RA (`docs/adr/0002.md:17-33`).
-- La estructura sigue fuera de convención por `docs/Arc42/` y `docs/C4/`, y `docs/adr/0002.md` no cumple el nombre `NNNN-titulo-en-kebab-case.md`.
-- El ADR 0001 fue reescrito en varios commits entre el 23/08 y el 31/08. El contrato exige crear un ADR sustituto y conservar el aceptado.
-- El único test visible es una prueba de humo del esqueleto (`test/app_smoke_test.dart:6-18`); no cubre el cambio de ubicación. No hay workflow ni run de CI que consultar.
-- No hay medición de línea base ni resultado reproducible contra umbral. `docs/ia.md` llega al 30/08 y no registra el trabajo de S5.
-- El repositorio versiona `.dart_tool/`, artefacto local que debe excluirse.
+- El HEAD avanzó respecto al 03/09: conversión de `.adoc` a `.md`, el ADR 0002 (patrones de diseño, con cambio de alcance que descarta la realidad aumentada) y un corte vertical de Repository/Observer (`lib/services/ubicacion_service.dart`) fusionado por PR #1 el 31/08.
+- Pese a ese avance, **`docs/aspectos.md` sigue sin actualizar en HEAD**: la fila A-01 sigue diciendo "Sin ADR aún", C4 "por definir" y código/pruebas/evidencia "Aún no iniciado", contradiciendo que el ADR 0002 y el código ya existen desde el 30-31/08. La cadena de trazabilidad está rota también en HEAD, no solo en la etiqueta.
+- El único test es `test/app_smoke_test.dart` (prueba de humo del esqueleto); no cubre el cambio de ubicación. Sigue sin existir `.github/workflows/`.
+- No hay medición de línea base ni resultado reproducible contra umbral en ningún punto del historial.
+- El 06/09 (la noche antes del cierre) se agregaron cuatro archivos vacíos `FeedbackCorreccioner/FeedbackS1..S4` (commits de `charlygz21`, 22:34–22:35), sin contenido; no aportan evidencia y no hay `correcciones.md` en la raíz de HEAD ni de `corte-1`, así que no hay correcciones del equipo que adjudicar en este lote.
+- El repositorio sigue sin mover la etiqueta `corte-1` al commit real del corte, pese a que la revisión preliminar ya señaló el problema el 03/09.
 
-## Nivel de rúbrica sugerido
+## Nivel de rúbrica sugerido (propuesta al docente; la nota final se fija en Moodle)
 
-Propuesta preliminar al docente. La sustentación no se infiere del repositorio.
-
-| Criterio | Nivel sugerido | Puntaje | Evidencia que lo sostiene |
-|---|---|---:|---|
-| Diagnóstico del reto | no demostrado | 0,00 | La etiqueta apunta a S1; falta la restricción externa y no hay diagnóstico del reto en el estado entregado. |
+| Criterio | Nivel sugerido | Puntaje | Evidencia |
+|---|---:|---:|---|
+| Diagnóstico del reto | no demostrado | 0,00 | La etiqueta apunta a S1; no hay diagnóstico del reto en el estado calificado ni referencia a la restricción asignada. |
 | Alternativas y decisión | no demostrado | 0,00 | No hay ADR en `corte-1`. |
-| Aplicación sobre el corte vertical | no demostrado | 0,00 | `corte-1` no contiene código ni arranque reproducible. |
+| Aplicación sobre el corte vertical | no demostrado | 0,00 | `corte-1` no contiene código ni arranque. |
 | Pruebas, medición y trazabilidad | no demostrado | 0,00 | No hay pruebas, medición ni cadena completa en la etiqueta. |
 | Sustentación del reto | lo fija el docente | pendiente | Requiere sesión. |
 | **Subtotal técnico** | | **0,00 / 4,00** | No es la nota total sobre 5,00. |
 
-## Recuento
+## No verificado
 
-**0 de 12 criterios Cumple.** La restricción, el PDF y la sustentación siguen No verificados; los demás criterios no se satisfacen en la etiqueta.
-
-## No verificados
-
-- Restricción asignada: hace falta la consigna individual del equipo.
-- PDF de dos páginas: hace falta el adjunto de Moodle.
-- Sustentación: la resuelve el docente en sesión.
+- Restricción asignada al equipo (no disponible en el kit).
+- PDF de dos páginas de Moodle.
+- Sustentación (la fija el docente en sesión).
 
 ## Hallazgos
 
-- `corte-1` está fijada en el commit inicial de S1 y deja fuera todo el avance actual.
-- El HEAD presenta un cambio arquitectónico y código nuevo, pero no medición, prueba específica, CI ni trazabilidad actualizada.
-- Hay reescritura de ADR aceptado y desviaciones de estructura y versionado de artefactos locales.
+- `corte-1` sigue fijada en el commit de S1 tras la revisión preliminar; el equipo no la corrigió antes del cierre.
+- El HEAD acumula avance real (ADR 0002, código Repository/Observer) que no está entregado por la etiqueta y que, aun en HEAD, no está reflejado en `docs/aspectos.md`.
+- ADR 0001 reescrito sin declarar reemplazo; `docs/adr/0002.md` fuera de la convención de nombres.
+- Sin `correcciones.md`: no hay objeciones del equipo a la revisión preliminar que adjudicar.
 
 ## Preguntas para la sustentación
 
-- ¿Cuál fue la restricción asignada y qué evidencia demuestra que el cambio de ubicación/Observer responde a ella?
-- ¿Qué medición inicial ejecutaron, con qué herramienta, carga y procedimiento, y cuál fue el resultado posterior?
-- ¿Por qué `corte-1` sigue en S1 y cómo van a conservar la historia de ADR sin reescribir decisiones aceptadas?
+- ¿Por qué `corte-1` sigue apuntando al commit de la evidencia S1 pese a que la revisión preliminar ya lo señaló el 03/09?
+- ¿Cuál fue la restricción asignada y qué evidencia (aún no etiquetada) demuestra que el ADR 0002 y el cambio de ubicación responden a ella?
+- ¿Qué impide actualizar `docs/aspectos.md` para que refleje el ADR y el código que ya existen en HEAD?

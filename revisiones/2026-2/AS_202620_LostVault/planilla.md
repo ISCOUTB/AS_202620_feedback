@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_LostVault` |
 | Integrantes y su usuario de GitHub | Jose Faustino Espana Noriega · Roy Andres Gonzalez Blanco · Shamara Llorente Tapias · Kiefer Monterroza Manjarres — identidades del historial: Roy Gonzalez (¿`RGBlanco18`?), `shamarallorente-blip`, `Fausto-4` (correo `ganonimo2504`), `weller-rar` (correo `pelu.kiefer`); correspondencias por confirmar con el docente |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-03 |
+| Ultima revision | 2026-09-07 (definitiva, post-cierre) |
 
 ## Estado por entrega
 
@@ -18,7 +18,7 @@
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `af94a30` · 2026-08-16T22:09:43-05:00 | 7/9 | no se publica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `1ddb826` · 2026-08-23T23:57:37-05:00 | 4/9 | no se publica | sí |
 | 4 | S4 | `952af8f` (2026-08-30T22:13:14-05:00) | 7/10 | 3.8 | si |
-| 5 | Primer corte · reto de línea base | `corte-1` → `952af8f` | 1/12 | subtotal técnico preliminar 0,00/4,00; sustentación pendiente | revisión manual preliminar 2026-09-03 |
+| 5 | Primer corte · reto de línea base | `corte-1` → `952af8f` (sin cambios desde S4; confirmado que la etiqueta no se movió tras la revisión preliminar) | 1/12 | subtotal técnico 0,00/4,00; sustentación pendiente | revisión definitiva post-cierre 2026-09-07 |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
@@ -43,20 +43,21 @@
 | Sección 4 y matriz comparativa genéricas, sin comparar contra los escenarios 1-4 | S3 | Sí | Reescribir la matriz fila por escenario del árbol de utilidad y ligar la estrategia a los escenarios |
 | Paquetes de módulos del ADR inexistentes (solo `lib/main.dart`) | S3 | Sí | Crear `lib/<modulo>/` con la frontera `public/` que declara el ADR; el checklist del README los da por creados |
 | ADR no alcanzable desde `aspectos.md` ni desde los escenarios | S3 | Sí | Enlazar el ADR desde la fila del aspecto y desde el escenario que lo motiva |
-| Archivos basura en la raíz (`front_end`, `ejecutable`, 1 byte) | S3 (cierre) | Sí | Borrar los residuos de los zips subidos en `cd5ee95`…`1ddb826` |
+| Archivos basura en la raíz (`front_end`, `ejecutable`, 1 byte) | S3 (cierre) | Sí (un documento propio, `REVISION_CORREGIDA.md`, afirma desde el 24 de agosto que ya se eliminaron, pero siguen presentes en `corte-1`) | Borrar de verdad los residuos de los zips subidos en `cd5ee95`…`1ddb826`. |
 | Integración con SonarCloud pendiente según contrato | S4 | si | |
 | C4 nivel 2 sin código fuente que permita verificar coherencia y límites | S4 | si | |
 | Arranque documentado pero sin verificación ejecutada | S4 | si | |
 | Cortes ejecutables para AS-01, AS-02 y AS-04 pendientes según docs/aspectos.md | S4 | si | |
-| Confirmar etiqueta corte-1 | S5 | si | |
-| Diagnóstico de la restricción asignada con línea base medida | S5 | si | |
-| ADR del reto con alternativas, fuerzas, decisión y consecuencias | S5 | si | |
-| Cambio implementado y ejecutable de extremo a extremo | S5 | si | |
-| Medición contrastada con umbral y reproducible | S5 | si | |
-| Trazabilidad del reto en docs/aspectos.md | S5 | si | |
-| Registro de IA del corte 1 en docs/ia.md | S5 | si | |
-| PDF de dos páginas en Moodle | S5 | si | |
-| SonarCloud en el pipeline | S5 | si | |
+| Confirmar etiqueta corte-1 | S5 | No (confirmada, `952af8f`, pero sin contenido de reto) | La etiqueta existe y es válida por fecha; su contenido sigue siendo el de S4. |
+| Diagnóstico de la restricción asignada con línea base medida | S5 | Sí (sin cambios desde la revisión preliminar) | Cero commits nuevos desde el 30 de agosto (`git log 952af8f..HEAD` vacío); declarar la restricción y medir la línea base. |
+| ADR del reto con alternativas, fuerzas, decisión y consecuencias | S5 | Sí | Sin ADR nuevo. |
+| Cambio implementado y ejecutable de extremo a extremo | S5 | Sí | Sin cambio de código desde S4. |
+| Medición contrastada con umbral y reproducible | S5 | Sí | Sin medición nueva. |
+| Trazabilidad del reto en docs/aspectos.md | S5 | Sí | Sin fila nueva del reto. |
+| Registro de IA del corte 1 en docs/ia.md | S5 | Sí | Última entrada sigue siendo del 24 de agosto (S3). |
+| PDF de dos páginas en Moodle | S5 | No verificado | No accesible desde el kit. |
+| SonarCloud en el pipeline | S5 | Sí | El pipeline (`flutter.yml`) sigue sin paso de SonarCloud. |
+
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -68,7 +69,7 @@
 | `docs/ia.md` al día | No cumple | Última entrada 08-ago; sin lo rechazado |
 | Sin credenciales en el repositorio ni en el historial | Cumple | git grep, .env y `log -S` sin coincidencias |
 | Contribución de todos los integrantes | Cumple | 4 identidades de 4 en `1ddb826`; atribución de `Fausto-4` y `weller-rar` por confirmar |
-| Pipeline en verde | No cumple | Sin `.github/workflows/`; prueba localizada sin evidencia de ejecución |
+| Pipeline en verde | Cumple | `.github/workflows/flutter.yml` presente desde S4; run sobre `952af8f` (etiqueta `corte-1`) exitoso (2026-09-01T21:21:20Z). |
 
 ## Contribución por integrante
 

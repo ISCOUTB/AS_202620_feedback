@@ -29,3 +29,15 @@ El corte vertical ya atraviesa interfaz, lógica y persistencia, y la documentac
 ## Semana 5 · CORTE1
 
 El repositorio tiene una base sólida de documentación y código, pero la respuesta al reto del corte 1 no aparece en el commit calificado. No se encontró un ADR nuevo que registre el diagnóstico de la restricción, las alternativas y la decisión, ni una medición de línea base con procedimiento reproducible. La tabla de aspectos no sigue el formato de 8 columnas del contrato, lo que impide recorrer la trazabilidad. El registro de IA documenta usos, pero no muestra qué salidas se rechazaron y por qué. El pipeline existe, pero no hay evidencia de un run en verde anterior a la etiqueta. Para la sustentación, preparen respuestas sobre la restricción asignada, el estado inicial medido y cómo verifican el umbral del escenario.
+
+## Semana 5 · Primer corte (revisión definitiva, 2026-09-07)
+
+Avanzaron bastante en cerrar los pendientes de estructura: `docs/aspectos.md` ya tiene la tabla completa de 8 columnas, `docs/ia.md` registra un rechazo con motivo técnico, el ADR-0001 quedó correctamente marcado como reemplazado por el ADR-0002 (con enlace), el README explica arranque con un único comando y el pipeline de CI corre en verde antes del cierre. Leímos su `docs/correciones.md` completo y la mayoría de esos puntos quedan confirmados por el estado real del repositorio.
+
+Lo que falta, y que ustedes mismos ya habían identificado en ese mismo documento, sigue sin resolverse: no existe la etiqueta `corte-1` (tienen el procedimiento escrito, pero nunca lo ejecutaron), no hay un ADR que registre la restricción nueva que debía asignárseles para este corte, y la medición de línea base quedó en el método definido, sin ejecutar ni registrar un resultado. Esos tres puntos son justamente los que definen si hubo o no una respuesta al reto — el resto del trabajo, aunque valioso, es consolidación de la línea base.
+
+Una observación menor: los títulos de los dos ADR ("Selección de Arquitectura Base") describen el tema, no la decisión — convendría renombrarlos para que el título diga qué se decidió.
+
+Noten también que tres commits llegaron después del cierre del corte (corrección de duplicación en pruebas y documentación en ia.md); no afectan la nota de este corte, pero no cuentan como parte de la entrega.
+
+Para la sustentación: preparen quién explica cuál era la restricción asignada y qué impidió completar su ADR y su medición si ya tenían todo el resto de la infraestructura lista.

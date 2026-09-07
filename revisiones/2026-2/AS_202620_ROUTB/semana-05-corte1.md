@@ -1,97 +1,84 @@
-# semana-05-corte1 · ROUTB
+# Semana 5 · Primer corte · ROUTB
 
-> Revisión manual preliminar completa realizada el 2026-09-03, antes del cierre. El equipo puede modificar el repositorio y la evaluacion definitiva debe repetirse despues de `2026-09-07T05:00:00Z`.
+> Revisión definitiva post-cierre — 2026-09-07. Reemplaza la revisión manual preliminar del 2026-09-03 (que no vio nada de este trabajo: se hizo después). Cierre: `2026-09-07T05:00:00Z`.
 
 | Campo | Valor |
 |---|---|
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_ROUTB` |
-| Estado revisado | `83b8c5e` (2026-08-30T19:33:15-05:00) |
+| Estado calificado | etiqueta `corte-1` → `493efdb4cc54548bd9722406d13677b8d60402f0` (2026-09-06T20:11:13-05:00 = 2026-09-07T01:11:13Z) — anterior al cierre |
+| HEAD para el overall | `6f6e40c7adef3abffd1208edc92629e90df6eb36` (2026-09-07T13:23:46-05:00 = 18:23:46Z, **posterior al cierre**) |
 | Cierre | 2026-09-07T05:00:00Z |
-| Revisor | revisión manual local, solo lectura; no se ejecutó código |
+| Comandos ejecutados | `git clone --filter=blob:none`; `git tag --list`; `git log -1 corte-1`; `git log 83b8c5e..corte-1`; lectura de `docs/adr/0003-control-atomico-de-cupos.md`, `docs/aspectos.md`, `docs/ia.md`, `docs/arc42/10_requisitos_de_calidad.md`, `backend/tests/test_cupos.py`, `README.md`; `git shortlog -sne HEAD`; `git grep` (secretos); `GET /repos/.../actions/runs` (una consulta, filtrando por el commit de la etiqueta y por el workflow de SonarCloud); búsqueda de `correcciones.md` en todo el historial (no existe) |
+| Revisor | agente de revisión, solo lectura; no se ejecutó código del equipo |
+| Alcance externo no disponible | No se localizó un documento que declare una restricción individual asignada por el curso a este equipo; `docs/ia.md` describe el reto como "concurrencia y disponibilidad de cupos", que parece autoidentificado por el equipo a partir del dominio, no una restricción externa impuesta como en otros equipos del lote. Se anota como incertidumbre, no como ausencia. |
 
-## Matriz de la ficha
+## Matriz de la ficha (evaluada sobre `corte-1` = `493efdb`)
 
-| Criterio de evaluacion | Evidencia tecnica | Estado | Observaciones |
-|---|---|---|---|
-| Etiqueta corte-1 sobre un commit anterior al cierre | Consulta manual `git tag --list`: no existe `corte-1`; se revisó el HEAD anterior al cierre | No cumple | Falta la etiqueta exigida por la ficha. |
-| PDF de dos páginas con diagnóstico, decisión, cambio, medición y trazabilidad | No disponible en el repositorio; requiere adjunto de Moodle | No verificado | No se puede comprobar desde el repositorio. |
-| Impacto de la restricción localizado en requisitos, C4 y código | docs/arc42/11_riesgos_y_deuda_tecnica.md pendiente; sin ADR nuevo; commit 83b8c5e 'Semana 4' | No verificado | No hay diagnóstico del reto; se desconoce la restricción asignada. |
-| Línea base medida y verificable antes del cambio | No se encontraron cifras con herramienta y procedimiento en el repositorio | No cumple | Falta línea base medible. |
-| ADR del reto con alternativas, fuerzas, decisión y consecuencias | Solo docs/adr/0001-usar-monolito-modular.md (semana 3), no ligado al reto | No cumple | No hay ADR del reto. |
-| Cambio implementado y ejecutable de extremo a extremo | diff_desde_cierre vacío; sin commits posteriores a la semana 4 | No cumple | No hay implementación del reto. |
-| Límites declarados conservados tras el cambio | docs/c4/context.md existe; sin cambio del reto que verificar | No cumple | Sin cambio no hay conservación que comprobar. |
-| Prueba que cubre el cambio, en verde en el pipeline | runs_ci success (Backend CI run 33344914286) pero solo backend/tests/test_registro.py | No cumple | La prueba existente no cubre el reto. |
-| Resultado contrastado con el umbral del escenario y reproducible | No hay medición con herramienta, carga y procedimiento | No cumple | Falta medición contra umbral. |
-| Cadena aspecto, requisito, C4, ADR, código, pruebas y evidencia navegable | docs/aspectos.md filas 1 y 3 con celdas vacías en ADR, Código y Pruebas | No cumple | La cadena no es navegable. |
-| Salida de IA aceptada, corregida o rechazada con motivo técnico | docs/ia.md última entrada 2026-08-30 (semana 4); sin entrada de semana 5 | No cumple | No hay registro de IA del corte. |
-| Sustentación del reto | Sesión de sustentación; no verificable desde el repositorio | No verificado | Lo resuelve el docente en la sesión. |
+| Criterio de evaluación | Estado | Observaciones |
+|---|---|---|
+| Etiqueta `corte-1` sobre un commit anterior al cierre | Cumple | `493efdb` del 2026-09-07T01:11:13Z, anterior al cierre (05:00:00Z). |
+| PDF de dos páginas con diagnóstico, decisión, cambio, medición y trazabilidad | No verificado | No está en el kit ni en el repositorio. |
+| Impacto de la restricción localizado en requisitos, C4 y código | Cumple (con reserva) | `docs/aspectos.md` fila 1 liga el aspecto de "gestión de disponibilidad de cupos" a C4, ADR-0001/0003 y al módulo `trips`. La reserva es que no se identificó una restricción individual asignada externamente: el reto parece autoidentificado a partir de un riesgo de concurrencia del propio dominio. |
+| Línea base medida y verificable antes del cambio | Cumple | `docs/arc42/10_requisitos_de_calidad.md`: "20 intentos al endpoint de reserva, los 20 terminaron con `404 Not Found`" — línea base real y verificable (el endpoint no existía), aunque no es una cifra de degradación cuantificada sino un estado binario. |
+| ADR del reto con alternativas, fuerzas, decisión y consecuencias | Cumple (nivel competente) | `docs/adr/0003-control-atomico-de-cupos.md`: 2 alternativas descartadas con motivo, decisión y consecuencias positivas/negativas. No declara fuerzas como sección aparte ni un criterio de reconsideración o costo de reversión — no alcanza el nivel sobresaliente que sí muestran otros equipos del lote. |
+| Cambio implementado y ejecutable de extremo a extremo | Cumple | Módulo `trips` con `POST /trips/`, `GET /trips/{id}`, `POST /trips/{id}/reservations`; README documenta arranque de backend (`uvicorn app.main:app --reload`) y frontend (`flutter run`), sin cambios respecto a S4. |
+| Límites declarados conservados tras el cambio | Cumple | `docs/ia.md` (S5) declara explícitamente que se rechazó modificar los diagramas C4 existentes porque el cambio se mantuvo dentro de los límites del contenedor API Backend, la base de datos y el módulo `trips`. |
+| Prueba que cubre el cambio, en verde en el pipeline | Cumple | `backend/tests/test_cupos.py::test_reservas_concurrentes_no_sobrevenden_cupos` cubre 20 intentos concurrentes sobre 4 cupos. El run de CI de pruebas sobre el propio commit de la etiqueta (`493efdb4`) terminó en `success` el 2026-09-07T01:11:16Z, antes del cierre. |
+| Resultado contrastado con el umbral del escenario y reproducible | Cumple | Tabla en `docs/arc42/10_requisitos_de_calidad.md`: antes (0/20 solicitudes procesadas, `404`) vs. después (20/20 procesadas, 4 reservas exitosas, 0 cupos restantes, p95 = 0,2281 s) contra el umbral declarado (< 3,99 s); procedimiento fijo y reproducible (misma carga, mismos cupos iniciales). |
+| Cadena aspecto→requisito→C4→ADR→código→pruebas→evidencia navegable | Cumple | Fila 1 de `docs/aspectos.md` recorrida celda a celda sin huecos. |
+| Salida de IA aceptada/corregida/rechazada con motivo técnico | Cumple (débil) | `docs/ia.md` (05/09/2026): "Se rechazó modificar los diagramas existentes del C4, alterar el workflow original del backend CI o incluir detalles técnicos internos..." — hay un rechazo con motivo, pero es más una decisión de alcance que un rechazo técnico de una propuesta de IA concreta; menos sólido que en otros equipos del lote. |
+| Sustentación del reto | No verificado | Lo resuelve el docente en la sesión. |
+
+**Recuento: 10 de 12** (2 No verificado — PDF, sustentación —, 0 No cumple).
 
 ## Matriz transversal (CONTRATO §11)
 
-| Criterio | Evidencia | Estado | Observaciones |
-|---|---|---|---|
-| Identidad del repositorio | Repo visible ISCOUTB/AS_202620_ROUTB; autores: MKeinerrr, diegobrr999-commits, juliandmanjarrez-tech, junior14700 | Cumple | 4 identidades consolidadas coinciden con los integrantes declarados. |
-| Estructura mínima | arbol_head incluye README.md, docs/arc42/, docs/adr/, docs/c4/, docs/aspectos.md, docs/ia.md | Cumple | Estructura completa. |
-| Versionado y estado calificado | Consulta Git manual confirma que no existe la etiqueta `corte-1`; se identifica HEAD como estado preliminar | No cumple | Falta el estado versionado exigido por la ficha. |
-| Convenciones de ADR | docs/adr/0001-usar-monolito-modular.md con nombre válido | Cumple | Un ADR; hay un error de formato en su tabla de trazabilidad. |
-| Tabla de aspectos | docs/aspectos.md filas 1 y 3 con celdas vacías en ADR, Código y Pruebas | No cumple | Filas con huecos no defendibles. |
-| Registro de uso de IA | docs/ia.md con entradas por semana y secciones de aceptado/rechazado; log con 4 commits | Cumple | Registro presente, aunque sin entrada de la semana 5. |
-| README y reproducibilidad | README.md documenta instalación, arranque (uvicorn, flutter run) y pruebas (pytest) | Cumple | Comandos de arranque y prueba documentados. |
-| Pipeline y análisis estático | .github/workflows/ci.yml ejecuta pytest; runs_ci success; sin configuración de SonarCloud | No cumple | CI en verde, falta análisis estático en SonarCloud. |
+| Criterio | Estado | Observaciones |
+|---|---|---|
+| a. Repositorio en la organización, con el nombre de la convención y público | Cumple | Clon sin autenticación de `ISCOUTB/AS_202620_ROUTB` responde el 2026-09-07. |
+| b. Estructura mínima presente | Cumple | `docs/arc42/` (12 archivos), `docs/adr/`, `docs/c4/`, `docs/aspectos.md`, `docs/ia.md`, `README.md`, todo en minúsculas. |
+| c. Estado calificado identificable | Cumple | `corte-1` = `493efdb`, anterior al cierre. |
+| d. Nombres de ADR según la convención | Cumple | `0001-usar-monolito-modular.md`, `0002-usar-arquitectura-interna-por-capas.md`, `0003-control-atomico-de-cupos.md`. |
+| e. ADR aceptados no reescritos | Cumple | Los tres ADR aparecen como archivos nuevos en commits distintos; no se detectaron reescrituras de un ADR previamente aceptado. |
+| f. `docs/ia.md` al día para la semana | Cumple | Entrada "Semana 5" fechada 2026-09-05, específica del reto. |
+| g. Sin credenciales en el repositorio ni en el historial | Cumple | Las coincidencias de `git grep` son nombres de campo (`password`, `hashed_password`) en esquemas y servicios de autenticación, no secretos reales; sin `.env` versionado. |
+| h. Contribución de todos los integrantes | Cumple | `git shortlog -sne HEAD`: MKeinerrr (31+2, dos correos, mismo integrante), diegobrr999-commits (6), juliandmanjarrez-tech (3), junior14700 (2). Los cuatro integrantes tienen commits, aunque muy concentrados en MKeinerrr. |
+| Pipeline y análisis estático (nota adicional, no es fila h) | **No cumple en la parte de análisis estático** | Las pruebas (`Backend CI` / `CI ROUTB`) están en verde, incluida la del commit de la etiqueta. Pero el workflow `SonarCloud` aparece en **`failure` en cada una de sus ejecuciones registradas** desde el 2026-09-05 hasta el 2026-09-06T19:29:31Z (última vista), sin un run en verde ni asociado al commit de la etiqueta. |
 
-## Estado global del proyecto (overall · revisado en HEAD)
+## Estado global del proyecto (overall · HEAD `6f6e40c7`, posterior al cierre)
 
-Mira el repositorio **entero en su estado actual** (HEAD), no solo la evidencia del cierre: si el equipo subio tarde o corregio entregas anteriores, aqui se nota.
+- HEAD tiene 3 commits más que la etiqueta, todos del 07/09 después del cierre (`"Evaluación de retroalimentación de IA"` y dos más), con runs de CI en verde a las 18:2x. No se revisó su contenido en detalle porque no puede contar para esta entrega; se deja anotado que el equipo siguió trabajando el mismo día del cierre, después de la hora límite.
+- El pipeline de pruebas es sólido y consistente en verde desde antes del cierre. El pipeline de SonarCloud nunca llegó a estar en verde en las ejecuciones consultadas — es un pendiente real, no solo de forma.
+- No se localizó una restricción individual asignada al equipo por el curso; el reto de concurrencia de cupos parece una elección razonable del propio equipo a partir de un riesgo real del dominio (sobreventa de cupos), pero no se pudo confirmar que corresponda a la restricción que se le asignó específicamente a ROUTB.
+- Sin `correcciones.md` en ningún punto del historial: no hay objeciones del equipo a la revisión preliminar que adjudicar en este lote.
 
-- **HEAD revisado**: `83b8c5ec2e378713af04a8193dd0981de0032d48 2026-08-30T19:33:15-05:00 Semana 4`
-- **Veredicto**: con pendientes
-- Resumen: Proyecto con base arquitectónica (estructura, ADR 0001, CI en verde) pero sin respuesta al reto de línea base; la etiqueta corte-1 no existe y no hay cambios desde la semana 4.
+## Nivel de rúbrica sugerido (propuesta al docente; la nota final se fija en Moodle)
 
-Pendientes que siguen abiertos:
-- Crear etiqueta corte-1
-- Diagnóstico y línea base del reto
-- ADR del reto
-- Implementación y pruebas
-- Medición contra umbral
-- Completar arc42 secciones 7, 8 y 11
-- Completar celdas vacías de docs/aspectos.md
-- Configurar SonarCloud
-- Registrar uso de IA de la semana 5
+| Criterio | Nivel sugerido | Puntaje | Evidencia |
+|---|---:|---:|---|
+| Diagnóstico del reto | competente | 0,80 | Localiza el impacto en C4/ADR/código con línea base verificable (endpoints inexistentes, 404 en los 20 intentos), pero no se confirmó que responda a una restricción individual asignada, y no distingue explícitamente síntomas de causas más allá de "condición de carrera". |
+| Alternativas y decisión | competente | 0,80 | ADR-0003 con 2 alternativas, decisión y consecuencias ligadas al escenario, pero sin criterio de reconsideración ni costo de reversión declarados. |
+| Aplicación sobre el corte vertical | competente | 0,80 | Funciona de extremo a extremo, arranque reproducible, límites conservados; el manejo de conflictos concurrentes es correcto pero se documenta como corrección funcional, no como una degradación controlada explícitamente diseñada y probada como tal. |
+| Pruebas, medición y trazabilidad | competente | 0,80 | Cadena navegable y contraste con umbral reproducible; la salida de IA rechazada es débil (una decisión de alcance, no un rechazo técnico concreto) y el análisis estático (SonarCloud) nunca llegó a estar en verde. |
+| Sustentación del reto | lo fija el docente | pendiente | Requiere sesión. |
+| **Subtotal técnico** | | **3,20 / 4,00** | Propuesta; no es la nota total sobre 5,00. |
 
-## Nivel de rúbrica sugerido
+## No verificado
 
-| Criterio | Nivel sugerido | Puntaje | Evidencia que lo sostiene |
-|---|---|---:|---|
-| Diagnóstico del reto | Sin evidencia evaluable del reto | 0,00 | No se identifica una respuesta a la restricción nueva; la restricción asignada tampoco está disponible. |
-| Alternativas y decisión | Sin evidencia del reto | 0,00 | Los ADR visibles corresponden a decisiones de la línea base o son anteriores al inicio de S5. |
-| Aplicación sobre el corte vertical | Sin evidencia del reto | 0,00 | No hay cambio trazable a una restricción nueva. |
-| Pruebas, medición y trazabilidad | Sin evidencia del reto | 0,00 | Las pruebas o el CI de la línea base no demuestran una medición antes/después del reto. |
-| Sustentación del reto | Lo fija el docente | pendiente | No se puntúa desde el repositorio. |
-| **Subtotal técnico verificable** |  | **0,00 / 4,00** | No constituye el total sobre 5,00. |
+- Restricción individual asignada al equipo (no se localizó un documento que la declare; el reto parece autoidentificado).
+- PDF de dos páginas de Moodle.
+- Sustentación (la fija el docente en sesión).
 
-## Recuento
+## Hallazgos
 
-0 de 12 criterios Cumple.
-
-## No verificado / pendientes
-
-- Coincidencia del diagnóstico con la restricción asignada, porque la asignación no está disponible en el kit.
-- PDF adjunto en Moodle.
-- Sustentación del reto.
-
-## Hallazgos para la planilla
-
-- No existe la etiqueta corte-1; el commit calificado es 83b8c5e (2026-08-30).
-- No hay evidencia de diagnóstico, ADR, implementación, pruebas ni medición del reto.
-- El repositorio no presenta cambios desde la semana 4 (commit 'Semana 4').
-- docs/aspectos.md tiene filas con celdas vacías en ADR, Código y Pruebas.
-- docs/ia.md no registra usos de IA de la semana 5.
-- El pipeline CI está en verde pero solo cubre el flujo de registro.
-- No hay configuración de SonarCloud.
-- No se encontraron secretos en el repositorio.
+- El reto de concurrencia de cupos está bien resuelto técnicamente (control atómico, prueba de 20 intentos concurrentes, medición antes/después contra un umbral), pero el ADR no alcanza el nivel de rigor de otros equipos del lote (sin criterio de reconsideración ni costo de reversión).
+- El pipeline de SonarCloud está consistentemente en rojo desde el 05/09 hasta la última ejecución vista; las pruebas funcionales sí están en verde, incluida la del commit de la etiqueta.
+- No se pudo confirmar que el reto responda a una restricción individual asignada por el curso, a diferencia de otros equipos del lote que sí la declaran explícitamente.
+- HEAD tiene actividad posterior al cierre que no se evaluó por no ser parte de la entrega.
+- Sin `correcciones.md`: no hay objeciones del equipo a la revisión preliminar que adjudicar.
 
 ## Preguntas para la sustentación
 
-1. ¿Cuál fue la restricción asignada y dónde se localiza su impacto en requisitos, C4 y código?
-2. ¿Cuál fue la cifra de línea base, con qué herramienta y procedimiento se obtuvo, y cuál fue el resultado posterior?
-3. ¿Qué ADR y commit implementan el reto, y qué prueba del pipeline demuestra el cambio?
+- ¿Cuál fue exactamente la restricción individual que el curso les asignó, y cómo se relaciona con el control de concurrencia de cupos que implementaron?
+- ¿Por qué el análisis de SonarCloud nunca llegó a estar en verde? ¿Qué hallazgos quedan sin resolver?
+- ¿Qué dato los haría reconsiderar el control atómico actual (por ejemplo, frente a una base de datos distribuida) y qué costo tendría revertirlo?

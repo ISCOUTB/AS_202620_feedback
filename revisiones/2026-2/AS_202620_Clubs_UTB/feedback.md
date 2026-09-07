@@ -31,3 +31,11 @@ Entrega S4 completa en lo esencial: arc42 1-6, 9, 10 y glosario redactados; C4 n
 ## Semana 5 · CORTE1
 
 El repositorio mantiene la línea base documental de semanas anteriores, pero la entrega del corte 1 no responde al reto: falta la etiqueta corte-1, no hay ADR nuevo, no se documenta diagnóstico con línea base medida, no hay implementación del cambio ni medición reproducible. Se recomienda crear la etiqueta, registrar la restricción asignada en un ADR con alternativas y consecuencias, implementar el cambio en el código con su prueba, y añadir la medición con herramienta y procedimiento. Completar la tabla de aspectos con la columna Evidencia y registrar el uso de IA de esta semana. El pipeline está en verde, pero debe ampliarse para cubrir el cambio del reto.
+
+## Semana 5 · Primer corte (revisión definitiva, 2026-09-07)
+
+Revisando el repositorio completo hasta el último commit antes del cierre, seguimos sin encontrar una respuesta a la restricción nueva que pedía este corte: no hay etiqueta `corte-1`, no hay un ADR nuevo, no hay una cifra de línea base medida ni un resultado contrastado contra un umbral. Lo único que se agregó en esta semana fue un endpoint de publicaciones (con su prueba y con el pipeline en verde) y un ajuste de una línea en la sección de requisitos de calidad, ninguno de los dos vinculado a una restricción diagnosticada en la documentación.
+
+Un hallazgo nuevo de esta revisión: el ADR-0001, que ya estaba aceptado, se editó otra vez el 30 de agosto para agregarle una sección de trazabilidad. El contrato pide que un ADR aceptado no se toque — si hace falta completar o cambiar algo, se escribe un ADR nuevo que lo reemplace y se enlaza. No hace falta deshacer ese cambio, pero de aquí en adelante cualquier ajuste a esa decisión debe ir en un ADR nuevo, no en el mismo archivo.
+
+Para la sustentación: preparen quién puede explicar qué restricción les asignaron, qué se midió antes del cambio, y por qué el endpoint agregado no aparece documentado como respuesta a ella.

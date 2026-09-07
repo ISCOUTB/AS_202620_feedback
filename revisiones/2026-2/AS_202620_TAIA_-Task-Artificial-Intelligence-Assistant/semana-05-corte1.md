@@ -1,97 +1,108 @@
 # semana-05-corte1 · TAIA
 
-> Revisión manual preliminar completa realizada el 2026-09-03, antes del cierre. El equipo puede modificar el repositorio y la evaluacion definitiva debe repetirse despues de `2026-09-07T05:00:00Z`.
+> Revisión DEFINITIVA post-cierre, realizada el 2026-09-07. Reemplaza la revisión manual preliminar del 2026-09-03. Cierre de la actividad: `2026-09-07T05:00:00Z`.
 
 | Campo | Valor |
 |---|---|
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant` |
-| Estado revisado | `c087303` (2026-08-30T18:54:10-05:00) |
+| Estado revisado | No existe la etiqueta `corte-1` (solo existe `corrections-s4`). Se revisó el último commit ≤ cierre: `a3f4d826dd90bfc7e29ff9eb7d944b71ca99ecf7` (2026-09-06T04:13:11-05:00 = 2026-09-06T09:13:11Z), que también es HEAD | 
 | Cierre | 2026-09-07T05:00:00Z |
-| Revisor | revisión manual local, solo lectura; no se ejecutó código |
+| Comandos ejecutados | `git clone --filter=blob:none`; `git tag --list`; `git log` (fallback, HEAD, ventana S4→HEAD); `git ls-tree` de `docs/adr`; `git show` de `docs/ia.md`, `docs/aspectos.md`, `correcciones.md`; `git grep` (patrón de credenciales, §9); `git shortlog -sne`; `curl` a `actions/runs?per_page=10` (una sola llamada) |
+| Revisor | revisión manual local, solo lectura; no se ejecutó código estudiantil |
+| `correcciones.md` | Existe en HEAD, pero versa sobre las semanas 1 a 4 ("Justificación de la calificación de las semanas 1 a 4"), no sobre el corte 1. No contiene ningún punto que contradiga la matriz preliminar de este corte. Se resume abajo y se marca fuera de alcance. |
+
+## Qué se hizo en la ventana del corte (S4 → cierre)
+
+```
+a3f4d82 2026-09-06T04:13:11-05:00  feat: update ia.md and add corrections.md based on automated evaluation feedback
+c8796c7 2026-09-06T02:11:19-05:00  docs: complete arc42 architecture views
+ce99b54 2026-09-06T01:47:31-05:00  ci: fix pytest root configuration
+2f3ca0d 2026-09-06T01:39:22-05:00  ci: configure automated test workflow
+bda515c 2026-09-06T01:35:51-05:00  ci: add automated test workflow
+1668579 2026-09-06T01:29:55-05:00  feat: update name, remove templates, and translate titles to Spanish in arc42
+42c5b03 2026-09-06T00:20:34-05:00  feat: add traceability section to architectural decision record for Adr-01
+c087303 2026-08-30T18:54:10-05:00  docs: change prueba (readme) add ia entry (ia.md) change c2 text  ← commit calificado en la preliminar de S4
+```
+Todos los commits nuevos (2026-09-06) son: completar el arc42, configurar por primera vez un pipeline de CI, y escribir `correcciones.md`/actualizar `docs/ia.md` justificando las notas de S1-S4. **Ninguno de estos commits responde al reto del corte 1**: no hay ADR nuevo, no hay diagnóstico de una restricción, no hay cambio de código de dominio, no hay medición contra un umbral.
 
 ## Matriz de la ficha
 
-| Criterio de evaluacion | Evidencia tecnica | Estado | Observaciones |
+| Criterio de evaluación | Evidencia técnica | Estado | Observaciones |
 |---|---|---|---|
-| Etiqueta `corte-1` sobre un commit anterior al cierre | Consulta manual `git tag --list`: no existe `corte-1`; se revisó el HEAD anterior al cierre | No cumple | Falta la etiqueta exigida por la ficha. |
-| PDF de dos páginas con diagnóstico, decisión, cambio, medición y trazabilidad | No accesible desde el repositorio; requiere adjunto en Moodle. | No verificado | No verificable sin el documento. |
-| Impacto de la restricción localizado en requisitos, C4 y código | docs/adr solo contiene 0001-estilo-arquitectonico.md; head c087303 es un commit de documentación sin cambios de código. | No verificado | No se proporcionó la restricción asignada; no hay diagnóstico del reto en el repositorio. |
-| Línea base medida y verificable antes del cambio | No hay cifra con herramienta y procedimiento en el repositorio. | No cumple | escenarios_calidad.md define umbrales pero no mediciones. |
-| ADR del reto con alternativas, fuerzas, decisión y consecuencias | ls docs/adr/ → solo 0001-estilo-arquitectonico.md. | No cumple | No existe ADR del reto. |
-| Cambio implementado y ejecutable de extremo a extremo | No hay commit que implemente un ADR del reto; head es 'docs: change prueba (readme) add ia entry (ia.md) change c2 text'. | No cumple | README documenta arranque con run.bat, pero no hay cambio del reto. |
-| Límites declarados conservados tras el cambio | No hay cambio del reto que verificar; C4-C2 y estructura backend coinciden para el corte vertical anterior. | No cumple | No aplica porque no hay implementación del reto. |
-| Prueba que cubre el cambio, en verde en el pipeline | runs_ci vacío; no hay evidencia de ejecución en pipeline. | No cumple | Existen pruebas locales (test_academic_register_task.py) pero sin run de CI. |
-| Resultado contrastado con el umbral del escenario y reproducible | No hay medición contra umbral en el repositorio. | No cumple | Falta herramienta, carga y procedimiento. |
-| Cadena aspecto, requisito, C4, ADR, código, pruebas y evidencia navegable | docs/aspectos.md tiene fila A-01 navegable, pero corresponde al corte vertical de la semana 4. | No cumple | No hay fila del aspecto del reto. |
-| Salida de IA aceptada, corregida o rechazada con motivo técnico | docs/ia.md entradas 004 y 005 (2026-08-29 y 2026-08-30) con aceptado/rechazado y motivos, pero referidas al corte vertical de la semana 4. | No cumple | Ninguna entrada menciona el reto de línea base. |
-| Sustentación del reto | No verificable desde el repositorio. | No verificado | Lo resuelve el docente en la sesión de sustentación. |
+| Etiqueta `corte-1` sobre un commit anterior al cierre | `git tag --list` → solo `corrections-s4`; no existe `corte-1` | No cumple | Se revisó el último commit admisible, `a3f4d82` (2026-09-06T09:13:11Z) |
+| PDF de dos páginas con diagnóstico, decisión, cambio, medición y trazabilidad | No accesible desde el repositorio | No verificado | Depende del adjunto de Moodle |
+| Impacto de la restricción localizado en requisitos, C4 y código | Ningún documento del árbol nombra una restricción nueva; `docs/adr/` sigue con un único ADR de agosto | No cumple | Sin indicio de diagnóstico de una restricción nueva |
+| Línea base medida y verificable antes del cambio | Sin archivo de medición ni cifra en el árbol | No cumple | No hay herramienta ni procedimiento documentado |
+| ADR del reto con alternativas, fuerzas, decisión y consecuencias | `git ls-tree HEAD:docs/adr` → solo `0001-estilo-arquitectonico.md`; el commit `42c5b03` solo añadió una sección de trazabilidad al ADR existente | No cumple | No existe ADR del reto; el ADR 0001 se editó, pero no es un ADR nuevo del reto |
+| Cambio implementado y ejecutable de extremo a extremo | Los commits de la ventana son documentación (arc42, ia.md) y configuración de CI; ningún archivo bajo `backend/app/` o dominio cambia | No cumple | No hay cambio de código atribuible a un reto de restricción |
+| Límites declarados conservados tras el cambio | Sin cambio del reto que comparar | No cumple | No aplica: sin cambio no hay límites que verificar |
+| Prueba que cubre el cambio, en verde en el pipeline | `curl -s .../actions/runs?per_page=10` → primer pipeline de la historia del repositorio, con 2 fallos (`2f3ca0da`, `bda515c1`) y luego 4 éxitos, el último sobre `a3f4d826` en `2026-09-06T09:22:42Z`, antes del cierre | No cumple | El pipeline por fin corre y termina en verde, pero cubre las pruebas existentes del corte vertical de S4, no un cambio nuevo del reto |
+| Resultado contrastado con el umbral del escenario y reproducible | Sin medición en el árbol | No cumple | No hay umbral ni cifra que contrastar |
+| Cadena aspecto, requisito, C4, ADR, código, pruebas y evidencia navegable | `docs/aspectos.md` tiene una sola fila (A-01), sin cambios en la ventana, referida al corte vertical de S4 | No cumple | No hay fila del reto que recorrer |
+| Salida de IA aceptada, corregida o rechazada con motivo técnico | `docs/ia.md` actualizado en `a3f4d82`, pero su contenido nuevo documenta el proceso de escribir `correcciones.md` (justificación de S1-S4), no una salida de IA sobre el reto de este corte | No cumple | Ninguna entrada se refiere al diagnóstico, ADR o medición de un reto nuevo |
+| Sustentación del reto | Sesión de sustentación | No verificado | Lo resuelve el docente en la sesión |
 
 ## Matriz transversal (CONTRATO §11)
 
 | Criterio | Evidencia | Estado | Observaciones |
 |---|---|---|---|
-| Identidad del repositorio | Repo AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant en ISCOUTB, público; 4 autores visibles (val, dei0811, mark, luis20072002) coinciden con los integrantes. | Cumple | Nombre y visibilidad correctos. |
-| Estructura mínima | README.md, docs/arc42, docs/adr, docs/c4, docs/aspectos.md y docs/ia.md presentes en el árbol. | Cumple | Incluye además docs/calidad y docs/ficha_problema.md. |
-| Versionado | Consulta Git manual confirma que no existe la etiqueta `corte-1`; se identifica HEAD como estado preliminar | No cumple | Falta el estado versionado exigido por la ficha. |
-| Convenciones de ADR | 0001-estilo-arquitectonico.md cumple el formato NNNN-titulo-en-kebab-case. | Cumple | Sin reescrituras detectadas. |
-| Tabla de aspectos | docs/aspectos.md con fila A-01 y 8 columnas navegables. | Cumple | Corresponde al corte vertical anterior; el reto no tiene fila. |
-| Registro de uso de IA | docs/ia.md con 5 entradas, cada una con aceptado/rechazado y motivo. | Cumple | Ninguna entrada referida al reto de línea base. |
-| README | README.md documenta qué es, arranque con run.bat y pruebas con pytest backend/tests. | Cumple | Requisitos previos declarados. |
-| Pipeline y análisis estático | No hay .github/workflows en el árbol; runs_ci vacío. | No cumple | Sin evidencia de integración continua ni análisis estático. |
+| a. Repositorio en la organización, con el nombre de la convención y público | `ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant`, clon anónimo exitoso | Cumple | — |
+| b. Estructura mínima presente | README.md, docs/arc42, docs/adr, docs/c4, docs/aspectos.md, docs/ia.md presentes | Cumple | — |
+| c. Estado calificado identificable | Sin etiqueta; se usó el último commit ≤ cierre, `a3f4d82`, identificable y documentado | Cumple | Identificable pese a no haber etiqueta |
+| Versionado (commit anterior al cierre) | No existe `corte-1` | No cumple | Falta el estado versionado exigido por la ficha |
+| d. Nombres de ADR según la convención | `0001-estilo-arquitectonico.md` cumple el patrón | Cumple | Único ADR del repositorio |
+| e. ADR aceptados no reescritos | El commit `42c5b03` **edita** el ADR 0001 (añade sección de trazabilidad) en vez de crear uno nuevo o declarar reemplazo | No cumple | CONTRATO §4: un ADR aceptado no se edita; si cambia, se escribe otro y el anterior queda "reemplazado" con enlace. Aquí no hay ni ADR nuevo ni marca de reemplazo |
+| f. `docs/ia.md` al día para la semana | Última entrada (2026-09-06) documenta la redacción de `correcciones.md` sobre S1-S4, no trabajo nuevo de código o arquitectura de esta semana | No cumple | No hay entrada referida al reto del corte 1 |
+| g. Sin credenciales en el repositorio ni en el historial | `git grep` (patrón AKIA/BEGIN.../ghp_/xox.../sk-/password/secret/token/api_key) sobre HEAD: sin coincidencias | Cumple | — |
+| h. Contribución de todos los integrantes | `git shortlog -sne HEAD`: val (17+2 con dos correos), dei0811 (8), mark (3), luis20072002 (1) — los 4 integrantes declarados aparecen | Cumple | val firma con dos correos (`@gmail.com` y `@email.com`); se consolida como una sola persona |
 
 ## Estado global del proyecto (overall · revisado en HEAD)
 
-Mira el repositorio **entero en su estado actual** (HEAD), no solo la evidencia del cierre: si el equipo subio tarde o corregio entregas anteriores, aqui se nota.
-
-- **HEAD revisado**: `c0873031acbab61c644e1fac546915b7dde5d1cb 2026-08-30T18:54:10-05:00 docs: change prueba  (readme) add ia entry (ia.md) change c2 text`
+- **HEAD revisado**: `a3f4d826dd90bfc7e29ff9eb7d944b71ca99ecf7` (2026-09-06T04:13:11-05:00), *"feat: update ia.md and add corrections.md based on automated evaluation feedback"*
 - **Veredicto**: con pendientes
-- Resumen: El repositorio conserva el corte vertical A-01 de la semana 4 con documentación y pruebas, pero la entrega del reto de línea base no se evidencia: falta la etiqueta corte-1, no hay ADR del reto, no hay medición de línea base ni resultado contra umbral, y no hay pipeline de CI.
+- Resumen: en la última noche antes del cierre el equipo hizo un trabajo real pero dirigido a otra cosa: completó el arc42, montó por primera vez un pipeline de CI (con dos intentos fallidos antes de dejarlo en verde) y escribió un documento extenso justificando las notas de las semanas 1 a 4. Ese esfuerzo no se tradujo en una respuesta al reto de este corte: no hay restricción diagnosticada, ADR nuevo, cambio de código ni medición. Además, la única edición sobre el ADR existente lo modifica sin marcarlo como reemplazado, lo que incumple la regla de no editar ADR aceptados.
 
 Pendientes que siguen abiertos:
-- Etiqueta corte-1
-- PDF de dos páginas
-- Diagnóstico de la restricción con línea base medida
-- ADR del reto
-- Implementación del cambio
-- Prueba en CI
-- Medición contra umbral
-- Trazabilidad del reto en aspectos.md
-- Registro de IA del reto
-- Pipeline de CI
+- Diagnosticar la restricción asignada (o, si nunca llegó, alguna del arc42) con una línea base medida.
+- Escribir el ADR del reto (nuevo, no una edición del 0001) con alternativas, fuerzas, decisión y consecuencias.
+- Implementar el cambio sobre el corte vertical existente y ejecutar las pruebas correspondientes.
+- Medir el resultado contra el umbral del escenario.
+- Crear la etiqueta `corte-1`.
+- Referir `docs/ia.md` y `docs/aspectos.md` al trabajo del reto.
+- Corregir la edición del ADR-0001: o se revierte, o se declara "reemplazado" y se crea el ADR nuevo correspondiente.
+- Adjuntar el PDF de dos páginas en Moodle.
 
-## Nivel de rúbrica sugerido
+## Nivel de rúbrica sugerido (propuesta al docente; la nota final se fija en Moodle)
 
 | Criterio | Nivel sugerido | Puntaje | Evidencia que lo sostiene |
 |---|---|---:|---|
-| Diagnóstico del reto | Sin evidencia evaluable del reto | 0,00 | No se identifica una respuesta a la restricción nueva; la restricción asignada tampoco está disponible. |
-| Alternativas y decisión | Sin evidencia del reto | 0,00 | Los ADR visibles corresponden a decisiones de la línea base o son anteriores al inicio de S5. |
-| Aplicación sobre el corte vertical | Sin evidencia del reto | 0,00 | No hay cambio trazable a una restricción nueva. |
-| Pruebas, medición y trazabilidad | Sin evidencia del reto | 0,00 | Las pruebas o el CI de la línea base no demuestran una medición antes/después del reto. |
-| Sustentación del reto | Lo fija el docente | pendiente | No se puntúa desde el repositorio. |
-| **Subtotal técnico verificable** |  | **0,00 / 4,00** | No constituye el total sobre 5,00. |
+| Diagnóstico del reto | Sin evidencia evaluable del reto | 0,00 | No se identifica una respuesta a una restricción nueva |
+| Alternativas y decisión | Sin evidencia del reto | 0,00 | El único ADR es de agosto y se editó, no se reemplazó, para añadir trazabilidad ajena al reto |
+| Aplicación sobre el corte vertical | Sin evidencia del reto | 0,00 | Ningún cambio de código en la ventana corresponde a una restricción nueva |
+| Pruebas, medición y trazabilidad | Sin evidencia del reto | 0,00 | El pipeline por fin corre en verde, pero sobre las pruebas existentes, no sobre un cambio del reto |
+| Sustentación del reto | Lo fija el docente | pendiente | No se puntúa desde el repositorio |
+| **Subtotal técnico verificable** | | **0,00 / 4,00** | No constituye el total sobre 5,00 |
 
 ## Recuento
 
-0 de 12 criterios Cumple.
+0 de 12 criterios Cumple (2 No verificado, 10 No cumple).
 
 ## No verificado / pendientes
 
-- Coincidencia del diagnóstico con la restricción asignada, porque la asignación no está disponible en el kit.
 - PDF adjunto en Moodle.
 - Sustentación del reto.
 
 ## Hallazgos para la planilla
 
-- No existe la etiqueta corte-1; se revisó el último commit c087303 anterior al cierre.
-- docs/adr solo contiene 0001-estilo-arquitectonico.md; no hay ADR del reto.
-- No hay evidencia de diagnóstico, línea base medida ni medición contra umbral.
-- runs_ci vacío: no hay pipeline configurado ni ejecuciones.
-- docs/ia.md registra 5 entradas, pero ninguna referida al reto de línea base.
-- La fila A-01 de aspectos.md es navegable, pero corresponde al corte vertical de la semana 4.
-- docs/ia.md entrada 005 deja pendiente ejecutar pytest.
+- No existe la etiqueta `corte-1`; se revisó el último commit admisible, `a3f4d82` (2026-09-06T09:13:11Z), que coincide con HEAD.
+- El equipo dedicó la última noche a completar arc42, montar CI por primera vez (ahora en verde) y escribir `correcciones.md` sobre S1-S4, pero no atacó el reto del corte 1.
+- El commit `42c5b03` edita el ADR-0001 aceptado (añade trazabilidad) sin crear un ADR nuevo ni marcarlo como reemplazado: incumple CONTRATO §4.
+- `correcciones.md` existe pero no contradice ningún punto de la revisión preliminar del corte 1; versa sobre S1-S4, fuera del alcance de esta revisión.
+- Mejora real respecto a la preliminar: ahora hay pipeline de CI configurado y en verde (antes no existía `.github/workflows`).
+- `docs/aspectos.md` sigue con una sola fila (A-01, corte vertical de S4); no hay fila del reto.
 
 ## Preguntas para la sustentación
 
-1. ¿Cuál fue la restricción asignada y dónde se localiza su impacto en requisitos, C4 y código?
-2. ¿Cuál fue la cifra de línea base, con qué herramienta y procedimiento se obtuvo, y cuál fue el resultado posterior?
-3. ¿Qué ADR y commit implementan el reto, y qué prueba del pipeline demuestra el cambio?
+1. ¿Qué restricción se les asignó, y por qué el trabajo de la última noche se dirigió a completar S1-S4 en vez de al reto del corte 1?
+2. ¿Por qué se editó el ADR-0001 en vez de crear un ADR nuevo, y el equipo lo entiende como una violación de la regla de "ADR aceptado no se edita"?
+3. Con el pipeline ya en verde, ¿qué haría falta para escribir la prueba y la medición del reto, y en qué escenario de calidad se apoyaría?

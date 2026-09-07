@@ -18,7 +18,7 @@
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `59590c9` · 2026-08-16T19:15:15-05:00 | 3/9 | no aplica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `46257a03` · 2026-08-23T16:47:00-05:00 | 5/9 | no se publica | sí |
 | 4 | S4 | `c087303` (2026-08-30T18:54:10-05:00) | 5/10 | 3.0 | si |
-| 5 | Primer corte · reto de línea base | HEAD `c087303` (sin etiqueta) | 0/12 | subtotal técnico preliminar 0,00/4,00; sustentación pendiente | revisión manual preliminar 2026-09-03 |
+| 5 | Primer corte · reto de línea base | HEAD `a3f4d82` (sin etiqueta corte-1; solo existe `corrections-s4`) | 0/12 | subtotal técnico 0,00/4,00; sustentación pendiente | revisión definitiva post-cierre 2026-09-07 |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
@@ -51,16 +51,17 @@
 | Verificar contenido de secciones arc42 3, 4, 9, 10 y 12 | S4 | si | |
 | Configurar CI/SonarCloud o evidenciar plataforma alternativa | S4 | si | |
 | Alinear C4 nivel 2 con el código actual | S4 | si | |
-| Etiqueta corte-1 | S5 | si | |
-| PDF de dos páginas | S5 | si | |
-| Diagnóstico de la restricción con línea base medida | S5 | si | |
-| ADR del reto | S5 | si | |
-| Implementación del cambio | S5 | si | |
-| Prueba en CI | S5 | si | |
-| Medición contra umbral | S5 | si | |
-| Trazabilidad del reto en aspectos.md | S5 | si | |
-| Registro de IA del reto | S5 | si | |
-| Pipeline de CI | S5 | si | |
+| Etiqueta corte-1 | S5 | si | No existe; solo `corrections-s4`. Se revisó el último commit admisible a3f4d82. |
+| PDF de dos páginas | S5 | si | No verificable desde el repositorio; depende de Moodle. |
+| Diagnóstico de la restricción con línea base medida | S5 | si | No hecho: los commits de la ventana son arc42, CI y correcciones.md sobre S1-S4, sin diagnóstico de restricción nueva. |
+| ADR del reto | S5 | si | No hecho; en su lugar se editó el ADR-0001 aceptado (42c5b03), lo que incumple CONTRATO §4 (no editar ADR aceptados). |
+| Implementación del cambio | S5 | si | No hecho: ningún commit de la ventana toca código de dominio. |
+| Prueba en CI | S5 | si | Parcial: se configuró CI por primera vez y terminó en verde (a3f4d826), pero cubre las pruebas existentes, no un cambio del reto. |
+| Medición contra umbral | S5 | si | No hecho: sin archivo de medición en el árbol. |
+| Trazabilidad del reto en aspectos.md | S5 | si | No hecho: docs/aspectos.md sigue con una sola fila (A-01) sin cambios en la ventana. |
+| Registro de IA del reto | S5 | si | No hecho: la entrada nueva de docs/ia.md documenta la redacción de correcciones.md sobre S1-S4, no el reto. |
+| Pipeline de CI | S5 | si | Resuelto por fin: .github/workflows/ci.yml existe y corre en verde desde a3f4d826. |
+
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -72,7 +73,9 @@
 | `docs/ia.md` al día | No cumple | Entrada 03 (08-23) sin aceptado/rechazado |
 | Sin credenciales en el repositorio ni en el historial | Cumple | `git grep` §9 y `.env` sin coincidencias |
 | Contribución de todos los integrantes | Cumple | 4 identidades consolidadas = 4 integrantes |
-| Pipeline en verde | No cumple | Sin `.github/workflows/` y sin evidencia de ejecución |
+| Pipeline en verde | Cumple (desde corte 1) | `.github/workflows/ci.yml` configurado el 2026-09-06; run success sobre `a3f4d826` antes del cierre |
+| Etiqueta corte-1 (corte 1) | No cumple | No existe; solo `corrections-s4` |
+| ADR aceptados sin reescribir (corte 1) | No cumple | El commit `42c5b03` edita el ADR-0001 aceptado en vez de crear uno nuevo o marcarlo reemplazado |
 
 ## Contribución por integrante
 

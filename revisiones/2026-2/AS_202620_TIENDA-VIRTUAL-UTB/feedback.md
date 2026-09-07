@@ -36,3 +36,13 @@ El arranque con un solo comando y la fila de disponibilidad hasta Pruebas ya est
 ## Semana 5 · CORTE1
 
 El repositorio está bien estructurado y el corte vertical arranca con un solo comando, pero la entrega del reto no se evidencia en el repositorio: no hay ADR nuevo, diagnóstico de la restricción ni medición. Sin conocer la restricción asignada no es posible validar el diagnóstico; asegúrense de citarla en el PDF y enlazarla desde la tabla de aspectos. La tabla de aspectos debe tener las 8 columnas del contrato para que la cadena sea navegable. Incorporen SonarCloud al pipeline; hoy solo corre pytest. Registren en docs/ia.md los usos de IA de este corte con al menos un descarte y su motivo técnico. Para la sustentación, preparen cómo justifican trade-offs, límites y consecuencias del reto.
+
+## Semana 5 · Primer corte (revisión definitiva, 2026-09-07)
+
+Se revisó de nuevo después del cierre. No existe ninguna etiqueta en el repositorio, así que se tomó el último commit subido antes del cierre.
+
+Qué está bien: el equipo sí trabajó activamente en esos días — corrigió pendientes reales de semanas anteriores (objetivos de negocio, trazabilidad entre escenarios y ADR, registro de IA) y hasta adelantó evidencia de la semana 6.
+
+Qué falta: nada de ese trabajo fue sobre el reto de este corte. El único commit que se llama literalmente "Corte 1" agrega dos líneas al README y no toca ni ADR, ni código, ni pruebas, ni documentación de aspectos. No hay ninguna restricción diagnosticada, ni medición, ni cambio implementado.
+
+Qué corregir: dedicar el esfuerzo que sí se ve en el historial (que es real y de buena calidad para otras semanas) al reto específico de este corte: identificar la restricción, medir el estado inicial, decidir en un ADR nuevo, implementar el cambio y volver a medir contra el umbral del escenario. Después, crear la etiqueta `corte-1` sobre ese commit.

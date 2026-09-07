@@ -31,3 +31,13 @@ El repositorio está en la organización, con el nombre correcto y el commit de 
 ## Semana 5 · CORTE1
 
 El repositorio tiene la estructura base, README funcional y un esqueleto de monolito modular, pero la entrega del corte no responde al reto. No hay ADR del reto, diagnóstico con línea base, medición ni evidencia de pipeline. Revisen la restricción asignada, registren la decisión en un ADR nuevo, implementen el cambio y adjunten el PDF de dos páginas. Además, creen la etiqueta corte-1 y aseguren que todos los integrantes contribuyan al historial. La sustentación se evaluará en sesión.
+
+## Semana 5 · Primer corte (revisión definitiva, 2026-09-07)
+
+Se revisó de nuevo después del cierre, sobre la etiqueta `corte-1` que ya existe en el repositorio.
+
+Qué está bien: ahora los cuatro integrantes tienen commits propios en el historial, y no hay credenciales expuestas.
+
+Qué falta: la etiqueta `corte-1` quedó puesta sobre un commit de más de 7 horas después del cierre, así que la entrega se considera tardía. Además, subir el proyecto como archivos ZIP por la interfaz web dejó el árbol triplicado (el mismo proyecto repetido dentro de varias carpetas), y después de la etiqueta se siguió reorganizando todo sin resolverlo. Sobre todo: no hay ninguna señal de que se haya trabajado el reto del corte — no hay diagnóstico de una restricción nueva, no hay ADR nuevo, no hay cambio de código, no hay medición, y el pipeline de pruebas nunca se ha ejecutado ni una sola vez en todo el repositorio.
+
+Qué corregir: dejar una sola copia del proyecto en la raíz, mover la etiqueta a un commit dentro del plazo la próxima vez, configurar y correr el pipeline, y sobre todo hacer el ejercicio completo del reto (diagnóstico con cifra, ADR con alternativas, cambio implementado, prueba y medición) antes de la sustentación.

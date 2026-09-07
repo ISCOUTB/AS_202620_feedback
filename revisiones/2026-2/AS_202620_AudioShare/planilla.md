@@ -14,7 +14,7 @@
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 5 | Primer corte · reto de línea base | HEAD `1a51799` (sin etiqueta) | 0/12 | subtotal técnico preliminar 0,00/4,00; sustentación pendiente | revisión manual preliminar 2026-09-03 |
+| 5 | Primer corte · reto de línea base | `corte-1` `cb65d131` (2026-09-06T22:00:48-05:00) | 1/12 | 0,00/4,00 + sustentación pendiente | revisión definitiva post-cierre 2026-09-07 |
 | 4 | S4 | `24a5023` (2026-08-30T23:48:29-05:00) | 4/10 | 2.6 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `1c9ebb0a` · 2026-08-09T20:31:49-05:00 | 2/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `d0760fdf` · 2026-08-16T23:31:32-05:00 | 4/9 | no se publica | sí |
@@ -48,6 +48,9 @@
 | Configurar pipeline y aportar runs | S5 | si | |
 | Conciliar C4 Nivel 2 con la implementación | S5 | si | |
 | Aportar medición de línea base y resultado contra umbral | S5 | si | |
+| Diagnosticar y responder la restricción nueva asignada en el corte 1 (S5) | S5 | si | Se revisó el repositorio completo hasta la etiqueta `corte-1` y no hay ADR, medición ni prueba de una restricción nueva; solo se integró el corte vertical de S4 y se ajustaron diagramas C4, README y CI. |
+| `docs/ia.md` sin entrada específica del corte 1 | S5 | si | Se les dijo que la línea "actualizado durante la semana 5" no sustituye una entrada de uso de IA de este corte. |
+
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

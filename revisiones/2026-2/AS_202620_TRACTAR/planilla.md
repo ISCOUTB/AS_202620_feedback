@@ -20,7 +20,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `0a23855` · 2026-08-16T20:05:46-05:00 | 6/9 | 3.7 (propuesta) | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `5f923cd` · 2026-08-23T22:40:51-05:00 | 7/9 | no se publica | sí |
 | 4 | S4 | `2b16439` (2026-08-30T15:02:33-05:00) | 1/10 | 1.4 | si |
-| 5 | Primer corte · reto de línea base | HEAD `7cfb872` (sin etiqueta) | 0/12 | subtotal técnico preliminar 0,00/4,00; sustentación pendiente | revisión manual preliminar 2026-09-03 |
+| 5 | Primer corte · reto de línea base | sin etiqueta `corte-1`; fallback `7cfb872` (2026-08-31T12:27:23-05:00, = HEAD) | 0/12 | subtotal técnico 0,00/4,00; sustentación pendiente | revisión definitiva post-cierre 2026-09-07 |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
@@ -51,14 +51,15 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Autoría: 3 integrantes declarados sin commits en el historial | S4 | si | |
 | Sin análisis estático SonarCloud | S4 | si | |
 | Glosario y secciones 5/6/9/10 de arc42 no verificados en HEAD | S4 | si | |
-| Diagnóstico de la restricción asignada | S5 | si | |
-| ADR del reto con alternativas, fuerzas y consecuencias | S5 | si | |
-| Cambio implementado sobre el corte vertical | S5 | si | |
-| Medición reproducible contra umbral | S5 | si | |
-| Trazabilidad navegable en docs/aspectos.md | S5 | si | |
-| Análisis estático SonarCloud en pipeline | S5 | si | |
-| Registro de IA del corte con salidas rechazadas | S5 | si | |
-| Participación de los 4 integrantes en el historial | S5 | si | |
+| Diagnóstico de la restricción asignada | S5 | si | no se pudo ubicar el diagnóstico ni la restricción asignada; localizarla y registrar estado inicial medido antes de sustentar |
+| ADR del reto con alternativas, fuerzas y consecuencias | S5 | si | falta un ADR nuevo del reto S5, ligado al escenario de calidad afectado |
+| Cambio implementado sobre el corte vertical | S5 | si | los commits de S5 son documentales (texto, C4); falta el cambio que responda al reto |
+| Medición reproducible contra umbral | S5 | si | no hay medición con herramienta/carga/procedimiento, ni antes ni después del cambio |
+| Trazabilidad navegable en docs/aspectos.md | S5 | si | añadir la fila del reto S5; las filas actuales son de la línea base S4 |
+| Análisis estático SonarCloud en pipeline | S5 | si | activar SonarCloud (org isco-utb) en el workflow de CI |
+| Registro de IA del corte con salidas rechazadas | S5 | si | docs/ia.md sin cambios desde 2026-08-16; registrar el uso de IA de este corte |
+| Participación de los 4 integrantes en el historial | S5 | si | tres integrantes siguen sin commits; es crítico antes del proyecto final |
+
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -66,11 +67,11 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Nombre y visibilidad del repositorio | Cumple | El URL público responde con redirección al nombre actual del proyecto |
 | Estructura mínima | Cumple | seis rutas obligatorias presentes en HEAD |
 | Convención de nombres de ADR | Cumple | `0001-estilo-arquitectonico.md`, `0002-cambio-stack-fastapi-flutter.md` |
-| ADR aceptados sin reescribir | No cumple | decisiones aceptadas modificadas con el cambio de proyecto, sin reemplazo declarado |
+| ADR aceptados sin reescribir | Cumple | `git log --follow` sobre cada ADR muestra un solo commit (creación); sin reescritura tras la aceptación (corrige la revisión previa) |
 | `docs/ia.md` al día | No cumple | último cambio 2026-08-16; sin entrada S5 |
 | Sin credenciales en el repositorio ni en el historial | Cumple | barridos limpios |
 | Contribución de todos los integrantes | No cumple | una persona concentra las identidades; 3 integrantes sin commits |
-| Pipeline en verde | No verificado | workflow presente; la API redirigió y no dejó un run citable para este URL |
+| Pipeline en verde | Cumple | run del commit HEAD `7cfb8729` concluyó `success`: https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/actions/runs/33419672964 |
 
 ## Contribución por integrante
 

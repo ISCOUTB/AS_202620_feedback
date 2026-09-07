@@ -1,98 +1,92 @@
 # semana-05-corte1 · LostVault
 
-> Revisión manual preliminar completa realizada el 2026-09-03, antes del cierre. El equipo puede modificar el repositorio y la evaluacion definitiva debe repetirse despues de `2026-09-07T05:00:00Z`.
+> **Revisión definitiva post-cierre — 2026-09-07.** Reemplaza la revisión preliminar del 2026-09-03, previa al cierre `2026-09-07T05:00:00Z`. **Se verificó específicamente la advertencia de esa revisión** (la etiqueta `corte-1` podía haberse movido tras el 2026-09-03) y **se confirma que no cambió nada**: la etiqueta sigue apuntando al mismo commit, sin actividad nueva del equipo.
 
 | Campo | Valor |
 |---|---|
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_LostVault` |
-| Estado revisado | `952af8f` (2026-08-30T22:13:14-05:00) |
-| Cierre | 2026-09-07T05:00:00Z |
-| Revisor | revisión manual local, solo lectura; no se ejecutó código |
+| Estado revisado | etiqueta `corte-1` → `952af8f4f2230a4cd2258d361629579da8a6ade6` · 2026-08-30T22:13:14-05:00 (anterior al cierre) |
+| Cierre | `2026-09-07T05:00:00Z` |
+| Comandos ejecutados | `git clone --filter=blob:none`; `git tag --list`; `git log corte-1`; `git log 952af8f..HEAD` (**0 commits**, confirma que la etiqueta no se movió ni hay commits nuevos); `git ls-tree`; `git grep` de secretos; `curl` a `actions/runs?per_page=5` (1 llamada) |
+| Restricción asignada | No disponible en el kit; el repositorio tampoco declara un reto/restricción nueva de Corte 1 |
+
+## Verificación puntual solicitada
+
+Se confirmó explícitamente lo que pedía la nota de este lote: **la etiqueta `corte-1` NO fue actualizada** después de la revisión preliminar del 2026-09-03. `git log 952af8f..HEAD` no devuelve ningún commit — el repositorio está exactamente en el mismo estado que se revisó entonces. El contenido etiquetado sigue siendo la evidencia de S4 (corte vertical de AS-03/Seguridad), sin diagnóstico, ADR, cambio ni medición de un reto propio de Corte 1.
 
 ## Matriz de la ficha
 
-| Criterio de evaluacion | Evidencia tecnica | Estado | Observaciones |
+| Criterio de evaluación | Evidencia técnica | Estado | Observaciones |
 |---|---|---|---|
-| Etiqueta `corte-1` sobre un commit anterior al cierre | `git tag --list` confirma `corte-1`; apunta a `952af8f4f2230a4cd2258d361629579da8a6ade6` (2026-08-30T22:13:14-05:00) | Cumple | La etiqueta existe y apunta a un commit anterior al cierre; su contenido corresponde a la línea base S4. |
-| PDF de dos páginas con diagnóstico, decisión, cambio, medición y trazabilidad | Documento adjunto en Moodle, no accesible desde el repositorio. | No verificado | Requiere revisar la entrega en Moodle; no hay ruta en el repo. |
-| Impacto de la restricción localizado en requisitos, C4 y código | No se recibió la restricción asignada; README.md y docs/aspectos.md solo documentan AS-03 de la línea base, sin diagnóstico de una restricción nueva. | No verificado | Sin la restricción no se puede juzgar; no hay sección de diagnóstico del reto. |
-| Línea base medida y verificable antes del cambio | docs/arc42/10_requisitos_calidad.md define umbrales (99 %, p95 ≤2 s) pero sin medición; README.md declara que las métricas no están demostradas. | No cumple | Falta cifra con herramienta y procedimiento. |
-| ADR del reto con alternativas, fuerzas, decisión y consecuencias | docs/adr/ solo contiene 0001-estilo-arquitectonico.md; no hay ADR nuevo para el reto. | No cumple | Falta ADR ligado al escenario de calidad del reto. |
-| Cambio implementado y ejecutable de extremo a extremo | Commit 952af8f 'Se realiza el corte vertical y la fila de aspectos' implementa AS-03 de la línea base; README.md documenta `flutter run -d chrome`. | No cumple | No hay commit que implemente un ADR del reto de la semana 5. |
-| Límites declarados conservados tras el cambio | Sin cambio del reto no hay contra qué verificar; test/architecture_structure_test.dart protege la regla de dependencias en la línea base. | No cumple | Se podría verificar si existiera el cambio del reto. |
-| Prueba que cubre el cambio, en verde en el pipeline | Run 'Flutter checks' 33560607903 success (2026-09-01) en https://github.com/ISCOUTB/AS_202620_LostVault/actions/runs/33560607903; cubre test/claim_object_use_case_test.dart, test/widget_test.dart y test/architecture_structure_test.dart. | No cumple | Pipeline en verde, pero sin prueba de un cambio del reto. |
-| Resultado contrastado con el umbral del escenario y reproducible | No hay medición con herramienta, carga y procedimiento en el repositorio; solo umbrales declarados en docs/arc42/10_requisitos_calidad.md. | No cumple | Falta evidencia reproducible de la medición. |
-| Cadena aspecto, requisito, C4, ADR, código, pruebas y evidencia navegable | docs/aspectos.md tiene fila AS-03 navegable hasta pruebas, pero no hay fila para el reto de la semana 5. | No cumple | La cadena del reto no existe; solo la de la línea base. |
-| Salida de IA aceptada, corregida o rechazada con motivo técnico | docs/ia.md tiene registros hasta S3 (2026-08-24, commit edd78d7); sin entrada para el corte 1. | No cumple | Falta registro de IA del trabajo de esta semana. |
-| Sustentación del reto | Criterio de sesión de sustentación, no verificable desde el repositorio. | No verificado | Lo resuelve el docente en la sesión. |
+| Etiqueta `corte-1` sobre un commit anterior al cierre | `git tag --list` confirma `corte-1` → `952af8f` (2026-08-30T22:13:14-05:00), anterior al cierre | Cumple | La etiqueta existe y es válida en cuanto a fecha, pero su contenido es la línea base de S4, sin cambios posteriores. |
+| PDF de dos páginas con diagnóstico, decisión, cambio, medición y trazabilidad | No hay ruta en el repo | No verificado | Adjunto de Moodle no accesible desde el kit. |
+| Impacto de la restricción localizado en requisitos, C4 y código | `docs/aspectos.md` solo documenta AS-03 de la línea base (S2-S4); no hay declaración de una restricción nueva de Corte 1 | No cumple | Sin restricción nueva, no hay diagnóstico que localizar. |
+| Línea base medida y verificable antes del cambio | `docs/arc42/10_requisitos_calidad.md` define umbrales (99%, p95≤2s) sin medición ejecutada; no hay línea base de un reto nuevo | No cumple | No aplica: no hay reto nuevo que tenga línea base. |
+| ADR del reto con alternativas, fuerzas, decisión y consecuencias | `docs/adr/` solo contiene `0001-estilo-arquitectonico.md`, sin cambios desde la revisión anterior | No cumple | Ningún ADR nuevo para un reto de Corte 1. |
+| Cambio implementado y ejecutable de extremo a extremo | Sin commits nuevos desde `952af8f`; el corte vertical de AS-03 (línea base) sigue siendo lo único ejecutable, documentado en README (`flutter run -d chrome`) | No cumple | No hay incremento sobre el corte vertical. |
+| Límites declarados conservados tras el cambio | Sin cambio no hay límites nuevos que verificar | No verificado | No aplica una comparación antes/después. |
+| Prueba que cubre el cambio, en verde en el pipeline | Run sobre `952af8f`, éxito, 2026-09-01T21:21:20Z (`https://github.com/ISCOUTB/AS_202620_LostVault/actions/runs/...`); cubre `test/claim_object_use_case_test.dart`, `test/widget_test.dart`, `test/architecture_structure_test.dart`, todas de la línea base | No cumple | Pipeline en verde, pero sin prueba de un cambio del reto (porque no lo hay). |
+| Resultado contrastado con el umbral del escenario y reproducible | No hay medición nueva; solo umbrales declarados sin ejecutar en `docs/arc42/10_requisitos_calidad.md` | No cumple | Sin cambio del reto no hay resultado que contrastar. |
+| Cadena aspecto, requisito, C4, ADR, código, pruebas y evidencia navegable | `docs/aspectos.md` tiene fila AS-03 navegable hasta pruebas (línea base), pero ninguna fila para un reto de Corte 1 | No cumple | La cadena de la línea base es navegable; la del reto no existe. |
+| Salida de IA aceptada, corregida o rechazada con motivo técnico | `docs/ia.md` registra hasta S3 (2026-08-24, commit `edd78d7`); sin entrada nueva para el corte 1 | No cumple | Sin cambios desde la revisión preliminar. |
+| Sustentación del reto | Sesión de sustentación | No verificado | Lo fija el docente en la sesión. |
 
 ## Matriz transversal (CONTRATO §11)
 
 | Criterio | Evidencia | Estado | Observaciones |
 |---|---|---|---|
-| Identidad del repositorio | Repositorio ISCOUTB/AS_202620_LostVault público; autores en historial: Roy Gonzalez, Fausto-4, shamarallorente-blip, Jose Faustino España, weller-rar y Shamara Llorente Tapias, consolidados en 4 personas. | Cumple | Los 4 integrantes declarados aparecen en el historial. |
-| Estructura mínima | docs/arc42/, docs/adr/, docs/c4/, docs/aspectos.md, docs/ia.md y README.md presentes en HEAD. | Cumple | Hay además REVISION_CORREGIDA.md y carpetas ejecutable/front_end. |
-| Qué estado del repositorio se califica | Etiqueta `corte-1` confirmada sobre `952af8f4f2230a4cd2258d361629579da8a6ade6`, anterior al cierre | Cumple | Estado versionado e identificable. |
-| Convenciones de ADR | docs/adr/0001-estilo-arquitectonico.md sigue el formato NNNN-titulo-en-kebab-case; sin reescrituras posteriores. | Cumple | Solo existe un ADR; ninguno del reto de la semana 5. |
-| La tabla de aspectos | docs/aspectos.md no tiene las 8 columnas del contrato (faltan Requisito y C4 como columnas); la fila AS-03 es navegable. | No cumple | Desviación de estructura: usa columnas como 'Escenario relacionado' y 'Decisión/compromiso'. |
-| Registro de uso de IA | docs/ia.md registra S1-S3 con aceptado y rechazado con motivo técnico. | Cumple | Sin entradas nuevas para el corte 1. |
-| README | README.md documenta arranque con `flutter run -d chrome` y pruebas con `flutter test`. | Cumple | Reproducible según el comando declarado. |
-| Pipeline y análisis estático | .github/workflows/flutter.yml ejecuta flutter analyze y flutter test en verde (run 33560607903), pero no hay configuración ni evidencia de SonarCloud. | No cumple | Falta el análisis estático en SonarCloud exigido por el contrato. |
+| Repositorio en la organización, con el nombre de la convención y público | Repositorio `ISCOUTB/AS_202620_LostVault` público, clonado sin autenticación | Cumple | — |
+| Estructura mínima presente | `docs/arc42/`, `docs/adr/`, `docs/c4/`, `docs/aspectos.md`, `docs/ia.md` y `README.md` presentes en HEAD | Cumple | Persisten `REVISION_CORREGIDA.md`, `ejecutable/` y `front_end/` como residuos: `REVISION_CORREGIDA.md` (2026-08-24) afirma que esas carpetas "se eliminan", pero `git ls-tree` confirma que ambas siguen presentes en el commit etiquetado. |
+| Estado calificado identificable | Etiqueta `corte-1` confirmada sobre `952af8f`, anterior al cierre | Cumple | — |
+| Nombres de ADR según la convención | `docs/adr/0001-estilo-arquitectonico.md` sigue el formato `NNNN-titulo-en-kebab-case.md` | Cumple | Solo existe un ADR; ninguno del reto de Corte 1. |
+| ADR aceptados no reescritos | Sin cambios desde la revisión anterior | Cumple | — |
+| `docs/ia.md` al día para la semana | Última entrada del 2026-08-24 (S3); sin entrada de Corte 1 | No cumple | Sin cambios desde la revisión preliminar. |
+| Sin credenciales en el repositorio ni en el historial | `git grep` de patrones de secretos sin coincidencias; sin `.env` versionado | Cumple | — |
+| Contribución de todos los integrantes | Los 4 integrantes declarados aparecen en el historial (Roy Gonzalez, Fausto-4/Jose Faustino España, shamarallorente-blip/Shamara Llorente, weller-rar), consolidados | Cumple | — |
 
-## Estado global del proyecto (overall · revisado en HEAD)
+## Estado global del proyecto (overall · HEAD)
 
-Mira el repositorio **entero en su estado actual** (HEAD), no solo la evidencia del cierre: si el equipo subio tarde o corregio entregas anteriores, aqui se nota.
+- **HEAD** = etiqueta `corte-1` = `952af8f4f2230a4cd2258d361629579da8a6ade6` · 2026-08-30T22:13:14-05:00. Sin commits posteriores.
+- **Veredicto:** con pendientes graves — el equipo no realizó ningún trabajo nuevo entre la revisión preliminar (2026-09-03) y el cierre (2026-09-07T05:00:00Z), pese a haber tenido cuatro días adicionales.
+- El proyecto conserva una línea base arquitectónica completa (arc42, C4, ADR-0001, corte vertical AS-03 ejecutable y probado, CI en verde), pero cero avance sobre el reto de Corte 1.
+- Persisten residuos (`ejecutable/`, `front_end/`) que un documento interno del propio equipo (`REVISION_CORREGIDA.md`, 2026-08-24) afirmaba haber eliminado.
 
-- **HEAD revisado**: `952af8f4f2230a4cd2258d361629579da8a6ade6 2026-08-30T22:13:14-05:00 Se realiza el corte vertical y la fila de aspectos`
-- **Veredicto**: con pendientes
-- Resumen: El proyecto tiene una línea base arquitectónica completa (arc42, C4, ADR 0001, corte vertical AS-03 ejecutable y probado), pero la respuesta al reto del corte 1 no está en el repositorio a HEAD: falta diagnóstico, ADR, cambio, medición y trazabilidad del reto.
-
-Pendientes que siguen abiertos:
-- Etiqueta `corte-1` confirmada; la respuesta al reto S5 sigue ausente.
-- Diagnóstico de la restricción asignada con línea base medida
-- ADR del reto con alternativas, fuerzas, decisión y consecuencias
-- Cambio implementado y ejecutable de extremo a extremo
-- Medición contrastada con umbral y reproducible
-- Trazabilidad del reto en docs/aspectos.md
-- Registro de IA del corte 1 en docs/ia.md
-- PDF de dos páginas en Moodle
-- SonarCloud en el pipeline
-
-## Nivel de rúbrica sugerido
+## Nivel de rúbrica sugerido (propuesta al docente, NO nota aplicada)
 
 | Criterio | Nivel sugerido | Puntaje | Evidencia que lo sostiene |
 |---|---|---:|---|
-| Diagnóstico del reto | Sin evidencia evaluable del reto | 0,00 | No se identifica una respuesta a la restricción nueva; la restricción asignada tampoco está disponible. |
-| Alternativas y decisión | Sin evidencia del reto | 0,00 | Los ADR visibles corresponden a decisiones de la línea base o son anteriores al inicio de S5. |
-| Aplicación sobre el corte vertical | Sin evidencia del reto | 0,00 | No hay cambio trazable a una restricción nueva. |
-| Pruebas, medición y trazabilidad | Sin evidencia del reto | 0,00 | Las pruebas o el CI de la línea base no demuestran una medición antes/después del reto. |
+| Diagnóstico del reto | Sin evidencia evaluable del reto | 0,00 | No se identifica una respuesta a ninguna restricción nueva; sin cambios desde la revisión preliminar. |
+| Alternativas y decisión | Sin evidencia del reto | 0,00 | El único ADR es de la línea base (S3). |
+| Aplicación sobre el corte vertical | Sin evidencia del reto | 0,00 | Cero commits nuevos desde `952af8f`. |
+| Pruebas, medición y trazabilidad | Sin evidencia del reto | 0,00 | El CI de la línea base sigue en verde, pero no demuestra ninguna medición del reto. |
 | Sustentación del reto | Lo fija el docente | pendiente | No se puntúa desde el repositorio. |
-| **Subtotal técnico verificable** |  | **0,00 / 4,00** | No constituye el total sobre 5,00. |
+| **Subtotal técnico** | | **0,00 / 4,00** | Propuesta al docente; la nota final se fija en Moodle. |
 
 ## Recuento
 
-1 de 12 criterios Cumple.
+1 de 12 criterios Cumple (etiqueta válida por fecha, aunque su contenido es de S4).
 
-## No verificado / pendientes
+## No verificado
 
-- Coincidencia del diagnóstico con la restricción asignada, porque la asignación no está disponible en el kit.
+- Coincidencia del diagnóstico con la restricción asignada (no disponible en el kit).
 - PDF adjunto en Moodle.
 - Sustentación del reto.
+- Conservación de límites tras un cambio que no existe.
 
-## Hallazgos para la planilla
+## Hallazgos
 
-- La etiqueta `corte-1` fue confirmada y apunta a `952af8f`.
-- No hay ADR nuevo para el reto de la semana 5; solo existe 0001-estilo-arquitectonico.md.
-- No hay diagnóstico de la restricción asignada ni línea base medida.
-- No hay medición contrastada con umbral ni procedimiento reproducible.
-- docs/ia.md no registra usos de IA del corte 1.
-- La fila AS-03 de docs/aspectos.md es navegable, pero no cubre el reto.
-- Pipeline en verde, pero sin SonarCloud.
-- docs/aspectos.md no usa las 8 columnas del contrato.
-- El apartado 11 del contrato no fue incluido en la entrada; la matriz transversal se infiere de las secciones 1-8.
+- **El equipo no hizo ningún cambio entre el 2026-08-30 y el cierre**: la etiqueta `corte-1` sigue apuntando al mismo commit que en la revisión preliminar, confirmado con `git log 952af8f..HEAD` (0 commits).
+- No hay ADR, diagnóstico, cambio de código ni medición para un reto/restricción nueva de Corte 1.
+- `docs/ia.md` no registra ningún uso de IA posterior a S3.
+- Persisten `ejecutable/` y `front_end/` como residuos que un documento propio del equipo decía haber eliminado desde el 24 de agosto.
+- `docs/aspectos.md` no usa las 8 columnas exactas del contrato (usa columnas propias como "Escenario relacionado" y "Decisión/compromiso"), aunque la fila AS-03 sí es navegable hasta pruebas.
+
+## Correcciones del equipo
+
+No se encontró `correcciones.md` en la raíz del repositorio ni en HEAD. Existe `REVISION_CORREGIDA.md`, pero es un documento de 2026-08-24 (previo a S4), sin relación con el reto de Corte 1 ni con la revisión preliminar de esta semana — no contradice ningún hallazgo de `semana-05-corte1.md`. No aplica esta sección.
 
 ## Preguntas para la sustentación
 
-1. ¿Cuál fue la restricción asignada y dónde se localiza su impacto en requisitos, C4 y código?
-2. ¿Cuál fue la cifra de línea base, con qué herramienta y procedimiento se obtuvo, y cuál fue el resultado posterior?
-3. ¿Qué ADR y commit implementan el reto, y qué prueba del pipeline demuestra el cambio?
+1. ¿Por qué no hubo ningún commit nuevo entre el 30 de agosto y el cierre del primer corte, pese a la revisión preliminar del 3 de septiembre que señalaba la ausencia de respuesta al reto?
+2. ¿Cuál fue la restricción asignada al equipo y dónde se localiza su impacto en requisitos, C4 y código?
+3. ¿Por qué siguen presentes `ejecutable/` y `front_end/` si `REVISION_CORREGIDA.md` afirma desde agosto que fueron eliminados?

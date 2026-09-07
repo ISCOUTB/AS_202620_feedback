@@ -31,3 +31,13 @@ Buen avance en documentación: C4 niveles 1 y 2 completos y coherentes, corte ve
 ## Semana 5 · CORTE1
 
 El repositorio tiene una base sólida de documentación (arc42, C4, ADR-0001, README), pero la entrega del corte 1 no deja ver la respuesta al reto. Para el siguiente corte: (1) añadan el ADR del reto con alternativas, fuerzas, decisión y consecuencias ligadas al escenario de calidad; (2) completen docs/aspectos.md con rutas reales de código y pruebas, y evidencia de medición reproducible; (3) dejen un run de CI en verde que ejecute la prueba del cambio; (4) verifiquen que los tres integrantes aparezcan en el historial; (5) eliminen el archivo temporal de Word versionado. La sustentación se evaluará en sesión.
+
+## Semana 5 · Primer corte (revisión definitiva, 2026-09-07)
+
+El repositorio no tuvo ningún cambio entre el 1 de septiembre y el cierre del corte (7 de septiembre): toda la semana 5 quedó sin actividad. Un detalle importante sobre lo que ya tenían: el commit con el mensaje "corte-1" no es una etiqueta de Git (`git tag`); es solo el texto de un commit normal. Para que el curso reconozca un estado como "el corte 1", necesitan crear la etiqueta con `git tag corte-1` y subirla (`git push origin corte-1`), no solo nombrar así un commit.
+
+No encontramos evidencia de que se haya diagnosticado o respondido una restricción nueva: el único ADR sigue siendo el de la arquitectura base (muy bien escrito, con alternativas y consecuencias claras, pero es de otra semana), las cuatro filas de `docs/aspectos.md` siguen con la evidencia marcada "Pendiente", y el pipeline de integración continua está en rojo en los tres intentos que registra GitHub Actions, incluido el commit que se presenta como entrega.
+
+Además, revisando el historial completo del repositorio, seguimos sin ver ningún commit de Angel Fabian Gutierrez Gomez. Si sus aportes existen fuera de Git (diseño, decisiones, documentación en otro medio), tráiganlo a la sustentación, porque desde el repositorio no es visible.
+
+Para la próxima entrega: creen la etiqueta real, retomen el trabajo cuanto antes (una semana completa sin commits es un riesgo), arreglen el pipeline, y aporten la restricción, el diagnóstico y la medición que pide este corte.

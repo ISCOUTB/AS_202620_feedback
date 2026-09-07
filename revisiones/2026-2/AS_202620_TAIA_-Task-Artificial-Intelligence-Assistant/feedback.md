@@ -39,3 +39,13 @@ La entrega no muestra evidencia del reto de línea base en el repositorio.
 8) Completar la fila del aspecto en aspectos.md.
 9) Registrar en ia.md la salida de IA de este corte.
 10) Entregar el PDF en Moodle.
+
+## Semana 5 · Primer corte (revisión definitiva, 2026-09-07)
+
+Se revisó de nuevo después del cierre. Como no existe la etiqueta `corte-1`, se tomó el último commit subido antes del cierre.
+
+Qué está bien: por fin hay un pipeline de integración continua configurado y corriendo en verde, algo que faltaba desde antes. También completaron bastante el arc42.
+
+Qué falta, y es lo más importante: el trabajo de la última noche no atacó el reto de este corte. No hay ninguna restricción nueva diagnosticada, no hay ADR del reto, no hay cambio de código, no hay medición contra un umbral. En cambio, editaron el ADR ya aceptado para añadirle una sección, en vez de crear un ADR nuevo — un ADR aceptado no se edita; si algo cambia, se escribe otro y el anterior queda marcado como reemplazado.
+
+Qué corregir: crear la etiqueta `corte-1` sobre un commit que sí resuelva el reto (restricción, diagnóstico medido, ADR nuevo, cambio implementado, prueba y medición contra el umbral), y revertir o formalizar correctamente la edición del ADR-0001.

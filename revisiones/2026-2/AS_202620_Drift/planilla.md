@@ -14,7 +14,7 @@
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 5 | Primer corte · reto de línea base | HEAD `d7a61cc` (sin etiqueta) | 0/12 | subtotal técnico preliminar 0,00/4,00; sustentación pendiente | revisión manual preliminar 2026-09-03 |
+| 5 | Primer corte · reto de línea base | sin etiqueta; último commit ≤ cierre `d110d6d0` (2026-09-06T23:34:21-05:00) | 2/12 | 0,00/4,00 + sustentación pendiente | revisión definitiva post-cierre 2026-09-07 |
 | 4 | S4 | `4254f4a` (2026-08-30T19:13:01-05:00) | 7/10 | 3.8 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `b7ec296c` · 2026-08-09T22:59:42-05:00 | 4/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `23fb8c29` · 2026-08-16T22:39:37-05:00 | 6/9 | no se publica | sí |
@@ -35,12 +35,16 @@
 | ADR con trazabilidad y marcado de reemplazo | S4 | si | |
 | README con requisitos previos y comando de arranque | S4 | si | |
 | Evidencia de run de CI en verde | S4 | si | |
-| Verificar/crear etiqueta corte-1 | S5 | si | |
-| Registrar ADR del reto con alternativas y decisión | S5 | si | |
-| Medir línea base con procedimiento | S5 | si | |
-| Completar aspectos.md con 8 columnas | S5 | si | |
-| Añadir rechazos con motivo en ia.md | S5 | si | |
-| Evidenciar run de CI en verde | S5 | si | |
+| Verificar/crear etiqueta corte-1 | S5 | sí (el propio equipo la reconoce pendiente en `docs/correciones.md`) | Se calificó el último commit ≤ cierre (`d110d6d0`); se les pidió crear la etiqueta antes del próximo corte, ya tienen el procedimiento escrito. |
+| Registrar ADR del reto con alternativas y decisión | S5 | sí (autoadmitido pendiente) | El propio equipo lo marca "Pendiente, corresponde al reto que será asignado" en `docs/correciones.md`. |
+| Medir línea base con procedimiento | S5 | sí (autoadmitido parcial) | Método de verificación definido en `docs/escenarios.md`; falta ejecutar la medición y registrar el resultado. |
+| Completar aspectos.md con 8 columnas | S5 | cerrado | `docs/aspectos.md` ya tiene las 8 columnas del contrato con las 5 filas E1-E5. |
+| Añadir rechazos con motivo en ia.md | S5 | cerrado | Registro 11 de `docs/ia.md` descarta una alternativa con motivo técnico explícito. |
+| Evidenciar run de CI en verde | S5 | cerrado | Run verde confirmado sobre el commit calificado, antes del cierre. |
+| ADR con marca de reemplazo y trazabilidad | S5 | cerrado | ADR-0001 marca "Superada parcialmente por ADR-0002" con enlace; corrige el hallazgo preliminar. |
+| Nombres de ADR enuncian el tema, no la decisión | S5 | sí | 0001 y 0002 comparten el título "Selección de Arquitectura Base"; deberían titularse por la decisión (p. ej. "Adoptar Next.js/FastAPI..."). |
+| Tres commits llegaron después del cierre (2026-09-07T05:22Z–06:26Z) | S5 | — (no se calificaron) | Se les avisó que solo cuenta lo anterior al cierre; esos commits corrigen duplicación de pruebas y documentan en ia.md. |
+
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -52,7 +56,7 @@
 | `docs/ia.md` al día | Cumple | Commits 08-21/08-22; rechazo narrado en §3.1 con motivo. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Sin coincidencias. |
 | Contribución de todos los integrantes | Cumple | Los 4 firman en S3, con desbalance (51/19/18/9). |
-| Pipeline en verde | No verificado | Sin pipeline; prueba local sin evidencia de ejecución. |
+| Pipeline en verde | Cumple | `.github/workflows/ci.yml` con runs verdes confirmados vía API, incluido el commit calificado de S5 (`d110d6d0`, antes del cierre). |
 
 ## Contribución por integrante
 

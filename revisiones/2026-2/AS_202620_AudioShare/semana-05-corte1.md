@@ -1,88 +1,81 @@
 # semana-05-corte1 · AudioShare
 
-> Revisión manual preliminar completa realizada el 2026-09-03, antes del cierre. El equipo puede modificar el repositorio y la evaluación definitiva debe repetirse después de `2026-09-07T05:00:00Z`.
+> **Revisión definitiva post-cierre — 2026-09-07.** Reemplaza la revisión preliminar del 2026-09-03. El estado calificado es la etiqueta `corte-1`, ya existente y anterior al cierre.
 
 | Campo | Valor |
 |---|---|
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_AudioShare` |
-| Estado preliminar revisado | `1a5179910ec4ba6191422bc31fc4028bce4468a8` (`2026-09-03T18:01:42-05:00`) |
-| Referencia | `HEAD`; no existe la etiqueta `corte-1` |
+| Estado calificado | etiqueta `corte-1` → `cb65d13134b220c020d0facaa00d0a779d584245` (`2026-09-06T22:00:48-05:00`, *Update README.md*) |
 | Cierre | `2026-09-07T05:00:00Z` |
-| Revisor | revisión manual local, solo lectura; no se ejecutó código |
-
-La restricción asignada y el PDF adjunto en Moodle no estuvieron disponibles. La evidencia interna permite comprobar la línea base, pero no demuestra qué reto externo debía responder el equipo.
+| Comandos ejecutados | `git clone --filter=blob:none`; `git tag --list`; `git log -1 corte-1`; `git checkout corte-1`; `git ls-tree -r --name-only`; `git log --format=... HEAD` (histórico completo); `git log --diff-filter=A -- docs/adr/`; `git grep` de secretos (regex del contrato, exit 1 = sin coincidencias); `git ls-files | grep '\.env$'`; `git shortlog -sne`; `curl .../actions/runs?per_page=30` (1 llamada) |
+| Restricción asignada | No disponible en el kit ni citada en el repositorio; no se pudo verificar contra qué restricción específica debía responder el equipo. |
 
 ## Matriz de la ficha
 
-| Criterio de evaluación | Evidencia técnica | Estado | Observaciones |
+| Criterio | Evidencia técnica | Estado | Observaciones |
 |---|---|---|---|
-| Etiqueta `corte-1` sobre un commit anterior al cierre | `git tag --list` sin salida; `HEAD` `1a517991`, 2026-09-03 | No cumple | Se usa `HEAD` como estado preliminar por ausencia de etiqueta. |
-| PDF de dos páginas con diagnóstico, decisión, cambio, medición y trazabilidad | El adjunto de Moodle no está disponible en el kit | No verificado | Debe comprobarse en Moodle; un archivo del repositorio no sustituye el adjunto. |
-| Impacto de la restricción localizado en requisitos, C4 y código | No se declara cuál es el reto S5; `docs/aspectos.md:34-39` describe EC-01–EC-04 de la línea base | No verificado | Sin la restricción asignada no puede juzgarse correspondencia; el repositorio tampoco identifica una restricción nueva. |
-| Línea base medida y verificable antes del cambio | `docs/aspectos.md:37-39` marca pendientes las mediciones y casos específicos; `docs/aspectos.md:103-107` solo transcribe un resultado de pruebas | No cumple | No hay cifra inicial obtenida con herramienta, carga y procedimiento. |
-| ADR del reto con alternativas, fuerzas, decisión y consecuencias | Solo `docs/adr/0001-usar-monolito-modular.md`, fechado 2026-08-23 y todavía “propuesto” (`:1-6`); su implementación y pruebas siguen pendientes (`:46-51`) | No cumple | Es la decisión de estilo de la línea base, no un ADR identificable del reto S5. |
-| Cambio implementado y ejecutable de extremo a extremo | `README.md:49-72` documenta el corte vertical A-01; desde el inicio de S5 los cambios son el merge `dd2025c` y tres correcciones documentales | No cumple | No se identifica un cambio que responda a una restricción nueva. No se ejecutó el sistema. |
-| Límites declarados conservados tras el cambio | C4 declara cuatro contenedores (`docs/c4/Contenedor - Nivel 2.mmd:12-44`), mientras README declara un monolito modular (`README.md:29-32`) | No cumple | La representación de contenedores no corresponde al único proceso implementado; tampoco hay cambio S5 identificable que comparar. |
-| Prueba que cubre el cambio, en verde en el pipeline | `tests/a01.test.ts` se describe en `README.md:19-27`; no existe `.github/workflows/` en el árbol | No cumple | La prueba cubre el corte vertical base, no un cambio S5, y no hay run de CI verificable. |
-| Resultado contrastado con el umbral del escenario y reproducible | Los umbrales aparecen en `docs/aspectos.md:36-39`, pero las mediciones específicas quedan pendientes (`:37-39`) | No cumple | Falta resultado, herramienta, carga y procedimiento reproducible. |
-| Cadena aspecto, requisito, C4, ADR, código, pruebas y evidencia navegable | `docs/aspectos.md:34-39` enlaza requisito, ADR, C4, código y pruebas, pero usa diez columnas y no incluye `Evidencia`; varias pruebas/mediciones están pendientes | No cumple | La cadena se rompe en evidencia de calidad. |
-| Salida de IA aceptada, corregida o rechazada con motivo técnico | `docs/ia.md:59-72` registra S1–S4; `docs/ia.md:93-100` declara que continuará actualizándose | No cumple | No hay entrada del reto S5. |
-| Sustentación del reto | Requiere la sesión de sustentación | No verificado | Lo fija el docente. |
+| 1. Etiqueta `corte-1` sobre un commit anterior al cierre | `git log -1 --format='%H %cI' corte-1` → `cb65d131…`, `2026-09-06T22:00:48-05:00` (`2026-09-07T03:00:48Z`), anterior al cierre `05:00:00Z` | **Cumple** | La etiqueta apareció entre la revisión preliminar y el cierre. |
+| 2. PDF de dos páginas | No hay PDF en el repositorio (correcto, va en Moodle) | **No verificado** | Debe comprobarse en Moodle. |
+| 3. Impacto de la restricción en requisitos, C4 y código | `docs/aspectos.md` (aspecto A-01) sigue describiendo la sincronización de audio de la línea base (EC-01…EC-04); no aparece una restricción nueva ni en `docs/arc42/src/02_architecture_constraints.adoc` ni en el único ADR | **No cumple** | No hay diagnóstico de una restricción nueva en ningún artefacto del repo. |
+| 4. Línea base medida y verificable | `docs/aspectos.md`: EC-02/EC-03 declaran explícitamente "medición de latencia real queda pendiente" y "caso específico de pausa/reanudación queda pendiente" | **No cumple** | Ninguna cifra con herramienta y procedimiento. |
+| 5. ADR del reto | `docs/adr/` solo contiene `0001-usar-monolito-modular.md` (commit de creación `84e2e03`, 2026-08-23, anterior a S5); último cambio al ADR es `924d133` (2026-09-04), edición de texto, no ADR nuevo | **No cumple** | Es el ADR de la línea base, no responde a una restricción nueva. |
+| 6. Cambio implementado extremo a extremo | Commits de S5 (`9bb6b6a`…`cb65d13`): integrar corte vertical A-01 a `master`, diagramas C4, ajustar Node 20→22 en CI, editar README; ninguno introduce funcionalidad nueva ligada a una restricción | **No cumple** | El único cambio funcional (`869f3a9` "Implementar corte vertical A-01") es anterior al cierre de S4, no de S5. |
+| 7. Límites C4 conservados | `docs/c4/C4 Nivel 2 - Contenedores.mmd` sigue describiendo 4 contenedores frente a un monolito Node implementado en `src/` | **No cumple** | Discrepancia arrastrada de S4; sin cambio S5 que la agrave o resuelva, pero tampoco hay nada que "conservar" porque no hubo cambio del reto. |
+| 8. Prueba que cubre el cambio, en verde en pipeline | `curl .../actions/runs`: `cb65d131` success (`2026-09-07T03:00:50Z` y `03:21:03Z`); commits previos de S5 (`3373bb8`, `7afe7c6`, `03ee2f7`, `924d133`, `ee26081`, `9bb6b6a`) en `failure` | **No cumple** | El run verde corresponde a un commit de solo README/Node version, no a una prueba del reto; no existe prueba nueva que cubrir. |
+| 9. Resultado contrastado con umbral | Sin medición reportada (ver criterio 4) | **No cumple** | No hay resultado que contrastar. |
+| 10. Cadena de trazabilidad navegable | `docs/aspectos.md` trae 9 columnas (`ID…Pruebas`) y "Resumen de trazabilidad"; recorrida la fila A-01/EC-02: llega a ADR-0001, C4 nivel 2, código y prueba, pero la celda de prueba dice explícitamente que la medición real está pendiente | **No cumple** | La cadena existe pero se rompe en la evidencia de calidad (no hay medición), y no incluye ninguna fila para una restricción nueva. |
+| 11. Salida de IA con motivo técnico, de este corte | `docs/ia.md`: última sección fechada "Semana 4"; el pie dice "Documento actualizado durante la semana 5, previo al corte 1" pero no agrega ninguna entrada fechada o etiquetada como S5/reto | **No cumple** | La actualización de S5 es solo la línea de estado, no una entrada de uso de IA de este corte. |
+| 12. Sustentación del reto | — | **No verificado** | Lo resuelve el docente en la sesión. |
 
 ## Matriz transversal (CONTRATO §11)
 
-| Criterio de evaluación | Evidencia técnica esperada | Estado | Observaciones |
+| Criterio | Evidencia | Estado | Observaciones |
 |---|---|---|---|
-| Repositorio en la organización, con el nombre de la convención y público | Clon anónimo de `github.com/ISCOUTB/AS_202620_AudioShare` completado el 2026-09-03 | Cumple | Nombre y visibilidad comprobados por protocolo Git. |
-| Estructura mínima presente | `README.md`, `docs/arc42/`, `docs/adr/`, `docs/c4/`, `docs/aspectos.md` y `docs/ia.md` en `1a517991` | Cumple | arc42 usa AsciiDoc, desviación de formato respecto a Markdown. |
-| Estado calificado identificable | `HEAD` `1a5179910ec4ba6191422bc31fc4028bce4468a8`, `2026-09-03T18:01:42-05:00` | Cumple | Estado preliminar identificable; falta la etiqueta exigida por la ficha. |
-| Nombres de ADR según la convención | `docs/adr/0001-usar-monolito-modular.md` | Cumple | Nombre conforme. |
-| ADR aceptados no reescritos | `docs/adr/0001-usar-monolito-modular.md:3` continúa en estado “propuesto” | Cumple | No hay un ADR aceptado que pueda evaluarse como reescrito. |
-| `docs/ia.md` al día para la semana | Última entrada visible: Semana 4 (`docs/ia.md:68-72`) | No cumple | Falta S5. |
-| Sin credenciales en el repositorio ni en el historial | `git grep` y búsqueda histórica de `BEGIN PRIVATE KEY` sin coincidencias; no hay `.env` versionado | Cumple | Comprobación sobre HEAD e historial. |
-| Contribución de todos los integrantes | `git shortlog -sne HEAD`: cuatro identidades consolidadas para cuatro integrantes | Cumple | No se publican correos. |
+| a. Repositorio en la organización, convención y público | Clon anónimo de `github.com/ISCOUTB/AS_202620_AudioShare` exitoso | **Cumple** | — |
+| b. Estructura mínima | `git ls-tree` en `cb65d13`: `README.md`, `docs/arc42/`, `docs/adr/`, `docs/c4/`, `docs/aspectos.md`, `docs/ia.md` presentes | **Cumple** | arc42 en AsciiDoc (desviación de formato, ya anotada desde S2). |
+| c. Estado calificado identificable | `corte-1` → `cb65d131…`, `2026-09-06T22:00:48-05:00` | **Cumple** | — |
+| d. Nombres de ADR según convención | `docs/adr/0001-usar-monolito-modular.md` | **Cumple** | — |
+| e. ADR aceptados no reescritos | Único ADR, sin marca de "reescrito tras aceptación" en su historial de commits (`924d133` es edición de contenido, sin cambio de estado declarado) | **No verificado** | El ADR no declara explícitamente su estado (aceptado/propuesto) en el texto revisado; no se puede confirmar si el cambio de `924d133` ocurrió antes o después de una aceptación formal. |
+| f. `docs/ia.md` al día para la semana | Ver criterio 11 | **No cumple** | Sin entrada de S5. |
+| g. Sin credenciales | `git grep` con la regex del contrato: exit 1 (sin coincidencias); `git ls-files` sin `.env` | **Cumple** | — |
+| h. Contribución de todos los integrantes | `git shortlog -sne cb65d13`: Elian 45, Yeiver 38, cardonavincent26-design 36, Santiago 30 | **Cumple** | 4 identidades para 4 integrantes; `cardonavincent26-design` sigue sin confirmación oficial contra matrícula (arrastrado de S2). |
 
 ## Estado global del proyecto (overall · HEAD)
 
-- **HEAD revisado:** `1a5179910ec4ba6191422bc31fc4028bce4468a8`, `Revise README for clarity and organization`.
-- **Veredicto:** línea base ejecutable y documentada, respuesta al reto S5 no identificable.
-- El README ofrece un comando de arranque y uno de pruebas (`README.md:6-27`), y la prueba A-01 recorre sesión, persistencia, sincronización y audio.
-- La trazabilidad mejoró en S5, pero aún carece de la columna y la evidencia de calidad exigidas (`docs/aspectos.md:34-39`).
-- El C4 de contenedores sigue describiendo una solución distribuida que contradice el monolito implementado.
-- No hay workflow, medición reproducible, ADR del reto ni registro de IA S5.
+HEAD coincide con `corte-1` (`cb65d131…`). El repositorio tiene una línea base sólida (arc42, C4, ADR, corte vertical A-01 con prueba de integración y CI) pero **no hay ninguna evidencia de que el equipo haya recibido o respondido una restricción nueva**: los únicos cambios entre el cierre de S4 y la etiqueta son la integración del corte vertical A-01 (que en realidad pertenece a S4), diagramas C4, y ajustes cosméticos de README/CI. El pipeline sí corre y el último run es verde, pero sobre el mismo contenido de la línea base, no sobre una prueba nueva.
 
-## Nivel de rúbrica sugerido
+## Nivel de rúbrica sugerido (propuesta al docente)
 
-| Criterio | Nivel sugerido | Puntaje | Evidencia que lo sostiene |
+| Criterio | Nivel | Puntaje | Evidencia |
 |---|---|---:|---|
-| Diagnóstico del reto | Sin evidencia | 0,00 | No se declara el reto S5 ni una línea base medida. |
-| Alternativas y decisión | Sin evidencia | 0,00 | El único ADR pertenece a la línea base y sigue propuesto. |
-| Aplicación sobre el corte vertical | Sin evidencia del reto | 0,00 | Hay corte vertical base, pero ningún cambio trazable a una restricción nueva. |
-| Pruebas, medición y trazabilidad | Sin evidencia del reto | 0,00 | No hay CI ni medición; la tabla termina antes de Evidencia. |
+| Diagnóstico del reto | Sin evidencia | 0,00 | No se identifica una restricción nueva ni una línea base medida para ella. |
+| Alternativas y decisión | Sin evidencia | 0,00 | El único ADR es el de la línea base (S3). |
+| Aplicación sobre el corte vertical | Sin evidencia del reto | 0,00 | Los cambios de S5 no implementan una restricción nueva. |
+| Pruebas, medición y trazabilidad | Sin evidencia del reto | 0,00 | Sin medición, sin prueba nueva, sin umbral contrastado. |
 | Sustentación del reto | Lo fija el docente | pendiente | No se puntúa desde el repositorio. |
-| **Subtotal técnico verificable** |  | **0,00 / 4,00** | No constituye total sobre 5,00. |
+| **Subtotal técnico verificable** | | **0,00 / 4,00** | La nota final (sobre 5,00 con sustentación) la fija Moodle. |
 
 ## Recuento
 
-**0 de 12 criterios Cumple.** Revisión preliminar; no se propone total sobre 5,00 sin sustentación.
+**1 de 12 criterios Cumple** (solo la etiqueta `corte-1`).
 
 ## No verificado
 
-- Coincidencia del diagnóstico con la restricción asignada.
+- Coincidencia del diagnóstico con la restricción asignada (no disponible).
 - PDF adjunto en Moodle.
+- Estado formal (aceptado/propuesto) del ADR-0001 en el momento de su última edición.
 - Sustentación del reto.
 
 ## Hallazgos
 
-- Falta la etiqueta `corte-1`.
-- La línea base de S4 está documentada, pero no hay respuesta identificable al reto S5.
-- Falta medición antes/después contra un umbral reproducible.
-- Falta CI y un run en verde que cubra el cambio.
-- C4 e implementación representan límites diferentes.
-- Falta la entrada de IA de S5.
+- La etiqueta `corte-1` ya existe y apunta a un commit anterior al cierre: mejora respecto a la revisión preliminar.
+- No hay evidencia de que el equipo haya recibido o diagnosticado una restricción nueva para este corte; todo el trabajo de S5 consolida la línea base de S4 (corte vertical A-01, C4, README, CI).
+- `docs/ia.md` no agrega ninguna entrada de este corte pese a declararse "actualizado durante la semana 5".
+- El pipeline corre y el último run es verde, pero no cubre ninguna funcionalidad nueva.
+- El C4 de contenedores sigue sin coincidir con el monolito implementado (arrastrado de S4).
 
 ## Preguntas para la sustentación
 
-1. ¿Cuál fue la restricción asignada y qué archivos o componentes cambian específicamente por ella?
-2. ¿Cuál fue la cifra de línea base, con qué herramienta, carga y procedimiento se obtuvo, y cuál fue el resultado posterior?
-3. ¿Por qué el C4 representa cuatro contenedores si la implementación y el ADR declaran un monolito modular?
+1. ¿Cuál fue la restricción asignada para este corte, y por qué no hay ningún artefacto del repositorio (ADR, aspecto, sección de arc42) que la mencione?
+2. Si no se implementó un cambio para el reto, ¿qué se entregó como diagnóstico y decisión en el PDF de Moodle, y con qué evidencia del repositorio se sostiene?
+3. ¿Por qué el C4 de contenedores describe cuatro contenedores si la implementación (`src/`) y el ADR-0001 declaran un monolito modular de un solo proceso?
