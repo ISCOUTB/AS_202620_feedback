@@ -673,9 +673,6 @@ def hash_publicado(entrada, repo):
 
 # ---------- main ----------
 
-TAG_CORTES = {"corte1": "corte-1", "corte2": "corte-2", "final": "final"}
-
-
 def procesar_equipo(repo, equipo, entrada, contrato, ficha, modo, desde):
     d = clone_efimero(repo)
     if not d:
@@ -683,11 +680,6 @@ def procesar_equipo(repo, equipo, entrada, contrato, ficha, modo, desde):
     try:
         p = sh(["git", "-C", d, "log", "-1", "--format=%h %cI %s",
                 "--until=%s" % entrada["cierre"]], timeout=60)
-        tag = TAG_CORTES.get(entrada["id"])
-        if tag and modo == "definitive":
-            tp = sh(["git", "-C", d, "log", "-1", "--format=%h %cI %s", tag], timeout=60)
-            if tp.returncode == 0 and tp.stdout.strip():
-                p = tp
         if p.returncode != 0 or not p.stdout.strip():
             hc = None
         else:
