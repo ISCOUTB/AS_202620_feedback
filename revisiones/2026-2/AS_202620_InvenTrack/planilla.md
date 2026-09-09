@@ -17,7 +17,7 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 5 | Primer corte · reto de línea base | `corte-1` → `2988b03` (2026-09-06T23:35:40-05:00) | 3/12 | subtotal técnico 2,00/4,00 (ver hallazgo crítico: cambio no implementado); sustentación pendiente | revisión definitiva post-cierre 2026-09-07 |
-| 4 | S4 | `d7ba824` (2026-08-30T23:39:33-05:00) | 4/10 | 2.6 | si |
+| 4 | S4 | `d7ba824` (2026-08-30T23:39:33-05:00) | 5/10 | 3.0 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `06920209` · 2026-08-09T16:03:46-05:00 | 4/9 | 2,8 * | sí |
 | 2 | S2 | `db90ff2` (2026-08-16T21:22:20-05:00) | 9/9 | no aplica | si |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `dd4ea1cb8` · 2026-08-23T23:46:24-05:00 | 9/9 | no se publica | sí (actualizada tras el cierre) |
@@ -50,6 +50,11 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 | El commit cf9d7d3 define Flutter como frontend, decisión de stack posterior a la entrega s2. | S2 | no (resuelto tarde) | — |
 | No hay runs_ci citables que confirmen la ejecución del pipeline a HEAD. | S2 | si | |
 | Faltaba CI/ADR en s2; a HEAD ya existen, pero la evidencia de ejecución no está registrada. | S2 | si | |
+| Secciones 5, 6 y glosario de arc42: se agregaron después del cierre (commits 22bd660, c870f2b y otros entre 2026-09-06 y 2026-09-08). | S4 | no (resuelto tarde) | — |
+| Prueba de corte vertical: tests/productos/test_api_corte_vertical.py se agregó en HEAD pero no existe en d7ba824. | S4 | no (resuelto tarde) | — |
+| Fila de aspectos con columna Pruebas completa: se resolvió en HEAD con la trazabilidad del corte 1 (commit bb4ef0c). | S4 | no (resuelto tarde) | — |
+| SonarCloud: sonar-project.properties se agregó en HEAD, no en el commit calificado. | S4 | no (resuelto tarde) | — |
+| En HEAD aún no se verifica ejecución de SonarCloud en un run; no hay evidencia de análisis estático en los runs disponibles. | S4 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -61,7 +66,7 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 | `docs/ia.md` al día | Cumple | Entrada del 2026-09-06 referida al Reto Corte 1, con rechazo y motivo técnico. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Escaneos limpios. |
 | Contribución de todos los integrantes | Cumple | Cuatro personas consolidadas para cuatro integrantes en HEAD. |
-| Pipeline en verde | No verificado | Run de HEAD `33811437677` en verde; no demuestra el reto. |
+| Pipeline en verde | No cumple | Run de HEAD `33811437677` en verde; no demuestra el reto. |
 
 ## Contribución por integrante
 

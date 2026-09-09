@@ -19,8 +19,7 @@ Qué corregir antes del corte 1 (semana 5):
 
 ## Semana 4 · S4
 
-La entrega S4 se evaluó dentro del plazo, pero el equipo siguió subiendo cambios después del cierre. En el estado calificado faltan secciones 4, 5, 6 y 12 de arc42, la sección 9 no está redactada y la fila de aspectos deja Pruebas pendiente. El C4 nivel 2 dibuja Web y Base de datos sin código. El corte vertical de productos y su prueba en verde son el punto fuerte. Se recomienda completar arc42 dentro del horario de la entrega, corregir el ADR-0002 duplicado y añadir evidencia de SonarCloud. Para el primer corte, mantengan los diagramas como código y enlacen cada ADR con su commit de implementación.
-
+Buen avance en documentación, C4 y estructura del esqueleto: el arc42, los diagramas y la organización por módulos son sólidos. Para completar la semana 4, redacten las secciones 5 y 6 con la interpretación de los diagramas, inicien el glosario y hagan que la fila de aspectos apunte a una prueba real del corte vertical. Cuiden las convenciones de ADR: un archivo por decisión real y con nombre estandarizado. Aunque los commits posteriores al cierre corrigen varios vacíos, esas correcciones no cuentan para la entrega de la semana.
 ## Semana 5 · Primer corte
 
 Revisión manual preliminar previa al cierre. El proyecto ya tiene módulos de productos e inventario, pruebas y CI en verde. Ese avance no está identificado como respuesta al reto nuevo: falta la etiqueta `corte-1`, declarar la restricción, medir la línea base, registrar alternativas y decisión, enlazar el incremento y contrastar el resultado con el umbral. Si el nuevo módulo de inventario responde al reto, incorpórenlo a una fila completa de `docs/aspectos.md` y a una prueba específica. Actualicen también `docs/ia.md` para el corte y corrijan el enlace del README al archivo real `docs/c4/containers.md`.

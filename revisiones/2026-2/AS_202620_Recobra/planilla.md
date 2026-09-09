@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Recobra` |
 | Integrantes y su usuario de GitHub | Camilo Andres Conde Corrales · Fernando Isacc Conde Herrera · Miguel Alejandro Iii Jacome Yanez · Veronica Ubarne Reyes — cuentas consolidadas: `Cconde31` (incluye la identidad `Steamlinker`, unificada por `.mailmap` el 05/09), `MiguelJacome`, `vylrir` (Verónica Ubarne), y el commit real de Fernando Isacc Conde Herrera (`fconde@utb.edu.co`) |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-07 (revisión definitiva post-cierre) |
+| Ultima revision | 2026-09-09 |
 
 ## Estado por entrega
 
@@ -17,7 +17,7 @@
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `da5c15d` · 2026-08-07T17:54:04-05:00 | 3/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `d2dac73` · 2026-08-16T23:44:54-05:00 | 4/9 | no se publica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `cb5c579` · 2026-08-23T23:44:12-05:00 | 4/9 | no se publica | sí |
-| 4 | S4 | `2268b33` (2026-08-30T22:34:56-05:00) | 2/10 | 1.8 | si |
+| 4 | S4 | `2268b33` (2026-08-30T22:34:56-05:00) | 6/10 | 3.4 | si |
 | 5 | Primer corte · reto de línea base | `corte-1` → `f7c1a6c` (2026-09-07T14:59:41Z, **posterior al cierre**) | 10/12 | subtotal técnico 4,00/4,00; sustentación pendiente; **versionado No cumple por entrega tardía de la etiqueta** | revisión definitiva post-cierre 2026-09-07 |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
@@ -59,19 +59,26 @@
 | docs/aspectos.md con 8 columnas | S5 | no (resuelto) | — |
 | Registro de IA del corte | S5 | no (resuelto: entradas del 05/09 con rechazos justificados) | — |
 | Rotar token de Coveralls | S5 | sí | Rotar el token — no se ha confirmado |
-
+| Corte vertical y documentación de publicación: commits 87ada13, 10c239b, 905f546 del 31 ago/1 sep (posteriores al cierre). | S4 | no (resuelto tarde) | — |
+| Migración a NestJS/Flutter, CI y ADR 0002/0003: commits 3a82ca6, 316a994, dc91a8b, e68eb8e, 25525ae, 6ee5b66, f7c1a6c del 5 al 7 de septiembre. | S4 | no (resuelto tarde) | — |
+| Corrección de identidad de autor con .mailmap: 6ee5b66 (posterior al cierre). | S4 | no (resuelto tarde) | — |
+| Redactar sección 9 de arc42 enlazada a los ADR (sigue ausente en HEAD). | S4 | si | |
+| Completar docs/aspectos.md con las 8 columnas y enlaces verificables. | S4 | si | |
+| Dejar evidencia de CI en verde para el commit de la entrega (no solo en HEAD). | S4 | si | |
+| Corregir correspondencia entre C4 nivel 2 y el código real. | S4 | si | |
+| Eliminar node_modules del repositorio y aplicar .gitignore. | S4 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | Público (clon sin auth) |
-| Estructura mínima | Cumple (con desviación) | Las seis rutas están, pero `docs/arc42.md` suelto convive con `docs/arc42/` |
+| Estructura mínima | No cumple | Las seis rutas están, pero `docs/arc42.md` suelto convive con `docs/arc42/` |
 | Convención de nombres de ADR | Cumple | 0001, 0002, 0003 en kebab-case con la decisión en el título |
 | ADR aceptados sin reescribir | Cumple | ADR-0001 marcado "Reemplazada" en vez de editado o borrado |
 | `docs/ia.md` al día | Cumple | Entradas del 05/09 con aceptado/corregido/rechazado y motivo |
 | Sin credenciales en el repositorio ni en el historial | **No cumple** | Token de Coveralls recuperable en el historial (`905f546`); no confirmado que se haya rotado |
 | Contribución de todos los integrantes | Cumple, con reserva | 4 identidades para 4 integrantes, pero Fernando con 1 solo commit en todo el semestre |
-| Pipeline en verde | Cumple | Runs `success` antes (`6ee5b66`, 06/09 01:27Z) y después (`f7c1a6c`, 07/09 15:00Z) del cierre |
+| Pipeline en verde | No verificado | Runs `success` antes (`6ee5b66`, 06/09 01:27Z) y después (`f7c1a6c`, 07/09 15:00Z) del cierre |
 
 ## Contribución por integrante
 
