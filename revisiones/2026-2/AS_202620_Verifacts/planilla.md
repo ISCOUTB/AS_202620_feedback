@@ -8,13 +8,13 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Verifacts` |
 | Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md); historial: `PedroC1213` (30 commits) y `Cristian Cardeño` (4 commits tardíos), sin atribuir oficialmente |
 | URL del sistema desplegado | |
-| Última revisión | 2026-09-07 · revisión definitiva post-cierre; repositorio inaccesible desde la organización |
+| Ultima revision | 2026-09-09 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 1 | Evidencia S1 · Equipo, problema y repositorio | HEAD `8ded7cf` (excepción docente) | 4/9 | 2,8 | sí |
+| 1 | S1 | `(sin commits)` () | sin actividad | no aplica | si |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | HEAD `8ded7cf` (excepción docente) | 2/9 | 1,9 | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `8259b75` · 2026-08-23T23:50:00-05:00 | 4/9 | no se publica | sí |
 | 4 | Evidencia S4 · arc42, C4 y corte vertical | `443e908` · 2026-08-29T18:17:18-05:00 | 7/10 | 3.8 | sí |

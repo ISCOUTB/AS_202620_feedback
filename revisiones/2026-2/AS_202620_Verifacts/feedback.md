@@ -57,3 +57,7 @@ Revisión preliminar antes del cierre: el repositorio mejoró la línea base con
 No pudimos revisar el corte 1 porque el repositorio del equipo ya no está en la organización del curso: no responde al clonarlo ni a través de la API, y no aparece en el listado completo de repositorios públicos de la organización. No sabemos si esto pasó por un cambio de visibilidad, un traslado a otra cuenta o un borrado — cualquiera de los tres deja el trabajo fuera de nuestro alcance. La última vez que se pudo ver, el 2026-09-02, el repositorio tenía una base de S4 completa (interfaz, lógica y persistencia con su prueba) pero todavía no mostraba una respuesta al reto del corte 1.
 
 Esto es urgente y no depende de esta revisión: hablen con el docente cuanto antes para restablecer el acceso público al repositorio, con el historial completo tal como estaba. Sin eso no hay manera de calificar el corte, y tampoco de que ustedes mismos demuestren el trabajo que hicieron.
+
+## Semana 1 · S1
+
+Sin actividad S1: el ultimo commit anterior al cierre es de la entrega previa, asi que esta evidencia no se pudo evaluar. Lo que se arrastra de semanas anteriores sigue abierto para el corte.

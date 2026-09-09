@@ -36,3 +36,7 @@ No encontramos una respuesta identificable al reto de este corte. El repositorio
 Lo que sí se sostiene de antes: la documentación base (arc42, C4, dos ADR de estilo y stack) sigue ahí y el pipeline de integración continua corre en verde sobre el estado actual. Eso es la base sobre la que debía construirse el reto, no el reto en sí.
 
 Se mantiene, sin resolver desde el inicio del semestre, que solo una persona del equipo aparece en el historial de commits (con distintas identidades de git). Esto va a pesar cada vez más de cara al proyecto final: la nota es de equipo, pero la evidencia de trabajo debe verse repartida.
+
+## Semana 1 · S1
+
+Sin actividad S1: el ultimo commit anterior al cierre es de la entrega previa, asi que esta evidencia no se pudo evaluar. Lo que se arrastra de semanas anteriores sigue abierto para el corte.

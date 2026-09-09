@@ -41,3 +41,7 @@ Qué está bien: ahora los cuatro integrantes tienen commits propios en el histo
 Qué falta: la etiqueta `corte-1` quedó puesta sobre un commit de más de 7 horas después del cierre, así que la entrega se considera tardía. Además, subir el proyecto como archivos ZIP por la interfaz web dejó el árbol triplicado (el mismo proyecto repetido dentro de varias carpetas), y después de la etiqueta se siguió reorganizando todo sin resolverlo. Sobre todo: no hay ninguna señal de que se haya trabajado el reto del corte — no hay diagnóstico de una restricción nueva, no hay ADR nuevo, no hay cambio de código, no hay medición, y el pipeline de pruebas nunca se ha ejecutado ni una sola vez en todo el repositorio.
 
 Qué corregir: dejar una sola copia del proyecto en la raíz, mover la etiqueta a un commit dentro del plazo la próxima vez, configurar y correr el pipeline, y sobre todo hacer el ejercicio completo del reto (diagnóstico con cifra, ADR con alternativas, cambio implementado, prueba y medición) antes de la sustentación.
+
+## Semana 1 · S1
+
+Sin actividad S1: el ultimo commit anterior al cierre es de la entrega previa, asi que esta evidencia no se pudo evaluar. Lo que se arrastra de semanas anteriores sigue abierto para el corte.

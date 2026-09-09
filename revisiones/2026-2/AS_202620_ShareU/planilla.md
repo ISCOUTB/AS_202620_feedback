@@ -8,13 +8,13 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_ShareU` |
 | Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-03 |
+| Ultima revision | 2026-09-09 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 1 | Evidencia S1 · Equipo, problema y repositorio | `8886d4e` · 2026-08-09T22:03:52-05:00 | 4/9 | no aplica | sí |
+| 1 | S1 | `(sin commits)` () | sin actividad | no aplica | si |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `aa0659c` · 2026-08-16T22:47:16-05:00 | 2/9 | no aplica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `0833272` · 2026-08-23T22:46:30-05:00 | 6/9 | no se publica | sí |
 | 4 | S4 | `27e1190` (2026-08-30T15:22:02-05:00) | 0/10 | 1.0 | si |
