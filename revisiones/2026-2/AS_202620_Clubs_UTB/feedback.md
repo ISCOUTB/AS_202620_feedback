@@ -39,3 +39,7 @@ Revisando el repositorio completo hasta el último commit antes del cierre, segu
 Un hallazgo nuevo de esta revisión: el ADR-0001, que ya estaba aceptado, se editó otra vez el 30 de agosto para agregarle una sección de trazabilidad. El contrato pide que un ADR aceptado no se toque — si hace falta completar o cambiar algo, se escribe un ADR nuevo que lo reemplace y se enlaza. No hace falta deshacer ese cambio, pero de aquí en adelante cualquier ajuste a esa decisión debe ir en un ADR nuevo, no en el mismo archivo.
 
 Para la sustentación: preparen quién puede explicar qué restricción les asignaron, qué se midió antes del cambio, y por qué el endpoint agregado no aparece documentado como respuesta a ella.
+
+## Semana 3 · S3
+
+El ADR y la matriz comparativa están bien orientados y la estructura de paquetes refleja la decisión hexagonal. Para las próximas entregas: automaticen la prueba en un pipeline visible, documenten el arranque en el README desde el primer commit, y hagan navegable la trazabilidad en docs/aspectos.md y en los escenarios de calidad. Cuiden también las convenciones de nombres de ADR y el orden del repositorio. Varios de estos puntos se corrigieron después del cierre; procuren que los arreglos lleguen antes del cierre en las siguientes semanas.

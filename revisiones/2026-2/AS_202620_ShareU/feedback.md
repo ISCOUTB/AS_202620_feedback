@@ -49,3 +49,7 @@ Sin actividad S1: el ultimo commit anterior al cierre es de la entrega previa, a
 ## Semana 2 · S2
 
 Sin actividad S2: el ultimo commit anterior al cierre es de la entrega previa, asi que esta evidencia no se pudo evaluar. Lo que se arrastra de semanas anteriores sigue abierto para el corte.
+
+## Semana 3 · S3
+
+Sin actividad S3: el ultimo commit anterior al cierre es de la entrega previa, asi que esta evidencia no se pudo evaluar. Lo que se arrastra de semanas anteriores sigue abierto para el corte.

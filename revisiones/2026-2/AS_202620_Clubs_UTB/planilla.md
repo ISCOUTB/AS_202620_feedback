@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Clubs_UTB` |
 | Integrantes y su usuario de GitHub | Hollman Jose De Orta Gonzalez (`deortahollman-star`) · Josh Robinson Ortega Castellon (`Josh4OP`) · Diego Andres Ramos De Avila (`Zavod Dev`, atribución sin confirmar) · Luis Daniel Salas Reyes (`Luis-Salas-Reyes`) |
 | URL del sistema desplegado | sin desplegar todavía |
-| Ultima revision | 2026-09-03 |
+| Ultima revision | 2026-09-09 |
 
 ## Estado por entrega
 
@@ -18,7 +18,7 @@
 | 4 | S4 | `91323d6` (2026-08-30T23:21:56-05:00) | 9/10 | 4.6 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `c92595ed` · 2026-08-09T13:25:24-05:00 | 2/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `69cfe68f` · 2026-08-16T18:33:10-05:00 | 7/9 | no se publica | sí |
-| 3 | Evidencia S3 · Estrategia de solución y primer ADR | `5bf86ead1` · 2026-08-23T23:05:10-05:00 | 6/9 | no se publica | sí (actualizada tras el cierre) |
+| 3 | S3 | `5bf86ea` (2026-08-23T23:05:10-05:00) | 6/9 | 3.7 | si |
 
 ## Lo que se arrastra
 
@@ -43,19 +43,27 @@
 | Registro IA sin entrada de S5 | S5 | sí | `docs/ia.md` no tiene commits desde S3-S4. |
 | Análisis estático SonarCloud ausente | S5 | sí | No se verificó badge ni run de SonarCloud en el estado revisado. |
 | ADR-0001 editado después de aceptado (`c6c46e3`, 30/08) sin ADR de reemplazo | S5 | sí | Corrige el hallazgo de S4 ("sin reescrituras"): sí hay una edición posterior a la aceptación; se les pidió escribir un ADR nuevo si la decisión cambia. |
-
+| README con arranque y pruebas documentado después del cierre (commits 7017270, 91323d6). | S3 | no (resuelto tarde) | — |
+| Workflow .github/workflows/backend-tests.yml añadido tras el cierre. | S3 | no (resuelto tarde) | — |
+| docs/C4 renombrado a docs/c4 y docs/aspectos.md actualizado después del cierre. | S3 | no (resuelto tarde) | — |
+| Corrección de nombres de archivos y enlaces en docs (commits 46c7fa3, 993f51d). | S3 | no (resuelto tarde) | — |
+| docs/aspectos.md aún sin las 8 columnas del contrato ni enlace al ADR. | S3 | si | |
+| docs/ia.md sin registros concretos de uso de IA. | S3 | si | |
+| ADR con nombre fuera de la convención kebab-case. | S3 | si | |
+| Sin evidencia de que la prueba automatizada esté en verde en CI. | S3 | si | |
+| Archivo basura docs/adr/.temp aún presente. | S3 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | `AS_202620_Clubs_UTB`, público. |
-| Estructura mínima | Cumple | Las seis rutas existen; `docs/C4/` en mayúscula (desviación de ruta). |
+| Estructura mínima | No cumple | Las seis rutas existen; `docs/C4/` en mayúscula (desviación de ruta). |
 | Convención de nombres de ADR | Cumple | `0001-hexagonal.md` conforme; `docs/adr/.temp` residual a borrar. |
 | ADR aceptados sin reescribir | No cumple | Aceptado en `2c316f4` (23/08); editado nuevamente en `c6c46e3` (30/08, "correción de feedback") sin ADR de reemplazo. Corrige la fila anterior, que solo había mirado hasta S4. |
 | `docs/ia.md` al día | No cumple | Último commit `c92595e` (2026-08-09). |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Sin coincidencias. |
 | Contribución de todos los integrantes | Cumple | 4 de 4 en S3: Luis 2, Diego 2, Hollman 1, Josh 1 (Josh4OP = «Josh Ortega», mismo correo). |
-| Pipeline en verde | No cumple | Sin workflow; la prueba estaba vacía en el hash calificado (contenido tardío). |
+| Pipeline en verde | No verificado | Sin workflow; la prueba estaba vacía en el hash calificado (contenido tardío). |
 
 ## Contribución por integrante
 

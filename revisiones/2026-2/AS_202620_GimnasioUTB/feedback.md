@@ -43,3 +43,7 @@ Lo que falta: el trabajo antes del cierre fue limpieza de documentación (README
 Una alerta seria: el ADR de arquitectura hexagonal, que ya estaba aceptado desde la semana 3, fue editado en su contenido varias veces después de aceptarse (cambiaron los escenarios de calidad que cita y las consecuencias). Un ADR aceptado no se edita: si la decisión evoluciona, se escribe un ADR nuevo que reemplaza al anterior, dejando un enlace.
 
 Para la sustentación: traigan la restricción asignada, la medida inicial del sistema antes de tocarlo, y expliquen por qué el ADR 0001 cambió de contenido después de aceptado.
+
+## Semana 3 · S3
+
+La entrega tiene buen ADR y un esqueleto hexagonal coherente con el estilo elegido. Sin embargo, faltó completar la sección 4 de arc42 con la matriz comparativa y las tácticas ligadas a los escenarios, y docs/aspectos.md no enlaza el ADR. Ajusten también la estructura mínima moviendo arc42 a docs/arc42/ y registren el C4 en docs/c4/. El esqueleto arranca bien y la prueba pasa, así que el foco ahora es cerrar la trazabilidad documental para que la semana 4 no arrastre estas brechas.

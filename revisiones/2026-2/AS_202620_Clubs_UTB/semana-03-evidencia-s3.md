@@ -1,58 +1,81 @@
-# Evidencia S3 · Clubs UTB
+# semana-03-evidencia-s3 · Clubs UTB
 
-## Datos
+> Revision automatica definitiva (GitHub Actions, posterior al cierre). Re-evaluada por cambio de hash calificado tras la pasada temprana.
 
-| | |
+| Campo | Valor |
 |---|---|
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Clubs_UTB` |
-| Estado revisado | `5bf86ead1` · 2026-08-23T23:05:10-05:00 (último commit ≤ cierre 2026-08-24T05:00:00Z) |
-| Fecha/hora de revisión | 2026-08-24, DESPUÉS del cierre. Revisión actualizada tras el cierre: el equipo empujó después de la primera revisión; hash calificado definitivo |
-| Primera revisión | `2c316f44` · 2026-08-23T21:15:42-05:00 (quedó sin efecto; todo se recalifica sobre el hash definitivo) |
-| Commits tardíos | 1: `8d69f62` · 2026-08-24T00:21:05-05:00 «Esqueleto ejecutable: arranque con uvicorn, test de health en verde» (21 min después del cierre) |
-| Comandos | clon efímero `--filter=blob:none --no-checkout`; `git log -1 --until='2026-08-24T05:00:00Z'`; `git log --after` para tardíos; `git ls-tree`; `git show`; `git grep` de secretos (exit 1). Sin API de actions: no hay `.github/workflows/` |
+| Estado revisado | `5bf86ea` (2026-08-23T23:05:10-05:00) |
+| Cierre | 2026-08-24T05:00:00Z |
+| Revisor | pipeline automatico (GitHub Actions) |
 
 ## Matriz de la ficha
 
-| Criterio | Evidencia técnica | Estado | Observaciones |
+| Criterio de evaluacion | Evidencia tecnica | Estado | Observaciones |
 |---|---|---|---|
-| arc42 sección 4 con estrategia y tácticas ligadas a los escenarios | `docs/arc42/04_estrategia_de_solucion.md` | Cumple | Estrategia elegida (hexagonal, §4.2) justificada contra la meta de disponibilidad y la restricción T4; §4.3 nombra tácticas por meta (timeout/reintento en adaptadores, caché e índices en persistencia) y enlaza matriz y ADR. |
-| Matriz comparativa de los tres estilos contra el árbol de utilidad | `docs/arc42/matriz_comparativa_estilos.md` | Cumple | Fila por escenario del equipo (U1–U3, C1–C3 de la sección 10, IDs coinciden), con qué estilo mejora/empeora por escenario y conclusión. |
-| `docs/adr/0001-*.md` con el nombre de la convención | `docs/adr/0001-hexagonal.md` | Cumple | Nombre conforme al filtro `^[0-9]{4}-[a-z0-9]+(-[a-z0-9]+)*\.md$`. Sigue el residuo `docs/adr/.temp` (no es ADR, conviene borrarlo). |
-| ADR con contexto, opciones evaluadas, decisión y consecuencias | `docs/adr/0001-hexagonal.md` | Cumple | Contexto, Alternativas, Decision y Consecuencias presentes, estado «Aceptado» (desde `2c316f4`). Observación: el título «Arquitectura hexagonal» nombra el tema y no la decisión; el CONTRATO pide «Usar arquitectura hexagonal». |
-| Alternativas descartadas con su motivo | ADR §Alternativas | Cumple | Capas descartada por mezclar lógica de negocio e infraestructura; monolito modular por no aislar la lógica de las tecnologías externas. Motivos breves pero presentes. |
-| ADR alcanzable desde `docs/aspectos.md` y desde el escenario que lo motiva | `git grep -i adr` en `docs/aspectos.md` y `docs/arc42/10_requisitos_de_calidad.md`: sin coincidencias | No cumple | El ADR solo es alcanzable desde la sección 4 (`04_estrategia_de_solucion.md:16`) y la matriz. `aspectos.md` sigue en prosa sin enlace, y el escenario U2 (disponibilidad, que motiva la decisión) no lo enlaza. |
-| Arranque con un solo comando documentado en el README | `README.md` §6 («En fase de planeación… No hay desarrollo de código activo») | No cumple | En el hash calificado el README no documenta ningún comando de arranque, `backend/src/main.py` está vacío y no existe `requirements.txt` (todo eso llegó en el commit tardío `8d69f62`, 21 min después del cierre). |
-| Prueba automatizada en verde | `backend/tests/test_health.py` en el hash calificado | No cumple | El archivo existe pero está **vacío** en `5bf86ead1`: la prueba con `assert` llegó solo en el commit tardío. Sin `.github/workflows/` ni evidencia de ejecución. |
-| Estructura de paquetes correspondiente al estilo del ADR | `backend/src/linkclub/{domain,application/{ports,use_cases},adapters/{inbound/api,outbound/persistence}}` | Cumple | Estructura hexagonal (dominio, aplicación con puertos y casos de uso, adaptadores de entrada/salida) creada en `5bf86ea` y coherente con la decisión del ADR; paquetes vacíos como pide el esqueleto. |
+| arc42 sección 4 con estrategia y tácticas ligadas a los escenarios | docs/arc42/04_estrategia_de_solucion.md en commit 5bf86ea | Cumple | Explica la estrategia hexagonal ligada a la disponibilidad y menciona tácticas específicas para los escenarios. |
+| Matriz comparativa de los tres estilos contra el árbol de utilidad | docs/arc42/matriz_comparativa_estilos.md en commit 5bf86ea | Cumple | Compara capas, monolito modular y hexagonal contra los escenarios U1-U3 y C1-C3. |
+| docs/adr/0001-*.md con el nombre de la convención | docs/adr/0001-hexagonal.md en commit 5bf86ea | Cumple | Existe el archivo ADR, aunque el nombre no es kebab-case estricto. |
+| ADR con contexto, opciones evaluadas, decisión y consecuencias | docs/adr/0001-hexagonal.md en commit 5bf86ea | Cumple | Contiene secciones de Contexto, Alternativas, Decisión y Consecuencias. |
+| Alternativas descartadas con su motivo | docs/adr/0001-hexagonal.md apartado Alternativas en commit 5bf86ea | Cumple | Capas y monolito modular se descartan con justificación. |
+| ADR alcanzable desde docs/aspectos.md y desde el escenario que lo motiva | docs/aspectos.md y docs/arc42/10_requisitos_de_calidad.md en commit 5bf86ea | No cumple | Ninguno de los dos enlaza al ADR. |
+| Arranque con un solo comando documentado en el README | README.md en commit 5bf86ea | No cumple | No hay sección de arranque ni comando único documentado al cierre. |
+| Prueba automatizada en verde | backend/tests/test_health.py existe en commit 5bf86ea; runs_ci vacío | No verificado | No hay pipeline ni run que demuestre la prueba en verde. |
+| Estructura de paquetes correspondiente al estilo del ADR | backend/src/linkclub/{domain,application,adapters} en commit 5bf86ea | Cumple | Coherente con puertos y adaptadores declarados en el ADR. |
 
-## Matriz transversal (CONTRATO)
+## Matriz transversal (CONTRATO §11)
 
-| Criterio | Evidencia técnica | Estado | Observaciones |
+| Criterio | Evidencia | Estado | Observaciones |
 |---|---|---|---|
-| Repositorio en la organización, con el nombre de la convención y público | clon anónimo OK de `ISCOUTB/AS_202620_Clubs_UTB` | Cumple | Público y con el nombre de la convención. |
-| Estructura mínima presente | `git ls-tree -r --name-only 5bf86ead1` | Cumple | Las seis rutas existen; `docs/C4/` en mayúscula es desviación de ruta (anotada desde S2), no ausencia. |
-| Estado calificado identificable | `5bf86ead1` · 2026-08-23T23:05:10-05:00 | Cumple | Sin etiqueta; se registra hash+fecha del último commit anterior al cierre. |
-| Nombres de ADR según la convención | `ls docs/adr` | Cumple | `0001-hexagonal.md` conforme; residual `docs/adr/.temp` fuera de convención pero no es un ADR. |
-| ADR aceptados no reescritos | `git log --follow -- docs/adr/0001-hexagonal.md`: `75aff08` (en revisión) → `2c316f4` (Aceptado) | Cumple | Aceptado en `2c316f4`; sin commits de reescritura posteriores a la aceptación. |
-| `docs/ia.md` al día para la semana | `git log -- docs/ia.md`: último commit `c92595e` 2026-08-09 | No cumple | Sin commits en S2 ni S3; sin registro de usos reales ni de rechazos. |
-| Sin credenciales en el repositorio ni en el historial | `git grep` de secretos (exit 1), sin `.env` versionado | Cumple | Sin coincidencias. |
-| Contribución de todos los integrantes | commits en S3: Luis-Salas-Reyes (2), Zavod Dev (2), deortahollman-star (1), Josh Ortega (1, mismo correo `[correo omitido]` que `Josh4OP`) | Cumple | Los 4 integrantes firman commits dentro del periodo S3, consolidando las dos identidades de Josh. |
+| Identidad del repositorio | repo ISCOUTB/AS_202620_Clubs_UTB, commit 5bf86ea | Cumple | Nombre, organización y visibilidad correctos. |
+| Estructura mínima | docs/C4/contexto.md y docs/adr/.temp en commit 5bf86ea | No cumple | docs/C4 está en mayúscula y hay un archivo .temp en docs/adr. |
+| Estado del repositorio que se califica | commit 5bf86ea 2026-08-23T23:05:10-05:00 | Cumple | Último commit antes del cierre. |
+| Convenciones de ADR | docs/adr/0001-hexagonal.md | No cumple | El nombre no es kebab-case con patrón NNNN-titulo. |
+| La tabla de aspectos | docs/aspectos.md en commit 5bf86ea | No cumple | No tiene las 8 columnas ni enlaces navegables. |
+| Registro de uso de IA | docs/ia.md en commit 5bf86ea | No cumple | Solo describe usos posibles, no registros concretos con aceptado/rechazado. |
+| README | README.md en commit 5bf86ea | No cumple | No documenta arranque ni pruebas. |
+| Pipeline y análisis estático | runs_ci vacío y sin workflow al cierre | No verificado | No hay evidencia de ejecución de CI ni SonarCloud. |
 
-## Recuento
+## Estado global del proyecto (overall · revisado en HEAD)
 
-**6 de 9** criterios de la ficha cumplidos. La nota la fija el profesor (sin rúbrica publicada).
+Mira el repositorio **entero en su estado actual** (HEAD), no solo la evidencia del cierre: si el equipo subio tarde o corregio entregas anteriores, aqui se nota.
+
+- **HEAD revisado**: `4ede977c7cccc335d878019ce06cba2e23cf76d2 2026-09-06T22:41:55-05:00 quite el C2 y lo reemplaze con el C3`
+- **Veredicto**: con pendientes
+- Resumen: La entrega S3 en el commit 5bf86ea cumple parcialmente: tiene ADR, matriz comparativa y estructura hexagonal, pero no documenta arranque, no evidencia prueba en verde y la trazabilidad está rota. A HEAD se agregaron README operativo, CI y correcciones de estructura, pero hay pendientes de semanas anteriores aún sin resolver.
+
+Resuelto tarde (corregido despues del cierre, ahora al dia):
+- README con arranque y pruebas documentado después del cierre (commits 7017270, 91323d6).
+- Workflow .github/workflows/backend-tests.yml añadido tras el cierre.
+- docs/C4 renombrado a docs/c4 y docs/aspectos.md actualizado después del cierre.
+- Corrección de nombres de archivos y enlaces en docs (commits 46c7fa3, 993f51d).
+
+Pendientes que siguen abiertos:
+- docs/aspectos.md aún sin las 8 columnas del contrato ni enlace al ADR.
+- docs/ia.md sin registros concretos de uso de IA.
+- ADR con nombre fuera de la convención kebab-case.
+- Sin evidencia de que la prueba automatizada esté en verde en CI.
+- Archivo basura docs/adr/.temp aún presente.
+
+## Recuento y nota sugerida
+
+6 de 9 criterios Cumple.
+
+**Nota sugerida (propuesta al docente, publicada por decision del profesor): 3.7 = 1 + 4 × (6/9).** La nota final la fija el profesor en Moodle.
 
 ## No verificado / pendientes
 
-- Nada quedó No verificado: toda la evidencia se pudo leer desde el commit calificado.
-- Ejecución real del arranque: no aplica al hash calificado (no hay comando ni archivo que lo soporte; ambos llegaron tardíos).
-- Sin llamada a la API de actions: el repositorio no tiene `.github/workflows/`.
+- Prueba automatizada en verde: no hay run de CI; comando pendiente: pytest backend/tests.
+- Pipeline y análisis estático: no hay runs_ci ni workflow al cierre.
 
 ## Hallazgos para la planilla
 
-- La documentación S3 está completa y en verde: sección 4 con tácticas, matriz por escenarios, ADR aceptado con alternativas y paquetes hexagonales coherentes.
-- **Commit tardío** (`8d69f62`, 00:21 del 24-ago, 21 min después del cierre): ahí llegó el esqueleto ejecutable real — `main.py` con uvicorn, `test_health.py` con asserts, `requirements.txt`. En el hash calificado `main.py` y `test_health.py` están vacíos y el README no documenta comando de arranque: las filas de arranque y prueba quedaron No cumple por 21 minutos.
-- El ADR sigue sin ser alcanzable desde `docs/aspectos.md` ni desde el escenario U2.
-- `docs/aspectos.md` sigue en prosa sin la tabla de 8 columnas (arrastrado de S1).
-- `docs/ia.md` sin commits desde el 2026-08-09 (arrastrado de S2).
-- Residuo `docs/adr/.temp` pendiente de borrar.
+- ADR no enlazado desde docs/aspectos.md ni desde los escenarios de calidad.
+- README sin comando de arranque al cierre.
+- Prueba sin evidencia de ejecución en CI.
+- Nombre del ADR no sigue la convención kebab-case.
+- docs/aspectos.md no cumple las 8 columnas.
+- docs/ia.md es declarativo, sin usos concretos.
+- docs/C4 en mayúscula y archivo .temp en docs/adr.
+- Correcciones importantes subieron después del cierre s3.
+- Commits posteriores al cierre (no calificados): 4ede977 2026-09-06T22:41:55-05:00 quite el C2 y lo reemplaze con el C3; 4cfcfb6 2026-09-06T18:58:18-05:00 Agregación de endpoint get y post para el corte vertical; 91323d6 2026-08-30T23:21:56-05:00 Correción de parrafo en sección 6.1 y corrección del readme; 01ae5f5 2026-08-30T22:41:40-05:00 Merge branch 'master' of https://github.com/ISCOUTB/AS_202620_Clubs_UTB; cae56d6 2026-08-30T22:41:36-05:00 .
