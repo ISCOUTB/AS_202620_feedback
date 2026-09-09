@@ -210,15 +210,22 @@ def llm_chat(system, user, model, temperature=0.2, max_tokens=8000):
     try:
         with urllib.request.urlopen(req, timeout=600) as r:
             data = json.loads(r.read().decode("utf-8"))
-    except urllib.error.HTTPError:
+    except urllib.error.HTTPError as ex1:
+        cuerpo1 = ex1.read().decode("utf-8", "replace")[:500]
+        print("LLM error (1er intento, con response_format): %s %s" % (ex1.code, cuerpo1))
         payload.pop("response_format", None)
         body = json.dumps(payload).encode("utf-8")
         req = urllib.request.Request(LLM_BASE.rstrip("/") + "/chat/completions", data=body,
                                      headers={"Content-Type": "application/json",
                                               "User-Agent": "arqsw-feedback-bot/1.0",
                                               "Authorization": "Bearer " + LLM_KEY})
-        with urllib.request.urlopen(req, timeout=600) as r:
-            data = json.loads(r.read().decode("utf-8"))
+        try:
+            with urllib.request.urlopen(req, timeout=600) as r:
+                data = json.loads(r.read().decode("utf-8"))
+        except urllib.error.HTTPError as ex2:
+            cuerpo2 = ex2.read().decode("utf-8", "replace")[:500]
+            raise RuntimeError("LLM error (2do intento, sin response_format): %s %s"
+                               % (ex2.code, cuerpo2)) from None
     return data["choices"][0]["message"]["content"]
 
 
