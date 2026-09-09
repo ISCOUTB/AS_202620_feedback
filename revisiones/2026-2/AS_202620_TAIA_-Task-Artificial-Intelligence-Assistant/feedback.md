@@ -28,18 +28,7 @@ La entrega tiene un corte vertical claro (HTTP → caso de uso → dominio → p
 
 ## Semana 5 · CORTE1
 
-La entrega no muestra evidencia del reto de línea base en el repositorio.
-1) Crear la etiqueta corte-1 en el commit a calificar.
-2) Registrar la restricción asignada y su impacto en requisitos, C4 y código.
-3) Medir el estado inicial con herramienta y procedimiento.
-4) Escribir el ADR del reto con alternativas, fuerzas, decisión y consecuencias.
-5) Implementar el cambio y probarlo de extremo a extremo.
-6) Ejecutar las pruebas en CI y adjuntar el run.
-7) Contrastar el resultado con el umbral del escenario.
-8) Completar la fila del aspecto en aspectos.md.
-9) Registrar en ia.md la salida de IA de este corte.
-10) Entregar el PDF en Moodle.
-
+El proyecto presenta una base sólida con documentación arc42 completa, ADR-0001 bien estructurado, C4 en Mermaid y un corte vertical ejecutable de registro/consulta de tareas respaldado por CI en GitHub Actions. La tabla de aspectos tiene una fila A-01 navegable. Se sugiere revisar el contenido de correcciones.md y publicar el PDF del aula en el repositorio o proporcionar el enlace del adjunto para verificar su cumplimiento. Completar la entrada de docs/ia.md que quedó truncada y consolidar las identidades de git para reflejar correctamente la contribución de los cuatro integrantes. Los últimos commits fuera del cierre bloquean SonarCloud, pero no afectan la nota del corte.
 ## Semana 5 · Primer corte (revisión definitiva, 2026-09-07)
 
 Se revisó de nuevo después del cierre. Como no existe la etiqueta `corte-1`, se tomó el último commit subido antes del cierre.

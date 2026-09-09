@@ -31,8 +31,7 @@ La entrega de la semana 4 está sólida en lo que se pudo verificar: C4 como có
 
 ## Semana 5 · CORTE1
 
-Revisión preliminar antes del cierre: el repositorio tiene una línea base reproducible, trazabilidad amplia y CI en verde. Todavía no permite identificar cuál es la restricción asignada ni qué ADR, cambio y resultado corresponden al reto del corte. Fijen la etiqueta, nombren explícitamente el reto, enlacen su diagnóstico con la línea base ya medida y aporten la medición posterior contra el mismo umbral. Registren también el uso de IA de esta etapa y confirmen la correspondencia entre las identidades de Git y los integrantes.
-
+Sin actividad CORTE1: el ultimo commit anterior al cierre es de la entrega previa, asi que esta evidencia no se pudo evaluar. Lo que se arrastra de semanas anteriores sigue abierto para el corte.
 ## Semana 5 · Primer corte (revisión definitiva, 2026-09-07)
 
 El repositorio no tiene la etiqueta `corte-1` y no cambió entre la revisión de antes del cierre y el cierre mismo. Dicho eso: encontramos un trabajo (la decisión de delegar la autenticación en un proveedor externo, en vez de confiar en una cabecera que cualquiera podía falsificar) que tiene toda la forma de una buena respuesta a una restricción — diagnóstico claro, comparación real de alternativas con sus costos, decisión documentada, implementación de punta a punta que arranca con un solo comando, y pruebas en verde. Lo evaluamos como su respuesta más probable al reto, aunque el repositorio no lo declara explícitamente como tal — en la sustentación conviene confirmar si esa fue, en efecto, la restricción asignada.

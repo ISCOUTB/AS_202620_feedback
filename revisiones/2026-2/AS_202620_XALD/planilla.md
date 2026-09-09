@@ -10,7 +10,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_XALD` |
 | Integrantes y su usuario de GitHub | Xavier Yesid Garcia Diaz (xaviergarciadiaz20-commits) · Dilan Joan Gonzalez Bejarano (dilanbejarano011) · Luis Estheban Lozano Colmenares (colmenares2007-crypto) · Axel Jair Ruiz Bolano (axeljruiz717-hash) — correspondencias por los correos de los commits (nombres explícitos), por confirmar con el docente |
 | URL del sistema desplegado | sin URL (sin despliegue todavía) |
-| Ultima revision | 2026-09-07 · revisión definitiva post-cierre |
+| Ultima revision | 2026-09-09 |
 
 ## Estado por entrega
 
@@ -20,7 +20,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `8c37887` · 2026-08-16T13:45:27-05:00 | 1/9 | 1.4 (propuesta) | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `dc38992` · 2026-08-23T22:07:19-05:00 | 5/9 | no se publica | sí |
 | 4 | S4 | `0205e44` (2026-08-30T23:12:03-05:00) | 4/10 | 2.6 | si |
-| 5 | Primer corte · reto de línea base | etiqueta `corte-1` en `2861d8b` (2026-09-06T22:50:12-05:00, anterior al cierre) | 3/12 | subtotal técnico 0,60/4,00; sustentación pendiente | revisión definitiva post-cierre 2026-09-07 |
+| 5 | CORTE1 | `ee9af9c` (2026-09-06T23:11:50-05:00) | 7/12 | no aplica | si |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
@@ -60,7 +60,11 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Entregar el PDF con diagnóstico, decisión, cambio, medición y trazabilidad. | S5 | sí | no hay PDF versionado; falta además identificar la restricción nueva asignada, con línea base y medición posterior |
 | El pipeline de CI no dispara en `master` (rama por defecto), solo en `experimental`/`main`; el estado etiquetado no tiene un run propio | S5 (detectado en revisión definitiva) | sí | ajustar `on.push.branches` en `ci.yml` para incluir `master`, o cambiar la rama por defecto |
 | La prueba "corte vertical" (`Entornotest.kt`) es un `assertTrue(true)` trivial, no demuestra los 5 módulos interactuando | S5 (detectado en revisión definitiva) | sí | agregar una prueba que ejercite el flujo real de datos entre módulos |
-
+| correcciones-feedback-XALD.md renombrado a correcciones.md en 43b8e35 (2026-09-08T10:25:05-05:00), posterior al cierre. | S5 | no (resuelto tarde) | — |
+| Workflow de CI ajustado a la rama master en 9bf16cf (2026-09-09T10:07:09-05:00), posterior al cierre; run success 2026-09-09T15:07:12Z. | S5 | no (resuelto tarde) | — |
+| Completar CÓDIGO, PRUEBAS y EVIDENCIA en docs/aspectos.md con enlaces al estado calificado. | S5 | si | |
+| Incorporar análisis estático SonarCloud. | S5 | si | |
+| Verificar entrega del PDF en Moodle y sustentación. | S5 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -72,7 +76,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | `docs/ia.md` al día | Cumple | corrige la revisión preliminar: la última entrada (SonarCloud) está fechada en la ventana de commits previa a la etiqueta |
 | Sin credenciales en el repositorio ni en el historial | Cumple | greps limpios; `local.properties` solo trae ruta de SDK (fuera del versionado de todas formas) |
 | Contribución de todos los integrantes | Cumple | 4 identidades = 4 integrantes |
-| Pipeline en verde | No verificado | corrige la revisión preliminar (que citaba un run de la base, no del reto): el workflow solo dispara en `experimental`/`main`; ningún commit de la noche del cierre (incluida la etiqueta) disparó un run en `master` |
+| Pipeline en verde | No cumple | corrige la revisión preliminar (que citaba un run de la base, no del reto): el workflow solo dispara en `experimental`/`main`; ningún commit de la noche del cierre (incluida la etiqueta) disparó un run en `master` |
 
 ## Contribución por integrante
 

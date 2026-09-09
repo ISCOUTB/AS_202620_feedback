@@ -35,8 +35,7 @@ El arranque con un solo comando y la fila de disponibilidad hasta Pruebas ya est
 
 ## Semana 5 · CORTE1
 
-El repositorio está bien estructurado y el corte vertical arranca con un solo comando, pero la entrega del reto no se evidencia en el repositorio: no hay ADR nuevo, diagnóstico de la restricción ni medición. Sin conocer la restricción asignada no es posible validar el diagnóstico; asegúrense de citarla en el PDF y enlazarla desde la tabla de aspectos. La tabla de aspectos debe tener las 8 columnas del contrato para que la cadena sea navegable. Incorporen SonarCloud al pipeline; hoy solo corre pytest. Registren en docs/ia.md los usos de IA de este corte con al menos un descarte y su motivo técnico. Para la sustentación, preparen cómo justifican trade-offs, límites y consecuencias del reto.
-
+El primer corte tiene una base sólida: problema, escenarios de calidad, ADR, arc42, C4 y corte vertical están documentados y las pruebas pasan en CI. El punto crítico es que correcciones.md no estaba en la raíz al cierre; se añadió después, así que la entrega calificada queda sin el índice de correcciones. Revisen la tabla de aspectos para que tenga las 8 columnas del contrato (ID, Aspecto, Requisito, C4, ADR, Código, Pruebas, Evidencia) y añadan SonarCloud al pipeline. El commit posterior al cierre no cambia la nota del corte, pero sí el estado actual del repositorio.
 ## Semana 5 · Primer corte (revisión definitiva, 2026-09-07)
 
 Se revisó de nuevo después del cierre. No existe ninguna etiqueta en el repositorio, así que se tomó el último commit subido antes del cierre.

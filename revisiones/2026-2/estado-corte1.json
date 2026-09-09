@@ -1,11 +1,1 @@
-{
-  "modo": "definitiva",
-  "ts": "2026-09-07T18:50:00Z",
-  "cierre": "2026-09-07T05:00:00Z",
-  "equipos": 23,
-  "evaluados": 22,
-  "no_evaluables": [
-    "AS_202620_Verifacts (repositorio no accesible, 404)"
-  ],
-  "reemplaza": "preliminar-manual 2026-09-04"
-}
+{"modo": "definitive", "ts": "2026-09-09T16:16:52.842981+00:00", "equipos": 23}

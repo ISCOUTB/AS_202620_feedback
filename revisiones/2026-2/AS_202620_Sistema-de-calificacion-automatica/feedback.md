@@ -29,8 +29,7 @@ Buen avance: el corte vertical A-01 está construido y documentado, los ADRs son
 
 ## Semana 5 · CORTE1
 
-El repositorio está bien organizado y los ADR 0004/0005 documentan decisiones con alternativas, fuerzas y consecuencias. La estructura, el README y la tabla de aspectos cumplen la forma esperada. Sin embargo, la entrega del corte 1 no permite verificar la etiqueta, la restricción asignada, la línea base medida, la ejecución del pipeline ni la trazabilidad completa del aspecto afectado. Completen la fila A-04, aporten la medición con procedimiento reproducible y dejen visible el run de CI en verde. La sustentación definirá el quinto criterio.
-
+El repositorio está bien documentado: el corte vertical A-01 se puede recorrer desde el README hasta la medición de EC-07, y los seis ADR dejan trazadas las decisiones y sus cambios. Para el compendio del corte quedan dos pendientes concretos: crear correcciones.md en la raíz con el nombre exacto y dentro del plazo de la entrega, respondiendo a los hallazgos de S1 a S4 con evidencia contrastable; y añadir docs/ia.md con el registro de usos de IA, incluida la columna de lo rechazado y por qué. Aunque correcciones.md se añadió justo después del cierre, el estado calificado debe tenerlo ya en el commit. Cuiden también que el pipeline de CI quede respaldado con el enlace al run de cada commit.
 ## Semana 5 · Primer corte (revisión definitiva, 2026-09-07)
 
 Se revisó de nuevo después del cierre, sobre la etiqueta `corte-1`, que sí existe y apunta a un commit dentro del plazo.

@@ -18,7 +18,7 @@
 | 2 | S2 | `d4302f4` (2026-08-16T23:17:26-05:00) | 3/9 | no aplica | si |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `dd422fb` · 2026-08-23T23:52:23-05:00 | 6/9 | no se publica | sí |
 | 4 | S4 | `cede35e` (2026-08-30T23:51:34-05:00) | 6/10 | 3.4 | si |
-| 5 | Primer corte · reto de línea base | HEAD `cede35e` (sin etiqueta) | 0/12 | subtotal técnico preliminar 0,00/4,00; sustentación pendiente | revisión manual preliminar 2026-09-03 |
+| 5 | CORTE1 | `201acac` (2026-09-06T23:34:17-05:00) | 7/12 | no aplica | si |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
@@ -65,6 +65,10 @@
 | Árbol de utilidad priorizado por impacto y riesgo. | S2 | si | |
 | Tabla de aspectos navegable hasta código, ADR, pruebas y evidencia. | S2 | si | |
 | Clasificación de restricciones en técnicas, organizativas y legales. | S2 | si | |
+| 8b0d00b (2026-09-07T14:29:28-05:00) renombra correcciones_feedback.md a correcciones.md: corrige la fila 2 de la ficha S5 después del cierre. | S5 | no (resuelto tarde) | — |
+| docs/ia.md sigue ausente en HEAD. | S5 | si | |
+| Correcciones trazables en correcciones.md no se pudieron contrastar: no se verificó su contenido ni respuesta a hallazgos S1-S4. | S5 | si | |
+| No hay runs_ci citados para respaldar el pipeline en HEAD. | S5 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -73,7 +77,7 @@
 | Estructura mínima | Cumple | Las seis rutas presentes en `b65626e` |
 | Convención de nombres de ADR | Cumple | `0001-usar-monolito-modular.md`, `0002-procesar-calificacion-de-forma-asincrona.md` |
 | ADR aceptados sin reescribir | Cumple | 0001 marcado como reemplazado por 0002, sin reescrituras de contenido |
-| `docs/ia.md` al día | Cumple | Actualizado en S3 (`aa14dca`) con aceptado/rechazado/justificación |
+| `docs/ia.md` al día | No cumple | Actualizado en S3 (`aa14dca`) con aceptado/rechazado/justificación |
 | Sin credenciales en el repositorio ni en el historial | Cumple | git grep y `.env` sin coincidencias |
 | Contribución de todos los integrantes | Cumple | 4 cuentas para 4 integrantes |
 | Pipeline en verde | No verificado | Sin código ni prueba al cierre; el esqueleto tardío trae prueba, pendiente de run en verde para S4 |

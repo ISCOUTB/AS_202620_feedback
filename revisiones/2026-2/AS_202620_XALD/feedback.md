@@ -30,8 +30,7 @@ El C4 en Mermaid es claro y coherente entre niveles, y los cinco módulos Gradle
 
 ## Semana 5 · CORTE1
 
-Revisión preliminar antes del cierre: la base tiene módulos Android, C4, ADR, participación del equipo y CI en verde. Aún no se distingue la respuesta al reto del corte: faltan la etiqueta, el diagnóstico de la restricción asignada, una línea base realmente ejecutada, el cambio y la medición final contra el umbral. Completen las celdas pendientes de la tabla de aspectos y corrijan la diferencia entre el backend dibujado y el árbol implementado. El registro de IA debe indicar qué se aceptó, corrigió o rechazó específicamente en este corte.
-
+El proyecto muestra una base arquitectónica sólida: arc42, C4, seis ADR trazables, matriz de aspectos, módulos Gradle y corte vertical con CI en verde. Para el compendio del corte faltan tres consolidaciones: (1) el archivo de correcciones debe llamarse exactamente correcciones.md y estar en la raíz desde el estado calificado, no después del cierre; (2) la tabla de aspectos debe completar CÓDIGO, PRUEBAS y EVIDENCIA con enlaces navegables al hash entregado, no a la rama experimental; (3) el pipeline debe ejecutarse sobre la rama master real desde antes del cierre y conviene activar SonarCloud. La documentación de decisiones y calidad está bien encaminada; falta la trazabilidad operativa final.
 ## Semana 5 · Primer corte (revisión definitiva, 2026-09-07)
 
 Buena noticia primero: ya existe la etiqueta `corte-1`, sobre un commit de la noche antes del cierre. Y en esa noche el equipo hizo un trabajo real: completaron las secciones de alternativas de los seis ADR, alinearon el código con el backend que el diagrama C4 ya mostraba, corrigieron varias advertencias de seguridad que señalaba el análisis estático, y dejaron un registro de IA con el detalle de qué se aceptó y por qué.

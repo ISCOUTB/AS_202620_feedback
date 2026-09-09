@@ -18,7 +18,7 @@
 | 2 | S2 | `59590c9` (2026-08-16T19:15:15-05:00) | 5/9 | no aplica | si |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `46257a03` · 2026-08-23T16:47:00-05:00 | 5/9 | no se publica | sí |
 | 4 | S4 | `c087303` (2026-08-30T18:54:10-05:00) | 5/10 | 3.0 | si |
-| 5 | Primer corte · reto de línea base | HEAD `a3f4d82` (sin etiqueta corte-1; solo existe `corrections-s4`) | 0/12 | subtotal técnico 0,00/4,00; sustentación pendiente | revisión definitiva post-cierre 2026-09-07 |
+| 5 | CORTE1 | `a3f4d82` (2026-09-06T04:13:11-05:00) | 9/12 | no aplica | si |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
@@ -68,6 +68,13 @@
 | Se añadió CI en .github/workflows/ci.yml en commits 2f3ca0d/bda515c/ce99b54 (2026-09-06), posterior al cierre. | S2 | no (resuelto tarde) | — |
 | La corrección de estructura y arquitectura se ha hecho en commits posteriores, con lo cual la evidencia de la semana 2 no es defendible en el estado calificado. | S2 | si | |
 | Revisar que doc de aspectos/apartados del contrato queden sincronizados en la rama principal para la próxima entrega. | S2 | si | |
+| 3cf6bfc y 915e499 (2026-09-08) corrigen pipeline de SonarCloud tras el cierre del 2026-09-07; no forman parte del estado calificado | S5 | no (resuelto tarde) | — |
+| El diff desde cierre modifica .github/workflows/ci.yml y backend/requirements.txt para blindar la instalación de dependencias | S5 | no (resuelto tarde) | — |
+| Verificación del contenido de correcciones.md en estado calificado | S5 | si | |
+| Evidencia del PDF u adjunto entregado en Moodle | S5 | si | |
+| Sustentación del corte | S5 | si | |
+| Consolidar identidades de git (val con dos correos) | S5 | si | |
+| Análisis estático SonarCloud sin evidencia concreta | S5 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -79,7 +86,7 @@
 | `docs/ia.md` al día | Cumple | Entrada 03 (08-23) sin aceptado/rechazado |
 | Sin credenciales en el repositorio ni en el historial | Cumple | `git grep` §9 y `.env` sin coincidencias |
 | Contribución de todos los integrantes | Cumple | 4 identidades consolidadas = 4 integrantes |
-| Pipeline en verde | No cumple | `.github/workflows/ci.yml` configurado el 2026-09-06; run success sobre `a3f4d826` antes del cierre |
+| Pipeline en verde | Cumple | `.github/workflows/ci.yml` configurado el 2026-09-06; run success sobre `a3f4d826` antes del cierre |
 | Etiqueta corte-1 (corte 1) | No cumple | No existe; solo `corrections-s4` |
 | ADR aceptados sin reescribir (corte 1) | No cumple | El commit `42c5b03` edita el ADR-0001 aceptado en vez de crear uno nuevo o marcarlo reemplazado |
 

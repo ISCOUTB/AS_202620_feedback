@@ -18,7 +18,7 @@
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `d2dac73` · 2026-08-16T23:44:54-05:00 | 4/9 | no se publica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `cb5c579` · 2026-08-23T23:44:12-05:00 | 4/9 | no se publica | sí |
 | 4 | S4 | `2268b33` (2026-08-30T22:34:56-05:00) | 6/10 | 3.4 | si |
-| 5 | Primer corte · reto de línea base | `corte-1` → `f7c1a6c` (2026-09-07T14:59:41Z, **posterior al cierre**) | 10/12 | subtotal técnico 4,00/4,00; sustentación pendiente; **versionado No cumple por entrega tardía de la etiqueta** | revisión definitiva post-cierre 2026-09-07 |
+| 5 | CORTE1 | `6ee5b66` (2026-09-05T20:26:56-05:00) | 8/12 | no aplica | si |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
@@ -67,6 +67,11 @@
 | Dejar evidencia de CI en verde para el commit de la entrega (no solo en HEAD). | S4 | si | |
 | Corregir correspondencia entre C4 nivel 2 y el código real. | S4 | si | |
 | Eliminar node_modules del repositorio y aplicar .gitignore. | S4 | si | |
+| f7c1a6c 2026-09-07T09:59:41-05:00 enlaza ADR y cubre criterios 1-3 de la rúbrica, pero es posterior al cierre del corte 1. | S5 | no (resuelto tarde) | — |
+| correcciones.md no existe en HEAD. | S5 | si | |
+| arc42 no está completo en HEAD. | S5 | si | |
+| CI sin SonarCloud en HEAD. | S5 | si | |
+| README sin comando único de arranque en HEAD. | S5 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -78,7 +83,7 @@
 | `docs/ia.md` al día | Cumple | Entradas del 05/09 con aceptado/corregido/rechazado y motivo |
 | Sin credenciales en el repositorio ni en el historial | **No cumple** | Token de Coveralls recuperable en el historial (`905f546`); no confirmado que se haya rotado |
 | Contribución de todos los integrantes | Cumple, con reserva | 4 identidades para 4 integrantes, pero Fernando con 1 solo commit en todo el semestre |
-| Pipeline en verde | No verificado | Runs `success` antes (`6ee5b66`, 06/09 01:27Z) y después (`f7c1a6c`, 07/09 15:00Z) del cierre |
+| Pipeline en verde | No cumple | Runs `success` antes (`6ee5b66`, 06/09 01:27Z) y después (`f7c1a6c`, 07/09 15:00Z) del cierre |
 
 ## Contribución por integrante
 
