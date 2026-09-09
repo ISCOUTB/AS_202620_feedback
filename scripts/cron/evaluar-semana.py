@@ -194,7 +194,11 @@ def evidencia_equipo(repo, hash_cal, cierre, desde):
 
 # ---------- LLM ----------
 
-def llm_chat(system, user, model, temperature=0.2, max_tokens=8000):
+def llm_chat(system, user, model, session_id, temperature=0.2, max_tokens=8000):
+    headers_base = {"Content-Type": "application/json",
+                     "User-Agent": "arqsw-feedback-bot/1.0",
+                     "Authorization": "Bearer " + LLM_KEY,
+                     "x-opencode-session": session_id}
     payload = {
         "model": model,
         "messages": [{"role": "system", "content": system},
@@ -204,9 +208,7 @@ def llm_chat(system, user, model, temperature=0.2, max_tokens=8000):
     }
     body = json.dumps(payload).encode("utf-8")
     req = urllib.request.Request(LLM_BASE.rstrip("/") + "/chat/completions", data=body,
-                                 headers={"Content-Type": "application/json",
-                                          "User-Agent": "arqsw-feedback-bot/1.0",
-                                          "Authorization": "Bearer " + LLM_KEY})
+                                 headers=headers_base)
     try:
         with urllib.request.urlopen(req, timeout=600) as r:
             data = json.loads(r.read().decode("utf-8"))
@@ -216,9 +218,7 @@ def llm_chat(system, user, model, temperature=0.2, max_tokens=8000):
         payload.pop("response_format", None)
         body = json.dumps(payload).encode("utf-8")
         req = urllib.request.Request(LLM_BASE.rstrip("/") + "/chat/completions", data=body,
-                                     headers={"Content-Type": "application/json",
-                                              "User-Agent": "arqsw-feedback-bot/1.0",
-                                              "Authorization": "Bearer " + LLM_KEY})
+                                     headers=headers_base)
         try:
             with urllib.request.urlopen(req, timeout=600) as r:
                 data = json.loads(r.read().decode("utf-8"))
@@ -724,7 +724,8 @@ def procesar_equipo(repo, equipo, entrada, contrato, ficha, modo, desde):
                     "estado": "sin actividad %s" % entrada["id"]}
         user = prompt_evaluacion(ficha, contrato, equipo, ev, entrada, modo)
         modelo = modelo_evaluacion(modo)
-        texto = llm_chat(SISTEMA, user, modelo)
+        session_id = "arqsw-%s-%s" % (entrada["id"], repo)
+        texto = llm_chat(SISTEMA, user, modelo, session_id)
         try:
             res = parse_json_llm(texto)
             if "matriz_ficha" not in res:
@@ -733,7 +734,7 @@ def procesar_equipo(repo, equipo, entrada, contrato, ficha, modo, desde):
             user2 = user + ("\n\nIMPORTANTE: tu respuesta anterior no era JSON valido (%s). "
                             "Responde de nuevo UNICAMENTE con el objeto JSON, sin comentarios ni markdown."
                             % str(ex)[:200])
-            texto = llm_chat(SISTEMA, user2, modelo_evaluacion(modo))
+            texto = llm_chat(SISTEMA, user2, modelo_evaluacion(modo), session_id)
             res = parse_json_llm(texto)
             if "matriz_ficha" not in res:
                 raise ValueError("JSON sin matriz_ficha")
