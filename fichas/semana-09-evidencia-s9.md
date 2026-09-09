@@ -45,7 +45,7 @@ incorporarlo, **el ADR que lo justifica**.
    con su motivo técnico**. Es la columna que demuestra criterio, y su ausencia es hallazgo.
    ```bash
    git -C "$DIR" log --format='%h %cI' -- docs/ia.md | head
-   git -C "$DIR" diff --stat corte-1..HEAD -- docs/ia.md
+   git -C "$DIR" diff --stat <HASH_S5>..<HASH_ACTUAL> -- docs/ia.md
    ```
 7. **Auditoría de erosión.** Comprueba si la generación cruzó los límites de contexto o las reglas
    de propiedad de datos de la semana 6, y qué se hizo. Contrástalo tú mismo sobre el código
@@ -58,7 +58,7 @@ incorporarlo, **el ADR que lo justifica**.
    inventados por un modelo y registrados después por un tercero son el caso que la semana
    estudia.
    ```bash
-   git -C "$DIR" diff corte-1..HEAD -- package.json requirements.txt pyproject.toml pom.xml go.mod Gemfile 2>/dev/null | grep -E '^\+' | head -30
+   git -C "$DIR" diff <HASH_S5>..<HASH_ACTUAL> -- package.json requirements.txt pyproject.toml pom.xml go.mod Gemfile 2>/dev/null | grep -E '^\+' | head -30
    curl -s "https://registry.npmjs.org/<paquete>" | python -c "import json,sys;d=json.load(sys.stdin);print(d.get('name'),list(d.get('time',{}))[:1])"
    curl -s "https://pypi.org/pypi/<paquete>/json" | python -c "import json,sys;d=json.load(sys.stdin);print(d['info']['name'],d['info']['home_page'])"
    ```

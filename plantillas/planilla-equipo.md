@@ -21,25 +21,25 @@ Una fila por entrega con repositorio. «Criterios» es el recuento de la matriz 
 decisión del profesor, en las evidencias semanales (nota sugerida `1 + 4 × (n/m)`, preliminar en
 las pasadas tempranas y propuesta al docente en la definitiva).
 
-| Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
+| Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 1 | Evidencia S1 · Equipo, problema y repositorio | | | no aplica | |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | | | no aplica | |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | | | no aplica | |
 | 4 | Evidencia S4 · arc42, C4 y corte vertical | | | no aplica | |
-| 5 | Primer corte · compendio de la línea base | `corte-1` | | | |
+| 5 | Primer corte · compendio de la línea base | | | | |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
-| 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
+| 10 | Segundo corte · reto aplicado sobre el MVP | | | | |
 | 11 | Evidencia S11 · Fallos parciales y decisión de extracción | | | no aplica | |
 | 12 | Evidencia S12 · Estrategia de datos y eventos | | | no aplica | |
 | 12 | Taller aplicado · Mensajes y consistencia | | | no aplica | |
 | 13 | Evidencia S13 · Modelado de amenazas y plan de mitigación | | | no aplica | |
 | 14 | Evidencia S14 · Medición de atributos de calidad | | | no aplica | |
-| 16 | Proyecto final · integración y desafío arquitectónico | `final` | | | |
+| 16 | Proyecto final · integración y desafío arquitectónico | | | | |
 | 17 | Aplicación de cambios y cierre arquitectónico | | | | |
 
 ## Lo que se arrastra

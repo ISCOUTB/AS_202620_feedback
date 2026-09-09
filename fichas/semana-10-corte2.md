@@ -6,8 +6,8 @@
 | Semana | 10 |
 | Corte | Segundo corte (actividad de corte) |
 | Tipo | grupal, nota única del equipo, con rúbrica de 5 criterios |
-| Qué sube el estudiante | enlace al repositorio en el commit etiquetado `corte-2`, la URL del despliegue y un PDF de dos páginas |
-| Estado que se califica | la etiqueta `corte-2` y el despliegue en el momento de la revisión |
+| Qué sube el estudiante | enlace al repositorio, la URL del despliegue y un PDF de dos páginas |
+| Estado que se califica | último commit de `master` o `main` anterior o igual al cierre, y el despliegue en el momento de la revisión |
 | Acceso | requiere el primer corte |
 
 Antes de empezar, lee [CONTRATO.md](../CONTRATO.md). Su matriz transversal se rellena además de la
@@ -27,10 +27,11 @@ Consigue **cuál fue el escenario operativo asignado a ese equipo** antes de rev
 
 ## Instrucciones para el agente de revisión
 
-1. **Sitúate en la etiqueta `corte-2`** y comprueba que apunta a un commit anterior al cierre. Sin
-   etiqueta, revisa el último commit anterior al cierre y regístralo.
+1. **Fija el estado calificado** en el último commit de la rama principal `master` o `main`
+   anterior o igual al cierre. No consultes ni uses etiquetas.
    ```bash
-   git -C "$DIR" log -1 --format='%H %cI %s' corte-2 && git -C "$DIR" checkout corte-2
+   git -C "$DIR" log -1 --format='%H %cI %s' --until="$CIERRE_S10" origin/master
+   # Usa origin/main cuando esa sea la rama principal.
    ```
 2. **Comprueba el despliegue en ese momento**, con la hora anotada. Prueba el flujo principal y el
    health check.
@@ -43,8 +44,8 @@ Consigue **cuál fue el escenario operativo asignado a ese equipo** antes de rev
    decisión es coherente con dominio, contratos, despliegue y costo. Si el equipo decidió **no
    cambiar**, exige la demostración de que es la mejor decisión, que la rúbrica admite.
    ```bash
-   git -C "$DIR" log --format='%h %cI %an %s' corte-1..corte-2 | head -40
-   git -C "$DIR" diff --stat corte-1..corte-2 -- docs/adr docs/arc42 docs/c4
+   git -C "$DIR" log --format='%h %cI %an %s' <HASH_S5>..<HASH_S10> | head -40
+   git -C "$DIR" diff --stat <HASH_S5>..<HASH_S10> -- docs/adr docs/arc42 docs/c4
    ```
 5. **Ejecución del experimento.** Resultado contrastado con el umbral, con evidencia que permita
    repetirlo. Comprueba si el equipo controla factores de confusión y declara los límites de
@@ -75,17 +76,17 @@ desde el repositorio; no dar por bueno un experimento sin línea base, por bien 
 
 | Criterio de evaluación | Evidencia técnica esperada | Estado (Cumple / No cumple) | Observaciones |
 |---|---|---|---|
-| Etiqueta `corte-2` sobre un commit anterior al cierre | `git log -1 --format='%H %cI' corte-2` | | |
+| Estado de S10 identificable y anterior al cierre | rama `master` o `main`, hash y fecha | | |
 | Despliegue accesible en el momento de la revisión | código de respuesta, tiempo y hora de la comprobación | | |
 | PDF de dos páginas con el resultado del experimento | documento adjunto en la entrega de Moodle | | |
 | Hipótesis, montaje, variables y umbral declarados | apartado de caracterización del escenario | | |
 | Línea base medida y reproducible | cifra con herramienta, carga y procedimiento | | |
 | Decisión registrada en ADR, coherente con dominio, contratos, despliegue y costo | `docs/adr/NNNN-*.md` del periodo | | |
-| Respuesta implementada o configurada sobre el MVP | commits entre `corte-1` y `corte-2` | | |
+| Respuesta implementada o configurada sobre el MVP | commits entre los hashes revisados en S5 y S10 | | |
 | Resultado contrastado con el umbral | medición final frente a la línea base | | |
 | Pipeline, health check, logs estructurados y métrica ligada al escenario | URL del run, ruta del health check, configuración de logs | | |
 | Secretos protegidos | barrido del contrato sin coincidencias | | |
-| C4, arc42, ADR y contratos correspondientes al MVP | diferencia documental entre `corte-1` y `corte-2` | | |
+| C4, arc42, ADR y contratos correspondientes al MVP | diferencia documental entre los hashes revisados en S5 y S10 | | |
 | Decisión anterior confirmada o reemplazada con evidencia | ADR marcado como reemplazado, con enlace | | |
 | Sustentación del reto sobre el entorno desplegado | sesión de sustentación, no verificable desde el repositorio | No verificado | lo resuelve el docente en la sesión |
 

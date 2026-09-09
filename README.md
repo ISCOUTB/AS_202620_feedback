@@ -34,8 +34,8 @@ revisiones/2026-2/<repositorio>/  la evaluación de cada equipo, entrega por ent
 
 ### Qué ocurre cuando entregas
 
-1. Se localiza el repositorio del equipo y se clona **en el estado que se califica**: el commit
-   etiquetado (`corte-1`, `corte-2`, `final`) o el commit vigente al cierre de la actividad.
+1. Se localiza el repositorio del equipo y se toma **el estado que se califica**: el último commit
+   de su rama principal `master` o `main` anterior o igual al cierre. Las etiquetas no se revisan.
 2. Un agente automatizado recorre la ficha de esa entrega y la matriz transversal de
    [CONTRATO.md](CONTRATO.md), criterio por criterio.
 3. El resultado es una matriz con un estado por criterio, la evidencia que lo respalda y la lista
@@ -112,8 +112,8 @@ Autorrevisarte antes de entregar es la mejor manera de aprovecharlo:
    cumple.
 3. Mira el apartado **«Qué no hacer aquí»** de la ficha: dice lo que *todavía* no se exige esa
    semana, y sirve para no gastar esfuerzo antes de tiempo.
-4. Etiqueta a tiempo. Una etiqueta ausente o posterior al cierre afecta a la fila de versionado
-   aunque el contenido esté impecable.
+4. Mantén el trabajo evaluable en la rama principal `master` o `main` antes del cierre. Las ramas
+   auxiliares y las etiquetas no se usan para determinar qué commit se califica.
 
 Y una garantía: lo que no esté en la ficha, en el contrato o en el aula **no se te exige**. Si el
 kit pide algo que no aparece en ninguno de los tres, es un error del kit.
@@ -257,7 +257,8 @@ Qué hace `scripts/cron/evaluar-semana.py`: elige la entrega vigente según
 `scripts/cron/calendario.json`, clona cada repositorio de forma efímera (protocolo git; la API de
 GitHub se usa solo para los `actions/runs` de CI), arma la evidencia y la pasa al LLM (clave del
 secret `OPENCODE_GO_API_KEY`, suscripción OpenCode Go, endpoint `https://opencode.ai/zen/go/v1`),
-escribe la matriz con la nota sugerida, la sección **overall** del proyecto en HEAD, actualiza
+escribe la matriz con la nota sugerida, la sección **overall** en la punta actual de la misma rama
+`master` o `main`, actualiza
 `planilla.md`, `feedback.md`, el `resumen-sX.md` y la columna de matrices del README, y hace commit
 y push. Guardas anti-duplicados: `revisiones/2026-2/estado-sX.json` junto con los informes
 definitivos impiden re-procesar semanas ya cerradas.
@@ -268,8 +269,8 @@ injection) y la salida del LLM se valida como JSON antes de escribir nada.
 **Regla especial de S5:** la pasada definitiva revisa el primer corte como compendio de S1–S4 y
 contrasta `correcciones.md`, que debe existir en la raíz del estado calificado, con los hallazgos
 publicados y la evidencia real. Esta comprobación no se aplica como cierre definitivo en las
-pasadas tempranas. La matriz se decide en `corte-1` (o el hash anterior al cierre si falta la
-etiqueta); los cambios posteriores se informan solo en `overall`.
+pasadas tempranas. La matriz se decide con el último commit de `master` o `main` anterior o igual
+al cierre; los cambios posteriores se informan solo en `overall`.
 
 ### Cómo se usa
 
@@ -283,7 +284,7 @@ cuatro pasos:
    «Revisa `AS_202620_X` contra `fichas/semana-08-evidencia-s8.md`».
 3. El agente clona en el estado que se califica, recorre las instrucciones, rellena la matriz de
    la ficha más la **matriz transversal** de [CONTRATO.md](CONTRATO.md) y la sección **overall**
-   del proyecto en HEAD, y escribe el resultado en
+   en la punta actual de la misma rama `master` o `main`, y escribe el resultado en
    `revisiones/2026-2/<repositorio>/<tarea>.md`, que sí se publica.
 4. Antes de empujar: sin correos en los archivos publicados; la nota sugerida va marcada como
    propuesta al docente. Añade el equipo al índice de [Evaluaciones publicadas](#evaluaciones-publicadas--2026-2)
@@ -321,7 +322,8 @@ registra la discrepancia.
 ```bash
 DIR="$(mktemp -d)/AS_202620_X"
 git clone --filter=blob:none "https://github.com/ISCOUTB/AS_202620_X.git" "$DIR"
-git -C "$DIR" checkout corte-1     # o el hash del último commit anterior al cierre
+git -C "$DIR" log -1 --format='%H %cI %s' --until="$CIERRE" origin/master
+# Usa origin/main cuando esa sea la rama principal del repositorio.
 ```
 
 ### Reglas del agente
@@ -345,12 +347,12 @@ git -C "$DIR" checkout corte-1     # o el hash del último commit anterior al ci
 
 ### Qué produce una revisión
 
-1. Encabezado con equipo, repositorio, estado revisado (etiqueta o hash con su fecha) y qué
+1. Encabezado con equipo, repositorio, rama revisada (`master` o `main`), hash con su fecha y qué
    comandos se ejecutaron.
 2. La matriz de la ficha, rellena.
 3. La matriz transversal del contrato, rellena.
-4. La sección **overall**: el estado del proyecto entero revisado en HEAD, para notar entregas
-   subidas tarde o correcciones posteriores al cierre.
+4. La sección **overall**: el estado del proyecto entero en la punta actual de la misma rama
+   `master` o `main`, para notar entregas subidas tarde o correcciones posteriores al cierre.
 5. En `corte1`, `corte2`, `final` y `cierre`, el **nivel sugerido** por criterio con su suma sobre
    5,0, marcado como propuesta al docente. Eso va al registro local, no al archivo publicado.
 6. Lo que quedó en No verificado, con qué haría falta para cerrarlo.

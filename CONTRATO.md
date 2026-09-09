@@ -49,24 +49,27 @@ estás dentro del clon: `cd "$DIR"` antes de ejecutarlos.
 
 ## 3. Qué estado del repositorio se califica
 
-Las entregas de corte se califican en el **commit etiquetado**: `corte-1`, `corte-2`, `final`.
-Las evidencias semanales y los talleres se califican en el **commit vigente al cierre de la
-actividad**, y ese cierre lo publica la propia actividad en el aula.
+Todas las entregas se califican sobre el **último commit de `master` o `main` anterior o igual al
+cierre de la actividad**. Se usa la rama principal que exista en el repositorio; las etiquetas no
+se consultan ni determinan el estado evaluado. El cierre lo publica la propia actividad en el
+aula y el informe siempre conserva el hash exacto revisado.
 
 ```bash
-git -C "$DIR" tag --list
-git -C "$DIR" log -1 --format='%H %cI %s' "corte-1"        # fecha real del commit etiquetado
-git -C "$DIR" log -1 --format='%H %cI' --until="$CIERRE"    # sin etiqueta: el último antes del cierre
+git -C "$DIR" show-ref --verify refs/remotes/origin/master  # usa esta si existe
+git -C "$DIR" show-ref --verify refs/remotes/origin/main    # si no, usa main
+git -C "$DIR" log -1 --format='%H %cI %s' --until="$CIERRE" origin/master
+# En repositorios cuya rama principal sea main, sustituye origin/master por origin/main.
 ```
 
-Tres situaciones y su resolución, para que no dependan del criterio del momento:
+Situaciones y resolución:
 
-- **Etiqueta ausente.** Se revisa el último commit anterior al cierre, se anota el hash en
-  Observaciones y la fila de versionado de la matriz transversal queda en No cumple.
-- **Etiqueta posterior al cierre.** El contenido se revisa igual, y la fila de versionado
-  registra la diferencia entre `%cI` y el cierre de la actividad.
-- **Etiqueta movida después de calificar.** Se compara con el hash citado en la revisión previa,
-  que por eso se guarda siempre.
+- **Existen `master` y `main`.** Se usa la rama principal declarada por el repositorio remoto y se
+  anota su nombre. No se mezclan commits de ambas ramas.
+- **No existe ninguna.** El estado queda No verificado, con las ramas encontradas y lo que debe
+  corregirse; no se sustituye silenciosamente por otra rama.
+- **Hay commits posteriores al cierre.** Se califican solo los anteriores o iguales al cierre; lo
+  posterior se registra en `overall` como hallazgo y no cambia la matriz.
+- **La rama cambia después de calificar.** Manda el hash citado en el informe ya publicado.
 
 ## 4. Convenciones de ADR
 
@@ -171,7 +174,7 @@ Se aplica en **todas** las entregas, además de la matriz propia de la ficha.
 |---|---|---|---|
 | Repositorio en la organización, con el nombre de la convención y público | URL `github.com/ISCOUTB/AS_202620_<PROYECTO>` y respuesta de la API sin autenticación | | |
 | Estructura mínima presente | salida de `git ls-tree` con las seis rutas del apartado 2 | | |
-| Estado calificado identificable | etiqueta de la entrega, o hash y `%cI` del último commit anterior al cierre | | |
+| Estado calificado identificable | rama `master` o `main`, hash y `%cI` del último commit anterior o igual al cierre | | |
 | Nombres de ADR según la convención | `ls docs/adr` sin salida en el filtro del apartado 4 | | |
 | ADR aceptados no reescritos | historial de cada ADR anterior sin commits de reescritura, o reemplazo declarado | | |
 | `docs/ia.md` al día para la semana | commits sobre el archivo dentro del periodo revisado, con lo rechazado y su motivo | | |
@@ -180,9 +183,9 @@ Se aplica en **todas** las entregas, además de la matriz propia de la ficha.
 
 ## 12. Reglas de evaluación que fija el curso
 
-- **Lo anterior no se recalifica por existir.** Los cortes evalúan la respuesta a un reto nuevo;
-  las evidencias de semanas previas son línea base. Si un artefacto anterior se deterioró, eso
-  afecta a la coherencia del sistema, pero su nota original no se duplica.
+- **Lo anterior no se recalifica por existir.** Salvo el compendio especial de S5, los cortes
+  evalúan la entrega nueva y las evidencias previas son línea base. Si un artefacto anterior se
+  deterioró, eso afecta a la coherencia del sistema, pero su nota original no se duplica.
 - **Si no lo entiende, no lo entrega.** Código o documento que el equipo no pueda explicar en la
   sustentación tiene el mismo efecto que no haberlo entregado. Por eso hay filas que solo se
   resuelven en la sustentación, y el kit las marca así en vez de adivinarlas.

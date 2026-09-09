@@ -6,8 +6,8 @@
 | Semana | 5 |
 | Corte | Primer corte (actividad de corte) |
 | Tipo | grupal, nota única del equipo |
-| Qué sube el estudiante | enlace al repositorio en el commit etiquetado `corte-1`, PDF exigido por el aula y `correcciones.md` en la raíz del repositorio |
-| Estado que se califica | la etiqueta `corte-1` o, si falta, el último commit anterior al cierre |
+| Qué sube el estudiante | enlace al repositorio, PDF exigido por el aula y `correcciones.md` en la raíz del repositorio |
+| Estado que se califica | último commit de `master` o `main` anterior o igual al cierre |
 | Acceso | requiere haber entregado la evidencia S4 |
 
 Antes de empezar, lee [CONTRATO.md](../CONTRATO.md) y las fichas de las evidencias S1 a S4. Su
@@ -31,8 +31,8 @@ correcciones de forma definitiva.
 ## `correcciones.md` en la raíz
 
 En el estado calificado debe existir exactamente `correcciones.md` en la raíz del repositorio.
-El nombre mal escrito, una ubicación distinta o un archivo añadido después del cierre no cumplen
-esta fila.
+El nombre mal escrito, una ubicación distinta, otra rama o un archivo añadido después del cierre
+no cumplen esta fila.
 
 El archivo debe responder de forma trazable a los hallazgos publicados en S1–S4 y, si existió una
 pasada temprana de S5, a sus hallazgos preliminares. Para cada corrección debe indicar:
@@ -49,22 +49,23 @@ automáticamente toda la entrega.
 
 ## Instrucciones para la revisión definitiva
 
-1. **Fija el estado calificado.** Comprueba que `corte-1` existe y apunta a un commit anterior o
-   igual al cierre. Si no existe, usa el último commit anterior al cierre y registra la ausencia.
+1. **Fija el estado calificado.** Identifica la rama principal `master` o `main` y toma su último
+   commit anterior o igual al cierre. No consultes ni uses etiquetas. Si existen ambas ramas, usa
+   la declarada como principal por el remoto y anótala; si no existe ninguna, marca No verificado.
    ```bash
-   git -C "$DIR" tag --list
-   git -C "$DIR" log -1 --format='%H %cI %s' corte-1
-   git -C "$DIR" log -1 --until="$CIERRE_S5" --format='%H %cI %s'
+   git -C "$DIR" show-ref --verify refs/remotes/origin/master
+   git -C "$DIR" show-ref --verify refs/remotes/origin/main
+   git -C "$DIR" log -1 --format='%H %cI %s' --until="$CIERRE_S5" origin/master
    ```
-2. **Comprueba `correcciones.md` en la raíz del estado calificado.** No uses el archivo de HEAD
-   si fue añadido después del cierre.
+2. **Comprueba `correcciones.md` en la raíz del estado calificado.** No uses la versión de la
+   punta actual de la rama si fue añadida después del cierre.
    ```bash
-   git -C "$DIR" ls-tree --name-only corte-1
-   git -C "$DIR" show corte-1:correcciones.md
+   git -C "$DIR" ls-tree --name-only "$HASH"
+   git -C "$DIR" show "$HASH:correcciones.md"
    ```
 3. **Recorre las revisiones publicadas S1–S4.** Construye una lista de hallazgos y verifica si
    `correcciones.md` responde a cada uno. No aceptes una autoevaluación genérica de «Cumple».
-4. **Contrasta cada corrección.** Abre la ruta citada en `corte-1`, revisa el cambio en el historial
+4. **Contrasta cada corrección.** Abre la ruta citada en el hash calificado, revisa el cambio en el historial
    y busca la prueba o el run de CI correspondiente. Clasifica la respuesta como verificada,
    parcial, pendiente, rechazada con fundamento o no sustentada.
 5. **Revisa el compendio S1–S4 en su estado actual.** Aplica las matrices de las cuatro fichas al
@@ -72,9 +73,9 @@ automáticamente toda la entrega.
    restricciones; estrategia y ADR; arc42, C4 y corte vertical.
 6. **Revisa el contrato transversal.** Comprueba estructura, ADR, `docs/ia.md`, secretos,
    contribución y CI de acuerdo con [CONTRATO.md](../CONTRATO.md).
-7. **Separa corte y HEAD.** La matriz S5 se decide con el estado calificado. En `overall`, revisa
-   HEAD para registrar correcciones o deterioros posteriores como hallazgo, sin cambiar la nota
-   del corte.
+7. **Separa corte y estado actual.** La matriz S5 se decide con el hash calificado. En `overall`,
+   revisa la punta actual de la misma rama `master` o `main` para registrar correcciones o
+   deterioros posteriores como hallazgo, sin cambiar la nota del corte.
 8. **Deja trazabilidad en el informe.** Incluye una tabla específica para `correcciones.md` y cita
    evidencia por cada conclusión. Añade preguntas de sustentación para lo que no pueda verificarse
    desde el repositorio.
@@ -83,7 +84,7 @@ automáticamente toda la entrega.
 
 | Criterio de evaluación | Evidencia técnica esperada | Estado (Cumple / No cumple / No verificado) | Observaciones |
 |---|---|---|---|
-| Estado de corte identificable y anterior al cierre | etiqueta `corte-1` o hash sustituto, con fecha | | |
+| Estado de corte identificable y anterior al cierre | rama `master` o `main`, hash y fecha | | |
 | `correcciones.md` existe en la raíz del estado calificado | `git show <hash>:correcciones.md` | | |
 | Correcciones trazables y contrastadas | cada hallazgo S1–S4 enlazado con evidencia real o justificación técnica | | |
 | S1 al día: equipo, problema y repositorio | matriz vigente de `semana-01-evidencia-s1.md` | | |

@@ -6,8 +6,8 @@
 | Semana | 16 |
 | Corte | Tercer corte (actividad de corte) |
 | Tipo | grupal, nota única del equipo, con rúbrica de 5 criterios |
-| Qué sube el estudiante | enlace al repositorio en el commit etiquetado `final`, la URL del sistema y un documento guía de tres páginas |
-| Estado que se califica | la etiqueta `final` y el sistema desplegado |
+| Qué sube el estudiante | enlace al repositorio, la URL del sistema y un documento guía de tres páginas |
+| Estado que se califica | último commit de `master` o `main` anterior o igual al cierre, y el sistema desplegado |
 
 Antes de empezar, lee [CONTRATO.md](../CONTRATO.md). Su matriz transversal se rellena además de la
 de esta ficha.
@@ -24,16 +24,18 @@ aplica lo recomendado y no repite la defensa.
 
 Antes de revisar, consigue **cuál fue el desafío final asignado a ese equipo**.
 
-La última verificación que el aula pide antes de etiquetar `final` marca el listón documental:
+La última verificación antes del cierre del proyecto final marca el listón documental:
 arc42 completo (secciones 1 a 12, incluido glosario), C4 niveles 1 a 3 correspondientes al sistema
 entregado, y la tabla de aspectos recorrible de punta a punta **para todos** los aspectos
 declarados.
 
 ## Instrucciones para el agente de revisión
 
-1. **Sitúate en la etiqueta `final`** y comprueba que apunta a un commit anterior al cierre.
+1. **Fija el estado calificado** en el último commit de la rama principal `master` o `main`
+   anterior o igual al cierre. No consultes ni uses etiquetas.
    ```bash
-   git -C "$DIR" log -1 --format='%H %cI %s' final && git -C "$DIR" checkout final
+   git -C "$DIR" log -1 --format='%H %cI %s' --until="$CIERRE_S16" origin/master
+   # Usa origin/main cuando esa sea la rama principal.
    ```
 2. **Comprueba el sistema desplegado**, con la hora anotada: flujos principales, health check y
    al menos un camino de error (entrada inválida, recurso inexistente).
@@ -48,8 +50,8 @@ declarados.
    comprueba que lo no hecho está **declarado**. Un alcance recortado y declarado puntúa mejor que
    uno recortado en silencio.
    ```bash
-   git -C "$DIR" diff --stat corte-2..final | tail -5
-   git -C "$DIR" log --format='%h %cI %an %s' corte-2..final | head -40
+   git -C "$DIR" diff --stat <HASH_S10>..<HASH_S16> | tail -5
+   git -C "$DIR" log --format='%h %cI %an %s' <HASH_S10>..<HASH_S16> | head -40
    ```
 5. **Decisiones y evolución.** Recorre los ADR del semestre en orden y comprueba que se puede
    reconstruir por qué el sistema es como es. Busca al menos uno **confirmado o reemplazado con
@@ -82,7 +84,7 @@ declarados.
    [EQUIPOS.md](../EQUIPOS.md) y contra la correspondencia entre cuenta y persona que la planilla del
    equipo haya ido fijando durante el semestre.
    ```bash
-   git -C "$DIR" shortlog -sne final
+   git -C "$DIR" shortlog -sne <HASH_S16>
    git -C "$DIR" log --format='%cI %an' | cut -c1-7 | sort | uniq -c
    curl -s "https://api.github.com/repos/ISCOUTB/$REPO/pulls?state=all&per_page=100" \
      | python -c "import json,sys;[print(p['number'],p['user']['login'],p['merged_at'],p['title']) for p in json.load(sys.stdin)]"
@@ -101,12 +103,12 @@ declararla con honestidad es parte de lo que se evalúa.
 
 | Criterio de evaluación | Evidencia técnica esperada | Estado (Cumple / No cumple) | Observaciones |
 |---|---|---|---|
-| Etiqueta `final` sobre un commit anterior al cierre | `git log -1 --format='%H %cI' final` | | |
+| Estado final identificable y anterior al cierre | rama `master` o `main`, hash y fecha | | |
 | Sistema desplegado y estable en el momento de la revisión | códigos de respuesta y hora de la comprobación | | |
 | Flujos principales funcionando con datos realistas | rutas probadas y su resultado | | |
 | Caminos de error atendidos: validaciones, entradas inválidas, tiempos de espera | respuestas de las rutas de error | | |
 | Respuesta al desafío final implementada y evidenciada | rutas del código y evidencia de ejecución | | |
-| Alcance entregado frente al comprometido, con lo no hecho declarado | documento guía y diferencia entre `corte-2` y `final` | | |
+| Alcance entregado frente al comprometido, con lo no hecho declarado | documento guía y diferencia entre los hashes revisados en S10 y S16 | | |
 | ADR que permiten reconstruir la evolución del sistema | listado de `docs/adr/` recorrido en orden | | |
 | Al menos una decisión confirmada o reemplazada con evidencia | ADR marcado, con el enlace al que lo sustituye | | |
 | Atributos prioritarios medidos y contrastados con su umbral | mediciones con procedimiento reproducible | | |

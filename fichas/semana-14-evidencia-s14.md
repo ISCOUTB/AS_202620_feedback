@@ -44,7 +44,7 @@ con lo que le dijeron.
    historial.
    ```bash
    git -C "$DIR" log --format='%h %cI %s' -- docs/arc42/11* | head
-   git -C "$DIR" diff --stat corte-2..HEAD -- docs/arc42
+   git -C "$DIR" diff --stat <HASH_S10>..<HASH_ACTUAL> -- docs/arc42
    ```
 7. **Coherencia con la tabla de aspectos.** La columna de evidencia del aspecto medido debe
    apuntar a esta medición.
@@ -76,5 +76,5 @@ matriz, se publica como propuesta al docente (decisión del profesor): la nota f
 profesor en Moodle.
 
 Esta es la última evidencia antes del proyecto final. Deja una lista corta de lo que el equipo
-tiene que cerrar antes de etiquetar `final`: arc42 completo con glosario, C4 de los tres niveles y
+tiene que cerrar antes del proyecto final: arc42 completo con glosario, C4 de los tres niveles y
 la tabla de aspectos recorrible de punta a punta para **todos** los aspectos declarados.

@@ -19,7 +19,8 @@ en delta con `deepseek-v4-flash`: solo equipos con commits nuevos, notas prelimi
 `scripts/cron/calendario.json` y el LLM del secret `OPENCODE_GO_API_KEY` (suscripción OpenCode Go,
 endpoint `https://opencode.ai/zen/go/v1`). Escribe matrices, planillas, feedback, resumen y README,
 y hace commit+push a master. Cada informe lleva una sección **overall** que revisa el proyecto
-entero en HEAD, para notar entregas subidas tarde o correcciones posteriores al cierre. Guardas:
+entero en la punta actual de la misma rama `master` o `main`, para notar entregas subidas tarde o
+correcciones posteriores al cierre. Guardas:
 `estado-sX.json` e informes definitivos impiden re-procesar semanas cerradas.
 
 **Rol del agente humano**: supervisar el output de Actions, corregir casos especiales (repo
@@ -44,11 +45,11 @@ transversal, vuelve a comprobar en el estado calificado los criterios vigentes d
 S2, S3 y S4. Esto no cambia retroactivamente sus notas: determina si el primer corte está al día.
 
 En esa pasada —y solo en la definitiva completa de S5— debe existir `correcciones.md` en la raíz
-del repositorio en `corte-1` o en el hash sustituto anterior al cierre. Se cruza, fila por fila,
+del último commit de `master` o `main` anterior o igual al cierre. Se cruza, fila por fila,
 con los hallazgos publicados de S1–S4 y con cualquier preliminar de S5. El archivo no prueba por
 sí mismo una corrección: hay que verificar las rutas, commits, pruebas y runs que cite. Si falta,
-su fila queda en No cumple, pero se continúa la revisión completa. HEAD se usa únicamente para la
-sección `overall`; no convierte cambios tardíos en cumplimiento del corte. Sigue el procedimiento
+su fila queda en No cumple, pero se continúa la revisión completa. La punta actual de esa misma
+rama se usa únicamente para `overall`; no convierte cambios tardíos en cumplimiento del corte. Sigue el procedimiento
 detallado de `fichas/semana-05-corte1.md`.
 
 ## Paso a paso
@@ -85,16 +86,18 @@ ficha y cierres):
 >
 > - Cierre: `--until='<CIERRE_SX>'` con `git log -1 --format='%H %cI %s'` = estado calificado.
 >   Commits posteriores (`--after`) = tardíos, solo hallazgo.
+>   La consulta se hace exclusivamente sobre `origin/master` o `origin/main`, según la rama
+>   principal existente. No consultar ni usar etiquetas para elegir el estado.
 > - API de GitHub: úsala SOLO para `actions/runs` (1 llamada por equipo con workflow). Si 403,
 >   sigue sin API y anótalo. Todo lo demás por protocolo git (no consume rate limit).
 > - Clon: `DIR="$(mktemp -d)"; git clone --filter=blob:none --no-checkout -q "https://github.com/ISCOUTB/$REPO.git" "$DIR"`.
->   Lecturas con `git -C "$DIR" show "$HASH:ruta"`, `ls-tree`, `shortlog -sne HEAD`, `grep` de
+>   Lecturas con `git -C "$DIR" show "$HASH:ruta"`, `ls-tree`, `shortlog -sne "$HASH"`, `grep` de
 >   secretos (CONTRATO §9). Al terminar cada equipo: `rm -rf "$DIR"`.
 > - Estados: Cumple solo con evidencia citada (ruta:línea, hash, fecha, URL); No cumple con
 >   evidencia; No verificado con motivo y qué haría falta.
 > - Consolidar identidades (2 correos = 1 persona); NO atribuir cuentas por parecido de nombre.
 > - Escribe `revisiones/<periodo>/<repo>/semana-0X-evidencia-sX.md` (encabezado, matriz de la
->   ficha, matriz transversal CONTRATO §11, sección **overall** del proyecto en HEAD, recuento
+>   ficha, matriz transversal CONTRATO §11, sección **overall** en la punta actual de la misma rama, recuento
 >   n/m con la nota sugerida marcada como propuesta al docente, pendientes, hallazgos), actualiza
 >   `planilla.md` (fila de la semana, Sugerido = nota propuesta, tabla de contrato y arrastres con
 >   lo que dice el overall) y añade la sección de la semana a `feedback.md` (sin nombres,
@@ -143,7 +146,7 @@ cada equipo y actualizar el árbol de estructura si cambió.
 - `feedback.md` — ÚNICO archivo de retroalimentación, una sección por semana (se añade, no se
   reemplaza). Sin nombres, notas, correos ni hashes.
 - `semana-0X-evidencia-sX.md` — matriz de la ficha + transversal + recuento n/m + sección
-  **overall** (estado global del proyecto en HEAD).
+  **overall** (punta actual de la misma rama `master` o `main`).
 - `planilla.md` — acumulado del semestre: estado por entrega, lo que se arrastra, contrato,
   contribución.
 
@@ -153,8 +156,8 @@ cada equipo y actualizar el árbol de estructura si cambió.
   con motivo. No se pide acceso.
 - **Sin commits antes del cierre**: semana No evaluable, matriz No verificado con motivo.
 - **Entrega tardía**: se califica el último commit ≤ cierre; lo posterior es hallazgo.
-- **Excepción docente** (ej. Verifacts S1-S2): solo si el docente lo pide; evaluar en HEAD y
-  dejarlo escrito en el informe.
+- **Excepción docente** (ej. Verifacts S1-S2): solo si el docente lo pide; evaluar la punta actual
+  de `master` o `main` y dejarlo escrito en el informe.
 - **API agotada (403)**: todo por protocolo git; el «verde» de CI queda No verificado con motivo.
 - **Sin ejecutar código de estudiantes, jamás.** Arranque/pruebas = No verificado con el comando
   anotado, salvo run de CI citable.

@@ -48,10 +48,10 @@ documentado.
 6. **arc42 sección 8.** Lenguaje ubicuo con términos del dominio y el mapa de contextos
    incorporado.
 7. **Coherencia con el corte anterior.** Si los límites cambiaron respecto al primer corte, tiene
-   que haber C4 nivel 3 actualizado y un ADR del reajuste. Compara con el estado de la etiqueta
-   `corte-1`.
+   que haber C4 nivel 3 actualizado y un ADR del reajuste. Compara con el hash de `master` o
+   `main` citado en la revisión definitiva de S5.
    ```bash
-   git -C "$DIR" diff --stat corte-1..HEAD -- docs/c4 docs/arc42 docs/adr
+   git -C "$DIR" diff --stat <HASH_S5>..<HASH_ACTUAL> -- docs/c4 docs/arc42 docs/adr
    ```
 8. **Correspondencia con la tabla de aspectos.** Los contextos que aparecen en el mapa deben poder
    relacionarse con las filas de `docs/aspectos.md`; anota los aspectos que quedan sin contexto.
@@ -70,7 +70,7 @@ espera cuando se aprende el dominio, siempre que quede el ADR.
 | Violaciones de propiedad de datos detectadas sobre el código actual | lista con ubicación de cada violación | | |
 | Plan de corrección por violación | acción concreta asociada a cada una | | |
 | arc42 sección 8 con lenguaje ubicuo y mapa de contextos | `docs/arc42/08*` | | |
-| C4 nivel 3 y ADR si los límites cambiaron desde el primer corte | diferencia contra la etiqueta `corte-1`, con el ADR del reajuste | | |
+| C4 nivel 3 y ADR si los límites cambiaron desde el primer corte | diferencia contra el hash revisado en S5, con el ADR del reajuste | | |
 | Aspectos relacionables con los contextos del mapa | filas de `docs/aspectos.md` frente al mapa | | |
 
 ## Cierre
