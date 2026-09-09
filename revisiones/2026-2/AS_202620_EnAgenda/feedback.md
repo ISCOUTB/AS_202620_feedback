@@ -6,12 +6,9 @@ El montaje quedó muy bien: ficha del problema con usuarios, alcance y tres tens
 
 Dos correcciones menores: varios archivos tienen un espacio antes de la extensión (por ejemplo `aspectos .md`, `ia .md`, el ADR `0001-… .md`); renómbrenlos a la convención para que las herramientas de revisión los encuentren. Y conviene confirmar que los tres integrantes tienen acceso al repositorio, porque el historial de la semana solo muestra a dos.
 
-## Semana 2 · Escenarios de calidad y restricciones
+## Semana 2 · S2
 
-Buen trabajo en el núcleo: cinco escenarios con sus seis partes y medida numérica, árbol de utilidad con prioridades y un C4 de contexto como código con flechas etiquetadas, coherente con la sección 3.
-
-Antes del corte 1 les conviene: (1) clasificar las restricciones (técnicas, organizativas, legales) y decir de dónde viene cada una — hoy R-03 y R-06 están redactadas como requisitos funcionales; (2) enlazar cada escenario desde su fila de aspectos (la tabla sigue con todo en «Pendiente»); (3) añadir la leyenda al diagrama C4; y (4) dar condición de carga a las medidas de EC-01 a EC-04, como ya hace EC-05.
-
+La semana 2 tiene un buen avance en escenarios de calidad: cinco escenarios completos con medida numérica. Para cerrar las brechas: creen docs/arc42/01* con objetivos de negocio e interesados, clasifiquen las restricciones en técnicas, organizativas y legales, y agreguen riesgo al árbol de utilidad. La tabla de aspectos aún no traza nada: cada fila debe enlazar a su escenario. También noten que los commits posteriores al cierre sugieren que muchas correcciones se subieron tarde; procuren dejar la entrega cerrada antes de la fecha límite.
 ## Semana 3
 
 Qué está bien: la sección 4 ya elige el monolito modular con límites y consecuencias, el ADR es una decisión de estilo aceptada con alternativas motivadas y `aspectos.md` ya usa la tabla de 8 columnas.

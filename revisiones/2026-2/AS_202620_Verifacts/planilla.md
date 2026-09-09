@@ -15,7 +15,7 @@
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 1 | S1 | `(sin commits)` () | sin actividad | no aplica | si |
-| 2 | Evidencia S2 · Escenarios de calidad y restricciones | HEAD `8ded7cf` (excepción docente) | 2/9 | 1,9 | sí |
+| 2 | S2 | `(sin commits)` () | sin actividad | no aplica | si |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `8259b75` · 2026-08-23T23:50:00-05:00 | 4/9 | no se publica | sí |
 | 4 | Evidencia S4 · arc42, C4 y corte vertical | `443e908` · 2026-08-29T18:17:18-05:00 | 7/10 | 3.8 | sí |
 | 5 | Primer corte · reto de línea base | **repositorio inaccesible** (404 en la organización desde antes del cierre; último estado visto: `8764f9f`, 2026-09-02) | no evaluable | no evaluable — repositorio inaccesible | revisión definitiva post-cierre 2026-09-07 |

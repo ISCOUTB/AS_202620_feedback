@@ -8,14 +8,14 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica` |
 | Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-03 |
+| Ultima revision | 2026-09-09 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `4f6f568` · 2026-08-09T13:16:43-05:00 | 7/9 | no aplica | sí |
-| 2 | Evidencia S2 · Escenarios de calidad y restricciones | `d4302f4` · 2026-08-16T23:17:26-05:00 | 7/9 | no aplica | sí |
+| 2 | S2 | `d4302f4` (2026-08-16T23:17:26-05:00) | 3/9 | no aplica | si |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `dd422fb` · 2026-08-23T23:52:23-05:00 | 6/9 | no se publica | sí |
 | 4 | S4 | `cede35e` (2026-08-30T23:51:34-05:00) | 6/10 | 3.4 | si |
 | 5 | Primer corte · reto de línea base | HEAD `cede35e` (sin etiqueta) | 0/12 | subtotal técnico preliminar 0,00/4,00; sustentación pendiente | revisión manual preliminar 2026-09-03 |
@@ -56,7 +56,15 @@
 | Evidenciar pipeline en verde | S5 | si | Resuelto: run success sobre 201acacb a las 2026-09-07T04:43:04Z, antes del cierre. |
 | Completar trazabilidad de A-04 | S5 | si | No se revisó A-04 en este corte; el reto tocó A-01. Sigue abierto para A-04. |
 | Verificar contenido de docs/ia.md | S5 | si | Verificado: entrada 7 (2026-09-06) con 4 rechazos y motivo técnico, referida a este corte. |
-
+| ADR y estructura docs/adr creados después del cierre (commits 9a80cf0 a 201acac, 2026-08-30 en adelante). | S2 | no (resuelto tarde) | — |
+| Pipeline CI agregado tras el cierre (.github/workflows/ci.yml solo en HEAD). | S2 | no (resuelto tarde) | — |
+| README actualizado con arranque y prueba tras el cierre (commit 02c39d8 2026-08-30T14:05:57-05:00). | S2 | no (resuelto tarde) | — |
+| docs/aspectos.md actualizado con A-04 y retiro de tensión T-2 tras el cierre (commit 9469642 2026-08-30T14:11:19-05:00). | S2 | no (resuelto tarde) | — |
+| Código y evidencia del aspecto A-01 agregados después del cierre (59e182e y db99e99, 2026-08-30). | S2 | no (resuelto tarde) | — |
+| Escenarios de calidad con medida numérica en arc42 sección 10. | S2 | si | |
+| Árbol de utilidad priorizado por impacto y riesgo. | S2 | si | |
+| Tabla de aspectos navegable hasta código, ADR, pruebas y evidencia. | S2 | si | |
+| Clasificación de restricciones en técnicas, organizativas y legales. | S2 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

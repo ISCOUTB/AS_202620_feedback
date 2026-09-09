@@ -15,7 +15,7 @@
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 1 | S1 | `(sin commits)` () | sin actividad | no aplica | si |
-| 2 | Evidencia S2 · Escenarios de calidad y restricciones | `aa0659c` · 2026-08-16T22:47:16-05:00 | 2/9 | no aplica | sí |
+| 2 | S2 | `(sin commits)` () | sin actividad | no aplica | si |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `0833272` · 2026-08-23T22:46:30-05:00 | 6/9 | no se publica | sí |
 | 4 | S4 | `27e1190` (2026-08-30T15:22:02-05:00) | 0/10 | 1.0 | si |
 | 5 | Primer corte · reto de línea base | `corte-1` `a5d08c1` (posterior al cierre; fallback admisible `1728495`) | 0/12 | subtotal técnico 0,00/4,00; sustentación pendiente | revisión definitiva post-cierre 2026-09-07 |

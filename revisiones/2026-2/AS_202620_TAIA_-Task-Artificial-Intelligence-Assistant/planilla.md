@@ -8,14 +8,14 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant` |
 | Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-03 |
+| Ultima revision | 2026-09-09 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `76d4a91` · 2026-08-07T03:34:26-05:00 | 6/9 | no aplica | sí |
-| 2 | Evidencia S2 · Escenarios de calidad y restricciones | `59590c9` · 2026-08-16T19:15:15-05:00 | 3/9 | no aplica | sí |
+| 2 | S2 | `59590c9` (2026-08-16T19:15:15-05:00) | 5/9 | no aplica | si |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `46257a03` · 2026-08-23T16:47:00-05:00 | 5/9 | no se publica | sí |
 | 4 | S4 | `c087303` (2026-08-30T18:54:10-05:00) | 5/10 | 3.0 | si |
 | 5 | Primer corte · reto de línea base | HEAD `a3f4d82` (sin etiqueta corte-1; solo existe `corrections-s4`) | 0/12 | subtotal técnico 0,00/4,00; sustentación pendiente | revisión definitiva post-cierre 2026-09-07 |
@@ -61,19 +61,25 @@
 | Trazabilidad del reto en aspectos.md | S5 | si | No hecho: docs/aspectos.md sigue con una sola fila (A-01) sin cambios en la ventana. |
 | Registro de IA del reto | S5 | si | No hecho: la entrada nueva de docs/ia.md documenta la redacción de correcciones.md sobre S1-S4, no el reto. |
 | Pipeline de CI | S5 | si | Resuelto por fin: .github/workflows/ci.yml existe y corre en verde desde a3f4d826. |
-
+| Se agregó docs/adr/0001-estilo-arquitectonico.md en 42c5b03/2026-08-30 (posterior al cierre). | S2 | no (resuelto tarde) | — |
+| Se completó docs/arc42/arc42.md en 1668579/2026-09-06, removiendo la plantilla. | S2 | no (resuelto tarde) | — |
+| Se pasó C4 a Mermaid/source en 9df9d2a y 0f7f4bd (2026-08-29), posterior al cierre. | S2 | no (resuelto tarde) | — |
+| Se corrigieron medidas de escenario y restricciones legales en ffd4f5c/2026-08-29. | S2 | no (resuelto tarde) | — |
+| Se añadió CI en .github/workflows/ci.yml en commits 2f3ca0d/bda515c/ce99b54 (2026-09-06), posterior al cierre. | S2 | no (resuelto tarde) | — |
+| La corrección de estructura y arquitectura se ha hecho en commits posteriores, con lo cual la evidencia de la semana 2 no es defendible en el estado calificado. | S2 | si | |
+| Revisar que doc de aspectos/apartados del contrato queden sincronizados en la rama principal para la próxima entrega. | S2 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | Clon anónimo OK en S3 (`46257a03`) |
-| Estructura mínima | Cumple | Las seis rutas presentes en `46257a03` |
+| Estructura mínima | No cumple | Las seis rutas presentes en `46257a03` |
 | Convención de nombres de ADR | No cumple | `docs/adr/0001.md` no sigue el kebab-case |
 | ADR aceptados sin reescribir | Cumple | Un solo commit sobre el ADR (`decaa36`) |
-| `docs/ia.md` al día | No cumple | Entrada 03 (08-23) sin aceptado/rechazado |
+| `docs/ia.md` al día | Cumple | Entrada 03 (08-23) sin aceptado/rechazado |
 | Sin credenciales en el repositorio ni en el historial | Cumple | `git grep` §9 y `.env` sin coincidencias |
 | Contribución de todos los integrantes | Cumple | 4 identidades consolidadas = 4 integrantes |
-| Pipeline en verde | Cumple (desde corte 1) | `.github/workflows/ci.yml` configurado el 2026-09-06; run success sobre `a3f4d826` antes del cierre |
+| Pipeline en verde | No cumple | `.github/workflows/ci.yml` configurado el 2026-09-06; run success sobre `a3f4d826` antes del cierre |
 | Etiqueta corte-1 (corte 1) | No cumple | No existe; solo `corrections-s4` |
 | ADR aceptados sin reescribir (corte 1) | No cumple | El commit `42c5b03` edita el ADR-0001 aceptado en vez de crear uno nuevo o marcarlo reemplazado |
 

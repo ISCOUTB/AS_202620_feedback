@@ -49,3 +49,7 @@ Qué está bien: por fin hay un pipeline de integración continua configurado y 
 Qué falta, y es lo más importante: el trabajo de la última noche no atacó el reto de este corte. No hay ninguna restricción nueva diagnosticada, no hay ADR del reto, no hay cambio de código, no hay medición contra un umbral. En cambio, editaron el ADR ya aceptado para añadirle una sección, en vez de crear un ADR nuevo — un ADR aceptado no se edita; si algo cambia, se escribe otro y el anterior queda marcado como reemplazado.
 
 Qué corregir: crear la etiqueta `corte-1` sobre un commit que sí resuelva el reto (restricción, diagnóstico medido, ADR nuevo, cambio implementado, prueba y medición contra el umbral), y revertir o formalizar correctamente la edición del ADR-0001.
+
+## Semana 2 · S2
+
+Buen avance en la definición de calidad: el problema y los interesados están claros y los escenarios 1 a 4 muestran medida. Para la próxima entrega, aseguren que la documentación arc42 esté en archivos propios y en español, agreguen el directorio docs/adr con decisiones reales y lleven la trazabilidad de docs/aspectos.md hasta sus enlaces: una fila sin evidencia navegable no es defendible. El árbol de utilidad debe priorizar por impacto y riesgo, y los cinco escenarios necesitan medida numérica explícita con unidad y condición de carga. Faltó CI en el commit calificado: el repositorio no muestra pruebas ejecutadas en GitHub Actions antes del cierre. Sigan consolidando la identidad de cada integrante en el historial para que se vea el trabajo de todo el equipo.

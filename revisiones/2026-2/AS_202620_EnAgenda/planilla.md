@@ -10,7 +10,7 @@ Hoja consolidada del equipo EnAgenda. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_EnAgenda` |
 | Integrantes y su usuario de GitHub | Eliab Josue Arnedo Conde · Jeimy Yulieth Mendez Altamiranda · Gabriela Morales Cancino — cuentas abajo |
 | URL del sistema desplegado | sin desplegar aún |
-| Ultima revision | 2026-09-07 (definitiva, post-cierre) |
+| Ultima revision | 2026-09-09 |
 
 ## Estado por entrega
 
@@ -19,7 +19,7 @@ Hoja consolidada del equipo EnAgenda. Se actualiza tras cada revisión.
 | 5 | Primer corte · reto de línea base | `corte-1` → `31773ad` (2026-09-06T23:39:52-05:00) | 1/12 | subtotal técnico 0,60/4,00; sustentación pendiente | revisión definitiva post-cierre 2026-09-07 |
 | 4 | S4 | `df724b8` (2026-08-30T23:57:42-05:00) | 8/10 | 4.2 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `13f61b10` · 2026-08-09T05:34:14-05:00 | 8/9 | 4,6 * | sí |
-| 2 | Evidencia S2 · Escenarios de calidad y restricciones | `5b6f7a8e` · 2026-08-16T23:33:20-05:00 | 5/9 | 3,2 * | sí |
+| 2 | S2 | `5b6f7a8` (2026-08-16T23:33:20-05:00) | 5/9 | no aplica | si |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `c38adfb94` · 2026-08-23T23:49:01-05:00 | 3/9 | no se publica | sí (actualizada tras el cierre) |
 
 ## Lo que se arrastra
@@ -43,7 +43,13 @@ Hoja consolidada del equipo EnAgenda. Se actualiza tras cada revisión.
 | Cadena de `docs/aspectos.md` no navegable y evidencia pendiente | S5 | Parcial (mejoró, celda Evidencia rota) | La fila A-01 ya enlaza C4/ADR/código/pruebas, pero "Evidencia" apunta a `correcciones-feedback.md`, archivo inexistente (el real es `docs/correcciones.md`); corregir el enlace y crear la fila del reto de Corte 1. |
 | C4 de contenedores desactualizado frente al monolito Flask y el repositorio en memoria | S4 | Sí | Alinear el diagrama con el estado ejecutable. |
 | Registro de IA sin entrada del Corte 1 | S5 | Sí | `docs/ia.md` sigue sin entradas posteriores al 30/08/2026; registrar el uso de IA (si lo hubo) en las correcciones del cierre y en el reto de Corte 1. |
-
+| 13fdc8e Cambios C4 | S2 | no (resuelto tarde) | — |
+| 66fb6e4 Cambios C4 | S2 | no (resuelto tarde) | — |
+| 1d01401 Update documentation with recent project changes | S2 | no (resuelto tarde) | — |
+| 696882e Update aspectos.md | S2 | no (resuelto tarde) | — |
+| Falta docs/arc42/01* | S2 | si | |
+| Trazabilidad de aspectos pendiente | S2 | si | |
+| Sin integración continua | S2 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

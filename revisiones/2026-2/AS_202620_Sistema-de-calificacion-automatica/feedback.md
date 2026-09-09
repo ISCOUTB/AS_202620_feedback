@@ -40,3 +40,7 @@ Qué está bien: el reto quedó resuelto por completo. Midieron el problema ante
 Qué falta: todo el ejercicio del reto quedó en un solo commit muy grande, lo que dificulta ver el proceso paso a paso; en el futuro conviene dividir el trabajo en varios commits. Queda pendiente adjuntar el PDF de dos páginas en Moodle, y una de las pruebas nuevas tiene un hueco de cobertura que el propio equipo ya reconoció (una mutación que ninguna prueba detecta).
 
 Para la sustentación: preparen cómo justifican haber trabajado sobre la deuda declarada (R-06) al no recibir la restricción de Moodle, y qué tan bien encajaría la misma solución si la restricción real resulta ser otra.
+
+## Semana 2 · S2
+
+La entrega de la semana 2 deja la documentación base (C4 nivel 1, contexto y restricciones) y un primer aspecto en aspectos.md, pero los escenarios de calidad y el árbol de utilidad están pendientes. Para la próxima entrega: redacten 3 a 5 escenarios completos en la sección 10 con medida numérica (cifra, unidad y condición de carga), clasifiquen las restricciones en técnicas/organizativas/legales, y hagan navegable la tabla de aspectos. Revisen también que el README diga cómo arrancar y probar, y que el registro de IA siga creciendo con cada uso. Los cambios recientes van en la dirección correcta: los ADR, el pipeline y el corte vertical de A-01 deben quedar evidenciados con sus runs. Sigan consolidando los commits de todo el equipo.

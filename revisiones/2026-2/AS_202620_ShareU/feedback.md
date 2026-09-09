@@ -45,3 +45,7 @@ Qué corregir: dejar una sola copia del proyecto en la raíz, mover la etiqueta 
 ## Semana 1 · S1
 
 Sin actividad S1: el ultimo commit anterior al cierre es de la entrega previa, asi que esta evidencia no se pudo evaluar. Lo que se arrastra de semanas anteriores sigue abierto para el corte.
+
+## Semana 2 · S2
+
+Sin actividad S2: el ultimo commit anterior al cierre es de la entrega previa, asi que esta evidencia no se pudo evaluar. Lo que se arrastra de semanas anteriores sigue abierto para el corte.

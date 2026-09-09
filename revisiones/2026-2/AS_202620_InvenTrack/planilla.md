@@ -10,7 +10,7 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_InvenTrack` |
 | Integrantes y su usuario de GitHub | Javier Alejandro Carta Lacharme · Esteban Javier Peluffo Marquez · Felix Andres Taborda Jimenez · Jose Gabriel Vargas Perez — cuentas abajo |
 | URL del sistema desplegado | sin desplegar aún |
-| Ultima revision | 2026-09-07 (definitiva, post-cierre) |
+| Ultima revision | 2026-09-09 |
 
 ## Estado por entrega
 
@@ -19,7 +19,7 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 | 5 | Primer corte · reto de línea base | `corte-1` → `2988b03` (2026-09-06T23:35:40-05:00) | 3/12 | subtotal técnico 2,00/4,00 (ver hallazgo crítico: cambio no implementado); sustentación pendiente | revisión definitiva post-cierre 2026-09-07 |
 | 4 | S4 | `d7ba824` (2026-08-30T23:39:33-05:00) | 4/10 | 2.6 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `06920209` · 2026-08-09T16:03:46-05:00 | 4/9 | 2,8 * | sí |
-| 2 | Evidencia S2 · Escenarios de calidad y restricciones | `db90ff2f` · 2026-08-16T21:22:20-05:00 | 9/9 | 5,0 * | sí |
+| 2 | S2 | `db90ff2` (2026-08-16T21:22:20-05:00) | 9/9 | no aplica | si |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `dd4ea1cb8` · 2026-08-23T23:46:24-05:00 | 9/9 | no se publica | sí (actualizada tras el cierre) |
 
 ## Lo que se arrastra
@@ -45,7 +45,11 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 | Módulo de inventario de HEAD sin fila propia en `docs/aspectos.md` | S5 | No (resuelto) | ASP-02 ya tiene fila completa en `docs/aspectos.md`, aunque la celda de código no refleja un cambio real (ver hallazgo crítico). |
 | Registro de IA sin entrada del Corte 1 | S5 | No (resuelto) | `docs/ia.md` tiene entrada del 2026-09-06 para el Reto Corte 1 con rechazo explícito y motivo técnico. |
 | Enlace del README a `docs/c4/container.md` no existe | S5 | No verificado en esta revisión | No se reinspeccionó este enlace puntual; confirmar en el próximo corte. |
-
+| La corrección 'Update and rename feedback.md to correcciones.md' (ac951e3, 2026-09-08) es posterior al cierre. | S2 | no (resuelto tarde) | — |
+| Se añadieron ADR-0001 y ADR-0002, código, CI y trazabilidad en commits posteriores al cierre (7b0aad5, bcb133d, 8d149c1). | S2 | no (resuelto tarde) | — |
+| El commit cf9d7d3 define Flutter como frontend, decisión de stack posterior a la entrega s2. | S2 | no (resuelto tarde) | — |
+| No hay runs_ci citables que confirmen la ejecución del pipeline a HEAD. | S2 | si | |
+| Faltaba CI/ADR en s2; a HEAD ya existen, pero la evidencia de ejecución no está registrada. | S2 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -57,7 +61,7 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 | `docs/ia.md` al día | Cumple | Entrada del 2026-09-06 referida al Reto Corte 1, con rechazo y motivo técnico. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Escaneos limpios. |
 | Contribución de todos los integrantes | Cumple | Cuatro personas consolidadas para cuatro integrantes en HEAD. |
-| Pipeline en verde | Cumple | Run de HEAD `33811437677` en verde; no demuestra el reto. |
+| Pipeline en verde | No verificado | Run de HEAD `33811437677` en verde; no demuestra el reto. |
 
 ## Contribución por integrante
 

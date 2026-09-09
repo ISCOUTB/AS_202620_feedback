@@ -61,3 +61,7 @@ Esto es urgente y no depende de esta revisión: hablen con el docente cuanto ant
 ## Semana 1 · S1
 
 Sin actividad S1: el ultimo commit anterior al cierre es de la entrega previa, asi que esta evidencia no se pudo evaluar. Lo que se arrastra de semanas anteriores sigue abierto para el corte.
+
+## Semana 2 · S2
+
+Sin actividad S2: el ultimo commit anterior al cierre es de la entrega previa, asi que esta evidencia no se pudo evaluar. Lo que se arrastra de semanas anteriores sigue abierto para el corte.
