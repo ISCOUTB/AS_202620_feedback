@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
     inputs:
       semana:
-        description: "Numero de semana a revisar (vacio = automatico)"
+        description: "Numero(s) de semana a revisar, separados por coma (ej. 1,2,3,4,5; vacio = automatico)"
         required: false
         default: ""
       modo:
@@ -37,7 +37,7 @@ concurrency:
 jobs:
   revision:
     runs-on: ubuntu-latest
-    timeout-minutes: 300
+    timeout-minutes: 350
     env:
       TZ: America/Bogota
       LLM_BASE_URL: https://opencode.ai/zen/go/v1
@@ -64,14 +64,26 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "schedule" ]; then
             MODO_EFECTIVO="$MODO"
+            SEMANAS=""
           else
             MODO_EFECTIVO="${{ github.event.inputs.modo }}"
-            SEMANA="${{ github.event.inputs.semana }}"
+            SEMANAS="${{ github.event.inputs.semana }}"
             SOLO="${{ github.event.inputs.solo }}"
             DRY="${{ github.event.inputs.dry_run }}"
           fi
-          python scripts/cron/evaluar-semana.py \
-            --semana "${SEMANA:-}" \
-            --modo "${MODO_EFECTIVO:-auto}" \
-            --solo "${SOLO:-}" \
-            --dry-run "${DRY:-false}"
+          FALLO=0
+          if [ -z "${SEMANAS:-}" ]; then
+            ITEMS=("")
+          else
+            ITEMS=($(echo "$SEMANAS" | tr ',' ' '))
+          fi
+          for SEMANA in "${ITEMS[@]}"; do
+            echo "::group::Semana ${SEMANA:-auto}"
+            python scripts/cron/evaluar-semana.py \
+              --semana "${SEMANA:-}" \
+              --modo "${MODO_EFECTIVO:-auto}" \
+              --solo "${SOLO:-}" \
+              --dry-run "${DRY:-false}" || FALLO=1
+            echo "::endgroup::"
+          done
+          exit $FALLO
