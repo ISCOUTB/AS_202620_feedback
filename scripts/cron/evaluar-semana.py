@@ -105,6 +105,20 @@ def clone_efimero(repo):
     return d
 
 
+def rama_principal(d):
+    """Devuelve origin/master u origin/main; ninguna otra rama es evaluable."""
+    p = sh(["git", "-C", d, "symbolic-ref", "--short", "refs/remotes/origin/HEAD"], timeout=60)
+    candidata = p.stdout.strip()
+    if candidata in ("origin/master", "origin/main"):
+        return candidata
+    for candidata in ("origin/master", "origin/main"):
+        p = sh(["git", "-C", d, "show-ref", "--verify", "--quiet",
+                "refs/remotes/%s" % candidata], timeout=60)
+        if p.returncode == 0:
+            return candidata
+    return None
+
+
 def git_show(d, ref, path, max_lines=150):
     p = sh(["git", "-C", d, "show", "%s:%s" % (ref, path)], timeout=120)
     if p.returncode != 0:
@@ -137,7 +151,7 @@ def ci_runs(repo):
         return [{"error": str(ex)[:120]}]
 
 
-def evidencia_equipo(repo, hash_cal, cierre, desde):
+def evidencia_equipo(repo, hash_cal, cierre, desde, rama):
     d = clone_efimero(repo)
     if not d:
         return None, None, {"visible": False, "repo": repo}
@@ -147,22 +161,22 @@ def evidencia_equipo(repo, hash_cal, cierre, desde):
         else:
             h, fecha = "(sin commits)", ""
         arbol = git_ls(d, h)
-        tardios = [x for x in sh(["git", "-C", d, "log", "--format=%h %cI %s",
+        tardios = [x for x in sh(["git", "-C", d, "log", rama, "--format=%h %cI %s",
                                   "--after=%s" % cierre, "-10"], timeout=60).stdout.strip().split("\n") if x] if hash_cal else []
-        autores = sh(["git", "-C", d, "shortlog", "-sne", "HEAD"], timeout=60).stdout.strip()
-        secretos = sh(["git", "-C", d, "grep", "-nI", "-E", SECRETS_RE, "HEAD"], timeout=300)
+        autores = sh(["git", "-C", d, "shortlog", "-sne", h], timeout=60).stdout.strip()
+        secretos = sh(["git", "-C", d, "grep", "-nI", "-E", SECRETS_RE, h], timeout=300)
         envs = git_ls(d, h, r"(^|/)\.env$")
-        ia_log = sh(["git", "-C", d, "log", "--format=%cI %h", "--", "docs/ia.md", "docs/IA.md"],
+        ia_log = sh(["git", "-C", d, "log", h, "--format=%cI %h", "--", "docs/ia.md", "docs/IA.md"],
                     timeout=60).stdout.strip()
-        nuevos = sh(["git", "-C", d, "log", "--format=%h %cI %s",
+        nuevos = sh(["git", "-C", d, "log", rama, "--format=%h %cI %s",
                      "--after=%s" % desde, "-5"], timeout=60).stdout.strip() if desde else ""
-        head = sh(["git", "-C", d, "log", "-1", "--format=%H %cI %s", "HEAD"],
+        head = sh(["git", "-C", d, "log", "-1", "--format=%H %cI %s", rama],
                   timeout=60).stdout.strip()
         diff_head = ""
         if hash_cal and head:
             diff_head = sh(["git", "-C", d, "diff", "--name-only",
-                            "%s..HEAD" % h.split(" ")[0]], timeout=120).stdout.strip()
-        post_cierre = sh(["git", "-C", d, "log", "--format=%h %cI %s",
+                            "%s..%s" % (h.split(" ")[0], rama)], timeout=120).stdout.strip()
+        post_cierre = sh(["git", "-C", d, "log", rama, "--format=%h %cI %s",
                           "--since=%s" % cierre, "-20"], timeout=60).stdout.strip()
         runs = ci_runs(repo) if any(f.startswith(".github/workflows/") for f in arbol) else []
         docs = {}
@@ -172,18 +186,22 @@ def evidencia_equipo(repo, hash_cal, cierre, desde):
             c = git_show(d, h, f, max_lines=300)
             if c is not None:
                 docs[f] = c[:9000]
+        correcciones = git_show(d, h, "correcciones.md", max_lines=300)
+        if correcciones is not None:
+            docs["correcciones.md"] = correcciones[:9000]
         for f in git_ls(d, h, r"^\.github/workflows/|^(pyproject\.toml|package\.json|pom\.xml|build\.gradle.*|Makefile|docker-compose.*|requirements\.txt)$"):
             c = git_show(d, h, f, max_lines=150)
             if c is not None:
                 docs[f] = c[:5000]
         ev = {
-            "visible": True, "repo": repo, "hash_calificado": h, "fecha": fecha,
+            "visible": True, "repo": repo, "rama_principal": rama,
+            "hash_calificado": h, "fecha": fecha,
             "arbol": arbol[:MAX_TREE_ITEMS], "autores": autores,
             "secretos": secretos.stdout.strip() or "(sin coincidencias)",
             "envs_versionados": envs, "ia_log": ia_log or "(sin commits sobre docs/ia.md)",
             "commits_nuevos_desde_cierre_anterior": nuevos or "(sin commits nuevos)",
             "commits_tardios_post_cierre": tardios, "documentos": docs,
-            "head": head, "arbol_head": git_ls(d, "HEAD")[:MAX_TREE_ITEMS],
+            "head": head, "arbol_head": git_ls(d, rama)[:MAX_TREE_ITEMS],
             "diff_desde_cierre": diff_head or "(sin diferencias con el estado calificado)",
             "commits_post_cierre": post_cierre or "(sin commits posteriores al cierre)",
             "runs_ci": runs,
@@ -276,10 +294,11 @@ SISTEMA = (
     "lineas), overall (objeto {estado, al_dia, resumen, resueltos_tardios, pendientes}). Se "
     "conciso: evidencia y observaciones en una frase corta cada una.\n"
     "8. 'estado' debe ser exactamente 'Cumple', 'No cumple' o 'No verificado'.\n"
-    "9. 'overall' evalua el proyecto ENTERO en HEAD (no solo la entrega de la semana): usa head, "
+    "9. 'overall' evalua el proyecto ENTERO en la punta actual de la misma rama principal "
+    "(master o main; no solo la entrega de la semana): usa head, "
     "diff_desde_cierre, commits_post_cierre y runs_ci de la evidencia. Si el equipo subio tarde o "
     "corrigio entregas anteriores despues del cierre, listalo en 'resueltos_tardios' (con la "
-    "evidencia); 'al_dia' solo si no quedan pendientes de semanas anteriores sin resolver a HEAD."
+    "evidencia); 'al_dia' solo si no quedan pendientes de semanas anteriores sin resolver en esa rama."
 )
 
 
@@ -288,7 +307,7 @@ def prompt_evaluacion(ficha, contrato, equipo, ev, entrada, modo):
         "ENTREGA A EVALUAR (semana %s, %s, cierre %s):\n%s\n\n"
         "CONTRATO DEL CURSO (matriz transversal de 8 filas y reglas):\n%s\n\n"
         "EQUIPO: %s | repo %s | integrantes declarados: %s\n\n"
-        "EVIDENCIA DEL REPOSITORIO (estado calificado: %s %s, modo %s):\n%s\n\n"
+        "EVIDENCIA DEL REPOSITORIO (rama: %s; estado calificado: %s %s, modo %s):\n%s\n\n"
         "Evalua la matriz DE LA FICHA (una fila por criterio de su tabla 'Matriz de cumplimiento'), "
         "la matriz transversal del contrato (sus 8 criterios del apartado 11) y el 'overall' del "
         "proyecto entero a HEAD. En 'overall': si el equipo subio tarde o corregio entregas "
@@ -298,7 +317,7 @@ def prompt_evaluacion(ficha, contrato, equipo, ev, entrada, modo):
     ) % (entrada["semana"], entrada["id"], entrada["cierre"], ficha,
          contrato[:8000],
          equipo["equipo"], ev.get("repo", ""), equipo["integrantes"],
-         ev.get("hash_calificado", ""), ev.get("fecha", ""), modo,
+         ev.get("rama_principal", ""), ev.get("hash_calificado", ""), ev.get("fecha", ""), modo,
          json.dumps(ev, ensure_ascii=False, indent=1)[:95000])
 
 # ---------- escritura de archivos ----------
@@ -340,7 +359,8 @@ def escribir_informe(equipo, ev, entrada, res, modo, hash_anterior):
         "| Campo | Valor |",
         "|---|---|",
         "| Repositorio | `https://github.com/ISCOUTB/%s` |" % ev["repo"],
-        "| Estado revisado | `%s` (%s) |" % (ev.get("hash_calificado", ""), ev.get("fecha", "")),
+        "| Estado revisado | `%s` en `%s` (%s) |" % (ev.get("hash_calificado", ""),
+                                                    ev.get("rama_principal", ""), ev.get("fecha", "")),
         "| Cierre | %s |" % entrada["cierre"],
         "| Revisor | pipeline automatico (GitHub Actions) |",
         "",
@@ -352,12 +372,12 @@ def escribir_informe(equipo, ev, entrada, res, modo, hash_anterior):
         "",
         md_tabla(filas_trans, ["Criterio", "Evidencia", "Estado", "Observaciones"]),
         "",
-        "## Estado global del proyecto (overall · revisado en HEAD)",
+        "## Estado global del proyecto (overall · punta actual de la misma rama)",
         "",
-        "Mira el repositorio **entero en su estado actual** (HEAD), no solo la evidencia del cierre: "
+        "Mira el repositorio **entero en la punta actual de la misma rama**, no solo la evidencia del cierre: "
         "si el equipo subio tarde o corregio entregas anteriores, aqui se nota.",
         "",
-        "- **HEAD revisado**: `%s`" % (ev.get("head") or "-"),
+        "- **Punta actual revisada**: `%s`" % (ev.get("head") or "-"),
         "- **Veredicto**: %s" % ("al dia" if res.get("overall", {}).get("al_dia") else "con pendientes"),
     ]
     ov = res.get("overall") or {}
@@ -440,7 +460,8 @@ def escribir_informe_sin_actividad(equipo, ev, entrada, ficha):
         "| Campo | Valor |",
         "|---|---|",
         "| Repositorio | `https://github.com/ISCOUTB/%s` |" % ev["repo"],
-        "| Estado revisado | `%s` (%s) |" % (ev.get("hash_calificado", ""), ev.get("fecha", "")),
+        "| Estado revisado | `%s` en `%s` (%s) |" % (ev.get("hash_calificado", ""),
+                                                    ev.get("rama_principal", ""), ev.get("fecha", "")),
         "| Cierre | %s |" % entrada["cierre"],
         "| Revisor | pipeline automatico (GitHub Actions) |",
         "",
@@ -456,9 +477,9 @@ def escribir_informe_sin_actividad(equipo, ev, entrada, ficha):
         "",
         "Semana no evaluable por falta de actividad nueva (nota no aplica).",
         "",
-        "## Estado global del proyecto (overall · revisado en HEAD)",
+        "## Estado global del proyecto (overall · punta actual de la misma rama)",
         "",
-        "- HEAD revisado: `%s`" % (ev.get("head") or "-"),
+        "- Punta actual revisada: `%s`" % (ev.get("head") or "-"),
         "- Commits posteriores al cierre: %s" % (ev.get("commits_post_cierre") or "(ninguno)"),
         "- Archivos cambiados despues del cierre: %s" % (ev.get("diff_desde_cierre") or "(ninguno)"),
         "",
@@ -685,15 +706,19 @@ def procesar_equipo(repo, equipo, entrada, contrato, ficha, modo, desde):
     if not d:
         return {"repo": repo, "equipo": equipo["equipo"], "estado": "no visible"}
     try:
+        rama = rama_principal(d)
+        if not rama:
+            return {"repo": repo, "equipo": equipo["equipo"],
+                    "estado": "sin rama principal master/main"}
         p = sh(["git", "-C", d, "log", "-1", "--format=%h %cI %s",
-                "--until=%s" % entrada["cierre"]], timeout=60)
+                "--until=%s" % entrada["cierre"], rama], timeout=60)
         if p.returncode != 0 or not p.stdout.strip():
             hc = None
         else:
             partes = p.stdout.strip().split(" ", 2)
             hc = " ".join(partes[:2])
         if desde:
-            nuevos = sh(["git", "-C", d, "log", "--format=%h", "--after=%s" % desde, "-1"],
+            nuevos = sh(["git", "-C", d, "log", rama, "--format=%h", "--after=%s" % desde, "-1"],
                         timeout=60).stdout.strip()
         else:
             nuevos = hc or ""
@@ -705,13 +730,14 @@ def procesar_equipo(repo, equipo, entrada, contrato, ficha, modo, desde):
                 return resumen_desde_informe(repo, equipo, entrada,
                                              "sin cambios desde la pasada anterior (%s)" % anterior[:7])
         if modo == "definitive" and not hc:
-            ev = {"visible": True, "repo": repo, "hash_calificado": "(sin commits)", "fecha": "",
+            ev = {"visible": True, "repo": repo, "rama_principal": rama,
+                  "hash_calificado": "(sin commits)", "fecha": "",
                   "head": "", "commits_post_cierre": "(sin commits)",
                   "diff_desde_cierre": "(sin commits)"}
             escribir_informe_sin_actividad(equipo, ev, entrada, ficha)
             return {"repo": repo, "equipo": equipo["equipo"], "hash": "(sin commits)",
                     "nm": "sin actividad", "nota": "-", "estado": "sin commits <= cierre"}
-        ev, d2, err = evidencia_equipo(repo, hc, entrada["cierre"], desde)
+        ev, d2, err = evidencia_equipo(repo, hc, entrada["cierre"], desde, rama)
         if isinstance(d2, str) and d2:
             shutil.rmtree(d2, ignore_errors=True)
         shutil.rmtree(d, ignore_errors=True)
