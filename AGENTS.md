@@ -44,13 +44,17 @@ depende de una «restricción asignada» que no esté documentada en el aula. Ad
 transversal, vuelve a comprobar en el estado calificado los criterios vigentes de las fichas S1,
 S2, S3 y S4. Esto no cambia retroactivamente sus notas: determina si el primer corte está al día.
 
-En esa pasada —y solo en la definitiva completa de S5— debe existir `correcciones.md` en la raíz
+Para este primer corte, el cierre excepcional está registrado en `calendario.json` como el
+**10 de septiembre de 2026 a las 12:00 COT** (`2026-09-10T17:00:00Z`); sustituye el cierre semanal
+ordinario solo para S5. En esa pasada —y solo en la definitiva completa de S5— debe existir `correcciones.md` en la raíz
 del último commit de `master` o `main` anterior o igual al cierre. Se cruza, fila por fila,
 con los hallazgos publicados de S1–S4 y con cualquier preliminar de S5. El archivo no prueba por
 sí mismo una corrección: hay que verificar las rutas, commits, pruebas y runs que cite. Si falta,
 su fila queda en No cumple, pero se continúa la revisión completa. La punta actual de esa misma
-rama se usa únicamente para `overall`; no convierte cambios tardíos en cumplimiento del corte. Sigue el procedimiento
-detallado de `fichas/semana-05-corte1.md`.
+rama se usa únicamente para `overall`; no convierte cambios tardíos en cumplimiento del corte.
+S5 se califica con la misma fórmula de los avances: `1 + 4 × (Cumple/total)` sobre su matriz de
+12 filas, como propuesta al docente. La pasada definitiva revisa los 23 equipos aun cuando no
+hayan tenido commits desde S4. Sigue el procedimiento detallado de `fichas/semana-05-corte1.md`.
 
 ## Paso a paso
 
@@ -114,7 +118,7 @@ ficha y cierres):
 redondeada a 1 decimal. **Por decisión del profesor se publica**, marcada siempre como «propuesta
 al docente; la nota final se fija en Moodle»: va en el informe (`Recuento y nota sugerida`), en la
 fila de la planilla y en el `resumen-sX.md` consolidado. En los cortes con escala publicada no se
-aplica la fórmula; el nivel sugerido lo propone la ficha del corte.
+aplica la fórmula, salvo S5, que por decisión docente se califica igual que los avances.
 
 ### 5. Re-barrido post-cierre
 

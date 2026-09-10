@@ -7,7 +7,7 @@
 | Corte | Primer corte (actividad de corte) |
 | Tipo | grupal, nota única del equipo |
 | Qué sube el estudiante | enlace al repositorio, PDF exigido por el aula y `correcciones.md` en la raíz del repositorio |
-| Estado que se califica | último commit de `master` o `main` anterior o igual al cierre |
+| Estado que se califica | último commit de `master` o `main` anterior o igual al cierre excepcional registrado en el calendario |
 | Acceso | requiere haber entregado la evidencia S4 |
 
 Antes de empezar, lee [CONTRATO.md](../CONTRATO.md) y las fichas de las evidencias S1 a S4. Su
@@ -105,7 +105,6 @@ automáticamente toda la entrega.
 
 ## Criterio para la propuesta al docente
 
-La propuesta de S5 debe reflejar el estado consolidado del primer corte y usar la escala o rúbrica
-publicada en el aula. No inventes un reto, una restricción ni ponderaciones ausentes. Si la rúbrica
-del aula no está disponible, entrega la matriz y deja la nota o nivel como **No verificado** para
-que lo resuelva el docente.
+S5 se califica igual que los avances: `1 + 4 × (criterios Cumple ÷ criterios totales)` sobre esta
+matriz, redondeada a un decimal. Es una **propuesta al docente**; la nota final la fija el docente
+en Moodle. No inventes un reto, una restricción ni ponderaciones adicionales.

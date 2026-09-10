@@ -6,7 +6,7 @@
     {"semana": 2,  "id": "s2",  "ficha": "semana-02-evidencia-s2.md", "idnumber": "arqsw:evidencia-s2", "tipo": "evidencia", "cierre": "2026-08-17T05:00:00Z", "nota": "no"},
     {"semana": 3,  "id": "s3",  "ficha": "semana-03-evidencia-s3.md", "idnumber": "arqsw:evidencia-s3", "tipo": "evidencia", "cierre": "2026-08-24T05:00:00Z", "nota": "si"},
     {"semana": 4,  "id": "s4",  "ficha": "semana-04-evidencia-s4.md", "idnumber": "arqsw:evidencia-s4", "tipo": "evidencia", "cierre": "2026-08-31T05:00:00Z", "nota": "si"},
-    {"semana": 5,  "id": "corte1", "ficha": "semana-05-corte1.md", "idnumber": "arqsw:corte1", "tipo": "corte", "cierre": "2026-09-07T05:00:00Z", "nota": "no"},
+    {"semana": 5,  "id": "corte1", "ficha": "semana-05-corte1.md", "idnumber": "arqsw:corte1", "tipo": "corte", "cierre": "2026-09-10T17:00:00Z", "nota": "si"},
     {"semana": 6,  "id": "s6",  "ficha": "semana-06-evidencia-s6.md", "idnumber": "arqsw:evidencia-s6", "tipo": "evidencia", "cierre": "2026-09-14T05:00:00Z", "nota": "si"},
     {"semana": 7,  "id": "s7",  "ficha": "semana-07-evidencia-s7.md", "idnumber": "arqsw:evidencia-s7", "tipo": "evidencia", "cierre": "2026-09-21T05:00:00Z", "nota": "si"},
     {"semana": 8,  "id": "s8",  "ficha": "semana-08-evidencia-s8.md", "idnumber": "arqsw:evidencia-s8", "tipo": "evidencia", "cierre": "2026-09-28T05:00:00Z", "nota": "si"},

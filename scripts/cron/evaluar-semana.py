@@ -743,7 +743,9 @@ def procesar_equipo(repo, equipo, entrada, contrato, ficha, modo, desde):
         shutil.rmtree(d, ignore_errors=True)
         if err:
             return {"repo": repo, "equipo": equipo["equipo"], "estado": "error evidencia"}
-        if modo == "definitive" and desde and not nuevos:
+        # S5 definitiva es un compendio completo: aun sin commits desde S4 debe revisar
+        # el último estado elegible de cada equipo. Las demás semanas conservan el delta.
+        if modo == "definitive" and desde and not nuevos and entrada["id"] != "corte1":
             escribir_informe_sin_actividad(equipo, ev, entrada, ficha)
             return {"repo": repo, "equipo": equipo["equipo"],
                     "hash": ev.get("hash_calificado", "-"), "nm": "sin actividad", "nota": "-",

@@ -270,7 +270,9 @@ injection) y la salida del LLM se valida como JSON antes de escribir nada.
 contrasta `correcciones.md`, que debe existir en la raíz del estado calificado, con los hallazgos
 publicados y la evidencia real. Esta comprobación no se aplica como cierre definitivo en las
 pasadas tempranas. La matriz se decide con el último commit de `master` o `main` anterior o igual
-al cierre; los cambios posteriores se informan solo en `overall`.
+al cierre excepcional de S5 registrado en el calendario (**10 de septiembre de 2026, 12:00 COT**);
+los cambios posteriores se informan solo en `overall`. S5 recibe nota sugerida con la misma fórmula
+de los avances: `1 + 4 × (Cumple/total)` sobre su matriz.
 
 ### Cómo se usa
 
@@ -353,8 +355,9 @@ git -C "$DIR" log -1 --format='%H %cI %s' --until="$CIERRE" origin/master
 3. La matriz transversal del contrato, rellena.
 4. La sección **overall**: el estado del proyecto entero en la punta actual de la misma rama
    `master` o `main`, para notar entregas subidas tarde o correcciones posteriores al cierre.
-5. En `corte1`, `corte2`, `final` y `cierre`, el **nivel sugerido** por criterio con su suma sobre
-   5,0, marcado como propuesta al docente. Eso va al registro local, no al archivo publicado.
+5. En `corte2`, `final` y `cierre`, el **nivel sugerido** por criterio con su suma sobre 5,0,
+   marcado como propuesta al docente. S5 es la excepción: usa la misma fórmula de los avances
+   sobre su matriz de 12 criterios. Eso va al registro local, no al archivo publicado.
 6. Lo que quedó en No verificado, con qué haría falta para cerrarlo.
 
 ### Mantenimiento
