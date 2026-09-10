@@ -30,8 +30,7 @@ Buen avance en documentación: C4 niveles 1 y 2 completos y coherentes, corte ve
 
 ## Semana 5 · CORTE1
 
-El repositorio tiene una base sólida de documentación (arc42, C4, ADR-0001, README), pero la entrega del corte 1 no deja ver la respuesta al reto. Para el siguiente corte: (1) añadan el ADR del reto con alternativas, fuerzas, decisión y consecuencias ligadas al escenario de calidad; (2) completen docs/aspectos.md con rutas reales de código y pruebas, y evidencia de medición reproducible; (3) dejen un run de CI en verde que ejecute la prueba del cambio; (4) verifiquen que los tres integrantes aparezcan en el historial; (5) eliminen el archivo temporal de Word versionado. La sustentación se evaluará en sesión.
-
+El proyecto tiene una base sólida: documentación arc42, C4, ADR y trazabilidad de aspectos están bien desarrolladas y navegables. Sin embargo, el archivo correcciones.md no estaba en el estado calificado, lo que impide verificar la trazabilidad de correcciones de S1-S4. Además, no hay evidencia de ejecución del pipeline CI para el hash evaluado, por lo que la reproducibilidad y las pruebas no están confirmadas. Se recomienda asegurar que correcciones.md esté en la raíz antes del cierre y proporcionar enlaces a runs de CI en la próxima entrega.
 ## Semana 5 · Primer corte (revisión definitiva, 2026-09-07)
 
 El repositorio no tuvo ningún cambio entre el 1 de septiembre y el cierre del corte (7 de septiembre): toda la semana 5 quedó sin actividad. Un detalle importante sobre lo que ya tenían: el commit con el mensaje "corte-1" no es una etiqueta de Git (`git tag`); es solo el texto de un commit normal. Para que el curso reconozca un estado como "el corte 1", necesitan crear la etiqueta con `git tag corte-1` y subirla (`git push origin corte-1`), no solo nombrar así un commit.

@@ -25,11 +25,9 @@ Qué corregir antes del corte 1 (semana 5):
 
 La entrega de la semana 4 está sólida en documentación arc42, glosario, C4 niveles 1 y 2, corte vertical y pruebas en CI. Para el primer corte, revisen la coherencia entre el C4 nivel 2 y el código real: el diagrama muestra API/Backend y Base de Datos, pero la implementación es un monolito Flask con repositorio en memoria; ajusten el diagrama o el código. Completen la celda C4 de docs/aspectos.md con rutas navegables a los diagramas. Agreguen SonarCloud al pipeline como exige el contrato. Eviten versionar archivos .pyc. Finalmente, verifiquen que las secciones 1, 4, 5 y 6 de arc42 estén completamente redactadas y sin texto de plantilla.
 
-## Semana 5 · Primer corte
+## Semana 5 · CORTE1
 
-Revisión manual preliminar previa al cierre. La línea base de invitaciones tiene aplicación, pruebas y CI en verde. La respuesta al reto nuevo aún no es identificable: falta la etiqueta `corte-1`, declarar la restricción, medir el estado inicial, registrar las alternativas y la decisión en un ADR nuevo, implementar el incremento y contrastar el resultado con el umbral. Completen una fila navegable en `docs/aspectos.md` hasta código, prueba y evidencia, y registren en `docs/ia.md` una salida del corte con su decisión y motivo técnico. Alineen también el C4 de contenedores con el monolito Flask y la persistencia en memoria que existen actualmente.
-
-
+El proyecto tiene una base sólida: problema claro, ADR bien documentado, escenarios de calidad definidos y un corte vertical funcional con CI en verde. Sin embargo, para el compendio del primer corte faltan ajustes importantes: el archivo de correcciones debe estar en la raíz del repositorio, la matriz de aspectos debe tener enlaces válidos y cubrir todos los aspectos, y las secciones de arc42 (07, 08, 11) y el C4 nivel 3 deben completarse. Además, se debe configurar el análisis estático con SonarCloud. Corrige estos puntos antes del siguiente corte para mantener la trazabilidad y la coherencia arquitectónica.
 ## Semana 5 · Primer corte (revisión definitiva, 2026-09-07)
 
 Ya crearon la etiqueta `corte-1` sobre un commit anterior al cierre, y eso está bien: quedó un estado identificable para calificar.

@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Verifacts` |
 | Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md); historial: `PedroC1213` (30 commits) y `Cristian Cardeño` (4 commits tardíos), sin atribuir oficialmente |
 | URL del sistema desplegado | |
-| Ultima revision | 2026-09-09 |
+| Ultima revision | 2026-09-10 |
 
 ## Estado por entrega
 
@@ -18,7 +18,7 @@
 | 2 | S2 | `(sin commits)` () | sin actividad | no aplica | si |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `8259b75` · 2026-08-23T23:50:00-05:00 | 4/9 | no se publica | sí |
 | 4 | Evidencia S4 · arc42, C4 y corte vertical | `443e908` · 2026-08-29T18:17:18-05:00 | 7/10 | 3.8 | sí |
-| 5 | Primer corte · reto de línea base | **repositorio inaccesible** (404 en la organización desde antes del cierre; último estado visto: `8764f9f`, 2026-09-02) | no evaluable | no evaluable — repositorio inaccesible | revisión definitiva post-cierre 2026-09-07 |
+| 5 | CORTE1 | `3120e06` (2026-09-06T18:36:46-05:00) | 4/12 | no aplica | si |
 
 ## Lo que se arrastra
 
@@ -43,7 +43,14 @@
 | Línea base y resultado reproducibles contra umbral | S5 | sí | la documentación reconoce que la medición P95 está pendiente |
 | Registro de IA del corte | S5 | sí | último cambio del archivo fue el 24-ago |
 | **El repositorio `ISCOUTB/AS_202620_Verifacts` desapareció de la organización** (404 vía API y clon; ausente de los 191 repos públicos listados de ISCOUTB) | S5 (detectado en la revisión definitiva) | sí — crítico | escalado al docente; el equipo debe restablecer el acceso público con el historial intacto antes de que se pueda calificar el corte 1 |
-
+| Limpieza de __pycache__, archivos con sufijos '(3).py'/' (4).py' y data/verifacts.db realizada después del cierre (diff_desde_cierre 3120e06→67f8cea); el PDF en raíz persiste. | S5 | no (resuelto tarde) | — |
+| SonarCloud y workflow 'Tests and SonarCloud' añadidos después del cierre (commits a1d23eb, 2a90b44, ab978d3, efbad6b), pero los runs 34407270858 y siguientes fallan. | S5 | no (resuelto tarde) | — |
+| Frontend y soporte de URL incorporados después del cierre (commits 5fc30ce, 04d625d, 67f8cea), ampliando el corte vertical. | S5 | no (resuelto tarde) | — |
+| Julian Samuel Cabeza Pena sigue sin commits en HEAD. | S5 | si | |
+| arc42 incompleto: falta sección 11 (riesgos) y docs/c4/03-componentes.md es plantilla sin completar. | S5 | si | |
+| CI en rojo: runs_ci de 'Tests and SonarCloud' posteriores al cierre concluyen failure. | S5 | si | |
+| docs/aspectos.md A-02 pendiente y enlaces rotos (docs/decisiones-arquitectonicas.md). | S5 | si | |
+| PDF en la raíz del repositorio persiste en HEAD. | S5 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -55,7 +62,7 @@
 | `docs/ia.md` al día | No cumple | sin entrada S5; último cambio 2026-08-24 |
 | Sin credenciales en el repositorio ni en el historial | Cumple | git grep y `.env` sin coincidencias |
 | Contribución de todos los integrantes | No cumple | dos personas visibles; el tercer integrante sigue sin commits |
-| Pipeline en verde | No verificado | `tests.yml` existe pero la API no reporta runs; la URL citada en `aspectos.md` da 404 |
+| Pipeline en verde | No cumple | `tests.yml` existe pero la API no reporta runs; la URL citada en `aspectos.md` da 404 |
 
 ## Contribución por integrante
 

@@ -35,7 +35,7 @@ El arranque con un solo comando y la fila de disponibilidad hasta Pruebas ya est
 
 ## Semana 5 · CORTE1
 
-El primer corte tiene una base sólida: problema, escenarios de calidad, ADR, arc42, C4 y corte vertical están documentados y las pruebas pasan en CI. El punto crítico es que correcciones.md no estaba en la raíz al cierre; se añadió después, así que la entrega calificada queda sin el índice de correcciones. Revisen la tabla de aspectos para que tenga las 8 columnas del contrato (ID, Aspecto, Requisito, C4, ADR, Código, Pruebas, Evidencia) y añadan SonarCloud al pipeline. El commit posterior al cierre no cambia la nota del corte, pero sí el estado actual del repositorio.
+El corte vertical y la documentación S1-S4 están completos y las pruebas pasan en CI. El problema principal es que correcciones.md no existía en el commit del corte (20ab43f) y se subió después del cierre; recuerden que el estado calificado es el último commit antes del cierre. Asegúrense de que los entregables exigidos estén en la rama principal antes de la fecha límite. Revisen la integración con SonarCloud para el análisis estático. La trazabilidad entre aspectos, escenarios, ADR, código y pruebas es sólida; mantengan ese nivel. Para el próximo corte, verifiquen que el archivo de correcciones esté en la raíz y referencie cada hallazgo con evidencia.
 ## Semana 5 · Primer corte (revisión definitiva, 2026-09-07)
 
 Se revisó de nuevo después del cierre. No existe ninguna etiqueta en el repositorio, así que se tomó el último commit subido antes del cierre.

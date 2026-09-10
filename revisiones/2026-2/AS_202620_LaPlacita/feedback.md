@@ -27,9 +27,7 @@ Buen avance: C4 como código, corte vertical con pruebas en CI verde y trazabili
 
 ## Semana 5 · CORTE1
 
-El repositorio tiene una base sólida: estructura completa, CI en verde y README reproducible. Para el corte 1 falta lo esencial del reto: crear la etiqueta `corte-1`, declarar la restricción asignada y registrar el diagnóstico, la decisión y la medición. Completen la tabla de aspectos (celdas Pendiente), documenten en docs/ia.md qué salidas de IA rechazaron y por qué, y concreten SonarCloud. Sin esos elementos, la trazabilidad no se puede defender. El PDF de dos páginas debe entregarse en Moodle con los enlaces de trazabilidad.
-
-
+El corte 1 deja una base sólida: el aislamiento por establecimiento (RES-05) está implementado, medido y respaldado por pruebas y CI en verde. Para el siguiente corte, corrijan el nombre del archivo de correcciones: debe ser exactamente correcciones.md en la raíz (hoy está como correciones.md). Completen la trazabilidad de docs/aspectos.md: la columna Evidencia debe enlazar al run o comando verificable, no solo texto. En docs/ia.md registren también lo que rechazaron de la IA y por qué. Activen SonarCloud con el token y projectKey para que el análisis estático corra en cada push. El resto de la documentación (arc42, C4, ADR) está bien encaminada.
 ## Semana 5 · Primer corte (revisión definitiva, 2026-09-07)
 
 Este fue, de lejos, el trabajo más completo de este corte: identificaron su restricción (que las operaciones de una tienda nunca deben tocar datos de otra), midieron cuántos accesos cruzados eran posibles antes de tocar el código, escribieron un ADR con tres alternativas comparadas y con criterios claros de cuándo revisar la decisión, cambiaron el código real en los cinco módulos del sistema, y volvieron a medir después del cambio con un script reproducible. La etiqueta `corte-1` quedó puesta antes del cierre, sobre un commit con el pipeline en verde.

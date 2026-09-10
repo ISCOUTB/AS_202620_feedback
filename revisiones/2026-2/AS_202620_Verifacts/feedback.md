@@ -50,8 +50,7 @@ Qué corregir antes del corte 1 (semana 5):
 
 ## Semana 5 · CORTE1
 
-Revisión preliminar antes del cierre: el repositorio mejoró la línea base con un recorrido completo y su prueba, pero todavía no presenta la respuesta al reto del primer corte. Falta crear la etiqueta, identificar la restricción asignada, medir el estado inicial, registrar la decisión en un ADR nuevo, implementar el cambio y comparar el resultado con el umbral. El PDF versionado tiene una sola página y describe la evidencia anterior, no el reto actual. También faltan un run público de CI, el registro de IA de esta etapa y contribución verificable del tercer integrante.
-
+El compendio muestra avance real: corte vertical POST /analysis, escenarios, ADR y trazabilidad parcial. Para cerrar el corte: actualicen correcciones.md para reflejar lo ya resuelto, completen arc42 (sección 11 y glosario), terminen docs/c4/03-componentes.md, limpien __pycache__, archivos con sufijos y PDF de la raíz, aseguren commits del tercer integrante, y dejen un run de CI en verde anterior al cierre con SonarCloud. Revisen enlaces rotos en README y aspectos.md.
 ## Semana 5 · Primer corte (revisión definitiva, 2026-09-07)
 
 No pudimos revisar el corte 1 porque el repositorio del equipo ya no está en la organización del curso: no responde al clonarlo ni a través de la API, y no aparece en el listado completo de repositorios públicos de la organización. No sabemos si esto pasó por un cambio de visibilidad, un traslado a otra cuenta o un borrado — cualquiera de los tres deja el trabajo fuera de nuestro alcance. La última vez que se pudo ver, el 2026-09-02, el repositorio tenía una base de S4 completa (interfaz, lógica y persistencia con su prueba) pero todavía no mostraba una respuesta al reto del corte 1.

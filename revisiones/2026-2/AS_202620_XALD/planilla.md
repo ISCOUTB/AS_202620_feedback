@@ -10,7 +10,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_XALD` |
 | Integrantes y su usuario de GitHub | Xavier Yesid Garcia Diaz (xaviergarciadiaz20-commits) · Dilan Joan Gonzalez Bejarano (dilanbejarano011) · Luis Estheban Lozano Colmenares (colmenares2007-crypto) · Axel Jair Ruiz Bolano (axeljruiz717-hash) — correspondencias por los correos de los commits (nombres explícitos), por confirmar con el docente |
 | URL del sistema desplegado | sin URL (sin despliegue todavía) |
-| Ultima revision | 2026-09-09 |
+| Ultima revision | 2026-09-10 |
 
 ## Estado por entrega
 
@@ -20,7 +20,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `8c37887` · 2026-08-16T13:45:27-05:00 | 1/9 | 1.4 (propuesta) | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `dc38992` · 2026-08-23T22:07:19-05:00 | 5/9 | no se publica | sí |
 | 4 | S4 | `0205e44` (2026-08-30T23:12:03-05:00) | 4/10 | 2.6 | si |
-| 5 | CORTE1 | `ee9af9c` (2026-09-06T23:11:50-05:00) | 7/12 | no aplica | si |
+| 5 | CORTE1 | `ee9af9c` (2026-09-06T23:11:50-05:00) | 6/12 | no aplica | si |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
@@ -65,6 +65,12 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Completar CÓDIGO, PRUEBAS y EVIDENCIA en docs/aspectos.md con enlaces al estado calificado. | S5 | si | |
 | Incorporar análisis estático SonarCloud. | S5 | si | |
 | Verificar entrega del PDF en Moodle y sustentación. | S5 | si | |
+| 43b8e35 (2026-09-08) renombra correcciones-feedback-XALD.md a correcciones.md, cerrando la fila 2 después del cierre | S5 | no (resuelto tarde) | — |
+| 9bf16cf (2026-09-09) ajusta CI a la rama master, cerrando el pipeline transversal después del cierre | S5 | no (resuelto tarde) | — |
+| docs/aspectos.md con celdas Pendiente en Código/Pruebas/Evidencia para A-02 a A-05 | S5 | si | |
+| Enlaces de aspectos.md a rama experimental en lugar de master | S5 | si | |
+| Completitud de arc42 (12 secciones) sin verificar | S5 | si | |
+| PDF en Moodle y sustentación pendientes de confirmación docente | S5 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

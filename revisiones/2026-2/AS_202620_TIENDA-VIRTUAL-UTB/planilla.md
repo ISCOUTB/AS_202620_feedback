@@ -10,7 +10,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB` |
 | Integrantes y su usuario de GitHub | Shalom Jhoanna Arrieta Marrugo (shalom-A26) · Levis Adrian Ortiz Cano (RAZOR7150) · Alejandro Patron Montero (pxtroniwnl) · Jasen Mihovil Yukopila Escobar (Jmyukopila) — correspondencias por los correos de los commits, por confirmar con el docente |
 | URL del sistema desplegado | sin URL (sin despliegue todavía) |
-| Ultima revision | 2026-09-09 |
+| Ultima revision | 2026-09-10 |
 
 ## Estado por entrega
 
@@ -20,7 +20,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `456365b` · 2026-08-15T14:07:47-05:00 | 6/9 | 3.7 (propuesta) | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `f4602a3` · 2026-08-21T13:22:16-05:00 | 6/9 | no se publica | sí |
 | 4 | S4 | `0d208a2` (2026-08-29T21:37:39-05:00) | 6/10 | 3.4 | si |
-| 5 | CORTE1 | `20ab43f` (2026-09-06T07:56:34-05:00) | 7/12 | no aplica | si |
+| 5 | CORTE1 | `20ab43f` (2026-09-06T07:56:34-05:00) | 8/12 | no aplica | si |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
@@ -57,6 +57,10 @@ Hoja consolidada del equipo a lo largo del semestre.
 | correcciones.md ausente en el estado calificado | S5 | si | |
 | tabla de aspectos sin las 8 columnas del contrato | S5 | si | |
 | SonarCloud no configurado en el pipeline | S5 | si | |
+| docs/aspectos.md y docs/ia.md modificados en 3d732d7 post-cierre | S5 | no (resuelto tarde) | — |
+| Verificar SonarCloud | S5 | si | |
+| PDF en Moodle | S5 | si | |
+| Sustentación | S5 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -68,7 +72,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | `docs/ia.md` al día | No cumple | commit en el periodo, pero sin registro de rechazos con motivo |
 | Sin credenciales en el repositorio ni en el historial | Cumple | greps limpios; `compose.yaml:7` lleva contraseña de desarrollo del Postgres local |
 | Contribución de todos los integrantes | Cumple | 4 identidades consolidadas = 4 integrantes (Shalom ya aparece) |
-| Pipeline en verde | No cumple | run «Pruebas» success 2026-08-21T18:36Z (actions/runs/32514183233) |
+| Pipeline en verde | No verificado | run «Pruebas» success 2026-08-21T18:36Z (actions/runs/32514183233) |
 | Etiqueta corte-1 (corte 1) | No cumple | `git tag --list` vacío; no existe ninguna etiqueta en el repositorio |
 
 ## Contribución por integrante

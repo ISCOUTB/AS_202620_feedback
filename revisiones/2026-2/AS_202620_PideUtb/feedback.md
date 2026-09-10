@@ -32,10 +32,9 @@ No versionen el entorno virtual (.venv-1).
 Ejecuten las pruebas en CI y dejen el enlace al run en verde.
 El glosario y las secciones 1-6, 9, 10 y 12 de arc42 deben quedar visibles en docs/arc42/.
 
-## Semana 5 · Primer corte
+## Semana 5 · CORTE1
 
-No hay etiqueta `corte-1` ni commits de la semana 5: el estado actual sigue siendo la entrega de S4. El corte vertical de pedidos, sus pruebas y el arranque documentado son una base acumulada, pero no demuestran la respuesta al reto nuevo. Antes del cierre deben documentar la restricción y su diagnóstico, medir una línea base, registrar el ADR del reto, implementar el cambio, cubrirlo con una prueba en CI, contrastar el resultado con el umbral y completar la cadena de ocho columnas en `docs/aspectos.md`. También deben crear la etiqueta sobre el commit real del corte, organizar arc42 y C4 en las carpetas exigidas, registrar el uso de IA de S5 y retirar `.venv-1/` del repositorio. La restricción asignada, el PDF y la sustentación quedan pendientes de verificación docente.
-
+El proyecto tiene una base sólida: arquitectura documentada, ADR claro y corte vertical ejecutable. Sin embargo, la entrega del corte no incluye el archivo correcciones.md ni el registro de IA, ambos requeridos. Además, la tabla de aspectos no está completa y no se evidencia CI en el estado calificado. Se recomienda completar la trazabilidad y añadir los artefactos faltantes antes del cierre. El entorno virtual no debe versionarse.
 ## Semana 5 · Primer corte (revisión definitiva, 2026-09-07)
 
 Después del cierre siguieron trabajando el mismo lunes 7 de septiembre (entre las 08:19 y las 13:36), pero nunca crearon la etiqueta `corte-1`, ni antes ni después de esa hora. Como no existe la etiqueta, se calificó el último commit anterior al cierre, que sigue siendo el mismo de la entrega de S4: no hay diagnóstico de la restricción, ADR del reto, medición ni prueba específica en ningún punto del historial. Lo que hicieron después del cierre — mover `arc42.md` a `docs/`, crear una carpeta de C4 y ajustar el texto de los escenarios — no responde al reto y de todas formas no puede contar para esta entrega por llegar tarde. Sigue sin existir un pipeline de CI y el entorno virtual completo continúa versionado. No se encontró ningún documento de correcciones del equipo a la revisión preliminar. Antes de la sustentación: creen la etiqueta sobre el commit correcto para la próxima entrega, documenten la restricción asignada y midan una línea base real.

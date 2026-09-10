@@ -5,7 +5,7 @@
 | Campo | Valor |
 |---|---|
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Recobra` |
-| Estado revisado | `6ee5b66` (2026-09-05T20:26:56-05:00) |
+| Estado revisado | `6ee5b66` en `origin/master` (2026-09-05T20:26:56-05:00) |
 | Cierre | 2026-09-07T05:00:00Z |
 | Revisor | pipeline automatico (GitHub Actions) |
 
@@ -13,48 +13,47 @@
 
 | Criterio de evaluacion | Evidencia tecnica | Estado | Observaciones |
 |---|---|---|---|
-| Estado de corte identificable y anterior al cierre | rama master; hash 6ee5b66, 2026-09-05T20:26:56-05:00 < cierre 2026-09-07T05:00:00Z | Cumple | Último commit en master antes del cierre correctamente identificado. |
-| correcciones.md existe en la raíz del estado calificado | Árbol de 6ee5b66 no incluye correcciones.md; git show 6ee5b66:correcciones.md no disponible | No cumple | Falta el archivo exigido en la raíz del commit calificado. |
-| Correcciones trazables y contrastadas | Sin correcciones.md en 6ee5b66 no hay índice trazable de correcciones S1-S4 | No cumple | No es posible contrastar afirmaciones porque el archivo índice no existe. |
-| S1 al día: equipo, problema y repositorio | README.md:5-28; docs/Restricciones_justificadas.md:1-37; docs/escenarios_calidad.md:1-13 | Cumple | Equipo, problema y repositorio coherentes en el estado calificado. |
-| S2 al día: escenarios de calidad y restricciones | docs/escenarios_calidad.md:1-13; docs/Restricciones_justificadas.md:1-37; docs/arbol_utilidad.md:1-53 | Cumple | Escenarios medibles y restricciones justificadas presentes. |
-| S3 al día: estrategia de solución y decisiones | docs/adr/0002-arquitectura-y-stack.md:1-148 Aceptada; docs/arc42/04-estrategia-solucion.md:1-38 decisión hexagonal | Cumple | ADR-0002 y ADR-0003 documentan la decisión; ADR-0001 reemplazada. |
-| S4 al día: arc42, C4 y corte vertical | docs/arc42.md:1-89; docs/c4/README.md:1-67 diagramas C4; README.md:69-104 rutas del corte vertical | Cumple | arc42 y C4 presentes; corte vertical backend y cliente Flutter documentados. |
-| Corte vertical reproducible y coherente con la arquitectura | README.md:46-77 comandos npm install/start/test, endpoints POST/GET; src/domain/entities/publicacion.ts; src/application/use-cases/crear-publicacion.ts; mobile/lib/main.dart | Cumple | Estructura hexagonal visible en código y comandos para arrancar/probar. |
-| Pipeline y pruebas respaldan el estado calificado | .github/workflows/ci.yml:1-25; runs_ci success 2026-09-05T18:21:52Z y 2026-09-05T18:08:43Z posteriores al hash 6ee5b66 | Cumple | CI ejecuta npm test, e2e, build y flutter test; runs en verde. |
-| Trazabilidad consolidada navegable | docs/aspectos.md:1-15 tabla con 8 columnas; enlaces a escenarios, ADR, C4, código y pruebas | Cumple | La cadena aspecto→requisito→C4→ADR→código→pruebas→evidencia es navegable. |
-| PDF u otro adjunto exigido por el aula | docs/entrega-corte1-moodle.pdf existe en el árbol pero no se accede al adjunto de Moodle | No verificado | La entrega en Moodle no está disponible para el revisor. |
-| Sustentación del corte | Sin evidencia de sesión de sustentación en el repositorio | No verificado | Lo resuelve el docente en la sesión. |
+| Estado de corte identificable y anterior al cierre | rama origin/master, hash 6ee5b66, fecha 2026-09-05T20:26:56-05:00 (anterior al cierre 2026-09-07T05:00:00Z) | Cumple | El commit calificado existe y es anterior al cierre. |
+| correcciones.md existe en la raíz del estado calificado | Árbol del hash 6ee5b66 no incluye correcciones.md (ver arbol) | No cumple | No se encontró el archivo en la raíz del estado calificado. |
+| Correcciones trazables y contrastadas | No existe correcciones.md que enlace hallazgos S1-S4 con evidencia | No cumple | Sin índice de correcciones, no hay trazabilidad de respuestas a hallazgos previos. |
+| S1 al día: equipo, problema y repositorio | README.md describe problema y objetivos; autores en historial: Cconde31, vylrir, MiguelJacome, Fernando Isacc Conde Herrera (git shortlog) | Cumple | Equipo identificado y problema claro; repositorio público en ISCOUTB. |
+| S2 al día: escenarios de calidad y restricciones | docs/escenarios_calidad.md con S1-S7; docs/Restricciones_justificadas.md con tabla de restricciones | Cumple | Escenarios y restricciones documentados y justificados. |
+| S3 al día: estrategia de solución y decisiones | docs/arc42/04-estrategia-solucion.md con matriz comparativa; ADR-0001, 0002, 0003 en docs/adr/ | Cumple | Estrategia hexagonal y decisiones ADR presentes y coherentes. |
+| S4 al día: arc42, C4 y corte vertical | docs/arc42.md, docs/c4/README.md con diagramas mermaid; código en src/ y mobile/ implementa crear/consultar publicación | Cumple | Documentación y corte vertical implementado. |
+| Corte vertical reproducible y coherente con la arquitectura | README.md con comandos de arranque y prueba; src/application/use-cases/*.spec.ts y test/publicaciones.e2e-spec.ts | Cumple | Flujo HTTP→caso de uso→dominio→puerto→adaptador; pruebas unitarias y e2e. |
+| Pipeline y pruebas respaldan el estado calificado | Run CI success 2026-09-05T18:21:52Z (posterior al hash 6ee5b66) en https://github.com/ISCOUTB/AS_202620_Recobra/actions/runs/33983825454 | Cumple | CI en verde para el estado calificado. |
+| Trazabilidad consolidada navegable | docs/aspectos.md con tabla de 8 columnas enlazando aspecto→requisito→C4→ADR→código→pruebas→evidencia | Cumple | Cadenas navegables para A1, A2, A3, A4. |
+| PDF u otro adjunto exigido por el aula | docs/entrega-corte1-moodle.pdf existe en el repo, pero no se puede confirmar entrega en Moodle | No verificado | Se requiere verificación en Moodle. |
+| Sustentación del corte | No hay evidencia de sesión de sustentación en el repositorio | No verificado | Depende del docente. |
 
 ## Matriz transversal (CONTRATO §11)
 
 | Criterio | Evidencia | Estado | Observaciones |
 |---|---|---|---|
-| Estructura del repositorio | docs/arc42.md es un único archivo sin las 12 secciones; docs/arc42/ solo contiene 04-estrategia-solucion.md; no hay docs/adr/ con NNNN-titulo.md completo? Sí existe; falta README con arranque en un comando | No cumple | arc42 no sigue la plantilla de 12 secciones; desviación de estructura mínima. |
-| Convenciones de ADR | docs/adr/0001-estilo-arquitectonico.md, 0002-arquitectura-y-stack.md, 0003-reto-corte1-stack-obligatorio.md; nombres con patrón NNNN-titulo-kebab | Cumple | Un archivo por decisión; ADR-0001 marcada 'Reemplazada por ADR-0002'. |
-| Tabla de aspectos con trazabilidad navegable | docs/aspectos.md:1-15 enlaces a escenarios_calidad.md, c4/README.md, adr/0002, código y pruebas | Cumple | Las filas A1-A4 tienen 8 columnas con enlaces. |
-| Registro de uso de IA | docs/ia.md:1-15 con fechas, herramientas, aceptado y rechazado con motivo; log de commits 2026-08-23 a 2026-09-05 | Cumple | Incluye columna de descartes y registro individual por integrante. |
-| README con arranque y prueba en un comando | README.md:46-77 usa npm install, npm run start, flutter pub get, flutter run; no hay comando único para todo el sistema | No cumple | Se requieren pasos manuales separados backend/mobile y requisitos declarados. |
-| Pipeline y análisis estático en CI | .github/workflows/ci.yml:1-25 corre tests/build/analyze pero no define jobs SonarCloud; sin archivo .github/workflows con sonar; sonar-project.properties existe pero sin ejecución visible | No cumple | No hay step de SonarCloud ni runs que lo evidencien. |
-| Secretos y credenciales fuera del repositorio | secretos '(sin coincidencias)'; envs_versionados []; .env.example en lugar de .env | Cumple | Sin secretos detectados en HEAD. |
-| Autoría y colaboración en el historial | autores: 25 Cconde31, 9 vylrir, 7 MiguelJacome, 1 fconde, 1 Steamlinker; .mailmap al final consolidando identidades | Cumple | Los 4 integrantes tienen commits en master; identidades consolidadas con .mailmap. |
+| Identidad del repositorio | Repositorio AS_202620_Recobra en ISCOUTB, público; integrantes en historial (git shortlog) | Cumple | Nombre y organización correctos. |
+| Estructura mínima | README.md, docs/arc42.md, docs/arc42/04-estrategia-solucion.md, docs/adr/0001-0003, docs/c4/README.md, docs/aspectos.md, docs/ia.md | Cumple | Estructura presente; arc42 en un solo archivo y subcarpeta, aceptable. |
+| Estado del repositorio calificado | Hash 6ee5b66 en origin/master, anterior al cierre | Cumple | Se usó la rama principal correcta. |
+| Convenciones de ADR | docs/adr/0001-estilo-arquitectonico.md, 0002-arquitectura-y-stack.md, 0003-reto-corte1-stack-obligatorio.md; nombres en kebab-case y numerados | Cumple | ADR-0001 marcado como reemplazada; ADR-0002 y 0003 aceptados. |
+| Tabla de aspectos | docs/aspectos.md con 8 columnas y enlaces a C4, ADR, código, pruebas y evidencia | Cumple | Cadenas navegables para A1-A4. |
+| Registro de uso de IA | docs/ia.md con fechas, herramientas, aceptado/rechazado; log de commits 2026-08-23 a 2026-09-05 | Cumple | Registro detallado y con criterio. |
+| README | README.md con qué es, cómo arrancar backend y Flutter, y cómo probar | Cumple | Comandos de arranque y prueba claros. |
+| Pipeline y análisis estático | .github/workflows/ci.yml con jobs backend y mobile; runs success en 2026-09-05 y 2026-09-06 | Cumple | CI ejecuta pruebas y build; SonarCloud configurado en sonar-project.properties. |
 
-## Estado global del proyecto (overall · revisado en HEAD)
+## Estado global del proyecto (overall · punta actual de la misma rama)
 
-Mira el repositorio **entero en su estado actual** (HEAD), no solo la evidencia del cierre: si el equipo subio tarde o corregio entregas anteriores, aqui se nota.
+Mira el repositorio **entero en la punta actual de la misma rama**, no solo la evidencia del cierre: si el equipo subio tarde o corregio entregas anteriores, aqui se nota.
 
-- **HEAD revisado**: `f7c1a6c7c4371f1e9df38ca268895544cca43c17 2026-09-07T09:59:41-05:00 Enlazar ADR a sus commits y cubrir criterios 1-3 de la rúbrica del reto`
+- **Punta actual revisada**: `f7c1a6c7c4371f1e9df38ca268895544cca43c17 2026-09-07T09:59:41-05:00 Enlazar ADR a sus commits y cubrir criterios 1-3 de la rúbrica del reto`
 - **Veredicto**: con pendientes
-- Resumen: El proyecto tiene avance real: arquitectura hexagonal, corte vertical funcional, pruebas y CI en verde; pero el compendio S5 incumple correcciones.md y quedan pendientes transversales de estructura, README y Sonar.
+- Resumen: El proyecto cumple con la mayoría de criterios de S1-S4 y el corte vertical, pero la ausencia de correcciones.md impide el compendio completo.
 
 Resuelto tarde (corregido despues del cierre, ahora al dia):
-- f7c1a6c 2026-09-07T09:59:41-05:00 enlaza ADR y cubre criterios 1-3 de la rúbrica, pero es posterior al cierre del corte 1.
+- Commit f7c1a6c (2026-09-07) posterior al cierre enlaza ADR a commits y cubre criterios de rúbrica; no afecta la nota del corte pero es tardío.
 
 Pendientes que siguen abiertos:
-- correcciones.md no existe en HEAD.
-- arc42 no está completo en HEAD.
-- CI sin SonarCloud en HEAD.
-- README sin comando único de arranque en HEAD.
+- Crear correcciones.md en la raíz antes del cierre.
+- Verificar entrega del PDF en Moodle.
+- Sustentación pendiente.
 
 ## Recuento y nota sugerida
 
@@ -62,17 +61,14 @@ Pendientes que siguen abiertos:
 
 ## No verificado / pendientes
 
-- PDF u otro adjunto exigido por el aula: no se pudo acceder a Moodle.
-- Sustentación del corte: sin evidencia de sesión.
-- SonarCloud: no hay run que muestre análisis estático, solo archivo de configuración.
+- PDF entregado en Moodle (no verificable desde repo).
+- Sustentación del corte (depende del docente).
 
 ## Hallazgos para la planilla
 
-- Falta correcciones.md en la raíz del estado calificado 6ee5b66.
-- Sin correcciones.md no se puede verificar trazabilidad de correcciones S1-S4.
-- arc42.md es un resumen sin las 12 secciones exigidas.
-- docs/arc42/ solo contiene 04-estrategia-solucion.md; secciones 1-3 y 5-12 ausentes como archivos de la plantilla.
-- CI no evidencia análisis estático SonarCloud; la organización isco-utb no aparece en workflows.
-- README no permite arrancar todo el sistema con un solo comando.
-- Un commit posterior al cierre (f7c1a6c 2026-09-07T09:59:41-05:00) modifica ADR y aspectos, pero no cierra hallazgos del corte.
+- Falta correcciones.md en la raíz del estado calificado.
+- No hay índice de correcciones trazables para hallazgos S1-S4.
+- Commit f7c1a6c posterior al cierre modifica ADR y aspectos (tardío).
+- docs/checklist-entrega-manual.md menciona token Coveralls en node_modules, posible riesgo de secreto histórico.
+- Persistencia en memoria declarada como alcance, no deuda oculta.
 - Commits posteriores al cierre (no calificados): f7c1a6c 2026-09-07T09:59:41-05:00 Enlazar ADR a sus commits y cubrir criterios 1-3 de la rúbrica del reto

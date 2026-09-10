@@ -10,13 +10,13 @@ Hoja consolidada del equipo LaPlacita. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_LaPlacita` |
 | Integrantes y su usuario de GitHub | Mateo Josue Buendia Barrios · Miguel Angel Isaza Montalvo · Samuel David Jimenez Alvarez · Jorge Alberto Martinez Castillo — cuentas abajo |
 | URL del sistema desplegado | sin desplegar aún |
-| Ultima revision | 2026-09-07 (definitiva, post-cierre) |
+| Ultima revision | 2026-09-10 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 5 | Primer corte · reto de línea base | `corte-1` → `50b92f8` (2026-09-06T22:45:05Z) | 10/12 | subtotal técnico 3,80/4,00; sustentación pendiente | revisión definitiva post-cierre 2026-09-07 |
+| 5 | CORTE1 | `50b92f8` (2026-09-06T17:45:05-05:00) | 7/12 | no aplica | si |
 | 4 | S4 | `745e799` (2026-08-30T21:52:41-05:00) | 4/10 | 2.6 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `37f1deb8` · 2026-08-08T15:37:16-05:00 | 8/9 | 4,6 * | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `fa7e13bc` · 2026-08-15T18:13:29-05:00 | 5/9 | 3,2 * | sí |
@@ -43,7 +43,11 @@ Hoja consolidada del equipo LaPlacita. Se actualiza tras cada revisión.
 | Registrar motivos técnicos en ia.md | S5 | Parcial | Hay entrada del Corte 1, pero su columna Validación no cierra con el resultado final; completarla. |
 | Configurar SonarCloud | S5 | Parcial | `sonar-project.properties` y el paso en CI existen; falta activar `SONAR_TOKEN` para el análisis en vivo. |
 | Aportar mediciones reproducibles | S5 | No (resuelto, scripts/medir-aislamiento.js) | Resuelto: 2/2 línea base -> 0/300 post-cambio, reproducible. |
-
+| correcciones.md con nombre incorrecto | S5 | si | |
+| docs/ia.md sin sección de rechazos | S5 | si | |
+| docs/aspectos.md con Evidencia no navegable | S5 | si | |
+| SonarCloud sin token/projectKey | S5 | si | |
+| PDF adjunto no verificado | S5 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -55,7 +59,7 @@ Hoja consolidada del equipo LaPlacita. Se actualiza tras cada revisión.
 | `docs/ia.md` al día | Cumple | Entradas del 23/08 con lo rechazado y su motivo |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Greps limpios |
 | Contribución de todos los integrantes | Cumple | 4 identidades consolidadas / 4 integrantes (53+21+18+3) |
-| Pipeline en verde | Cumple | `.github/workflows/` presente desde S4; run sobre la etiqueta `corte-1` (`50b92f8`) exitoso. |
+| Pipeline en verde | No cumple | `.github/workflows/` presente desde S4; run sobre la etiqueta `corte-1` (`50b92f8`) exitoso. |
 
 ## Contribución por integrante
 

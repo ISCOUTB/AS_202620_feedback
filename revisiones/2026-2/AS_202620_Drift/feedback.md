@@ -28,8 +28,7 @@ El corte vertical ya atraviesa interfaz, lógica y persistencia, y la documentac
 
 ## Semana 5 · CORTE1
 
-El repositorio tiene una base sólida de documentación y código, pero la respuesta al reto del corte 1 no aparece en el commit calificado. No se encontró un ADR nuevo que registre el diagnóstico de la restricción, las alternativas y la decisión, ni una medición de línea base con procedimiento reproducible. La tabla de aspectos no sigue el formato de 8 columnas del contrato, lo que impide recorrer la trazabilidad. El registro de IA documenta usos, pero no muestra qué salidas se rechazaron y por qué. El pipeline existe, pero no hay evidencia de un run en verde anterior a la etiqueta. Para la sustentación, preparen respuestas sobre la restricción asignada, el estado inicial medido y cómo verifican el umbral del escenario.
-
+El proyecto tiene una base arquitectónica sólida: hexagonal, ADR, arc42, C4 y contribución repartida. Para el compendio, el archivo de correcciones debe llamarse exactamente correcciones.md y estar en la raíz; el actual está en docs/ con nombre mal escrito. Completen las secciones arc42 7, 8 y 11, y cierren los pendientes de trazabilidad E3-E5 con pruebas y evidencia real. Asocien un commit a ADR-0001 y documenten en README el arranque con un solo comando. Verifiquen el pipeline con un run enlazado. Eviten commits después del cierre; los registrados se consideran resueltos tardíos.
 ## Semana 5 · Primer corte (revisión definitiva, 2026-09-07)
 
 Avanzaron bastante en cerrar los pendientes de estructura: `docs/aspectos.md` ya tiene la tabla completa de 8 columnas, `docs/ia.md` registra un rechazo con motivo técnico, el ADR-0001 quedó correctamente marcado como reemplazado por el ADR-0002 (con enlace), el README explica arranque con un único comando y el pipeline de CI corre en verde antes del cierre. Leímos su `docs/correciones.md` completo y la mayoría de esos puntos quedan confirmados por el estado real del repositorio.

@@ -1,98 +1,80 @@
 # semana-05-corte1 · DinamikUTB
 
-> **Revisión definitiva post-cierre — 2026-09-07.** Reemplaza la revisión preliminar del 2026-09-03. No existe la etiqueta `corte-1`; se calificó el último commit anterior al cierre.
+> Revision automatica definitiva (GitHub Actions, posterior al cierre).
 
 | Campo | Valor |
 |---|---|
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_DinamikUTB` |
-| Estado calificado | sin etiqueta `corte-1`; último commit ≤ cierre: `f89564fd616716b9dbfa0769ed1e38b606a12713` (`2026-09-06T23:35:03-05:00`, *Create correcciones.md*) |
-| Cierre | `2026-09-07T05:00:00Z` |
-| Comandos ejecutados | `git tag --list` (vacío); `git log --until=... HEAD`; `git ls-tree -r --name-only`; `git log --format=...` completo; `git log --diff-filter=A -- docs/adr/`; lectura de `docs/adr/0003-*.md`, `docs/aspectos.md`, `docs/ia.md`; `git grep` de secretos (exit 1); `git shortlog -sne`; `curl .../actions/runs?per_page=15` (1 llamada) |
-| Restricción asignada | No disponible en el kit ni citada explícitamente como tal en el repositorio. |
-
-El equipo incluye `correcciones.md` en la raíz del commit calificado; se adjudica en la sección dedicada más abajo.
+| Estado revisado | `f89564f` en `origin/master` (2026-09-06T23:35:03-05:00) |
+| Cierre | 2026-09-07T05:00:00Z |
+| Revisor | pipeline automatico (GitHub Actions) |
 
 ## Matriz de la ficha
 
-| Criterio | Evidencia técnica | Estado | Observaciones |
+| Criterio de evaluacion | Evidencia tecnica | Estado | Observaciones |
 |---|---|---|---|
-| 1. Etiqueta `corte-1` sobre un commit anterior al cierre | `git tag --list` sin salida | **No cumple** | Se calificó el último commit ≤ cierre: `f89564fd`, `2026-09-06T23:35:03-05:00`. |
-| 2. PDF de dos páginas | No hay PDF en el repositorio | **No verificado** | Debe comprobarse en Moodle. |
-| 3. Impacto de la restricción en requisitos, C4 y código | `docs/adr/0003-seleccion-motor-de-base-de-datos.md` formaliza una decisión que `02-architecture-constraints.md` (§2.1) ya dejaba como "pendiente" desde S2/S3 (elegir SQL o NoSQL) | **No cumple** | El ADR-0003 resuelve una brecha documental de la línea base (motor de BD ya usado desde S4), no diagnostica una restricción nueva asignada externamente para este corte. |
-| 4. Línea base medida y verificable | Ningún escenario Q-01…Q-08 reporta una medición real antes del cambio; ADR-0003 discute alternativas cualitativamente, sin cifra de partida | **No cumple** | — |
-| 5. ADR del reto | ADR-0003 sí tiene contexto, alternativas (SQLite/PostgreSQL/MySQL/NoSQL), factores, decisión, consecuencias y trazabilidad completa | **No cumple** | Cumple el formato competente de un ADR, pero no responde a una restricción nueva asignada: formaliza el motor ya implementado desde el corte vertical de S4. |
-| 6. Cambio implementado extremo a extremo | El motor SQLite ya estaba implementado desde S4 (`backend/app/core/database.py`); ADR-0003 no introduce cambio de código, solo documentación | **No cumple** | No hay commit de código nuevo asociado al ADR-0003. |
-| 7. Límites C4 conservados | `docs/c4/contenedores.puml` ya reflejaba `ContainerDb` (SQLite) antes de ADR-0003 | **No verificado** | No hay cambio de código que contrastar contra el C4. |
-| 8. Prueba que cubre el cambio, en verde en pipeline | `curl .../actions/runs`: `f89564fd` success (`2026-09-07T04:35:05Z`, antes del cierre) | **No cumple** | El run verde cubre la suite existente (backend/frontend), no una prueba nueva del reto: no hay cambio de código que probar. |
-| 9. Resultado contrastado con umbral | Sin medición reportada | **No cumple** | — |
-| 10. Cadena de trazabilidad navegable | `docs/aspectos.md` tiene 9 columnas (`ID…Evidencia`); siguiendo A-08 ("Historial de cambios"): llega a Q-08, ADR-0003 (parcial), pero Código/Pruebas/Evidencia = "Pendiente" | **No cumple** | La cadena se rompe en Código/Pruebas/Evidencia para el aspecto que cita el ADR-0003. |
-| 11. Salida de IA con motivo técnico, de este corte | `docs/ia.md`: entrada `06/09/2026` "Formalizar la decisión del motor de base de datos..." con validación **Aceptado**, referida al ADR-0003 de este corte | **Cumple** | Hay una entrada fechada dentro de la ventana de S5, referida al trabajo de este corte, con motivo técnico. |
-| 12. Sustentación del reto | — | **No verificado** | Lo resuelve el docente en la sesión. |
+| Estado de corte identificable y anterior al cierre | origin/master f89564f 2026-09-06T23:35:03-05:00 (2026-09-07T04:35:03Z), anterior al cierre 2026-09-07T05:00:00Z | Cumple | Hash y fecha verificados en la rama principal. |
+| correcciones.md existe en la raíz del estado calificado | correcciones.md presente en el árbol de f89564f | Cumple | Archivo en la raíz del hash calificado. |
+| Correcciones trazables y contrastadas | No se proporcionó el contenido de correcciones.md en f89564f | No verificado | Se requiere el contenido para contrastar cada hallazgo S1-S4. |
+| S1 al día: equipo, problema y repositorio | README.md y docs/fichadelproblema.md presentes; falta la matriz vigente de semana-01-evidencia-s1.md | No verificado | Sin la matriz S1 no se puede confirmar el estado. |
+| S2 al día: escenarios de calidad y restricciones | docs/arc42/10-quality-requirements.md y 02-architecture-constraints.md presentes; falta la matriz vigente de semana-02-evidencia-s2.md | No verificado | Sin la matriz S2 no se puede confirmar el estado. |
+| S3 al día: estrategia de solución y decisiones | docs/arc42/04-solution-strategy.md y docs/adr/0001-0003 presentes; falta la matriz vigente de semana-03-evidencia-s3.md | No verificado | Sin la matriz S3 no se puede confirmar el estado. |
+| S4 al día: arc42, C4 y corte vertical | docs/arc42/07-deployment-view.md y 08-cross-cutting-concepts.md están vacíos en f89564f | No cumple | arc42 incompleto: secciones 07 y 08 sin contenido. |
+| Corte vertical reproducible y coherente con la arquitectura | backend/app/requisitos/, frontend/lib/requisitos/, backend/tests/test_requisitos.py, frontend/test/widget_test.dart presentes; sin runs de CI | No verificado | Código y pruebas existen, pero no hay evidencia de ejecución. |
+| Pipeline y pruebas respaldan el estado calificado | .github/workflows/ci.yml presente; sin runs_ci asociados | No verificado | Se requiere URL de run o evidencia de ejecución. |
+| Trazabilidad consolidada navegable | docs/aspectos.md presente; contenido no proporcionado | No verificado | Sin el contenido no se puede verificar la navegabilidad de las 8 columnas. |
+| PDF u otro adjunto exigido por el aula | No disponible en el repositorio | No verificado | Depende de la entrega en Moodle. |
+| Sustentación del corte | Sesión de sustentación no evaluable desde el repositorio | No verificado | Lo resuelve el docente en la sesión. |
 
 ## Matriz transversal (CONTRATO §11)
 
 | Criterio | Evidencia | Estado | Observaciones |
 |---|---|---|---|
-| a. Repositorio en la organización, convención y público | Clon anónimo exitoso de `github.com/ISCOUTB/AS_202620_DinamikUTB` | **Cumple** | — |
-| b. Estructura mínima | `git ls-tree` en `f89564fd`: `README.md`, `docs/arc42/` (12 secciones), `docs/adr/` (3 ADR), `docs/c4/`, `docs/aspectos.md`, `docs/ia.md` presentes | **Cumple** | — |
-| c. Estado calificado identificable | Sin etiqueta; `f89564fd`, `2026-09-06T23:35:03-05:00` | **No cumple** | Falta la etiqueta `corte-1`. |
-| d. Nombres de ADR según convención | `0001-seleccion-monolito-modular.md`, `0002-seleccion-tecnologia-backend-frontend.md`, `0003-seleccion-motor-de-base-de-datos.md` | **Cumple** | — |
-| e. ADR aceptados no reescritos | ADR-0003 declara explícitamente que no reemplaza ni modifica 0001/0002 | **Cumple** | — |
-| f. `docs/ia.md` al día para la semana | Entrada de `06/09/2026` sobre ADR-0003 | **Cumple** | — |
-| g. Sin credenciales | `git grep` con la regex del contrato: exit 1; sin `.env` versionado | **Cumple** | — |
-| h. Contribución de todos los integrantes | `git shortlog -sne f89564fd`: JuanchisV/404Vargas/Juan José Vargas (misma persona) 104, Daniel-dev02/LUIS DANIEL (misma persona) 37, gillianisperez-prog 23, Eramirezr 7 | **Cumple** | 4 identidades consolidadas para 4 integrantes; distribución muy desigual (Juan José Vargas concentra ~60% de los commits), anotar para sustentación. |
+| Estructura mínima | README.md, docs/arc42/01-12, docs/adr/0001-0003, docs/c4/, docs/aspectos.md, docs/ia.md en el árbol de f89564f | Cumple | Estructura completa; contenido de 07/08 vacío afecta a arc42, no a la estructura. |
+| Convenciones de ADR | docs/adr/0001-seleccion-monolito-modular.md, 0002-seleccion-tecnologia-backend-frontend.md, 0003-seleccion-motor-de-base-de-datos.md | Cumple | Nombres y estructura de ADR correctos. |
+| Tabla de aspectos | docs/aspectos.md presente; contenido no proporcionado | No verificado | Se requiere el contenido para verificar las 8 columnas. |
+| Registro de uso de IA | docs/ia.md presente con historial de 14 commits; contenido no proporcionado | No verificado | Se requiere el contenido para verificar las columnas de aceptado/rechazado. |
+| README | README.md con descripción, arranque (start.bat), pruebas y estructura | Cumple | Incluye comando único de inicio y cómo probar. |
+| Pipeline y análisis estático | .github/workflows/ci.yml presente; sin runs_ci | No verificado | Se requiere evidencia de ejecución en GitHub Actions. |
+| Secretos | git grep sin coincidencias; sin .env versionados | Cumple | No se encontraron credenciales en el hash. |
+| Autoría y colaboración | shortlog: 4 identidades consolidadas: JuanchisV/404Vargas/Juan José Vargas Pérez (104), Daniel-dev02/LUIS DANIEL (37), gillianisperez-prog (23), Eramirezr (7) | Cumple | Los 4 integrantes tienen contribuciones; distribución desigual pero presente. |
 
-## Estado global del proyecto (overall · HEAD)
+## Estado global del proyecto (overall · punta actual de la misma rama)
 
-HEAD coincide con el estado calificado (`f89564fd`). El proyecto tiene una línea base madura (arc42 completo, 3 ADR bien formados, C4, pipeline verde, `docs/ia.md` con entradas hasta este corte) y el equipo usó la ventana de S5 para **formalizar deuda documental de la línea base** (ADR-0003 sobre el motor de BD) en lugar de responder a una restricción nueva. No se creó la etiqueta `corte-1`. El último commit del estado calificado es precisamente la creación de `correcciones.md`.
+Mira el repositorio **entero en la punta actual de la misma rama**, no solo la evidencia del cierre: si el equipo subio tarde o corregio entregas anteriores, aqui se nota.
 
-## Correcciones del equipo
+- **Punta actual revisada**: `72bfc7e206eac4147dd244c03fa09b4b32b9a7e7 2026-09-07T22:28:37-05:00 Update correcciones.md`
+- **Veredicto**: con pendientes
+- Resumen: El compendio S5 no está completo: arc42 tiene secciones vacías, no hay evidencia de CI y correcciones.md no se pudo contrastar. La base del proyecto es sólida pero persisten carencias de S4.
 
-`correcciones.md` (raíz del commit calificado) no contradice ninguna fila de la revisión preliminar de **este corte** (semana-05-corte1): es una autoevaluación del propio equipo sobre las semanas **S1 a S4**, marcando en bloque "Cumple" para cada punto, sin citar evidencia verificable más allá de rutas de archivo, y sin mencionar la restricción asignada a este corte ni ninguna fila de la matriz de corte1. Además, la ficha es explícita en que **S1-S4 son línea base y no se recalifican por existir**: su nota ya está puesta y no corresponde reabrirla aquí.
+Resuelto tarde (corregido despues del cierre, ahora al dia):
+- 72bfc7e, 86870bf, 30efaa7, af1d7e3 (2026-09-07) actualizan correcciones.md e ia.md después del cierre; no se puede confirmar que resuelvan hallazgos previos sin su contenido.
 
-| Corrección (agrupada) | Adjudicación | Justificación |
-|---|---|---|
-| S1 (5 puntos: tensión de calidad, ficha en Markdown, contribución, ia.md, estructura) | **Rechazada** | Corresponde a la semana 1, ya calificada y fuera de alcance de esta revisión; el archivo no cita evidencia nueva, solo afirma "Cumple". |
-| S2 (5 puntos: enlaces de escenarios, condiciones de carga, ia.md, C4 nivel 1, contribución) | **Rechazada** | Mismo motivo: semana ya calificada; autoafirmación sin evidencia verificable citada en el propio archivo. |
-| S3 (6 puntos: tácticas, matriz comparativa, aspectos con ADR, trazabilidad, ia.md, contribución) | **Rechazada** | Mismo motivo. |
-| S4 (7 puntos, incluyendo "existencia de etiqueta" y "commits post-cierre") | **Rechazada** | Mismo motivo; además el punto S4-06 ("existencia de un tag") es contradicho por la evidencia real: no existe ninguna etiqueta en el repositorio, ni siquiera al cierre de S5. |
-| "Elementos implementados" (14 filas: C4, arc42, ADR-0001/0002, ia.md, aspectos, backend, frontend, pruebas, start.bat) | **Rechazada como corrección al corte1** | Estos elementos ya se evaluaron en S1-S4; no aportan evidencia sobre la restricción nueva de S5, que sigue sin diagnóstico, ADR ni medición propios. |
+Pendientes que siguen abiertos:
+- Completar docs/arc42/07-deployment-view.md y 08-cross-cutting-concepts.md
+- Verificar contenido de correcciones.md en el hash calificado
+- Aportar runs de CI del estado calificado
+- Completar trazabilidad navegable en docs/aspectos.md
 
-No hay ninguna corrección en el archivo dirigida específicamente a una fila de la matriz de `semana-05-corte1` publicada preliminarmente (por ejemplo, no se disputa "no cumple" en línea base medida, ADR del reto o pipeline en verde para el cambio); por eso todas las filas del archivo se adjudican como fuera de alcance de esta revisión.
+## Recuento y nota sugerida
 
-## Nivel de rúbrica sugerido (propuesta al docente)
+2 de 12 criterios Cumple.
 
-| Criterio | Nivel | Puntaje | Evidencia |
-|---|---|---:|---|
-| Diagnóstico del reto | Sin evidencia | 0,00 | ADR-0003 formaliza una decisión pendiente de la línea base, no una restricción nueva diagnosticada. |
-| Alternativas y decisión | Nivel básico, sin escenario del reto | 0,00 | ADR-0003 tiene alternativas y consecuencias bien formadas, pero no está ligado a una restricción de este corte. |
-| Aplicación sobre el corte vertical | Sin evidencia del reto | 0,00 | No hay cambio de código nuevo asociado a una restricción de S5. |
-| Pruebas, medición y trazabilidad | Sin evidencia del reto | 0,00 | Pipeline verde sobre la suite existente; sin medición ni umbral del reto. |
-| Sustentación del reto | Lo fija el docente | pendiente | No se puntúa desde el repositorio. |
-| **Subtotal técnico verificable** | | **0,00 / 4,00** | La nota final la fija Moodle. |
+## No verificado / pendientes
 
-## Recuento
+- Contenido de correcciones.md en f89564f
+- Matrices vigentes de S1, S2 y S3
+- Contenido de docs/aspectos.md
+- Contenido de docs/ia.md
+- Runs de CI asociados al hash
+- PDF en Moodle
+- Sustentación
 
-**1 de 12 criterios Cumple** (salida de IA con motivo técnico de este corte).
+## Hallazgos para la planilla
 
-## No verificado
-
-- PDF adjunto en Moodle.
-- Coincidencia del diagnóstico con la restricción asignada (no disponible).
-- Conservación de límites C4 (sin cambio de código que contrastar).
-- Sustentación del reto.
-
-## Hallazgos
-
-- No existe la etiqueta `corte-1`; se calificó el último commit anterior al cierre.
-- El trabajo de S5 (ADR-0003) formaliza una decisión pendiente de la línea base, no responde a una restricción nueva asignada.
-- No hay medición de línea base ni resultado contra un umbral en ningún artefacto.
-- `docs/ia.md` sí tiene una entrada fechada y referida a este corte (único criterio que cumple).
-- `correcciones.md` es una autoevaluación de S1-S4 sin evidencia verificable citada y fuera del alcance de esta revisión (esas semanas no se recalifican).
-- Distribución de commits muy concentrada en un integrante.
-
-## Preguntas para la sustentación
-
-1. ¿Cuál fue la restricción nueva asignada para este corte, y por qué el ADR-0003 formaliza una decisión (el motor de base de datos) que ya estaba pendiente desde S2/S3 en lugar de responder a ella?
-2. ¿Cuál es la cifra de línea base medida antes de cualquier cambio de este corte, con qué herramienta y procedimiento se obtuvo?
-3. ¿Por qué no se creó la etiqueta `corte-1` antes del cierre?
+- docs/arc42/07-deployment-view.md y 08-cross-cutting-concepts.md vacíos en el hash calificado.
+- correcciones.md existe pero su contenido no fue contrastable en f89564f.
+- Sin runs de CI que respalden el estado calificado.
+- Matrices S1-S3 no disponibles para verificar el compendio.
+- 4 commits posteriores al cierre modifican correcciones.md e ia.md.
+- Commits posteriores al cierre (no calificados): 72bfc7e 2026-09-07T22:28:37-05:00 Update correcciones.md; 86870bf 2026-09-07T22:25:30-05:00 Update ia.md; 30efaa7 2026-09-07T22:12:21-05:00 Update correcciones.md; af1d7e3 2026-09-07T21:53:03-05:00 Update correcciones.md

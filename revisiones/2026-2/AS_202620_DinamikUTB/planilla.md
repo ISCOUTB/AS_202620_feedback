@@ -8,13 +8,13 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_DinamikUTB` |
 | Integrantes y su usuario de GitHub | Luis Daniel Padilla Leottau (`Daniel-dev02`) · Gillianis Del Carmen Perez Revolledo (`gillianisperez-prog`) · Esteban Ramirez Rios (`Eramirezr`) · Juan Jose Vargas Perez (`JuanchisV`, firma también como «Juan José Vargas Pérez» con el mismo correo) |
 | URL del sistema desplegado | sin desplegar todavía |
-| Ultima revision | 2026-09-03 |
+| Ultima revision | 2026-09-10 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 5 | Primer corte · reto de línea base | sin etiqueta; último commit ≤ cierre `f89564fd` (2026-09-06T23:35:03-05:00) | 1/12 | 0,00/4,00 + sustentación pendiente | revisión definitiva post-cierre 2026-09-07 |
+| 5 | CORTE1 | `f89564f` (2026-09-06T23:35:03-05:00) | 2/12 | no aplica | si |
 | 4 | S4 | `8558156` (2026-08-30T23:52:24-05:00) | 7/10 | 3.8 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `769f970` · 2026-08-09T21:24:49-05:00 | 7/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `58734e1c` · 2026-08-16T23:33:53-05:00 | 9/9 | no se publica | sí |
@@ -46,7 +46,11 @@
 | Completar docs/ia.md con salida aceptada/corregida/rechazada | S5 | cerrado | Entrada del 06/09/2026 sobre ADR-0003, con validación explícita. |
 | Verificar navegabilidad de docs/aspectos.md | S5 | sí (parcial) | 9 columnas presentes; para el aspecto A-08 (ligado al reto) Código/Pruebas/Evidencia siguen "Pendiente". |
 | `correcciones.md` autoevalúa S1-S4 en bloque, sin evidencia citable y fuera del alcance de esta revisión | S5 | sí | Se les explicó que S1-S4 ya están calificadas y no se reabren; ninguna corrección tocó una fila de la matriz de corte1. |
-
+| 72bfc7e, 86870bf, 30efaa7, af1d7e3 (2026-09-07) actualizan correcciones.md e ia.md después del cierre; no se puede confirmar que resuelvan hallazgos previos sin su contenido. | S5 | no (resuelto tarde) | — |
+| Completar docs/arc42/07-deployment-view.md y 08-cross-cutting-concepts.md | S5 | si | |
+| Verificar contenido de correcciones.md en el hash calificado | S5 | si | |
+| Aportar runs de CI del estado calificado | S5 | si | |
+| Completar trazabilidad navegable en docs/aspectos.md | S5 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

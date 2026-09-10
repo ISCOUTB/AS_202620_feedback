@@ -10,7 +10,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TRACTAR` |
 | Integrantes y su usuario de GitHub | Joriel Samir Barros Pena (sin cuentas en el historial) · Geronimo Alberto Cadena Garcia (sin cuentas) · Sebastian Garcia Devoz (firma con dos identidades de git, mismo correo, más el correo institucional) · Mateo Alfonso Millan Barraza (sin cuentas) |
 | URL del sistema desplegado | sin URL (sin despliegue todavía) |
-| Ultima revision | 2026-09-09 |
+| Ultima revision | 2026-09-10 |
 
 ## Estado por entrega
 
@@ -20,7 +20,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `0a23855` · 2026-08-16T20:05:46-05:00 | 6/9 | 3.7 (propuesta) | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `5f923cd` · 2026-08-23T22:40:51-05:00 | 7/9 | no se publica | sí |
 | 4 | S4 | `2b16439` (2026-08-30T15:02:33-05:00) | 1/10 | 1.4 | si |
-| 5 | Primer corte · reto de línea base | sin etiqueta `corte-1`; fallback `7cfb872` (2026-08-31T12:27:23-05:00, = HEAD) | 0/12 | subtotal técnico 0,00/4,00; sustentación pendiente | revisión definitiva post-cierre 2026-09-07 |
+| 5 | CORTE1 | `7cfb872` (2026-08-31T12:27:23-05:00) | 7/12 | no aplica | si |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
@@ -59,7 +59,10 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Análisis estático SonarCloud en pipeline | S5 | si | activar SonarCloud (org isco-utb) en el workflow de CI |
 | Registro de IA del corte con salidas rechazadas | S5 | si | docs/ia.md sin cambios desde 2026-08-16; registrar el uso de IA de este corte |
 | Participación de los 4 integrantes en el historial | S5 | si | tres integrantes siguen sin commits; es crítico antes del proyecto final |
-
+| Crear correcciones.md en la raíz | S5 | si | |
+| Completar tabla de aspectos con enlaces | S5 | si | |
+| Subir PDF al aula | S5 | si | |
+| Sustentar el corte | S5 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

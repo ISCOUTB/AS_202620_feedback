@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica` |
 | Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-09 |
+| Ultima revision | 2026-09-10 |
 
 ## Estado por entrega
 
@@ -69,6 +69,12 @@
 | docs/ia.md sigue ausente en HEAD. | S5 | si | |
 | Correcciones trazables en correcciones.md no se pudieron contrastar: no se verificó su contenido ni respuesta a hallazgos S1-S4. | S5 | si | |
 | No hay runs_ci citados para respaldar el pipeline en HEAD. | S5 | si | |
+| Renombrado de correcciones_feedback.md a correcciones.md en 8b0d00b (2026-09-07T14:29:28-05:00), posterior al cierre | S5 | no (resuelto tarde) | — |
+| Verificar contenido de correcciones.md a HEAD | S5 | si | |
+| Confirmar run de CI para el hash calificado | S5 | si | |
+| PDF en Moodle | S5 | si | |
+| Sustentación | S5 | si | |
+| Confirmar organización ISCOUTB | S5 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

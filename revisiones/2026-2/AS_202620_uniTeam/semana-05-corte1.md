@@ -5,7 +5,7 @@
 | Campo | Valor |
 |---|---|
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_uniTeam` |
-| Estado revisado | `dc14298` (2026-08-29T11:49:10-05:00) |
+| Estado revisado | `dc14298` en `origin/master` (2026-08-29T11:49:10-05:00) |
 | Cierre | 2026-09-07T05:00:00Z |
 | Revisor | pipeline automatico (GitHub Actions) |
 
@@ -42,9 +42,9 @@
 
 Semana no evaluable por falta de actividad nueva (nota no aplica).
 
-## Estado global del proyecto (overall · revisado en HEAD)
+## Estado global del proyecto (overall · punta actual de la misma rama)
 
-- HEAD revisado: `dc14298c32a4fde0956266b0300063c24d7a9486 2026-08-29T11:49:10-05:00 Línea base de ESC-01 medida, y corrección de lo que la tabla prometía de más`
+- Punta actual revisada: `dc14298c32a4fde0956266b0300063c24d7a9486 2026-08-29T11:49:10-05:00 Línea base de ESC-01 medida, y corrección de lo que la tabla prometía de más`
 - Commits posteriores al cierre: (sin commits posteriores al cierre)
 - Archivos cambiados despues del cierre: (sin diferencias con el estado calificado)
 

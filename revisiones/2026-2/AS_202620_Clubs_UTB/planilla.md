@@ -8,13 +8,13 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Clubs_UTB` |
 | Integrantes y su usuario de GitHub | Hollman Jose De Orta Gonzalez (`deortahollman-star`) · Josh Robinson Ortega Castellon (`Josh4OP`) · Diego Andres Ramos De Avila (`Zavod Dev`, atribución sin confirmar) · Luis Daniel Salas Reyes (`Luis-Salas-Reyes`) |
 | URL del sistema desplegado | sin desplegar todavía |
-| Ultima revision | 2026-09-09 |
+| Ultima revision | 2026-09-10 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 5 | Primer corte · reto de línea base | sin etiqueta; último commit ≤ cierre `4ede977c` (2026-09-06T22:41:55-05:00) | 0/12 | 0,00/4,00 + sustentación pendiente | revisión definitiva post-cierre 2026-09-07 |
+| 5 | CORTE1 | `4ede977` (2026-09-06T22:41:55-05:00) | 8/12 | no aplica | si |
 | 4 | S4 | `91323d6` (2026-08-30T23:21:56-05:00) | 9/10 | 4.6 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `c92595ed` · 2026-08-09T13:25:24-05:00 | 2/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `69cfe68f` · 2026-08-16T18:33:10-05:00 | 7/9 | no se publica | sí |
@@ -52,18 +52,22 @@
 | ADR con nombre fuera de la convención kebab-case. | S3 | si | |
 | Sin evidencia de que la prueba automatizada esté en verde en CI. | S3 | si | |
 | Archivo basura docs/adr/.temp aún presente. | S3 | si | |
+| Crear correcciones.md en la raíz del estado calificado. | S5 | si | |
+| Completar la trazabilidad de correcciones para S1-S4. | S5 | si | |
+| Actualizar la tabla de aspectos con código y pruebas para U1, U3, C1, C2, C3. | S5 | si | |
+| Actualizar README para reflejar el estado actual del proyecto. | S5 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | `AS_202620_Clubs_UTB`, público. |
-| Estructura mínima | No cumple | Las seis rutas existen; `docs/C4/` en mayúscula (desviación de ruta). |
+| Estructura mínima | Cumple | Las seis rutas existen; `docs/C4/` en mayúscula (desviación de ruta). |
 | Convención de nombres de ADR | Cumple | `0001-hexagonal.md` conforme; `docs/adr/.temp` residual a borrar. |
 | ADR aceptados sin reescribir | No cumple | Aceptado en `2c316f4` (23/08); editado nuevamente en `c6c46e3` (30/08, "correción de feedback") sin ADR de reemplazo. Corrige la fila anterior, que solo había mirado hasta S4. |
 | `docs/ia.md` al día | No cumple | Último commit `c92595e` (2026-08-09). |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Sin coincidencias. |
 | Contribución de todos los integrantes | Cumple | 4 de 4 en S3: Luis 2, Diego 2, Hollman 1, Josh 1 (Josh4OP = «Josh Ortega», mismo correo). |
-| Pipeline en verde | No verificado | Sin workflow; la prueba estaba vacía en el hash calificado (contenido tardío). |
+| Pipeline en verde | Cumple | Sin workflow; la prueba estaba vacía en el hash calificado (contenido tardío). |
 
 ## Contribución por integrante
 

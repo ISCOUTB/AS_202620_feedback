@@ -1,97 +1,81 @@
-# Primer corte · reto de línea base arquitectónica · Verifacts
+# semana-05-corte1 · Verifacts
 
-> **Revisión definitiva post-cierre — 2026-09-07.** Reemplaza la revisión manual preliminar
-> hecha antes del cierre (2026-09-02). Se repite sobre el estado admisible tras
-> `2026-09-07T05:00:00Z`.
-
-## Hallazgo crítico: el repositorio calificado ya no es accesible
+> Revision automatica definitiva (GitHub Actions, posterior al cierre).
 
 | Campo | Valor |
 |---|---|
-| Repositorio esperado | `https://github.com/ISCOUTB/AS_202620_Verifacts` |
-| Estado a la fecha de esta revisión | **No accesible.** `git clone` falla ("could not read Username"); la API devuelve `404 Not Found`; el listado completo y paginado de los 191 repositorios públicos de la organización `ISCOUTB` (`GET /orgs/ISCOUTB/repos`, dos páginas, `public_repos: 191`) **no contiene ningún repositorio con "Verifacts" en el nombre**, ni variantes de mayúsculas o guiones probadas (`AS_202620_VeriFacts`, `AS_202620_Verifacts2`, `AS_202620-Verifacts`, `AS_202620_veriFacts`) |
-| Última vez visto accesible | 2026-09-02T13:32:53-05:00, commit `8764f9f1684560bddb9a61e07ffa0d1249b8199d` (revisión preliminar) |
-| Búsqueda de rastro | `GET /search/commits?q=hash:8764f9f…` → 0 resultados; búsqueda de repositorios públicos por "verifacts" en todo GitHub no devuelve ninguna copia con ese historial |
-| Repo personal hallado | `https://github.com/PedroC1213/Verifacts` (público) — **no es el mismo proyecto**: 12 commits, todos entre 2026-08-07 y 2026-08-16 (`bf6d4a7` es el último), es decir **anterior** incluso al primer commit conocido del repositorio de la organización (2026-08-18, según `EQUIPOS.md`). Contiene solo `README.md`, `docs/` (aspectos, IA, restricciones, árbol de utilidad, C4 de contexto) y un PDF de resumen — un estado embrionario de S1/S2, sin corte vertical, sin ADR, sin pruebas, sin CI. No se puede usar como sustituto del estado que debía calificarse. |
-| `correcciones.md` | No se pudo comprobar (repositorio inaccesible); tampoco está en el repo personal de Pedro |
-
-**No se puede calificar el corte 1 de este equipo desde el repositorio.** El repositorio que la
-revisión preliminar evaluó el 2026-09-02 (commit `8764f9f`, con corte vertical, `POST /analysis`,
-pruebas y documentación descritos en esa revisión) desapareció de la organización `ISCOUTB` en
-algún momento entre esa fecha y el cierre. No podemos determinar desde fuera si fue borrado,
-transferido fuera de la organización o puesto en privado — cualquiera de las tres deja el
-repositorio inaccesible para un evaluador externo, que es como debe poder verse un repositorio
-público según el CONTRATO §1. Esto **no es una desviación menor de nombre o de estructura: es la
-pérdida de la entrega misma.**
+| Repositorio | `https://github.com/ISCOUTB/AS_202620_Verifacts` |
+| Estado revisado | `3120e06` en `origin/master` (2026-09-06T18:36:46-05:00) |
+| Cierre | 2026-09-07T05:00:00Z |
+| Revisor | pipeline automatico (GitHub Actions) |
 
 ## Matriz de la ficha
 
-Todas las filas quedan **No verificado** por la razón anterior, salvo la primera y la última,
-que sí se pueden decidir con la evidencia disponible.
-
-| Criterio de evaluación | Evidencia técnica | Estado | Observaciones |
+| Criterio de evaluacion | Evidencia tecnica | Estado | Observaciones |
 |---|---|---|---|
-| Etiqueta `corte-1` sobre un commit anterior al cierre | El repositorio no es accesible; no se puede comprobar `git tag` | No cumple | Sin importar si existía o no la etiqueta, el estado no es verificable ahora mismo. |
-| PDF de dos páginas con diagnóstico, decisión, cambio, medición y trazabilidad | Fuera del alcance de este kit (Moodle); no hay repositorio que contrastar | No verificado | Debe comprobarse en Moodle. |
-| Impacto de la restricción localizado en requisitos, C4 y código | Repositorio inaccesible | No verificado | No se puede leer ningún artefacto del estado calificado. |
-| Línea base medida y verificable antes del cambio | Repositorio inaccesible | No verificado | Ídem. |
-| ADR del reto con alternativas, fuerzas, decisión y consecuencias | Repositorio inaccesible | No verificado | Ídem. |
-| Cambio implementado y ejecutable de extremo a extremo | Repositorio inaccesible | No verificado | Ídem. |
-| Límites declarados conservados tras el cambio | Repositorio inaccesible | No verificado | Ídem. |
-| Prueba que cubre el cambio, en verde en el pipeline | Repositorio inaccesible; no se pudo consultar Actions sin el nombre del repositorio válido | No verificado | Ídem. |
-| Resultado contrastado con el umbral del escenario y reproducible | Repositorio inaccesible | No verificado | Ídem. |
-| Cadena aspecto, requisito, C4, ADR, código, pruebas y evidencia navegable | Repositorio inaccesible | No verificado | Ídem. |
-| Salida de IA aceptada, corregida o rechazada con motivo técnico | Repositorio inaccesible | No verificado | Ídem. |
-| Sustentación del reto | No verificable desde el repositorio bajo ninguna circunstancia | No verificado | Lo fija el docente; en este caso además es la única vía posible para que el equipo demuestre su trabajo, dado que el repositorio no está disponible. |
+| Estado de corte identificable y anterior al cierre | origin/master 3120e06 2026-09-06T18:36:46-05:00, anterior al cierre 2026-09-07T05:00:00Z | Cumple | Rama principal master identificada; no se usaron etiquetas. |
+| correcciones.md existe en la raíz del estado calificado | git ls-tree 3120e06 incluye correcciones.md; git show 3120e06:correcciones.md contiene el registro | Cumple | Archivo presente en la raíz del hash calificado. |
+| Correcciones trazables y contrastadas | correcciones.md marca Pendiente árbol de utilidad, leyenda C4 y tensiones, pero docs/arbol-utilidad.md y docs/c4/01-contexto.md ya los tienen; marca Pendiente corte vertical pero 3120e06 incluye POST /analysis y tests/test_analysis.py | No cumple | El índice no refleja el estado real; varios hallazgos siguen abiertos. |
+| S1 al día: equipo, problema y repositorio | git shortlog -sne 3120e06: autores PedroC1213 y Cristian Cardeño; Julian Samuel Cabeza Pena sin commits; README lista solo dos integrantes | No cumple | El tercer integrante declarado no aparece en el historial. |
+| S2 al día: escenarios de calidad y restricciones | docs/escenarios-de-calidad.md con Q-01 a Q-05 en 6 partes; docs/arc42/02-restricciones.md; docs/arbol-utilidad.md con impacto/riesgo | Cumple | Escenarios y restricciones presentes y numerados. |
+| S3 al día: estrategia de solución y decisiones | docs/arc42/04-estrategia-de-solucion.md con tácticas por escenario; docs/adr/0001-estilo-arquitectonico.md; docs/matriz-estilos.md | Cumple | Estrategia, ADR y matriz comparativa disponibles. |
+| S4 al día: arc42, C4 y corte vertical | docs/arc42/11-glosario.md es el glosario pero falta sección 11 (riesgos); docs/c4/03-componentes.md contiene plantilla sin completar ('Completa esta tabla', 'ej.') | No cumple | arc42 incompleto y C4 nivel 3 es un esqueleto, no documentación. |
+| Corte vertical reproducible y coherente con la arquitectura | README documenta python run.py y POST /analysis; tests/test_health.py y tests/test_analysis.py existen en 3120e06; sin run de CI anterior al cierre | No verificado | No se ejecutó; comando anotado: python -m pytest -q y python run.py. |
+| Pipeline y pruebas respaldan el estado calificado | .github/workflows/tests.yml existe en 3120e06; runs_ci disponibles son posteriores y en failure (p.ej. Tests and SonarCloud 34407270858) | No verificado | No hay run asociado al hash calificado; no se puede confirmar que las pruebas pasaran al cierre. |
+| Trazabilidad consolidada navegable | docs/aspectos.md fila A-02 'Pendiente'; README enlaza docs/decisiones-arquitectonicas.md inexistente en 3120e06; docs/c4/03-componentes.md sin completar | No cumple | La cadena aspecto→evidencia tiene huecos y enlaces rotos. |
+| PDF u otro adjunto exigido por el aula | No hay acceso a Moodle; en el repo existe VeriFacts-resumen-entrega-final c1.pdf en la raíz de 3120e06 | No verificado | La entrega en aula no es verificable desde el repositorio. |
+| Sustentación del corte | No hay evidencia de sesión de sustentación en el repositorio | No verificado | Lo resuelve el docente en la sesión. |
 
 ## Matriz transversal (CONTRATO §11)
 
-| Criterio | Evidencia técnica | Estado | Observaciones |
+| Criterio | Evidencia | Estado | Observaciones |
 |---|---|---|---|
-| Repositorio en la organización, con el nombre de la convención y público | `ISCOUTB/AS_202620_Verifacts` responde 404 vía API y clon anónimo; ausente de los 191 repositorios públicos listados de la organización | No cumple | Hallazgo crítico: el repositorio no está donde debía estar. |
-| Estructura mínima presente | No verificable | No verificado | Repositorio inaccesible. |
-| Estado calificado identificable | No verificable | No verificado | Repositorio inaccesible. |
-| Nombres de ADR según la convención | No verificable | No verificado | Repositorio inaccesible. |
-| ADR aceptados no reescritos | No verificable | No verificado | Repositorio inaccesible. |
-| `docs/ia.md` al día para la semana | No verificable | No verificado | Repositorio inaccesible. |
-| Sin credenciales en el repositorio ni en el historial | No verificable | No verificado | Repositorio inaccesible. |
-| Contribución de todos los integrantes | No verificable | No verificado | Repositorio inaccesible. |
+| Estructura mínima | 3120e06 contiene README.md, docs/arc42/ (01-11), docs/adr/0001, docs/c4/01-03, docs/aspectos.md, docs/ia.md | Cumple | Rutas mínimas presentes; persisten artefactos no deseados (__pycache__, archivos con sufijos, PDF) que se registran en S4. |
+| Convenciones de ADR | docs/adr/0001-estilo-arquitectonico.md con nombre válido, contexto, alternativas, decisión, consecuencias y trazabilidad a Q-01..Q-05 | Cumple | Un solo ADR; no se observó reescritura posterior. |
+| Tabla de aspectos | docs/aspectos.md tiene 8 columnas pero A-02 'Pendiente' y A-00 cita URL de CI no respaldada por runs_ci | No cumple | Fila con hueco en evidencia; no toda la cadena es navegable. |
+| Registro de uso de IA | docs/ia.md con 4 registros (aceptado/rechazado/pendiente) y motivos; log de commits 8ad4574, 5eed315, d42dd18 | Cumple | Incluye lo rechazado y por qué, como exige el contrato. |
+| README | README.md describe el sistema, requisitos, python run.py como arranque único y cómo probar | Cumple | Contiene enlace roto a docs/decisiones-arquitectonicas.md, pero el núcleo de arranque/prueba está. |
+| Pipeline y análisis estático | 3120e06 solo tiene .github/workflows/tests.yml sin SonarCloud; runs_ci posteriores fallan (34407270858) | No cumple | No hay análisis estático configurado en el estado calificado ni run en verde. |
+| Secretos | git grep sin coincidencias de credenciales; sin .env versionados en 3120e06 | Cumple | No se hallaron secretos en el hash calificado. |
+| Autoría y colaboración | git shortlog -sne 3120e06: PedroC1213 (150) y Cristian Cardeño (12); Julian Samuel Cabeza Pena sin commits | No cumple | No todos los integrantes declarados aparecen en el historial. |
 
-## Estado global del proyecto en HEAD
+## Estado global del proyecto (overall · punta actual de la misma rama)
 
-- **No hay HEAD que evaluar.** El repositorio de la organización no responde. La última fotografía disponible es la de la revisión preliminar del 2026-09-02, que describía una base S4 completada tarde (corte vertical con `POST /analysis`, pruebas), pero sin evidencia S5 (sin etiqueta, sin ADR del reto, sin medición, `docs/ia.md` desactualizado desde el 2026-08-24) y con autoría concentrada en un solo integrante confirmado y un segundo con pocas contribuciones, y un tercer integrante sin ningún commit.
-- El único repositorio público con "Verifacts" atribuible a un integrante del equipo (`PedroC1213/Verifacts`) es un borrador temprano, anterior incluso al arranque del repositorio de curso, y no permite reconstruir el estado perdido.
-- **Se recomienda contactar urgentemente al equipo y a la organización de GitHub** para esclarecer qué ocurrió con el repositorio antes de aplicar cualquier nota, y confirmar si existe una copia accesible (por ejemplo, en un fork privado que el equipo pueda hacer público, o restaurando el repositorio si fue borrado por error).
+Mira el repositorio **entero en la punta actual de la misma rama**, no solo la evidencia del cierre: si el equipo subio tarde o corregio entregas anteriores, aqui se nota.
 
-## Nivel de rúbrica sugerido (propuesta al docente; la nota final se fija en Moodle)
+- **Punta actual revisada**: `67f8cea03e6a7b827aced6b60d3af8cf4307b237 2026-09-09T16:30:01-05:00 feat: integrate backend URL analysis contract and align frontend`
+- **Veredicto**: con pendientes
+- Resumen: El corte calificado 3120e06 tiene avances reales (corte vertical POST /analysis, escenarios, ADR, aspectos parciales) pero arrastra pendientes de S1-S4; la punta actual 67f8cea añade frontend, ingesta por URL y SonarCloud, pero la CI sigue en rojo y persisten huecos documentales.
 
-| Criterio | Nivel sugerido | Puntaje | Evidencia que lo sostiene |
-|---|---|---:|---|
-| Diagnóstico del reto | No evaluable | — | Repositorio inaccesible. |
-| Alternativas y decisión | No evaluable | — | Repositorio inaccesible. |
-| Aplicación sobre el corte vertical | No evaluable | — | Repositorio inaccesible. |
-| Pruebas, medición y trazabilidad | No evaluable | — | Repositorio inaccesible. |
-| Sustentación del reto | Pendiente del docente | — | No verificable desde el repositorio. |
-| **Subtotal técnico** |  | **No evaluable** | El equipo debe restablecer el acceso al repositorio antes de poder calificar el corte. |
+Resuelto tarde (corregido despues del cierre, ahora al dia):
+- Limpieza de __pycache__, archivos con sufijos '(3).py'/' (4).py' y data/verifacts.db realizada después del cierre (diff_desde_cierre 3120e06→67f8cea); el PDF en raíz persiste.
+- SonarCloud y workflow 'Tests and SonarCloud' añadidos después del cierre (commits a1d23eb, 2a90b44, ab978d3, efbad6b), pero los runs 34407270858 y siguientes fallan.
+- Frontend y soporte de URL incorporados después del cierre (commits 5fc30ce, 04d625d, 67f8cea), ampliando el corte vertical.
 
-## Recuento
+Pendientes que siguen abiertos:
+- Julian Samuel Cabeza Pena sigue sin commits en HEAD.
+- arc42 incompleto: falta sección 11 (riesgos) y docs/c4/03-componentes.md es plantilla sin completar.
+- CI en rojo: runs_ci de 'Tests and SonarCloud' posteriores al cierre concluyen failure.
+- docs/aspectos.md A-02 pendiente y enlaces rotos (docs/decisiones-arquitectonicas.md).
+- PDF en la raíz del repositorio persiste en HEAD.
 
-0 de 12 criterios de la ficha se pueden marcar "Cumple" (1 "No cumple" por la etiqueta ausente en un repositorio inaccesible; el resto "No verificado" por la misma razón). En la matriz transversal: 1 "No cumple", 7 "No verificado".
+## Recuento y nota sugerida
 
-## No verificado
+4 de 12 criterios Cumple.
 
-- Prácticamente toda la matriz de la ficha y la matriz transversal, porque el repositorio de la organización no es accesible desde el 2026-09-02 hasta la fecha de esta revisión (2026-09-07).
-- Si el repositorio fue transferido, borrado o puesto en privado, y en qué fecha exacta.
-- Si `PedroC1213/Verifacts` guarda alguna relación real con el proyecto de curso más allá del nombre.
+## No verificado / pendientes
 
-## Hallazgos
+- Corte vertical reproducible: requiere ejecutar python run.py y python -m pytest -q; no hay run que lo respalde.
+- Pipeline y pruebas del estado calificado: no hay run anterior/igual al cierre; runs_ci posteriores fallan.
+- PDF adjunto en Moodle: no disponible en la evidencia.
+- Sustentación del corte: la resuelve el docente.
 
-- **Crítico:** el repositorio `ISCOUTB/AS_202620_Verifacts` no existe en la organización a la fecha de esta revisión (191/191 repositorios públicos listados, ninguno coincide); tampoco resuelve por clon anónimo ni por la API. Esto bloquea la calificación completa del corte 1 desde el repositorio.
-- El único repositorio público relacionado por nombre y por integrante (`PedroC1213/Verifacts`) es un borrador embrionario de agosto, anterior al propio arranque del repositorio de curso, y no sustituye la evidencia perdida.
-- Este hallazgo debe escalarse al docente antes de aplicar cualquier nota: puede tratarse de un error operativo (transferencia accidental, cambio de visibilidad) más que de una decisión del equipo, y el plazo para restablecerlo debería resolverse con criterio humano, no solo con esta revisión automatizada.
+## Hallazgos para la planilla
 
-## Preguntas para la sustentación
-
-- ¿Qué pasó con el repositorio `ISCOUTB/AS_202620_Verifacts`? ¿Fue transferido, puesto en privado o borrado, y cuándo?
-- ¿Pueden restablecer el acceso público al repositorio con su historial completo intacto, para que se pueda verificar que no hubo alteración retroactiva?
-- Dado que no se puede verificar nada del corte 1 desde el repositorio, ¿pueden presentar en la sesión el diagnóstico, el ADR, el cambio y la medición que preparó el equipo?
+- correcciones.md no refleja el estado real: marca pendientes ya resueltos (árbol de utilidad, leyenda C4, tensiones, POST /analysis).
+- Tercer integrante declarado sin commits en el historial.
+- arc42 incompleto y C4 nivel 3 sin completar.
+- Persisten artefactos no deseados en el hash calificado: __pycache__, archivos con sufijos, PDF en raíz.
+- Sin run de CI anterior al cierre; runs posteriores fallan.
+- Trazabilidad con huecos: A-02 pendiente y enlace roto en README.
+- Commits posteriores al cierre (no calificados): 67f8cea 2026-09-09T16:30:01-05:00 feat: integrate backend URL analysis contract and align frontend; 78126d4 2026-09-09T16:21:14-05:00 Update global.css with new styles and remove comments; 46fb432 2026-09-09T16:20:01-05:00 Destructure response from fetchAnalysisList; 2239a5f 2026-09-09T16:19:16-05:00 Add metadata section to ResultPanel component; f9324ee 2026-09-09T16:18:37-05:00 Update timestamp display format in HistoryLedger

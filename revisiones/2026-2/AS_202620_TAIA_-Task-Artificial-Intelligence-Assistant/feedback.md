@@ -28,7 +28,7 @@ La entrega tiene un corte vertical claro (HTTP → caso de uso → dominio → p
 
 ## Semana 5 · CORTE1
 
-El proyecto presenta una base sólida con documentación arc42 completa, ADR-0001 bien estructurado, C4 en Mermaid y un corte vertical ejecutable de registro/consulta de tareas respaldado por CI en GitHub Actions. La tabla de aspectos tiene una fila A-01 navegable. Se sugiere revisar el contenido de correcciones.md y publicar el PDF del aula en el repositorio o proporcionar el enlace del adjunto para verificar su cumplimiento. Completar la entrada de docs/ia.md que quedó truncada y consolidar las identidades de git para reflejar correctamente la contribución de los cuatro integrantes. Los últimos commits fuera del cierre bloquean SonarCloud, pero no afectan la nota del corte.
+El proyecto está mayormente al día: S1-S4 completos, corte vertical A-01 implementado y CI en verde. El correcciones.md debe reestructurarse como índice de verificación: por cada hallazgo, indicar acción, evidencia (commit/run/ruta) y estado. Se recomienda equilibrar la distribución de contribuciones y documentar el historial del ADR. Los commits posteriores al cierre deben evitarse o justificarse. La sustentación y el PDF se resolverán en el aula.
 ## Semana 5 · Primer corte (revisión definitiva, 2026-09-07)
 
 Se revisó de nuevo después del cierre. Como no existe la etiqueta `corte-1`, se tomó el último commit subido antes del cierre.

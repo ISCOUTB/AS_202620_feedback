@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Recobra` |
 | Integrantes y su usuario de GitHub | Camilo Andres Conde Corrales · Fernando Isacc Conde Herrera · Miguel Alejandro Iii Jacome Yanez · Veronica Ubarne Reyes — cuentas consolidadas: `Cconde31` (incluye la identidad `Steamlinker`, unificada por `.mailmap` el 05/09), `MiguelJacome`, `vylrir` (Verónica Ubarne), y el commit real de Fernando Isacc Conde Herrera (`fconde@utb.edu.co`) |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-09 |
+| Ultima revision | 2026-09-10 |
 
 ## Estado por entrega
 
@@ -72,18 +72,22 @@
 | arc42 no está completo en HEAD. | S5 | si | |
 | CI sin SonarCloud en HEAD. | S5 | si | |
 | README sin comando único de arranque en HEAD. | S5 | si | |
+| Commit f7c1a6c (2026-09-07) posterior al cierre enlaza ADR a commits y cubre criterios de rúbrica; no afecta la nota del corte pero es tardío. | S5 | no (resuelto tarde) | — |
+| Crear correcciones.md en la raíz antes del cierre. | S5 | si | |
+| Verificar entrega del PDF en Moodle. | S5 | si | |
+| Sustentación pendiente. | S5 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | Público (clon sin auth) |
-| Estructura mínima | No cumple | Las seis rutas están, pero `docs/arc42.md` suelto convive con `docs/arc42/` |
+| Estructura mínima | Cumple | Las seis rutas están, pero `docs/arc42.md` suelto convive con `docs/arc42/` |
 | Convención de nombres de ADR | Cumple | 0001, 0002, 0003 en kebab-case con la decisión en el título |
 | ADR aceptados sin reescribir | Cumple | ADR-0001 marcado "Reemplazada" en vez de editado o borrado |
 | `docs/ia.md` al día | Cumple | Entradas del 05/09 con aceptado/corregido/rechazado y motivo |
 | Sin credenciales en el repositorio ni en el historial | **No cumple** | Token de Coveralls recuperable en el historial (`905f546`); no confirmado que se haya rotado |
 | Contribución de todos los integrantes | Cumple, con reserva | 4 identidades para 4 integrantes, pero Fernando con 1 solo commit en todo el semestre |
-| Pipeline en verde | No cumple | Runs `success` antes (`6ee5b66`, 06/09 01:27Z) y después (`f7c1a6c`, 07/09 15:00Z) del cierre |
+| Pipeline en verde | Cumple | Runs `success` antes (`6ee5b66`, 06/09 01:27Z) y después (`f7c1a6c`, 07/09 15:00Z) del cierre |
 
 ## Contribución por integrante
 

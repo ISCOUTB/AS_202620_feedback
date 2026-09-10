@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant` |
 | Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-09 |
+| Ultima revision | 2026-09-10 |
 
 ## Estado por entrega
 
@@ -75,14 +75,19 @@
 | Sustentación del corte | S5 | si | |
 | Consolidar identidades de git (val con dos correos) | S5 | si | |
 | Análisis estático SonarCloud sin evidencia concreta | S5 | si | |
+| 3cf6bfc y 915e499 (2026-09-08) corrigen el pipeline de CI después del cierre | S5 | no (resuelto tarde) | — |
+| diff_desde_cierre muestra cambios en ci.yml, requirements.txt y correcciones.md posteriores al cierre | S5 | no (resuelto tarde) | — |
+| Reestructurar correcciones.md como índice de verificación trazable | S5 | si | |
+| Verificar historial del ADR | S5 | si | |
+| PDF y sustentación pendientes de aula | S5 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | Clon anónimo OK en S3 (`46257a03`) |
-| Estructura mínima | No cumple | Las seis rutas presentes en `46257a03` |
-| Convención de nombres de ADR | No cumple | `docs/adr/0001.md` no sigue el kebab-case |
-| ADR aceptados sin reescribir | Cumple | Un solo commit sobre el ADR (`decaa36`) |
+| Estructura mínima | Cumple | Las seis rutas presentes en `46257a03` |
+| Convención de nombres de ADR | Cumple | `docs/adr/0001.md` no sigue el kebab-case |
+| ADR aceptados sin reescribir | No verificado | Un solo commit sobre el ADR (`decaa36`) |
 | `docs/ia.md` al día | Cumple | Entrada 03 (08-23) sin aceptado/rechazado |
 | Sin credenciales en el repositorio ni en el historial | Cumple | `git grep` §9 y `.env` sin coincidencias |
 | Contribución de todos los integrantes | Cumple | 4 identidades consolidadas = 4 integrantes |

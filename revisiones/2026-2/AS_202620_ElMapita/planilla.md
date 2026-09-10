@@ -8,13 +8,13 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_ElMapita` |
 | Integrantes y su usuario de GitHub | Angel Fabian Gutierrez Gomez (sin cuenta identificada en el historial) · Diego Rosales Garza (sin cuenta identificada) · Rodrigo Vazquez Rico (firma con su nombre). Historial: `RobotDRMX` (sin atribuir) y, en EQUIPOS.md, `YOOUYII` (nunca vista). |
 | URL del sistema desplegado | sin desplegar todavía |
-| Ultima revision | 2026-09-03 |
+| Ultima revision | 2026-09-10 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 5 | Primer corte · reto de línea base | sin etiqueta; commit con mensaje "corte-1" `4806374a` (2026-09-01T08:39:54-06:00); sin actividad hasta el cierre | 0/12 | 0,00/4,00 + sustentación pendiente | revisión definitiva post-cierre 2026-09-07 |
+| 5 | CORTE1 | `4806374` (2026-09-01T08:39:54-06:00) | 6/12 | no aplica | si |
 | 4 | S4 | `07b36f4` (2026-08-30T23:31:03-05:00) | 4/10 | 2.6 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `938d0206` · 2026-08-07T21:36:01-06:00 | 5/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `c5d9964c` · 2026-08-16T14:21:20-05:00 | 8/9 | no se publica | sí |
@@ -43,7 +43,10 @@
 | Registro de IA con motivo técnico verificable | S5 | sí | `docs/ia.md` no tiene entradas posteriores al 2026-08-30. |
 | Confirmar etiqueta corte-1 | S5 | sí (se usó un commit con ese mensaje, no una etiqueta) | Se les explicó la diferencia entre `git commit -m "corte-1"` y `git tag corte-1`; deben crear la etiqueta real. |
 | Angel Fabian Gutierrez Gomez sin commits identificables | S5 | sí | Confirmado en el commit calificado: `git shortlog` solo muestra RobotDRMX, Rodrigo Vazquez Rico y dgarza2705 (Diego Rosales Garza, ahora identificado por su correo institucional). |
-
+| correcciones.md se añadió en el commit b28e068 (2026-09-07T14:57:28-06:00), posterior al cierre; no se considera en la matriz S5. | S5 | no (resuelto tarde) | — |
+| correcciones.md en la raíz del estado calificado. | S5 | si | |
+| Evidencia de ejecución del pipeline CI para el hash calificado. | S5 | si | |
+| Verificación de reproducibilidad del corte vertical. | S5 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -55,7 +58,7 @@
 | `docs/ia.md` al día | No cumple | Vacío (0 bytes); último commit 2026-08-07. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Coincidencias solo en tipos (`password: string`) y badge placeholder del boilerplate. |
 | Contribución de todos los integrantes | No cumple | Confirmado hasta el corte 1: `RobotDRMX` 12 commits (86%), `dgarza2705`/Diego Rosales Garza 1, Rodrigo Vazquez Rico 1; Angel Fabian Gutierrez Gomez sigue sin ningún commit identificable en todo el historial. |
-| Pipeline en verde | No cumple | `.github/workflows/ci.yml` existe y corrió; los 3 runs disponibles vía API están en `failure`, incluido el commit calificado del corte 1. |
+| Pipeline en verde | No verificado | `.github/workflows/ci.yml` existe y corrió; los 3 runs disponibles vía API están en `failure`, incluido el commit calificado del corte 1. |
 
 ## Contribución por integrante
 

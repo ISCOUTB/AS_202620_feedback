@@ -10,7 +10,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_uniTeam` |
 | Integrantes y su usuario de GitHub | Julio Cesar Emiliani Ramos (commits con nombre propio) · Ian Novoa Carrillo (firma «Ian Novoa», correo omitido; la cuenta `iansx` del listado no aparece) · Juan Jose Bustamante More (sin commits atribuibles) · Daniel Isaac Manjarres Herrera (sin commits atribuibles). `super-gremlin` (noreply) sin atribuir a persona. |
 | URL del sistema desplegado | sin URL (sin despliegue todavía) |
-| Ultima revision | 2026-09-09 |
+| Ultima revision | 2026-09-10 |
 
 ## Estado por entrega
 

@@ -20,11 +20,9 @@ Qué corregir antes del corte 1 (semana 5):
 ## Semana 4 · S4
 
 Buen avance en documentación, C4 y estructura del esqueleto: el arc42, los diagramas y la organización por módulos son sólidos. Para completar la semana 4, redacten las secciones 5 y 6 con la interpretación de los diagramas, inicien el glosario y hagan que la fila de aspectos apunte a una prueba real del corte vertical. Cuiden las convenciones de ADR: un archivo por decisión real y con nombre estandarizado. Aunque los commits posteriores al cierre corrigen varios vacíos, esas correcciones no cuentan para la entrega de la semana.
-## Semana 5 · Primer corte
+## Semana 5 · CORTE1
 
-Revisión manual preliminar previa al cierre. El proyecto ya tiene módulos de productos e inventario, pruebas y CI en verde. Ese avance no está identificado como respuesta al reto nuevo: falta la etiqueta `corte-1`, declarar la restricción, medir la línea base, registrar alternativas y decisión, enlazar el incremento y contrastar el resultado con el umbral. Si el nuevo módulo de inventario responde al reto, incorpórenlo a una fila completa de `docs/aspectos.md` y a una prueba específica. Actualicen también `docs/ia.md` para el corte y corrijan el enlace del README al archivo real `docs/c4/containers.md`.
-
-
+El repositorio muestra una base arquitectónica sólida: arc42, C4, ADR, aspectos e IA bien documentados, con corte vertical y pruebas en CI. Para el corte, recuerden que correcciones.md debe estar en la raíz en el commit anterior al cierre; en esta entrega se añadió después. Integren SonarCloud al pipeline para cumplir el contrato. Revisen que cada hallazgo de S1-S4 quede respondido con evidencia contrastable. Distribuyan más equitativamente las contribuciones y mantengan la trazabilidad navegable.
 ## Semana 5 · Primer corte (revisión definitiva, 2026-09-07)
 
 Ya tienen la etiqueta `corte-1` sobre un commit anterior al cierre: bien.

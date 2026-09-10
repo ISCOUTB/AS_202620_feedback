@@ -10,13 +10,13 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_InvenTrack` |
 | Integrantes y su usuario de GitHub | Javier Alejandro Carta Lacharme · Esteban Javier Peluffo Marquez · Felix Andres Taborda Jimenez · Jose Gabriel Vargas Perez — cuentas abajo |
 | URL del sistema desplegado | sin desplegar aún |
-| Ultima revision | 2026-09-09 |
+| Ultima revision | 2026-09-10 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 5 | Primer corte · reto de línea base | `corte-1` → `2988b03` (2026-09-06T23:35:40-05:00) | 3/12 | subtotal técnico 2,00/4,00 (ver hallazgo crítico: cambio no implementado); sustentación pendiente | revisión definitiva post-cierre 2026-09-07 |
+| 5 | CORTE1 | `2988b03` (2026-09-06T23:35:40-05:00) | 8/12 | no aplica | si |
 | 4 | S4 | `d7ba824` (2026-08-30T23:39:33-05:00) | 5/10 | 3.0 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `06920209` · 2026-08-09T16:03:46-05:00 | 4/9 | 2,8 * | sí |
 | 2 | S2 | `db90ff2` (2026-08-16T21:22:20-05:00) | 9/9 | no aplica | si |
@@ -55,6 +55,11 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 | Fila de aspectos con columna Pruebas completa: se resolvió en HEAD con la trazabilidad del corte 1 (commit bb4ef0c). | S4 | no (resuelto tarde) | — |
 | SonarCloud: sonar-project.properties se agregó en HEAD, no en el commit calificado. | S4 | no (resuelto tarde) | — |
 | En HEAD aún no se verifica ejecución de SonarCloud en un run; no hay evidencia de análisis estático en los runs disponibles. | S4 | si | |
+| correcciones.md creado en ac951e3 (2026-09-08) tras el cierre, renombrando feedback.md. | S5 | no (resuelto tarde) | — |
+| Frontend definido como Flutter en cf9d7d3 (2026-09-07) tras el cierre, actualizando README y containers.md. | S5 | no (resuelto tarde) | — |
+| Integrar SonarCloud al pipeline de CI. | S5 | si | |
+| Verificar que correcciones.md responda a todos los hallazgos S1-S4. | S5 | si | |
+| Equilibrar la distribución de contribuciones. | S5 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

@@ -10,13 +10,13 @@ Hoja consolidada del equipo EnAgenda. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_EnAgenda` |
 | Integrantes y su usuario de GitHub | Eliab Josue Arnedo Conde · Jeimy Yulieth Mendez Altamiranda · Gabriela Morales Cancino — cuentas abajo |
 | URL del sistema desplegado | sin desplegar aún |
-| Ultima revision | 2026-09-09 |
+| Ultima revision | 2026-09-10 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 5 | Primer corte · reto de línea base | `corte-1` → `31773ad` (2026-09-06T23:39:52-05:00) | 1/12 | subtotal técnico 0,60/4,00; sustentación pendiente | revisión definitiva post-cierre 2026-09-07 |
+| 5 | CORTE1 | `942e112` (2026-09-06T23:56:39-05:00) | 7/12 | no aplica | si |
 | 4 | S4 | `df724b8` (2026-08-30T23:57:42-05:00) | 8/10 | 4.2 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `13f61b10` · 2026-08-09T05:34:14-05:00 | 8/9 | 4,6 * | sí |
 | 2 | S2 | `5b6f7a8` (2026-08-16T23:33:20-05:00) | 5/9 | no aplica | si |
@@ -50,18 +50,25 @@ Hoja consolidada del equipo EnAgenda. Se actualiza tras cada revisión.
 | Falta docs/arc42/01* | S2 | si | |
 | Trazabilidad de aspectos pendiente | S2 | si | |
 | Sin integración continua | S2 | si | |
+| docs/aspectos.md actualizado en commits 03c855c y 696882e (post-cierre) para corregir trazabilidad | S5 | no (resuelto tarde) | — |
+| docs/evidencia.md agregado en commit 5a8a5c5 (post-cierre) como evidencia de corte vertical | S5 | no (resuelto tarde) | — |
+| correcciones.md en la raíz | S5 | si | |
+| Completar arc42 secciones 07, 08 y 11 | S5 | si | |
+| Completar C4 nivel 3 | S5 | si | |
+| Corregir enlace roto en aspectos.md | S5 | si | |
+| Configurar SonarCloud | S5 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | `ISCOUTB/AS_202620_EnAgenda`, público, verificable sin autenticación |
-| Estructura mínima | Cumple | Las seis rutas del contrato están presentes en HEAD. |
+| Estructura mínima | No cumple | Las seis rutas del contrato están presentes en HEAD. |
 | Convención de nombres de ADR | Cumple | `0001-usar-monolito-modular.md`. |
 | ADR aceptados sin reescribir | Cumple | Aceptado en `c38adfb`; después solo fue renombrado. |
 | `docs/ia.md` al día | No cumple | La entrada más reciente corresponde a Semana 4; falta Corte 1. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Sin credenciales; coincidencias con `token` son identificadores de dominio y datos de prueba. |
 | Contribución de todos los integrantes | Cumple | Tres identidades consolidadas para tres integrantes en HEAD. |
-| Pipeline en verde | Cumple | Run de HEAD `33360647498` en verde; no demuestra todavía el reto. |
+| Pipeline en verde | No cumple | Run de HEAD `33360647498` en verde; no demuestra todavía el reto. |
 
 ## Contribución por integrante
 
