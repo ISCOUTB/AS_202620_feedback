@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_ROUTB` |
 | Integrantes y su usuario de GitHub | Diego Jose Baron Ruiz (`diegobrr999-commits`) · Julian David Manjarrez Guzman (`juliandmanjarrez-tech`) · Keiner Enrique Mendivil Diaz (`MKeinerrr`, dos correos) · Junior Jose Orozco Atencio (`junior14700`) |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-10 |
+| Ultima revision | 2026-09-11 |
 
 ## Estado por entrega
 
@@ -18,7 +18,7 @@
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `14e6688` · 2026-08-16T12:44:08-05:00 | 2/9 | no aplica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `1ed002b` · 2026-08-23T20:31:54-05:00 | 6/9 | no se publica | sí |
 | 4 | S4 | `83b8c5e` (2026-08-30T19:33:15-05:00) | 10/10 | 5.0 | si |
-| 5 | CORTE1 | `493efdb` (2026-09-06T20:11:13-05:00) | 8/12 | no aplica | si |
+| 5 | CORTE1 | `343bb9d` (2026-09-09T21:10:40-05:00) | 8/12 | 3.7 | si |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
@@ -62,6 +62,11 @@
 | 5c89522 (2026-09-09T21:10:11-05:00) 'S6' y 343bb9d (2026-09-09T21:10:40-05:00) 'Delete' son posteriores al cierre y no forman parte del estado calificado. | S5 | no (resuelto tarde) | — |
 | correcciones.md no existe en la raíz del estado calificado ni en HEAD. | S5 | si | |
 | No hay evidencia de que hallazgos S1-S4 hayan sido respondidos formalmente. | S5 | si | |
+| Verificar contenido de correcciones.md | S5 | si | |
+| Verificar contenido de docs/ia.md | S5 | si | |
+| Verificar run de CI asociado al hash | S5 | si | |
+| Entregar PDF en Moodle | S5 | si | |
+| Sustentación del corte | S5 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -73,7 +78,7 @@
 | `docs/ia.md` al día | Cumple | Entrada de S5 fechada 05/09 |
 | Sin credenciales en el repositorio ni en el historial | Cumple | git grep sin secretos reales; sin `.env` |
 | Contribución de todos los integrantes | Cumple | 4 personas para 4 integrantes (MKeinerrr consolidado); muy concentrada en MKeinerrr |
-| Pipeline en verde | Cumple | `Backend CI`/`CI ROUTB` en verde, incluido el commit de la etiqueta; `SonarCloud` en `failure` en todas las ejecuciones vistas |
+| Pipeline en verde | No cumple | `Backend CI`/`CI ROUTB` en verde, incluido el commit de la etiqueta; `SonarCloud` en `failure` en todas las ejecuciones vistas |
 
 ## Contribución por integrante
 

@@ -1,43 +1,43 @@
 # semana-05-corte1 · XALD
 
-> Revision automatica definitiva (GitHub Actions, posterior al cierre).
+> Revision automatica definitiva (GitHub Actions, posterior al cierre). Re-evaluada por cambio de hash calificado tras la pasada temprana.
 
 | Campo | Valor |
 |---|---|
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_XALD` |
-| Estado revisado | `ee9af9c` en `origin/master` (2026-09-06T23:11:50-05:00) |
-| Cierre | 2026-09-07T05:00:00Z |
+| Estado revisado | `9bf16cf` en `origin/master` (2026-09-09T10:07:09-05:00) |
+| Cierre | 2026-09-10T17:00:00Z |
 | Revisor | pipeline automatico (GitHub Actions) |
 
 ## Matriz de la ficha
 
 | Criterio de evaluacion | Evidencia tecnica | Estado | Observaciones |
 |---|---|---|---|
-| Estado de corte identificable y anterior al cierre | origin/master ee9af9c 2026-09-06T23:11:50-05:00 (04:11:50Z), anterior al cierre 2026-09-07T05:00:00Z | Cumple | Rama principal master identificada; sin etiquetas. |
-| correcciones.md existe en la raíz del estado calificado | Árbol de ee9af9c contiene correcciones-feedback-XALD.md, no correcciones.md; renombrado en 43b8e35 (post cierre) | No cumple | El nombre exacto exigido no existe en el hash calificado. |
-| Correcciones trazables y contrastadas | Sin correcciones.md en ee9af9c no hay índice trazable de hallazgos S1-S4 | No cumple | El archivo con nombre incorrecto no cumple la especificación y no fue contrastable. |
-| S1 al día: equipo, problema y repositorio | docs/ficha del problema.md, README.md, shortlog con 4 autores, repo ISCOUTB/AS_202620_XALD público | Cumple | Problema, usuarios y alcance documentados; integrantes en historial. |
-| S2 al día: escenarios de calidad y restricciones | docs/arc42/arc42-template-EN.md con Architecture Constraints (RT-01..05, RO-01..02, RL-01) y Quality Goals (ESC-01..05) | Cumple | Restricciones y escenarios medibles presentes. |
-| S3 al día: estrategia de solución y decisiones | docs/adr/0001..0006, docs/matriz-comparativa-estilos.md, ADR-0006 adopta monolito modular | Cumple | Decisiones con contexto, opciones, consecuencias y trazabilidad. |
-| S4 al día: arc42, C4 y corte vertical | docs/arc42/arc42-template-EN.md, docs/c4/c1.md, c2.md, c4.md, XALDAPP/app/src/test/java/com/proyecto/xald/Cortevertical.kt existen | No verificado | No se pudo comprobar que arc42 contenga las 12 secciones completas en ee9af9c; falta la matriz S4 para contrastar. |
-| Corte vertical reproducible y coherente con la arquitectura | README.md con comandos gradlew test; Cortevertical.kt; run Android CI 34077698416 success | Cumple | Los 5 módulos Gradle coinciden con C2; el corte vertical está documentado y probado. |
-| Pipeline y pruebas respaldan el estado calificado | runs_ci Android CI success 2026-09-07T02:51:58Z (https://github.com/ISCOUTB/AS_202620_XALD/actions/runs/34077698416) | Cumple | Runs anteriores al cierre en verde; sin embargo ci.yml en ee9af9c no incluía master (corregido en 9bf16cf post cierre). |
-| Trazabilidad consolidada navegable | docs/aspectos.md con celdas 'Pendiente' en Código/Pruebas/Evidencia para A-02 a A-05; enlaces a rama experimental | No cumple | Huecos en la cadena aspecto-requisito-C4-ADR-código-pruebas-evidencia. |
-| PDF u otro adjunto exigido por el aula | Sin evidencia del PDF en Moodle en los datos del repositorio | No verificado | La ficha indica No verificado si no está disponible. |
-| Sustentación del corte | Sesión de sustentación no evaluable desde el repositorio | No verificado | Lo resuelve el docente en la sesión. |
+| Estado de corte identificable y anterior al cierre | rama origin/master, hash 9bf16cf989667977ff8afe95311a595a66517318, fecha 2026-09-09T10:07:09-05:00 (anterior al cierre 2026-09-10T17:00:00Z) | Cumple | El commit calificado existe y es anterior al cierre. |
+| correcciones.md existe en la raíz del estado calificado | git show 9bf16cf:correcciones.md presente en el árbol del hash calificado | Cumple | Archivo en la raíz con el nombre exacto. |
+| Correcciones trazables y contrastadas | correcciones.md responde a hallazgos S1-S4 pero varias respuestas no se sustentan: 4.1 y 4.3 se declaran 'sin acción' y 4.5 queda pendiente de SonarCloud; no hay run de SonarCloud citado | No cumple | Faltan enlaces a commits/pruebas para verificar cada corrección; la tabla de seguimiento no está completa. |
+| S1 al día: equipo, problema y repositorio | docs/ficha del problema.md describe problema, usuarios, alcance y tensiones; README.md describe el proyecto; autores en historial: 126 dilanbejarano011, 77 colmenares2007-crypto, 48 xaviergarciadiaz20-commits, 31 axeljruiz717-hash | Cumple | Equipo visible y problema documentado. |
+| S2 al día: escenarios de calidad y restricciones | docs/arc42/arc42-template-EN.md secciones Architecture Constraints y Quality Goals con RT-01 a RT-05, RO-01/02, RL-01 y escenarios ESC-01 a ESC-05 | Cumple | Restricciones y escenarios presentes y enlazados desde docs/aspectos.md. |
+| S3 al día: estrategia de solución y decisiones | docs/adr/0001 a 0006 con contexto, opciones evaluadas, decisión, consecuencias y trazabilidad; docs/matriz-comparativa-estilos.md documenta alternativas | Cumple | Decisiones documentadas y alineadas con la estrategia. |
+| S4 al día: arc42, C4 y corte vertical | docs/arc42/arc42-template-EN.md con secciones 1-12; docs/c4/c1.md, c2.md y c4.md con diagramas Mermaid; XALDAPP/app/src/test/java/com/proyecto/xald/Cortevertical.kt y Entornotest.kt | Cumple | Documentación y pruebas del corte vertical presentes en el hash calificado. |
+| Corte vertical reproducible y coherente con la arquitectura | README.md documenta comando .\XALDAPP\gradlew.bat -p XALDAPP test; run Android CI 34368132945 success del 2026-09-09T15:07:12Z asociado al hash calificado | Cumple | El comando de arranque y prueba está documentado y el run respalda la ejecución. |
+| Pipeline y pruebas respaldan el estado calificado | .github/workflows/ci.yml ejecuta ./gradlew testDebugUnitTest; run Android CI 34368132945 success (2026-09-09T15:07:12Z) posterior al hash calificado | Cumple | Pipeline en verde para el estado calificado. |
+| Trazabilidad consolidada navegable | docs/aspectos.md tiene filas A-02 a A-05 con CÓDIGO, PRUEBAS y EVIDENCIA en 'Pendiente'; A-01 enlaza a rama experimental en lugar del hash calificado | No cumple | La tabla de aspectos no es navegable de extremo a extremo en el estado calificado. |
+| PDF u otro adjunto exigido por el aula | No hay PDF en el repositorio (docs/.gitignore excluye *.pdf) y no se dispone del adjunto de Moodle | No verificado | Se requiere el documento entregado en el aula para verificar. |
+| Sustentación del corte | No hay evidencia de sesión de sustentación en el repositorio | No verificado | Lo resuelve el docente en la sesión. |
 
 ## Matriz transversal (CONTRATO §11)
 
 | Criterio | Evidencia | Estado | Observaciones |
 |---|---|---|---|
-| Identidad del repositorio | Repo ISCOUTB/AS_202620_XALD visible; shortlog con 4 autores | Cumple | Nombre y organización correctos; integrantes en historial. |
-| Estructura mínima | Árbol con README.md, docs/arc42/, docs/adr/ (6), docs/c4/, docs/aspectos.md, docs/ia.md | Cumple | README incluye arranque con un comando y requisitos. |
-| Convenciones de ADR | docs/adr/0001..0006 con nombres kebab-case y contenido contexto/opciones/decisión/consecuencias/trazabilidad | Cumple | ADR-0005 en revisión, sin aspecto asociado, declarado explícitamente. |
-| La tabla de aspectos | docs/aspectos.md: A-02 a A-05 con Código/Pruebas/Evidencia 'Pendiente'; enlaces a blob/experimental | No cumple | Filas con huecos no defendibles según el contrato. |
-| Registro de uso de IA | docs/ia.md con tabla de usos, rechazos y justificaciones; log con 6 commits | Cumple | Incluye decisiones de rechazo con motivo técnico. |
-| Pipeline y análisis estático | .github/workflows/ci.yml en ee9af9c escucha branches experimental/main, no master; corregido en 9bf16cf post cierre | No cumple | No se ejecutaba CI en cada push a la rama principal al cierre. |
-| Secretos | git grep sin coincidencias; sin .env versionados | Cumple | Sin credenciales en el estado calificado. |
-| Autoría y colaboración | shortlog: 125, 77, 48, 30 commits distribuidos entre 4 autores | Cumple | Actividad repartida a lo largo del semestre. |
+| Identidad del repositorio | repositorio ISCOUTB/AS_202620_XALD visible, nombre coincide con AS_202620_<PROYECTO>; historial con 4 autores | Cumple | Cumple organización, nombre y visibilidad. |
+| Estructura mínima | árbol del hash 9bf16cf contiene README.md, docs/arc42/, docs/adr/ con 6 ADR, docs/c4/, docs/aspectos.md y docs/ia.md | Cumple | Estructura mínima presente en la raíz. |
+| Estado del repositorio que se califica | rama origin/master, hash 9bf16cf 2026-09-09T10:07:09-05:00, anterior al cierre 2026-09-10T17:00:00Z; sin commits posteriores | Cumple | Estado calificado identificado correctamente. |
+| Convenciones de ADR | docs/adr/ contiene 0001-patron-offline-first.md a 0006-seleccion-de-estilo-arquitectonico.md con nombres en kebab-case y contenido con contexto, opciones, decisión, consecuencias y trazabilidad | Cumple | Nombres y contenido cumplen la convención. |
+| Tabla de aspectos | docs/aspectos.md filas A-02 a A-05 tienen CÓDIGO, PRUEBAS y EVIDENCIA en 'Pendiente'; A-01 enlaza a rama experimental | No cumple | Filas con huecos no navegables en el estado calificado. |
+| Registro de uso de IA | docs/ia.md con tabla de usos, herramienta, decisión del estudiante y justificación; historial con 6 commits entre 2026-08-07 y 2026-09-06 | Cumple | Registro presente y con evolución en el tiempo. |
+| README | README.md describe qué es el sistema, comando de arranque .\XALDAPP\gradlew.bat -p XALDAPP test y salida esperada | Cumple | Arranque y prueba documentados con un comando. |
+| Pipeline y análisis estático | .github/workflows/ci.yml solo ejecuta testDebugUnitTest; no hay configuración ni run de SonarCloud citado; correcciones.md 4.5 declara la integración pendiente | No cumple | Falta análisis estático en el pipeline. |
 
 ## Estado global del proyecto (overall · punta actual de la misma rama)
 
@@ -45,35 +45,31 @@ Mira el repositorio **entero en la punta actual de la misma rama**, no solo la e
 
 - **Punta actual revisada**: `9bf16cf989667977ff8afe95311a595a66517318 2026-09-09T10:07:09-05:00 Change CI branches from 'main' to 'master'`
 - **Veredicto**: con pendientes
-- Resumen: El primer corte tiene una base sólida (ADRs, C4, corte vertical, CI en verde), pero el archivo de correcciones no cumplía el nombre exacto al cierre y la trazabilidad de aspectos tiene huecos.
-
-Resuelto tarde (corregido despues del cierre, ahora al dia):
-- 43b8e35 (2026-09-08) renombra correcciones-feedback-XALD.md a correcciones.md, cerrando la fila 2 después del cierre
-- 9bf16cf (2026-09-09) ajusta CI a la rama master, cerrando el pipeline transversal después del cierre
+- Resumen: El proyecto entero a HEAD (9bf16cf, sin commits posteriores) mantiene la documentación S1-S4 y el corte vertical en verde, pero arrastra pendientes de semanas anteriores: trazabilidad incompleta en docs/aspectos.md y análisis estático ausente del pipeline.
 
 Pendientes que siguen abiertos:
-- docs/aspectos.md con celdas Pendiente en Código/Pruebas/Evidencia para A-02 a A-05
-- Enlaces de aspectos.md a rama experimental en lugar de master
-- Completitud de arc42 (12 secciones) sin verificar
-- PDF en Moodle y sustentación pendientes de confirmación docente
+- Completar columnas CÓDIGO, PRUEBAS y EVIDENCIA en docs/aspectos.md.
+- Corregir enlaces de docs/aspectos.md que apuntan a la rama experimental.
+- Integrar y evidenciar SonarCloud en el pipeline.
+- Contrastar cada corrección de correcciones.md con commit o run específico.
 
 ## Recuento y nota sugerida
 
-6 de 12 criterios Cumple.
+8 de 12 criterios Cumple.
+
+**Nota sugerida (propuesta al docente, publicada por decision del profesor): 3.7 = 1 + 4 × (8/12).** La nota final la fija el profesor en Moodle.
 
 ## No verificado / pendientes
 
-- S4 al día: completitud de arc42 (12 secciones) no comprobada en ee9af9c
-- PDF adjunto en Moodle no disponible en la evidencia
-- Sustentación del corte: la resuelve el docente
+- PDF u otro adjunto exigido por el aula: no disponible en el repositorio; se requiere el adjunto de Moodle.
+- Sustentación del corte: sin evidencia; depende de la sesión del docente.
 
 ## Hallazgos para la planilla
 
-- correcciones.md ausente en ee9af9c; solo existía correcciones-feedback-XALD.md
-- Renombrado a correcciones.md ocurrió después del cierre (43b8e35)
-- Workflow CI en ee9af9c no incluía la rama master; corregido en 9bf16cf post cierre
-- docs/aspectos.md con celdas Pendiente en Código, Pruebas y Evidencia para A-02 a A-05
-- Enlaces de aspectos.md apuntan a la rama experimental, no a master
-- No se pudo verificar que arc42 contenga las 12 secciones completas
-- Runs de CI en verde anteriores al cierre respaldan el corte vertical
-- Commits posteriores al cierre (no calificados): 9bf16cf 2026-09-09T10:07:09-05:00 Change CI branches from 'main' to 'master'; 43b8e35 2026-09-08T10:25:05-05:00 Rename correcciones-feedback-XALD.md to correcciones.md
+- correcciones.md no contrasta cada hallazgo con commit o run específico; 4.1 y 4.3 se responden sin acción verificable.
+- docs/aspectos.md deja CÓDIGO, PRUEBAS y EVIDENCIA en 'Pendiente' para A-02 a A-05.
+- A-01 en docs/aspectos.md enlaza a la rama experimental, no al hash calificado.
+- Pipeline sin análisis estático: no hay SonarCloud configurado ni run que lo respalde.
+- correcciones.md 4.5 reconoce que la integración de SonarCloud quedó pendiente de ejecutar.
+- No hay evidencia del PDF adjunto en Moodle en el repositorio.
+- Sustentación del corte sin evidencia en el repositorio.

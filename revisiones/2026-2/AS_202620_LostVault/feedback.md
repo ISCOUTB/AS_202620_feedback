@@ -27,7 +27,7 @@ Entrega sólida de la semana 4: arc42 1-6, 9, 10 y glosario redactados con conte
 
 ## Semana 5 · CORTE1
 
-El repositorio muestra una línea base sólida: problema, escenarios, ADR, arc42, C4 y corte vertical AS-03 están documentados y el código del corte es coherente con la arquitectura declarada. El pendiente principal es crear correcciones.md en la raíz del commit calificado, con trazabilidad a los hallazgos S1-S4 y evidencia contrastada. También conviene dejar un run de CI asociado al hash de la entrega, porque los runs actuales son posteriores al cierre. Revisar el nombre del archivo C4 nivel 2.jpg para evitar espacios. Completar los cortes y mediciones pendientes de AS-01, AS-02 y AS-04 en las próximas semanas.
+El corte vertical AS-03 está bien implementado y documentado, con pruebas y pipeline en verde. La documentación arc42, el ADR y el registro de IA son sólidos. Para cerrar el corte, falta crear correcciones.md en la raíz con el formato exigido (hallazgo, acción, evidencia, estado) y completar la trazabilidad de docs/aspectos.md incluyendo el eslabón C4. También conviene limpiar archivos residuales como lib/search/domain/entities/lost_object.dart y documentar o eliminar las carpetas ejecutable y front_end. El resto de la línea base cumple.
 ## Semana 5 · Primer corte (revisión definitiva, 2026-09-07)
 
 Se revisó de nuevo después del cierre y no hay cambios: el repositorio quedó exactamente igual a como estaba el 3 de septiembre, cuando se hizo la revisión preliminar. No hubo ningún commit nuevo entre esa fecha y el cierre del corte.

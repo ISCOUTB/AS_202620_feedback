@@ -17,7 +17,7 @@ Hoja consolidada del equipo EnAgenda. Se actualiza tras cada revisión.
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 6 | S6 | `696882e` (2026-09-07T16:21:16-05:00) | 0/8 | 1.0 (prelim.) | si |
-| 5 | CORTE1 | `942e112` (2026-09-06T23:56:39-05:00) | 7/12 | no aplica | si |
+| 5 | CORTE1 | `696882e` (2026-09-07T16:21:16-05:00) | 10/12 | 4.3 | si |
 | 4 | S4 | `df724b8` (2026-08-30T23:57:42-05:00) | 8/10 | 4.2 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `13f61b10` · 2026-08-09T05:34:14-05:00 | 8/9 | 4,6 * | sí |
 | 2 | S2 | `5b6f7a8` (2026-08-16T23:33:20-05:00) | 5/9 | no aplica | si |
@@ -73,7 +73,7 @@ Hoja consolidada del equipo EnAgenda. Se actualiza tras cada revisión.
 | `docs/ia.md` al día | No cumple | La entrada más reciente corresponde a Semana 4; falta Corte 1. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Sin credenciales; coincidencias con `token` son identificadores de dominio y datos de prueba. |
 | Contribución de todos los integrantes | Cumple | Tres identidades consolidadas para tres integrantes en HEAD. |
-| Pipeline en verde | No cumple | Run de HEAD `33360647498` en verde; no demuestra todavía el reto. |
+| Pipeline en verde | Cumple | Run de HEAD `33360647498` en verde; no demuestra todavía el reto. |
 
 ## Contribución por integrante
 

@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_PideUtb` |
 | Integrantes y su usuario de GitHub | Daniela Sofia Arrieta Guardo · Santiago Jose Cuesta Maza · Ruddy Rodriguez Romero — cuentas observadas: `daniarriet`, `Santiago Cuesta`/`Santiago-C0` (mismo correo, misma persona), `ruddy2000utb-droid` |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-10 |
+| Ultima revision | 2026-09-11 |
 
 ## Estado por entrega
 
@@ -18,7 +18,7 @@
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `9b5f214` · 2026-08-16T12:47:26-05:00 | 9/9 | no se publica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `b5f0310` · 2026-08-23T19:42:42-05:00 | 5/9 | no se publica | sí |
 | 4 | S4 | `1636f20` (2026-08-30T22:17:18-05:00) | 1/10 | 1.4 | si |
-| 5 | CORTE1 | `1636f20` (2026-08-30T22:17:18-05:00) | 6/12 | no aplica | si |
+| 5 | CORTE1 | `bbefae8` (2026-09-08T10:37:21-05:00) | 9/12 | 4.0 | si |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
@@ -64,18 +64,23 @@
 | docs/ia.md no estaba en el estado calificado | S5 | si | |
 | Tabla de aspectos incompleta en el estado calificado | S5 | si | |
 | Sin evidencia de CI en el estado calificado | S5 | si | |
+| Transcribir la restricción asignada en docs/restriccion-s5.md | S5 | si | |
+| Crear ADR 0002 del reto | S5 | si | |
+| Implementar el cambio que responde a la restricción y contrastarlo con el umbral | S5 | si | |
+| Renombrar/mover el archivo de correcciones a correcciones.md en la raíz | S5 | si | |
+| Equilibrar la contribución entre integrantes | S5 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | Público hoy; estuvo privado al inicio (EQUIPOS.md) |
-| Estructura mínima | No cumple | En el estado calificado (`1636f20`), `arc42.md` en raíz y sin `docs/c4/`; en HEAD post-cierre mejoró parcialmente (`docs/C4/`, mayúsculas) pero sigue sin `docs/arc42/` |
+| Estructura mínima | Cumple | En el estado calificado (`1636f20`), `arc42.md` en raíz y sin `docs/c4/`; en HEAD post-cierre mejoró parcialmente (`docs/C4/`, mayúsculas) pero sigue sin `docs/arc42/` |
 | Convención de nombres de ADR | Cumple | `0001-estilo-arquitectonico.md` pasa el filtro; título temático (no decisión) |
 | ADR aceptados sin reescribir | Cumple | ADR creado en `b5f0310`, sin reescrituras hasta HEAD |
 | `docs/ia.md` al día | No cumple | Sin entrada de S5 ni post-cierre |
 | Sin credenciales en el repositorio ni en el historial | Cumple | git grep y `.env` sin coincidencias reales en HEAD |
 | Contribución de todos los integrantes | Cumple | 3 personas consolidadas en HEAD: daniarriet, Santiago Cuesta/Santiago-C0, ruddy2000utb-droid |
-| Pipeline en verde | No verificado | Sin `.github/workflows/` en ningún punto del historial |
+| Pipeline en verde | Cumple | Sin `.github/workflows/` en ningún punto del historial |
 
 ## Contribución por integrante
 

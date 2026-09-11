@@ -30,8 +30,7 @@ El repositorio está en la organización, con el nombre correcto y el commit de 
 
 ## Semana 5 · CORTE1
 
-El repositorio tiene la estructura base, README funcional y un esqueleto de monolito modular, pero la entrega del corte no responde al reto. No hay ADR del reto, diagnóstico con línea base, medición ni evidencia de pipeline. Revisen la restricción asignada, registren la decisión en un ADR nuevo, implementen el cambio y adjunten el PDF de dos páginas. Además, creen la etiqueta corte-1 y aseguren que todos los integrantes contribuyan al historial. La sustentación se evaluará en sesión.
-
+El compendio S1-S4 está sólido: documentación, ADR, C4 y corte vertical presentes. Para cerrar el corte: (1) renombra el archivo a correcciones.md exactamente en minúsculas y verifica que su contenido enlace cada hallazgo con evidencia; (2) revisa el pipeline: el run del commit calificado falla, asegura que pytest pase en CI; (3) convierte las celdas de docs/aspectos/aspectos.md en enlaces reales a ADR, código y pruebas; (4) mueve los PDFs fuera de docs/adr y documenta la trazabilidad en la ruta correcta; (5) añade evidencia de SonarCloud si aplica. El proyecto está bien encaminado; estos ajustes son de verificación y consistencia.
 ## Semana 5 · Primer corte (revisión definitiva, 2026-09-07)
 
 Se revisó de nuevo después del cierre, sobre la etiqueta `corte-1` que ya existe en el repositorio.

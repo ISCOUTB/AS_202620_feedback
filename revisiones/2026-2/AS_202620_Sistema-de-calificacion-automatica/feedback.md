@@ -29,7 +29,7 @@ Buen avance: el corte vertical A-01 está construido y documentado, los ADRs son
 
 ## Semana 5 · CORTE1
 
-El corte vertical A-01 está completo, con 47 pruebas de backend y 6 de frontend, y la documentación arquitectónica (arc42, C4, ADR, aspectos) está al día. El incumplimiento principal del corte es el nombre del archivo de correcciones: al cierre era correcciones_feedback.md y no correcciones.md; el renombrado llegó después. Para las próximas entregas, verifica el nombre exacto de los artefactos antes del cierre y adjunta el enlace al run de CI del commit evaluado. También conviene confirmar la organización del repositorio y entregar el PDF en el aula.
+El repositorio está bien estructurado y el corte vertical A-01 es sólido, con medición de EC-07 y pruebas. Para el cierre, aseguren que correcciones.md enlace cada hallazgo de S1-S4 con evidencia verificable (commit, ruta o run). Adjunten la URL del run de CI correspondiente al hash calificado, ya que el workflow existe pero no se pudo verificar su ejecución. Revisen docs/ia.md para que cada uso de IA incluya qué se rechazó y por qué. Mantengan el ritmo de contribuciones más equilibrado. El proyecto está al día; solo falta evidencia externa para cerrar los pendientes.
 ## Semana 5 · Primer corte (revisión definitiva, 2026-09-07)
 
 Se revisó de nuevo después del cierre, sobre la etiqueta `corte-1`, que sí existe y apunta a un commit dentro del plazo.

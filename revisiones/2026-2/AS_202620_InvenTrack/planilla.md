@@ -17,7 +17,7 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 6 | S6 | `ac951e3` (2026-09-08T10:11:58-05:00) | 0/8 | 1.0 (prelim.) | si |
-| 5 | CORTE1 | `2988b03` (2026-09-06T23:35:40-05:00) | 8/12 | no aplica | si |
+| 5 | CORTE1 | `ac951e3` (2026-09-08T10:11:58-05:00) | 9/12 | 4.0 | si |
 | 4 | S4 | `d7ba824` (2026-08-30T23:39:33-05:00) | 5/10 | 3.0 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `06920209` · 2026-08-09T16:03:46-05:00 | 4/9 | 2,8 * | sí |
 | 2 | S2 | `db90ff2` (2026-08-16T21:22:20-05:00) | 9/9 | no aplica | si |
@@ -67,6 +67,12 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 | Lenguaje ubicuo y mapa de contextos en arc42 sección 8 | S6 | si | |
 | C4 nivel 3 | S6 | si | |
 | Evidencia de ejecución de SonarCloud en CI | S6 | si | |
+| Tabla de aspectos convertida a 8 columnas después del cierre de S2 (correcciones.md, sección Semana 2); verificada en docs/aspectos.md de ac951e3. | S5 | no (resuelto tarde) | — |
+| ADR-0001 actualizado a Aceptado después del cierre de S3 (correcciones.md, sección Semana 3); verificado en docs/adr/0001 de ac951e3. | S5 | no (resuelto tarde) | — |
+| Corte vertical y mecanismo de consistencia implementados después de S4 (correcciones.md, sección Semana 4); verificados en app/productos, app/inventario y tests de ac951e3. | S5 | no (resuelto tarde) | — |
+| correcciones.md sin estructura de índice trazable (criterio 3 de la ficha S5). | S5 | si | |
+| Sin evidencia de ejecución de SonarCloud. | S5 | si | |
+| PDF en Moodle y sustentación pendientes de verificación. | S5 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

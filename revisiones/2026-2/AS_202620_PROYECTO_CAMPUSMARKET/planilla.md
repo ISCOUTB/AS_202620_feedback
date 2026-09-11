@@ -18,7 +18,7 @@
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `4f72799` · 2026-08-16T22:01:41-05:00 | 7/9 | no se publica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `4dd857a` · 2026-08-23T23:54:16-05:00 | 9/9 | no se publica | sí |
 | 4 | S4 | `f3f4367` (2026-08-30T22:55:30-05:00) | 9/10 | 4.6 | si |
-| 5 | CORTE1 | `8044215` (2026-09-06T16:05:15-05:00) | 10/12 | no aplica | si |
+| 5 | CORTE1 | `8044215` (2026-09-06T16:05:15-05:00) | 10/12 | 4.3 | si |
 | 6 | S6 | `8044215` (2026-09-06T16:05:15-05:00) | 1/8 | 1.5 (prelim.) | si |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
@@ -75,7 +75,7 @@
 | `docs/ia.md` al día | Cumple | Sección "Evidencia S5" con rechazos y motivo técnico |
 | Sin credenciales en el repositorio ni en el historial | Cumple | git grep y `.env` sin coincidencias |
 | Contribución de todos los integrantes | Cumple | 3 personas consolidadas: Nilver Garcia (124), Camilo Martinez (26), Joshua Tenorio (19) |
-| Pipeline en verde | No verificado | Run del commit de la etiqueta (`80442158`) en success: https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/actions/runs/34059972075 |
+| Pipeline en verde | Cumple | Run del commit de la etiqueta (`80442158`) en success: https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/actions/runs/34059972075 |
 
 ## Contribución por integrante
 

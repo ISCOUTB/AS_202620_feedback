@@ -19,7 +19,7 @@
 | 2 | S2 | `(sin commits)` () | sin actividad | no aplica | si |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `8259b75` · 2026-08-23T23:50:00-05:00 | 4/9 | no se publica | sí |
 | 4 | Evidencia S4 · arc42, C4 y corte vertical | `443e908` · 2026-08-29T18:17:18-05:00 | 7/10 | 3.8 | sí |
-| 5 | CORTE1 | `3120e06` (2026-09-06T18:36:46-05:00) | 4/12 | no aplica | si |
+| 5 | CORTE1 | `67f8cea` (2026-09-09T16:30:01-05:00) | 8/12 | 3.7 | si |
 
 ## Lo que se arrastra
 
@@ -57,6 +57,11 @@
 | Posible ADR de reajuste de límites si cambiaron | S6 | si | |
 | Integrante declarado sin commits | S6 | si | |
 | Evidencia de runs de CI | S6 | si | |
+| Incluir a Julian Samuel Cabeza Pena en README.md y Equipo.md y evidenciar su contribución en el historial. | S5 | si | |
+| Contrastar correcciones.md con los hallazgos S1-S4. | S5 | si | |
+| Aportar run de CI en verde para el hash calificado. | S5 | si | |
+| Cerrar A-02 con prueba de modificación de regla. | S5 | si | |
+| Actualizar glosario, vista de bloques, C4 de componentes y enlaces rotos. | S5 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

@@ -15,7 +15,7 @@
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 6 | S6 | `6d0a1b8` (2026-09-10T22:21:13-05:00) | 0/8 | 1.0 (prelim.) | si |
-| 5 | CORTE1 | `d110d6d` (2026-09-06T23:34:21-05:00) | 4/12 | no aplica | si |
+| 5 | CORTE1 | `74337a3` (2026-09-08T02:53:31Z) | 7/12 | 3.3 | si |
 | 4 | S4 | `4254f4a` (2026-08-30T19:13:01-05:00) | 7/10 | 3.8 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `b7ec296c` · 2026-08-09T22:59:42-05:00 | 4/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `23fb8c29` · 2026-08-16T22:39:37-05:00 | 6/9 | no se publica | sí |
@@ -65,18 +65,24 @@
 | Registro de rechazos en ia.md | S6 | si | |
 | Instrucciones de arranque y prueba en README | S6 | si | |
 | Evidencia de ejecución de CI | S6 | si | |
+| Correcciones a correcciones.md y enlaces subidas después del cierre (commits 1cab45e, df8f512, 11577b9, 6e275a6, 6d0a1b8, 2026-09-10T22:15:10Z a 22:21:13Z) no estaban en el estado calificado. | S5 | no (resuelto tarde) | — |
+| correcciones.md en la raíz (a HEAD sigue en docs/correciones.md). | S5 | si | |
+| Enlaces rotos en docs/aspectos.md y docs/correciones.md. | S5 | si | |
+| Celdas pendientes en la tabla de trazabilidad (E3-E5). | S5 | si | |
+| Nomenclatura de ADR no conforme. | S5 | si | |
+| Falta SonarCloud en el pipeline. | S5 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | `AS_202620_Drift`, público. |
-| Estructura mínima | Cumple | Las seis rutas en su lugar desde la reorganización del 08-22. |
+| Estructura mínima | No cumple | Las seis rutas en su lugar desde la reorganización del 08-22. |
 | Convención de nombres de ADR | Cumple | `0001-arquitectura-base.md` conforme. |
 | ADR aceptados sin reescribir | Cumple | Creado y renombrado el mismo día (2026-08-23), sin reescrituras posteriores. |
 | `docs/ia.md` al día | Cumple | Commits 08-21/08-22; rechazo narrado en §3.1 con motivo. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Sin coincidencias. |
 | Contribución de todos los integrantes | Cumple | Los 4 firman en S3, con desbalance (51/19/18/9). |
-| Pipeline en verde | No verificado | `.github/workflows/ci.yml` con runs verdes confirmados vía API, incluido el commit calificado de S5 (`d110d6d0`, antes del cierre). |
+| Pipeline en verde | No cumple | `.github/workflows/ci.yml` con runs verdes confirmados vía API, incluido el commit calificado de S5 (`d110d6d0`, antes del cierre). |
 
 ## Contribución por integrante
 

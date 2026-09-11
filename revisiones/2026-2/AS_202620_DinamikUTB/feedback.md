@@ -28,7 +28,12 @@ La documentación arc42 y el C4 están bien avanzados y el corte vertical es tra
 
 ## Semana 5 · CORTE1
 
-El proyecto tiene una base sólida: README completo, ADR bien formados, estructura modular y código de corte vertical. Para el compendio S5 falta: completar las secciones 07 y 08 de arc42, que están vacías; asegurar que correcciones.md en el hash calificado sea verificable con enlaces a commits/pruebas; y adjuntar evidencia de CI (URL de runs) que respalde el estado. También conviene revisar docs/aspectos.md e ia.md para que sus columnas sean navegables. Los commits posteriores al cierre deben evitarse; si corrigen hallazgos, se registran como tardíos.
+El repositorio tiene una base sólida: estructura completa, ADR bien formados, README claro y un corte vertical coherente con la arquitectura.
+Sin embargo, hay secciones arc42 vacías (07 y 08) que deben completarse para cerrar S4.
+Falta poder contrastar correcciones.md con los hallazgos previos y verificar la trazabilidad de aspectos.md.
+Aporten el contenido de esos archivos y un run de CI del commit evaluado.
+También deben entregar el PDF en Moodle y preparar la sustentación.
+El historial muestra participación de todo el equipo y no se detectaron secretos.
 ## Semana 5 · Primer corte (revisión definitiva, 2026-09-07)
 
 Buenas noticias primero: el pipeline sigue en verde antes del cierre y `docs/ia.md` sí tiene una entrada fechada de esta semana con su justificación, así que ese punto queda resuelto. Lo que preocupa es que el trabajo que hicieron en esta semana (el ADR-0003 sobre el motor de base de datos) formaliza una decisión que ya venía pendiente desde varias semanas atrás, no responde a la restricción nueva que debía asignárseles para este corte. No encontramos en el repositorio ningún diagnóstico de esa restricción, ninguna cifra de línea base medida, ni un resultado comparado contra un umbral. Tampoco existe todavía la etiqueta `corte-1`.

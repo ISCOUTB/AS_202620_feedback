@@ -27,7 +27,7 @@ La entrega de la semana 4 está sólida en documentación arc42, glosario, C4 ni
 
 ## Semana 5 · CORTE1
 
-El proyecto tiene una base sólida: problema claro, ADR bien documentado, escenarios de calidad definidos y un corte vertical funcional con CI en verde. Sin embargo, para el compendio del primer corte faltan ajustes importantes: el archivo de correcciones debe estar en la raíz del repositorio, la matriz de aspectos debe tener enlaces válidos y cubrir todos los aspectos, y las secciones de arc42 (07, 08, 11) y el C4 nivel 3 deben completarse. Además, se debe configurar el análisis estático con SonarCloud. Corrige estos puntos antes del siguiente corte para mantener la trazabilidad y la coherencia arquitectónica.
+El proyecto cumple con la línea base arquitectónica del primer corte. La documentación arc42, el ADR y los diagramas C4 están alineados con la implementación real. El corte vertical de invitaciones es reproducible y las pruebas pasan en CI. Se recomienda eliminar los archivos __pycache__ del repositorio y añadir análisis estático con SonarCloud para futuras entregas. Mantener la trazabilidad en aspectos.md es un buen hábito. Sigan así.
 ## Semana 5 · Primer corte (revisión definitiva, 2026-09-07)
 
 Ya crearon la etiqueta `corte-1` sobre un commit anterior al cierre, y eso está bien: quedó un estado identificable para calificar.

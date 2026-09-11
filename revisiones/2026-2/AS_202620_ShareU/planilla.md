@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_ShareU` |
 | Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-09 |
+| Ultima revision | 2026-09-11 |
 
 ## Estado por entrega
 
@@ -18,7 +18,7 @@
 | 2 | S2 | `(sin commits)` () | sin actividad | no aplica | si |
 | 3 | S3 | `(sin commits)` () | sin actividad | no aplica | si |
 | 4 | S4 | `27e1190` (2026-08-30T15:22:02-05:00) | 0/10 | 1.0 | si |
-| 5 | Primer corte · reto de línea base | `corte-1` `a5d08c1` (posterior al cierre; fallback admisible `1728495`) | 0/12 | subtotal técnico 0,00/4,00; sustentación pendiente | revisión definitiva post-cierre 2026-09-07 |
+| 5 | CORTE1 | `19ce719` (2026-09-07T22:41:14-05:00) | 5/12 | 2.7 | si |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
@@ -64,7 +64,11 @@
 | Crear etiqueta corte-1 | S5 | si | Existe, pero apunta a un commit posterior al cierre (a5d08c1, +7h): corregir para el próximo corte. |
 | Evidenciar pipeline en verde | S5 | si | 0 runs de CI en la vida del repositorio (actions/runs total_count=0). |
 | Completar docs/ia.md y docs/aspectos.md | S5 | si | Ambos siguen fechados en S3-S4; sin entradas del reto de este corte. |
-
+| Correcciones.md debe llamarse exactamente correcciones.md. | S5 | si | |
+| Pipeline de CI debe pasar en el hash calificado. | S5 | si | |
+| Trazabilidad de aspectos debe ser navegable. | S5 | si | |
+| PDFs fuera de docs/adr. | S5 | si | |
+| Evidencia de SonarCloud pendiente. | S5 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -77,7 +81,7 @@
 | Sin credenciales en el repositorio ni en el historial | Cumple | `git grep` §9 y `log -S` sin coincidencias |
 | Etiqueta corte-1 (corte 1) | No cumple | Existe pero apunta a un commit posterior al cierre (`a5d08c1`, +7h); fallback admisible `1728495` |
 | Contribución de todos los integrantes | Cumple | Corte 1 (post-cierre, 2026-09-07): los 4 integrantes tienen commits propios (Dayana 6, luiscorredor 2, Nicolas-HH 1, steven 1) |
-| Pipeline en verde | No verificado | Sin `.github/workflows`; prueba sin evidencia de ejecución |
+| Pipeline en verde | No cumple | Sin `.github/workflows`; prueba sin evidencia de ejecución |
 
 ## Contribución por integrante
 

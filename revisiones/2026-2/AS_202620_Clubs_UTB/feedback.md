@@ -30,7 +30,7 @@ Entrega S4 completa en lo esencial: arc42 1-6, 9, 10 y glosario redactados; C4 n
 
 ## Semana 5 · CORTE1
 
-El proyecto avanza bien en documentación y corte vertical, pero falta el archivo correcciones.md en la raíz, que es obligatorio para esta entrega. Deben crear ese archivo con el seguimiento de hallazgos de S1-S4 y de la pasada preliminar de S5, citando evidencia real. También conviene completar las celdas 'Pendiente' en la tabla de aspectos y actualizar el README para reflejar el estado actual del código. El pipeline y las pruebas están funcionando; sigan así. Revisen la coherencia entre el ADR y los escenarios de calidad tras el cambio de C2 a C3.
+El proyecto está sólido en documentación y corte vertical, con CI pasando. Sin embargo, falta el archivo correcciones.md en la raíz, que es obligatorio para esta entrega. Deben crearlo antes del cierre, listando cada hallazgo de S1-S4 y cómo lo resolvieron, con evidencia. También asegúrense de subir el PDF al aula. El resto de la matriz está bien.
 ## Semana 5 · Primer corte (revisión definitiva, 2026-09-07)
 
 Revisando el repositorio completo hasta el último commit antes del cierre, seguimos sin encontrar una respuesta a la restricción nueva que pedía este corte: no hay etiqueta `corte-1`, no hay un ADR nuevo, no hay una cifra de línea base medida ni un resultado contrastado contra un umbral. Lo único que se agregó en esta semana fue un endpoint de publicaciones (con su prueba y con el pipeline en verde) y un ajuste de una línea en la sección de requisitos de calidad, ninguno de los dos vinculado a una restricción diagnosticada en la documentación.

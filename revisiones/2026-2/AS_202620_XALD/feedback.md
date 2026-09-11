@@ -30,7 +30,7 @@ El C4 en Mermaid es claro y coherente entre niveles, y los cinco módulos Gradle
 
 ## Semana 5 · CORTE1
 
-El corte deja una base sólida: ADRs trazables, C4, corte vertical y CI en verde. Sin embargo, el archivo de correcciones no tenía el nombre exacto al cierre (se renombró después) y la tabla de aspectos aún tiene huecos en código, pruebas y evidencia. Corrijan los enlaces que apuntan a la rama experimental y verifiquen que el arc42 tenga las 12 secciones. El pipeline ya cubre master tras el ajuste posterior. Sigan documentando los rechazos de IA y mantengan la actividad distribuida.
+El repositorio está al día en documentación, ADR, C4 y corte vertical, y el CI corre en verde. Para el compendio falta cerrar la trazabilidad: completar las columnas pendientes de docs/aspectos.md y enlazar cada corrección de correcciones.md a un commit o run concreto. El pipeline necesita el análisis estático prometido (SonarCloud) para cumplir el contrato. Revisen también que los enlaces de la tabla de aspectos apunten a la rama principal y no a experimental. El PDF del aula debe quedar disponible para la verificación del corte.
 ## Semana 5 · Primer corte (revisión definitiva, 2026-09-07)
 
 Buena noticia primero: ya existe la etiqueta `corte-1`, sobre un commit de la noche antes del cierre. Y en esa noche el equipo hizo un trabajo real: completaron las secciones de alternativas de los seis ADR, alinearon el código con el backend que el diagrama C4 ya mostraba, corrigieron varias advertencias de seguridad que señalaba el análisis estático, y dejaron un registro de IA con el detalle de qué se aceptó y por qué.

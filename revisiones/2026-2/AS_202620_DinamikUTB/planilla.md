@@ -8,13 +8,13 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_DinamikUTB` |
 | Integrantes y su usuario de GitHub | Luis Daniel Padilla Leottau (`Daniel-dev02`) · Gillianis Del Carmen Perez Revolledo (`gillianisperez-prog`) · Esteban Ramirez Rios (`Eramirezr`) · Juan Jose Vargas Perez (`JuanchisV`, firma también como «Juan José Vargas Pérez» con el mismo correo) |
 | URL del sistema desplegado | sin desplegar todavía |
-| Ultima revision | 2026-09-10 |
+| Ultima revision | 2026-09-11 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 5 | CORTE1 | `f89564f` (2026-09-06T23:35:03-05:00) | 2/12 | no aplica | si |
+| 5 | CORTE1 | `72bfc7e` (2026-09-07T22:28:37-05:00) | 4/12 | 2.3 | si |
 | 4 | S4 | `8558156` (2026-08-30T23:52:24-05:00) | 7/10 | 3.8 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `769f970` · 2026-08-09T21:24:49-05:00 | 7/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `58734e1c` · 2026-08-16T23:33:53-05:00 | 9/9 | no se publica | sí |
@@ -51,6 +51,9 @@
 | Verificar contenido de correcciones.md en el hash calificado | S5 | si | |
 | Aportar runs de CI del estado calificado | S5 | si | |
 | Completar trazabilidad navegable en docs/aspectos.md | S5 | si | |
+| Verificar contenido de correcciones.md, aspectos.md, 10-quality-requirements.md e ia.md. | S5 | si | |
+| Aportar runs de CI del hash 72bfc7e. | S5 | si | |
+| Entregar PDF en Moodle y sustentar. | S5 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

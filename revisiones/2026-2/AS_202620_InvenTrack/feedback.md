@@ -22,7 +22,7 @@ Qué corregir antes del corte 1 (semana 5):
 Buen avance en documentación, C4 y estructura del esqueleto: el arc42, los diagramas y la organización por módulos son sólidos. Para completar la semana 4, redacten las secciones 5 y 6 con la interpretación de los diagramas, inicien el glosario y hagan que la fila de aspectos apunte a una prueba real del corte vertical. Cuiden las convenciones de ADR: un archivo por decisión real y con nombre estandarizado. Aunque los commits posteriores al cierre corrigen varios vacíos, esas correcciones no cuentan para la entrega de la semana.
 ## Semana 5 · CORTE1
 
-El repositorio muestra una base arquitectónica sólida: arc42, C4, ADR, aspectos e IA bien documentados, con corte vertical y pruebas en CI. Para el corte, recuerden que correcciones.md debe estar en la raíz en el commit anterior al cierre; en esta entrega se añadió después. Integren SonarCloud al pipeline para cumplir el contrato. Revisen que cada hallazgo de S1-S4 quede respondido con evidencia contrastable. Distribuyan más equitativamente las contribuciones y mantengan la trazabilidad navegable.
+El proyecto está sólido: corte vertical funcional, documentación arc42/C4/ADR completa y trazabilidad de aspectos navegable, con CI en verde. Para el próximo corte: reestructuren correcciones.md como tabla por hallazgo (acción, ruta, commit/run, estado) para que cada corrección sea contrastable. Aporten evidencia de SonarCloud (URL del análisis o workflow), no solo el archivo de propiedades. Equilibren la participación en el historial. Recuerden adjuntar el PDF en Moodle y preparar la sustentación.
 ## Semana 5 · Primer corte (revisión definitiva, 2026-09-07)
 
 Ya tienen la etiqueta `corte-1` sobre un commit anterior al cierre: bien.

@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_mapsutb` |
 | Integrantes y su usuario de GitHub | Carlos Alberto Galvis Zuluaga · Carlos David Manrique Fals · Nerlis Nikol Otero Perez · Isabel Sofia Paez Matallana — cuentas observadas en el historial: `charlygz21`, `nerlis-otero`, `CarlosManrique-1397`, `i-matallana` (correspondencias por confirmar con el docente) |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-10 |
+| Ultima revision | 2026-09-11 |
 
 ## Estado por entrega
 
@@ -18,7 +18,7 @@
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `1cf1576` · 2026-08-16T21:26:05-05:00 | 4/9 | no se publica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `ed55eda` · 2026-08-23T21:44:05-05:00 | 5/9 | no se publica | sí |
 | 4 | S4 | `f0d036a` (2026-08-30T22:53:06-05:00) | 5/10 | 3.0 | si |
-| 5 | CORTE1 | `f40775d` (2026-09-06T22:35:28-05:00) | 5/12 | no aplica | si |
+| 5 | CORTE1 | `e8bad4c` (2026-09-09T18:34:48-05:00) | 3/12 | 2.0 | si |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
@@ -63,12 +63,18 @@
 | Trazabilidad navegable en docs/aspectos.md | S5 | si | |
 | Convención de nombre del ADR 0002 | S5 | si | |
 | Evidencia de CI y pruebas asociadas al hash calificado | S5 | si | |
+| 4b464f1, 8e9c06d y 7af89e6 (2026-09-11) corrigen ficha-problema y trazabilidad de aspectos tras el cierre | S5 | no (resuelto tarde) | — |
+| Secciones 7 y 8 de arc42 sin completar | S5 | si | |
+| ADR 0001 sin marcar reemplazo | S5 | si | |
+| ADR 0002 con nombre incorrecto | S5 | si | |
+| Sin runs_ci de pruebas | S5 | si | |
+| correcciones.md sin contenido contrastable | S5 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | `github.com/ISCOUTB/AS_202620_mapsutb`, público (clon sin auth el 2026-09-07) |
-| Estructura mínima | Cumple | En HEAD usa `docs/Arc42/` y `docs/C4/`; la etiqueta S5 solo contiene README, aspectos e IA |
+| Estructura mínima | No cumple | En HEAD usa `docs/Arc42/` y `docs/C4/`; la etiqueta S5 solo contiene README, aspectos e IA |
 | Convención de nombres de ADR | No cumple | `0002.md` no incluye título en kebab-case |
 | ADR aceptados sin reescribir | No cumple | `0001-patrones-de-diseno.md` tiene múltiples reescrituras posteriores a su creación |
 | `docs/ia.md` al día | No cumple | última entrada 30/08; sin registro del trabajo S5 en HEAD `f40775d` |

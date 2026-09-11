@@ -17,7 +17,7 @@ Hoja consolidada del equipo LaPlacita. Se actualiza tras cada revisión.
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 6 | S6 | `50b92f8` (2026-09-06T17:45:05-05:00) | 0/8 | 1.0 (prelim.) | si |
-| 5 | CORTE1 | `50b92f8` (2026-09-06T17:45:05-05:00) | 7/12 | no aplica | si |
+| 5 | CORTE1 | `50b92f8` (2026-09-06T17:45:05-05:00) | 8/12 | 3.7 | si |
 | 4 | S4 | `745e799` (2026-08-30T21:52:41-05:00) | 4/10 | 2.6 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `37f1deb8` · 2026-08-08T15:37:16-05:00 | 8/9 | 4,6 * | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `fa7e13bc` · 2026-08-15T18:13:29-05:00 | 5/9 | 3,2 * | sí |
@@ -54,6 +54,9 @@ Hoja consolidada del equipo LaPlacita. Se actualiza tras cada revisión.
 | Documentar mapa de contextos con relaciones tipificadas | S6 | si | |
 | Crear tabla módulo a datos con dueño único | S6 | si | |
 | Completar sección 8 de arc42 con lenguaje ubicuo | S6 | si | |
+| Renombrar correciones.md a correcciones.md. | S5 | si | |
+| Completar docs/ia.md con columna de rechazado. | S5 | si | |
+| Configurar SONAR_TOKEN para activar SonarCloud. | S5 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

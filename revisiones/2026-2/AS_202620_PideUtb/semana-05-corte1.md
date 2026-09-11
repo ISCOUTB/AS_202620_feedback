@@ -1,43 +1,43 @@
 # semana-05-corte1 · PideUtb
 
-> Revision automatica definitiva (GitHub Actions, posterior al cierre).
+> Revision automatica definitiva (GitHub Actions, posterior al cierre). Re-evaluada por cambio de hash calificado tras la pasada temprana.
 
 | Campo | Valor |
 |---|---|
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_PideUtb` |
-| Estado revisado | `1636f20` en `origin/master` (2026-08-30T22:17:18-05:00) |
-| Cierre | 2026-09-07T05:00:00Z |
+| Estado revisado | `bbefae8` en `origin/master` (2026-09-08T10:37:21-05:00) |
+| Cierre | 2026-09-10T17:00:00Z |
 | Revisor | pipeline automatico (GitHub Actions) |
 
 ## Matriz de la ficha
 
 | Criterio de evaluacion | Evidencia tecnica | Estado | Observaciones |
 |---|---|---|---|
-| Estado de corte identificable y anterior al cierre | rama origin/master, hash 1636f20, fecha 2026-08-30T22:17:18-05:00 (anterior al cierre 2026-09-07T05:00:00Z) | Cumple | El estado calificado es identificable y anterior al cierre. |
-| correcciones.md existe en la raíz del estado calificado | árbol del hash 1636f20 no incluye correcciones.md; solo aparece en commits posteriores (f9a3304 2026-09-07T16:12:06-05:00) | No cumple | El archivo fue añadido después del cierre, no en el estado calificado. |
-| Correcciones trazables y contrastadas | sin correcciones.md en el hash calificado, no hay índice de correcciones; los commits posteriores (f9a3304, f9a903f) no son parte del estado evaluado | No cumple | No se puede contrastar ninguna corrección en el estado calificado. |
-| S1 al día: equipo, problema y repositorio | README.md describe el problema y la arquitectura; autores: daniarriet, Santiago Cuesta, ruddy2000utb-droid, Santiago-C0 (consolidado a 3 identidades) | Cumple | El repositorio es público y los integrantes aparecen en el historial. |
-| S2 al día: escenarios de calidad y restricciones | docs/aspectos.md incluye escenarios ESC-01 a ESC-05 y atributos de calidad (usabilidad, confiabilidad, seguridad, disponibilidad, rendimiento) | Cumple | Los escenarios están documentados y enlazados a arc42. |
-| S3 al día: estrategia de solución y decisiones | docs/adr/0001-estilo-arquitectonico.md (aceptada 23/08/2026) y docs/comparativa-arquitectura.md con matriz comparativa | Cumple | La decisión de monolito modular está documentada con alternativas y consecuencias. |
-| S4 al día: arc42, C4 y corte vertical | arc42.md (secciones 4, 6, 10.2), README.md describe el corte vertical con flujo pedidos-menu y pruebas en backend/tests/test_pedidos.py | Cumple | El corte vertical es ejecutable y coherente con la arquitectura. |
-| Corte vertical reproducible y coherente con la arquitectura | README.md incluye comando único de arranque y pruebas; backend/tests/test_pedidos.py cubre casos exitoso y de error | Cumple | El flujo cruza módulos pedidos y menu según la arquitectura. |
-| Pipeline y pruebas respaldan el estado calificado | no se proporcionan runs_ci para el hash 1636f20; solo commits posteriores mencionan CI (c665562, a5fe113) | No verificado | Falta evidencia de un run de CI asociado al estado calificado. |
-| Trazabilidad consolidada navegable | docs/aspectos.md tiene filas con huecos (Confiabilidad, Seguridad, Disponibilidad, Rendimiento sin táctica ni prueba) y no hay tabla de trazabilidad completa | No cumple | La tabla de aspectos no está completa hasta la columna 'Prueba' para todos los aspectos. |
-| PDF u otro adjunto exigido por el aula | no se dispone del documento entregado en Moodle | No verificado | El PDF no está disponible en el repositorio; depende del aula. |
-| Sustentación del corte | no hay sesión de sustentación registrada | No verificado | Lo resuelve el docente en la sesión. |
+| Estado de corte identificable y anterior al cierre | rama origin/master, hash bbefae8, fecha 2026-09-08T10:37:21-05:00 (anterior al cierre 2026-09-10T17:00:00Z) | Cumple | El commit calificado es el último de master antes del cierre. |
+| correcciones.md existe en la raíz del estado calificado | Árbol del hash bbefae8: no aparece 'correcciones.md'; aparece 'CORRECCIONES.md' y 'docs/correcciones.md' | No cumple | El nombre exacto exigido no está en la raíz; hay variantes con mayúsculas y en docs/. |
+| Correcciones trazables y contrastadas | docs/correcciones.md responde a hallazgos S1-S4 con enlaces y evidencia; p.ej. run CI #10 y rutas de código | Cumple | Aunque el archivo no está en la raíz con el nombre exacto, su contenido es trazable y contrastable. |
+| S1 al día: equipo, problema y repositorio | ficha_problema.md presente con tensiones T-1 y T-2; repo público en ISCOUTB/AS_202620_PideUtb | Cumple | Equipo declarado coincide con integrantes en historial. |
+| S2 al día: escenarios de calidad y restricciones | docs/aspectos.md con tabla de 8 columnas y escenarios ESC-01 a ESC-05; arc42 sección 2 con restricciones | Cumple | Escenarios y restricciones documentados y enlazados. |
+| S3 al día: estrategia de solución y decisiones | docs/adr/0001-estilo-arquitectonico.md con contexto, alternativas, decisión y trazabilidad; docs/comparativa-arquitectura.md | Cumple | ADR 0001 aceptado y con trazabilidad completa. |
+| S4 al día: arc42, C4 y corte vertical | docs/arc42/arc42.md con secciones 1-12; docs/c4/ con niveles 1-3 en Mermaid; backend con corte vertical POST /pedidos y pruebas | Cumple | C4 y arc42 coherentes con el código. |
+| Corte vertical reproducible y coherente con la arquitectura | README documenta arranque y pruebas; backend/tests/test_pedidos.py cubre flujo; código en backend/app/pedidos y menu | Cumple | Flujo cruza módulos vía service público, coherente con ADR-0001. |
+| Pipeline y pruebas respaldan el estado calificado | runs_ci: run 34245943551 success 2026-09-08T15:37:27Z (posterior al hash pero mismo estado); workflow .github/workflows/ci.yml | Cumple | CI en verde para el estado calificado y posteriores. |
+| Trazabilidad consolidada navegable | docs/aspectos.md enlaza escenario, C4, ADR, código y pruebas; README índice de documentación | Cumple | Cadena completa para ESC-01; otras filas pendientes marcadas. |
+| PDF u otro adjunto exigido por el aula | No disponible en repositorio; se entrega en Moodle | No verificado | Requiere acceso al aula para verificar. |
+| Sustentación del corte | Sesión de sustentación no registrada en repositorio | No verificado | Lo resuelve el docente en la sesión. |
 
 ## Matriz transversal (CONTRATO §11)
 
 | Criterio | Evidencia | Estado | Observaciones |
 |---|---|---|---|
-| Identidad del repositorio | repositorio AS_202620_PideUtb en ISCOUTB, público, con integrantes en historial | Cumple | Nombre y organización correctos. |
-| Estructura mínima | falta docs/ia.md en el árbol del hash 1636f20; docs/arc42, docs/adr, docs/c4 y README.md presentes | No cumple | docs/ia.md no existe en el estado calificado. |
-| Estado del repositorio calificado | hash 1636f20 en origin/master, anterior al cierre | Cumple | Se usó la rama principal declarada. |
-| Convenciones de ADR | docs/adr/0001-estilo-arquitectonico.md con nombre correcto y contenido completo | Cumple | Un ADR, aceptado, sin reescrituras posteriores. |
-| Tabla de aspectos | docs/aspectos.md tiene filas con huecos (Confiabilidad, Seguridad, Disponibilidad, Rendimiento sin táctica ni prueba) | No cumple | La trazabilidad no está completa para todos los aspectos. |
-| Registro de uso de IA | docs/ia.md no existe en el hash 1636f20; solo aparece en commits posteriores (f9a3304) | No cumple | Falta el registro de IA en el estado calificado. |
-| README | README.md incluye qué es, cómo arrancar con un comando y cómo probar | Cumple | Cumple con los requisitos de reproducibilidad. |
-| Pipeline y análisis estático | no hay runs_ci para el hash calificado; solo commits posteriores mencionan CI | No verificado | Falta evidencia de ejecución de CI. |
+| Identidad del repositorio | Repo público ISCOUTB/AS_202620_PideUtb; integrantes en historial (daniarriet, Santiago Cuesta, ruddy2000utb-droid) | Cumple | Nombre y organización correctos. |
+| Estructura mínima | Árbol incluye docs/arc42/, docs/adr/, docs/c4/, docs/aspectos.md, docs/ia.md, README.md | Cumple | Estructura cumple; correcciones.md no en raíz (ver ficha). |
+| Estado del repositorio calificado | Hash bbefae8 en origin/master anterior al cierre; sin commits posteriores | Cumple | Estado calificado correcto. |
+| Convenciones de ADR | docs/adr/0001-estilo-arquitectonico.md con nombre válido y contenido completo; sin reescrituras | Cumple | Un ADR aceptado, no editado. |
+| Tabla de aspectos | docs/aspectos.md con 8 columnas y filas por escenario; enlaces navegables | Cumple | Cadena completa para ESC-01; pendientes marcados. |
+| Registro de uso de IA | docs/ia.md con usos por entrega y tabla de rechazos con motivos | Cumple | Incluye S5 y rechazos justificados. |
+| README | README.md con descripción, comando único de arranque y cómo probar | Cumple | Reproducible. |
+| Pipeline y análisis estático | .github/workflows/ci.yml ejecuta pytest en 3.11 y 3.12; runs_ci success; SonarCloud no configurado | Cumple | CI en verde; SonarCloud no evidenciado (pendiente para segundo corte). |
 
 ## Estado global del proyecto (overall · punta actual de la misma rama)
 
@@ -45,36 +45,32 @@ Mira el repositorio **entero en la punta actual de la misma rama**, no solo la e
 
 - **Punta actual revisada**: `bbefae828185e9baa4df757ea073cbe84539cd3f 2026-09-08T10:37:21-05:00 Actualizar las referencias restantes al run de CI`
 - **Veredicto**: con pendientes
-- Resumen: El proyecto tiene una arquitectura bien documentada y un corte vertical funcional, pero la entrega del corte carece de correcciones.md y docs/ia.md, y la trazabilidad está incompleta.
-
-Resuelto tarde (corregido despues del cierre, ahora al dia):
-- correcciones.md añadido en commit f9a3304 (2026-09-07T16:12:06-05:00), posterior al cierre
-- docs/ia.md añadido en commit f9a3304 (2026-09-07T16:12:06-05:00), posterior al cierre
-- CI configurado en commits c665562 y a5fe113 (2026-09-07), posterior al cierre
+- Resumen: El proyecto en HEAD (bbefae8) está al día en S1-S4 y en la mayoría de S5, pero quedan pendientes de S5: restricción no transcrita, ADR 0002 no creado, cambio no implementado, y el archivo correcciones.md no está en la raíz con el nombre exacto.
 
 Pendientes que siguen abiertos:
-- correcciones.md no estaba en el estado calificado
-- docs/ia.md no estaba en el estado calificado
-- Tabla de aspectos incompleta en el estado calificado
-- Sin evidencia de CI en el estado calificado
+- Transcribir la restricción asignada en docs/restriccion-s5.md
+- Crear ADR 0002 del reto
+- Implementar el cambio que responde a la restricción y contrastarlo con el umbral
+- Renombrar/mover el archivo de correcciones a correcciones.md en la raíz
+- Equilibrar la contribución entre integrantes
 
 ## Recuento y nota sugerida
 
-6 de 12 criterios Cumple.
+9 de 12 criterios Cumple.
+
+**Nota sugerida (propuesta al docente, publicada por decision del profesor): 4.0 = 1 + 4 × (9/12).** La nota final la fija el profesor en Moodle.
 
 ## No verificado / pendientes
 
-- Pipeline y pruebas respaldan el estado calificado
-- PDF u otro adjunto exigido por el aula
-- Sustentación del corte
-- Pipeline y análisis estático (transversal)
+- PDF u otro adjunto exigido por el aula: requiere acceso a Moodle.
+- Sustentación del corte: requiere sesión docente.
 
 ## Hallazgos para la planilla
 
-- correcciones.md no existe en el estado calificado (hash 1636f20), solo en commits posteriores.
-- docs/ia.md no existe en el estado calificado.
-- La tabla de aspectos tiene huecos en varias filas.
-- No hay evidencia de CI para el estado calificado.
-- Se versionó el entorno virtual .venv-1 en el repositorio.
-- El historial muestra commits posteriores al cierre que corrigen la entrega.
-- Commits posteriores al cierre (no calificados): bbefae8 2026-09-08T10:37:21-05:00 Actualizar las referencias restantes al run de CI; ca2c641 2026-09-08T10:33:54-05:00 Actualizar la referencia del run de CI tras la reescritura del historial; 51a8122 2026-09-08T10:04:11-05:00 Anadir .mailmap para unificar la identidad de Santiago-C0; 2dbc8a1 2026-09-08T09:54:45-05:00 Anadir .mailmap para unificar la identidad de Santiago Cuesta; c665562 2026-09-07T16:55:42-05:00 Instalar dependencias en CI desde un lock con versiones exactas y hashes
+- El archivo correcciones.md no existe en la raíz del estado calificado; hay CORRECCIONES.md y docs/correcciones.md.
+- La restricción asignada de S5 no está transcrita en docs/restriccion-s5.md (sección 1 pendiente).
+- El ADR del reto (0002) no está creado; depende de la restricción.
+- La implementación del cambio para la restricción S5 no está hecha (secciones 5-6 pendientes).
+- La contribución está desbalanceada: daniarriet 23, Santiago Cuesta 21+2, ruddy2000utb-droid 2 commits.
+- No hay evidencia de SonarCloud en el pipeline.
+- El PDF de la entrega no está en el repositorio (se entrega en Moodle).
