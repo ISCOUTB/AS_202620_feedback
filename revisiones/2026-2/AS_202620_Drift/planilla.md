@@ -8,12 +8,13 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Drift` |
 | Integrantes y su usuario de GitHub | Jerry Daniel Buelvas Mejia (`JerryDBM`) · Mauricio Andres Fernandez Espinosa (`maufern4ndez`) · Luis Mario Perez Diaz (`lmpdiaz12`) · Joshua David Reyes Leones (`JoshuaR01` y `JoshXX`, mismo correo) |
 | URL del sistema desplegado | sin desplegar todavía |
-| Ultima revision | 2026-09-10 |
+| Ultima revision | 2026-09-11 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 6 | S6 | `6d0a1b8` (2026-09-10T22:21:13-05:00) | 0/8 | 1.0 (prelim.) | si |
 | 5 | CORTE1 | `d110d6d` (2026-09-06T23:34:21-05:00) | 4/12 | no aplica | si |
 | 4 | S4 | `4254f4a` (2026-08-30T19:13:01-05:00) | 7/10 | 3.8 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `b7ec296c` · 2026-08-09T22:59:42-05:00 | 4/9 | no se publica | sí |
@@ -55,12 +56,21 @@
 | commit en ADR-0001 | S5 | si | |
 | verificación de pipeline | S5 | si | |
 | README con comando único | S5 | si | |
+| Mapa de contextos con relaciones tipificadas | S6 | si | |
+| Tabla módulo-datos con dueño único | S6 | si | |
+| Lista de violaciones con plan de corrección | S6 | si | |
+| Sección 8 de arc42 | S6 | si | |
+| C4 nivel 3 y ADR si aplica | S6 | si | |
+| Trazabilidad completa en aspectos.md | S6 | si | |
+| Registro de rechazos en ia.md | S6 | si | |
+| Instrucciones de arranque y prueba en README | S6 | si | |
+| Evidencia de ejecución de CI | S6 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | `AS_202620_Drift`, público. |
-| Estructura mínima | No cumple | Las seis rutas en su lugar desde la reorganización del 08-22. |
+| Estructura mínima | Cumple | Las seis rutas en su lugar desde la reorganización del 08-22. |
 | Convención de nombres de ADR | Cumple | `0001-arquitectura-base.md` conforme. |
 | ADR aceptados sin reescribir | Cumple | Creado y renombrado el mismo día (2026-08-23), sin reescrituras posteriores. |
 | `docs/ia.md` al día | Cumple | Commits 08-21/08-22; rechazo narrado en §3.1 con motivo. |

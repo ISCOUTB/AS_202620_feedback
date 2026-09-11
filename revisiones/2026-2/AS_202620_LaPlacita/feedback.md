@@ -35,3 +35,7 @@ Este fue, de lejos, el trabajo más completo de este corte: identificaron su res
 Dos cosas menores para pulir: la entrada del registro de IA de esta semana no cierra con el resultado final de la verificación (queda "pendiente de revisión"), y SonarCloud está configurado en el pipeline pero el análisis en vivo todavía no está activado (falta la clave real).
 
 Para la sustentación: expliquen qué pasaría si una tienda concentrara la mayoría del tráfico, como ustedes mismos anticipan en el ADR, y cierren el resultado de la verificación que quedó pendiente en el registro de IA.
+
+## Semana 6 · S6
+
+La entrega no incluye el mapa de contextos ni la tabla módulo a datos que pide la semana 6. El ADR-0004 documenta bien el problema de aislamiento entre tiendas, pero la auditoría de propiedad de datos sobre el código actual no está. Falta el C4 nivel 3 y activar SonarCloud. Revisen la sección 8 de arc42 para incorporar lenguaje ubicuo y el mapa de contextos. Organicen la documentación para que sea verificable en el repositorio.

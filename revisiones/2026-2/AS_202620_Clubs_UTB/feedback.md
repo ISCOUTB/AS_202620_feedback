@@ -42,3 +42,7 @@ Para la sustentación: preparen quién puede explicar qué restricción les asig
 ## Semana 3 · S3
 
 El ADR y la matriz comparativa están bien orientados y la estructura de paquetes refleja la decisión hexagonal. Para las próximas entregas: automaticen la prueba en un pipeline visible, documenten el arranque en el README desde el primer commit, y hagan navegable la trazabilidad en docs/aspectos.md y en los escenarios de calidad. Cuiden también las convenciones de nombres de ADR y el orden del repositorio. Varios de estos puntos se corrigieron después del cierre; procuren que los arreglos lleguen antes del cierre en las siguientes semanas.
+
+## Semana 6 · S6
+
+La entrega de la semana 6 no incluye los artefactos solicitados: mapa de contextos, tabla módulo-datos, violaciones con plan de corrección, sección 8 de arc42 ni C4 nivel 3. La base documental existente (arc42 parcial, ADR 0001, aspectos, IA) es un buen punto de partida, pero la ficha S6 queda sin cubrir. Se recomienda: documentar los contextos del dominio (publicaciones, clubes, usuarios) con relaciones tipificadas; crear la tabla módulo-datos contrastada con las entidades reales (Publicacion); auditar el código actual y registrar violaciones con plan; completar la sección 8 de arc42 con lenguaje ubicuo y mapa de contextos; añadir C4 nivel 3 y ADR si los límites cambian; completar las secciones 07 y 11 de arc42; y configurar SonarCloud en el pipeline.

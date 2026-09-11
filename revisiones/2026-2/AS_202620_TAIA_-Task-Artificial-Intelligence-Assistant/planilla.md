@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant` |
 | Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-10 |
+| Ultima revision | 2026-09-11 |
 
 ## Estado por entrega
 
@@ -19,7 +19,7 @@
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `46257a03` · 2026-08-23T16:47:00-05:00 | 5/9 | no se publica | sí |
 | 4 | S4 | `c087303` (2026-08-30T18:54:10-05:00) | 5/10 | 3.0 | si |
 | 5 | CORTE1 | `a3f4d82` (2026-09-06T04:13:11-05:00) | 9/12 | no aplica | si |
-| 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
+| 6 | S6 | `3950aba` (2026-09-11T00:51:26-05:00) | 0/8 | 1.0 (prelim.) | si |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
@@ -80,6 +80,12 @@
 | Reestructurar correcciones.md como índice de verificación trazable | S5 | si | |
 | Verificar historial del ADR | S5 | si | |
 | PDF y sustentación pendientes de aula | S5 | si | |
+| Verificar mapa de contextos con relaciones tipificadas | S6 | si | |
+| Verificar tabla módulo-datos con dueño único | S6 | si | |
+| Verificar lista de violaciones y plan de corrección | S6 | si | |
+| Verificar arc42 sección 8 con lenguaje ubicuo | S6 | si | |
+| Comparar límites contra hash de S5 y posible ADR de reajuste | S6 | si | |
+| Cruzar aspectos con contextos del mapa | S6 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

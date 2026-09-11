@@ -64,3 +64,7 @@ Sin actividad S1: el ultimo commit anterior al cierre es de la entrega previa, a
 ## Semana 2 · S2
 
 Sin actividad S2: el ultimo commit anterior al cierre es de la entrega previa, asi que esta evidencia no se pudo evaluar. Lo que se arrastra de semanas anteriores sigue abierto para el corte.
+
+## Semana 6 · S6
+
+La entrega S6 documenta bien el mapa de contextos, la propiedad de datos y la verificación de violaciones. El lenguaje ubicuo en arc42 §8 es correcto. Para cerrar brechas: vincula explícitamente las filas de aspectos.md con los contextos del mapa, añade un ADR si los límites cambiaron, completa la evidencia de la fila A-02 y asegura que todos los integrantes declarados aparezcan en el historial. Incluye enlaces a runs de CI en la documentación.

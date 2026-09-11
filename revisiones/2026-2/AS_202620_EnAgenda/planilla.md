@@ -10,12 +10,13 @@ Hoja consolidada del equipo EnAgenda. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_EnAgenda` |
 | Integrantes y su usuario de GitHub | Eliab Josue Arnedo Conde · Jeimy Yulieth Mendez Altamiranda · Gabriela Morales Cancino — cuentas abajo |
 | URL del sistema desplegado | sin desplegar aún |
-| Ultima revision | 2026-09-10 |
+| Ultima revision | 2026-09-11 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 6 | S6 | `696882e` (2026-09-07T16:21:16-05:00) | 0/8 | 1.0 (prelim.) | si |
 | 5 | CORTE1 | `942e112` (2026-09-06T23:56:39-05:00) | 7/12 | no aplica | si |
 | 4 | S4 | `df724b8` (2026-08-30T23:57:42-05:00) | 8/10 | 4.2 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `13f61b10` · 2026-08-09T05:34:14-05:00 | 8/9 | 4,6 * | sí |
@@ -57,12 +58,16 @@ Hoja consolidada del equipo EnAgenda. Se actualiza tras cada revisión.
 | Completar C4 nivel 3 | S5 | si | |
 | Corregir enlace roto en aspectos.md | S5 | si | |
 | Configurar SonarCloud | S5 | si | |
+| C4 nivel 3 sin contenido | S6 | si | |
+| arc42 sección 8 vacía | S6 | si | |
+| Mapa de contextos y tabla módulo-datos ausentes | S6 | si | |
+| SonarCloud no configurado | S6 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | `ISCOUTB/AS_202620_EnAgenda`, público, verificable sin autenticación |
-| Estructura mínima | No cumple | Las seis rutas del contrato están presentes en HEAD. |
+| Estructura mínima | Cumple | Las seis rutas del contrato están presentes en HEAD. |
 | Convención de nombres de ADR | Cumple | `0001-usar-monolito-modular.md`. |
 | ADR aceptados sin reescribir | Cumple | Aceptado en `c38adfb`; después solo fue renombrado. |
 | `docs/ia.md` al día | No cumple | La entrada más reciente corresponde a Semana 4; falta Corte 1. |

@@ -37,3 +37,7 @@ Lo que falta: el trabajo de la última noche antes del cierre se dedicó a corre
 Dos cosas puntuales para corregir ya: el enlace de "Evidencia" en la fila de aspectos apunta a un archivo que no existe en el repositorio (el archivo real tiene otro nombre); y el registro de uso de IA no tiene ninguna entrada de esta semana, ni de las correcciones que sí hicieron el 6 de septiembre.
 
 Para la sustentación: lleven claro qué restricción les tocó, qué medida inicial tomaron y con qué procedimiento, y qué cambio de código (no solo de documentación) responde a esa restricción.
+
+## Semana 6 · S6
+
+La semana 6 no entrega los artefactos centrales: no hay mapa de contextos, tabla módulo-datos, ni lista de violaciones sobre el código actual. La sección 8 de arc42 y el C4 nivel 3 siguen vacíos. Se recomienda partir de los módulos ya declarados (eventos, invitaciones, tareas, agenda, presupuesto, panel), tipificar sus relaciones y contrastar una tabla de dueño único contra el código real. Si no hay violaciones, documentar el recorrido de verificación. También conviene completar las secciones vacías de arc42, añadir SonarCloud al pipeline y limpiar los .pyc del repositorio.

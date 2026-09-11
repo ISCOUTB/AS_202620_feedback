@@ -8,12 +8,13 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Verifacts` |
 | Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md); historial: `PedroC1213` (30 commits) y `Cristian Cardeño` (4 commits tardíos), sin atribuir oficialmente |
 | URL del sistema desplegado | |
-| Ultima revision | 2026-09-10 |
+| Ultima revision | 2026-09-11 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 6 | S6 | `67f8cea` (2026-09-09T16:30:01-05:00) | 6/8 | 4.0 (prelim.) | si |
 | 1 | S1 | `(sin commits)` () | sin actividad | no aplica | si |
 | 2 | S2 | `(sin commits)` () | sin actividad | no aplica | si |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `8259b75` · 2026-08-23T23:50:00-05:00 | 4/9 | no se publica | sí |
@@ -51,6 +52,11 @@
 | CI en rojo: runs_ci de 'Tests and SonarCloud' posteriores al cierre concluyen failure. | S5 | si | |
 | docs/aspectos.md A-02 pendiente y enlaces rotos (docs/decisiones-arquitectonicas.md). | S5 | si | |
 | PDF en la raíz del repositorio persiste en HEAD. | S5 | si | |
+| Fila A-02 de aspectos.md sin evidencia de prueba | S6 | si | |
+| aspectos.md sin relación explícita con contextos del mapa | S6 | si | |
+| Posible ADR de reajuste de límites si cambiaron | S6 | si | |
+| Integrante declarado sin commits | S6 | si | |
+| Evidencia de runs de CI | S6 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -62,7 +68,7 @@
 | `docs/ia.md` al día | No cumple | sin entrada S5; último cambio 2026-08-24 |
 | Sin credenciales en el repositorio ni en el historial | Cumple | git grep y `.env` sin coincidencias |
 | Contribución de todos los integrantes | No cumple | dos personas visibles; el tercer integrante sigue sin commits |
-| Pipeline en verde | No cumple | `tests.yml` existe pero la API no reporta runs; la URL citada en `aspectos.md` da 404 |
+| Pipeline en verde | No verificado | `tests.yml` existe pero la API no reporta runs; la URL citada en `aspectos.md` da 404 |
 
 ## Contribución por integrante
 

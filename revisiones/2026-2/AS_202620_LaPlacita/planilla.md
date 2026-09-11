@@ -10,12 +10,13 @@ Hoja consolidada del equipo LaPlacita. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_LaPlacita` |
 | Integrantes y su usuario de GitHub | Mateo Josue Buendia Barrios · Miguel Angel Isaza Montalvo · Samuel David Jimenez Alvarez · Jorge Alberto Martinez Castillo — cuentas abajo |
 | URL del sistema desplegado | sin desplegar aún |
-| Ultima revision | 2026-09-10 |
+| Ultima revision | 2026-09-11 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 6 | S6 | `50b92f8` (2026-09-06T17:45:05-05:00) | 0/8 | 1.0 (prelim.) | si |
 | 5 | CORTE1 | `50b92f8` (2026-09-06T17:45:05-05:00) | 7/12 | no aplica | si |
 | 4 | S4 | `745e799` (2026-08-30T21:52:41-05:00) | 4/10 | 2.6 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `37f1deb8` · 2026-08-08T15:37:16-05:00 | 8/9 | 4,6 * | sí |
@@ -48,6 +49,11 @@ Hoja consolidada del equipo LaPlacita. Se actualiza tras cada revisión.
 | docs/aspectos.md con Evidencia no navegable | S5 | si | |
 | SonarCloud sin token/projectKey | S5 | si | |
 | PDF adjunto no verificado | S5 | si | |
+| Configurar SONAR_TOKEN para activar SonarCloud | S6 | si | |
+| Crear C4 nivel 3 (componentes) | S6 | si | |
+| Documentar mapa de contextos con relaciones tipificadas | S6 | si | |
+| Crear tabla módulo a datos con dueño único | S6 | si | |
+| Completar sección 8 de arc42 con lenguaje ubicuo | S6 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

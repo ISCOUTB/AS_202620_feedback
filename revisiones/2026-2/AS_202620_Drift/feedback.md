@@ -40,3 +40,13 @@ Una observación menor: los títulos de los dos ADR ("Selección de Arquitectura
 Noten también que tres commits llegaron después del cierre del corte (corrección de duplicación en pruebas y documentación en ia.md); no afectan la nota de este corte, pero no cuentan como parte de la entrega.
 
 Para la sustentación: preparen quién explica cuál era la restricción asignada y qué impidió completar su ADR y su medición si ya tenían todo el resto de la infraestructura lista.
+
+## Semana 6 · S6
+
+La entrega S6 no incluye los artefactos centrales de la semana: mapa de contextos, tabla módulo-datos, lista de violaciones con plan y sección 8 de arc42.
+La documentación base (arc42, C4 niveles 1-2, ADR) está presente, pero falta el análisis de dominio solicitado.
+Se recomienda crear el mapa de contextos con relaciones tipificadas (núcleo compartido, cliente-proveedor, capa anticorrupción).
+Elaborar la tabla módulo-datos contrastada con los modelos reales (backend/app/domain/model/game.py, frontend/domain/model/Game.js).
+Documentar las violaciones encontradas con su plan de corrección y añadir la sección 8 de arc42.
+Completar la trazabilidad de aspectos.md (celdas pendientes) y documentar lo rechazado en ia.md.
+Añadir instrucciones de arranque y prueba al README y revisar los títulos de los ADR para que enuncien la decisión.
