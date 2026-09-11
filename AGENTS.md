@@ -17,7 +17,8 @@ equipos sobre el último commit ≤ cierre) y el **miércoles y viernes 06:00 CO
 en delta con `deepseek-v4-flash`: solo equipos con commits nuevos, notas preliminares), más
 `workflow_dispatch` manual. El núcleo es `scripts/cron/evaluar-semana.py` con el calendario de
 `scripts/cron/calendario.json` y el LLM del secret `OPENCODE_GO_API_KEY` (suscripción OpenCode Go,
-endpoint `https://opencode.ai/zen/go/v1`). Escribe matrices, planillas, feedback, resumen y README,
+endpoint `https://opencode.ai/zen/go/v1`). Escribe matrices, planillas, feedback, resumen y README
+(y sincroniza `calificaciones.md` en la pasada definitiva de S5),
 y hace commit+push a master. Cada informe lleva una sección **overall** que revisa el proyecto
 entero en la punta actual de la misma rama `master` o `main`, para notar entregas subidas tarde o
 correcciones posteriores al cierre. Guardas:

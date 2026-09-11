@@ -689,6 +689,35 @@ def escribir_resumen(resultados, entrada, modo):
     write_txt(p, "\n".join(lineas))
 
 
+def actualizar_calificaciones_corte1(resultados, entrada, modo):
+    """Sincroniza la columna S5 cuando se publica una pasada definitiva del corte.
+
+    La fuente de los valores es la misma lista que alimenta el resumen.  Conserva las columnas
+    S1--S4 y permite que un reproceso parcial actualice solamente el equipo procesado.
+    """
+    if entrada["id"] != "corte1" or modo != "definitive":
+        return
+    p = os.path.join(KIT, "calificaciones.md")
+    if not os.path.exists(p):
+        print("calificaciones.md no existe; se omite su actualizacion")
+        return
+    valores = {}
+    for r in resultados:
+        nota, nm = r.get("nota"), r.get("nm")
+        if nota not in (None, "-") and nm not in (None, "-", "sin actividad"):
+            valores[r["equipo"]] = "%s (%s)" % (nota, nm)
+        else:
+            valores[r["equipo"]] = "Pendiente de reproceso"
+    lineas = []
+    for linea in read_txt(p).splitlines():
+        celdas = [celda.strip() for celda in linea.strip().split("|")]
+        if len(celdas) == 8 and celdas[1] in valores:
+            celdas[6] = valores[celdas[1]]
+            linea = "| " + " | ".join(celdas[1:-1]) + " |"
+        lineas.append(linea)
+    write_txt(p, "\n".join(lineas) + "\n")
+
+
 def hash_publicado(entrada, repo):
     p = os.path.join(REV, repo, entrada["ficha"])
     if not os.path.exists(p):
@@ -784,7 +813,10 @@ def procesar_equipo(repo, equipo, entrada, contrato, ficha, modo, desde):
 def commit_push(mensaje):
     p = sh(["git", "config", "user.email", "revision-bot@opencode.ai"], cwd=KIT)
     p = sh(["git", "config", "user.name", "Revision automatica"], cwd=KIT)
-    p = sh(["git", "add", "revisiones/", "README.md"], cwd=KIT)
+    rutas = ["revisiones/", "README.md"]
+    if os.path.exists(os.path.join(KIT, "calificaciones.md")):
+        rutas.append("calificaciones.md")
+    p = sh(["git", "add"] + rutas, cwd=KIT)
     p = sh(["git", "status", "--porcelain"], cwd=KIT)
     if not p.stdout.strip():
         print("sin cambios que commitear")
@@ -844,6 +876,7 @@ def main():
         print(r)
     if resultados:
         escribir_resumen(resultados, entrada, modo_real)
+        actualizar_calificaciones_corte1(resultados, entrada, modo_real)
     actualizar_readme(eqs.keys() if not args.solo else [args.solo], entrada)
     write_txt(estado_path, json.dumps({"modo": modo_real,
                                        "ts": dt.datetime.now(dt.timezone.utc).isoformat(),
