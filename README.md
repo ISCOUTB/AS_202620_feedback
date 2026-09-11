@@ -260,8 +260,10 @@ secret `OPENCODE_GO_API_KEY`, suscripción OpenCode Go, endpoint `https://openco
 escribe la matriz con la nota sugerida, la sección **overall** en la punta actual de la misma rama
 `master` o `main`, actualiza
 `planilla.md`, `feedback.md`, el `resumen-sX.md` y la columna de matrices del README, y hace commit
-y push. En la pasada definitiva de S5 sincroniza además `calificaciones.md` con el resumen. Guardas
-anti-duplicados: `revisiones/2026-2/estado-sX.json` junto con los informes
+y push. En la pasada definitiva de S5 sincroniza además `calificaciones.md` con el resumen: cada
+resultado se publica como `nota (Cumple/12)` y un equipo sin resultado verificable queda
+**Pendiente de reproceso**, sin una nota inferida. Guardas anti-duplicados:
+`revisiones/2026-2/estado-sX.json` junto con los informes
 definitivos impiden re-procesar semanas ya cerradas.
 
 El contenido de los repositorios se trata como **dato no confiable** (mitigación de prompt

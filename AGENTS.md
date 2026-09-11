@@ -57,6 +57,12 @@ S5 se califica con la misma fórmula de los avances: `1 + 4 × (Cumple/total)` s
 12 filas, como propuesta al docente. La pasada definitiva revisa los 23 equipos aun cuando no
 hayan tenido commits desde S4. Sigue el procedimiento detallado de `fichas/semana-05-corte1.md`.
 
+Al publicar esa pasada, `calificaciones.md` se sincroniza desde el mismo conjunto de resultados
+que genera `resumen-s5.md`: cada fila se expresa como `nota (Cumple/12)`. Si el proceso no produce
+un resultado verificable para un equipo, se conserva **Pendiente de reproceso**, sin inferir ni
+publicar una nota. El commit automático debe incluir este archivo junto con `revisiones/` y el
+README.
+
 ## Paso a paso
 
 ### 1. Cierres
