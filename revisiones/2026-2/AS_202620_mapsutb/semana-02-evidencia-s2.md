@@ -1,5 +1,9 @@
 # Evidencia S2 · mapsutb
 
+> Revisión manual confirmatoria. Se volvió a leer el contenido del hash de cierre;
+> se confirma el recuento histórico de 4/9 y su propuesta de 2.8. Los cambios
+> posteriores del proyecto no reabren esta evidencia.
+
 ## Datos
 
 | | |
@@ -38,6 +42,8 @@
 ## Recuento de criterios
 
 4 de 9 criterios de la ficha cumplidos.
+
+**Nota sugerida: 2.8 = 1 + 4 × (4/9).** Es una propuesta al docente; la nota oficial la fija el docente en Moodle.
 
 ## No verificado / pendientes
 

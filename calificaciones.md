@@ -33,7 +33,7 @@ regla.
 | TRACTAR | — | 3.7 | 4.6 | 1.4 | 3.7 (8/12) |
 | Verifacts | 2.8 | 1.9 | 2.8 | 3.8 | 3.7 (8/12) |
 | XALD | 3.2 | 1.4 | 3.2 | 2.6 | 3.7 (8/12) |
-| mapsutb | 3.2 | 2.8 | 3.2 | 3.0 | 2.0 (3/12) |
+| mapsutb | 3.2 | 2.8 | 3.2 | 3.0 | 3.7 (8/12)* |
 | uniTeam | 3.7 | 5.0 | 3.2 | 3.4 | Pendiente de reproceso |
 
 ## Criterio de lectura
@@ -45,6 +45,8 @@ regla.
   calculó aplicando la misma fórmula a ese recuento.
 - **Corte final S5:** propuesta calculada con `1 + 4 × (Cumple/12)`, redondeada a un decimal.
   El paréntesis indica el recuento publicado por la matriz definitiva.
+- **mapsutb:** por excepción docente, S5 acepta las correcciones incorporadas durante la semana,
+  aun cuando sean posteriores al cierre original; el asterisco identifica esta excepción.
 - **Pendientes de reproceso:** GimnasioUTB, TAIA y uniTeam no tuvieron resultado publicado en el
   resumen definitivo; no se les asigna una nota hasta que se complete su revisión.
 - **Cobertura completa:** la pasada definitiva S5 incluye los 23 equipos, incluso si no hubo

@@ -8,17 +8,17 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_mapsutb` |
 | Integrantes y su usuario de GitHub | Carlos Alberto Galvis Zuluaga · Carlos David Manrique Fals · Nerlis Nikol Otero Perez · Isabel Sofia Paez Matallana — cuentas observadas en el historial: `charlygz21`, `nerlis-otero`, `CarlosManrique-1397`, `i-matallana` (correspondencias por confirmar con el docente) |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-11 |
+| Ultima revision | 2026-09-14 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `7e56ad3` · 2026-08-09T23:27:46-05:00 | 5/9 | no se publica | sí |
-| 2 | Evidencia S2 · Escenarios de calidad y restricciones | `1cf1576` · 2026-08-16T21:26:05-05:00 | 4/9 | no se publica | sí |
+| 2 | Evidencia S2 · Escenarios de calidad y restricciones | `1cf1576` · 2026-08-16T21:26:05-05:00 | 4/9 | 2.8 | sí (revisión manual confirmatoria) |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `ed55eda` · 2026-08-23T21:44:05-05:00 | 5/9 | no se publica | sí |
 | 4 | S4 | `f0d036a` (2026-08-30T22:53:06-05:00) | 5/10 | 3.0 | si |
-| 5 | CORTE1 | `e8bad4c` (2026-09-09T18:34:48-05:00) | 3/12 | 2.0 | si |
+| 5 | CORTE1 | `e8bad4c` histórico; excepción: `8aee879` (2026-09-13T18:14:14-05:00) | 8/12 | 3.7 | sí (actualizada con correcciones tardías aceptadas) |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
@@ -53,34 +53,24 @@
 | Corregir mayúsculas en docs/Arc42 y docs/C4 | S4 | sí (persisten en HEAD) | Renombrar a minúsculas |
 | Crear etiqueta corte-1 | S4 | sí (creada, pero sobre el commit equivocado) | Mover la etiqueta al commit real del corte |
 | Registrar cambios de decisión en ADR nuevos, no editando aceptados | S4 | sí (ADR 0001 reescrito entre 23/08 y 31/08) | Crear ADR de reemplazo y conservar el aceptado |
-| Etiqueta `corte-1` fijada en el commit inicial de S1 | S5 | sí (confirmado post-cierre, 2026-09-07) | Mover la etiqueta al commit real del corte antes del cierre — no se hizo |
-| Sin diagnóstico, línea base ni medición reproducible del reto | S5 | sí | Documentar procedimiento, carga, cifra inicial, umbral y resultado |
-| `docs/aspectos.md` contradice el alcance actual y no enlaza ADR, código ni pruebas | S5 | sí (persiste en HEAD) | Actualizar la cadena completa y hacerla navegable |
-| ADR 0001 reescrito y ADR 0002 con nombre fuera de convención | S5 | sí | Conservar ADR aceptados y usar `NNNN-titulo-en-kebab-case.md` |
-| Sin prueba específica del cambio ni workflow de CI | S5 | sí | Añadir prueba del reto y evidencia de run verde |
-| Commits posteriores al cierre: 3f5221b, 09f7aad, af22316, fd046a8, e8bad4c (2026-09-08/09) ajustan plugins y manual de identidad visual; no se evidencia que corrijan hallazgos S1-S4. | S5 | no (resuelto tarde) | — |
-| correcciones.md en la raíz del estado calificado | S5 | si | |
-| Trazabilidad navegable en docs/aspectos.md | S5 | si | |
-| Convención de nombre del ADR 0002 | S5 | si | |
-| Evidencia de CI y pruebas asociadas al hash calificado | S5 | si | |
-| 4b464f1, 8e9c06d y 7af89e6 (2026-09-11) corrigen ficha-problema y trazabilidad de aspectos tras el cierre | S5 | no (resuelto tarde) | — |
-| Secciones 7 y 8 de arc42 sin completar | S5 | si | |
-| ADR 0001 sin marcar reemplazo | S5 | si | |
-| ADR 0002 con nombre incorrecto | S5 | si | |
-| Sin runs_ci de pruebas | S5 | si | |
-| correcciones.md sin contenido contrastable | S5 | si | |
+| `correcciones.md` trazable en la raíz | S5 | cerrado | Se contrastó junto con las correcciones aplicadas hasta `8aee879`. |
+| Ficha, escenarios, C4 y aspecto A-01 alineados al alcance sin RA | S5 | cerrado con revisión flexible | Se aceptan las correcciones de esta semana aunque sean posteriores al cierre original. |
+| Comparación de estilos y ADR de monolito | S5 | cerrado con revisión flexible | ADR 0004 compara tres estilos y formaliza la elección; el historial de ADR 0001 sigue como observación. |
+| Contenedores C2 sin activos | S5 | declarado pendiente | C2 reconoce explícitamente plano y panorámicas como diferidos. |
+| CI de pruebas y evidencia de run | S5 | No verificado | `ci.yml` existe y ejecuta pruebas, pero falta un run público verificable. |
+| PDF exigido por el aula y sustentación | S5 | No verificado | Se comprueban en Moodle y en la sesión docente. |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | `github.com/ISCOUTB/AS_202620_mapsutb`, público (clon sin auth el 2026-09-07) |
-| Estructura mínima | No cumple | En HEAD usa `docs/Arc42/` y `docs/C4/`; la etiqueta S5 solo contiene README, aspectos e IA |
-| Convención de nombres de ADR | No cumple | `0002.md` no incluye título en kebab-case |
+| Estructura mínima | Cumple | La punta aceptada usa `docs/arc42/`, `docs/c4/` y `docs/adr/`. |
+| Convención de nombres de ADR | Cumple | Los ADR actuales están numerados y titulados en kebab-case. |
 | ADR aceptados sin reescribir | No cumple | `0001-patrones-de-diseno.md` tiene múltiples reescrituras posteriores a su creación |
-| `docs/ia.md` al día | No cumple | última entrada 30/08; sin registro del trabajo S5 en HEAD `f40775d` |
+| `docs/ia.md` al día | Cumple | El hash calificado registra decisiones, ajustes y pendientes del cambio de alcance. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | greps limpios en HEAD `f40775d` |
 | Contribución de todos los integrantes | Cumple | 4 personas consolidadas en HEAD: CarlosManrique-1397 (41), i-matallana (39, dos correos), charlygz21 (13), nerlis-otero (6) |
-| Pipeline en verde | No verificado | Sin `.github/workflows/` ni URL de run, también en HEAD |
+| Pipeline en verde | No verificado | `ci.yml` ejecuta `flutter test`, pero falta un run público verificable. |
 
 ## Contribución por integrante
 
@@ -93,7 +83,6 @@
 
 ## Preguntas abiertas para la sustentación
 
-- ¿Por qué la etiqueta `corte-1` sigue sin moverse pese a que la revisión preliminar del 03/09 ya lo señaló?
 - ¿`i-matallana` corresponde a Isabel Sofia Paez Matallana? Confirmar con el docente.
-- ¿Cuándo se actualizará `docs/aspectos.md` para reflejar el ADR 0002 y el código que ya existen en HEAD?
-- ¿La app compila y la prueba de humo pasa en verde en el entorno del equipo? (sin CI ni evidencia)
+- ¿Cómo demuestran que el recorrido de zonas funciona de extremo a extremo, con una prueba y run de CI asociados a la entrega?
+- ¿Cómo se conserva la historia de ADR 0001 al cambiar una decisión aceptada y cómo se conecta la fila A-01 con C4, ADR, código y pruebas?

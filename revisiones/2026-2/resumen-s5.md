@@ -27,5 +27,7 @@ Nota sugerida = 1 + 4 × (n/m) sobre la matriz de la ficha, **propuesta al docen
 | TRACTAR | `AS_202620_TRACTAR` | `7cfb872` | 8/12 | 3.7 |
 | Verifacts | `AS_202620_Verifacts` | `67f8cea` | 8/12 | 3.7 |
 | XALD | `AS_202620_XALD` | `9bf16cf` | 8/12 | 3.7 |
-| mapsutb | `AS_202620_mapsutb` | `e8bad4c` | 3/12 | 2.0 |
+| mapsutb | `AS_202620_mapsutb` | `8aee879`* | 8/12 | 3.7 |
 | uniTeam | `AS_202620_uniTeam` | `-` | - | - |
+
+\* Revisión manual excepcional: se aceptaron las correcciones aplicadas durante la semana, posteriores al cierre original.
