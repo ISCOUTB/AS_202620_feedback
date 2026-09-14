@@ -52,3 +52,11 @@ Sin actividad S2: el ultimo commit anterior al cierre es de la entrega previa, a
 ## Semana 3 · S3
 
 Sin actividad S3: el ultimo commit anterior al cierre es de la entrega previa, asi que esta evidencia no se pudo evaluar. Lo que se arrastra de semanas anteriores sigue abierto para el corte.
+
+## Semanas 3 y 4 · revisión excepcional de entregables
+
+Esta revisión sustituye las conclusiones automáticas de S3 y S4 para estos dos avances: se miró únicamente el estado actual de los entregables, sin usar fechas, actividad de commits, etiquetas ni contribuciones como criterio.
+
+En S3, el ADR 0001 está bien estructurado, el esqueleto modular está presente, el README ya documenta el arranque y hay pruebas en verde. Falta una matriz explícita que contraste capas, hexagonal y monolito modular con el árbol de utilidad; además, el escenario de usabilidad debe enlazar directamente el ADR que motiva.
+
+En S4, arc42, el corte vertical de búsqueda, el arranque y las pruebas están documentados. Aún falta un C4 de contexto real: los dos diagramas actuales son de contenedores. Completen también la trazabilidad en la ruta `docs/aspectos.md` con las ocho columnas del curso, incluyendo ID y C4, y mantengan la sección 9 de arc42 enlazada a todos los ADR vigentes.

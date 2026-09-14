@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_ShareU` |
 | Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-11 |
+| Ultima revision | Revisión excepcional S3-S4 · solo entregables actuales |
 
 ## Estado por entrega
 
@@ -16,8 +16,8 @@
 |---:|---|---|---|---|---|
 | 1 | S1 | `(sin commits)` () | sin actividad | no aplica | si |
 | 2 | S2 | `(sin commits)` () | sin actividad | no aplica | si |
-| 3 | S3 | `(sin commits)` () | sin actividad | no aplica | si |
-| 4 | S4 | `27e1190` (2026-08-30T15:22:02-05:00) | 0/10 | 1.0 | si |
+| 3 | S3 | `master` `0bae184` · excepción docente | 7/9 | 4.1 | sí |
+| 4 | S4 | `master` `0bae184` · excepción docente | 7/10 | 3.8 | sí |
 | 5 | CORTE1 | `19ce719` (2026-09-07T22:41:14-05:00) | 5/12 | 2.7 | si |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
@@ -37,6 +37,10 @@
 
 | Hallazgo | Primera vez que se detectó | Sigue abierto | Qué se le dijo al equipo |
 |---|---|---|---|
+| Falta matriz de capas, hexagonal y monolito modular contra el árbol de utilidad | S3 · revisión excepcional | Sí | Construir la comparación explícita con los escenarios y sus trade-offs. |
+| El escenario de usabilidad no enlaza directamente el ADR 0001 | S3 · revisión excepcional | Sí | Añadir el enlace desde el escenario hacia el ADR que motiva. |
+| No hay C4 de contexto: ambos archivos `.mmd` son diagramas de contenedores | S4 · revisión excepcional | Sí | Crear el C4 nivel 1 y conservar el nivel 2 de contenedores. |
+| Trazabilidad en ruta desviada y sin las ocho columnas | S4 · revisión excepcional | Sí | Mover o exponer `docs/aspectos.md` y completar ID, C4 y el resto de la cadena. |
 | Estructura sin montar: `docs/arc42/` (la plantilla está suelta en `docs/`), `docs/adr/` y `docs/c4/` inexistentes | S1 (08-09) | Parcial: `docs/adr/` ya existe; siguen faltando `docs/arc42/` y `docs/c4/` | Muevan la plantilla a `docs/arc42/` y creen `docs/c4/` |
 | `docs/aspectos.md` sin la tabla de 8 columnas ni ID | S1 (08-09) | Sí, en S3 | Armen la tabla del curso y enlacen cada escenario desde su fila |
 | Luis Carlos Corredor Altamiranda sin aparición en el historial | S1 (08-09) | Sí (3 identidades para 4 integrantes en S3) | El integrante debe contribuir con su cuenta para que la contribución individual sea verificable |
