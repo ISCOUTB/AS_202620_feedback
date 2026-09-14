@@ -38,4 +38,4 @@ Para la sustentación: expliquen qué pasaría si una tienda concentrara la mayo
 
 ## Semana 6 · S6
 
-La entrega no incluye el mapa de contextos ni la tabla módulo a datos que pide la semana 6. El ADR-0004 documenta bien el problema de aislamiento entre tiendas, pero la auditoría de propiedad de datos sobre el código actual no está. Falta el C4 nivel 3 y activar SonarCloud. Revisen la sección 8 de arc42 para incorporar lenguaje ubicuo y el mapa de contextos. Organicen la documentación para que sea verificable en el repositorio.
+La entrega S6 está bien estructurada: el mapa de contextos, la tabla de propiedad de datos y la auditoría con plan de corrección son verificables y cubren el código actual. Se recomienda confirmar que la sección 8 de arc42 incluya explícitamente el lenguaje ubicuo y el mapa de contextos, ya que no se pudo verificar en el commit. También conviene activar SonarCloud con el token y projectKey para cerrar el pendiente de S4, y evidenciar la ejecución del pipeline con un run. La deuda V-02/V-04/V-05/V-06 está bien planificada; el cierre de V-01 y V-03 el 13/09 es un buen avance.

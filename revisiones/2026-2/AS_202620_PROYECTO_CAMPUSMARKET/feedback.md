@@ -31,4 +31,4 @@ Muy buen trabajo en el reto de corte 1. Diagnosticaron el problema con una cifra
 
 ## Semana 6 · S6
 
-La base documental de S1-S5 está sólida, pero la evidencia S6 no se subió al commit vigente: faltan el mapa de contextos con relaciones tipificadas, la tabla módulo-datos con dueño único, la lista de violaciones con plan de corrección, la sección 8 de arc42 y, si aplica, el C4 nivel 3 con su ADR. Revisen el estado de master al cierre y completen los artefactos de la semana sobre el código actual.
+La entrega S6 está sólida: el mapa de contextos, la propiedad de datos y la sección 8 de arc42 están bien documentados y alineados con el código actual. Para futuras revisiones, aseguren que los archivos de evidencia (auditoría, aspectos.md, ia.md) sean directamente revisables en el repositorio y aporten enlaces a los runs de CI. La distinción entre producto y publicación y la declaración explícita de que no hay shared kernel son buenas prácticas. Mantengan la trazabilidad entre aspectos y contextos para que la sustentación sea defendible.

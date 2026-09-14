@@ -45,3 +45,7 @@ Qué está bien: el equipo sí trabajó activamente en esos días — corrigió 
 Qué falta: nada de ese trabajo fue sobre el reto de este corte. El único commit que se llama literalmente "Corte 1" agrega dos líneas al README y no toca ni ADR, ni código, ni pruebas, ni documentación de aspectos. No hay ninguna restricción diagnosticada, ni medición, ni cambio implementado.
 
 Qué corregir: dedicar el esfuerzo que sí se ve en el historial (que es real y de buena calidad para otras semanas) al reto específico de este corte: identificar la restricción, medir el estado inicial, decidir en un ADR nuevo, implementar el cambio y volver a medir contra el umbral del escenario. Después, crear la etiqueta `corte-1` sobre ese commit.
+
+## Semana 6 · S6
+
+Sin actividad S6: el ultimo commit anterior al cierre es de la entrega previa, asi que esta evidencia no se pudo evaluar. Lo que se arrastra de semanas anteriores sigue abierto para el corte.

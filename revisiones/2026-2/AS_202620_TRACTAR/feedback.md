@@ -39,3 +39,7 @@ Se mantiene, sin resolver desde el inicio del semestre, que solo una persona del
 ## Semana 1 · S1
 
 Sin actividad S1: el ultimo commit anterior al cierre es de la entrega previa, asi que esta evidencia no se pudo evaluar. Lo que se arrastra de semanas anteriores sigue abierto para el corte.
+
+## Semana 6 · S6
+
+Sin actividad S6: el ultimo commit anterior al cierre es de la entrega previa, asi que esta evidencia no se pudo evaluar. Lo que se arrastra de semanas anteriores sigue abierto para el corte.
