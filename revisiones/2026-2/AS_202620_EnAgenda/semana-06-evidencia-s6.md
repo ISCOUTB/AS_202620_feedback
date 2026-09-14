@@ -1,11 +1,11 @@
 # semana-06-evidencia-s6 · EnAgenda
 
-> Pasada temprana (GitHub Actions, previa al cierre): los hashes y la nota son preliminares y pueden cambiar si el equipo empuja antes del cierre.
+> Revision automatica definitiva (GitHub Actions, posterior al cierre). Re-evaluada por cambio de hash calificado tras la pasada temprana.
 
 | Campo | Valor |
 |---|---|
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_EnAgenda` |
-| Estado revisado | `696882e` en `origin/master` (2026-09-07T16:21:16-05:00) |
+| Estado revisado | `0a58de8` en `origin/master` (2026-09-13T23:38:41-05:00) |
 | Cierre | 2026-09-14T05:00:00Z |
 | Revisor | pipeline automatico (GitHub Actions) |
 
@@ -13,58 +13,56 @@
 
 | Criterio de evaluacion | Evidencia tecnica | Estado | Observaciones |
 |---|---|---|---|
-| Mapa de contextos con relaciones tipificadas | No se encontró mapa de contextos en docs/; docs/arc42/08-conceptos-transversales.md dice 'Esta sección se completará durante el desarrollo del proyecto' (696882e) | No cumple | No se nombran contextos del dominio ni relaciones (núcleo compartido, cliente-proveedor, capa anticorrupción). |
-| Tabla módulo a datos con dueño único por entidad | No existe tabla módulo-datos en docs/; única entidad real Invitacion en src/invitaciones/dominio/invitaciones.py (696882e) | No cumple | No se cita tabla alguna con dueño único. |
-| La tabla cubre las entidades que existen en el código | Sin tabla, no cubre entidades; esquema real es repositorio en memoria en src/invitaciones/infraestructura/repositorio_memoria.py (696882e) | No cumple | No hay migraciones ni esquema; la tabla ausente no puede contrastarse. |
-| Violaciones de propiedad de datos detectadas sobre el código actual | No hay lista de violaciones; grep de escrituras solo muestra el módulo invitaciones escribiendo su entidad (696882e) | No cumple | No se documenta recorrido de verificación, requisito para declarar lista vacía. |
-| Plan de corrección por violación | No hay plan de corrección asociado a violaciones porque no hay lista (696882e) | No cumple | Cada violación debería tener acción concreta; no existe. |
-| arc42 sección 8 con lenguaje ubicuo y mapa de contextos | docs/arc42/08-conceptos-transversales.md está vacío en 696882e | No cumple | Faltan lenguaje ubicuo y mapa de contextos en sección 8. |
-| C4 nivel 3 y ADR si los límites cambiaron desde el primer corte | No se dispone del hash de S5 para comparar; docs/c4/nivel-3-componentes.md está vacío en 696882e | No verificado | No hay ADR de reajuste; sin hash de S5 no se puede confirmar si los límites cambiaron. |
-| Aspectos relacionables con los contextos del mapa | docs/aspectos.md solo tiene A-01 y no referencia contextos del mapa; no hay mapa (696882e) | No cumple | Los aspectos no se pueden relacionar con contextos inexistentes. |
+| Mapa de contextos con relaciones tipificadas | docs/arquitectura/contextos-y-propiedad-de-datos.md (mapa Mermaid y tabla de relaciones tipificadas) | Cumple | Nombra Eventos, Invitaciones, Tareas, Agenda, Presupuesto, Panel y Compartido con relaciones cliente-proveedor, proveedor-consumidor y núcleo compartido; menciona capa anticorrupción. |
+| Tabla módulo a datos con dueño único por entidad | docs/arquitectura/contextos-y-propiedad-de-datos.md (tabla 'Propiedad de datos y permisos') | Cumple | Cada entidad o dato tiene un único contexto dueño y se indica quién puede consultarlo y modificarlo. |
+| La tabla cubre las entidades que existen en el código | docs/arquitectura/contextos-y-propiedad-de-datos.md ('Cobertura frente al código actual') y src/invitaciones/dominio/invitaciones.py | Cumple | La única entidad implementada (Invitacion) está cubierta; los demás contextos se declaran planificados. |
+| Violaciones de propiedad de datos detectadas sobre el código actual | docs/arquitectura/contextos-y-propiedad-de-datos.md (tabla 'Verificación de violaciones de propiedad') | Cumple | Documenta el recorrido de verificación (escrituras y referencias) y concluye sin violaciones en el código actual. |
+| Plan de corrección por violación | docs/arquitectura/contextos-y-propiedad-de-datos.md (sección 'Plan de corrección') | Cumple | Define acción correctiva y responsable por tipo de violación, aunque no haya violaciones activas. |
+| arc42 sección 8 con lenguaje ubicuo y mapa de contextos | docs/arc42/08-conceptos-transversales.md | Cumple | Incluye lenguaje ubicuo en 8.1 y referencia al mapa de contextos en 8.2; el mapa está enlazado, no incrustado. |
+| C4 nivel 3 y ADR si los límites cambiaron desde el primer corte | docs/c4/nivel-3-componentes.md existe; falta hash de S5 para comparar | No verificado | No se pudo verificar si los límites cambiaron porque no se aportó el hash de la revisión definitiva de S5. |
+| Aspectos relacionables con los contextos del mapa | docs/aspectos.md (fila A-01) y docs/arquitectura/contextos-y-propiedad-de-datos.md | Cumple | A-01 se relaciona con Invitaciones; los demás contextos aún no tienen aspectos, lo que es esperable en esta etapa. |
 
 ## Matriz transversal (CONTRATO §11)
 
 | Criterio | Evidencia | Estado | Observaciones |
 |---|---|---|---|
-| Identidad del repositorio | Repo ISCOUTB/AS_202620_EnAgenda visible y público; 3 cuentas en shortlog (696882e) | Cumple | Integrantes declarados coinciden en número con cuentas activas. |
-| Estructura mínima | README.md, docs/arc42/, docs/adr/, docs/c4/, docs/aspectos.md y docs/ia.md presentes en HEAD (696882e) | Cumple | Hay archivos __pycache__ versionados, pero no afecta la estructura mínima. |
-| Convenciones de ADR | docs/adr/0001-usar-monolito-modular.md con nombre válido y contenido completo (696882e) | Cumple | Un solo ADR; no se observan reescrituras. |
-| La tabla de aspectos | docs/aspectos.md fila A-01 con enlaces a C4, ADR, código, pruebas y evidencia (696882e) | Cumple | Solo un aspecto; la fila es navegable. |
-| Registro de uso de IA | docs/ia.md con entradas de agosto y septiembre, incluidos rechazos con motivo (696882e) | Cumple | El log muestra 3 commits, crece en el tiempo. |
-| README | README.md describe qué es, arranque con un comando y pruebas (696882e) | Cumple | El comando usa backslash de Windows; en Linux requiere ajuste. |
-| Pipeline y análisis estático | .github/workflows/ci.yml ejecuta pytest; runs_ci 'CI' success (https://github.com/ISCOUTB/AS_202620_EnAgenda/actions/runs/34162828625); sin configuración de SonarCloud | No cumple | Falta análisis estático en SonarCloud exigido por el contrato. |
-| Secretos | grep de secretos en 696882e solo muestra tokens de invitación; sin .env versionado | Cumple | No hay credenciales en el repositorio. |
+| Identidad del repositorio | Repositorio ISCOUTB/AS_202620_EnAgenda visible; autores consolidados: Daoisttl0FB3/GabrielaMorales Cancino (mismo correo), Jein-12, eliabarnedocondef10-gif | Cumple | Tres identidades consolidadas coinciden con los integrantes declarados. |
+| Estructura mínima | docs/arc42/ (01-12), docs/adr/0001-usar-monolito-modular.md, docs/c4/nivel-1..3, docs/aspectos.md, docs/ia.md, README.md | Cumple | Estructura mínima presente; se versionan archivos __pycache__ que deberían ignorarse. |
+| Estado del repositorio calificado | Hash 0a58de8 (2026-09-13T23:38:41-05:00) en origin/master, anterior al cierre; sin commits posteriores | Cumple | Commit vigente correcto para la semana 6. |
+| Convenciones de ADR | docs/adr/0001-usar-monolito-modular.md con contexto, alternativas, decisión, consecuencias y trazabilidad | Cumple | Nombre y estructura cumplen la convención; no se observan reescrituras. |
+| Tabla de aspectos | docs/aspectos.md con fila A-01 y 8 columnas navegables (C4, ADR, código, pruebas, evidencia) | Cumple | Solo una fila; el resto de contextos aún sin aspectos asociados. |
+| Registro de uso de IA | docs/ia.md con usos, aceptaciones, rechazos y verificación; log con commits en varias fechas | Cumple | Incluye rechazos con motivo técnico, como exige el contrato. |
+| README | README.md con descripción, requisitos, instalación, arranque (python app\web.py) y pruebas (pytest -q) | Cumple | Arranque con un solo comando y pruebas documentadas. |
+| Pipeline y análisis estático | .github/workflows/ci.yml solo ejecuta pytest; runs_ci con conclusión success (ej. run 34806818454) | No cumple | Falta el análisis estático con SonarCloud (organización isco-utb) exigido por el contrato. |
 
 ## Estado global del proyecto (overall · punta actual de la misma rama)
 
 Mira el repositorio **entero en la punta actual de la misma rama**, no solo la evidencia del cierre: si el equipo subio tarde o corregio entregas anteriores, aqui se nota.
 
-- **Punta actual revisada**: `696882ecb889c01bdc93170556c90044acf4fcff 2026-09-07T16:21:16-05:00 Update aspectos.md`
+- **Punta actual revisada**: `0a58de865e0ddcde35c2b6fb73433c8611752219 2026-09-13T23:38:41-05:00 Update ia.md`
 - **Veredicto**: con pendientes
-- Resumen: El proyecto tiene base de invitaciones con pruebas y CI en verde, pero la documentación de arquitectura está incompleta: C4 nivel 3 vacío, arc42 sección 8 vacía, sin mapa de contextos ni tabla de datos.
+- Resumen: Proyecto EnAgenda con monolito modular, corte vertical de invitaciones implementado y documentación arc42 completa. Mapa de contextos y propiedad de datos definidos para la semana 6.
 
 Pendientes que siguen abiertos:
-- C4 nivel 3 sin contenido
-- arc42 sección 8 vacía
-- Mapa de contextos y tabla módulo-datos ausentes
-- SonarCloud no configurado
+- SonarCloud no configurado en el pipeline.
+- Pendientes de la semana 5: reto nuevo, medición, incremento y umbral.
+- Ampliar la tabla de aspectos a más contextos.
+- Eliminar archivos __pycache__ del repositorio.
 
 ## Recuento y nota sugerida
 
-0 de 8 criterios Cumple.
+7 de 8 criterios Cumple.
 
-**Nota sugerida preliminar (propuesta al docente; puede cambiar al cierre): 1.0 = 1 + 4 × (0/8).** La nota final la fija el profesor en Moodle.
+**Nota sugerida (propuesta al docente, publicada por decision del profesor): 4.5 = 1 + 4 × (7/8).** La nota final la fija el profesor en Moodle.
 
 ## No verificado / pendientes
 
-- Criterio 7 de la ficha (C4 nivel 3 y ADR si límites cambiaron): falta hash de S5 para comparar.
+- Criterio 7 de la ficha: comparación de límites con S5 requiere el hash de la revisión definitiva de S5.
 
 ## Hallazgos para la planilla
 
-- No hay mapa de contextos ni tabla módulo-datos en la entrega S6.
-- arc42 sección 8 y C4 nivel 3 están vacíos.
-- No se documenta recorrido de verificación de violaciones.
-- Falta SonarCloud en el pipeline.
 - Archivos __pycache__ versionados en src/ y tests/.
-- docs/correcciones.md referencia correcciones-feedback.md inexistente.
-- Solo un aspecto en docs/aspectos.md para seis módulos declarados.
+- SonarCloud no configurado en el pipeline; solo pytest.
+- Pendientes de la semana 5 (reto nuevo, medición, incremento, umbral) declarados en docs/correcciones.md sin resolver.
+- Solo un aspecto (A-01) en docs/aspectos.md; Eventos, Tareas, Agenda, Presupuesto y Panel sin aspectos asociados.
+- C4 nivel 3 existe pero no se pudo verificar reajuste de límites por falta del hash de S5.

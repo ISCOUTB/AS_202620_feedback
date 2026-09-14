@@ -41,3 +41,7 @@ Buenas noticias primero: el pipeline sigue en verde antes del cierre y `docs/ia.
 Sobre `correcciones.md`: lo leímos completo. Es una autoevaluación de las semanas 1 a 4 donde ustedes mismos marcan todo como "Cumple", pero esas semanas ya fueron calificadas y no se vuelven a calificar por existir el documento — necesitábamos que el archivo respondiera a la revisión preliminar de este corte (semana-05-corte1), y no encontramos ningún punto que lo hiciera. Para la próxima entrega, si quieren disputar una fila concreta de una revisión ya publicada, cítenla y aporten la evidencia puntual que la contradice, en vez de una lista general de "cumple" sin evidencia verificable.
 
 Preparen para la sustentación: cuál era la restricción asignada, qué midieron antes de cualquier cambio y con qué procedimiento, y por qué el ADR-0003 no aparece conectado a esa restricción.
+
+## Semana 6 · S6
+
+La documentación de la semana 6 está parcialmente visible: la sección 8 de arc42 ya incorpora lenguaje ubicuo con los términos de contextos delimitados, pero no se pudo verificar el mapa de contextos completo ni la tabla módulo-datos. Se recomienda asegurar que el mapa nombre explícitamente los contextos y el tipo de relación entre ellos, y que la tabla de dueño único se contraste con los modelos reales del backend. También conviene documentar el recorrido de la auditoría de violaciones con ubicaciones concretas en el código. Para el pipeline, adjuntar el enlace a un run de GitHub Actions. El repositorio cumple con la estructura, los ADR y el registro de IA.

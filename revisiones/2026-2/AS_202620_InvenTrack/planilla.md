@@ -10,13 +10,13 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_InvenTrack` |
 | Integrantes y su usuario de GitHub | Javier Alejandro Carta Lacharme · Esteban Javier Peluffo Marquez · Felix Andres Taborda Jimenez · Jose Gabriel Vargas Perez — cuentas abajo |
 | URL del sistema desplegado | sin desplegar aún |
-| Ultima revision | 2026-09-11 |
+| Ultima revision | 2026-09-14 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 6 | S6 | `ac951e3` (2026-09-08T10:11:58-05:00) | 0/8 | 1.0 (prelim.) | si |
+| 6 | S6 | `d6f2b19` (2026-09-13T23:37:36-05:00) | 7/8 | 4.5 | si |
 | 5 | CORTE1 | `ac951e3` (2026-09-08T10:11:58-05:00) | 9/12 | 4.0 | si |
 | 4 | S4 | `d7ba824` (2026-08-30T23:39:33-05:00) | 5/10 | 3.0 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `06920209` · 2026-08-09T16:03:46-05:00 | 4/9 | 2,8 * | sí |
@@ -73,6 +73,8 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 | correcciones.md sin estructura de índice trazable (criterio 3 de la ficha S5). | S5 | si | |
 | Sin evidencia de ejecución de SonarCloud. | S5 | si | |
 | PDF en Moodle y sustentación pendientes de verificación. | S5 | si | |
+| Verificar sección 8 de arc42 (lenguaje ubicuo y mapa de contextos) | S6 | si | |
+| Evidenciar ejecución del pipeline CI | S6 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -84,7 +86,7 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 | `docs/ia.md` al día | Cumple | Entrada del 2026-09-06 referida al Reto Corte 1, con rechazo y motivo técnico. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Escaneos limpios. |
 | Contribución de todos los integrantes | Cumple | Cuatro personas consolidadas para cuatro integrantes en HEAD. |
-| Pipeline en verde | No cumple | Run de HEAD `33811437677` en verde; no demuestra el reto. |
+| Pipeline en verde | No verificado | Run de HEAD `33811437677` en verde; no demuestra el reto. |
 
 ## Contribución por integrante
 

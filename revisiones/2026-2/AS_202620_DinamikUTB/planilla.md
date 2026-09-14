@@ -8,12 +8,13 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_DinamikUTB` |
 | Integrantes y su usuario de GitHub | Luis Daniel Padilla Leottau (`Daniel-dev02`) · Gillianis Del Carmen Perez Revolledo (`gillianisperez-prog`) · Esteban Ramirez Rios (`Eramirezr`) · Juan Jose Vargas Perez (`JuanchisV`, firma también como «Juan José Vargas Pérez» con el mismo correo) |
 | URL del sistema desplegado | sin desplegar todavía |
-| Ultima revision | 2026-09-11 |
+| Ultima revision | 2026-09-14 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 6 | S6 | `265e652` (2026-09-13T23:29:49-05:00) | 0/8 | 1.0 | si |
 | 5 | CORTE1 | `72bfc7e` (2026-09-07T22:28:37-05:00) | 4/12 | 2.3 | si |
 | 4 | S4 | `8558156` (2026-08-30T23:52:24-05:00) | 7/10 | 3.8 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `769f970` · 2026-08-09T21:24:49-05:00 | 7/9 | no se publica | sí |
@@ -54,6 +55,11 @@
 | Verificar contenido de correcciones.md, aspectos.md, 10-quality-requirements.md e ia.md. | S5 | si | |
 | Aportar runs de CI del hash 72bfc7e. | S5 | si | |
 | Entregar PDF en Moodle y sustentar. | S5 | si | |
+| Confirmar mapa de contextos y tabla módulo-datos en 08-cross-cutting-concepts.md | S6 | si | |
+| Verificar violaciones de propiedad de datos y plan de corrección | S6 | si | |
+| Comparar C4 nivel 3 con el hash de S5 y posible ADR de reajuste | S6 | si | |
+| Revisar docs/aspectos.md | S6 | si | |
+| Evidenciar ejecución del pipeline con runs_ci | S6 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

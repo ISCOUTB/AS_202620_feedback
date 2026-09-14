@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET` |
 | Integrantes y su usuario de GitHub | Nilver Garcia Pimentel · Camilo Jose Martinez Berrio · Joshua Jose Tenorio Alvarez — cuentas consolidadas: `nilver-garcia`/`Nnigarp` (mismo id de cuenta, es una sola persona), `camilixo92`, `Carulla-sd` |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-11 |
+| Ultima revision | 2026-09-14 |
 
 ## Estado por entrega
 
@@ -19,7 +19,7 @@
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `4dd857a` · 2026-08-23T23:54:16-05:00 | 9/9 | no se publica | sí |
 | 4 | S4 | `f3f4367` (2026-08-30T22:55:30-05:00) | 9/10 | 4.6 | si |
 | 5 | CORTE1 | `8044215` (2026-09-06T16:05:15-05:00) | 10/12 | 4.3 | si |
-| 6 | S6 | `8044215` (2026-09-06T16:05:15-05:00) | 1/8 | 1.5 (prelim.) | si |
+| 6 | S6 | `dc548c0` (2026-09-13T01:19:54-05:00) | 7/8 | 4.5 | si |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
@@ -64,6 +64,9 @@
 | Lista de violaciones de propiedad de datos con plan de corrección | S6 | si | |
 | Sección 8 de arc42 con lenguaje ubicuo y mapa de contextos | S6 | si | |
 | C4 nivel 3 y ADR si los límites cambian | S6 | si | |
+| Verificar contenido de docs/aspectos.md | S6 | si | |
+| Verificar contenido de docs/ia.md | S6 | si | |
+| Aportar runs_ci del pipeline | S6 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -75,7 +78,7 @@
 | `docs/ia.md` al día | Cumple | Sección "Evidencia S5" con rechazos y motivo técnico |
 | Sin credenciales en el repositorio ni en el historial | Cumple | git grep y `.env` sin coincidencias |
 | Contribución de todos los integrantes | Cumple | 3 personas consolidadas: Nilver Garcia (124), Camilo Martinez (26), Joshua Tenorio (19) |
-| Pipeline en verde | Cumple | Run del commit de la etiqueta (`80442158`) en success: https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/actions/runs/34059972075 |
+| Pipeline en verde | No verificado | Run del commit de la etiqueta (`80442158`) en success: https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/actions/runs/34059972075 |
 
 ## Contribución por integrante
 

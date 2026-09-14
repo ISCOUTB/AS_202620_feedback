@@ -10,7 +10,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB` |
 | Integrantes y su usuario de GitHub | Shalom Jhoanna Arrieta Marrugo (shalom-A26) · Levis Adrian Ortiz Cano (RAZOR7150) · Alejandro Patron Montero (pxtroniwnl) · Jasen Mihovil Yukopila Escobar (Jmyukopila) — correspondencias por los correos de los commits, por confirmar con el docente |
 | URL del sistema desplegado | sin URL (sin despliegue todavía) |
-| Ultima revision | 2026-09-11 |
+| Ultima revision | 2026-09-14 |
 
 ## Estado por entrega
 
@@ -21,7 +21,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `f4602a3` · 2026-08-21T13:22:16-05:00 | 6/9 | no se publica | sí |
 | 4 | S4 | `0d208a2` (2026-08-29T21:37:39-05:00) | 6/10 | 3.4 | si |
 | 5 | CORTE1 | `3d732d7` (2026-09-07T14:41:37-05:00) | 9/12 | 4.0 | si |
-| 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
+| 6 | S6 | `3d732d7` (2026-09-07T14:41:37-05:00) | sin actividad | no aplica | si |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
 | 8 | Taller aplicado de despliegue | | | no aplica | |

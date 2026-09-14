@@ -10,13 +10,13 @@ Hoja consolidada del equipo EnAgenda. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_EnAgenda` |
 | Integrantes y su usuario de GitHub | Eliab Josue Arnedo Conde · Jeimy Yulieth Mendez Altamiranda · Gabriela Morales Cancino — cuentas abajo |
 | URL del sistema desplegado | sin desplegar aún |
-| Ultima revision | 2026-09-11 |
+| Ultima revision | 2026-09-14 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 6 | S6 | `696882e` (2026-09-07T16:21:16-05:00) | 0/8 | 1.0 (prelim.) | si |
+| 6 | S6 | `0a58de8` (2026-09-13T23:38:41-05:00) | 7/8 | 4.5 | si |
 | 5 | CORTE1 | `696882e` (2026-09-07T16:21:16-05:00) | 10/12 | 4.3 | si |
 | 4 | S4 | `df724b8` (2026-08-30T23:57:42-05:00) | 8/10 | 4.2 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `13f61b10` · 2026-08-09T05:34:14-05:00 | 8/9 | 4,6 * | sí |
@@ -62,6 +62,10 @@ Hoja consolidada del equipo EnAgenda. Se actualiza tras cada revisión.
 | arc42 sección 8 vacía | S6 | si | |
 | Mapa de contextos y tabla módulo-datos ausentes | S6 | si | |
 | SonarCloud no configurado | S6 | si | |
+| SonarCloud no configurado en el pipeline. | S6 | si | |
+| Pendientes de la semana 5: reto nuevo, medición, incremento y umbral. | S6 | si | |
+| Ampliar la tabla de aspectos a más contextos. | S6 | si | |
+| Eliminar archivos __pycache__ del repositorio. | S6 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -73,7 +77,7 @@ Hoja consolidada del equipo EnAgenda. Se actualiza tras cada revisión.
 | `docs/ia.md` al día | No cumple | La entrada más reciente corresponde a Semana 4; falta Corte 1. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Sin credenciales; coincidencias con `token` son identificadores de dominio y datos de prueba. |
 | Contribución de todos los integrantes | Cumple | Tres identidades consolidadas para tres integrantes en HEAD. |
-| Pipeline en verde | Cumple | Run de HEAD `33360647498` en verde; no demuestra todavía el reto. |
+| Pipeline en verde | No cumple | Run de HEAD `33360647498` en verde; no demuestra todavía el reto. |
 
 ## Contribución por integrante
 
