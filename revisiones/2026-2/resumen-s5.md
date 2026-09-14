@@ -8,7 +8,7 @@ Nota sugerida = 1 + 4 × (n/m) sobre la matriz de la ficha, **propuesta al docen
 |---|---|---|---|---|
 | AudioShare | `AS_202620_AudioShare` | `cb65d13` | 8/12 | 3.7 |
 | Clubs UTB | `AS_202620_Clubs_UTB` | `4ede977` | 8/12 | 3.7 |
-| DinamikUTB | `AS_202620_DinamikUTB` | `72bfc7e` | 4/12 | 2.3 |
+| DinamikUTB | `AS_202620_DinamikUTB` | `72bfc7e` | 8/12 | 3.7 |
 | Drift | `AS_202620_Drift` | `74337a3` | 7/12 | 3.3 |
 | ElMapita | `AS_202620_ElMapita` | `b28e068` | 7/12 | 3.3 |
 | EnAgenda | `AS_202620_EnAgenda` | `696882e` | 10/12 | 4.3 |

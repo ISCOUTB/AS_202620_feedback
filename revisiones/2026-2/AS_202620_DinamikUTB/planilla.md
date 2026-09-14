@@ -15,7 +15,7 @@
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 6 | S6 | `265e652` (2026-09-13T23:29:49-05:00) | 0/8 | 1.0 | si |
-| 5 | CORTE1 | `72bfc7e` (2026-09-07T22:28:37-05:00) | 4/12 | 2.3 | si |
+| 5 | CORTE1 | `72bfc7e` (2026-09-07T22:28:37-05:00) | 8/12 | 3.7 | sí (actualizada) |
 | 4 | S4 | `8558156` (2026-08-30T23:52:24-05:00) | 7/10 | 3.8 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `769f970` · 2026-08-09T21:24:49-05:00 | 7/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `58734e1c` · 2026-08-16T23:33:53-05:00 | 9/9 | no se publica | sí |
@@ -40,21 +40,11 @@
 | Evidencia de run de CI en verde | S4 | si | |
 | Verificar fila de aspectos.md | S4 | si | |
 | Verificar contenido de docs/ia.md | S4 | si | |
-| Confirmar existencia de etiqueta corte-1 | S5 | sí (sigue sin existir al cierre de S5) | Se calificó el último commit ≤ cierre (`f89564fd`); se les pidió crear la etiqueta antes del próximo corte. |
-| Aportar PDF de dos páginas en Moodle | S5 | No verificado | Se comprueba en Moodle, no en el repositorio. |
-| Conocer la restricción asignada para evaluar el diagnóstico | S5 | sí | No disponible en el kit; ADR-0003 (motor de BD) formaliza una decisión de la línea base, no una restricción nueva. |
-| Aportar runs_ci del pipeline en verde | S5 | cerrado | `f89564fd` tiene un run verde de CI antes del cierre. |
-| Completar docs/ia.md con salida aceptada/corregida/rechazada | S5 | cerrado | Entrada del 06/09/2026 sobre ADR-0003, con validación explícita. |
-| Verificar navegabilidad de docs/aspectos.md | S5 | sí (parcial) | 9 columnas presentes; para el aspecto A-08 (ligado al reto) Código/Pruebas/Evidencia siguen "Pendiente". |
-| `correcciones.md` autoevalúa S1-S4 en bloque, sin evidencia citable y fuera del alcance de esta revisión | S5 | sí | Se les explicó que S1-S4 ya están calificadas y no se reabren; ninguna corrección tocó una fila de la matriz de corte1. |
-| 72bfc7e, 86870bf, 30efaa7, af1d7e3 (2026-09-07) actualizan correcciones.md e ia.md después del cierre; no se puede confirmar que resuelvan hallazgos previos sin su contenido. | S5 | no (resuelto tarde) | — |
-| Completar docs/arc42/07-deployment-view.md y 08-cross-cutting-concepts.md | S5 | si | |
-| Verificar contenido de correcciones.md en el hash calificado | S5 | si | |
-| Aportar runs de CI del estado calificado | S5 | si | |
-| Completar trazabilidad navegable en docs/aspectos.md | S5 | si | |
-| Verificar contenido de correcciones.md, aspectos.md, 10-quality-requirements.md e ia.md. | S5 | si | |
-| Aportar runs de CI del hash 72bfc7e. | S5 | si | |
-| Entregar PDF en Moodle y sustentar. | S5 | si | |
+| Correcciones S1–S4 trazables y contrastadas | S5 | cerrado | `correcciones.md` relaciona cada hallazgo con rutas verificadas en el hash calificado. |
+| Pipeline de CI en el estado calificado | S5 | cerrado | El run asociado a `72bfc7e` terminó en verde. |
+| Trazabilidad consolidada de aspectos | S5 | sí | A-02 a A-08 tienen eslabones o columnas pendientes en `docs/aspectos.md`. |
+| ADR 0001 reescrito después de su aceptación | S5 | sí | Documentar cambios posteriores como ADR nuevo, sin editar una decisión aceptada. |
+| PDF exigido por el aula y sustentación | S5 | No verificado | Se comprueban en Moodle y en la sesión docente, no en el repositorio. |
 | Confirmar mapa de contextos y tabla módulo-datos en 08-cross-cutting-concepts.md | S6 | si | |
 | Verificar violaciones de propiedad de datos y plan de corrección | S6 | si | |
 | Comparar C4 nivel 3 con el hash de S5 y posible ADR de reajuste | S6 | si | |
@@ -67,11 +57,11 @@
 | Nombre y visibilidad del repositorio | Cumple | `AS_202620_DinamikUTB`, público. |
 | Estructura mínima | Cumple | Las seis rutas presentes; arc42 con 12 secciones. |
 | Convención de nombres de ADR | Cumple | `0001-seleccion-monolito-modular.md` conforme. |
-| ADR aceptados sin reescribir | Cumple | Creado e iterado el mismo día (2026-08-23, 04:00–04:48), sin reescrituras posteriores. |
+| ADR aceptados sin reescribir | No cumple | ADR 0001 tuvo una actualización posterior a su aceptación el 1 de septiembre; debe preservarse y sucederse con un ADR nuevo. |
 | `docs/ia.md` al día | Cumple | Entradas del 23/08 con rechazos («Rechazado parcialmente») y motivo. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Sin coincidencias. |
 | Contribución de todos los integrantes | Cumple | 4 de 4 en S3 (Juan 21, Gillianis 11, Luis 12, Esteban 2); desbalance anotado. |
-| Pipeline en verde | No verificado | Sin pipeline; hay pruebas locales (`backend/tests/test_main.py`, `frontend/test/widget_test.dart`) sin evidencia de ejecución. |
+| Pipeline en verde | Cumple | El workflow de CI y el run asociado a `72bfc7e` verifican backend y frontend en verde. |
 
 ## Contribución por integrante
 

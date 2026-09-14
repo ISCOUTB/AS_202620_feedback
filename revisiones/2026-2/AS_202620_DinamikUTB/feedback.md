@@ -45,3 +45,9 @@ Preparen para la sustentación: cuál era la restricción asignada, qué midiero
 ## Semana 6 · S6
 
 La documentación de la semana 6 está parcialmente visible: la sección 8 de arc42 ya incorpora lenguaje ubicuo con los términos de contextos delimitados, pero no se pudo verificar el mapa de contextos completo ni la tabla módulo-datos. Se recomienda asegurar que el mapa nombre explícitamente los contextos y el tipo de relación entre ellos, y que la tabla de dueño único se contraste con los modelos reales del backend. También conviene documentar el recorrido de la auditoría de violaciones con ubicaciones concretas en el código. Para el pipeline, adjuntar el enlace a un run de GitHub Actions. El repositorio cumple con la estructura, los ADR y el registro de IA.
+
+## Semana 5 · corte actualizado
+
+Esta revisión sustituye las conclusiones anteriores de S5. El corte es un compendio de S1 a S4: no se evaluó un reto ni una restricción nueva. La documentación de problema, calidad, estrategia, ADR, C4 y el corte vertical está presente, y las correcciones están organizadas con rutas verificables; también hay evidencia de CI en verde.
+
+Queda por completar la trazabilidad de los aspectos que aún conservan celdas pendientes, verificar el arranque completo en un entorno limpio y resolver el PDF y la sustentación fuera del repositorio. Si una decisión aceptada cambia, registren la sustitución en un ADR nuevo en vez de editar el ADR original.
