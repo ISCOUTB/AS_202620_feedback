@@ -121,6 +121,21 @@ Pruebas automatizadas ejecutadas por integración continua en cada push, más an
 SonarCloud (organización `isco-utb`). Desde el segundo corte se espera además que el pipeline
 bloquee la integración cuando falla.
 
+Como los repositorios y sus análisis son públicos, desde S6 la evidencia de SonarCloud debe ser
+auditable sin acceso del equipo. Para marcar esta comprobación como **Cumple**, el informe cita:
+
+1. el archivo de configuración del análisis, si aplica (`sonar-project.properties` u opción
+   equivalente), y la línea del workflow que invoca el scanner;
+2. la URL del run exitoso de CI que ejecutó el scanner para el hash o rama revisados; y
+3. la URL pública del análisis en SonarCloud, con el estado del *Quality Gate* y la rama o
+   revisión correspondiente.
+
+Un badge, el enlace genérico a la organización, un token configurado, o un workflow que solo
+sincroniza issues **no prueba que SonarCloud funcione**. Si falta cualquiera de las tres
+evidencias, se documenta como no conformidad: qué se esperaba encontrar, dónde se buscó y qué no
+se encontró. Un *Quality Gate* fallido también es una no conformidad; no se compensa con que el
+scanner haya arrancado.
+
 ```bash
 ls .github/workflows/ 2>/dev/null
 curl -s "https://api.github.com/repos/ISCOUTB/$REPO/actions/runs?per_page=5" \
@@ -128,8 +143,8 @@ curl -s "https://api.github.com/repos/ISCOUTB/$REPO/actions/runs?per_page=5" \
 ```
 
 Si el equipo usa otra plataforma de CI, la evidencia es el enlace al run que entregó en Moodle
-más el archivo de configuración en el repositorio. Un badge en el README no es evidencia de
-ejecución.
+más el archivo de configuración en el repositorio y la URL pública de SonarCloud. Un badge en el
+README no es evidencia de ejecución.
 
 ## 9. Secretos
 
@@ -170,7 +185,7 @@ listado de equipos delante, y solo entonces concluye quién falta.
 
 Se aplica en **todas** las entregas, además de la matriz propia de la ficha.
 
-| Criterio de evaluación | Evidencia técnica esperada | Estado (Cumple / No cumple) | Observaciones |
+| Criterio de evaluación | Evidencia técnica esperada | Estado (Cumple / No cumple / No verificado) | Observaciones |
 |---|---|---|---|
 | Repositorio en la organización, con el nombre de la convención y público | URL `github.com/ISCOUTB/AS_202620_<PROYECTO>` y respuesta de la API sin autenticación | | |
 | Estructura mínima presente | salida de `git ls-tree` con las seis rutas del apartado 2 | | |
@@ -178,6 +193,7 @@ Se aplica en **todas** las entregas, además de la matriz propia de la ficha.
 | Nombres de ADR según la convención | `ls docs/adr` sin salida en el filtro del apartado 4 | | |
 | ADR aceptados no reescritos | historial de cada ADR anterior sin commits de reescritura, o reemplazo declarado | | |
 | `docs/ia.md` al día para la semana | commits sobre el archivo dentro del periodo revisado, con lo rechazado y su motivo | | |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | workflow y run exitoso, más URL pública del análisis y su *Quality Gate* | | |
 | Sin credenciales en el repositorio ni en el historial | `git grep` y `git log -S` sin coincidencias | | |
 | Contribución de todos los integrantes | `git shortlog -sne` con todos los integrantes del equipo | | |
 

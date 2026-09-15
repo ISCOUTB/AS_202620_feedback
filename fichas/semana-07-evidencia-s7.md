@@ -36,7 +36,7 @@ flecha etiquetada con su protocolo y su formato.
    respuesta. Un contrato con rutas pero sin esquemas de datos se anota.
 3. **Comprueba que el contrato corresponde con la API implementada.** Toma dos rutas del contrato
    y localízalas en el código; toma una ruta del código y comprueba que está en el contrato. La
-   desincronización en cualquiera de los dos sentidos es hallazgo.
+   desincronización en cualquiera de los dos sentidos es una no conformidad.
 4. **Versionado del contrato.** Debe verse la versión de la API (en el propio archivo o en la
    ruta) y su historial en git.
    ```bash
@@ -59,6 +59,20 @@ flecha etiquetada con su protocolo y su formato.
    calidad concreto, con la alternativa descartada y sus consecuencias de acoplamiento.
 8. **arc42 sección 6 y C4 nivel 2.** Flujos de interacción descritos, y cada flecha del nivel 2
    etiquetada con protocolo y formato.
+9. **SonarCloud público.** Además de la prueba de contrato, aplica la comprobación transversal
+   del contrato: scanner invocado por el workflow, run exitoso de la rama o hash revisados y URL
+   pública del análisis con *Quality Gate*. Un badge o una configuración sin ejecución no cuentan.
+
+### Cómo reportar una ausencia o no conformidad
+
+En cada criterio que no cumpla o no pueda verificarse, el informe debe registrar: **qué evidencia
+se esperaba encontrar**, **dónde y cómo se buscó** (hash, rutas, contrato, código, workflow o
+run) y **qué no se encontró**. Por ejemplo: se esperaba una prueba de contrato invocada desde
+`ci.yml`, se revisó el workflow y no aparece ningún comando de contrato; o se esperaba que
+`GET /reservas/{id}` estuviera documentado y no existe en el OpenAPI.
+
+No basta con escribir «falta contrato» o «sin evidencia»: la ausencia debe quedar reproducible y
+conectada con la no conformidad correspondiente.
 
 **Qué no hacer aquí:** no exigir mensajería ni eventos, que son de la semana 12; no exigir
 despliegue de la API, que es de la semana 8; no puntuar la cantidad de endpoints.
