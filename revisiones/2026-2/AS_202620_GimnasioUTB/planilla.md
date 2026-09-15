@@ -10,12 +10,13 @@ Hoja consolidada del equipo GimnasioUTB. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_GimnasioUTB` |
 | Integrantes y su usuario de GitHub | Sebastian Felipe Caicedo Acosta · Rodrigo Andres Facio Lince Beltran · Pedro Luis Pallares De La Hoz — cuentas abajo |
 | URL del sistema desplegado | sin desplegar aún |
-| Ultima revision | 2026-09-09 |
+| Ultima revision | 2026-09-15 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 7 | S7 | `106869b` (2026-09-13T22:19:08-05:00) | 1/10 | 1.4 (prelim.) | si |
 | 5 | Primer corte · reto de línea base | HEAD `9b9f7c8` (sin etiqueta `corte-1`) | 2/12 | subtotal técnico 0,60/4,00; sustentación pendiente | revisión definitiva post-cierre 2026-09-07 |
 | 4 | S4 | `56db96b` (2026-08-30T22:33:47-05:00) | 2/10 | 1.8 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `a45615e9` · 2026-08-08T21:41:21-05:00 | 4/9 | 2,8 * | sí |
@@ -51,18 +52,25 @@ Hoja consolidada del equipo GimnasioUTB. Se actualiza tras cada revisión.
 | docs/aspectos.md con enlaces al ADR y a los escenarios. | S3 | si | |
 | Integración de SonarCloud en el pipeline. | S3 | si | |
 | Consolidar la estructura mínima en HEAD y mantener la trazabilidad en las próximas semanas. | S3 | si | |
+| Contrato de API en OpenAPI/AsyncAPI/proto ausente y sin historial de version (S7) | S7 | si | |
+| Prueba de contrato ausente y no invocada por .github/workflows/ci.yml (S7) | S7 | si | |
+| ADR de estrategia de integracion sincrona/asincrona ausente (S7) | S7 | si | |
+| SonarCloud sin scanner en el workflow ni URL publica de analisis con Quality Gate (pendiente desde S6) | S7 | si | |
+| docs/adr/ADR0001.md duplicado y fuera de la convencion NNNN-kebab-case | S7 | si | |
+| docs/aspectos.md sin columnas/enlaces a C4 y a evidencia de calidad | S7 | si | |
+| arc42 seccion 6 no verificable con la evidencia disponible | S7 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | `ISCOUTB/AS_202620_GimnasioUTB`, público |
-| Estructura mínima | No cumple | Las seis rutas del contrato están presentes en HEAD. |
+| Estructura mínima | Cumple | Las seis rutas del contrato están presentes en HEAD. |
 | Convención de nombres de ADR | Cumple | `0001-arquitectura-hexagonal.md` |
 | ADR aceptados sin reescribir | No cumple | Aceptado en `92f4a53` y modificado en cuatro commits posteriores. |
 | `docs/ia.md` al día | No cumple | Última entrada de Semana 4; falta Corte 1. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Escaneos limpios; solo `.env.example`. |
 | Contribución de todos los integrantes | Cumple | Tres personas consolidadas para tres integrantes en HEAD. |
-| Pipeline en verde | Cumple | Run de HEAD `33535934343` en verde; no demuestra el reto. |
+| Pipeline en verde | No cumple | Run de HEAD `33535934343` en verde; no demuestra el reto. |
 
 ## Contribución por integrante
 

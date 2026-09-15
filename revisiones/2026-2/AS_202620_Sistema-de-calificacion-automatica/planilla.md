@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica` |
 | Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-11 |
+| Ultima revision | 2026-09-15 |
 
 ## Estado por entrega
 
@@ -20,7 +20,7 @@
 | 4 | S4 | `cede35e` (2026-08-30T23:51:34-05:00) | 6/10 | 3.4 | si |
 | 5 | CORTE1 | `8b0d00b` (2026-09-07T14:29:28-05:00) | 8/12 | 3.7 | si |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
-| 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
+| 7 | S7 | `a47d5bd` (2026-09-13T23:21:55-05:00) | 1/10 | 1.4 (prelim.) | si |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
@@ -77,6 +77,10 @@
 | Confirmar organización ISCOUTB | S5 | si | |
 | Adjuntar run de CI del hash calificado | S5 | si | |
 | Confirmar docs/ia.md con rechazos documentados | S5 | si | |
+| Contrato de API en formato ejecutable versionado en el repositorio. | S7 | si | |
+| Prueba de contrato ejecutada por el pipeline y evidencia de que falla ante un cambio incompatible. | S7 | si | |
+| Evidencia auditable de SonarCloud (workflow, run exitoso y URL pública con Quality Gate). | S7 | si | |
+| Verificación de la tabla de aspectos, el registro de IA, la sección 6 del arc42 y el C4 nivel 2. | S7 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
