@@ -19,7 +19,7 @@ KIT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))
 REV = os.path.join(KIT, "revisiones", "2026-2")
 
 LLM_BASE = os.environ.get("LLM_BASE_URL", "https://opencode.ai/zen/go/v1")
-LLM_MODEL = os.environ.get("LLM_MODEL", "deepseek-v4-flash")
+LLM_MODEL = os.environ.get("LLM_MODEL", "deepseek-v4.1-flash")
 LLM_KEY = os.environ.get("OPENCODE_GO_API_KEY", "")
 
 MAX_TREE_ITEMS = 400

@@ -12,9 +12,9 @@ qué se publica y qué no (ver «Publicación»).
 ## Automatización (GitHub Actions)
 
 La revisión semanal corre sola desde la nube: `.github/workflows/revision-semanal.yml` se dispara
-el **lunes 06:00 COT** (pasada definitiva **completa** con `deepseek-v4-flash`: re-evalúa los 23
+el **lunes 06:00 COT** (pasada definitiva **completa** con `deepseek-v4.1-flash`: re-evalúa los 23
 equipos sobre el último commit ≤ cierre) y el **miércoles y viernes 06:00 COT** (pasadas tempranas
-en delta con `deepseek-v4-flash`: solo equipos con commits nuevos, notas preliminares), más
+en delta con `deepseek-v4.1-flash`: solo equipos con commits nuevos, notas preliminares), más
 `workflow_dispatch` manual. El núcleo es `scripts/cron/evaluar-semana.py` con el calendario de
 `scripts/cron/calendario.json` y el LLM del secret `OPENCODE_GO_API_KEY` (suscripción OpenCode Go,
 endpoint `https://opencode.ai/zen/go/v1`). Escribe matrices, planillas, feedback, resumen y README
@@ -32,11 +32,11 @@ procedimiento manual completo, por si hay que repetir algo a mano, sigue abajo.
 
 Cada entrega cierra el **domingo a medianoche (Colombia, UTC-5)**. El trabajo automático es:
 
-1. **Pasadas tempranas (miércoles y viernes 06:00 COT)**: revisión delta con `deepseek-v4-flash`
+1. **Pasadas tempranas (miércoles y viernes 06:00 COT)**: revisión delta con `deepseek-v4.1-flash`
    de los equipos con commits nuevos desde la pasada anterior; las notas quedan marcadas como
    preliminares y pueden cambiar hasta el cierre.
 2. **Pasada definitiva (lunes 06:00 COT)**: evaluación completa de los 23 equipos con
-   `deepseek-v4-flash` sobre el último commit ≤ cierre. Es la que queda publicada y la que cuenta.
+   `deepseek-v4.1-flash` sobre el último commit ≤ cierre. Es la que queda publicada y la que cuenta.
 
 ### Regla especial: pasada definitiva de S5
 
