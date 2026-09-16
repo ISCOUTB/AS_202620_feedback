@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant` |
 | Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-11 |
+| Ultima revision | 2026-09-16 |
 
 ## Estado por entrega
 
@@ -20,7 +20,7 @@
 | 4 | S4 | `c087303` (2026-08-30T18:54:10-05:00) | 5/10 | 3.0 | si |
 | 5 | CORTE1 | `a3f4d82` (2026-09-06T04:13:11-05:00) | 9/12 | no aplica | si |
 | 6 | S6 | `3950aba` (2026-09-11T00:51:26-05:00) | 0/8 | 1.0 (prelim.) | si |
-| 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
+| 7 | S7 | `5a4e8dc` (2026-09-15T20:48:07-05:00) | 6/10 | 3.4 (prelim.) | si |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
@@ -86,6 +86,11 @@
 | Verificar arc42 sección 8 con lenguaje ubicuo | S6 | si | |
 | Comparar límites contra hash de S5 y posible ADR de reajuste | S6 | si | |
 | Cruzar aspectos con contextos del mapa | S6 | si | |
+| Confirmar que ci.yml ejecuta backend/tests/test_api_contract.py y aportar la URL del run | S7 | si | |
+| Aportar la evidencia del cambio incompatible que hace fallar la prueba (contenido o run en rojo) | S7 | si | |
+| Publicar URL de SonarCloud con Quality Gate, línea del scanner y run exitoso | S7 | si | |
+| Completar contenido verificable de docs/c4/C4-C2.md, docs/aspectos.md y docs/ia.md | S7 | si | |
+| Registrar el historial git del contrato para sostener su versionado | S7 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -97,7 +102,7 @@
 | `docs/ia.md` al día | Cumple | Entrada 03 (08-23) sin aceptado/rechazado |
 | Sin credenciales en el repositorio ni en el historial | Cumple | `git grep` §9 y `.env` sin coincidencias |
 | Contribución de todos los integrantes | Cumple | 4 identidades consolidadas = 4 integrantes |
-| Pipeline en verde | Cumple | `.github/workflows/ci.yml` configurado el 2026-09-06; run success sobre `a3f4d826` antes del cierre |
+| Pipeline en verde | No verificado | `.github/workflows/ci.yml` configurado el 2026-09-06; run success sobre `a3f4d826` antes del cierre |
 | Etiqueta corte-1 (corte 1) | No cumple | No existe; solo `corrections-s4` |
 | ADR aceptados sin reescribir (corte 1) | No cumple | El commit `42c5b03` edita el ADR-0001 aceptado en vez de crear uno nuevo o marcarlo reemplazado |
 

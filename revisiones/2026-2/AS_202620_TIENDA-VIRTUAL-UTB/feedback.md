@@ -49,3 +49,7 @@ Qué corregir: dedicar el esfuerzo que sí se ve en el historial (que es real y 
 ## Semana 6 · S6
 
 Sin actividad S6: el ultimo commit anterior al cierre es de la entrega previa, asi que esta evidencia no se pudo evaluar. Lo que se arrastra de semanas anteriores sigue abierto para el corte.
+
+## Semana 7 · S7
+
+El repositorio no permite auditar la entrega porque el listado de archivos llega truncado y no expone docs/ ni la raíz. Suban el contrato de la API en OpenAPI o AsyncAPI con rutas y esquemas, su versión y el historial del archivo; localicen dos rutas del contrato en el código y una ruta del código en el contrato. Añadan la prueba de contrato y la línea del workflow que la invoca, con la URL del run. Lo más importante: demuestren con un run en rojo, o con el cambio incompatible documentado, que la prueba falla cuando el proveedor rompe el contrato. Falta el ADR de integración con alternativa descartada, la sección 6 de arc42 y el C4 nivel 2 con protocolo y formato en cada flecha. Eviten versionar el entorno Python completo en el repositorio: genera ruido en todos los escaneos. Si ya corrigieron algo después del cierre, indíquenlo con commit y fecha.

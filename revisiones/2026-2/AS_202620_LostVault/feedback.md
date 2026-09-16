@@ -37,3 +37,7 @@ Esto significa que sigue faltando todo lo que se pidió para el reto: identifica
 De paso, noten que un documento propio del equipo (`REVISION_CORREGIDA.md`, escrito en agosto) dice que ya habían eliminado unas carpetas residuales (`front_end`, `ejecutable`), pero esas carpetas todavía están en el repositorio.
 
 Antes de la sustentación, sería importante que el equipo pueda mostrar avance real sobre el reto, aunque sea parcial, y explicar qué pasó durante estos días adicionales.
+
+## Semana 7 · S7
+
+El repositorio está ordenado, el corte vertical de seguridad está documentado y las pruebas pasan en CI; eso es una buena base. Lo que falta esta semana es el contrato de API en un formato ejecutable: se esperaba un archivo OpenAPI, AsyncAPI o proto versionado, con rutas y esquemas de datos, y no aparece ninguno en el commit evaluado. Añádanlo, conéctenlo con las rutas reales del sistema y declaren su versión con historial en el repositorio. Después lleven la prueba de contrato al pipeline: hoy el workflow solo ejecuta analyze y test, así que un cambio incompatible del proveedor pasaría inadvertido. Para demostrar que sirve, introduzcan un cambio incompatible y dejen el run en rojo como evidencia. Complementen con un ADR que justifique la integración síncrona o asíncrona frente a un escenario de calidad, con la alternativa descartada, y con el nivel 2 de C4 como código, etiquetando cada flecha con protocolo y formato. Falta también publicar la URL del análisis de SonarCloud con su Quality Gate.

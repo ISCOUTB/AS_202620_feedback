@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_ROUTB` |
 | Integrantes y su usuario de GitHub | Diego Jose Baron Ruiz (`diegobrr999-commits`) · Julian David Manjarrez Guzman (`juliandmanjarrez-tech`) · Keiner Enrique Mendivil Diaz (`MKeinerrr`, dos correos) · Junior Jose Orozco Atencio (`junior14700`) |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-11 |
+| Ultima revision | 2026-09-16 |
 
 ## Estado por entrega
 
@@ -20,7 +20,7 @@
 | 4 | S4 | `83b8c5e` (2026-08-30T19:33:15-05:00) | 10/10 | 5.0 | si |
 | 5 | CORTE1 | `343bb9d` (2026-09-09T21:10:40-05:00) | 8/12 | 3.7 | si |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
-| 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
+| 7 | S7 | `5b48dd0` (2026-09-13T23:43:22-05:00) | 2/10 | 1.8 (prelim.) | si |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
@@ -67,6 +67,12 @@
 | Verificar run de CI asociado al hash | S5 | si | |
 | Entregar PDF en Moodle | S5 | si | |
 | Sustentación del corte | S5 | si | |
+| Contrato OpenAPI o AsyncAPI versionado con rutas y esquemas. | S7 | si | |
+| Prueba de contrato invocada desde el pipeline y evidencia de fallo ante cambio incompatible. | S7 | si | |
+| ADR de estrategia de integracion sincrona o asincrona ligado a un escenario de calidad. | S7 | si | |
+| Evidencia auditable de SonarCloud: configuracion, run exitoso y URL del Quality Gate. | S7 | si | |
+| Comando unico de arranque y prueba en el README. | S7 | si | |
+| Contenido verificable del registro de uso de IA. | S7 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

@@ -10,7 +10,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB` |
 | Integrantes y su usuario de GitHub | Shalom Jhoanna Arrieta Marrugo (shalom-A26) · Levis Adrian Ortiz Cano (RAZOR7150) · Alejandro Patron Montero (pxtroniwnl) · Jasen Mihovil Yukopila Escobar (Jmyukopila) — correspondencias por los correos de los commits, por confirmar con el docente |
 | URL del sistema desplegado | sin URL (sin despliegue todavía) |
-| Ultima revision | 2026-09-14 |
+| Ultima revision | 2026-09-16 |
 
 ## Estado por entrega
 
@@ -22,7 +22,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 4 | S4 | `0d208a2` (2026-08-29T21:37:39-05:00) | 6/10 | 3.4 | si |
 | 5 | CORTE1 | `3d732d7` (2026-09-07T14:41:37-05:00) | 9/12 | 4.0 | si |
 | 6 | S6 | `3d732d7` (2026-09-07T14:41:37-05:00) | sin actividad | no aplica | si |
-| 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
+| 7 | S7 | `dea5bc9` (2026-09-15T09:52:53-05:00) | 0/10 | 1.0 (prelim.) | si |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
@@ -65,18 +65,25 @@ Hoja consolidada del equipo a lo largo del semestre.
 | PDF no verificado | S5 | si | |
 | sustentación no verificada | S5 | si | |
 | celdas de trazabilidad sin enlace | S5 | si | |
+| Contrato ejecutable con rutas y esquemas, versionado e historial | S7 | si | |
+| Prueba de contrato y su invocación desde el workflow, con URL del run | S7 | si | |
+| Evidencia de que la prueba falla ante un cambio incompatible | S7 | si | |
+| ADR de estrategia de integración con alternativa descartada | S7 | si | |
+| arc42 sección 6 y C4 nivel 2 con protocolo y formato por flecha | S7 | si | |
+| Evidence de SonarCloud: configuración, run del scanner y Quality Gate público | S7 | si | |
+| Listado completo de archivos y retiro del entorno Python vendorizado | S7 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | `ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB`, público |
-| Estructura mínima | Cumple | seis rutas presentes; desviación: escenarios en `docs/escenarios-calidad.md` con arc42 §10 vacía |
+| Estructura mínima | No verificado | seis rutas presentes; desviación: escenarios en `docs/escenarios-calidad.md` con arc42 §10 vacía |
 | Convención de nombres de ADR | Cumple | `0001-monolito-modular.md` |
 | ADR aceptados sin reescribir | Cumple | un solo commit sobre el ADR (`f4602a3`) |
 | `docs/ia.md` al día | No cumple | commit en el periodo, pero sin registro de rechazos con motivo |
 | Sin credenciales en el repositorio ni en el historial | Cumple | greps limpios; `compose.yaml:7` lleva contraseña de desarrollo del Postgres local |
 | Contribución de todos los integrantes | Cumple | 4 identidades consolidadas = 4 integrantes (Shalom ya aparece) |
-| Pipeline en verde | No cumple | run «Pruebas» success 2026-08-21T18:36Z (actions/runs/32514183233) |
+| Pipeline en verde | No verificado | run «Pruebas» success 2026-08-21T18:36Z (actions/runs/32514183233) |
 | Etiqueta corte-1 (corte 1) | No cumple | `git tag --list` vacío; no existe ninguna etiqueta en el repositorio |
 
 ## Contribución por integrante

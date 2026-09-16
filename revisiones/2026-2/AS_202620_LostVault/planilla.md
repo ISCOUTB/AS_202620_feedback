@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_LostVault` |
 | Integrantes y su usuario de GitHub | Jose Faustino Espana Noriega · Roy Andres Gonzalez Blanco · Shamara Llorente Tapias · Kiefer Monterroza Manjarres — identidades del historial: Roy Gonzalez (¿`RGBlanco18`?), `shamarallorente-blip`, `Fausto-4` (correo `ganonimo2504`), `weller-rar` (correo `pelu.kiefer`); correspondencias por confirmar con el docente |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-11 |
+| Ultima revision | 2026-09-16 |
 
 ## Estado por entrega
 
@@ -20,7 +20,7 @@
 | 4 | S4 | `952af8f` (2026-08-30T22:13:14-05:00) | 7/10 | 3.8 | si |
 | 5 | CORTE1 | `c0c17c1` (2026-09-07T16:46:16-05:00) | 7/12 | 3.3 | si |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
-| 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
+| 7 | S7 | `9d57572` (2026-09-13T22:11:29-05:00) | 1/10 | 1.4 (prelim.) | si |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
@@ -64,6 +64,16 @@
 | Crear correcciones.md en la raíz | S5 | si | |
 | Completar trazabilidad con C4 en docs/aspectos.md | S5 | si | |
 | Limpiar archivos residuales | S5 | si | |
+| Contrato de API en OpenAPI, AsyncAPI o proto, versionado y con rutas y esquemas. | S7 | si | |
+| Correspondencia verificable entre el contrato y la API implementada. | S7 | si | |
+| Versión de API declarada con historial en git. | S7 | si | |
+| Prueba de contrato y su invocación en el pipeline. | S7 | si | |
+| Evidencia de fallo de la prueba ante un cambio incompatible. | S7 | si | |
+| ADR de estrategia de integración síncrona o asíncrona con escenario y alternativa descartada. | S7 | si | |
+| C4 nivel 2 como código con protocolo y formato en cada flecha. | S7 | si | |
+| URL pública del análisis de SonarCloud con Quality Gate. | S7 | si | |
+| Columnas y filas pendientes de docs/aspectos.md (incluida la trazabilidad C4). | S7 | si | |
+| Secciones arc42 7, 8, 11 y 12 ausentes. | S7 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -75,7 +85,7 @@
 | `docs/ia.md` al día | No cumple | Última entrada 08-ago; sin lo rechazado |
 | Sin credenciales en el repositorio ni en el historial | Cumple | git grep, .env y `log -S` sin coincidencias |
 | Contribución de todos los integrantes | Cumple | 4 identidades de 4 en `1ddb826`; atribución de `Fausto-4` y `weller-rar` por confirmar |
-| Pipeline en verde | Cumple | `.github/workflows/flutter.yml` presente desde S4; run sobre `952af8f` (etiqueta `corte-1`) exitoso (2026-09-01T21:21:20Z). |
+| Pipeline en verde | No cumple | `.github/workflows/flutter.yml` presente desde S4; run sobre `952af8f` (etiqueta `corte-1`) exitoso (2026-09-01T21:21:20Z). |
 
 ## Contribución por integrante
 

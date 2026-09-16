@@ -10,12 +10,13 @@ Hoja consolidada del equipo LaPlacita. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_LaPlacita` |
 | Integrantes y su usuario de GitHub | Mateo Josue Buendia Barrios · Miguel Angel Isaza Montalvo · Samuel David Jimenez Alvarez · Jorge Alberto Martinez Castillo — cuentas abajo |
 | URL del sistema desplegado | sin desplegar aún |
-| Ultima revision | 2026-09-14 |
+| Ultima revision | 2026-09-16 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 7 | S7 | `2c0eb01` (2026-09-13T21:28:00-05:00) | 1/10 | 1.4 (prelim.) | si |
 | 6 | S6 | `2c0eb01` (2026-09-13T21:28:00-05:00) | 7/8 | 4.5 | si |
 | 5 | CORTE1 | `50b92f8` (2026-09-06T17:45:05-05:00) | 8/12 | 3.7 | si |
 | 4 | S4 | `745e799` (2026-08-30T21:52:41-05:00) | 4/10 | 2.6 | si |
@@ -61,6 +62,14 @@ Hoja consolidada del equipo LaPlacita. Se actualiza tras cada revisión.
 | Verificar que arc42 §8 contenga lenguaje ubicuo y mapa de contextos | S6 | si | |
 | Evidenciar la ejecución del pipeline CI en el commit actual | S6 | si | |
 | Deuda de propiedad V-02/V-04/V-05/V-06 planificada para Corte 2 | S6 | si | |
+| Contrato de API en formato ejecutable versionado | S7 | si | |
+| Prueba de contrato invocada por el pipeline | S7 | si | |
+| Evidencia de fallo de la prueba de contrato ante cambio incompatible | S7 | si | |
+| ADR de estrategia de integración (síncrona o asíncrona) contra escenario | S7 | si | |
+| arc42 §6 verificable en el archivo completo | S7 | si | |
+| SonarCloud: invocación en workflow, run exitoso del hash y URL pública con Quality Gate | S7 | si | |
+| Deuda de propiedad V-02, V-04, V-05 y V-06 (corte 2) | S7 | si | |
+| Vista única del arc42 como plantilla, revisar separación por secciones | S7 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -72,7 +81,7 @@ Hoja consolidada del equipo LaPlacita. Se actualiza tras cada revisión.
 | `docs/ia.md` al día | Cumple | Entradas del 23/08 con lo rechazado y su motivo |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Greps limpios |
 | Contribución de todos los integrantes | Cumple | 4 identidades consolidadas / 4 integrantes (53+21+18+3) |
-| Pipeline en verde | No verificado | `.github/workflows/` presente desde S4; run sobre la etiqueta `corte-1` (`50b92f8`) exitoso. |
+| Pipeline en verde | No cumple | `.github/workflows/` presente desde S4; run sobre la etiqueta `corte-1` (`50b92f8`) exitoso. |
 
 ## Contribución por integrante
 

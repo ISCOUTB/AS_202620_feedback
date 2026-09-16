@@ -32,3 +32,13 @@ El proyecto presenta una línea base arquitectónica sólida con arc42 completo,
 ## Semana 5 · Primer corte (revisión definitiva, 2026-09-07)
 
 El reto quedó resuelto de forma correcta: identificaron un riesgo real (que dos personas reserven el mismo cupo al mismo tiempo), midieron que antes del cambio el sistema ni siquiera tenía ese endpoint, implementaron el control para que solo se acepten tantas reservas como cupos existan, y probaron con 20 intentos simultáneos sobre 4 cupos que efectivamente solo se aceptan 4 y ninguno queda en negativo, dentro del tiempo esperado. La cadena de trazabilidad queda completa. Dos cosas por mejorar: primero, no pudimos confirmar cuál fue la restricción individual que el curso les asignó — verifiquen que lo que resolvieron sea exactamente eso y no una interpretación propia del reto. Segundo, el análisis de SonarCloud lleva varios días en rojo sin resolverse; tener las pruebas en verde no es suficiente si el análisis estático sigue fallando. Para la próxima entrega, repartan mejor el trabajo: casi todo el reto de esta semana lo hizo una sola persona.
+
+## Semana 7 · S7
+
+Buen avance en documentacion: la seccion 6 de arc42 y el C4 nivel 2 estan bien desarrollados y el nivel 2 etiqueta protocolo y formato en las flechas entre contenedores.
+El pendiente grande de esta semana es el contrato de la API: hoy la API solo esta descrita en codigo y en prosa, no en un archivo OpenAPI o AsyncAPI versionado que se pueda contrastar con las rutas implementadas.
+Sin ese archivo tampoco puede existir la prueba de contrato, y sin una ejecucion en rojo ante un cambio incompatible no hay evidencia de que la prueba sirva.
+Falta ademas el ADR que justifique la integracion sincrona o asincrona con la alternativa descartada y sus consecuencias de acoplamiento.
+Para la comprobacion transversal, el pipeline necesita una ejecucion visible del analisis estatico y la URL publica del Quality Gate.
+Sugerencia de orden: publicar el contrato, engancharlo al pipeline, provocar un fallo deliberado y dejarlo documentado, y cerrar con el ADR de integracion.
+El README se beneficiaria de un unico comando de arranque y de un comando de pruebas reproducible.

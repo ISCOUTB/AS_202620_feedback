@@ -39,3 +39,7 @@ Para la sustentación: expliquen qué pasaría si una tienda concentrara la mayo
 ## Semana 6 · S6
 
 La entrega S6 está bien estructurada: el mapa de contextos, la tabla de propiedad de datos y la auditoría con plan de corrección son verificables y cubren el código actual. Se recomienda confirmar que la sección 8 de arc42 incluya explícitamente el lenguaje ubicuo y el mapa de contextos, ya que no se pudo verificar en el commit. También conviene activar SonarCloud con el token y projectKey para cerrar el pendiente de S4, y evidenciar la ejecución del pipeline con un run. La deuda V-02/V-04/V-05/V-06 está bien planificada; el cierre de V-01 y V-03 el 13/09 es un buen avance.
+
+## Semana 7 · S7
+
+La base del proyecto sigue ordenada y con buena trazabilidad documental, pero esta entrega queda incompleta: no hay contrato OpenAPI/AsyncAPI/proto versionado, ni prueba de contrato ejecutada por el pipeline, ni ADR que justifique la integración síncrona o asíncrona. Tampoco se puede verificar que la prueba de contrato falle ante un cambio incompatible, que es el punto que separa competente de sobresaliente en este corte. Pendientes de semanas anteriores: SonarCloud sin run ni Quality Gate públicos, deuda de propiedad V-02/V-04/V-05/V-06 y secciones del arc42 que no se pueden cotejar con lo entregado. Recomendación: subir el contrato como archivo ejecutable, invocarlo desde ci.yml y anexar el run que lo rompe.
