@@ -212,7 +212,7 @@ def evidencia_equipo(repo, hash_cal, cierre, desde, rama):
 
 # ---------- LLM ----------
 
-def llm_chat(system, user, model, session_id, temperature=0.2, max_tokens=8000):
+def llm_chat(system, user, model, session_id, temperature=0.2, max_tokens=16000):
     headers_base = {"Content-Type": "application/json",
                      "User-Agent": "arqsw-feedback-bot/1.0",
                      "Authorization": "Bearer " + LLM_KEY,
@@ -244,7 +244,24 @@ def llm_chat(system, user, model, session_id, temperature=0.2, max_tokens=8000):
             cuerpo2 = ex2.read().decode("utf-8", "replace")[:500]
             raise RuntimeError("LLM error (2do intento, sin response_format): %s %s"
                                % (ex2.code, cuerpo2)) from None
-    return data["choices"][0]["message"]["content"]
+    choice = data["choices"][0]
+    mensaje = choice.get("message") or {}
+    contenido = mensaje.get("content")
+    if isinstance(contenido, list):
+        contenido = "".join(
+            parte.get("text", "") if isinstance(parte, dict) else str(parte)
+            for parte in contenido
+        )
+    if not isinstance(contenido, str) or not contenido.strip():
+        # No publicamos ni interpretamos razonamiento interno: solo informamos metadatos
+        # suficientes para distinguir una respuesta truncada de un JSON mal formado.
+        tamanos = {
+            clave: len(valor) if isinstance(valor, (str, list, dict)) else 0
+            for clave, valor in mensaje.items() if clave != "content"
+        }
+        raise RuntimeError("LLM sin contenido final (finish_reason=%s; campos=%s)" %
+                           (choice.get("finish_reason", "desconocido"), tamanos))
+    return contenido
 
 
 def modelo_evaluacion(modo):
