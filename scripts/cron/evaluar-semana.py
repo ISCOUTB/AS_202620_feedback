@@ -637,6 +637,12 @@ def actualizar_feedback(equipo, ev, entrada, res):
 
 
 def actualizar_readme(repos, entrada):
+    """Sincroniza la columna de una entrega sin publicar enlaces inexistentes.
+
+    Una pasada puede terminar con resultados parciales (por ejemplo, ante una respuesta no
+    procesable del modelo). En ese caso la matriz debe mostrar ``pendiente``: un enlace solo
+    es publicable cuando el informe correspondiente ya existe en el árbol que se va a commitear.
+    """
     p = os.path.join(KIT, "README.md")
     s = read_txt(p)
     col = ("Taller S%d" % entrada["semana"]) if entrada["id"].startswith("taller") \
@@ -655,12 +661,23 @@ def actualizar_readme(repos, entrada):
             s = s[:m.start(2)] + sep + s[m.end(2):]
     for repo in repos:
         folder = "revisiones/2026-2/%s" % repo
-        if folder + "/" + link in s:
+        informe = os.path.join(KIT, folder, link)
+        enlace = "[ver](%s/%s)" % (folder, link)
+        enlace_planilla = "[ver](%s/planilla.md)" % folder
+        if not os.path.exists(informe):
+            # Repara también las tablas de publicaciones parciales anteriores.
+            s = s.replace(enlace, "pendiente")
+            continue
+        if enlace in s:
+            continue
+        marcador_pendiente = "pendiente | " + enlace_planilla
+        if marcador_pendiente in s:
+            s = s.replace(marcador_pendiente, enlace + " | " + enlace_planilla)
             continue
         pat = r"\[ver\]\(" + re.escape(folder) + r"/planilla\.md\)"
         m = re.search(pat, s)
         if m:
-            s = s[:m.start()] + "[ver](%s/%s) | " % (folder, link) + s[m.start():]
+            s = s[:m.start()] + enlace + " | " + s[m.start():]
     write_txt(p, s)
 
 

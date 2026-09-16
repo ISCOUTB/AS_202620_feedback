@@ -48,6 +48,9 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
+          # En ejecuciones manuales, el SHA del despacho puede quedar obsoleto mientras
+          # espera el bloqueo de concurrencia. La publicación siempre parte de master.
+          ref: master
 
       - uses: actions/setup-python@v5
         with:
