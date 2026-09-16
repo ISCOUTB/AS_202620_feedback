@@ -270,6 +270,35 @@ def parse_json_llm(texto):
         raise
 
 
+def solicitar_evaluacion_json(user, modelo, session_id):
+    """Obtiene una matriz JSON utilizable, con reintentos independientes.
+
+    Algunos proveedores devuelven ocasionalmente una respuesta vacía o cortada aunque acepten
+    ``response_format``. Una respuesta así no es evidencia evaluable; se reintenta en una
+    sesión nueva y, si sigue ocurriendo, la pasada falla en lugar de publicar resultados parciales.
+    """
+    ultimo_error = "sin respuesta"
+    for intento in range(3):
+        instruccion = user
+        if intento:
+            instruccion += (
+                "\n\nIMPORTANTE: una respuesta anterior no fue JSON valido (%s). "
+                "Responde UNICAMENTE con el objeto JSON completo, sin comentarios ni markdown."
+                % ultimo_error[:200]
+            )
+        try:
+            texto = llm_chat(SISTEMA, instruccion, modelo,
+                              "%s-intento-%d" % (session_id, intento + 1))
+            res = parse_json_llm(texto)
+            if "matriz_ficha" not in res:
+                raise ValueError("JSON sin matriz_ficha")
+            return res
+        except Exception as ex:
+            ultimo_error = str(ex)
+            print("LLM/JSON invalido (intento %d/3): %s" % (intento + 1, ultimo_error[:200]))
+    raise ValueError("No se obtuvo JSON evaluable tras 3 intentos: %s" % ultimo_error[:200])
+
+
 SISTEMA = (
     "Eres un agente de revision academica de repositorios de estudiantes universitarios. "
     "Reglas innegociables:\n"
@@ -799,19 +828,7 @@ def procesar_equipo(repo, equipo, entrada, contrato, ficha, modo, desde):
         user = prompt_evaluacion(ficha, contrato, equipo, ev, entrada, modo)
         modelo = modelo_evaluacion(modo)
         session_id = "arqsw-%s-%s" % (entrada["id"], repo)
-        texto = llm_chat(SISTEMA, user, modelo, session_id)
-        try:
-            res = parse_json_llm(texto)
-            if "matriz_ficha" not in res:
-                raise ValueError("JSON sin matriz_ficha")
-        except Exception as ex:
-            user2 = user + ("\n\nIMPORTANTE: tu respuesta anterior no era JSON valido (%s). "
-                            "Responde de nuevo UNICAMENTE con el objeto JSON, sin comentarios ni markdown."
-                            % str(ex)[:200])
-            texto = llm_chat(SISTEMA, user2, modelo_evaluacion(modo), session_id)
-            res = parse_json_llm(texto)
-            if "matriz_ficha" not in res:
-                raise ValueError("JSON sin matriz_ficha")
+        res = solicitar_evaluacion_json(user, modelo, session_id)
         n_cumple = sum(1 for r in res["matriz_ficha"] if r.get("estado") == "Cumple")
         res["recuento"] = {"cumple": n_cumple, "total": len(res["matriz_ficha"])}
         nt = escribir_informe(equipo, ev, entrada, res, modo, anterior)
@@ -891,6 +908,12 @@ def main():
         r = procesar_equipo(repo, eqs[repo], entrada, contrato, ficha, modo_real, desde)
         resultados.append(r)
         print(r)
+    errores = [r for r in resultados if r.get("estado", "").startswith("error")]
+    if errores:
+        print("Pasada sin publicar: %d equipo(s) sin informe evaluable." % len(errores))
+        for r in errores:
+            print(" - %s: %s" % (r["repo"], r["estado"]))
+        raise SystemExit(1)
     if resultados:
         escribir_resumen(resultados, entrada, modo_real)
         actualizar_calificaciones_corte1(resultados, entrada, modo_real)
