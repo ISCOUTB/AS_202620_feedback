@@ -36,3 +36,7 @@ Antes de sustentar, implementen de verdad el mecanismo que describieron (o docum
 ## Semana 6 · S6
 
 La entrega de la semana 6 está sólida: el mapa de contextos, la tabla de propiedad de datos y la auditoría de modularidad están bien documentados y trazados. Para cerrar los pendientes: (1) verifica que la sección 8 del arc42 incluya explícitamente el lenguaje ubicuo y el mapa de contextos, y actualiza el README para reflejarlo; (2) deja evidencia de la ejecución del pipeline (enlace a un run de GitHub Actions) y decide si SonarCloud vuelve al workflow; (3) los módulos vacíos (usuarios, proveedores, alertas) deberían tener al menos una nota de estado en el mapa de contextos. El resto cumple con lo pedido.
+
+## Semana 7 · S7
+
+El avance en documentación de arquitectura es sólido: el ADR de integración está bien argumentado y la tabla de aspectos y el registro de IA son navegables. Para esta entrega falta lo central: el contrato de API en OpenAPI/AsyncAPI/proto versionado, la prueba de contrato y su ejecución en el pipeline. Sugerencia: empezar por un archivo de contrato con rutas y esquemas, conectarlo a dos o tres endpoints ya implementados y añadir en el workflow un paso que lo valide, comprobando además que falla al romper una ruta o un tipo. Conviene restituir el paso de análisis estático que quedó retirado y publicar la URL del análisis con su Quality Gate. En el C4 nivel 2, etiquetar cada flecha con protocolo y formato. Una prueba de contrato que nunca falla no demuestra nada: hay que provocar el fallo y dejarlo registrado.

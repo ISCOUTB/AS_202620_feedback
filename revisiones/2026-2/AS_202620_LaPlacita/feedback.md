@@ -42,4 +42,7 @@ La entrega S6 está bien estructurada: el mapa de contextos, la tabla de propied
 
 ## Semana 7 · S7
 
-La base del proyecto sigue ordenada y con buena trazabilidad documental, pero esta entrega queda incompleta: no hay contrato OpenAPI/AsyncAPI/proto versionado, ni prueba de contrato ejecutada por el pipeline, ni ADR que justifique la integración síncrona o asíncrona. Tampoco se puede verificar que la prueba de contrato falle ante un cambio incompatible, que es el punto que separa competente de sobresaliente en este corte. Pendientes de semanas anteriores: SonarCloud sin run ni Quality Gate públicos, deuda de propiedad V-02/V-04/V-05/V-06 y secciones del arc42 que no se pueden cotejar con lo entregado. Recomendación: subir el contrato como archivo ejecutable, invocarlo desde ci.yml y anexar el run que lo rompe.
+Buen avance de la semana: el contrato v1 está versionado, la prueba de contrato existe y documentaron con detalle cómo falla ante un cambio incompatible, además del ADR-0006 y el C4 nivel 2 con protocolo y formato.
+Para cerrar el corte, publiquen la URL del run de CI que ejecuta la prueba de contrato y la URL pública de SonarCloud con su Quality Gate, porque hoy el ADR-0003 deja ese análisis pendiente de un secreto.
+Añadan el fragmento de esquemas del OpenAPI y la evidencia de correspondencia entre dos rutas del contrato y el código implementado, y completen arc42 §6 con los flujos de interacción.
+Recuerden que una afirmación en un documento no reemplaza el enlace al run; con esos enlaces la entrega queda plenamente defendible.

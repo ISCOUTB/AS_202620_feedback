@@ -41,3 +41,13 @@ Para la sustentación: lleven claro qué restricción les tocó, qué medida ini
 ## Semana 6 · S6
 
 El mapa de contextos y la tabla de propiedad de datos están bien elaborados y contrastados con el código actual. La verificación de violaciones está documentada y el plan de corrección es claro. Pendientes: integrar SonarCloud al pipeline, resolver los pendientes señalados en el feedback de la semana 5 (reto nuevo, medición, incremento, umbral) y evitar versionar archivos __pycache__. A medida que se implementen más contextos, conviene ampliar la tabla de aspectos para mantener la trazabilidad completa.
+
+## Semana 7 · S7
+
+El repositorio está ordenado y la trazabilidad del módulo de invitaciones se sostiene: la tabla de aspectos navega a C4, ADR, código, pruebas y evidencia, y el pipeline corre y pasa.
+Sin embargo, esta entrega no aparece en la rama: no hay contrato ejecutable versionado, ni prueba de contrato ejecutada por el workflow, ni evidencia de que esa prueba falle ante un cambio incompatible.
+Se sugiere declarar el contrato de la API aunque el alcance sea mínimo y versionarlo en el repositorio, de modo que el pipeline pueda ejecutarlo y exista un run que se ponga en rojo al romperlo.
+Si la decisión es no exponer API, conviene dejar esa estrategia de integración en un ADR propio, ligado a un escenario de calidad, con la alternativa descartada y sus consecuencias de acoplamiento.
+Falta además indicar el formato (JSON, HTML) en las flechas del C4 nivel 2 y revisar la sección 6 de arc42.
+El análisis estático no es auditable hoy: no hay paso del escáner ni URL pública con Quality Gate.
+Detalles menores: un enlace a un documento de correcciones que no existe y archivos .pyc versionados.

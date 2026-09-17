@@ -10,12 +10,13 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_InvenTrack` |
 | Integrantes y su usuario de GitHub | Javier Alejandro Carta Lacharme · Esteban Javier Peluffo Marquez · Felix Andres Taborda Jimenez · Jose Gabriel Vargas Perez — cuentas abajo |
 | URL del sistema desplegado | sin desplegar aún |
-| Ultima revision | 2026-09-14 |
+| Ultima revision | 2026-09-17 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 7 | S7 | `d71c5b7` (2026-09-15T11:15:51-05:00) | 1/10 | 1.4 (prelim.) | si |
 | 6 | S6 | `d6f2b19` (2026-09-13T23:37:36-05:00) | 7/8 | 4.5 | si |
 | 5 | CORTE1 | `ac951e3` (2026-09-08T10:11:58-05:00) | 9/12 | 4.0 | si |
 | 4 | S4 | `d7ba824` (2026-08-30T23:39:33-05:00) | 5/10 | 3.0 | si |
@@ -75,6 +76,9 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 | PDF en Moodle y sustentación pendientes de verificación. | S5 | si | |
 | Verificar sección 8 de arc42 (lenguaje ubicuo y mapa de contextos) | S6 | si | |
 | Evidenciar ejecución del pipeline CI | S6 | si | |
+| Paso de SonarCloud retirado del CI (docs/ia.md, 2026-09-13) sin restituir a HEAD. | S7 | si | |
+| Contrato de API y prueba de contrato de la semana 7 ausentes. | S7 | si | |
+| Formato ausente en varias flechas del C4 nivel 2. | S7 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -86,7 +90,7 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 | `docs/ia.md` al día | Cumple | Entrada del 2026-09-06 referida al Reto Corte 1, con rechazo y motivo técnico. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Escaneos limpios. |
 | Contribución de todos los integrantes | Cumple | Cuatro personas consolidadas para cuatro integrantes en HEAD. |
-| Pipeline en verde | No verificado | Run de HEAD `33811437677` en verde; no demuestra el reto. |
+| Pipeline en verde | No cumple | Run de HEAD `33811437677` en verde; no demuestra el reto. |
 
 ## Contribución por integrante
 

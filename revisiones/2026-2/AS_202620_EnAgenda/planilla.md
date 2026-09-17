@@ -10,12 +10,13 @@ Hoja consolidada del equipo EnAgenda. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_EnAgenda` |
 | Integrantes y su usuario de GitHub | Eliab Josue Arnedo Conde · Jeimy Yulieth Mendez Altamiranda · Gabriela Morales Cancino — cuentas abajo |
 | URL del sistema desplegado | sin desplegar aún |
-| Ultima revision | 2026-09-14 |
+| Ultima revision | 2026-09-17 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 7 | S7 | `0a58de8` (2026-09-13T23:38:41-05:00) | 0/10 | 1.0 (prelim.) | si |
 | 6 | S6 | `0a58de8` (2026-09-13T23:38:41-05:00) | 7/8 | 4.5 | si |
 | 5 | CORTE1 | `696882e` (2026-09-07T16:21:16-05:00) | 10/12 | 4.3 | si |
 | 4 | S4 | `df724b8` (2026-08-30T23:57:42-05:00) | 8/10 | 4.2 | si |
@@ -66,6 +67,16 @@ Hoja consolidada del equipo EnAgenda. Se actualiza tras cada revisión.
 | Pendientes de la semana 5: reto nuevo, medición, incremento y umbral. | S6 | si | |
 | Ampliar la tabla de aspectos a más contextos. | S6 | si | |
 | Eliminar archivos __pycache__ del repositorio. | S6 | si | |
+| Ninguno: commits_post_cierre vacío y diff_desde_cierre 'sin diferencias con el estado calificado'; el HEAD de la rama sigue siendo 0a58de8. | S7 | no (resuelto tarde) | — |
+| Contrato OpenAPI/AsyncAPI/proto versionado y ejecutable | S7 | si | |
+| Rutas con esquemas de datos y correspondencia con la API implementada | S7 | si | |
+| Versión de API declarada con historial en git | S7 | si | |
+| Prueba de contrato presente y ejecutada por el workflow | S7 | si | |
+| Evidencia de que la prueba falla ante un cambio incompatible (run en rojo o evidencia aportada) | S7 | si | |
+| ADR de estrategia de integración (síncrona o asíncrona) con alternativa descartada | S7 | si | |
+| Verificación de arc42 sección 6 con los flujos de interacción | S7 | si | |
+| Formato en cada flecha del C4 nivel 2 | S7 | si | |
+| Análisis estático auditable en SonarCloud (scanner en workflow, run y URL con Quality Gate) | S7 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
