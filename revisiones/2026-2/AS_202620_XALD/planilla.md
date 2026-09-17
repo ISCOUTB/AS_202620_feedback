@@ -21,7 +21,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `dc38992` · 2026-08-23T22:07:19-05:00 | 5/9 | no se publica | sí |
 | 4 | S4 | `0205e44` (2026-08-30T23:12:03-05:00) | 4/10 | 2.6 | si |
 | 5 | CORTE1 | `9bf16cf` (2026-09-09T10:07:09-05:00) | 8/12 | 3.7 | si |
-| 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
+| 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | `55993cf` (2026-09-13T22:06:22-05:00) | 8/8 | 5.0 (prelim.) | sí |
 | 7 | S7 | `b00b319` (2026-09-17T00:01:02-05:00) | 4/10 | 2.6 (prelim.) | si |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
@@ -75,6 +75,8 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Corregir enlaces de docs/aspectos.md que apuntan a la rama experimental. | S5 | si | |
 | Integrar y evidenciar SonarCloud en el pipeline. | S5 | si | |
 | Contrastar cada corrección de correcciones.md con commit o run específico. | S5 | si | |
+| Análisis SonarCloud público con scanner, run y Quality Gate. | S6 | sí | Pipeline sin scanner ni URL pública de análisis. |
+| Completar A-04 y corregir enlaces de aspectos que apuntan a experimental. | S6 | sí | La tabla no es defendible en la rama calificada. |
 | Prueba de contrato inexistente en el arbol de b00b319. | S7 | si | |
 | Sin evidencia de ejecucion de CI (runs) ni analisis SonarCloud publico con Quality Gate. | S7 | si | |
 | Correspondencia contrato-codigo sin verificar; el contrato declara FastAPI y el backend versionado es Node. | S7 | si | |

@@ -747,41 +747,46 @@ def actualizar_readme(repos, entrada):
     es publicable cuando el informe correspondiente ya existe en el árbol que se va a commitear.
     """
     p = os.path.join(KIT, "README.md")
-    s = read_txt(p)
+    lineas = read_txt(p).splitlines()
     col = ("Taller S%d" % entrada["semana"]) if entrada["id"].startswith("taller") \
         else ("Matriz " + entrada["id"].upper())
     link = entrada["ficha"]
-    if ("| " + col + " |") not in s:
-        s2, n = re.subn(r"^(\| Equipo \|[^\n]*) \| Planilla \|$",
-                        r"\1 | " + col + " | Planilla |", s, count=1, flags=re.M)
-        if n == 0:
-            return
-        s = s2
-        m = re.search(r"^(\| Equipo \|[^\n]*\n)(\|[-|]+\|)\n", s, re.M)
-        if m:
-            ncols = m.group(1).count("|") - 1
-            sep = "|" + "---|" * ncols
-            s = s[:m.start(2)] + sep + s[m.end(2):]
-    for repo in repos:
-        folder = "revisiones/2026-2/%s" % repo
-        informe = os.path.join(KIT, folder, link)
-        enlace = "[ver](%s/%s)" % (folder, link)
-        enlace_planilla = "[ver](%s/planilla.md)" % folder
-        if not os.path.exists(informe):
-            # Repara también las tablas de publicaciones parciales anteriores.
-            s = s.replace(enlace, "pendiente")
-            continue
-        if enlace in s:
-            continue
-        marcador_pendiente = "pendiente | " + enlace_planilla
-        if marcador_pendiente in s:
-            s = s.replace(marcador_pendiente, enlace + " | " + enlace_planilla)
-            continue
-        pat = r"\[ver\]\(" + re.escape(folder) + r"/planilla\.md\)"
-        m = re.search(pat, s)
-        if m:
-            s = s[:m.start()] + enlace + " | " + s[m.start():]
-    write_txt(p, s)
+    cabecera = next((i for i, linea in enumerate(lineas)
+                      if linea.startswith("| Equipo |") and "| Planilla |" in linea), None)
+    if cabecera is None:
+        return
+    encabezados = [x.strip() for x in lineas[cabecera].strip().strip("|").split("|")]
+    if col not in encabezados:
+        encabezados.insert(encabezados.index("Planilla"), col)
+    linea_separador = "|" + "---|" * len(encabezados)
+    lineas[cabecera] = "| " + " | ".join(encabezados) + " |"
+    lineas[cabecera + 1] = linea_separador
+    pos_columna = encabezados.index(col)
+    pos_planilla = encabezados.index("Planilla")
+    esperadas = len(encabezados)
+
+    for i in range(cabecera + 2, len(lineas)):
+        if not lineas[i].startswith("|"):
+            break
+        celdas = [x.strip() for x in lineas[i].strip().strip("|").split("|")]
+        # Repara la matriz publicada con el actualizador anterior: cuando ya
+        # existía S7, este añadía S6 como una celda extra antes de Planilla.
+        while len(celdas) > esperadas:
+            indice_planilla = next((j for j, x in enumerate(celdas)
+                                     if "/planilla.md" in x), len(celdas) - 1)
+            del celdas[indice_planilla - 1 if indice_planilla > pos_planilla else -1]
+        while len(celdas) < esperadas:
+            celdas.insert(pos_planilla, "pendiente")
+        for repo in repos:
+            folder = "revisiones/2026-2/%s" % repo
+            if folder not in " | ".join(celdas):
+                continue
+            informe = os.path.join(KIT, folder, link)
+            celdas[pos_columna] = ("[ver](%s/%s)" % (folder, link)
+                                  if os.path.exists(informe) else "pendiente")
+            break
+        lineas[i] = "| " + " | ".join(celdas) + " |"
+    write_txt(p, "\n".join(lineas) + "\n")
 
 
 def escribir_resumen(resultados, entrada, modo):

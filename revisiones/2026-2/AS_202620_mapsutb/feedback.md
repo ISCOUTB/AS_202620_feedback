@@ -34,3 +34,7 @@ La documentación ahora declara con honestidad que el plano y las panorámicas s
 ## Semana 7 · S7
 
 El avance de documentación es sólido: la sección 6 de arc42, el árbol de utilidad y los ADR están bien razonados, y el README permite arrancar con un solo comando. Lo que falta para esta semana es el núcleo del entregable: no hay contrato de API en el repositorio porque el sistema aún no expone ninguna interfaz. Definan la interfaz que van a publicar (aunque sea interna, por ejemplo los límites entre repositorios y servicios), descríbanla en un archivo OpenAPI o AsyncAPI versionado y manténganla sincronizada con el código. Encima de ese contrato, agreguen una prueba que lo verifique desde el pipeline y demuestren con un run en rojo que falla al introducir un cambio incompatible: esa es la evidencia que distingue un trabajo competente de uno sobresaliente. Cierren también el ADR que justifique por qué la integración es síncrona o asíncrona frente a un escenario de calidad y etiqueten cada flecha del C4 nivel 2 con protocolo y formato. Con eso la entrega queda defendible sin cambiar el alcance del producto.
+
+## Semana 6 · S6
+
+El documento `dominio_y_modularidad.md` aporta un mapa de contextos, dueños de datos y no conformidades con acciones concretas. Para que la arquitectura sea defendible, llévenlo también a arc42 §8, documenten en un ADR el reajuste de límites y vinculen cada contexto con la tabla de aspectos. Añadan SonarCloud con scanner, run y Quality Gate público.

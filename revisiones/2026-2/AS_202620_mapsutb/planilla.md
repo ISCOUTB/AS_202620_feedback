@@ -19,7 +19,7 @@
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `ed55eda` · 2026-08-23T21:44:05-05:00 | 5/9 | no se publica | sí |
 | 4 | S4 | `f0d036a` (2026-08-30T22:53:06-05:00) | 5/10 | 3.0 | si |
 | 5 | CORTE1 | `e8bad4c` histórico; excepción: `8aee879` (2026-09-13T18:14:14-05:00) | 8/12 | 3.7 | sí (actualizada con correcciones tardías aceptadas) |
-| 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
+| 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | `8aee879` (2026-09-13T18:14:14-05:00) | 5/8 | 3.5 (prelim.) | sí |
 | 7 | S7 | `8aee879` (2026-09-13T18:14:14-05:00) | 1/10 | 1.4 (prelim.) | si |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
@@ -66,6 +66,8 @@
 | ADR de estrategia de integración (síncrona o asíncrona) con alternativa descartada y consecuencias. | S7 | si | |
 | C4 nivel 2 con protocolo y formato en cada flecha; revisar también docs/c4/C2.md. | S7 | si | |
 | Evidencia auditable de SonarCloud: línea del scanner, run del hash revisado y URL pública con Quality Gate. | S7 | si | |
+| Trasladar el mapa y lenguaje ubicuo a arc42 §8 y registrar el reajuste en un ADR. | S6 | sí | `dominio_y_modularidad.md` existe, pero §8 sigue siendo plantilla. |
+| Mapear aspectos a contextos y aportar scanner/run/Quality Gate de SonarCloud. | S6 | sí | La fila A-01 no cubre los cuatro contextos. |
 | Contenido verificable de docs/aspectos.md con las ocho columnas y celdas navegables. | S7 | si | |
 ## Estado del contrato del repositorio
 

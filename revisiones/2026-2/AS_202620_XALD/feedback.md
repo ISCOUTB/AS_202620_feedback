@@ -44,3 +44,7 @@ También revisamos el documento de correcciones que dejaron en el repositorio. L
 ## Semana 7 · S7
 
 Buen avance: el contrato ya es un OpenAPI 3.1.0 ejecutable con esquemas completos, hay ADR de integración ligado a escenarios y la sección 6 de arc42 describe los flujos con diagramas de secuencia. Lo que falta es lo que da valor probatorio: una prueba de contrato que consuma el contrato y se ejecute en el pipeline, y la evidencia de que esa prueba falla cuando el proveedor rompe el contrato (run en rojo o cambio incompatible documentado). Añadan el analisis de SonarCloud con su URL publica y Quality Gate, y el run de CI que lo invoca. Cotejen el contrato con el codigo: el archivo declara un servidor FastAPI y el backend versionado es Node; verifiquen que la ruta publicada coincide con el handler real. Completen la verificacion del C2 con protocolo y formato en cada flecha igual que lo hicieron en la seccion 3. Con esos cuatro puntos el entregable pasa de correcto a defendible.
+
+## Semana 6 · S6
+
+El mapa de contextos, la matriz de propiedad y la auditoría de no conformidades están bien conectados: los módulos, contratos públicos y DTO de tránsito tienen dueño explícito. Para cerrar la evidencia: incorporen SonarCloud al pipeline y publiquen el scanner, un run y el Quality Gate; además, completen A-04 y hagan que los enlaces de aspectos apunten a la rama principal, no a `experimental`.

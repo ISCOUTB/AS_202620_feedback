@@ -26,6 +26,6 @@ Nota preliminar (pasada temprana): puede cambiar al cierre.
 | Tienda virtual UTB | `AS_202620_TIENDA-VIRTUAL-UTB` | `3d732d7` | - | - |
 | TRACTAR | `AS_202620_TRACTAR` | `7cfb872` | - | - |
 | Verifacts | `AS_202620_Verifacts` | `5941c33` | 8/8 | 5.0 |
-| XALD | `AS_202620_XALD` | `-` | - | - |
-| mapsutb | `AS_202620_mapsutb` | `-` | - | - |
+| XALD | `AS_202620_XALD` | `55993cf` | 8/8 | 5.0 |
+| mapsutb | `AS_202620_mapsutb` | `8aee879` | 5/8 | 3.5 |
 | uniTeam | `AS_202620_uniTeam` | `6cc8e6f` | 2/8 | 2.0 |
