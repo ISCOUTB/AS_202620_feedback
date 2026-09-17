@@ -39,3 +39,7 @@ El repositorio no tiene la etiqueta `corte-1` y no cambió entre la revisión de
 Lo que le falta a esa respuesta para estar completa: (1) medir con una cifra cómo de explotable era el problema antes del cambio, no solo describirlo; (2) medir el resultado después del cambio y compararlo contra el umbral de ese escenario de seguridad; y (3) una entrada en el registro de uso de IA que hable puntualmente de esta pieza de trabajo (qué se aceptó, qué se corrigió o rechazó y por qué), no solo de las decisiones de otras semanas.
 
 Sobre la autoría: con esta revisión pudimos atribuir contribución a los cuatro integrantes declarados, algo que antes no se había podido confirmar del todo. Queda pendiente identificar a quién corresponde una cuenta adicional que aparece en el historial con más commits que cualquier otra.
+
+## Semana 6 · S6
+
+El mapa de contextos y la tabla inicial de dueño único tienen una estructura clara: distinguen relaciones síncronas, eventos y consumidores de solo lectura. El siguiente paso indispensable es convertir la auditoría prevista en evidencia real: contrasten cada entidad con el esquema y los modelos, reemplacen los marcadores “revisar” por no conformidades con ruta y línea, y enlacen cada corrección con una acción concreta. Incorporen el mapa y el lenguaje ubicuo en la sección 8 de arc42, relacionen los contextos con la tabla de aspectos y publiquen el análisis SonarCloud con su Quality Gate.

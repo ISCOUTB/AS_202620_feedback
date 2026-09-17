@@ -10,7 +10,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_uniTeam` |
 | Integrantes y su usuario de GitHub | Julio Cesar Emiliani Ramos (commits con nombre propio) · Ian Novoa Carrillo (firma «Ian Novoa», correo omitido; la cuenta `iansx` del listado no aparece) · Juan Jose Bustamante More (sin commits atribuibles) · Daniel Isaac Manjarres Herrera (sin commits atribuibles). `super-gremlin` (noreply) sin atribuir a persona. |
 | URL del sistema desplegado | sin URL (sin despliegue todavía) |
-| Ultima revision | 2026-09-10 |
+| Ultima revision | 2026-09-17 |
 
 ## Estado por entrega
 
@@ -21,7 +21,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `ca44917` · 2026-08-23T13:38:40-05:00 | 5/9 | no se publica | sí |
 | 4 | S4 | `dc14298` (2026-08-29T11:49:10-05:00) | 6/10 | 3.4 | si |
 | 5 | CORTE1 | `dc14298` (2026-08-29T11:49:10-05:00) | sin actividad | no aplica | si |
-| 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
+| 6 | S6 | `6cc8e6f` (2026-09-13T20:20:18-05:00) | 2/8 | 2.0 (propuesta) | sí |
 | 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
@@ -52,6 +52,10 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Etiqueta `corte-1` y respuesta explícita a la restricción asignada | S5 | sí | fijar la etiqueta; el ADR 0005 (OIDC) es una respuesta plausible pero el equipo debe confirmar en sustentación si esa fue la restricción asignada |
 | Medición posterior al cambio comparada con la línea base | S5 | sí | falta cuantificar el estado inicial del defecto de autenticación y medir el resultado posterior contra el umbral de ESC-03 (100% denegado, auditoría ≤1s); ESC-01 mide un escenario distinto |
 | Registro de IA específico del cambio de autenticación (OIDC) | S5 | sí | `docs/ia.md` menciona el cambio pero sin una entrada de aceptado/corregido/rechazado con motivo técnico propia de esa pieza de trabajo |
+| Tabla de propiedad contrastada contra esquema y modelos reales | S6 | sí | el propio documento la declara como primera pasada |
+| No conformidades de propiedad con rutas y corrección verificable | S6 | sí | las tres filas conservan marcadores `revisar` |
+| Incorporar mapa y lenguaje ubicuo en arc42 §8 | S6 | sí | la sección 8 del arc42 está marcada como pendiente |
+| Evidencia pública de SonarCloud y Quality Gate | S6 | sí | `ci.yml` no invoca scanner ni aporta URL de análisis |
 
 ## Estado del contrato del repositorio
 
