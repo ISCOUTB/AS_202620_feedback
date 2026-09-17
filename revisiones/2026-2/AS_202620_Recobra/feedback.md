@@ -34,3 +34,7 @@ El contenido del reto es de muy buen nivel: identificaron con precisión que el 
 ## Semana 7 · S7
 
 El avance en documentación, arquitectura y pipeline es sólido, pero la entrega de esta semana queda incompleta. No hay contrato de API en formato ejecutable versionado, ni prueba de contrato en el pipeline, ni evidencia de que esa prueba falle ante un cambio incompatible. Falta el ADR que justifique la estrategia de integración (síncrona o asíncrona) contra un escenario de calidad. En el C4 nivel 2, solo algunas flechas llevan protocolo y formato. Se recomienda: versionar el contrato y declarar su versión; alinear sus rutas con el código implementado; añadir la prueba de contrato al workflow y registrar un run en rojo tras un cambio incompatible; etiquetar cada flecha con protocolo y formato; y completar las secciones de arc42 que aún no se ven. Con eso la entrega se vuelve defendible en sustentación.
+
+## Semana 6 · S6
+
+El mapa de contextos y la tabla módulo-datos están bien encaminados. Para cerrar S6, documenten el recorrido de búsqueda de escrituras y las no conformidades de propiedad con entidad, dueño esperado y ubicación. Añadan la sección 8 de arc42 con lenguaje ubicuo y mapa de contextos. Si los límites cambiaron desde el primer corte, incluyan el diff, C4 nivel 3 y ADR. Completen la evidencia de SonarCloud con run exitoso y URL pública del Quality Gate. Rote el token expuesto en el historial y dejen constancia; no basta con retirarlo del HEAD.

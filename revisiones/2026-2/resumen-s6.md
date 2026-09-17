@@ -17,10 +17,10 @@ Nota preliminar (pasada temprana): puede cambiar al cierre.
 | LaPlacita | `AS_202620_LaPlacita` | `2c0eb01` | 7/8 | 4.5 |
 | LostVault | `AS_202620_LostVault` | `9d57572` | 6/8 | 4.0 |
 | CampusMarket | `AS_202620_PROYECTO_CAMPUSMARKET` | `dc548c0` | 7/8 | 4.5 |
-| PideUtb | `AS_202620_PideUtb` | `-` | - | - |
-| ROUTB | `AS_202620_ROUTB` | `-` | - | - |
-| Recobra | `AS_202620_Recobra` | `-` | - | - |
-| ShareU | `AS_202620_ShareU` | `-` | - | - |
+| PideUtb | `AS_202620_PideUtb` | `006edfe` | 7/8 | 4.5 |
+| ROUTB | `AS_202620_ROUTB` | `5b48dd0` | 4/8 | 3.0 |
+| Recobra | `AS_202620_Recobra` | `47fb44b` | 4/8 | 3.0 |
+| ShareU | `AS_202620_ShareU` | `c389364` | 7/8 | 4.5 |
 | Calificación automática | `AS_202620_Sistema-de-calificacion-automatica` | `-` | - | - |
 | TAIA | `AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant` | `3950aba` | 0/8 | 1.0 |
 | Tienda virtual UTB | `AS_202620_TIENDA-VIRTUAL-UTB` | `3d732d7` | - | - |

@@ -19,7 +19,7 @@
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `cb5c579` · 2026-08-23T23:44:12-05:00 | 4/9 | no se publica | sí |
 | 4 | S4 | `2268b33` (2026-08-30T22:34:56-05:00) | 6/10 | 3.4 | si |
 | 5 | CORTE1 | `f7c1a6c` (2026-09-07T09:59:41-05:00) | 8/12 | 3.7 | si |
-| 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
+| 6 | S6 | `47fb44b` (2026-09-13T16:58:53-05:00) | 4/8 | 3.0 (prelim.) | si |
 | 7 | S7 | `47fb44b` (2026-09-13T16:58:53-05:00) | 1/10 | 1.4 (prelim.) | si |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
@@ -84,6 +84,12 @@
 | Flechas del C4 nivel 2 con protocolo y formato | S7 | si | |
 | Secciones de arc42 faltantes (7, 8, 11, 12) | S7 | si | |
 | Evidencia auditable de CI y Quality Gate de SonarCloud | S7 | si | |
+| Token de Coveralls expuesto en el historial, declarado abierto en docs/no-conformidades.md. | S6 | si | |
+| Run de CI y URL pública de SonarCloud con Quality Gate para 47fb44b. | S6 | si | |
+| arc42 sección 8 con lenguaje ubicuo y mapa de contextos. | S6 | si | |
+| Diff contra hash S5, C4 nivel 3 y ADR si cambiaron los límites. | S6 | si | |
+| Auditoría de no conformidades de propiedad de datos y su plan de corrección. | S6 | si | |
+| Verificación de correspondencia entre integrantes declarados y cuentas del historial. | S6 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

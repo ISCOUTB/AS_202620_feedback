@@ -19,7 +19,7 @@
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `b5f0310` · 2026-08-23T19:42:42-05:00 | 5/9 | no se publica | sí |
 | 4 | S4 | `1636f20` (2026-08-30T22:17:18-05:00) | 1/10 | 1.4 | si |
 | 5 | CORTE1 | `bbefae8` (2026-09-08T10:37:21-05:00) | 9/12 | 4.0 | si |
-| 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
+| 6 | S6 | `006edfe` (2026-09-13T16:37:23-05:00) | 7/8 | 4.5 (prelim.) | si |
 | 7 | S7 | `006edfe` (2026-09-13T16:37:23-05:00) | 2/10 | 1.8 (prelim.) | si |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
@@ -75,6 +75,10 @@
 | Evidencia publica de SonarCloud: configuracion del scanner, run del hash y URL del analisis con Quality Gate | S7 | si | |
 | Modulo pagos vacio: ESC-04 y ESC-05 sin codigo ni pruebas | S7 | si | |
 | Deuda planificada V-07, V-08 y V-09 y prueba de carga de ESC-02 | S7 | si | |
+| Evidencia pública de SonarCloud con Quality Gate para el hash revisado | S6 | si | |
+| Títulos de ADR que enuncien la decisión | S6 | si | |
+| Contenido verificable de arc42 §8 | S6 | si | |
+| Diff contra hash de S5 para confirmar el reajuste de límites | S6 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -86,7 +90,7 @@
 | `docs/ia.md` al día | No cumple | Sin entrada de S5 ni post-cierre |
 | Sin credenciales en el repositorio ni en el historial | Cumple | git grep y `.env` sin coincidencias reales en HEAD |
 | Contribución de todos los integrantes | Cumple | 3 personas consolidadas en HEAD: daniarriet, Santiago Cuesta/Santiago-C0, ruddy2000utb-droid |
-| Pipeline en verde | No cumple | Sin `.github/workflows/` en ningún punto del historial |
+| Pipeline en verde | No verificado | Sin `.github/workflows/` en ningún punto del historial |
 
 ## Contribución por integrante
 

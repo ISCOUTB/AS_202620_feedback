@@ -19,7 +19,7 @@
 | 3 | S3 | `master` `0bae184` · excepción docente | 7/9 | 4.1 | sí |
 | 4 | S4 | `master` `0bae184` · excepción docente | 7/10 | 3.8 | sí |
 | 5 | CORTE1 | `19ce719` (2026-09-07T22:41:14-05:00) | 5/12 | 2.7 | si |
-| 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
+| 6 | S6 | `c389364` (2026-09-13T23:21:08-05:00) | 7/8 | 4.5 (prelim.) | si |
 | 7 | S7 | `0bae184` (2026-09-14T15:26:52-05:00) | 1/10 | 1.4 (prelim.) | si |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
@@ -82,6 +82,12 @@
 | Columnas ID y C4 en la tabla de aspectos | S7 | si | |
 | Paso del scanner de SonarCloud en CI y URL pública del Quality Gate | S7 | si | |
 | Puntos de la revisión del corte 1 aún sin resolver, según correcciones.md (reto/restricción asignada y etiqueta) | S7 | si | |
+| 0bae184 (2026-09-14T15:26:52-05:00, posterior al cierre 2026-09-14T05:00:00Z): elimina docs/adr/ShareU_Trazabilidad.pdf; es exactamente el diff respecto del estado calificado c389364. | S6 | no (resuelto tarde) | — |
+| C4 nivel 3 del reajuste de límites de Calificaciones (ADR 0003 sigue en estado Propuesto). | S6 | si | |
+| Columnas ID y C4 en docs/aspectos/aspectos.md para completar las ocho del contrato. | S6 | si | |
+| Paso del scanner de SonarCloud en el workflow y URL pública del análisis con su Quality Gate. | S6 | si | |
+| Puntos 1 y 2 de correcciones.md: ADR/diagnóstico de la restricción del corte 1 y definición del mecanismo de cierre, aún sin resolver en el repositorio. | S6 | si | |
+| Implementación del plan de corrección V1 (tabla y servicio propios de calificaciones). | S6 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
