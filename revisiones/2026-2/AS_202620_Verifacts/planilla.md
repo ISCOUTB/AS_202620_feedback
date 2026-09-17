@@ -15,7 +15,7 @@
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 7 | S7 | `635f9b7` (2026-09-16T00:52:52-05:00) | 8/10 | 4.2 (prelim.) | si |
-| 6 | S6 | `67f8cea` (2026-09-09T16:30:01-05:00) | 6/8 | 4.0 (prelim.) | si |
+| 6 | S6 | `5941c33` (2026-09-12T02:00:20-05:00) | 8/8 | 5.0 (prelim.) | si |
 | 1 | S1 | `(sin commits)` () | sin actividad | no aplica | si |
 | 2 | S2 | `(sin commits)` () | sin actividad | no aplica | si |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `8259b75` · 2026-08-23T23:50:00-05:00 | 4/9 | no se publica | sí |
@@ -69,6 +69,19 @@
 | Marcador de CI en la fila A-00 de docs/aspectos.md, que el propio documento pide reemplazar por la URL real. | S7 | si | |
 | Contradicción sobre Q-03 entre docs/escenarios-de-calidad.md ('Pendiente') y docs/aspectos.md A-02 (prueba en verde). | S7 | si | |
 | Evidencia de run del pipeline y URL pública de SonarCloud con Quality Gate. | S7 | si | |
+| Filas A-04 y A-05 en docs/aspectos.md (b5d9068, 2026-09-16T00:51:03-05:00) | S6 | no (resuelto tarde) | — |
+| ADR-0003 y especificación OpenAPI del API (fa29e9a y f3caf45, 2026-09-16) | S6 | no (resuelto tarde) | — |
+| Pruebas de contrato de endpoints (9fdf092, 2026-09-16T00:47:30-05:00) | S6 | no (resuelto tarde) | — |
+| Actualizaciones de README (8e24d72 y 635f9b7, 2026-09-16) | S6 | no (resuelto tarde) | — |
+| pyyaml y jsonschema en requirements (2bf64ca, 2026-09-16) | S6 | no (resuelto tarde) | — |
+| Ajustes de vistas de bloques y ejecución y de decisiones (3d07ec5, 122273b, 89b1928, 2026-09-16) | S6 | no (resuelto tarde) | — |
+| Evidencia de CI con URL de run para el hash revisado | S6 | si | |
+| URL pública de SonarCloud con estado del Quality Gate | S6 | si | |
+| Entrada de lo rechazado con motivo técnico en docs/ia.md | S6 | si | |
+| Reemplazo del marcador [PENDIENTE] en A-00 y fila propia para A-04 | S6 | si | |
+| Commits del tercer integrante declarado | S6 | si | |
+| Enlaces del README a documentos inexistentes | S6 | si | |
+| Medición de P95 (Q-01) y prueba de usuario (Q-04) | S6 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

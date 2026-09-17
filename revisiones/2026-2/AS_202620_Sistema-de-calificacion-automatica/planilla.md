@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica` |
 | Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-15 |
+| Ultima revision | 2026-09-17 |
 
 ## Estado por entrega
 
@@ -19,7 +19,7 @@
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `dd422fb` · 2026-08-23T23:52:23-05:00 | 6/9 | no se publica | sí |
 | 4 | S4 | `cede35e` (2026-08-30T23:51:34-05:00) | 6/10 | 3.4 | si |
 | 5 | CORTE1 | `8b0d00b` (2026-09-07T14:29:28-05:00) | 8/12 | 3.7 | si |
-| 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
+| 6 | S6 | `a47d5bd` (2026-09-13T23:21:55-05:00) | 3/8 | 2.5 (prelim.) | si |
 | 7 | S7 | `a47d5bd` (2026-09-13T23:21:55-05:00) | 1/10 | 1.4 (prelim.) | si |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
@@ -81,6 +81,12 @@
 | Prueba de contrato ejecutada por el pipeline y evidencia de que falla ante un cambio incompatible. | S7 | si | |
 | Evidencia auditable de SonarCloud (workflow, run exitoso y URL pública con Quality Gate). | S7 | si | |
 | Verificación de la tabla de aspectos, el registro de IA, la sección 6 del arc42 y el C4 nivel 2. | S7 | si | |
+| Aportar runs de CI y URL pública de SonarCloud con Quality Gate para el hash a47d5bd. | S6 | si | |
+| Incluir contenido de docs/aspectos.md y verificar sus ocho columnas. | S6 | si | |
+| Incluir contenido de docs/ia.md con lo aceptado y lo rechazado. | S6 | si | |
+| Incluir arc42 §8 con lenguaje ubicuo y mapa de contextos. | S6 | si | |
+| Aportar lista de no conformidades de propiedad con ubicación y plan, o el recorrido que concluyó ausencia. | S6 | si | |
+| Aportar diff contra el hash de S5 y C4 nivel 3/ADR si los límites cambiaron. | S6 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

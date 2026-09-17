@@ -21,11 +21,11 @@ Nota preliminar (pasada temprana): puede cambiar al cierre.
 | ROUTB | `AS_202620_ROUTB` | `5b48dd0` | 4/8 | 3.0 |
 | Recobra | `AS_202620_Recobra` | `47fb44b` | 4/8 | 3.0 |
 | ShareU | `AS_202620_ShareU` | `c389364` | 7/8 | 4.5 |
-| Calificación automática | `AS_202620_Sistema-de-calificacion-automatica` | `-` | - | - |
-| TAIA | `AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant` | `3950aba` | 0/8 | 1.0 |
+| Calificación automática | `AS_202620_Sistema-de-calificacion-automatica` | `a47d5bd` | 3/8 | 2.5 |
+| TAIA | `AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant` | `c0c3adb` | 7/8 | 4.5 |
 | Tienda virtual UTB | `AS_202620_TIENDA-VIRTUAL-UTB` | `3d732d7` | - | - |
 | TRACTAR | `AS_202620_TRACTAR` | `7cfb872` | - | - |
-| Verifacts | `AS_202620_Verifacts` | `67f8cea` | 6/8 | 4.0 |
+| Verifacts | `AS_202620_Verifacts` | `5941c33` | 8/8 | 5.0 |
 | XALD | `AS_202620_XALD` | `-` | - | - |
 | mapsutb | `AS_202620_mapsutb` | `-` | - | - |
 | uniTeam | `AS_202620_uniTeam` | `6cc8e6f` | 2/8 | 2.0 |
