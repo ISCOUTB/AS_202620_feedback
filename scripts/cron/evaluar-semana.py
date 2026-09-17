@@ -287,6 +287,63 @@ def parse_json_llm(texto):
         raise
 
 
+def texto_respuesta(valor):
+    """Convierte valores JSON simples en texto seguro para los artefactos Markdown.
+
+    El proveedor puede responder una lista de frases donde se solicitó una sola frase
+    (en particular en ``feedback``). La lista no cambia el sentido de la evaluación;
+    se conserva completa, uniendo sus elementos, y se evita que una llamada posterior
+    a ``.strip()`` invalide el lote entero.
+    """
+    if valor is None:
+        return ""
+    if isinstance(valor, str):
+        return valor
+    if isinstance(valor, list):
+        return "; ".join(texto_respuesta(x) for x in valor if texto_respuesta(x))
+    if isinstance(valor, dict):
+        return "; ".join("%s: %s" % (k, texto_respuesta(v)) for k, v in valor.items())
+    return str(valor)
+
+
+def lista_texto(valor):
+    if valor is None:
+        return []
+    return [texto_respuesta(x) for x in valor] if isinstance(valor, list) else [texto_respuesta(valor)]
+
+
+def normalizar_respuesta_evaluacion(res):
+    """Valida la forma esencial y normaliza campos textuales del JSON del modelo."""
+    if not isinstance(res, dict):
+        raise ValueError("La respuesta JSON no es un objeto")
+    for clave in ("matriz_ficha", "matriz_transversal"):
+        filas = res.get(clave)
+        if not isinstance(filas, list):
+            raise ValueError("JSON sin %s como lista" % clave)
+        normalizadas = []
+        for fila in filas:
+            if not isinstance(fila, dict):
+                raise ValueError("Fila no valida en %s" % clave)
+            normalizadas.append({
+                "criterio": texto_respuesta(fila.get("criterio")),
+                "estado": texto_respuesta(fila.get("estado")),
+                "evidencia": texto_respuesta(fila.get("evidencia")),
+                "observaciones": texto_respuesta(fila.get("observaciones")),
+            })
+        res[clave] = normalizadas
+    res["feedback"] = texto_respuesta(res.get("feedback"))
+    res["hallazgos"] = lista_texto(res.get("hallazgos"))
+    res["no_verificados"] = lista_texto(res.get("no_verificados"))
+    overall = res.get("overall") or {}
+    if not isinstance(overall, dict):
+        overall = {"resumen": texto_respuesta(overall)}
+    overall["resumen"] = texto_respuesta(overall.get("resumen"))
+    overall["resueltos_tardios"] = lista_texto(overall.get("resueltos_tardios"))
+    overall["pendientes"] = lista_texto(overall.get("pendientes"))
+    res["overall"] = overall
+    return res
+
+
 def solicitar_evaluacion_json(user, modelo, session_id):
     """Obtiene una matriz JSON utilizable, con reintentos independientes.
 
@@ -309,7 +366,7 @@ def solicitar_evaluacion_json(user, modelo, session_id):
             res = parse_json_llm(texto)
             if "matriz_ficha" not in res:
                 raise ValueError("JSON sin matriz_ficha")
-            return res
+            return normalizar_respuesta_evaluacion(res)
         except Exception as ex:
             ultimo_error = str(ex)
             print("LLM/JSON invalido (intento %d/3): %s" % (intento + 1, ultimo_error[:200]))
