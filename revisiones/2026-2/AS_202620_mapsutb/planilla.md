@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_mapsutb` |
 | Integrantes y su usuario de GitHub | Carlos Alberto Galvis Zuluaga · Carlos David Manrique Fals · Nerlis Nikol Otero Perez · Isabel Sofia Paez Matallana — cuentas observadas en el historial: `charlygz21`, `nerlis-otero`, `CarlosManrique-1397`, `i-matallana` (correspondencias por confirmar con el docente) |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-14 |
+| Ultima revision | 2026-09-17 |
 
 ## Estado por entrega
 
@@ -20,7 +20,7 @@
 | 4 | S4 | `f0d036a` (2026-08-30T22:53:06-05:00) | 5/10 | 3.0 | si |
 | 5 | CORTE1 | `e8bad4c` histórico; excepción: `8aee879` (2026-09-13T18:14:14-05:00) | 8/12 | 3.7 | sí (actualizada con correcciones tardías aceptadas) |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
-| 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
+| 7 | S7 | `8aee879` (2026-09-13T18:14:14-05:00) | 1/10 | 1.4 (prelim.) | si |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
@@ -59,6 +59,14 @@
 | Contenedores C2 sin activos | S5 | declarado pendiente | C2 reconoce explícitamente plano y panorámicas como diferidos. |
 | CI de pruebas y evidencia de run | S5 | No verificado | `ci.yml` existe y ejecuta pruebas, pero falta un run público verificable. |
 | PDF exigido por el aula y sustentación | S5 | No verificado | Se comprueban en Moodle y en la sesión docente. |
+| Contrato de API en OpenAPI, AsyncAPI o proto, versionado y con esquemas de datos. | S7 | si | |
+| Correspondencia entre contrato y API implementada. | S7 | si | |
+| Prueba de contrato y su invocación en ci.yml, con run exitoso citado. | S7 | si | |
+| Evidencia de que la prueba falla ante un cambio incompatible. | S7 | si | |
+| ADR de estrategia de integración (síncrona o asíncrona) con alternativa descartada y consecuencias. | S7 | si | |
+| C4 nivel 2 con protocolo y formato en cada flecha; revisar también docs/c4/C2.md. | S7 | si | |
+| Evidencia auditable de SonarCloud: línea del scanner, run del hash revisado y URL pública con Quality Gate. | S7 | si | |
+| Contenido verificable de docs/aspectos.md con las ocho columnas y celdas navegables. | S7 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

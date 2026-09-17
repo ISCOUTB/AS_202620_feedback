@@ -22,7 +22,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 4 | S4 | `dc14298` (2026-08-29T11:49:10-05:00) | 6/10 | 3.4 | si |
 | 5 | CORTE1 | `dc14298` (2026-08-29T11:49:10-05:00) | sin actividad | no aplica | si |
 | 6 | S6 | `6cc8e6f` (2026-09-13T20:20:18-05:00) | 2/8 | 2.0 (propuesta) | sí |
-| 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
+| 7 | S7 | `6cc8e6f` (2026-09-13T20:20:18-05:00) | 1/10 | 1.4 (prelim.) | si |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
@@ -56,7 +56,12 @@ Hoja consolidada del equipo a lo largo del semestre.
 | No conformidades de propiedad con rutas y corrección verificable | S6 | sí | las tres filas conservan marcadores `revisar` |
 | Incorporar mapa y lenguaje ubicuo en arc42 §8 | S6 | sí | la sección 8 del arc42 está marcada como pendiente |
 | Evidencia pública de SonarCloud y Quality Gate | S6 | sí | `ci.yml` no invoca scanner ni aporta URL de análisis |
-
+| Contrato OpenAPI/AsyncAPI/proto versionado, con rutas, esquemas y versión de API (filas 1-4 de la ficha). | S7 | si | |
+| Prueba de contrato e invocación desde el workflow (filas 5-6). | S7 | si | |
+| Evidencia de que la prueba falla ante un cambio incompatible (fila 7). | S7 | si | |
+| Sección 6 de arc42 con flujos de interacción y formato en cada flecha del C4 nivel 2 (filas 9-10, parcialmente resuelto). | S7 | si | |
+| Evidencia auditable de SonarCloud: línea del scanner, URL del run y URL del análisis con Quality Gate (contrato §8). | S7 | si | |
+| Secciones 7 y 8 de arc42, declaradas pendientes por el propio documento. | S7 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -68,7 +73,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | `docs/ia.md` al día | No cumple | último cambio 2026-08-29, antes del periodo S5 |
 | Sin credenciales en el repositorio ni en el historial | Cumple | barridos limpios; menciones de token son identificadores de código |
 | Contribución de todos los integrantes | Cumple | en el estado calificado del corte 1, `JuanB` (10 commits: C4 nivel 2, README) es atribuible por iniciales a Juan Jose Bustamante More y `Daniel Manjarres Herrera` (4 commits: CI, dependencias) aparece con nombre propio; con Ian Novoa y Julio Cesar Emiliani ya confirmados, los cuatro integrantes tienen contribución visible. `super-gremlin` (15 commits) sigue sin atribuir a una persona, adicional a los cuatro. |
-| Pipeline en verde | Cumple | run de HEAD exitoso: `actions/runs/33263993238` |
+| Pipeline en verde | No cumple | run de HEAD exitoso: `actions/runs/33263993238` |
 
 ## Contribución por integrante
 

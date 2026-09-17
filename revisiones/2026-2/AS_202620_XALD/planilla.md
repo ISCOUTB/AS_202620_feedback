@@ -10,7 +10,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_XALD` |
 | Integrantes y su usuario de GitHub | Xavier Yesid Garcia Diaz (xaviergarciadiaz20-commits) · Dilan Joan Gonzalez Bejarano (dilanbejarano011) · Luis Estheban Lozano Colmenares (colmenares2007-crypto) · Axel Jair Ruiz Bolano (axeljruiz717-hash) — correspondencias por los correos de los commits (nombres explícitos), por confirmar con el docente |
 | URL del sistema desplegado | sin URL (sin despliegue todavía) |
-| Ultima revision | 2026-09-11 |
+| Ultima revision | 2026-09-17 |
 
 ## Estado por entrega
 
@@ -22,7 +22,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 4 | S4 | `0205e44` (2026-08-30T23:12:03-05:00) | 4/10 | 2.6 | si |
 | 5 | CORTE1 | `9bf16cf` (2026-09-09T10:07:09-05:00) | 8/12 | 3.7 | si |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
-| 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
+| 7 | S7 | `b00b319` (2026-09-17T00:01:02-05:00) | 4/10 | 2.6 (prelim.) | si |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
@@ -75,6 +75,10 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Corregir enlaces de docs/aspectos.md que apuntan a la rama experimental. | S5 | si | |
 | Integrar y evidenciar SonarCloud en el pipeline. | S5 | si | |
 | Contrastar cada corrección de correcciones.md con commit o run específico. | S5 | si | |
+| Prueba de contrato inexistente en el arbol de b00b319. | S7 | si | |
+| Sin evidencia de ejecucion de CI (runs) ni analisis SonarCloud publico con Quality Gate. | S7 | si | |
+| Correspondencia contrato-codigo sin verificar; el contrato declara FastAPI y el backend versionado es Node. | S7 | si | |
+| Sin historial git del contrato y sin contenido aportado de docs/c4/c2.md ni docs/aspectos.md. | S7 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -86,7 +90,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | `docs/ia.md` al día | Cumple | corrige la revisión preliminar: la última entrada (SonarCloud) está fechada en la ventana de commits previa a la etiqueta |
 | Sin credenciales en el repositorio ni en el historial | Cumple | greps limpios; `local.properties` solo trae ruta de SDK (fuera del versionado de todas formas) |
 | Contribución de todos los integrantes | Cumple | 4 identidades = 4 integrantes |
-| Pipeline en verde | No cumple | corrige la revisión preliminar (que citaba un run de la base, no del reto): el workflow solo dispara en `experimental`/`main`; ningún commit de la noche del cierre (incluida la etiqueta) disparó un run en `master` |
+| Pipeline en verde | No verificado | corrige la revisión preliminar (que citaba un run de la base, no del reto): el workflow solo dispara en `experimental`/`main`; ningún commit de la noche del cierre (incluida la etiqueta) disparó un run en `master` |
 
 ## Contribución por integrante
 
