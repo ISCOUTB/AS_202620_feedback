@@ -35,10 +35,4 @@ El reto quedó resuelto de forma correcta: identificaron un riesgo real (que dos
 
 ## Semana 7 · S7
 
-Buen avance en documentacion: la seccion 6 de arc42 y el C4 nivel 2 estan bien desarrollados y el nivel 2 etiqueta protocolo y formato en las flechas entre contenedores.
-El pendiente grande de esta semana es el contrato de la API: hoy la API solo esta descrita en codigo y en prosa, no en un archivo OpenAPI o AsyncAPI versionado que se pueda contrastar con las rutas implementadas.
-Sin ese archivo tampoco puede existir la prueba de contrato, y sin una ejecucion en rojo ante un cambio incompatible no hay evidencia de que la prueba sirva.
-Falta ademas el ADR que justifique la integracion sincrona o asincrona con la alternativa descartada y sus consecuencias de acoplamiento.
-Para la comprobacion transversal, el pipeline necesita una ejecucion visible del analisis estatico y la URL publica del Quality Gate.
-Sugerencia de orden: publicar el contrato, engancharlo al pipeline, provocar un fallo deliberado y dejarlo documentado, y cerrar con el ADR de integracion.
-El README se beneficiaria de un unico comando de arranque y de un comando de pruebas reproducible.
+Ya tienen arc42 sección 6 con los flujos de interacción y un C4 nivel 2 que etiqueta protocolo y formato en las flechas entre contenedores: eso es lo que hay que conservar. Falta el contrato de la API versionado en el repositorio (OpenAPI, AsyncAPI o proto) con rutas y esquemas; sin él no se puede comprobar correspondencia ni versionado. Falta una prueba de contrato que el pipeline ejecute y, sobre todo, que se demuestre que falla cuando se rompe el contrato: guarden el run en rojo o el cambio incompatible que la hizo fallar. Falta un ADR que decida la estrategia de integración (síncrona o asíncrona) contra un escenario de calidad, con la alternativa descartada y sus consecuencias de acoplamiento. Completen además la evidencia pública de SonarCloud (línea del scanner, run del hash revisado y URL del Quality Gate).

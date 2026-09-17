@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_ShareU` |
 | Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo |
 | URL del sistema desplegado | — |
-| Ultima revision | Revisión excepcional S3-S4 · solo entregables actuales |
+| Ultima revision | 2026-09-17 |
 
 ## Estado por entrega
 
@@ -20,7 +20,7 @@
 | 4 | S4 | `master` `0bae184` · excepción docente | 7/10 | 3.8 | sí |
 | 5 | CORTE1 | `19ce719` (2026-09-07T22:41:14-05:00) | 5/12 | 2.7 | si |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
-| 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
+| 7 | S7 | `0bae184` (2026-09-14T15:26:52-05:00) | 1/10 | 1.4 (prelim.) | si |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
@@ -73,6 +73,15 @@
 | Trazabilidad de aspectos debe ser navegable. | S5 | si | |
 | PDFs fuera de docs/adr. | S5 | si | |
 | Evidencia de SonarCloud pendiente. | S5 | si | |
+| Contrato de API en OpenAPI o AsyncAPI versionado en el repositorio | S7 | si | |
+| Routes y esquemas de datos dentro del contrato | S7 | si | |
+| Prueba de contrato presente y ejecutada por el workflow | S7 | si | |
+| Evidencia de que la prueba falla ante un cambio incompatible | S7 | si | |
+| ADR de estrategia de integración (síncrona o asíncrona) con alternativa descartada | S7 | si | |
+| Etiquetado de protocolo y formato en cada flecha del C4 nivel 2 | S7 | si | |
+| Columnas ID y C4 en la tabla de aspectos | S7 | si | |
+| Paso del scanner de SonarCloud en CI y URL pública del Quality Gate | S7 | si | |
+| Puntos de la revisión del corte 1 aún sin resolver, según correcciones.md (reto/restricción asignada y etiqueta) | S7 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

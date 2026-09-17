@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_PideUtb` |
 | Integrantes y su usuario de GitHub | Daniela Sofia Arrieta Guardo · Santiago Jose Cuesta Maza · Ruddy Rodriguez Romero — cuentas observadas: `daniarriet`, `Santiago Cuesta`/`Santiago-C0` (mismo correo, misma persona), `ruddy2000utb-droid` |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-11 |
+| Ultima revision | 2026-09-17 |
 
 ## Estado por entrega
 
@@ -20,7 +20,7 @@
 | 4 | S4 | `1636f20` (2026-08-30T22:17:18-05:00) | 1/10 | 1.4 | si |
 | 5 | CORTE1 | `bbefae8` (2026-09-08T10:37:21-05:00) | 9/12 | 4.0 | si |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
-| 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
+| 7 | S7 | `006edfe` (2026-09-13T16:37:23-05:00) | 2/10 | 1.8 (prelim.) | si |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
@@ -69,6 +69,12 @@
 | Implementar el cambio que responde a la restricción y contrastarlo con el umbral | S5 | si | |
 | Renombrar/mover el archivo de correcciones a correcciones.md en la raíz | S5 | si | |
 | Equilibrar la contribución entre integrantes | S5 | si | |
+| Contrato OpenAPI/AsyncAPI o proto versionado, con rutas, esquemas y version declarada | S7 | si | |
+| Prueba de contrato invocada desde el workflow y evidencia de fallo ante cambio incompatible | S7 | si | |
+| ADR de estrategia de integracion sincrona o asincrona con alternativa descartada | S7 | si | |
+| Evidencia publica de SonarCloud: configuracion del scanner, run del hash y URL del analisis con Quality Gate | S7 | si | |
+| Modulo pagos vacio: ESC-04 y ESC-05 sin codigo ni pruebas | S7 | si | |
+| Deuda planificada V-07, V-08 y V-09 y prueba de carga de ESC-02 | S7 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -80,7 +86,7 @@
 | `docs/ia.md` al día | No cumple | Sin entrada de S5 ni post-cierre |
 | Sin credenciales en el repositorio ni en el historial | Cumple | git grep y `.env` sin coincidencias reales en HEAD |
 | Contribución de todos los integrantes | Cumple | 3 personas consolidadas en HEAD: daniarriet, Santiago Cuesta/Santiago-C0, ruddy2000utb-droid |
-| Pipeline en verde | Cumple | Sin `.github/workflows/` en ningún punto del historial |
+| Pipeline en verde | No cumple | Sin `.github/workflows/` en ningún punto del historial |
 
 ## Contribución por integrante
 

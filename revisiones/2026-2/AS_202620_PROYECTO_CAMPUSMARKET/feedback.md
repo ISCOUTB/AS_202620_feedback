@@ -32,3 +32,7 @@ Muy buen trabajo en el reto de corte 1. Diagnosticaron el problema con una cifra
 ## Semana 6 · S6
 
 La entrega S6 está sólida: el mapa de contextos, la propiedad de datos y la sección 8 de arc42 están bien documentados y alineados con el código actual. Para futuras revisiones, aseguren que los archivos de evidencia (auditoría, aspectos.md, ia.md) sean directamente revisables en el repositorio y aporten enlaces a los runs de CI. La distinción entre producto y publicación y la declaración explícita de que no hay shared kernel son buenas prácticas. Mantengan la trazabilidad entre aspectos y contextos para que la sustentación sea defendible.
+
+## Semana 7 · S7
+
+El contrato OpenAPI versionado y la prueba de contrato son un buen avance. Para cerrar la brecha, incluyan en la entrega el fragmento del contrato con esquemas y la línea del workflow que ejecuta la prueba. Añadan la URL del run de CI y la URL pública de SonarCloud con Quality Gate. Mantengan la trazabilidad entre rutas del contrato y código. La evidencia de fallo por cambio incompatible es valiosa; si pueden, acompañenla de un run en rojo. Revisen que la tabla de aspectos y el registro de IA tengan todas las columnas. Con eso la entrega queda mucho más defendible.

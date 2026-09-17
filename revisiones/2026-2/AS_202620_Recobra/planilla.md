@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Recobra` |
 | Integrantes y su usuario de GitHub | Camilo Andres Conde Corrales · Fernando Isacc Conde Herrera · Miguel Alejandro Iii Jacome Yanez · Veronica Ubarne Reyes — cuentas consolidadas: `Cconde31` (incluye la identidad `Steamlinker`, unificada por `.mailmap` el 05/09), `MiguelJacome`, `vylrir` (Verónica Ubarne), y el commit real de Fernando Isacc Conde Herrera (`fconde@utb.edu.co`) |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-11 |
+| Ultima revision | 2026-09-17 |
 
 ## Estado por entrega
 
@@ -20,7 +20,7 @@
 | 4 | S4 | `2268b33` (2026-08-30T22:34:56-05:00) | 6/10 | 3.4 | si |
 | 5 | CORTE1 | `f7c1a6c` (2026-09-07T09:59:41-05:00) | 8/12 | 3.7 | si |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
-| 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
+| 7 | S7 | `47fb44b` (2026-09-13T16:58:53-05:00) | 1/10 | 1.4 (prelim.) | si |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
@@ -77,6 +77,13 @@
 | Verificar entrega del PDF en Moodle. | S5 | si | |
 | Sustentación pendiente. | S5 | si | |
 | Crear correcciones.md en la raíz del repositorio con trazabilidad de hallazgos S1-S4. | S5 | si | |
+| Contrato OpenAPI/AsyncAPI en formato ejecutable versionado | S7 | si | |
+| Prueba de contrato y su invocación en el pipeline | S7 | si | |
+| Evidencia de fallo de la prueba ante cambio incompatible | S7 | si | |
+| ADR de estrategia de integración (síncrona/async) | S7 | si | |
+| Flechas del C4 nivel 2 con protocolo y formato | S7 | si | |
+| Secciones de arc42 faltantes (7, 8, 11, 12) | S7 | si | |
+| Evidencia auditable de CI y Quality Gate de SonarCloud | S7 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -88,7 +95,7 @@
 | `docs/ia.md` al día | Cumple | Entradas del 05/09 con aceptado/corregido/rechazado y motivo |
 | Sin credenciales en el repositorio ni en el historial | **No cumple** | Token de Coveralls recuperable en el historial (`905f546`); no confirmado que se haya rotado |
 | Contribución de todos los integrantes | Cumple, con reserva | 4 identidades para 4 integrantes, pero Fernando con 1 solo commit en todo el semestre |
-| Pipeline en verde | Cumple | Runs `success` antes (`6ee5b66`, 06/09 01:27Z) y después (`f7c1a6c`, 07/09 15:00Z) del cierre |
+| Pipeline en verde | No verificado | Runs `success` antes (`6ee5b66`, 06/09 01:27Z) y después (`f7c1a6c`, 07/09 15:00Z) del cierre |
 
 ## Contribución por integrante
 
