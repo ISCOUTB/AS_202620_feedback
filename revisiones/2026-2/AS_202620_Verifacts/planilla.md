@@ -8,12 +8,13 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Verifacts` |
 | Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md); historial: `PedroC1213` (30 commits) y `Cristian Cardeño` (4 commits tardíos), sin atribuir oficialmente |
 | URL del sistema desplegado | |
-| Ultima revision | 2026-09-11 |
+| Ultima revision | 2026-09-17 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 7 | S7 | `635f9b7` (2026-09-16T00:52:52-05:00) | 8/10 | 4.2 (prelim.) | si |
 | 6 | S6 | `67f8cea` (2026-09-09T16:30:01-05:00) | 6/8 | 4.0 (prelim.) | si |
 | 1 | S1 | `(sin commits)` () | sin actividad | no aplica | si |
 | 2 | S2 | `(sin commits)` () | sin actividad | no aplica | si |
@@ -62,6 +63,12 @@
 | Aportar run de CI en verde para el hash calificado. | S5 | si | |
 | Cerrar A-02 con prueba de modificación de regla. | S5 | si | |
 | Actualizar glosario, vista de bloques, C4 de componentes y enlaces rotos. | S5 | si | |
+| Medición formal de P95 para Q-01 (docs/escenarios-de-calidad.md la declara pendiente). | S7 | si | |
+| Prueba de usuario 4 de 5 para Q-04 (declarada pendiente). | S7 | si | |
+| Prueba automatizada de componente para el frontend: la fila A-04 solo tiene verificación manual. | S7 | si | |
+| Marcador de CI en la fila A-00 de docs/aspectos.md, que el propio documento pide reemplazar por la URL real. | S7 | si | |
+| Contradicción sobre Q-03 entre docs/escenarios-de-calidad.md ('Pendiente') y docs/aspectos.md A-02 (prueba en verde). | S7 | si | |
+| Evidencia de run del pipeline y URL pública de SonarCloud con Quality Gate. | S7 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

@@ -43,3 +43,7 @@ Sin actividad S1: el ultimo commit anterior al cierre es de la entrega previa, a
 ## Semana 6 · S6
 
 Sin actividad S6: el ultimo commit anterior al cierre es de la entrega previa, asi que esta evidencia no se pudo evaluar. Lo que se arrastra de semanas anteriores sigue abierto para el corte.
+
+## Semana 7 · S7
+
+El repositorio está ordenado y la documentación base (README, ADR, aspectos, C4 nivel 2 y registro de IA) está en las rutas esperadas; el C4 de contenedores ya etiqueta sus flechas con protocolo y formato. Lo que falta es el corazón de esta entrega: un contrato OpenAPI, AsyncAPI o proto versionado en el repositorio, con rutas y esquemas, más una prueba de contrato que el workflow ejecute y que se demuestre capaz de fallar ante un cambio incompatible (run en rojo o cambio aportado como evidencia). Como FastAPI ya genera el esquema, exportarlo a un archivo versionado y validarlo con schemathesis o similar cierra varios criterios a la vez. Conviene además: hacer que el pipeline ejecute toda la carpeta de pruebas y no solo una parte, añadir el análisis estático con su URL pública y su Quality Gate, completar la sección 6 de arc42 con los flujos de interacción, registrar al menos un uso de IA rechazado con su motivo y equilibrar la contribución en el historial, hoy concentrada en una sola cuenta.

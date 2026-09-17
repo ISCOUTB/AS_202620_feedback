@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant` |
 | Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-16 |
+| Ultima revision | 2026-09-17 |
 
 ## Estado por entrega
 
@@ -20,7 +20,7 @@
 | 4 | S4 | `c087303` (2026-08-30T18:54:10-05:00) | 5/10 | 3.0 | si |
 | 5 | CORTE1 | `a3f4d82` (2026-09-06T04:13:11-05:00) | 9/12 | no aplica | si |
 | 6 | S6 | `3950aba` (2026-09-11T00:51:26-05:00) | 0/8 | 1.0 (prelim.) | si |
-| 7 | S7 | `5a4e8dc` (2026-09-15T20:48:07-05:00) | 6/10 | 3.4 (prelim.) | si |
+| 7 | S7 | `3c2ae72` (2026-09-16T21:40:14-05:00) | 6/10 | 3.4 (prelim.) | si |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
@@ -91,6 +91,11 @@
 | Publicar URL de SonarCloud con Quality Gate, línea del scanner y run exitoso | S7 | si | |
 | Completar contenido verificable de docs/c4/C4-C2.md, docs/aspectos.md y docs/ia.md | S7 | si | |
 | Registrar el historial git del contrato para sostener su versionado | S7 | si | |
+| Comprobar que el pipeline ejecuta la prueba de contrato (contenido de ci.yml y URL del run). | S7 | si | |
+| Aportar análisis SonarCloud público con Quality Gate para el hash revisado. | S7 | si | |
+| Cotejar rutas del contrato con el código implementado. | S7 | si | |
+| Publicar el contenido de docs/aspectos.md y docs/c4/C4-C2.md. | S7 | si | |
+| Aportar el historial de git del archivo de contrato. | S7 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

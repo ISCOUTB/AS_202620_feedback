@@ -68,3 +68,7 @@ Sin actividad S2: el ultimo commit anterior al cierre es de la entrega previa, a
 ## Semana 6 · S6
 
 La entrega S6 documenta bien el mapa de contextos, la propiedad de datos y la verificación de violaciones. El lenguaje ubicuo en arc42 §8 es correcto. Para cerrar brechas: vincula explícitamente las filas de aspectos.md con los contextos del mapa, añade un ADR si los límites cambiaron, completa la evidencia de la fila A-02 y asegura que todos los integrantes declarados aparezcan en el historial. Incluye enlaces a runs de CI en la documentación.
+
+## Semana 7 · S7
+
+El contrato OpenAPI 3.1, la prueba de contrato y el ADR de integración están bien construidos y trazados: hay esquemas de datos, correspondencia con los endpoints y el escenario de calidad que motiva la decisión síncrona. Dos mejoras subirían el resultado: aportar la evidencia de ejecución del pipeline (URL del run que corre la prueba de contrato y URL pública del análisis con su Quality Gate), porque hoy solo se documenta que pytest la ejecuta; y respaldar el fallo inducido con un run en rojo o un commit que rompa el contrato, en lugar de describirlo únicamente. Conviene además alinear los documentos rezagados (arc42 §3 y §5 y la fila Q-03, que dice 'Pendiente' mientras la tabla de aspectos afirma que ya hay prueba) y cerrar la medición de P95 y la prueba de usuario de Q-04, que siguen abiertas.

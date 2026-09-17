@@ -10,7 +10,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TRACTAR` |
 | Integrantes y su usuario de GitHub | Joriel Samir Barros Pena (sin cuentas en el historial) · Geronimo Alberto Cadena Garcia (sin cuentas) · Sebastian Garcia Devoz (firma con dos identidades de git, mismo correo, más el correo institucional) · Mateo Alfonso Millan Barraza (sin cuentas) |
 | URL del sistema desplegado | sin URL (sin despliegue todavía) |
-| Ultima revision | 2026-09-14 |
+| Ultima revision | 2026-09-17 |
 
 ## Estado por entrega
 
@@ -22,7 +22,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 4 | S4 | `2b16439` (2026-08-30T15:02:33-05:00) | 1/10 | 1.4 | si |
 | 5 | CORTE1 | `7cfb872` (2026-08-31T12:27:23-05:00) | 8/12 | 3.7 | si |
 | 6 | S6 | `7cfb872` (2026-08-31T12:27:23-05:00) | sin actividad | no aplica | si |
-| 7 | Evidencia S7 · Contrato de API y prueba de contrato | | | no aplica | |
+| 7 | S7 | `7cfb872` (2026-08-31T12:27:23-05:00) | 2/10 | 1.8 (prelim.) | si |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
@@ -66,6 +66,14 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Crear correcciones.md en la raíz del repositorio. | S5 | si | |
 | Verificar la entrega del PDF en Moodle. | S5 | si | |
 | Preparar la sustentación del corte. | S5 | si | |
+| Contrato OpenAPI/AsyncAPI/proto versionado con rutas y esquemas de datos | S7 | si | |
+| Prueba de contrato presente y ejecutada por el pipeline | S7 | si | |
+| Evidencia de que la prueba de contrato falla ante un cambio incompatible | S7 | si | |
+| Sección 6 de arc42 con los flujos de interacción | S7 | si | |
+| SonarCloud: configuración, run del scanner y URL pública con Quality Gate | S7 | si | |
+| Registro de IA con al menos un rechazo justificado | S7 | si | |
+| Contribución al historial de los tres integrantes restantes | S7 | si | |
+| Que el workflow ejecute la totalidad de las pruebas del repositorio | S7 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -77,7 +85,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | `docs/ia.md` al día | No cumple | último cambio 2026-08-16; sin entrada S5 |
 | Sin credenciales en el repositorio ni en el historial | Cumple | barridos limpios |
 | Contribución de todos los integrantes | No cumple | una persona concentra las identidades; 3 integrantes sin commits |
-| Pipeline en verde | Cumple | run del commit HEAD `7cfb8729` concluyó `success`: https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/actions/runs/33419672964 |
+| Pipeline en verde | No cumple | run del commit HEAD `7cfb8729` concluyó `success`: https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/actions/runs/33419672964 |
 
 ## Contribución por integrante
 
