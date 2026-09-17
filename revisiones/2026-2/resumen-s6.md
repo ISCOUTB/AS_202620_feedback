@@ -12,10 +12,10 @@ Nota preliminar (pasada temprana): puede cambiar al cierre.
 | Drift | `AS_202620_Drift` | `5f7fa4c` | 5/8 | 3.5 |
 | ElMapita | `AS_202620_ElMapita` | `a22f0a4` | 0/8 | 1.0 |
 | EnAgenda | `AS_202620_EnAgenda` | `0a58de8` | 7/8 | 4.5 |
-| GimnasioUTB | `AS_202620_GimnasioUTB` | `-` | - | - |
+| GimnasioUTB | `AS_202620_GimnasioUTB` | `106869b` | 6/8 | 4.0 |
 | InvenTrack | `AS_202620_InvenTrack` | `d6f2b19` | 7/8 | 4.5 |
 | LaPlacita | `AS_202620_LaPlacita` | `2c0eb01` | 7/8 | 4.5 |
-| LostVault | `AS_202620_LostVault` | `-` | - | - |
+| LostVault | `AS_202620_LostVault` | `9d57572` | 6/8 | 4.0 |
 | CampusMarket | `AS_202620_PROYECTO_CAMPUSMARKET` | `dc548c0` | 7/8 | 4.5 |
 | PideUtb | `AS_202620_PideUtb` | `-` | - | - |
 | ROUTB | `AS_202620_ROUTB` | `-` | - | - |

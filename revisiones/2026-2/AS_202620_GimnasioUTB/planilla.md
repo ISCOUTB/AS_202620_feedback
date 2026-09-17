@@ -10,12 +10,13 @@ Hoja consolidada del equipo GimnasioUTB. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_GimnasioUTB` |
 | Integrantes y su usuario de GitHub | Sebastian Felipe Caicedo Acosta · Rodrigo Andres Facio Lince Beltran · Pedro Luis Pallares De La Hoz — cuentas abajo |
 | URL del sistema desplegado | sin desplegar aún |
-| Ultima revision | 2026-09-15 |
+| Ultima revision | 2026-09-17 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 6 | S6 | `106869b` (2026-09-13T22:19:08-05:00) | 6/8 | 4.0 (prelim.) | si |
 | 7 | S7 | `106869b` (2026-09-13T22:19:08-05:00) | 1/10 | 1.4 (prelim.) | si |
 | 5 | Primer corte · reto de línea base | HEAD `9b9f7c8` (sin etiqueta `corte-1`) | 2/12 | subtotal técnico 0,60/4,00; sustentación pendiente | revisión definitiva post-cierre 2026-09-07 |
 | 4 | S4 | `56db96b` (2026-08-30T22:33:47-05:00) | 2/10 | 1.8 | si |
@@ -59,6 +60,12 @@ Hoja consolidada del equipo GimnasioUTB. Se actualiza tras cada revisión.
 | docs/adr/ADR0001.md duplicado y fuera de la convencion NNNN-kebab-case | S7 | si | |
 | docs/aspectos.md sin columnas/enlaces a C4 y a evidencia de calidad | S7 | si | |
 | arc42 seccion 6 no verificable con la evidencia disponible | S7 | si | |
+| Integrar el scanner de SonarCloud en .github/workflows/ci.yml y publicar la URL del análisis con el estado del Quality Gate. | S6 | si | |
+| Eliminar o renombrar docs/adr/ADR0001.md para cumplir la convención NNNN-titulo-kebab-case.md. | S6 | si | |
+| Completar docs/aspectos.md con las ocho columnas del contrato (C4 y Evidencia). | S6 | si | |
+| Confirmar o escribir la sección 8 del arc42 con lenguaje ubicuo y mapa de contextos. | S6 | si | |
+| Añadir C4 nivel 3 y ADR de reajuste si los límites de los contextos cambiaron desde el primer corte. | S6 | si | |
+| Implementar el adaptador PostgreSQL y el historial de eventos, hoy declarados pendientes. | S6 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

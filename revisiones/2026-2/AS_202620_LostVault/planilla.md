@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_LostVault` |
 | Integrantes y su usuario de GitHub | Jose Faustino Espana Noriega · Roy Andres Gonzalez Blanco · Shamara Llorente Tapias · Kiefer Monterroza Manjarres — identidades del historial: Roy Gonzalez (¿`RGBlanco18`?), `shamarallorente-blip`, `Fausto-4` (correo `ganonimo2504`), `weller-rar` (correo `pelu.kiefer`); correspondencias por confirmar con el docente |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-16 |
+| Ultima revision | 2026-09-17 |
 
 ## Estado por entrega
 
@@ -19,7 +19,7 @@
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `1ddb826` · 2026-08-23T23:57:37-05:00 | 4/9 | no se publica | sí |
 | 4 | S4 | `952af8f` (2026-08-30T22:13:14-05:00) | 7/10 | 3.8 | si |
 | 5 | CORTE1 | `c0c17c1` (2026-09-07T16:46:16-05:00) | 7/12 | 3.3 | si |
-| 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | | | no aplica | |
+| 6 | S6 | `9d57572` (2026-09-13T22:11:29-05:00) | 6/8 | 4.0 (prelim.) | si |
 | 7 | S7 | `9d57572` (2026-09-13T22:11:29-05:00) | 1/10 | 1.4 (prelim.) | si |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
@@ -74,6 +74,10 @@
 | URL pública del análisis de SonarCloud con Quality Gate. | S7 | si | |
 | Columnas y filas pendientes de docs/aspectos.md (incluida la trazabilidad C4). | S7 | si | |
 | Secciones arc42 7, 8, 11 y 12 ausentes. | S7 | si | |
+| docs/arc42/08* con lenguaje ubicuo y mapa de contextos incorporado. | S6 | si | |
+| C4 nivel 3 y ADR del reajuste si los límites cambiaron respecto al corte anterior. | S6 | si | |
+| URL pública del análisis de SonarCloud con rama o revisión y estado del Quality Gate. | S6 | si | |
+| Columnas Requisito y C4 en docs/aspectos.md y cierre de las celdas pendientes de AS-01, AS-02 y AS-04. | S6 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
