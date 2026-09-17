@@ -15,7 +15,7 @@
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 7 | S7 | `d2d1450` (2026-09-15T10:14:52-05:00) | 1/10 | 1.4 (prelim.) | si |
-| 6 | S6 | `4ede977` (2026-09-06T22:41:55-05:00) | 0/8 | 1.0 (prelim.) | si |
+| 6 | S6 | `743cc1f` (2026-09-13T23:55:10-05:00) | 6/8 | 4.0 (prelim.) | si |
 | 5 | CORTE1 | `4ede977` (2026-09-06T22:41:55-05:00) | 8/12 | 3.7 | si |
 | 4 | S4 | `91323d6` (2026-08-30T23:21:56-05:00) | 9/10 | 4.6 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `c92595ed` · 2026-08-09T13:25:24-05:00 | 2/9 | no se publica | sí |
@@ -70,6 +70,12 @@
 | docs/arc42/tabla_modulo.md desalineada con los tres contextos vigentes, según ADR 0002 y arc42 §8.3. | S7 | si | |
 | Secciones 07 y 11 de arc42 ausentes. | S7 | si | |
 | Contrato de API, prueba de contrato en el pipeline y ADR de estrategia de integración sin entregar (S7). | S7 | si | |
+| d2d1450 'Update IA usage log for week 6' (2026-09-15T10:14:52-05:00), único cambio en diff_desde_cierre: docs/ia.md, con run 'Backend tests' success del 2026-09-15T15:14:55Z (https://github.com/ISCOUTB/AS_202620_Clubs_UTB/actions/runs/34987143230). | S6 | no (resuelto tarde) | — |
+| NC-02: ausencia de manejo de errores de conexión en el backend. | S6 | si | |
+| Enlace roto a docs/adr/0002-ajuste-contextos-publicaciones.md y documentos que declaran pendiente una alineación ya aplicada. | S6 | si | |
+| Análisis estático SonarCloud ausente del pipeline y sin URL pública con Quality Gate. | S6 | si | |
+| docs/aspectos.md con celdas 'Pendiente' y sin columna de evidencia; sin mapeo a los contextos del mapa. | S6 | si | |
+| Secciones arc42 07 y 11 no presentes en el repositorio. | S6 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

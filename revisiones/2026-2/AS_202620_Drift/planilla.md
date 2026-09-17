@@ -15,7 +15,7 @@
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 7 | S7 | `430b9a0` (2026-09-15T11:27:22-05:00) | 1/10 | 1.4 (prelim.) | si |
-| 6 | S6 | `6d0a1b8` (2026-09-10T22:21:13-05:00) | 0/8 | 1.0 (prelim.) | si |
+| 6 | S6 | `5f7fa4c` (2026-09-13T22:07:49-05:00) | 5/8 | 3.5 (prelim.) | si |
 | 5 | CORTE1 | `74337a3` (2026-09-08T02:53:31Z) | 7/12 | 3.3 | si |
 | 4 | S4 | `4254f4a` (2026-08-30T19:13:01-05:00) | 7/10 | 3.8 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `b7ec296c` · 2026-08-09T22:59:42-05:00 | 4/9 | no se publica | sí |
@@ -80,6 +80,13 @@
 | C4 nivel 2 con protocolo y formato en cada flecha | S7 | si | |
 | Trazabilidad de ADR-0001 y ADR-0003 (commit y enlaces pendientes) | S7 | si | |
 | Prueba de sustitución del adaptador para E2, declarada pendiente en docs/aspectos.md | S7 | si | |
+| 2026-09-15T11:04-11:27 -05:00: b2bf164, 56f979b, 66dccb3, 7483132, 579ff78 y 430b9a0 reescriben y renombran el documento S6 y ajustan los enlaces del README después del cierre 2026-09-14T05:00Z. | S6 | no (resuelto tarde) | — |
+| 2026-09-15T10:40:25-05:00: 418196c elimina matrices de cumplimiento y secciones de conclusión del paquete S6 tras el cierre. | S6 | no (resuelto tarde) | — |
+| Evidencia pública de SonarCloud (run exitoso del scanner y URL del análisis con Quality Gate) para el hash revisado. | S6 | si | |
+| Lista de no conformidades de propiedad con entidad, dueño esperado y ubicación observada, más su plan de corrección. | S6 | si | |
+| Tipificación de las relaciones del mapa de contextos con el vocabulario de la semana. | S6 | si | |
+| Trazabilidad de ADR-0003 (commit de implementación y enlace correcto al ADR de referencia) y de ADR-0001. | S6 | si | |
+| Prueba específica de sustitución del adaptador externo para el escenario E2, hoy citada con una prueba que no la cubre. | S6 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

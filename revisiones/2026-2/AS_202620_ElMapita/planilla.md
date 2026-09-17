@@ -14,6 +14,7 @@
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 6 | S6 | `a22f0a4` (2026-09-13T22:21:07-05:00) | 0/8 | 1.0 (prelim.) | si |
 | 7 | S7 | `a22f0a4` (2026-09-13T22:21:07-05:00) | 0/10 | 1.0 (prelim.) | si |
 | 5 | CORTE1 | `b28e068` (2026-09-07T14:57:28-06:00) | 7/12 | 3.3 | si |
 | 4 | S4 | `07b36f4` (2026-08-30T23:31:03-05:00) | 4/10 | 2.6 | si |
@@ -60,6 +61,12 @@
 | C4 nivel 2 con protocolo y formato en cada flecha | S7 | si | |
 | Contenido defendible de docs/aspectos.md y docs/ia.md | S7 | si | |
 | Runs de CI y análisis público de SonarCloud con estado del Quality Gate | S7 | si | |
+| Mapa de contextos con relaciones tipificadas en formato revisable. | S6 | si | |
+| Tabla módulo a datos con dueño único y su contraste con las entidades del código. | S6 | si | |
+| Lista de no conformidades de propiedad de datos con ubicación y plan de corrección. | S6 | si | |
+| arc42 sección 8 con lenguaje ubicuo y mapa de contextos. | S6 | si | |
+| ADR de reajuste y diff de C4 Nivel 3 si los límites cambiaron desde el primer corte. | S6 | si | |
+| Evidencia de SonarCloud: configuración, run de CI y URL pública con Quality Gate. | S6 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -71,7 +78,7 @@
 | `docs/ia.md` al día | No cumple | Vacío (0 bytes); último commit 2026-08-07. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Coincidencias solo en tipos (`password: string`) y badge placeholder del boilerplate. |
 | Contribución de todos los integrantes | No cumple | Confirmado hasta el corte 1: `RobotDRMX` 12 commits (86%), `dgarza2705`/Diego Rosales Garza 1, Rodrigo Vazquez Rico 1; Angel Fabian Gutierrez Gomez sigue sin ningún commit identificable en todo el historial. |
-| Pipeline en verde | No cumple | `.github/workflows/ci.yml` existe y corrió; los 3 runs disponibles vía API están en `failure`, incluido el commit calificado del corte 1. |
+| Pipeline en verde | No verificado | `.github/workflows/ci.yml` existe y corrió; los 3 runs disponibles vía API están en `failure`, incluido el commit calificado del corte 1. |
 
 ## Contribución por integrante
 

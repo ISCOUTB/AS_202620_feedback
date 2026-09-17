@@ -45,8 +45,13 @@ El ADR y la matriz comparativa están bien orientados y la estructura de paquete
 
 ## Semana 6 · S6
 
-La entrega de la semana 6 no incluye los artefactos solicitados: mapa de contextos, tabla módulo-datos, violaciones con plan de corrección, sección 8 de arc42 ni C4 nivel 3. La base documental existente (arc42 parcial, ADR 0001, aspectos, IA) es un buen punto de partida, pero la ficha S6 queda sin cubrir. Se recomienda: documentar los contextos del dominio (publicaciones, clubes, usuarios) con relaciones tipificadas; crear la tabla módulo-datos contrastada con las entidades reales (Publicacion); auditar el código actual y registrar violaciones con plan; completar la sección 8 de arc42 con lenguaje ubicuo y mapa de contextos; añadir C4 nivel 3 y ADR si los límites cambian; completar las secciones 07 y 11 de arc42; y configurar SonarCloud en el pipeline.
-
+El mapa de contextos con relaciones tipificadas, la tabla de dueño único, el ADR del reajuste y la lista de no conformidades muestran un avance sólido en la entrega. Para cerrar del todo:
+1) Agreguen el scanner de SonarCloud al workflow y publiquen la URL del análisis con su Quality Gate; hoy solo hay pruebas.
+2) Completen docs/aspectos.md con la columna de evidencia y eliminen las celdas 'Pendiente' que dejan filas sin defender.
+3) Escriban explícitamente qué fila de aspectos corresponde a cada contexto del mapa (hoy la relación queda implícita).
+4) Corrijan el enlace roto a la tabla de módulos y las menciones que aún declaran pendiente una alineación ya aplicada.
+5) Cierren NC-01 y NC-02 o actualicen su plan con fecha y responsable.
+6) Dejen registrado el recorrido de auditoría (comando y alcance) para que la lista de no conformidades sea repetible.
 ## Semana 7 · S7
 
 El avance en documentación de contexto y en la vista de ejecución se nota, pero falta lo central de esta entrega: un contrato ejecutable (OpenAPI/AsyncAPI/proto) versionado en el repositorio, con rutas y esquemas de datos. Añadan la prueba de contrato al workflow y demuestren con un run en rojo que falla cuando el proveedor rompe el contrato; hoy todos los runs están en verde. Registren además un ADR que elija integración síncrona o asíncrona frente a un escenario de calidad, con la alternativa descartada y sus consecuencias de acoplamiento. En el C4 nivel 2 etiqueten cada flecha con su protocolo y su formato. Activen el scanner de SonarCloud y publiquen la URL del análisis con el estado del Quality Gate. Cierren los pendientes abiertos (datos de clubes hardcodeados, manejo de errores de conexión, enlace roto al ADR de contextos) y completen las secciones 07 y 11 de arc42 para que la documentación sea defendible de punta a punta.

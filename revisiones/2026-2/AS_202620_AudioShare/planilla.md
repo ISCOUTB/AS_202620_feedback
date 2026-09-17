@@ -14,6 +14,7 @@
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 6 | S6 | `4a0eba9` (2026-09-13T22:01:57-05:00) | 4/8 | 3.0 (prelim.) | si |
 | 7 | S7 | `4a0eba9` (2026-09-13T22:01:57-05:00) | 2/10 | 1.8 (prelim.) | si |
 | 5 | CORTE1 | `cb65d13` (2026-09-06T22:00:48-05:00) | 8/12 | 3.7 | si |
 | 4 | S4 | `24a5023` (2026-08-30T23:48:29-05:00) | 4/10 | 2.6 | si |
@@ -62,6 +63,12 @@
 | Evidencia de fallo de la prueba ante cambio incompatible | S7 | si | |
 | ADR de estrategia de integración con alternativa descartada | S7 | si | |
 | Evidencia de SonarCloud: configuración, run exitoso y URL pública con Quality Gate | S7 | si | |
+| C4 nivel 3 y ADR del reajuste de límites | S6 | si | |
+| docs/arc42/src/08_concepts.adoc (y secciones 07 y 11 ausentes) | S6 | si | |
+| Auditoría de propiedad de datos con recorrido citado | S6 | si | |
+| Tipificación de relaciones del mapa de contextos | S6 | si | |
+| Evidencia pública de SonarCloud (configuración, run y Quality Gate) | S6 | si | |
+| Pruebas de EC-02 y EC-03 | S6 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -73,7 +80,7 @@
 | `docs/ia.md` al día | Cumple | Commit en S3 (`024ae34`) pero sin entradas de qué se rechazó y por qué. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Sin coincidencias; solo `.env.example`. |
 | Contribución de todos los integrantes | Cumple | 4 de 4 en S3: Santiago 11, Elian 11, Yeiver 7, Vincent 6. |
-| Pipeline en verde | No cumple | Prueba `tests/health.test.ts` y script `test`; sin workflow ni evidencia de ejecución. |
+| Pipeline en verde | No verificado | Prueba `tests/health.test.ts` y script `test`; sin workflow ni evidencia de ejecución. |
 
 ## Contribución por integrante
 

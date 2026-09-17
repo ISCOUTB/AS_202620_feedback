@@ -43,14 +43,7 @@ Para la sustentación: preparen quién explica cuál era la restricción asignad
 
 ## Semana 6 · S6
 
-La entrega S6 no incluye los artefactos centrales de la semana: mapa de contextos, tabla módulo-datos, lista de violaciones con plan y sección 8 de arc42.
-La documentación base (arc42, C4 niveles 1-2, ADR) está presente, pero falta el análisis de dominio solicitado.
-Se recomienda crear el mapa de contextos con relaciones tipificadas (núcleo compartido, cliente-proveedor, capa anticorrupción).
-Elaborar la tabla módulo-datos contrastada con los modelos reales (backend/app/domain/model/game.py, frontend/domain/model/Game.js).
-Documentar las violaciones encontradas con su plan de corrección y añadir la sección 8 de arc42.
-Completar la trazabilidad de aspectos.md (celdas pendientes) y documentar lo rechazado en ia.md.
-Añadir instrucciones de arranque y prueba al README y revisar los títulos de los ADR para que enuncien la decisión.
-
+El repositorio está bien organizado y la trazabilidad de aspectos, C4 y arc42 es clara; se nota trabajo real en la delimitación de contextos y en la tabla de propiedad de datos. Para cerrar la evidencia, el mapa de contextos debe etiquetar el tipo de relación entre contextos (cliente-proveedor, núcleo compartido, capa anticorrupción), no solo el flujo de datos. La auditoría de propiedad gana mucho si el documento deja explícitos el hash revisado, el patrón de búsqueda usado y cada ruta de escritura encontrada, incluso cuando la lista de no conformidades quede vacía. Falta la evidencia pública de integración continua y del análisis estático: el run exitoso y la URL del análisis con su Quality Gate para el commit revisado; un token configurado o un workflow sin ejecución no lo demuestran. Revisen también la trazabilidad de los ADR (enlaces y commit de implementación) y eviten dejar correcciones de la entrega para después del cierre.
 ## Semana 7 · S7
 
 El repositorio está ordenado y la sección 6 de arc42, la tabla de aspectos y los ADR muestran trabajo real de arquitectura. Para la siguiente entrega: (1) agregar el contrato de la API como archivo OpenAPI versionado, con versión, rutas y esquemas de datos, y mantenerlo sincronizado con lo implementado; (2) incluir una prueba de contrato que el pipeline ejecute y demostrar con un run en rojo que falla ante un cambio incompatible, porque una prueba que nunca falla no prueba nada; (3) escribir un ADR que elija síncrono o asíncrono frente a un escenario de calidad, con la alternativa descartada y sus consecuencias de acoplamiento; (4) revisar el nivel 2 del C4 para que cada flecha indique protocolo y formato; (5) dejar la evidencia pública de SonarCloud (run exitoso más URL del análisis con Quality Gate) y cerrar la trazabilidad pendiente de los ADR.
