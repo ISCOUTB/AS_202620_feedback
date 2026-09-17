@@ -8,12 +8,13 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Clubs_UTB` |
 | Integrantes y su usuario de GitHub | Hollman Jose De Orta Gonzalez (`deortahollman-star`) · Josh Robinson Ortega Castellon (`Josh4OP`) · Diego Andres Ramos De Avila (`Zavod Dev`, atribución sin confirmar) · Luis Daniel Salas Reyes (`Luis-Salas-Reyes`) |
 | URL del sistema desplegado | sin desplegar todavía |
-| Ultima revision | 2026-09-11 |
+| Ultima revision | 2026-09-17 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 7 | S7 | `d2d1450` (2026-09-15T10:14:52-05:00) | 1/10 | 1.4 (prelim.) | si |
 | 6 | S6 | `4ede977` (2026-09-06T22:41:55-05:00) | 0/8 | 1.0 (prelim.) | si |
 | 5 | CORTE1 | `4ede977` (2026-09-06T22:41:55-05:00) | 8/12 | 3.7 | si |
 | 4 | S4 | `91323d6` (2026-08-30T23:21:56-05:00) | 9/10 | 4.6 | si |
@@ -64,6 +65,11 @@
 | C4 nivel 3 y ADR de reajuste | S6 | si | |
 | Completar secciones 07 y 11 de arc42 | S6 | si | |
 | SonarCloud en pipeline | S6 | si | |
+| NC-01: datos de clubes hardcodeados en frontend/linkclub/lib/clubs_page.dart (docs/arc42/lista_errores.md). | S7 | si | |
+| NC-02: sin manejo de errores de conexión en backend (docs/arc42/lista_errores.md). | S7 | si | |
+| docs/arc42/tabla_modulo.md desalineada con los tres contextos vigentes, según ADR 0002 y arc42 §8.3. | S7 | si | |
+| Secciones 07 y 11 de arc42 ausentes. | S7 | si | |
+| Contrato de API, prueba de contrato en el pipeline y ADR de estrategia de integración sin entregar (S7). | S7 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -75,7 +81,7 @@
 | `docs/ia.md` al día | No cumple | Último commit `c92595e` (2026-08-09). |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Sin coincidencias. |
 | Contribución de todos los integrantes | Cumple | 4 de 4 en S3: Luis 2, Diego 2, Hollman 1, Josh 1 (Josh4OP = «Josh Ortega», mismo correo). |
-| Pipeline en verde | Cumple | Sin workflow; la prueba estaba vacía en el hash calificado (contenido tardío). |
+| Pipeline en verde | No cumple | Sin workflow; la prueba estaba vacía en el hash calificado (contenido tardío). |
 
 ## Contribución por integrante
 

@@ -50,3 +50,7 @@ Elaborar la tabla módulo-datos contrastada con los modelos reales (backend/app/
 Documentar las violaciones encontradas con su plan de corrección y añadir la sección 8 de arc42.
 Completar la trazabilidad de aspectos.md (celdas pendientes) y documentar lo rechazado en ia.md.
 Añadir instrucciones de arranque y prueba al README y revisar los títulos de los ADR para que enuncien la decisión.
+
+## Semana 7 · S7
+
+El repositorio está ordenado y la sección 6 de arc42, la tabla de aspectos y los ADR muestran trabajo real de arquitectura. Para la siguiente entrega: (1) agregar el contrato de la API como archivo OpenAPI versionado, con versión, rutas y esquemas de datos, y mantenerlo sincronizado con lo implementado; (2) incluir una prueba de contrato que el pipeline ejecute y demostrar con un run en rojo que falla ante un cambio incompatible, porque una prueba que nunca falla no prueba nada; (3) escribir un ADR que elija síncrono o asíncrono frente a un escenario de calidad, con la alternativa descartada y sus consecuencias de acoplamiento; (4) revisar el nivel 2 del C4 para que cada flecha indique protocolo y formato; (5) dejar la evidencia pública de SonarCloud (run exitoso más URL del análisis con Quality Gate) y cerrar la trazabilidad pendiente de los ADR.

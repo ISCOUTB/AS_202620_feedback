@@ -40,3 +40,7 @@ No encontramos evidencia de que se haya diagnosticado o respondido una restricci
 Además, revisando el historial completo del repositorio, seguimos sin ver ningún commit de Angel Fabian Gutierrez Gomez. Si sus aportes existen fuera de Git (diseño, decisiones, documentación en otro medio), tráiganlo a la sustentación, porque desde el repositorio no es visible.
 
 Para la próxima entrega: creen la etiqueta real, retomen el trabajo cuanto antes (una semana completa sin commits es un riesgo), arreglen el pipeline, y aporten la restricción, el diagnóstico y la medición que pide este corte.
+
+## Semana 7 · S7
+
+La base del repositorio está bien encaminada: estructura docs/ completa, ADR numerados, README con arranque y un registro de IA que crece con el semestre. Para esta entrega falta el núcleo: no hay contrato OpenAPI/AsyncAPI/proto versionado, así que nada permite contrastar contrato contra API ni declarar versión con historial. Añadan el archivo del contrato con rutas y esquemas, una prueba de contrato y conéctenla al workflow; documenten con un run en rojo que falla ante un cambio incompatible, que es la diferencia entre competente y sobresaliente aquí. Sumen un ADR que justifique síncrono o asíncrono frente a un escenario de calidad, con la alternativa descartada y su acoplamiento. Completen arc42 sección 6 con los flujos y etiqueten cada flecha del C4 nivel 2 con protocolo y formato. Aporten la URL del run y el enlace público del análisis con Quality Gate. Revisen también los archivos temporales de ofimática versionados en docs/.

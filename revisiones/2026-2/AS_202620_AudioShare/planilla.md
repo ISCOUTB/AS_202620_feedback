@@ -8,12 +8,13 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_AudioShare` |
 | Integrantes y su usuario de GitHub | Santiago Adolfo Camacho Hernandez (commits como «Santiago Adolfo Camacho Hernández») · Vincent Cardona Castro (presumiblemente `cardonavincent26-design`, sin confirmar) · Elian Daniel Perea Vanegas («Elian Daniel Perea Vanegas») · Yeiver Andres Verjel Perez («Yeiver Andrés Vergel Pérez») |
 | URL del sistema desplegado | sin desplegar todavía |
-| Ultima revision | 2026-09-11 |
+| Ultima revision | 2026-09-17 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 7 | S7 | `4a0eba9` (2026-09-13T22:01:57-05:00) | 2/10 | 1.8 (prelim.) | si |
 | 5 | CORTE1 | `cb65d13` (2026-09-06T22:00:48-05:00) | 8/12 | 3.7 | si |
 | 4 | S4 | `24a5023` (2026-08-30T23:48:29-05:00) | 4/10 | 2.6 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `1c9ebb0a` · 2026-08-09T20:31:49-05:00 | 2/9 | no se publica | sí |
@@ -56,6 +57,11 @@
 | análisis estático SonarCloud | S5 | si | |
 | PDF en Moodle (no verificado) | S5 | si | |
 | Sustentación (no verificada) | S5 | si | |
+| Contrato OpenAPI/AsyncAPI/proto versionado con rutas y esquemas | S7 | si | |
+| Prueba de contrato presente y ejecutada por el pipeline | S7 | si | |
+| Evidencia de fallo de la prueba ante cambio incompatible | S7 | si | |
+| ADR de estrategia de integración con alternativa descartada | S7 | si | |
+| Evidencia de SonarCloud: configuración, run exitoso y URL pública con Quality Gate | S7 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -67,7 +73,7 @@
 | `docs/ia.md` al día | Cumple | Commit en S3 (`024ae34`) pero sin entradas de qué se rechazó y por qué. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Sin coincidencias; solo `.env.example`. |
 | Contribución de todos los integrantes | Cumple | 4 de 4 en S3: Santiago 11, Elian 11, Yeiver 7, Vincent 6. |
-| Pipeline en verde | Cumple | Prueba `tests/health.test.ts` y script `test`; sin workflow ni evidencia de ejecución. |
+| Pipeline en verde | No cumple | Prueba `tests/health.test.ts` y script `test`; sin workflow ni evidencia de ejecución. |
 
 ## Contribución por integrante
 

@@ -8,12 +8,13 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Drift` |
 | Integrantes y su usuario de GitHub | Jerry Daniel Buelvas Mejia (`JerryDBM`) · Mauricio Andres Fernandez Espinosa (`maufern4ndez`) · Luis Mario Perez Diaz (`lmpdiaz12`) · Joshua David Reyes Leones (`JoshuaR01` y `JoshXX`, mismo correo) |
 | URL del sistema desplegado | sin desplegar todavía |
-| Ultima revision | 2026-09-11 |
+| Ultima revision | 2026-09-17 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 7 | S7 | `430b9a0` (2026-09-15T11:27:22-05:00) | 1/10 | 1.4 (prelim.) | si |
 | 6 | S6 | `6d0a1b8` (2026-09-10T22:21:13-05:00) | 0/8 | 1.0 (prelim.) | si |
 | 5 | CORTE1 | `74337a3` (2026-09-08T02:53:31Z) | 7/12 | 3.3 | si |
 | 4 | S4 | `4254f4a` (2026-08-30T19:13:01-05:00) | 7/10 | 3.8 | si |
@@ -71,12 +72,20 @@
 | Celdas pendientes en la tabla de trazabilidad (E3-E5). | S5 | si | |
 | Nomenclatura de ADR no conforme. | S5 | si | |
 | Falta SonarCloud en el pipeline. | S5 | si | |
+| Contrato OpenAPI/AsyncAPI versionado (S7) | S7 | si | |
+| Prueba de contrato ejecutada por el pipeline (S7) | S7 | si | |
+| Evidencia de que la prueba de contrato falla ante un cambio incompatible (S7) | S7 | si | |
+| ADR de estrategia de integración síncrona o asíncrona (S7) | S7 | si | |
+| Evidencia pública de SonarCloud con Quality Gate, pendiente desde S6 | S7 | si | |
+| C4 nivel 2 con protocolo y formato en cada flecha | S7 | si | |
+| Trazabilidad de ADR-0001 y ADR-0003 (commit y enlaces pendientes) | S7 | si | |
+| Prueba de sustitución del adaptador para E2, declarada pendiente en docs/aspectos.md | S7 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | `AS_202620_Drift`, público. |
-| Estructura mínima | No cumple | Las seis rutas en su lugar desde la reorganización del 08-22. |
+| Estructura mínima | Cumple | Las seis rutas en su lugar desde la reorganización del 08-22. |
 | Convención de nombres de ADR | Cumple | `0001-arquitectura-base.md` conforme. |
 | ADR aceptados sin reescribir | Cumple | Creado y renombrado el mismo día (2026-08-23), sin reescrituras posteriores. |
 | `docs/ia.md` al día | Cumple | Commits 08-21/08-22; rechazo narrado en §3.1 con motivo. |

@@ -8,12 +8,13 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_DinamikUTB` |
 | Integrantes y su usuario de GitHub | Luis Daniel Padilla Leottau (`Daniel-dev02`) · Gillianis Del Carmen Perez Revolledo (`gillianisperez-prog`) · Esteban Ramirez Rios (`Eramirezr`) · Juan Jose Vargas Perez (`JuanchisV`, firma también como «Juan José Vargas Pérez» con el mismo correo) |
 | URL del sistema desplegado | sin desplegar todavía |
-| Ultima revision | 2026-09-14 |
+| Ultima revision | 2026-09-17 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 7 | S7 | `265e652` (2026-09-13T23:29:49-05:00) | 1/10 | 1.4 (prelim.) | si |
 | 6 | S6 | `265e652` (2026-09-13T23:29:49-05:00) | 0/8 | 1.0 | si |
 | 5 | CORTE1 | `72bfc7e` (2026-09-07T22:28:37-05:00) | 8/12 | 3.7 | sí (actualizada) |
 | 4 | S4 | `8558156` (2026-08-30T23:52:24-05:00) | 7/10 | 3.8 | si |
@@ -50,6 +51,13 @@
 | Comparar C4 nivel 3 con el hash de S5 y posible ADR de reajuste | S6 | si | |
 | Revisar docs/aspectos.md | S6 | si | |
 | Evidenciar ejecución del pipeline con runs_ci | S6 | si | |
+| Contrato OpenAPI/AsyncAPI/proto versionado con rutas y esquemas | S7 | si | |
+| Prueba de contrato integrada al pipeline | S7 | si | |
+| Demostración de que la prueba de contrato falla ante cambio incompatible | S7 | si | |
+| ADR de estrategia de integración (síncrono vs asíncrono) | S7 | si | |
+| Etiquetado de protocolo y formato en el C4 nivel 2 | S7 | si | |
+| Contenido verificable de docs/aspectos.md y docs/ia.md | S7 | si | |
+| Evidencia pública del análisis estático con Quality Gate | S7 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -61,7 +69,7 @@
 | `docs/ia.md` al día | Cumple | Entradas del 23/08 con rechazos («Rechazado parcialmente») y motivo. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Sin coincidencias. |
 | Contribución de todos los integrantes | Cumple | 4 de 4 en S3 (Juan 21, Gillianis 11, Luis 12, Esteban 2); desbalance anotado. |
-| Pipeline en verde | Cumple | El workflow de CI y el run asociado a `72bfc7e` verifican backend y frontend en verde. |
+| Pipeline en verde | No verificado | El workflow de CI y el run asociado a `72bfc7e` verifican backend y frontend en verde. |
 
 ## Contribución por integrante
 

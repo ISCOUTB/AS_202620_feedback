@@ -6,11 +6,11 @@ Nota preliminar (pasada temprana): puede cambiar al cierre.
 
 | Equipo | Repo | Hash | n/m | Nota sugerida (preliminar) |
 |---|---|---|---|---|
-| AudioShare | `AS_202620_AudioShare` | `-` | - | - |
-| Clubs UTB | `AS_202620_Clubs_UTB` | `-` | - | - |
-| DinamikUTB | `AS_202620_DinamikUTB` | `-` | - | - |
-| Drift | `AS_202620_Drift` | `-` | - | - |
-| ElMapita | `AS_202620_ElMapita` | `-` | - | - |
+| AudioShare | `AS_202620_AudioShare` | `4a0eba9` | 2/10 | 1.8 |
+| Clubs UTB | `AS_202620_Clubs_UTB` | `d2d1450` | 1/10 | 1.4 |
+| DinamikUTB | `AS_202620_DinamikUTB` | `265e652` | 1/10 | 1.4 |
+| Drift | `AS_202620_Drift` | `430b9a0` | 1/10 | 1.4 |
+| ElMapita | `AS_202620_ElMapita` | `a22f0a4` | 0/10 | 1.0 |
 | EnAgenda | `AS_202620_EnAgenda` | `0a58de8` | 0/10 | 1.0 |
 | GimnasioUTB | `AS_202620_GimnasioUTB` | `106869b` | 1/10 | 1.4 |
 | InvenTrack | `AS_202620_InvenTrack` | `d71c5b7` | 1/10 | 1.4 |
