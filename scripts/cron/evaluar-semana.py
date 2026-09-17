@@ -883,6 +883,10 @@ def main():
     ap.add_argument("--modo", default="auto", choices=["auto", "early", "definitive"])
     ap.add_argument("--semana", default="")
     ap.add_argument("--solo", default="")
+    ap.add_argument("--lote", type=int, default=0,
+                    help="Lote 1-indexado de equipos; 0 procesa todos.")
+    ap.add_argument("--tamano-lote", type=int, default=5,
+                    help="Numero maximo de equipos por lote.")
     ap.add_argument("--dry-run", default="false")
     args = ap.parse_args()
     dry = args.dry_run.lower() in ("1", "true", "si", "yes")
@@ -915,7 +919,20 @@ def main():
             desde = e["cierre"]
     if modo_real == "early":
         desde = None
-    repos = [args.solo] if args.solo else sorted(eqs.keys())
+    todos_los_repos = sorted(eqs.keys())
+    if args.lote < 0 or args.tamano_lote < 1:
+        raise SystemExit("El lote debe ser >= 0 y el tamano-lote >= 1.")
+    if args.solo:
+        repos = [args.solo]
+    elif args.lote:
+        inicio = (args.lote - 1) * args.tamano_lote
+        repos = todos_los_repos[inicio:inicio + args.tamano_lote]
+        if not repos:
+            raise SystemExit("Lote %d fuera del rango de %d equipos." %
+                             (args.lote, len(todos_los_repos)))
+    else:
+        repos = todos_los_repos
+    print("LOTE:", args.lote or "todos", "equipos:", ", ".join(repos))
     resultados = []
     for repo in repos:
         if repo not in eqs:
@@ -931,16 +948,25 @@ def main():
         for r in errores:
             print(" - %s: %s" % (r["repo"], r["estado"]))
         raise SystemExit(1)
+    if dry:
+        print("DRY-RUN: sin escribir, commit ni push")
+        return
     if resultados:
-        escribir_resumen(resultados, entrada, modo_real)
+        # Cada lote publica solo sus informes, pero el resumen sigue siendo la
+        # vista completa: para las filas no procesadas se conserva la evidencia
+        # ya publicada en lugar de sustituirla por una tabla parcial.
+        por_repo = {r["repo"]: r for r in resultados}
+        resumen_completo = [por_repo.get(repo, resumen_desde_informe(
+            repo, eqs[repo], entrada, "pendiente de revision"))
+            for repo in todos_los_repos]
+        escribir_resumen(resumen_completo, entrada, modo_real)
         actualizar_calificaciones_corte1(resultados, entrada, modo_real)
-    actualizar_readme(eqs.keys() if not args.solo else [args.solo], entrada)
+    actualizar_readme(repos, entrada)
     write_txt(estado_path, json.dumps({"modo": modo_real,
                                        "ts": dt.datetime.now(dt.timezone.utc).isoformat(),
-                                       "equipos": len(resultados)}))
-    if dry:
-        print("DRY-RUN: sin commit ni push")
-        return
+                                       "equipos": len(resultados),
+                                       "lote": args.lote or "todos",
+                                       "tamano_lote": args.tamano_lote}))
     commit_push("Revision automatica S%d (%s) - %s" % (entrada["semana"], entrada["id"], modo_real))
 
 

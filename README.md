@@ -250,8 +250,11 @@ La revisión semanal corre sola, en este mismo repositorio, con el workflow
   último commit anterior al cierre. Es la que queda publicada y la que cuenta.
 - **Miércoles y viernes 06:00 COT**: pasadas tempranas (delta) con `deepseek-v4.1-flash`, solo sobre
   los equipos con commits nuevos; las notas quedan marcadas como preliminares.
+- Cada pasada se divide en cinco lotes seriales de hasta cinco equipos (5+5+5+5+3). Cada lote
+  publica antes de que comience el siguiente: si el modelo no devuelve una evaluación verificable,
+  solo falla ese lote y los ya publicados se conservan.
 - También corre a mano desde **Actions → Run workflow** (`workflow_dispatch`), con opción de
-  `--semana`, `--modo`, `--solo` y `--dry-run`.
+  `semana`, `modo`, `solo`, `lote` (1–5; 0 ejecuta todos) y `dry_run`.
 
 Qué hace `scripts/cron/evaluar-semana.py`: elige la entrega vigente según
 `scripts/cron/calendario.json`, clona cada repositorio de forma efímera (protocolo git; la API de

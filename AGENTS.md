@@ -19,7 +19,10 @@ en delta con `deepseek-v4.1-flash`: solo equipos con commits nuevos, notas preli
 `scripts/cron/calendario.json` y el LLM del secret `OPENCODE_GO_API_KEY` (suscripción OpenCode Go,
 endpoint `https://opencode.ai/zen/go/v1`). Escribe matrices, planillas, feedback, resumen y README
 (y sincroniza `calificaciones.md` en la pasada definitiva de S5),
-y hace commit+push a master. Cada informe lleva una sección **overall** que revisa el proyecto
+y hace commit+push a master. Cada pasada se divide en **cinco lotes seriales de hasta cinco
+equipos** (5+5+5+5+3): un lote publica antes de que inicie el siguiente, de modo que una respuesta
+fallida del modelo deja intactos los lotes ya publicados y se puede reprocesar únicamente el lote
+afectado con `workflow_dispatch`. Cada informe lleva una sección **overall** que revisa el proyecto
 entero en la punta actual de la misma rama `master` o `main`, para notar entregas subidas tarde o
 correcciones posteriores al cierre. Guardas:
 `estado-sX.json` e informes definitivos impiden re-procesar semanas cerradas.

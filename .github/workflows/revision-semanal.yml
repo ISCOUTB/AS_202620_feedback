@@ -22,6 +22,10 @@ on:
         description: "Repo unico para pruebas (vacio = todos)"
         required: false
         default: ""
+      lote:
+        description: "Lote de cinco equipos (1-5; 0 = ejecutar todos los lotes)"
+        required: false
+        default: "0"
       dry_run:
         description: "true = sin commit ni push"
         required: false
@@ -38,6 +42,13 @@ jobs:
   revision:
     runs-on: ubuntu-latest
     timeout-minutes: 350
+    strategy:
+      # Los lotes escriben sobre la misma rama. Se procesan en serie para que cada
+      # uno parta del commit publicado por el anterior, sin carreras al hacer push.
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        lote: [1, 2, 3, 4, 5]
     env:
       TZ: America/Bogota
       LLM_BASE_URL: https://opencode.ai/zen/go/v1
@@ -65,14 +76,27 @@ jobs:
 
       - name: Evaluar semana
         run: |
+          LOTE="${{ matrix.lote }}"
           if [ "${{ github.event_name }}" = "schedule" ]; then
             MODO_EFECTIVO="$MODO"
             SEMANAS=""
+            LOTE_SOLICITADO="0"
           else
             MODO_EFECTIVO="${{ github.event.inputs.modo }}"
             SEMANAS="${{ github.event.inputs.semana }}"
             SOLO="${{ github.event.inputs.solo }}"
+            LOTE_SOLICITADO="${{ github.event.inputs.lote }}"
             DRY="${{ github.event.inputs.dry_run }}"
+          fi
+          # Un despacho con un lote concreto no duplica los otros cuatro. Una
+          # prueba por repositorio se ejecuta solo una vez, en el primer lote.
+          if [ "${LOTE_SOLICITADO:-0}" != "0" ] && [ "$LOTE_SOLICITADO" != "$LOTE" ]; then
+            echo "Lote $LOTE omitido (se solicito $LOTE_SOLICITADO)."
+            exit 0
+          fi
+          if [ -n "${SOLO:-}" ] && [ "${LOTE_SOLICITADO:-0}" = "0" ] && [ "$LOTE" != "1" ]; then
+            echo "Lote $LOTE omitido: prueba de un unico repositorio."
+            exit 0
           fi
           FALLO=0
           if [ -z "${SEMANAS:-}" ]; then
@@ -86,6 +110,8 @@ jobs:
               --semana "${SEMANA:-}" \
               --modo "${MODO_EFECTIVO:-auto}" \
               --solo "${SOLO:-}" \
+              --lote "$LOTE" \
+              --tamano-lote 5 \
               --dry-run "${DRY:-false}" || FALLO=1
             echo "::endgroup::"
           done
