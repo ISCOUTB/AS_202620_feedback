@@ -13,7 +13,7 @@ Nota preliminar (pasada temprana): puede cambiar al cierre.
 | ElMapita | `AS_202620_ElMapita` | `a22f0a4` | 0/10 | 1.0 |
 | EnAgenda | `AS_202620_EnAgenda` | `0a58de8` | 0/10 | 1.0 |
 | GimnasioUTB | `AS_202620_GimnasioUTB` | `106869b` | 1/10 | 1.4 |
-| InvenTrack | `AS_202620_InvenTrack` | `d71c5b7` | 1/10 | 1.4 |
+| InvenTrack | `AS_202620_InvenTrack` | `81ebeab` | 3/10 | 2.2 |
 | LaPlacita | `AS_202620_LaPlacita` | `90f510e` | 5/10 | 3.0 |
 | LostVault | `AS_202620_LostVault` | `9d57572` | 1/10 | 1.4 |
 | CampusMarket | `AS_202620_PROYECTO_CAMPUSMARKET` | `baeca7e` | 6/10 | 3.4 |

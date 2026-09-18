@@ -10,13 +10,13 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_InvenTrack` |
 | Integrantes y su usuario de GitHub | Javier Alejandro Carta Lacharme · Esteban Javier Peluffo Marquez · Felix Andres Taborda Jimenez · Jose Gabriel Vargas Perez — cuentas abajo |
 | URL del sistema desplegado | sin desplegar aún |
-| Ultima revision | 2026-09-17 |
+| Ultima revision | 2026-09-18 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 7 | S7 | `d71c5b7` (2026-09-15T11:15:51-05:00) | 1/10 | 1.4 (prelim.) | si |
+| 7 | S7 | `81ebeab` (2026-09-17T23:00:46-05:00) | 3/10 | 2.2 (prelim.) | si |
 | 6 | S6 | `d6f2b19` (2026-09-13T23:37:36-05:00) | 7/8 | 4.5 | si |
 | 5 | CORTE1 | `ac951e3` (2026-09-08T10:11:58-05:00) | 9/12 | 4.0 | si |
 | 4 | S4 | `d7ba824` (2026-08-30T23:39:33-05:00) | 5/10 | 3.0 | si |
@@ -79,6 +79,11 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 | Paso de SonarCloud retirado del CI (docs/ia.md, 2026-09-13) sin restituir a HEAD. | S7 | si | |
 | Contrato de API y prueba de contrato de la semana 7 ausentes. | S7 | si | |
 | Formato ausente en varias flechas del C4 nivel 2. | S7 | si | |
+| SonarCloud sin ejecución, sin run asociado y sin URL pública con Quality Gate (paso retirado del workflow). | S7 | si | |
+| Ejecución de la prueba de contrato en el pipeline sin run citado. | S7 | si | |
+| Evidencia de que la prueba de contrato falla ante un cambio incompatible. | S7 | si | |
+| C4 nivel 2 sin formato de datos en las flechas. | S7 | si | |
+| Módulos usuarios, proveedores y alertas sin código (VIO-02 diferido por diseño). | S7 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
