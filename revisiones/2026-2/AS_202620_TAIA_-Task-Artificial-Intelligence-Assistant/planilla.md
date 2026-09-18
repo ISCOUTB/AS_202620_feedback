@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant` |
 | Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-17 |
+| Ultima revision | 2026-09-18 |
 
 ## Estado por entrega
 
@@ -20,7 +20,7 @@
 | 4 | S4 | `c087303` (2026-08-30T18:54:10-05:00) | 5/10 | 3.0 | si |
 | 5 | CORTE1 | `a3f4d82` (2026-09-06T04:13:11-05:00) | 9/12 | no aplica | si |
 | 6 | S6 | `c0c3adb` (2026-09-13T20:01:35-05:00) | 7/8 | 4.5 (prelim.) | si |
-| 7 | S7 | `3c2ae72` (2026-09-16T21:40:14-05:00) | 6/10 | 3.4 (prelim.) | si |
+| 7 | S7 | `0a12f0c` (2026-09-17T15:27:54-05:00) | 6/10 | 3.4 (prelim.) | si |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
@@ -105,6 +105,12 @@
 | Evidencia auditable de CI y SonarCloud: configuración del scanner, run del hash revisado y Quality Gate público. | S6 | si | |
 | Columnas completas y navegables en docs/aspectos.md y columna de lo rechazado en docs/ia.md. | S6 | si | |
 | Persistencia PostgreSQL aún no integrada; los repositorios siguen en memoria. | S6 | si | |
+| Ejecucion de la prueba de contrato en el pipeline y URL del run | S7 | si | |
+| Evidencia verificable de fallo ante cambio incompatible | S7 | si | |
+| C4 nivel 2 con protocolo y formato en cada flecha | S7 | si | |
+| Historial git del archivo de contrato | S7 | si | |
+| SonarCloud: configuracion, run exitoso y URL publica con Quality Gate | S7 | si | |
+| Contenido de docs/aspectos.md para validar la tabla de trazabilidad | S7 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

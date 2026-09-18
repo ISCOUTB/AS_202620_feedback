@@ -22,7 +22,7 @@ Nota preliminar (pasada temprana): puede cambiar al cierre.
 | Recobra | `AS_202620_Recobra` | `47fb44b` | 1/10 | 1.4 |
 | ShareU | `AS_202620_ShareU` | `0bae184` | 1/10 | 1.4 |
 | Calificación automática | `AS_202620_Sistema-de-calificacion-automatica` | `a47d5bd` | 1/10 | 1.4 |
-| TAIA | `AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant` | `3c2ae72` | 6/10 | 3.4 |
+| TAIA | `AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant` | `0a12f0c` | 6/10 | 3.4 |
 | Tienda virtual UTB | `AS_202620_TIENDA-VIRTUAL-UTB` | `dea5bc9` | 0/10 | 1.0 |
 | TRACTAR | `AS_202620_TRACTAR` | `7cfb872` | 2/10 | 1.8 |
 | Verifacts | `AS_202620_Verifacts` | `635f9b7` | 8/10 | 4.2 |
