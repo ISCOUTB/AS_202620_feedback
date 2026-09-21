@@ -35,8 +35,11 @@ El reto quedó resuelto de forma correcta: identificaron un riesgo real (que dos
 
 ## Semana 7 · S7
 
-Ya tienen arc42 sección 6 con los flujos de interacción y un C4 nivel 2 que etiqueta protocolo y formato en las flechas entre contenedores: eso es lo que hay que conservar. Falta el contrato de la API versionado en el repositorio (OpenAPI, AsyncAPI o proto) con rutas y esquemas; sin él no se puede comprobar correspondencia ni versionado. Falta una prueba de contrato que el pipeline ejecute y, sobre todo, que se demuestre que falla cuando se rompe el contrato: guarden el run en rojo o el cambio incompatible que la hizo fallar. Falta un ADR que decida la estrategia de integración (síncrona o asíncrona) contra un escenario de calidad, con la alternativa descartada y sus consecuencias de acoplamiento. Completen además la evidencia pública de SonarCloud (línea del scanner, run del hash revisado y URL del Quality Gate).
-
+El contrato en docs/openapi.json, la prueba test_openapi_contract.py, el ADR 0004 y la sección 6 de arc42 están versionados y bien encaminados.
+Para cerrar la semana, hagan auditable el contrato: versión visible, dos rutas contrastadas con el código y el fragmento con esquemas.
+Confirmen que el workflow invoca la prueba y adjunten el enlace del run.
+Aportar la ejecución en rojo, o el cambio incompatible que la produjo, es lo que distingue una prueba real de una que siempre pasa.
+Completen el nivel 2 del C4 etiquetando cada flecha con protocolo y formato, y dejen el análisis de SonarCloud con su Quality Gate enlazado.
 ## Semana 6 · S6
 
 Buen avance: el mapa de contextos y la sección 8 recogen el lenguaje y los límites del dominio, y el C4 nivel 3 y los ADR están al día. Para cerrar el segundo corte: (1) publiquen la evidencia auditable de SonarCloud: archivo de configuración, línea del workflow que invoca el scanner, run exitoso para el hash revisado y URL del Quality Gate; (2) incorporen la tabla módulo a datos y la lista de no conformidades con su plan, dejando explícito qué se esperaba, dónde se buscó y qué se halló sobre el código actual; (3) completen el registro de IA con lo rechazado y su motivo. Revisen además que el arranque quede en un solo comando para facilitar la reproducibilidad.

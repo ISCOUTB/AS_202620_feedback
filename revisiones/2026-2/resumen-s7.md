@@ -16,11 +16,11 @@ Nota sugerida = 1 + 4 × (n/m) sobre la matriz de la ficha, **propuesta al docen
 | InvenTrack | `AS_202620_InvenTrack` | `f10fd01` | 4/10 | 2.6 |
 | LaPlacita | `AS_202620_LaPlacita` | `8c2e1bc` | 4/10 | 2.6 |
 | LostVault | `AS_202620_LostVault` | `7bf515f` | 6/10 | 3.4 |
-| CampusMarket | `AS_202620_PROYECTO_CAMPUSMARKET` | `baeca7e` | 6/10 | 3.4 |
-| PideUtb | `AS_202620_PideUtb` | `006edfe` | 2/10 | 1.8 |
-| ROUTB | `AS_202620_ROUTB` | `dcd3317` | 2/10 | 1.8 |
-| Recobra | `AS_202620_Recobra` | `47fb44b` | 1/10 | 1.4 |
-| ShareU | `AS_202620_ShareU` | `0bae184` | 1/10 | 1.4 |
+| CampusMarket | `AS_202620_PROYECTO_CAMPUSMARKET` | `c53ee32` | 7/10 | 3.8 |
+| PideUtb | `AS_202620_PideUtb` | `557e150` | 5/10 | 3.0 |
+| ROUTB | `AS_202620_ROUTB` | `fe266aa` | 4/10 | 2.6 |
+| Recobra | `AS_202620_Recobra` | `8f25313` | 8/10 | 4.2 |
+| ShareU | `AS_202620_ShareU` | `29184bc` | 5/10 | 3.0 |
 | Calificación automática | `AS_202620_Sistema-de-calificacion-automatica` | `a47d5bd` | 1/10 | 1.4 |
 | TAIA | `AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant` | `0a12f0c` | 6/10 | 3.4 |
 | Tienda virtual UTB | `AS_202620_TIENDA-VIRTUAL-UTB` | `dea5bc9` | 0/10 | 1.0 |

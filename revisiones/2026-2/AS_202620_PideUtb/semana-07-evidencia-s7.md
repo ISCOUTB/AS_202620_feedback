@@ -1,11 +1,11 @@
 # semana-07-evidencia-s7 · PideUtb
 
-> Pasada temprana (GitHub Actions, previa al cierre): los hashes y la nota son preliminares y pueden cambiar si el equipo empuja antes del cierre.
+> Revision automatica definitiva (GitHub Actions, posterior al cierre). Re-evaluada por cambio de hash calificado tras la pasada temprana.
 
 | Campo | Valor |
 |---|---|
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_PideUtb` |
-| Estado revisado | `006edfe` en `origin/master` (2026-09-13T16:37:23-05:00) |
+| Estado revisado | `557e150` en `origin/master` (2026-09-20T22:21:14-05:00) |
 | Cierre | 2026-09-21T05:00:00Z |
 | Revisor | pipeline automatico (GitHub Actions) |
 
@@ -13,66 +13,67 @@
 
 | Criterio de evaluacion | Evidencia tecnica | Estado | Observaciones |
 |---|---|---|---|
-| Contrato en formato ejecutable versionado en el repositorio | Arbol de HEAD 006edfe (2026-09-13T16:37:23-05:00): no hay archivo openapi/swagger/asyncapi .yaml/.json ni .proto; solo backend/app/menu/contracts.py y backend/app/usuarios/contracts.py. | No cumple | Se esperaba especificacion OpenAPI/AsyncAPI o proto versionada; los contracts.py son lenguaje publicado entre modulos, no el contrato del API. |
-| Contrato con rutas y esquemas de datos, no solo listado de endpoints | No existe archivo de especificacion en HEAD 006edfe del que citar rutas o esquemas; los unicos esquemas son modelos Pydantic en backend/app/{menu,pedidos,usuarios}/models.py. | No cumple | Sin contrato no hay version de especificacion, rutas ni esquemas de respuesta que revisar. |
-| Correspondencia entre el contrato y la API implementada | El codigo expone POST /pedidos (backend/app/pedidos/router.py) pero no hay contrato donde contrastar rutas en ningun sentido. | No cumple | No se pudo tomar dos rutas del contrato hacia el codigo ni una del codigo hacia el contrato. |
-| Version de la API declarada y con historial | Sin archivo de contrato no hay campo de version de API ni salida de git log sobre el contrato en HEAD 006edfe. | No cumple | Se esperaba la version declarada en el propio archivo o en su ruta y el historial de commits del contrato. |
-| Prueba de contrato presente | backend/tests/ en HEAD 006edfe lista test_health, test_pedidos, test_propiedad_datos, test_modularidad y test_linea_base; ninguna prueba de contrato (dredd, schemathesis, pact, prism o spectral). | No cumple | test_modularidad.py audita imports por AST; no valida el contrato del API. |
-| El pipeline ejecuta la prueba de contrato | Solo existe .github/workflows/ci.yml y ninguna prueba de contrato que invocar; la evidencia no aporta linea del workflow con contract/dredd/schemathesis/pact/spectral. | No cumple | Se esperaba la linea del workflow que invoca la prueba y la URL del run; ninguna de las dos aparece. |
-| Evidencia de que la prueba falla ante un cambio incompatible | No hay run en rojo ni evidencia aportada por el equipo, y el listado de pruebas de HEAD 006edfe no incluye ninguna prueba de contrato. | No verificado | Hararia falta la prueba de contrato y un run fallido o el registro del cambio incompatible; queda como pregunta de sustentacion. |
-| ADR de la estrategia de integracion ligado a un escenario | docs/adr/ en HEAD 006edfe contiene 0001-estilo-arquitectonico.md y 0002-propiedad-datos-establecimiento.md; ninguno decide sincrono frente a asincrono con alternativa descartada y consecuencias de acoplamiento. | No cumple | ADR-0002 menciona llamadas en proceso entre contextos como consecuencia, pero no es un ADR de estrategia de integracion. |
-| arc42 seccion 6 con los flujos de interaccion | docs/arc42/arc42.md a 006edfe con vista de tiempo de ejecucion: README.md enlaza a arc42.md seccion 6 y docs/linea-base.md cita arc42 seccion 6.1 (#runtime-crear-pedido) y su diagrama de secuencia. | Cumple | Verificacion indirecta: la evidencia entrega el arc42 truncado, pero tres documentos citan la seccion 6 y el flujo de crear pedido. |
-| C4 nivel 2 con protocolo y formato en cada flecha | docs/c4/nivel2-contenedores.md a 006edfe: seis Rel(...) con etiqueta de tecnologia, entre ellas frontend hacia API como HTTPS/JSON y API hacia Supabase y Wompi como HTTPS/API. | Cumple | El formato de datos solo es explicito en frontend hacia API; las flechas a Supabase y Wompi indican protocolo sin formato declarado. |
+| Contrato en formato ejecutable versionado en el repositorio | docs/api/openapi.yaml (openapi: 3.1.0) y docs/api/asyncapi.yaml (asyncapi: 3.0.0) en 557e150 | Cumple | Ambos contratos versionados en el repositorio, no prosa. |
+| Contrato con rutas y esquemas de datos, no solo listado de endpoints | openapi.yaml declara paths (/v1/pedidos, /v1/menu/items/{item_id}, /v1/pagos/intentos) y components.schemas (Pedido, ItemMenu) con required y tipos | Cumple | Las respuestas llevan content/schema, no solo un listado. |
+| Correspondencia entre el contrato y la API implementada | Existen backend/app/{menu,pedidos,pagos}/router.py y tests/test_contrato_api.py, pero no se aportó el contenido de los routers | No verificado | Haría falta citar las líneas de ruta de los routers y contrastarlas con los paths del contrato. |
+| Versión de la API declarada y con historial | openapi.yaml info.version 1.0.0 y docs/api/historial/openapi-1.0.0.yaml congelado | Cumple | Versión declarada y copia congelada presente; no se aportó el git log por archivo. |
+| Prueba de contrato presente | backend/tests/test_contrato_api.py, test_compatibilidad_contrato.py y test_expectativas_consumidor.py en 557e150 | Cumple | Tres suites de contrato en el repositorio. |
+| El pipeline ejecuta la prueba de contrato | Existe .github/workflows/ci.yml, pero no se aportó su contenido ni runs_ci | No verificado | Se esperaba la línea del workflow que invoca la prueba y la URL del run. |
+| Evidencia de que la prueba falla ante un cambio incompatible | docs/api/README.md §3 describe el procedimiento y la salida '3 failed, 71 passed, 3 skipped' | No verificado | No se aporta URL de run en rojo ni el contenido de correcciones.md; queda como pregunta de sustentación. |
+| ADR de la estrategia de integración ligado a un escenario | docs/adr/0003-estrategia-integracion.md con ESC-05 y las alternativas síncrona/asíncrona descartadas | Cumple | Incluye consecuencias de acoplamiento temporal y trazabilidad. |
+| arc42 sección 6 con los flujos de interacción | asyncapi.yaml referencia docs/arc42/arc42.md §6.3, pero el contenido aportado se trunca en §1 | No verificado | Haría falta citar la sección 6 y sus flujos descritos. |
+| C4 nivel 2 con protocolo y formato en cada flecha | docs/c4/nivel2-contenedores.md existe y el commit ddf0364 lo etiqueta, pero no se aportó el diagrama | No verificado | Haría falta ver cada flecha etiquetada con protocolo y formato. |
 
 ## Matriz transversal (CONTRATO §11)
 
 | Criterio | Evidencia | Estado | Observaciones |
 |---|---|---|---|
-| Identidad del repositorio | Repositorio ISCOUTB/AS_202620_PideUtb, visible=true en HEAD 006edfe; autores consolidados con .mailmap dan 3 identidades de git (Santiago Cuesta y Santiago-C0; daniarriet; Ruddy y ruddy2000utb-droid) para 3 integrantes declarados. | Cumple | Ninguna cuenta se atribuyo por parecido de nombre; la consolidacion usa el mismo autor y el .mailmap versionado. |
-| Estructura minima | HEAD 006edfe contiene docs/arc42/arc42.md, docs/adr/, docs/c4/, docs/aspectos.md, docs/ia.md y README.md. | Cumple | Se cumple la ruta minima; arc42 se entrega como un unico Markdown dentro de docs/arc42/. |
-| Convenciones de ADR | docs/adr/0001-estilo-arquitectonico.md y docs/adr/0002-propiedad-datos-establecimiento.md siguen el patron NNNN-kebab-case, enuncian la decision y traen alternativas descartadas y tabla de trazabilidad. | Cumple | No se observan reescrituras de ADR aceptados en la evidencia disponible. |
-| Tabla de aspectos | docs/aspectos.md a 006edfe tiene 8 columnas (ID, aspecto, escenario, medida, C4, ADR, codigo, pruebas) y filas ESC-01 a ESC-05 enlazadas a C4, ADR, codigo y pruebas. | Cumple | ESC-01 y ESC-03 con cadena completa; ESC-04 y ESC-05 marcadas pendientes por el modulo pagos vacio. |
-| Registro de uso de IA | docs/ia.md registra por entrega la herramienta, lo usado y una tabla de propuestas rechazadas con su motivo (S5), con 9 revisiones entre 2026-08-08 y 2026-09-13. | Cumple | El historial del archivo se cita con fecha y hash en la evidencia aportada. |
-| README | README.md en HEAD 006edfe declara que es el sistema, el requisito Python 3.11+, un comando unico de arranque (venv, pip, uvicorn) y como correr pytest. | Cumple | Incluye la nota de que los repositorios usan datos en memoria en esta entrega. |
-| Pipeline y analisis estatico | Existe .github/workflows/ci.yml y el README declara pytest en Python 3.11 y 3.12, pero en HEAD 006edfe no hay sonar-project.properties, ni URL del run del hash revisado, ni URL publica del analisis con Quality Gate. | No cumple | Se buscaron el archivo de configuracion del scanner y las URL de run y SonarCloud; solo docs/ia.md menciona correccion de hallazgos de SonarCloud, sin enlace publico. |
-| Secretos | El barrido de patrones de credenciales sobre HEAD 006edfe no arrojo coincidencias y la lista de .env versionados esta vacia (secretos: sin coincidencias; envs_versionados: []). | Cumple | Sin incidentes en el commit calificado; el historial completo no se pudo barrer con la evidencia entregada. |
+| Identidad del repositorio | ISCOUTB/AS_202620_PideUtb público; autores consolidados (Santiago Cuesta, daniarriet, Ruddy) coinciden con los tres integrantes declarados en 557e150 | Cumple | Alias de una misma cuenta se consolidan; .mailmap presente. |
+| Estructura mínima | docs/arc42/arc42.md, docs/adr/, docs/c4/, docs/aspectos.md, docs/ia.md y README.md en 557e150 | Cumple | Rutas mínimas del contrato presentes. |
+| Convenciones de ADR | docs/adr/0001-estilo-arquitectonico.md, 0002-propiedad-datos-establecimiento.md y 0003-estrategia-integracion.md con título-decisión y trazabilidad | Cumple | Numeración y kebab-case correctos; los aceptados no aparecen editados. |
+| La tabla de aspectos | docs/aspectos.md existe, pero no se aportó su contenido | No verificado | Haría falta comprobar las 8 columnas y que cada celda navegue. |
+| Registro de uso de IA | docs/ia.md con historial en git: 8 entradas de 2026-08-08 a 2026-09-20 | Cumple | El registro crece a lo largo del semestre. |
+| README | README.md describe el sistema, el arranque con un comando y 'pytest'; declara Python 3.11+ | Cumple | Requisitos previos declarados y prueba documentada. |
+| Pipeline y análisis estático | sonar-project.properties y docs/calidad-sonarcloud.md existen, pero faltan la línea del workflow, la URL del run y la URL pública de SonarCloud con Quality Gate | No verificado | El badge no cuenta como evidencia de ejecución. |
+| Secretos | Único hallazgo: un comentario en sonar-project.properties:7 que menciona la palabra token; sin .env versionado | Cumple | No es una credencial; no hay nada que rotar. |
 
 ## Estado global del proyecto (overall · punta actual de la misma rama)
 
 Mira el repositorio **entero en la punta actual de la misma rama**, no solo la evidencia del cierre: si el equipo subio tarde o corregio entregas anteriores, aqui se nota.
 
-- **Punta actual revisada**: `006edfe555ed809d027d7ed47657efc6a451f325 2026-09-13T16:37:23-05:00 Actualizar la evidencia de CI y reconvertir el documento de linea base`
-- **Veredicto**: con pendientes
-- Resumen: En la punta de master (006edfe, 2026-09-13) el proyecto conserva una base documental y de CI solida (identidad, estructura, ADRs, aspectos, IA, README y sin secretos) y cumple 2 de 10 criterios de la ficha S7; falta la pieza central de la semana: contrato del API ejecutable y versionado, su prueba en el pipeline, la evidencia de que esa prueba falla y el ADR de estrategia de integracion.
+- **Punta actual revisada**: `557e150fc76dc6c2460b10db399451821987b77f 2026-09-20T22:21:14-05:00 Registrar el Quality Gate en verde y el run del hash entregado`
+- **Veredicto**: al dia
+- Resumen: A la semana 7 el proyecto está consolidado: contrato OpenAPI 3.1 y AsyncAPI 3.0 versionados con esquemas e historial, ADR-0003 con alternativa descartada y trazabilidad, y pruebas de contrato en el repositorio; sin commits posteriores al cierre. Quedan sin verificar la correspondencia contrato–código, la ejecución y el run en rojo de la prueba, arc42 §6, el C4 nivel 2 y SonarCloud.
 
 Pendientes que siguen abiertos:
-- Contrato OpenAPI/AsyncAPI o proto versionado, con rutas, esquemas y version declarada
-- Prueba de contrato invocada desde el workflow y evidencia de fallo ante cambio incompatible
-- ADR de estrategia de integracion sincrona o asincrona con alternativa descartada
-- Evidencia publica de SonarCloud: configuracion del scanner, run del hash y URL del analisis con Quality Gate
-- Modulo pagos vacio: ESC-04 y ESC-05 sin codigo ni pruebas
-- Deuda planificada V-07, V-08 y V-09 y prueba de carga de ESC-02
+- Correspondencia contrato–código (routers)
+- Ejecución y run en rojo de la prueba de contrato
+- arc42 §6 y C4 nivel 2 etiquetado
+- URL pública de SonarCloud con Quality Gate
+- Contenido de docs/aspectos.md
 
 ## Recuento y nota sugerida
 
-2 de 10 criterios Cumple.
+5 de 10 criterios Cumple.
 
-**Nota sugerida preliminar (propuesta al docente; puede cambiar al cierre): 1.8 = 1 + 4 × (2/10).** La nota final la fija el profesor en Moodle.
+**Nota sugerida (propuesta al docente, publicada por decision del profesor): 3.0 = 1 + 4 × (5/10).** La nota final la fija el profesor en Moodle.
 
 ## No verificado / pendientes
 
-- Prueba de contrato que falle ante un cambio incompatible: no hay prueba, ni run en rojo, ni evidencia del equipo (paso 6 de la ficha).
-- Ejecucion del pipeline para el hash 006edfe: la evidencia no aporta runs_ci; correcciones.md cita un run verde de otro commit.
-- Estado del Quality Gate de SonarCloud: sin URL publica del analisis y sin configuracion del scanner en el arbol.
-- Contenido literal de arc42 seccion 6 y de los ADR: los documentos llegan truncados y su verificacion fue por referencias cruzadas.
+- Correspondencia contrato–código: faltan las líneas de ruta de backend/app/*/router.py frente a los paths de docs/api/openapi.yaml.
+- Ejecución de la prueba de contrato en CI: falta la línea de .github/workflows/ci.yml y la URL del run.
+- Run en rojo por cambio incompatible: falta la URL del run o el contenido de correcciones.md.
+- arc42 sección 6 con flujos de interacción: falta el contenido de la sección.
+- C4 nivel 2 con protocolo y formato por flecha: falta el diagrama.
+- Tabla de aspectos de 8 columnas: falta el contenido de docs/aspectos.md.
+- SonarCloud: faltan la línea del workflow, la URL del run y la URL pública con Quality Gate.
 
 ## Hallazgos para la planilla
 
-- La entrega S7 no incluye ninguna especificacion OpenAPI/AsyncAPI o proto versionada en el repositorio.
-- En el proyecto, contracts.py designa el lenguaje publicado entre modulos, no el contrato del API principal.
-- No existe prueba de contrato ni evidencia de que falle ante un cambio incompatible.
-- No hay ADR que decida la estrategia de integracion sincrona o asincrona frente a un escenario.
-- La matriz transversal del contrato se cumple en 7 de 8 filas; la pendiente es la evidencia publica de SonarCloud.
-- La evidencia de SonarCloud no es auditable: falta configuracion del scanner, run del hash 006edfe y URL publica con Quality Gate.
-- La evidencia reporta sin commits nuevos desde el cierre anterior, de modo que S7 no aporta commits propios en master.
-- No hay commits posteriores al cierre en la rama master segun la evidencia entregada.
+- Contrato OpenAPI 3.1 y AsyncAPI 3.0 versionados con rutas y esquemas de datos completos.
+- Política de versionado con reglas de compatibilidad y casos negativos documentados.
+- No se aportó el contenido de los routers: la correspondencia contrato–código no se pudo comprobar.
+- No se aportan runs de CI ni el contenido de ci.yml: no se verifica la ejecución de la prueba de contrato.
+- No hay URL de run en rojo: falta la prueba de que la validación falla ante un cambio incompatible.
+- Tres contribuyentes consolidados coinciden con los integrantes declarados.
+- Sin credenciales versionadas; el único hallazgo de secretos es un comentario.

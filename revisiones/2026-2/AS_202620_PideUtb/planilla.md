@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_PideUtb` |
 | Integrantes y su usuario de GitHub | Daniela Sofia Arrieta Guardo · Santiago Jose Cuesta Maza · Ruddy Rodriguez Romero — cuentas observadas: `daniarriet`, `Santiago Cuesta`/`Santiago-C0` (mismo correo, misma persona), `ruddy2000utb-droid` |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-17 |
+| Ultima revision | 2026-09-21 |
 
 ## Estado por entrega
 
@@ -20,7 +20,7 @@
 | 4 | S4 | `1636f20` (2026-08-30T22:17:18-05:00) | 1/10 | 1.4 | si |
 | 5 | CORTE1 | `bbefae8` (2026-09-08T10:37:21-05:00) | 9/12 | 4.0 | si |
 | 6 | S6 | `006edfe` (2026-09-13T16:37:23-05:00) | 7/8 | 4.5 (prelim.) | si |
-| 7 | S7 | `006edfe` (2026-09-13T16:37:23-05:00) | 2/10 | 1.8 (prelim.) | si |
+| 7 | S7 | `557e150` (2026-09-20T22:21:14-05:00) | 5/10 | 3.0 | si |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
@@ -79,6 +79,11 @@
 | Títulos de ADR que enuncien la decisión | S6 | si | |
 | Contenido verificable de arc42 §8 | S6 | si | |
 | Diff contra hash de S5 para confirmar el reajuste de límites | S6 | si | |
+| Correspondencia contrato–código (routers) | S7 | si | |
+| Ejecución y run en rojo de la prueba de contrato | S7 | si | |
+| arc42 §6 y C4 nivel 2 etiquetado | S7 | si | |
+| URL pública de SonarCloud con Quality Gate | S7 | si | |
+| Contenido de docs/aspectos.md | S7 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

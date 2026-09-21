@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Recobra` |
 | Integrantes y su usuario de GitHub | Camilo Andres Conde Corrales · Fernando Isacc Conde Herrera · Miguel Alejandro Iii Jacome Yanez · Veronica Ubarne Reyes — cuentas consolidadas: `Cconde31` (incluye la identidad `Steamlinker`, unificada por `.mailmap` el 05/09), `MiguelJacome`, `vylrir` (Verónica Ubarne), y el commit real de Fernando Isacc Conde Herrera (`fconde@utb.edu.co`) |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-17 |
+| Ultima revision | 2026-09-21 |
 
 ## Estado por entrega
 
@@ -20,7 +20,7 @@
 | 4 | S4 | `2268b33` (2026-08-30T22:34:56-05:00) | 6/10 | 3.4 | si |
 | 5 | CORTE1 | `f7c1a6c` (2026-09-07T09:59:41-05:00) | 8/12 | 3.7 | si |
 | 6 | S6 | `47fb44b` (2026-09-13T16:58:53-05:00) | 4/8 | 3.0 (prelim.) | si |
-| 7 | S7 | `47fb44b` (2026-09-13T16:58:53-05:00) | 1/10 | 1.4 (prelim.) | si |
+| 7 | S7 | `8f25313` (2026-09-19T13:37:58-05:00) | 8/10 | 4.2 | si |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
@@ -90,6 +90,17 @@
 | Diff contra hash S5, C4 nivel 3 y ADR si cambiaron los límites. | S6 | si | |
 | Auditoría de no conformidades de propiedad de datos y su plan de corrección. | S6 | si | |
 | Verificación de correspondencia entre integrantes declarados y cuentas del historial. | S6 | si | |
+| 8f25313 2026-09-19T13:37:58-05:00 «Registrar en ia.md el uso de IA de esta semana (S6/S7)»: cierra la falta de registro de IA (contenido no aportado para verificar). | S7 | no (resuelto tarde) | — |
+| 3d9da06 2026-09-19T13:37:14-05:00 «Corregir hallazgo de SonarCloud: ya corre y esta en verde (GitHub App)»: corrige un hallazgo transversal anterior solo de forma declarativa, sin run ni URL pública. | S7 | no (resuelto tarde) | — |
+| 573e512 2026-09-19T13:04:46-05:00 «Agregar secciones 8 y 11 de arc42»: completa documentación de semanas anteriores al final de la ventana. | S7 | no (resuelto tarde) | — |
+| c7bf54c 2026-09-19T11:26:41-05:00 «Agregar flujo de interaccion a seccion 6 y nueva seccion 7 de arc42»: cubre el recordatorio de documentación de S7 sobre la marcha. | S7 | no (resuelto tarde) | — |
+| 667d66f 2026-09-19T13:33:47-05:00 «Limpiar formato de las secciones 6-12 de arc42 y del diagrama C4-C2»: ajuste de entregables previos. | S7 | no (resuelto tarde) | — |
+| No hay commits posteriores al cierre de S7 (commits_tardios_post_cierre vacío). | S7 | no (resuelto tarde) | — |
+| Añadir la evidencia verificable de CI: contenido de .github/workflows/ci.yml con el paso de contrato y enlaces de los runs (verde y rojo). | S7 | si | |
+| Publicar la URL del análisis de SonarCloud con el estado del Quality Gate para el hash revisado. | S7 | si | |
+| Aportar el historial git de docs/contracts/openapi.yaml para respaldar la versión declarada. | S7 | si | |
+| Aportar el contenido de docs/ia.md con lo rechazado y su motivo por cada uso. | S7 | si | |
+| Consolidar las cuentas del historial con los integrantes declarados y confirmar la rotación del token de Coveralls mencionado en el checklist. | S7 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

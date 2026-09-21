@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_ShareU` |
 | Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-17 |
+| Ultima revision | 2026-09-21 |
 
 ## Estado por entrega
 
@@ -20,7 +20,7 @@
 | 4 | S4 | `master` `0bae184` · excepción docente | 7/10 | 3.8 | sí |
 | 5 | CORTE1 | `19ce719` (2026-09-07T22:41:14-05:00) | 5/12 | 2.7 | si |
 | 6 | S6 | `c389364` (2026-09-13T23:21:08-05:00) | 7/8 | 4.5 (prelim.) | si |
-| 7 | S7 | `0bae184` (2026-09-14T15:26:52-05:00) | 1/10 | 1.4 (prelim.) | si |
+| 7 | S7 | `29184bc` (2026-09-20T23:34:09-05:00) | 5/10 | 3.0 | si |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
@@ -88,6 +88,14 @@
 | Paso del scanner de SonarCloud en el workflow y URL pública del análisis con su Quality Gate. | S6 | si | |
 | Puntos 1 y 2 de correcciones.md: ADR/diagnóstico de la restricción del corte 1 y definición del mecanismo de cierre, aún sin resolver en el repositorio. | S6 | si | |
 | Implementación del plan de corrección V1 (tabla y servicio propios de calificaciones). | S6 | si | |
+| La triplicación del árbol (AS_202620_ShareU-master/, shareu_base/) señalada en la revisión de semana 5 ya no aparece en el árbol de 29184bc, según se documenta en correcciones.md. | S7 | no (resuelto tarde) | — |
+| Los commits 0bae184 (2026-09-14, borrado de docs/adr/ShareU_Trazabilidad.pdf) y f189703 (2026-09-20, Update requirements.in) corrigen entregas anteriores sobre trazabilidad y versiones de dependencias. | S7 | no (resuelto tarde) | — |
+| Prueba de contrato en el pipeline y evidencia de que falla ante un cambio incompatible (criterios 5 a 7 de la ficha). | S7 | si | |
+| Correspondencia contrato-código sin evidencia citable de los routers. | S7 | si | |
+| C4 nivel 2 con protocolo y formato en cada flecha. | S7 | si | |
+| Tabla de aspectos con las ocho columnas del contrato (faltan ID y C4). | S7 | si | |
+| SonarCloud auditable: paso del scanner en el workflow y URL pública del análisis con Quality Gate para el hash revisado. | S7 | si | |
+| Carpeta docs/adr/ con un PDF ajeno a la convención de nombres. | S7 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
