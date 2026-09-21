@@ -1,11 +1,11 @@
 # semana-07-evidencia-s7 · XALD
 
-> Pasada temprana (GitHub Actions, previa al cierre): los hashes y la nota son preliminares y pueden cambiar si el equipo empuja antes del cierre.
+> Revision automatica definitiva (GitHub Actions, posterior al cierre). Re-evaluada por cambio de hash calificado tras la pasada temprana.
 
 | Campo | Valor |
 |---|---|
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_XALD` |
-| Estado revisado | `364ac5b` en `origin/master` (2026-09-17T15:43:54-05:00) |
+| Estado revisado | `62a0d15` en `origin/master` (2026-09-20T23:25:16-05:00) |
 | Cierre | 2026-09-21T05:00:00Z |
 | Revisor | pipeline automatico (GitHub Actions) |
 
@@ -13,67 +13,76 @@
 
 | Criterio de evaluacion | Evidencia tecnica | Estado | Observaciones |
 |---|---|---|---|
-| Contrato en formato ejecutable versionado en el repositorio | docs/api/openapi.yaml con `openapi: 3.1.0`, presente en el árbol de 364ac5b (2026-09-17). | Cumple | Es especificación legible por máquina versionada en docs/api/, no prosa. |
-| Contrato con rutas y esquemas de datos, no solo listado de endpoints | docs/api/openapi.yaml: `paths: /transacciones` con requestBody `$ref TransaccionDTO` y respuesta 202 `$ref RespuestaSincronizacion`, más `components.schemas` con TransaccionDTO, RespuestaSincronizacion y OrigenDatosEnum. | Cumple | El DTO declara 7 campos requeridos con tipos, formato y ejemplo. |
-| Correspondencia entre el contrato y la API implementada | El contrato solo declara POST /transacciones (docs/api/openapi.yaml) mientras el flujo de sincronización documentado usa POST /api/v1/sync (docs/arc42/06-Runtime view.md, escenario 6.3); el único backend del árbol es backend_xald/index.js y su contenido no se aporta. | No cumple | Se buscaron rutas del contrato en el código y rutas del código en el contrato: no se pudo trazar ninguna en ninguno de los dos sentidos. |
-| Versión de la API declarada y con historial | docs/api/openapi.yaml declara `info.version: 1.0.0`; el bundle no incluye el historial del archivo. | No verificado | Falta `git log --format='%h %cI %s' -- docs/api/openapi.yaml` para ver el versionado real. |
-| Prueba de contrato presente | Árbol de 364ac5b: solo existen XALDAPP/app/src/test/java/com/proyecto/xald/Cortevertical.kt, Entornotest.kt, ExampleUnitTest.kt, ValidacionModulosTest.kt y los Example*Test por módulo; ninguna prueba valida docs/api/openapi.yaml. | No cumple | Se esperaba un archivo de prueba de contrato (validación OpenAPI, schemathesis, pact, dredd) y no hay ninguno. |
-| El pipeline ejecuta la prueba de contrato | Existe .github/workflows/ci.yml, pero no hay prueba de contrato que invocar y el bundle no aporta el contenido del workflow ni el grep de 'contract\|dredd\|schemathesis\|pact\|prism\|spectral\|openapi'. | No cumple | Sin prueba de contrato en el repositorio, el pipeline no puede ejecutarla. |
-| Evidencia de que la prueba falla ante un cambio incompatible | El bundle no incluye runs_ci y no se aporta run en rojo ni artefacto del cambio incompatible. | No verificado | Queda como pregunta de sustentación: hace falta la URL del run fallido o la evidencia del cambio que rompe el contrato. |
-| ADR de la estrategia de integración ligado a un escenario | docs/adr/0001-patron-offline-first.md descarta el cliente-servidor síncrono y liga la integración asíncrona a ESC-01 y ESC-05 con sus riesgos de acoplamiento; docs/adr/0007-contratos-por-modulo.md evalúa alternativas descartadas y consecuencias de acoplamiento. | Cumple | ADR-0007 traza a la auditoría de la semana 6 más que a un ESC numerado; el anclaje a escenario lo aporta ADR-0001. |
-| arc42 sección 6 con los flujos de interacción | docs/arc42/06-Runtime view.md: escenarios 6.1 a 6.4 con diagramas de secuencia Mermaid y descripción paso a paso. | Cumple | El extracto aportado está truncado al final de 6.4; conviene confirmar el cierre del archivo. |
-| C4 nivel 2 con protocolo y formato en cada flecha | docs/c4/c2.md existe en el árbol, pero el bundle no incluye su contenido. | No verificado | Se necesita el diagrama del nivel 2; la tabla de contexto técnico de docs/arc42/03 sí etiqueta protocolo y formato, pero no es el C2. |
+| Contrato en formato ejecutable versionado en el repositorio | docs/api/openapi.yaml (openapi: 3.1.0) presente en el árbol del commit 62a0d15 (2026-09-20T23:25:16-05:00). | Cumple | Es especificación ejecutable, no prosa; se complementa con docs/api/contrato.md. |
+| Contrato con rutas y esquemas de datos, no solo listado de endpoints | docs/api/openapi.yaml: paths /transacciones (POST) con requestBody $ref TransaccionDTO y responses 202/400 con RespuestaSincronizacion; components.schemas TransaccionDTO (7 campos required tipados), RespuestaSincronizacion y OrigenDatosEnum. | Cumple | Los esquemas incluyen tipos, formatos, longitudes y valores de ejemplo. |
+| Correspondencia entre el contrato y la API implementada | docs/api/contrato.md §3 (matriz Contrato↔Código): POST /api/v1/transacciones ↔ @app.post en backend/app/main.py; TransaccionDTO, RespuestaSincronizacion y OrigenDatosEnum ↔ backend/app/dtos.py (commit 62a0d15). | Cumple | El contrato declara un solo endpoint; la correspondencia se apoya en la matriz del propio equipo y no se contrastó línea a línea main.py/dtos.py, que no vienen en la evidencia. |
+| Versión de la API declarada y con historial | docs/api/openapi.yaml info.version 1.0.0; git log del archivo en commits_nuevos_desde_cierre_anterior: b7ca7f7 (2026-09-20T23:03) y 73de849 (2026-09-20T23:18) 'Update openapi.yaml'; historial v1.0.0 (2026-09) en docs/api/contrato.md §4. | Cumple | Historial corto y concentrado en el día del cierre. |
+| Prueba de contrato presente | Se revisó el árbol completo de 62a0d15 y no aparece archivo de prueba de contrato (sin coincidencias de contract/pact/dredd/schemathesis); docs/api/contrato.md §4 y §6 mencionan validación con @redocly/cli dentro de GitHub Actions. | No verificado | Hace falta el contenido de .github/workflows/ci.yml para saber si la validación vive solo como comando del workflow; se esperaba una ruta de prueba versionada. |
+| El pipeline ejecuta la prueba de contrato | Existe .github/workflows/ci.yml en el árbol de 62a0d15, pero no se aporta su contenido ni runs_ci; docs/api/contrato.md §6 cita un run en Actions que no es auditable desde el informe. | No verificado | Comando a repetir: grep -rniE 'contract\|dredd\|schemathesis\|pact\|prism\|spectral\|openapi\|redocly' .github/workflows/ y citar nombre, conclusion y URL del run. |
+| Evidencia de que la prueba falla ante un cambio incompatible | docs/api/contrato.md §7: captura del CI en rojo tras cambiar el tipo de entrada de los DTOs y texto que describe el experimento (commit 62a0d15). | Cumple | La evidencia es una captura embebida (user-attachments), no auditable desde el informe y sin run en rojo citado; queda como pregunta de sustentación. |
+| ADR de la estrategia de integración ligado a un escenario | docs/adr/0007-contratos-por-modulo.md: opciones evaluadas (comunicación directa vs contratos con orquestación centralizada), decisión síncrona por interfaces públicas, riesgo de acoplamiento de :app y su mitigación. | Cumple | No enlaza explícitamente ningún ESC de la sección 10; su justificación se apoya en la auditoría de la semana 6 y en docs/aspectos.md. |
+| arc42 sección 6 con los flujos de interacción | docs/arc42/06-Runtime view.md: escenarios 6.1 a 6.4 con pasos numerados y diagramas de secuencia Mermaid (ESC-01, ESC-02, ESC-05, ESC-03), actualizada en 62a0d15. | Cumple | El archivo contiene texto de instrucciones de copia/pegar y aparece truncado; conviene limpiarlo. |
+| C4 nivel 2 con protocolo y formato en cada flecha | Solo se dispone de la ruta docs/c4/c2.md en el árbol de 62a0d15; su contenido no viene en la evidencia. | No verificado | Se esperaba el diagrama de contenedores con cada flecha etiquetada con protocolo y formato; hace falta el contenido del C2 para comprobarlo. |
 
 ## Matriz transversal (CONTRATO §11)
 
 | Criterio | Evidencia | Estado | Observaciones |
 |---|---|---|---|
-| Identidad del repositorio | repo AS_202620_XALD, `visible: true`, organización ISCOUTB; el historial registra 4 cuentas (dilanbejarano011, colmenares2007-crypto, xaviergarciadiaz20-commits, axeljruiz717-hash), tantas como integrantes declarados. | Cumple | Todas las cuentas del historial pertenecen a la organización y hay actividad de las cuatro. |
-| Estructura mínima | En 364ac5b existen docs/adr/, docs/c4/, docs/arc42/, docs/aspectos.md, docs/ia.md y README.md. | Cumple | docs/arc42/04-Solution Strategy sin extensión .md y faltan las secciones 07 y 11 de arc42. |
-| Estado del repositorio que se califica | origin/master en 364ac5b, 2026-09-17T15:43:54-05:00, anterior al cierre 2026-09-21T05:00:00Z. | Cumple | Entrega temprana y sin commits posteriores al cierre. |
-| Convenciones de ADR | docs/adr/0001..0007 con nombres NNNN-kebab-case.md; ADR-0007 incluye contexto, opciones evaluadas, decisión, consecuencias y trazabilidad. | Cumple | ADR-0005 sigue 'En revisión' y ADR-0007 declara puntos abiertos. |
-| Tabla de aspectos | docs/aspectos.md existe en 364ac5b, pero el bundle no incluye su contenido. | No verificado | Hace falta ver las 8 columnas (ID·Aspecto·Requisito·C4·ADR·Código·Pruebas·Evidencia) y que las celdas sean navegables. |
-| Registro de uso de IA | ia_log muestra 12 commits sobre docs/ia.md entre 2026-08-07 y 2026-09-13, pero no se aporta el contenido. | No verificado | No se puede verificar qué se aceptó y qué se rechazó con su motivo técnico. |
-| README | README.md describe la app, el comando de arranque/pruebas (`gradlew.bat test`) y los requisitos previos (JDK 17, Android SDK). | Cumple | El comando documentado ejecuta pruebas y no arranca la app; incluye rutas locales con "<user>". |
-| Pipeline y análisis estático | Existe .github/workflows/ci.yml, pero el bundle no aporta contenido del workflow ni runs_ci, y no hay sonar-project.properties en el árbol. | No verificado | Para Cumple faltan la línea del scanner, la URL del run y la URL pública del análisis con Quality Gate; la revisión de secretos no halló coincidencias ni .env versionados. |
+| Identidad del repositorio | ISCOUTB/AS_202620_XALD público ('visible': true); historial con cuatro cuentas (186, 83, 54 y 38 commits), mismo número que los cuatro integrantes declarados. | Cumple | No se atribuyen cuentas a personas por parecido de nombre; el acrónimo del repo corresponde al proyecto XALD. |
+| Estructura mínima | En 62a0d15: README.md, docs/arc42/01..12, docs/adr/0001..0007, docs/c4/c1..c4, docs/aspectos.md y docs/ia.md. | Cumple | docs/arc42/07-Deployment View.md está vacío, así que la estructura existe pero esa sección no está desarrollada. |
+| Convenciones de ADR | docs/adr/0001..0007 con nombres NNNN-titulo-en-kebab-case.md; ADR-0007 incluye contexto, opciones evaluadas, decisión, consecuencias y trazabilidad (commit 62a0d15). | Cumple | ADR-0005 declara estatus APROBADA pero su propia trazabilidad dice 'en revisión'. |
+| La tabla de aspectos | docs/aspectos.md existe y fue actualizada en fcf0089 (2026-09-20T22:52), pero su contenido no viene en la evidencia. | No verificado | Hace falta el archivo para verificar las ocho columnas (ID·Aspecto·Requisito·C4·ADR·Código·Pruebas·Evidencia) y que ninguna celda quede hueca. |
+| Registro de uso de IA | docs/ia.md con 13 entradas de historial entre 2026-08-07 y 2026-09-20 (último c450b4f), pero sin contenido en la evidencia. | No verificado | Hace falta el archivo para comprobar qué se rechazó y con qué motivo técnico. |
+| README | README.md declara qué es el sistema, requisitos previos (JDK 17, Android SDK), comando único de pruebas (.\XALDAPP\gradlew.bat -p XALDAPP test) y salida esperada. | Cumple | El arranque exige exportar JAVA_HOME y ANDROID_HOME manualmente y la evidencia de ejecución es una captura. |
+| Pipeline y análisis estático | Existe .github/workflows/ci.yml pero sin contenido; no hay runs_ci; no hay sonar-project.properties en el árbol; docs/api/contrato.md §6 enlaza a un run de GitHub y no a una URL de sonarcloud.io. | No verificado | Faltan las tres evidencias que exige el contrato (configuración, línea del workflow que invoca el scanner, run exitoso y URL pública del análisis con Quality Gate). |
+| Secretos | Búsqueda de patrones de credenciales en HEAD sin coincidencias, sin .env versionados y sin claves privadas en el historial. | Cumple | Sí se versionan archivos backend/app/__pycache__/*.pyc: es higiene del repositorio, no un secreto. |
 
 ## Estado global del proyecto (overall · punta actual de la misma rama)
 
 Mira el repositorio **entero en la punta actual de la misma rama**, no solo la evidencia del cierre: si el equipo subio tarde o corregio entregas anteriores, aqui se nota.
 
-- **Punta actual revisada**: `364ac5bddd020fc5edda5b56e70aaa666c287306 2026-09-17T15:43:54-05:00 Revise OpenAPI documentation for financial sync API`
+- **Punta actual revisada**: `62a0d1540c9f4ae9d4df611b3a20286e8d7c1a76 2026-09-20T23:25:16-05:00 Update 06-Runtime view.md`
 - **Veredicto**: con pendientes
-- Resumen: A HEAD (origin/master, 364ac5b, 2026-09-17) el proyecto está bien estructurado y documentado, con contrato OpenAPI 3.1.0 ejecutable, 7 ADR y arc42; sin embargo la prueba de contrato y su ejecución en el pipeline no existen, la correspondencia contrato↔código no se demuestra y SonarCloud no es auditable. Quedan además pendientes anteriores sin cerrar: ADR-0005 en estado 'En revisión', el punto abierto de ADR-0007 sobre la ubicación de ReceptorSmsBancario y las secciones 07 y 11 de arc42 ausentes.
+- Resumen: A HEAD de la rama principal (62a0d15, origin/master, 2026-09-20T23:25:16-05:00, anterior al cierre) el proyecto aporta contrato OpenAPI 3.1.0 ejecutable, ADRs, arc42 1-12, C4 y ausencia de secretos; quedan pendientes la prueba de contrato versionada y ejecutada con run citable, la evidencia auditable de SonarCloud, la verificación del C2, de aspectos.md y de ia.md, y la sección 7 de arc42 vacía.
+
+Resuelto tarde (corregido despues del cierre, ahora al dia):
+- c450b4f 2026-09-20T22:40:25-05:00 Update ia.md
+- fcf0089 2026-09-20T22:52:52-05:00 Update aspectos.md
+- b7ca7f7 2026-09-20T23:03:41-05:00 y 73de849 2026-09-20T23:18:48-05:00 Update openapi.yaml
+- 62a0d15 2026-09-20T23:25:16-05:00 Update 06-Runtime view.md
 
 Pendientes que siguen abiertos:
-- Prueba de contrato inexistente y sin ejecución en el pipeline.
-- Sin evidencia de fallo de la prueba ante un cambio incompatible.
-- Correspondencia contrato↔código no trazada (/transacciones vs /api/v1/sync).
-- SonarCloud sin configuración, run ni URL pública del análisis.
-- C4 nivel 2, docs/aspectos.md y docs/ia.md sin contenido verificable en la evidencia.
-- ADR-0005 en revisión y punto abierto de ADR-0007 (ReceptorSmsBancario).
-- Secciones 07 y 11 de arc42 ausentes.
+- Prueba de contrato no localizada ni invocada con evidencia de run
+- SonarCloud sin las tres evidencias auditables
+- docs/arc42/07-Deployment View.md vacío
+- docs/c4/c2.md sin verificar protocolo y formato en cada flecha
+- docs/aspectos.md y docs/ia.md sin contenido verificable
+- ADR-0005 con estatus inconsistente entre encabezado y trazabilidad
+- Archivos __pycache__ (.pyc) versionados
 
 ## Recuento y nota sugerida
 
-4 de 10 criterios Cumple.
+7 de 10 criterios Cumple.
 
-**Nota sugerida preliminar (propuesta al docente; puede cambiar al cierre): 2.6 = 1 + 4 × (4/10).** La nota final la fija el profesor en Moodle.
+**Nota sugerida (propuesta al docente, publicada por decision del profesor): 3.8 = 1 + 4 × (7/10).** La nota final la fija el profesor en Moodle.
 
 ## No verificado / pendientes
 
-- C4 nivel 2: falta el contenido de docs/c4/c2.md con cada flecha etiquetada con protocolo y formato.
-- docs/aspectos.md: falta la tabla con sus 8 columnas y celdas navegables.
-- docs/ia.md: falta el contenido, en particular la columna de lo rechazado y su motivo.
-- Historial del contrato: falta `git log --format='%h %cI %s' -- docs/api/openapi.yaml`.
-- CI y SonarCloud: faltan runs_ci (nombre, conclusion, URL) y la URL pública del análisis con Quality Gate.
+- Prueba de contrato: no se localizó su ruta en el árbol; falta el contenido de .github/workflows/ci.yml.
+- Ejecución del pipeline sobre el contrato: sin runs_ci; comando anotado: grep -rniE 'contract|dredd|schemathesis|pact|prism|spectral|openapi|redocly' .github/workflows/.
+- C4 nivel 2: falta el contenido de docs/c4/c2.md para verificar protocolo y formato en cada flecha.
+- Tabla de aspectos: falta el contenido de docs/aspectos.md.
+- Registro de uso de IA: falta el contenido de docs/ia.md para revisar lo rechazado.
+- SonarCloud: faltan archivo de configuración, línea del workflow, run exitoso y URL pública con Quality Gate.
 
 ## Hallazgos para la planilla
 
-- El contrato existe y está modelado con esquemas completos, pero no hay ninguna prueba de contrato en el repositorio.
-- El único endpoint del contrato no se puede trazar al código y el flujo documentado usa otra ruta (POST /api/v1/sync).
-- No hay runs de CI citables ni evidencia pública de SonarCloud.
-- Sin prueba de contrato no es posible demostrar que falle ante un cambio incompatible.
-- Documentación arc42 y ADRs extensos, con ADR-0007 que cierra las violaciones detectadas en la semana 6.
-- Sin secretos ni archivos .env versionados.
-- Entrega temprana: el hash calificado es anterior al cierre y no hay commits posteriores.
+- El contrato OpenAPI 3.1.0 está versionado, con versión declarada y esquemas completos, y alineado 1:1 con el único endpoint del backend.
+- No se localizó archivo de prueba de contrato en el árbol; la validación parece vivir solo en el workflow, cuyo contenido no se aportó.
+- La evidencia de que la prueba falla es una captura embebida, sin run en rojo citable ni commit del cambio incompatible.
+- No hay evidencia auditable de SonarCloud: falta configuración y URL pública de análisis, y el enlace citado no apunta a sonarcloud.io.
+- docs/arc42/07-Deployment View.md está vacío.
+- docs/arc42/06-Runtime view.md contiene instrucciones de copia/pegar y aparece truncado.
+- Se versionan archivos __pycache__ (.pyc) en backend/app/.
+- Cinco commits el día del cierre (2026-09-20), ninguno posterior al cierre.
+- ADR-0007 documenta la corrección de las siete violaciones de la auditoría de la semana 6 con una prueba anti-regresión.

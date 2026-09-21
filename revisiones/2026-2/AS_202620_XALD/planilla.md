@@ -10,7 +10,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_XALD` |
 | Integrantes y su usuario de GitHub | Xavier Yesid Garcia Diaz (xaviergarciadiaz20-commits) · Dilan Joan Gonzalez Bejarano (dilanbejarano011) · Luis Estheban Lozano Colmenares (colmenares2007-crypto) · Axel Jair Ruiz Bolano (axeljruiz717-hash) — correspondencias por los correos de los commits (nombres explícitos), por confirmar con el docente |
 | URL del sistema desplegado | sin URL (sin despliegue todavía) |
-| Ultima revision | 2026-09-18 |
+| Ultima revision | 2026-09-21 |
 
 ## Estado por entrega
 
@@ -22,7 +22,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 4 | S4 | `0205e44` (2026-08-30T23:12:03-05:00) | 4/10 | 2.6 | si |
 | 5 | CORTE1 | `9bf16cf` (2026-09-09T10:07:09-05:00) | 8/12 | 3.7 | si |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | `55993cf` (2026-09-13T22:06:22-05:00) | 8/8 | 5.0 (prelim.) | sí |
-| 7 | S7 | `364ac5b` (2026-09-17T15:43:54-05:00) | 4/10 | 2.6 (prelim.) | si |
+| 7 | S7 | `62a0d15` (2026-09-20T23:25:16-05:00) | 7/10 | 3.8 | si |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
@@ -88,6 +88,16 @@ Hoja consolidada del equipo a lo largo del semestre.
 | C4 nivel 2, docs/aspectos.md y docs/ia.md sin contenido verificable en la evidencia. | S7 | si | |
 | ADR-0005 en revisión y punto abierto de ADR-0007 (ReceptorSmsBancario). | S7 | si | |
 | Secciones 07 y 11 de arc42 ausentes. | S7 | si | |
+| c450b4f 2026-09-20T22:40:25-05:00 Update ia.md | S7 | no (resuelto tarde) | — |
+| fcf0089 2026-09-20T22:52:52-05:00 Update aspectos.md | S7 | no (resuelto tarde) | — |
+| b7ca7f7 2026-09-20T23:03:41-05:00 y 73de849 2026-09-20T23:18:48-05:00 Update openapi.yaml | S7 | no (resuelto tarde) | — |
+| 62a0d15 2026-09-20T23:25:16-05:00 Update 06-Runtime view.md | S7 | no (resuelto tarde) | — |
+| Prueba de contrato no localizada ni invocada con evidencia de run | S7 | si | |
+| SonarCloud sin las tres evidencias auditables | S7 | si | |
+| docs/arc42/07-Deployment View.md vacío | S7 | si | |
+| docs/c4/c2.md sin verificar protocolo y formato en cada flecha | S7 | si | |
+| ADR-0005 con estatus inconsistente entre encabezado y trazabilidad | S7 | si | |
+| Archivos __pycache__ (.pyc) versionados | S7 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

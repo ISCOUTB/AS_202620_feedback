@@ -10,7 +10,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_uniTeam` |
 | Integrantes y su usuario de GitHub | Julio Cesar Emiliani Ramos (commits con nombre propio) · Ian Novoa Carrillo (firma «Ian Novoa», correo omitido; la cuenta `iansx` del listado no aparece) · Juan Jose Bustamante More (sin commits atribuibles) · Daniel Isaac Manjarres Herrera (sin commits atribuibles). `super-gremlin` (noreply) sin atribuir a persona. |
 | URL del sistema desplegado | sin URL (sin despliegue todavía) |
-| Ultima revision | 2026-09-17 |
+| Ultima revision | 2026-09-21 |
 
 ## Estado por entrega
 
@@ -22,7 +22,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 4 | S4 | `dc14298` (2026-08-29T11:49:10-05:00) | 6/10 | 3.4 | si |
 | 5 | CORTE1 | `dc14298` (2026-08-29T11:49:10-05:00) | sin actividad | no aplica | si |
 | 6 | S6 | `6cc8e6f` (2026-09-13T20:20:18-05:00) | 2/8 | 2.0 (propuesta) | sí |
-| 7 | S7 | `6cc8e6f` (2026-09-13T20:20:18-05:00) | 1/10 | 1.4 (prelim.) | si |
+| 7 | S7 | `6cc8e6f` (2026-09-13T20:20:18-05:00) | sin actividad | no aplica | si |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |

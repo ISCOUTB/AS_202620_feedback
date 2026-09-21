@@ -26,6 +26,6 @@ Nota sugerida = 1 + 4 × (n/m) sobre la matriz de la ficha, **propuesta al docen
 | Tienda virtual UTB | `AS_202620_TIENDA-VIRTUAL-UTB` | `dea5bc9` | 0/10 | 1.0 |
 | TRACTAR | `AS_202620_TRACTAR` | `7cfb872` | 2/10 | 1.8 |
 | Verifacts | `AS_202620_Verifacts` | `635f9b7` | 8/10 | 4.2 |
-| XALD | `AS_202620_XALD` | `364ac5b` | 4/10 | 2.6 |
-| mapsutb | `AS_202620_mapsutb` | `8aee879` | 1/10 | 1.4 |
-| uniTeam | `AS_202620_uniTeam` | `6cc8e6f` | 1/10 | 1.4 |
+| XALD | `AS_202620_XALD` | `62a0d15` | 7/10 | 3.8 |
+| mapsutb | `AS_202620_mapsutb` | `5e2fdd5` | 7/10 | 3.8 |
+| uniTeam | `AS_202620_uniTeam` | `6cc8e6f` | sin actividad | - |
