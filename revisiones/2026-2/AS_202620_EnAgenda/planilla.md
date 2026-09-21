@@ -10,13 +10,13 @@ Hoja consolidada del equipo EnAgenda. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_EnAgenda` |
 | Integrantes y su usuario de GitHub | Eliab Josue Arnedo Conde · Jeimy Yulieth Mendez Altamiranda · Gabriela Morales Cancino — cuentas abajo |
 | URL del sistema desplegado | sin desplegar aún |
-| Ultima revision | 2026-09-17 |
+| Ultima revision | 2026-09-21 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 7 | S7 | `0a58de8` (2026-09-13T23:38:41-05:00) | 0/10 | 1.0 (prelim.) | si |
+| 7 | S7 | `849ee8c` (2026-09-20T23:59:07-05:00) | 2/10 | 1.8 | si |
 | 6 | S6 | `0a58de8` (2026-09-13T23:38:41-05:00) | 7/8 | 4.5 | si |
 | 5 | CORTE1 | `696882e` (2026-09-07T16:21:16-05:00) | 10/12 | 4.3 | si |
 | 4 | S4 | `df724b8` (2026-08-30T23:57:42-05:00) | 8/10 | 4.2 | si |
@@ -77,6 +77,15 @@ Hoja consolidada del equipo EnAgenda. Se actualiza tras cada revisión.
 | Verificación de arc42 sección 6 con los flujos de interacción | S7 | si | |
 | Formato en cada flecha del C4 nivel 2 | S7 | si | |
 | Análisis estático auditable en SonarCloud (scanner en workflow, run y URL con Quality Gate) | S7 | si | |
+| 54ecb57 2026-09-21T02:36:10-05:00 Create 0002-estrategia-integracion-api.md (ADR posterior al cierre) | S7 | no (resuelto tarde) | — |
+| 9ebd147 2026-09-21T02:46:20-05:00 Update 06-vista-de-ejecución.md | S7 | no (resuelto tarde) | — |
+| 6db7cd9 2026-09-21T02:53:08-05:00 Update nivel-2-contenedores.md | S7 | no (resuelto tarde) | — |
+| a02f375 2026-09-21T02:30:15-05:00 y 61cb4d0 2026-09-21T02:31:44-05:00: alta y borrado previos del mismo ADR | S7 | no (resuelto tarde) | — |
+| Prueba de contrato ejecutada por el pipeline y evidencia de su fallo ante un cambio incompatible | S7 | si | |
+| Correspondencia contrato↔código verificable con el contenido de app/web.py y de los tests | S7 | si | |
+| SonarCloud: scanner en el workflow, run exitoso del hash y URL pública con Quality Gate | S7 | si | |
+| Contenido de arc42 §6 y C4 nivel 2 con protocolo y formato por flecha en el commit del cierre | S7 | si | |
+| Historial del contrato y limpieza de __pycache__ versionado | S7 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

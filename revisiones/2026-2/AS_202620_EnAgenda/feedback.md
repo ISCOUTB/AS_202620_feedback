@@ -44,10 +44,4 @@ El mapa de contextos y la tabla de propiedad de datos están bien elaborados y c
 
 ## Semana 7 · S7
 
-El repositorio está ordenado y la trazabilidad del módulo de invitaciones se sostiene: la tabla de aspectos navega a C4, ADR, código, pruebas y evidencia, y el pipeline corre y pasa.
-Sin embargo, esta entrega no aparece en la rama: no hay contrato ejecutable versionado, ni prueba de contrato ejecutada por el workflow, ni evidencia de que esa prueba falle ante un cambio incompatible.
-Se sugiere declarar el contrato de la API aunque el alcance sea mínimo y versionarlo en el repositorio, de modo que el pipeline pueda ejecutarlo y exista un run que se ponga en rojo al romperlo.
-Si la decisión es no exponer API, conviene dejar esa estrategia de integración en un ADR propio, ligado a un escenario de calidad, con la alternativa descartada y sus consecuencias de acoplamiento.
-Falta además indicar el formato (JSON, HTML) en las flechas del C4 nivel 2 y revisar la sección 6 de arc42.
-El análisis estático no es auditable hoy: no hay paso del escáner ni URL pública con Quality Gate.
-Detalles menores: un enlace a un documento de correcciones que no existe y archivos .pyc versionados.
+El contrato OpenAPI está bien encaminado: versionado, con rutas y esquemas de datos y ejemplos. El foco de esta semana es la prueba de contrato: hay que invocarla desde el workflow y conservar la evidencia de que falla al introducir un cambio incompatible, que es lo que separa una entrega competente de una sobresaliente. También se esperaba el ADR de estrategia de integración y las secciones de arc42/C4 nivel 2 dentro del commit del cierre, no después; en el nivel 2 cada flecha debe indicar protocolo y formato. Falta incorporar el análisis estático en SonarCloud con su run y el enlace público del Quality Gate, y limpiar del control de versiones los archivos generados. Buen trabajo con la estructura del repositorio y con la trazabilidad de aspectos.

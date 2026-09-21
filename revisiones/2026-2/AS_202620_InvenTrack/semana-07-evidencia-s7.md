@@ -1,11 +1,11 @@
 # semana-07-evidencia-s7 · InvenTrack
 
-> Pasada temprana (GitHub Actions, previa al cierre): los hashes y la nota son preliminares y pueden cambiar si el equipo empuja antes del cierre.
+> Revision automatica definitiva (GitHub Actions, posterior al cierre). Re-evaluada por cambio de hash calificado tras la pasada temprana.
 
 | Campo | Valor |
 |---|---|
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_InvenTrack` |
-| Estado revisado | `81ebeab` en `origin/main` (2026-09-17T23:00:46-05:00) |
+| Estado revisado | `f10fd01` en `origin/main` (2026-09-20T23:01:13-05:00) |
 | Cierre | 2026-09-21T05:00:00Z |
 | Revisor | pipeline automatico (GitHub Actions) |
 
@@ -13,66 +13,67 @@
 
 | Criterio de evaluacion | Evidencia tecnica | Estado | Observaciones |
 |---|---|---|---|
-| Contrato en formato ejecutable versionado en el repositorio | contracts/openapi/v1.json presente en el árbol del commit 81ebeab de origin/main. | Cumple | El archivo existe y está versionado; no se aportó su contenido, así que no se pudo validar que sea OpenAPI legible. |
-| Contrato con rutas y esquemas de datos, no solo listado de endpoints | Se esperaba el fragmento con paths y components/schemas de contracts/openapi/v1.json; el archivo no se incluyó en la evidencia. | No verificado | El ADR-0004 afirma que la prueba compara metadatos, rutas, parámetros y esquemas, pero es una afirmación sobre el contrato, no el contrato. |
-| Correspondencia entre el contrato y la API implementada | Se buscaron dos rutas del contrato en app/productos/infrastructure/router.py y app/inventario/infrastructure/router.py y una ruta del código en el contrato; no se aportó el contenido ni de los routers ni del contrato. | No verificado | Sin ambos archivos citables no puede descartarse desincronización en ninguno de los dos sentidos. |
-| Versión de la API declarada y con historial | La ruta contracts/openapi/v1.json sugiere versión v1, pero no se aportó el campo de versión interno ni la salida de git log sobre ese archivo. | No verificado | Falta `git log --format='%h %cI %s' -- contracts/openapi/v1.json` para ver el historial del contrato. |
-| Prueba de contrato presente | tests/contract/test_openapi_contract.py en el árbol de 81ebeab; ADR-0004 describe que compara contracts/openapi/v1.json con app.openapi(). | Cumple | La ruta de la prueba se cita; su contenido no se aportó. |
-| El pipeline ejecuta la prueba de contrato | Se esperaba la línea del workflow en .github/workflows/test.yml (grep de contract/schemathesis/pact/prism/spectral) y la URL del run; no se aportó el contenido del workflow ni runs_ci. | No verificado | Sin run citado no puede confirmarse que la prueba se ejecute en CI y no solo que el archivo exista. |
-| Evidencia de que la prueba falla ante un cambio incompatible | Se buscó un run en rojo en el historial de Actions y evidencia aportada por el equipo del cambio incompatible; no se incluyó ninguna de las dos. | No verificado | Queda como pregunta de sustentación: una prueba que pasa siempre no prueba nada. |
-| ADR de la estrategia de integración ligado a un escenario | docs/adr/0003-integracion-productos-inventario-via-puertos-de-aplicacion.md: Contexto liga ESC-01 y ESC-02 y el apartado de Alternativas evalúa cuatro opciones, incluida la de eventos descartada por complejidad. | Cumple | Justifica la llamada síncrona por puertos frente a eventos y frente a fusionar módulos. |
-| arc42 sección 6 con los flujos de interacción | docs/arc42/arc42-template-EN.md está en el árbol y el README indexa '6 · Runtime View' con diagramas de secuencia, pero el fragmento aportado está truncado antes de esa sección. | No verificado | Harían falta los flujos de interacción citables (por ejemplo, el registro concurrente de movimientos). |
-| C4 nivel 2 con protocolo y formato en cada flecha | docs/c4/containers.md, diagrama Mermaid: 'Dueno -- HTTPS --> Web', 'Web -- "HTTPS/REST" --> Api', 'Api -- SMTP --> Notif', 'Api -- "Repositorios / futuro SQL" --> Db'. | No cumple | Varias flechas llevan protocolo, pero ninguna declara formato de datos y la flecha API–Persistencia usa un mecanismo, no protocolo y formato. |
+| Contrato en formato ejecutable versionado en el repositorio | `contracts/openapi/v1.json` en el árbol de f10fd01 (2026-09-20T23:01:13-05:00); ADR-0004 lo describe como OpenAPI 3.1 versionado. | Cumple | El contenido del archivo no se aporta, así que no se pudo leer la versión ni las rutas internas. |
+| Contrato con rutas y esquemas de datos, no solo listado de endpoints | Se esperaba `paths` y `components.schemas` de `contracts/openapi/v1.json`; solo hay la tabla de endpoints en prosa de `docs/api/inventrack-contrato.md` §3 y el mapa de errores §4. | No verificado | Falta citar el fragmento del archivo con esquemas de respuesta (haría falta el JSON o su volcado). |
+| Correspondencia entre el contrato y la API implementada | Se esperaban dos rutas del contrato localizadas en `app/productos/infrastructure/router.py` y `app/inventario/infrastructure/router.py` y una ruta del código en el contrato; no se aporta el contenido de routers ni del JSON. | No verificado | Haría falta citar ruta:línea en el router y la ruta homóloga en el contrato. |
+| Versión de la API declarada y con historial | ADR-0004 declara `info.version: 0.1.0` y `docs/api/inventrack-contrato.md` §8 declara «1.0.0»; no se aporta `git log -- contracts/openapi/v1.json`. | No verificado | Dos fuentes del propio repositorio declaran versiones distintas y no hay historial git citado del contrato. |
+| Prueba de contrato presente | `tests/contract/test_openapi_contract.py` en el árbol de f10fd01, descrito en ADR-0004 como comparación con `app.openapi()`. | Cumple | Ninguna. |
+| El pipeline ejecuta la prueba de contrato | Existe `.github/workflows/test.yml`, pero no se aporta su contenido ni runs_ci; ADR-0004 afirma un paso «Validate versioned API contract» sin URL de run. | No verificado | Comando anotado: `grep -rniE 'contract\|openapi' .github/workflows/` y URL del run asociado al hash revisado. |
+| Evidencia de que la prueba falla ante un cambio incompatible | ADR-0004 narra una verificación manual (quitar el `503` documentado produce `AssertionError`), sin run en rojo, commit ni diff que lo reproduzca. | No verificado | Sin runs_ci en la evidencia; haría falta la URL del run fallido o el commit del cambio incompatible. |
+| ADR de la estrategia de integración ligado a un escenario | `docs/adr/0003-integracion-productos-inventario-via-puertos-de-aplicacion.md`: decisión síncrona vía puertos, alternativa de eventos descartada y consecuencias de acoplamiento, ligada a ESC-01 y ESC-02. | Cumple | Ninguna. |
+| arc42 sección 6 con los flujos de interacción | El contenido aportado de `docs/arc42/arc42-template-EN.md` se corta antes de la sección 6; el índice del README menciona «6 · Runtime View» sin citar el texto. | No verificado | Haría falta la ruta:línea de la sección 6 con los flujos de interacción. |
+| C4 nivel 2 con protocolo y formato en cada flecha | `docs/c4/containers.md`: flechas etiquetadas «HTTPS / HTML (UI)», «HTTPS / JSON (REST API)», «In-Process Memory / Objetos Python (Futuro: TCP / Wire SQL)» y «SMTP / MIME (Texto Plano)». | Cumple | Ninguna. |
 
 ## Matriz transversal (CONTRATO §11)
 
 | Criterio | Evidencia | Estado | Observaciones |
 |---|---|---|---|
-| Identidad del repositorio | Repositorio AS_202620_InvenTrack en la organización ISCOUTB, visible: true, rama principal origin/main; autores consolidados por identificador de cuenta repetido: Jose Vargas (2 alias), Esteban Peluffo (1), Felix Taborda (3 alias) y Javier Carta (1) = 4 identidades. | Cumple | Las cuatro identidades consolidadas coinciden con los cuatro integrantes declarados. |
-| Estructura mínima | En 81ebeab: README.md, docs/adr/, docs/c4/, docs/arc42/, docs/aspectos.md y docs/ia.md. | Cumple | El arc42 vive en un único docs/arc42/arc42-template-EN.md en lugar de archivos por sección: desviación de forma, no ausencia del artefacto. |
-| Convenciones de ADR | docs/adr/0001-usar-monolito-modular-con-hexagonal-por-modulo.md, 0002-control-concurrencia-memoria-inventario.md, 0003-integracion-productos-inventario-via-puertos-de-aplicacion.md y 0004-contrato-api-versionado-openapi.md, todos en NNNN-kebab-case y con el título enunciando la decisión. | Cumple | El ADR-0004 no incluye sección de trazabilidad y no se aportó git log de los ADR para verificar que ninguno se reescribió tras aceptarse. |
-| La tabla de aspectos | docs/aspectos.md: dos filas (ASP-01, ASP-02) con las ocho columnas del curso y enlaces a requisito, C4, ADR, código, pruebas y evidencia. | Cumple | Celdas navegables, sin huecos visibles en las dos filas. |
-| Registro de uso de IA | docs/ia.md con seis entradas entre 2026-08-08 y 2026-09-13 y columna 'Rechazado / motivo' con motivos técnicos. | Cumple | El archivo acumula 12 commits entre 2026-08-09 y 2026-09-13, es decir, crece a lo largo del semestre. |
-| README | README.md describe el sistema, incluye 'Cómo ejecutar el esqueleto' en el índice, y ADR-0001 cita el comando único `python -m uvicorn app.main:app --reload`. | Cumple | El fragmento aportado está truncado y no se observa una sección dedicada a cómo se prueba. |
-| Pipeline y análisis estático | Existen .github/workflows/test.yml y sonar-project.properties, pero no hay línea del workflow que invoque el scanner, ni run exitoso citado, ni URL pública del análisis; docs/ia.md (2026-09-13) registra que el paso de SonarCloud se retiró del workflow hasta confirmar el secreto. | No cumple | Faltan las tres evidencias exigidas por el contrato: configuración e invocación, run exitoso del hash revisado y URL pública con estado del Quality Gate. |
-| Secretos | Barrido del historial sin coincidencias de credenciales y sin archivos .env versionados (envs_versionados: []). | Cumple | Sin hallazgos de secretos en el estado revisado. |
+| Identidad del repositorio | `AS_202620_InvenTrack` en la organización ISCOUTB, visible=true; el historial muestra 4 identidades consolidadas por correo (Jose Vargas, Esteban Peluffo, la identidad de Felix Taborda con tres nombres visibles y jxviercarta-a11y). | Cumple | Las 4 cuentas visibles corresponden a los 4 integrantes declarados; consolidación hecha por igualdad de correo, no por parecido de nombre. |
+| Estructura mínima | En f10fd01 existen `docs/arc42/`, `docs/adr/`, `docs/c4/`, `docs/aspectos.md`, `docs/ia.md` y `README.md`. | Cumple | Rutas alternas (p. ej. `contracts/openapi/`) son desviación tolerable, no ausencia. |
+| Convenciones de ADR | `docs/adr/0001-…` a `0004-…` cumplen el patrón `NNNN-kebab-case.md`, con contexto, alternativas, decisión, consecuencias y trazabilidad. | Cumple | No se aporta `git log --follow` por ADR para comprobar que ninguno aceptado fue reescrito. |
+| Tabla de aspectos | `docs/aspectos.md` con las 8 columnas (ID · Aspecto · Requisito · C4 · ADR · Código · Pruebas · Evidencia) y filas ASP-01 y ASP-02 con enlaces navegables. | Cumple | Ninguna. |
+| Registro de uso de IA | `docs/ia.md` con 16 entradas fechadas (2026-08-08 a 2026-09-20) y columna de lo rechazado con motivo técnico. | Cumple | Crece a lo largo del semestre. |
+| README | `README.md` describe el sistema y su índice incluye «Cómo ejecutar el esqueleto»; ADR-0001 cita el comando de arranque documentado allí (`python -m uvicorn app.main:app --reload`). | Cumple | La sección de pruebas no se alcanza a ver en el extracto aportado; se deduce de la suite pytest del repositorio. |
+| Pipeline y análisis estático | Se esperaba la línea del workflow que invoca el scanner de SonarCloud, la URL del run exitoso y la URL pública del Quality Gate; a HEAD rige `d7045d8` «fix(ci): temporarily disable SonarCloud scan and Java setup in CI pipeline» (2026-09-20T22:27:44-05:00) y no hay runs_ci en la evidencia. | No cumple | El análisis estático está deshabilitado en la configuración vigente y no hay badge ni URL de análisis que lo sustituya. |
+| Secretos | Evidencia del repositorio: «(sin coincidencias)» en el barrido de credenciales y `envs_versionados: []`. | Cumple | Ninguna. |
 
 ## Estado global del proyecto (overall · punta actual de la misma rama)
 
 Mira el repositorio **entero en la punta actual de la misma rama**, no solo la evidencia del cierre: si el equipo subio tarde o corregio entregas anteriores, aqui se nota.
 
-- **Punta actual revisada**: `81ebeabe12386ad45a886aa1eb6331acc66130ac 2026-09-17T23:00:46-05:00 feat: agregar contrato OpenAPI versionado`
+- **Punta actual revisada**: `f10fd01147a9831e219d27217eae3165fcac0384 2026-09-20T23:01:13-05:00 refactor(docs): update architectural scenarios for consistency, availability, performance, and security measures`
 - **Veredicto**: con pendientes
-- Resumen: En la punta actual de origin/main (81ebeab, 2026-09-17, sin commits posteriores al cierre) existen el contrato OpenAPI, la prueba de contrato y los ADR de integración y de versionado del contrato, pero no hay evidencia de ejecución en CI, no hay prueba de que la prueba falle ante cambios incompatibles, el análisis de SonarCloud quedó fuera del pipeline y el C4 nivel 2 no declara formato en sus flechas.
+- Resumen: Proyecto evaluado en su punta actual de `origin/main`: f10fd01 (2026-09-20T23:01:13-05:00), dentro del cierre. Cumple 7 de 8 criterios transversales; la ficha de la semana queda en 4 de 10 porque buena parte de la evidencia exigida (contenido del contrato, correspondencia con el código, ejecución en CI y resultado del análisis estático) no es citable con lo aportado.
 
 Pendientes que siguen abiertos:
-- SonarCloud sin ejecución, sin run asociado y sin URL pública con Quality Gate (paso retirado del workflow).
-- Ejecución de la prueba de contrato en el pipeline sin run citado.
-- Evidencia de que la prueba de contrato falla ante un cambio incompatible.
-- C4 nivel 2 sin formato de datos en las flechas.
-- Módulos usuarios, proveedores y alertas sin código (VIO-02 diferido por diseño).
+- SonarCloud deshabilitado en el workflow desde el commit d7045d8 y sin URL pública de Quality Gate.
+- Contrato sin evidencia de ejecución en CI ni de fallo ante cambio incompatible.
+- Versión del contrato contradictoria entre ADR-0004 y el documento de API.
+- Esquemas del contrato y correspondencia con los routers sin verificar.
+- Sección 6 de arc42 sin evidencia citable.
 
 ## Recuento y nota sugerida
 
-3 de 10 criterios Cumple.
+4 de 10 criterios Cumple.
 
-**Nota sugerida preliminar (propuesta al docente; puede cambiar al cierre): 2.2 = 1 + 4 × (3/10).** La nota final la fija el profesor en Moodle.
+**Nota sugerida (propuesta al docente, publicada por decision del profesor): 2.6 = 1 + 4 × (4/10).** La nota final la fija el profesor en Moodle.
 
 ## No verificado / pendientes
 
-- Contrato OpenAPI: contenido, rutas y esquemas de contracts/openapi/v1.json (no se aportó el archivo).
-- Correspondencia contrato–código: faltan dos rutas del contrato localizadas en el código y una ruta del código presente en el contrato.
-- Versión de la API declarada en el archivo y git log del contrato.
-- Ejecución de la prueba de contrato en el pipeline: línea de .github/workflows/test.yml y URL del run del hash revisado.
-- Run en rojo o evidencia aportada de que la prueba falla ante un cambio incompatible.
-- arc42 sección 6: los flujos de interacción no son visibles en el fragmento aportado.
+- Esquemas de datos y rutas internas de `contracts/openapi/v1.json` (no se aporta el archivo).
+- Correspondencia contrato–API en `app/productos/infrastructure/router.py` y `app/inventario/infrastructure/router.py` (no se aporta el código de los routers).
+- Historial git del contrato: `git log --format='%h %cI %s' -- contracts/openapi/v1.json`.
+- Ejecución de la prueba de contrato en el pipeline: `grep -rniE 'contract|openapi' .github/workflows/` y URL del run del hash f10fd01.
+- Run en rojo o commit del cambio incompatible que hizo fallar la prueba.
+- Sección 6 del arc42 (`docs/arc42/06*` o la sección Runtime View del archivo entregado).
 
 ## Hallazgos para la planilla
 
-- El contrato contracts/openapi/v1.json y su prueba existen, pero no se aportó el contenido de ninguno de los dos, así que no se pueden citar rutas ni esquemas.
-- No hay ningún run de CI citado: no puede confirmarse que el pipeline ejecute la prueba de contrato.
-- No hay evidencia de que la prueba de contrato falle ante un cambio incompatible, que es el diferenciador del segundo corte.
-- El análisis de SonarCloud quedó fuera del workflow según el registro de IA, por lo que no hay URL pública ni Quality Gate.
-- El C4 nivel 2 etiqueta protocolos (HTTPS, SMTP) pero ningún formato de datos en sus flechas.
-- La evidencia no registra commits posteriores al cierre ni nuevos respecto del cierre anterior; el hash calificado (81ebeab, 2026-09-17) es anterior al cierre 2026-09-21T05:00:00Z.
-- Cuatro identidades de git consolidadas coinciden con los cuatro integrantes declarados del equipo.
+- Entrega a tiempo: el hash calificado f10fd01 (2026-09-20T23:01:13-05:00) es el HEAD de `origin/main` y es anterior al cierre.
+- `contracts/openapi/v1.json` está versionado, pero su contenido no fue aportado: no se pudieron comprobar rutas, esquemas ni la versión interna.
+- Contradicción de versión del contrato: ADR-0004 dice `0.1.0` y `docs/api/inventrack-contrato.md` §8 dice `1.0.0`.
+- No hay runs de CI en la evidencia ni URL de análisis público: la ejecución de la prueba de contrato queda sin comprobar.
+- El análisis de SonarCloud fue deshabilitado en el workflow antes del cierre (commit `d7045d8`), dejando pendiente una comprobación transversal.
+- La afirmación de que la prueba falla ante un cambio incompatible está solo narrada en ADR-0004, sin run en rojo ni commit reproducible.
+- El C4 nivel 2 sí etiqueta protocolo y formato en todas las flechas.
+- El ADR-0003 justifica la integración síncrona frente a la alternativa de eventos, atada a ESC-01 y ESC-02.

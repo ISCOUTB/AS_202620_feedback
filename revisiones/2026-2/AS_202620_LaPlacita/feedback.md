@@ -42,7 +42,4 @@ La entrega S6 está bien estructurada: el mapa de contextos, la tabla de propied
 
 ## Semana 7 · S7
 
-Buen avance de la semana: el contrato v1 está versionado, la prueba de contrato existe y documentaron con detalle cómo falla ante un cambio incompatible, además del ADR-0006 y el C4 nivel 2 con protocolo y formato.
-Para cerrar el corte, publiquen la URL del run de CI que ejecuta la prueba de contrato y la URL pública de SonarCloud con su Quality Gate, porque hoy el ADR-0003 deja ese análisis pendiente de un secreto.
-Añadan el fragmento de esquemas del OpenAPI y la evidencia de correspondencia entre dos rutas del contrato y el código implementado, y completen arc42 §6 con los flujos de interacción.
-Recuerden que una afirmación en un documento no reemplaza el enlace al run; con esos enlaces la entrega queda plenamente defendible.
+El contrato OpenAPI y la prueba de contrato están en el repositorio, pero falta evidencia pública de su ejecución y del fallo ante cambio incompatible. Se recomienda enlazar en la entrega el run de CI que ejecuta el job de contrato y, si aplica, el run en rojo controlado, además del Quality Gate público de SonarCloud. También conviene completar los enlaces de la tabla de aspectos y verificar la sección 6 de arc42. Sin esa evidencia, varios criterios quedan como no verificados.

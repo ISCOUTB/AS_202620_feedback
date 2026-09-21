@@ -10,13 +10,13 @@ Hoja consolidada del equipo LaPlacita. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_LaPlacita` |
 | Integrantes y su usuario de GitHub | Mateo Josue Buendia Barrios · Miguel Angel Isaza Montalvo · Samuel David Jimenez Alvarez · Jorge Alberto Martinez Castillo — cuentas abajo |
 | URL del sistema desplegado | sin desplegar aún |
-| Ultima revision | 2026-09-17 |
+| Ultima revision | 2026-09-21 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 7 | S7 | `90f510e` (2026-09-16T23:20:13-05:00) | 5/10 | 3.0 (prelim.) | si |
+| 7 | S7 | `8c2e1bc` (2026-09-20T22:47:32-05:00) | 4/10 | 2.6 | si |
 | 6 | S6 | `2c0eb01` (2026-09-13T21:28:00-05:00) | 7/8 | 4.5 | si |
 | 5 | CORTE1 | `50b92f8` (2026-09-06T17:45:05-05:00) | 8/12 | 3.7 | si |
 | 4 | S4 | `745e799` (2026-08-30T21:52:41-05:00) | 4/10 | 2.6 | si |
@@ -75,6 +75,14 @@ Hoja consolidada del equipo LaPlacita. Se actualiza tras cada revisión.
 | Correspondencia contrato↔código sin verificar | S7 | si | |
 | Esquemas y versionado/historial del contrato sin verificar | S7 | si | |
 | arc42 §6 con flujos de interacción sin verificar | S7 | si | |
+| V-02 ACL Pedidos→Catálogo | S7 | si | |
+| V-04 Shared Kernel tiendaId | S7 | si | |
+| V-05 OHS evento notificaciones | S7 | si | |
+| V-06 orquestador | S7 | si | |
+| SonarCloud token y análisis | S7 | si | |
+| Sección 6 arc42 | S7 | si | |
+| Evidencia de fallo de contrato | S7 | si | |
+| Enlaces tabla aspectos | S7 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

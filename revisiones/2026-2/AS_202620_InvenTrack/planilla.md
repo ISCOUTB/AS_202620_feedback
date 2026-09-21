@@ -10,13 +10,13 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_InvenTrack` |
 | Integrantes y su usuario de GitHub | Javier Alejandro Carta Lacharme · Esteban Javier Peluffo Marquez · Felix Andres Taborda Jimenez · Jose Gabriel Vargas Perez — cuentas abajo |
 | URL del sistema desplegado | sin desplegar aún |
-| Ultima revision | 2026-09-18 |
+| Ultima revision | 2026-09-21 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 7 | S7 | `81ebeab` (2026-09-17T23:00:46-05:00) | 3/10 | 2.2 (prelim.) | si |
+| 7 | S7 | `f10fd01` (2026-09-20T23:01:13-05:00) | 4/10 | 2.6 | si |
 | 6 | S6 | `d6f2b19` (2026-09-13T23:37:36-05:00) | 7/8 | 4.5 | si |
 | 5 | CORTE1 | `ac951e3` (2026-09-08T10:11:58-05:00) | 9/12 | 4.0 | si |
 | 4 | S4 | `d7ba824` (2026-08-30T23:39:33-05:00) | 5/10 | 3.0 | si |
@@ -84,6 +84,11 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 | Evidencia de que la prueba de contrato falla ante un cambio incompatible. | S7 | si | |
 | C4 nivel 2 sin formato de datos en las flechas. | S7 | si | |
 | Módulos usuarios, proveedores y alertas sin código (VIO-02 diferido por diseño). | S7 | si | |
+| SonarCloud deshabilitado en el workflow desde el commit d7045d8 y sin URL pública de Quality Gate. | S7 | si | |
+| Contrato sin evidencia de ejecución en CI ni de fallo ante cambio incompatible. | S7 | si | |
+| Versión del contrato contradictoria entre ADR-0004 y el documento de API. | S7 | si | |
+| Esquemas del contrato y correspondencia con los routers sin verificar. | S7 | si | |
+| Sección 6 de arc42 sin evidencia citable. | S7 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
