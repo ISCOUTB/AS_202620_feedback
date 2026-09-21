@@ -8,13 +8,13 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_DinamikUTB` |
 | Integrantes y su usuario de GitHub | Luis Daniel Padilla Leottau (`Daniel-dev02`) · Gillianis Del Carmen Perez Revolledo (`gillianisperez-prog`) · Esteban Ramirez Rios (`Eramirezr`) · Juan Jose Vargas Perez (`JuanchisV`, firma también como «Juan José Vargas Pérez» con el mismo correo) |
 | URL del sistema desplegado | sin desplegar todavía |
-| Ultima revision | 2026-09-17 |
+| Ultima revision | 2026-09-21 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 7 | S7 | `265e652` (2026-09-13T23:29:49-05:00) | 1/10 | 1.4 (prelim.) | si |
+| 7 | S7 | `5e6fa73` (2026-09-20T23:57:27-05:00) | 7/10 | 3.8 | si |
 | 6 | S6 | `265e652` (2026-09-13T23:29:49-05:00) | 0/8 | 1.0 | si |
 | 5 | CORTE1 | `72bfc7e` (2026-09-07T22:28:37-05:00) | 8/12 | 3.7 | sí (actualizada) |
 | 4 | S4 | `8558156` (2026-08-30T23:52:24-05:00) | 7/10 | 3.8 | si |
@@ -58,6 +58,13 @@
 | Etiquetado de protocolo y formato en el C4 nivel 2 | S7 | si | |
 | Contenido verificable de docs/aspectos.md y docs/ia.md | S7 | si | |
 | Evidencia pública del análisis estático con Quality Gate | S7 | si | |
+| YAML de ci.yml corregido en 31350f1 el mismo día del cierre, tras el experimento del contrato. | S7 | no (resuelto tarde) | — |
+| Bloqueo de permisos de SonarCloud documentado como hallazgo en 1ffe3e2 y 5e6fa73 en vez de resolverse. | S7 | no (resuelto tarde) | — |
+| Commit 8a5ae13 'Update ci.yml' posterior al cierre (2026-09-21T00:01:43-05:00). | S7 | no (resuelto tarde) | — |
+| SonarCloud: run que invoque el scanner y URL pública del análisis con Quality Gate. | S7 | si | |
+| Contenido de arc42 sección 6 y del C4 nivel 2 con protocolo y formato por flecha. | S7 | si | |
+| Historial git del contrato y confirmación de la versión de la API. | S7 | si | |
+| Contenido de docs/aspectos.md con sus ocho columnas navegables. | S7 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -69,7 +76,7 @@
 | `docs/ia.md` al día | Cumple | Entradas del 23/08 con rechazos («Rechazado parcialmente») y motivo. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Sin coincidencias. |
 | Contribución de todos los integrantes | Cumple | 4 de 4 en S3 (Juan 21, Gillianis 11, Luis 12, Esteban 2); desbalance anotado. |
-| Pipeline en verde | No verificado | El workflow de CI y el run asociado a `72bfc7e` verifican backend y frontend en verde. |
+| Pipeline en verde | No cumple | El workflow de CI y el run asociado a `72bfc7e` verifican backend y frontend en verde. |
 
 ## Contribución por integrante
 

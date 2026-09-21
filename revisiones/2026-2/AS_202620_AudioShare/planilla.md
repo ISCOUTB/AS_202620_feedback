@@ -8,14 +8,14 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_AudioShare` |
 | Integrantes y su usuario de GitHub | Santiago Adolfo Camacho Hernandez (commits como «Santiago Adolfo Camacho Hernández») · Vincent Cardona Castro (presumiblemente `cardonavincent26-design`, sin confirmar) · Elian Daniel Perea Vanegas («Elian Daniel Perea Vanegas») · Yeiver Andres Verjel Perez («Yeiver Andrés Vergel Pérez») |
 | URL del sistema desplegado | sin desplegar todavía |
-| Ultima revision | 2026-09-17 |
+| Ultima revision | 2026-09-21 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 6 | S6 | `4a0eba9` (2026-09-13T22:01:57-05:00) | 4/8 | 3.0 (prelim.) | si |
-| 7 | S7 | `4a0eba9` (2026-09-13T22:01:57-05:00) | 2/10 | 1.8 (prelim.) | si |
+| 7 | S7 | `0ada095` (2026-09-20T23:57:20-05:00) | 5/10 | 3.0 | si |
 | 5 | CORTE1 | `cb65d13` (2026-09-06T22:00:48-05:00) | 8/12 | 3.7 | si |
 | 4 | S4 | `24a5023` (2026-08-30T23:48:29-05:00) | 4/10 | 2.6 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `1c9ebb0a` · 2026-08-09T20:31:49-05:00 | 2/9 | no se publica | sí |
@@ -69,6 +69,15 @@
 | Tipificación de relaciones del mapa de contextos | S6 | si | |
 | Evidencia pública de SonarCloud (configuración, run y Quality Gate) | S6 | si | |
 | Pruebas de EC-02 y EC-03 | S6 | si | |
+| Ocho commits posteriores al cierre 2026-09-21T05:00:00Z (=00:00-05:00): 900b3e8 (00:04:54), 628c8be (00:07:23), d01e743 (00:09:48), 354f1f5 (00:15:12), eab5775 (00:18:45), 5c72af6 (00:19:45), b83471f (00:20:25) y d094a51 (00:21:38), todos en origin/master. | S7 | no (resuelto tarde) | — |
+| Evidencia de que la prueba de contrato falla ante un cambio incompatible (run en rojo o registro del cambio). | S7 | si | |
+| Línea del workflow que ejecuta la prueba de contrato y URL del run de CI. | S7 | si | |
+| Evidencia pública de SonarCloud: invocación del scanner, run exitoso y Quality Gate. | S7 | si | |
+| Correspondencia verificable entre rutas del contrato y rutas implementadas en el código. | S7 | si | |
+| Columna Evidencia en docs/aspectos.md y limpieza de la matriz duplicada. | S7 | si | |
+| Marcadores de conflicto de fusión en README y ADR-0001 y enlaces a ADR inexistentes. | S7 | si | |
+| Secciones 07 y 11 de arc42 ausentes y documentación arc42 en formato .adoc. | S7 | si | |
+| Verificación del contenido de docs/ia.md (qué se rechazó y por qué). | S7 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

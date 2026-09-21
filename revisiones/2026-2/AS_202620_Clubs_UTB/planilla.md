@@ -8,13 +8,13 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Clubs_UTB` |
 | Integrantes y su usuario de GitHub | Hollman Jose De Orta Gonzalez (`deortahollman-star`) · Josh Robinson Ortega Castellon (`Josh4OP`) · Diego Andres Ramos De Avila (`Zavod Dev`, atribución sin confirmar) · Luis Daniel Salas Reyes (`Luis-Salas-Reyes`) |
 | URL del sistema desplegado | sin desplegar todavía |
-| Ultima revision | 2026-09-17 |
+| Ultima revision | 2026-09-21 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 7 | S7 | `d2d1450` (2026-09-15T10:14:52-05:00) | 1/10 | 1.4 (prelim.) | si |
+| 7 | S7 | `dc211b8` (2026-09-20T23:56:51-05:00) | 6/10 | 3.4 | si |
 | 6 | S6 | `743cc1f` (2026-09-13T23:55:10-05:00) | 6/8 | 4.0 (prelim.) | si |
 | 5 | CORTE1 | `4ede977` (2026-09-06T22:41:55-05:00) | 8/12 | 3.7 | si |
 | 4 | S4 | `91323d6` (2026-08-30T23:21:56-05:00) | 9/10 | 4.6 | si |
@@ -76,6 +76,12 @@
 | Análisis estático SonarCloud ausente del pipeline y sin URL pública con Quality Gate. | S6 | si | |
 | docs/aspectos.md con celdas 'Pendiente' y sin columna de evidencia; sin mapeo a los contextos del mapa. | S6 | si | |
 | Secciones arc42 07 y 11 no presentes en el repositorio. | S6 | si | |
+| Actualizar docs/arc42/tabla_modulo.md a los tres contextos vigentes (abierto en ADR 0002 y arc42 §8.3). | S7 | si | |
+| Cerrar NC-01 y NC-02 de docs/arc42/lista_errores.md. | S7 | si | |
+| Eliminar el ADR duplicado y renombrar 0003 según NNNN-kebab-case, corrigiendo el enlace roto. | S7 | si | |
+| Aportar análisis SonarCloud público con Quality Gate y configuración en el repositorio. | S7 | si | |
+| Aportar el run del workflow de contrato y la evidencia de fallo por cambio incompatible. | S7 | si | |
+| Completar las secciones 07 y 11 de arc42 y verificar correspondencia contrato↔código y C4 nivel 2. | S7 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

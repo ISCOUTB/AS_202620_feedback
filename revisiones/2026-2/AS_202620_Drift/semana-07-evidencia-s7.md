@@ -1,11 +1,11 @@
 # semana-07-evidencia-s7 · Drift
 
-> Pasada temprana (GitHub Actions, previa al cierre): los hashes y la nota son preliminares y pueden cambiar si el equipo empuja antes del cierre.
+> Revision automatica definitiva (GitHub Actions, posterior al cierre). Re-evaluada por cambio de hash calificado tras la pasada temprana.
 
 | Campo | Valor |
 |---|---|
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Drift` |
-| Estado revisado | `430b9a0` en `origin/master` (2026-09-15T11:27:22-05:00) |
+| Estado revisado | `9334a03` en `origin/master` (2026-09-20T20:19:47-05:00) |
 | Cierre | 2026-09-21T05:00:00Z |
 | Revisor | pipeline automatico (GitHub Actions) |
 
@@ -13,70 +13,71 @@
 
 | Criterio de evaluacion | Evidencia tecnica | Estado | Observaciones |
 |---|---|---|---|
-| Contrato en formato ejecutable versionado en el repositorio | Árbol de 430b9a0 (2026-09-15) sin ningún archivo openapi/swagger/asyncapi (.yaml/.json) ni .proto; se buscó con ls-tree -r --name-only HEAD con patrón (openapi\|swagger\|asyncapi).(ya?ml\|json)$\|.proto$ y no hay coincidencias. | No cumple | No hay artefacto de contrato que citar; la API solo se describe en prosa en docs/arc42/arc42_8_conceptos_transversales.md (sección 8.9). |
-| Contrato con rutas y esquemas de datos, no solo listado de endpoints | No existe el archivo del contrato en el árbol de 430b9a0, por lo que no hay rutas ni esquemas de respuesta que citar. | No cumple | Se esperaba un fragmento del contrato con paths y schemas; no se encontró ningún archivo de especificación. |
-| Correspondencia entre el contrato y la API implementada | La API real documentada en prosa (GET /games/search?q=<consulta>, docs/arc42/arc42_8_conceptos_transversales.md §8.9, y el endpoint de compatibilidad citado en docs/c4/componentes.md) no tiene contrato contra el cual contrastar. | No cumple | No se puede verificar ninguno de los dos sentidos (contrato→código, código→contrato) porque falta el contrato. |
-| Versión de la API declarada y con historial | Sin archivo de contrato en 430b9a0 no hay campo de versión ni salida posible de git log -- <ruta del contrato>. | No cumple | Se esperaba campo de versión (en el archivo o en la ruta) y su historial en git. |
-| Prueba de contrato presente | backend/tests/ solo contiene steam_fixtures.py, test_health.py, test_search_games.py y test_compatibility.py; ninguna prueba de contrato (pact, schemathesis, dredd, prism). | No cumple | Se esperaba una ruta de prueba de contrato; no se encontró ninguna en el árbol de 430b9a0. |
-| El pipeline ejecuta la prueba de contrato | .github/workflows/ci.yml existe en el árbol, pero no se aportó su contenido ni runs_ci, y no existe artefacto de contrato ni prueba de contrato que el workflow pueda invocar (ver filas anteriores). | No cumple | Se esperaba la línea del workflow que invoca la prueba y la URL del run; no hay ninguno de los dos. |
-| Evidencia de que la prueba falla ante un cambio incompatible | No se aportaron runs_ci ni evidencia del equipo de un cambio incompatible que pusiera la prueba en rojo; en la evidencia del repositorio no hay bloque de ejecuciones de Actions. | No verificado | Queda como pregunta de sustentación: aportar el run en rojo o el cambio incompatible y su resultado (curl a /actions/runs filtrando conclusion != success). |
-| ADR de la estrategia de integración ligado a un escenario | docs/adr/ contiene 0001-adoptar-arquitectura-hexagonal.md, 0002-adoptar-nextjs-fastapi-arquitectura-hexagonal.md y 0003-reajuste-contextos-dominio.md; ninguno decide síncrono vs asíncrono ni evalúa la alternativa descartada con consecuencias de acoplamiento frente a un escenario de calidad. | No cumple | ADR-0003 ajusta contextos delimitados, no la estrategia de integración; el escenario E2 de mantenibilidad no se usa para justificar síncrono/async. |
-| arc42 sección 6 con los flujos de interacción | docs/arc42/arc42_6_Vista_Ejecucion.md en 430b9a0: tres flujos con diagramas de secuencia (6.1 búsqueda y comparación, 6.2 fallo de fuente externa, 6.3 estimación de compatibilidad) y explicación numerada de cada paso. | Cumple | Cada flujo declara su escenario asociado y los bloques coinciden con la sección 5. |
-| C4 nivel 2 con protocolo y formato en cada flecha | El árbol incluye docs/c4/contenedores.md, pero su contenido no se aportó; el nivel 2 de docs/arc42/arc42_5_vista_bloques.md (§5.2.1 y §5.2.2) etiqueta las flechas con «puerto de salida» y nombres de API, sin protocolo ni formato explícitos. | No verificado | Hace falta el contenido del diagrama de contenedores para comprobar protocolo (HTTP/REST) y formato (JSON) en cada flecha. |
+| Contrato en formato ejecutable versionado en el repositorio | docs/api/drift/openapi.yaml (openapi: 3.1.0), docs/api/playstation/openapi.yaml (3.0.3) y docs/api/playstation/asyncapi.yaml (3.0.0), presentes en el árbol de 9334a03. | Cumple | Tres contratos ejecutables versionados; no se puntúa la cantidad de endpoints. |
+| Contrato con rutas y esquemas de datos, no solo listado de endpoints | En docs/api/drift/openapi.yaml: paths /, /games/search, /games/sync/playstation y /games/{game_id}/compatibility, con components.schemas GameSearchResult, CompatibilityRequest, CompatibilityResult, HealthResponse y SyncError. | Cumple | Los esquemas declaran required y properties; el archivo aportado está truncado (30 líneas finales). |
+| Correspondencia entre el contrato y la API implementada | No se aporta el contenido de backend/app/main.py ni de backend/tests/test_contract.py en el árbol de 9334a03. | No verificado | Se esperaba citar dos rutas del contrato en el código y una del código en el contrato; sin el código no se puede comprobar la desincronización en ningún sentido. |
+| Versión de la API declarada y con historial | info.version: 1.0.0 en docs/api/drift/openapi.yaml, y sección 8 'Historial de versiones' (1.0.0 \| 2026-09-19) en docs/api/drift/contrato_API_DRIFT.md. | Cumple | No se aporta el git log por archivo del contrato; el archivo sí está versionado en el commit 9334a03. |
+| Prueba de contrato presente | backend/tests/test_contract.py en el árbol de 9334a03. | Cumple | No se aporta el contenido de la prueba ni el comando que la invoca. |
+| El pipeline ejecuta la prueba de contrato | Existe .github/workflows/ci.yml en el árbol de 9334a03, pero no se aporta su contenido ni ninguna entrada de runs_ci. | No verificado | Se esperaba la línea del workflow que invoca la prueba de contrato y la URL del run; comando anotado: grep -niE 'contract\|schemathesis\|dredd\|pact\|prism\|spectral' .github/workflows/ci.yml. |
+| Evidencia de que la prueba falla ante un cambio incompatible | Existe docs/evidencias/cambio_incompatible_evidencia.md y los commits 6397c09 'Prueba de Falla de incompatibilidad' y 715347d 'Volver a estado sin falla controlada' (2026-09-20), actualizados en 9334a03. | No verificado | No hay run en rojo ni el contenido del archivo; queda como pregunta de sustentación si la prueba realmente falló. |
+| ADR de la estrategia de integración ligado a un escenario | docs/adr/0004-estrategia-de-integracion.md: estado Aceptado, tres alternativas con ventajas y consecuencias, y escenario E2 de mantenibilidad con el acoplamiento descartado. | Cumple | Decide estrategia híbrida (consultas síncronas HTTP/JSON y actualización asíncrona con MySQL). |
+| arc42 sección 6 con los flujos de interacción | docs/arc42/arc42_6_Vista_Ejecucion.md existe en el árbol de 9334a03, pero su contenido no se aporta. | No verificado | Se esperaban los flujos de interacción descritos; la evidencia entregada llega truncada. |
+| C4 nivel 2 con protocolo y formato en cada flecha | docs/c4/contenedores.md existe en el árbol de 9334a03, pero su contenido no se aporta. | No verificado | Se esperaba el diagrama de contenedores con cada flecha etiquetada con protocolo y formato. |
 
 ## Matriz transversal (CONTRATO §11)
 
 | Criterio | Evidencia | Estado | Observaciones |
 |---|---|---|---|
-| Identidad del repositorio | AS_202620_Drift visible en la organización ISCOUTB, rama principal origin/master, HEAD 430b9a0 (2026-09-15); autores consolidados: JerryDBM (77 commits), JoshuaR01 (61), lmpdiaz12 (61) y maufern4ndez (57), que corresponden a los 4 integrantes declarados. | Cumple | Las variantes Sherry, JoshXX, Luis Mario Perez Diaz y Mauricio Andres Fernandez Espinosa consolidan con las cuentas anteriores por identidad de autor, no por parecido de nombre; los 4 integrantes aparecen en el historial. |
-| Estructura mínima | En HEAD 430b9a0 existen docs/arc42/ (secciones 1-6, 8, 9, 10, 12), docs/adr/ (0001-0003), docs/c4/ (contexto, contenedores, componentes), docs/aspectos.md, docs/ia.md y README.md. | Cumple | Los nombres de arc42 usan guiones bajos y mayúsculas distintas de la plantilla y aún faltan las secciones 7 y 11; es desviación de forma, no ausencia. |
-| Convenciones de ADR | Los tres archivos siguen NNNN-titulo-en-kebab-case.md y enuncian la decisión; ADR-0001 está marcado como «Reemplazado por ADR-0002» y ADR-0003 incluye contexto, tres opciones evaluadas, decisión y consecuencias. | Cumple | Trazabilidad incompleta: ADR-0001 y ADR-0003 dejan el commit «pendiente» y los enlaces de trazabilidad de ADR-0003 apuntan a rutas inexistentes en el árbol. |
-| Tabla de aspectos | docs/aspectos.md en 430b9a0: tabla con las ocho columnas (ID · Aspecto · Requisito · C4 · ADR · Código · Pruebas · Evidencia) y filas E1-E5 con enlaces a C4, ADR, archivos de código y evidencias. | Cumple | La fila E2 declara explícitamente que la prueba de sustitución del adaptador está pendiente. |
-| Registro de uso de IA | docs/ia.md existe y crece a lo largo del semestre: 27 entradas de git log entre 2026-08-09 y 2026-09-13 (última 5f7fa4c), pero no se aportó su contenido. | No verificado | Se verificó existencia y mantenimiento por historial; falta el texto para comprobar para qué se usó, qué se aceptó y qué se rechazó con su motivo. |
-| README | README.md de 430b9a0 describe qué es DRIFT, requisitos previos (Python 3.12+, Node 22+), comando único de arranque `python scripts/start.py` y cómo se prueba (pytest, npm run build, k6 run scripts/k6_baseline.js). | Cumple | Cita «8 pruebas aprobadas» y «compilación aprobada» como validación local, sin enlace a un run de CI que lo respalde. |
-| Pipeline y análisis estático | Existen .github/workflows/ci.yml y sonar-project.properties, pero no se aportó la línea del workflow que invoca el scanner, ni la URL de un run exitoso, ni la URL pública del análisis con estado del Quality Gate; el README indica que el análisis «se ejecutará en GitHub Actions cuando el equipo realice un push autorizado». | No cumple | Faltan las tres evidencias exigidas desde S6; badge o configuración sin ejecución no cuentan. |
-| Secretos | En HEAD 430b9a0: sin coincidencias del grep de patrones (AKIA, claves privadas, ghp_, sk-, xox, password/secret/token) y lista de .env versionados vacía. | Cumple | Mantener la revisión tras cada push, porque el repositorio es público. |
+| Identidad del repositorio | Repositorio visible AS_202620_Drift en la organización ISCOUTB; el historial consolidado da 4 cuentas (JerryDBM/Sherry, JoshuaR01/JoshXX, lmpdiaz12 y maufern4ndez) y los 4 integrantes declarados aparecen en él. | Cumple | Consolidación por correo registrado idéntico entre alias, sin atribuir cuentas por parecido de nombre. |
+| Estructura mínima | En 9334a03 existen docs/arc42/, docs/adr/, docs/c4/, docs/aspectos.md, docs/ia.md y README.md. | Cumple | arc42 sin las secciones 7 ni 11 y con prefijo arc42_N_ en los nombres: desviación de forma, no ausencia del artefacto. |
+| Estado del repositorio calificado | Rama origin/master, commit 9334a03 del 2026-09-20T20:19:47-05:00, anterior al cierre 2026-09-21T05:00:00Z; commits_tardios_post_cierre vacío. | Cumple | Único hash revisado, sin mezcla con otras ramas. |
+| Convenciones de ADR | docs/adr/0001..0004 numerados en kebab-case, con contexto, opciones, decisión y consecuencias; 0001 marcado 'Reemplazado por ADR-0002' con enlace. | Cumple | 0003 y 0004 no enlazan commit o PR de implementación ('pendiente'), trazabilidad parcial. |
+| Tabla de aspectos | docs/aspectos.md existe en el árbol de 9334a03, pero su contenido no se aporta. | No verificado | Se esperaba la tabla con las ocho columnas ID · Aspecto · Requisito · C4 · ADR · Código · Pruebas · Evidencia. |
+| Registro de uso de IA | docs/ia.md con 29 entradas de git log entre 2026-08-09 y 2026-09-20 (última 0129608), es decir, crece a lo largo del semestre. | Cumple | No se aporta el contenido; no se pudo comprobar la columna de lo rechazado y su motivo. |
+| README | README.md declara qué es el sistema, requisitos previos (Python 3.12, Node 22), arranque con un solo comando (python scripts/start.py) y cómo se prueba (pytest, npm run build, k6). | Cumple | No remite a pasos manuales no documentados. |
+| Pipeline y análisis estático | sonar-project.properties existe en 9334a03 y el README describe el escaneo dentro de .github/workflows/ci.yml, pero no hay runs_ci ni URL pública del análisis. | No verificado | Se esperaba la línea del workflow que invoca el scanner, la URL del run exitoso y la URL pública con Quality Gate; comando anotado: curl -s https://api.github.com/repos/ISCOUTB/AS_202620_Drift/actions/runs. |
 
 ## Estado global del proyecto (overall · punta actual de la misma rama)
 
 Mira el repositorio **entero en la punta actual de la misma rama**, no solo la evidencia del cierre: si el equipo subio tarde o corregio entregas anteriores, aqui se nota.
 
-- **Punta actual revisada**: `430b9a0cf7c2c9effde4b983e0ca256082f77f1d 2026-09-15T11:27:22-05:00 Revise performance testing details in README`
-- **Veredicto**: con pendientes
-- Resumen: En la punta actual de master (430b9a0, 2026-09-15, rama origin/master, estado calificado en modo early) el proyecto tiene arquitectura hexagonal implementada, ADR, arc42 con flujos de interacción y documentos transversales presentes, pero la entrega de la semana 7 no aporta contrato ejecutable, ni prueba de contrato, ni ADR de estrategia de integración, y no hay runs_ci que respalden pipeline ni SonarCloud.
+- **Punta actual revisada**: `9334a03f97fc2ddb67846b8e6d229ff85898f3f1 2026-09-20T20:19:47-05:00 Update cambio_incompatible_evidencia.md`
+- **Veredicto**: al dia
+- Resumen: En la punta de origin/master (9334a03, 2026-09-20, antes del cierre) el proyecto tiene contratos ejecutables, ADR-0004 ligado a E2, estructura, README, registro de IA y ausencia de secretos; sin embargo no hay runs_ci ni URL pública de SonarCloud y la evidencia llega truncada, por lo que el pipeline, la ejecución y el fallo controlado de la prueba de contrato, arc42-6, C4-2, aspectos.md y la correspondencia contrato-código no se pudieron verificar.
+
+Resuelto tarde (corregido despues del cierre, ahora al dia):
+- Ninguno: commits_tardios_post_cierre está vacío y el último commit (9334a03) es anterior al cierre; los ajustes de contrato y su evidencia se registraron el 2026-09-20.
 
 Pendientes que siguen abiertos:
-- Contrato OpenAPI/AsyncAPI versionado (S7)
-- Prueba de contrato ejecutada por el pipeline (S7)
-- Evidencia de que la prueba de contrato falla ante un cambio incompatible (S7)
-- ADR de estrategia de integración síncrona o asíncrona (S7)
-- Evidencia pública de SonarCloud con Quality Gate, pendiente desde S6
-- C4 nivel 2 con protocolo y formato en cada flecha
-- Trazabilidad de ADR-0001 y ADR-0003 (commit y enlaces pendientes)
-- Prueba de sustitución del adaptador para E2, declarada pendiente en docs/aspectos.md
+- Aportar la línea de ci.yml que ejecuta la prueba de contrato y la URL del run.
+- Aportar el registro del cambio incompatible que hizo fallar la prueba, o un run en rojo.
+- Aportar la URL pública de SonarCloud con Quality Gate y el run que invocó el scanner.
+- Completar la evidencia de correspondencia contrato-código (main.py frente a openapi.yaml).
+- Aportar el contenido de arc42 sección 6, C4 de contenedores y docs/aspectos.md.
 
 ## Recuento y nota sugerida
 
-1 de 10 criterios Cumple.
+5 de 10 criterios Cumple.
 
-**Nota sugerida preliminar (propuesta al docente; puede cambiar al cierre): 1.4 = 1 + 4 × (1/10).** La nota final la fija el profesor en Moodle.
+**Nota sugerida (propuesta al docente, publicada por decision del profesor): 3.0 = 1 + 4 × (5/10).** La nota final la fija el profesor en Moodle.
 
 ## No verificado / pendientes
 
-- Ejecución del pipeline y del análisis estático: no hay runs_ci ni URL pública de SonarCloud; comprobar con ls .github/workflows/ y curl a /repos/ISCOUTB/AS_202620_Drift/actions/runs más la URL del análisis con Quality Gate.
-- Fallo de la prueba de contrato ante un cambio incompatible: no hay run en rojo ni evidencia del equipo; aportar el run o el cambio incompatible aplicado.
-- Contenido de docs/c4/contenedores.md (C4 nivel 2): no aportado; hace falta leer el diagrama para verificar protocolo y formato en cada flecha.
-- Contenido de docs/ia.md: no aportado; falta verificar la columna de lo rechazado y su motivo técnico.
-- Contenido de .github/workflows/ci.yml: no aportado; hace falta la línea que invoca pruebas y scanner.
-- Contenido de docs/c4/componentes.md y backend/app/main.py más allá de los extractos: no permiten contrastar rutas del código con un contrato inexistente.
+- Correspondencia contrato-código: falta el contenido de backend/app/main.py y de backend/tests/test_contract.py.
+- Ejecución de la prueba de contrato en el pipeline: falta la línea de .github/workflows/ci.yml y la URL del run.
+- Fallo controlado de la prueba: falta el contenido de docs/evidencias/cambio_incompatible_evidencia.md o un run en rojo.
+- arc42 sección 6: falta el contenido de docs/arc42/arc42_6_Vista_Ejecucion.md.
+- C4 nivel 2: falta el contenido de docs/c4/contenedores.md con las flechas etiquetadas.
+- SonarCloud: faltan la línea del scanner en el workflow y las URL del run y del análisis con Quality Gate.
+- Tabla de aspectos: falta el contenido de docs/aspectos.md con las ocho columnas.
+- El extracto del contrato aportado se corta en la sección 2.3 y no muestra un apartado 11 con 8 criterios; la matriz transversal se armó con los criterios visibles (secciones 1 a 9).
 
 ## Hallazgos para la planilla
 
-- No existe contrato OpenAPI/AsyncAPI/proto en el árbol de 430b9a0: la API solo está descrita en prosa.
-- No hay ninguna prueba de contrato en backend/tests/ ni comando de contrato identificado en el pipeline.
-- No se aportaron runs_ci: no se puede verificar la ejecución del pipeline ni del scanner de SonarCloud.
-- Sin evidencia de que una prueba de contrato falle ante un cambio incompatible del proveedor.
-- Ningún ADR decide la estrategia de integración síncrona o asíncrona frente a un escenario de calidad.
-- La sección 6 de arc42 sí documenta tres flujos de interacción con diagramas de secuencia y explicación paso a paso.
-- La tabla de aspectos tiene las ocho columnas y trazabilidad E1-E5, con E2 aún pendiente de prueba.
-- Trazabilidad de ADR-0001 y ADR-0003 con commit pendiente y enlaces a rutas inexistentes.
+- Contrato OpenAPI 3.1 del backend y contratos OpenAPI/AsyncAPI de PlayStation versionados y con esquemas de datos.
+- La evidencia entregada está truncada: faltan main.py, test_contract.py, ci.yml, aspectos.md, arc42-6 y c4/contenedores.md.
+- No hay runs_ci: ni ejecución del pipeline ni URL pública de SonarCloud con Quality Gate.
+- Los commits 6397c09 y 715347d sugieren el cambio incompatible y su reversión, pero no se aporta el registro del fallo.
+- Sin secretos ni .env versionados en el árbol revisado.
+- Los cuatro integrantes declarados aparecen en el historial tras consolidar cuentas duplicadas.
+- El ADR-0004 liga la estrategia de integración al escenario E2 con la alternativa descartada.

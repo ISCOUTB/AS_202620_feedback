@@ -1,11 +1,11 @@
 # semana-07-evidencia-s7 · Clubs UTB
 
-> Pasada temprana (GitHub Actions, previa al cierre): los hashes y la nota son preliminares y pueden cambiar si el equipo empuja antes del cierre.
+> Revision automatica definitiva (GitHub Actions, posterior al cierre). Re-evaluada por cambio de hash calificado tras la pasada temprana.
 
 | Campo | Valor |
 |---|---|
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Clubs_UTB` |
-| Estado revisado | `d2d1450` en `origin/master` (2026-09-15T10:14:52-05:00) |
+| Estado revisado | `dc211b8` en `origin/master` (2026-09-20T23:56:51-05:00) |
 | Cierre | 2026-09-21T05:00:00Z |
 | Revisor | pipeline automatico (GitHub Actions) |
 
@@ -13,67 +13,68 @@
 
 | Criterio de evaluacion | Evidencia tecnica | Estado | Observaciones |
 |---|---|---|---|
-| Contrato en formato ejecutable versionado en el repositorio | Árbol de d2d1450 (2026-09-15) sin ningún archivo openapi/swagger/asyncapi .yaml/.json ni .proto; se buscó con ls-tree -r --name-only HEAD \| grep -iE '(openapi\|swagger\|asyncapi).*\.(ya?ml\|json)$\|\.proto$' y no hubo coincidencias. | No cumple | La API solo está descrita en prosa (README.md §7, arc42 03 y 06). |
-| Contrato con rutas y esquemas de datos, no solo listado de endpoints | No hay archivo de contrato que citar; la única ruta documentada es GET /health en docs/arc42/06_vista_de_ejecucion.md @ d2d1450, sin esquemas de datos. | No cumple | Sin contrato no hay rutas ni esquemas que revisar. |
-| Correspondencia entre el contrato y la API implementada | No existe contrato contra el que cotejar; los routers backend/src/linkclub/adapters/inbound/api/health_router.py y publicacion_router.py no tienen especificación asociada en el árbol de d2d1450. | No cumple | No se puede tomar ninguna ruta del contrato ni una del código en el contrato. |
-| Versión de la API declarada y con historial | No hay campo de versión (info.version/openapi) ni es posible ejecutar git log -- <ruta del contrato> porque el archivo no existe; README.md y arc42 no declaran versión de API @ d2d1450. | No cumple | Sin archivo versionado no hay historial del contrato. |
-| Prueba de contrato presente | backend/tests/ solo contiene test_health.py y test_publicaciones.py; búsqueda de contract\|dredd\|schemathesis\|pact\|prism\|spectral\|openapi en el árbol de d2d1450 sin coincidencias. | No cumple | Las pruebas existentes son unitarias/integración de endpoints, no de contrato. |
-| El pipeline ejecuta la prueba de contrato | .github/workflows/backend-tests.yml es el único workflow y su paso 'Correr pruebas' ejecuta `pytest tests/ -v`; los runs listados ('Backend tests', success, p. ej. https://github.com/ISCOUTB/AS_202620_Clubs_UTB/actions/runs/34987143230 del 2026-09-15) no invocan herramienta de contrato. | No cumple | El workflow no contiene ningún comando de contrato. |
-| Evidencia de que la prueba falla ante un cambio incompatible | Los runs listados concluyen success (p. ej. run 34987143230) y no hay evidencia aportada por el equipo en el repositorio de d2d1450; además no existe prueba de contrato que pueda fallar. | No verificado | Queda como pregunta de sustentación: haría falta un run en rojo o la evidencia del cambio incompatible. |
-| ADR de la estrategia de integración ligado a un escenario | docs/adr/0001-hexagonal.md (estilo arquitectónico) y docs/adr/0002-hexagonal.md (fusión de contextos Actividades/Notificaciones) @ d2d1450; ninguno decide síncrono vs. asíncrono ni descarta una alternativa por acoplamiento. | No cumple | La estrategia de integración no está registrada como decisión. |
-| arc42 sección 6 con los flujos de interacción | docs/arc42/06_vista_de_ejecucion.md @ d2d1450: diagrama Mermaid de secuencia GET /health (cliente → health_router → CheckHealthUseCase → StatusPort → InMemoryStatusAdapter), descripción paso a paso y vínculo a backend/tests/test_health.py. | Cumple | Documenta un solo flujo (health); el de publicaciones todavía no aparece. |
-| C4 nivel 2 con protocolo y formato en cada flecha | docs/c4/contexto.md @ d2d1450, diagrama de contenedores: solo APP → API indica 'Solicitudes JSON/HTTPS'; persona → APP ('Usa') y API → Supabase ('Valida tokens de sesión', 'Lee y escribe datos') no declaran protocolo ni formato. | No cumple | Flechas del nivel 2 sin etiquetar con protocolo y formato. |
+| Contrato en formato ejecutable versionado en el repositorio | docs/api/openapi.yaml:1 declara `openapi: 3.1.0` y el archivo está en el árbol del commit dc211b8. | Cumple | Es especificación ejecutable, no prosa; único contrato del repo (no hay AsyncAPI ni proto). |
+| Contrato con rutas y esquemas de datos, no solo listado de endpoints | docs/api/openapi.yaml define 9 rutas (/health, /clubes, /clubes/{club_id}, /clubes/{club_id}/miembros, /clubes/{club_id}/eventos, /eventos/{evento_id}, /eventos/{evento_id}/asistencia, /clubes/{club_id}/publicaciones, /publicaciones/{publicacion_id}) con responses y requestBody que referencian #/components/schemas/{Club,Evento,Membresia,Publicacion,ErrorResponse}. | Cumple | El volcado del archivo se corta antes de components/schemas, por lo que solo se citan las referencias a esquemas, no sus definiciones. |
+| Correspondencia entre el contrato y la API implementada | Se esperaba cotejar backend/src/linkclub/adapters/inbound/api/health_router.py y publicacion_router.py contra docs/api/openapi.yaml; el árbol los lista pero su contenido no se volcó. | No verificado | Señal de posible desincronización: docs/api/contrato_api.md declara implementado POST /publicaciones y GET /publicaciones/{club_id}, mientras el contrato define POST /clubes/{club_id}/publicaciones y GET /publicaciones/{publicacion_id}. |
+| Versión de la API declarada y con historial | docs/api/openapi.yaml declara info.version 1.0.0, docs/api/CHANGELOG.md registra '## 1.0.0 - 2026-09-20' y la ruta del contrato aparece en los commits 659b9bf y e0eaca4 (2026-09-20). | Cumple | No se aportó `git log` específico del archivo; la corrección del contrato del mismo día no subió la versión. |
+| Prueba de contrato presente | backend/tests/test_contrato_openapi.py existe en el árbol de dc211b8 y el ADR 0003 lo describe verificando esquemas de respuesta y rutas del código. | Cumple | Solo se cita la ruta de la prueba; no se volcó su contenido. |
+| El pipeline ejecuta la prueba de contrato | Se esperaba la línea de .github/workflows/contrato.yml que invoca la prueba y la URL del run; el workflow existe en el árbol y el ADR 0003 nombra los jobs lint-contrato, prueba-contrato y cambios-incompatibles, pero no hay YAML ni runs en la evidencia. | No verificado | Sin `runs_ci` no se puede confirmar ejecución; haría falta el contenido del workflow y la URL del run. |
+| Evidencia de que la prueba falla ante un cambio incompatible | Se esperaba un run en rojo del job cambios-incompatibles (oasdiff) o la evidencia aportada por el equipo; no hay runs en la evidencia ni artefacto entregado. | No verificado | Queda como pregunta de sustentación: es el criterio que separa competente de sobresaliente en este corte. |
+| ADR de la estrategia de integración ligado a un escenario | docs/adr/0003- integacion rest openapi.md (idéntico a docs/adr/0003-API.md) decide REST síncrono con contrato OpenAPI, descarta todo asíncrono, polling y GraphQL, y traza a U3 y C1 de docs/arc42/10_requisitos_de_calidad.md. | Cumple | Hay dos archivos con el número 0003 y el enlace citado en docs/arc42/09_decisiones_de_diseno.md (0003-integracion-rest-openapi.md) no existe en el árbol. |
+| arc42 sección 6 con los flujos de interacción | docs/arc42/06_vista_de_ejecucion.md contiene diagrama de secuencia de GET /health (cliente → health_router → CheckHealthUseCase → StatusPort → InMemoryStatusAdapter) y descripción paso a paso. | Cumple | Solo documenta el flujo de health; el flujo de publicaciones, que sí tiene código, no aparece. |
+| C4 nivel 2 con protocolo y formato en cada flecha | Se esperaba el diagrama de contenedores con cada flecha etiquetada con protocolo y formato; solo existe docs/c4/contexto.md y su contenido no fue volcado (el README afirma que reúne nivel 1 y 2). | No verificado | Haría falta el contenido del archivo o el diagrama de nivel 2 para comprobar el etiquetado. |
 
 ## Matriz transversal (CONTRATO §11)
 
 | Criterio | Evidencia | Estado | Observaciones |
 |---|---|---|---|
-| Identidad del repositorio | Repositorio público ISCOUTB/AS_202620_Clubs_UTB; en los metadatos de autor de d2d1450 (2026-09-15) aparecen al menos cuatro identidades distintas (Zavod Dev, Josh Ortega y Josh4OP, Luis-Salas-Reyes, deortahollman-star), y README.md §5 declara 4 integrantes. | Cumple | La pertenencia de cada cuenta a la organización no se puede comprobar en este snapshot; las cuentas que comparten la misma dirección institucional en los metadatos se consolidan como un solo contribuyente. |
-| Estructura mínima | Árbol de d2d1450 con docs/arc42/, docs/adr/0001-hexagonal.md y 0002-hexagonal.md, docs/c4/contexto.md, docs/aspectos.md, docs/ia.md y README.md. | Cumple | Faltan las secciones 07 y 11 de arc42 y docs/c4/ concentra los niveles 1 a 3 en un solo archivo. |
-| Estado del repositorio que se califica | Rama principal origin/master; commit vigente d2d14508c71639a2adb9acc53be97f50039ed0d8 del 2026-09-15T10:14:52-05:00, anterior al cierre 2026-09-21T05:00:00Z; commits_post_cierre y diff_desde_cierre vacíos. | Cumple | No hay commits posteriores al cierre. |
-| Convenciones de ADR | docs/adr/0001-hexagonal.md titula por tema y no por decisión; el archivo 0002-hexagonal.md no nombra la decisión que contiene (fusión en Publicaciones) y docs/arc42/tabla_modulo.md enlaza ../adr/0002-ajuste-contextos-publicaciones.md, ruta inexistente en el árbol de d2d1450. | No cumple | Ambos ADR sí incluyen contexto, opciones, decisión, consecuencias y trazabilidad. |
-| Tabla de aspectos | docs/aspectos.md @ d2d1450 usa las columnas ID \| Aspecto de calidad \| Escenario \| Requisito \| C4 \| ADR \| Código \| Pruebas, sin columna Evidencia, y las filas U1, U3, C1, C2 y C3 llevan 'Pendiente' en Código y Pruebas. | No cumple | Solo la fila U2 tiene código y pruebas navegables; el resto son huecos. |
-| Registro de uso de IA | docs/ia.md @ d2d1450 con tabla Semana/Integrante/Para qué/Herramienta/Cómo se usó/Motivo y nueve entradas en su historial de commits (última d2d1450). | Cumple | La columna 'Cómo se usó' registra lo no incorporado y su motivo. |
-| README | README.md @ d2d1450 describe el sistema, el stack, los requisitos previos (Python 3.10+), el arranque (uvicorn linkclub.main:app --app-dir src) y las pruebas (PYTHONPATH=src pytest tests/ -v). | Cumple | El arranque son varios pasos manuales documentados (venv, pip install, uvicorn), no un único comando. |
-| Pipeline y análisis estático | Único workflow .github/workflows/backend-tests.yml (pytest en push/PR a master) con runs exitosos (p. ej. run 34987143230); no hay paso de scanner SonarCloud, ni sonar-project.properties, ni URL pública de análisis con Quality Gate en d2d1450. | No cumple | Sin run en rojo tampoco se comprueba que el pipeline bloquee la integración ante fallos. |
+| Identidad del repositorio | Repositorio ISCOUTB/AS_202620_Clubs_UTB, visible: true, con historial de 6 cuentas de autor que se consolidan en al menos 4 identidades (dos cuentas comparten el mismo correo y corresponden al mismo autor). | Cumple | El README asocia los handles a los 4 integrantes; la cuenta 'Zavod Dev' no se atribuye a una persona por parecido de nombre. |
+| Estructura mínima | El árbol de dc211b8 incluye docs/arc42/, docs/adr/, docs/c4/, docs/aspectos.md, docs/ia.md y README.md. | Cumple | Faltan las secciones 07 y 11 de arc42; los ADR incumplen la convención de nombre (se registra en su fila). |
+| Convenciones de ADR | docs/adr/ contiene '0003- integacion rest openapi.md' (espacio y sin kebab-case) y '0003-API.md' (número duplicado y título que no enuncia la decisión), y docs/arc42/09_decisiones_de_diseno.md enlaza ../adr/0003-integracion-rest-openapi.md, ruta inexistente. | No cumple | 0001-hexagonal.md y 0002-ajuste-contextos-publicaciones.md sí cumplen número, nombre y trazabilidad. |
+| Tabla de aspectos | docs/aspectos.md existe y el ADR 0001 cita sus filas U2, C1 y C3, pero su contenido no fue volcado. | No verificado | No se pueden comprobar las 8 columnas (ID·Aspecto·Requisito·C4·ADR·Código·Pruebas·Evidencia) ni que cada celda sea navegable; el README la describe nombrando 'Escenario' en lugar de 'Evidencia'. |
+| Registro de uso de IA | docs/ia.md existe y acumula 9 commits entre 2026-08-09 y 2026-09-15 (últimos d2d1450 y 1d99370), pero su contenido no fue volcado. | No verificado | No se puede comprobar la columna de qué se rechazó y por qué, que es la que se revisa primero. |
+| README | README.md describe el sistema y el problema (secciones 1-2), stack, estructura, equipo y 'Cómo arrancar' con requisitos previos (Python 3.10+), venv, `uvicorn linkclub.main:app --app-dir src` y `PYTHONPATH=src pytest tests/ -v`. | Cumple | El arranque son cuatro comandos documentados, no un único comando, como pide el contrato. |
+| Pipeline y análisis estático | En el árbol de dc211b8 solo hay .github/workflows/backend-tests.yml y .github/workflows/contrato.yml; no existe sonar-project.properties ni configuración equivalente y la evidencia no aporta run ni URL pública de SonarCloud con Quality Gate. | No cumple | Faltan las tres piezas exigidas (config + línea del scanner, run exitoso del hash, URL del análisis); tampoco se puede verificar que el pipeline bloquee la integración. |
+| Secretos | El escaneo de secretos sobre HEAD no arrojó coincidencias y envs_versionados está vacío (ningún .env versionado). | Cumple | Sin hallazgos de credenciales en el commit revisado. |
 
 ## Estado global del proyecto (overall · punta actual de la misma rama)
 
 Mira el repositorio **entero en la punta actual de la misma rama**, no solo la evidencia del cierre: si el equipo subio tarde o corregio entregas anteriores, aqui se nota.
 
-- **Punta actual revisada**: `d2d14508c71639a2adb9acc53be97f50039ed0d8 2026-09-15T10:14:52-05:00 Update IA usage log for week 6`
+- **Punta actual revisada**: `dc211b8f38c4f8d0ba0ebd13021e3181b6d573bb 2026-09-20T23:56:51-05:00 Merge pull request #2 from ISCOUTB/contrato-openapi`
 - **Veredicto**: con pendientes
-- Resumen: En la punta de origin/master (d2d1450, 2026-09-15, previa al cierre de S7) no existe contrato OpenAPI/AsyncAPI/proto, ni prueba de contrato, ni ADR de estrategia de integración: 1 de 10 criterios de la ficha (arc42 §6) y 5 de 8 del contrato transversal.
+- Resumen: El proyecto en la punta de origin/master (dc211b8, 2026-09-20T23:56:51-05:00, anterior al cierre) entrega el contrato OpenAPI 3.1 versionado, ADR de integración con alternativas descartadas, pipeline de contrato declarado y arc42 §6; sin embargo faltan el análisis estático público con Quality Gate y la evidencia de que la prueba de contrato falla ante un cambio incompatible, y persisten pendientes de semanas anteriores (tabla de módulos desalineada, NC-01 y NC-02, ADR duplicado y con nombre fuera de convención, enlaces rotos).
 
 Pendientes que siguen abiertos:
-- NC-01: datos de clubes hardcodeados en frontend/linkclub/lib/clubs_page.dart (docs/arc42/lista_errores.md).
-- NC-02: sin manejo de errores de conexión en backend (docs/arc42/lista_errores.md).
-- docs/arc42/tabla_modulo.md desalineada con los tres contextos vigentes, según ADR 0002 y arc42 §8.3.
-- Secciones 07 y 11 de arc42 ausentes.
-- Contrato de API, prueba de contrato en el pipeline y ADR de estrategia de integración sin entregar (S7).
+- Actualizar docs/arc42/tabla_modulo.md a los tres contextos vigentes (abierto en ADR 0002 y arc42 §8.3).
+- Cerrar NC-01 y NC-02 de docs/arc42/lista_errores.md.
+- Eliminar el ADR duplicado y renombrar 0003 según NNNN-kebab-case, corrigiendo el enlace roto.
+- Aportar análisis SonarCloud público con Quality Gate y configuración en el repositorio.
+- Aportar el run del workflow de contrato y la evidencia de fallo por cambio incompatible.
+- Completar las secciones 07 y 11 de arc42 y verificar correspondencia contrato↔código y C4 nivel 2.
 
 ## Recuento y nota sugerida
 
-1 de 10 criterios Cumple.
+6 de 10 criterios Cumple.
 
-**Nota sugerida preliminar (propuesta al docente; puede cambiar al cierre): 1.4 = 1 + 4 × (1/10).** La nota final la fija el profesor en Moodle.
+**Nota sugerida (propuesta al docente, publicada por decision del profesor): 3.4 = 1 + 4 × (6/10).** La nota final la fija el profesor en Moodle.
 
 ## No verificado / pendientes
 
-- Pertenencia de las cuentas del historial a la organización ISCOUTB: se revisaron los metadatos de autor de d2d1450 y haría falta la lista de miembros de la organización.
-- Evidencia de que la prueba de contrato falla ante un cambio incompatible: se revisaron los runs de Actions (todos success) y el árbol de d2d1450, sin run en rojo ni evidencia del equipo; haría falta un run fallido o el registro del cambio incompatible.
-- Bloqueo de la integración por el pipeline: los runs listados concluyen success; haría falta un run en rojo o la configuración de protección de rama.
-- Quality Gate de SonarCloud: se buscó scanner en .github/workflows/, sonar-project.properties y URL pública de análisis, y no existe ninguno; sin análisis no hay estado que verificar.
+- Correspondencia contrato↔código: falta el contenido de health_router.py y publicacion_router.py para cotejar rutas en ambos sentidos.
+- Ejecución de la prueba de contrato en el pipeline: falta el YAML de .github/workflows/contrato.yml y la URL del run.
+- Fallo de la prueba ante cambio incompatible: sin run en rojo ni evidencia aportada; queda como pregunta de sustentación.
+- C4 nivel 2 con protocolo y formato por flecha: falta el contenido de docs/c4/contexto.md.
+- Tabla de aspectos con las 8 columnas navegables: falta el contenido de docs/aspectos.md.
+- Registro de uso de IA con lo rechazado y su motivo: falta el contenido de docs/ia.md.
 
 ## Hallazgos para la planilla
 
-- No existe archivo de contrato OpenAPI, AsyncAPI o proto en el árbol de d2d1450.
-- No hay prueba de contrato ni herramienta asociada (dredd, schemathesis, pact, prism, spectral) en el repositorio.
-- El único workflow ejecuta solo pytest y todos los runs listados concluyen success.
-- Los ADR existentes cubren estilo arquitectónico y límites de contextos, no la estrategia de integración síncrona o asíncrona.
-- Varias flechas del C4 nivel 2 no declaran protocolo ni formato.
-- Sin scanner de SonarCloud en el workflow ni URL pública de análisis con Quality Gate.
-- Enlace roto: docs/arc42/tabla_modulo.md apunta a ../adr/0002-ajuste-contextos-publicaciones.md, que no existe.
-- Pendientes abiertos a HEAD: NC-01 y NC-02 de docs/arc42/lista_errores.md y la desalineación de tabla_modulo.md.
-- Faltan las secciones 07 y 11 de arc42 y la columna Evidencia en docs/aspectos.md.
-- Sin coincidencias de secretos y sin archivos .env versionados; el repositorio es público.
+- El contrato OpenAPI 3.1 (docs/api/openapi.yaml) está versionado, con 9 rutas, esquemas referenciados y CHANGELOG en SemVer.
+- No hay evidencia de ejecución del workflow de contrato ni de un run en rojo provocado por un cambio incompatible.
+- Existen dos ADR con el número 0003, uno con espacio en el nombre, y el enlace a 0003-integracion-rest-openapi.md está roto desde arc42 §9 y el contrato.
+- No hay rastro de SonarCloud: sin archivo de configuración ni URL pública de análisis con Quality Gate.
+- docs/arc42/tabla_modulo.md sigue desalineado con los tres contextos vigentes, pendiente declarado en el ADR 0002 y en arc42 §8.3.
+- NC-01 (datos de clubes hardcodeados) y NC-02 (sin manejo de errores de conexión) siguen 'pendiente' en docs/arc42/lista_errores.md.
+- arc42 no incluye las secciones 07 y 11.
+- HEAD dc211b8 (2026-09-20T23:56:51-05:00) es anterior al cierre y no hay commits posteriores en la rama principal.

@@ -8,13 +8,13 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Drift` |
 | Integrantes y su usuario de GitHub | Jerry Daniel Buelvas Mejia (`JerryDBM`) · Mauricio Andres Fernandez Espinosa (`maufern4ndez`) · Luis Mario Perez Diaz (`lmpdiaz12`) · Joshua David Reyes Leones (`JoshuaR01` y `JoshXX`, mismo correo) |
 | URL del sistema desplegado | sin desplegar todavía |
-| Ultima revision | 2026-09-17 |
+| Ultima revision | 2026-09-21 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 7 | S7 | `430b9a0` (2026-09-15T11:27:22-05:00) | 1/10 | 1.4 (prelim.) | si |
+| 7 | S7 | `9334a03` (2026-09-20T20:19:47-05:00) | 5/10 | 3.0 | si |
 | 6 | S6 | `5f7fa4c` (2026-09-13T22:07:49-05:00) | 5/8 | 3.5 (prelim.) | si |
 | 5 | CORTE1 | `74337a3` (2026-09-08T02:53:31Z) | 7/12 | 3.3 | si |
 | 4 | S4 | `4254f4a` (2026-08-30T19:13:01-05:00) | 7/10 | 3.8 | si |
@@ -87,6 +87,12 @@
 | Tipificación de las relaciones del mapa de contextos con el vocabulario de la semana. | S6 | si | |
 | Trazabilidad de ADR-0003 (commit de implementación y enlace correcto al ADR de referencia) y de ADR-0001. | S6 | si | |
 | Prueba específica de sustitución del adaptador externo para el escenario E2, hoy citada con una prueba que no la cubre. | S6 | si | |
+| Ninguno: commits_tardios_post_cierre está vacío y el último commit (9334a03) es anterior al cierre; los ajustes de contrato y su evidencia se registraron el 2026-09-20. | S7 | no (resuelto tarde) | — |
+| Aportar la línea de ci.yml que ejecuta la prueba de contrato y la URL del run. | S7 | si | |
+| Aportar el registro del cambio incompatible que hizo fallar la prueba, o un run en rojo. | S7 | si | |
+| Aportar la URL pública de SonarCloud con Quality Gate y el run que invocó el scanner. | S7 | si | |
+| Completar la evidencia de correspondencia contrato-código (main.py frente a openapi.yaml). | S7 | si | |
+| Aportar el contenido de arc42 sección 6, C4 de contenedores y docs/aspectos.md. | S7 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -98,7 +104,7 @@
 | `docs/ia.md` al día | Cumple | Commits 08-21/08-22; rechazo narrado en §3.1 con motivo. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Sin coincidencias. |
 | Contribución de todos los integrantes | Cumple | Los 4 firman en S3, con desbalance (51/19/18/9). |
-| Pipeline en verde | No cumple | `.github/workflows/ci.yml` con runs verdes confirmados vía API, incluido el commit calificado de S5 (`d110d6d0`, antes del cierre). |
+| Pipeline en verde | No verificado | `.github/workflows/ci.yml` con runs verdes confirmados vía API, incluido el commit calificado de S5 (`d110d6d0`, antes del cierre). |
 
 ## Contribución por integrante
 

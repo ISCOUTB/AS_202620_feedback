@@ -8,14 +8,14 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_ElMapita` |
 | Integrantes y su usuario de GitHub | Angel Fabian Gutierrez Gomez (sin cuenta identificada en el historial) · Diego Rosales Garza (sin cuenta identificada) · Rodrigo Vazquez Rico (firma con su nombre). Historial: `RobotDRMX` (sin atribuir) y, en EQUIPOS.md, `YOOUYII` (nunca vista). |
 | URL del sistema desplegado | sin desplegar todavía |
-| Ultima revision | 2026-09-17 |
+| Ultima revision | 2026-09-21 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 6 | S6 | `a22f0a4` (2026-09-13T22:21:07-05:00) | 0/8 | 1.0 (prelim.) | si |
-| 7 | S7 | `a22f0a4` (2026-09-13T22:21:07-05:00) | 0/10 | 1.0 (prelim.) | si |
+| 7 | S7 | `afae3be` (2026-09-20T19:09:25-06:00) | 4/10 | 2.6 | si |
 | 5 | CORTE1 | `b28e068` (2026-09-07T14:57:28-06:00) | 7/12 | 3.3 | si |
 | 4 | S4 | `07b36f4` (2026-08-30T23:31:03-05:00) | 4/10 | 2.6 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `938d0206` · 2026-08-07T21:36:01-06:00 | 5/9 | no se publica | sí |
@@ -67,6 +67,13 @@
 | arc42 sección 8 con lenguaje ubicuo y mapa de contextos. | S6 | si | |
 | ADR de reajuste y diff de C4 Nivel 3 si los límites cambiaron desde el primer corte. | S6 | si | |
 | Evidencia de SonarCloud: configuración, run de CI y URL pública con Quality Gate. | S6 | si | |
+| Sin envíos posteriores al cierre: commits_post_cierre vacío y el commit calificado afae3be es anterior al cierre. | S7 | no (resuelto tarde) | — |
+| Brecha de `npm run test:contracts` prometida en ADR-0001 y nunca implementada: se cierra en afae3be con el ADR-0003, dentro del plazo de S7 pero aún sin evidencia de ejecución en CI. | S7 | no (resuelto tarde) | — |
+| Deriva de rutas contrato-backend por prefijo duplicado (`/api/api/v1/...`), reconocida en ADR-0003 y no corregida. | S7 | si | |
+| Evidencia de que la prueba de contrato se ejecuta en el pipeline y de que falla ante un cambio incompatible. | S7 | si | |
+| Evidencia de SonarCloud (configuración del scanner, run exitoso y URL pública con Quality Gate), pendiente desde S6. | S7 | si | |
+| Contenido verificable de la tabla de aspectos, de arc42 §6 y del C4 nivel 2 con protocolo y formato. | S7 | si | |
+| Implementación pendiente declarada en ADR-0002 (LOD y degradación progresiva). | S7 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

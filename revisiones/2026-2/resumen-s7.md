@@ -1,16 +1,16 @@
-# Resumen de revision · Semana 7 · s7 (early)
+# Resumen de revision · Semana 7 · s7 (definitive)
 
 Generado por el pipeline automatico (GitHub Actions).
 
-Nota preliminar (pasada temprana): puede cambiar al cierre.
+Nota sugerida = 1 + 4 × (n/m) sobre la matriz de la ficha, **propuesta al docente**.
 
-| Equipo | Repo | Hash | n/m | Nota sugerida (preliminar) |
+| Equipo | Repo | Hash | n/m | Nota sugerida |
 |---|---|---|---|---|
-| AudioShare | `AS_202620_AudioShare` | `4a0eba9` | 2/10 | 1.8 |
-| Clubs UTB | `AS_202620_Clubs_UTB` | `d2d1450` | 1/10 | 1.4 |
-| DinamikUTB | `AS_202620_DinamikUTB` | `265e652` | 1/10 | 1.4 |
-| Drift | `AS_202620_Drift` | `430b9a0` | 1/10 | 1.4 |
-| ElMapita | `AS_202620_ElMapita` | `a22f0a4` | 0/10 | 1.0 |
+| AudioShare | `AS_202620_AudioShare` | `0ada095` | 5/10 | 3.0 |
+| Clubs UTB | `AS_202620_Clubs_UTB` | `dc211b8` | 6/10 | 3.4 |
+| DinamikUTB | `AS_202620_DinamikUTB` | `5e6fa73` | 7/10 | 3.8 |
+| Drift | `AS_202620_Drift` | `9334a03` | 5/10 | 3.0 |
+| ElMapita | `AS_202620_ElMapita` | `afae3be` | 4/10 | 2.6 |
 | EnAgenda | `AS_202620_EnAgenda` | `0a58de8` | 0/10 | 1.0 |
 | GimnasioUTB | `AS_202620_GimnasioUTB` | `106869b` | 1/10 | 1.4 |
 | InvenTrack | `AS_202620_InvenTrack` | `81ebeab` | 3/10 | 2.2 |
