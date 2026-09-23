@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica` |
 | Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-17 |
+| Ultima revision | 2026-09-23 |
 
 ## Estado por entrega
 
@@ -21,7 +21,7 @@
 | 5 | CORTE1 | `8b0d00b` (2026-09-07T14:29:28-05:00) | 8/12 | 3.7 | si |
 | 6 | S6 | `a47d5bd` (2026-09-13T23:21:55-05:00) | 3/8 | 2.5 (prelim.) | si |
 | 7 | S7 | `a47d5bd` (2026-09-13T23:21:55-05:00) | 1/10 | 1.4 (prelim.) | si |
-| 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
+| 8 | S8 | `2269ca5` (2026-09-20T21:48:00-05:00) | 4/12 | 2.3 (prelim.) | si |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
 | 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
@@ -87,6 +87,14 @@
 | Incluir arc42 §8 con lenguaje ubicuo y mapa de contextos. | S6 | si | |
 | Aportar lista de no conformidades de propiedad con ubicación y plan, o el recorrido que concluyó ausencia. | S6 | si | |
 | Aportar diff contra el hash de S5 y C4 nivel 3/ADR si los límites cambiaron. | S6 | si | |
+| arc42 seccion 7 (Deployment View) con una caja por pieza y donde se ejecuta | S8 | si | |
+| ADR por decision de plataforma con alternativa descartada y capa gratuita verificada | S8 | si | |
+| Estimacion de costo mensual con volumen supuesto y punto de ruptura de la capa gratuita | S8 | si | |
+| URL publica desplegada y health check con hora y codigo de respuesta | S8 | si | |
+| Evidencia de pipeline en verde y de SonarCloud (configuracion, run y analisis publico) | S8 | si | |
+| Limite de costo y restriccion de tarjeta en arc42 seccion 2 | S8 | si | |
+| Tabla de aspectos sin huecos (no verificable con la evidencia aportada) | S8 | si | |
+| R-06 (persistencia) y V-5 (verificacion automatica de propiedad de datos) siguen abiertos | S8 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -98,7 +106,7 @@
 | `docs/ia.md` al día | No cumple | Actualizado en S3 (`aa14dca`) con aceptado/rechazado/justificación |
 | Sin credenciales en el repositorio ni en el historial | Cumple | git grep y `.env` sin coincidencias |
 | Contribución de todos los integrantes | Cumple | 4 cuentas para 4 integrantes |
-| Pipeline en verde | No verificado | Sin código ni prueba al cierre; el esqueleto tardío trae prueba, pendiente de run en verde para S4 |
+| Pipeline en verde | No cumple | Sin código ni prueba al cierre; el esqueleto tardío trae prueba, pendiente de run en verde para S4 |
 | Etiqueta corte-1 (corte 1) | Cumple | `201acac`, 2026-09-07T04:34:17Z, antes del cierre |
 
 ## Contribución por integrante

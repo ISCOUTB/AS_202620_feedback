@@ -21,11 +21,11 @@ Nota preliminar (pasada temprana): puede cambiar al cierre.
 | ROUTB | `AS_202620_ROUTB` | `-` | - | - |
 | Recobra | `AS_202620_Recobra` | `-` | - | - |
 | ShareU | `AS_202620_ShareU` | `-` | - | - |
-| Calificación automática | `AS_202620_Sistema-de-calificacion-automatica` | `-` | - | - |
-| TAIA | `AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant` | `-` | - | - |
-| Tienda virtual UTB | `AS_202620_TIENDA-VIRTUAL-UTB` | `-` | - | - |
-| TRACTAR | `AS_202620_TRACTAR` | `-` | - | - |
-| Verifacts | `AS_202620_Verifacts` | `-` | - | - |
+| Calificación automática | `AS_202620_Sistema-de-calificacion-automatica` | `2269ca5` | 4/12 | 2.3 |
+| TAIA | `AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant` | `f818f75` | 4/12 | 2.3 |
+| Tienda virtual UTB | `AS_202620_TIENDA-VIRTUAL-UTB` | `69aa82d` | 0/12 | 1.0 |
+| TRACTAR | `AS_202620_TRACTAR` | `9cf1ac9` | 1/12 | 1.3 |
+| Verifacts | `AS_202620_Verifacts` | `7d52e8e` | 5/12 | 2.7 |
 | XALD | `AS_202620_XALD` | `-` | - | - |
 | mapsutb | `AS_202620_mapsutb` | `-` | - | - |
 | uniTeam | `AS_202620_uniTeam` | `-` | - | - |

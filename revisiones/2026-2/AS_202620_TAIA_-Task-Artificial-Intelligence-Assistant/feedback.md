@@ -49,3 +49,15 @@ El mapa de contextos, la tabla de propiedad de datos y la auditoría están bien
 ## Semana 7 · S7
 
 El contrato OpenAPI 3.1 esta bien encaminado: es ejecutable, tiene esquemas de entrada y salida, y el ADR explica por que la integracion es sincrona frente a la alternativa asincrona. Falta cerrar la parte que mas peso tiene en esta semana: que la prueba de contrato se ejecute en el pipeline y que exista una ejecucion en rojo, o la evidencia del cambio incompatible que la hizo fallar, porque hoy solo se ve un archivo de evidencia sin contenido publico. Suban tambien el diagrama C4 nivel 2 con cada flecha etiquetada con protocolo y formato, la salida del historial git del contrato y la evidencia publica de SonarCloud (configuracion, run y Quality Gate). Con esos cuatro cierres la entrega pasa de correcta a defendible en sustentacion.
+
+## Semana 8 · S8
+
+El avance del backend es sólido: módulos separados, suite de pruebas amplia y documentación arc42 completa y trazable.
+Lo central de esta entrega falta: publicar el sistema en una URL accesible desde fuera de la red de la universidad, con hora y código de respuesta anotados.
+Versionen la infraestructura (Dockerfile, compose o equivalente) para que el entorno se recree con un comando en lugar de pasos manuales.
+Dejen el pipeline en verde y citen el run con su URL y su conclusión; hoy no hay evidencia ejecutable de CI ni de análisis estático.
+Añadan logs estructurados con campos y una métrica consultable ligada a un escenario de calidad del equipo.
+Documenten la estimación de costo mensual desde el volumen esperado, indicando dónde se rompe la capa gratuita.
+Escriban un ADR por decisión de plataforma, con la alternativa descartada y la verificación de la capa gratuita.
+Declaren las variables de entorno en un .env.example y dejen su valor en el almacén del proveedor.
+Mantengan navegables los aspectos y el registro de IA, incluida la columna de lo rechazado y su motivo.

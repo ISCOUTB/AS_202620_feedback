@@ -10,7 +10,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB` |
 | Integrantes y su usuario de GitHub | Shalom Jhoanna Arrieta Marrugo (shalom-A26) · Levis Adrian Ortiz Cano (RAZOR7150) · Alejandro Patron Montero (pxtroniwnl) · Jasen Mihovil Yukopila Escobar (Jmyukopila) — correspondencias por los correos de los commits, por confirmar con el docente |
 | URL del sistema desplegado | sin URL (sin despliegue todavía) |
-| Ultima revision | 2026-09-16 |
+| Ultima revision | 2026-09-23 |
 
 ## Estado por entrega
 
@@ -23,7 +23,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 5 | CORTE1 | `3d732d7` (2026-09-07T14:41:37-05:00) | 9/12 | 4.0 | si |
 | 6 | S6 | `3d732d7` (2026-09-07T14:41:37-05:00) | sin actividad | no aplica | si |
 | 7 | S7 | `dea5bc9` (2026-09-15T09:52:53-05:00) | 0/10 | 1.0 (prelim.) | si |
-| 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
+| 8 | S8 | `69aa82d` (2026-09-20T09:34:49-05:00) | 0/12 | 1.0 (prelim.) | si |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
 | 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
@@ -72,6 +72,12 @@ Hoja consolidada del equipo a lo largo del semestre.
 | arc42 sección 6 y C4 nivel 2 con protocolo y formato por flecha | S7 | si | |
 | Evidence de SonarCloud: configuración, run del scanner y Quality Gate público | S7 | si | |
 | Listado completo de archivos y retiro del entorno Python vendorizado | S7 | si | |
+| URL pública del sistema y health check con hora de verificación. | S8 | si | |
+| Infraestructura como código versionada y README reproducible. | S8 | si | |
+| Pipeline en verde sobre main con URL del run y evidencia pública de SonarCloud. | S8 | si | |
+| Logs estructurados, métrica con escenario y estimación de costo con supuestos. | S8 | si | |
+| arc42 secciones 2 y 7, ADRs de plataforma, docs/aspectos.md, docs/ia.md y diagramas C4. | S8 | si | |
+| Retirar del versionado el entorno de terceros .security-tools. | S8 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

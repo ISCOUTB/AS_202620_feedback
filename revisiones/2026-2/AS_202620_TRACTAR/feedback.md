@@ -47,3 +47,13 @@ Sin actividad S6: el ultimo commit anterior al cierre es de la entrega previa, a
 ## Semana 7 · S7
 
 El repositorio está ordenado y la documentación base (README, ADR, aspectos, C4 nivel 2 y registro de IA) está en las rutas esperadas; el C4 de contenedores ya etiqueta sus flechas con protocolo y formato. Lo que falta es el corazón de esta entrega: un contrato OpenAPI, AsyncAPI o proto versionado en el repositorio, con rutas y esquemas, más una prueba de contrato que el workflow ejecute y que se demuestre capaz de fallar ante un cambio incompatible (run en rojo o cambio aportado como evidencia). Como FastAPI ya genera el esquema, exportarlo a un archivo versionado y validarlo con schemathesis o similar cierra varios criterios a la vez. Conviene además: hacer que el pipeline ejecute toda la carpeta de pruebas y no solo una parte, añadir el análisis estático con su URL pública y su Quality Gate, completar la sección 6 de arc42 con los flujos de interacción, registrar al menos un uso de IA rechazado con su motivo y equilibrar la contribución en el historial, hoy concentrada en una sola cuenta.
+
+## Semana 8 · S8
+
+El repositorio sigue ordenado y el pipeline está en verde, pero esta semana no llegó: en el commit revisado no hay sistema desplegado ni URL pública, solo la ejecución local en el puerto 8000.
+Falta la infraestructura como código y el procedimiento para recrear el entorno desplegado.
+Quedan pendientes el health check verificable desde fuera, los logs estructurados, una métrica ligada a un escenario de calidad y la estimación de costo mensual con supuestos y punto de ruptura de la capa gratuita.
+Completen arc42 sección 7 con una caja por pieza y dónde se ejecuta, y la sección 2 con el límite de costo y, si aplica, la restricción de tarjeta.
+Escriban un ADR por decisión de plataforma, con su alternativa descartada y la capa gratuita verificada.
+Añadan SonarCloud con análisis público y su Quality Gate, y mantengan el CI en verde.
+Suban todo sobre la rama principal antes del cierre, con la URL viva y la hora de verificación.

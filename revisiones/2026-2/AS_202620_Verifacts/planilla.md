@@ -8,12 +8,13 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Verifacts` |
 | Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md); historial: `PedroC1213` (30 commits) y `Cristian Cardeño` (4 commits tardíos), sin atribuir oficialmente |
 | URL del sistema desplegado | |
-| Ultima revision | 2026-09-17 |
+| Ultima revision | 2026-09-23 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 8 | S8 | `7d52e8e` (2026-09-22T22:42:51-05:00) | 5/12 | 2.7 (prelim.) | si |
 | 7 | S7 | `635f9b7` (2026-09-16T00:52:52-05:00) | 8/10 | 4.2 (prelim.) | si |
 | 6 | S6 | `5941c33` (2026-09-12T02:00:20-05:00) | 8/8 | 5.0 (prelim.) | si |
 | 1 | S1 | `(sin commits)` () | sin actividad | no aplica | si |
@@ -82,6 +83,14 @@
 | Commits del tercer integrante declarado | S6 | si | |
 | Enlaces del README a documentos inexistentes | S6 | si | |
 | Medición de P95 (Q-01) y prueba de usuario (Q-04) | S6 | si | |
+| Comprobar URL y /health con hora y código de respuesta. | S8 | si | |
+| Aportar run de CI en verde y URL pública de SonarCloud con Quality Gate. | S8 | si | |
+| Actualizar arc42 §7 con una caja por pieza y su ubicación de ejecución. | S8 | si | |
+| Añadir límite de costo y restricción de tarjeta en arc42 §2. | S8 | si | |
+| Registrar un ADR por decisión de plataforma con alternativa descartada y capa gratuita verificada. | S8 | si | |
+| Asociar la métrica /metrics a un escenario de calidad y completar la medición de P95. | S8 | si | |
+| Cerrar los huecos de docs/aspectos.md y corregir las secciones 3 y 10 desactualizadas. | S8 | si | |
+| Incluir un integrante declarado que aún no aparece en el historial. | S8 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

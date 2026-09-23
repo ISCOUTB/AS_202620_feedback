@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant` |
 | Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-18 |
+| Ultima revision | 2026-09-23 |
 
 ## Estado por entrega
 
@@ -21,7 +21,7 @@
 | 5 | CORTE1 | `a3f4d82` (2026-09-06T04:13:11-05:00) | 9/12 | no aplica | si |
 | 6 | S6 | `c0c3adb` (2026-09-13T20:01:35-05:00) | 7/8 | 4.5 (prelim.) | si |
 | 7 | S7 | `0a12f0c` (2026-09-17T15:27:54-05:00) | 6/10 | 3.4 (prelim.) | si |
-| 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
+| 8 | S8 | `f818f75` (2026-09-22T09:20:59-05:00) | 4/12 | 2.3 (prelim.) | si |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
 | 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
@@ -111,6 +111,14 @@
 | Historial git del archivo de contrato | S7 | si | |
 | SonarCloud: configuracion, run exitoso y URL publica con Quality Gate | S7 | si | |
 | Contenido de docs/aspectos.md para validar la tabla de trazabilidad | S7 | si | |
+| Publicar el sistema en una URL accesible desde fuera de la red de la universidad y registrar hora y código de respuesta. | S8 | si | |
+| Versionar infraestructura como código para recrear el entorno con un solo comando. | S8 | si | |
+| Dejar el pipeline en verde y aportar la URL del run con su conclusión. | S8 | si | |
+| Añadir logs estructurados y una métrica consultable asociada a un escenario de calidad. | S8 | si | |
+| Documentar la estimación de costo mensual con supuestos y punto de ruptura de la capa gratuita. | S8 | si | |
+| Escribir un ADR por decisión de plataforma con alternativa descartada y capa gratuita verificada. | S8 | si | |
+| Declarar variables de entorno en .env.example y tomar sus valores del almacén del proveedor. | S8 | si | |
+| Aportar el contenido de docs/aspectos.md y docs/ia.md para verificar su trazabilidad. | S8 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -122,7 +130,7 @@
 | `docs/ia.md` al día | Cumple | Entrada 03 (08-23) sin aceptado/rechazado |
 | Sin credenciales en el repositorio ni en el historial | Cumple | `git grep` §9 y `.env` sin coincidencias |
 | Contribución de todos los integrantes | Cumple | 4 identidades consolidadas = 4 integrantes |
-| Pipeline en verde | No verificado | `.github/workflows/ci.yml` configurado el 2026-09-06; run success sobre `a3f4d826` antes del cierre |
+| Pipeline en verde | No cumple | `.github/workflows/ci.yml` configurado el 2026-09-06; run success sobre `a3f4d826` antes del cierre |
 | Etiqueta corte-1 (corte 1) | No cumple | No existe; solo `corrections-s4` |
 | ADR aceptados sin reescribir (corte 1) | No cumple | El commit `42c5b03` edita el ADR-0001 aceptado en vez de crear uno nuevo o marcarlo reemplazado |
 

@@ -10,7 +10,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TRACTAR` |
 | Integrantes y su usuario de GitHub | Joriel Samir Barros Pena (sin cuentas en el historial) · Geronimo Alberto Cadena Garcia (sin cuentas) · Sebastian Garcia Devoz (firma con dos identidades de git, mismo correo, más el correo institucional) · Mateo Alfonso Millan Barraza (sin cuentas) |
 | URL del sistema desplegado | sin URL (sin despliegue todavía) |
-| Ultima revision | 2026-09-17 |
+| Ultima revision | 2026-09-23 |
 
 ## Estado por entrega
 
@@ -23,7 +23,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 5 | CORTE1 | `7cfb872` (2026-08-31T12:27:23-05:00) | 8/12 | 3.7 | si |
 | 6 | S6 | `7cfb872` (2026-08-31T12:27:23-05:00) | sin actividad | no aplica | si |
 | 7 | S7 | `7cfb872` (2026-08-31T12:27:23-05:00) | 2/10 | 1.8 (prelim.) | si |
-| 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
+| 8 | S8 | `9cf1ac9` (2026-09-21T00:14:08-05:00) | 1/12 | 1.3 (prelim.) | si |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
 | 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
@@ -74,6 +74,16 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Registro de IA con al menos un rechazo justificado | S7 | si | |
 | Contribución al historial de los tres integrantes restantes | S7 | si | |
 | Que el workflow ejecute la totalidad de las pruebas del repositorio | S7 | si | |
+| URL pública del sistema accesible desde fuera de la red de la universidad | S8 | si | |
+| Infraestructura como código versionada y recreación del entorno | S8 | si | |
+| Health check verificable en el entorno desplegado | S8 | si | |
+| Logs estructurados y métrica consultable asociada a un escenario de calidad | S8 | si | |
+| Estimación de costo mensual con supuestos y punto de ruptura de la capa gratuita | S8 | si | |
+| arc42 sección 7 con una caja por pieza y sección 2 con límite de costo | S8 | si | |
+| Un ADR por decisión de plataforma con alternativa descartada | S8 | si | |
+| Análisis estático en SonarCloud con URL pública y Quality Gate | S8 | si | |
+| Registro de uso de IA actualizado con rechazos justificados | S8 | si | |
+| Evidencia de commits de los cuatro integrantes declarados | S8 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
