@@ -8,12 +8,13 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_ElMapita` |
 | Integrantes y su usuario de GitHub | Angel Fabian Gutierrez Gomez (sin cuenta identificada en el historial) · Diego Rosales Garza (sin cuenta identificada) · Rodrigo Vazquez Rico (firma con su nombre). Historial: `RobotDRMX` (sin atribuir) y, en EQUIPOS.md, `YOOUYII` (nunca vista). |
 | URL del sistema desplegado | sin desplegar todavía |
-| Ultima revision | 2026-09-21 |
+| Ultima revision | 2026-09-23 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 8 | S8 | `afae3be` (2026-09-20T19:09:25-06:00) | 2/12 | 1.7 (prelim.) | si |
 | 6 | S6 | `a22f0a4` (2026-09-13T22:21:07-05:00) | 0/8 | 1.0 (prelim.) | si |
 | 7 | S7 | `afae3be` (2026-09-20T19:09:25-06:00) | 4/10 | 2.6 | si |
 | 5 | CORTE1 | `b28e068` (2026-09-07T14:57:28-06:00) | 7/12 | 3.3 | si |
@@ -74,6 +75,15 @@
 | Evidencia de SonarCloud (configuración del scanner, run exitoso y URL pública con Quality Gate), pendiente desde S6. | S7 | si | |
 | Contenido verificable de la tabla de aspectos, de arc42 §6 y del C4 nivel 2 con protocolo y formato. | S7 | si | |
 | Implementación pendiente declarada en ADR-0002 (LOD y degradación progresiva). | S7 | si | |
+| URL desplegada con hora de comprobación | S8 | si | |
+| Health check con código de respuesta | S8 | si | |
+| Infraestructura como código versionada | S8 | si | |
+| Run de CI en verde con URL | S8 | si | |
+| Logs estructurados | S8 | si | |
+| Métrica ligada a escenario | S8 | si | |
+| Estimación de costo mensual y punto de ruptura | S8 | si | |
+| arc42 secciones 7 y 2 | S8 | si | |
+| ADR por decisión de plataforma | S8 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -85,7 +95,7 @@
 | `docs/ia.md` al día | No cumple | Vacío (0 bytes); último commit 2026-08-07. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Coincidencias solo en tipos (`password: string`) y badge placeholder del boilerplate. |
 | Contribución de todos los integrantes | No cumple | Confirmado hasta el corte 1: `RobotDRMX` 12 commits (86%), `dgarza2705`/Diego Rosales Garza 1, Rodrigo Vazquez Rico 1; Angel Fabian Gutierrez Gomez sigue sin ningún commit identificable en todo el historial. |
-| Pipeline en verde | No verificado | `.github/workflows/ci.yml` existe y corrió; los 3 runs disponibles vía API están en `failure`, incluido el commit calificado del corte 1. |
+| Pipeline en verde | No cumple | `.github/workflows/ci.yml` existe y corrió; los 3 runs disponibles vía API están en `failure`, incluido el commit calificado del corte 1. |
 
 ## Contribución por integrante
 

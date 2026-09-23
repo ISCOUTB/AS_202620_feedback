@@ -8,12 +8,13 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Clubs_UTB` |
 | Integrantes y su usuario de GitHub | Hollman Jose De Orta Gonzalez (`deortahollman-star`) · Josh Robinson Ortega Castellon (`Josh4OP`) · Diego Andres Ramos De Avila (`Zavod Dev`, atribución sin confirmar) · Luis Daniel Salas Reyes (`Luis-Salas-Reyes`) |
 | URL del sistema desplegado | sin desplegar todavía |
-| Ultima revision | 2026-09-21 |
+| Ultima revision | 2026-09-23 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 8 | S8 | `dc211b8` (2026-09-20T23:56:51-05:00) | 0/12 | 1.0 (prelim.) | si |
 | 7 | S7 | `dc211b8` (2026-09-20T23:56:51-05:00) | 6/10 | 3.4 | si |
 | 6 | S6 | `743cc1f` (2026-09-13T23:55:10-05:00) | 6/8 | 4.0 (prelim.) | si |
 | 5 | CORTE1 | `4ede977` (2026-09-06T22:41:55-05:00) | 8/12 | 3.7 | si |
@@ -82,6 +83,17 @@
 | Aportar análisis SonarCloud público con Quality Gate y configuración en el repositorio. | S7 | si | |
 | Aportar el run del workflow de contrato y la evidencia de fallo por cambio incompatible. | S7 | si | |
 | Completar las secciones 07 y 11 de arc42 y verificar correspondencia contrato↔código y C4 nivel 2. | S7 | si | |
+| Ninguno: commits_tardios_post_cierre está vacío y no hay commits nuevos desde el cierre anterior. | S8 | no (resuelto tarde) | — |
+| URL pública del sistema y comprobación externa de /health | S8 | si | |
+| Infraestructura como código versionada | S8 | si | |
+| arc42 §7 (vista de despliegue) y §11 | S8 | si | |
+| ADR por decisión de plataforma con alternativa descartada | S8 | si | |
+| Estimación de costo mensual y restricciones de costo y tarjeta en §2 | S8 | si | |
+| Métrica consultable ligada a un escenario de calidad | S8 | si | |
+| Logs estructurados con campos | S8 | si | |
+| Runs de CI y análisis público de SonarCloud | S8 | si | |
+| Corregir nombres y duplicados de ADR y el enlace roto de la sección 9 | S8 | si | |
+| Resolver NC-01 y NC-02 de docs/arc42/lista_errores.md | S8 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

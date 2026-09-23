@@ -8,12 +8,13 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Drift` |
 | Integrantes y su usuario de GitHub | Jerry Daniel Buelvas Mejia (`JerryDBM`) · Mauricio Andres Fernandez Espinosa (`maufern4ndez`) · Luis Mario Perez Diaz (`lmpdiaz12`) · Joshua David Reyes Leones (`JoshuaR01` y `JoshXX`, mismo correo) |
 | URL del sistema desplegado | sin desplegar todavía |
-| Ultima revision | 2026-09-21 |
+| Ultima revision | 2026-09-23 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 8 | S8 | `9334a03` (2026-09-20T20:19:47-05:00) | 1/12 | 1.3 (prelim.) | si |
 | 7 | S7 | `9334a03` (2026-09-20T20:19:47-05:00) | 5/10 | 3.0 | si |
 | 6 | S6 | `5f7fa4c` (2026-09-13T22:07:49-05:00) | 5/8 | 3.5 (prelim.) | si |
 | 5 | CORTE1 | `74337a3` (2026-09-08T02:53:31Z) | 7/12 | 3.3 | si |
@@ -93,6 +94,12 @@
 | Aportar la URL pública de SonarCloud con Quality Gate y el run que invocó el scanner. | S7 | si | |
 | Completar la evidencia de correspondencia contrato-código (main.py frente a openapi.yaml). | S7 | si | |
 | Aportar el contenido de arc42 sección 6, C4 de contenedores y docs/aspectos.md. | S7 | si | |
+| Despliegue accesible desde fuera con URL y health check. | S8 | si | |
+| Infraestructura como codigo versionada y README de recreacion del entorno. | S8 | si | |
+| Pipeline en verde sobre master y analisis SonarCloud auditable. | S8 | si | |
+| Logs estructurados y metrica consultable ligada al escenario E1. | S8 | si | |
+| Estimacion de costo mensual con supuestos; limite de costo y 'sin tarjeta' en arc42 seccion 2. | S8 | si | |
+| arc42 seccion 7 y un ADR por decision de plataforma con alternativa descartada. | S8 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

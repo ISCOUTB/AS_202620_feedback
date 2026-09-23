@@ -8,12 +8,13 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_DinamikUTB` |
 | Integrantes y su usuario de GitHub | Luis Daniel Padilla Leottau (`Daniel-dev02`) · Gillianis Del Carmen Perez Revolledo (`gillianisperez-prog`) · Esteban Ramirez Rios (`Eramirezr`) · Juan Jose Vargas Perez (`JuanchisV`, firma también como «Juan José Vargas Pérez» con el mismo correo) |
 | URL del sistema desplegado | sin desplegar todavía |
-| Ultima revision | 2026-09-21 |
+| Ultima revision | 2026-09-23 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 8 | S8 | `65202f2` (2026-09-21T22:51:09-05:00) | 1/12 | 1.3 (prelim.) | si |
 | 7 | S7 | `5e6fa73` (2026-09-20T23:57:27-05:00) | 7/10 | 3.8 | si |
 | 6 | S6 | `265e652` (2026-09-13T23:29:49-05:00) | 0/8 | 1.0 | si |
 | 5 | CORTE1 | `72bfc7e` (2026-09-07T22:28:37-05:00) | 8/12 | 3.7 | sí (actualizada) |
@@ -65,6 +66,14 @@
 | Contenido de arc42 sección 6 y del C4 nivel 2 con protocolo y formato por flecha. | S7 | si | |
 | Historial git del contrato y confirmación de la versión de la API. | S7 | si | |
 | Contenido de docs/aspectos.md con sus ocho columnas navegables. | S7 | si | |
+| Publicar URL del sistema accesible desde fuera de la red universitaria, con hora de comprobación. | S8 | si | |
+| Health check consultable y su código de respuesta. | S8 | si | |
+| Infraestructura como código versionada (Dockerfile/compose o IaC del proveedor). | S8 | si | |
+| Logs estructurados y métrica consultable ligada a un escenario de calidad. | S8 | si | |
+| Estimación de costo mensual con supuestos y punto de ruptura de la capa gratuita. | S8 | si | |
+| arc42 §7 con una caja por pieza y §2 con límite de costo y restricción de tarjeta. | S8 | si | |
+| Un ADR por decisión de plataforma con alternativa descartada. | S8 | si | |
+| Pendiente desde S6: URL pública del análisis en SonarCloud con estado del Quality Gate. | S8 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

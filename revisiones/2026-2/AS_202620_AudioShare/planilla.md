@@ -8,12 +8,13 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_AudioShare` |
 | Integrantes y su usuario de GitHub | Santiago Adolfo Camacho Hernandez (commits como «Santiago Adolfo Camacho Hernández») · Vincent Cardona Castro (presumiblemente `cardonavincent26-design`, sin confirmar) · Elian Daniel Perea Vanegas («Elian Daniel Perea Vanegas») · Yeiver Andres Verjel Perez («Yeiver Andrés Vergel Pérez») |
 | URL del sistema desplegado | sin desplegar todavía |
-| Ultima revision | 2026-09-21 |
+| Ultima revision | 2026-09-23 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 8 | S8 | `d094a51` (2026-09-21T00:21:38-05:00) | 2/12 | 1.7 (prelim.) | si |
 | 6 | S6 | `4a0eba9` (2026-09-13T22:01:57-05:00) | 4/8 | 3.0 (prelim.) | si |
 | 7 | S7 | `0ada095` (2026-09-20T23:57:20-05:00) | 5/10 | 3.0 | si |
 | 5 | CORTE1 | `cb65d13` (2026-09-06T22:00:48-05:00) | 8/12 | 3.7 | si |
@@ -78,6 +79,15 @@
 | Marcadores de conflicto de fusión en README y ADR-0001 y enlaces a ADR inexistentes. | S7 | si | |
 | Secciones 07 y 11 de arc42 ausentes y documentación arc42 en formato .adoc. | S7 | si | |
 | Verificación del contenido de docs/ia.md (qué se rechazó y por qué). | S7 | si | |
+| URL pública con hora y código de respuesta, y ruta de health check consultable. | S8 | si | |
+| Infraestructura como código del entorno desplegado, versionada y reproducible desde el README. | S8 | si | |
+| Run de CI sobre la rama principal y evidencia pública de SonarCloud con Quality Gate. | S8 | si | |
+| Configuración de logs estructurados con línea de ejemplo. | S8 | si | |
+| Métrica consultable asociada a un escenario de calidad. | S8 | si | |
+| Estimación de costo mensual con supuestos y punto de ruptura de la capa gratuita. | S8 | si | |
+| arc42 sección 7 con una caja por pieza y sección 2 con el límite de costo. | S8 | si | |
+| Un ADR por decisión de plataforma, con alternativa descartada. | S8 | si | |
+| Corrección del enlace a un ADR inexistente en `docs/aspectos.md` y de las columnas de la tabla de aspectos. | S8 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
