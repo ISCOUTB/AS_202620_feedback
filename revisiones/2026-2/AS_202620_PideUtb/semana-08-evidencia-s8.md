@@ -55,4 +55,3 @@ La punta actual coincide con el estado revisado. El CI y el análisis estático 
 - Corregir el despliegue y acreditar raíz y health check con respuesta válida.
 - Versionar IaC, pasos de reproducción y configuración de secretos sin fallback inseguro.
 - Completar observabilidad, costos, arc42 §7 y ADR de plataforma.
-

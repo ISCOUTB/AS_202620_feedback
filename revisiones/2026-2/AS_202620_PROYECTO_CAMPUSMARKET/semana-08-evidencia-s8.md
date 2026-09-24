@@ -55,4 +55,3 @@ La punta actual coincide con el estado revisado. El CI permanece verde, pero no 
 - Declarar y publicar una URL con health check externo.
 - Versionar IaC y documentar la reproducción del despliegue.
 - Incorporar logs, métrica, costos, arc42 §7 y ADR de plataforma.
-

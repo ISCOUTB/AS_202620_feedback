@@ -55,4 +55,3 @@ La punta actual coincide con el estado revisado. Conserva CI verde, pero la docu
 - Publicar el sistema y un health check verificable.
 - Versionar IaC y documentar la reproducción del despliegue.
 - Completar observabilidad, secretos, costos, arc42 §7 y ADR de plataforma.
-

@@ -55,4 +55,3 @@ La punta actual coincide con el estado revisado. Hay avance material en IaC, log
 - Declarar la URL y permitir comprobar externamente el health check.
 - Recuperar el pipeline de `master` y añadir una métrica ligada a un escenario.
 - Actualizar arc42 §7, separar las decisiones de plataforma y retirar secretos literales del Compose.
-
