@@ -50,4 +50,11 @@ El mapa de contextos, la matriz de propiedad y la auditoría de no conformidades
 
 ## Semana 8 · S8 (preliminar)
 
-El pipeline del estado revisado está en verde y la restricción de costo cero está documentada. Sin embargo, el repositorio no aporta una URL pública verificable ni un endpoint de salud, infraestructura como código, instrucciones de despliegue reproducible, logs estructurados, una métrica operativa consultable o un mecanismo de secretos de la plataforma. También faltan el cálculo mensual, la sección 7 de arc42 y un ADR que compare y decida la plataforma de despliegue. Estas no conformidades mantienen la evidencia centrada en desarrollo local; para la entrega definitiva hace falta demostrar el sistema realmente desplegado y operable.
+### Recomendaciones prioritarias
+
+- Conserven la restricción de costo cero y capas gratuitas; completen la sección 7 modular, hoy vacía, con cada componente y su destino real.
+- Publiquen URL, respuesta de salud y hora; versionen la infraestructura y los pasos para recrear el entorno.
+- Añadan logs estructurados y una métrica ligada a un escenario, con secretos tomados del proveedor.
+- Calculen costo y punto de ruptura y documenten la plataforma en un ADR; mantengan evidencia del CI en verde.
+
+El pipeline del estado revisado está en verde y la restricción de costo cero está documentada. Sin embargo, el repositorio no aporta una URL pública verificable ni un endpoint de salud, infraestructura como código, instrucciones de despliegue reproducible, logs estructurados, una métrica operativa consultable o un mecanismo de secretos de la plataforma. También faltan el cálculo mensual, el contenido de la sección 7 de arc42 y un ADR que compare y decida la plataforma de despliegue. Estas no conformidades mantienen la evidencia centrada en desarrollo local; para la entrega definitiva hace falta demostrar el sistema realmente desplegado y operable.

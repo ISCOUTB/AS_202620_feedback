@@ -58,4 +58,11 @@ Buen avance del corte: el contrato OpenAPI está versionado con CHANGELOG y esqu
 
 ## Semana 8 · S8
 
+### Recomendaciones prioritarias
+
+- Antes de cerrar el corte, verifiquen la autorización docente previa exigida para S2 y conserven su evidencia.
+- Declaren en la sección 2 el límite económico y la condición de tarjeta; representen en la sección 7 cada componente en su destino real.
+- Publiquen URL, respuesta de salud y hora de comprobación; versionen la definición del despliegue y expliquen cómo recrearlo.
+- Expongan una métrica ligada a un escenario, estimen costo y punto de ruptura, y documenten cada plataforma en un ADR.
+
 La documentación de arquitectura y el contrato de API están bien trabajados, pero la entrega de despliegue no llegó: no hay URL pública, ni infraestructura como código, ni run de pipeline citado. Para cerrar el corte conviene, en este orden: 1) desplegar el backend en un proveedor con capa gratuita y pegar la URL junto a la hora exacta y el código de respuesta de /health; 2) versionar Dockerfile o el archivo del proveedor que describe el entorno, no pasos manuales; 3) añadir arc42 §7 con una caja por pieza y dónde se ejecuta, y §11; 4) escribir un ADR por decisión de plataforma con su alternativa descartada y la capa gratuita verificada; 5) calcular el costo mensual desde el volumen del propio escenario e indicar dónde se rompe la capa gratuita, dejando el límite y la restricción de tarjeta en §2; 6) declarar la configuración en .env.example y consumirla del proveedor; 7) publicar la URL del run de CI y del análisis de SonarCloud; 8) unificar los ADR 0003 duplicados y arreglar el enlace roto de la sección 9.

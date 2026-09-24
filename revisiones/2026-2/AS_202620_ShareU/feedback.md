@@ -70,4 +70,11 @@ La auditoría sobre el código actual está bien hecha: el mapa de contextos, la
 
 ## Semana 8 · S8
 
+### Recomendaciones prioritarias
+
+- Completen la sección 2 del arc42 único con límite de costo y condición de tarjeta; sustituyan en la sección 7 el entorno genérico por el host de la API y la ubicación real de SQLite o del almacenamiento elegido.
+- Desplieguen y publiquen URL, respuesta de salud y hora; versionen infraestructura y procedimiento de recreación.
+- Documenten el origen seguro de secretos, logs estructurados y una métrica de calidad; calculen costo y punto de ruptura, y registren la plataforma en un ADR.
+- Conserven la evidencia del CI en verde.
+
 El pipeline está en verde y existe una vista genérica de ejecución, pero aún no hay URL pública, infraestructura versionada ni health check externo verificable. También faltan logs estructurados, una métrica ligada a un escenario, evidencia positiva del manejo de secretos, estimación de costos, una vista de despliegue con plataformas reales y ADR de plataforma. Corrijan además la referencia documental a una prueba inexistente para que lo declarado coincida con el repositorio. Estas no conformidades deben resolverse antes de presentar el despliegue como reproducible.

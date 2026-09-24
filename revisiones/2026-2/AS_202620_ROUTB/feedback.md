@@ -46,4 +46,11 @@ Buen avance: el mapa de contextos y la sección 8 recogen el lenguaje y los lím
 
 ## Semana 8 · S8
 
+### Recomendaciones prioritarias
+
+- Mantengan la restricción de costo cero y sin tarjeta ya documentada; sustituyan en la sección 7 los servidores genéricos por piezas ubicadas explícitamente en Render y Supabase.
+- Publiquen URL, respuesta externa de salud y hora; documenten cómo reproducir el despliegue usando los artefactos versionados.
+- Resuelvan el run fallido de CI, retiren valores sensibles del entorno local y hagan consultable una métrica ligada a un escenario.
+- Actualicen el cálculo mensual y el punto de ruptura; separen las decisiones de plataforma en ADR independientes.
+
 Hay avance material: se versionaron artefactos de contenedores y plataforma, los logs tienen estructura y la estimación de costos incluye supuestos y umbrales. Sin embargo, no se declaró la URL pública y el health check no pudo comprobarse externamente; además, el pipeline de la rama principal falla. Completen una métrica ligada a un escenario, documenten en el README la reproducción del despliegue, representen las plataformas reales en arc42, separen cada decisión de plataforma en su ADR y retiren credenciales literales del entorno local. Esas son las no conformidades que impiden cerrar la evidencia.

@@ -39,4 +39,11 @@ El contrato OpenAPI versionado, la prueba que lo compara con FastAPI y el ADR de
 
 ## Semana 8 · S8
 
+### Recomendaciones prioritarias
+
+- El arc42 combina un consolidado y módulos: completen la sección 2 con el límite económico y sustituyan en la sección 7 el esquema local por nodos y proveedores realmente elegidos.
+- Publiquen URL, respuesta de salud y hora; versionen la infraestructura, el origen de secretos y los pasos para recrear el entorno.
+- Añadan logs estructurados y una métrica ligada a un escenario; calculen costo mensual y punto de ruptura, y documenten la elección en un ADR.
+- Conserven la evidencia del CI en verde junto a la evidencia operativa.
+
 El pipeline principal continúa en verde, pero todavía no se observa una entrega operativa de despliegue. Las no conformidades prioritarias son la ausencia de URL pública y health check externo, infraestructura como código, pasos reproducibles de despliegue, logs estructurados, una métrica ligada a un escenario, estimación de costos, vista de despliegue real y ADR de plataforma. La mejor siguiente iteración es publicar primero una URL declarada y su health check, y luego documentar exactamente cómo se recrea ese entorno.

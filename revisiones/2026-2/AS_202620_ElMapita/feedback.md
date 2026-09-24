@@ -50,4 +50,10 @@ El repositorio va bien encaminado: conserva estructura, ADR, README y un registr
 
 ## Semana 8 · S8
 
-El repositorio está bien ordenado: estructura mínima completa, README con arranque en un comando, ADR numerados, registro de IA que crece y sin credenciales versionadas. Lo que falta es el corazón de esta entrega: no hay URL del sistema desplegado con su comprobación y hora, no hay infraestructura como código ni pipeline con un run verificable, y no se ven logs estructurados, métrica ligada a un escenario, estimación de costo con supuestos ni ADR por decisión de plataforma. Para el segundo corte conviene priorizar: desplegar y publicar URL y health check, versionar la IaC, aportar el run de CI en verde con SonarCloud y cerrar las secciones arc42 7 y 2 y los ADR de plataforma. Con eso la matriz cambia de forma sustancial.
+### Recomendaciones prioritarias
+
+- El arc42 en un solo documento es válido: completen allí la sección 2 con el presupuesto y, si aplica, la condición de tarjeta. La sección 7 ya existe, pero debe elegir entre Cloud Run, Render o VPS y mostrar el host real de cada pieza.
+- Publiquen la URL y la comprobación externa de salud; versionen la infraestructura y el procedimiento de recreación.
+- Añadan logs y una métrica ligados a un escenario, estimen costo y punto de ruptura, y documenten la elección de plataforma en un ADR.
+
+El repositorio está bien ordenado: estructura mínima completa, README con arranque en un comando, ADR numerados, registro de IA que crece y sin credenciales versionadas. Lo que falta es el corazón de esta entrega: no hay URL del sistema desplegado con su comprobación y hora, no hay infraestructura como código ni pipeline con un run verificable, y no se ven logs estructurados, métrica ligada a un escenario, estimación de costo con supuestos ni ADR por decisión de plataforma. Para el segundo corte conviene priorizar: desplegar y publicar URL y health check, versionar la IaC, aportar el run de CI en verde con SonarCloud, completar el límite económico en la sección 2 existente y elegir el host real de cada pieza en la sección 7 existente del arc42, además de documentar los ADR de plataforma. Con eso la matriz cambia de forma sustancial.

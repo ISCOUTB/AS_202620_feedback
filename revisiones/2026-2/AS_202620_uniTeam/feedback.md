@@ -50,4 +50,11 @@ Sin actividad S7: el ultimo commit anterior al cierre es de la entrega previa, a
 
 ## Semana 8 · S8 (preliminar)
 
+### Recomendaciones prioritarias
+
+- Conserven la restricción de presupuesto cero y cuentas estudiantiles; completen la sección 7 del arc42 único con cada componente y su destino real, sin dividir el documento.
+- Publiquen URL, respuesta externa de salud y hora; distingan el despliegue real del entorno local ya reproducible.
+- Reparen CI, tomen secretos del proveedor en vez de valores de desarrollo, y muestren logs estructurados y una métrica ligada a un escenario.
+- Calculen costo mensual y punto de ruptura, y registren la elección de plataforma en un ADR.
+
 Docker, Compose y el README permiten reconstruir el entorno local, y la restricción de costo cero está documentada. Aun así, el propio repositorio declara que no hay despliegue real: el endpoint de salud solo se presenta en localhost y el pipeline del estado revisado está en rojo. Las demás no conformidades son logs sin estructura, ausencia de una métrica operativa consultable, credenciales de desarrollo embebidas en Compose sin un mecanismo de secretos del proveedor, falta de cálculo mensual, arc42 §7 pendiente y ausencia de un ADR de plataforma. Para la entrega definitiva, conviertan la reproducibilidad local en evidencia de operación pública y segura.

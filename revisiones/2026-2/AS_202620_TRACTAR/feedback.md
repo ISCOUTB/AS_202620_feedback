@@ -50,6 +50,12 @@ El repositorio está ordenado y la documentación base (README, ADR, aspectos, C
 
 ## Semana 8 · S8
 
+### Recomendaciones prioritarias
+
+- El arc42 único es válido: completen su sección 2 con presupuesto y condición de tarjeta, y sustituyan los marcadores de la sección 7 por nodos, plataformas y ubicaciones reales.
+- Desplieguen y publiquen URL, respuesta de salud y hora; versionen infraestructura y pasos de recreación.
+- Documenten inyección segura de secretos, logs estructurados y una métrica de calidad; calculen costo y punto de ruptura, y registren la plataforma en un ADR.
+
 El repositorio sigue ordenado y el pipeline está en verde, pero esta semana no llegó: en el commit revisado no hay sistema desplegado ni URL pública, solo la ejecución local en el puerto 8000.
 Falta la infraestructura como código y el procedimiento para recrear el entorno desplegado.
 Quedan pendientes el health check verificable desde fuera, los logs estructurados, una métrica ligada a un escenario de calidad y la estimación de costo mensual con supuestos y punto de ruptura de la capa gratuita.

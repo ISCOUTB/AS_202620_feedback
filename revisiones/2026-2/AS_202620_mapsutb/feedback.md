@@ -40,4 +40,11 @@ El documento `dominio_y_modularidad.md` aporta un mapa de contextos, dueños de 
 
 ## Semana 8 · S8 (preliminar)
 
+### Recomendaciones prioritarias
+
+- Mantengan la restricción de presupuesto cero y capas gratuitas; sustituyan los marcadores de la sección 7 AsciiDoc por componentes, proveedores y ubicaciones reales.
+- Publiquen URL, respuesta de salud y hora; versionen el despliegue y expliquen cómo recrearlo.
+- Resuelvan CI, protejan la clave de API mediante secretos del proveedor y enlacen el run de verificación.
+- Añadan logs estructurados y una métrica de calidad; calculen costo y punto de ruptura, y registren la plataforma en un ADR.
+
 El README permite reproducir el entorno local y la restricción de costo cero está declarada. Las no conformidades principales son que no existe una URL pública ni un endpoint de salud, falta infraestructura como código para desplegar y el pipeline del estado revisado está en rojo. Tampoco se encontraron logs estructurados, una métrica operativa consultable, inyección segura de la clave de Google, cálculo mensual, contenido real en arc42 §7 o un ADR que compare y decida la plataforma. Para la entrega definitiva, separen claramente arranque local de despliegue reproducible y publiquen evidencia operativa verificable.

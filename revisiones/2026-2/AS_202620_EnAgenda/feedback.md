@@ -48,4 +48,11 @@ El contrato OpenAPI está versionado, incluye rutas y esquemas, y la vista de ej
 
 ## Semana 8 · S8
 
-El entorno local se puede reconstruir desde el README y el pipeline está en verde, pero todavía no hay una URL pública, health check, infraestructura como código ni vista de despliegue. Para completar la entrega, definan la plataforma en un ADR, versionen el entorno, publiquen la URL y añadan logs estructurados, una métrica vinculada a un escenario y la estimación mensual con el punto de ruptura de la capa gratuita.
+### Recomendaciones prioritarias
+
+- Conserven la restricción de servicios gratuitos y cuentas no pagas; sustituyan el marcador de la sección 7 por el destino real de cada componente.
+- Publiquen URL, respuesta de salud y hora de verificación; versionen el entorno desplegado y sus pasos de recreación.
+- Añadan logs estructurados y una métrica ligada a un escenario; estimen costo y punto de ruptura, y registren la plataforma en un ADR.
+- Mantengan la evidencia del CI en verde junto a la evidencia del despliegue.
+
+El entorno local se puede reconstruir desde el README y el pipeline está en verde, pero todavía no hay una URL pública, health check, infraestructura como código ni una vista de despliegue que identifique destinos reales: la sección 7 conserva un marcador. Para completar la entrega, definan la plataforma en un ADR, versionen el entorno, publiquen la URL y añadan logs estructurados, una métrica vinculada a un escenario y la estimación mensual con el punto de ruptura de la capa gratuita.

@@ -46,4 +46,11 @@ La entrega S7 sí contiene el contrato ejecutable, esquemas, correspondencia con
 
 ## Semana 8 · S8
 
+### Recomendaciones prioritarias
+
+- La restricción sobre tarjetas de usuarios no fija el presupuesto de hosting: definan límite mensual, condición de tarjeta del proveedor y punto de ruptura de su capa gratuita en la sección 2.
+- Desplieguen públicamente y publiquen URL, respuesta de salud y hora; agreguen en el mismo arc42 la sección 7 con cada pieza y su ubicación real.
+- Estabilicen CI y enlacen un run de la rama principal; muestren logs estructurados y una métrica ligada a un escenario.
+- Documenten cada plataforma en un ADR independiente, con alternativa y costo estimado.
+
 El Dockerfile, el procedimiento local y la gestión de secretos son una buena base. Pero la propia documentación confirma que Railway aún no está desplegado y el pipeline sigue en rojo. Antes del cierre, publiquen la URL y su health check, corrijan CI, instrumenten logs y métricas, completen la vista de despliegue y estimen el costo. La decisión combinada de Railway y SonarCloud debe separarse en un ADR por plataforma.

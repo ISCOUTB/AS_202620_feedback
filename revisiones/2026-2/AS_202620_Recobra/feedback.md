@@ -40,4 +40,11 @@ El mapa de contextos y la tabla módulo-datos están bien encaminados. Para cerr
 
 ## Semana 8 · S8
 
+### Recomendaciones prioritarias
+
+- Desplieguen primero un corte mínimo: la sección 7 del arc42 único aún describe ejecución local. Una vez operativo, muestren cada componente y su destino real en esa sección.
+- Completen la sección 2, que hoy solo limita el stack, con presupuesto y condición de tarjeta; calculen costo y punto de ruptura.
+- Publiquen URL, respuesta de salud y hora; versionen infraestructura y pasos de recreación en el README, con secretos tomados del proveedor.
+- Expongan logs estructurados y una métrica ligada a un escenario; registren la plataforma en un ADR. Conserven el CI en verde.
+
 El pipeline continúa en verde, pero la propia documentación indica que el despliegue en nube sigue pendiente. Por eso todavía no pueden verificarse una URL, un health check externo ni observabilidad operativa. Las no conformidades incluyen infraestructura como código, pasos reproducibles, logs estructurados, métrica ligada a un escenario, manejo explícito de secretos, estimación de costos, vista de despliegue real y ADR de plataforma. Prioricen un corte mínimo desplegado y documentado antes de ampliar el alcance.

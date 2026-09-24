@@ -54,6 +54,13 @@ El contrato ejecutable, los esquemas, la correspondencia con las rutas, la prueb
 
 ## Semana 8 · S8
 
+### Recomendaciones prioritarias
+
+- El arc42 puede seguir como documento único y ya declara presupuesto cero en la sección 2; agreguen allí mismo la sección 7 con cada pieza y su destino real.
+- Publiquen URL, respuesta de salud y hora; versionen la infraestructura y describan cómo se recrea el entorno.
+- Tomen secretos del proveedor, muestren logs estructurados y una métrica ligada a un escenario, y calculen costo y punto de ruptura.
+- Formalicen la elección de plataforma y su alternativa en un ADR; mantengan la evidencia del CI en verde.
+
 El backend local, el health check y el pipeline son reproducibles. Sin embargo, Render solo aparece como intención: no hay URL pública, definición de infraestructura ni vista de despliegue. Completen el entorno desplegado, gestionen sus secretos desde el proveedor, instrumenten logs estructurados y una métrica consultable, y documenten costo mensual y alternativas de plataforma en un ADR independiente.
 ## Semana 6 · S6
 

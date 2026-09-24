@@ -74,4 +74,10 @@ El contrato OpenAPI 3.1, la prueba de contrato y el ADR de integración están b
 
 ## Semana 8 · S8
 
-La actualización del 23 de septiembre cerró buena parte de la evidencia: el pipeline del estado actual está en verde, la métrica de latencia se vinculó con Q-01, arc42 ya representa las piezas desplegadas y las restricciones de costo, y el ADR de plataforma compara alternativas. También quedó documentado el arranque con Docker y el registro de IA de la semana. Las no conformidades pendientes son concretas: falta una comprobación externa de la URL y del health con hora, el Quality Gate publicado está en rojo, la tabla de aspectos conserva evidencia manual o incompleta y aún no se puede confirmar la contribución del tercer integrante. Corrijan esos puntos y completen la medición formal del P95 para que el despliegue sea defendible en el segundo corte.
+### Recomendaciones prioritarias
+
+- Las secciones 2 y 7 del arc42 modular ya cumplen; conserven la topología y las restricciones alineadas con el entorno real.
+- Mantengan enlaces a URL y health check con fecha y hora, y vuelvan a validar la salud desde fuera en el corte definitivo. La fecha añadida después de la revisión no cambia retroactivamente el estado evaluado.
+- Mantengan el run de CI y el análisis de SonarCloud con Quality Gate y evidencia pública verificable; corrijan cualquier resultado pendiente antes del cierre.
+
+La actualización del 23 de septiembre cerró buena parte de la evidencia: el pipeline del estado evaluado está en verde, la métrica de latencia se vinculó con Q-01, arc42 ya representa las piezas desplegadas y las restricciones de costo, y el ADR de plataforma compara alternativas. También quedó documentado el arranque con Docker y el registro de IA de la semana. En el estado evaluado faltaba la hora de comprobación externa de la URL y del health; una actualización posterior ya la añadió, pero no cambia retroactivamente ese corte. Conserven los enlaces fechados y vuelvan a validar la salud en el próximo cierre. El Quality Gate publicado estaba en rojo, la tabla de aspectos conservaba evidencia manual o incompleta y aún no se podía confirmar la contribución del tercer integrante. Corrijan esos puntos y completen la medición formal del P95 para que el despliegue sea defendible en el segundo corte.

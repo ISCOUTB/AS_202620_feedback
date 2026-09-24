@@ -44,4 +44,11 @@ Buen avance: el mapa de contextos, la tabla módulo a datos y el plan de correcc
 
 ## Semana 8 · S8
 
+### Recomendaciones prioritarias
+
+- Fijen en la sección 2 el presupuesto máximo y si el despliegue puede exigir tarjeta; comprueben que las variables sensibles llegan desde el proveedor, no desde el repositorio.
+- Dibujen en la sección 7 una caja por componente y el host donde realmente corre; publiquen URL, respuesta de salud y procedimiento reproducible de despliegue.
+- Muestren una línea de log estructurado y una métrica vinculada a un escenario; calculen el costo mensual y el punto de ruptura de la capa gratuita.
+- Registren cada elección de plataforma en su ADR, con alternativa descartada y evidencia de la oferta elegida.
+
 El repositorio ya tiene una base sólida: estructura de documentos, ADR iniciales, contratos y pruebas del backend y del cliente.; Lo que falta es la entrega de despliegue: sin URL pública, health check y hora de comprobación no se puede sustentar el entorno.; Versionen la infraestructura del entorno desplegado (compose, terraform o configuración del proveedor), no solo el devcontainer.; Añadan la sección 7 de arc42 con una caja por pieza y dónde se ejecuta, y recojan el límite de costo en la sección 2.; Escriban un ADR por decisión de plataforma, con la alternativa descartada y la capa gratuita verificada.; Documenten los logs estructurados con un ejemplo de línea y expongan una métrica ligada a un escenario de calidad.; Incluyan la estimación de costo mensual desde el volumen del escenario y el punto donde se rompe la capa gratuita.; Aporten el run de CI sobre la rama principal y la URL pública del análisis con su Quality Gate.; Corrijan el enlace de `docs/aspectos.md` al ADR de cliente Flutter y ajusten las columnas a las ocho del curso.; Agreguen al README la URL desplegada y el procedimiento de recreación del entorno desplegado.

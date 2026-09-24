@@ -48,4 +48,10 @@ El equipo documenta un mapa de contextos claro y una auditoría de propiedad de 
 
 ## Semana 8 · S8
 
+### Recomendaciones prioritarias
+
+- La sección 2 ya declara presupuesto cero y servicios gratuitos; aclaren la condición de tarjeta solo si afecta las plataformas elegidas. Completen la sección 7 del mismo arc42 con Vercel, backend, Supabase y su ubicación real.
+- Corrijan la raíz y el health check que respondieron como recurso inexistente; publiquen URL, respuesta y hora de una nueva comprobación externa.
+- Versionen la infraestructura y la inyección segura de secretos; añadan logs estructurados, una métrica, costo con punto de ruptura y ADR de plataforma.
+
 La URL declarada es alcanzable como dominio, pero tanto la raíz como el health check respondieron con recurso inexistente durante la comprobación; por tanto, el sistema aún no es verificable desde fuera. El CI y el análisis estático son una buena base. Las no conformidades restantes son infraestructura reproducible, instrucciones de despliegue, logs estructurados, métrica operativa, costos, vista de despliegue, ADR por plataforma y configuración sensible sin valores inseguros por defecto. Primero recuperen la aplicación y el health check; después documenten el despliegue de punta a punta.

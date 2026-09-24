@@ -43,4 +43,10 @@ El contrato OpenAPI, sus esquemas, la correspondencia con los routers, la prueba
 
 ## Semana 8 · S8
 
+### Recomendaciones prioritarias
+
+- El arc42 en un solo archivo es válido y su sección 2 ya fija la ausencia de presupuesto: completen la sección 7 con el host productivo que elijan, en vez de dejar solo el entorno local.
+- Publiquen URL, respuesta de salud y hora; versionen la infraestructura y el procedimiento de despliegue.
+- Expongan logs estructurados y una métrica ligada a un escenario; estimen costo y punto de ruptura, y justifiquen la plataforma en un ADR.
+
 El pipeline y SonarCloud están en verde, los secretos del análisis se toman del almacén de GitHub y el entorno local está documentado. La no conformidad central es que el hosting sigue sin decidirse: no hay URL pública, infraestructura como código, health check externo ni vista de despliegue productiva. Añadan también logs estructurados, una métrica vinculada a un escenario, la estimación mensual y el ADR de plataforma.

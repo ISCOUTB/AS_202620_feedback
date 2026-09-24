@@ -58,4 +58,11 @@ El contrato OpenAPI versionado con esquemas y la prueba de contrato que falla an
 
 ## Semana 8 · S8
 
+### Recomendaciones prioritarias
+
+- Completen la sección 7, hoy vacía, con una caja por componente, proveedor y ubicación de ejecución reales; añadan en la sección 2 el límite de costo y la condición de tarjeta.
+- Desplieguen el sistema y publiquen URL, respuesta de salud y hora; versionen la infraestructura y documenten la inyección de secretos desde el proveedor.
+- Configuren logs estructurados y una métrica consultable asociada a un escenario; calculen costo mensual y punto de ruptura, y registren la elección de plataforma en un ADR.
+- Resuelvan la ejecución fallida de CI y enlacen el run de la rama principal que confirme la corrección.
+
 El trabajo de arquitectura, ADR y pruebas de semanas anteriores se sostiene, pero el commit revisado aún no incluye las piezas de S8. Para cerrar el corte: (1) desplegar el sistema en un proveedor y publicar la URL con la hora de comprobación; (2) exponer un endpoint de health check y registrar su código de respuesta; (3) versionar la infraestructura (Dockerfile/compose o IaC del proveedor) y enlazarla desde el README; (4) configurar logs estructurados con una línea de ejemplo y una métrica consultable atada a un escenario de calidad; (5) declarar las variables de entorno en un .env.example y tomarlas del almacén del proveedor; (6) añadir la estimación de costo mensual con volumen supuesto, costo por pieza y punto de ruptura de la capa gratuita; (7) completar arc42 §7 con una caja por pieza y recoger en §2 el límite de costo y la restricción de tarjeta; (8) registrar un ADR por decisión de plataforma con alternativa descartada y capa gratuita verificada. Queda pendiente de semanas anteriores publicar la URL del análisis de SonarCloud con su Quality Gate.

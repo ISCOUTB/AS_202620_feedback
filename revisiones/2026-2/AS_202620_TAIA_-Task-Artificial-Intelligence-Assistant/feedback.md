@@ -52,10 +52,17 @@ El contrato OpenAPI 3.1 esta bien encaminado: es ejecutable, tiene esquemas de e
 
 ## Semana 8 · S8
 
+### Recomendaciones prioritarias
+
+- Las secciones 2 y 7 del arc42 ya cubren las restricciones y la topología; el foco pendiente es publicar la URL y comprobar externamente el health check con hora y respuesta.
+- Versionen la infraestructura de producción y expliquen cómo recrearla sin pasos manuales.
+- Muestren logs estructurados y una métrica consultable ligada a un escenario; calculen costo mensual y punto de ruptura.
+- Documenten en ADR la decisión de plataforma y conserven la evidencia del CI en verde.
+
 El avance del backend es sólido: módulos separados, suite de pruebas amplia y documentación arc42 completa y trazable.
 Lo central de esta entrega falta: publicar el sistema en una URL accesible desde fuera de la red de la universidad, con hora y código de respuesta anotados.
 Versionen la infraestructura (Dockerfile, compose o equivalente) para que el entorno se recree con un comando en lugar de pasos manuales.
-Dejen el pipeline en verde y citen el run con su URL y su conclusión; hoy no hay evidencia ejecutable de CI ni de análisis estático.
+Conserven el pipeline en verde y citen el run con su URL y conclusión; enlacen también el análisis estático público para que ambas evidencias sean auditables.
 Añadan logs estructurados con campos y una métrica consultable ligada a un escenario de calidad del equipo.
 Documenten la estimación de costo mensual desde el volumen esperado, indicando dónde se rompe la capa gratuita.
 Escriban un ADR por decisión de plataforma, con la alternativa descartada y la verificación de la capa gratuita.

@@ -58,4 +58,11 @@ Quedan dos no conformidades de la ficha. El ADR compara alternativas y consecuen
 
 ## Semana 8 · S8
 
-La entrega llega sin las piezas que sostienen el segundo corte, así que la revisión no pudo comprobar casi nada. Primero publique la URL del sistema y confirme que responde desde fuera de la red, con su health check. Después suba la infraestructura como código versionada y deje el README con el arranque en un solo comando. Añada la configuración de logs estructurados con una línea de ejemplo, una métrica ligada a un escenario de calidad y la estimación de costo mensual con supuestos y punto de ruptura de la capa gratuita. Documente las secciones 2 y 7 de arc42 y un ADR por decisión de plataforma, cada uno con su alternativa descartada. Evite versionar entornos de terceros: infla el repositorio y ensucia el barrido de secretos. Enlace el último run en verde de la rama principal con su URL. Con eso, la próxima revisión podrá verificar criterio por criterio.
+### Recomendaciones prioritarias
+
+- Aclaración: la sección 7 del arc42 único ya representa el despliegue; no hace falta rehacerla ni dividir el documento. Precisen en la sección 2 el límite económico y la condición de tarjeta.
+- Publiquen URL, respuesta de salud y hora; versionen infraestructura y procedimiento de despliegue.
+- Añadan logs estructurados, una métrica de calidad, origen seguro de secretos y cálculo de costo con punto de ruptura; registren las decisiones de plataforma en ADR.
+- Resuelvan la ejecución fallida del pipeline y enlacen el run de la rama principal que confirme el resultado.
+
+La sección 7 del arc42 ya representa el despliegue, pero las demás evidencias operativas del segundo corte no quedaron suficientemente verificables. Primero publiquen la URL del sistema y confirmen que responde desde fuera de la red, con su health check. Después versionen la infraestructura y documenten en el README cómo recrear el despliegue. Añadan logs estructurados con una línea de ejemplo, una métrica ligada a un escenario de calidad y la estimación de costo mensual con supuestos y punto de ruptura de la capa gratuita. Precisen el límite económico en la sección 2 y registren cada decisión de plataforma en un ADR con su alternativa descartada. Eviten versionar entornos de terceros: inflan el repositorio y dificultan el barrido de secretos. Resuelvan el pipeline fallido y enlacen el run de la rama principal que confirme el resultado. Con eso, la próxima revisión podrá verificar criterio por criterio.

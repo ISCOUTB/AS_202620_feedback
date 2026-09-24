@@ -47,4 +47,10 @@ El mapa de contextos y la auditoría sobre el código son el punto fuerte de la 
 
 ## Semana 8 · S8
 
+### Recomendaciones prioritarias
+
+- Conserven la restricción de costo cero y capas gratuitas ya escrita en la sección 2; elijan una plataforma y completen la sección 7 modular con cliente, API, almacenamiento y lugar de ejecución de cada uno.
+- Reemplacen la URL de ejemplo por la real y publiquen respuesta de salud con hora; versionen la infraestructura y los pasos de recreación.
+- Añadan logs estructurados, una métrica de calidad y un cálculo de costo con punto de ruptura; documenten la decisión de plataforma en un ADR.
+
 El README permite reproducir la aplicación local y los workflows del estado revisado están en verde. La entrega aún no tiene URL pública, health check, infraestructura como código, logs estructurados, métricas ni vista de despliegue. Definan una plataforma con su ADR, publiquen el entorno y documenten la estimación mensual; mantengan los secretos fuera del repositorio y enlacen el Quality Gate público.

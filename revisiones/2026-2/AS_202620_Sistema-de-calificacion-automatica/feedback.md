@@ -56,4 +56,11 @@ El avance en contextos delimitados y propiedad de datos es visible: el ADR-0007 
 
 ## Semana 8 · S8
 
-El repositorio esta bien armado: infraestructura como codigo, arranque con un solo comando y secretos fuera del control de versiones; la metrica de EC-07 esta bien atada a su escenario. Lo que sostiene este corte es el entorno desplegado y eso todavia no se puede acreditar: falta la URL publica y la comprobacion del health check con su hora y codigo de respuesta. Tampoco hay evidencia del pipeline (URL del run) ni del analisis estatico publico. La seccion 7 de arc42 sigue pendiente y no hay un ADR por decision de plataforma. Falta la estimacion de costo mensual con supuestos, volumen del escenario y punto de ruptura de la capa gratuita. Prioridad: desplegar, publicar las URLs y cerrar la vista de despliegue.
+### Recomendaciones prioritarias
+
+- La sección 2 sí existe en el arc42 principal: agreguen allí el límite de costo y la condición de tarjeta. Sustituyan la sección 7 pendiente por las piezas, plataformas y ubicaciones del despliegue real.
+- Publiquen URL, respuesta de salud y hora; distingan la infraestructura local ya versionada de la necesaria para recrear producción.
+- Estimen costo mensual y punto de ruptura desde un volumen explícito y documenten cada elección de plataforma en un ADR.
+- Mantengan la evidencia del CI en verde junto a la evidencia operativa.
+
+El repositorio esta bien armado: infraestructura como codigo, arranque con un solo comando y secretos fuera del control de versiones; la metrica de EC-07 esta bien atada a su escenario. Lo que sostiene este corte es el entorno desplegado y eso todavia no se puede acreditar: falta la URL publica y la comprobacion del health check con su hora y codigo de respuesta. El CI está en verde; enlacen el run y el análisis estático público como evidencia. La seccion 7 de arc42 sigue pendiente y no hay un ADR por decision de plataforma. Falta la estimacion de costo mensual con supuestos, volumen del escenario y punto de ruptura de la capa gratuita. Prioridad: desplegar, publicar las URLs y cerrar la vista de despliegue.
