@@ -51,7 +51,7 @@ The latest `master` contains all 23 definitive S7 reports but only 10 preliminar
 - Link check: all 46 S7/S8 README targets resolve to files.
 - Publication hygiene: no email addresses in the two summaries, README, state files, or this task document.
 - Formatting: `git diff --check` passed.
-- Delivery: no remote publication or push; a local work-unit commit remains to be recorded.
+- Delivery: local work-unit commit `23675a4` recorded; no remote publication or push.
 
 ## Next step
 
