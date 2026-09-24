@@ -27,7 +27,7 @@ Las recomendaciones de mejora deben llegar a los estudiantes en el canal semanal
 
 - [x] S8-FB-1: Inspect existing weekly feedback and add accurate, actionable S8 recommendations to each of 23 team files.
 - [x] S8-FB-2: Verify one S8 recommendation section per team, clean diff, and no prohibited personal or grading data.
-- [ ] S8-FB-3: Commit the work unit, integrate into `master`, and push the authorized update.
+- [x] S8-FB-3: Commit the work unit, integrate into `master`, and push the authorized update.
 
 ## Acceptance criteria
 
@@ -53,7 +53,8 @@ Las recomendaciones de mejora deben llegar a los estudiantes en el canal semanal
 - Writer checks: read back all 23 complete files; confirmed one S8 section and one recommendation subsection in each, with 3–4 new bullets; `git diff --check` passed. Search of added lines found no email addresses, scores or hash-like identifiers; a person-name pattern matched only the generic phrase `autorización docente previa`.
 - S8-FB-2 complete: compared the complete S8 text in all 23 files against the reviewed evidence and harmonized eight materially inaccurate pre-existing S8 statements in eight files, only within S8, while preserving all earlier weeks. The corrections address the existing arc42 sections in ElMapita and Tienda Virtual, the deployment placeholders in EnAgenda and XALD, the need to cite rather than prejudge Drift's CI run, green CI evidence in TAIA and Sistema de calificación automática, and Verifacts' later timestamp without retroactive credit. Drift's added recommendation now asks neutrally for the chosen deployment topology without assuming existing alternatives. Readback confirmed one S8 recommendation subsection per team; `git diff --check` and scans of added feedback lines for emails, scores, hashes and personal names passed.
 - Work-unit commit: `72391f1` (`docs(feedback): add S8 recommendations for all teams`), covering 23 feedback files plus this task document.
+- Integration and publication: fast-forwarded `master` to `785cb046c6274943467d2ff66e6a687dd1363d6d` and pushed it to `origin/master`; the remote accepted the update from `c44a1b5`.
 
 ## Next step
 
-Integrate commit `72391f1` into `master`, push under the user's explicit authorization, then record delivery evidence and close S8-FB-3.
+Delivery is complete. The 23 feedback files and ODD evidence are published on `origin/master`; no grades, matrices, or evaluation reports were changed.
