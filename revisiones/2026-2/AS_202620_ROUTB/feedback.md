@@ -43,3 +43,7 @@ Completen el nivel 2 del C4 etiquetando cada flecha con protocolo y formato, y d
 ## Semana 6 · S6
 
 Buen avance: el mapa de contextos y la sección 8 recogen el lenguaje y los límites del dominio, y el C4 nivel 3 y los ADR están al día. Para cerrar el segundo corte: (1) publiquen la evidencia auditable de SonarCloud: archivo de configuración, línea del workflow que invoca el scanner, run exitoso para el hash revisado y URL del Quality Gate; (2) incorporen la tabla módulo a datos y la lista de no conformidades con su plan, dejando explícito qué se esperaba, dónde se buscó y qué se halló sobre el código actual; (3) completen el registro de IA con lo rechazado y su motivo. Revisen además que el arranque quede en un solo comando para facilitar la reproducibilidad.
+
+## Semana 8 · S8
+
+Hay avance material: se versionaron artefactos de contenedores y plataforma, los logs tienen estructura y la estimación de costos incluye supuestos y umbrales. Sin embargo, no se declaró la URL pública y el health check no pudo comprobarse externamente; además, el pipeline de la rama principal falla. Completen una métrica ligada a un escenario, documenten en el README la reproducción del despliegue, representen las plataformas reales en arc42, separen cada decisión de plataforma en su ADR y retiren credenciales literales del entorno local. Esas son las no conformidades que impiden cerrar la evidencia.

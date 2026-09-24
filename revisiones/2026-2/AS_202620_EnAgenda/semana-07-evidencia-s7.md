@@ -15,14 +15,14 @@
 |---|---|---|---|
 | Contrato en formato ejecutable versionado en el repositorio | docs/api/openapi.yaml:1 `openapi: 3.0.3`, presente en el árbol de 849ee8c (2026-09-20T23:59:07-05:00). | Cumple | Es especificación ejecutable, no prosa; servidor declarado http://localhost:5000. |
 | Contrato con rutas y esquemas de datos, no solo listado de endpoints | docs/api/openapi.yaml: paths `/api/v1/invitaciones/{token}` (GET, POST) con `$ref` a components.schemas.Invitacion, RespuestaInvitacion y Error en respuestas 200/400/404. | Cumple | Los esquemas declaran tipos, campos requeridos, enum de estado y ejemplos. |
-| Correspondencia entre el contrato y la API implementada | Se revisó docs/api/openapi.yaml (rutas /api/v1/invitaciones/{token}) y el árbol de 849ee8c; no se aporta el contenido de app/web.py ni de tests/test_api_invitaciones.py. | No verificado | Hace falta el contenido de app/web.py y del test para localizar dos rutas del contrato en el código y una del código en el contrato. |
-| Versión de la API declarada y con historial | docs/api/openapi.yaml: info.version `1.0.0`; no se aporta la salida de `git log -- docs/api/openapi.yaml`. | No verificado | La versión se ve; sin historial no se puede confirmar su evolución ni cambios de versión. |
-| Prueba de contrato presente | En el árbol de 849ee8c existe tests/test_api_invitaciones.py, pero no se aporta su contenido ni dependencia de validación de contrato (README declara solo Flask y pytest). | No verificado | No se puede distinguir si es prueba de contrato contra el OpenAPI o prueba funcional de la API. |
+| Correspondencia entre el contrato y la API implementada | `app/web.py` implementa GET y POST en `/api/v1/invitaciones/<token>`, pero también expone `/` y `/invitacion/<token>` sin declararlos en `docs/api/openapi.yaml`. | No cumple | Hay correspondencia para las dos operaciones contratadas, pero una ruta del código no está en el contrato; la sincronización bidireccional exigida no se sostiene. |
+| Versión de la API declarada y con historial | `docs/api/openapi.yaml` declara `info.version: 1.0.0`; `git log` registra su creación en `bda4116` (2026-09-20T17:40:38-05:00). | Cumple | La versión y el archivo están bajo control de versiones en el estado calificado. |
+| Prueba de contrato presente | `tests/test_api_invitaciones.py` prueba respuestas funcionales de GET/POST, pero no lee ni valida `docs/api/openapi.yaml` ni sus esquemas. | No cumple | Es una prueba de API, no una prueba de contrato contra la especificación ejecutable. |
 | El pipeline ejecuta la prueba de contrato | .github/workflows/ci.yml solo contiene `run: pytest -q` tras instalar dependencias; ninguna línea invoca contract/schemathesis/dredd/pact/prism/spectral/openapi. | No cumple | El run exitoso runs/35575083849 es un CI genérico de pytest, no identifica paso de contrato; se esperaba el comando de contrato en el workflow y su URL de run. |
 | Evidencia de que la prueba falla ante un cambio incompatible | runs_ci de master: 10 runs listados, todos con conclusion `success` (p. ej. runs/35575083849); no hay run en rojo ni evidencia aportada por el equipo. | No verificado | Queda como pregunta de sustentación: falta la ejecución que demuestre que la prueba falla al romper el contrato. |
 | ADR de la estrategia de integración ligado a un escenario | En 849ee8c el árbol solo lista docs/adr/0001-usar-monolito-modular.md; docs/adr/0002-estrategia-integracion-api.md aparece en el commit 54ecb57 (2026-09-21T02:36:10-05:00), posterior al cierre. | No cumple | El ADR-0001 trata el estilo arquitectónico, no la estrategia de integración síncrona/asíncrona con alternativa descartada. |
-| arc42 sección 6 con los flujos de interacción | docs/arc42/06-vista-de-ejecución.md existe en el árbol de 849ee8c, pero su contenido no se aporta; el commit 9ebd147 (2026-09-21T02:46:20-05:00) lo actualizó después del cierre. | No verificado | Hace falta el contenido del archivo en el hash calificado para comprobar los flujos de interacción. |
-| C4 nivel 2 con protocolo y formato en cada flecha | docs/c4/nivel-2-contenedores.md: `Rel(organizador, webApp, "Utiliza", "HTTP")` y `Rel(webApp, invitaciones, "Gestiona invitaciones", "Llamada interna")`, sin formato de datos. | No cumple | Solo dos flechas declaran protocolo y ninguna declara formato; el commit 6db7cd9 posterior al cierre modificó el archivo, sin contenido aportado para verificar. |
+| arc42 sección 6 con los flujos de interacción | `docs/arc42/06-vista-de-ejecución.md` describe el flujo de respuesta a invitación, sus siete pasos, errores y correspondencia con aplicación, dominio e infraestructura. | Cumple | El documento ya tenía un flujo verificable en 849ee8c; el ajuste posterior al cierre no es necesario para cumplir esta fila. |
+| C4 nivel 2 con protocolo y formato en cada flecha | docs/c4/nivel-2-contenedores.md: `Rel(organizador, webApp, "Utiliza", "HTTP")` y `Rel(webApp, invitaciones, "Gestiona invitaciones", "Llamada interna")`, sin formato de datos. | No cumple | Solo dos flechas declaran protocolo y ninguna declara formato en el estado calificado; la modificación posterior al cierre no cambia esta fila. |
 
 ## Matriz transversal (CONTRATO §11)
 
@@ -31,7 +31,7 @@
 | Identidad del repositorio | Repositorio público AS_202620_EnAgenda en la organización ISCOUTB; historial de 849ee8c con tres cuentas distintas (Daoisttl0FB3, Jein-12, eliabarnedocondef10-gif) más una cuarta entrada de la misma persona que repite su dirección de contacto. | Cumple | Consolidadas las identidades, los contribuyentes coinciden con los tres integrantes declarados. |
 | Estructura mínima | Árbol de 849ee8c con docs/arc42/01..12, docs/adr/, docs/c4/, docs/aspectos.md, docs/ia.md y README.md. | Cumple | C4 está en docs/c4/ y no en docs/arc42/ (desviación admisible); se versionan archivos __pycache__/*.pyc en src/ y tests/. |
 | Estado del repositorio calificado | Rama principal origin/master; commit 849ee8c del 2026-09-20T23:59:07-05:00, anterior al cierre 2026-09-21T05:00:00Z. | Cumple | HEAD 6db7cd9 (2026-09-21T02:53:08-05:00) es posterior al cierre y no cambia la matriz. |
-| Convenciones de ADR | docs/adr/0001-usar-monolito-modular.md cumple el patrón NNNN-titulo-en-kebab-case y contiene contexto, alternativas, decisión, consecuencias y trazabilidad. | Cumple | No se aporta `git log --follow` del ADR, así que no se puede comprobar si se editó tras aceptarse. |
+| Convenciones de ADR | docs/adr/0001-usar-monolito-modular.md cumple el patrón NNNN-titulo-en-kebab-case y contiene contexto, alternativas, decisión, consecuencias y trazabilidad. | Cumple | El historial del ADR registra una sola revisión hasta el estado calificado. |
 | La tabla de aspectos | docs/aspectos.md: fila A-01 con las ocho columnas y enlaces navegables a C4 niveles 1-3, ADR-0001, src/invitaciones/ y app/web.py, tests/test_invitaciones.py y docs/evidencia.md. | Cumple | Una sola fila con todos los eslabones navegables. |
 | Registro de uso de IA | docs/ia.md con columna de lo rechazado y su motivo técnico, e historial en git con entradas del 2026-08-25 al 2026-09-13. | Cumple | La última entrada es del 2026-09-13: el registro no crece con la entrega de la semana 7. |
 | README | README.md declara qué es el sistema, requisitos previos (Python 3.13, pip), instalación y arranque con `python app\web.py` y pruebas con `pytest -q`. | Cumple | El arranque es un solo comando tras instalar dependencias. |
@@ -43,7 +43,7 @@ Mira el repositorio **entero en la punta actual de la misma rama**, no solo la e
 
 - **Punta actual revisada**: `6db7cd98f957c757aa37aeda47a52b9e54831e12 2026-09-21T02:53:08-05:00 Update nivel-2-contenedores.md`
 - **Veredicto**: con pendientes
-- Resumen: En la punta de master (6db7cd9) el contrato OpenAPI 3.0.3 con esquemas está versionado y la estructura, aspectos, README e IA se sostienen, pero la prueba de contrato no está demostrada en el pipeline y no hay evidencia de que falle ante un cambio incompatible; el ADR de integración, arc42 §6 y el C4 nivel 2 llegaron después del cierre, y el análisis estático en SonarCloud sigue sin evidencia sobre la rama.
+- Resumen: En la punta de master (6db7cd9) el contrato OpenAPI 3.0.3 con esquemas está versionado y arc42 §6 ya era verificable al cierre. Siguen abiertas la sincronización bidireccional contrato-código, una prueba que valide el OpenAPI, su ejecución explícita y el fallo ante incompatibilidad; el ADR de integración y el ajuste del C4 llegaron después del cierre, y SonarCloud continúa sin evidencia pública.
 
 Resuelto tarde (corregido despues del cierre, ahora al dia):
 - 54ecb57 2026-09-21T02:36:10-05:00 Create 0002-estrategia-integracion-api.md (ADR posterior al cierre)
@@ -53,25 +53,23 @@ Resuelto tarde (corregido despues del cierre, ahora al dia):
 
 Pendientes que siguen abiertos:
 - Prueba de contrato ejecutada por el pipeline y evidencia de su fallo ante un cambio incompatible
-- Correspondencia contrato↔código verificable con el contenido de app/web.py y de los tests
+- Sincronizar con el contrato las rutas `/` y `/invitacion/<token>` expuestas por `app/web.py`
 - SonarCloud: scanner en el workflow, run exitoso del hash y URL pública con Quality Gate
-- Contenido de arc42 §6 y C4 nivel 2 con protocolo y formato por flecha en el commit del cierre
-- Historial del contrato y limpieza de __pycache__ versionado
+- C4 nivel 2 con protocolo y formato por flecha
+- Limpieza de __pycache__ versionado
 
 ## Recuento y nota sugerida
 
-2 de 10 criterios Cumple.
+4 de 10 criterios Cumple.
 
-**Nota sugerida (propuesta al docente, publicada por decision del profesor): 1.8 = 1 + 4 × (2/10).** La nota final la fija el profesor en Moodle.
+**Nota sugerida (propuesta al docente, publicada por decision del profesor): 2.6 = 1 + 4 × (4/10).** La nota final la fija el profesor en Moodle.
 
 ## No verificado / pendientes
 
-- Correspondencia contrato↔código: falta el contenido de app/web.py y de tests/test_api_invitaciones.py.
-- Historial del contrato: falta `git log -- docs/api/openapi.yaml` para ver la evolución de la versión.
-- Prueba de contrato: falta el contenido del test y la dependencia que valide el OpenAPI.
+- Correspondencia contrato↔código: las rutas `/` y `/invitacion/<token>` no están en el OpenAPI.
+- Prueba de contrato: `tests/test_api_invitaciones.py` no valida la especificación OpenAPI.
 - Fallo de la prueba ante cambio incompatible: sin run en rojo ni evidencia aportada; pregunta de sustentación.
-- Contenido de docs/arc42/06-vista-de-ejecución.md en el hash calificado 849ee8c.
-- Contenido de docs/adr/0002-estrategia-integracion-api.md y del C4 nivel 2 en HEAD (commits posteriores al cierre).
+- El ADR de integración y los ajustes de C4 posteriores al cierre no alteran el resultado definitivo de S7.
 - SonarCloud: falta archivo de configuración, línea del scanner en el workflow y URL pública del análisis con Quality Gate.
 
 ## Hallazgos para la planilla

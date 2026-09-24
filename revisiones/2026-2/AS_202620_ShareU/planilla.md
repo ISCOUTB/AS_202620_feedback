@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_ShareU` |
 | Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-21 |
+| Ultima revision | 2026-09-24 |
 
 ## Estado por entrega
 
@@ -20,8 +20,8 @@
 | 4 | S4 | `master` `0bae184` · excepción docente | 7/10 | 3.8 | sí |
 | 5 | CORTE1 | `19ce719` (2026-09-07T22:41:14-05:00) | 5/12 | 2.7 | si |
 | 6 | S6 | `c389364` (2026-09-13T23:21:08-05:00) | 7/8 | 4.5 (prelim.) | si |
-| 7 | S7 | `29184bc` (2026-09-20T23:34:09-05:00) | 5/10 | 3.0 | si |
-| 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
+| 7 | S7 | `29184bc` (2026-09-20T23:34:09-05:00) | 6/10 | 3.4 | si |
+| 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `532fcf6` (2026-09-21T12:26:41-05:00) | 1/12 | 1.3 (prelim.) | si |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
 | 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
@@ -96,6 +96,8 @@
 | Tabla de aspectos con las ocho columnas del contrato (faltan ID y C4). | S7 | si | |
 | SonarCloud auditable: paso del scanner en el workflow y URL pública del análisis con Quality Gate para el hash revisado. | S7 | si | |
 | Carpeta docs/adr/ con un PDF ajeno a la convención de nombres. | S7 | si | |
+| Publicar URL y health check y completar IaC, observabilidad, costos y ADR de plataforma. | S8 | si | El CI está verde, pero no hay evidencia operativa S8. |
+
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -108,7 +110,7 @@
 | Sin credenciales en el repositorio ni en el historial | Cumple | `git grep` §9 y `log -S` sin coincidencias |
 | Etiqueta corte-1 (corte 1) | No cumple | Existe pero apunta a un commit posterior al cierre (`a5d08c1`, +7h); fallback admisible `1728495` |
 | Contribución de todos los integrantes | Cumple | Corte 1 (post-cierre, 2026-09-07): los 4 integrantes tienen commits propios (Dayana 6, luiscorredor 2, Nicolas-HH 1, steven 1) |
-| Pipeline en verde | No cumple | Sin `.github/workflows`; prueba sin evidencia de ejecución |
+| Pipeline en verde | Cumple | Run público exitoso del estado S8: https://github.com/ISCOUTB/AS_202620_ShareU/actions/runs/35632045274; SonarCloud no está acreditado. |
 
 ## Contribución por integrante
 

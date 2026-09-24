@@ -46,7 +46,9 @@ La entrega de la semana 2 deja la documentación base (C4 nivel 1, contexto y re
 
 ## Semana 7 · S7
 
-El repositorio está bien estructurado y el ADR de integración asíncrona está sólidamente justificado contra escenarios de calidad. Falta el entregable central de la semana: no hay contrato de API en formato ejecutable (OpenAPI, AsyncAPI o proto) versionado, ni prueba de contrato en el pipeline. Sin contrato no se puede verificar la correspondencia con la API implementada ni demostrar que la prueba falla ante un cambio incompatible, que es la evidencia clave del corte. Se recomienda versionar el contrato, enlazarlo con las rutas ya implementadas, añadir la prueba al workflow y registrar un run en rojo provocado por un cambio incompatible. También conviene completar la sección 6 del arc42, etiquetar el C4 nivel 2 y publicar la evidencia de SonarCloud con su Quality Gate.
+La entrega resolvió de forma completa el objetivo de la semana: el contrato OpenAPI está versionado, coincide automáticamente con la API y tiene pruebas propias en el pipeline. La evidencia del cambio incompatible es especialmente sólida: registra una ruptura deliberada, el fallo contractual que produjo y la recuperación posterior. El ADR justifica la integración contra escenarios concretos, la sección 6 de arc42 describe los flujos y el C4 nivel 2 explicita protocolo y formato en sus relaciones.
+
+La no conformidad pendiente es transversal: todavía falta evidencia pública y auditable de SonarCloud con su configuración, la ejecución del scanner y el Quality Gate. También deben confirmar de forma explícita la asociación de las cuentas que aún no están mapeadas en el registro del curso.
 
 ## Semana 6 · S6
 

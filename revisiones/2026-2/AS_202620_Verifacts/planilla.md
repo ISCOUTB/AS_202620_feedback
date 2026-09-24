@@ -6,15 +6,15 @@
 |---|---|
 | Equipo | Verifacts |
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Verifacts` |
-| Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md); historial: `PedroC1213` (30 commits) y `Cristian Cardeño` (4 commits tardíos), sin atribuir oficialmente |
-| URL del sistema desplegado | |
-| Ultima revision | 2026-09-23 |
+| Integrantes y su usuario de GitHub | Ver [EQUIPOS.md](../../../EQUIPOS.md); historial actual: `PedroC1213` (240 commits, dos correos consolidados) y `Cristian Cardeño` (31 commits, dos correos con la misma firma), sin correspondencia individual confirmada; falta una tercera identidad atribuible. |
+| URL del sistema desplegado | `https://verifacts-web.onrender.com` · API: `https://verifacts-api.onrender.com` (pendiente de comprobación externa fechada) |
+| Ultima revision | 2026-09-24 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 8 | S8 | `7d52e8e` (2026-09-22T22:42:51-05:00) | 5/12 | 2.7 (prelim.) | si |
+| 8 | S8 | `ef48c08` (2026-09-23T21:28:43-05:00) | 10/12 | 4.3 (propuesta preliminar) | sí (actualizada) |
 | 7 | S7 | `635f9b7` (2026-09-16T00:52:52-05:00) | 8/10 | 4.2 (prelim.) | si |
 | 6 | S6 | `5941c33` (2026-09-12T02:00:20-05:00) | 8/8 | 5.0 (prelim.) | si |
 | 1 | S1 | `(sin commits)` () | sin actividad | no aplica | si |
@@ -84,32 +84,32 @@
 | Enlaces del README a documentos inexistentes | S6 | si | |
 | Medición de P95 (Q-01) y prueba de usuario (Q-04) | S6 | si | |
 | Comprobar URL y /health con hora y código de respuesta. | S8 | si | |
-| Aportar run de CI en verde y URL pública de SonarCloud con Quality Gate. | S8 | si | |
-| Actualizar arc42 §7 con una caja por pieza y su ubicación de ejecución. | S8 | si | |
-| Añadir límite de costo y restricción de tarjeta en arc42 §2. | S8 | si | |
-| Registrar un ADR por decisión de plataforma con alternativa descartada y capa gratuita verificada. | S8 | si | |
-| Asociar la métrica /metrics a un escenario de calidad y completar la medición de P95. | S8 | si | |
+| Aportar run de CI en verde y URL pública de SonarCloud con Quality Gate. | S8 | parcial | Los runs de Tests y SonarCloud del hash actual están en verde y la URL es pública, pero el propio documento declara el Quality Gate general en rojo. |
+| Actualizar arc42 §7 con una caja por pieza y su ubicación de ejecución. | S8 | no (resuelto) | La sección muestra web, API y SQLite dentro de Render, además de las piezas del CI. |
+| Añadir límite de costo y restricción de tarjeta en arc42 §2. | S8 | no (resuelto) | R-TEC-05 recoge costo cero y ausencia de tarjeta. |
+| Registrar un ADR por decisión de plataforma con alternativa descartada y capa gratuita verificada. | S8 | no (resuelto) | ADR 0004 decide Render y compara Terraform y AWS Lambda. |
+| Asociar la métrica /metrics a un escenario de calidad y completar la medición de P95. | S8 | parcial | La métrica ya está ligada a Q-01; la medición formal del P95 sigue pendiente. |
 | Cerrar los huecos de docs/aspectos.md y corregir las secciones 3 y 10 desactualizadas. | S8 | si | |
 | Incluir un integrante declarado que aún no aparece en el historial. | S8 | si | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
-| Nombre y visibilidad del repositorio | No cumple | el repositorio ya no existe en la organización ISCOUTB (404 vía API/clon; ausente de los 191 repos públicos listados el 2026-09-07); único repo público relacionado por nombre (`PedroC1213/Verifacts`) es un borrador ajeno de agosto, anterior al propio repositorio de curso |
-| Estructura mínima | Cumple | las seis rutas presentes (`docs/arc42/`, `docs/adr/`, `docs/c4/`, `aspectos.md`, `ia.md`, README); glosario numerado 11 en vez de 12 |
-| Convención de nombres de ADR | Cumple | `0001-estilo-arquitectonico.md` |
+| Nombre y visibilidad del repositorio | Cumple | `ISCOUTB/AS_202620_Verifacts` respondió al clon público sin autenticación el 2026-09-24. |
+| Estructura mínima | Cumple | Las seis rutas están presentes; el glosario está numerado como sección 12. |
+| Convención de nombres de ADR | Cumple | Cuatro ADR con nombres `NNNN-titulo-en-kebab-case.md`. |
 | ADR aceptados sin reescribir | No cumple | el ADR aceptado fue modificado, borrado y recreado |
-| `docs/ia.md` al día | No cumple | sin entrada S5; último cambio 2026-08-24 |
+| `docs/ia.md` al día | Cumple | Entrada del 22–23 de septiembre sobre despliegue, observabilidad y decisiones aceptadas/descartadas. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | git grep y `.env` sin coincidencias |
 | Contribución de todos los integrantes | No cumple | dos personas visibles; el tercer integrante sigue sin commits |
-| Pipeline en verde | No verificado | `tests.yml` existe pero la API no reporta runs; la URL citada en `aspectos.md` da 404 |
+| Pipeline en verde | Cumple | Tests y SonarCloud concluyeron `success` para `ef48c08`; el Quality Gate general documentado en rojo sigue como no conformidad transversal. |
 
 ## Contribución por integrante
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
 |---|---|---:|---:|---:|---|
-| Cristian David Cardeno Gulloso | `Cristian Cardeño` (sin atribuir por parecido de nombre) | 12 | | | commits dentro del periodo S4; los de la madrugada del 24-ago fueron tardíos de S3 |
-| Pedro Jose Castro Blanquicett | sin atribuir (`PedroC1213` en el historial, dos correos consolidados) | 110 | | | — |
+| Cristian David Cardeno Gulloso | `Cristian Cardeño` (sin atribuir por parecido de nombre) | 31 | | | Dos correos con la misma firma; correspondencia individual pendiente. |
+| Pedro Jose Castro Blanquicett | sin atribuir (`PedroC1213` en el historial, dos correos consolidados) | 240 | | | — |
 | Julian Samuel Cabeza Pena | sin aparición | 0 | | | — |
 
 ## Preguntas abiertas para la sustentación

@@ -1,84 +1,69 @@
 # semana-07-evidencia-s7 · Tienda virtual UTB
 
-> Pasada temprana (GitHub Actions, previa al cierre): los hashes y la nota son preliminares y pueden cambiar si el equipo empuja antes del cierre.
+> Revisión definitiva corregida después del cierre. El informe preliminar evaluó un borrador; esta versión usa el último commit de `origin/main` anterior al cierre.
 
 | Campo | Valor |
 |---|---|
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB` |
-| Estado revisado | `dea5bc9` en `origin/main` (2026-09-15T09:52:53-05:00) |
+| Estado revisado | `69aa82d` en `origin/main` (2026-09-20T09:34:49-05:00) |
 | Cierre | 2026-09-21T05:00:00Z |
-| Revisor | pipeline automatico (GitHub Actions) |
+| Revisor | revisión académica local sobre evidencia Git y GitHub Actions |
 
 ## Matriz de la ficha
 
-| Criterio de evaluacion | Evidencia tecnica | Estado | Observaciones |
+| Criterio de evaluación | Evidencia técnica | Estado | Observaciones |
 |---|---|---|---|
-| Contrato en formato ejecutable versionado en el repositorio | Árbol de dea5bc9 truncado: solo se listan .dockerignore, .github/workflows/tests.yml, .gitignore y .security-tools/… hasta fastapi/dependencies/models.py. | No verificado | Se esperaba una ruta openapi/asyncapi/proto; el listado recibido no permite ver docs/ ni la raíz, así que no se confirma presencia ni ausencia (haría falta `git ls-tree -r --name-only HEAD`). |
-| Contrato con rutas y esquemas de datos, no solo listado de endpoints | No se aporta fragmento del contrato ni archivo de especificación en el árbol visible de dea5bc9. | No verificado | Sin el archivo abierto no se puede comprobar versión de especificación, paths ni schemas de respuesta. |
-| Correspondencia entre el contrato y la API implementada | No hay en la evidencia rutas del contrato ni rutas del código (el árbol entregado es casi todo .security-tools/…). | No verificado | Se necesitan dos rutas del contrato localizadas en el código y una ruta del código presente en el contrato. |
-| Versión de la API declarada y con historial | Sin ruta de contrato no se puede ejecutar `git log --format='%h %cI %s' -- <ruta>` sobre dea5bc9. | No verificado | Falta el campo de versión (info.version o versión en la ruta) y su historial de cambios. |
-| Prueba de contrato presente | El árbol visible de dea5bc9 no muestra rutas de tests propias; solo .github/workflows/tests.yml. | No verificado | Árbol truncado: se esperaba algo tipo tests/contract/… o *contract*test*; buscar con `ls-tree` completo y grep de contract\|dredd\|schemathesis\|pact\|prism\|spectral. |
-| El pipeline ejecuta la prueba de contrato | Existe .github/workflows/tests.yml, pero no se aporta su contenido ni ningún run de CI (runs_ci ausente en la evidencia). | No verificado | Se esperaba la línea del workflow que invoca la prueba y la URL del run; sin runs ni contenido del YAML no se puede afirmar ejecución. |
-| Evidencia de que la prueba falla ante un cambio incompatible | No hay runs en la evidencia ni documento del equipo con el cambio incompatible que rompió el contrato. | No verificado | Criterio decisivo competente/sobresaliente; queda como pregunta de sustentación. |
-| ADR de la estrategia de integración ligado a un escenario | No se ve docs/adr/000N-*.md en el árbol de dea5bc9 (listado truncado). | No verificado | Se necesita el ADR con escenario de calidad, alternativa descartada y consecuencias de acoplamiento. |
-| arc42 sección 6 con los flujos de interacción | No se ve docs/arc42/06* en el árbol de dea5bc9. | No verificado | Falta comprobar que los flujos de interacción están descritos. |
-| C4 nivel 2 con protocolo y formato en cada flecha | No se ve diagrama de nivel 2 en docs/c4/ ni en docs/arc42/ dentro del árbol recibido. | No verificado | Se esperaba cada flecha etiquetada con protocolo y formato. |
+| Contrato en formato ejecutable versionado en el repositorio | `docs/api/openapi.json:2` declara OpenAPI 3.1.0 y el archivo está versionado desde `0416e62`. | Cumple | Es el contrato generado de la API implementada; `docs/openapi/tienda-virtual.yaml` queda como contrato de diseño futuro. |
+| Contrato con rutas y esquemas de datos, no solo listado de endpoints | `docs/api/openapi.json:8,34,58-104` define `/catalog/products`, `/health` y los esquemas `HealthOut` y `ProductOut`. | Cumple | Las respuestas de ambas rutas enlazan modelos tipados. |
+| Correspondencia entre el contrato y la API implementada | `backend/app/main.py:45-59` implementa `/health` y registra el router; `backend/app/modules/catalog/router.py:10-13` implementa `/catalog/products`. `backend/tests/contract/test_openapi.py:39` exige igualdad entre `app.openapi()` y el contrato. | Cumple | Se cotejan las dos rutas del contrato y la igualdad automatizada impide rutas extra no documentadas. |
+| Versión de la API declarada y con historial | `docs/api/openapi.json:5` y `backend/app/main.py:45` declaran `0.2.0`; `git log -- docs/api/openapi.json` registra `0416e62` y su antecedente documental `f4602a3`. | Cumple | La versión coincide entre contrato y proveedor y la ruta tiene historial Git. |
+| Prueba de contrato presente | `backend/tests/contract/test_openapi.py:34-67` valida la especificación, la igualdad con FastAPI, respuestas reales y mutaciones incompatibles. | Cumple | Usa OpenAPI Spec Validator y JSON Schema Draft 2020-12. |
+| El pipeline ejecuta la prueba de contrato | `.github/workflows/tests.yml:24-33` ejecuta `python -m pytest tests/contract ...` y publica el JUnit; run exacto del hash: https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/actions/runs/35516931181 | Cumple | El run existe y concluye en fallo; esa condición se registra además como no conformidad transversal. |
+| Evidencia de que la prueba falla ante un cambio incompatible | `backend/tests/contract/test_openapi.py:57-67` elimina `name` o cambia `price_cents` a texto y exige `ValidationError` al validar la respuesta contra el contrato. | Cumple | La mutación negativa demuestra de forma estática que el validador rechaza dos rupturas del proveedor; no se confunde con una prueba que pasa sin ejercer el cambio. |
+| ADR de la estrategia de integración ligado a un escenario | `docs/adr/0002-contrato-integracion-http.md:7-24,76-88` compara HTTP síncrono, mensajería y HTTP sin contrato, y documenta consecuencias. No enlaza ningún escenario de calidad concreto. | No cumple | Se esperaba un identificador y vínculo a un escenario medible que justificara la elección y sus consecuencias de acoplamiento. |
+| arc42 sección 6 con los flujos de interacción | `docs/arc42/arc42-template-EN.md:350-404` contiene secuencias para arranque/siembra y navegación del catálogo entre Compose, FastAPI, PostgreSQL y Next.js. | Cumple | Los dos flujos describen comportamiento existente y puntos de fallo. |
+| C4 nivel 2 con protocolo y formato en cada flecha | `docs/c4/container.md:28-32` etiqueta web→API como REST/JSON sobre HTTP y API→base como SQL/SQLAlchemy, pero las tres relaciones persona→web solo indican HTTPS. | No cumple | HTTPS declara protocolo, no el formato; cada flecha debe explicitar ambos según la ficha. |
 
 ## Matriz transversal (CONTRATO §11)
 
 | Criterio | Evidencia | Estado | Observaciones |
 |---|---|---|---|
-| Identidad del repositorio | Repo AS_202620_TIENDA-VIRTUAL-UTB, organización ISCOUTB, "visible": true, hash dea5bc9; historial con 4 cuentas consolidadas (RAZOR7150, pxtroniwnl, Jasen/Jasen Yukopila y shalom-A26). | Cumple | El número de cuentas coincide con los 4 integrantes declarados, pero la pertenencia a la organización no se verifica con esta evidencia. |
-| Estructura mínima | El árbol recibido de dea5bc9 está truncado y solo muestra .security-tools/… junto a .github/workflows/tests.yml y .gitignore. | No verificado | Haría falta el listado completo con docs/arc42/, docs/adr/, docs/c4/, docs/aspectos.md y docs/ia.md. |
-| Convenciones de ADR | No aparece ningún docs/adr/NNNN-*.md en la porción visible del árbol de dea5bc9. | No verificado | Se requiere `ls docs/adr \| grep -Ev '^[0-9]{4}-[a-z0-9]+(-[a-z0-9]+)*\.md$'` y `git log --follow` por ADR. |
-| Tabla de aspectos | No se ve docs/aspectos.md en el árbol recibido. | No verificado | Debe comprobarse la cadena aspecto→requisito→C4→ADR→código→pruebas→evidencia sin celdas huecas. |
-| Registro de uso de IA | No se ve docs/ia.md en el árbol recibido, ni su historial en git. | No verificado | Falta la columna de lo rechazado y por qué, que es la que se evalúa. |
-| README | README.md no aparece en la porción visible del árbol de dea5bc9 (listado cortado antes de la raíz). | No verificado | Se debe verificar el arranque con un solo comando y los requisitos previos declarados. |
-| Pipeline y análisis estático | Solo consta .github/workflows/tests.yml; no hay runs_ci en la evidencia ni línea del scanner de SonarCloud ni URL pública del análisis. | No verificado | Para Cumple harían falta el YAML con el scanner, el run exitoso del hash revisado y el enlace público del Quality Gate en isco-utb. |
-| Secretos | El escaneo de dea5bc9 solo devuelve coincidencias dentro de .security-tools/python/Lib/site-packages/… (p. ej. dea5bc9:.security-tools/python/Lib/site-packages/psycopg2/__init__.py:99), todas de dependencias vendorizadas. | Cumple | No se hallan credenciales ni .env en código propio; conviene retirar el entorno Python completo del repositorio por ruido en todos los escaneos. |
+| Repositorio en la organización, con el nombre de la convención y público | `https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB`, accesible por clonación sin autenticación. | Cumple | Nombre y organización coinciden con `EQUIPOS.md`. |
+| Estructura mínima presente | El árbol de `69aa82d` contiene `README.md`, `docs/arc42/`, `docs/adr/`, `docs/c4/`, `docs/aspectos.md` y `docs/ia.md`. | Cumple | Las seis rutas exigidas están versionadas. |
+| Estado calificado identificable | `origin/main`, `69aa82d`, 2026-09-20T09:34:49-05:00; es el último commit anterior al cierre. | Cumple | La punta actual coincide con el estado calificado. |
+| Nombres de ADR según la convención | `docs/adr/0001-monolito-modular.md` y `docs/adr/0002-contrato-integracion-http.md`. | Cumple | Ambos siguen `NNNN-kebab-case.md`. |
+| ADR aceptados no reescritos | El ADR 0001 tiene dos cambios: creación en `f4602a3` y reescritura de trazabilidad en `e8ae57d`. | No cumple | El contrato exige crear un ADR sucesor cuando cambia una decisión aceptada, no reescribir el anterior. |
+| `docs/ia.md` al día para la semana | `docs/ia.md:7,19,31` registra la actividad de S7, propuestas descartadas, motivo y validación humana; el archivo fue actualizado en el periodo. | Cumple | Distingue pruebas locales de evidencia de despliegue o CI. |
+| Pipeline, SonarCloud y Quality Gate públicos | El run 35516931181 del hash calificado concluye en fallo; el workflow no invoca SonarCloud y no existe URL pública del análisis con Quality Gate. | No cumple | CI no está verde y faltan las evidencias públicas de SonarCloud requeridas desde S6. |
+| Sin credenciales en el repositorio ni en el historial | No hay `.env` versionado y el barrido estático del hash no encontró credenciales en código propio. | Cumple | El entorno de terceros versionado se excluyó del juicio sobre código propio, pero debe retirarse por higiene. |
+| Contribución de todos los integrantes | `git shortlog -sne 69aa82d` consolida cuatro grupos de identidad; corresponden a las cuatro cuentas declaradas en `EQUIPOS.md`. | Cumple | Dos firmas pertenecen al mismo grupo y se contabilizan una sola vez. |
 
 ## Estado global del proyecto (overall · punta actual de la misma rama)
 
-Mira el repositorio **entero en la punta actual de la misma rama**, no solo la evidencia del cierre: si el equipo subio tarde o corregio entregas anteriores, aqui se nota.
-
-- **Punta actual revisada**: `dea5bc9590612d894c9c68a06c72cfb57efcdb9a 2026-09-15T09:52:53-05:00 s7 borrador`
-- **Veredicto**: con pendientes
-- Resumen: En la punta de origin/main (dea5bc9, 2026-09-15) solo es verificable la identidad del repositorio y la ausencia de credenciales en código propio; contrato, prueba de contrato, ADR, documentación y CI/SonarCloud no son comprobables con la evidencia aportada porque el árbol llega truncado y no hay runs.
+- **Punta actual revisada**: `69aa82d36bd9f8efac8fc0541d58c07204724e91 2026-09-20T09:34:49-05:00 Evidencia S7, termino de documentacion, actualizacion de diagramas, correccion de errores`.
+- **Veredicto**: entrega S7 mayormente completa, con dos no conformidades de ficha y el pipeline transversal en rojo.
+- El contrato OpenAPI, la correspondencia con FastAPI, las pruebas de contrato, la mutación negativa y los flujos de arc42 están presentes en la punta actual.
 
 Pendientes que siguen abiertos:
-- Contrato ejecutable con rutas y esquemas, versionado e historial
-- Prueba de contrato y su invocación desde el workflow, con URL del run
-- Evidencia de que la prueba falla ante un cambio incompatible
-- ADR de estrategia de integración con alternativa descartada
-- arc42 sección 6 y C4 nivel 2 con protocolo y formato por flecha
-- Evidence de SonarCloud: configuración, run del scanner y Quality Gate público
-- Listado completo de archivos y retiro del entorno Python vendorizado
+- Vincular el ADR de integración a un escenario de calidad concreto y medible.
+- Completar protocolo y formato en las tres flechas de actores hacia el cliente web del C4 nivel 2.
+- Corregir el pipeline, integrar SonarCloud y publicar el análisis con Quality Gate.
+- Evitar reescribir ADR aceptados y retirar del repositorio el entorno Python de terceros.
 
 ## Recuento y nota sugerida
 
-0 de 10 criterios Cumple.
+8 de 10 criterios Cumple.
 
-**Nota sugerida preliminar (propuesta al docente; puede cambiar al cierre): 1.0 = 1 + 4 × (0/10).** La nota final la fija el profesor en Moodle.
+**Nota sugerida (propuesta al docente, publicada por decisión del profesor): 4.2 = 1 + 4 × (8/10).** La nota final la fija el profesor en Moodle.
 
 ## No verificado / pendientes
 
-- Contrato ejecutable versionado: falta lista completa de archivos (openapi/swagger/asyncapi/proto) en HEAD.
-- Rutas y esquemas del contrato: falta el contenido del archivo de especificación.
-- Correspondencia contrato↔API: faltan rutas citadas en ambos sentidos.
-- Versión de la API e historial: falta el campo de versión y `git log` del archivo.
-- Prueba de contrato: falta su ruta en el árbol completo.
-- Ejecución de la prueba en el pipeline: falta contenido de .github/workflows/tests.yml y la URL del run.
-- Fallo de la prueba ante cambio incompatible: faltan run en rojo o evidencia del equipo.
-- ADR de integración: falta docs/adr/000N-*.md con alternativa descartada.
-- arc42 sección 6: falta docs/arc42/06*.
-- C4 nivel 2: falta el diagrama con protocolo y formato por flecha.
-- Estructura mínima, aspectos, IA y README: el árbol recibido no llega a esas rutas.
-- SonarCloud: faltan configuración, run del scanner y URL pública del Quality Gate.
+- No quedan filas de la ficha en estado No verificado: las dos no conformidades se comprobaron directamente en el ADR y el C4.
+- El resultado preciso de cada job del run fallido no se consultó; la API pública sí confirma la conclusión `failure` para el hash calificado.
 
 ## Hallazgos para la planilla
 
-- El repositorio versiona un entorno Python completo en .security-tools/… (miles de archivos), lo que contamina cualquier grep de contrato, pruebas o secretos.
-- El árbol de dea5bc9 entregado está truncado, de modo que docs/, la raíz y cualquier archivo OpenAPI quedan fuera de la evidencia.
-- No se aporta ningún run de CI (runs_ci ausente): no se puede citar workflow, conclusión ni URL.
-- Las 4 cuentas del historial consolidan a 4 contribuyentes, coherente en número con los integrantes declarados; la adscripción a la organización no es verificable aquí.
-- El commit evaluado es del 2026-09-15, anterior al cierre del 2026-09-21, en modo early.
+- El informe preliminar evaluó `dea5bc9`; el estado correcto al cierre es `69aa82d`.
+- Ocho filas de la ficha cumplen; el ADR carece de escenario de calidad concreto y tres flechas del C4 solo declaran protocolo.
+- El workflow ejecuta las pruebas de contrato, pero el run exacto del hash calificado está en rojo.
+- SonarCloud no tiene configuración, ejecución ni Quality Gate público verificables.

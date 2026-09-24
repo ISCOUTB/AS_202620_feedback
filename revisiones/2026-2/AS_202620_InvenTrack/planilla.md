@@ -10,13 +10,14 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_InvenTrack` |
 | Integrantes y su usuario de GitHub | Javier Alejandro Carta Lacharme · Esteban Javier Peluffo Marquez · Felix Andres Taborda Jimenez · Jose Gabriel Vargas Perez — cuentas abajo |
 | URL del sistema desplegado | sin desplegar aún |
-| Ultima revision | 2026-09-21 |
+| Ultima revision | 2026-09-24 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 7 | S7 | `f10fd01` (2026-09-20T23:01:13-05:00) | 4/10 | 2.6 | si |
+| 8 | S8 preliminar | `f62ad34` (2026-09-23T02:02:36-05:00) | 4/12 | 2.3 | sí, preliminar |
+| 7 | S7 | `f10fd01` (2026-09-20T23:01:13-05:00) | 9/10 | 4.6 | sí, auditada |
 | 6 | S6 | `d6f2b19` (2026-09-13T23:37:36-05:00) | 7/8 | 4.5 | si |
 | 5 | CORTE1 | `ac951e3` (2026-09-08T10:11:58-05:00) | 9/12 | 4.0 | si |
 | 4 | S4 | `d7ba824` (2026-08-30T23:39:33-05:00) | 5/10 | 3.0 | si |
@@ -76,19 +77,12 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 | PDF en Moodle y sustentación pendientes de verificación. | S5 | si | |
 | Verificar sección 8 de arc42 (lenguaje ubicuo y mapa de contextos) | S6 | si | |
 | Evidenciar ejecución del pipeline CI | S6 | si | |
-| Paso de SonarCloud retirado del CI (docs/ia.md, 2026-09-13) sin restituir a HEAD. | S7 | si | |
-| Contrato de API y prueba de contrato de la semana 7 ausentes. | S7 | si | |
-| Formato ausente en varias flechas del C4 nivel 2. | S7 | si | |
-| SonarCloud sin ejecución, sin run asociado y sin URL pública con Quality Gate (paso retirado del workflow). | S7 | si | |
-| Ejecución de la prueba de contrato en el pipeline sin run citado. | S7 | si | |
-| Evidencia de que la prueba de contrato falla ante un cambio incompatible. | S7 | si | |
-| C4 nivel 2 sin formato de datos en las flechas. | S7 | si | |
-| Módulos usuarios, proveedores y alertas sin código (VIO-02 diferido por diseño). | S7 | si | |
-| SonarCloud deshabilitado en el workflow desde el commit d7045d8 y sin URL pública de Quality Gate. | S7 | si | |
-| Contrato sin evidencia de ejecución en CI ni de fallo ante cambio incompatible. | S7 | si | |
-| Versión del contrato contradictoria entre ADR-0004 y el documento de API. | S7 | si | |
-| Esquemas del contrato y correspondencia con los routers sin verificar. | S7 | si | |
-| Sección 6 de arc42 sin evidencia citable. | S7 | si | |
+| Evidencia reproducible de fallo de la prueba contractual ante un cambio incompatible | S7 | Sí | Aportar run en rojo o commit reproducible. |
+| Versión contradictoria entre el contrato ejecutable y `docs/api/inventrack-contrato.md` | S7 | Sí | Alinear la documentación con la versión 0.1.0 del OpenAPI. |
+| SonarCloud deshabilitado al cierre S7 | S7 | No (resuelto tarde) | La punta S8 restituye scanner, proyecto público y run en verde. |
+| Despliegue público, health check e infraestructura como código ausentes | S8 | Sí | Elegir plataforma, desplegar y versionar el entorno. |
+| Sin logs estructurados, métrica consultable ni estimación de costo | S8 | Sí | Instrumentar observabilidad y calcular el consumo mensual. |
+| Vista de despliegue productiva y ADR de plataforma ausentes | S8 | Sí | Completar arc42 §7 y registrar la decisión. |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -96,11 +90,11 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 | Nombre y visibilidad del repositorio | Cumple | `ISCOUTB/AS_202620_InvenTrack`, público |
 | Estructura mínima | Cumple | Seis rutas presentes; arc42 en `docs/arc42/arc42-template-EN.md` |
 | Convención de nombres de ADR | Cumple | `0001-usar-monolito-modular-con-hexagonal-por-modulo.md`; placeholder eliminado |
-| ADR aceptados sin reescribir | Cumple | Churn previo; aceptado en `45d2fa0` y sin cambios posteriores. |
-| `docs/ia.md` al día | Cumple | Entrada del 2026-09-06 referida al Reto Corte 1, con rechazo y motivo técnico. |
+| ADR aceptados sin reescribir | No verificado | Hay varias revisiones; falta ubicar la aceptación para evaluar cambios posteriores. |
+| `docs/ia.md` al día | No cumple | No registra los cambios realizados después del cierre S7. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Escaneos limpios. |
 | Contribución de todos los integrantes | Cumple | Cuatro personas consolidadas para cuatro integrantes en HEAD. |
-| Pipeline en verde | No cumple | Run de HEAD `33811437677` en verde; no demuestra el reto. |
+| Pipeline en verde | Cumple | El run de la punta actual concluye en verde y ejecuta SonarCloud. |
 
 ## Contribución por integrante
 

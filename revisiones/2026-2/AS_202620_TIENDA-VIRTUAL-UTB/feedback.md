@@ -52,7 +52,9 @@ Sin actividad S6: el ultimo commit anterior al cierre es de la entrega previa, a
 
 ## Semana 7 · S7
 
-El repositorio no permite auditar la entrega porque el listado de archivos llega truncado y no expone docs/ ni la raíz. Suban el contrato de la API en OpenAPI o AsyncAPI con rutas y esquemas, su versión y el historial del archivo; localicen dos rutas del contrato en el código y una ruta del código en el contrato. Añadan la prueba de contrato y la línea del workflow que la invoca, con la URL del run. Lo más importante: demuestren con un run en rojo, o con el cambio incompatible documentado, que la prueba falla cuando el proveedor rompe el contrato. Falta el ADR de integración con alternativa descartada, la sección 6 de arc42 y el C4 nivel 2 con protocolo y formato en cada flecha. Eviten versionar el entorno Python completo en el repositorio: genera ruido en todos los escaneos. Si ya corrigieron algo después del cierre, indíquenlo con commit y fecha.
+La entrega sí contiene el contrato OpenAPI ejecutable, con rutas, esquemas y versión alineados con la API. La prueba compara el contrato con FastAPI, valida respuestas reales y ejerce dos mutaciones incompatibles; además, el workflow la ejecuta y publica su reporte. La sección 6 de arc42 también documenta los flujos de arranque y navegación del catálogo.
+
+Quedan dos no conformidades de la ficha. El ADR compara alternativas y consecuencias, pero no justifica la integración contra un escenario de calidad concreto y medible. En el C4 nivel 2, las relaciones entre actores y cliente web declaran HTTPS, pero omiten el formato. Adicionalmente, el pipeline del estado revisado está en rojo y sigue sin evidencia pública de SonarCloud con Quality Gate. Corrijan esas piezas y retiren del repositorio el entorno de terceros versionado, que añade ruido innecesario a los barridos.
 
 ## Semana 8 · S8
 

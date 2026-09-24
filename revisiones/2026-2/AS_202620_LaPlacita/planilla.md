@@ -10,13 +10,14 @@ Hoja consolidada del equipo LaPlacita. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_LaPlacita` |
 | Integrantes y su usuario de GitHub | Mateo Josue Buendia Barrios · Miguel Angel Isaza Montalvo · Samuel David Jimenez Alvarez · Jorge Alberto Martinez Castillo — cuentas abajo |
 | URL del sistema desplegado | sin desplegar aún |
-| Ultima revision | 2026-09-21 |
+| Ultima revision | 2026-09-24 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 7 | S7 | `8c2e1bc` (2026-09-20T22:47:32-05:00) | 4/10 | 2.6 | si |
+| 8 | S8 preliminar | `03b4e73` (2026-09-21T20:20:16-05:00) | 3/12 | 2.0 | sí, preliminar |
+| 7 | S7 | `8c2e1bc` (2026-09-20T22:47:32-05:00) | 10/10 | 5.0 | sí, auditada |
 | 6 | S6 | `2c0eb01` (2026-09-13T21:28:00-05:00) | 7/8 | 4.5 | si |
 | 5 | CORTE1 | `50b92f8` (2026-09-06T17:45:05-05:00) | 8/12 | 3.7 | si |
 | 4 | S4 | `745e799` (2026-08-30T21:52:41-05:00) | 4/10 | 2.6 | si |
@@ -62,27 +63,15 @@ Hoja consolidada del equipo LaPlacita. Se actualiza tras cada revisión.
 | Verificar que arc42 §8 contenga lenguaje ubicuo y mapa de contextos | S6 | si | |
 | Evidenciar la ejecución del pipeline CI en el commit actual | S6 | si | |
 | Deuda de propiedad V-02/V-04/V-05/V-06 planificada para Corte 2 | S6 | si | |
-| Contrato de API en formato ejecutable versionado | S7 | si | |
-| Prueba de contrato invocada por el pipeline | S7 | si | |
-| Evidencia de fallo de la prueba de contrato ante cambio incompatible | S7 | si | |
-| ADR de estrategia de integración (síncrona o asíncrona) contra escenario | S7 | si | |
-| arc42 §6 verificable en el archivo completo | S7 | si | |
-| SonarCloud: invocación en workflow, run exitoso del hash y URL pública con Quality Gate | S7 | si | |
-| Deuda de propiedad V-02, V-04, V-05 y V-06 (corte 2) | S7 | si | |
-| Vista única del arc42 como plantilla, revisar separación por secciones | S7 | si | |
 | SonarCloud sin URL de análisis ni Quality Gate (ADR-0003 lo declara pendiente del secreto) | S7 | si | |
-| Ejecución de la prueba de contrato en el pipeline sin verificar | S7 | si | |
-| Correspondencia contrato↔código sin verificar | S7 | si | |
-| Esquemas y versionado/historial del contrato sin verificar | S7 | si | |
-| arc42 §6 con flujos de interacción sin verificar | S7 | si | |
 | V-02 ACL Pedidos→Catálogo | S7 | si | |
 | V-04 Shared Kernel tiendaId | S7 | si | |
 | V-05 OHS evento notificaciones | S7 | si | |
 | V-06 orquestador | S7 | si | |
-| SonarCloud token y análisis | S7 | si | |
-| Sección 6 arc42 | S7 | si | |
-| Evidencia de fallo de contrato | S7 | si | |
 | Enlaces tabla aspectos | S7 | si | |
+| Despliegue público y health check ausentes; pipeline de la punta en rojo | S8 | Sí | Completar Railway y corregir el workflow. |
+| Sin logs estructurados, métrica consultable ni estimación de costo | S8 | Sí | Instrumentar observabilidad y calcular el consumo. |
+| arc42 §7, restricción económica y ADR separados por plataforma ausentes | S8 | Sí | Completar la documentación operativa. |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -90,11 +79,11 @@ Hoja consolidada del equipo LaPlacita. Se actualiza tras cada revisión.
 | Nombre y visibilidad del repositorio | Cumple | `ISCOUTB/AS_202620_LaPlacita`, público |
 | Estructura mínima | Cumple | Seis rutas; C4 en `docs/c4/contexto.md` con leyenda |
 | Convención de nombres de ADR | Cumple | `0001-adopcion-monolito-modular.md` |
-| ADR aceptados sin reescribir | Cumple | Único commit `bf94244`; estado «propuesto» anotado |
-| `docs/ia.md` al día | Cumple | Entradas del 23/08 con lo rechazado y su motivo |
+| ADR aceptados sin reescribir | No verificado | Varios ADR aceptados tienen múltiples revisiones; falta ubicar su aceptación. |
+| `docs/ia.md` al día | Cumple | Actualizado para S8 con decisiones y rechazos técnicos. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Greps limpios |
 | Contribución de todos los integrantes | Cumple | 4 identidades consolidadas / 4 integrantes (53+21+18+3) |
-| Pipeline en verde | No cumple | `.github/workflows/` presente desde S4; run sobre la etiqueta `corte-1` (`50b92f8`) exitoso. |
+| Pipeline en verde | No cumple | El run de la punta actual termina en rojo. |
 
 ## Contribución por integrante
 

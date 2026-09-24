@@ -42,4 +42,8 @@ La entrega S6 está bien estructurada: el mapa de contextos, la tabla de propied
 
 ## Semana 7 · S7
 
-El contrato OpenAPI y la prueba de contrato están en el repositorio, pero falta evidencia pública de su ejecución y del fallo ante cambio incompatible. Se recomienda enlazar en la entrega el run de CI que ejecuta el job de contrato y, si aplica, el run en rojo controlado, además del Quality Gate público de SonarCloud. También conviene completar los enlaces de la tabla de aspectos y verificar la sección 6 de arc42. Sin esa evidencia, varios criterios quedan como no verificados.
+La entrega S7 sí contiene el contrato ejecutable, esquemas, correspondencia con las rutas, prueba contractual en el pipeline, reproducción del fallo incompatible, ADR, flujos de ejecución y C4 etiquetado. La ficha queda completa. Como no conformidad transversal, el pipeline continúa fallando y todavía falta la evidencia pública del Quality Gate de SonarCloud.
+
+## Semana 8 · S8
+
+El Dockerfile, el procedimiento local y la gestión de secretos son una buena base. Pero la propia documentación confirma que Railway aún no está desplegado y el pipeline sigue en rojo. Antes del cierre, publiquen la URL y su health check, corrijan CI, instrumenten logs y métricas, completen la vista de despliegue y estimen el costo. La decisión combinada de Railway y SonarCloud debe separarse en un ADR por plataforma.

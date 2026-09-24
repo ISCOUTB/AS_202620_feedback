@@ -50,15 +50,11 @@ La entrega tiene buen ADR y un esqueleto hexagonal coherente con el estilo elegi
 
 ## Semana 7 · S7
 
-El contrato está en formato ejecutable, con esquemas de datos y una prueba que el pipeline corre en cada push: es la base correcta de la entrega.
-Para que quede defendible:
-1) Dejar en el informe el log del run en rojo que demuestre que la prueba falla al romper el contrato; hay runs fallidos, pero no se ve el paso que falló.
-2) Completar el ADR de integración con la alternativa descartada y el escenario de calidad que la justifica.
-3) Aportar la evidencia de análisis estático: configuración, línea del workflow que invoca el scanner y URL pública del análisis con su Quality Gate.
-4) Unificar los dos archivos que hoy ocupan el número 0001 en docs/adr y respetar la convención NNNN-titulo-en-kebab-case.md.
-5) Completar la tabla de aspectos con las ocho columnas del curso y etiquetar con protocolo y formato las flechas de actor a contenedor del C4 nivel 2.
-6) Adjuntar el git log del contrato y una cita del router que muestre la correspondencia entre contrato y código.
-Con esos seis ajustes la entrega pasa de correcta a sobresaliente.
+El contrato ejecutable, los esquemas, la correspondencia con las rutas, la prueba contractual, su ejecución en CI, la vista de ejecución y el C4 están bien resueltos. Quedan dos no conformidades de la ficha: el ADR de integración no presenta una alternativa descartada ligada a un escenario, y los runs fallidos disponibles no demuestran que el paso contractual se haya puesto en rojo por un cambio incompatible. También deben unificar los dos archivos que ocupan el número 0001 y publicar la evidencia completa de SonarCloud.
+
+## Semana 8 · S8
+
+El backend local, el health check y el pipeline son reproducibles. Sin embargo, Render solo aparece como intención: no hay URL pública, definición de infraestructura ni vista de despliegue. Completen el entorno desplegado, gestionen sus secretos desde el proveedor, instrumenten logs estructurados y una métrica consultable, y documenten costo mensual y alternativas de plataforma en un ADR independiente.
 ## Semana 6 · S6
 
 El mapa de contextos y la auditoría de propiedad de datos están bien construidos: los contextos, las relaciones tipificadas y los hallazgos citan rutas concretas del código y traen plan de corrección accionable. Para el siguiente corte, cierren la deuda transversal: integren el scanner de SonarCloud en el workflow y publiquen la URL del análisis con su Quality Gate; unifiquen los ADR en un archivo con la convención NNNN-titulo; completen la tabla de aspectos con las ocho columnas, incluida la evidencia de calidad; confirmen la sección 8 del arc42 con lenguaje ubicuo y el mapa de contextos. Si los límites de los contextos cambiaron respecto al primer corte, añadan el C4 nivel 3 y el ADR del reajuste. Y apliquen ya lo acordado en el plan: encapsular el estado del adaptador, crear el caso de uso de consulta y definir el puerto de lectura.

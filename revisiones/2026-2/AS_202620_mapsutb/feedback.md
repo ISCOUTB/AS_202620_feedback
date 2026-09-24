@@ -37,3 +37,7 @@ El contrato de las tres integraciones y el ADR que justifica la estrategia sincr
 ## Semana 6 · S6
 
 El documento `dominio_y_modularidad.md` aporta un mapa de contextos, dueños de datos y no conformidades con acciones concretas. Para que la arquitectura sea defendible, llévenlo también a arc42 §8, documenten en un ADR el reajuste de límites y vinculen cada contexto con la tabla de aspectos. Añadan SonarCloud con scanner, run y Quality Gate público.
+
+## Semana 8 · S8 (preliminar)
+
+El README permite reproducir el entorno local y la restricción de costo cero está declarada. Las no conformidades principales son que no existe una URL pública ni un endpoint de salud, falta infraestructura como código para desplegar y el pipeline del estado revisado está en rojo. Tampoco se encontraron logs estructurados, una métrica operativa consultable, inyección segura de la clave de Google, cálculo mensual, contenido real en arc42 §7 o un ADR que compare y decida la plataforma. Para la entrega definitiva, separen claramente arranque local de despliegue reproducible y publiquen evidencia operativa verificable.

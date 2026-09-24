@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_LostVault` |
 | Integrantes y su usuario de GitHub | Jose Faustino Espana Noriega · Roy Andres Gonzalez Blanco · Shamara Llorente Tapias · Kiefer Monterroza Manjarres — identidades del historial: Roy Gonzalez (¿`RGBlanco18`?), `shamarallorente-blip`, `Fausto-4` (correo `ganonimo2504`), `weller-rar` (correo `pelu.kiefer`); correspondencias por confirmar con el docente |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-21 |
+| Ultima revision | 2026-09-24 |
 
 ## Estado por entrega
 
@@ -20,8 +20,8 @@
 | 4 | S4 | `952af8f` (2026-08-30T22:13:14-05:00) | 7/10 | 3.8 | si |
 | 5 | CORTE1 | `c0c17c1` (2026-09-07T16:46:16-05:00) | 7/12 | 3.3 | si |
 | 6 | S6 | `9d57572` (2026-09-13T22:11:29-05:00) | 6/8 | 4.0 (prelim.) | si |
-| 7 | S7 | `7bf515f` (2026-09-20T23:55:34-05:00) | 6/10 | 3.4 | si |
-| 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
+| 7 | S7 | `7bf515f` (2026-09-20T23:55:34-05:00) | 7/10 | 3.8 | sí, auditada |
+| 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `7bf515f` (2026-09-20T23:55:34-05:00) | 4/12 | 2.3 | sí, preliminar |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
 | 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
@@ -64,38 +64,31 @@
 | Crear correcciones.md en la raíz | S5 | si | |
 | Completar trazabilidad con C4 en docs/aspectos.md | S5 | si | |
 | Limpiar archivos residuales | S5 | si | |
-| Contrato de API en OpenAPI, AsyncAPI o proto, versionado y con rutas y esquemas. | S7 | si | |
-| Correspondencia verificable entre el contrato y la API implementada. | S7 | si | |
-| Versión de API declarada con historial en git. | S7 | si | |
-| Prueba de contrato y su invocación en el pipeline. | S7 | si | |
-| Evidencia de fallo de la prueba ante un cambio incompatible. | S7 | si | |
-| ADR de estrategia de integración síncrona o asíncrona con escenario y alternativa descartada. | S7 | si | |
-| C4 nivel 2 como código con protocolo y formato en cada flecha. | S7 | si | |
-| URL pública del análisis de SonarCloud con Quality Gate. | S7 | si | |
-| Columnas y filas pendientes de docs/aspectos.md (incluida la trazabilidad C4). | S7 | si | |
-| Secciones arc42 7, 8, 11 y 12 ausentes. | S7 | si | |
 | docs/arc42/08* con lenguaje ubicuo y mapa de contextos incorporado. | S6 | si | |
 | C4 nivel 3 y ADR del reajuste si los límites cambiaron respecto al corte anterior. | S6 | si | |
 | URL pública del análisis de SonarCloud con rama o revisión y estado del Quality Gate. | S6 | si | |
 | Columnas Requisito y C4 en docs/aspectos.md y cierre de las celdas pendientes de AS-01, AS-02 y AS-04. | S6 | si | |
 | Correspondencia entre el contrato y una API implementada (o aclaración explícita de que la frontera HTTP aún no existe). | S7 | si | |
 | Evidencia de ejecución de la prueba de contrato en rojo ante un cambio incompatible. | S7 | si | |
-| URL pública del análisis en SonarCloud con Quality Gate para el hash revisado y run «Build» en verde. | S7 | si | |
+| URL pública del análisis en SonarCloud con Quality Gate para el hash revisado. | S7 | si | |
 | C4 nivel 2 revisable (como código) con protocolo y formato en cada flecha. | S7 | si | |
 | Columna C4 y celdas completas en docs/aspectos.md para todas las filas. | S7 | si | |
-| Historial git del contrato y actualización de docs/arc42/09_decisiones.md con el ADR 0002. | S7 | si | |
+| Actualización de docs/arc42/09_decisiones.md con el ADR 0002. | S7 | si | |
+| Despliegue público, health check e infraestructura como código ausentes | S8 | Sí | Definir plataforma, desplegar y versionar el entorno. |
+| Sin logs estructurados, métrica consultable ni estimación de costo | S8 | Sí | Instrumentar observabilidad y calcular el consumo mensual. |
+| arc42 §7 y ADR de plataforma ausentes | S8 | Sí | Documentar piezas, ubicación y decisión de alojamiento. |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | `github.com/ISCOUTB/AS_202620_LostVault`, público (ls-remote sin auth) |
-| Estructura mínima | Cumple | Sin `docs/c4/`; C4 en `docs/arc42/c4_contexto.png` |
-| Convención de nombres de ADR | Cumple | `0001-estilo-arquitectonico.md` |
-| ADR aceptados sin reescribir | Cumple | Creación (`723d9e6`) + renombrado (`d0e7078`), sin reescritura |
-| `docs/ia.md` al día | No cumple | Última entrada 08-ago; sin lo rechazado |
+| Estructura mínima | Cumple | Las seis rutas mínimas, incluido `docs/c4/`, están presentes. |
+| Convención de nombres de ADR | Cumple | ADR 0001 y 0002 siguen `NNNN-titulo-en-kebab-case.md`. |
+| ADR aceptados sin reescribir | Cumple | Cada ADR aceptado tiene una sola revisión en su ruta actual. |
+| `docs/ia.md` al día | No cumple | La última entrada corresponde a S7; no registra S8. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | git grep, .env y `log -S` sin coincidencias |
 | Contribución de todos los integrantes | Cumple | 4 identidades de 4 en `1ddb826`; atribución de `Fausto-4` y `weller-rar` por confirmar |
-| Pipeline en verde | No cumple | `.github/workflows/flutter.yml` presente desde S4; run sobre `952af8f` (etiqueta `corte-1`) exitoso (2026-09-01T21:21:20Z). |
+| Pipeline en verde | Cumple | Los workflows Flutter checks y Build del hash vigente terminan en verde. |
 
 ## Contribución por integrante
 

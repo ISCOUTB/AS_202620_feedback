@@ -6,9 +6,9 @@
 |---|---|
 | Equipo | Recobra |
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Recobra` |
-| Integrantes y su usuario de GitHub | Camilo Andres Conde Corrales · Fernando Isacc Conde Herrera · Miguel Alejandro Iii Jacome Yanez · Veronica Ubarne Reyes — cuentas consolidadas: `Cconde31` (incluye la identidad `Steamlinker`, unificada por `.mailmap` el 05/09), `MiguelJacome`, `vylrir` (Verónica Ubarne), y el commit real de Fernando Isacc Conde Herrera (`fconde@utb.edu.co`) |
+| Integrantes y su usuario de GitHub | Camilo Andres Conde Corrales · Fernando Isacc Conde Herrera · Miguel Alejandro Iii Jacome Yanez · Veronica Ubarne Reyes — cuentas consolidadas: `Cconde31` (incluye la identidad `Steamlinker`, unificada por `.mailmap` el 05/09), `MiguelJacome`, `vylrir` (Verónica Ubarne), y un commit identificado con el nombre real de Fernando Isacc Conde Herrera |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-21 |
+| Ultima revision | 2026-09-24 |
 
 ## Estado por entrega
 
@@ -20,8 +20,8 @@
 | 4 | S4 | `2268b33` (2026-08-30T22:34:56-05:00) | 6/10 | 3.4 | si |
 | 5 | CORTE1 | `f7c1a6c` (2026-09-07T09:59:41-05:00) | 8/12 | 3.7 | si |
 | 6 | S6 | `47fb44b` (2026-09-13T16:58:53-05:00) | 4/8 | 3.0 (prelim.) | si |
-| 7 | S7 | `8f25313` (2026-09-19T13:37:58-05:00) | 8/10 | 4.2 | si |
-| 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
+| 7 | S7 | `8f25313` (2026-09-19T13:37:58-05:00) | 10/10 | 5.0 | si |
+| 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `8f25313` (2026-09-19T13:37:58-05:00) | 1/12 | 1.3 (prelim.) | si |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
 | 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
@@ -101,6 +101,8 @@
 | Aportar el historial git de docs/contracts/openapi.yaml para respaldar la versión declarada. | S7 | si | |
 | Aportar el contenido de docs/ia.md con lo rechazado y su motivo por cada uso. | S7 | si | |
 | Consolidar las cuentas del historial con los integrantes declarados y confirmar la rotación del token de Coveralls mencionado en el checklist. | S7 | si | |
+| Publicar el despliegue y completar IaC, observabilidad, costos y ADR de plataforma. | S8 | si | arc42 declara expresamente que el despliegue en nube está pendiente. |
+
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -112,14 +114,14 @@
 | `docs/ia.md` al día | Cumple | Entradas del 05/09 con aceptado/corregido/rechazado y motivo |
 | Sin credenciales en el repositorio ni en el historial | **No cumple** | Token de Coveralls recuperable en el historial (`905f546`); no confirmado que se haya rotado |
 | Contribución de todos los integrantes | Cumple, con reserva | 4 identidades para 4 integrantes, pero Fernando con 1 solo commit en todo el semestre |
-| Pipeline en verde | No verificado | Runs `success` antes (`6ee5b66`, 06/09 01:27Z) y después (`f7c1a6c`, 07/09 15:00Z) del cierre |
+| Pipeline en verde | Cumple | Run público exitoso del estado revisado: https://github.com/ISCOUTB/AS_202620_Recobra/actions/runs/35461821663; SonarCloud no está acreditado. |
 
 ## Contribución por integrante
 
 | Integrante | Usuario de GitHub | Commits (HEAD) | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
 |---|---|---:|---:|---:|---|
 | Camilo Andres Conde Corrales | `Cconde31` (incluye `Steamlinker`, consolidado) | 26 | — | — | Autor de casi todo el reto S5 |
-| Fernando Isacc Conde Herrera | commit con nombre real, `fconde@utb.edu.co` | 1 | — | — | Contribución mínima persistente |
+| Fernando Isacc Conde Herrera | commit identificado con nombre real | 1 | — | — | Contribución mínima persistente |
 | Miguel Alejandro Iii Jacome Yanez | `MiguelJacome` | 7 | — | — | — |
 | Veronica Ubarne Reyes | `vylrir` | 9 | — | — | Consolidada desde S3-S4 |
 

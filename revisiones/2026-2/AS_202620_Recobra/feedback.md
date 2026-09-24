@@ -37,3 +37,7 @@ El avance está bien encaminado: el contrato OpenAPI 3.0.3 con rutas y esquemas,
 ## Semana 6 · S6
 
 El mapa de contextos y la tabla módulo-datos están bien encaminados. Para cerrar S6, documenten el recorrido de búsqueda de escrituras y las no conformidades de propiedad con entidad, dueño esperado y ubicación. Añadan la sección 8 de arc42 con lenguaje ubicuo y mapa de contextos. Si los límites cambiaron desde el primer corte, incluyan el diff, C4 nivel 3 y ADR. Completen la evidencia de SonarCloud con run exitoso y URL pública del Quality Gate. Rote el token expuesto en el historial y dejen constancia; no basta con retirarlo del HEAD.
+
+## Semana 8 · S8
+
+El pipeline continúa en verde, pero la propia documentación indica que el despliegue en nube sigue pendiente. Por eso todavía no pueden verificarse una URL, un health check externo ni observabilidad operativa. Las no conformidades incluyen infraestructura como código, pasos reproducibles, logs estructurados, métrica ligada a un escenario, manejo explícito de secretos, estimación de costos, vista de despliegue real y ADR de plataforma. Prioricen un corte mínimo desplegado y documentado antes de ampliar el alcance.

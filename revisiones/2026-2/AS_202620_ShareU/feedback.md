@@ -67,3 +67,7 @@ Buen avance: el contrato OpenAPI 3.1 está versionado en docs/api/openapi.yaml c
 ## Semana 6 · S6
 
 La auditoría sobre el código actual está bien hecha: el mapa de contextos, la tabla de dueño único y las violaciones con su plan citan rutas reales y son repetibles. Para cerrar el corte, incrusten el mapa de contextos en la sección 8 de arc42 y añadan el C4 nivel 3 que implica el reajuste de límites. La tabla de aspectos necesita las columnas ID y C4 para que cada fila sea navegable. SonarCloud no queda demostrado: incorporen el paso del scanner al workflow y la URL pública del análisis con su Quality Gate. Verifiquen también que lo afirmado en la evidencia siga siendo cierto tras los cambios posteriores al cierre. Buen trabajo de trazabilidad; el siguiente paso natural es ejecutar el plan de corrección ya redactado.
+
+## Semana 8 · S8
+
+El pipeline está en verde y existe una vista genérica de ejecución, pero aún no hay URL pública, infraestructura versionada ni health check externo verificable. También faltan logs estructurados, una métrica ligada a un escenario, evidencia positiva del manejo de secretos, estimación de costos, una vista de despliegue con plataformas reales y ADR de plataforma. Corrijan además la referencia documental a una prueba inexistente para que lo declarado coincida con el repositorio. Estas no conformidades deben resolverse antes de presentar el despliegue como reproducible.

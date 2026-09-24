@@ -10,7 +10,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_XALD` |
 | Integrantes y su usuario de GitHub | Xavier Yesid Garcia Diaz (xaviergarciadiaz20-commits) · Dilan Joan Gonzalez Bejarano (dilanbejarano011) · Luis Estheban Lozano Colmenares (colmenares2007-crypto) · Axel Jair Ruiz Bolano (axeljruiz717-hash) — correspondencias por los correos de los commits (nombres explícitos), por confirmar con el docente |
 | URL del sistema desplegado | sin URL (sin despliegue todavía) |
-| Ultima revision | 2026-09-21 |
+| Ultima revision | 2026-09-24 |
 
 ## Estado por entrega
 
@@ -22,8 +22,8 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 4 | S4 | `0205e44` (2026-08-30T23:12:03-05:00) | 4/10 | 2.6 | si |
 | 5 | CORTE1 | `9bf16cf` (2026-09-09T10:07:09-05:00) | 8/12 | 3.7 | si |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | `55993cf` (2026-09-13T22:06:22-05:00) | 8/8 | 5.0 (prelim.) | sí |
-| 7 | S7 | `62a0d15` (2026-09-20T23:25:16-05:00) | 7/10 | 3.8 | si |
-| 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
+| 7 | S7 | `62a0d15` (2026-09-20T23:25:16-05:00) | 9/10 | 4.6 (propuesta) | sí (auditoría local) |
+| 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `62a0d15` (2026-09-20T23:25:16-05:00) | 2/12 | 1.7 (prelim.) | sí |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
 | 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
@@ -92,24 +92,28 @@ Hoja consolidada del equipo a lo largo del semestre.
 | fcf0089 2026-09-20T22:52:52-05:00 Update aspectos.md | S7 | no (resuelto tarde) | — |
 | b7ca7f7 2026-09-20T23:03:41-05:00 y 73de849 2026-09-20T23:18:48-05:00 Update openapi.yaml | S7 | no (resuelto tarde) | — |
 | 62a0d15 2026-09-20T23:25:16-05:00 Update 06-Runtime view.md | S7 | no (resuelto tarde) | — |
-| Prueba de contrato no localizada ni invocada con evidencia de run | S7 | si | |
+| Prueba de contrato no localizada ni invocada con evidencia de run | S7 | no (resuelto en auditoría) | Redocly se ejecuta en CI y el run del hash revisado está verde. |
 | SonarCloud sin las tres evidencias auditables | S7 | si | |
 | docs/arc42/07-Deployment View.md vacío | S7 | si | |
-| docs/c4/c2.md sin verificar protocolo y formato en cada flecha | S7 | si | |
+| docs/c4/c2.md sin verificar protocolo y formato en cada flecha | S7 | no (resuelto en auditoría) | El C2 etiqueta protocolo o mecanismo y formato en todas las relaciones. |
 | ADR-0005 con estatus inconsistente entre encabezado y trazabilidad | S7 | si | |
 | Archivos __pycache__ (.pyc) versionados | S7 | si | |
+| Sin URL pública, health check ni infraestructura como código de despliegue | S8 | sí | Entregar el entorno público y su configuración reproducible. |
+| Sin logs estructurados ni métrica operativa consultable | S8 | sí | Ligarlos a un escenario de calidad y al entorno desplegado. |
+| Sin estimación mensual de costo ni ADR de plataforma | S8 | sí | Calcular por volumen y documentar cada decisión de proveedor. |
+| `docs/arc42/07-Deployment View.md` vacío | S8 | sí | Completar una caja por pieza y dónde se ejecuta. |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | `ISCOUTB/AS_202620_XALD`, público (antes privado: EQUIPOS.md) |
 | Estructura mínima | Cumple | seis rutas presentes; `docs/c4/` ahora en su carpeta |
-| Convención de nombres de ADR | Cumple | seis ADR con nombres `NNNN-titulo-en-kebab-case.md` |
+| Convención de nombres de ADR | Cumple | siete ADR con nombres `NNNN-titulo-en-kebab-case.md` |
 | ADR aceptados sin reescribir | No cumple | persiste: `0002-parsing-hibrido.md` fue editado el 2026-08-30 después de su aceptación, sin declarar reemplazo |
-| `docs/ia.md` al día | Cumple | corrige la revisión preliminar: la última entrada (SonarCloud) está fechada en la ventana de commits previa a la etiqueta |
+| `docs/ia.md` al día | No cumple | último cambio 2026-09-20; no registra trabajo del periodo S8 |
 | Sin credenciales en el repositorio ni en el historial | Cumple | greps limpios; `local.properties` solo trae ruta de SDK (fuera del versionado de todas formas) |
 | Contribución de todos los integrantes | Cumple | 4 identidades = 4 integrantes |
-| Pipeline en verde | No verificado | corrige la revisión preliminar (que citaba un run de la base, no del reto): el workflow solo dispara en `experimental`/`main`; ningún commit de la noche del cierre (incluida la etiqueta) disparó un run en `master` |
+| Pipeline en verde | No cumple | CI del hash revisado en verde, pero sin scanner ni URL pública de SonarCloud con Quality Gate |
 
 ## Contribución por integrante
 

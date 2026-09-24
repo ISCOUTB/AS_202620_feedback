@@ -1,76 +1,67 @@
 # semana-07-evidencia-s7 · Calificación automática
 
-> Pasada temprana (GitHub Actions, previa al cierre): los hashes y la nota son preliminares y pueden cambiar si el equipo empuja antes del cierre.
+> Revisión definitiva corregida después del cierre. El informe preliminar había omitido 19 commits elegibles; esta versión evalúa el último commit de `origin/master` anterior al cierre.
 
 | Campo | Valor |
 |---|---|
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica` |
-| Estado revisado | `a47d5bd` en `origin/master` (2026-09-13T23:21:55-05:00) |
+| Estado revisado | `2269ca5` en `origin/master` (2026-09-20T21:48:00-05:00) |
 | Cierre | 2026-09-21T05:00:00Z |
-| Revisor | pipeline automatico (GitHub Actions) |
+| Revisor | revisión académica local sobre evidencia Git y GitHub Actions |
 
 ## Matriz de la ficha
 
-| Criterio de evaluacion | Evidencia tecnica | Estado | Observaciones |
+| Criterio de evaluación | Evidencia técnica | Estado | Observaciones |
 |---|---|---|---|
-| Contrato en formato ejecutable versionado en el repositorio | Árbol de a47d5bd: no aparece ningún archivo openapi/swagger/asyncapi (.yaml/.json) ni .proto; solo backend/api/main.py y docs/arc42/arc42-template-ES.md. | No cumple | Se esperaba un archivo de contrato ejecutable versionado; se revisó el árbol completo del commit calificado y no existe. |
-| Contrato con rutas y esquemas de datos, no solo listado de endpoints | Sin archivo de contrato en el árbol de a47d5bd; no hay rutas ni esquemas que citar. | No cumple | No se puede citar fragmento alguno porque el contrato no existe en el repositorio. |
-| Correspondencia entre el contrato y la API implementada | El README describe POST /examenes/{id}/hojas y /health en backend/api/main.py, pero no hay contrato contra el cual contrastarlas. | No cumple | La API existe en código; falta el contrato que permita verificar la correspondencia en ambos sentidos. |
-| Versión de la API declarada y con historial | No hay archivo de contrato en a47d5bd, por lo que no existe campo de versión ni git log del contrato. | No cumple | Se esperaba versión declarada en el propio contrato o en su ruta; no se encontró. |
-| Prueba de contrato presente | backend/tests/ contiene test_arranque, test_carga_hojas, test_durabilidad_recepcion, test_encolado, test_fronteras, test_modulos_importables y test_recepcion; ninguna prueba de contrato. | No cumple | Se esperaba una prueba de contrato (dredd, schemathesis, pact, prism o equivalente); no aparece en el árbol. |
-| El pipeline ejecuta la prueba de contrato | .github/workflows/ci.yml existe, pero no hay prueba de contrato que invocar; no se aporta run que la ejecute. | No cumple | Se esperaba la línea del workflow que invoca la prueba y la URL del run; no hay ninguna de las dos. |
-| Evidencia de que la prueba falla ante un cambio incompatible | No hay runs de CI en la evidencia aportada ni prueba de contrato que pueda fallar; no se aporta evidencia del cambio incompatible. | No verificado | Queda como pregunta de sustentación: se esperaba un run en rojo o la evidencia del cambio incompatible que hizo fallar la prueba. |
-| ADR de la estrategia de integración ligado a un escenario | docs/adr/0002-procesar-calificacion-de-forma-asincrona.md: escenario EC-03/EC-04, alternativa A (síncrona) descartada con su consecuencia de acoplamiento y alternativa C (servicio aparte) descartada por RNF-07. | Cumple | El ADR justifica la estrategia asíncrona contra escenarios concretos y registra las alternativas descartadas. |
-| arc42 sección 6 con los flujos de interacción | docs/arc42/arc42-template-ES.md declara en su encabezado que las secciones 1 a 6 están escritas, pero el contenido aportado se corta antes de la sección 6 y no se puede citar el flujo. | No verificado | Se esperaba docs/arc42/06* con los flujos descritos; el extracto disponible no permite confirmarlo ni negarlo. |
-| C4 nivel 2 con protocolo y formato en cada flecha | docs/c4/doc-c4.md existe en el árbol, pero no se aporta su contenido; ADR-0006 menciona relaciones 3 y 4 del Nivel 2 sin mostrar el diagrama. | No verificado | Se esperaba el diagrama de nivel 2 con cada flecha etiquetada con protocolo y formato; no se pudo comprobar. |
+| Contrato en formato ejecutable versionado en el repositorio | `docs/contrato/openapi.json:199` declara OpenAPI 3.1.0; el archivo aparece en el historial en `661b3a1` (2026-09-20T17:29:30-05:00). | Cumple | Es un contrato ejecutable versionado, no una descripción en prosa. |
+| Contrato con rutas y esquemas de datos, no solo listado de endpoints | `docs/contrato/openapi.json:3-195` define `components.schemas`; las rutas `/examenes/{examen_id}/hojas` y `/health` están en las líneas 201 y 251. | Cumple | Las operaciones enlazan esquemas tipados de petición y respuesta. |
+| Correspondencia entre el contrato y la API implementada | `backend/api/main.py:69-74` implementa `/health` y `/examenes/{examen_id}/hojas`; ambas rutas están en `docs/contrato/openapi.json:201,251`. `backend/tests/test_contrato.py:129-145` compara el documento generado con el versionado. | Cumple | La igualdad automatizada comprueba la correspondencia en ambos sentidos. |
+| Versión de la API declarada y con historial | `docs/contrato/openapi.json:197` declara `1.0.0`, alineada con `backend/api/esquemas.py:24` y `backend/api/main.py:30-35`; `git log -- docs/contrato/openapi.json` registra `661b3a1`. | Cumple | Versión e introducción del contrato quedan trazables en Git. |
+| Prueba de contrato presente | `backend/tests/test_contrato.py:122-195` compara esquemas y rutas, verifica la versión y valida respuestas reales contra el contrato. | Cumple | La prueba cubre sincronización documental y cuerpos de respuesta. |
+| El pipeline ejecuta la prueba de contrato | `.github/workflows/ci.yml:37-38` ejecuta `pytest -v tests/test_contrato.py`; el run del hash calificado terminó exitoso: https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/actions/runs/35555368047 | Cumple | La prueba tiene un paso propio antes de la suite completa. |
+| Evidencia de que la prueba falla ante un cambio incompatible | `docs/evidencia/prueba-de-contrato-falla.md:17,88-89` documenta el cambio deliberado de `nombre_archivo` a `archivo`, el run rojo 35548751589 y el run verde 35549237474 tras revertir. | Cumple | La evidencia distingue el fallo contractual de un error de sintaxis y conserva los runs reproducibles. |
+| ADR de la estrategia de integración ligado a un escenario | `docs/adr/0002-procesar-calificacion-de-forma-asincrona.md:6,100-201,250-282` liga la asincronía a EC-03 y EC-04, compara alternativas y registra consecuencias. | Cumple | La elección y el acoplamiento se justifican contra escenarios concretos. |
+| arc42 sección 6 con los flujos de interacción | `docs/arc42/arc42-template-ES.md:356-440` describe el arranque, la sonda de salud y la carga de hojas con el recorrido por API, almacenamiento, bitácora y cola. | Cumple | Los flujos corresponden al incremento implementado. |
+| C4 nivel 2 con protocolo y formato en cada flecha | `docs/c4/doc-c4.md:273-280` enumera las ocho relaciones del nivel 2 con HTTPS/JSON/multipart, SQL/PostgreSQL, llamadas en proceso con bytes, Redis/JSON y lectura de imagen. | Cumple | Todas las relaciones indican el protocolo o mecanismo y el formato intercambiado. |
 
 ## Matriz transversal (CONTRATO §11)
 
 | Criterio | Evidencia | Estado | Observaciones |
 |---|---|---|---|
-| Identidad del repositorio | Repo AS_202620_Sistema-de-calificacion-automatica en la organización ISCOUTB, visible; autores scp1109, josueacademico17-source, SusanaRosales y Mariadelmar-restrepo en el historial. | Cumple | Los cuatro integrantes declarados aparecen como autores en el historial del repositorio. |
-| Estructura mínima | Árbol de a47d5bd: docs/adr/ con 0001 a 0007, docs/arc42/, docs/c4/doc-c4.md, docs/aspectos.md, docs/ia.md y README.md. | Cumple | Se cumple la estructura mínima; el C4 vive en docs/c4/ y el arc42 en docs/arc42/. |
-| Qué estado del repositorio se califica | Rama principal origin/master; hash calificado a47d5bd con fecha 2026-09-13T23:21:55-05:00, anterior al cierre 2026-09-21T05:00:00Z. | Cumple | El commit calificado es el último de master anterior al cierre y no hay commits posteriores al cierre. |
-| Convenciones de ADR | docs/adr/0001-usar-monolito-modular.md a 0007-declarar-los-contextos-delimitados-y-la-regla-de-dueno-unico.md, todos con nombre NNNN-kebab-case; 0001 marcado como reemplazado por 0002 sin editarse. | Cumple | Los nombres siguen la convención y el ADR reemplazado conserva su contenido con enlace al sustituto. |
-| La tabla de aspectos | docs/aspectos.md existe en el árbol, pero no se aporta su contenido para comprobar las ocho columnas y la navegabilidad de cada eslabón. | No verificado | Se esperaba la tabla con ID, Aspecto, Requisito, C4, ADR, Código, Pruebas y Evidencia; el extracto no la incluye. |
-| Registro de uso de IA | docs/ia.md existe y su historial muestra nueve commits entre 2026-08-07 y 2026-09-13, pero no se aporta el contenido con lo aceptado y lo rechazado. | No verificado | El archivo crece a lo largo del semestre; falta ver la columna de lo rechazado y su motivo técnico. |
-| README | README.md describe el sistema, el arranque con 'docker compose up' y cómo se prueba con pytest (47 pruebas) y flutter test (6 pruebas). | Cumple | Declara requisitos previos (Docker con Compose) y el comando único de arranque. |
-| Pipeline y análisis estático | .github/workflows/ci.yml existe, pero no se aportan runs de CI ni URL pública de SonarCloud con Quality Gate para a47d5bd. | No verificado | Se esperaba la línea del workflow que invoca el scanner, la URL del run exitoso y la URL pública del análisis; no se aportó ninguna. |
+| Repositorio en la organización, con el nombre de la convención y público | `https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica`, accesible por clonación sin autenticación. | Cumple | Nombre y organización coinciden con `EQUIPOS.md`. |
+| Estructura mínima presente | El árbol de `2269ca5` contiene `README.md`, `docs/arc42/`, `docs/adr/`, `docs/c4/`, `docs/aspectos.md` y `docs/ia.md`. | Cumple | Las seis rutas exigidas están versionadas. |
+| Estado calificado identificable | `origin/master`, `2269ca5`, 2026-09-20T21:48:00-05:00; es el último commit anterior al cierre. | Cumple | La punta actual coincide con el estado calificado. |
+| Nombres de ADR según la convención | `docs/adr/0001-usar-monolito-modular.md` a `0007-declarar-los-contextos-delimitados-y-la-regla-de-dueno-unico.md`. | Cumple | Numeración y nombres siguen `NNNN-kebab-case.md`. |
+| ADR aceptados no reescritos | El historial conserva los ADR por decisión; el 0001 solo añade el estado de reemplazo por el 0002 en `9ca9257`. | Cumple | El reemplazo está declarado y el contenido de la decisión anterior permanece trazable. |
+| `docs/ia.md` al día para la semana | `docs/ia.md:126-138` registra la actividad de S7, propuestas rechazadas y motivos técnicos; el último commit del archivo es `2269ca5`. | Cumple | Se documentan incluso evidencias descartadas por no probar la propiedad correcta. |
+| Pipeline, SonarCloud y Quality Gate públicos | `.github/workflows/ci.yml` y el run exitoso 35555368047 verifican CI, pero el árbol no contiene configuración ni invocación de SonarCloud y no se publica una URL de análisis con Quality Gate. | No cumple | Faltan las tres evidencias de SonarCloud exigidas desde S6. |
+| Sin credenciales en el repositorio ni en el historial | El árbol solo contiene `.env.example`; el barrido estático del hash no encontró credenciales en código propio. | Cumple | No hay `.env` versionado. |
+| Contribución de todos los integrantes | `git shortlog -sne 2269ca5` produce cuatro grupos de identidad, pero `EQUIPOS.md` solo confirma dos cuentas para este repositorio. | No verificado | No se atribuyen las otras identidades por parecido de nombre; hace falta confirmar las cuentas. |
 
 ## Estado global del proyecto (overall · punta actual de la misma rama)
 
-Mira el repositorio **entero en la punta actual de la misma rama**, no solo la evidencia del cierre: si el equipo subio tarde o corregio entregas anteriores, aqui se nota.
-
-- **Punta actual revisada**: `a47d5bd660abb2d220071430f869e8ee8ee17bd2 2026-09-13T23:21:55-05:00 docs: corregir el estado del C4 y registrar la decision del nombre`
-- **Veredicto**: con pendientes
-- Resumen: El proyecto avanza en documentación arquitectónica y en el corte vertical A-01, pero en la punta actual de master no existe contrato de API ejecutable ni prueba de contrato en el pipeline, que son el objeto de la semana 7.
+- **Punta actual revisada**: `2269ca5a1fa1b64787745a55f4d714070192a8f0 2026-09-20T21:48:00-05:00 docs(ia): registrar el uso de IA de la semana 7`.
+- **Veredicto**: entrega S7 completa; persiste una no conformidad transversal de SonarCloud.
+- El contrato OpenAPI, su correspondencia con FastAPI, la prueba de contrato en CI, la demostración en rojo, el ADR, arc42 §6 y el C4 nivel 2 están presentes y trazables en la punta actual.
 
 Pendientes que siguen abiertos:
-- Contrato de API en formato ejecutable versionado en el repositorio.
-- Prueba de contrato ejecutada por el pipeline y evidencia de que falla ante un cambio incompatible.
-- Evidencia auditable de SonarCloud (workflow, run exitoso y URL pública con Quality Gate).
-- Verificación de la tabla de aspectos, el registro de IA, la sección 6 del arc42 y el C4 nivel 2.
+- Configurar e invocar SonarCloud desde el workflow, publicar un run exitoso que ejecute el scanner y enlazar el análisis público con Quality Gate.
+- Confirmar las cuentas de GitHub de las dos identidades no mapeadas en `EQUIPOS.md`.
 
 ## Recuento y nota sugerida
 
-1 de 10 criterios Cumple.
+10 de 10 criterios Cumple.
 
-**Nota sugerida preliminar (propuesta al docente; puede cambiar al cierre): 1.4 = 1 + 4 × (1/10).** La nota final la fija el profesor en Moodle.
+**Nota sugerida (propuesta al docente, publicada por decisión del profesor): 5.0 = 1 + 4 × (10/10).** La nota final la fija el profesor en Moodle.
 
 ## No verificado / pendientes
 
-- Evidencia de que la prueba de contrato falla ante un cambio incompatible: no hay runs ni evidencia aportada; haría falta un run en rojo o el registro del cambio incompatible.
-- arc42 sección 6 con los flujos de interacción: el extracto se corta antes de la sección 6; haría falta el contenido de docs/arc42/06*.
-- C4 nivel 2 con protocolo y formato en cada flecha: docs/c4/doc-c4.md no se aporta; haría falta el diagrama con las etiquetas.
-- Tabla de aspectos: docs/aspectos.md no se aporta; haría falta su contenido con las ocho columnas.
-- Registro de uso de IA: docs/ia.md no se aporta; haría falta el contenido con lo aceptado y lo rechazado.
-- Pipeline y análisis estático: sin runs de CI ni URL pública de SonarCloud; haría falta la línea del workflow, el run exitoso y el Quality Gate.
+- Contribución: cuatro identidades aparecen en el historial, pero solo dos cuentas están confirmadas en `EQUIPOS.md`; se requiere asociación explícita para las otras dos.
+- SonarCloud: no existe configuración o invocación del scanner ni URL pública del análisis con Quality Gate; es una no conformidad transversal, no una fila de la ficha S7.
 
 ## Hallazgos para la planilla
 
-- No existe archivo de contrato OpenAPI, AsyncAPI ni proto en el commit calificado a47d5bd.
-- No hay prueba de contrato en backend/tests/ ni invocación de contrato en .github/workflows/ci.yml.
-- No se aporta ningún run de CI ni evidencia de que una prueba de contrato pueda fallar.
-- El ADR-0002 justifica la estrategia asíncrona contra EC-03 y EC-04 con alternativas descartadas.
-- No se aportan runs de CI ni URL pública de SonarCloud para el hash revisado.
-- No hay commits posteriores al cierre en la rama master.
+- El informe preliminar evaluó `a47d5bd`; el estado correcto al cierre es `2269ca5`, que incorpora 19 commits elegibles.
+- La entrega S7 cumple las diez filas de la ficha, incluida una demostración reproducible de la prueba en rojo y su posterior recuperación.
+- CI está verde para el hash calificado en el run 35555368047.
+- SonarCloud continúa sin evidencia pública auditable.

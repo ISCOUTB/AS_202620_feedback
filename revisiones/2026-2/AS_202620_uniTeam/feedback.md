@@ -47,3 +47,7 @@ El mapa de contextos y la tabla inicial de dueño único tienen una estructura c
 ## Semana 7 · S7
 
 Sin actividad S7: el ultimo commit anterior al cierre es de la entrega previa, asi que esta evidencia no se pudo evaluar. Lo que se arrastra de semanas anteriores sigue abierto para el corte.
+
+## Semana 8 · S8 (preliminar)
+
+Docker, Compose y el README permiten reconstruir el entorno local, y la restricción de costo cero está documentada. Aun así, el propio repositorio declara que no hay despliegue real: el endpoint de salud solo se presenta en localhost y el pipeline del estado revisado está en rojo. Las demás no conformidades son logs sin estructura, ausencia de una métrica operativa consultable, credenciales de desarrollo embebidas en Compose sin un mecanismo de secretos del proveedor, falta de cálculo mensual, arc42 §7 pendiente y ausencia de un ADR de plataforma. Para la entrega definitiva, conviertan la reproducibilidad local en evidencia de operación pública y segura.

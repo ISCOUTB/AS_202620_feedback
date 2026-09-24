@@ -10,13 +10,14 @@ Hoja consolidada del equipo EnAgenda. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_EnAgenda` |
 | Integrantes y su usuario de GitHub | Eliab Josue Arnedo Conde · Jeimy Yulieth Mendez Altamiranda · Gabriela Morales Cancino — cuentas abajo |
 | URL del sistema desplegado | sin desplegar aún |
-| Ultima revision | 2026-09-21 |
+| Ultima revision | 2026-09-24 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 7 | S7 | `849ee8c` (2026-09-20T23:59:07-05:00) | 2/10 | 1.8 | si |
+| 8 | S8 preliminar | `6db7cd9` (2026-09-21T02:53:08-05:00) | 3/12 | 2.0 | sí, preliminar |
+| 7 | S7 | `849ee8c` (2026-09-20T23:59:07-05:00) | 4/10 | 2.6 | sí, auditada |
 | 6 | S6 | `0a58de8` (2026-09-13T23:38:41-05:00) | 7/8 | 4.5 | si |
 | 5 | CORTE1 | `696882e` (2026-09-07T16:21:16-05:00) | 10/12 | 4.3 | si |
 | 4 | S4 | `df724b8` (2026-08-30T23:57:42-05:00) | 8/10 | 4.2 | si |
@@ -67,37 +68,27 @@ Hoja consolidada del equipo EnAgenda. Se actualiza tras cada revisión.
 | Pendientes de la semana 5: reto nuevo, medición, incremento y umbral. | S6 | si | |
 | Ampliar la tabla de aspectos a más contextos. | S6 | si | |
 | Eliminar archivos __pycache__ del repositorio. | S6 | si | |
-| Ninguno: commits_post_cierre vacío y diff_desde_cierre 'sin diferencias con el estado calificado'; el HEAD de la rama sigue siendo 0a58de8. | S7 | no (resuelto tarde) | — |
-| Contrato OpenAPI/AsyncAPI/proto versionado y ejecutable | S7 | si | |
-| Rutas con esquemas de datos y correspondencia con la API implementada | S7 | si | |
-| Versión de API declarada con historial en git | S7 | si | |
-| Prueba de contrato presente y ejecutada por el workflow | S7 | si | |
-| Evidencia de que la prueba falla ante un cambio incompatible (run en rojo o evidencia aportada) | S7 | si | |
-| ADR de estrategia de integración (síncrona o asíncrona) con alternativa descartada | S7 | si | |
-| Verificación de arc42 sección 6 con los flujos de interacción | S7 | si | |
-| Formato en cada flecha del C4 nivel 2 | S7 | si | |
-| Análisis estático auditable en SonarCloud (scanner en workflow, run y URL con Quality Gate) | S7 | si | |
-| 54ecb57 2026-09-21T02:36:10-05:00 Create 0002-estrategia-integracion-api.md (ADR posterior al cierre) | S7 | no (resuelto tarde) | — |
-| 9ebd147 2026-09-21T02:46:20-05:00 Update 06-vista-de-ejecución.md | S7 | no (resuelto tarde) | — |
-| 6db7cd9 2026-09-21T02:53:08-05:00 Update nivel-2-contenedores.md | S7 | no (resuelto tarde) | — |
-| a02f375 2026-09-21T02:30:15-05:00 y 61cb4d0 2026-09-21T02:31:44-05:00: alta y borrado previos del mismo ADR | S7 | no (resuelto tarde) | — |
-| Prueba de contrato ejecutada por el pipeline y evidencia de su fallo ante un cambio incompatible | S7 | si | |
-| Correspondencia contrato↔código verificable con el contenido de app/web.py y de los tests | S7 | si | |
-| SonarCloud: scanner en el workflow, run exitoso del hash y URL pública con Quality Gate | S7 | si | |
-| Contenido de arc42 §6 y C4 nivel 2 con protocolo y formato por flecha en el commit del cierre | S7 | si | |
-| Historial del contrato y limpieza de __pycache__ versionado | S7 | si | |
+| Rutas web expuestas fuera del contrato OpenAPI | S7 | Sí | Declarar `/` y `/invitacion/<token>` o separar explícitamente la frontera contractual. |
+| Prueba funcional que no valida el OpenAPI ni se ejecuta como prueba contractual explícita | S7 | Sí | Hacer que la prueba lea la especificación y que el workflow invoque el paso contractual. |
+| Evidencia de fallo ante un cambio incompatible | S7 | Sí | Aportar un run o reproducción verificable de la rotura. |
+| ADR de integración incorporado después del cierre | S7 | No (resuelto tarde) | Existe en la punta actual, pero no modifica la calificación definitiva. |
+| C4 nivel 2 sin formato de datos en cada flecha | S7 | Sí | Etiquetar canal y formato en todas las relaciones. |
+| SonarCloud sin scanner, análisis público ni Quality Gate | S7 | Sí | Integrar el análisis y publicar la evidencia del hash. |
+| Despliegue público, health check e infraestructura como código ausentes | S8 | Sí | Publicar una URL verificable y versionar el entorno. |
+| Sin logs estructurados, métrica consultable ni estimación de costo | S8 | Sí | Instrumentar observabilidad y documentar el cálculo mensual. |
+| arc42 §7 y ADR de plataforma ausentes | S8 | Sí | Documentar piezas, ubicación y decisión de alojamiento. |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | `ISCOUTB/AS_202620_EnAgenda`, público, verificable sin autenticación |
 | Estructura mínima | Cumple | Las seis rutas del contrato están presentes en HEAD. |
-| Convención de nombres de ADR | Cumple | `0001-usar-monolito-modular.md`. |
-| ADR aceptados sin reescribir | Cumple | Aceptado en `c38adfb`; después solo fue renombrado. |
-| `docs/ia.md` al día | No cumple | La entrada más reciente corresponde a Semana 4; falta Corte 1. |
+| Convención de nombres de ADR | Cumple | ADR 0001 y 0002 siguen `NNNN-titulo-en-kebab-case.md`. |
+| ADR aceptados sin reescribir | Cumple | Cada ADR aceptado tiene una sola revisión en su ruta actual. |
+| `docs/ia.md` al día | No cumple | La última entrada es del 2026-09-13; no registra S8. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Sin credenciales; coincidencias con `token` son identificadores de dominio y datos de prueba. |
 | Contribución de todos los integrantes | Cumple | Tres identidades consolidadas para tres integrantes en HEAD. |
-| Pipeline en verde | No cumple | Run de HEAD `33360647498` en verde; no demuestra todavía el reto. |
+| Pipeline en verde | Cumple | Run de la punta actual en verde; SonarCloud permanece como no conformidad separada. |
 
 ## Contribución por integrante
 

@@ -45,3 +45,7 @@ Van muy bien: el contrato OpenAPI 3.1 y AsyncAPI 3.0 está versionado, con esque
 ## Semana 6 · S6
 
 El equipo documenta un mapa de contextos claro y una auditoría de propiedad de datos con violaciones corregidas y planificadas. Para cerrar la evidencia, incorporen el enlace al análisis público de SonarCloud con su Quality Gate y el run de CI del hash revisado. Revisen los títulos de los ADR para que enuncien la decisión, no el tema. Aseguren que arc42 §8 incluya el lenguaje ubicuo y el mapa de contextos. Mantengan la trazabilidad de aspectos y el registro de IA, que están bien encaminados.
+
+## Semana 8 · S8
+
+La URL declarada es alcanzable como dominio, pero tanto la raíz como el health check respondieron con recurso inexistente durante la comprobación; por tanto, el sistema aún no es verificable desde fuera. El CI y el análisis estático son una buena base. Las no conformidades restantes son infraestructura reproducible, instrucciones de despliegue, logs estructurados, métrica operativa, costos, vista de despliegue, ADR por plataforma y configuración sensible sin valores inseguros por defecto. Primero recuperen la aplicación y el health check; después documenten el despliegue de punta a punta.

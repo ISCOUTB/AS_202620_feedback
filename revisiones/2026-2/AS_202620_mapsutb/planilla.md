@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_mapsutb` |
 | Integrantes y su usuario de GitHub | Carlos Alberto Galvis Zuluaga · Carlos David Manrique Fals · Nerlis Nikol Otero Perez · Isabel Sofia Paez Matallana — cuentas observadas en el historial: `charlygz21`, `nerlis-otero`, `CarlosManrique-1397`, `i-matallana` (correspondencias por confirmar con el docente) |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-21 |
+| Ultima revision | 2026-09-24 |
 
 ## Estado por entrega
 
@@ -20,8 +20,8 @@
 | 4 | S4 | `f0d036a` (2026-08-30T22:53:06-05:00) | 5/10 | 3.0 | si |
 | 5 | CORTE1 | `e8bad4c` histórico; excepción: `8aee879` (2026-09-13T18:14:14-05:00) | 8/12 | 3.7 | sí (actualizada con correcciones tardías aceptadas) |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | `8aee879` (2026-09-13T18:14:14-05:00) | 5/8 | 3.5 (prelim.) | sí |
-| 7 | S7 | `5e2fdd5` (2026-09-20T21:15:28-05:00) | 7/10 | 3.8 | si |
-| 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
+| 7 | S7 | `5e2fdd5` (2026-09-20T21:15:28-05:00) | 10/10 | 5.0 | sí (auditoría definitiva corregida) |
+| 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `7048021` (2026-09-22T10:10:19-05:00) | 2/12 | 1.7 (propuesta preliminar) | sí (preliminar) |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
 | 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
@@ -69,9 +69,14 @@
 | Trasladar el mapa y lenguaje ubicuo a arc42 §8 y registrar el reajuste en un ADR. | S6 | sí | `dominio_y_modularidad.md` existe, pero §8 sigue siendo plantilla. |
 | Mapear aspectos a contextos y aportar scanner/run/Quality Gate de SonarCloud. | S6 | sí | La fila A-01 no cubre los cuatro contextos. |
 | Contenido verificable de docs/aspectos.md con las ocho columnas y celdas navegables. | S7 | si | |
-| Evidencia de que la prueba de contrato falla ante un cambio incompatible (run en rojo o evidencia aportada). | S7 | si | |
-| Linea del workflow y URL del run que ejecuta la prueba de contrato sobre el hash revisado. | S7 | si | |
+| Evidencia de que la prueba de contrato falla ante un cambio incompatible (run en rojo o evidencia aportada). | S7 | no | Resuelto: el run fallido del cambio incompatible quedó citado en la auditoría definitiva. |
+| Linea del workflow y URL del run que ejecuta la prueba de contrato sobre el hash revisado. | S7 | no | Resuelto: el workflow descubre la prueba y el run exitoso del estado calificado quedó citado. |
 | Evidencia auditable de SonarCloud: invocacion del scanner, run exitoso y URL publica del analisis con Quality Gate (exigida desde S6). | S7 | si | |
+| Publicar una URL real del sistema y un endpoint mínimo de salud verificable. | S8 | sí | No se encontró despliegue público ni endpoint de salud en el estado preliminar. |
+| Versionar infraestructura como código y documentar un despliegue reproducible, no solo el arranque local. | S8 | sí | El README reproduce el entorno local, pero no existe infraestructura de despliegue. |
+| Dejar el pipeline actual en verde y publicar la evidencia de análisis estático con Quality Gate. | S8 | sí | El run del estado revisado falla y no se encontró URL pública del análisis. |
+| Añadir logs estructurados, una métrica operativa consultable y manejo seguro de secretos en la plataforma. | S8 | sí | No hay evidencia verificable de observabilidad ni de inyección segura de la clave de Google. |
+| Completar costo mensual, arc42 §7 y ADR de plataforma de despliegue. | S8 | sí | Solo está documentada la restricción de costo cero; faltan cálculo y decisión de plataforma. |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -80,10 +85,10 @@
 | Estructura mínima | Cumple | La punta aceptada usa `docs/arc42/`, `docs/c4/` y `docs/adr/`. |
 | Convención de nombres de ADR | Cumple | Los ADR actuales están numerados y titulados en kebab-case. |
 | ADR aceptados sin reescribir | No cumple | `0001-patrones-de-diseno.md` tiene múltiples reescrituras posteriores a su creación |
-| `docs/ia.md` al día | Cumple | El hash calificado registra decisiones, ajustes y pendientes del cambio de alcance. |
+| `docs/ia.md` al día | No cumple | La última actualización verificable es del 2026-08-30, anterior a S8. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | greps limpios en HEAD `f40775d` |
 | Contribución de todos los integrantes | Cumple | 4 personas consolidadas en HEAD: CarlosManrique-1397 (41), i-matallana (39, dos correos), charlygz21 (13), nerlis-otero (6) |
-| Pipeline en verde | No cumple | `ci.yml` ejecuta `flutter test`, pero falta un run público verificable. |
+| Pipeline en verde | No cumple | El run del estado S8 revisado falla; además no se encontró análisis público de SonarCloud con Quality Gate. |
 
 ## Contribución por integrante
 

@@ -10,14 +10,15 @@ Hoja consolidada del equipo GimnasioUTB. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_GimnasioUTB` |
 | Integrantes y su usuario de GitHub | Sebastian Felipe Caicedo Acosta · Rodrigo Andres Facio Lince Beltran · Pedro Luis Pallares De La Hoz — cuentas abajo |
 | URL del sistema desplegado | sin desplegar aún |
-| Ultima revision | 2026-09-21 |
+| Ultima revision | 2026-09-24 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 6 | S6 | `106869b` (2026-09-13T22:19:08-05:00) | 6/8 | 4.0 (prelim.) | si |
-| 7 | S7 | `0e3aeb5` (2026-09-20T23:29:29-05:00) | 5/10 | 3.0 | si |
+| 8 | S8 preliminar | `0e3aeb5` (2026-09-20T23:29:29-05:00) | 3/12 | 2.0 | sí, preliminar |
+| 7 | S7 | `0e3aeb5` (2026-09-20T23:29:29-05:00) | 8/10 | 4.2 | sí, auditada |
 | 5 | Primer corte · reto de línea base | HEAD `9b9f7c8` (sin etiqueta `corte-1`) | 2/12 | subtotal técnico 0,60/4,00; sustentación pendiente | revisión definitiva post-cierre 2026-09-07 |
 | 4 | S4 | `56db96b` (2026-08-30T22:33:47-05:00) | 2/10 | 1.8 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `a45615e9` · 2026-08-08T21:41:21-05:00 | 4/9 | 2,8 * | sí |
@@ -53,13 +54,6 @@ Hoja consolidada del equipo GimnasioUTB. Se actualiza tras cada revisión.
 | docs/aspectos.md con enlaces al ADR y a los escenarios. | S3 | si | |
 | Integración de SonarCloud en el pipeline. | S3 | si | |
 | Consolidar la estructura mínima en HEAD y mantener la trazabilidad en las próximas semanas. | S3 | si | |
-| Contrato de API en OpenAPI/AsyncAPI/proto ausente y sin historial de version (S7) | S7 | si | |
-| Prueba de contrato ausente y no invocada por .github/workflows/ci.yml (S7) | S7 | si | |
-| ADR de estrategia de integracion sincrona/asincrona ausente (S7) | S7 | si | |
-| SonarCloud sin scanner en el workflow ni URL publica de analisis con Quality Gate (pendiente desde S6) | S7 | si | |
-| docs/adr/ADR0001.md duplicado y fuera de la convencion NNNN-kebab-case | S7 | si | |
-| docs/aspectos.md sin columnas/enlaces a C4 y a evidencia de calidad | S7 | si | |
-| arc42 seccion 6 no verificable con la evidencia disponible | S7 | si | |
 | Integrar el scanner de SonarCloud en .github/workflows/ci.yml y publicar la URL del análisis con el estado del Quality Gate. | S6 | si | |
 | Eliminar o renombrar docs/adr/ADR0001.md para cumplir la convención NNNN-titulo-kebab-case.md. | S6 | si | |
 | Completar docs/aspectos.md con las ocho columnas del contrato (C4 y Evidencia). | S6 | si | |
@@ -70,21 +64,22 @@ Hoja consolidada del equipo GimnasioUTB. Se actualiza tras cada revisión.
 | docs/adr/0003-comunicacion-sincrona-asincrona.md sin alternativa descartada ni escenario de calidad citado. | S7 | si | |
 | docs/adr/ADR0001.md duplicado y fuera de la convención de nombres. | S7 | si | |
 | docs/aspectos.md sin las ocho columnas del curso (faltan C4 y Evidencia). | S7 | si | |
-| C4 nivel 2 con dos flechas de actor a contenedor sin protocolo ni formato. | S7 | si | |
-| Verificar correspondencia contrato↔código y el historial de versiones del contrato. | S7 | si | |
-| Verificar el contenido de la sección 6 del arc42. | S7 | si | |
+| Evidencia de fallo de la prueba contractual ante un cambio incompatible | S7 | Sí | Aportar el log contractual o una reproducción verificable. |
+| Despliegue público, health check e infraestructura como código ausentes | S8 | Sí | Publicar Render y versionar su definición. |
+| Sin logs estructurados, métrica consultable ni estimación de costo completa | S8 | Sí | Instrumentar observabilidad y calcular el punto de ruptura. |
+| arc42 §7 y ADR independiente de plataforma ausentes | S8 | Sí | Documentar cada pieza y su decisión de alojamiento. |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | `ISCOUTB/AS_202620_GimnasioUTB`, público |
 | Estructura mínima | Cumple | Las seis rutas del contrato están presentes en HEAD. |
-| Convención de nombres de ADR | Cumple | `0001-arquitectura-hexagonal.md` |
-| ADR aceptados sin reescribir | No cumple | Aceptado en `92f4a53` y modificado en cuatro commits posteriores. |
-| `docs/ia.md` al día | No cumple | Última entrada de Semana 4; falta Corte 1. |
+| Convención de nombres de ADR | No cumple | `ADR0001.md` duplica el número 0001 y no sigue la convención. |
+| ADR aceptados sin reescribir | No verificado | La duplicidad impide establecer una única decisión aceptada. |
+| `docs/ia.md` al día | No cumple | La última entrada es del 2026-09-13; no registra S8. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Escaneos limpios; solo `.env.example`. |
 | Contribución de todos los integrantes | Cumple | Tres personas consolidadas para tres integrantes en HEAD. |
-| Pipeline en verde | No cumple | Run de HEAD `33535934343` en verde; no demuestra el reto. |
+| Pipeline en verde | Cumple | El run de la punta actual concluye en verde; SonarCloud sigue pendiente. |
 
 ## Contribución por integrante
 

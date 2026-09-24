@@ -47,3 +47,7 @@ El contrato OpenAPI 3.1.0 está bien construido: versión declarada, esquemas co
 ## Semana 6 · S6
 
 El mapa de contextos, la matriz de propiedad y la auditoría de no conformidades están bien conectados: los módulos, contratos públicos y DTO de tránsito tienen dueño explícito. Para cerrar la evidencia: incorporen SonarCloud al pipeline y publiquen el scanner, un run y el Quality Gate; además, completen A-04 y hagan que los enlaces de aspectos apunten a la rama principal, no a `experimental`.
+
+## Semana 8 · S8 (preliminar)
+
+El pipeline del estado revisado está en verde y la restricción de costo cero está documentada. Sin embargo, el repositorio no aporta una URL pública verificable ni un endpoint de salud, infraestructura como código, instrucciones de despliegue reproducible, logs estructurados, una métrica operativa consultable o un mecanismo de secretos de la plataforma. También faltan el cálculo mensual, la sección 7 de arc42 y un ADR que compare y decida la plataforma de despliegue. Estas no conformidades mantienen la evidencia centrada en desarrollo local; para la entrega definitiva hace falta demostrar el sistema realmente desplegado y operable.

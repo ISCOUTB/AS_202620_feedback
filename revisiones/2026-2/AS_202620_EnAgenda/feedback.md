@@ -44,4 +44,8 @@ El mapa de contextos y la tabla de propiedad de datos están bien elaborados y c
 
 ## Semana 7 · S7
 
-El contrato OpenAPI está bien encaminado: versionado, con rutas y esquemas de datos y ejemplos. El foco de esta semana es la prueba de contrato: hay que invocarla desde el workflow y conservar la evidencia de que falla al introducir un cambio incompatible, que es lo que separa una entrega competente de una sobresaliente. También se esperaba el ADR de estrategia de integración y las secciones de arc42/C4 nivel 2 dentro del commit del cierre, no después; en el nivel 2 cada flecha debe indicar protocolo y formato. Falta incorporar el análisis estático en SonarCloud con su run y el enlace público del Quality Gate, y limpiar del control de versiones los archivos generados. Buen trabajo con la estructura del repositorio y con la trazabilidad de aspectos.
+El contrato OpenAPI está versionado, incluye rutas y esquemas, y la vista de ejecución describe el flujo implementado. La prueba actual comprueba respuestas funcionales, pero no valida la especificación OpenAPI; además, el código expone rutas que no aparecen en el contrato. Para cerrar las no conformidades, sincronicen contrato y código, incorporen una prueba contractual explícita al pipeline y conserven la evidencia de que falla ante un cambio incompatible. El ADR de integración y el ajuste del C4 llegaron después del cierre. Falta también SonarCloud con su run y Quality Gate públicos.
+
+## Semana 8 · S8
+
+El entorno local se puede reconstruir desde el README y el pipeline está en verde, pero todavía no hay una URL pública, health check, infraestructura como código ni vista de despliegue. Para completar la entrega, definan la plataforma en un ADR, versionen el entorno, publiquen la URL y añadan logs estructurados, una métrica vinculada a un escenario y la estimación mensual con el punto de ruptura de la capa gratuita.

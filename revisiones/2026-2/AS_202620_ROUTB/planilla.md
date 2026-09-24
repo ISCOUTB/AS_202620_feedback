@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_ROUTB` |
 | Integrantes y su usuario de GitHub | Diego Jose Baron Ruiz (`diegobrr999-commits`) · Julian David Manjarrez Guzman (`juliandmanjarrez-tech`) · Keiner Enrique Mendivil Diaz (`MKeinerrr`, dos correos) · Junior Jose Orozco Atencio (`junior14700`) |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-21 |
+| Ultima revision | 2026-09-24 |
 
 ## Estado por entrega
 
@@ -20,8 +20,8 @@
 | 4 | S4 | `83b8c5e` (2026-08-30T19:33:15-05:00) | 10/10 | 5.0 | si |
 | 5 | CORTE1 | `343bb9d` (2026-09-09T21:10:40-05:00) | 8/12 | 3.7 | si |
 | 6 | S6 | `5b48dd0` (2026-09-13T23:43:22-05:00) | 4/8 | 3.0 (prelim.) | si |
-| 7 | S7 | `fe266aa` (2026-09-20T21:32:01-05:00) | 4/10 | 2.6 | si |
-| 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | | | no aplica | |
+| 7 | S7 | `fe266aa` (2026-09-20T21:32:01-05:00) | 9/10 | 4.6 | si |
+| 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `35d088c` (2026-09-23T23:53:01-05:00) | 5/12 | 2.7 (prelim.) | si |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
 | 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
@@ -88,6 +88,8 @@
 | Run en rojo o evidencia del cambio incompatible | S7 | si | |
 | C4 nivel 2 con protocolo y formato en cada flecha | S7 | si | |
 | SonarCloud con run exitoso y Quality Gate público | S7 | si | |
+| Declarar URL pública, recuperar CI de `master`, añadir métrica y separar ADR de plataforma. | S8 | si | Hay IaC, logs y costos; faltan verificabilidad externa y cierre de no conformidades. |
+
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -99,7 +101,7 @@
 | `docs/ia.md` al día | Cumple | Entrada de S5 fechada 05/09 |
 | Sin credenciales en el repositorio ni en el historial | Cumple | git grep sin secretos reales; sin `.env` |
 | Contribución de todos los integrantes | Cumple | 4 personas para 4 integrantes (MKeinerrr consolidado); muy concentrada en MKeinerrr |
-| Pipeline en verde | No verificado | `Backend CI`/`CI ROUTB` en verde, incluido el commit de la etiqueta; `SonarCloud` en `failure` en todas las ejecuciones vistas |
+| Pipeline en verde | No cumple | El run público del estado S8 en `master` terminó en fallo: https://github.com/ISCOUTB/AS_202620_ROUTB/actions/runs/35957534355 |
 
 ## Contribución por integrante
 

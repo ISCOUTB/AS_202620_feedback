@@ -44,3 +44,7 @@ El contrato OpenAPI 3.1.1, la prueba de consumidor y el ADR de integración sín
 ## Semana 6 · S6
 
 El mapa de contextos y la auditoría sobre el código son el punto fuerte de la entrega: tipifican las relaciones, reconocen el núcleo compartido y convierten hallazgos reales en no conformidades con acción de corrección. Para cerrar la semana falta la sección 8 de arc42 con el lenguaje ubicuo y el mapa incorporado, y la evidencia de SonarCloud (URL pública del análisis y estado del Quality Gate). Si los límites cambiaron respecto al primer corte, agreguen el C4 nivel 3 y el ADR del reajuste. Alineen la tabla de aspectos con las columnas del contrato (falta Requisito y C4) y eviten celdas pendientes en las filas que ya defienden. Mantengan cada no conformidad con su ubicación y su corrección, y verifiquen su cierre en el código, no solo en el documento.
+
+## Semana 8 · S8
+
+El README permite reproducir la aplicación local y los workflows del estado revisado están en verde. La entrega aún no tiene URL pública, health check, infraestructura como código, logs estructurados, métricas ni vista de despliegue. Definan una plataforma con su ADR, publiquen el entorno y documenten la estimación mensual; mantengan los secretos fuera del repositorio y enlacen el Quality Gate público.

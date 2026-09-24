@@ -36,3 +36,7 @@ La entrega S6 está sólida: el mapa de contextos, la propiedad de datos y la se
 ## Semana 7 · S7
 
 El contrato OpenAPI versionado, la prueba que lo compara con FastAPI y el ADR de integración están bien encadenados y se sostienen entre sí. Para que la entrega sea demostrable y no solo declarada, conviene: 1) aportar la URL del run de CI sobre el hash revisado y la línea del workflow que ejecuta la prueba de contrato; 2) publicar la URL del análisis en SonarCloud con el estado del Quality Gate y la línea del scanner; 3) mover a la organización el run en rojo del cambio incompatible, que hoy vive en un fork, o adjuntar la evidencia con su contenido; 4) dejar revisables en el repositorio la tabla de aspectos, el registro de uso de IA y el C4 nivel 2, etiquetando protocolo y formato en cada flecha. Con esos cuatro puntos la entrega pasa de correcta a verificable de punta a punta.
+
+## Semana 8 · S8
+
+El pipeline principal continúa en verde, pero todavía no se observa una entrega operativa de despliegue. Las no conformidades prioritarias son la ausencia de URL pública y health check externo, infraestructura como código, pasos reproducibles de despliegue, logs estructurados, una métrica ligada a un escenario, estimación de costos, vista de despliegue real y ADR de plataforma. La mejor siguiente iteración es publicar primero una URL declarada y su health check, y luego documentar exactamente cómo se recrea ese entorno.
