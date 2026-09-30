@@ -15,7 +15,7 @@
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 8 | S8 | `9334a03` (2026-09-20T20:19:47-05:00) | 1/12 | 1.3 (prelim.) | si |
-| 7 | S7 | `9334a03` (2026-09-20T20:19:47-05:00) | 5/10 | 3.0 | si |
+| 7 | S7 | `9334a03` (2026-09-20T20:19:47-05:00) | 10/10 | 5.0 | si |
 | 6 | S6 | `5f7fa4c` (2026-09-13T22:07:49-05:00) | 5/8 | 3.5 (prelim.) | si |
 | 5 | CORTE1 | `74337a3` (2026-09-08T02:53:31Z) | 7/12 | 3.3 | si |
 | 4 | S4 | `4254f4a` (2026-08-30T19:13:01-05:00) | 7/10 | 3.8 | si |
@@ -73,12 +73,12 @@
 | Celdas pendientes en la tabla de trazabilidad (E3-E5). | S5 | si | |
 | Nomenclatura de ADR no conforme. | S5 | si | |
 | Falta SonarCloud en el pipeline. | S5 | si | |
-| Contrato OpenAPI/AsyncAPI versionado (S7) | S7 | si | |
-| Prueba de contrato ejecutada por el pipeline (S7) | S7 | si | |
-| Evidencia de que la prueba de contrato falla ante un cambio incompatible (S7) | S7 | si | |
-| ADR de estrategia de integración síncrona o asíncrona (S7) | S7 | si | |
-| Evidencia pública de SonarCloud con Quality Gate, pendiente desde S6 | S7 | si | |
-| C4 nivel 2 con protocolo y formato en cada flecha | S7 | si | |
+| Contrato OpenAPI/AsyncAPI versionado (S7) | S7 | no (resuelto) | Tres contratos ejecutables versionados en el hash calificado. |
+| Prueba de contrato ejecutada por el pipeline (S7) | S7 | no (resuelto) | `ci.yml` instala Schemathesis y ejecuta pytest sobre backend/tests, incluida test_contract.py. |
+| Evidencia de que la prueba de contrato falla ante un cambio incompatible (S7) | S7 | no (resuelto) | Evidencia del fallo controlado documentada y run 35549837357 en rojo. |
+| ADR de estrategia de integración síncrona o asíncrona (S7) | S7 | no (resuelto) | ADR-0004 con alternativa descartada y escenario E2. |
+| Evidencia pública de SonarCloud con Quality Gate, pendiente desde S6 | S7 | sí | Falta el run del scanner y la URL pública con Quality Gate. |
+| C4 nivel 2 con protocolo y formato en cada flecha | S7 | no (resuelto) | `docs/c4/contenedores.md` releído; relaciones con protocolo y formato. |
 | Trazabilidad de ADR-0001 y ADR-0003 (commit y enlaces pendientes) | S7 | si | |
 | Prueba de sustitución del adaptador para E2, declarada pendiente en docs/aspectos.md | S7 | si | |
 | 2026-09-15T11:04-11:27 -05:00: b2bf164, 56f979b, 66dccb3, 7483132, 579ff78 y 430b9a0 reescriben y renombran el documento S6 y ajustan los enlaces del README después del cierre 2026-09-14T05:00Z. | S6 | no (resuelto tarde) | — |
@@ -89,11 +89,11 @@
 | Trazabilidad de ADR-0003 (commit de implementación y enlace correcto al ADR de referencia) y de ADR-0001. | S6 | si | |
 | Prueba específica de sustitución del adaptador externo para el escenario E2, hoy citada con una prueba que no la cubre. | S6 | si | |
 | Ninguno: commits_tardios_post_cierre está vacío y el último commit (9334a03) es anterior al cierre; los ajustes de contrato y su evidencia se registraron el 2026-09-20. | S7 | no (resuelto tarde) | — |
-| Aportar la línea de ci.yml que ejecuta la prueba de contrato y la URL del run. | S7 | si | |
-| Aportar el registro del cambio incompatible que hizo fallar la prueba, o un run en rojo. | S7 | si | |
-| Aportar la URL pública de SonarCloud con Quality Gate y el run que invocó el scanner. | S7 | si | |
-| Completar la evidencia de correspondencia contrato-código (main.py frente a openapi.yaml). | S7 | si | |
-| Aportar el contenido de arc42 sección 6, C4 de contenedores y docs/aspectos.md. | S7 | si | |
+| Aportar la línea de ci.yml que ejecuta la prueba de contrato y la URL del run. | S7 | no (resuelto) | La línea está en ci.yml; la URL del run queda como corroboración externa. |
+| Aportar el registro del cambio incompatible que hizo fallar la prueba, o un run en rojo. | S7 | no (resuelto) | docs/evidencias/cambio_incompatible_evidencia.md y commits 6397c09/715347d. |
+| Aportar la URL pública de SonarCloud con Quality Gate y el run que invocó el scanner. | S7 | sí | Sin evidencia pública de SonarCloud. |
+| Completar la evidencia de correspondencia contrato-código (main.py frente a openapi.yaml). | S7 | no (resuelto) | Rutas del contrato localizadas en backend/app/main.py. |
+| Aportar el contenido de arc42 sección 6, C4 de contenedores y docs/aspectos.md. | S7 | no (resuelto) | Los tres artefactos releídos en el hash calificado. |
 | Despliegue accesible desde fuera con URL y health check. | S8 | si | |
 | Infraestructura como codigo versionada y README de recreacion del entorno. | S8 | si | |
 | Pipeline en verde sobre master y analisis SonarCloud auditable. | S8 | si | |

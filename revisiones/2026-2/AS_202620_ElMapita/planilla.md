@@ -16,7 +16,7 @@
 |---:|---|---|---|---|---|
 | 8 | S8 | `afae3be` (2026-09-20T19:09:25-06:00) | 2/12 | 1.7 (prelim.) | si |
 | 6 | S6 | `a22f0a4` (2026-09-13T22:21:07-05:00) | 0/8 | 1.0 (prelim.) | si |
-| 7 | S7 | `afae3be` (2026-09-20T19:09:25-06:00) | 4/10 | 2.6 | si |
+| 7 | S7 | `afae3be` (2026-09-20T19:09:25-06:00) | 8/10 | 4.2 | si |
 | 5 | CORTE1 | `b28e068` (2026-09-07T14:57:28-06:00) | 7/12 | 3.3 | si |
 | 4 | S4 | `07b36f4` (2026-08-30T23:31:03-05:00) | 4/10 | 2.6 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `938d0206` · 2026-08-07T21:36:01-06:00 | 5/9 | no se publica | sí |
@@ -54,14 +54,14 @@
 | Implementación de LOD y degradación progresiva (ADR-0002) | S5 | si | |
 | Verificación de pipeline y CI | S5 | si | |
 | Correcciones.md sin contrastar | S5 | si | |
-| Contrato OpenAPI/AsyncAPI/proto versionado, con rutas, esquemas y versión | S7 | si | |
-| Prueba de contrato presente y ejecutada desde el workflow | S7 | si | |
-| Evidencia de que la prueba falla ante un cambio incompatible | S7 | si | |
-| ADR de estrategia de integración síncrona o asíncrona con alternativa descartada | S7 | si | |
-| arc42 sección 6 con los flujos de interacción | S7 | si | |
-| C4 nivel 2 con protocolo y formato en cada flecha | S7 | si | |
-| Contenido defendible de docs/aspectos.md y docs/ia.md | S7 | si | |
-| Runs de CI y análisis público de SonarCloud con estado del Quality Gate | S7 | si | |
+| Contrato OpenAPI/AsyncAPI/proto versionado, con rutas, esquemas y versión | S7 | no (resuelto) | Contrato 3.1 con rutas y components.schemas releído. |
+| Prueba de contrato presente y ejecutada desde el workflow | S7 | no (resuelto) | El job `contract` ejecuta `npm run test:contracts`. |
+| Evidencia de que la prueba falla ante un cambio incompatible | S7 | sí | Sin run en rojo ni registro del cambio introducido. |
+| ADR de estrategia de integración síncrona o asíncrona con alternativa descartada | S7 | no (resuelto) | ADR-0003 descarta AsyncAPI frente a OpenAPI 3.1. |
+| arc42 sección 6 con los flujos de interacción | S7 | no (resuelto) | Cuatro escenarios con diagrama y pasos. |
+| C4 nivel 2 con protocolo y formato en cada flecha | S7 | no (resuelto) | Relaciones etiquetadas con protocolo y formato. |
+| Contenido defendible de docs/aspectos.md y docs/ia.md | S7 | sí (parcial) | `aspectos.md` releído con las ocho columnas; sus celdas Pruebas/Evidencia siguen "Pendiente" y `docs/ia.md` sigue vacío. |
+| Runs de CI y análisis público de SonarCloud con estado del Quality Gate | S7 | sí | Sin SonarCloud en el repositorio: fila transversal en No cumple. |
 | Mapa de contextos con relaciones tipificadas en formato revisable. | S6 | si | |
 | Tabla módulo a datos con dueño único y su contraste con las entidades del código. | S6 | si | |
 | Lista de no conformidades de propiedad de datos con ubicación y plan de corrección. | S6 | si | |
@@ -71,9 +71,9 @@
 | Sin envíos posteriores al cierre: commits_post_cierre vacío y el commit calificado afae3be es anterior al cierre. | S7 | no (resuelto tarde) | — |
 | Brecha de `npm run test:contracts` prometida en ADR-0001 y nunca implementada: se cierra en afae3be con el ADR-0003, dentro del plazo de S7 pero aún sin evidencia de ejecución en CI. | S7 | no (resuelto tarde) | — |
 | Deriva de rutas contrato-backend por prefijo duplicado (`/api/api/v1/...`), reconocida en ADR-0003 y no corregida. | S7 | si | |
-| Evidencia de que la prueba de contrato se ejecuta en el pipeline y de que falla ante un cambio incompatible. | S7 | si | |
-| Evidencia de SonarCloud (configuración del scanner, run exitoso y URL pública con Quality Gate), pendiente desde S6. | S7 | si | |
-| Contenido verificable de la tabla de aspectos, de arc42 §6 y del C4 nivel 2 con protocolo y formato. | S7 | si | |
+| Evidencia de que la prueba de contrato se ejecuta en el pipeline y de que falla ante un cambio incompatible. | S7 | sí (parcial) | Ejecución demostrada en `ci.yml`; el fallo controlado sigue sin evidencia. |
+| Evidencia de SonarCloud (configuración del scanner, run exitoso y URL pública con Quality Gate), pendiente desde S6. | S7 | sí | Sin SonarCloud en el repositorio. |
+| Contenido verificable de la tabla de aspectos, de arc42 §6 y del C4 nivel 2 con protocolo y formato. | S7 | no (resuelto) | Los tres artefactos releídos y conformes; quedan celdas Pruebas/Evidencia pendientes en `aspectos.md`. |
 | Implementación pendiente declarada en ADR-0002 (LOD y degradación progresiva). | S7 | si | |
 | URL desplegada con hora de comprobación | S8 | si | |
 | Health check con código de respuesta | S8 | si | |
