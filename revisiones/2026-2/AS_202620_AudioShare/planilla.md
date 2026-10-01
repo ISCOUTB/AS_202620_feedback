@@ -16,7 +16,7 @@
 |---:|---|---|---|---|---|
 | 8 | S8 | `d094a51` (2026-09-21T00:21:38-05:00) | 2/12 | 1.7 (prelim.) | si |
 | 6 | S6 | `4a0eba9` (2026-09-13T22:01:57-05:00) | 4/8 | 3.0 (prelim.) | si |
-| 7 | S7 | `0ada095` (2026-09-20T23:57:20-05:00) | 5/10 | 3.0 | si |
+| 7 | S7 | `0ada095` (2026-09-20T23:57:20-05:00) | 9/10 | 4.6 | si |
 | 5 | CORTE1 | `cb65d13` (2026-09-06T22:00:48-05:00) | 8/12 | 3.7 | si |
 | 4 | S4 | `24a5023` (2026-08-30T23:48:29-05:00) | 4/10 | 2.6 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `1c9ebb0a` · 2026-08-09T20:31:49-05:00 | 2/9 | no se publica | sí |
@@ -59,10 +59,10 @@
 | análisis estático SonarCloud | S5 | si | |
 | PDF en Moodle (no verificado) | S5 | si | |
 | Sustentación (no verificada) | S5 | si | |
-| Contrato OpenAPI/AsyncAPI/proto versionado con rutas y esquemas | S7 | si | |
-| Prueba de contrato presente y ejecutada por el pipeline | S7 | si | |
+| Contrato OpenAPI/AsyncAPI/proto versionado con rutas y esquemas | S7 | no (verificado en la relectura) | |
+| Prueba de contrato presente y ejecutada por el pipeline | S7 | no (verificado en la relectura) | |
 | Evidencia de fallo de la prueba ante cambio incompatible | S7 | si | |
-| ADR de estrategia de integración con alternativa descartada | S7 | si | |
+| ADR de estrategia de integración con alternativa descartada | S7 | no (verificado en la relectura) | |
 | Evidencia de SonarCloud: configuración, run exitoso y URL pública con Quality Gate | S7 | si | |
 | C4 nivel 3 y ADR del reajuste de límites | S6 | si | |
 | docs/arc42/src/08_concepts.adoc (y secciones 07 y 11 ausentes) | S6 | si | |
@@ -72,13 +72,13 @@
 | Pruebas de EC-02 y EC-03 | S6 | si | |
 | Ocho commits posteriores al cierre 2026-09-21T05:00:00Z (=00:00-05:00): 900b3e8 (00:04:54), 628c8be (00:07:23), d01e743 (00:09:48), 354f1f5 (00:15:12), eab5775 (00:18:45), 5c72af6 (00:19:45), b83471f (00:20:25) y d094a51 (00:21:38), todos en origin/master. | S7 | no (resuelto tarde) | — |
 | Evidencia de que la prueba de contrato falla ante un cambio incompatible (run en rojo o registro del cambio). | S7 | si | |
-| Línea del workflow que ejecuta la prueba de contrato y URL del run de CI. | S7 | si | |
+| Línea del workflow que ejecuta la prueba de contrato y URL del run de CI. | S7 | no (verificado en la relectura) | |
 | Evidencia pública de SonarCloud: invocación del scanner, run exitoso y Quality Gate. | S7 | si | |
-| Correspondencia verificable entre rutas del contrato y rutas implementadas en el código. | S7 | si | |
+| Correspondencia verificable entre rutas del contrato y rutas implementadas en el código. | S7 | no (verificado en la relectura) | |
 | Columna Evidencia en docs/aspectos.md y limpieza de la matriz duplicada. | S7 | si | |
 | Marcadores de conflicto de fusión en README y ADR-0001 y enlaces a ADR inexistentes. | S7 | si | |
 | Secciones 07 y 11 de arc42 ausentes y documentación arc42 en formato .adoc. | S7 | si | |
-| Verificación del contenido de docs/ia.md (qué se rechazó y por qué). | S7 | si | |
+| Verificación del contenido de docs/ia.md (qué se rechazó y por qué). | S7 | no (verificado en la relectura) | |
 | URL pública con hora y código de respuesta, y ruta de health check consultable. | S8 | si | |
 | Infraestructura como código del entorno desplegado, versionada y reproducible desde el README. | S8 | si | |
 | Run de CI sobre la rama principal y evidencia pública de SonarCloud con Quality Gate. | S8 | si | |

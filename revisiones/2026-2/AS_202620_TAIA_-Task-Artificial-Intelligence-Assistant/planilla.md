@@ -20,7 +20,7 @@
 | 4 | S4 | `c087303` (2026-08-30T18:54:10-05:00) | 5/10 | 3.0 | si |
 | 5 | CORTE1 | `a3f4d82` (2026-09-06T04:13:11-05:00) | 9/12 | no aplica | si |
 | 6 | S6 | `c0c3adb` (2026-09-13T20:01:35-05:00) | 7/8 | 4.5 (prelim.) | si |
-| 7 | S7 | `0a12f0c` (2026-09-17T15:27:54-05:00) | 6/10 | 3.4 (prelim.) | si |
+| 7 | S7 | `0a12f0c` (2026-09-17T15:27:54-05:00) | 10/10 | 5.0 | si |
 | 8 | S8 | `f818f75` (2026-09-22T09:20:59-05:00) | 4/12 | 2.3 (prelim.) | si |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
@@ -86,16 +86,16 @@
 | Verificar arc42 sección 8 con lenguaje ubicuo | S6 | si | |
 | Comparar límites contra hash de S5 y posible ADR de reajuste | S6 | si | |
 | Cruzar aspectos con contextos del mapa | S6 | si | |
-| Confirmar que ci.yml ejecuta backend/tests/test_api_contract.py y aportar la URL del run | S7 | si | |
-| Aportar la evidencia del cambio incompatible que hace fallar la prueba (contenido o run en rojo) | S7 | si | |
+| Confirmar que ci.yml ejecuta backend/tests/test_api_contract.py y aportar la URL del run | S7 | no (verificado en la relectura) | |
+| Aportar la evidencia del cambio incompatible que hace fallar la prueba (contenido o run en rojo) | S7 | no (verificado en la relectura) | |
 | Publicar URL de SonarCloud con Quality Gate, línea del scanner y run exitoso | S7 | si | |
-| Completar contenido verificable de docs/c4/C4-C2.md, docs/aspectos.md y docs/ia.md | S7 | si | |
-| Registrar el historial git del contrato para sostener su versionado | S7 | si | |
-| Comprobar que el pipeline ejecuta la prueba de contrato (contenido de ci.yml y URL del run). | S7 | si | |
+| Completar contenido verificable de docs/c4/C4-C2.md, docs/aspectos.md y docs/ia.md | S7 | no (verificado en la relectura) | |
+| Registrar el historial git del contrato para sostener su versionado | S7 | no (verificado en la relectura) | |
+| Comprobar que el pipeline ejecuta la prueba de contrato (contenido de ci.yml y URL del run). | S7 | no (verificado en la relectura) | |
 | Aportar análisis SonarCloud público con Quality Gate para el hash revisado. | S7 | si | |
-| Cotejar rutas del contrato con el código implementado. | S7 | si | |
-| Publicar el contenido de docs/aspectos.md y docs/c4/C4-C2.md. | S7 | si | |
-| Aportar el historial de git del archivo de contrato. | S7 | si | |
+| Cotejar rutas del contrato con el código implementado. | S7 | no (verificado en la relectura) | |
+| Publicar el contenido de docs/aspectos.md y docs/c4/C4-C2.md. | S7 | no (verificado en la relectura) | |
+| Aportar el historial de git del archivo de contrato. | S7 | no (verificado en la relectura) | |
 | 2837b47 2026-09-15T20:43:43-05:00 feat(api): add OpenAPI contract and contract tests (posterior al cierre). | S6 | no (resuelto tarde) | — |
 | 5a4e8dc 2026-09-15T20:48:07-05:00 Merge pull request #13 (posterior al cierre). | S6 | no (resuelto tarde) | — |
 | 7b32b3f 2026-09-16T20:31:46-05:00 docs: completa evidencia de contrato y CI (posterior al cierre). | S6 | no (resuelto tarde) | — |
@@ -105,12 +105,12 @@
 | Evidencia auditable de CI y SonarCloud: configuración del scanner, run del hash revisado y Quality Gate público. | S6 | si | |
 | Columnas completas y navegables en docs/aspectos.md y columna de lo rechazado en docs/ia.md. | S6 | si | |
 | Persistencia PostgreSQL aún no integrada; los repositorios siguen en memoria. | S6 | si | |
-| Ejecucion de la prueba de contrato en el pipeline y URL del run | S7 | si | |
-| Evidencia verificable de fallo ante cambio incompatible | S7 | si | |
-| C4 nivel 2 con protocolo y formato en cada flecha | S7 | si | |
-| Historial git del archivo de contrato | S7 | si | |
+| Ejecucion de la prueba de contrato en el pipeline y URL del run | S7 | no (verificado en la relectura) | |
+| Evidencia verificable de fallo ante cambio incompatible | S7 | no (verificado en la relectura) | |
+| C4 nivel 2 con protocolo y formato en cada flecha | S7 | no (verificado en la relectura) | |
+| Historial git del archivo de contrato | S7 | no (verificado en la relectura) | |
 | SonarCloud: configuracion, run exitoso y URL publica con Quality Gate | S7 | si | |
-| Contenido de docs/aspectos.md para validar la tabla de trazabilidad | S7 | si | |
+| Contenido de docs/aspectos.md para validar la tabla de trazabilidad | S7 | no (verificado en la relectura) | |
 | Publicar el sistema en una URL accesible desde fuera de la red de la universidad y registrar hora y código de respuesta. | S8 | si | |
 | Versionar infraestructura como código para recrear el entorno con un solo comando. | S8 | si | |
 | Dejar el pipeline en verde y aportar la URL del run con su conclusión. | S8 | si | |
