@@ -67,16 +67,32 @@ tecnológico. Aplicado de forma uniforme; es lo que separa el Cumple de DinamikU
 `SQL`) del No cumple de Clubs_UTB (`Valida tokens de sesión`, sin protocolo ni formato) y de
 LostVault (diagrama en imagen, flechas de cruce sin formato).
 
-## Pendiente de decisión docente
+## Correcciones de cierre (aplicadas)
 
-- `informes_definitivos()` en `scripts/cron/evaluar-semana.py` cuenta un informe como definitivo
-  solo si contiene el literal `Revision automatica definitiva`. Hoy lo conservan 9 de 23 informes
-  S7, porque la auditoría local del 24-sep y esta corrección reescribieron ese encabezado. La
-  guarda de semana cerrada queda inoperante: un pase definitivo reprocesaría S7 y pisaría estas
-  correcciones. Defecto preexistente, no corregido aquí.
-- Faltan filas estándar de §11 en cuatro informes: «ADR aceptados no reescritos» (Verifacts, TAIA,
-  ElMapita, DinamikUTB), «Estado calificado identificable» (Verifacts, TAIA, ElMapita),
-  «Contribución de todos los integrantes» (los cuatro) y «Sin credenciales» (DinamikUTB).
-- Con la lectura real, dos ADR aceptados fueron editados sin reemplazo declarado: Verifacts
-  ADR-0001 (`73beb28`, 2026-09-07) y TAIA ADR-0001 (`42c5b03`, 2026-09-06). Son filas
-  transversales: no cambian la nota, pero son no conformidades de §11 sin registrar.
+- **Guarda de semana cerrada reparada.** `informes_definitivos()` dejó de depender del texto de la
+  cabecera: cuenta los informes publicados y el modo definitivo lo decide `estado-s7.json`. Un pase
+  definitivo ya no puede reprocesar S7 y pisar estas correcciones.
+- **Matriz transversal de 9 filas.** El prompt del pipeline pedía «exactamente 8» y `CONTRATO.md`
+  §11 tiene 9, por eso los informes omitían filas. Se corrigieron el prompt y el conteo, y se
+  completaron las filas faltantes en Verifacts, TAIA, ElMapita, DinamikUTB y TRACTAR.
+- **Tres ADR aceptados editados sin reemplazo declarado** (fila §11 «ADR aceptados no reescritos» →
+  No cumple): Verifacts ADR-0001 (`73beb28`, 2026-09-07), TAIA ADR-0001 (`42c5b03`, 2026-09-06) y
+  ElMapita ADR-0001 (`07b36f4`, 2026-08-30). En DinamikUTB el mismo hallazgo afecta a cuatro ADR.
+- **Contribución incompleta** (fila §11 → No cumple): Verifacts (2 de 3 integrantes), ElMapita (2 de
+  3 identificables) y TRACTAR (1 de 4).
+- **Volcado del pipeline con presupuesto explícito.** Los documentos que deciden filas entran
+  primero y con cupo propio; lo que queda afuera se publica en `documentos_omitidos` y el prompt
+  prohíbe escribir «no se aportó» por un recorte del volcado.
+- **TRACTAR**: el repositorio fue renombrado a `ISCOUTB/AS_202620_UTB_TRACKER`
+  (`AS_202620_TRACTAR` redirige con 301); el cargo de identidad anterior era autocontradictorio y
+  quedó corregido. Se registra además el commit `9cf1ac9`, catorce minutos posterior al cierre.
+- **Higiene**: se quitaron nombres propios y correos de informes y feedback donde aparecían.
+
+Ninguna de estas correcciones cambia una nota: la matriz transversal no entra en la fórmula.
+
+## Pendiente
+
+- Repetir el barrido de filas «Cumple» sin respaldo y de volcado recortado en S8 y en las semanas
+  siguientes: el mismo prompt las genera.
+- Actualizar el nombre de TRACTAR en el mapeo del kit si se quiere evitar la redirección.
+

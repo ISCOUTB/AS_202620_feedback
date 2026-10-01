@@ -28,14 +28,17 @@
 
 | Criterio | Evidencia | Estado | Observaciones |
 |---|---|---|---|
-| Identidad del repositorio | Autores de 7cfb872: 13+7+1 commits de una misma identidad ('Sebastian Garcia Devoz', dos direcciones consolidadas); ningún commit de los otros tres integrantes declarados. | No cumple | El nombre del repositorio en la evidencia (AS_202620_TRACTAR) no coincide con el de las URLs de CI (ISCOUTB/AS_202620_UTB_TRACKER). |
+| Identidad del repositorio | El clon público funciona con `https://github.com/ISCOUTB/AS_202620_TRACTAR.git` por redirección: `curl -sI https://github.com/ISCOUTB/AS_202620_TRACTAR` responde `301 Moved Permanently` con `Location: https://github.com/ISCOUTB/AS_202620_UTB_TRACKER`, y ese URL responde `200 OK`; la API pública sin token confirma `Moved Permanently`. El nombre canónico actual es `ISCOUTB/AS_202620_UTB_TRACKER`. | Cumple | La cabecera y `EQUIPOS.md` lo declaran `AS_202620_TRACTAR`, pero el repositorio fue renombrado: el nombre real hoy es `AS_202620_UTB_TRACKER` y el URL declarado redirige allí. Sigue en la organización ISCOUTB, es público y conserva el patrón `AS_202620_<PROYECTO>`; es una discrepancia de nomenclatura entre el kit y el remoto, no un incumplimiento de identidad. |
 | Estructura mínima | Árbol de 7cfb872: docs/arc42/arc42.md, docs/adr/0001-*.md y 0002-*.md, docs/c4/C2.md y c4_nivel1.md, docs/aspectos.md, docs/ia.md y README.md. | Cumple | Todas las rutas mínimas están presentes en las ubicaciones esperadas. |
+| Estado calificado identificable | Rama `origin/main`; `7cfb8729db79435bf9de7d3975a9a3bd7ac5b849` con fecha `2026-08-31T12:27:23-05:00` («Fix: solved the text problem»), confirmado con `git rev-list -1 --before=2026-09-21T05:00:00Z` como el último commit ≤ cierre. | Cumple | Coincide con el estado revisado de la cabecera. Existe un commit posterior, `9cf1ac9` («S7», 2026-09-21T00:14:08-05:00), 14 minutos después del cierre: no se califica. |
 | Convenciones de ADR | docs/adr/0001-estilo-arquitectonico.md y docs/adr/0002-cambio-stack-fastapi-flutter.md cumplen el patrón NNNN-kebab-case y llevan contexto, opciones, decisión y consecuencias. | Cumple | Los títulos anuncian más el tema que la decisión y la trazabilidad no enlaza commit, PR ni elementos C4. |
-| Tabla de aspectos | docs/aspectos.md presenta la tabla con las ocho columnas ID·Aspecto·Requisito·C4·ADR·Código·Pruebas·Evidencia y las filas A-01 a A-06. | Cumple | A-01 a A-05 quedan con '—' en Código, Pruebas y Evidencia; solo A-06 recorre la cadena completa. |
+| ADR aceptados no reescritos | `git log --follow` de `docs/adr/0001-estilo-arquitectonico.md` da un único commit, `5f923cd` (2026-08-23T22:40:51-05:00), y el de `docs/adr/0002-cambio-stack-fastapi-flutter.md` da un único commit, `e88a3d6` (2026-08-31T03:35:36-05:00). Ambos declaran `Aceptado` (línea 5). | Cumple | El historial hasta 7cfb872 no muestra ediciones posteriores a la aceptación ni reemplazo declarado. |
 | Registro de uso de IA | docs/ia.md registra dos usos del 2026-08-16 que solo describen lo usado; no hay ningún rechazo ni su motivo técnico. | No cumple | git log de docs/ia.md muestra únicamente e84871f y 74fdb96, ambos del 2026-08-16. |
-| README | README.md declara qué es UTB Tracker, el arranque con un solo comando (./run.sh) y cómo se prueba con pytest. | Cumple | Cita docs/arc42.md y tests/test_health.py, rutas que no coinciden con el árbol revisado. |
 | Pipeline y análisis estático | .github/workflows/ci.yml solo invoca pytest (run success 33419672964, 2026-08-31T17:27:34Z); no hay sonar-project.properties, paso del scanner ni URL pública de SonarCloud con Quality Gate. | No cumple | Faltan las tres evidencias exigidas desde S6 y no es verificable el bloqueo del pipeline cuando algo falla. |
 | Secretos | Búsqueda de credenciales sobre HEAD sin coincidencias y sin archivos .env versionados. | Cumple | No hay secretos que rotar. |
+| Contribución de todos los integrantes | `git shortlog -sne 7cfb872` da tres filas (13, 7 y 1 commits) que se consolidan en una sola persona y no cubren a los otros tres integrantes declarados en EQUIPOS.md: no hay ninguna cuenta atribuible a ellos. | No cumple | Todo el historial se concentra en una persona; la verificación es por el historial de git y no se atribuye por parecido de nombre. La pertenencia o el acceso de los otros tres a la organización no se puede comprobar con el protocolo git. |
+| Tabla de aspectos | docs/aspectos.md presenta la tabla con las ocho columnas ID·Aspecto·Requisito·C4·ADR·Código·Pruebas·Evidencia y las filas A-01 a A-06. | Cumple | A-01 a A-05 quedan con '—' en Código, Pruebas y Evidencia; solo A-06 recorre la cadena completa. |
+| README | README.md declara qué es UTB Tracker, el arranque con un solo comando (./run.sh) y cómo se prueba con pytest. | Cumple | Cita docs/arc42.md y tests/test_health.py, rutas que no coinciden con el árbol revisado. |
 
 ## Estado global del proyecto (overall · punta actual de la misma rama)
 
@@ -43,7 +46,10 @@ Mira el repositorio **entero en la punta actual de la misma rama**, no solo la e
 
 - **Punta actual revisada**: `7cfb8729db79435bf9de7d3975a9a3bd7ac5b849 2026-08-31T12:27:23-05:00 Fix: solved the text problem`
 - **Veredicto**: con pendientes
-- Resumen: A HEAD 7cfb872 (2026-08-31), sin commits posteriores al cierre (diff_desde_cierre sin diferencias), el proyecto no incorpora el contrato de API ni la prueba de contrato de la semana 7 y arrastra pendientes transversales de semanas anteriores: SonarCloud sin evidencia auditable, sección 6 de arc42, registro de IA sin rechazos y contribución de un solo integrante. Los runs en rojo del 2026-08-30 y 2026-08-31 corresponden a pruebas funcionales, no a una prueba de contrato.
+- Resumen: A HEAD 7cfb872 (2026-08-31), con un commit posterior al cierre, `9cf1ac9` (2026-09-21T00:14:08-05:00, catorce minutos despues del limite), que no se califica, el proyecto no incorpora el contrato de API ni la prueba de contrato de la semana 7 y arrastra pendientes transversales de semanas anteriores: SonarCloud sin evidencia auditable, sección 6 de arc42, registro de IA sin rechazos y contribución de un solo integrante. Los runs en rojo del 2026-08-30 y 2026-08-31 corresponden a pruebas funcionales, no a una prueba de contrato.
+
+Resuelto tarde (corregido despues del cierre, ahora al dia):
+- `9cf1ac9` (2026-09-21T00:14:08-05:00, «S7») llega catorce minutos despues del cierre: no entra en el estado calificado y se registra como entrega tardia.
 
 Pendientes que siguen abiertos:
 - Contrato OpenAPI/AsyncAPI/proto versionado con rutas y esquemas de datos
@@ -59,7 +65,7 @@ Pendientes que siguen abiertos:
 
 2 de 10 criterios Cumple.
 
-**Nota sugerida preliminar (propuesta al docente; puede cambiar al cierre): 1.8 = 1 + 4 × (2/10).** La nota final la fija el profesor en Moodle.
+**Nota sugerida (propuesta al docente): 1.8 = 1 + 4 × (2/10).** La nota final la fija el profesor en Moodle.
 
 ## No verificado / pendientes
 
@@ -77,4 +83,4 @@ Pendientes que siguen abiertos:
 - arc42 sigue siendo el template: falta la sección 6 con los flujos de interacción.
 - docs/ia.md no registra qué se rechazó ni por qué.
 - Solo una identidad de autor aparece en el historial de los cuatro integrantes declarados.
-- El nombre del repositorio difiere entre la evidencia aportada y las URLs de los runs de CI.
+- El repositorio fue renombrado: `ISCOUTB/AS_202620_TRACTAR` redirige (301) a `ISCOUTB/AS_202620_UTB_TRACKER`, que es su nombre canónico actual. Sigue siendo público y conserva el patrón `AS_202620_<PROYECTO>`, pero el nombre difiere del declarado en la cabecera y en EQUIPOS.md.

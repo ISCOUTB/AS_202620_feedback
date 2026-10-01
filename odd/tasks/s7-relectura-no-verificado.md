@@ -58,7 +58,25 @@ LostVault.
 - [x] T7 — Re-read the nine "Cumple" rows that admitted not reading (IA records in ElMapita,
       Drift and DinamikUTB; Verifacts and TAIA ADR rows; TAIA contract correspondence; ElMapita
       wording). No state changed; every observation is now backed by `ruta:línea`.
-- [x] T8 — Hygiene and commit.
+- [x] T8 — Publication of the corrected week (`779284b..792e5db` on `master`).
+- [x] T9 — Repair the closed-week guard in `informes_definitivos()`: it counted a report as
+      definitive only when it contained the literal `Revision automatica definitiva`, which local
+      audits rewrite. It now counts published reports and leaves the mode to `estado-<id>.json`.
+      Verified: 23 of 23 for S7.
+- [x] T10 — Fix the transversal matrix size. The pipeline prompt demanded "exactly 8 rows" while
+      `CONTRATO.md` §11 has 9, so published reports dropped standard rows. Prompt and count fixed,
+      and the missing rows were added to Verifacts, TAIA, ElMapita, DinamikUTB and TRACTAR.
+- [x] T11 — Give the evidence digest an explicit budget. Criterion-deciding documents enter first
+      with their own quota, everything left out is published in `documentos_omitidos`, the payload
+      no longer silently truncates, and the prompt forbids writing "no se aportó" because of a
+      digest cut. Verified against Drift, ElMapita and TRACTAR: the six deciding groups
+      (contract, workflows, arc42 §6, C4 level 2, aspectos, ia) all arrive and the payload fits.
+- [x] T12 — Register the §11 non-conformities found by reading: three accepted ADRs edited without
+      a declared replacement (Verifacts, TAIA, ElMapita; four in DinamikUTB) and incomplete
+      contribution (Verifacts, ElMapita, TRACTAR).
+- [x] T13 — Record the TRACTAR repository rename (`AS_202620_TRACTAR` redirects to
+      `AS_202620_UTB_TRACKER`) and correct its self-contradictory identity charge.
+- [x] T14 — Hygiene: remove personal names from three reports and the ElMapita feedback.
 
 ## Checks
 
@@ -92,20 +110,29 @@ LostVault.
   ElMapita arc42 §6): all four sustained.
 - Hygiene: email scan clean, `git diff --check` clean, `.atl/` untracked and not staged.
 
-## Known defects found, not fixed here
+## Pipeline defects fixed in this work
 
-- `informes_definitivos()` in `scripts/cron/evaluar-semana.py` counts a report as definitive only
-  when it contains the literal `Revision automatica definitiva`. Only 9 of 23 S7 reports still
-  contain it, so the closed-week guard no longer holds and a definitive pass would reprocess the
-  week and overwrite this correction. Pre-existing; the fix belongs to the instructor.
-- Four reports are missing standard §11 rows: "ADR aceptados no reescritos" (Verifacts, TAIA,
-  ElMapita, DinamikUTB), "Estado calificado identificable" (Verifacts, TAIA, ElMapita),
-  "Contribución de todos los integrantes" (all four) and "Sin credenciales" (DinamikUTB).
-- Two accepted ADRs were edited without a declared replacement: Verifacts ADR-0001 (`73beb28`) and
-  TAIA ADR-0001 (`42c5b03`). Transversal only; no score impact, not registered anywhere.
-- The S7 pipeline still truncates its evidence digest, so the same defect will recur in later
-  weeks unless the prompt requires `git show` for anything outside the dump.
+All four share one origin: the evaluation read a silently truncated digest.
+
+1. Closed-week guard: `informes_definitivos()` matched a literal header that local audits rewrite.
+   It now counts published reports; the definitive mode lives in `estado-<id>.json`.
+2. Transversal matrix: the prompt asked for "exactly 8 rows" while §11 has 9, so reports dropped a
+   standard row. The nine names are now listed literally in the prompt.
+3. Digest budget: criterion-deciding documents enter first with their own quota; the payload is no
+   longer cut mid-JSON; leftovers are published in `documentos_omitidos`; the prompt forbids reading
+   a budget cut as "the team did not provide it".
+4. Tree truncation is now flagged as `arbol_truncado`, so an absence in a truncated tree cannot be
+   reported as "No cumple".
+
+Not tested end to end: there is no local LLM key, so these changes were verified by compiling the
+script and exercising the new functions against real repositories, not by a full pipeline run.
+
+## Open items
+
+- The same sweep has not been done for S8 or later weeks; the prompt that caused it is now fixed
+  only going forward.
+- `EQUIPOS.md` and the README still use the old TRACTAR repository name, which now redirects.
 
 ## Next step
 
-Report the corrected scoreboard and the decision list; await the publication decision.
+Report the corrected scoreboard and the pipeline changes; await the next week's decision.

@@ -151,6 +151,70 @@ def ci_runs(repo):
         return [{"error": str(ex)[:120]}]
 
 
+# Archivos que deciden filas de la ficha o del contrato: entran al volcado primero y con
+# presupuesto propio, porque el JSON total se recortaba a 95000 caracteres y lo que sobraba
+# desaparecia sin dejar rastro; el evaluador lo leia como "no se aporto el contenido".
+DOCS_REGLAS = (
+    # (patron, max_lineas, max_chars, max_archivos, patron_preferente, cupo_del_grupo)
+    # El cupo reservado de los grupos que deciden filas suma menos que DOCS_PRESUPUESTO, para que
+    # ninguno se quede sin presupuesto por culpa de los anteriores.
+    (r"^correcciones\.md$", 400, 6000, 1, None, 6000),
+    (r"(^|/)docs/(api|contracts)/|\.proto$|(openapi|swagger|asyncapi).*\.(ya?ml|json)$",
+     400, 7000, 2, None, 14000),
+    (r"^\.github/workflows/", 400, 4000, 2, None, 8000),
+    (r"^docs/arc42/", 400, 10000, 1, r"[-_]0?6[-_.]|template|0?6[-_]", 10000),
+    (r"^docs/c4/", 400, 5000, 1, r"l2|nivel.?2|contenedor", 5000),
+    (r"^docs/(aspectos|ia)\.md$", 400, 5500, 2, None, 11000),
+    (r"^docs/adr/", 150, 2000, 3, None, 4000),
+    (r"^docs/|^README", 150, 2000, 4, None, 4000),
+    (r"^(pyproject\.toml|package\.json|pom\.xml|build\.gradle.*|Makefile|docker-compose.*|requirements\.txt)$",
+     200, 1500, 2, None, 3000),
+)
+DOCS_PRESUPUESTO = 58000
+DOCS_BINARIOS = (".png", ".jpg", ".jpeg", ".pdf", ".zip", ".lock", ".pyc", ".ipynb")
+DOCS_IGNORAR = (".gitkeep", ".gitignore", ".gitattributes", ".keep", "desktop.ini", ".DS_Store")
+
+
+def volcado_documentos(d, h):
+    """Documentos del estado calificado, en orden de prioridad y dentro del presupuesto.
+
+    Devuelve (documentos, omitidos). Cada regla tiene cupo propio y toma pocos archivos, prefiriendo
+    los que nombran el artefacto del criterio. Antes el recorte era silencioso y el evaluador leia un
+    recorte de presupuesto como "el equipo no lo aporto"; 'omitidos' y el marcador de corte lo dejan
+    explicito.
+    """
+    documentos, omitidos, gastado, vistos = {}, [], 0, set()
+    marca = "\n... (cortado por el presupuesto del volcado)"
+    for patron, max_lineas, max_chars, max_archivos, preferente, cupo in DOCS_REGLAS:
+        candidatos = [f for f in git_ls(d, h, patron)
+                      if not f.endswith(DOCS_BINARIOS) and not f.endswith(DOCS_IGNORAR)
+                      and "__pycache__" not in f]
+        candidatos.sort(key=lambda f: (0 if preferente and re.search(preferente, f, re.I) else 1, f))
+        gastado_grupo = 0
+        for f in candidatos[:max_archivos]:
+            if f in vistos:
+                continue
+            vistos.add(f)
+            c = git_show(d, h, f, max_lines=max_lineas)
+            if c is None or not c.strip():
+                continue
+            if len(c) > max_chars:
+                c = c[:max(0, max_chars - len(marca))] + marca
+            if gastado + len(c) > DOCS_PRESUPUESTO or gastado_grupo + len(c) > cupo:
+                omitidos.append(f)
+                continue
+            documentos[f] = c
+            gastado += len(c)
+            gastado_grupo += len(c)
+        omitidos.extend(candidatos[max_archivos:])
+    unicos, vistos_omitidos = [], set()
+    for f in omitidos:
+        if f not in vistos_omitidos:
+            vistos_omitidos.add(f)
+            unicos.append(f)
+    return documentos, unicos
+
+
 def evidencia_equipo(repo, hash_cal, cierre, desde, rama):
     d = clone_efimero(repo)
     if not d:
@@ -160,7 +224,8 @@ def evidencia_equipo(repo, hash_cal, cierre, desde, rama):
             h, fecha = hash_cal.split(" ", 1)
         else:
             h, fecha = "(sin commits)", ""
-        arbol = git_ls(d, h)
+        arbol_completo = git_ls(d, h)
+        arbol = arbol_completo[:MAX_TREE_ITEMS]
         tardios = [x for x in sh(["git", "-C", d, "log", rama, "--format=%h %cI %s",
                                   "--after=%s" % cierre, "-10"], timeout=60).stdout.strip().split("\n") if x] if hash_cal else []
         autores = sh(["git", "-C", d, "shortlog", "-sne", h], timeout=60).stdout.strip()
@@ -178,30 +243,18 @@ def evidencia_equipo(repo, hash_cal, cierre, desde, rama):
                             "%s..%s" % (h.split(" ")[0], rama)], timeout=120).stdout.strip()
         post_cierre = sh(["git", "-C", d, "log", rama, "--format=%h %cI %s",
                           "--since=%s" % cierre, "-20"], timeout=60).stdout.strip()
-        runs = ci_runs(repo) if any(f.startswith(".github/workflows/") for f in arbol) else []
-        docs = {}
-        for f in git_ls(d, h, r"^docs/|^README"):
-            if f.endswith((".png", ".jpg", ".jpeg", ".pdf", ".zip", ".lock", ".pyc", ".ipynb")):
-                continue
-            c = git_show(d, h, f, max_lines=300)
-            if c is not None:
-                docs[f] = c[:9000]
-        correcciones = git_show(d, h, "correcciones.md", max_lines=300)
-        if correcciones is not None:
-            docs["correcciones.md"] = correcciones[:9000]
-        for f in git_ls(d, h, r"^\.github/workflows/|^(pyproject\.toml|package\.json|pom\.xml|build\.gradle.*|Makefile|docker-compose.*|requirements\.txt)$"):
-            c = git_show(d, h, f, max_lines=150)
-            if c is not None:
-                docs[f] = c[:5000]
+        runs = ci_runs(repo) if any(f.startswith(".github/workflows/") for f in arbol_completo) else []
+        docs, omitidos = volcado_documentos(d, h)
         ev = {
             "visible": True, "repo": repo, "rama_principal": rama,
             "hash_calificado": h, "fecha": fecha,
-            "arbol": arbol[:MAX_TREE_ITEMS], "autores": autores,
-            "secretos": secretos.stdout.strip() or "(sin coincidencias)",
+            "arbol": arbol, "arbol_truncado": len(arbol_completo) > len(arbol), "autores": autores,
+            "secretos": secretos.stdout.strip()[:4000] or "(sin coincidencias)",
             "envs_versionados": envs, "ia_log": ia_log or "(sin commits sobre docs/ia.md)",
             "commits_nuevos_desde_cierre_anterior": nuevos or "(sin commits nuevos)",
             "commits_tardios_post_cierre": tardios, "documentos": docs,
-            "head": head, "arbol_head": git_ls(d, rama)[:MAX_TREE_ITEMS],
+            "documentos_omitidos": omitidos,
+            "head": head, "arbol_head": git_ls(d, rama)[:100],
             "diff_desde_cierre": diff_head or "(sin diferencias con el estado calificado)",
             "commits_post_cierre": post_cierre or "(sin commits posteriores al cierre)",
             "runs_ci": runs,
@@ -390,8 +443,8 @@ SISTEMA = (
     "6. Todo en espanol y SIN correos: cita las cuentas de git por su nombre visible, nunca "
     "direcciones de correo.\n"
     "7. Responde UNICAMENTE un objeto JSON valido con las claves: matriz_ficha (lista de {criterio, "
-    "estado, evidencia, observaciones}), matriz_transversal (lista de EXACTAMENTE 8 filas con los "
-    "criterios del apartado 11 del contrato, nombrados igual), recuento "
+    "estado, evidencia, observaciones}), matriz_transversal (lista de EXACTAMENTE 9 filas, ver "
+    "regla 11), recuento "
     "({cumple, total}), hallazgos (lista de frases cortas), no_verificados (lista), feedback "
     "(texto breve y constructivo para publicar, sin nombres, sin notas, sin correos, maximo 12 "
     "lineas), overall (objeto {estado, al_dia, resumen, resueltos_tardios, pendientes}). Se "
@@ -401,7 +454,20 @@ SISTEMA = (
     "(master o main; no solo la entrega de la semana): usa head, "
     "diff_desde_cierre, commits_post_cierre y runs_ci de la evidencia. Si el equipo subio tarde o "
     "corrigio entregas anteriores despues del cierre, listalo en 'resueltos_tardios' (con la "
-    "evidencia); 'al_dia' solo si no quedan pendientes de semanas anteriores sin resolver en esa rama."
+    "evidencia); 'al_dia' solo si no quedan pendientes de semanas anteriores sin resolver en esa rama.\n"
+    "10. El campo 'documentos' es un extracto con presupuesto, no el repositorio entero: si un "
+    "archivo figura en 'arbol' pero no en 'documentos', aparece en 'documentos_omitidos' o su "
+    "contenido llega cortado, NUNCA escribas que el equipo no lo aporto ni que el archivo falta. "
+    "En ese caso la fila queda 'No verificado' diciendo que el archivo no entro completo en el "
+    "volcado y que hay que leerlo en el repositorio. 'No cumple' exige evidencia de ausencia en "
+    "'arbol', y si 'arbol_truncado' es true la ausencia de una ruta tampoco prueba que no exista: "
+    "en ese caso no uses 'No cumple' por ausencia.\n"
+    "11. La matriz transversal tiene EXACTAMENTE 9 filas, con estos criterios literales: "
+    "'Repositorio en la organizacion, con el nombre de la convencion y publico', 'Estructura minima "
+    "presente', 'Estado calificado identificable', 'Nombres de ADR segun la convencion', 'ADR "
+    "aceptados no reescritos', 'docs/ia.md al dia para la semana', 'Pipeline, SonarCloud y Quality "
+    "Gate publicos', 'Sin credenciales en el repositorio ni en el historial' y 'Contribucion de "
+    "todos los integrantes'. No omitas ninguna ni agregues filas ajenas al contrato.\n"
 )
 
 
@@ -412,7 +478,7 @@ def prompt_evaluacion(ficha, contrato, equipo, ev, entrada, modo):
         "EQUIPO: %s | repo %s | integrantes declarados: %s\n\n"
         "EVIDENCIA DEL REPOSITORIO (rama: %s; estado calificado: %s %s, modo %s):\n%s\n\n"
         "Evalua la matriz DE LA FICHA (una fila por criterio de su tabla 'Matriz de cumplimiento'), "
-        "la matriz transversal del contrato (sus 8 criterios del apartado 11) y el 'overall' del "
+        "la matriz transversal del contrato (sus 9 criterios del apartado 11) y el 'overall' del "
         "proyecto entero a HEAD. En 'overall': si el equipo subio tarde o corregio entregas "
         "anteriores despues del cierre, eso aparece en 'commits_post_cierre' y 'diff_desde_cierre' "
         "y debe reflejarse en 'resueltos_tardios'; 'al_dia' solo si no quedan pendientes de "
@@ -632,12 +698,14 @@ def resumen_desde_informe(repo, equipo, entrada, estado):
 
 
 def informes_definitivos(entrada, eqs):
-    n = 0
-    for repo in eqs:
-        p = os.path.join(REV, repo, entrada["ficha"])
-        if os.path.exists(p) and "Revision automatica definitiva" in read_txt(p):
-            n += 1
-    return n
+    """Informes ya cerrados para la entrega: basta con que existan.
+
+    El pase automatico y las auditorias locales posteriores escriben cabeceras distintas, asi que
+    buscar un literal en el texto dejaba la guarda inservible y un pase definitivo volvia a
+    reprocesar una semana ya cerrada. El modo definitivo se decide por estado-<id>.json.
+    """
+    return sum(1 for repo in eqs
+               if os.path.exists(os.path.join(REV, repo, entrada["ficha"])))
 
 # ---------- planilla / feedback / README / resumen ----------
 

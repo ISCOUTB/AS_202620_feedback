@@ -91,7 +91,7 @@
 | Nombre y visibilidad del repositorio | Cumple | `AS_202620_ElMapita`, público. |
 | Estructura mínima | Cumple | Las seis rutas; arc42 en plantilla única y C4 solo PNG (anotado desde S2). |
 | Convención de nombres de ADR | Cumple | `0001-estilo-arquitectonico-propuesto.md` conforme. |
-| ADR aceptados sin reescribir | Cumple | Un solo commit de creación (`aa16382`). |
+| ADR aceptados sin reescribir | No cumple | `docs/adr/0001-estilo-arquitectonico-propuesto.md` declara `status: Accepted` (2026-08-22) y fue editado en `07b36f4` (2026-08-30) sin declarar reemplazo; el informe S7 lo registra en No cumple. |
 | `docs/ia.md` al día | Cumple | 7 commits entre 2026-08-07 y 2026-09-20 (afae3be); el registro documenta usos y rechazos con su motivo. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Coincidencias solo en tipos (`password: string`) y badge placeholder del boilerplate. |
 | Contribución de todos los integrantes | No cumple | Confirmado hasta el corte 1: `RobotDRMX` 12 commits (86%), `dgarza2705`/Diego Rosales Garza 1, Rodrigo Vazquez Rico 1; Angel Fabian Gutierrez Gomez sigue sin ningún commit identificable en todo el historial. |
