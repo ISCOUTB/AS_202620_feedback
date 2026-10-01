@@ -50,10 +50,8 @@ El repositorio va bien encaminado: conserva estructura, ADR, README y un registr
 
 ## Semana 8 · S8
 
-### Recomendaciones prioritarias
+Está bien: la infraestructura como código versionada (el blueprint de despliegue más el Dockerfile del backend), el pipeline en verde sobre la rama principal con un gate que bloquea el merge, los logs estructurados con salida JSON, una métrica de latencia ligada al escenario de carga inicial y consultable en el endpoint de métricas, la protección de secretos (variables declaradas como secretas en el blueprint y tomadas del entorno), la estimación de costo mensual con supuestos y punto de ruptura, la vista de despliegue con una caja por pieza y un ADR de plataforma con su alternativa descartada.
 
-- El arc42 en un solo documento es válido: completen allí la sección 2 con el presupuesto y, si aplica, la condición de tarjeta. La sección 7 ya existe, pero debe elegir entre Cloud Run, Render o VPS y mostrar el host real de cada pieza.
-- Publiquen la URL y la comprobación externa de salud; versionen la infraestructura y el procedimiento de recreación.
-- Añadan logs y una métrica ligados a un escenario, estimen costo y punto de ruptura, y documenten la elección de plataforma en un ADR.
+Qué corregir: la sección 2 de arc42 debe recoger el límite de costo y la condición de tarjeta como restricciones (hoy solo viven en el ADR); la evidencia de SonarCloud (configuración, run y URL pública con el estado del Quality Gate) sigue ausente; conviene fijar el host real de la sección 7 en el proveedor elegido, que hoy sigue como una lista de opciones; los ADR aceptados no deben editarse sin declarar reemplazo; y la contribución debe repartirse para que todos los integrantes aparezcan en el historial.
 
-El repositorio está bien ordenado: estructura mínima completa, README con arranque en un comando, ADR numerados, registro de IA que crece y sin credenciales versionadas. Lo que falta es el corazón de esta entrega: no hay URL del sistema desplegado con su comprobación y hora, no hay infraestructura como código ni pipeline con un run verificable, y no se ven logs estructurados, métrica ligada a un escenario, estimación de costo con supuestos ni ADR por decisión de plataforma. Para el segundo corte conviene priorizar: desplegar y publicar URL y health check, versionar la IaC, aportar el run de CI en verde con SonarCloud, completar el límite económico en la sección 2 existente y elegir el host real de cada pieza en la sección 7 existente del arc42, además de documentar los ADR de plataforma. Con eso la matriz cambia de forma sustancial.
+La URL del despliegue y la comprobación de salud quedan diferidas por decisión docente: se entregan por Moodle.

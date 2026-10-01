@@ -1,79 +1,76 @@
 # semana-08-evidencia-s8 · Drift
 
-> Pasada temprana (GitHub Actions, previa al cierre): los hashes y la nota son preliminares y pueden cambiar si el equipo empuja antes del cierre.
+> Revisión definitiva: hash 74709aa, última revisión ≤ cierre (2026-09-28T05:00:00Z) en origin/master.
 
 | Campo | Valor |
 |---|---|
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Drift` |
-| Estado revisado | `9334a03` en `origin/master` (2026-09-20T20:19:47-05:00) |
+| Estado revisado | `74709aa` en `origin/master` (2026-09-27T23:58:28-05:00) |
 | Cierre | 2026-09-28T05:00:00Z |
-| Revisor | pipeline automatico (GitHub Actions) |
+| Revisor | auditoría local sobre clon público efímero |
+
+> El estado calificado se movió respecto de la pasada temprana (que revisó `9334a03`): el equipo empujó el 27 de septiembre. Se releyeron del repositorio todas las filas que la pasada preliminar había dejado como no incluidas.
 
 ## Matriz de la ficha
 
-| Criterio de evaluacion | Evidencia tecnica | Estado | Observaciones |
+| Criterio de evaluación | Evidencia técnica | Estado | Observaciones |
 |---|---|---|---|
-| URL del sistema accesible desde fuera de la red de la universidad | README.md solo documenta http://localhost:3000 y http://localhost:8000 y el arbol de HEAD 9334a03 no contiene URL publica ni archivos de despliegue. | No cumple | No hay URL declarada ni hora de comprobacion posible. |
-| Health check consultable | docs/api/drift/openapi.yaml define GET / con HealthResponse y existe backend/tests/test_health.py, pero no hay entorno desplegado donde consultarlo. | No cumple | No se cumple el codigo de respuesta en vivo; el equipo no declara una ruta /health. |
-| Infraestructura como codigo versionada en el repositorio | El arbol de HEAD 9334a03 no incluye Dockerfile, docker-compose, *.tf, *.tfvars, k8s/, helm/, Procfile ni fly.toml; solo .github/workflows/ci.yml y scripts/start.py. | No cumple | El arranque depende de pasos manuales documentados en el README. |
-| El entorno se puede recrear siguiendo el README | README.md contiene Requisitos previos, Instalacion y 'Comando Unico de Ejecuccion' con python scripts/start.py, y scripts/start.py esta versionado en HEAD. | Cumple | Reproducible en local; no describe un entorno desplegado. |
-| Pipeline en verde sobre la rama principal | Existen .github/workflows/ci.yml y sonar-project.properties, pero la evidencia no incluye runs_ci con conclusion ni URL. | No verificado | Comprobar con curl a api.github.com/repos/ISCOUTB/AS_202620_Drift/actions/runs sobre master. |
-| Logs estructurados | El arbol de HEAD 9334a03 no contiene configuracion de registro (structlog, winston, pino, logback, serilog ni formatter JSON). | No cumple | No hay archivo de configuracion ni linea de ejemplo que citar. |
-| Metrica consultable asociada a un escenario de calidad | scripts/k6_baseline.js y docs/evidencias/e1-linea-base.md reportan p95 1.24 s para E1, pero no hay metrica expuesta ni entorno desplegado donde consultarla. | No cumple | El escenario esta asociado (E1); falta la metrica consultable en ejecucion. |
-| Secretos fuera del codigo y tomados del entorno o del almacen | El barrido no encontro coincidencias y envs_versionados esta vacio, pero el arbol no incluye .env.example ni configuracion de despliegue. | No cumple | No se puede citar la declaracion de variables ni su toma desde un almacen. |
-| Estimacion de costo mensual con supuestos y punto de ruptura de la capa gratuita | El arbol de HEAD 9334a03 no contiene documento de costos y ni README.md ni docs/ mencionan volumen supuesto ni capa gratuita. | No cumple | No hay calculo ni punto de ruptura que revisar. |
-| arc42 seccion 7 con una caja por pieza y donde se ejecuta | docs/arc42/ contiene las secciones 1, 2, 3, 4, 5, 6, 8, 9, 10 y 12; no existe archivo de la seccion 7. | No cumple | Falta la vista de despliegue con una caja por pieza y su ubicacion. |
-| Limite de costo y restriccion de tarjeta recogidos en la seccion 2 | docs/arc42/arc42_2_restricciones.md cubre restricciones organizacionales, academicas, tecnologicas y de fuentes externas; no menciona limite de costo ni 'sin tarjeta'. | No cumple | El archivo existe, pero no recoge las restricciones pedidas. |
-| Un ADR por decision de plataforma, con alternativa descartada | docs/adr/ solo contiene 0001 a 0004 (arquitectura hexagonal, stack Next.js/FastAPI, contextos del dominio y estrategia de integracion); ninguno decide la plataforma de despliegue. | No cumple | No hay ADR de plataforma ni capa gratuita verificada. |
+| URL del sistema accesible desde fuera de la red de la universidad | `docs/evidencias/evidencia_semana8.md:15` declara `https://drift-utb-202620-g5fvchdcgpcthkeg.mexicocentral-01.azurewebsites.net`, y `docs/arc42/arc42_7_vista_despliegue.md:65` la repite para el backend. | No verificado | Pendiente de calificar: la URL del despliegue se entrega por Moodle y no está disponible en esta pasada. No se abrió ninguna URL. El repositorio sí declara una URL pública de backend. |
+| Health check consultable | Ruta `GET /health` en `backend/app/main.py:90` (responde `{"status":"ok"}`); `docs/evidencias/evidencia_semana8.md:48-53` y `docs/arc42/arc42_7_vista_despliegue.md` §7.4 la documentan. | No verificado | Pendiente de calificar: la URL del despliegue se entrega por Moodle y no está disponible en esta pasada. El repositorio prueba que la ruta de health existe (`backend/app/main.py:90`). |
+| Infraestructura como código versionada en el repositorio | `infra/azure/main.bicep` (App Service F1 Free, Python 3.12, TLS 1.2), `infra/azure/main.parameters.json`, `deployment/vercel/` (función serverless) y `.github/workflows/master_drift-utb-202620.yml`. | Cumple | Infraestructura descrita como código en Bicep, no en pasos manuales. |
+| El entorno se puede recrear siguiendo el README | README.md «Instalación» y «Comando Unico de Ejecuccion» (`python scripts/start.py`, con requisitos previos y pruebas); `infra/azure/README.md` documenta la recreación con `az deployment group create` sobre `main.bicep`. | Cumple | Arranque local con un solo comando y procedimiento de infraestructura versionado. |
+| Pipeline en verde sobre la rama principal | Run `CI` sobre `master` del hash `74709aa`, conclusión `success`: https://github.com/ISCOUTB/AS_202620_Drift/actions/runs/36379911184 (2026-09-28T04:58:30Z). | Cumple | Run atado al hash calificado de `master`. |
+| Logs estructurados | `backend/app/infrastructure/observability.py:9` define `JsonFormatter` y `:37` `log_event`; `backend/app/main.py` emite `search_completed`/`search_failed` con campos (`duration_ms`, `results_count`, `query_length`). Ejemplo JSON en `docs/evidencias/evidencia_semana8.md`. | Cumple | El grep de la ficha no lo detecta porque usa `logging.Formatter` propio; verificado a mano. |
+| Métrica consultable asociada a un escenario de calidad | `GET /metrics` en `backend/app/main.py:94`; métrica `drift_search_latency_ms` en `backend/app/infrastructure/observability.py:56`, asociada al escenario **E1 (rendimiento)** en `docs/evidencias/evidencia_semana8.md:422`. | Cumple | Métrica nombrada y ligada explícitamente a E1. |
+| Secretos fuera del código y tomados del entorno o del almacén | `.github/workflows/master_drift-utb-202620.yml:40-42` usa `secrets.AZUREAPPSERVICE_CLIENTID/TENANTID/SUBSCRIPTIONID` (OIDC); `infra/azure/README.md` declara que los secretos no viven en el repositorio; sin `.env` versionado ni coincidencias del barrido. | Cumple | Los secretos se toman del almacén de GitHub. `docs/evidencias/evidencia_semana8.md:468` afirma un `.env.example` que no existe en el árbol calificado; las variables públicas están en `infra/azure/main.parameters.json`. |
+| Estimación de costo mensual con supuestos y punto de ruptura de la capa gratuita | `docs/evidencias/Estimacion_costos.md`: supuestos de volumen (`:3`), costo por componente `$0` (`:24-27`) y sección «Punto de ruptura de la capa gratuita» (`:29`). | Cumple | El punto de ruptura se describe de forma cualitativa (agotar el crédito de Azure for Students / límites de Vercel Hobby), sin umbral numérico de volumen. |
+| arc42 sección 7 con una caja por pieza y dónde se ejecuta | `docs/arc42/arc42_7_vista_despliegue.md` con diagrama de despliegue y tabla §7.2 (`:42`) pieza/tecnología/ubicación; §7.4 describe el backend (`:65`). | Cumple | Una caja por pieza (frontend Vercel, backend Azure, CI, IaC) y su ubicación. |
+| Límite de costo y restricción de tarjeta recogidos en la sección 2 | `docs/arc42/arc42_2_restricciones.md:76` §2.7 «Límite de costo y restricción de tarjeta», con §2.7.1 de tarjeta (`:89`). | Cumple | Recoge el límite de costo y la condición de tarjeta. |
+| Un ADR por decisión de plataforma, con alternativa descartada | `docs/adr/0005-estrategia-despliegue.md` (frontend Vercel / backend Azure / Supabase) y `docs/adr/0006-despliegue-serverless-api-busqueda.md` (serverless de la búsqueda), ambos con alternativas A/B y sus desventajas. | Cumple | Un ADR por decisión de plataforma con alternativa descartada; la capa gratuita se afirma (Azure for Students, Vercel Hobby) pero no se verifica con cifras. |
 
 ## Matriz transversal (CONTRATO §11)
 
 | Criterio | Evidencia | Estado | Observaciones |
 |---|---|---|---|
-| Identidad del repositorio | Repositorio AS_202620_Drift en la organizacion ISCOUTB, visible: true, y el historial de HEAD 9334a03 lista 8 nombres de autor que consolidan en los 4 integrantes declarados. | Cumple | Nombre y visibilidad correctos; integrantes presentes en el historial. |
-| Estructura minima | HEAD 9334a03 contiene docs/arc42/, docs/adr/, docs/c4/, docs/aspectos.md, docs/ia.md y README.md. | Cumple | La documentacion es revisable en Markdown; arc42 aun sin secciones 7 y 11. |
-| Convenciones de ADR | docs/adr/0001-0004 siguen el patron NNNN-titulo-en-kebab-case y 0001 esta marcado como Reemplazado por ADR-0002. | Cumple | La trazabilidad de 0001 queda pendiente y los enlaces de 0003 apuntan a rutas inexistentes. |
-| Tabla de aspectos | docs/aspectos.md existe en HEAD 9334a03, pero su contenido no se incluyo en la evidencia entregada. | No verificado | Hace falta el contenido para verificar las ocho columnas y que cada celda sea navegable. |
-| Registro de uso de IA | docs/ia.md existe y su historial crece entre 2026-08-09 y 2026-09-20 (ia_log), pero no se incluyo su contenido. | No verificado | Falta comprobar lo rechazado y su motivo tecnico. |
-| README | README.md describe que es el sistema, requisitos previos, instalacion, 'Comando Unico de Ejecuccion' con python scripts/start.py y como se prueba (pytest, npm run build, k6). | Cumple | Cubre el arranque con un solo comando en local. |
-| Pipeline y analisis estatico | Existen .github/workflows/ci.yml y sonar-project.properties, pero la evidencia no aporta runs_ci ni la URL publica del analisis con Quality Gate. | No verificado | Comprobar con curl a api.github.com/repos/ISCOUTB/AS_202620_Drift/actions/runs y con la URL publica de SonarCloud del hash revisado. |
-| Secretos | El barrido de secretos sobre HEAD 9334a03 no arroja coincidencias y envs_versionados esta vacio (ningun .env versionado). | Cumple | Repositorio publico sin credenciales; conviene anadir .env.example. |
+| Repositorio en la organización, con el nombre de la convención y público | `ISCOUTB/AS_202620_Drift`, clonado sin autenticación; responde al protocolo git. | Cumple | Nombre conforme a `AS_202620_<PROYECTO>` y público. |
+| Estructura mínima presente | Árbol de `74709aa`: `docs/arc42/`, `docs/adr/`, `docs/c4/`, `docs/aspectos.md`, `docs/ia.md` y `README.md`. | Cumple | Seis rutas del contrato presentes; arc42 usa prefijo `arc42_N_` (desviación de forma, no de contenido). |
+| Estado calificado identificable | Rama `origin/master`; hash `74709aa` (2026-09-27T23:58:28-05:00), último ≤ cierre 2026-09-28T05:00:00Z. | Cumple | Trece commits posteriores al cierre, registrados en overall. |
+| Nombres de ADR según la convención | `docs/adr/0001-adoptar-arquitectura-hexagonal.md` … `0006-despliegue-serverless-api-busqueda.md`, todos `NNNN-kebab-case.md`. | Cumple | Seis nombres conformes. |
+| ADR aceptados no reescritos | `docs/adr/0002-adoptar-nextjs-fastapi-arquitectura-hexagonal.md:3` está `Aceptado` y `git log --follow` muestra ediciones posteriores a su creación (`45b5987`, 2026-08-24): `70e52e2` (2026-09-05T22:40:14-05:00) y `9488544` (2026-09-13T13:40:00-05:00), sin ADR que lo reemplace. | No cumple | CONTRATO §4 prohíbe editar un ADR aceptado. ADR-0001 sí declara reemplazo por ADR-0002, pero ADR-0002 (vigente) fue editado después de aceptarse. |
+| `docs/ia.md` al día para la semana | Historial de `docs/ia.md` con entradas del periodo; última del hash calificado `74709aa` (2026-09-27T23:58:28-05:00, «Add deployment planning section»). Contenido con «Alternativa descartada» y su motivo (p. ej. documentar el despliegue solo en el README). | Cumple | Registra rechazos con motivo. |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | `sonar-project.properties` existe y el README menciona SonarQube Cloud, pero `.github/workflows/ci.yml` no contiene ningún paso que invoque el scanner ni referencia a `SONAR_TOKEN`; el proyecto es público con Quality Gate `OK` (consultado por API), sin run que lo relacione con el hash revisado. | No cumple | Contrato §8: falta la línea del workflow que ejecuta el scanner y el run exitoso asociado; un proyecto con Quality Gate no prueba que el análisis corra en CI. |
+| Sin credenciales en el repositorio ni en el historial | `git grep` de secretos sobre `74709aa` sin coincidencias reales; ningún `.env` versionado; el único acierto es `id-token: write` (permiso de workflow). | Cumple | Sin credenciales en el árbol revisado. |
+| Contribución de todos los integrantes | `git shortlog -sne 74709aa` consolida por correo idéntico en 4 personas: `JerryDBM`+«Sherry» (115), `JoshuaR01`+`JoshXX` (99), `lmpdiaz12`+«Luis Mario Perez Diaz» (85) y `maufern4ndez`+«Mauricio Andres Fernandez Espinosa» (66). | Cumple | Coinciden con los 4 integrantes de `EQUIPOS.md`; aportes repartidos. |
 
 ## Estado global del proyecto (overall · punta actual de la misma rama)
 
-Mira el repositorio **entero en la punta actual de la misma rama**, no solo la evidencia del cierre: si el equipo subio tarde o corregio entregas anteriores, aqui se nota.
-
-- **Punta actual revisada**: `9334a03f97fc2ddb67846b8e6d229ff85898f3f1 2026-09-20T20:19:47-05:00 Update cambio_incompatible_evidencia.md`
-- **Veredicto**: con pendientes
-- Resumen: En HEAD 9334a03 (2026-09-20, anterior al cierre) el sistema sigue siendo local: sin URL publica, sin infraestructura como codigo, sin pipeline verificable y sin observabilidad, costo ni ADR de plataforma.
+- **Punta actual revisada**: `8a00556` (`2026-09-30T22:34:57-05:00`, «Update links and formatting in evidencias_semana9.md»), 13 commits posteriores al cierre.
+- **Veredicto**: con pendientes.
+- Resumen: la punta actual de `master` conserva las piezas de S8 del hash calificado (Bicep de Azure, despliegue serverless de Vercel, observabilidad con logs JSON y `/metrics` ligado a E1, costos, arc42 §7 y §2 y ADR de plataforma) y avanza hacia S9 con evidencias nuevas. Los 13 commits posteriores al cierre son posteriores a la entrega y no cambian la matriz; algunos runs de despliegue del 1 de octubre salieron en rojo, mientras que el job `CI` siguió en verde.
 
 Pendientes que siguen abiertos:
-- Despliegue accesible desde fuera con URL y health check.
-- Infraestructura como codigo versionada y README de recreacion del entorno.
-- Pipeline en verde sobre master y analisis SonarCloud auditable.
-- Logs estructurados y metrica consultable ligada al escenario E1.
-- Estimacion de costo mensual con supuestos; limite de costo y 'sin tarjeta' en arc42 seccion 2.
-- arc42 seccion 7 y un ADR por decision de plataforma con alternativa descartada.
+- ADR aceptados editados después de su aceptación (ADR-0002), sin ADR de reemplazo.
+- SonarCloud: falta un paso del workflow que ejecute el scanner y el run asociado al hash revisado.
+- URL y health check: quedan pendientes de calificar con la URL de Moodle.
 
 ## Recuento y nota sugerida
 
-1 de 12 criterios Cumple.
+**10 de 10 criterios graduables.** (Las 2 filas de despliegue quedan diferidas y no entran en el recuento.)
 
-**Nota sugerida preliminar (propuesta al docente; puede cambiar al cierre): 1.3 = 1 + 4 × (1/12).** La nota final la fija el profesor en Moodle.
+**Propuesta provisional al docente — `nota = 1 + 4 × (10/10) = 5.0`; quedan 2 filas de despliegue pendientes de calificar y la nota final la fija el profesor en Moodle.**
 
 ## No verificado / pendientes
 
-- Pipeline en verde sobre master: falta el ultimo run de GitHub Actions con su conclusion y URL.
-- Analisis de SonarCloud con estado del Quality Gate para el hash revisado: falta la URL publica.
-- Contenido de docs/aspectos.md: no se incluyo, no se pudieron verificar las ocho columnas.
-- Contenido de docs/ia.md: no se incluyo, no se pudo verificar lo rechazado y su motivo.
-- Comprobacion en vivo de despliegue y health check: no hay URL declarada que abrir desde fuera de la red.
+- URL del sistema accesible desde fuera de la red: pendiente de calificar; la evidencia declara una URL pública, pero no se abrió ninguna.
+- Health check consultable: pendiente de calificar; la ruta existe en el código (`backend/app/main.py:90`).
+- Sustentación: no evaluable desde el repositorio.
+- Filas transversales abiertas: ADR aceptados no reescritos (No cumple) y Pipeline/SonarCloud/Quality Gate (No cumple).
 
 ## Hallazgos para la planilla
 
-- La entrega S8 no tiene despliegue: sin URL publica ni infraestructura como codigo en HEAD 9334a03.
-- No hay runs de CI en la evidencia: no se puede confirmar pipeline en verde ni Quality Gate de SonarCloud.
-- Faltan la seccion 7 de arc42, el limite de costo en la seccion 2, la estimacion mensual y los ADR de plataforma.
-- No existe logging estructurado ni metrica consultable en un entorno desplegado.
-- El repositorio esta limpio de secretos y sin .env versionado.
-- El commit calificado (9334a03, 2026-09-20) es anterior al cierre y no hay commits posteriores ni tardios.
+- El estado calificado cambió respecto de la pasada temprana: la definitiva usa `74709aa` (27/09), no `9334a03`.
+- S8 resolvió en el repositorio IaC (Bicep de Azure + serverless de Vercel), logs JSON, `/metrics` ligado a E1, estimación de costos, arc42 §7 y §2, y ADR de plataforma.
+- Se corrige el arrastre previo: ADR-0002 (vigente, aceptado) fue editado el 05/09 y el 13/09 sin ADR de reemplazo → fila transversal en No cumple.
+- SonarCloud sigue sin integrarse al pipeline: no hay paso del workflow que invoque el scanner pese a existir `sonar-project.properties`; el hallazgo sigue abierto desde S6.
+- `docs/evidencias/evidencia_semana8.md` afirma un `.env.example` que no existe en el árbol calificado; las variables públicas viven en `infra/azure/main.parameters.json` y los secretos en GitHub Secrets.
+- URL y health check quedan pendientes de calificar por decisión docente (se entregan por Moodle).

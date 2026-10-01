@@ -48,11 +48,8 @@ El contrato OpenAPI está versionado, incluye rutas y esquemas, y la vista de ej
 
 ## Semana 8 · S8
 
-### Recomendaciones prioritarias
+Está bien: se añadió un ADR de plataforma con su alternativa descartada y la capa gratuita verificada; la vista de despliegue identifica cada pieza y dónde se ejecuta; la restricción de costo cero y sin cuentas de pago quedó recogida en arc42; existen rutas de salud y de métricas; y el entorno local se reproduce desde el README.
 
-- Conserven la restricción de servicios gratuitos y cuentas no pagas; sustituyan el marcador de la sección 7 por el destino real de cada componente.
-- Publiquen URL, respuesta de salud y hora de verificación; versionen el entorno desplegado y sus pasos de recreación.
-- Añadan logs estructurados y una métrica ligada a un escenario; estimen costo y punto de ruptura, y registren la plataforma en un ADR.
-- Mantengan la evidencia del CI en verde junto a la evidencia del despliegue.
+Qué corregir, por prioridad: el commit revisado es un merge con conflictos sin resolver en varios archivos de infraestructura (Dockerfile, compose, blueprint de despliegue, ejemplo de variables y evidencia), lo que deja la infraestructura como código inválida y el pipeline en rojo; resuelvan los conflictos y vuelvan a dejar el CI en verde. Tampoco hay logs estructurados, aunque la documentación afirma que sí; la métrica expuesta no se ata a un escenario de calidad real, porque cita un escenario que no existe en arc42; y la estimación de costo deja sin completar los supuestos de volumen. Sigue pendiente SonarCloud con su URL y el estado del Quality Gate.
 
-El entorno local se puede reconstruir desde el README y el pipeline está en verde, pero todavía no hay una URL pública, health check, infraestructura como código ni una vista de despliegue que identifique destinos reales: la sección 7 conserva un marcador. Para completar la entrega, definan la plataforma en un ADR, versionen el entorno, publiquen la URL y añadan logs estructurados, una métrica vinculada a un escenario y la estimación mensual con el punto de ruptura de la capa gratuita.
+La URL del despliegue y la comprobación de salud quedan diferidas por decisión docente: se entregan por Moodle.

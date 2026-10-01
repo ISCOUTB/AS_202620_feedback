@@ -56,13 +56,16 @@ El mapa de contextos con relaciones tipificadas, la tabla de dueño único, el A
 
 Buen avance del corte: el contrato OpenAPI está versionado con CHANGELOG y esquemas, corresponde con la API implementada, el workflow de contrato invoca la prueba, el ADR de integración compara alternativas síncronas y asíncronas, y la vista de ejecución describe un flujo con diagrama de secuencia. Para cerrar la evidencia: (1) adjunten un run en rojo provocado por un cambio incompatible, que es lo que demuestra que la prueba protege de verdad; (2) publiquen la URL del análisis estático con su Quality Gate y la línea del workflow que invoca el scanner, hoy no hay configuración en el repositorio; (3) unifiquen el ADR de integración en un solo archivo con nombre NNNN-en-kebab-case y corrijan el enlace roto que apunta a él; (4) etiqueten cada flecha del diagrama de contenedores con protocolo y formato, incluidas las que llegan a Supabase; (5) completen la tabla de aspectos con las ocho columnas del curso y sin celdas «Pendiente»; (6) actualicen la tabla de módulos y cierren las no conformidades registradas. ¿Pueden documentar también el flujo de publicaciones en la vista de ejecución y subir la evidencia del cambio que hizo fallar la prueba?
 
-## Semana 8 · S8
+## Semana 8 · S8 (revisión definitiva)
 
-### Recomendaciones prioritarias
+La entrega llegó parcialmente. Está bien: la infraestructura como código versionada (Dockerfile y Terraform de Supabase), la vista de despliegue con una caja por pieza y su entorno, las restricciones de costo y «sin tarjeta» en la sección 2, la estimación de costo con volumen propio y el punto de ruptura de la capa gratuita, y los secretos fuera del código.
 
-- Antes de cerrar el corte, verifiquen la autorización docente previa exigida para S2 y conserven su evidencia.
-- Declaren en la sección 2 el límite económico y la condición de tarjeta; representen en la sección 7 cada componente en su destino real.
-- Publiquen URL, respuesta de salud y hora de comprobación; versionen la definición del despliegue y expliquen cómo recrearlo.
-- Expongan una métrica ligada a un escenario, estimen costo y punto de ruptura, y documenten cada plataforma en un ADR.
+Falta:
+1. Desplegar y publicar la URL pública con la hora y el código de respuesta de `/health`.
+2. Poner en verde los workflows de pruebas y de contrato sobre la rama principal.
+3. Añadir configuración de logs estructurados con una línea de ejemplo y una métrica consultable ligada a un escenario de calidad.
+4. Documentar en el README cómo recrear el entorno desplegado a partir del Dockerfile y del Terraform.
+5. Escribir un ADR de plataforma para el hosting de la API, con alternativa descartada; hoy solo hay un ADR de la base de datos y está en estado «Propuesto».
+6. Unificar los ADR 0003 duplicados y con nombre fuera de la convención, y no editar un ADR aceptado: cuando cambie una decisión, escriban uno nuevo que la reemplace.
 
-La documentación de arquitectura y el contrato de API están bien trabajados, pero la entrega de despliegue no llegó: no hay URL pública, ni infraestructura como código, ni run de pipeline citado. Para cerrar el corte conviene, en este orden: 1) desplegar el backend en un proveedor con capa gratuita y pegar la URL junto a la hora exacta y el código de respuesta de /health; 2) versionar Dockerfile o el archivo del proveedor que describe el entorno, no pasos manuales; 3) añadir arc42 §7 con una caja por pieza y dónde se ejecuta, y §11; 4) escribir un ADR por decisión de plataforma con su alternativa descartada y la capa gratuita verificada; 5) calcular el costo mensual desde el volumen del propio escenario e indicar dónde se rompe la capa gratuita, dejando el límite y la restricción de tarjeta en §2; 6) declarar la configuración en .env.example y consumirla del proveedor; 7) publicar la URL del run de CI y del análisis de SonarCloud; 8) unificar los ADR 0003 duplicados y arreglar el enlace roto de la sección 9.
+La URL del despliegue se entrega por Moodle y no se califica en esta pasada.

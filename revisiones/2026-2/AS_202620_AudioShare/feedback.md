@@ -42,13 +42,14 @@ El contrato OpenAPI/AsyncAPI con rutas y esquemas, la prueba de contrato, su eje
 
 Buen avance: el mapa de contextos, la tabla módulo a datos y el plan de corrección ya están en el repositorio, y la trazabilidad de A-01 enlaza ADR, C4, código y pruebas. Para cerrar el corte: tipifiquen cada relación del mapa con el vocabulario de la semana (núcleo compartido, cliente-proveedor, capa anticorrupción), no solo flechas. Registren el recorrido de la auditoría de propiedad (comandos, hash y rutas) y declaren como no conformidad la escritura de startAt y del estado de reproducción desde la persistencia de Session. Falta incorporar la sección 8 de arc42: el lenguaje ubicuo y el mapa existen, pero en documentos sueltos y con un include roto. Si los límites cambiaron desde el primer corte, suban el C4 nivel 3 y el ADR del reajuste. Completen la evidencia pública de SonarCloud (workflow, run y URL con Quality Gate) y las pruebas de EC-02 y EC-03.
 
-## Semana 8 · S8
+## Semana 8 · S8 (revisión definitiva)
 
-### Recomendaciones prioritarias
+La entrega de despliegue llegó y es la más completa del corte: infraestructura versionada (Dockerfile, compose y el workflow que publica la imagen), procedimiento de recreación enlazado desde el README, logs JSON con campos, una métrica ligada a los escenarios de sincronización, secretos tomados del almacén, estimación de costo con supuestos propios y punto de ruptura, la vista de despliegue con una caja por pieza y las restricciones de costo y tarjeta, y un ADR de plataforma con la alternativa descartada y la capa gratuita verificada.
 
-- Fijen en la sección 2 el presupuesto máximo y si el despliegue puede exigir tarjeta; comprueben que las variables sensibles llegan desde el proveedor, no desde el repositorio.
-- Dibujen en la sección 7 una caja por componente y el host donde realmente corre; publiquen URL, respuesta de salud y procedimiento reproducible de despliegue.
-- Muestren una línea de log estructurado y una métrica vinculada a un escenario; calculen el costo mensual y el punto de ruptura de la capa gratuita.
-- Registren cada elección de plataforma en su ADR, con alternativa descartada y evidencia de la oferta elegida.
+Para cerrar del todo:
+1. Pongan en verde el workflow de Flutter sobre la rama principal: es el único pipeline que falla en el último push.
+2. Publiquen la URL pública del análisis estático con el estado del Quality Gate y alineen la organización del proyecto con la del curso.
+3. Actualicen `docs/ia.md` con el uso de IA de esta semana.
+4. Un ADR aceptado no se edita: cuando la decisión cambie, escriban un ADR nuevo que lo reemplace y marquen el anterior como reemplazado.
 
-El repositorio ya tiene una base sólida: estructura de documentos, ADR iniciales, contratos y pruebas del backend y del cliente.; Lo que falta es la entrega de despliegue: sin URL pública, health check y hora de comprobación no se puede sustentar el entorno.; Versionen la infraestructura del entorno desplegado (compose, terraform o configuración del proveedor), no solo el devcontainer.; Añadan la sección 7 de arc42 con una caja por pieza y dónde se ejecuta, y recojan el límite de costo en la sección 2.; Escriban un ADR por decisión de plataforma, con la alternativa descartada y la capa gratuita verificada.; Documenten los logs estructurados con un ejemplo de línea y expongan una métrica ligada a un escenario de calidad.; Incluyan la estimación de costo mensual desde el volumen del escenario y el punto donde se rompe la capa gratuita.; Aporten el run de CI sobre la rama principal y la URL pública del análisis con su Quality Gate.; Corrijan el enlace de `docs/aspectos.md` al ADR de cliente Flutter y ajusten las columnas a las ocho del curso.; Agreguen al README la URL desplegada y el procedimiento de recreación del entorno desplegado.
+La URL del despliegue se entrega por Moodle y no se califica en esta pasada.

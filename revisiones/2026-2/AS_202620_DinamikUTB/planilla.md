@@ -8,13 +8,13 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_DinamikUTB` |
 | Integrantes y su usuario de GitHub | Luis Daniel Padilla Leottau (`Daniel-dev02`) · Gillianis Del Carmen Perez Revolledo (`gillianisperez-prog`) · Esteban Ramirez Rios (`Eramirezr`) · Juan Jose Vargas Perez (`JuanchisV`, firma también como «Juan José Vargas Pérez» con el mismo correo) |
 | URL del sistema desplegado | sin desplegar todavía |
-| Ultima revision | 2026-09-23 |
+| Ultima revision | 2026-10-01 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 8 | S8 | `65202f2` (2026-09-21T22:51:09-05:00) | 1/12 | 1.3 (prelim.) | si |
+| 8 | S8 | `287c65d` (2026-09-27T23:57:31-05:00) | 10/10 | 5.0 (prop. prov.; 2 filas de despliegue diferidas) | sí |
 | 7 | S7 | `5e6fa73` (2026-09-20T23:57:27-05:00) | 10/10 | 5.0 | si |
 | 6 | S6 | `265e652` (2026-09-13T23:29:49-05:00) | 0/8 | 1.0 | si |
 | 5 | CORTE1 | `72bfc7e` (2026-09-07T22:28:37-05:00) | 8/12 | 3.7 | sí (actualizada) |
@@ -66,14 +66,15 @@
 | Contenido de arc42 sección 6 y del C4 nivel 2 con protocolo y formato por flecha. | S7 | no (releído y conforme) | — |
 | Historial git del contrato y confirmación de la versión de la API. | S7 | no (releído y conforme) | — |
 | Contenido de docs/aspectos.md con sus ocho columnas navegables. | S7 | si | |
-| Publicar URL del sistema accesible desde fuera de la red universitaria, con hora de comprobación. | S8 | si | |
-| Health check consultable y su código de respuesta. | S8 | si | |
-| Infraestructura como código versionada (Dockerfile/compose o IaC del proveedor). | S8 | si | |
-| Logs estructurados y métrica consultable ligada a un escenario de calidad. | S8 | si | |
-| Estimación de costo mensual con supuestos y punto de ruptura de la capa gratuita. | S8 | si | |
-| arc42 §7 con una caja por pieza y §2 con límite de costo y restricción de tarjeta. | S8 | si | |
-| Un ADR por decisión de plataforma con alternativa descartada. | S8 | si | |
-| Pendiente desde S6: URL pública del análisis en SonarCloud con estado del Quality Gate. | S8 | si | |
+| Publicar URL del sistema accesible desde fuera de la red universitaria, con hora de comprobación. | S8 | sí (diferido: URL por Moodle) | |
+| Health check consultable y su código de respuesta. | S8 | sí (diferido: URL por Moodle) | |
+| Infraestructura como código versionada (Dockerfile/compose o IaC del proveedor). | S8 | no (resuelto: `render.yaml` y `deploy-pages.yml`) | |
+| Logs estructurados y métrica consultable ligada a un escenario de calidad. | S8 | no (resuelto: JSON logging y `/metrics` ligado a Q-05) | |
+| Estimación de costo mensual con supuestos y punto de ruptura de la capa gratuita. | S8 | no (resuelto: `docs/costos.md`) | |
+| arc42 §7 con una caja por pieza y §2 con límite de costo y restricción de tarjeta. | S8 | no (resuelto en el hash calificado) | |
+| Un ADR por decisión de plataforma con alternativa descartada. | S8 | no (resuelto: ADR-0005/0006/0007) | |
+| Pendiente desde S6: URL pública del análisis en SonarCloud con estado del Quality Gate. | S8 | no (resuelto: scanner en CI y Quality Gate `OK`) | |
+| ADR-0005 y ADR-0006 editados tras su aceptación el 2026-09-27 | S8 | sí | Ver feedback S8 |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -85,7 +86,7 @@
 | `docs/ia.md` al día | Cumple | Entradas del 23/08 con rechazos («Rechazado parcialmente») y motivo. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Sin coincidencias. |
 | Contribución de todos los integrantes | Cumple | 4 de 4 en S3 (Juan 21, Gillianis 11, Luis 12, Esteban 2); desbalance anotado. |
-| Pipeline en verde | No cumple | El workflow de CI y el run asociado a `72bfc7e` verifican backend y frontend en verde. |
+| Pipeline en verde | Cumple | CI en verde sobre `287c65d` (run 36379851321); SonarCloud con scanner en CI y Quality Gate `OK`. |
 
 ## Contribución por integrante
 

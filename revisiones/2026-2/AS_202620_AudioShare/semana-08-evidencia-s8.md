@@ -1,86 +1,78 @@
 # semana-08-evidencia-s8 · AudioShare
 
-> Pasada temprana (GitHub Actions, previa al cierre): los hashes y la nota son preliminares y pueden cambiar si el equipo empuja antes del cierre.
+> Revisión definitiva: hash `e4789d8`, última revisión ≤ cierre (2026-09-28T05:00:00Z) en `origin/master`.
 
 | Campo | Valor |
 |---|---|
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_AudioShare` |
-| Estado revisado | `d094a51` en `origin/master` (2026-09-21T00:21:38-05:00) |
+| Estado revisado | `e4789d88` en `origin/master` (2026-09-27T23:49:01-05:00) |
 | Cierre | 2026-09-28T05:00:00Z |
-| Revisor | pipeline automatico (GitHub Actions) |
+| Revisor | auditoría local sobre clon público efímero |
 
 ## Matriz de la ficha
 
-| Criterio de evaluacion | Evidencia tecnica | Estado | Observaciones |
+| Criterio de evaluación | Evidencia técnica esperada | Estado (Cumple / No cumple) | Observaciones |
 |---|---|---|---|
-| URL del sistema accesible desde fuera de la red de la universidad | La evidencia del commit d094a51 (2026-09-21T00:21:38-05:00) no incluye URL del sistema ni registro de comprobación con hora. | No verificado | Falta la URL y el resultado de `curl -sS -o /dev/null -w 'http=%{http_code} tiempo=%{time_total}s\n' "$URL"` con la hora exacta. |
-| Health check consultable | El árbol de d094a51 contiene `tests/health.test.ts`, pero no se declara ruta de health ni hay URL desplegada que consultar. | No verificado | El equipo no declara ninguna ruta; sin despliegue no hay código de respuesta para `/health`. |
-| Infraestructura como código versionada en el repositorio | En d094a51 solo aparecen `.devcontainer/Dockerfile`, `.devcontainer/devcontainer.json` y `.github/workflows/`; no hay compose, terraform, k8s, helm, fly.toml, render.yaml, railway ni Procfile. | No cumple | El devcontainer describe el entorno de desarrollo en Codespaces, no el entorno desplegado. |
-| El entorno se puede recrear siguiendo el README | README.md, secciones Requisitos, Instalación (`flutter pub get`, `npm ci`), Ejecución (`npm run dev`) y Tests (`flutter analyze`, `flutter test`, `npm test`). | Cumple | El procedimiento recrea el entorno local con un comando; no cubre el entorno desplegado. |
-| Pipeline en verde sobre la rama principal | Existen `.github/workflows/ci.yml` y `.github/workflows/flutter.yml` en d094a51, pero no se aporta ningún run con conclusión ni URL. | No verificado | Falta el último run de origin/master; comando anotado: `curl -s "https://api.github.com/repos/ISCOUTB/AS_202620_AudioShare/actions/runs?per_page=10"`. |
-| Logs estructurados | Ni el árbol de d094a51 ni la documentación aportada contienen configuración de logging (pino, winston, structlog, logback, serilog) ni una línea de ejemplo. | No cumple | No hay archivo de configuración de registro ni ejemplo de campos estructurados. |
-| Métrica consultable asociada a un escenario de calidad | `docs/escenarios_calidad.md` define EC-01 a EC-04 con umbrales (100 ms, 200 ms, 3 s), pero no hay métrica emitida ni consultable en el repositorio. | No cumple | Sin métrica ni instrumentación no hay escenario asociado que verificar. |
-| Secretos fuera del código y tomados del entorno o del almacén | `.env.example` en la raíz, `envs_versionados: []` y barrido de secretos sin coincidencias sobre d094a51. | Cumple | Se verifica que no hay credenciales en el repositorio; no hay despliegue configurado del que se tomen del almacén y no se aporta el contenido del workflow. |
-| Estimación de costo mensual con supuestos y punto de ruptura de la capa gratuita | No existe documento de costos en el árbol; solo R-01 de `docs/Restricciones_justificadas.md` pide herramientas gratuitas. | No cumple | Falta volumen supuesto, costo por pieza y punto de ruptura de la capa gratuita. |
-| arc42 sección 7 con una caja por pieza y dónde se ejecuta | `docs/arc42/src/` en d094a51 no contiene `07_deployment_view.adoc` (sí 01-06, 08-10 y 12). | No cumple | La plantilla `arc42-template.adoc` incluye el `include` de la sección 7, pero el archivo no existe. |
-| Límite de costo y restricción de tarjeta recogidos en la sección 2 | `docs/arc42/src/02_architecture_constraints.adoc` lista solo restricciones técnicas (Flutter/Dart, Node/Express, SQLite, Wi-Fi local, audio físico fuera de alcance). | No cumple | El límite de costo no aparece en la sección 2; R-01 lo menciona en `docs/Restricciones_justificadas.md`, fuera de arc42. |
-| Un ADR por decisión de plataforma, con alternativa descartada | `docs/adr/` en d094a51 contiene 0001-monolito-modular, 0002-estrategia-integracion y 0003-transicion-a-flutter; ninguno decide plataforma de despliegue. | No cumple | No hay alternativa de plataforma descartada ni capa gratuita verificada. |
+| URL del sistema accesible desde fuera de la red de la universidad | código de respuesta y tiempo, con la hora de la comprobación | No verificado | Pendiente de calificar: la URL del despliegue se entrega por Moodle y no está disponible en esta pasada. El repositorio declara la URL pública: `README.md:153` (`https://audioshare-api.icypond-27a6987e.canadacentral.azurecontainerapps.io`), replicada en `docs/despliegue.md:94` y en `docs/adr/0004-despliegue-api-azure-vs-laboratorio.md:123`. No se abre ninguna URL en esta pasada. |
+| Health check consultable | ruta y código de respuesta | No verificado | Pendiente de calificar: la URL del despliegue se entrega por Moodle y no está disponible en esta pasada. Ruta de health en el código: `src/app.ts:327` (`app.get("/health", ...)`), declarada en `README.md:154` (`Health check: /health`). No se consulta en esta pasada. |
+| Infraestructura como código versionada en el repositorio | rutas de los archivos de infraestructura | Cumple | `Dockerfile:1` (producción multi-etapa con HEALTHCHECK), `docker-compose.yml:1` (servicios + volumen `audioshare-data`), `.github/workflows/publish-image.yml:1` (build y push de la imagen). La infraestructura describe el entorno desplegado, no solo el devcontainer. |
+| El entorno se puede recrear siguiendo el README | sección del README con el procedimiento | Cumple | `README.md:80-90` documenta el arranque local con `npm run dev` (instalación y tests en `README.md:73-104`); `README.md:151-160` remite a `docs/despliegue.md` para recrear el entorno desplegado (`docker compose up -d --build` y el alta en Azure Container Apps). El procedimiento de despliegue vive en el documento enlazado, no inline. |
+| Pipeline en verde sobre la rama principal | URL del último run y su conclusión | No cumple | En el último push a `origin/master` (runs del 2026-09-28T04:48:32Z) el workflow **Flutter** concluyó `failure`: https://github.com/ISCOUTB/AS_202620_AudioShare/actions/runs/36379253148. Los workflows `CI` (https://github.com/ISCOUTB/AS_202620_AudioShare/actions/runs/36379253187) y `Publicar imagen` (https://github.com/ISCOUTB/AS_202620_AudioShare/actions/runs/36379253129) sí concluyeron `success`. El pipeline no está en verde. |
+| Logs estructurados | archivo de configuración y ejemplo de línea | Cumple | `src/shared/logger.ts:1-31` emite una línea JSON por evento con `level`, `msg`, `ts` y campos extra; el ejemplo está en el propio encabezado (`src/shared/logger.ts:11`). Uso real: `src/app.ts:80` (`log.info("room.created", ...)`), `src/app.ts:206` (`log.info("room.play", ...)`) y `src/server.ts:8` (`log.info("server.started", ...)`). |
+| Métrica consultable asociada a un escenario de calidad | nombre de la métrica y escenario al que corresponde | Cumple | `src/shared/metrics.ts:18-40` expone `rooms_created_total`, `play_events_total` y `last_play_receiver_count`, declarando `aspecto: "A-01"` y `escenarios_relacionados: ["EC-01", "EC-04"]`; ruta consultable en `src/app.ts:339` (`/metrics`). El archivo explica que es un proxy operacional, no la medición en ms de EC-01. |
+| Secretos fuera del código y tomados del entorno o del almacén | `.env.example`, referencias a secretos en el workflow | Cumple | `.env.example:1-4` declara las variables; no hay ningún `.env` versionado; el barrido de credenciales sobre el hash no encontró coincidencias. El workflow toma los valores del almacén: `publish-image.yml:17-19` (`secrets.DOCKERHUB_USERNAME`, `secrets.DOCKERHUB_TOKEN`) y `ci.yml:23` (`secrets.SONAR_TOKEN`). |
+| Estimación de costo mensual con supuestos y punto de ruptura de la capa gratuita | documento con volumen supuesto y cálculo | Cumple | `docs/costos-mensuales.md:8-20` parte del volumen de EC-01/EC-04 (500 salas/mes, 3 receptores, ~1.8 MB/mes de NDJSON) y calcula costo por alternativa; `docs/costos-mensuales.md:44-50` identifica el punto de ruptura: `minReplicas: 1` (`docs/costos-mensuales.md:47`) consume ~1.296.000 vCPU-s/mes y rompe el tramo gratis por ~7×. No es el catálogo del proveedor. |
+| arc42 sección 7 con una caja por pieza y dónde se ejecuta | `docs/arc42/07*` | Cumple | `docs/arc42/src/07_deployment_view.adoc:13-24` tiene una tabla con una fila por pieza (API, cliente Web, cliente Android) y su columna «Dónde se ejecuta» (`:14`); el resto de la sección mapea `Dockerfile`/`docker-compose.yml` al despliegue. |
+| Límite de costo y restricción de tarjeta recogidos en la sección 2 | `docs/arc42/02*` | Cumple | `docs/arc42/src/02_architecture_constraints.adoc:9-13` fija «Presupuesto máximo del proyecto: $0 (R-01)», exige que al menos una alternativa funcione sin tarjeta y aclara que Azure for Students tampoco exige tarjeta. |
+| Un ADR por decisión de plataforma, con alternativa descartada | archivos de `docs/adr/` de esta semana | Cumple | `docs/adr/0004-despliegue-api-azure-vs-laboratorio.md:1-131` decide la plataforma de despliegue de la API (Azure Container Apps) con alternativas A (servidor del laboratorio) y B (Azure) evaluadas, descarta explícitamente Render Free (`:81`) y documenta la capa gratuita verificada y sus restricciones (`:32`, `:86-110`). Estado `aceptado` (`:3`). |
 
 ## Matriz transversal (CONTRATO §11)
 
 | Criterio | Evidencia | Estado | Observaciones |
 |---|---|---|---|
-| Identidad del repositorio: organización ISCOUTB, nombre AS_202620_<PROYECTO>, público e integrantes en el historial | `repo: AS_202620_AudioShare`, `visible: true`, rama `origin/master`; historial con cuatro identidades de autor (Elian Daniel Perea Vanegas, Yeiver Andrés Vergel Pérez, Santiago Adolfo Camacho Hernández y la cuenta cardonavincent26-design). | Cumple | No se verifica membresía de las cuentas en la organización y la cuenta cardonavincent26-design no se atribuye a una persona por parecido de nombre. |
-| Estructura mínima del repositorio (docs/arc42, docs/adr, docs/c4, docs/aspectos.md, docs/ia.md, README.md) | El árbol de d094a51 contiene `docs/arc42/`, `docs/adr/`, `docs/c4/`, `docs/aspectos.md`, `docs/ia.md` y `README.md`. | Cumple | Faltan las secciones 07 y 11 de arc42 y la documentación está en asciidoc, no en Markdown revisable como pide la convención. |
-| Estado calificado: último commit de master o main anterior o igual al cierre | `hash_calificado: d094a51`, fecha 2026-09-21T00:21:38-05:00, sobre `origin/master`, anterior al cierre 2026-09-28T05:00:00Z. | Cumple | Entrega en modo early; no hay commits posteriores al cierre en `commits_tardios_post_cierre`. |
-| Convenciones de ADR: un archivo por decisión, numerado, con contexto, opciones, decisión, consecuencias y trazabilidad | 0001 y 0002 cumplen la convención, pero `docs/adr/0003-transicion-a-flutter.md` no incluye alternativas evaluadas ni bloque de trazabilidad (requisito/aspecto, C4, implementación, pruebas). | No cumple | Además, `docs/aspectos.md` enlaza a `0002-cliente-flutter-backend-modular.md`, que no existe en `docs/adr/`. |
-| Tabla de aspectos con las ocho columnas navegables | `docs/aspectos.md` usa columnas propias (Escenario, Objetivo/métrica, Decisión arquitectónica) en vez de las ocho del curso y su columna ADR apunta a un archivo inexistente. | No cumple | Un enlace que no lleva a ninguna parte cuenta como hueco en la fila de trazabilidad. |
-| Registro de uso de IA con lo aceptado y lo rechazado y por qué | `docs/ia.md` existe y crece (13 commits entre 2026-08-09 y 2026-09-20, último 5a6d73b), pero no se aporta su contenido. | No verificado | Haría falta el archivo para comprobar la columna de lo rechazado con su motivo técnico. |
-| README: qué es, cómo se arranca con un solo comando y cómo se prueba | README.md describe el sistema, el arranque con `npm run dev`, las pruebas (`flutter analyze`, `flutter test`, `npm test`) y declara requisitos previos. | Cumple | El arranque documentado es local; no incluye la URL desplegada. |
-| Pipeline en cada push y análisis estático en SonarCloud con evidencia auditable | Consta `sonar-project.properties` y `.github/workflows/ci.yml` en d094a51, pero no se aportan runs ni la URL pública del análisis con su Quality Gate. | No verificado | Faltan dos de las tres evidencias exigidas; comando anotado: `curl -s "https://api.github.com/repos/ISCOUTB/AS_202620_AudioShare/actions/runs?per_page=5"`. |
+| Repositorio en la organización, con el nombre de la convención y público | `https://github.com/ISCOUTB/AS_202620_AudioShare`, clon anónimo con `--filter=blob:none` exitoso; rama `origin/master`. | Cumple | El repositorio responde sin autenticación y su nombre sigue `AS_202620_<PROYECTO>`. |
+| Estructura mínima presente | El árbol contiene `docs/arc42/`, `docs/adr/`, `docs/c4/`, `docs/aspectos.md`, `docs/ia.md` y `README.md`. | Cumple | Desviación de formato: arc42 está en AsciiDoc (`.adoc`) y falta la sección 11; el resto de rutas existen. |
+| Estado calificado identificable | `e4789d88` en `origin/master`, `2026-09-27T23:49:01-05:00`, anterior al cierre 2026-09-28T05:00:00Z. | Cumple | No hay commits posteriores al cierre: la punta actual coincide con el hash calificado. |
+| Nombres de ADR según la convención | `docs/adr/0001-usar-monolito-modular.md`, `0002-estrategia-integracion.md`, `0003-transicion-a-flutter.md`, `0004-despliegue-api-azure-vs-laboratorio.md`. | Cumple | Los cuatro siguen `NNNN-titulo-kebab-case.md`. |
+| ADR aceptados no reescritos | ADR-0001 aceptado en `924d133` (2026-09-04) y editado después en `453710f` y `354f1f5` (2026-09-21, actualiza referencias a ADR-0003 y a C4); ADR-0003 aceptado (fecha 2026-09-20) y editado en `d11f39a` (2026-09-25). | No cumple | Ninguna de las ediciones posteriores declara un ADR de reemplazo: el contrato §4 prohíbe editar un ADR aceptado. |
+| `docs/ia.md` al día para la semana | Último commit sobre `docs/ia.md`: `5a6d73b` (2026-09-20); el documento cierra en «actualizado durante la semana 7». | No cumple | El registro tiene contenido y rechazos con motivo hasta S7, pero no se actualizó dentro del periodo de S8. |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | `sonar-project.properties:1-6` (configuración y `sonar.organization=cardonavincent26`); `ci.yml:17-23` invoca el scanner con `SONAR_TOKEN`; el run `CI` concluyó `success` (https://github.com/ISCOUTB/AS_202620_AudioShare/actions/runs/36379253187). | No cumple | Falta la URL pública del análisis con estado del Quality Gate (tercera evidencia del §8) y la organización de SonarCloud no es `isco-utb`; además el workflow `Flutter` de la rama está en rojo. |
+| Sin credenciales en el repositorio ni en el historial | `git grep` de patrones de credenciales sobre el hash sin coincidencias (solo `secrets.*` como referencia de workflow); ningún `.env` versionado; `git log -S"BEGIN PRIVATE KEY"` sin coincidencias. | Cumple | No se encontraron credenciales reales. |
+| Contribución de todos los integrantes | `shortlog -sne` consolidado: Elian Daniel Perea Vanegas 60, cardonavincent26-design 59, Yeiver Andrés Vergel Pérez 41, Santiago Adolfo Camacho Hernández 37. | Cumple | Cuatro identidades para cuatro integrantes declarados; la atribución de `cardonavincent26-design` a Vincent Cardona es presunta (no se consolida por parecido de nombre). |
 
 ## Estado global del proyecto (overall · punta actual de la misma rama)
 
-Mira el repositorio **entero en la punta actual de la misma rama**, no solo la evidencia del cierre: si el equipo subio tarde o corregio entregas anteriores, aqui se nota.
+Mira el repositorio **entero en la punta actual de la misma rama**, no solo la evidencia del cierre: si el equipo subió tarde o corrigió entregas anteriores, aquí se nota.
 
-- **Punta actual revisada**: `d094a5166d0af4067bfc717e4170e660aacacab1 2026-09-21T00:21:38-05:00 Update architectural decision references in documentation`
+- **Punta actual revisada**: `e4789d887fe59b2ace65bd1d2680f79758db5b54 2026-09-27T23:49:01-05:00 S8: URL desplegada en Azure, evidencia de health y restricciones de la suscripción`
 - **Veredicto**: con pendientes
-- Resumen: En la punta de origin/master (d094a51, 2026-09-21) el proyecto mantiene código, documentación y secretos bajo control, pero la entrega de despliegue está prácticamente ausente: sin URL ni health check comprobables, sin IaC del entorno desplegado, sin logs estructurados, sin métrica con escenario, sin estimación de costo, sin sección 7 de arc42 y sin ADR de plataforma.
+- **Commits posteriores al cierre**: ninguno; la punta actual coincide con el hash calificado.
+- Resumen: la entrega S8 sí llegó y está bien documentada: infraestructura versionada, README y `docs/despliegue.md` con el procedimiento, logs JSON con campos, métrica ligada a A-01/EC-01/EC-04, secretos fuera del código, estimación de costo con supuestos y punto de ruptura, arc42 §7 y §2, y un ADR-0004 de plataforma con alternativa descartada. Lo que impide el pleno es que el workflow **Flutter** de la rama principal está en rojo en el último push y que no hay URL pública del análisis de SonarCloud con Quality Gate; también quedan dos ADR aceptados editados sin reemplazo y `docs/ia.md` sin entrada de S8.
 
 Pendientes que siguen abiertos:
-- URL pública con hora y código de respuesta, y ruta de health check consultable.
-- Infraestructura como código del entorno desplegado, versionada y reproducible desde el README.
-- Run de CI sobre la rama principal y evidencia pública de SonarCloud con Quality Gate.
-- Configuración de logs estructurados con línea de ejemplo.
-- Métrica consultable asociada a un escenario de calidad.
-- Estimación de costo mensual con supuestos y punto de ruptura de la capa gratuita.
-- arc42 sección 7 con una caja por pieza y sección 2 con el límite de costo.
-- Un ADR por decisión de plataforma, con alternativa descartada.
-- Corrección del enlace a un ADR inexistente en `docs/aspectos.md` y de las columnas de la tabla de aspectos.
+- Poner en verde el workflow `Flutter` sobre `origin/master`.
+- Publicar la URL pública del análisis de SonarCloud con su Quality Gate (y alinear la organización, hoy `cardonavincent26`).
+- Actualizar `docs/ia.md` con el uso de IA de S8.
+- No editar ADR aceptados: los ajustes a ADR-0001 y ADR-0003 debieron ir en un ADR nuevo.
 
 ## Recuento y nota sugerida
 
-2 de 12 criterios Cumple.
+**9 de 10 criterios graduables** (la matriz de la ficha tiene 12 filas; las 2 filas de despliegue quedan pendientes de calificar en esta pasada).
 
-**Nota sugerida preliminar (propuesta al docente; puede cambiar al cierre): 1.7 = 1 + 4 × (2/12).** La nota final la fija el profesor en Moodle.
+**Propuesta provisional al docente — `nota = 1 + 4 × (9/10) = 4.6`**; quedan 2 filas de despliegue pendientes de calificar y la nota final la fija el profesor en Moodle.
 
 ## No verificado / pendientes
 
-- URL del sistema desde fuera de la red: sin URL ni hora; comando `curl -sS -o /dev/null -w 'http=%{http_code} tiempo=%{time_total}s\n' "$URL"`.
-- Health check: el equipo no declara ruta; falta `curl -sS -o /dev/null -w 'health=%{http_code}\n' "$URL/health"` sobre un despliegue accesible.
-- Pipeline en verde: sin runs aportados; comando de la API de acciones de GitHub anotado sobre AS_202620_AudioShare.
-- Análisis estático en SonarCloud: falta la URL pública del análisis y el estado del Quality Gate para el hash revisado.
-- Contenido de `docs/ia.md`: solo consta su historial de commits, no lo aceptado ni lo rechazado con motivo.
+- URL del sistema desde fuera de la red: No verificado por decisión docente (la URL se entrega por Moodle y no está disponible). El repositorio la declara en `README.md:153`.
+- Health check: No verificado por decisión docente. La ruta existe en `src/app.ts:327` y se declara en `README.md:154`.
+- Run en verde del workflow `Flutter`: falla en el último push a `origin/master` (run 36379253148).
+- SonarCloud: falta la URL pública del análisis y el estado del Quality Gate para el hash revisado.
 
 ## Hallazgos para la planilla
 
-- No se aporta URL del sistema desplegado ni hora de comprobación, por lo que la fila principal de la ficha queda sin verificar.
-- No existe `docs/arc42/src/07_deployment_view.adoc`, aunque la plantilla incluye su `include`.
-- Ninguno de los tres ADR del repositorio decide plataforma de despliegue ni verifica capa gratuita.
-- No hay documento de estimación de costo mensual con volumen supuesto y punto de ruptura.
-- `docs/aspectos.md` enlaza a un ADR de cliente Flutter que no existe en `docs/adr/`.
-- La sección 2 de arc42 no recoge límite de costo ni restricción de tarjeta.
-- La única pieza de infraestructura versionada es el devcontainer de Codespaces, no el entorno desplegado.
-- No hay configuración de logs estructurados ni métrica consultable con escenario asociado.
-- El barrido de secretos no encontró coincidencias, hay `.env.example` y ningún `.env` versionado.
-- ADR-0003 carece de alternativas evaluadas y de trazabilidad.
+- El workflow `Flutter` concluye `failure` en cada push reciente a `origin/master`; `CI` y `Publicar imagen` sí están en verde.
+- `sonar-project.properties` apunta a la organización de SonarCloud `cardonavincent26`, no a `isco-utb` como pide el CONTRATO §8, y no se aporta la URL pública con Quality Gate.
+- ADR-0001 y ADR-0003 fueron editados después de su aceptación sin declarar un ADR de reemplazo.
+- `docs/ia.md` no tiene entrada de la semana 8.
+- `docs/arc42` sigue en AsciiDoc y sin la sección 11.
+- La entrega de despliegue sí está versionada: `Dockerfile`, `docker-compose.yml`, `publish-image.yml`, `docs/despliegue.md` y ADR-0004 con la alternativa descartada y la capa gratuita verificada.

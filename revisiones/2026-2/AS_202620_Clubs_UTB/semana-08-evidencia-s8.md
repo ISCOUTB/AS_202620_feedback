@@ -1,89 +1,83 @@
 # semana-08-evidencia-s8 · Clubs UTB
 
-> Pasada temprana (GitHub Actions, previa al cierre): los hashes y la nota son preliminares y pueden cambiar si el equipo empuja antes del cierre.
+> Revisión definitiva: hash `652f78b`, última revisión ≤ cierre (2026-09-28T05:00:00Z) en `origin/master`.
 
 | Campo | Valor |
 |---|---|
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Clubs_UTB` |
-| Estado revisado | `dc211b8` en `origin/master` (2026-09-20T23:56:51-05:00) |
+| Estado revisado | `652f78b7` en `origin/master` (2026-09-27T23:39:11-05:00) |
 | Cierre | 2026-09-28T05:00:00Z |
-| Revisor | pipeline automatico (GitHub Actions) |
+| Revisor | auditoría local sobre clon público efímero |
 
 ## Matriz de la ficha
 
-| Criterio de evaluacion | Evidencia tecnica | Estado | Observaciones |
+| Criterio de evaluación | Evidencia técnica esperada | Estado (Cumple / No cumple) | Observaciones |
 |---|---|---|---|
-| URL del sistema accesible desde fuera de la red de la universidad | README.md §7 solo cita http://localhost:8000/health y el árbol a dc211b8 no tiene artefacto de despliegue alguno. | No cumple | No se declara URL pública, así que no se pudo registrar código ni tiempo desde fuera; una captura no sustituye la URL. |
-| Health check consultable | backend/src/linkclub/adapters/inbound/api/health_router.py y README.md §7 declaran /health, pero no hay instancia desplegada que responda. | No cumple | Sin URL no hay código de respuesta que citar; la ruta local no satisface el criterio del entorno desplegado. |
-| Infraestructura como código versionada en el repositorio | El árbol a dc211b8 no incluye Dockerfile, docker-compose, .tf/.tfvars, k8s/, helm/, fly.toml, render.yaml, railway ni Procfile. | No cumple | Solo hay .github/workflows/backend-tests.yml y contrato.yml, que son de pruebas y contrato, no de infraestructura. |
-| El entorno se puede recrear siguiendo el README | README.md §7 documenta requisitos (Python 3.10+), venv, pip install y uvicorn, pero la evidencia no aporta runs_ci ni despliegue. | No verificado | Comando anotado para comprobar: cd backend && python -m venv venv && pip install -r requirements.txt && uvicorn linkclub.main:app --app-dir src (y PYTHONPATH=src pytest tests/ -v). |
-| Pipeline en verde sobre la rama principal | Existen .github/workflows/backend-tests.yml y .github/workflows/contrato.yml, pero no se incluyó ningún run con nombre, conclusión y URL. | No verificado | Comando anotado: curl -s 'https://api.github.com/repos/ISCOUTB/AS_202620_Clubs_UTB/actions/runs?per_page=10'. |
-| Logs estructurados | No hay archivo de configuración de logging en el árbol a dc211b8 y la evidencia no incluye el contenido de main.py ni la salida del grep de logging. | No verificado | Falta un ejemplo de línea con campos; comando anotado: git grep -nIE '(structlog\|winston\|pino\|logback\|serilog\|logging\.config)'. |
-| Métrica consultable asociada a un escenario de calidad | El árbol a dc211b8 solo expone health_router.py y publicacion_router.py y ningún documento menciona métricas ni su escenario (U1, U2, U3, C1, C2 o C3). | No cumple | No hay métrica que consultar; sin escenario asociado el criterio sería incompleto de todos modos. |
-| Secretos fuera del código y tomados del entorno o del almacén | El barrido de secretos no tiene coincidencias y envs_versionados está vacío, pero no existe .env.example ni se aportó el contenido de los workflows con referencias secrets.X. | No verificado | Falta .env.example y la línea del workflow que toma los valores del proveedor; sin eso no se prueba la separación. |
-| Estimación de costo mensual con supuestos y punto de ruptura de la capa gratuita | No hay documento de costos en el árbol a dc211b8 ni mención de costo en README.md ni en docs/arc42/. | No cumple | Falta volumen supuesto, costo por pieza y el punto en que se rompe la capa gratuita. |
-| arc42 sección 7 con una caja por pieza y dónde se ejecuta | docs/arc42/ contiene 01-06, 08-10 y 12; no existe ningún archivo 07*. | No cumple | Falta la vista de despliegue; tampoco existe la sección 11. |
-| Límite de costo y restricción de tarjeta recogidos en la sección 2 | docs/arc42/02_restricciones.md solo lista T1-T4, O1-O3, C1-C2 y CV1. | No cumple | No se menciona el límite de costo ni la restricción de 'sin tarjeta'. |
-| Un ADR por decisión de plataforma, con alternativa descartada | docs/adr/ a dc211b8 tiene 0001-hexagonal.md, 0002-ajuste-contextos-publicaciones.md y dos archivos 0003 (contrato REST); ninguno decide plataforma de despliegue. | No cumple | '0003- integacion rest openapi.md' rompe la convención de nombre (espacio) y duplica el número; no hay ADR de infraestructura ni de capa gratuita verificada. |
+| URL del sistema accesible desde fuera de la red de la universidad | código de respuesta y tiempo, con la hora de la comprobación | No verificado | Pendiente de calificar: la URL del despliegue se entrega por Moodle y no está disponible en esta pasada. El repositorio no declara URL pública: `README.md:140` solo cita `http://localhost:8000/health` y `docs/arc42/07_vista_de_despliegue.md:9-17` nombra Azure Container Apps y Supabase como entorno, sin URL. No se abre ninguna URL en esta pasada. |
+| Health check consultable | ruta y código de respuesta | No verificado | Pendiente de calificar: la URL del despliegue se entrega por Moodle y no está disponible en esta pasada. Ruta de health en el código: `backend/src/linkclub/adapters/inbound/api/health_router.py:10` (`@router.get("/health")`); `README.md:140` la cita solo contra `localhost`. No se consulta en esta pasada. |
+| Infraestructura como código versionada en el repositorio | rutas de los archivos de infraestructura | Cumple | `backend/Dockerfile:1` (imagen FastAPI no-root) e `infra/terraform/provider.tf:1`, `infra/terraform/resource.tf:1`, `infra/terraform/settings.tf:1` más `infra/terraform/.terraform.lock.hcl`, que describen el proyecto Supabase como código. |
+| El entorno se puede recrear siguiendo el README | sección del README con el procedimiento | No cumple | `README.md:121-150` (§7) solo documenta el arranque local del backend (`venv`, `pip install`, `uvicorn`) y del frontend (`flutter run`); no menciona `backend/Dockerfile` ni `infra/terraform/`, así que el entorno desplegado no se puede recrear siguiendo el README. |
+| Pipeline en verde sobre la rama principal | URL del último run y su conclusión | No cumple | En el último push a `origin/master` (runs del 2026-09-28T04:39Z) ambos workflows concluyeron `failure`: `backend-tests.yml` (https://github.com/ISCOUTB/AS_202620_Clubs_UTB/actions/runs/36378631444) y `contrato.yml` (https://github.com/ISCOUTB/AS_202620_Clubs_UTB/actions/runs/36378632136). |
+| Logs estructurados | archivo de configuración y ejemplo de línea | No cumple | El grep de configuración de logging (`structlog|winston|pino|logback|serilog|logging.config|json.*formatter|import logging|getLogger|basicConfig`) sobre `backend/` no devuelve coincidencias, y `backend/src/linkclub/main.py:1-18` no configura registro ni emite campos estructurados. |
+| Métrica consultable asociada a un escenario de calidad | nombre de la métrica y escenario al que corresponde | No cumple | `backend/requirements.txt:8` declara `prometheus-fastapi-instrumentator==6.1.0`, pero no se usa en el código: no hay instrumentación, ni ruta `/metrics`, ni nombre de métrica, ni escenario asociado. |
+| Secretos fuera del código y tomados del entorno o del almacén | `.env.example`, referencias a secretos en el workflow | Cumple | `backend/.env.example:1-5` declara `SUPABASE_URL` y `SUPABASE_KEY` como marcadores; no hay ningún `.env` versionado; el barrido no encontró credenciales reales (solo `infra/terraform/resource.tf:14` `database_password = "placeholder"`) y el token de Terraform se toma de un archivo local `access-token` que está en `.gitignore:6`. |
+| Estimación de costo mensual con supuestos y punto de ruptura de la capa gratuita | documento con volumen supuesto y cálculo | Cumple | `docs/arc42/07_vista_de_despliegue.md:42-43` parte de un volumen propio (2.000 MAU, 160.000 consultas SQL/mes, ~50 MB) y fija el punto de ruptura de la capa gratuita en 500 MB / 50.000 MAU; superarlo cuesta $25/mes (Plan Pro). No es solo el catálogo del proveedor. |
+| arc42 sección 7 con una caja por pieza y dónde se ejecuta | `docs/arc42/07*` | Cumple | `docs/arc42/07_vista_de_despliegue.md:9-17` tiene una tabla con una fila por pieza (app móvil, API, BD/Auth, pipeline) y su «Entorno de Despliegue»; `:20-38` añade el diagrama de despliegue por piezas. |
+| Límite de costo y restricción de tarjeta recogidos en la sección 2 | `docs/arc42/02*` | Cumple | `docs/arc42/02_restricciones.md:33-34` recoge F1 «Costo Cero Mensual» y F2 «Sin tarjeta de crédito obligatoria» como restricciones financieras justificadas. |
+| Un ADR por decisión de plataforma, con alternativa descartada | archivos de `docs/adr/` de esta semana | No cumple | Solo existe `docs/adr/0004-despliegue-base-de-datos.md:1-58`, que decide la BD (Supabase) con alternativa B descartada, pero está en estado «Propuesto»; la plataforma de la API que declara `docs/arc42/07_vista_de_despliegue.md:11` (Azure Container Apps) no tiene ADR. Falta un ADR por decisión de plataforma. |
 
 ## Matriz transversal (CONTRATO §11)
 
 | Criterio | Evidencia | Estado | Observaciones |
 |---|---|---|---|
-| Identidad del repositorio | Repositorio AS_202620_Clubs_UTB en la organización ISCOUTB, visible=true, rama origin/master, commit dc211b8 (2026-09-20T23:56:51-05:00), con historial de las cuentas del equipo. | Cumple | El historial muestra 5 cuentas de autor para 4 integrantes declarados: 'Josh Ortega' y 'Josh4OP' comparten la misma identidad de autor registrada, y 'Luis Daniel' y 'Luis-Salas-Reyes' figuran como cuentas distintas (no se consolidan por parecido de nombre). |
-| Estructura mínima | A dc211b8 existen README.md, docs/arc42/, docs/adr/, docs/c4/contexto.md, docs/aspectos.md y docs/ia.md. | Cumple | Faltan arc42 07 y 11; el C4 de contexto y contenedores vive en un solo archivo de docs/c4/, lo que es desviación de estructura y no ausencia del artefacto. |
-| Convenciones de ADR | docs/adr/0003- integacion rest openapi.md (espacio inicial) y docs/adr/0003-API.md duplican el número y no cumplen el patrón NNNN-titulo-kebab-case; docs/arc42/09_decisiones_de_diseno.md enlaza 0003-integracion-rest-openapi.md, que no existe en el árbol. | No cumple | El ADR 0001 carece de trazabilidad a commit/PR y a elementos C4 exigida por la convención. |
-| La tabla de aspectos | docs/aspectos.md existe a dc211b8, pero la evidencia no incluye su contenido. | No verificado | No se pueden comprobar las ocho columnas ni que cada celda sea navegable; el README §4 la describe con columnas distintas a las del contrato (incluye Escenario y omite Evidencia). |
-| Registro de uso de IA | docs/ia.md crece a lo largo del semestre: commits de 2026-08-09 a 2026-09-15 (último d2d1450). | No verificado | No se incluyó el contenido del archivo, así que no se puede comprobar la columna de qué se rechazó y por qué, que es la que se mira primero. |
-| README | README.md describe el sistema (§1-2), el stack (§3), cómo arrancar (§7, con Python 3.10+ y uvicorn) y cómo probar (PYTHONPATH=src pytest tests/ -v). | Cumple | El arranque son varios pasos y no un único comando, y no hay run de CI que confirme que el procedimiento funciona. |
-| Pipeline y análisis estático | Hay .github/workflows/backend-tests.yml y contrato.yml, pero no existe sonar-project.properties en el árbol, ni URL de run de CI, ni URL pública de SonarCloud con Quality Gate para dc211b8. | No cumple | No conformidad del §8: falta al menos dos de las tres evidencias exigidas (configuración del scanner, run exitoso, análisis público con estado del Quality Gate). |
-| Secretos | Barrido de patrones de credenciales sin coincidencias a dc211b8 y envs_versionados vacío (ningún .env versionado). | Cumple | No hay secretos que rotar; conviene añadir .env.example para el criterio de despliegue de la ficha S8. |
+| Repositorio en la organización, con el nombre de la convención y público | `https://github.com/ISCOUTB/AS_202620_Clubs_UTB`, clon anónimo con `--filter=blob:none` exitoso; rama `origin/master`. | Cumple | El repositorio responde sin autenticación y su nombre sigue `AS_202620_<PROYECTO>`. |
+| Estructura mínima presente | El árbol contiene `docs/arc42/`, `docs/adr/`, `docs/c4/`, `docs/aspectos.md`, `docs/ia.md` y `README.md`. | Cumple | Las seis rutas del apartado 2 existen. |
+| Estado calificado identificable | `652f78b7` en `origin/master`, `2026-09-27T23:39:11-05:00`, anterior al cierre 2026-09-28T05:00:00Z. | Cumple | No hay commits posteriores al cierre: la punta actual coincide con el hash calificado. |
+| Nombres de ADR según la convención | `docs/adr/0003- integacion rest openapi.md` (espacio inicial, no kebab-case) y `docs/adr/0003-API.md` junto a `0003` duplicado; `0004-despliegue-base-de-datos.md` sí cumple. | No cumple | Dos archivos rompen la convención `NNNN-titulo-kebab-case.md` y duplican el número 0003. |
+| ADR aceptados no reescritos | ADR-0001 aceptado en `2c316f4` (2026-08-23) y editado en `c6c46e3` (2026-08-30, «correción de feedback»); ADR-0002 editado en `e0eaca4` (2026-09-20) tras `743cc1f` (2026-09-13). | No cumple | Las ediciones son posteriores a la aceptación y no declaran un ADR de reemplazo (contrato §4). |
+| `docs/ia.md` al día para la semana | Último commit sobre `docs/ia.md`: `78579b6` (2026-09-27), dentro del periodo de S8, con la fila S8 y su columna de motivo. | Cumple | El registro incluye qué se rechazó y por qué. |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No existe `sonar-project.properties` ni invocación del scanner en los workflows; `backend-tests.yml` y `contrato.yml` fallan en el último push a `origin/master`. | No cumple | No conformidad del §8: falta la configuración del scanner, un run exitoso y la URL pública del análisis con Quality Gate. |
+| Sin credenciales en el repositorio ni en el historial | Barrido de patrones sobre el hash sin credenciales reales (solo `placeholder` y la referencia a `access-token`); ningún `.env` versionado; `git log -S"BEGIN PRIVATE KEY"` y `-S"service_role"` sin coincidencias; `grep` de JWT `eyJ...` sin coincidencias. | Cumple | `infra/terraform.tfstate` está versionado pero es un archivo vacío (0 bytes): no contiene estado ni secretos. El patrón de `.gitignore` (`infra/terraform/*.tfstate`) no cubre esa ruta, conviene corregirlo. |
+| Contribución de todos los integrantes | `shortlog -sne` consolidado por correo idéntico: Zavod Dev 73, Josh Ortega + Josh4OP (mismo correo) 29, Luis-Salas-Reyes 9, deortahollman-star 9 y Luis Daniel 5. | Cumple | Los cuatro integrantes declarados tienen commits; `Zavod Dev` se atribuye a Diego Andrés Ramos con reserva (no se consolida por parecido de nombre), y 「Luis Daniel」 aparece con un segundo correo que no se fusiona con `Luis-Salas-Reyes`. |
 
 ## Estado global del proyecto (overall · punta actual de la misma rama)
 
-Mira el repositorio **entero en la punta actual de la misma rama**, no solo la evidencia del cierre: si el equipo subio tarde o corregio entregas anteriores, aqui se nota.
+Mira el repositorio **entero en la punta actual de la misma rama**, no solo la evidencia del cierre: si el equipo subió tarde o corrigió entregas anteriores, aquí se nota.
 
-- **Punta actual revisada**: `dc211b8f38c4f8d0ba0ebd13021e3181b6d573bb 2026-09-20T23:56:51-05:00 Merge pull request #2 from ISCOUTB/contrato-openapi`
+- **Punta actual revisada**: `652f78b76198ca854f7b3e79b910506e65ee4418 2026-09-27T23:39:11-05:00 feat(infra): importar proyecto Supabase LinkClub con Terraform`
 - **Veredicto**: con pendientes
-- Resumen: A la punta revisada de origin/master (dc211b8, 2026-09-20T23:56:51-05:00) el proyecto es un backend FastAPI con contrato OpenAPI y documentación arc42 parcial, sin despliegue, sin IaC, sin métrica, sin logs estructurados y sin estimación de costo; la entrega S8 no cumple ninguno de sus doce criterios.
-
-Resuelto tarde (corregido despues del cierre, ahora al dia):
-- Ninguno: commits_tardios_post_cierre está vacío y no hay commits nuevos desde el cierre anterior.
+- **Commits posteriores al cierre**: ninguno; la punta actual coincide con el hash calificado.
+- Resumen: la entrega S8 llegó parcialmente. Hay infraestructura versionada (Dockerfile + Terraform), vista de despliegue en arc42 §7 con una caja por pieza, restricciones de costo y tarjeta en §2, estimación de costo con volumen propio y punto de ruptura, y secretos fuera del código. Pero no hay URL pública declarada, los dos workflows de la rama están en rojo, no hay logs estructurados ni métrica instrumentada ligada a un escenario, no se puede recrear el entorno desplegado desde el README, y falta un ADR por decisión de plataforma (solo hay uno para la BD y está en estado «Propuesto»). Se arrastran además los problemas de nombres y duplicados de ADR y las ediciones de ADR aceptados.
 
 Pendientes que siguen abiertos:
-- URL pública del sistema y comprobación externa de /health
-- Infraestructura como código versionada
-- arc42 §7 (vista de despliegue) y §11
-- ADR por decisión de plataforma con alternativa descartada
-- Estimación de costo mensual y restricciones de costo y tarjeta en §2
-- Métrica consultable ligada a un escenario de calidad
-- Logs estructurados con campos
-- Runs de CI y análisis público de SonarCloud
-- Corregir nombres y duplicados de ADR y el enlace roto de la sección 9
-- Resolver NC-01 y NC-02 de docs/arc42/lista_errores.md
+- Desplegar y publicar la URL pública con la hora y el código de respuesta de `/health`.
+- Poner en verde los workflows `backend-tests.yml` y `contrato.yml` sobre `origin/master`.
+- Añadir configuración de logs estructurados con una línea de ejemplo.
+- Instrumentar una métrica consultable ligada a un escenario de calidad.
+- Documentar en el README la recreación del entorno desplegado (Dockerfile/Terraform).
+- Escribir un ADR de plataforma para el hosting de la API con alternativa descartada.
+- Corregir los nombres y el número duplicado de los ADR 0003 y dejar de editar ADR aceptados.
 
 ## Recuento y nota sugerida
 
-0 de 12 criterios Cumple.
+**5 de 10 criterios graduables** (la matriz de la ficha tiene 12 filas; las 2 filas de despliegue quedan pendientes de calificar en esta pasada).
 
-**Nota sugerida preliminar (propuesta al docente; puede cambiar al cierre): 1.0 = 1 + 4 × (0/12).** La nota final la fija el profesor en Moodle.
+**Propuesta provisional al docente — `nota = 1 + 4 × (5/10) = 3.0`**; quedan 2 filas de despliegue pendientes de calificar y la nota final la fija el profesor en Moodle.
 
 ## No verificado / pendientes
 
-- Recreación del entorno según README: falta run de CI del arranque; comando anotado con venv, pip install y uvicorn.
-- Pipeline en verde: sin runs citados; comando anotado contra la API de GitHub Actions del repositorio.
-- Logs estructurados: falta el contenido de main.py y la salida del grep de configuración de logging.
-- Secretos tomados del entorno: hay barrido limpio pero no hay .env.example ni contenido de workflows con secrets.X.
-- Tabla de aspectos: docs/aspectos.md no se incluyó en la evidencia, no se pueden comprobar sus ocho columnas.
-- Registro de IA: docs/ia.md no se incluyó; solo se ve que crece por commits.
+- URL del sistema desde fuera de la red: No verificado por decisión docente (la URL se entrega por Moodle y no está disponible). El repositorio no declara URL pública.
+- Health check: No verificado por decisión docente. La ruta existe en `backend/src/linkclub/adapters/inbound/api/health_router.py:10`.
+- Runs de CI y de contrato: ambos workflows fallan en el último push; no hay run verde que citar.
+- Logs estructurados y métrica: no hay evidencia en el árbol; no es una comprobación que exija ejecutar el sistema.
 
 ## Hallazgos para la planilla
 
-- La entrega S8 no aporta ninguna pieza de despliegue: no hay URL pública, ni IaC, ni health check externo.
-- El README solo describe arranque local en localhost:8000, no un entorno desplegado.
-- Faltan las secciones 7 y 11 de arc42 y no existe ningún ADR de plataforma de despliegue.
-- No hay estimación de costo mensual ni restricciones de costo o de 'sin tarjeta' en la sección 2.
-- docs/adr/ tiene dos archivos 0003 (uno con espacio en el nombre) y la sección 9 enlaza un 0003 inexistente.
-- No se aportaron runs de CI ni evidencia auditable de SonarCloud, por lo que el pipeline no se puede verificar.
-- El historial registra 5 cuentas de autor para 4 integrantes declarados; hay identidad duplicada y cuentas con nombre parecido no consolidadas.
-- No existe métrica consultable ni configuración de logs estructurados en el árbol revisado.
+- La entrega S8 llegó parcial: IaC (Dockerfile + Terraform), arc42 §7, restricciones §2 y estimación de costo con supuestos y punto de ruptura; el resto no.
+- No hay URL pública declarada ni en el README ni en arc42 §7.
+- Los workflows `backend-tests.yml` y `contrato.yml` concluyen `failure` en el último push a `origin/master`.
+- No hay configuración de logs estructurados ni métrica instrumentada ligada a un escenario (la dependencia `prometheus-fastapi-instrumentator` está declarada pero sin uso).
+- El README no documenta la recreación del entorno desplegado a partir del Dockerfile/Terraform.
+- `docs/adr/` conserva dos archivos 0003 (uno con espacio en el nombre) y duplica el número; el ADR-0004 de plataforma está en estado «Propuesto» y no cubre el hosting de la API.
+- ADR-0001 y ADR-0002 se editaron después de aceptados sin ADR de reemplazo.
+- `infra/terraform.tfstate` está versionado como archivo vacío y el patrón de `.gitignore` no cubre esa ruta.

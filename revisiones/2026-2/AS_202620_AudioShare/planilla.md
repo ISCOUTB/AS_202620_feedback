@@ -8,13 +8,13 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_AudioShare` |
 | Integrantes y su usuario de GitHub | Santiago Adolfo Camacho Hernandez (commits como «Santiago Adolfo Camacho Hernández») · Vincent Cardona Castro (presumiblemente `cardonavincent26-design`, sin confirmar) · Elian Daniel Perea Vanegas («Elian Daniel Perea Vanegas») · Yeiver Andres Verjel Perez («Yeiver Andrés Vergel Pérez») |
 | URL del sistema desplegado | sin desplegar todavía |
-| Ultima revision | 2026-09-23 |
+| Ultima revision | 2026-10-01 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 8 | S8 | `d094a51` (2026-09-21T00:21:38-05:00) | 2/12 | 1.7 (prelim.) | si |
+| 8 | S8 | `e4789d88` (2026-09-27T23:49:01-05:00) | 9/10 | 4.6 (provisional; 2 filas de despliegue diferidas por decisión docente) | si |
 | 6 | S6 | `4a0eba9` (2026-09-13T22:01:57-05:00) | 4/8 | 3.0 (prelim.) | si |
 | 7 | S7 | `0ada095` (2026-09-20T23:57:20-05:00) | 9/10 | 4.6 | si |
 | 5 | CORTE1 | `cb65d13` (2026-09-06T22:00:48-05:00) | 8/12 | 3.7 | si |

@@ -8,13 +8,13 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Drift` |
 | Integrantes y su usuario de GitHub | Jerry Daniel Buelvas Mejia (`JerryDBM`) · Mauricio Andres Fernandez Espinosa (`maufern4ndez`) · Luis Mario Perez Diaz (`lmpdiaz12`) · Joshua David Reyes Leones (`JoshuaR01` y `JoshXX`, mismo correo) |
 | URL del sistema desplegado | sin desplegar todavía |
-| Ultima revision | 2026-09-23 |
+| Ultima revision | 2026-10-01 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 8 | S8 | `9334a03` (2026-09-20T20:19:47-05:00) | 1/12 | 1.3 (prelim.) | si |
+| 8 | S8 | `74709aa` (2026-09-27T23:58:28-05:00) | 10/10 | 5.0 (prop. prov.; 2 filas de despliegue diferidas) | sí |
 | 7 | S7 | `9334a03` (2026-09-20T20:19:47-05:00) | 10/10 | 5.0 | si |
 | 6 | S6 | `5f7fa4c` (2026-09-13T22:07:49-05:00) | 5/8 | 3.5 (prelim.) | si |
 | 5 | CORTE1 | `74337a3` (2026-09-08T02:53:31Z) | 7/12 | 3.3 | si |
@@ -94,12 +94,12 @@
 | Aportar la URL pública de SonarCloud con Quality Gate y el run que invocó el scanner. | S7 | sí | Sin evidencia pública de SonarCloud. |
 | Completar la evidencia de correspondencia contrato-código (main.py frente a openapi.yaml). | S7 | no (resuelto) | Rutas del contrato localizadas en backend/app/main.py. |
 | Aportar el contenido de arc42 sección 6, C4 de contenedores y docs/aspectos.md. | S7 | no (resuelto) | Los tres artefactos releídos en el hash calificado. |
-| Despliegue accesible desde fuera con URL y health check. | S8 | si | |
-| Infraestructura como codigo versionada y README de recreacion del entorno. | S8 | si | |
-| Pipeline en verde sobre master y analisis SonarCloud auditable. | S8 | si | |
-| Logs estructurados y metrica consultable ligada al escenario E1. | S8 | si | |
-| Estimacion de costo mensual con supuestos; limite de costo y 'sin tarjeta' en arc42 seccion 2. | S8 | si | |
-| arc42 seccion 7 y un ADR por decision de plataforma con alternativa descartada. | S8 | si | |
+| Despliegue accesible desde fuera con URL y health check. | S8 | sí (diferido: URL por Moodle) | |
+| Infraestructura como codigo versionada y README de recreacion del entorno. | S8 | no (resuelto: `infra/azure/main.bicep`, `deployment/vercel/`) | |
+| Pipeline en verde sobre master y analisis SonarCloud auditable. | S8 | sí (CI en verde; SonarCloud sin paso del scanner en CI) | |
+| Logs estructurados y metrica consultable ligada al escenario E1. | S8 | no (resuelto: `observability.py`, `/metrics` con `drift_search_latency_ms`) | |
+| Estimacion de costo mensual con supuestos; limite de costo y 'sin tarjeta' en arc42 seccion 2. | S8 | no (resuelto: `Estimacion_costos.md` y `arc42_2` §2.7) | |
+| arc42 seccion 7 y un ADR por decision de plataforma con alternativa descartada. | S8 | no (resuelto: `arc42_7` y ADR-0005/0006) | |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -107,11 +107,11 @@
 | Nombre y visibilidad del repositorio | Cumple | `AS_202620_Drift`, público. |
 | Estructura mínima | Cumple | Las seis rutas en su lugar desde la reorganización del 08-22. |
 | Convención de nombres de ADR | Cumple | `0001-arquitectura-base.md` conforme. |
-| ADR aceptados sin reescribir | Cumple | Creado y renombrado el mismo día (2026-08-23), sin reescrituras posteriores. |
+| ADR aceptados sin reescribir | No cumple | ADR-0002 (vigente, aceptado) editado el 2026-09-05 (`70e52e2`) y el 2026-09-13 (`9488544`), sin ADR de reemplazo. |
 | `docs/ia.md` al día | Cumple | Commits 08-21/08-22; rechazo narrado en §3.1 con motivo. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Sin coincidencias. |
 | Contribución de todos los integrantes | Cumple | Los 4 firman en S3, con desbalance (51/19/18/9). |
-| Pipeline en verde | No verificado | `.github/workflows/ci.yml` con runs verdes confirmados vía API, incluido el commit calificado de S5 (`d110d6d0`, antes del cierre). |
+| Pipeline en verde | No cumple | CI en verde (run 36379911184 sobre `74709aa`), pero SonarCloud no está integrado: `ci.yml` no invoca el scanner ni usa `SONAR_TOKEN`. |
 
 ## Contribución por integrante
 

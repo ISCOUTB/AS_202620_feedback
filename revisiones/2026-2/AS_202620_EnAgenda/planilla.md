@@ -10,13 +10,13 @@ Hoja consolidada del equipo EnAgenda. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_EnAgenda` |
 | Integrantes y su usuario de GitHub | Eliab Josue Arnedo Conde · Jeimy Yulieth Mendez Altamiranda · Gabriela Morales Cancino — cuentas abajo |
 | URL del sistema desplegado | sin desplegar aún |
-| Ultima revision | 2026-09-24 |
+| Ultima revision | 2026-09-28 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 8 | S8 preliminar | `6db7cd9` (2026-09-21T02:53:08-05:00) | 3/12 | 2.0 | sí, preliminar |
+| 8 | S8 | `2c7d77a` (2026-09-27T23:42:39-05:00) | 5/10 (2 filas de despliegue diferidas) | 3.0 (provisional) | sí |
 | 7 | S7 | `849ee8c` (2026-09-20T23:59:07-05:00) | 4/10 | 2.6 | sí, auditada |
 | 6 | S6 | `0a58de8` (2026-09-13T23:38:41-05:00) | 7/8 | 4.5 | si |
 | 5 | CORTE1 | `696882e` (2026-09-07T16:21:16-05:00) | 10/12 | 4.3 | si |
@@ -74,9 +74,12 @@ Hoja consolidada del equipo EnAgenda. Se actualiza tras cada revisión.
 | ADR de integración incorporado después del cierre | S7 | No (resuelto tarde) | Existe en la punta actual, pero no modifica la calificación definitiva. |
 | C4 nivel 2 sin formato de datos en cada flecha | S7 | Sí | Etiquetar canal y formato en todas las relaciones. |
 | SonarCloud sin scanner, análisis público ni Quality Gate | S7 | Sí | Integrar el análisis y publicar la evidencia del hash. |
-| Despliegue público, health check e infraestructura como código ausentes | S8 | Sí | Publicar una URL verificable y versionar el entorno. |
-| Sin logs estructurados, métrica consultable ni estimación de costo | S8 | Sí | Instrumentar observabilidad y documentar el cálculo mensual. |
-| arc42 §7 y ADR de plataforma ausentes | S8 | Sí | Documentar piezas, ubicación y decisión de alojamiento. |
+| Despliegue público, health check e infraestructura como código ausentes | S8 | Sí (IaC inválida) | Publicar una URL verificable y limpiar los conflictos de merge del entorno. |
+| Sin logs estructurados, métrica consultable ni estimación de costo | S8 | Sí | No hay configuración de logging; la métrica no se ata a un EC real; los volúmenes de costo están sin completar. |
+| arc42 §7 y ADR de plataforma ausentes | S8 | No (resuelto en S8) | `docs/arc42/07-vista-de-despliegue.md` y ADR-0003 escritos. |
+| Conflictos de merge sin resolver en `Dockerfile`, `docker-compose.yml`, `render.yaml`, `.dockerignore`, `.env.example` y `docs/evidencia.md` | S8 | Sí | Limpiar los marcadores; la infraestructura no compila y el CI del hash revisado queda en rojo. |
+| ADR-0003 cita un escenario inexistente («EC-03 — Observabilidad de solicitudes») | S8 | Sí | Alinear la métrica con un EC real de arc42 §10. |
+| SonarCloud sin configuración, run ni Quality Gate públicos | S5 | Sí | Integrar el análisis y publicar la evidencia del hash. |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -88,7 +91,7 @@ Hoja consolidada del equipo EnAgenda. Se actualiza tras cada revisión.
 | `docs/ia.md` al día | No cumple | La última entrada es del 2026-09-13; no registra S8. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Sin credenciales; coincidencias con `token` son identificadores de dominio y datos de prueba. |
 | Contribución de todos los integrantes | Cumple | Tres identidades consolidadas para tres integrantes en HEAD. |
-| Pipeline en verde | Cumple | Run de la punta actual en verde; SonarCloud permanece como no conformidad separada. |
+| Pipeline en verde | No cumple | CI del hash revisado `2c7d77a` en rojo (run 36378874812); el commit anterior `387b4b3` sí estaba en verde. SonarCloud sigue ausente. |
 
 ## Contribución por integrante
 
