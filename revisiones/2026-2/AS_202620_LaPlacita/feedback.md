@@ -44,13 +44,13 @@ La entrega S6 está bien estructurada: el mapa de contextos, la tabla de propied
 
 La entrega S7 sí contiene el contrato ejecutable, esquemas, correspondencia con las rutas, prueba contractual en el pipeline, reproducción del fallo incompatible, ADR, flujos de ejecución y C4 etiquetado. La ficha queda completa. Como no conformidad transversal, el pipeline continúa fallando y todavía falta la evidencia pública del Quality Gate de SonarCloud.
 
-## Semana 8 · S8
+## Semana 8 · S8 (revisión definitiva)
 
-### Recomendaciones prioritarias
+Gran salto de esta entrega: el sistema quedó desplegado en Azure Container Apps con URL pública documentada, el pipeline del estado calificado está en verde y la observabilidad se incorporó de verdad (bitácora JSON con campos y un endpoint de métricas ligado a los escenarios). También quedaron versionados el Dockerfile, el workflow, la vista de despliegue de arc42 con una caja por pieza, la restricción económica con tope y condición de no usar tarjeta, y un ADR por cada decisión de plataforma (alojamiento, análisis estático y base de datos), cada uno con su alternativa descartada y su capa gratuita verificada. La estimación de costos parte de supuestos de volumen propios y declara el punto de ruptura de la capa gratuita.
 
-- La restricción sobre tarjetas de usuarios no fija el presupuesto de hosting: definan límite mensual, condición de tarjeta del proveedor y punto de ruptura de su capa gratuita en la sección 2.
-- Desplieguen públicamente y publiquen URL, respuesta de salud y hora; agreguen en el mismo arc42 la sección 7 con cada pieza y su ubicación real.
-- Estabilicen CI y enlacen un run de la rama principal; muestren logs estructurados y una métrica ligada a un escenario.
-- Documenten cada plataforma en un ADR independiente, con alternativa y costo estimado.
+Quedan tres frentes:
+1. SonarCloud sigue como paso informativo y no hay URL pública del Quality Gate; vincular la organización y publicar el resultado cierra la deuda transversal abierta desde S6.
+2. Se editaron ADR ya aceptados (alojamiento, análisis estático y uno anterior) sin declarar un reemplazo. Un ADR aceptado no se reescribe: si la decisión cambia, se escribe otro y el anterior se marca como reemplazado.
+3. La URL desplegada y su health check se entregan por Moodle y quedan pendientes de calificar; conserven la hora de la comprobación.
 
-El Dockerfile, el procedimiento local y la gestión de secretos son una buena base. Pero la propia documentación confirma que Railway aún no está desplegado y el pipeline sigue en rojo. Antes del cierre, publiquen la URL y su health check, corrijan CI, instrumenten logs y métricas, completen la vista de despliegue y estimen el costo. La decisión combinada de Railway y SonarCloud debe separarse en un ADR por plataforma.
+La base de infraestructura, observabilidad, costos y documentación operativa es sólida. Cierren el Quality Gate público y la disciplina de ADR.

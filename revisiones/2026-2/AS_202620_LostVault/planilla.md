@@ -7,8 +7,8 @@
 | Equipo | LostVault |
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_LostVault` |
 | Integrantes y su usuario de GitHub | Jose Faustino Espana Noriega · Roy Andres Gonzalez Blanco · Shamara Llorente Tapias · Kiefer Monterroza Manjarres — identidades del historial: Roy Gonzalez (¿`RGBlanco18`?), `shamarallorente-blip`, `Fausto-4` (correo `ganonimo2504`), `weller-rar` (correo `pelu.kiefer`); correspondencias por confirmar con el docente |
-| URL del sistema desplegado | — |
-| Ultima revision | 2026-09-24 |
+| URL del sistema desplegado | declarada en el repo: `https://backend-nu-self-91.vercel.app` (no consultada; pendiente por Moodle) |
+| Ultima revision | 2026-09-28 |
 
 ## Estado por entrega
 
@@ -21,7 +21,7 @@
 | 5 | CORTE1 | `c0c17c1` (2026-09-07T16:46:16-05:00) | 7/12 | 3.3 | si |
 | 6 | S6 | `9d57572` (2026-09-13T22:11:29-05:00) | 6/8 | 4.0 (prelim.) | si |
 | 7 | S7 | `7bf515f` (2026-09-20T23:55:34-05:00) | 7/10 | 3.8 | sí, auditada |
-| 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `7bf515f` (2026-09-20T23:55:34-05:00) | 4/12 | 2.3 | sí, preliminar |
+| 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `4a9ecc94` (2026-09-27T23:52:06-05:00) | 10/10 | 5.0 (provisional; 2 filas de despliegue pendientes) | sí, definitiva |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
 | 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
@@ -74,21 +74,25 @@
 | C4 nivel 2 revisable (como código) con protocolo y formato en cada flecha (el diagrama existe como .jpg; sus flechas de cruce tecnológico no llevan protocolo ni formato). | S7 | si | — | |
 | Columna C4 y celdas completas en docs/aspectos.md para todas las filas. | S7 | si | |
 | Actualización de docs/arc42/09_decisiones.md con el ADR 0002. | S7 | si | |
-| Despliegue público, health check e infraestructura como código ausentes | S8 | Sí | Definir plataforma, desplegar y versionar el entorno. |
-| Sin logs estructurados, métrica consultable ni estimación de costo | S8 | Sí | Instrumentar observabilidad y calcular el consumo mensual. |
-| arc42 §7 y ADR de plataforma ausentes | S8 | Sí | Documentar piezas, ubicación y decisión de alojamiento. |
+| Despliegue público, health check e infraestructura como código ausentes | S8 | No (resuelto en S8) | API desplegada en Vercel; Dockerfile/Compose/Terraform versionados; URL y health documentados. |
+| Sin logs estructurados, métrica consultable ni estimación de costo | S8 | No (resuelto en S8) | Logs JSON por request, `GET /metrics` (p95 ligado al escenario de rendimiento) y estimación con supuestos y ruptura. |
+| arc42 §7 y ADR de plataforma ausentes | S8 | No (resuelto en S8) | `07_vista_despliegue.md` con una pieza por fila y ADR-0003 de plataforma con alternativa y capa gratuita. |
+| ADR `000.3` incumple la convención de nombres | S8 | Sí | Renombrar a `NNNN-titulo-en-kebab-case.md`. |
+| ADR aceptados editados sin reemplazo declarado (0001, 0002) | S8 | Sí | No editar ADR aceptados; si cambia la decisión, escribir otro y marcar el anterior como reemplazado. |
+| URL pública del Quality Gate de SonarCloud | S8 | Sí | Publicar el enlace del análisis y el estado del Quality Gate. |
+| `backend/vercel.json` citado por arc42 §7 y Terraform no existe en el repo | S8 | Sí | Versionarlo o corregir las referencias documentales. |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | `github.com/ISCOUTB/AS_202620_LostVault`, público (ls-remote sin auth) |
 | Estructura mínima | Cumple | Las seis rutas mínimas, incluido `docs/c4/`, están presentes. |
-| Convención de nombres de ADR | Cumple | ADR 0001 y 0002 siguen `NNNN-titulo-en-kebab-case.md`. |
-| ADR aceptados sin reescribir | Cumple | Cada ADR aceptado tiene una sola revisión en su ruta actual. |
-| `docs/ia.md` al día | No cumple | La última entrada corresponde a S7; no registra S8. |
-| Sin credenciales en el repositorio ni en el historial | Cumple | git grep, .env y `log -S` sin coincidencias |
-| Contribución de todos los integrantes | Cumple | 4 identidades de 4 en `1ddb826`; atribución de `Fausto-4` y `weller-rar` por confirmar |
-| Pipeline en verde | Cumple | Los workflows Flutter checks y Build del hash vigente terminan en verde. |
+| Convención de nombres de ADR | No cumple | `000.3-despliegue-busqueda-lostvault.md` no sigue `NNNN-titulo-en-kebab-case.md` |
+| ADR aceptados sin reescribir | No cumple | ADR-0001 (`edd78d7`) y ADR-0002 (`b561576`) editados tras su aceptación sin reemplazo declarado |
+| `docs/ia.md` al día | Cumple | Actualizado el 27/09/2026 con lo aceptado y lo rechazado (Vercel frente a Render) |
+| Sin credenciales en el repositorio ni en el historial | Cumple | git grep, .env y `log -S` sin credenciales reales |
+| Contribución de todos los integrantes | Cumple | 4 personas consolidadas de 4 en el historial (46+36+21+11) |
+| Pipeline en verde | Cumple | Runs de Flutter, Backend y Build (con Quality Gate) del hash vigente en verde |
 
 ## Contribución por integrante
 

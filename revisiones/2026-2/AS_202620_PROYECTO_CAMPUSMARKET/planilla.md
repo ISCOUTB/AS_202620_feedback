@@ -7,8 +7,8 @@
 | Equipo | CampusMarket |
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET` |
 | Integrantes y su usuario de GitHub | Nilver Garcia Pimentel · Camilo Jose Martinez Berrio · Joshua Jose Tenorio Alvarez — cuentas consolidadas: `nilver-garcia`/`Nnigarp` (mismo id de cuenta, es una sola persona), `camilixo92`, `Carulla-sd` |
-| URL del sistema desplegado | — |
-| Ultima revision | 2026-09-24 |
+| URL del sistema desplegado | Declaradas, no comprobadas en esta pasada: sitio `https://nnigarp.github.io/AS_202620_PROYECTO_CAMPUSMARKET/`; API `https://campusmarket-s8-api-nilver.azurewebsites.net` (health `/health`) |
+| Ultima revision | 2026-09-28 |
 
 ## Estado por entrega
 
@@ -21,7 +21,7 @@
 | 5 | CORTE1 | `8044215` (2026-09-06T16:05:15-05:00) | 10/12 | 4.3 | si |
 | 6 | S6 | `dc548c0` (2026-09-13T01:19:54-05:00) | 7/8 | 4.5 | si |
 | 7 | S7 | `c53ee32` (2026-09-18T21:11:48-05:00) | 10/10 | 5.0 | si |
-| 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `c53ee32` (2026-09-18T21:11:48-05:00) | 1/12 | 1.3 (prelim.) | si |
+| 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `784d788` en `master` (2026-09-27T23:50:19-05:00) | 10/10 | 5.0 (2 filas de despliegue pendientes) | sí |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
 | 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
@@ -79,7 +79,9 @@
 | Aportar la URL del run de CI sobre el hash revisado y del run en rojo del repositorio de la organización. | S7 | si | |
 | Dejar revisable el contenido de `docs/aspectos.md` y `docs/ia.md`. | S7 | si | |
 | Aportar `docs/c4/02-contenedores.puml` con protocolo y formato en cada flecha. | S7 | si | |
-| Publicar una URL verificable, health check, IaC y observabilidad S8. | S8 | si | El CI está verde, pero no se encontró entrega operativa S8. |
+| Publicar una URL verificable, health check, IaC y observabilidad S8. | S8 | no (resuelto en el estado calificado: despliegue en GitHub Pages + Azure, `infra/main.bicep`, logs y métrica EC-01) | — |
+| Acreditar SonarCloud: línea del scanner en el workflow y URL pública del análisis con Quality Gate. | S7 | sí (reiterado en S8: `.sonarcloud.properties` sin invocación del scanner ni URL pública) | Añadir el paso `sonar` al workflow y publicar el análisis con su Quality Gate |
+| No editar ADR aceptados sin declarar reemplazo. | S8 | sí (ADR-0002, ADR-0003 y ADR-0005) | Los ajustes debieron ir en un ADR nuevo o declarar el reemplazo |
 
 ## Estado del contrato del repositorio
 
@@ -88,11 +90,11 @@
 | Nombre y visibilidad del repositorio | Cumple | Público (clon sin auth) |
 | Estructura mínima | Cumple | Las seis rutas presentes en `corte-1`, en minúsculas |
 | Convención de nombres de ADR | Cumple | `0001-usar-monolito-modular.md`, `0002-manejo-bloqueo-sqlite.md` |
-| ADR aceptados sin reescribir | Cumple | Un único commit para 0001 (`dbdd9c4`); 0002 es un archivo nuevo |
-| `docs/ia.md` al día | Cumple | Sección "Evidencia S5" con rechazos y motivo técnico |
-| Sin credenciales en el repositorio ni en el historial | Cumple | git grep y `.env` sin coincidencias |
-| Contribución de todos los integrantes | Cumple | 3 personas consolidadas: Nilver Garcia (124), Camilo Martinez (26), Joshua Tenorio (19) |
-| Pipeline en verde | Cumple | Run público exitoso del estado revisado: https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/actions/runs/35414943658; SonarCloud sigue sin verificación pública. |
+| ADR aceptados sin reescribir | No cumple | ADR-0002 aceptado 09-05 y editado 09-06 (`d72d6ac`, `3bb84a9`, `04fe631`); ADR-0003 aceptado 09-15 y editado 09-16 (`df72b1c`); ADR-0005 aceptado 09-27 y reescrito el mismo día (`0e2b85b`) sin declarar reemplazo |
+| `docs/ia.md` al día | Cumple | `083bcc3` (2026-09-27) registra el uso de IA de S8 con lo rechazado y su motivo |
+| Sin credenciales en el repositorio ni en el historial | Cumple | git grep y `.env` sin coincidencias reales en `784d788` |
+| Contribución de todos los integrantes | Cumple | 3 personas consolidadas: Nilver Garcia (193, `nilver-garcia`/`Nnigarp` mismo correo), Camilo Martinez (26), Joshua Tenorio (19) |
+| Pipeline en verde | Cumple | Run público exitoso de `784d788`: https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/actions/runs/36379371983; SonarCloud sigue sin verificación pública (sin paso del scanner en el workflow). |
 
 ## Contribución por integrante
 

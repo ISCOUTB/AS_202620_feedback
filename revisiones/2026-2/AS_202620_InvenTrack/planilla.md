@@ -16,7 +16,7 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 8 | S8 preliminar | `f62ad34` (2026-09-23T02:02:36-05:00) | 4/12 | 2.3 | sí, preliminar |
+| 8 | S8 | `48aeecf` (2026-09-27T23:48:02-05:00) | 10/10 | 5.0 | sí, definitiva |
 | 7 | S7 | `f10fd01` (2026-09-20T23:01:13-05:00) | 9/10 | 4.6 | sí, auditada |
 | 6 | S6 | `d6f2b19` (2026-09-13T23:37:36-05:00) | 7/8 | 4.5 | si |
 | 5 | CORTE1 | `ac951e3` (2026-09-08T10:11:58-05:00) | 9/12 | 4.0 | si |
@@ -24,6 +24,8 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `06920209` · 2026-08-09T16:03:46-05:00 | 4/9 | 2,8 * | sí |
 | 2 | S2 | `db90ff2` (2026-08-16T21:22:20-05:00) | 9/9 | no aplica | si |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `dd4ea1cb8` · 2026-08-23T23:46:24-05:00 | 9/9 | no se publica | sí (actualizada tras el cierre) |
+
+S8 se califica sobre 10 de las 12 filas de la ficha: quedan pendientes de calificar las dos filas de despliegue (URL del sistema accesible desde fuera de la red de la universidad y health check consultable), porque la URL se entrega por Moodle. La nota publicada es provisional.
 
 ## Lo que se arrastra
 
@@ -90,8 +92,8 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 | Nombre y visibilidad del repositorio | Cumple | `ISCOUTB/AS_202620_InvenTrack`, público |
 | Estructura mínima | Cumple | Seis rutas presentes; arc42 en `docs/arc42/arc42-template-EN.md` |
 | Convención de nombres de ADR | Cumple | `0001-usar-monolito-modular-con-hexagonal-por-modulo.md`; placeholder eliminado |
-| ADR aceptados sin reescribir | No verificado | Hay varias revisiones; falta ubicar la aceptación para evaluar cambios posteriores. |
-| `docs/ia.md` al día | No cumple | No registra los cambios realizados después del cierre S7. |
+| ADR aceptados sin reescribir | No cumple | ADR-0002, aceptado en `80c7d0a`, editado en `7aae9a8`, `66116c6`, `7b0aad5` (2026-09-06) y `af24edb` (2026-09-19); ADR-0004 y ADR-0005 también con ediciones posteriores a su aceptación, sin reemplazo declarado. |
+| `docs/ia.md` al día | Cumple | Entrada S8 del 2026-09-27 (`04f5e33`) con lo aceptado y lo rechazado. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Escaneos limpios. |
 | Contribución de todos los integrantes | Cumple | Cuatro personas consolidadas para cuatro integrantes en HEAD. |
 | Pipeline en verde | Cumple | El run de la punta actual concluye en verde y ejecuta SonarCloud. |

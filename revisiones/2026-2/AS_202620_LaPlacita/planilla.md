@@ -9,14 +9,14 @@ Hoja consolidada del equipo LaPlacita. Se actualiza tras cada revisión.
 | Equipo | LaPlacita |
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_LaPlacita` |
 | Integrantes y su usuario de GitHub | Mateo Josue Buendia Barrios · Miguel Angel Isaza Montalvo · Samuel David Jimenez Alvarez · Jorge Alberto Martinez Castillo — cuentas abajo |
-| URL del sistema desplegado | sin desplegar aún |
-| Ultima revision | 2026-09-24 |
+| URL del sistema desplegado | declarada en el repo: `https://laplacita-app.graymoss-fdd72159.canadacentral.azurecontainerapps.io` (no consultada; pendiente por Moodle) |
+| Ultima revision | 2026-09-28 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 8 | S8 preliminar | `03b4e73` (2026-09-21T20:20:16-05:00) | 3/12 | 2.0 | sí, preliminar |
+| 8 | S8 (definitiva) | `b03a797` (2026-09-27T19:00:57-05:00) | 10/10 | 5.0 (provisional; 2 filas de despliegue pendientes) | sí, definitiva |
 | 7 | S7 | `8c2e1bc` (2026-09-20T22:47:32-05:00) | 10/10 | 5.0 | sí, auditada |
 | 6 | S6 | `2c0eb01` (2026-09-13T21:28:00-05:00) | 7/8 | 4.5 | si |
 | 5 | CORTE1 | `50b92f8` (2026-09-06T17:45:05-05:00) | 8/12 | 3.7 | si |
@@ -69,9 +69,11 @@ Hoja consolidada del equipo LaPlacita. Se actualiza tras cada revisión.
 | V-05 OHS evento notificaciones | S7 | si | |
 | V-06 orquestador | S7 | si | |
 | Enlaces tabla aspectos | S7 | si | |
-| Despliegue público y health check ausentes; pipeline de la punta en rojo | S8 | Sí | Completar Railway y corregir el workflow. |
-| Sin logs estructurados, métrica consultable ni estimación de costo | S8 | Sí | Instrumentar observabilidad y calcular el consumo. |
-| arc42 §7, restricción económica y ADR separados por plataforma ausentes | S8 | Sí | Completar la documentación operativa. |
+| Despliegue público y health check ausentes; pipeline en rojo | S8 | No (resuelto en S8) | Desplegado en Azure Container Apps y workflow del hash calificado en verde; queda calificar la URL por Moodle. |
+| Sin logs estructurados, métrica consultable ni estimación de costo | S8 | No (resuelto en S8) | `src/logger.js` + `GET /api/v1/metricas` ligado a ESC-01/03/04 + estimación con supuestos y ruptura ×36. |
+| arc42 §7, restricción económica y ADR separados por plataforma ausentes | S8 | No (resuelto en S8) | §7 y RES-06 añadidos; ADR-0009/0010/0011 por decisión de plataforma. |
+| ADR aceptados editados sin reemplazo declarado (0003, 0009, 0010) | S8 | Sí | No editar ADR aceptados: si cambia la decisión, escribir otro y marcar el anterior como reemplazado. |
+| Quality Gate de SonarCloud sin URL pública (job `sonar` informativo) | S8 | Sí | Vincular org/proyecto y publicar la URL del Quality Gate. |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -79,11 +81,11 @@ Hoja consolidada del equipo LaPlacita. Se actualiza tras cada revisión.
 | Nombre y visibilidad del repositorio | Cumple | `ISCOUTB/AS_202620_LaPlacita`, público |
 | Estructura mínima | Cumple | Seis rutas; C4 en `docs/c4/contexto.md` con leyenda |
 | Convención de nombres de ADR | Cumple | `0001-adopcion-monolito-modular.md` |
-| ADR aceptados sin reescribir | No verificado | Varios ADR aceptados tienen múltiples revisiones; falta ubicar su aceptación. |
-| `docs/ia.md` al día | Cumple | Actualizado para S8 con decisiones y rechazos técnicos. |
+| ADR aceptados sin reescribir | No cumple | ADR-0003 (`745e799`→`95ec841`), ADR-0009 (`9452e43`→`4f38051`) y ADR-0010 (`c46fd36`→`c99f542`) editados tras su aceptación sin reemplazo declarado. |
+| `docs/ia.md` al día | Cumple | Actualizado el 27/09/2026 con decisiones y rechazos técnicos. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Greps limpios |
-| Contribución de todos los integrantes | Cumple | 4 identidades consolidadas / 4 integrantes (53+21+18+3) |
-| Pipeline en verde | No cumple | El run de la punta actual termina en rojo. |
+| Contribución de todos los integrantes | Cumple | 4 identidades consolidadas / 4 integrantes (64+34+29+20) |
+| Pipeline en verde | Cumple | Run `36360634637` sobre `b03a797` en `master`, en verde; `sonar` informativo. |
 
 ## Contribución por integrante
 

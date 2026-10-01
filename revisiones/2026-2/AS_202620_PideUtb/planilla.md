@@ -7,8 +7,8 @@
 | Equipo | PideUtb |
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_PideUtb` |
 | Integrantes y su usuario de GitHub | Daniela Sofia Arrieta Guardo · Santiago Jose Cuesta Maza · Ruddy Rodriguez Romero — cuentas observadas: `daniarriet`, `Santiago Cuesta`/`Santiago-C0` (mismo correo, misma persona), `ruddy2000utb-droid` |
-| URL del sistema desplegado | `https://pideutb.vercel.app` (HTTP 404 al 2026-09-24) |
-| Ultima revision | 2026-09-24 |
+| URL del sistema desplegado | Declaradas, no comprobadas en esta pasada: sitio `https://pideutb-sitio.onrender.com`; API `https://pideutb-api.onrender.com` (health `/health`) |
+| Ultima revision | 2026-09-28 |
 
 ## Estado por entrega
 
@@ -21,7 +21,7 @@
 | 5 | CORTE1 | `bbefae8` (2026-09-08T10:37:21-05:00) | 9/12 | 4.0 | si |
 | 6 | S6 | `006edfe` (2026-09-13T16:37:23-05:00) | 7/8 | 4.5 (prelim.) | si |
 | 7 | S7 | `3d78106` (2026-09-20T22:24:21-05:00) | 10/10 | 5.0 | si |
-| 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `9db30b9` (2026-09-21T10:25:39-05:00) | 1/12 | 1.3 (prelim.) | si |
+| 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `a94bf4e` en `master` (2026-09-27T20:30:08-05:00) | 8/10 | 4.2 (2 filas de despliegue pendientes) | sí |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
 | 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
@@ -84,20 +84,24 @@
 | arc42 §6 y C4 nivel 2 etiquetado | S7 | si | |
 | URL pública de SonarCloud con Quality Gate | S7 | si | |
 | Contenido de docs/aspectos.md | S7 | si | |
-| Recuperar el despliegue público y completar IaC, observabilidad y costos. | S8 | si | La URL declarada y `/health` respondieron HTTP 404; el CI está verde. |
+| Recuperar el despliegue público y completar IaC, observabilidad y costos. | S8 | no (resuelto en el estado calificado: despliegue en Render, `infra/` con Terraform, logs JSON y `/metricas` ligada a ESC-02) | — |
+| Recoger el límite de costo y la restricción de tarjeta en arc42 §2. | S8 | sí (la sección 2 declara presupuesto cero y plan gratuito, pero la condición de tarjeta solo está en `docs/comparacion-despliegue.md` y ADR-0004) | Añadir ambas al apartado de restricciones |
+| Registro de IA de la semana dentro del periodo. | S8 | sí (la entrada de S8 se subió el 28/09, después del cierre) | Registrar el uso de IA antes del cierre |
+| No editar ADR aceptados sin declarar reemplazo. | S8 | sí (títulos de ADR-0001 y ADR-0002 reescritos el 20/09) | Escribir un ADR nuevo o declarar el reemplazo |
+| Acreditar el run de CI del hash calificado y el Quality Gate público. | S6 | sí (reiterado en S8) | Aportar la URL del run del hash entregado y de la URL pública de análisis con su Quality Gate |
 
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | Público hoy; estuvo privado al inicio (EQUIPOS.md) |
-| Estructura mínima | Cumple | En el estado calificado (`1636f20`), `arc42.md` en raíz y sin `docs/c4/`; en HEAD post-cierre mejoró parcialmente (`docs/C4/`, mayúsculas) pero sigue sin `docs/arc42/` |
-| Convención de nombres de ADR | Cumple | `0001-estilo-arquitectonico.md` pasa el filtro; título temático (no decisión) |
-| ADR aceptados sin reescribir | Cumple | ADR creado en `b5f0310`, sin reescrituras hasta HEAD |
-| `docs/ia.md` al día | No cumple | Sin entrada de S5 ni post-cierre |
-| Sin credenciales en el repositorio ni en el historial | Cumple | git grep y `.env` sin coincidencias reales en HEAD |
-| Contribución de todos los integrantes | Cumple | 3 personas consolidadas en HEAD: daniarriet, Santiago Cuesta/Santiago-C0, ruddy2000utb-droid |
-| Pipeline en verde | Cumple | Run público exitoso del estado S8: https://github.com/ISCOUTB/AS_202620_PideUtb/actions/runs/35619185088; scanner acreditado en run público previo. |
+| Estructura mínima | Cumple | En `a94bf4e`: `docs/arc42/arc42.md`, `docs/adr/` (0001-0004), `docs/c4/`, `docs/aspectos.md`, `docs/ia.md` y `README.md` en minúsculas |
+| Convención de nombres de ADR | Cumple | `0001`-`0004` en kebab-case; los títulos enuncian la decisión |
+| ADR aceptados sin reescribir | No cumple | ADR-0001 aceptado 23/08 y editado 07/09 (`1b4f0f6`) y 20/09 (`1864353`, título reescrito); ADR-0002 aceptado 13/09 y editado 20/09 (`1864353`, título reescrito), sin reemplazo declarado |
+| `docs/ia.md` al día | No cumple | En el estado calificado el último commit es `356369d` (20/09, hasta S7); la entrada de S8 llegó en `e048523` (28/09), después del cierre |
+| Sin credenciales en el repositorio ni en el historial | Cumple | git grep y `.env` sin valores reales en `a94bf4e`; `.tfvars`/`.tfstate` ignorados |
+| Contribución de todos los integrantes | Cumple | 3 personas consolidadas: Santiago Cuesta/Santiago-C0 (48), daniarriet (26), Ruddy/ruddy2000utb-droid (10) |
+| Pipeline en verde | No verificado | La única llamada permitida a `actions/runs` devolvió solo runs posteriores al cierre; el run de `a94bf4e` no fue recuperable. SonarCloud: job condicionado a `SONAR_TOKEN`, marcado como pendiente en `infra/README.md` |
 
 ## Contribución por integrante
 

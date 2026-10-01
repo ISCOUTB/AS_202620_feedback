@@ -45,12 +45,13 @@ El contrato OpenAPI 3.1.1, la prueba de consumidor y el ADR de integración sín
 
 El mapa de contextos y la auditoría sobre el código son el punto fuerte de la entrega: tipifican las relaciones, reconocen el núcleo compartido y convierten hallazgos reales en no conformidades con acción de corrección. Para cerrar la semana falta la sección 8 de arc42 con el lenguaje ubicuo y el mapa incorporado, y la evidencia de SonarCloud (URL pública del análisis y estado del Quality Gate). Si los límites cambiaron respecto al primer corte, agreguen el C4 nivel 3 y el ADR del reajuste. Alineen la tabla de aspectos con las columnas del contrato (falta Requisito y C4) y eviten celdas pendientes en las filas que ya defienden. Mantengan cada no conformidad con su ubicación y su corrección, y verifiquen su cierre en el código, no solo en el documento.
 
-## Semana 8 · S8
+## Semana 8 · S8 (revisión definitiva)
 
-### Recomendaciones prioritarias
+La entrega cambió por completo frente a la revisión preliminar: la API quedó desplegada en Vercel con URL pública documentada, se versionaron Dockerfile, Compose y Terraform, y la vista de despliegue de arc42 describe una pieza por fila con su ubicación real. La observabilidad está resuelta con logs JSON por request (con identificador de petición y duración) y un endpoint de métricas p95 ligado al escenario de rendimiento. La estimación de costos parte de supuestos de volumen propios, verifica la capa gratuita y declara el punto de cruce. Hay un ADR de plataforma con las alternativas descartadas y la capa gratuita comprobada. El pipeline del estado calificado está en verde, incluido el paso de Quality Gate.
 
-- Conserven la restricción de costo cero y capas gratuitas ya escrita en la sección 2; elijan una plataforma y completen la sección 7 modular con cliente, API, almacenamiento y lugar de ejecución de cada uno.
-- Reemplacen la URL de ejemplo por la real y publiquen respuesta de salud con hora; versionen la infraestructura y los pasos de recreación.
-- Añadan logs estructurados, una métrica de calidad y un cálculo de costo con punto de ruptura; documenten la decisión de plataforma en un ADR.
+Tres correcciones:
+1. Hay un ADR con numeración fuera de la convención (termina en `.3`): renómbrenlo al formato `NNNN-titulo-en-kebab-case.md`.
+2. Se editaron ADR ya aceptados sin declarar un reemplazo. Un ADR aceptado no se reescribe: si la decisión cambia, se escribe otro y el anterior se marca como reemplazado.
+3. Falta publicar la URL del análisis en SonarCloud con el estado del Quality Gate; además, la vista de despliegue y el Terraform citan un archivo de configuración de Vercel que no está en el repositorio.
 
-El README permite reproducir la aplicación local y los workflows del estado revisado están en verde. La entrega aún no tiene URL pública, health check, infraestructura como código, logs estructurados, métricas ni vista de despliegue. Definan una plataforma con su ADR, publiquen el entorno y documenten la estimación mensual; mantengan los secretos fuera del repositorio y enlacen el Quality Gate público.
+La métrica p95 no acumula en producción por el estado en memoria de la función serverless, y está bien que lo hayan documentado. Cierren el enlace público del Quality Gate y la disciplina de ADR.

@@ -52,16 +52,21 @@ La entrega tiene buen ADR y un esqueleto hexagonal coherente con el estilo elegi
 
 El contrato ejecutable, los esquemas, la correspondencia con las rutas, la prueba contractual, su ejecución en CI, la vista de ejecución y el C4 están bien resueltos. Quedan dos no conformidades de la ficha: el ADR de integración no presenta una alternativa descartada ligada a un escenario, y los runs fallidos disponibles no demuestran que el paso contractual se haya puesto en rojo por un cambio incompatible. También deben unificar los dos archivos que ocupan el número 0001 y publicar la evidencia completa de SonarCloud.
 
-## Semana 8 · S8
+## Semana 8 · S8 (revisión definitiva)
+
+El backend local, el health check y el pipeline siguen siendo reproducibles y el CI corre en verde. Sin embargo, el grueso de la evidencia de la semana no está versionado: Render aparece solo como intención, sin URL pública, sin definición de infraestructura y sin vista de despliegue.
 
 ### Recomendaciones prioritarias
 
-- El arc42 puede seguir como documento único y ya declara presupuesto cero en la sección 2; agreguen allí mismo la sección 7 con cada pieza y su destino real.
-- Publiquen URL, respuesta de salud y hora; versionen la infraestructura y describan cómo se recrea el entorno.
-- Tomen secretos del proveedor, muestren logs estructurados y una métrica ligada a un escenario, y calculen costo y punto de ruptura.
-- Formalicen la elección de plataforma y su alternativa en un ADR; mantengan la evidencia del CI en verde.
+- Publiquen la URL del entorno desplegado y confirmen la respuesta de salud; recuerden que la URL se entrega por Moodle.
+- Versionen la infraestructura como código (imagen o definición de servicio) y describan en el README cómo se recrea el entorno.
+- Instrumenten logs estructurados con campos y una métrica consultable ligada a un escenario de calidad, y tomen los secretos del proveedor.
+- Añadan la estimación de costo mensual con supuestos y el punto de ruptura de la capa gratuita.
+- Completen la sección 7 de arc42 con una caja por pieza y su ubicación, y registren la decisión de plataforma en un ADR propio con su alternativa descartada.
+- Transversal: unifiquen el ADR que queda fuera de la convención de nombres, mantengan los ADR aceptados como registros históricos sin editarlos, pongan `docs/ia.md` al día e integren el análisis estático con su evidencia pública.
 
-El backend local, el health check y el pipeline son reproducibles. Sin embargo, Render solo aparece como intención: no hay URL pública, definición de infraestructura ni vista de despliegue. Completen el entorno desplegado, gestionen sus secretos desde el proveedor, instrumenten logs estructurados y una métrica consultable, y documenten costo mensual y alternativas de plataforma en un ADR independiente.
+Pendiente de calificar: las filas de URL accesible desde fuera de la red y de health check consultable, porque la URL se entrega por Moodle y no estaba disponible en esta pasada.
+
 ## Semana 6 · S6
 
 El mapa de contextos y la auditoría de propiedad de datos están bien construidos: los contextos, las relaciones tipificadas y los hallazgos citan rutas concretas del código y traen plan de corrección accionable. Para el siguiente corte, cierren la deuda transversal: integren el scanner de SonarCloud en el workflow y publiquen la URL del análisis con su Quality Gate; unifiquen los ADR en un archivo con la convención NNNN-titulo; completen la tabla de aspectos con las ocho columnas, incluida la evidencia de calidad; confirmen la sección 8 del arc42 con lenguaje ubicuo y el mapa de contextos. Si los límites de los contextos cambiaron respecto al primer corte, añadan el C4 nivel 3 y el ADR del reajuste. Y apliquen ya lo acordado en el plan: encapsular el estado del adaptador, crear el caso de uso de consulta y definir el puerto de lectura.

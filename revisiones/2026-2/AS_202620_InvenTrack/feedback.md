@@ -41,12 +41,14 @@ La entrega de la semana 6 está sólida: el mapa de contextos, la tabla de propi
 
 El contrato OpenAPI, sus esquemas, la correspondencia con los routers, la prueba contractual, su ejecución en el pipeline, el ADR, la vista de ejecución y el C4 están presentes y verificables. Para cerrar la única no conformidad de la ficha, conserven una evidencia reproducible de que la prueba falla ante un cambio incompatible. Unifiquen además la versión declarada en el documento de API con la versión del contrato ejecutable y mantengan SonarCloud auditable.
 
-## Semana 8 · S8
+## Semana 8 · S8 (revisión definitiva)
+
+La entrega cubre las diez filas graduables de la ficha. La infraestructura está versionada (imagen y definición de despliegue), el README reproduce el entorno, el pipeline corre en verde con análisis estático público y Quality Gate en orden, y hay logs estructurados, una métrica consultable ligada a un escenario de calidad y secretos tomados del almacén. La documentación de arquitectura incorpora la vista de despliegue con una pieza por nodo, el límite de costo en las restricciones y un ADR de plataforma con la alternativa descartada y la capa gratuita verificada. La estimación mensual parte de un volumen supuesto y fija el punto de ruptura de la capa gratuita.
 
 ### Recomendaciones prioritarias
 
-- El arc42 en un solo archivo es válido y su sección 2 ya fija la ausencia de presupuesto: completen la sección 7 con el host productivo que elijan, en vez de dejar solo el entorno local.
-- Publiquen URL, respuesta de salud y hora; versionen la infraestructura y el procedimiento de despliegue.
-- Expongan logs estructurados y una métrica ligada a un escenario; estimen costo y punto de ruptura, y justifiquen la plataforma en un ADR.
+- Mantengan inmutables los ADR aceptados: los cambios de decisión van en un ADR nuevo que reemplace al anterior, no editando el original.
+- Repartan la contribución: hoy dos integrantes concentran la mayor parte del historial.
+- Conserven la evidencia del pipeline y del análisis estático para el commit que entreguen.
 
-El pipeline y SonarCloud están en verde, los secretos del análisis se toman del almacén de GitHub y el entorno local está documentado. La no conformidad central es que el hosting sigue sin decidirse: no hay URL pública, infraestructura como código, health check externo ni vista de despliegue productiva. Añadan también logs estructurados, una métrica vinculada a un escenario, la estimación mensual y el ADR de plataforma.
+Pendiente de calificar: las filas de URL accesible desde fuera de la red y de health check consultable, porque la URL se entrega por Moodle y no estaba disponible en esta pasada. El repositorio sí declara la URL pública y la ruta de salud, que se verificarán en la segunda pasada.
