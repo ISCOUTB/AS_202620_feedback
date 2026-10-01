@@ -50,16 +50,10 @@ El repositorio está ordenado y la documentación base (README, ADR, aspectos, C
 
 ## Semana 8 · S8
 
-### Recomendaciones prioritarias
+La evidencia de despliegue no llegó a este corte. En el estado calificado no hay URL pública ni sistema desplegado: el README solo describe la ejecución local en el puerto 8000. Tampoco hay infraestructura como código (ningún Dockerfile, compose, Terraform, manifiestos ni Procfile), ni un procedimiento para recrear el entorno desplegado.
 
-- El arc42 único es válido: completen su sección 2 con presupuesto y condición de tarjeta, y sustituyan los marcadores de la sección 7 por nodos, plataformas y ubicaciones reales.
-- Desplieguen y publiquen URL, respuesta de salud y hora; versionen infraestructura y pasos de recreación.
-- Documenten inyección segura de secretos, logs estructurados y una métrica de calidad; calculen costo y punto de ruptura, y registren la plataforma en un ADR.
+Además, el pipeline quedó en rojo: los últimos commits añadieron al workflow un paso de despliegue por SSH y el run de la rama principal falla. Recuperen el verde antes de seguir, corrigiendo ese paso o retirándolo del job de pruebas.
 
-El repositorio sigue ordenado y el pipeline está en verde, pero esta semana no llegó: en el commit revisado no hay sistema desplegado ni URL pública, solo la ejecución local en el puerto 8000.
-Falta la infraestructura como código y el procedimiento para recrear el entorno desplegado.
-Quedan pendientes el health check verificable desde fuera, los logs estructurados, una métrica ligada a un escenario de calidad y la estimación de costo mensual con supuestos y punto de ruptura de la capa gratuita.
-Completen arc42 sección 7 con una caja por pieza y dónde se ejecuta, y la sección 2 con el límite de costo y, si aplica, la restricción de tarjeta.
-Escriban un ADR por decisión de plataforma, con su alternativa descartada y la capa gratuita verificada.
-Añadan SonarCloud con análisis público y su Quality Gate, y mantengan el CI en verde.
-Suban todo sobre la rama principal antes del cierre, con la URL viva y la hora de verificación.
+Quedan pendientes la verificación de salud, los logs estructurados, una métrica ligada a un escenario de calidad, la estimación de costo mensual con supuestos y punto de ruptura de la capa gratuita, la sección 7 de arc42 con una caja por pieza y dónde se ejecuta, la sección 2 con el límite de costo y la condición de tarjeta, y un ADR por decisión de plataforma con su alternativa descartada y la capa gratuita verificada.
+
+Mantengan el registro de uso de IA al día (hoy no crece desde agosto y no documenta rechazos con motivo) y repartan el trabajo: dos integrantes siguen sin aparecer en el historial de commits. La higiene de secretos sí está bien resuelta: las credenciales se toman del entorno y del almacén del proveedor, sin nada versionado.

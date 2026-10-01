@@ -38,13 +38,8 @@ El contrato de las tres integraciones y el ADR que justifica la estrategia sincr
 
 El documento `dominio_y_modularidad.md` aporta un mapa de contextos, dueños de datos y no conformidades con acciones concretas. Para que la arquitectura sea defendible, llévenlo también a arc42 §8, documenten en un ADR el reajuste de límites y vinculen cada contexto con la tabla de aspectos. Añadan SonarCloud con scanner, run y Quality Gate público.
 
-## Semana 8 · S8 (preliminar)
+## Semana 8 · S8 (revisión definitiva)
 
-### Recomendaciones prioritarias
+La entrega cambió respecto de la revisión temprana: el sitio está desplegado como aplicación web estática en Firebase Hosting, con health consultable, infraestructura como código, logs en JSON, una métrica de disponibilidad ligada a su escenario, secretos fuera del código, la sección 7 de arc42 con cada pieza y su ubicación, la restricción de costo cero y de no usar tarjeta en la sección 2, y un ADR por decisión de plataforma. El cálculo de costo parte del volumen del escenario y señala en qué punto se agota cada capa gratuita. El pipeline del estado calificado queda en verde y el análisis estático con su Quality Gate va ligado a ese run.
 
-- Mantengan la restricción de presupuesto cero y capas gratuitas; sustituyan los marcadores de la sección 7 AsciiDoc por componentes, proveedores y ubicaciones reales.
-- Publiquen URL, respuesta de salud y hora; versionen el despliegue y expliquen cómo recrearlo.
-- Resuelvan CI, protejan la clave de API mediante secretos del proveedor y enlacen el run de verificación.
-- Añadan logs estructurados y una métrica de calidad; calculen costo y punto de ruptura, y registren la plataforma en un ADR.
-
-El README permite reproducir el entorno local y la restricción de costo cero está declarada. Las no conformidades principales son que no existe una URL pública ni un endpoint de salud, falta infraestructura como código para desplegar y el pipeline del estado revisado está en rojo. Tampoco se encontraron logs estructurados, una métrica operativa consultable, inyección segura de la clave de Google, cálculo mensual, contenido real en arc42 §7 o un ADR que compare y decida la plataforma. Para la entrega definitiva, separen claramente arranque local de despliegue reproducible y publiquen evidencia operativa verificable.
+Para cerrar: dejen de reescribir ADR ya aceptados —registren el cambio como un ADR nuevo y marquen el anterior como reemplazado—. Las filas de URL desplegada y de health quedan pendientes de calificar porque la URL se entrega por Moodle.

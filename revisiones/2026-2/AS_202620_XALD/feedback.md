@@ -48,13 +48,8 @@ El contrato OpenAPI 3.1.0 está bien construido: versión declarada, esquemas co
 
 El mapa de contextos, la matriz de propiedad y la auditoría de no conformidades están bien conectados: los módulos, contratos públicos y DTO de tránsito tienen dueño explícito. Para cerrar la evidencia: incorporen SonarCloud al pipeline y publiquen el scanner, un run y el Quality Gate; además, completen A-04 y hagan que los enlaces de aspectos apunten a la rama principal, no a `experimental`.
 
-## Semana 8 · S8 (preliminar)
+## Semana 8 · S8 (revisión definitiva)
 
-### Recomendaciones prioritarias
+La entrega cambió por completo respecto de la revisión temprana: ahora hay un backend desplegado en Render, descrito como código (un archivo de Blueprint más su Dockerfile), con health check, logs en una línea JSON por evento, una métrica ligada a la resolución de conflictos de sincronización, secretos fuera del código y una estimación de costo con su volumen supuesto y el punto en que se agota cada capa gratuita. La sección 7 de arc42 quedó completa con una caja por pieza y su ubicación, la sección 2 recoge la restricción de costo cero y la de no usar tarjeta, y cada decisión de plataforma tiene su propio ADR con alternativas descartadas.
 
-- Conserven la restricción de costo cero y capas gratuitas; completen la sección 7 modular, hoy vacía, con cada componente y su destino real.
-- Publiquen URL, respuesta de salud y hora; versionen la infraestructura y los pasos para recrear el entorno.
-- Añadan logs estructurados y una métrica ligada a un escenario, con secretos tomados del proveedor.
-- Calculen costo y punto de ruptura y documenten la plataforma en un ADR; mantengan evidencia del CI en verde.
-
-El pipeline del estado revisado está en verde y la restricción de costo cero está documentada. Sin embargo, el repositorio no aporta una URL pública verificable ni un endpoint de salud, infraestructura como código, instrucciones de despliegue reproducible, logs estructurados, una métrica operativa consultable o un mecanismo de secretos de la plataforma. También faltan el cálculo mensual, el contenido de la sección 7 de arc42 y un ADR que compare y decida la plataforma de despliegue. Estas no conformidades mantienen la evidencia centrada en desarrollo local; para la entrega definitiva hace falta demostrar el sistema realmente desplegado y operable.
+Para cerrar: integren el análisis estático de SonarCloud al pipeline y publiquen el análisis con su Quality Gate; dejen de editar los ADR ya aceptados —si una decisión cambia, escriban uno nuevo y marquen el anterior como reemplazado—; y retiren del control de versiones los archivos compilados de Python que siguen en `__pycache__`. Las filas de URL desplegada y de health quedan pendientes de calificar porque la URL se entrega por Moodle.

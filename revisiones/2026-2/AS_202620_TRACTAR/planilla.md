@@ -10,7 +10,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TRACTAR` |
 | Integrantes y su usuario de GitHub | Joriel Samir Barros Pena (sin cuentas en el historial) · Geronimo Alberto Cadena Garcia (sin cuentas) · Sebastian Garcia Devoz (firma con dos identidades de git, mismo correo, más el correo institucional) · Mateo Alfonso Millan Barraza (sin cuentas) |
 | URL del sistema desplegado | sin URL (sin despliegue todavía) |
-| Ultima revision | 2026-09-23 |
+| Ultima revision | 2026-09-28 |
 
 ## Estado por entrega
 
@@ -23,7 +23,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 5 | CORTE1 | `7cfb872` (2026-08-31T12:27:23-05:00) | 8/12 | 3.7 | si |
 | 6 | S6 | `7cfb872` (2026-08-31T12:27:23-05:00) | sin actividad | no aplica | si |
 | 7 | S7 | `7cfb872` (2026-08-31T12:27:23-05:00) | 2/10 | 1.8 (prelim.) | si |
-| 8 | S8 | `9cf1ac9` (2026-09-21T00:14:08-05:00) | 1/12 | 1.3 (prelim.) | si |
+| 8 | S8 | `ae526db` (2026-09-25T11:36:43-05:00) | 1/10 | 1.4 (provisional; 2 filas de despliegue pendientes) | sí (definitiva) |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
 | 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
@@ -34,6 +34,8 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 14 | Evidencia S14 · Medición de atributos de calidad | | | no aplica | |
 | 16 | Proyecto final · integración y desafío arquitectónico | `final` | | | |
 | 17 | Aplicación de cambios y cierre arquitectónico | | | | |
+
+S8 se califica sobre 10 filas graduables. Quedan **pendientes de calificar** las dos filas de despliegue («URL del sistema accesible desde fuera de la red de la universidad» y «Health check consultable»): la URL se entrega por Moodle y no está disponible en esta pasada.
 
 ## Lo que se arrastra
 
@@ -95,14 +97,14 @@ Hoja consolidada del equipo a lo largo del semestre.
 | `docs/ia.md` al día | No cumple | último cambio 2026-08-16; sin entrada S5 |
 | Sin credenciales en el repositorio ni en el historial | Cumple | barridos limpios |
 | Contribución de todos los integrantes | No cumple | una persona concentra las identidades; 3 integrantes sin commits |
-| Pipeline en verde | No cumple | run del commit HEAD `7cfb8729` concluyó `success`: https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/actions/runs/33419672964 |
+| Pipeline en verde | No cumple | run de `ae526db` en `main` concluyó `failure`: https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/actions/runs/36161882569 |
 
 ## Contribución por integrante
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
 |---|---|---:|---:|---:|---|
-| Sebastian Garcia Devoz | dos identidades de git (mismo correo) + correo institucional | 16 | — | — | único autor del periodo |
-| Joriel Samir Barros Pena | — | 0 | — | — | sin commits |
+| Sebastian Garcia Devoz | dos identidades de git (mismo correo) + correo institucional | 22 | — | — | autor mayoritario del historial |
+| Joriel Samir Barros Pena | identidad detectada en el historial | 3 | — | — | aportes menores |
 | Geronimo Alberto Cadena Garcia | — | 0 | — | — | sin commits |
 | Mateo Alfonso Millan Barraza | — | 0 | — | — | sin commits |
 

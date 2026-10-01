@@ -10,7 +10,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_uniTeam` |
 | Integrantes y su usuario de GitHub | Julio Cesar Emiliani Ramos · Ian Novoa Carrillo · Juan Jose Bustamante More · Daniel Isaac Manjarres Herrera. Identidades observadas: `super-gremlin`, `Ian Novoa`, `Julio Cesar Emiliani`, `JuanB`/`JuanBustamante`, `Daniel Manjarres Herrera` y `DaniGamer0907`; ninguna correspondencia individual se da por confirmada. La cuenta listada `iansx` no aparece. |
 | URL del sistema desplegado | sin URL (sin despliegue todavía) |
-| Ultima revision | 2026-09-24 |
+| Ultima revision | 2026-10-01 |
 
 ## Estado por entrega
 
@@ -23,7 +23,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 5 | CORTE1 | `dc14298` (2026-08-29T11:49:10-05:00) | sin actividad | no aplica | si |
 | 6 | S6 | `6cc8e6f` (2026-09-13T20:20:18-05:00) | 2/8 | 2.0 (propuesta) | sí |
 | 7 | S7 | `1ea4aba` (2026-09-18T22:21:34Z) | 9/10 | 4.6 | sí (auditoría definitiva corregida) |
-| 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `73d714c` (2026-09-21T11:46:49-05:00) | 3/12 | 2.0 (propuesta preliminar) | sí (preliminar) |
+| 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `0f3da0f3` (2026-09-27T22:52:09-05:00) | 9/10 | 4.6 (propuesta; 2 filas de despliegue pendientes) | sí (definitiva) |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
 | 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |

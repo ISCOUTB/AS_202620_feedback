@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_mapsutb` |
 | Integrantes y su usuario de GitHub | Carlos Alberto Galvis Zuluaga · Carlos David Manrique Fals · Nerlis Nikol Otero Perez · Isabel Sofia Paez Matallana — cuentas observadas en el historial: `charlygz21`, `nerlis-otero`, `CarlosManrique-1397`, `i-matallana` (correspondencias por confirmar con el docente) |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-24 |
+| Ultima revision | 2026-10-01 |
 
 ## Estado por entrega
 
@@ -21,7 +21,7 @@
 | 5 | CORTE1 | `e8bad4c` histórico; excepción: `8aee879` (2026-09-13T18:14:14-05:00) | 8/12 | 3.7 | sí (actualizada con correcciones tardías aceptadas) |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | `8aee879` (2026-09-13T18:14:14-05:00) | 5/8 | 3.5 (prelim.) | sí |
 | 7 | S7 | `5e2fdd5` (2026-09-20T21:15:28-05:00) | 10/10 | 5.0 | sí (auditoría definitiva corregida) |
-| 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `7048021` (2026-09-22T10:10:19-05:00) | 2/12 | 1.7 (propuesta preliminar) | sí (preliminar) |
+| 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `8cfe4581` (2026-09-27T16:35:57-05:00) | 10/10 | 5.0 (propuesta; 2 filas de despliegue pendientes) | sí (definitiva) |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
 | 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |

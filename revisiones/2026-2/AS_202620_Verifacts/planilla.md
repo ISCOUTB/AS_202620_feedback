@@ -8,13 +8,13 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Verifacts` |
 | Integrantes y su usuario de GitHub | Ver [EQUIPOS.md](../../../EQUIPOS.md); historial actual: `PedroC1213` (240 commits, dos correos consolidados) y `Cristian Cardeño` (31 commits, dos correos con la misma firma), sin correspondencia individual confirmada; falta una tercera identidad atribuible. |
 | URL del sistema desplegado | `https://verifacts-web.onrender.com` · API: `https://verifacts-api.onrender.com` (pendiente de comprobación externa fechada) |
-| Ultima revision | 2026-09-24 |
+| Ultima revision | 2026-09-28 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 8 | S8 | `ef48c08` (2026-09-23T21:28:43-05:00) | 10/12 | 4.3 (propuesta preliminar) | sí (actualizada) |
+| 8 | S8 | `d2d7b5c` (2026-09-25T16:38:43-05:00) | 10/10 | 5.0 (provisional; 2 filas de despliegue pendientes) | sí (definitiva) |
 | 7 | S7 | `635f9b7` (2026-09-16T00:52:52-05:00) | 10/10 | 5.0 (auditada) | sí, auditada |
 | 6 | S6 | `5941c33` (2026-09-12T02:00:20-05:00) | 8/8 | 5.0 (prelim.) | si |
 | 1 | S1 | `(sin commits)` () | sin actividad | no aplica | si |
@@ -22,6 +22,8 @@
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `8259b75` · 2026-08-23T23:50:00-05:00 | 4/9 | no se publica | sí |
 | 4 | Evidencia S4 · arc42, C4 y corte vertical | `443e908` · 2026-08-29T18:17:18-05:00 | 7/10 | 3.8 | sí |
 | 5 | CORTE1 | `67f8cea` (2026-09-09T16:30:01-05:00) | 8/12 | 3.7 | si |
+
+S8 se califica sobre 10 filas graduables. Quedan **pendientes de calificar** las dos filas de despliegue («URL del sistema accesible desde fuera de la red de la universidad» y «Health check consultable»): la URL se entrega por Moodle y no está disponible en esta pasada.
 
 ## Lo que se arrastra
 
@@ -108,7 +110,7 @@
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
 |---|---|---:|---:|---:|---|
-| Cristian David Cardeno Gulloso | `Cristian Cardeño` (sin atribuir por parecido de nombre) | 31 | | | Dos correos con la misma firma; correspondencia individual pendiente. |
+| Cristian David Cardeno Gulloso | `Cristian Cardeño` (sin atribuir por parecido de nombre) | 33 | | | Dos correos con la misma firma; correspondencia individual pendiente. |
 | Pedro Jose Castro Blanquicett | sin atribuir (`PedroC1213` en el historial, dos correos consolidados) | 240 | | | — |
 | Julian Samuel Cabeza Pena | sin aparición | 0 | | | — |
 

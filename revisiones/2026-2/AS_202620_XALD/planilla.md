@@ -10,7 +10,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_XALD` |
 | Integrantes y su usuario de GitHub | Xavier Yesid Garcia Diaz (xaviergarciadiaz20-commits) · Dilan Joan Gonzalez Bejarano (dilanbejarano011) · Luis Estheban Lozano Colmenares (colmenares2007-crypto) · Axel Jair Ruiz Bolano (axeljruiz717-hash) — correspondencias por los correos de los commits (nombres explícitos), por confirmar con el docente |
 | URL del sistema desplegado | sin URL (sin despliegue todavía) |
-| Ultima revision | 2026-09-24 |
+| Ultima revision | 2026-10-01 |
 
 ## Estado por entrega
 
@@ -23,7 +23,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 5 | CORTE1 | `9bf16cf` (2026-09-09T10:07:09-05:00) | 8/12 | 3.7 | si |
 | 6 | Evidencia S6 · Contextos delimitados y propiedad de datos | `55993cf` (2026-09-13T22:06:22-05:00) | 8/8 | 5.0 (prelim.) | sí |
 | 7 | S7 | `62a0d15` (2026-09-20T23:25:16-05:00) | 9/10 | 4.6 (propuesta) | sí (auditoría local) |
-| 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `62a0d15` (2026-09-20T23:25:16-05:00) | 2/12 | 1.7 (prelim.) | sí |
+| 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `f90f28d3` (2026-09-27T21:56:48-05:00) | 10/10 | 5.0 (propuesta; 2 filas de despliegue pendientes) | sí (definitiva) |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
 | 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |

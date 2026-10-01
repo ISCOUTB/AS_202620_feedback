@@ -48,13 +48,8 @@ El mapa de contextos y la tabla inicial de dueño único tienen una estructura c
 
 Sin actividad S7: el ultimo commit anterior al cierre es de la entrega previa, asi que esta evidencia no se pudo evaluar. Lo que se arrastra de semanas anteriores sigue abierto para el corte.
 
-## Semana 8 · S8 (preliminar)
+## Semana 8 · S8 (revisión definitiva)
 
-### Recomendaciones prioritarias
+El proyecto ya se despliega en cuatro piezas (sitio estático, API en contenedor, base de datos gestionada y proveedor de identidad), con infraestructura como código, un health que además comprueba la base de datos, logs en una línea JSON por petición, métricas ligadas a sus escenarios, secretos fuera del código, la sección 7 de arc42 con una caja por pieza y la sección 2 con el límite de costo y la restricción de tarjeta; cada pieza de plataforma tiene su ADR con alternativas. El cálculo de costo parte del volumen del escenario y describe en qué punto se agota cada capa gratuita.
 
-- Conserven la restricción de presupuesto cero y cuentas estudiantiles; completen la sección 7 del arc42 único con cada componente y su destino real, sin dividir el documento.
-- Publiquen URL, respuesta externa de salud y hora; distingan el despliegue real del entorno local ya reproducible.
-- Reparen CI, tomen secretos del proveedor en vez de valores de desarrollo, y muestren logs estructurados y una métrica ligada a un escenario.
-- Calculen costo mensual y punto de ruptura, y registren la elección de plataforma en un ADR.
-
-Docker, Compose y el README permiten reconstruir el entorno local, y la restricción de costo cero está documentada. Aun así, el propio repositorio declara que no hay despliegue real: el endpoint de salud solo se presenta en localhost y el pipeline del estado revisado está en rojo. Las demás no conformidades son logs sin estructura, ausencia de una métrica operativa consultable, credenciales de desarrollo embebidas en Compose sin un mecanismo de secretos del proveedor, falta de cálculo mensual, arc42 §7 pendiente y ausencia de un ADR de plataforma. Para la entrega definitiva, conviertan la reproducibilidad local en evidencia de operación pública y segura.
+Lo prioritario: reparen el workflow de integración continua en la rama principal, que en el estado calificado termina en rojo (incluido el Quality Gate), y no editen ADR ya aceptados —si una decisión cambia, escriban uno nuevo y marquen el anterior como reemplazado—. Queda pendiente confirmar con el docente a qué integrante corresponde cada cuenta del historial. Las filas de URL desplegada y de health quedan pendientes de calificar porque la URL se entrega por Moodle.
