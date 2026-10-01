@@ -95,4 +95,3 @@ Ninguna de estas correcciones cambia una nota: la matriz transversal no entra en
 - Repetir el barrido de filas «Cumple» sin respaldo y de volcado recortado en S8 y en las semanas
   siguientes: el mismo prompt las genera.
 - Actualizar el nombre de TRACTAR en el mapeo del kit si se quiere evitar la redirección.
-
