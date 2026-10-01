@@ -17,7 +17,7 @@
 | Health check consultable | Rutas declaradas y presentes en código: `@app.get("/health")` backend/app/main.py:67, `@app.get("/health/ready")` :73 y `@app.get("/metrics")` :91; documentadas en README.md:113-117. No se consultó. | No verificado | Pendiente de calificar: la URL del despliegue se entrega por Moodle y no está disponible en esta pasada. El repositorio prueba que las rutas existen (`backend/app/main.py:67,73,91`) y el workflow `keepalive.yml` golpea `/health`. |
 | Infraestructura como código versionada en el repositorio | `backend/Dockerfile`, `frontend/Dockerfile`, `compose.yaml`, `render.yaml` (blueprint de la API) y `frontend/vercel.json`. Hash `858e78f`. | Cumple | IaC real por pieza, con el entorno local en Compose y el despliegue declarado en `render.yaml`. |
 | El entorno se puede recrear siguiendo el README | README.md:144-165 «Arranque local» (`cp .env.example .env` + `docker compose up --build`), con URLs de arranque y procedimiento de pruebas. | Cumple | El README documenta la recreación con un solo comando y los requisitos previos (Docker + Compose). |
-| Pipeline en verde sobre la rama principal | No se recuperó ningún run de la revisión calificada. El listado de `actions/runs` de `main` (total 384) queda monopolizado por el cron `keepalive.yml` cada 10 min; con las dos llamadas permitidas (per_page=10 y per_page=100) solo se alcanzan los 100 runs más recientes, todos `Keep-alive` success sobre `bc38c9b` (posterior al cierre). | No verificado | Con el presupuesto de API de esta pasada no se alcanzó el run de `858e78f` (ni de `Pruebas` ni de `Keep-alive`), así que no hay conclusión del hash calificado que citar. Haría falta una consulta filtrada por `head_sha=858e78f…` o la vista de Actions. |
+| Pipeline en verde sobre la rama principal | URL del último run y su conclusión | Cumple | Consulta sin autenticar a `actions/runs?head_sha=858e78f9e34ee4e205bdc84982ed8b04bd0dbb0d`: 62 runs del hash, todos `success`. Disparados por `push`: `Pruebas` #29 `success` (2026-09-27T20:36:55Z) https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/actions/runs/36348684373. El cron `Keep-alive` acumula 61 ejecuciones (`#5`–`#65`), todas `success` (p. ej. https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/actions/runs/36435017296). Ningún run del commit en `failure`/`cancelled`. |
 | Logs estructurados | Configuración: `JsonFormatter(logging.Formatter)` en backend/app/shared/logging.py:19 y `configure_logging()` :37; README.md lo describe (`logs JSON`) y la suite de observabilidad lo cubre. | Cumple | Una línea JSON por evento con campos estables (timestamp, level, logger, message + `extra`), sin texto libre. |
 | Métrica consultable asociada a un escenario de calidad | `GET /metrics` (backend/app/main.py:91) alimentado por `ObservabilityMiddleware` (metrics.py:38) y `snapshot()` (metrics.py:91); ligada explícitamente al escenario 4 de disponibilidad (metrics.py:5 y :110-112). | Cumple | La métrica declara su escenario (`docs/escenarios-calidad.md`, escenario 4) y expone conteo, errores 5xx y latencia p50/p95 por ruta. |
 | Secretos fuera del código y tomados del entorno o del almacén | `.env.example` versionado (raíz); `compose.yaml:8` exige `POSTGRES_PASSWORD` vía `.env`; `render.yaml:16-18` declara `DATABASE_URL` con `sync: false` (dashboard, nunca el repo); sin `.env` versionado; barrido de secretos limpio. | Cumple | Las variables están declaradas y separadas del código y las de producción las inyecta la plataforma; `.env` está git-ignorado. |
@@ -50,26 +50,24 @@ Mira el repositorio **entero en la punta actual de la misma rama**, no solo la e
 
 Pendientes que siguen abiertos:
 - Publicar/entregar la URL por Moodle para calificar las dos filas de despliegue (no se probó ninguna URL).
-- Cerrar la evidencia del pipeline: el cron `keepalive.yml` inunda el listado de runs y oculta el run de la revisión; conviene citar el run del hash calificado.
 - SonarCloud: configurar `SONAR_TOKEN`, ejecutar el scanner y publicar el Quality Gate del hash revisado.
 - No reescribir ADR aceptados (0001 y 0002) sin declarar uno sucesor.
 
 ## Recuento y nota sugerida
 
-**9 de 10 criterios graduables Cumple** (dos filas de despliegue quedan diferidas; la fila de pipeline queda No verificado por límite de recuperación del run).
+**10 de 10 criterios graduables Cumple** (dos filas de despliegue quedan diferidas; la fila de pipeline se confirmó en verde sobre el hash calificado).
 
-**Propuesta provisional al docente — `nota = 1 + 4 × (9/10) = 4.6`; quedan 2 filas de despliegue pendientes de calificar y la nota final la fija el profesor en Moodle.**
+**Propuesta provisional al docente — `nota = 1 + 4 × (10/10) = 5.0`; quedan 2 filas de despliegue pendientes de calificar y la nota final la fija el profesor en Moodle.**
 
 ## No verificado / pendientes
 
 - «URL del sistema accesible desde fuera de la red de la universidad» y «Health check consultable»: diferidas por decisión docente; la URL se entrega por Moodle. El repositorio declara las URLs (README.md:112-117) y las rutas existen en código (`backend/app/main.py:67,73,91`), pero no se abrió ninguna.
-- «Pipeline en verde sobre la rama principal»: no se recuperó ningún run de la revisión calificada dentro del presupuesto de API; el cron `keepalive.yml` (cada 10 min) monopoliza el listado y `per_page=100` solo alcanza runs post-cierre.
 
 ## Hallazgos para la planilla
 
 - S8 con avance real: despliegue por piezas (Vercel + Render + Neon), IaC (`render.yaml`, `compose.yaml`, Dockerfiles, `frontend/vercel.json`), logs JSON, `/metrics` con escenario 4, costo con supuestos y ADR 0003/0004/0005.
 - Las dos filas de despliegue quedan diferidas (URL por Moodle); no se abrió ninguna URL.
-- Pipeline no verificable con el presupuesto de API: el cron `keepalive.yml` inunda `actions/runs` (384 runs; los 100 más recientes son todos keep-alive). Citar el run del hash calificado.
+- Pipeline confirmado en verde sobre el hash calificado: 62 runs de `858e78f`, todos `success` (`Pruebas` #29 y el cron `Keep-alive`, `#5`–`#65`). La consulta por `head_sha` resolvió el bloqueo que el cron causaba en el listado general.
 - Transversal: ADR-0001 (`e8ae57d`) y ADR-0002 (`befb0bc`) reescritos tras aceptarse, sin sucesor.
 - Sin evidencia verificable de SonarCloud (job condicionado a `SONAR_TOKEN`); falta el Quality Gate público.
 - La punta de `main` tiene cuatro commits posteriores al cierre (2026-09-28) que no entran en la matriz.

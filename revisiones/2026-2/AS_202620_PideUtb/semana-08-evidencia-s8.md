@@ -28,7 +28,7 @@ sondeó ninguna URL.
 | Health check consultable | ruta y código de respuesta | No verificado | Pendiente de calificar: la URL del despliegue se entrega por Moodle y no está disponible en esta pasada. Ruta en el código: `backend/app/main.py:81-88` (`@app.get("/health")`, `health`) sobre las sondas de `backend/app/salud.py` (`revisar()`, que devuelve `503` si alguna dependencia cae); declarada en `README.md:15`. No se consulta en esta pasada. |
 | Infraestructura como código versionada en el repositorio | rutas de los archivos de infraestructura | Cumple | `infra/render.tf` (sitio), `infra/supabase.tf` (PostgreSQL), `infra/github.tf` (protección de rama), `infra/providers.tf`, `infra/variables.tf`, `infra/outputs.tf` y `.github/workflows/ci.yml`. La API queda fuera de Terraform por límite del proveedor (plan gratuito), y la excepción está documentada con el procedimiento manual en `infra/README.md`. |
 | El entorno se puede recrear siguiendo el README | sección del README con el procedimiento | Cumple | `README.md:118-141` documenta el arranque local con un solo comando (`README.md:125`) y las pruebas. La recreación del entorno público vive en `infra/README.md` (Terraform + alta manual de la API) y no está enlazada desde el README principal: hueco de enlace, no de procedimiento. |
-| Pipeline en verde sobre la rama principal | URL del último run y su conclusión | No verificado | La única llamada permitida a `actions/runs?per_page=10` devolvió únicamente runs del 2026-09-29 en adelante (posteriores al cierre); el run del hash calificado `a94bf4e` (2026-09-28T01:30Z) no fue recuperable sin una segunda llamada, no autorizada. El workflow `ci.yml` existe y corre en `push` a todas las ramas, pero no hay run citable del estado calificado. |
+| Pipeline en verde sobre la rama principal | URL del último run y su conclusión | Cumple | Consulta sin autenticar a `actions/runs?head_sha=a94bf4e87f84291edc11beed62df0c9d8cf57db7`: el hash calificado tiene un único run, `CI` #43, disparado por `push`, conclusión `success` (2026-09-28T01:30:11Z): https://github.com/ISCOUTB/AS_202620_PideUtb/actions/runs/36366211067. Ningún run del commit quedó en `failure`/`cancelled`. |
 | Logs estructurados | archivo de configuración y ejemplo de línea | Cumple | `backend/app/observabilidad.py:45` (`class FormatoJSON`) emite una línea JSON por petición y `:66` la serializa con `json.dumps`; `:174` (`configurar_logs`) la conecta a stdout. Ejemplo real en `docs/evidencia-s8.md:99-105` con `request_id`, `method`, `path`, `status` y `duration_ms`. |
 | Métrica consultable asociada a un escenario de calidad | nombre de la métrica y escenario al que corresponde | Cumple | `backend/app/main.py:116-122` expone `/metricas` con p50/p95/max por operación; `docs/evidencia-s8.md:150` la liga a **ESC-02** y acota que mide la parte del presupuesto controlada por el servidor, no el escenario completo. |
 | Secretos fuera del código y tomados del entorno o del almacén | `.env.example`, referencias a secretos en el workflow | Cumple | `infra/variables.tf` y `infra/providers.tf:55,60,64` toman los tokens por variable (`var.render_api_key`, etc.); `infra/.gitignore` excluye `*.tfvars`, `*.tfstate`, `.terraform/`; `infra/terraform.tfvars.example:20,29,60` usa solo marcadores `XXXX`; no hay `.env` versionado y el barrido de credenciales sobre el hash no encuentra valores reales. |
@@ -56,26 +56,25 @@ sondeó ninguna URL.
 - **Punta actual revisada**: `0393eee` — `2026-09-30T11:25:53-05:00 Hacer que requirements.txt incluya requirements.in en vez de copiarlo`.
 - **Veredicto**: con pendientes.
 - **Commits posteriores al cierre** (no cambian la matriz): `0393eee`, `1e8ad51` (merge PR #11 migración a Supabase), `ed57869`, `1744560` (quita la credencial del contenedor de pruebas), `1c676e9` (migra repositorios a PostgreSQL y cierra V-09), `0441ef2`, `373817f`, `8898291`, `e048523` (registro de IA de S8), `c04bc50`.
-- Resumen: la punta avanzó la migración a PostgreSQL y cerró la deuda de estado en memoria, además de retirar la credencial de CI que SonarCloud marcó y registrar la IA de S8. Nada de eso cuenta para el estado calificado. En el estado calificado la entrega S8 está mayormente cubierta (IaC con Terraform, logs JSON, métrica ligada a ESC-02, secretos por variable, costos con supuestos y punto de ruptura, arc42 §7, ADR-0004 de plataforma y README con arranque de un comando). Quedan abiertos la evidencia de costo/tarjeta en arc42 §2, el registro de IA de S8 (llegó tarde), la edición de ADR aceptados y la confirmación del Pipeline/SonarCloud para el hash calificado.
+- Resumen: la punta avanzó la migración a PostgreSQL y cerró la deuda de estado en memoria, además de retirar la credencial de CI que SonarCloud marcó y registrar la IA de S8. Nada de eso cuenta para el estado calificado. En el estado calificado la entrega S8 está mayormente cubierta (IaC con Terraform, logs JSON, métrica ligada a ESC-02, secretos por variable, costos con supuestos y punto de ruptura, arc42 §7, ADR-0004 de plataforma y README con arranque de un comando). Quedan abiertos la evidencia de costo/tarjeta en arc42 §2, el registro de IA de S8 (llegó tarde), la edición de ADR aceptados y la confirmación del Quality Gate de SonarCloud para el hash calificado (el run de CI ya quedó citado).
 
 Pendientes que siguen abiertos:
 - Comprobación externa de la URL y del health check (filas diferidas por decisión docente).
 - Recoger el límite de costo **y** la restricción de tarjeta en arc42 §2, no solo en el documento de comparación.
 - Actualizar `docs/ia.md` con el uso de IA de S8 dentro del periodo (la entrada llegó el 28/09, después del cierre).
 - No editar ADR aceptados: los títulos de ADR-0001 y ADR-0002 se reescribieron sin declarar reemplazo.
-- Acreditar `Pipeline, SonarCloud y Quality Gate` para el hash calificado (token `SONAR_TOKEN` marcado como pendiente).
+- Acreditar el Quality Gate público de SonarCloud para el hash calificado (token `SONAR_TOKEN` marcado como pendiente; el run de CI ya quedó citado).
 
 ## Recuento y nota sugerida
 
-**8 de 10 criterios graduables Cumple** (la matriz de la ficha tiene 12 filas; las 2 filas de despliegue quedan pendientes de calificar en esta pasada; de las 10 graduables, 1 quedó No verificado y 1 No cumple).
+**9 de 10 criterios graduables Cumple** (la matriz de la ficha tiene 12 filas; las 2 filas de despliegue quedan pendientes de calificar en esta pasada; de las 10 graduables, 1 queda No cumple).
 
-**Propuesta provisional al docente — `nota = 1 + 4 × (8/10) = 4.2`**; quedan 2 filas de despliegue pendientes de calificar y la nota final la fija el profesor en Moodle.
+**Propuesta provisional al docente — `nota = 1 + 4 × (9/10) = 4.6`**; quedan 2 filas de despliegue pendientes de calificar y la nota final la fija el profesor en Moodle.
 
 ## No verificado / pendientes
 
 - URL del sistema desde fuera de la red: No verificado por decisión docente; el repositorio la declara en `README.md:13-14`. No se abrió ninguna URL.
 - Health check: No verificado por decisión docente; la ruta existe en `backend/app/main.py:81-88` y `backend/app/salud.py`. No se consultó.
-- Pipeline en verde del hash calificado: no se pudo recuperar el run `a94bf4e` con la única llamada permitida a `actions/runs` (devolvió solo runs posteriores al cierre). Haría falta el run de CI sobre el hash entregado.
 - SonarCloud: job condicionado a `SONAR_TOKEN`, marcado como pendiente en `infra/README.md`; sin URL del Quality Gate para el hash calificado.
 
 ## Hallazgos para la planilla
@@ -85,4 +84,4 @@ Pendientes que siguen abiertos:
 - arc42 §2 no recoge la restricción de tarjeta: la frase vive en `docs/comparacion-despliegue.md` y ADR-0004.
 - `docs/ia.md` no tenía entrada de S8 en el estado calificado; la de S8 se subió el 2026-09-28, después del cierre.
 - ADR-0001 y ADR-0002 fueron editados (título reescrito) después de aceptarse sin declarar reemplazo.
-- No se pudo confirmar el run de CI del hash calificado con la única llamada autorizada; queda pendiente de verificación.
+- Pipeline del hash calificado en verde: `CI` #43 (`success`) sobre `a94bf4e`, con URL citada; la fila pasa de No verificado a Cumple.

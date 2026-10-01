@@ -21,7 +21,7 @@
 | 5 | CORTE1 | `bbefae8` (2026-09-08T10:37:21-05:00) | 9/12 | 4.0 | si |
 | 6 | S6 | `006edfe` (2026-09-13T16:37:23-05:00) | 7/8 | 4.5 (prelim.) | si |
 | 7 | S7 | `3d78106` (2026-09-20T22:24:21-05:00) | 10/10 | 5.0 | si |
-| 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `a94bf4e` en `master` (2026-09-27T20:30:08-05:00) | 8/10 | 4.2 (2 filas de despliegue pendientes) | sí |
+| 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `a94bf4e` en `master` (2026-09-27T20:30:08-05:00) | 9/10 | 4.6 (2 filas de despliegue pendientes) | sí |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
 | 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
@@ -88,7 +88,7 @@
 | Recoger el límite de costo y la restricción de tarjeta en arc42 §2. | S8 | sí (la sección 2 declara presupuesto cero y plan gratuito, pero la condición de tarjeta solo está en `docs/comparacion-despliegue.md` y ADR-0004) | Añadir ambas al apartado de restricciones |
 | Registro de IA de la semana dentro del periodo. | S8 | sí (la entrada de S8 se subió el 28/09, después del cierre) | Registrar el uso de IA antes del cierre |
 | No editar ADR aceptados sin declarar reemplazo. | S8 | sí (títulos de ADR-0001 y ADR-0002 reescritos el 20/09) | Escribir un ADR nuevo o declarar el reemplazo |
-| Acreditar el run de CI del hash calificado y el Quality Gate público. | S6 | sí (reiterado en S8) | Aportar la URL del run del hash entregado y de la URL pública de análisis con su Quality Gate |
+| Acreditar el run de CI del hash calificado y el Quality Gate público. | S6 | sí (parcial: el run de CI de `a94bf4e` ya quedó citado en S8; sigue pendiente el Quality Gate público) | Aportar la URL pública de análisis con su Quality Gate |
 
 ## Estado del contrato del repositorio
 
@@ -101,7 +101,7 @@
 | `docs/ia.md` al día | No cumple | En el estado calificado el último commit es `356369d` (20/09, hasta S7); la entrada de S8 llegó en `e048523` (28/09), después del cierre |
 | Sin credenciales en el repositorio ni en el historial | Cumple | git grep y `.env` sin valores reales en `a94bf4e`; `.tfvars`/`.tfstate` ignorados |
 | Contribución de todos los integrantes | Cumple | 3 personas consolidadas: Santiago Cuesta/Santiago-C0 (48), daniarriet (26), Ruddy/ruddy2000utb-droid (10) |
-| Pipeline en verde | No verificado | La única llamada permitida a `actions/runs` devolvió solo runs posteriores al cierre; el run de `a94bf4e` no fue recuperable. SonarCloud: job condicionado a `SONAR_TOKEN`, marcado como pendiente en `infra/README.md` |
+| Pipeline en verde | Cumple | Consulta por `head_sha=a94bf4e87f84291edc11beed62df0c9d8cf57db7`: único run `CI` #43 (`push`, `success`) sobre `a94bf4e`; URL citada en la evidencia S8. El Quality Gate de SonarCloud sigue No verificado (job condicionado a `SONAR_TOKEN`, marcado como pendiente en `infra/README.md`) |
 
 ## Contribución por integrante
 

@@ -23,7 +23,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 5 | CORTE1 | `3d732d7` (2026-09-07T14:41:37-05:00) | 9/12 | 4.0 | si |
 | 6 | S6 | `3d732d7` (2026-09-07T14:41:37-05:00) | sin actividad | no aplica | si |
 | 7 | S7 | `69aa82d` (2026-09-20T09:34:49-05:00) | 8/10 | 4.2 (propuesta) | sí |
-| 8 | S8 | `858e78f` en `origin/main` (2026-09-27T15:36:51-05:00) | 9/10 | 4.6 (propuesta; 2 filas de despliegue diferidas) | si |
+| 8 | S8 | `858e78f` en `origin/main` (2026-09-27T15:36:51-05:00) | 10/10 | 5.0 (propuesta; 2 filas de despliegue diferidas) | si |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
 | 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
@@ -74,12 +74,12 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Listado completo de archivos y retiro del entorno Python vendorizado | S7 | si | |
 | URL pública del sistema y health check con hora de verificación. | S8 | si | |
 | Infraestructura como código versionada y README reproducible. | S8 | si | |
-| Pipeline en verde sobre main con URL del run y evidencia pública de SonarCloud. | S8 | si | |
+| Pipeline en verde sobre main con URL del run y evidencia pública de SonarCloud. | S8 | sí (parcial: el pipeline del hash quedó citado en verde; falta el Quality Gate público de SonarCloud) | El run ya está citado; configurar `SONAR_TOKEN` y publicar el Quality Gate |
 | Logs estructurados, métrica con escenario y estimación de costo con supuestos. | S8 | si | |
 | arc42 secciones 2 y 7, ADRs de plataforma, docs/aspectos.md, docs/ia.md y diagramas C4. | S8 | si | |
 | Retirar del versionado el entorno de terceros .security-tools. | S8 | si | |
 | URL y health check diferidos: la URL se entrega por Moodle y no se probó; el repo declara Vercel/Render y `/health`, `/health/ready`, `/metrics` (`backend/app/main.py:67,73,91`). | S8 (definitiva) | si | Pendiente solo de entregar la URL en Moodle. |
-| Pipeline no verificable con el presupuesto de API: el cron `keepalive.yml` inunda `actions/runs` (384 runs; los 100 más recientes son keep-alive post-cierre). | S8 (definitiva) | si | Citar el run del hash calificado; conviene una consulta filtrada por `head_sha`. |
+| Pipeline no verificable con el presupuesto de API: el cron `keepalive.yml` inunda `actions/runs` (384 runs; los 100 más recientes son keep-alive post-cierre). | S8 (definitiva) | no (resuelto en esta corrección: la consulta por `head_sha` mostró 62 runs del hash, todos `success`) | — |
 | ADR aceptados reescritos: ADR-0001 (`e8ae57d`, 2026-08-31) y ADR-0002 (`befb0bc`, 2026-09-27) editados tras aceptarse, sin sucesor. | S8 (definitiva) | si | Si cambia la decisión, crear un ADR nuevo y marcar el anterior como reemplazado. |
 | SonarCloud sin evidencia verificable: job condicionado a `SONAR_TOKEN`; falta run del scanner y Quality Gate público del hash revisado. | S8 (definitiva) | si | Configurar el token, ejecutar el scanner y publicar el Quality Gate. |
 | Cuatro commits posteriores al cierre (2026-09-28) en `main` consolidan pendientes y declaran infraestructura de producción con Terraform. | S8 (definitiva) | no (hallazgo overall) | No entran en la matriz; se anotan en `overall`. |
@@ -94,7 +94,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | `docs/ia.md` al día | Cumple | Commits `9b31d8f` y `befb0bc` (2026-09-27) en la ventana S8; documenta descartes con motivo |
 | Sin credenciales en el repositorio ni en el historial | Cumple | `git grep` §9 limpio (solo `token` de SVG en un HTML de terceros); sin `.env` versionado; `.env.example` sí versionado |
 | Contribución de todos los integrantes | Cumple | 4 identidades consolidadas = 4 integrantes |
-| Pipeline en verde | No verificado | No se recuperó el run del hash calificado: el cron `keepalive.yml` inunda `actions/runs` (384 runs; los 100 más recientes son keep-alive post-cierre) |
+| Pipeline en verde | Cumple | 62 runs del hash `858e78f`, todos `success`: `Pruebas` #29 (URL citada en la evidencia S8) y el cron `Keep-alive` (61 ejecuciones, `#5`–`#65`); sin runs en `failure`/`cancelled` |
 | SonarCloud y Quality Gate públicos | No cumple | `sonar-project.properties` existe, pero el job está condicionado a `SONAR_TOKEN` y no hay run del scanner ni Quality Gate verificables para el hash revisado |
 | Etiqueta corte-1 (corte 1) | No cumple | `git tag --list` vacío; no existe ninguna etiqueta en el repositorio |
 

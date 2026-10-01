@@ -74,7 +74,7 @@
 | Evidencia auditable de SonarCloud: invocacion del scanner, run exitoso y URL publica del analisis con Quality Gate (exigida desde S6). | S7 | si | |
 | Publicar una URL real del sistema y un endpoint mínimo de salud verificable. | S8 | sí | No se encontró despliegue público ni endpoint de salud en el estado preliminar. |
 | Versionar infraestructura como código y documentar un despliegue reproducible, no solo el arranque local. | S8 | sí | El README reproduce el entorno local, pero no existe infraestructura de despliegue. |
-| Dejar el pipeline actual en verde y publicar la evidencia de análisis estático con Quality Gate. | S8 | sí | El run del estado revisado falla y no se encontró URL pública del análisis. |
+| Dejar el pipeline actual en verde y publicar la evidencia de análisis estático con Quality Gate. | S8 | sí (parcial: el pipeline del hash revisado quedó citado en verde —`CI` #31 y `Despliegue web` #6—; falta el Quality Gate público de SonarCloud) | Publicar el Quality Gate del análisis sobre el hash revisado |
 | Añadir logs estructurados, una métrica operativa consultable y manejo seguro de secretos en la plataforma. | S8 | sí | No hay evidencia verificable de observabilidad ni de inyección segura de la clave de Google. |
 | Completar costo mensual, arc42 §7 y ADR de plataforma de despliegue. | S8 | sí | Solo está documentada la restricción de costo cero; faltan cálculo y decisión de plataforma. |
 ## Estado del contrato del repositorio
@@ -88,7 +88,7 @@
 | `docs/ia.md` al día | No cumple | La última actualización verificable es del 2026-08-30, anterior a S8. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | greps limpios en HEAD `f40775d` |
 | Contribución de todos los integrantes | Cumple | 4 personas consolidadas en HEAD: CarlosManrique-1397 (41), i-matallana (39, dos correos), charlygz21 (13), nerlis-otero (6) |
-| Pipeline en verde | No cumple | El run del estado S8 revisado falla; además no se encontró análisis público de SonarCloud con Quality Gate. |
+| Pipeline en verde | Cumple | 104 runs del hash `8cfe4581`, todos `success`: `CI` #31 y `Despliegue web (Firebase Hosting)` #6, más los crons de sonda y sincronización de Sonar; URLs citadas en la evidencia S8 |
 
 ## Contribución por integrante
 
