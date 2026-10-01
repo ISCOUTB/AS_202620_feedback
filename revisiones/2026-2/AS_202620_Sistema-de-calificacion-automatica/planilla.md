@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica` |
 | Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-23 |
+| Ultima revision | 2026-10-01 |
 
 ## Estado por entrega
 
@@ -21,7 +21,7 @@
 | 5 | CORTE1 | `8b0d00b` (2026-09-07T14:29:28-05:00) | 8/12 | 3.7 | si |
 | 6 | S6 | `a47d5bd` (2026-09-13T23:21:55-05:00) | 3/8 | 2.5 (prelim.) | si |
 | 7 | S7 | `2269ca5` (2026-09-20T21:48:00-05:00) | 10/10 | 5.0 (propuesta) | sí |
-| 8 | S8 | `2269ca5` (2026-09-20T21:48:00-05:00) | 4/12 | 2.3 (prelim.) | si |
+| 8 | S8 | `1f8f76d` (2026-09-27T19:55:57-05:00) | 10/10 graduables (2 filas de despliegue pendientes) | 5.0 (provisional) | si |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
 | 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
@@ -95,28 +95,32 @@
 | Limite de costo y restriccion de tarjeta en arc42 seccion 2 | S8 | si | |
 | Tabla de aspectos sin huecos (no verificable con la evidencia aportada) | S8 | si | |
 | R-06 (persistencia) y V-5 (verificacion automatica de propiedad de datos) siguen abiertos | S8 | si | |
+| Evidencia auditable de SonarCloud: configuracion, invocacion del scanner en el workflow y URL publica con Quality Gate. | S6 | sí | El análisis corre desde la interfaz de SonarCloud; ningún paso del pipeline lo ejecuta. El equipo lo reconoce en `correcciones.md` y `docs/ia.md`. |
+| `ADR-0007` editado despues de aceptarse, sin reemplazo declarado. | S8 | sí | La edición (2026-09-26) solo actualiza enlaces de documentación; se registra por la regla del §4. |
+
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
-| Nombre y visibilidad del repositorio | Cumple | Público y con el nombre de la convención |
-| Estructura mínima | Cumple | Las seis rutas presentes en `b65626e` |
-| Convención de nombres de ADR | Cumple | `0001-usar-monolito-modular.md`, `0002-procesar-calificacion-de-forma-asincrona.md` |
-| ADR aceptados sin reescribir | Cumple | 0001 marcado como reemplazado por 0002, sin reescrituras de contenido |
-| `docs/ia.md` al día | No cumple | Actualizado en S3 (`aa14dca`) con aceptado/rechazado/justificación |
-| Sin credenciales en el repositorio ni en el historial | Cumple | git grep y `.env` sin coincidencias |
-| Contribución de todos los integrantes | Cumple | 4 cuentas para 4 integrantes |
-| Pipeline en verde | No cumple | Sin código ni prueba al cierre; el esqueleto tardío trae prueba, pendiente de run en verde para S4 |
+| Nombre y visibilidad del repositorio | Cumple | Público y con el nombre de la convención (S8) |
+| Estructura mínima | Cumple | Las seis rutas presentes en `1f8f76d` |
+| Convención de nombres de ADR | Cumple | `0001` a `0012`, todos `NNNN-kebab-case.md` |
+| ADR aceptados sin reescribir | No cumple | `ADR-0007` (aceptado el 2026-09-13) se edita el 2026-09-26 (`1c8bcfb`) sin reemplazo declarado; la edición solo cambia enlaces |
+| `docs/ia.md` al día | Cumple | Crece en el periodo y documenta lo aceptado y lo rechazado con motivo (S8) |
+| Sin credenciales en el repositorio ni en el historial | Cumple | `git grep` §9 y `log -S` sin coincidencias; sin `.env` versionado |
+| Contribución de todos los integrantes | Cumple | 4 cuentas para los 4 integrantes (S8) |
+| Pipeline en verde | Cumple | Run `36364030158` (`success`) sobre el hash calificado: https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/actions/runs/36364030158 |
+| Pipeline, SonarCloud y Quality Gate públicos | No cumple | CI verde, pero el workflow no invoca el scanner y no hay `sonar-project.properties`; solo enlace a SonarCloud |
 | Etiqueta corte-1 (corte 1) | Cumple | `201acac`, 2026-09-07T04:34:17Z, antes del cierre |
 
 ## Contribución por integrante
 
-| Integrante | Usuario de GitHub | Commits (a corte-1, `201acac`) | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
+| Integrante | Usuario de GitHub | Commits (a S8, `1f8f76d`) | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
 |---|---|---:|---:|---:|---|
-| Sebastian Canas Plata | scp1109 | 35 | — | — | Todo S1-S2, ADR 0003, ficha del problema en S3, reto del corte 1 (commit único) |
-| Josue David Ortega De Arco | josueacademico17-source | 16 | — | — | Desde la semana 3 |
-| Susana Marcela Rosales Castellar | SusanaRosales | 7 | — | — | Desde S3 |
-| Maria Del Mar Restrepo Licona | Mariadelmar-restrepo | 3 | — | — | Desde S3 |
+| Sebastian Canas Plata | scp1109 | 83 | — | — | Historial completo del semestre |
+| Josue David Ortega De Arco | josueacademico17-source | 37 | — | — | Desde la semana 3 |
+| Susana Marcela Rosales Castellar | SusanaRosales | 24 | — | — | Desde S3 |
+| Maria Del Mar Restrepo Licona | Mariadelmar-restrepo | 17 | — | — | Desde S3 |
 
 Corrección aceptada (hallazgo 8 de `correcciones_feedback.md`): la tabla anterior daba 27/9/1/3; `git shortlog -sn` sobre `cede35e` y `corte-1` confirma 34-35/16/7/3.
 

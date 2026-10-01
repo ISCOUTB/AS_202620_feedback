@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Recobra` |
 | Integrantes y su usuario de GitHub | Camilo Andres Conde Corrales · Fernando Isacc Conde Herrera · Miguel Alejandro Iii Jacome Yanez · Veronica Ubarne Reyes — cuentas consolidadas: `Cconde31` (incluye la identidad `Steamlinker`, unificada por `.mailmap` el 05/09), `MiguelJacome`, `vylrir` (Verónica Ubarne), y un commit identificado con el nombre real de Fernando Isacc Conde Herrera |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-24 |
+| Ultima revision | 2026-10-01 |
 
 ## Estado por entrega
 
@@ -21,7 +21,7 @@
 | 5 | CORTE1 | `f7c1a6c` (2026-09-07T09:59:41-05:00) | 8/12 | 3.7 | si |
 | 6 | S6 | `47fb44b` (2026-09-13T16:58:53-05:00) | 4/8 | 3.0 (prelim.) | si |
 | 7 | S7 | `8f25313` (2026-09-19T13:37:58-05:00) | 10/10 | 5.0 | si |
-| 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `8f25313` (2026-09-19T13:37:58-05:00) | 1/12 | 1.3 (prelim.) | si |
+| 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `5c7f77b` (2026-09-27T19:55:59-05:00) | 10/10 (2 filas de despliegue diferidas) | 5.0 (provisional) | si |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
 | 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
@@ -101,7 +101,9 @@
 | Aportar el historial git de docs/contracts/openapi.yaml para respaldar la versión declarada. | S7 | si | |
 | Aportar el contenido de docs/ia.md con lo rechazado y su motivo por cada uso. | S7 | si | |
 | Consolidar las cuentas del historial con los integrantes declarados y confirmar la rotación del token de Coveralls mencionado en el checklist. | S7 | si | |
-| Publicar el despliegue y completar IaC, observabilidad, costos y ADR de plataforma. | S8 | si | arc42 declara expresamente que el despliegue en nube está pendiente. |
+| Publicar el despliegue y su health check verificables. | S8 | sí (diferido) | Fila diferida por decisión docente: la URL se entrega por Moodle. El README ya declara la URL y la ruta `/health` existe. |
+| SonarCloud sin invocación en el workflow ni URL pública del Quality Gate. | S6 | si | Falta la evidencia del contrato §8. |
+| ADR-0002 y ADR-0003 editados después de aceptarse sin reemplazo declarado. | S8 | si | Crear un ADR sucesor en vez de editar uno aceptado. |
 
 ## Estado del contrato del repositorio
 
@@ -110,20 +112,21 @@
 | Nombre y visibilidad del repositorio | Cumple | Público (clon sin auth) |
 | Estructura mínima | Cumple | Las seis rutas están, pero `docs/arc42.md` suelto convive con `docs/arc42/` |
 | Convención de nombres de ADR | Cumple | 0001, 0002, 0003 en kebab-case con la decisión en el título |
-| ADR aceptados sin reescribir | Cumple | ADR-0001 marcado "Reemplazada" en vez de editado o borrado |
-| `docs/ia.md` al día | Cumple | Entradas del 05/09 con aceptado/corregido/rechazado y motivo |
-| Sin credenciales en el repositorio ni en el historial | **No cumple** | Token de Coveralls recuperable en el historial (`905f546`); no confirmado que se haya rotado |
+| ADR aceptados sin reescribir | No cumple | ADR-0001 sí declara reemplazo, pero ADR-0002 y ADR-0003 se editaron en `f7c1a6c` (2026-09-07) después de aceptarse (2026-09-05) sin declarar reemplazo |
+| `docs/ia.md` al día | Cumple | Entradas por semana con aceptado/corregido/rechazado y motivo, incluida la de S8 (2026-09-26) |
+| Sin credenciales en el repositorio ni en el historial | Cumple | Barrido sin credenciales del equipo; el `repo_token` de Coveralls del historial es un artefacto público del paquete npm `debug` 2.6.9, documentado y cerrado en `docs/no-conformidades.md` |
 | Contribución de todos los integrantes | Cumple, con reserva | 4 identidades para 4 integrantes, pero Fernando con 1 solo commit en todo el semestre |
-| Pipeline en verde | Cumple | Run público exitoso del estado revisado: https://github.com/ISCOUTB/AS_202620_Recobra/actions/runs/35461821663; SonarCloud no está acreditado. |
+| Pipeline en verde | Cumple | Run público exitoso del estado revisado (`5c7f77b`): https://github.com/ISCOUTB/AS_202620_Recobra/actions/runs/36364033272 |
+| Pipeline, SonarCloud y Quality Gate públicos | No cumple | CI en verde, pero el workflow no invoca el scanner de SonarCloud ni publica URL del Quality Gate |
 
 ## Contribución por integrante
 
 | Integrante | Usuario de GitHub | Commits (HEAD) | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
 |---|---|---:|---:|---:|---|
-| Camilo Andres Conde Corrales | `Cconde31` (incluye `Steamlinker`, consolidado) | 26 | — | — | Autor de casi todo el reto S5 |
-| Fernando Isacc Conde Herrera | commit identificado con nombre real | 1 | — | — | Contribución mínima persistente |
-| Miguel Alejandro Iii Jacome Yanez | `MiguelJacome` | 7 | — | — | — |
-| Veronica Ubarne Reyes | `vylrir` | 9 | — | — | Consolidada desde S3-S4 |
+| Camilo Andres Conde Corrales | `Cconde31` (incluye `Steamlinker`, consolidado) | 44+1 | — | — | Autor de casi todo el reto S5 |
+| Fernando Isacc Conde Herrera | commit identificado con nombre real | 24 | — | — | Ya no queda con contribución mínima |
+| Miguel Alejandro Iii Jacome Yanez | `MiguelJacome` | 10 | — | — | — |
+| Veronica Ubarne Reyes | `vylrir` | 25 | — | — | Consolidada desde S3-S4 |
 
 ## Preguntas abiertas para la sustentación
 

@@ -48,9 +48,8 @@ Buen avance: el mapa de contextos y la sección 8 recogen el lenguaje y los lím
 
 ### Recomendaciones prioritarias
 
-- Mantengan la restricción de costo cero y sin tarjeta ya documentada; sustituyan en la sección 7 los servidores genéricos por piezas ubicadas explícitamente en Render y Supabase.
-- Publiquen URL, respuesta externa de salud y hora; documenten cómo reproducir el despliegue usando los artefactos versionados.
-- Resuelvan el run fallido de CI, retiren valores sensibles del entorno local y hagan consultable una métrica ligada a un escenario.
-- Actualicen el cálculo mensual y el punto de ruptura; separen las decisiones de plataforma en ADR independientes.
+- Cierren la evidencia de SonarCloud: falta el paso que invoca el scanner en el workflow y la URL pública del análisis con su Quality Gate. Un enlace genérico al panel no acredita que el análisis corra.
+- Dejen de editar ADR ya aceptados: cuando cambie una decisión, escriban un ADR nuevo y marquen el anterior como reemplazado. Hoy varios ADR se editaron después de aceptarse sin ese enlace.
+- La URL del sistema y la respuesta del health check quedan pendientes de calificar en esta pasada porque se entregan por Moodle.
 
-Hay avance material: se versionaron artefactos de contenedores y plataforma, los logs tienen estructura y la estimación de costos incluye supuestos y umbrales. Sin embargo, no se declaró la URL pública y el health check no pudo comprobarse externamente; además, el pipeline de la rama principal falla. Completen una métrica ligada a un escenario, documenten en el README la reproducción del despliegue, representen las plataformas reales en arc42, separen cada decisión de plataforma en su ADR y retiren credenciales literales del entorno local. Esas son las no conformidades que impiden cerrar la evidencia.
+El avance de la semana es sólido: la infraestructura está versionada como código, el README explica cómo recrear el entorno, el pipeline de la rama principal volvió a verde, los logs tienen estructura con campos, existe una métrica consultable ligada al escenario de rendimiento, los secretos se toman de la configuración del proveedor, la estimación de costos trae supuestos y punto de ruptura, arc42 representa las plataformas reales en la sección 7 y recoge costo y «sin tarjeta» en la sección 2, y cada decisión de plataforma tiene su propio ADR con la alternativa descartada y la capa gratuita verificada. Mantengan ese nivel y cierren las dos no conformidades transversales.

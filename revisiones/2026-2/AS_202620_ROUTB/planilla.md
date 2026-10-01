@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_ROUTB` |
 | Integrantes y su usuario de GitHub | Diego Jose Baron Ruiz (`diegobrr999-commits`) · Julian David Manjarrez Guzman (`juliandmanjarrez-tech`) · Keiner Enrique Mendivil Diaz (`MKeinerrr`, dos correos) · Junior Jose Orozco Atencio (`junior14700`) |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-24 |
+| Ultima revision | 2026-10-01 |
 
 ## Estado por entrega
 
@@ -21,7 +21,7 @@
 | 5 | CORTE1 | `343bb9d` (2026-09-09T21:10:40-05:00) | 8/12 | 3.7 | si |
 | 6 | S6 | `5b48dd0` (2026-09-13T23:43:22-05:00) | 4/8 | 3.0 (prelim.) | si |
 | 7 | S7 | `fe266aa` (2026-09-20T21:32:01-05:00) | 9/10 | 4.6 | si |
-| 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `35d088c` (2026-09-23T23:53:01-05:00) | 5/12 | 2.7 (prelim.) | si |
+| 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `eae667e` (2026-09-27T21:58:06-05:00) | 10/10 (2 filas de despliegue diferidas) | 5.0 (provisional) | si |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
 | 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
@@ -88,7 +88,9 @@
 | Run en rojo o evidencia del cambio incompatible | S7 | si | |
 | C4 nivel 2 con protocolo y formato en cada flecha | S7 | si | |
 | SonarCloud con run exitoso y Quality Gate público | S7 | si | |
-| Declarar URL pública, recuperar CI de `master`, añadir métrica y separar ADR de plataforma. | S8 | si | Hay IaC, logs y costos; faltan verificabilidad externa y cierre de no conformidades. |
+| Declarar URL pública y health check verificables. | S8 | sí (diferido) | Fila diferida por decisión docente: la URL se entrega por Moodle. El README ya declara la URL y la ruta `/health` existe. |
+| SonarCloud sin invocación en el workflow ni URL pública del Quality Gate. | S6 | si | Falta la evidencia del contrato §8. |
+| ADR 0001, 0002, 0003, 0005 y 0006 editados después de aceptarse sin reemplazo declarado. | S8 | si | Crear un ADR sucesor en vez de editar uno aceptado. |
 
 ## Estado del contrato del repositorio
 
@@ -97,17 +99,18 @@
 | Nombre y visibilidad del repositorio | Cumple | Público y con el nombre de la convención |
 | Estructura mínima | Cumple | Las seis rutas presentes en `corte-1` |
 | Convención de nombres de ADR | Cumple | 0001, 0002, 0003 con título de la decisión en kebab-case |
-| ADR aceptados sin reescribir | Cumple | Sin reescrituras detectadas |
+| ADR aceptados sin reescribir | No cumple | ADR 0001 (`a94a1a3`), 0002 (`53ed7c3`), 0003 (`f706aa6`), 0005 y 0006 (`b0426fa`) editados después de aceptarse sin declarar reemplazo |
 | `docs/ia.md` al día | Cumple | Entrada de S5 fechada 05/09 |
 | Sin credenciales en el repositorio ni en el historial | Cumple | git grep sin secretos reales; sin `.env` |
 | Contribución de todos los integrantes | Cumple | 4 personas para 4 integrantes (MKeinerrr consolidado); muy concentrada en MKeinerrr |
-| Pipeline en verde | No cumple | El run público del estado S8 en `master` terminó en fallo: https://github.com/ISCOUTB/AS_202620_ROUTB/actions/runs/35957534355 |
+| Pipeline en verde | Cumple | Run público del estado S8 en `master` (`eae667e`) en verde: https://github.com/ISCOUTB/AS_202620_ROUTB/actions/runs/36371840003 |
+| Pipeline, SonarCloud y Quality Gate públicos | No cumple | CI en verde, pero el workflow no invoca el scanner de SonarCloud ni publica URL del Quality Gate |
 
 ## Contribución por integrante
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
 |---|---|---:|---:|---:|---|
-| Keiner Enrique Mendivil Diaz | `MKeinerrr` | 31+2 (dos correos, consolidado) | | | Autor de casi todo el reto S5 |
+| Keiner Enrique Mendivil Diaz | `MKeinerrr` | 53+2 (dos correos, consolidado) | | | Autor de casi todo el reto S5 |
 | Diego Jose Baron Ruiz | `diegobrr999-commits` | 6 | | | C4 en S2 |
 | Julian David Manjarrez Guzman | `juliandmanjarrez-tech` | 3 | | | C4 en S2 |
 | Junior Jose Orozco Atencio | `junior14700` | 2 | | | Restricciones en S2 |

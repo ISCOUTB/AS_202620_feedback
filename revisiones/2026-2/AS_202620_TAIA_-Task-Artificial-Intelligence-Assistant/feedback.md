@@ -68,3 +68,11 @@ Documenten la estimación de costo mensual desde el volumen esperado, indicando 
 Escriban un ADR por decisión de plataforma, con la alternativa descartada y la verificación de la capa gratuita.
 Declaren las variables de entorno en un .env.example y dejen su valor en el almacén del proveedor.
 Mantengan navegables los aspectos y el registro de IA, incluida la columna de lo rechazado y su motivo.
+
+## Semana 8 · S8 (revisión definitiva)
+
+Gran salto en esta entrega: el sistema ya tiene infraestructura como código versionada (imagen Docker y descripción de la máquina con Terraform), un pipeline que corre las pruebas y despliega de forma automática al integrar en la rama principal, logs estructurados en JSON y una métrica de latencia ligada a un escenario de calidad. También quedaron la estimación de costo con supuestos y su punto de ruptura, y un ADR por decisión de plataforma (API y base de datos) con la alternativa descartada y la capa gratuita verificada.
+
+Dos filas de despliegue quedaron pendientes de calificar porque la URL se entrega por Moodle y no se probó ninguna; el repositorio sí declara la URL pública y la ruta de health, lo que deja la comprobación para la segunda pasada.
+
+Para cerrar del todo: (1) versionen un `.env.example` sin valores reales, hoy el archivo no existe y tanto el README como la sección 7 del arc42 lo enlazan; (2) no editen un ADR ya aceptado —si la decisión cambia, escriban uno nuevo y marquen el anterior como reemplazado—; (3) registren en `docs/ia.md` el uso de IA del periodo, que no creció esta semana; y (4) añadan el análisis estático público (configuración, ejecución del scanner y URL con el Quality Gate) para que el pipeline sea auditable de punta a punta.

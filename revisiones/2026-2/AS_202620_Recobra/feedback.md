@@ -42,9 +42,8 @@ El mapa de contextos y la tabla módulo-datos están bien encaminados. Para cerr
 
 ### Recomendaciones prioritarias
 
-- Desplieguen primero un corte mínimo: la sección 7 del arc42 único aún describe ejecución local. Una vez operativo, muestren cada componente y su destino real en esa sección.
-- Completen la sección 2, que hoy solo limita el stack, con presupuesto y condición de tarjeta; calculen costo y punto de ruptura.
-- Publiquen URL, respuesta de salud y hora; versionen infraestructura y pasos de recreación en el README, con secretos tomados del proveedor.
-- Expongan logs estructurados y una métrica ligada a un escenario; registren la plataforma en un ADR. Conserven el CI en verde.
+- Cierren la evidencia de SonarCloud: falta el paso que invoca el scanner en el workflow y la URL pública del análisis con su Quality Gate. Tener el archivo de configuración no basta.
+- Dejen de editar ADR ya aceptados: cuando cambie una decisión, escriban un ADR nuevo y marquen el anterior como reemplazado. Hoy dos ADR se editaron después de aceptarse sin ese enlace.
+- La URL del sistema y la respuesta del health check quedan pendientes de calificar en esta pasada porque se entregan por Moodle.
 
-El pipeline continúa en verde, pero la propia documentación indica que el despliegue en nube sigue pendiente. Por eso todavía no pueden verificarse una URL, un health check externo ni observabilidad operativa. Las no conformidades incluyen infraestructura como código, pasos reproducibles, logs estructurados, métrica ligada a un escenario, manejo explícito de secretos, estimación de costos, vista de despliegue real y ADR de plataforma. Prioricen un corte mínimo desplegado y documentado antes de ampliar el alcance.
+La entrega cambió de forma notable respecto de la revisión anterior: el proyecto ya tiene infraestructura como código, procedimiento de recreación en el README, pipeline en verde, logs estructurados en JSON, una métrica consultable ligada al escenario de mantenibilidad, el secreto de base de datos tomado de la configuración del proveedor, estimación de costo con supuestos y punto de ruptura, arc42 con una caja por pieza y su ubicación real, restricciones de costo y «sin tarjeta» en la sección 2, y un ADR por cada decisión de plataforma con la alternativa descartada y la capa gratuita verificada. Conserven el CI en verde y cierren las dos no conformidades transversales.

@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_ShareU` |
 | Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-24 |
+| Ultima revision | 2026-10-01 |
 
 ## Estado por entrega
 
@@ -21,7 +21,7 @@
 | 5 | CORTE1 | `19ce719` (2026-09-07T22:41:14-05:00) | 5/12 | 2.7 | si |
 | 6 | S6 | `c389364` (2026-09-13T23:21:08-05:00) | 7/8 | 4.5 (prelim.) | si |
 | 7 | S7 | `29184bc` (2026-09-20T23:34:09-05:00) | 6/10 | 3.4 | si |
-| 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `532fcf6` (2026-09-21T12:26:41-05:00) | 1/12 | 1.3 (prelim.) | si |
+| 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `332f67f` (2026-09-27T23:57:16-05:00) | 7/10 graduables (2 filas de despliegue pendientes) | 3.8 (provisional) | si |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
 | 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
@@ -96,30 +96,34 @@
 | Tabla de aspectos con las ocho columnas del contrato (faltan ID y C4). | S7 | si | |
 | SonarCloud auditable: paso del scanner en el workflow y URL pública del análisis con Quality Gate para el hash revisado. | S7 | si | |
 | Carpeta docs/adr/ con un PDF ajeno a la convención de nombres. | S7 | si | |
-| Publicar URL y health check y completar IaC, observabilidad, costos y ADR de plataforma. | S8 | si | El CI está verde, pero no hay evidencia operativa S8. |
+| Publicar URL y health check y completar IaC, observabilidad, costos y ADR de plataforma. | S8 | sí | La estimación de costo, los logs y la métrica ya están; faltan URL, IaC y ADR de plataforma. |
+| IaC y ADR de plataforma citados pero ausentes: README y arc42 §7 referencian `Dockerfile`, `render.yaml` y ADR 0005–0007 que no existen en el árbol. | S8 | sí | Versionar los archivos o retirar las referencias; la revisión definitiva no los encuentra en `332f67f` ni en la punta actual. |
+| Pipeline de `master` en rojo en el hash calificado (`36379843854`, failure). | S8 | sí | Corregir el workflow para que el commit calificado quede en verde. |
+| PDF fuera de la convención en `docs/adr/` reaparece en el estado calificado. | S8 | sí | `docs/adr/ShareU_Trazabilida.pdf`. |
+| SonarCloud sin run del scanner ni Quality Gate público. | S6 | sí | Falta la evidencia auditable del §8. |
 
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
-| Nombre y visibilidad del repositorio | Cumple | Público y con el nombre de la convención |
-| Estructura mínima | Cumple | Faltan `docs/arc42/` (plantilla en `docs/`) y `docs/c4/` en `0833272` |
-| Convención de nombres de ADR | Cumple | `0001-estilo-arquitectonico.md` |
-| ADR aceptados sin reescribir | Cumple | Creación y ajuste el mismo día, antes del cierre |
-| `docs/ia.md` al día | No cumple | Entradas de S3 sin columna de rechazados |
+| Nombre y visibilidad del repositorio | Cumple | Público y con el nombre de la convención (S8) |
+| Estructura mínima | No cumple | `docs/aspectos.md` y `docs/ia.md` no están en la ruta mínima; los artefactos viven en `docs/aspectos/aspectos.md` y `docs/ia/ia.md` |
+| Convención de nombres de ADR | No cumple | `docs/adr/ShareU_Trazabilida.pdf` no sigue `NNNN-kebab-case.md` |
+| ADR aceptados sin reescribir | Cumple | `0001` solo se movió de carpeta; `0002`–`0004` con una creación cada uno |
+| `docs/ia.md` al día | Cumple | `docs/ia/ia.md` crece en el periodo y registra lo rechazado con motivo (S8) |
 | Sin credenciales en el repositorio ni en el historial | Cumple | `git grep` §9 y `log -S` sin coincidencias |
-| Etiqueta corte-1 (corte 1) | No cumple | Existe pero apunta a un commit posterior al cierre (`a5d08c1`, +7h); fallback admisible `1728495` |
-| Contribución de todos los integrantes | Cumple | Corte 1 (post-cierre, 2026-09-07): los 4 integrantes tienen commits propios (Dayana 6, luiscorredor 2, Nicolas-HH 1, steven 1) |
-| Pipeline en verde | Cumple | Run público exitoso del estado S8: https://github.com/ISCOUTB/AS_202620_ShareU/actions/runs/35632045274; SonarCloud no está acreditado. |
+| Contribución de todos los integrantes | Cumple | Los 4 integrantes aparecen en el historial consolidado por correo (S8) |
+| Pipeline en verde | No cumple | El run del hash calificado `36379843854` termina en `failure`: https://github.com/ISCOUTB/AS_202620_ShareU/actions/runs/36379843854 |
+| Pipeline, SonarCloud y Quality Gate públicos | No cumple | Scanner en el workflow, pero sin run exitoso para el hash ni URL pública con Quality Gate |
 
 ## Contribución por integrante
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
 |---|---|---:|---:|---:|---|
-| Dayana Narvaez Vasquez | daynarvaez | 19 | | | Toda la S3: ADR, esqueleto, README, ia.md |
-| Nicolas Ivan Hernandez Hernandez | Nicolas-HH | 8 | | | S1 y S2 |
-| Steven David Contreras Orozco | steven | 1 | | | Solo 10-ago (README) |
-| Luis Carlos Corredor Altamiranda | sin cuenta observada | 0 | | | No aparece en el historial |
+| Dayana Narvaez Vasquez | daynarvaez | 19 | | | Dos identidades consolidadas (`Dayana` + `daynarvaez`) |
+| Nicolas Ivan Hernandez Hernandez | Nicolas-HH | 11 | | | |
+| Steven David Contreras Orozco | steven | 5 | | | |
+| Luis Carlos Corredor Altamiranda | luiscorredor | 11 | | | Ya aparece en el historial (S8) |
 
 ## Preguntas abiertas para la sustentación
 

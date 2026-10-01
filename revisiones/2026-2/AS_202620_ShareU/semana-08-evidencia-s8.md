@@ -1,57 +1,76 @@
 # Semana 8 · Despliegue reproducible, CI y observabilidad · ShareU
 
-> Revisión preliminar. El estado definitivo se fijará con el último commit de `master` anterior o igual al cierre.
+> Revisión definitiva: hash `332f67f726969e0c73b98dd4705aea6c37e5603b`, última revisión ≤ cierre (2026-09-28T05:00:00Z) en `origin/master`.
 
 | Campo | Valor |
 |---|---|
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_ShareU` |
-| Estado revisado | `532fcf6` en `origin/master` (2026-09-21T12:26:41-05:00) |
+| Estado revisado | `332f67f` en `origin/master` (2026-09-27T23:57:16-05:00) |
 | Cierre | 2026-09-28T05:00:00Z |
-| Comprobación | 2026-09-24T13:15:17Z, sin ejecutar código estudiantil |
+| Revisor | auditoría local sobre clon público efímero |
+| Revisión preliminar sustituida | `532fcf6` (2026-09-21T12:26:41-05:00) |
 
 ## Matriz de la ficha
 
 | Criterio de evaluación | Evidencia técnica | Estado | Observaciones |
 |---|---|---|---|
-| URL del sistema accesible desde fuera de la red de la universidad | No se declara una URL pública. | No cumple | No fue posible una solicitud externa. |
-| Health check consultable | Existe `/health` en código, pero no un endpoint público declarado. | No verificado | Falta respuesta HTTP externa. |
-| Infraestructura como código versionada en el repositorio | No se encontró IaC o descriptor de plataforma. | No cumple | El workflow no es infraestructura de despliegue. |
-| El entorno se puede recrear siguiendo el README | El README cubre ejecución local, no el entorno público. | No cumple | Faltan proveedor, variables y pasos. |
-| Pipeline en verde sobre la rama principal | Run exitoso de `532fcf6`: https://github.com/ISCOUTB/AS_202620_ShareU/actions/runs/35632045274 | Cumple | CI público del estado revisado. |
-| Logs estructurados | No se encontró configuración ni ejemplo de logs estructurados. | No cumple | Falta formato con campos. |
-| Métrica consultable asociada a un escenario de calidad | No existe métrica desplegada ligada a un escenario. | No cumple | Falta consulta y umbral. |
-| Secretos fuera del código y tomados del entorno o del almacén | No hay evidencia positiva del manejo de secretos del despliegue. | No cumple | La ausencia de coincidencias no prueba carga segura. |
-| Estimación de costo mensual con supuestos y punto de ruptura de la capa gratuita | No se encontró estimación verificable. | No cumple | Faltan piezas, supuestos y umbral. |
-| arc42 sección 7 con una caja por pieza y dónde se ejecuta | La sección 7 presenta Uvicorn/FastAPI/SQLite de forma genérica, no un entorno actual. | No cumple | Faltan plataformas y ubicaciones reales. |
-| Límite de costo y restricción de tarjeta recogidos en la sección 2 | No se documentan conjuntamente ambas restricciones. | No cumple | Falta límite operativo verificable. |
-| Un ADR por decisión de plataforma, con alternativa descartada | No existe ADR de plataforma de despliegue. | No cumple | Falta decisión, alternativa y consecuencias. |
+| URL del sistema accesible desde fuera de la red de la universidad | El README (§«Sistema desplegado») declara la tabla Frontend/Backend con marcadores `<URL Vercel>` y `<URL Render>`; `docs/arc42/arc42.md` §7.1 nombra `https://shareu-backend.onrender.com` y `https://shareu-frontend.vercel.app`. | No verificado | Pendiente de calificar: la URL del despliegue se entrega por Moodle y no está disponible en esta pasada. El README (hash `332f67f`) no fija una URL real; §7.1 sí nombra los hosts. |
+| Health check consultable | La ruta existe en código: `app/main.py:84-86` (`@app.get("/health")` → `{"estado": "ok"}`); el §7.3 la declara usada por Docker y Render. | No verificado | Pendiente de calificar: la URL del despliegue se entrega por Moodle y no está disponible en esta pasada. La ruta `/health` está versionada en `app/main.py:84`. |
+| Infraestructura como código versionada en el repositorio | El árbol de `332f67f` no contiene Dockerfile, `docker-compose`, `.tf/.tfvars`, `k8s/`, `helm/`, `fly.toml`, `render.yaml`, railway ni `Procfile`; solo `.github/workflows/tests.yml`. | No cumple | El README y `arc42 §7.2` citan `Dockerfile` y un Blueprint `render.yaml`, pero ninguno existe en el repositorio. `git ls-tree -r 332f67f` no lista archivos de infraestructura. |
+| El entorno se puede recrear siguiendo el README | `README.md` §«Instalación»/§«Ejecución»: venv, `pip install -r requirements.txt`, `uvicorn app.main:app --reload`; §«Ejecución del frontend»: `npm install` y `npm run dev`, con `NEXT_PUBLIC_API_URL`. | Cumple | Procedimiento único y requisitos previos declarados; el documento cubre backend y frontend. La vía Docker que anuncia (`docker compose up --build`) no es reproducible porque no hay `docker-compose`, pero se declara como opcional. |
+| Pipeline en verde sobre la rama principal | Último run sobre `master` para el hash revisado: run `36379843854` (`.github/workflows/tests.yml`, 2026-09-28T04:57:27Z) con conclusión **failure**: https://github.com/ISCOUTB/AS_202620_ShareU/actions/runs/36379843854 | No cumple | El único workflow que corre sobre `master` en el estado calificado falla. Los runs verdes (p. ej. `35632045274`) son anteriores (`532fcf6`, 2026-09-21) y no corresponden al hash elegible. |
+| Logs estructurados | `app/main.py:24` (`class _JsonFormatter`), `app/main.py:49` (`_configurar_logging`) y middleware `app/main.py:76` emiten una línea JSON por solicitud con `request_id`, `method`, `path`, `status_code`, `duration_ms`. | Cumple | Configuración de logging con formato JSON y campos con nombre; el §7.3 cita la misma ruta. |
+| Métrica consultable asociada a un escenario de calidad | `app/administracion/metricas.py`: `obtener_metricas()` expone `total_busquedas` y `tasa_busquedas_sin_resultados` declarando el escenario «usabilidad — búsqueda combinada en ≤3 interacciones»; publicada en `app/administracion/router.py` (`GET /administracion/metricas`). | Cumple | Métrica con escenario explícito, consultable por HTTP; ligada a `docs/aspectos/aspectos.md`. |
+| Secretos fuera del código y tomados del entorno o del almacén | `app/frontend/.env.example` declara `NEXT_PUBLIC_API_URL`; `.github/workflows/tests.yml:25-26` toma `secrets.GITHUB_TOKEN` y `secrets.SONAR_TOKEN`; `app/main.py:63` lee `os.getenv(...)`; el barrido §9 y `git log -S` no encuentran credenciales ni `.env` versionado. | Cumple | Variables de entorno separadas del código y secretos tomados de GitHub/Render/Vercel. El `.env.example` de backend que el README menciona no existe; solo está el del frontend. |
+| Estimación de costo mensual con supuestos y punto de ruptura de la capa gratuita | `docs/costos/estimacion-costo.md`: supuesto de volumen (5–10 usuarios, ~50 búsquedas, <5 h/mes con tráfico), costo por pieza, total US$0/mes y punto de ruptura (la persistencia exige un Postgres gestionado; 750 h de Render). | Cumple | Documento con volumen supuesto, desglose por pieza y umbral de ruptura; no es el catálogo del proveedor. |
+| arc42 sección 7 con una caja por pieza y dónde se ejecuta | `docs/arc42/arc42.md` §7.1: tabla con Backend (Render Free, contenedor), Frontend (Vercel Hobby), Base de datos (SQLite en el contenedor) y CI/CD (GitHub Actions), cada uno con su ubicación. | Cumple | Una caja por pieza con el lugar de ejecución declarado. |
+| Límite de costo y restricción de tarjeta recogidos en la sección 2 | `docs/arc42/arc42.md` §2: «**Restricción de costo:** el despliegue debe mantenerse en **USD 0/mes** y **sin tarjeta de crédito** en ningún proveedor», con enlace a la estimación. | Cumple | Ambas restricciones recogidas juntas como restricción arquitectónica. |
+| Un ADR por decisión de plataforma, con alternativa descartada | `docs/adr/` contiene `0001`–`0004`, todos de arquitectura; el README y §7.2 citan ADR 0005, 0006 y 0007 de plataforma que **no existen** en el árbol. | No cumple | No hay ningún ADR de despliegue versionado; los archivos referenciados (`0005-migracion-frontend-nextjs.md`, `0006-plataforma-backend-despliegue.md`, `0007-plataforma-frontend-despliegue.md`) están ausentes. La propia `docs/ia/ia.md` (entrada 8) los da por redactados. |
 
 ## Matriz transversal (CONTRATO §11)
 
-| Criterio | Estado | Evidencia y observaciones |
-|---|---|---|
-| Repositorio público y con nombre de convención | Cumple | Clonado sin autenticación. |
-| Estructura mínima presente | No cumple | Aspectos e IA están fuera de las rutas contractuales. |
-| Estado calificado identificable | Cumple | Rama, hash, fecha y cierre consignados. |
-| Nombres de ADR según la convención | No cumple | `docs/adr/` contiene un PDF fuera de la convención. |
-| ADR aceptados no reescritos | Cumple | Historial conservado para los ADR Markdown. |
-| `docs/ia.md` al día para la semana | No cumple | No registra actividad S8 en la ruta contractual. |
-| Pipeline, SonarCloud y Quality Gate públicos | No cumple | CI verde, pero sin scanner y Quality Gate público. |
-| Sin credenciales en el repositorio ni en el historial | Cumple | Sin credenciales reales detectadas. |
-| Contribución de todos los integrantes | Cumple | Historial con aportes del equipo. |
+| Criterio | Evidencia | Estado | Observaciones |
+|---|---|---|---|
+| Repositorio en la organización, con el nombre de la convención y público | Clonado sin autenticación desde `https://github.com/ISCOUTB/AS_202620_ShareU.git`. | Cumple | Organización `ISCOUTB`, nombre `AS_202620_ShareU`, visible sin credenciales. |
+| Estructura mínima presente | `README.md`, `docs/arc42/arc42.md`, `docs/adr/`, `docs/c4/` presentes; `docs/aspectos/aspectos.md` y `docs/ia/ia.md` están en rutas distintas de las contractuales. | No cumple | `docs/aspectos.md` y `docs/ia.md` no existen en la ruta mínima; los artefactos sí están, en subcarpetas propias (desviación, no ausencia). |
+| Estado calificado identificable | `origin/master`, `332f67f`, 2026-09-27T23:57:16-05:00, anterior al cierre. | Cumple | Rama principal única, hash y fecha consignados. |
+| Nombres de ADR según la convención | `docs/adr/` contiene `ShareU_Trazabilida.pdf`, que no cumple `NNNN-kebab-case.md`. | No cumple | El PDF ajeno a la convención reaparece en el estado calificado (`698d1ae`, 2026-09-20). |
+| ADR aceptados no reescritos | `git log --follow`: `0001` solo registra movimientos de carpeta (`8148453`, `37beb7a`, 0 inserciones/0 borrados); `0002`, `0003` y `0004` se crean en un único commit cada uno. | Cumple | Ninguna decisión aceptada se reescribe; `0001` conserva su contenido. |
+| `docs/ia.md` al día para la semana | `docs/ia/ia.md` crece dentro del periodo (`b7737be` 2026-09-13, `332f67f` 2026-09-27) y registra la entrada 8 con lo aceptado y lo rechazado con motivo. | Cumple | El archivo está en la ruta desviada `docs/ia/ia.md`; se evalúa donde está. |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | `sonar-project.properties` y el paso `SonarSource/sonarcloud-github-action@v3` existen, pero el run del hash revisado (`36379843854`) termina en **failure**; solo hay un badge en el README. | No cumple | Falta el run exitoso que ejecute el scanner para el hash revisado y la URL pública del análisis con su Quality Gate; la única evidencia es el badge. |
+| Sin credenciales en el repositorio ni en el historial | `git grep` §9 y `git log -S'BEGIN PRIVATE KEY'` sin coincidencias; sin `.env` versionado. | Cumple | El repositorio no expone credenciales. |
+| Contribución de todos los integrantes | `shortlog -sne 332f67f` consolidado por identidad: cuatro grupos, uno por integrante, incluido el que antes no aparecía. | Cumple | Los cuatro integrantes declarados en `EQUIPOS.md` aparecen; Luis Carlos Corredor, antes ausente, ahora contribuye con su cuenta. |
 
 ## Estado global del proyecto (overall · punta actual de la misma rama)
 
-La punta actual coincide con el estado revisado. El CI está en verde, pero no hay despliegue público ni evidencia operativa S8. La documentación además referencia una prueba contractual inexistente y debe reconciliarse con el árbol real.
+Se mira el repositorio entero en la punta actual de `origin/master`, no solo el estado del cierre.
+
+- **Punta actual**: `3950860` (2026-09-28T19:56:57-05:00, «semana 9»).
+- **Commits posteriores al cierre**: `3950860` (semana 9, evidencia S9), `c552056` (`Update layout.tsx`), `0e14454` y `21256e5` (`Update tests.yml`).
+- **Veredicto**: con pendientes.
+
+La punta actual avanza hacia S9 (métrica tras interfaz, ADR 0008/0009, capa de servicios), pero no cierra lo que S8 dejó abierto: ni `Dockerfile`, ni `render.yaml`, ni los ADR 0005–0007 aparecen en el árbol de la punta (el README y §7 siguen apuntando a archivos inexistentes). Tampoco hay una URL real en el README. El workflow de `master` sigue fallando en los runs posteriores al cierre (`36505758458`, `36480560316`, `36479877131`). La documentación de despliegue describe un entorno que el repositorio no contiene.
 
 ## Recuento y nota sugerida
 
-**1 de 12 criterios Cumple.**
+**7 de 10 criterios graduables.**
 
-**Nota sugerida preliminar (propuesta al docente): 1.3 = 1 + 4 × (1/12).** La nota final la fija el profesor en Moodle.
+**Propuesta provisional al docente — `nota = 1 + 4 × (7/10) = 3.8`; quedan 2 filas de despliegue pendientes de calificar y la nota final la fija el profesor en Moodle.**
 
-## No conformidades prioritarias
+No se aplica la fórmula sobre las 12 filas: las dos primeras («URL del sistema accesible desde fuera de la red de la universidad» y «Health check consultable») quedan diferidas por decisión docente.
 
-- Declarar una URL pública y comprobar el health check.
-- Versionar IaC y documentar la recreación del entorno.
-- Completar logs, métrica, secretos, costos, arc42 §7 y ADR de plataforma.
+## No verificado / pendientes
+
+- Deferidas por decisión docente (no se abrieron ni probaron URLs): «URL del sistema accesible desde fuera de la red de la universidad» y «Health check consultable»; ambas dependen de la URL que se entrega por Moodle.
+- Los ADR de plataforma 0005, 0006 y 0007 referenciados por el README y `arc42 §7.2` no están en el repositorio; no se pueden evaluar.
+
+## Hallazgos para la planilla
+
+- El informe preliminar evaluó `532fcf6`; el estado definitivo es `332f67f`, que reescribe README, arc42 §2 y §7, agrega logs JSON, `GET /administracion/metricas`, `docs/costos/estimacion-costo.md` y `sonar-project.properties`.
+- IaC ausente: el README y arc42 §7 describen Dockerfile, `render.yaml` y ADR 0005–0007 que no existen en el árbol (tampoco en la punta actual).
+- El pipeline de `master` en el hash calificado está en rojo (run `36379843854`, failure).
+- La ruta contractual `docs/aspectos.md` / `docs/ia.md` sigue sin usarse (`docs/aspectos/` y `docs/ia/`).
+- Un PDF fuera de la convención (`docs/adr/ShareU_Trazabilida.pdf`) reaparece en `docs/adr/`.
+- SonarCloud no es auditable: scanner presente pero sin run exitoso ni Quality Gate público.
+- Contribución resuelta: los cuatro integrantes aparecen en el historial consolidado.
+- Sin credenciales en HEAD ni en el historial.

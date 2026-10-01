@@ -1,85 +1,75 @@
 # semana-08-evidencia-s8 · Tienda virtual UTB
 
-> Pasada temprana (GitHub Actions, previa al cierre): los hashes y la nota son preliminares y pueden cambiar si el equipo empuja antes del cierre.
+> Revisión definitiva: hash 858e78f9e34ee4e205bdc84982ed8b04bd0dbb0d, última revisión ≤ cierre (2026-09-28T05:00:00Z) en origin/main.
 
 | Campo | Valor |
 |---|---|
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB` |
-| Estado revisado | `69aa82d` en `origin/main` (2026-09-20T09:34:49-05:00) |
+| Estado revisado | `858e78f` en `origin/main` (2026-09-27T15:36:51-05:00) |
 | Cierre | 2026-09-28T05:00:00Z |
-| Revisor | pipeline automatico (GitHub Actions) |
+| Revisor | auditoría local sobre clon público efímero |
 
 ## Matriz de la ficha
 
-| Criterio de evaluacion | Evidencia tecnica | Estado | Observaciones |
+| Criterio de evaluación | Evidencia técnica | Estado | Observaciones |
 |---|---|---|---|
-| URL del sistema accesible desde fuera de la red de la universidad | La entrega no aporta URL del sistema; no se pudo ejecutar curl -sS -o /dev/null -w 'http=%{http_code} tiempo=%{time_total}s'. | No verificado | Sin URL no hay comprobación externa ni hora exacta de verificación que registrar. |
-| Health check consultable | El equipo no declara ninguna ruta de health check en la evidencia aportada. | No verificado | Hace falta la ruta declarada para probar su código de respuesta. |
-| Infraestructura como código versionada en el repositorio | En el árbol de 69aa82d sólo se ven .dockerignore y .github/workflows/tests.yml, y el listado aparece truncado. | No verificado | No se puede afirmar ausencia de Dockerfile, compose, terraform o helm; falta el listado completo (comando de ls-tree\|grep). |
-| El entorno se puede recrear siguiendo el README | README.md no aparece en la parte visible del árbol de 69aa82d (listado truncado). | No verificado | Sin README no se puede comprobar el arranque con un solo comando ni los requisitos previos. |
-| Pipeline en verde sobre la rama principal | No hay runs_ci en la evidencia; lo único visible es el archivo .github/workflows/tests.yml. | No verificado | Haría falta la URL y conclusión del último run sobre main (api.github.com/repos/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/actions/runs). |
-| Logs estructurados | No se aporta archivo de configuración de logging ni línea de ejemplo en formato de campos. | No verificado | Falta el grep de structlog/winston/pino/logback/logging.config y una línea de salida real. |
-| Métrica consultable asociada a un escenario de calidad | No se nombra ninguna métrica ni el escenario de calidad al que corresponde. | No verificado | Una métrica de sistema sin escenario asociado se anotaría como incompleta. |
-| Secretos fuera del código y tomados del entorno o del almacén | El barrido del contrato en 69aa82d sólo devuelve coincidencias dentro de .security-tools (código de terceros) y no se observa .env.example. | No verificado | Falta comprobar variables de entorno declaradas y que el despliegue las tome de la configuración del proveedor. |
-| Estimación de costo mensual con supuestos y punto de ruptura de la capa gratuita | No se aporta documento de estimación de costo mensual. | No verificado | Debe partir del volumen del escenario del equipo y señalar dónde se rompe la capa gratuita. |
-| arc42 sección 7 con una caja por pieza y dónde se ejecuta | No se observa ninguna ruta docs/arc42/07* en la parte visible del árbol de 69aa82d. | No verificado | Falta el despliegue con una caja por pieza y su ubicación de ejecución. |
-| Límite de costo y restricción de tarjeta recogidos en la sección 2 | No se observa ninguna ruta docs/arc42/02* en la parte visible del árbol de 69aa82d. | No verificado | Faltan el límite de costo y, si aplica, la restricción de «sin tarjeta» como restricciones. |
-| Un ADR por decisión de plataforma, con alternativa descartada | No se observan archivos de docs/adr/ correspondientes a esta semana en el árbol visible. | No verificado | Se espera un ADR por pieza decidida, cada uno con su alternativa descartada y capa gratuita verificada. |
+| URL del sistema accesible desde fuera de la red de la universidad | README.md:112 declara `https://tienda-virtual-utb-acme-8eed.vercel.app` y API `https://tienda-utb-api.onrender.com`; docs/despliegue-s8.md:3-10 repite las URLs. No se abrió. | No verificado | Pendiente de calificar: la URL del despliegue se entrega por Moodle y no está disponible en esta pasada. El repositorio sí prueba la declaración de una URL pública y de sus rutas operativas (README.md:112-117). |
+| Health check consultable | Rutas declaradas y presentes en código: `@app.get("/health")` backend/app/main.py:67, `@app.get("/health/ready")` :73 y `@app.get("/metrics")` :91; documentadas en README.md:113-117. No se consultó. | No verificado | Pendiente de calificar: la URL del despliegue se entrega por Moodle y no está disponible en esta pasada. El repositorio prueba que las rutas existen (`backend/app/main.py:67,73,91`) y el workflow `keepalive.yml` golpea `/health`. |
+| Infraestructura como código versionada en el repositorio | `backend/Dockerfile`, `frontend/Dockerfile`, `compose.yaml`, `render.yaml` (blueprint de la API) y `frontend/vercel.json`. Hash `858e78f`. | Cumple | IaC real por pieza, con el entorno local en Compose y el despliegue declarado en `render.yaml`. |
+| El entorno se puede recrear siguiendo el README | README.md:144-165 «Arranque local» (`cp .env.example .env` + `docker compose up --build`), con URLs de arranque y procedimiento de pruebas. | Cumple | El README documenta la recreación con un solo comando y los requisitos previos (Docker + Compose). |
+| Pipeline en verde sobre la rama principal | No se recuperó ningún run de la revisión calificada. El listado de `actions/runs` de `main` (total 384) queda monopolizado por el cron `keepalive.yml` cada 10 min; con las dos llamadas permitidas (per_page=10 y per_page=100) solo se alcanzan los 100 runs más recientes, todos `Keep-alive` success sobre `bc38c9b` (posterior al cierre). | No verificado | Con el presupuesto de API de esta pasada no se alcanzó el run de `858e78f` (ni de `Pruebas` ni de `Keep-alive`), así que no hay conclusión del hash calificado que citar. Haría falta una consulta filtrada por `head_sha=858e78f…` o la vista de Actions. |
+| Logs estructurados | Configuración: `JsonFormatter(logging.Formatter)` en backend/app/shared/logging.py:19 y `configure_logging()` :37; README.md lo describe (`logs JSON`) y la suite de observabilidad lo cubre. | Cumple | Una línea JSON por evento con campos estables (timestamp, level, logger, message + `extra`), sin texto libre. |
+| Métrica consultable asociada a un escenario de calidad | `GET /metrics` (backend/app/main.py:91) alimentado por `ObservabilityMiddleware` (metrics.py:38) y `snapshot()` (metrics.py:91); ligada explícitamente al escenario 4 de disponibilidad (metrics.py:5 y :110-112). | Cumple | La métrica declara su escenario (`docs/escenarios-calidad.md`, escenario 4) y expone conteo, errores 5xx y latencia p50/p95 por ruta. |
+| Secretos fuera del código y tomados del entorno o del almacén | `.env.example` versionado (raíz); `compose.yaml:8` exige `POSTGRES_PASSWORD` vía `.env`; `render.yaml:16-18` declara `DATABASE_URL` con `sync: false` (dashboard, nunca el repo); sin `.env` versionado; barrido de secretos limpio. | Cumple | Las variables están declaradas y separadas del código y las de producción las inyecta la plataforma; `.env` está git-ignorado. |
+| Estimación de costo mensual con supuestos y punto de ruptura de la capa gratuita | docs/costos-despliegue.md:8 «Supuestos de volumen» (≤10 000 req/mes, ≤50 MB), :19 «Costo por pieza en el mes» y :40 «Punto de ruptura de la capa gratuita». | Cumple | Parte del volumen del escenario, costea pieza por pieza y declara el punto de ruptura de cada capa gratuita (Vercel, Render, Neon, UptimeRobot). |
+| arc42 sección 7 con una caja por pieza y dónde se ejecuta | docs/arc42/arc42-template-EN.md:408 «Deployment View»; :456 «Infrastructure Level 2 — public deployment» con un diagrama por pieza (Vercel, Render, Neon, monitor) y tabla de mapeo. | Cumple | Una caja por pieza con dónde se ejecuta; se evalúa en el archivo arc42 único, desviación de ruta admitida por CONTRATO §2. |
+| Límite de costo y restricción de tarjeta recogidos en la sección 2 | docs/arc42/arc42-template-EN.md:119 «Architecture Constraints»; :128 restricción «Zero monthly cost and no credit card required for the deployment». | Cumple | Ambas condiciones están recogidas como restricciones con su justificación. |
+| Un ADR por decisión de plataforma, con alternativa descartada | docs/adr/0003-frontend-vercel.md (Vercel vs contenedor/estático, capa gratuita verificada), 0004-api-contenedor-render.md (Render vs serverless/Fly/Railway, capa gratuita verificada) y 0005-postgres-neon.md (Neon vs Render Postgres/Supabase, capa gratuita verificada). | Cumple | Una decisión de plataforma por pieza (web, API y base de datos), cada una con alternativas descartadas y capa gratuita verificada. |
 
 ## Matriz transversal (CONTRATO §11)
 
 | Criterio | Evidencia | Estado | Observaciones |
 |---|---|---|---|
-| Identidad del repositorio | Repo AS_202620_TIENDA-VIRTUAL-UTB, público (visible: true) y rama principal origin/main, hash 69aa82d. | Cumple | 5 identidades de git que consolidan en 4 personas (dos comparten la misma cuenta de correo); no se atribuye por nombre ni se pudo verificar la membresía en la organización. |
-| Estructura mínima | El árbol visible de 69aa82d está truncado y sólo muestra archivos de sistema y el entorno vendorizado .security-tools. | No verificado | No se observan README.md ni docs/(arc42\|adr\|c4\|aspectos\|ia), pero el truncamiento impide afirmar ausencia. |
-| Convenciones de ADR | No hay archivos de docs/adr/ en la parte visible del árbol del hash calificado. | No verificado | Haría falta el listado de docs/adr/ y el log de cada ADR para comprobar numeración y no reescritura. |
-| La tabla de aspectos | No se observa docs/aspectos.md en el árbol visible de 69aa82d. | No verificado | Falta la tabla con las ocho columnas y la cadena aspecto-requisito-C4-ADR-código-pruebas-evidencia. |
-| Registro de uso de IA | No se observa docs/ia.md en el árbol visible de 69aa82d. | No verificado | Falta el registro con lo aceptado y lo rechazado con su motivo técnico. |
-| README | README.md no aparece en la parte visible del árbol de 69aa82d. | No verificado | Falta el arranque con un solo comando y el procedimiento de prueba. |
-| Pipeline y análisis estático | Existe .github/workflows/tests.yml, pero no hay runs_ci aportados ni URL pública de SonarCloud. | No verificado | Se requiere la URL del run en verde sobre main y el estado del Quality Gate en la organización isco-utb. |
-| Secretos | El barrido sobre 69aa82d no muestra credenciales reales: todas las coincidencias están en .security-tools/python/Lib/site-packages (terceros). | No verificado | Falta confirmar que no hay .env versionado y que las variables llegan desde el entorno o el almacén del proveedor. |
+| Repositorio en la organización, con el nombre de la convención y público | `ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB`; clon anónimo OK en `858e78f`. | Cumple | Nombre con la convención y visibilidad pública verificada por clon sin autenticación. |
+| Estructura mínima presente | `README.md`, `docs/arc42/`, `docs/adr/` (0001-0005), `docs/c4/` (context, container), `docs/aspectos.md`, `docs/ia.md` en `858e78f`. | Cumple | Las seis rutas de CONTRATO §2 están presentes; arc42 vive en un único archivo, no en `docs/arc42/01..12` (desviación de ruta, no ausencia). |
+| Estado calificado identificable | `origin/main` `858e78f` (2026-09-27T15:36:51-05:00) ≤ cierre 2026-09-28T05:00:00Z. | Cumple | Rama principal y hash anterior al cierre registrados. Existe `master` pero es residual (2026-08-09); la principal es `main` (`HEAD -> refs/heads/main`). |
+| Nombres de ADR según la convención | `docs/adr/0001-monolito-modular.md` … `0005-postgres-neon.md`. | Cumple | Los cinco siguen `NNNN-titulo-en-kebab-case.md`. |
+| ADR aceptados no reescritos | `git log --follow`: ADR-0001 creado `f4602a3` (2026-08-21) y editado `e8ae57d` (2026-08-31); ADR-0002 creado `0416e62` (2026-09-15) y editado `befb0bc` (2026-09-27); ADR-0003/0004/0005 creados `9b31d8f` (2026-09-27) y editados `886825d` (2026-09-27) para registrar URLs de producción. Sin ADR sucesor declarado. | No cumple | Se editaron ADR ya aceptados sin declarar reemplazo; ya venía registrado desde S7 (ADR-0001). |
+| `docs/ia.md` al día para la semana | Commits en la ventana S8: `9b31d8f` (2026-09-27) y `befb0bc` (2026-09-27); la última entrada documenta lo descartado con su motivo (p. ej. no reescribir el cuerpo del ADR-0002). | Cumple | El registro creció dentro del periodo y documenta las propuestas descartadas y su razón. |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | `sonar-project.properties` y `.sonarcloud.properties` existen; el job `sonarcloud` en `.github/workflows/tests.yml:44-56` está condicionado a `SONAR_TOKEN != ''`; README.md:119-120 declara una URL pública de SonarCloud, pero `docs/ia.md` (entrada del 2026-09-27) deja `SONAR_TOKEN` como pendiente. Sin run del scanner citado para el hash calificado ni estado de Quality Gate verificable. | No cumple | Faltan la segunda y la tercera evidencia que exige CONTRATO §8 (run que ejecutó el scanner para el hash revisado y URL pública con Quality Gate); falta una de las tres y se documenta como no conformidad. |
+| Sin credenciales en el repositorio ni en el historial | `git grep` §9 sobre `858e78f`: solo coincidencias en un HTML de terceros (`docs/openapi/contratos-tienda-virtual.html`, variables `token` de SVG); sin `.env` versionado; `git log -S'BEGIN PRIVATE KEY'` sin coincidencias. | Cumple | Sin credenciales reales; `.env` está git-ignorado y Compose exige la contraseña por entorno. |
+| Contribución de todos los integrantes | `git shortlog -sne 858e78f` consolidado por correo: Jasen/Jasen Yukopila (12+3 = 15, mismo correo), RAZOR7150 (11), pxtroniwnl (6), shalom-A26 (2). | Cumple | Los cuatro integrantes declarados en EQUIPOS.md tienen commits. |
 
 ## Estado global del proyecto (overall · punta actual de la misma rama)
 
-Mira el repositorio **entero en la punta actual de la misma rama**, no solo la evidencia del cierre: si el equipo subio tarde o corregio entregas anteriores, aqui se nota.
+Mira el repositorio **entero en la punta actual de la misma rama**, no solo la evidencia del cierre: si el equipo subió tarde o corrigió entregas anteriores, aquí se nota.
 
-- **Punta actual revisada**: `69aa82d36bd9f8efac8fc0541d58c07204724e91 2026-09-20T09:34:49-05:00 Evidencia S7, termino de documentacion, actualizacion de diagramas, correccion de errores`
-- **Veredicto**: con pendientes
-- Resumen: Sobre 69aa82d (origin/main, 2026-09-20, anterior al cierre) no se pudo verificar ningún criterio de la ficha: no hay URL, no hay runs de CI y el árbol visible está truncado. Sólo se confirmó la identidad del repositorio, 1 de 20 criterios (0 de 12 en la ficha, 1 de 8 en la transversal).
+- **Punta actual revisada**: `bc38c9bab2830e8f2c855c0e36542d849565955e 2026-09-28T10:22:29-05:00 Corrige la region de Render, que estaba sin verificar, y registra el estado real de las credenciales`
+- **Veredicto**: con pendientes (commits posteriores al cierre)
+- Resumen: la punta de `main` va cuatro commits por delante del hash calificado (`bc38c9b`, `f28563b`, `4665f80`, `4904d94`, todos del 2026-09-28), que consolidan pendientes y declaran infraestructura de producción con Terraform; no cuentan para la matriz, solo como hallazgo. En el estado calificado (`858e78f`) el equipo ya había desplegado el frontend en Vercel, la API en Render y la base en Neon, con IaC, observabilidad, costo y ADR de plataforma; el avance respecto a la preliminar (0/12) es muy grande.
 
 Pendientes que siguen abiertos:
-- URL pública del sistema y health check con hora de verificación.
-- Infraestructura como código versionada y README reproducible.
-- Pipeline en verde sobre main con URL del run y evidencia pública de SonarCloud.
-- Logs estructurados, métrica con escenario y estimación de costo con supuestos.
-- arc42 secciones 2 y 7, ADRs de plataforma, docs/aspectos.md, docs/ia.md y diagramas C4.
-- Retirar del versionado el entorno de terceros .security-tools.
+- Publicar/entregar la URL por Moodle para calificar las dos filas de despliegue (no se probó ninguna URL).
+- Cerrar la evidencia del pipeline: el cron `keepalive.yml` inunda el listado de runs y oculta el run de la revisión; conviene citar el run del hash calificado.
+- SonarCloud: configurar `SONAR_TOKEN`, ejecutar el scanner y publicar el Quality Gate del hash revisado.
+- No reescribir ADR aceptados (0001 y 0002) sin declarar uno sucesor.
 
 ## Recuento y nota sugerida
 
-0 de 12 criterios Cumple.
+**9 de 10 criterios graduables Cumple** (dos filas de despliegue quedan diferidas; la fila de pipeline queda No verificado por límite de recuperación del run).
 
-**Nota sugerida preliminar (propuesta al docente; puede cambiar al cierre): 1.0 = 1 + 4 × (0/12).** La nota final la fija el profesor en Moodle.
+**Propuesta provisional al docente — `nota = 1 + 4 × (9/10) = 4.6`; quedan 2 filas de despliegue pendientes de calificar y la nota final la fija el profesor en Moodle.**
 
 ## No verificado / pendientes
 
-- URL del sistema y su health check: no se aportó URL ni ruta declarada; hace falta ejecutar curl y registrar la hora exacta.
-- Infraestructura como código: el listado del árbol está truncado; hace falta el listado completo o las rutas de Dockerfile/compose/terraform/helm/Procfile.
-- README y estructura docs/: no visibles por el truncamiento; hace falta el listado de rutas de la estructura mínima.
-- Pipeline: sin runs_ci; hace falta la URL y la conclusión del último run sobre la rama principal.
-- Logs estructurados: falta la configuración de logging citada y una línea de ejemplo con campos.
-- Métrica consultable: falta el nombre de la métrica y el escenario de calidad asociado.
-- Secretos: faltan .env.example y las referencias a secretos en el workflow o en la configuración del proveedor.
-- Estimación de costo mensual: falta el documento con volumen supuesto, cálculo por pieza y punto de ruptura.
-- arc42 secciones 2 y 7 y ADRs de plataforma: no visibles en el árbol; faltan las rutas docs/arc42/02*, docs/arc42/07* y docs/adr/.
+- «URL del sistema accesible desde fuera de la red de la universidad» y «Health check consultable»: diferidas por decisión docente; la URL se entrega por Moodle. El repositorio declara las URLs (README.md:112-117) y las rutas existen en código (`backend/app/main.py:67,73,91`), pero no se abrió ninguna.
+- «Pipeline en verde sobre la rama principal»: no se recuperó ningún run de la revisión calificada dentro del presupuesto de API; el cron `keepalive.yml` (cada 10 min) monopoliza el listado y `per_page=100` solo alcanza runs post-cierre.
 
 ## Hallazgos para la planilla
 
-- La entrega no aporta URL del sistema desplegado, así que no hubo nada que abrir desde fuera de la red.
-- No se aportaron runs de CI: lo único visible es el archivo .github/workflows/tests.yml.
-- El árbol visible de 69aa82d está truncado y dominado por un entorno Python vendorizado en .security-tools.
-- Ese entorno versionado incluye miles de archivos de terceros e incluso binarios .exe, lo que infla el repositorio y ensucia el barrido de secretos.
-- No se observan artefactos de S8 (infraestructura como código, health, métrica, costo, ADR de plataforma) en lo visible del árbol.
-- Contribuciones: 5 identidades de git que consolidan en 4 personas, coincidente con los 4 integrantes declarados.
-- El hash calificado 69aa82d es del 2026-09-20, anterior al cierre del 2026-09-28, sin datos de commits posteriores.
-- El barrido de secretos no encontró credenciales reales; todas las coincidencias pertenecen a librerías de terceros.
+- S8 con avance real: despliegue por piezas (Vercel + Render + Neon), IaC (`render.yaml`, `compose.yaml`, Dockerfiles, `frontend/vercel.json`), logs JSON, `/metrics` con escenario 4, costo con supuestos y ADR 0003/0004/0005.
+- Las dos filas de despliegue quedan diferidas (URL por Moodle); no se abrió ninguna URL.
+- Pipeline no verificable con el presupuesto de API: el cron `keepalive.yml` inunda `actions/runs` (384 runs; los 100 más recientes son todos keep-alive). Citar el run del hash calificado.
+- Transversal: ADR-0001 (`e8ae57d`) y ADR-0002 (`befb0bc`) reescritos tras aceptarse, sin sucesor.
+- Sin evidencia verificable de SonarCloud (job condicionado a `SONAR_TOKEN`); falta el Quality Gate público.
+- La punta de `main` tiene cuatro commits posteriores al cierre (2026-09-28) que no entran en la matriz.

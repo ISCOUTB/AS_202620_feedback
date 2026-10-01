@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant` |
 | Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo |
 | URL del sistema desplegado | — |
-| Ultima revision | 2026-09-23 |
+| Ultima revision | 2026-10-01 |
 
 ## Estado por entrega
 
@@ -21,7 +21,7 @@
 | 5 | CORTE1 | `a3f4d82` (2026-09-06T04:13:11-05:00) | 9/12 | no aplica | si |
 | 6 | S6 | `c0c3adb` (2026-09-13T20:01:35-05:00) | 7/8 | 4.5 (prelim.) | si |
 | 7 | S7 | `0a12f0c` (2026-09-17T15:27:54-05:00) | 10/10 | 5.0 | si |
-| 8 | S8 | `f818f75` (2026-09-22T09:20:59-05:00) | 4/12 | 2.3 (prelim.) | si |
+| 8 | S8 | `4b07242` en `origin/main` (2026-09-27T23:03:53-05:00) | 10/10 | 5.0 (propuesta; 2 filas de despliegue diferidas) | si |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
 | 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
 | 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
@@ -119,18 +119,24 @@
 | Escribir un ADR por decisión de plataforma con alternativa descartada y capa gratuita verificada. | S8 | si | |
 | Declarar variables de entorno en .env.example y tomar sus valores del almacén del proveedor. | S8 | si | |
 | Aportar el contenido de docs/aspectos.md y docs/ia.md para verificar su trazabilidad. | S8 | si | |
+| URL y health check diferidos: la URL se entrega por Moodle y no se probó; el repo declara `http://157.137.215.57:8000` y `/health` (`backend/app/main.py:48`). | S8 (definitiva) | si | Pendiente solo de entregar la URL en Moodle. |
+| `.env.example` inexistente: `.gitignore` lo excluye y README.md:105 y arc42 §7.3 lo citan (enlace roto). | S8 (definitiva) | si | Versionar un `.env.example` sin valores reales. |
+| ADR-0001 aceptado reescrito en `4dd3925` (2026-08-29) y `42c5b03` (2026-09-06) sin ADR sucesor. | S8 (definitiva) | si | No editar ADR aceptados; si cambia la decisión, crear uno nuevo y marcar el anterior como reemplazado. |
+| `docs/ia.md` sin commits en la ventana S8 (último `7b32b3f`, 2026-09-16). | S8 (definitiva) | si | Registrar el uso de IA del periodo. |
+| Sin SonarCloud: ni configuración, ni run del scanner, ni URL pública con Quality Gate. | S8 (definitiva) | si | Añadir el análisis estático auditable (CONTRATO §8). |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
-| Nombre y visibilidad del repositorio | Cumple | Clon anónimo OK en S3 (`46257a03`) |
-| Estructura mínima | Cumple | Las seis rutas presentes en `46257a03` |
-| Convención de nombres de ADR | Cumple | `docs/adr/0001.md` no sigue el kebab-case |
-| ADR aceptados sin reescribir | No verificado | Un solo commit sobre el ADR (`decaa36`) |
-| `docs/ia.md` al día | Cumple | Entrada 03 (08-23) sin aceptado/rechazado |
-| Sin credenciales en el repositorio ni en el historial | Cumple | `git grep` §9 y `.env` sin coincidencias |
-| Contribución de todos los integrantes | Cumple | 4 identidades consolidadas = 4 integrantes |
-| Pipeline en verde | No cumple | `.github/workflows/ci.yml` configurado el 2026-09-06; run success sobre `a3f4d826` antes del cierre |
+| Nombre y visibilidad del repositorio | Cumple | Clon anónimo OK en S8 (`4b07242`) |
+| Estructura mínima | Cumple | Las seis rutas presentes en `4b07242` |
+| Convención de nombres de ADR | Cumple | `docs/adr/0001`–`0004` en kebab-case; filtro de §4 sin residuos |
+| ADR aceptados sin reescribir | No cumple | ADR-0001 aceptado y editado en `4dd3925` (2026-08-29) y `42c5b03` (2026-09-06) sin ADR sucesor |
+| `docs/ia.md` al día | No cumple | Sin commits en la ventana S8; último sobre el archivo `7b32b3f` (2026-09-16) |
+| Sin credenciales en el repositorio ni en el historial | Cumple | `git grep` §9 limpio sobre `4b07242`; sin `.env` versionado; pickaxe coincide solo con la regex documentada en `correcciones.md` |
+| Contribución de todos los integrantes | Cumple | 4 identidades consolidadas = 4 integrantes (val 42, dei0811 31, Luis Mendoza/luis20072002 28, mark 3) |
+| Pipeline en verde | Cumple | Run CI `36376147005` y CD `36376186792` success sobre `4b07242` en `main` (2026-09-28T04:04Z) |
+| SonarCloud y Quality Gate públicos | No cumple | Sin `sonar-project.properties`, sin scanner en el workflow y sin URL pública con Quality Gate |
 | Etiqueta corte-1 (corte 1) | No cumple | No existe; solo `corrections-s4` |
 | ADR aceptados sin reescribir (corte 1) | No cumple | El commit `42c5b03` edita el ADR-0001 aceptado en vez de crear uno nuevo o marcarlo reemplazado |
 
