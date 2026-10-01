@@ -27,7 +27,7 @@
 
 | Hallazgo | Primera vez que se detectó | Sigue abierto | Qué se le dijo al equipo |
 |---|---|---|---|
-| `docs/ia.md` vacío (0 bytes) | S1 | sí | Ver feedback S1/S2 y S3 |
+| `docs/ia.md` vacío (0 bytes) en S1 | S1 | no (resuelto: tiene contenido desde 2026-08-30 y crece hasta 2026-09-20) | Ver feedback S1/S2 y S3 |
 | Sin ficha del problema | S1 | sí | Ver feedback S1/S2 |
 | Sin tensiones de calidad | S1 | sí | Ver feedback S1/S2 |
 | Historial con cuentas sin atribuir (2 identidades para 3 integrantes; en S3 solo una cuenta firma) | S1 | sí | Ver feedback S1/S2 y S3 |
@@ -43,7 +43,7 @@
 | Cadena de trazabilidad completa en docs/aspectos.md | S5 | sí | Se rompe sistemáticamente en Pruebas y Evidencia. |
 | Prueba en verde en pipeline | S5 | sí (empeoró: confirmado en rojo) | Los 3 runs de CI disponibles, incluido el del commit calificado, están en `failure`. |
 | Medición reproducible contra umbral | S5 | sí | Sin ejecutar. |
-| Registro de IA con motivo técnico verificable | S5 | sí | `docs/ia.md` no tiene entradas posteriores al 2026-08-30. |
+| Registro de IA con motivo técnico verificable | S5 | no (resuelto: el registro crece hasta 2026-09-20 y documenta rechazos con su motivo) | El informe S7 leyó el registro: descarte de Mermaid/.svg, no elección de Hexagonal y OpenAPI sobre AsyncAPI, cada uno con su motivo. |
 | Confirmar etiqueta corte-1 | S5 | sí (se usó un commit con ese mensaje, no una etiqueta) | Se les explicó la diferencia entre `git commit -m "corte-1"` y `git tag corte-1`; deben crear la etiqueta real. |
 | Angel Fabian Gutierrez Gomez sin commits identificables | S5 | sí | Confirmado en el commit calificado: `git shortlog` solo muestra RobotDRMX, Rodrigo Vazquez Rico y dgarza2705 (Diego Rosales Garza, ahora identificado por su correo institucional). |
 | correcciones.md se añadió en el commit b28e068 (2026-09-07T14:57:28-06:00), posterior al cierre; no se considera en la matriz S5. | S5 | no (resuelto tarde) | — |
@@ -60,7 +60,7 @@
 | ADR de estrategia de integración síncrona o asíncrona con alternativa descartada | S7 | no (resuelto) | ADR-0003 descarta AsyncAPI frente a OpenAPI 3.1. |
 | arc42 sección 6 con los flujos de interacción | S7 | no (resuelto) | Cuatro escenarios con diagrama y pasos. |
 | C4 nivel 2 con protocolo y formato en cada flecha | S7 | no (resuelto) | Relaciones etiquetadas con protocolo y formato. |
-| Contenido defendible de docs/aspectos.md y docs/ia.md | S7 | sí (parcial) | `aspectos.md` releído con las ocho columnas; sus celdas Pruebas/Evidencia siguen "Pendiente" y `docs/ia.md` sigue vacío. |
+| Contenido defendible de docs/aspectos.md y docs/ia.md | S7 | sí (parcial) | `aspectos.md` releído con las ocho columnas; sus celdas Pruebas/Evidencia siguen "Pendiente". `docs/ia.md` se leyó y documenta los rechazos con su motivo. |
 | Runs de CI y análisis público de SonarCloud con estado del Quality Gate | S7 | sí | Sin SonarCloud en el repositorio: fila transversal en No cumple. |
 | Mapa de contextos con relaciones tipificadas en formato revisable. | S6 | si | |
 | Tabla módulo a datos con dueño único y su contraste con las entidades del código. | S6 | si | |
@@ -92,7 +92,7 @@
 | Estructura mínima | Cumple | Las seis rutas; arc42 en plantilla única y C4 solo PNG (anotado desde S2). |
 | Convención de nombres de ADR | Cumple | `0001-estilo-arquitectonico-propuesto.md` conforme. |
 | ADR aceptados sin reescribir | Cumple | Un solo commit de creación (`aa16382`). |
-| `docs/ia.md` al día | No cumple | Vacío (0 bytes); último commit 2026-08-07. |
+| `docs/ia.md` al día | Cumple | 7 commits entre 2026-08-07 y 2026-09-20 (afae3be); el registro documenta usos y rechazos con su motivo. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Coincidencias solo en tipos (`password: string`) y badge placeholder del boilerplate. |
 | Contribución de todos los integrantes | No cumple | Confirmado hasta el corte 1: `RobotDRMX` 12 commits (86%), `dgarza2705`/Diego Rosales Garza 1, Rodrigo Vazquez Rico 1; Angel Fabian Gutierrez Gomez sigue sin ningún commit identificable en todo el historial. |
 | Pipeline en verde | No cumple | `.github/workflows/ci.yml` existe y corrió; los 3 runs disponibles vía API están en `failure`, incluido el commit calificado del corte 1. |
@@ -109,6 +109,6 @@
 
 - ¿A quién pertenece `RobotDRMX` y por qué `YOOUYII` nunca aparece?
 - ¿Quién escribió el ADR y el esqueleto si solo una cuenta firma en S3?
-- ¿Cuándo se llenará `docs/ia.md` (usos reales y rechazos)?
+- ¿Qué criterios aplicaron para aceptar o rechazar cada uso listado en `docs/ia.md`?
 - ¿Cuándo se escribirá la sección 4 de arc42 en su sitio (hoy está vacía y la estrategia vive en el ADR)?
 - ¿Publicarán el C4 como código para reparar el enlace roto a `docs/c4/contexto.md`?

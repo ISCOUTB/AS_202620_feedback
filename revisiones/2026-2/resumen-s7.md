@@ -2,15 +2,25 @@
 
 Consolidación local de los 23 informes definitivos auditados. Sin publicación remota.
 
+**Corrección posterior.** Ocho equipos fueron re-leídos en el repositorio, en el hash calificado,
+porque la pasada automática había dejado en «No verificado» 37 filas cuyo artefacto sí estaba
+presente y era legible con `git show`, lo que `CONTRATO.md` §13 prohíbe. De esas 37 filas, 31
+pasaron a Cumple y 6 a No cumple. Simultáneamente se auditó el defecto espejo: nueve filas
+publicadas como «Cumple» cuya observación admitía no haber leído el artefacto. Se leyeron y sus
+observaciones y evidencias quedaron respaldadas con `ruta:línea`; ninguna cambió de estado.
+
+Ninguna revisión calificada cambió: los 23 hashes son la última revisión ≤ cierre
+(`2026-09-21T05:00:00Z`), verificado con `git rev-list -1 --before` y con la API pública.
+
 Nota sugerida = 1 + 4 × (n/m) sobre la matriz de la ficha, **propuesta al docente**; la nota final se fija en Moodle.
 
 | Equipo | Repo | Hash | n/m | Nota sugerida |
 |---|---|---|---|---|
-| AudioShare | `AS_202620_AudioShare` | `0ada095` | 5/10 | 3.0 |
-| Clubs UTB | `AS_202620_Clubs_UTB` | `dc211b8` | 6/10 | 3.4 |
-| DinamikUTB | `AS_202620_DinamikUTB` | `5e6fa73` | 7/10 | 3.8 |
-| Drift | `AS_202620_Drift` | `9334a03` | 5/10 | 3.0 |
-| ElMapita | `AS_202620_ElMapita` | `afae3be` | 4/10 | 2.6 |
+| AudioShare | `AS_202620_AudioShare` | `0ada095` | 9/10 | 4.6 |
+| Clubs UTB | `AS_202620_Clubs_UTB` | `dc211b8` | 8/10 | 4.2 |
+| DinamikUTB | `AS_202620_DinamikUTB` | `5e6fa73` | 10/10 | 5.0 |
+| Drift | `AS_202620_Drift` | `9334a03` | 10/10 | 5.0 |
+| ElMapita | `AS_202620_ElMapita` | `afae3be` | 8/10 | 4.2 |
 | EnAgenda | `AS_202620_EnAgenda` | `849ee8c` | 4/10 | 2.6 |
 | GimnasioUTB | `AS_202620_GimnasioUTB` | `0e3aeb5` | 8/10 | 4.2 |
 | InvenTrack | `AS_202620_InvenTrack` | `f10fd01` | 9/10 | 4.6 |
@@ -22,10 +32,51 @@ Nota sugerida = 1 + 4 × (n/m) sobre la matriz de la ficha, **propuesta al docen
 | Recobra | `AS_202620_Recobra` | `8f25313` | 10/10 | 5.0 |
 | ShareU | `AS_202620_ShareU` | `29184bc` | 6/10 | 3.4 |
 | Calificación automática | `AS_202620_Sistema-de-calificacion-automatica` | `2269ca5` | 10/10 | 5.0 |
-| TAIA | `AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant` | `0a12f0c` | 6/10 | 3.4 |
+| TAIA | `AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant` | `0a12f0c` | 10/10 | 5.0 |
 | Tienda virtual UTB | `AS_202620_TIENDA-VIRTUAL-UTB` | `69aa82d` | 8/10 | 4.2 |
 | TRACTAR | `AS_202620_TRACTAR` | `7cfb872` | 2/10 | 1.8 |
-| Verifacts | `AS_202620_Verifacts` | `635f9b7` | 8/10 | 4.2 |
+| Verifacts | `AS_202620_Verifacts` | `635f9b7` | 10/10 | 5.0 |
 | XALD | `AS_202620_XALD` | `62a0d15` | 9/10 | 4.6 |
 | mapsutb | `AS_202620_mapsutb` | `5e2fdd5` | 10/10 | 5.0 |
 | uniTeam | `AS_202620_uniTeam` | `1ea4aba` | 9/10 | 4.6 |
+
+## Cambios de la corrección
+
+| Equipo | Antes | Ahora | Pasaron a Cumple | Quedaron en No cumple |
+|---|---|---|---|---|
+| AudioShare | 5/10 · 3.0 | 9/10 · 4.6 | rutas y esquemas, correspondencia, versión e historial, pipeline, registro de IA, análisis estático | — |
+| Clubs UTB | 6/10 · 3.4 | 8/10 · 4.2 | correspondencia, pipeline, registro de IA | C4 nivel 2, tabla de aspectos |
+| DinamikUTB | 7/10 · 3.8 | 10/10 · 5.0 | versión e historial, arc42 §6, C4 nivel 2 | tabla de aspectos |
+| Drift | 5/10 · 3.0 | 10/10 · 5.0 | correspondencia, pipeline, fallo controlado, arc42 §6, C4 nivel 2, tabla de aspectos | — |
+| ElMapita | 4/10 · 2.6 | 8/10 · 4.2 | rutas y esquemas, pipeline, arc42 §6, C4 nivel 2, tabla de aspectos | análisis estático |
+| TAIA | 6/10 · 3.4 | 10/10 · 5.0 | versión e historial, pipeline, fallo controlado, C4 nivel 2, tabla de aspectos | análisis estático |
+| Verifacts | 8/10 · 4.2 | 10/10 · 5.0 | versión e historial, pipeline, análisis estático | — |
+| LostVault | 7/10 · 3.8 | 7/10 · 3.8 | — | C4 nivel 2 |
+
+Promedio del curso: 4.0 → 4.4.
+
+Las filas «No cumple» que ya estaban publicadas no se tocaron: se sostienen con evidencia (TRACTAR
+sin contrato alguno; ElMapita con deriva de rutas `/api/api/v1`; EnAgenda con el ADR de integración
+posterior al cierre; AudioShare con marcadores de conflicto de fusión en el commit calificado).
+
+## Interpretación de criterio fijada
+
+«C4 nivel 2 con protocolo y formato en cada flecha»: las flechas **persona→contenedor** se toleran
+(describen interacción humana). Se exige protocolo y formato en toda flecha que cruce un límite
+tecnológico. Aplicado de forma uniforme; es lo que separa el Cumple de DinamikUTB (`HTTP/JSON`,
+`SQL`) del No cumple de Clubs_UTB (`Valida tokens de sesión`, sin protocolo ni formato) y de
+LostVault (diagrama en imagen, flechas de cruce sin formato).
+
+## Pendiente de decisión docente
+
+- `informes_definitivos()` en `scripts/cron/evaluar-semana.py` cuenta un informe como definitivo
+  solo si contiene el literal `Revision automatica definitiva`. Hoy lo conservan 9 de 23 informes
+  S7, porque la auditoría local del 24-sep y esta corrección reescribieron ese encabezado. La
+  guarda de semana cerrada queda inoperante: un pase definitivo reprocesaría S7 y pisaría estas
+  correcciones. Defecto preexistente, no corregido aquí.
+- Faltan filas estándar de §11 en cuatro informes: «ADR aceptados no reescritos» (Verifacts, TAIA,
+  ElMapita, DinamikUTB), «Estado calificado identificable» (Verifacts, TAIA, ElMapita),
+  «Contribución de todos los integrantes» (los cuatro) y «Sin credenciales» (DinamikUTB).
+- Con la lectura real, dos ADR aceptados fueron editados sin reemplazo declarado: Verifacts
+  ADR-0001 (`73beb28`, 2026-09-07) y TAIA ADR-0001 (`42c5b03`, 2026-09-06). Son filas
+  transversales: no cambian la nota, pero son no conformidades de §11 sin registrar.

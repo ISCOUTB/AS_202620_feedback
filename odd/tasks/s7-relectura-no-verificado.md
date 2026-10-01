@@ -3,9 +3,9 @@
 ## Objective
 
 Re-decide every S7 row that was published as "No verificado" without reading an artifact that
-was present and readable in the student repository at the graded revision, then recompute the
-affected teams' counts and suggested scores. Verify, for every team touched, that the graded
-revision really is the last commit at or before the S7 cutoff.
+was present and readable at the graded revision, then recompute the affected teams' counts and
+suggested scores. Verify, for every team touched, that the graded revision really is the last
+commit at or before the S7 cutoff.
 
 ## Problem and rationale
 
@@ -16,47 +16,49 @@ contenido" instead of fetching it with `git show <hash>:<path>`. That contradict
 §13: "No se usa para evitar decidir: si la evidencia está y se puede leer, hay que pronunciarse",
 and §12: "El repositorio es la entrega".
 
-A second, independent defect surfaced while mapping: three S7 reports were published with
-pre-cutoff revisions (`TAIA` `0a12f0c` 17-sep, `Verifacts` `635f9b7` 16-sep, `TRACTAR` `7cfb872`
-31-ago, against the 21-sep cutoff). Their graded state may not be the state at the cutoff, so no
-row can be corrected before the eligible revision is confirmed.
+The mirror defect appeared during verification: nine rows published as "Cumple" whose own
+observation admitted that the artifact had not been read. That inflates scores instead of
+lowering them, and it was corrected in the same pass.
 
 ## Scope and constraints
 
 - Cutoff: `2026-09-21T05:00:00Z`. Eligible revision: last commit at or before the cutoff on
   `origin/master` or `origin/main`. Never tags. Never another branch.
-- Rows to correct (type A: repo-readable artifact that was not read), 8 teams, 37 rows:
+- Rows corrected (type A: repo-readable artifact that was not read), 8 teams, 37 rows:
   AudioShare 6, Drift 6, ElMapita 6, TAIA 6, Clubs_UTB 5, DinamikUTB 4, Verifacts 3, LostVault 1.
-- Type B rows (Actions run URL, public SonarCloud URL and Quality Gate, sustentación) are out of
-  scope. At most one unauthenticated `actions/runs` call per team may corroborate them; never use
-  an ambient authenticated session, and on 403 continue without the API and record it.
-- The "No cumple" rows already published stay: evidence supports them. Rows of the 15 teams with
-  no type A rows are not touched.
-- Ephemeral clones under `C:\Users\jairo\AppData\Local\Temp\opencode\`, deleted when the team is
-  done. Never execute student code. Never write to student repositories.
-- `resumen-s7.md` and `estado-s7.json` are updated by the orchestrator, never by writers.
-- TDD: not applicable (static academic review artifacts). Checks are structural and content-based.
+  Outcome: 31 became Cumple, 6 became No cumple.
+- Type B rows (Actions run URL, public SonarCloud URL and Quality Gate, sustentación) stayed out
+  of scope. At most one unauthenticated `actions/runs` call per team was used to corroborate.
+- The published "No cumple" rows were kept: evidence supports them.
+- Ephemeral clones only, under the temp directory, deleted per team. No student code was executed.
+- `resumen-s7.md` and `estado-s7.json` were updated by the orchestrator, never by writers.
+- TDD: not applicable (static academic review artifacts).
 - Delivery: local commits only. No push; publication is the instructor's decision.
+
+## Criterion interpretation fixed during this work
+
+"C4 nivel 2 con protocolo y formato en cada flecha": arrows from a **person to a container** are
+tolerated (they describe human interaction). Protocol and format are required on every arrow that
+crosses a technological boundary (container to container, container to external system, container
+to database). Applied uniformly to AudioShare, ElMapita, Drift, DinamikUTB, Clubs_UTB and
+LostVault.
 
 ## Tasks
 
-- [ ] T1 — Drift (6 rows) and ElMapita (6 rows).
-  - Route: delegated writer; writer trigger fires (report, planilla and feedback files per team).
-  - Acceptance: every type A row re-decided with `hash:ruta` citation, count recomputed, report
-    marked as a post-cutoff updated revision, eligible revision confirmed.
-- [ ] T2 — AudioShare (6 rows) and TAIA (6 rows).
-  - Acceptance: same, plus TAIA's eligible revision resolved and corrected if stale.
-- [ ] T3 — Clubs_UTB (5), DinamikUTB (4), Verifacts (3), LostVault (1).
-  - Acceptance: same, plus Verifacts' eligible revision resolved and corrected if stale.
-- [ ] T4 — Freshness audit of the 15 untouched teams.
-  - Route: delegated; mapping trigger fires (23 repositories).
-  - Acceptance: per team, published hash versus eligible revision, with the list of teams whose
-    graded state must be re-evaluated before publishing.
-- [ ] T5 — Consolidate `resumen-s7.md` and `estado-s7.json`.
-  - Route: orchestrator; single writer for the shared files.
-- [ ] T6 — Independent verification and local commit.
-  - Acceptance: freshly re-read rows match the repositories, counts and scores reconcile, no
-    personal emails, `git diff --check` clean.
+- [x] T1 — Drift (6 rows) and ElMapita (6 rows). Drift 5/10 → 10/10; ElMapita 4/10 → 8/10.
+- [x] T2 — AudioShare (6 rows) and TAIA (6 rows). AudioShare 5/10 → 9/10; TAIA 6/10 → 10/10.
+- [x] T3 — Clubs_UTB (5), DinamikUTB (4), Verifacts (3), LostVault (1). Clubs_UTB 6/10 → 8/10;
+      DinamikUTB 7/10 → 10/10; Verifacts 8/10 → 10/10; LostVault stays 7/10.
+- [x] T4 — Freshness audit of the 15 untouched teams. All 15 published hashes equal the eligible
+      revision; no graded state needed re-evaluation. The earlier suspicion about TAIA, Verifacts
+      and TRACTAR was wrong: their revision dates are old because the teams did not push, not
+      because the reports were stale.
+- [x] T5 — Consolidate `resumen-s7.md` and `estado-s7.json`.
+- [x] T6 — Independent verification. Found the mirror defect and a leaked student name.
+- [x] T7 — Re-read the nine "Cumple" rows that admitted not reading (IA records in ElMapita,
+      Drift and DinamikUTB; Verifacts and TAIA ADR rows; TAIA contract correspondence; ElMapita
+      wording). No state changed; every observation is now backed by `ruta:línea`.
+- [x] T8 — Hygiene and commit.
 
 ## Checks
 
@@ -68,13 +70,42 @@ row can be corrected before the eligible revision is confirmed.
 
 ## Progress
 
-- Mapping complete: 37 type A rows across 8 teams; 13 reports still carry raw pipeline output.
-- Defect found: TAIA, Verifacts and TRACTAR were published with pre-cutoff revisions.
+- Mapping complete: 37 type A rows across 8 teams; 13 reports still carried raw pipeline output.
+- All 37 rows re-decided and 9 mirror rows re-read.
+- Counts recomputed from the published matrices by script, not by hand: 8 teams moved, 7 upward.
+  Class average 4.0 → 4.4. No graded revision changed for any of the 23 teams.
 
 ## Verification evidence
 
-Pending.
+- Orchestrator spot checks with its own clones: Drift `backend/tests/test_contract.py` is
+  schemathesis against the OpenAPI contract and `ci.yml` boots the API on the contract port before
+  running it; TAIA `_assert_contract_matches` compares `paths`/`components`/`info` and ships
+  `test_incompatible_change_is_detected`; AudioShare `npm run verify` → `vitest run` executes
+  `contract.test.ts` and `ci.yml` has the SonarCloud step; DinamikUTB and Clubs_UTB C4 diagrams
+  read line by line.
+- Eligible revision confirmed by `git rev-list -1 --before=2026-09-21T05:00:00Z` for Drift,
+  ElMapita, AudioShare, TAIA, Verifacts, LostVault, Clubs_UTB, DinamikUTB, uniTeam, Recobra,
+  CampusMarket and TRACTAR.
+- Independent verifier: recomputed all 23 matrices from the files (no discrepancy against
+  `resumen-s7.md`), checked report/planilla/feedback coherence, and re-read four rows against the
+  repositories (Clubs_UTB pipeline and correspondence, DinamikUTB arc42 §6, Verifacts pipeline,
+  ElMapita arc42 §6): all four sustained.
+- Hygiene: email scan clean, `git diff --check` clean, `.atl/` untracked and not staged.
+
+## Known defects found, not fixed here
+
+- `informes_definitivos()` in `scripts/cron/evaluar-semana.py` counts a report as definitive only
+  when it contains the literal `Revision automatica definitiva`. Only 9 of 23 S7 reports still
+  contain it, so the closed-week guard no longer holds and a definitive pass would reprocess the
+  week and overwrite this correction. Pre-existing; the fix belongs to the instructor.
+- Four reports are missing standard §11 rows: "ADR aceptados no reescritos" (Verifacts, TAIA,
+  ElMapita, DinamikUTB), "Estado calificado identificable" (Verifacts, TAIA, ElMapita),
+  "Contribución de todos los integrantes" (all four) and "Sin credenciales" (DinamikUTB).
+- Two accepted ADRs were edited without a declared replacement: Verifacts ADR-0001 (`73beb28`) and
+  TAIA ADR-0001 (`42c5b03`). Transversal only; no score impact, not registered anywhere.
+- The S7 pipeline still truncates its evidence digest, so the same defect will recur in later
+  weeks unless the prompt requires `git show` for anything outside the dump.
 
 ## Next step
 
-Run T1.
+Report the corrected scoreboard and the decision list; await the publication decision.

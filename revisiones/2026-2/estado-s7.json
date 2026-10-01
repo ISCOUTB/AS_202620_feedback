@@ -1,1 +1,1 @@
-{"modo":"definitive","ts":"2026-09-24T19:10:43.4699986Z","equipos":23,"lote":"todos","tamano_lote":23,"origen":"consolidacion-local","publicado":false}
+{"modo":"definitive","ts":"2026-09-24T19:10:43.4699986Z","equipos":23,"lote":"todos","tamano_lote":23,"origen":"consolidacion-local","publicado":false,"relectura":{"fecha":"2026-09-30","equipos":8,"filas":37,"motivo":"CONTRATO §13: filas en No verificado cuyo artefacto estaba en el árbol y era legible"}}

@@ -3,13 +3,13 @@
 ## Semana 1
 
 - Está bien: repositorio con el nombre correcto y público; estructura montada desde el inicio (arc42 con plantilla, adr, c4); `docs/aspectos.md` con la tabla de 8 columnas y el aspecto A-01 bien descrito.
-- Falta: la ficha del problema (usuarios, alcance), las dos tensiones de calidad, y contenido en `docs/ia.md` (está vacío).
+- Falta: la ficha del problema (usuarios, alcance), las dos tensiones de calidad, y contenido en `docs/ia.md` (estaba vacío en esa entrega).
 - Corregir antes del corte 1: crear la ficha, declarar las tensiones, llenar `docs/ia.md`, y que los tres integrantes firmen commits (el historial solo muestra una cuenta).
 
 ## Semana 2
 
 - Está bien: secciones 1, 2 y 3 redactadas con cuidado (restricciones clasificadas y separadas de requisitos, interesados con preocupaciones); 4 escenarios con seis partes, medidas numéricas con carga y evidencia prevista de medición; árbol de utilidad con impacto/riesgo; enlaces desde `docs/aspectos.md` a los escenarios.
-- Falta: `docs/ia.md` sigue vacío; el C4 solo existe como imagen y el enlace a `docs/c4/contexto.md` está roto; la ficha del problema y las tensiones siguen pendientes; en la semana solo hubo un commit de una persona.
+- Falta: `docs/ia.md` seguía vacío en esa entrega; el C4 solo existe como imagen y el enlace a `docs/c4/contexto.md` está roto; la ficha del problema y las tensiones siguen pendientes; en la semana solo hubo un commit de una persona.
 - Corregir antes del corte 1: publicar el diagrama de contexto como código con leyenda, crear la ficha con las dos tensiones, llenar `docs/ia.md` y repartir la contribución entre los tres.
 
 ## Semana 3
@@ -20,7 +20,7 @@ Qué corregir antes del corte 1 (semana 5):
 1. La sección 4 de arc42 está vacía (solo el encabezado): trasladen allí la estrategia con tácticas ligadas a los escenarios; que no viva solo en el ADR y la matriz.
 2. La matriz comparativa (bien ponderada) debe comparar contra los escenarios EC-01…EC-04 del árbol de utilidad, no contra criterios propios.
 3. Hagan alcanzable el ADR: la columna ADR de `docs/aspectos.md` sigue «Pendiente» y los escenarios no lo enlazan.
-4. `docs/ia.md` sigue vacío: registren usos reales y rechazos con motivo.
+4. `docs/ia.md` seguía vacío en esa entrega: registren usos reales y rechazos con motivo.
 5. Repartan la contribución: en S3 solo una cuenta firma commits; procuren que todos aparezcan en el historial.
 6. Evidencien el verde de las pruebas existentes con un pipeline o capturas de ejecución.
 
@@ -37,13 +37,13 @@ El repositorio no tuvo ningún cambio entre el 1 de septiembre y el cierre del c
 
 No encontramos evidencia de que se haya diagnosticado o respondido una restricción nueva: el único ADR sigue siendo el de la arquitectura base (muy bien escrito, con alternativas y consecuencias claras, pero es de otra semana), las cuatro filas de `docs/aspectos.md` siguen con la evidencia marcada "Pendiente", y el pipeline de integración continua está en rojo en los tres intentos que registra GitHub Actions, incluido el commit que se presenta como entrega.
 
-Además, revisando el historial completo del repositorio, seguimos sin ver ningún commit de Angel Fabian Gutierrez Gomez. Si sus aportes existen fuera de Git (diseño, decisiones, documentación en otro medio), tráiganlo a la sustentación, porque desde el repositorio no es visible.
+Además, revisando el historial completo del repositorio, seguimos sin ver ningún commit de uno de los integrantes declarados. Si sus aportes existen fuera de Git (diseño, decisiones, documentación en otro medio), tráiganlos a la sustentación, porque desde el repositorio no son visibles.
 
 Para la próxima entrega: creen la etiqueta real, retomen el trabajo cuanto antes (una semana completa sin commits es un riesgo), arreglen el pipeline, y aporten la restricción, el diagnóstico y la medición que pide este corte.
 
 ## Semana 7 · S7
 
-El contrato OpenAPI 3.1 versionado, con rutas y esquemas de datos, y el ADR de integración están bien resueltos: la decisión síncrona frente a AsyncAPI está bien argumentada. Revisión actualizada tras el cierre: al releer en el repositorio lo que la pasada automática no había podido abrir, se confirma que el job `contract` del pipeline ejecuta la prueba de contrato, que la sección 6 de arc42 describe los flujos de interacción y que el C4 nivel 2 etiqueta protocolo y formato, además de que la tabla de aspectos tiene sus ocho columnas. Quedan abiertos tres puntos: 1) unifiquen el prefijo de rutas, hoy el backend expone /api/api/v1/... y el contrato y el cliente usan /api/v1/..., lo que deja la correspondencia contrato-código en no conformidad; 2) aporten una ejecución en rojo provocada por un cambio incompatible: sin ella no se demuestra que la prueba sirva; 3) sumen la evidencia de SonarCloud (configuración, run y URL pública con Quality Gate), hoy ausente. Completen también las celdas de Pruebas y Evidencia de la tabla de aspectos, aún en "Pendiente", y el registro de uso de IA.
+El contrato OpenAPI 3.1 versionado, con rutas y esquemas de datos, y el ADR de integración están bien resueltos: la decisión síncrona frente a AsyncAPI está bien argumentada. Revisión actualizada tras el cierre: al releer en el repositorio lo que la pasada automática no había podido abrir, se confirma que el job `contract` del pipeline ejecuta la prueba de contrato, que la sección 6 de arc42 describe los flujos de interacción y que el C4 nivel 2 etiqueta protocolo y formato, además de que la tabla de aspectos tiene sus ocho columnas. Quedan abiertos tres puntos: 1) unifiquen el prefijo de rutas, hoy el backend expone /api/api/v1/... y el contrato y el cliente usan /api/v1/..., lo que deja la correspondencia contrato-código en no conformidad; 2) aporten una ejecución en rojo provocada por un cambio incompatible: sin ella no se demuestra que la prueba sirva; 3) sumen la evidencia de SonarCloud (configuración, run y URL pública con Quality Gate), hoy ausente. Completen también las celdas de Pruebas y Evidencia de la tabla de aspectos, aún en "Pendiente". El registro de uso de IA ya está al día: crece y documenta los rechazos con su motivo.
 ## Semana 6 · S6
 
 El repositorio va bien encaminado: conserva estructura, ADR, README y un registro de IA que crece durante el semestre. Para la próxima entrega, pasen a Markdown revisable el mapa de contextos y la tabla módulo a datos, que hoy solo existen como documentos binarios. En el mapa, nombren los contextos del dominio y el tipo de relación entre ellos (núcleo compartido, cliente y proveedor, capa anticorrupción), y enlácenlo desde la sección 8 de arc42. En la tabla, una entidad por fila con un único dueño, y verifiquenla contra las entidades que realmente existen en el código. Acompañen la lista de no conformidades con la ruta exacta donde ocurre cada escritura y la acción de corrección. Publiquen la evidencia de SonarCloud: archivo de configuración, run de CI y URL del análisis con el estado del Quality Gate. Completen docs/aspectos.md sin celdas huecas y limpien los archivos temporales de Office. Si los límites cambiaron respecto al primer corte, agreguen el ADR de reajuste y el diff contra el hash revisado.
