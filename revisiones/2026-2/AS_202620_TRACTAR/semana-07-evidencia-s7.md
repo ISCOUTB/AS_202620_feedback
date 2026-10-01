@@ -1,13 +1,13 @@
 # semana-07-evidencia-s7 · TRACTAR
 
-> Pasada temprana (GitHub Actions, previa al cierre): los hashes y la nota son preliminares y pueden cambiar si el equipo empuja antes del cierre.
+> Revisión definitiva: el hash calificado `7cfb872` coincide con la última revisión ≤ cierre (`2026-09-21T05:00:00Z`) en `origin/main`; el equipo no registró commits durante la semana.
 
 | Campo | Valor |
 |---|---|
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TRACTAR` |
 | Estado revisado | `7cfb872` en `origin/main` (2026-08-31T12:27:23-05:00) |
 | Cierre | 2026-09-21T05:00:00Z |
-| Revisor | pipeline automatico (GitHub Actions) |
+| Revisor | pasada automática, hash confirmado contra la revisión elegible |
 
 ## Matriz de la ficha
 
