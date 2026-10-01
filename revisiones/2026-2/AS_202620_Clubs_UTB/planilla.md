@@ -15,7 +15,7 @@
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 8 | S8 | `dc211b8` (2026-09-20T23:56:51-05:00) | 0/12 | 1.0 (prelim.) | si |
-| 7 | S7 | `dc211b8` (2026-09-20T23:56:51-05:00) | 6/10 | 3.4 | si |
+| 7 | S7 | `dc211b8` (2026-09-20T23:56:51-05:00) | 8/10 | 4.2 | si |
 | 6 | S6 | `743cc1f` (2026-09-13T23:55:10-05:00) | 6/8 | 4.0 (prelim.) | si |
 | 5 | CORTE1 | `4ede977` (2026-09-06T22:41:55-05:00) | 8/12 | 3.7 | si |
 | 4 | S4 | `91323d6` (2026-08-30T23:21:56-05:00) | 9/10 | 4.6 | si |
@@ -70,7 +70,7 @@
 | NC-02: sin manejo de errores de conexión en backend (docs/arc42/lista_errores.md). | S7 | si | |
 | docs/arc42/tabla_modulo.md desalineada con los tres contextos vigentes, según ADR 0002 y arc42 §8.3. | S7 | si | |
 | Secciones 07 y 11 de arc42 ausentes. | S7 | si | |
-| Contrato de API, prueba de contrato en el pipeline y ADR de estrategia de integración sin entregar (S7). | S7 | si | |
+| Contrato de API, prueba de contrato en el pipeline y ADR de estrategia de integración: entregados en S7 y releídos; faltan el run en rojo del hash calificado y el etiquetado del C4 nivel 2. | S7 | si | |
 | d2d1450 'Update IA usage log for week 6' (2026-09-15T10:14:52-05:00), único cambio en diff_desde_cierre: docs/ia.md, con run 'Backend tests' success del 2026-09-15T15:14:55Z (https://github.com/ISCOUTB/AS_202620_Clubs_UTB/actions/runs/34987143230). | S6 | no (resuelto tarde) | — |
 | NC-02: ausencia de manejo de errores de conexión en el backend. | S6 | si | |
 | Enlace roto a docs/adr/0002-ajuste-contextos-publicaciones.md y documentos que declaran pendiente una alineación ya aplicada. | S6 | si | |
@@ -82,7 +82,7 @@
 | Eliminar el ADR duplicado y renombrar 0003 según NNNN-kebab-case, corrigiendo el enlace roto. | S7 | si | |
 | Aportar análisis SonarCloud público con Quality Gate y configuración en el repositorio. | S7 | si | |
 | Aportar el run del workflow de contrato y la evidencia de fallo por cambio incompatible. | S7 | si | |
-| Completar las secciones 07 y 11 de arc42 y verificar correspondencia contrato↔código y C4 nivel 2. | S7 | si | |
+| Completar las secciones 07 y 11 de arc42 y etiquetar con protocolo y formato el C4 nivel 2 (la correspondencia contrato↔código quedó verificada). | S7 | si | |
 | Ninguno: commits_tardios_post_cierre está vacío y no hay commits nuevos desde el cierre anterior. | S8 | no (resuelto tarde) | — |
 | URL pública del sistema y comprobación externa de /health | S8 | si | |
 | Infraestructura como código versionada | S8 | si | |
@@ -102,7 +102,7 @@
 | Estructura mínima | Cumple | Las seis rutas existen; `docs/C4/` en mayúscula (desviación de ruta). |
 | Convención de nombres de ADR | Cumple | `0001-hexagonal.md` conforme; `docs/adr/.temp` residual a borrar. |
 | ADR aceptados sin reescribir | No cumple | Aceptado en `2c316f4` (23/08); editado nuevamente en `c6c46e3` (30/08, "correción de feedback") sin ADR de reemplazo. Corrige la fila anterior, que solo había mirado hasta S4. |
-| `docs/ia.md` al día | No cumple | Último commit `c92595e` (2026-08-09). |
+| `docs/ia.md` al día | Cumple | Releído en S7: último commit `d2d1450` (2026-09-15), dentro del periodo revisado, con lo rechazado y su motivo. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Sin coincidencias. |
 | Contribución de todos los integrantes | Cumple | 4 de 4 en S3: Luis 2, Diego 2, Hollman 1, Josh 1 (Josh4OP = «Josh Ortega», mismo correo). |
 | Pipeline en verde | No cumple | Sin workflow; la prueba estaba vacía en el hash calificado (contenido tardío). |

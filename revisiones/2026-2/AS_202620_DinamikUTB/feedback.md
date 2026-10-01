@@ -54,7 +54,7 @@ Queda por completar la trazabilidad de los aspectos que aún conservan celdas pe
 
 ## Semana 7 · S7
 
-El contrato OpenAPI versionado con esquemas y la prueba de contrato que falla ante un cambio incompatible están muy bien resueltos y son la mejor evidencia de esta semana. Para cerrar la entrega, suban la salida de git log del archivo de contrato para demostrar su historial junto con la versión, y compartan el contenido de la sección 6 de arc42 y del C4 nivel 2 para comprobar que cada flecha lleva protocolo y formato. La tabla de aspectos necesita sus ocho columnas navegables y sin huecos. El pendiente más importante es el análisis estático: hoy hay configuración y un bloqueo de permisos documentado, pero se necesita un run que invoque el scanner y la URL pública del análisis con el estado del Quality Gate. Cuiden también los commits de último minuto sobre el cierre, que dejan la entrega al borde del límite.
+El contrato OpenAPI versionado con esquemas y la prueba de contrato que falla ante un cambio incompatible están muy bien resueltos y son la mejor evidencia de esta semana; la sección 6 de arc42 describe tres flujos de interacción y el C4 nivel 2 etiqueta con protocolo y formato las relaciones entre contenedores. Para cerrar la entrega: (1) completen la tabla de aspectos con las ocho columnas navegables y sin celdas «Pendiente»; (2) el pendiente más importante es el análisis estático: hoy hay configuración y un bloqueo de permisos documentado, pero se necesita un run que invoque el scanner y la URL pública del análisis con el estado del Quality Gate; (3) cuiden los commits de último minuto sobre el cierre, que dejan la entrega al borde del límite.
 
 ## Semana 8 · S8
 
