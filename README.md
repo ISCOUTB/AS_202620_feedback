@@ -192,6 +192,12 @@ Lo que no está aquí es la nota: eso lo fija el profesor y se ve en Moodle. El 
 todos los proyectos, semana a semana, está en el
 [informe de estado](revisiones/2026-2/informe-estado-s4.md).
 
+Los **resúmenes** de cada semana, con el recuento y la nota sugerida de los 23 equipos, están en
+[resumen S1](revisiones/2026-2/resumen-s1.md), [S2](revisiones/2026-2/resumen-s2.md),
+[S3](revisiones/2026-2/resumen-s3.md), [S4](revisiones/2026-2/resumen-s4.md),
+[CORTE1](revisiones/2026-2/resumen-s5.md), [S6](revisiones/2026-2/resumen-s6.md),
+[S7](revisiones/2026-2/resumen-s7.md) y [S8](revisiones/2026-2/resumen-s8.md).
+
 | Equipo | Repositorio | Retroalimentación | Matriz S1 | Matriz S2 | Matriz S3 | Matriz S4 | Matriz CORTE1 | Matriz S6 | Matriz S7 | Matriz S8 | Planilla |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | AudioShare | [`AS_202620_AudioShare`](https://github.com/ISCOUTB/AS_202620_AudioShare) | [ver](revisiones/2026-2/AS_202620_AudioShare/feedback.md) | [ver](revisiones/2026-2/AS_202620_AudioShare/semana-01-evidencia-s1.md) | [ver](revisiones/2026-2/AS_202620_AudioShare/semana-02-evidencia-s2.md) | [ver](revisiones/2026-2/AS_202620_AudioShare/semana-03-evidencia-s3.md) | [ver](revisiones/2026-2/AS_202620_AudioShare/semana-04-evidencia-s4.md) | [ver](revisiones/2026-2/AS_202620_AudioShare/semana-05-corte1.md) | [ver](revisiones/2026-2/AS_202620_AudioShare/semana-06-evidencia-s6.md) | [ver](revisiones/2026-2/AS_202620_AudioShare/semana-07-evidencia-s7.md) | [ver](revisiones/2026-2/AS_202620_AudioShare/semana-08-evidencia-s8.md) | [ver](revisiones/2026-2/AS_202620_AudioShare/planilla.md) |
