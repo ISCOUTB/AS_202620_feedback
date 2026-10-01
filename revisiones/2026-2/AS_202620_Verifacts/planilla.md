@@ -15,7 +15,7 @@
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 8 | S8 | `ef48c08` (2026-09-23T21:28:43-05:00) | 10/12 | 4.3 (propuesta preliminar) | sí (actualizada) |
-| 7 | S7 | `635f9b7` (2026-09-16T00:52:52-05:00) | 8/10 | 4.2 (prelim.) | si |
+| 7 | S7 | `635f9b7` (2026-09-16T00:52:52-05:00) | 10/10 | 5.0 (auditada) | sí, auditada |
 | 6 | S6 | `5941c33` (2026-09-12T02:00:20-05:00) | 8/8 | 5.0 (prelim.) | si |
 | 1 | S1 | `(sin commits)` () | sin actividad | no aplica | si |
 | 2 | S2 | `(sin commits)` () | sin actividad | no aplica | si |
@@ -69,7 +69,7 @@
 | Prueba automatizada de componente para el frontend: la fila A-04 solo tiene verificación manual. | S7 | si | |
 | Marcador de CI en la fila A-00 de docs/aspectos.md, que el propio documento pide reemplazar por la URL real. | S7 | si | |
 | Contradicción sobre Q-03 entre docs/escenarios-de-calidad.md ('Pendiente') y docs/aspectos.md A-02 (prueba en verde). | S7 | si | |
-| Evidencia de run del pipeline y URL pública de SonarCloud con Quality Gate. | S7 | si | |
+| URL pública del análisis en SonarCloud con Quality Gate (evidencia externa); el scanner y la configuración ya se leyeron en el repositorio. | S7 | si | — |
 | Filas A-04 y A-05 en docs/aspectos.md (b5d9068, 2026-09-16T00:51:03-05:00) | S6 | no (resuelto tarde) | — |
 | ADR-0003 y especificación OpenAPI del API (fa29e9a y f3caf45, 2026-09-16) | S6 | no (resuelto tarde) | — |
 | Pruebas de contrato de endpoints (9fdf092, 2026-09-16T00:47:30-05:00) | S6 | no (resuelto tarde) | — |

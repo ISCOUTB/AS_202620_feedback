@@ -71,7 +71,7 @@
 | Correspondencia entre el contrato y una API implementada (o aclaración explícita de que la frontera HTTP aún no existe). | S7 | si | |
 | Evidencia de ejecución de la prueba de contrato en rojo ante un cambio incompatible. | S7 | si | |
 | URL pública del análisis en SonarCloud con Quality Gate para el hash revisado. | S7 | si | |
-| C4 nivel 2 revisable (como código) con protocolo y formato en cada flecha. | S7 | si | |
+| C4 nivel 2 revisable (como código) con protocolo y formato en cada flecha (el diagrama existe como .jpg; sus flechas de cruce tecnológico no llevan protocolo ni formato). | S7 | si | — | |
 | Columna C4 y celdas completas en docs/aspectos.md para todas las filas. | S7 | si | |
 | Actualización de docs/arc42/09_decisiones.md con el ADR 0002. | S7 | si | |
 | Despliegue público, health check e infraestructura como código ausentes | S8 | Sí | Definir plataforma, desplegar y versionar el entorno. |

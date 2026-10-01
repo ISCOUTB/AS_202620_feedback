@@ -7,7 +7,9 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_LostVault` |
 | Estado revisado | `7bf515f` en `origin/main` (2026-09-20T23:55:34-05:00) |
 | Cierre | 2026-09-21T05:00:00Z |
-| Revisor | pipeline automatico (GitHub Actions) |
+| Revisor | auditoría local sobre clon público efímero |
+
+> Revisión actualizada tras el cierre: se leyeron en el repositorio, en el hash 7bf515f, las filas que la pasada automática había dejado como No verificado.
 
 ## Matriz de la ficha
 
@@ -22,7 +24,7 @@
 | Evidencia de que la prueba falla ante un cambio incompatible | Runs revisados: el único fallo es del workflow «Build» (run 35562739717, 2026-09-21T04:57:04Z), ajeno a la prueba de contrato; ningún run de «Flutter checks» aparece en rojo. | No verificado | No hay run en rojo de la prueba ni evidencia aportada del cambio incompatible; queda como pregunta de sustentación. |
 | ADR de la estrategia de integración ligado a un escenario | docs/adr/0002-integracion-reclamacion-api.md: decisión HTTP/JSON síncrona, alternativa de evento asíncrono descartada y costos de acoplamiento, ligada al flujo de reclamación y a 06_vista_runtime.md. | Cumple | docs/arc42/09_decisiones.md todavía solo lista el ADR 0001. |
 | arc42 sección 6 con los flujos de interacción | docs/arc42/06_vista_runtime.md con pasos numerados y diagrama de secuencia UI → ClaimObjectUseCase → authentication/objects/identity_verification → ClaimService. | Cumple | Incluye caminos alternos de fallo y limitación del adaptador in-memory. |
-| C4 nivel 2 con protocolo y formato en cada flecha | docs/c4/C4 nivel 2.jpg existe en el árbol, pero es binario y no permite comprobar el etiquetado de las flechas; no hay versión .mmd del nivel 2. | No verificado | Haría falta el diagrama como código o su contenido citado para verificar protocolo y formato por flecha. |
+| C4 nivel 2 con protocolo y formato en cada flecha | `docs/c4/C4 nivel 2.jpg` (blob `46dcaac` en 7bf515f) muestra un diagrama de contenedores de LostVault: Estudiante y Encargado (personas), Aplicación Móvil, Aplicación Web, API Gateway y Servicios, y Base de Datos. Las flechas que cruzan el límite tecnológico: Móvil→API Gateway y Web→API Gateway dicen «Envía peticiones (API REST)»; Móvil→Web (punteada) dice «Envía notificaciones push/email»; API Gateway→Base de Datos dice «Lee/Escribe datos (SQL/ORM)». | No cumple | El diagrama de nivel 2 existe y se leyó, pero las flechas de cruce tecnológico no llevan protocolo y formato a la vez: Móvil→Web no declara ninguno de los dos, y las de Móvil/Web→API y API→Base de Datos solo dan protocolo o mecanismo, sin formato de datos. Las flechas persona→contenedor (HTTPS/WSS) se toleran por describir interacción humana. |
 
 ## Matriz transversal (CONTRATO §11)
 
@@ -43,13 +45,13 @@ Mira el repositorio **entero en la punta actual de la misma rama**, no solo la e
 
 - **Punta actual revisada**: `7bf515ff4d69a386a296124f3719c31f783f9970 2026-09-20T23:55:34-05:00 Merge pull request #10 from Fausto-4/main`
 - **Veredicto**: con pendientes
-- Resumen: En la punta actual de origin/main (7bf515f, 2026-09-20T23:55:34-05:00) existen el contrato ejecutable, la prueba de contrato en el pipeline y el ADR de integración, pero la correspondencia contrato–código no se sostiene, no hay evidencia de que la prueba falle y falta la evidencia pública de SonarCloud con Quality Gate; no hay commits posteriores al cierre ni diferencias con el estado calificado.
+- Resumen: En la punta actual de origin/main (7bf515f, 2026-09-20T23:55:34-05:00) existen el contrato ejecutable, la prueba de contrato en el pipeline y el ADR de integración, pero la correspondencia contrato–código no se sostiene, no hay evidencia de que la prueba falle, el C4 nivel 2 existe pero sus flechas de cruce tecnológico no llevan protocolo ni formato, y falta la evidencia pública de SonarCloud con Quality Gate; no hay commits posteriores al cierre ni diferencias con el estado calificado.
 
 Pendientes que siguen abiertos:
 - Correspondencia entre el contrato y una API implementada (o aclaración explícita de que la frontera HTTP aún no existe).
 - Evidencia de ejecución de la prueba de contrato en rojo ante un cambio incompatible.
 - URL pública del análisis en SonarCloud con Quality Gate para el hash revisado.
-- C4 nivel 2 revisable (como código) con protocolo y formato en cada flecha.
+- Etiquetado de protocolo y formato en las flechas de cruce tecnológico del C4 nivel 2 (el diagrama existe como .jpg y se leyó).
 - Columna C4 y celdas completas en docs/aspectos.md para todas las filas.
 - Historial git del contrato y actualización de docs/arc42/09_decisiones.md con el ADR 0002.
 
@@ -62,7 +64,6 @@ Pendientes que siguen abiertos:
 ## No verificado / pendientes
 
 - Fallo de la prueba de contrato ante un cambio incompatible: no hay run en rojo ni evidencia aportada; requiere un PR con cambio incompatible y el run fallido.
-- Etiquetado de protocolo y formato en cada flecha del C4 nivel 2: el archivo es binario; requiere el diagrama como código o su contenido citado.
 - URL pública del análisis en SonarCloud para el hash 7bf515f con Quality Gate: no aportada en la evidencia.
 
 ## Hallazgos para la planilla
@@ -70,7 +71,7 @@ Pendientes que siguen abiertos:
 - El contrato OpenAPI declara una frontera HTTP que el código no implementa: solo hay adaptadores in-memory.
 - El contrato tiene una sola ruta, sin segunda ruta para contrastar contra el código.
 - Ningún run de la prueba de contrato aparece en rojo, así que no se demuestra que pueda fallar.
-- El C4 nivel 2 está solo como .jpg, no verificable como diagrama etiquetado.
+- El C4 nivel 2 (.jpg) es un diagrama de contenedores, pero las flechas de cruce tecnológico no llevan protocolo y formato (la flecha Móvil→Web no declara ninguno).
 - Falta la URL pública de SonarCloud con el estado del Quality Gate.
 - El run «Build» del hash calificado terminó en verde; falta el análisis público de SonarCloud con Quality Gate.
 - docs/arc42/09_decisiones.md no lista el ADR 0002 ya aceptado.
