@@ -50,7 +50,7 @@
 
 10 de 10 criterios graduables Cumple.
 
-**propuesta provisional al docente — `nota = 1 + 4 × (10/10) = 5,0`; quedan 2 filas de despliegue pendientes de calificar y la nota final la fija el profesor en Moodle.**
+**propuesta provisional al docente — `nota = 1 + 4 × (10/10) = 5.0`; quedan 2 filas de despliegue pendientes de calificar y la nota final la fija el profesor en Moodle.**
 
 ## No verificado / pendientes
 

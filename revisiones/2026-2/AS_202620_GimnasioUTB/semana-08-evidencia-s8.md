@@ -21,7 +21,7 @@
 | Logs estructurados | `src/server.js:29` solo emite un `console.log` de arranque; no hay logger JSON ni campos. | No cumple | Falta archivo de configuración y ejemplo de línea. |
 | Métrica consultable asociada a un escenario de calidad | El arc42 define una medida de rendimiento (p95 ≤ 200 ms) como texto, pero no hay instrumentación ni endpoint de métricas. | No cumple | Un umbral documental no es una métrica consultable. |
 | Secretos fuera del código y tomados del entorno o del almacén | `.env.example:1` solo declara `PORT`; `ci.yml` no referencia `secrets.*` y no hay almacén de secretos ni despliegue que los consuma. | No cumple | No se encontraron credenciales, pero tampoco hay gestión de secretos del proveedor. |
-| Estimación de costo mensual con supuestos y punto de ruptura de la capa gratuita | `docs/arc42/arc42_gimnasio_utb.md:82` fija Render free tier y presupuesto 0 USD; no hay volumen supuesto, cálculo por pieza ni punto de ruptura. | No cumple | Falta la estimación exigida. |
+| Estimación de costo mensual con supuestos y punto de ruptura de la capa gratuita | `docs/arc42/arc42_gimnasio_utb.md:82` fija Render free tier y presupuesto 0 USD, pero no presenta el costo del entorno desplegado. `docs/taller.md` §7 sí trae volumen (120.000 invocaciones/mes), costo por pieza y punto de ruptura, aunque pertenece al taller de despliegue, que es un entregable separado de esta evidencia S8. | No cumple | Falta la estimación exigida en la evidencia S8; el cálculo de `docs/taller.md` §7 se califica aparte, con el taller. |
 | arc42 sección 7 con una caja por pieza y dónde se ejecuta | `docs/arc42/arc42_gimnasio_utb.md` salta de `## 6. Runtime View` (`:195`) a `## 8. Cross-cutting Concepts` (`:251`); no existe sección 7. | No cumple | No hay vista de despliegue. |
 | Límite de costo y restricción de tarjeta recogidos en la sección 2 | `docs/arc42/arc42_gimnasio_utb.md:82` (TC4): Render free tier y presupuesto del equipo de 0 USD. | Cumple | El límite de costo es explícito; el equipo no documenta una exigencia adicional de tarjeta. |
 | Un ADR por decisión de plataforma, con alternativa descartada | El arc42 resume un `ADR-0002` dentro de `## 9` (`docs/arc42/arc42_gimnasio_utb.md:294`), sin archivo propio en `docs/adr/` ni alternativas descartadas. | No cumple | La decisión de plataforma no cumple el formato pedido. |
@@ -50,7 +50,7 @@
 
 3 de 10 criterios graduables Cumple.
 
-**propuesta provisional al docente — `nota = 1 + 4 × (3/10) = 2,2`; quedan 2 filas de despliegue pendientes de calificar y la nota final la fija el profesor en Moodle.**
+**propuesta provisional al docente — `nota = 1 + 4 × (3/10) = 2.2`; quedan 2 filas de despliegue pendientes de calificar y la nota final la fija el profesor en Moodle.**
 
 ## No verificado / pendientes
 

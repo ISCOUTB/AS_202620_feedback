@@ -153,4 +153,19 @@ Round 1 launched.
 
 ## Next step
 
-Run T1, verify it, then continue with T2.
+Run T6, then publish the week on the instructor's word.
+
+## Result of T6
+
+Independent recount: 23 reports, each with exactly 12 rows and exactly 2 deferred, `n/10` and note
+matching `resumen-s8.md` and every `planilla.md`; 197 of 230 gradable criteria Cumple. Headers all
+mark the definitive revision. No other ficha row is left "No verificado". Repository
+counter-check on four teams (GimnasioUTB, ShareU, LaPlacita, TRACTAR), 24 rows: none unsupported.
+
+Fixes applied after verification: the deferred reason had landed in the wrong column in LaPlacita
+and LostVault; GimnasioUTB and InvenTrack wrote the note with a decimal comma; and GimnasioUTB's
+cost row now records that the volume, per-piece cost and breakpoint do exist in the workshop
+document, which is a separate deliverable graded apart.
+
+Known cosmetic leftovers: `.atl/` stays untracked (never staged); `EQUIPOS.md` and the README still
+use the old TRACTAR repository name.
