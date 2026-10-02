@@ -1,4 +1,4 @@
-# semana-06-evidencia-s6 · TRACTAR
+# semana-06-evidencia-s6 · UTB Tracker
 
 > Excepción docente: la ventana de S6 no tuvo actividad en la rama principal (el último commit
 > anterior al cierre siguió siendo el del corte anterior). Por indicación expresa del docente, la

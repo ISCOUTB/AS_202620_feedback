@@ -1,4 +1,4 @@
-# semana-07-evidencia-s7 · TRACTAR
+# semana-07-evidencia-s7 · UTB Tracker
 
 > Revisión definitiva: el hash calificado `7cfb872` coincide con la última revisión ≤ cierre (`2026-09-21T05:00:00Z`) en `origin/main`; el equipo no registró commits durante la semana.
 

@@ -24,13 +24,14 @@ Nota preliminar (pasada temprana): puede cambiar al cierre.
 | Calificación automática | `AS_202620_Sistema-de-calificacion-automatica` | `a47d5bd` | 3/8 | 2.5 |
 | TAIA | `AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant` | `c0c3adb` | 7/8 | 4.5 |
 | Tienda virtual UTB | `AS_202620_TIENDA-VIRTUAL-UTB` | `bc38c9b` * | 7/8 | 4.5 * |
-| TRACTAR | `AS_202620_UTB_TRACKER` | `ae526db` * | 0/8 | 1.0 * |
+| UTB Tracker | `AS_202620_UTB_TRACKER` | `ae526db` * | 0/8 | 1.0 * |
 | Verifacts | `AS_202620_Verifacts` | `5941c33` | 8/8 | 5.0 |
 | XALD | `AS_202620_XALD` | `55993cf` | 8/8 | 5.0 |
 | mapsutb | `AS_202620_mapsutb` | `8aee879` | 5/8 | 3.5 |
 | uniTeam | `AS_202620_uniTeam` | `6cc8e6f` | 2/8 | 2.0 |
 
-\* **Excepción docente.** Tienda virtual UTB y TRACTAR no tuvieron actividad en la ventana de S6 (su
+\* **Excepción docente.** Tienda virtual UTB (`AS_202620_TIENDA-VIRTUAL-UTB`) y UTB Tracker
+(`AS_202620_UTB_TRACKER`) no tuvieron actividad en la ventana de S6 (su
 rama principal no se movió entre el cierre del corte 1 y el de S6), así que su nota quedaba en «no
 aplica». Por indicación del docente, su matriz de S6 se completó sobre la **punta actual de la rama
 principal**: el hash es el de la punta, incluye trabajo de semanas posteriores y no es comparable

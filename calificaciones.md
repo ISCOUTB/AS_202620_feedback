@@ -30,7 +30,7 @@ regla.
 | Calificación automática | 4.1 | 4.1 | 3.7 | 3.4 | 3.7 (8/12) |
 | TAIA | 3.7 | 2.3 | 3.2 | 3.0 | Pendiente de reproceso |
 | Tienda virtual UTB | 4.1 | 3.7 | 4.1 | 3.4 | 4.0 (9/12) |
-| TRACTAR | — | 3.7 | 4.6 | 1.4 | 3.7 (8/12) |
+| UTB Tracker | — | 3.7 | 4.6 | 1.4 | 3.7 (8/12) |
 | Verifacts | 2.8 | 1.9 | 2.8 | 3.8 | 3.7 (8/12) |
 | XALD | 3.2 | 1.4 | 3.2 | 2.6 | 3.7 (8/12) |
 | mapsutb | 3.2 | 2.8 | 3.2 | 3.0 | 3.7 (8/12)* |

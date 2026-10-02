@@ -31,7 +31,7 @@ desde S8 queda cerca del piso y su nota sube sola cuando empuja.
 | ShareU | `AS_202620_ShareU` | `3950860` | 9/10 | 4.6 |
 | TAIA | `AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant` | `4b07242` | 1/10 | 1.4 |
 | Tienda virtual UTB | `AS_202620_TIENDA-VIRTUAL-UTB` | `bc38c9b` | 4/10 | 2.6 |
-| TRACTAR | `AS_202620_UTB_TRACKER` | `ae526db` | 1/10 | 1.4 |
+| UTB Tracker | `AS_202620_UTB_TRACKER` | `ae526db` | 1/10 | 1.4 |
 | uniTeam | `AS_202620_uniTeam` | `0f3da0f` | 1/10 | 1.4 |
 | Verifacts | `AS_202620_Verifacts` | `dae98e8` | 7/10 | 3.8 |
 | XALD | `AS_202620_XALD` | `f90f28d` | 1/10 | 1.4 |

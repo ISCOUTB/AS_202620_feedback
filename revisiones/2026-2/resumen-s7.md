@@ -34,7 +34,7 @@ Nota sugerida = 1 + 4 × (n/m) sobre la matriz de la ficha, **propuesta al docen
 | Calificación automática | `AS_202620_Sistema-de-calificacion-automatica` | `2269ca5` | 10/10 | 5.0 |
 | TAIA | `AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant` | `0a12f0c` | 10/10 | 5.0 |
 | Tienda virtual UTB | `AS_202620_TIENDA-VIRTUAL-UTB` | `69aa82d` | 8/10 | 4.2 |
-| TRACTAR | `AS_202620_UTB_TRACKER` | `7cfb872` | 2/10 | 1.8 |
+| UTB Tracker | `AS_202620_UTB_TRACKER` | `7cfb872` | 2/10 | 1.8 |
 | Verifacts | `AS_202620_Verifacts` | `635f9b7` | 10/10 | 5.0 |
 | XALD | `AS_202620_XALD` | `62a0d15` | 9/10 | 4.6 |
 | mapsutb | `AS_202620_mapsutb` | `5e2fdd5` | 10/10 | 5.0 |
@@ -55,7 +55,7 @@ Nota sugerida = 1 + 4 × (n/m) sobre la matriz de la ficha, **propuesta al docen
 
 Promedio del curso: 4.0 → 4.4.
 
-Las filas «No cumple» que ya estaban publicadas no se tocaron: se sostienen con evidencia (TRACTAR
+Las filas «No cumple» que ya estaban publicadas no se tocaron: se sostienen con evidencia (UTB Tracker
 sin contrato alguno; ElMapita con deriva de rutas `/api/api/v1`; EnAgenda con el ADR de integración
 posterior al cierre; AudioShare con marcadores de conflicto de fusión en el commit calificado).
 
@@ -74,16 +74,16 @@ LostVault (diagrama en imagen, flechas de cruce sin formato).
   definitivo ya no puede reprocesar S7 y pisar estas correcciones.
 - **Matriz transversal de 9 filas.** El prompt del pipeline pedía «exactamente 8» y `CONTRATO.md`
   §11 tiene 9, por eso los informes omitían filas. Se corrigieron el prompt y el conteo, y se
-  completaron las filas faltantes en Verifacts, TAIA, ElMapita, DinamikUTB y TRACTAR.
+  completaron las filas faltantes en Verifacts, TAIA, ElMapita, DinamikUTB y UTB Tracker.
 - **Tres ADR aceptados editados sin reemplazo declarado** (fila §11 «ADR aceptados no reescritos» →
   No cumple): Verifacts ADR-0001 (`73beb28`, 2026-09-07), TAIA ADR-0001 (`42c5b03`, 2026-09-06) y
   ElMapita ADR-0001 (`07b36f4`, 2026-08-30). En DinamikUTB el mismo hallazgo afecta a cuatro ADR.
 - **Contribución incompleta** (fila §11 → No cumple): Verifacts (2 de 3 integrantes), ElMapita (2 de
-  3 identificables) y TRACTAR (1 de 4).
+  3 identificables) y UTB Tracker (1 de 4).
 - **Volcado del pipeline con presupuesto explícito.** Los documentos que deciden filas entran
   primero y con cupo propio; lo que queda afuera se publica en `documentos_omitidos` y el prompt
   prohíbe escribir «no se aportó» por un recorte del volcado.
-- **TRACTAR**: el repositorio fue renombrado a `ISCOUTB/AS_202620_UTB_TRACKER`
+- **UTB Tracker**: el repositorio fue renombrado a `ISCOUTB/AS_202620_UTB_TRACKER`
   (`AS_202620_TRACTAR` redirige con 301); el cargo de identidad anterior era autocontradictorio y
   quedó corregido. Se registra además el commit `9cf1ac9`, catorce minutos posterior al cierre.
 - **Higiene**: se quitaron nombres propios y correos de informes y feedback donde aparecían.
@@ -94,4 +94,6 @@ Ninguna de estas correcciones cambia una nota: la matriz transversal no entra en
 
 - Repetir el barrido de filas «Cumple» sin respaldo y de volcado recortado en S8 y en las semanas
   siguientes: el mismo prompt las genera.
-- Actualizar el nombre de TRACTAR en el mapeo del kit si se quiere evitar la redirección.
+- **Resuelto.** El mapeo del kit usa ya `AS_202620_UTB_TRACKER`: `EQUIPOS.md`, el README,
+  `calificaciones.md`, los resúmenes y la carpeta `revisiones/2026-2/AS_202620_UTB_TRACKER/`.
+  `AS_202620_TRACTAR` queda solo como nombre anterior en los informes escritos antes del cambio.

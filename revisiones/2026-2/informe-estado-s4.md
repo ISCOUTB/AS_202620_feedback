@@ -14,9 +14,9 @@ la nota final se fija en Moodle.
 - **CI en verde con run citable**: 10 equipos. **Sin CI configurado**: 6 (AudioShare, PideUtb,
   Recobra, TAIA, mapsutb, Verifacts).
 - **Entregas tardías** (commits post-cierre, no calificados): 5 equipos — DinamikUTB, EnAgenda,
-  InvenTrack, TRACTAR, Verifacts. En Verifacts y TRACTAR lo tardío es sustancial (corte vertical /
+  InvenTrack, UTB Tracker, Verifacts. En Verifacts y UTB Tracker lo tardío es sustancial (corte vertical /
   avances S4 completos fuera de plazo).
-- **Contribución incompleta**: ShareU (un solo autor), TRACTAR (3 integrantes sin commits),
+- **Contribución incompleta**: ShareU (un solo autor), UTB Tracker (3 integrantes sin commits),
   ElMapita (9/11 commits de una cuenta), Verifacts (tercer integrante sin aparición).
 - **Incidente de seguridad**: Recobra tiene un `repo_token` de Coveralls expuesto
   (`node_modules/debug/.coveralls.yml`) — **avisar al equipo para rotarlo** (CONTRATO §9).
@@ -48,7 +48,7 @@ la nota final se fija en Moodle.
 | GimnasioUTB | 2/10 | 1.8 | con pendientes | verde (solo health) | — |
 | Recobra | 2/10 | 1.8 | con pendientes | sin CI | — |
 | PideUtb | 1/10 | 1.4 | con pendientes | sin CI | — |
-| TRACTAR | 1/10 | 1.4 | con pendientes | verde en cierre, rojo en HEAD | sí (avances S4, 03:35) |
+| UTB Tracker | 1/10 | 1.4 | con pendientes | verde en cierre, rojo en HEAD | sí (avances S4, 03:35) |
 | ShareU | 0/10 | 1.0 | con pendientes | workflow sin runs | — |
 
 ## Estado por proyecto
@@ -109,7 +109,7 @@ la nota final se fija en Moodle.
   de Coveralls expuesto (rotar)**.
 - **PideUtb (1/10)** — Sin C4, sin glosario verificable, sin CI; tabla de aspectos fuera de esquema;
   `.venv-1` versionado.
-- **TRACTAR (1/10)** — Al cierre S4 incompleta; los avances llegaron **después del cierre**
+- **UTB Tracker (1/10)** — Al cierre S4 incompleta; los avances llegaron **después del cierre**
   (03:35). El CI de HEAD está **en rojo**, 3 integrantes sin commits y sin SonarCloud.
 - **ShareU (0/10)** — Estructura presente pero casi todo sin contenido verificable; **un solo
   autor** en el historial; runs_ci vacío.
@@ -118,10 +118,10 @@ la nota final se fija en Moodle.
 
 1. **SonarCloud ausente en los 23 equipos** — exigencia del contrato §8; bloquea la fila de
    pipeline/análisis estático para todos en el corte 1.
-2. **Patrón de entrega tardía** — 5 equipos con commits post-cierre; en TRACTAR y Verifacts lo
+2. **Patrón de entrega tardía** — 5 equipos con commits post-cierre; en UTB Tracker y Verifacts lo
    tardío era la parte central de la entrega. Recordar en clase la regla: el repositorio se califica
    en el commit ≤ cierre.
-3. **Contribución** — 4 equipos con integrantes sin commits (ShareU, TRACTAR, Verifacts, ElMapita
+3. **Contribución** — 4 equipos con integrantes sin commits (ShareU, UTB Tracker, Verifacts, ElMapita
    concentrado). Es criterio calificado en el corte 1 y el final.
 4. **CI** — 10 equipos con run en verde citable; 6 sin CI configurado; 4 con workflow pero sin run
    citable. Un run en verde cierra dos filas de la ficha y una del contrato.

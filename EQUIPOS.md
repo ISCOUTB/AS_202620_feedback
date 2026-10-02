@@ -33,7 +33,7 @@ llegue a la suya. Lo que no se publica son correos ni notas.
 | Calificación automática | `AS_202620_Sistema-de-calificacion-automatica` | Sebastian Canas Plata · Josue David Ortega De Arco · Maria Del Mar Restrepo Licona · Susana Marcela Rosales Castellar | [revisiones](revisiones/2026-2/AS_202620_Sistema-de-calificacion-automatica/) |
 | TAIA | `AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant` | Valeria Estefania Berrio Payares · Deiner De Jesus Gonzalez Paredes · Luis Eduardo Mendoza Angulo · Mark Steven Pastrana Koreia | [revisiones](revisiones/2026-2/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/) |
 | Tienda virtual UTB | `AS_202620_TIENDA-VIRTUAL-UTB` | Shalom Jhoanna Arrieta Marrugo · Levis Adrian Ortiz Cano · Alejandro Patron Montero · Jasen Mihovil Yukopila Escobar | [revisiones](revisiones/2026-2/AS_202620_TIENDA-VIRTUAL-UTB/) |
-| TRACTAR | `AS_202620_UTB_TRACKER` | Joriel Samir Barros Pena · Geronimo Alberto Cadena Garcia · Sebastian Garcia Devoz · Mateo Alfonso Millan Barraza | [revisiones](revisiones/2026-2/AS_202620_UTB_TRACKER/) |
+| UTB Tracker | `AS_202620_UTB_TRACKER` | Joriel Samir Barros Pena · Geronimo Alberto Cadena Garcia · Sebastian Garcia Devoz · Mateo Alfonso Millan Barraza | [revisiones](revisiones/2026-2/AS_202620_UTB_TRACKER/) |
 | uniTeam | `AS_202620_uniTeam` | Juan Jose Bustamante More · Julio Cesar Emiliani Ramos · Daniel Isaac Manjarres Herrera · Ian Novoa Carrillo | [revisiones](revisiones/2026-2/AS_202620_uniTeam/) |
 | XALD | `AS_202620_XALD` | Xavier Yesid Garcia Diaz · Dilan Joan Gonzalez Bejarano · Luis Estheban Lozano Colmenares · Axel Jair Ruiz Bolano | [revisiones](revisiones/2026-2/AS_202620_XALD/) |
 | Verifacts | `AS_202620_Verifacts` | Cristian David Cardeno Gulloso · Pedro Jose Castro Blanquicett · Julian Samuel Cabeza Pena | [revisiones](revisiones/2026-2/AS_202620_Verifacts/) |
@@ -53,12 +53,13 @@ está agotada para esta IP (403), así que los metadatos salen del protocolo git
 eran repositorios nuevos: los cuatro existían ya, con commits, así que estaban en privado. Queda
 anotado porque explica por qué una revisión anterior pudo marcarlos como no visibles.
 
-**Un repositorio cambió de nombre.** `AS_202620_TRACTAR` fue renombrado por el equipo y hoy es
-`AS_202620_UTB_TRACKER`; el URL anterior redirige (301) y el repositorio sigue siendo el mismo y
-público. La tabla de equipos y la carpeta de revisiones usan ya el nombre actual
-(`revisiones/2026-2/AS_202620_UTB_TRACKER/`). El nombre antiguo aparece todavía en los informes
-semanales escritos antes del cambio, donde la discrepancia quedó registrada como hallazgo y sigue
-ahí como parte del historial.
+**El equipo y su repositorio cambiaron de nombre.** El equipo que aquí figuraba como TRACTAR se
+renombró a UTB Tracker, y su repositorio pasó de `AS_202620_TRACTAR` a `AS_202620_UTB_TRACKER`; el
+URL anterior redirige (301) y el repositorio sigue siendo el mismo y público. El kit publicable usa
+ya el nombre actual —esta tabla de equipos, el README, `calificaciones.md`, los resúmenes y la
+carpeta `revisiones/2026-2/AS_202620_UTB_TRACKER/`—. En los informes semanales escritos antes del
+cambio queda citado `AS_202620_TRACTAR` como nombre anterior, con la discrepancia registrada como
+hallazgo.
 
 La visibilidad cambia sin avisar, de modo que **este apartado es una foto y no una garantía**: se
 vuelve a comprobar antes de cada barrido.
