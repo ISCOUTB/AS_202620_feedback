@@ -76,3 +76,29 @@ Gran salto en esta entrega: el sistema ya tiene infraestructura como código ver
 Dos filas de despliegue quedaron pendientes de calificar porque la URL se entrega por Moodle y no se probó ninguna; el repositorio sí declara la URL pública y la ruta de health, lo que deja la comprobación para la segunda pasada.
 
 Para cerrar del todo: (1) versionen un `.env.example` sin valores reales, hoy el archivo no existe y tanto el README como la sección 7 del arc42 lo enlazan; (2) no editen un ADR ya aceptado —si la decisión cambia, escriban uno nuevo y marquen el anterior como reemplazado—; (3) registren en `docs/ia.md` el uso de IA del periodo, que no creció esta semana; y (4) añadan el análisis estático público (configuración, ejecución del scanner y URL con el Quality Gate) para que el pipeline sea auditable de punta a punta.
+
+## Semana 9 · S9 (pasada temprana, previa al cierre)
+
+En esta pasada temprana la rama principal no se movió desde la entrega anterior: el periodo de la
+evidencia está vacío. Bajo la regla del contrato, la evidencia previa no se recalifica por existir,
+así que la mayoría de los criterios quedan por construir en esta entrega.
+
+Qué falta para cerrarla antes del cierre:
+
+- Empujar la porción del sistema construida con apoyo de IA, con sus rutas de código y sus commits.
+- Llevar su cadena completa en la tabla de aspectos: escenario, elementos C4, ADR, código, prueba y
+  medición, cada eslabón navegable hasta su destino.
+- La prueba que falla ante el defecto que cubre: un run en rojo, una prueba de mutación o el
+  procedimiento documentado.
+- La medición del escenario asociado, contrastada con su umbral.
+- El extracto del registro de uso de IA de esta semana, con lo aceptado, lo corregido y al menos un
+  rechazo con su motivo técnico.
+- La auditoría de erosión: si la generación cruzó un límite de contexto o una regla de propiedad de
+  datos, cómo se detectó y cómo se corrigió, contrastado sobre el código.
+- La verificación de las dependencias propuestas, contra su registro oficial.
+
+Del repositorio: el sistema incorpora un componente generativo, así que conviene acompañarlo con su
+conjunto de evaluación, costo por operación y latencia; si la decisión fuera no incorporarlo, hace
+falta el ADR que lo justifique, no la ausencia de decisión. Sigue pendiente publicar el análisis
+estático con su Quality Gate y resolver los ADR aceptados editados sin declarar reemplazo. El barrido
+de credenciales está limpio.

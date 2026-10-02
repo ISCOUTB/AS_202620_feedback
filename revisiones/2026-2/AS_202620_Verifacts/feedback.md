@@ -79,3 +79,28 @@ La evidencia de despliegue se sostiene: el entorno se define como código versio
 Queda pendiente de calificación, por decisión docente, la comprobación externa fechada de la URL y del health check: la URL del despliegue se entrega por Moodle. Mantengan esos enlaces con hora para el próximo cierre.
 
 Para cerrar en el corte: corrijan el Quality Gate de SonarCloud, que sigue documentado en rojo; dejen de editar ADR ya aceptados (los enlaces de implementación posteriores no sustituyen un ADR de reemplazo); y confirmen la contribución del integrante que aún no aparece en el historial. La medición formal del P95 de Q-01 sigue abierta y conviene cerrarla para que el despliegue sea defendible.
+
+## Semana 9 · S9 (pasada temprana, previa al cierre)
+
+Buena entrega: el equipo dejó la evidencia S9 con piezas concretas. Registró en un ADR la decisión
+sobre los pesos y umbrales del resultado, con alternativas descartadas y su motivo; añadió pruebas de
+frontera y de límites entre módulos; demostró con mutaciones inducidas que un cambio de umbral que la
+suite anterior no detectaba ahora sí falla; midió Q-01 y Q-05 contra su umbral; auditó la erosión
+sobre los límites de contexto y la propiedad de datos; y verificó que la dependencia añadida existe en
+su registro oficial. El barrido de credenciales sigue limpio.
+
+Qué falta para cerrarla antes del cierre:
+
+- La cadena de la tabla de aspectos: la fila de la porción se rompe porque el enlace al ADR apunta a un
+  nombre de archivo que no existe y el enlace a la auditoría apunta a una ruta equivocada. El ADR del
+  periodo, además, no sigue la convención de nombres; conviene renombrarlo al nombre que ya citan el
+  código y los documentos.
+- Registrar en `docs/ia.md` el uso de IA de esta semana, que no creció en el periodo.
+- Decidir en un ADR propio la no incorporación de un componente generativo: hoy solo se rechaza su uso
+  para calibrar, no la decisión sobre el componente.
+- Corregir el Quality Gate de SonarCloud, que sigue documentado en rojo aunque los workflows estén en
+  verde; y confirmar la contribución del integrante que aún no aparece en el historial.
+
+Un aviso: la auditoría afirma que se corrigieron documentos que en el repositorio no cambiaron. Vale
+la pena subir esas correcciones o retirar la afirmación, para que lo declarado coincida con lo que se
+puede leer.

@@ -25,7 +25,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 7 | S7 | `69aa82d` (2026-09-20T09:34:49-05:00) | 8/10 | 4.2 (propuesta) | sí |
 | 8 | S8 | `858e78f` en `origin/main` (2026-09-27T15:36:51-05:00) | 10/10 | 5.0 (propuesta; 2 filas de despliegue diferidas) | si |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
-| 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
+| 9 | Evidencia S9 · Generación verificada y trazable | `bc38c9b` en `origin/main` (2026-09-28T10:22:29-05:00) | 4/10 | 2.6 (preliminar; propuesta al docente) | sí |
 | 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
 | 11 | Evidencia S11 · Fallos parciales y decisión de extracción | | | no aplica | |
 | 12 | Evidencia S12 · Estrategia de datos y eventos | | | no aplica | |
@@ -83,18 +83,22 @@ Hoja consolidada del equipo a lo largo del semestre.
 | ADR aceptados reescritos: ADR-0001 (`e8ae57d`, 2026-08-31) y ADR-0002 (`befb0bc`, 2026-09-27) editados tras aceptarse, sin sucesor. | S8 (definitiva) | si | Si cambia la decisión, crear un ADR nuevo y marcar el anterior como reemplazado. |
 | SonarCloud sin evidencia verificable: job condicionado a `SONAR_TOKEN`; falta run del scanner y Quality Gate público del hash revisado. | S8 (definitiva) | si | Configurar el token, ejecutar el scanner y publicar el Quality Gate. |
 | Cuatro commits posteriores al cierre (2026-09-28) en `main` consolidan pendientes y declaran infraestructura de producción con Terraform. | S8 (definitiva) | no (hallazgo overall) | No entran en la matriz; se anotan en `overall`. |
+| S9 con avance en IaC: Terraform en `infra/` (ADR-0006, workflow de verificación estática y entrada de `docs/ia.md` del 2026-09-28). | S9 (preliminar) | no (trabajo del periodo) | Cumple las filas 1, 3 y 6 de la ficha S9. |
+| `docs/aspectos.md` sin fila para la porción S9; sin prueba que falle, medición, auditoría de erosión ni decisión sobre componente generativo en el periodo. | S9 (preliminar) | si | Completar la cadena y la evidencia del periodo. |
+| Pipeline del hash revisado con runs `Keep-alive` en rojo y sin Quality Gate público de SonarCloud. | S9 (preliminar) | si | Corregir el cron y publicar el Quality Gate. |
+| El `apply` de Terraform no se ejecutó: producción sigue siendo la del 2026-09-27. | S9 (preliminar) | si | Crear los tokens y aplicar el corte. |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
-| Nombre y visibilidad del repositorio | Cumple | `ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB`, público; clon anónimo OK en `858e78f` |
+| Nombre y visibilidad del repositorio | Cumple | `ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB`, público; clon anónimo OK en `bc38c9b` |
 | Estructura mínima | Cumple | Seis rutas presentes; arc42 en un único archivo, no en `docs/arc42/01..12` (desviación de ruta, no ausencia) |
 | Convención de nombres de ADR | Cumple | `0001`–`0005` en kebab-case |
 | ADR aceptados sin reescribir | No cumple | ADR-0001 editado en `e8ae57d` (2026-08-31) y ADR-0002 en `befb0bc` (2026-09-27) tras aceptarse, sin sucesor |
-| `docs/ia.md` al día | Cumple | Commits `9b31d8f` y `befb0bc` (2026-09-27) en la ventana S8; documenta descartes con motivo |
+| `docs/ia.md` al día | Cumple | Commit `4904d94` (2026-09-28) añade la entrada del periodo S9 con lo aceptado y lo rechazado con motivo |
 | Sin credenciales en el repositorio ni en el historial | Cumple | `git grep` §9 limpio (solo `token` de SVG en un HTML de terceros); sin `.env` versionado; `.env.example` sí versionado |
 | Contribución de todos los integrantes | Cumple | 4 identidades consolidadas = 4 integrantes |
-| Pipeline en verde | Cumple | 62 runs del hash `858e78f`, todos `success`: `Pruebas` #29 (URL citada en la evidencia S8) y el cron `Keep-alive` (61 ejecuciones, `#5`–`#65`); sin runs en `failure`/`cancelled` |
+| Pipeline en verde | No cumple | El hash revisado `bc38c9b` acumula runs del cron `Keep-alive`; al menos dos en `failure` (`36826802735`, `36802694698`) |
 | SonarCloud y Quality Gate públicos | No cumple | `sonar-project.properties` existe, pero el job está condicionado a `SONAR_TOKEN` y no hay run del scanner ni Quality Gate verificables para el hash revisado |
 | Etiqueta corte-1 (corte 1) | No cumple | `git tag --list` vacío; no existe ninguna etiqueta en el repositorio |
 

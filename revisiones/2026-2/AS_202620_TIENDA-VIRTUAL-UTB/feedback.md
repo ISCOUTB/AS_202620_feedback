@@ -74,3 +74,26 @@ Entrega muy completa: el sistema quedó desplegado por piezas (cliente web, API 
 Dos filas de despliegue quedaron pendientes de calificar porque la URL se entrega por Moodle y no se probó ninguna; el repositorio sí declara las URLs y las rutas de salud y métricas.
 
 Para cerrar: (1) el cron de keep-alive inunda el listado de ejecuciones y deja el run de la revisión fuera del alcance de la comprobación, así que citen el run de la rama principal que confirme el resultado; (2) el análisis estático no deja evidencia auditable mientras el token no esté configurado, de modo que el pipeline ejecute el scanner y publique el Quality Gate; y (3) no reescriban un ADR ya aceptado: si la decisión cambia, escriban uno nuevo y marquen el anterior como reemplazado.
+
+## Semana 9 · S9 (pasada temprana, previa al cierre)
+
+La rama principal sí se movió en esta ventana: el equipo declaró la infraestructura de producción como
+código con Terraform, con una decisión arquitectónica que compara alternativas (ADR), un workflow de
+verificación estática y el registro de IA actualizado con lo aceptado y lo rechazado. Eso cubre tres
+criterios de la evidencia.
+
+Lo que falta para cerrarla antes del cierre:
+
+- La fila de la tabla de aspectos para esa porción: sigue sin existir, así que la cadena
+  escenario → C4 → ADR → código → prueba → medición no arranca.
+- La prueba que falla ante el defecto que cubre: validar el formato de Terraform no es esa prueba;
+  hace falta un run en rojo, una prueba de mutación o el procedimiento documentado.
+- La medición del escenario asociado, contrastada con su umbral.
+- La auditoría de erosión y, si aplica, la verificación de propiedad de datos.
+- La verificación de las dependencias propuestas (los proveedores de Terraform no están en los
+  registros que se revisan; si añaden dependencias de npm o PyPI, compruébenlas contra su registro).
+- La decisión registrada en un ADR de no incorporar un componente generativo.
+
+Además: el cron de keep-alive deja runs en rojo sobre el hash revisado y sigue sin publicarse el
+Quality Gate de SonarCloud; y los ADR aceptados siguen editándose sin declarar un reemplazo. El
+despliegue real todavía no se migró: falta crear los tokens de Terraform y aplicar el corte.

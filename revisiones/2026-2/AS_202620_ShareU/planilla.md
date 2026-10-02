@@ -23,7 +23,7 @@
 | 7 | S7 | `29184bc` (2026-09-20T23:34:09-05:00) | 6/10 | 3.4 | si |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `332f67f` (2026-09-27T23:57:16-05:00) | 7/10 graduables (2 filas de despliegue pendientes) | 3.8 (provisional) | si |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
-| 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
+| 9 | Evidencia S9 · Generación verificada y trazable (preliminar) | `3950860` (2026-09-28T19:56:57-05:00) | 9/10 | 4.6 (prelim.) | si |
 | 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
 | 11 | Evidencia S11 · Fallos parciales y decisión de extracción | | | no aplica | |
 | 12 | Evidencia S12 · Estrategia de datos y eventos | | | no aplica | |
@@ -101,6 +101,11 @@
 | Pipeline de `master` en rojo en el hash calificado (`36379843854`, failure). | S8 | sí | Corregir el workflow para que el commit calificado quede en verde. |
 | PDF fuera de la convención en `docs/adr/` reaparece en el estado calificado. | S8 | sí | `docs/adr/ShareU_Trazabilida.pdf`. |
 | SonarCloud sin run del scanner ni Quality Gate público. | S6 | sí | Falta la evidencia auditable del §8. |
+| La métrica de búsquedas de S8 tenía un cruce de frontera (`busqueda` importaba `administracion.metricas`); se corrigió en S9 con la fachada `administracion/service.py`. | S9 (prelim.) | no (resuelto en el periodo) | — |
+| Sin dependencias añadidas en el periodo S9 que verificar en el registro oficial. | S9 (prelim.) | si | Añadir en el periodo las dependencias que se quieran respaldar, o dejar constancia de que no hubo. |
+| Referencias a archivos inexistentes (`Dockerfile`, `render.yaml`, ADR 0005–0007, `tests/test_contrato.py`) y marcadores sin resolver en README, arc42 e `ia.md`. | S9 (prelim.) | si | Versionar los archivos o retirar las referencias; completar los marcadores. |
+| CI de `master` en rojo en el hash revisado (`3950860`, run `36505758458`, failure). | S9 (prelim.) | si | Dejar el commit calificado en verde. |
+| ADR-0008 y ADR-0009 en estado «Propuesto», pendientes de aprobación formal del equipo. | S9 (prelim.) | si | Aprobar los ADR y marcarlos como Aceptados. |
 
 ## Estado del contrato del repositorio
 
@@ -110,11 +115,11 @@
 | Estructura mínima | No cumple | `docs/aspectos.md` y `docs/ia.md` no están en la ruta mínima; los artefactos viven en `docs/aspectos/aspectos.md` y `docs/ia/ia.md` |
 | Convención de nombres de ADR | No cumple | `docs/adr/ShareU_Trazabilida.pdf` no sigue `NNNN-kebab-case.md` |
 | ADR aceptados sin reescribir | Cumple | `0001` solo se movió de carpeta; `0002`–`0004` con una creación cada uno |
-| `docs/ia.md` al día | Cumple | `docs/ia/ia.md` crece en el periodo y registra lo rechazado con motivo (S8) |
+| `docs/ia.md` al día | Cumple | `docs/ia/ia.md` crece en el periodo y registra lo rechazado con motivo, incluida la fila 9 de S9 |
 | Sin credenciales en el repositorio ni en el historial | Cumple | `git grep` §9 y `log -S` sin coincidencias |
-| Contribución de todos los integrantes | Cumple | Los 4 integrantes aparecen en el historial consolidado por correo (S8) |
-| Pipeline en verde | No cumple | El run del hash calificado `36379843854` termina en `failure`: https://github.com/ISCOUTB/AS_202620_ShareU/actions/runs/36379843854 |
-| Pipeline, SonarCloud y Quality Gate públicos | No cumple | Scanner en el workflow, pero sin run exitoso para el hash ni URL pública con Quality Gate |
+| Contribución de todos los integrantes | Cumple | Los 4 integrantes aparecen en el historial consolidado por correo (S9) |
+| Pipeline en verde | No cumple | El run del hash calificado `36505758458` termina en `failure`: https://github.com/ISCOUTB/AS_202620_ShareU/actions/runs/36505758458 |
+| Pipeline, SonarCloud y Quality Gate públicos | No cumple | Scanner en el workflow, pero el run del hash revisado está en rojo y no hay URL pública con Quality Gate |
 
 ## Contribución por integrante
 

@@ -23,7 +23,7 @@
 | 7 | S7 | `8f25313` (2026-09-19T13:37:58-05:00) | 10/10 | 5.0 | si |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `5c7f77b` (2026-09-27T19:55:59-05:00) | 10/10 (2 filas de despliegue diferidas) | 5.0 (provisional) | si |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
-| 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
+| 9 | Evidencia S9 · Generación verificada y trazable (preliminar) | `f8c0287` (2026-10-01T13:13:00-05:00) | 8/10 | 4.2 (prelim.) | si |
 | 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
 | 11 | Evidencia S11 · Fallos parciales y decisión de extracción | | | no aplica | |
 | 12 | Evidencia S12 · Estrategia de datos y eventos | | | no aplica | |
@@ -104,6 +104,10 @@
 | Publicar el despliegue y su health check verificables. | S8 | sí (diferido) | Fila diferida por decisión docente: la URL se entrega por Moodle. El README ya declara la URL y la ruta `/health` existe. |
 | SonarCloud sin invocación en el workflow ni URL pública del Quality Gate. | S6 | si | Falta la evidencia del contrato §8. |
 | ADR-0002 y ADR-0003 editados después de aceptarse sin reemplazo declarado. | S8 | si | Crear un ADR sucesor en vez de editar uno aceptado. |
+| La porción de código que la cadena S9 presenta (Emparejamiento + PostgreSQL) se creó en `e952f5b`, antes del hash de S8: es línea base y no satisface la fila 1. | S9 (prelim.) | si | Para S9 hace falta una porción construida en el periodo, con sus rutas y commits. |
+| Sin dependencias añadidas en el periodo S9 que verificar en el registro oficial. | S9 (prelim.) | si | Añadir en el periodo las dependencias que se quieran respaldar, o dejar constancia de que no hubo. |
+| SonarCloud: scanner en `continue-on-error` y sin URL pública del Quality Gate. | S6 | si | Falta la evidencia auditable del contrato §8. |
+| ADR-0004 editado el 2026-09-28 (`34ab8f2`) después de aceptarse, sin reemplazo declarado. | S9 (prelim.) | si | Crear un ADR sucesor en vez de editar uno aceptado. |
 
 ## Estado del contrato del repositorio
 
@@ -112,12 +116,12 @@
 | Nombre y visibilidad del repositorio | Cumple | Público (clon sin auth) |
 | Estructura mínima | Cumple | Las seis rutas están, pero `docs/arc42.md` suelto convive con `docs/arc42/` |
 | Convención de nombres de ADR | Cumple | 0001, 0002, 0003 en kebab-case con la decisión en el título |
-| ADR aceptados sin reescribir | No cumple | ADR-0001 sí declara reemplazo, pero ADR-0002 y ADR-0003 se editaron en `f7c1a6c` (2026-09-07) después de aceptarse (2026-09-05) sin declarar reemplazo |
-| `docs/ia.md` al día | Cumple | Entradas por semana con aceptado/corregido/rechazado y motivo, incluida la de S8 (2026-09-26) |
+| ADR aceptados sin reescribir | No cumple | ADR-0001 sí declara reemplazo, pero ADR-0002 y ADR-0003 se editaron en `f7c1a6c` (2026-09-07) y ADR-0004 en `34ab8f2` (2026-09-28) después de aceptarse, sin declarar reemplazo |
+| `docs/ia.md` al día | Cumple | Entradas por semana con aceptado/corregido/rechazado y motivo, incluidas las de S8 (2026-09-26) y S9 (2026-09-27/28 y 2026-10-01) |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Barrido sin credenciales del equipo; el `repo_token` de Coveralls del historial es un artefacto público del paquete npm `debug` 2.6.9, documentado y cerrado en `docs/no-conformidades.md` |
-| Contribución de todos los integrantes | Cumple, con reserva | 4 identidades para 4 integrantes, pero Fernando con 1 solo commit en todo el semestre |
-| Pipeline en verde | Cumple | Run público exitoso del estado revisado (`5c7f77b`): https://github.com/ISCOUTB/AS_202620_Recobra/actions/runs/36364033272 |
-| Pipeline, SonarCloud y Quality Gate públicos | No cumple | CI en verde, pero el workflow no invoca el scanner de SonarCloud ni publica URL del Quality Gate |
+| Contribución de todos los integrantes | Cumple | 4 identidades para 4 integrantes; Fernando ya con 24 commits (supera la contribución mínima) |
+| Pipeline en verde | Cumple | Run público exitoso del estado revisado (`f8c0287`): https://github.com/ISCOUTB/AS_202620_Recobra/actions/runs/36905180747 |
+| Pipeline, SonarCloud y Quality Gate públicos | No cumple | CI en verde; el workflow ya invoca el scanner, pero está en `continue-on-error` y no publica URL del Quality Gate |
 
 ## Contribución por integrante
 

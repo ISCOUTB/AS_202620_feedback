@@ -16,6 +16,7 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 9 | S9 (prelim.) | `f12bba8` (2026-09-30T00:41:30-05:00; punta actual) | 3/10 | 2.2 (prelim.; propuesta al docente) | sí, preliminar |
 | 8 | S8 | `48aeecf` (2026-09-27T23:48:02-05:00) | 10/10 | 5.0 | sí, definitiva |
 | 7 | S7 | `f10fd01` (2026-09-20T23:01:13-05:00) | 9/10 | 4.6 | sí, auditada |
 | 6 | S6 | `d6f2b19` (2026-09-13T23:37:36-05:00) | 7/8 | 4.5 | si |
@@ -85,6 +86,9 @@ S8 se califica sobre 10 de las 12 filas de la ficha: quedan pendientes de califi
 | Despliegue público, health check e infraestructura como código ausentes | S8 | Sí | Elegir plataforma, desplegar y versionar el entorno. |
 | Sin logs estructurados, métrica consultable ni estimación de costo | S8 | Sí | Instrumentar observabilidad y calcular el consumo mensual. |
 | Vista de despliegue productiva y ADR de plataforma ausentes | S8 | Sí | Completar arc42 §7 y registrar la decisión. |
+| Sin porción de sistema, cadena, prueba ni medición en el periodo S9 (solo despliegue a Dokploy) | S9 | Sí | Entregar la porción construida con IA con su cadena completa antes del cierre. |
+| Auditoría de erosión del periodo de generación S9 | S9 | Sí | Documentar si cruzó límites de contexto o reglas de propiedad de datos de S6, y su corrección. |
+| ADR de decisión sobre el componente generativo | S9 | Sí | La ausencia de decisión no es la decisión de no incorporarlo. |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

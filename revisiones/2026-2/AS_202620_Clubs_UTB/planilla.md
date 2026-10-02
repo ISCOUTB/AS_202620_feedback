@@ -14,6 +14,7 @@
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 9 | S9 (preliminar) | `652f78b7` (2026-09-27T23:39:11-05:00; punta sin cambios desde S8) | 1/10 | 1.4 (preliminar; puede cambiar al cierre) | si |
 | 8 | S8 | `652f78b7` (2026-09-27T23:39:11-05:00) | 5/10 | 3.0 (provisional; 2 filas de despliegue diferidas por decisión docente) | si |
 | 7 | S7 | `dc211b8` (2026-09-20T23:56:51-05:00) | 8/10 | 4.2 | si |
 | 6 | S6 | `743cc1f` (2026-09-13T23:55:10-05:00) | 6/8 | 4.0 (prelim.) | si |

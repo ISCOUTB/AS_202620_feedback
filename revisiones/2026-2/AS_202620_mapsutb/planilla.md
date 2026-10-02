@@ -23,7 +23,7 @@
 | 7 | S7 | `5e2fdd5` (2026-09-20T21:15:28-05:00) | 10/10 | 5.0 | sí (auditoría definitiva corregida) |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `8cfe4581` (2026-09-27T16:35:57-05:00) | 10/10 | 5.0 (propuesta; 2 filas de despliegue pendientes) | sí (definitiva) |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
-| 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
+| 9 | Evidencia S9 · Generación verificada y trazable | `0190115c` (2026-10-01T14:53:58-05:00) | 9/10 | 4.6 (preliminar) | sí (preliminar) |
 | 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
 | 11 | Evidencia S11 · Fallos parciales y decisión de extracción | | | no aplica | |
 | 12 | Evidencia S12 · Estrategia de datos y eventos | | | no aplica | |
@@ -77,6 +77,10 @@
 | Dejar el pipeline actual en verde y publicar la evidencia de análisis estático con Quality Gate. | S8 | sí (parcial: el pipeline del hash revisado quedó citado en verde —`CI` #31 y `Despliegue web` #6—; falta el Quality Gate público de SonarCloud) | Publicar el Quality Gate del análisis sobre el hash revisado |
 | Añadir logs estructurados, una métrica operativa consultable y manejo seguro de secretos en la plataforma. | S8 | sí | No hay evidencia verificable de observabilidad ni de inyección segura de la clave de Google. |
 | Completar costo mensual, arc42 §7 y ADR de plataforma de despliegue. | S8 | sí | Solo está documentada la restricción de costo cero; faltan cálculo y decisión de plataforma. |
+| ADR 0014 (no incorporar componente generativo) queda en estado *Propuesto*: falta la decisión del equipo. | S9 | sí | Marcar el ADR como *Aceptado* o tomar la decisión del componente generativo antes del cierre. |
+| `docs/aspectos.md` (A-01) declara pendiente la pantalla de mapa que ya existe en la punta (`b679886`). | S9 | sí | Actualizar la celda Código de A-01. |
+| `docs/evidencia-s9.md` §8 afirma «ninguna dependencia nueva» mientras `pubspec.yaml` añade `flutter_map` y `latlong2`. | S9 | sí | Alinear la sección de dependencias con el manifiesto. |
+| GPS real y coordenadas definitivas de las 11 zonas, declarados pendientes por el equipo. | S9 | sí | Registrar los datos en campo y regenerar el grafo. |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -85,7 +89,7 @@
 | Estructura mínima | Cumple | La punta aceptada usa `docs/arc42/`, `docs/c4/` y `docs/adr/`. |
 | Convención de nombres de ADR | Cumple | Los ADR actuales están numerados y titulados en kebab-case. |
 | ADR aceptados sin reescribir | No cumple | `0001-patrones-de-diseno.md` tiene múltiples reescrituras posteriores a su creación |
-| `docs/ia.md` al día | No cumple | La última actualización verificable es del 2026-08-30, anterior a S8. |
+| `docs/ia.md` al día | Cumple | Actualizado el 2026-10-01 (`265da7f`) dentro del periodo S9, con aceptado, corregido y rechazado con motivo. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | greps limpios en HEAD `f40775d` |
 | Contribución de todos los integrantes | Cumple | 4 personas consolidadas en HEAD: CarlosManrique-1397 (41), i-matallana (39, dos correos), charlygz21 (13), nerlis-otero (6) |
 | Pipeline en verde | Cumple | 104 runs del hash `8cfe4581`, todos `success`: `CI` #31 y `Despliegue web (Firebase Hosting)` #6, más los crons de sonda y sincronización de Sonar; URLs citadas en la evidencia S8 |

@@ -8,12 +8,13 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_ElMapita` |
 | Integrantes y su usuario de GitHub | Angel Fabian Gutierrez Gomez (sin cuenta identificada en el historial) · Diego Rosales Garza (sin cuenta identificada) · Rodrigo Vazquez Rico (firma con su nombre). Historial: `RobotDRMX` (sin atribuir) y, en EQUIPOS.md, `YOOUYII` (nunca vista). |
 | URL del sistema desplegado | sin desplegar todavía |
-| Ultima revision | 2026-09-28 |
+| Ultima revision | 2026-10-01 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 9 | S9 | `e5c3ac6` (2026-09-27T16:26:27-06:00) | 1/10 | 1.4 (preliminar, sin cierre) | si |
 | 8 | S8 | `e5c3ac6` (2026-09-27T16:26:27-06:00) | 9/10 (2 filas de despliegue diferidas) | 4.6 (provisional) | si |
 | 6 | S6 | `a22f0a4` (2026-09-13T22:21:07-05:00) | 0/8 | 1.0 (prelim.) | si |
 | 7 | S7 | `afae3be` (2026-09-20T19:09:25-06:00) | 8/10 | 4.2 | si |
@@ -84,6 +85,13 @@
 | Estimación de costo mensual y punto de ruptura | S8 | si | |
 | arc42 secciones 7 y 2 | S8 | si | |
 | ADR por decisión de plataforma | S8 | si | |
+| Sin commits de S9: la punta es la de S8 (`e5c3ac6`, 2026-09-27). | S9 | sí | La pasada S9 no tiene cierre y califica la punta actual; el equipo no ha empujado trabajo nuevo. |
+| Recalce S9 por CONTRATO §12: sin artefacto del periodo, las filas de porción con IA, cadena, ADR y extracto de `docs/ia.md` pasan a No cumple, y la de prueba que falla ante el defecto a No verificado. | S9 | sí | Solo el barrido de credenciales queda en Cumple; la evidencia de S3/S7/S8 se cita como contexto pero no se recalifica. |
+| `docs/aspectos.md` con Pruebas «(pendiente)» y Evidencia «Pendiente» (EC-01…EC-04). | S4/S9 | sí | La cadena no llega a prueba ni a medición. |
+| Sin medición contra umbral de ningún escenario. | S5/S9 | sí | — |
+| Sin auditoría de erosión ni verificación de propiedad de datos. | S9 | sí | Fila de la ficha en No cumple. |
+| Sin verificación de dependencias del periodo (diff vacío contra S8). | S9 | sí | — |
+| Sin ADR sobre el componente generativo (ni componente, ni decisión de no incorporarlo). | S9 | sí | La ausencia de decisión no es la decisión de no hacerlo. |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -92,7 +100,7 @@
 | Estructura mínima | Cumple | Las seis rutas; arc42 en plantilla única y C4 solo PNG (anotado desde S2). |
 | Convención de nombres de ADR | Cumple | `0001-estilo-arquitectonico-propuesto.md` conforme. |
 | ADR aceptados sin reescribir | No cumple | `docs/adr/0001-estilo-arquitectonico-propuesto.md` declara `status: Accepted` (2026-08-22) y fue editado en `07b36f4` (2026-08-30) sin declarar reemplazo; el informe S7 lo registra en No cumple. |
-| `docs/ia.md` al día | Cumple | 7 commits entre 2026-08-07 y 2026-09-20 (afae3be); el registro documenta usos y rechazos con su motivo. |
+| `docs/ia.md` al día | No cumple | Sigue documentando usos y rechazos con su motivo, pero su última entrada es del 2026-09-27 (S8): no se actualizó en la semana S9. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Coincidencias solo en tipos (`password: string`) y badge placeholder del boilerplate. |
 | Contribución de todos los integrantes | No cumple | Confirmado hasta el corte 1: `RobotDRMX` 12 commits (86%), `dgarza2705`/Diego Rosales Garza 1, Rodrigo Vazquez Rico 1; Angel Fabian Gutierrez Gomez sigue sin ningún commit identificable en todo el historial. |
 | Pipeline en verde | Cumple | Último run de `main` en `e5c3ac6` en verde (run 36355303177); SonarCloud sigue ausente y queda en la fila transversal. |

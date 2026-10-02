@@ -8,7 +8,7 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_LostVault` |
 | Integrantes y su usuario de GitHub | Jose Faustino Espana Noriega · Roy Andres Gonzalez Blanco · Shamara Llorente Tapias · Kiefer Monterroza Manjarres — identidades del historial: Roy Gonzalez (¿`RGBlanco18`?), `shamarallorente-blip`, `Fausto-4` (correo `ganonimo2504`), `weller-rar` (correo `pelu.kiefer`); correspondencias por confirmar con el docente |
 | URL del sistema desplegado | declarada en el repo: `https://backend-nu-self-91.vercel.app` (no consultada; pendiente por Moodle) |
-| Ultima revision | 2026-09-28 |
+| Ultima revision | 2026-10-01 |
 
 ## Estado por entrega
 
@@ -71,7 +71,7 @@
 | Correspondencia entre el contrato y una API implementada (o aclaración explícita de que la frontera HTTP aún no existe). | S7 | si | |
 | Evidencia de ejecución de la prueba de contrato en rojo ante un cambio incompatible. | S7 | si | |
 | URL pública del análisis en SonarCloud con Quality Gate para el hash revisado. | S7 | si | |
-| C4 nivel 2 revisable (como código) con protocolo y formato en cada flecha (el diagrama existe como .jpg; sus flechas de cruce tecnológico no llevan protocolo ni formato). | S7 | si | — | |
+| C4 nivel 2 revisable (como código) con protocolo y formato en cada flecha (el diagrama existe como .jpg; sus flechas de cruce tecnológico no llevan protocolo ni formato). | S7 | si | — |
 | Columna C4 y celdas completas en docs/aspectos.md para todas las filas. | S7 | si | |
 | Actualización de docs/arc42/09_decisiones.md con el ADR 0002. | S7 | si | |
 | Despliegue público, health check e infraestructura como código ausentes | S8 | No (resuelto en S8) | API desplegada en Vercel; Dockerfile/Compose/Terraform versionados; URL y health documentados. |
@@ -81,6 +81,7 @@
 | ADR aceptados editados sin reemplazo declarado (0001, 0002) | S8 | Sí | No editar ADR aceptados; si cambia la decisión, escribir otro y marcar el anterior como reemplazado. |
 | URL pública del Quality Gate de SonarCloud | S8 | Sí | Publicar el enlace del análisis y el estado del Quality Gate. |
 | `backend/vercel.json` citado por arc42 §7 y Terraform no existe en el repo | S8 | Sí | Versionarlo o corregir las referencias documentales. |
+| Sin entrega S9 en la punta: el periodo `4a9ecc94..a5faf6a` solo modifica `backend/DEPLOY_VERCEL.md` (Swagger UI) | S9 | Sí (preliminar) | Empujar la porción construida con IA, su ADR, la prueba que falla y la medición antes del cierre del 2026-10-05T05:00:00Z. |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

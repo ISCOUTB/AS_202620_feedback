@@ -25,7 +25,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 7 | S7 | `1ea4aba` (2026-09-18T22:21:34Z) | 9/10 | 4.6 | sí (auditoría definitiva corregida) |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `0f3da0f3` (2026-09-27T22:52:09-05:00) | 9/10 | 4.6 (propuesta; 2 filas de despliegue pendientes) | sí (definitiva) |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
-| 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
+| 9 | Evidencia S9 · Generación verificada y trazable | `0f3da0f3` (2026-09-27T22:52:09-05:00) | 1/10 | 1.4 (preliminar) | sí (preliminar) |
 | 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
 | 11 | Evidencia S11 · Fallos parciales y decisión de extracción | | | no aplica | |
 | 12 | Evidencia S12 · Estrategia de datos y eventos | | | no aplica | |
@@ -66,6 +66,11 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Recuperar el pipeline en verde para el estado entregado. | S8 | sí | El run del estado S8 revisado falla. |
 | Incorporar logs estructurados, métrica operativa consultable y mecanismo de secretos del proveedor. | S8 | sí | El logging es texto libre y Compose conserva credenciales de desarrollo; no hay métrica ni gestor de secretos verificable. |
 | Completar cálculo mensual, arc42 §7 y ADR de plataforma de despliegue. | S8 | sí | Existe la restricción de costo cero, pero faltan cálculo y decisión de plataforma. |
+| Sin commits de S9: la punta coincide con el hash calificado de S8. | S9 | sí | Empujar la porción de la evidencia S9 antes del cierre. |
+| CI del hash revisado en rojo, incluido el Quality Gate. | S9 | sí | Reparar el workflow `CI` en la rama principal. |
+| ADR 0011 editado el 2026-09-27 tras su aceptación, sin declarar reemplazo. | S9 | sí | No editar ADR aceptados; crear uno nuevo y marcar el anterior como reemplazado. |
+| Contribución por integrante sin atribuir: seis identidades de correo para cuatro personas. | S9 | No verificado | Confirmar con el docente a qué persona corresponde cada cuenta. |
+| Sin evaluación ni ADR sobre el componente generativo. | S9 | sí | Evaluar el componente o decidir su no incorporación con un ADR. |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -73,8 +78,8 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Nombre y visibilidad del repositorio | Cumple | `ISCOUTB/AS_202620_uniTeam`, público |
 | Estructura mínima | Cumple | seis rutas presentes |
 | Convención de nombres de ADR | Cumple | seis ADR con nombres `NNNN-titulo-en-kebab-case.md` |
-| ADR aceptados sin reescribir | Cumple | ADR 0001 declara reemplazo por 0002; los demás conservan su decisión |
-| `docs/ia.md` al día | No cumple | última actualización verificable 2026-09-18, anterior al periodo S8. |
+| ADR aceptados sin reescribir | No cumple | El ADR 0011 se editó el 2026-09-27 después de aceptarse, sin declarar reemplazo; el ADR 0001 sí declara reemplazo por 0002. |
+| `docs/ia.md` al día | No cumple | última modificación 2026-09-27, del periodo S8; no tiene entrada del periodo S9. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | barridos limpios; menciones de token son identificadores de código |
 | Contribución de todos los integrantes | No verificado | El historial contiene seis grupos de identidades; solo `JuanB`/`JuanBustamante` se consolidan por compartir cuenta. `EQUIPOS.md` no ofrece correspondencias individuales y `iansx` no aparece. |
 | Pipeline en verde | No cumple | El run del estado S8 revisado falla y no se encontró análisis público de SonarCloud con Quality Gate. |

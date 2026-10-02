@@ -55,3 +55,24 @@ Tres correcciones:
 3. Falta publicar la URL del análisis en SonarCloud con el estado del Quality Gate; además, la vista de despliegue y el Terraform citan un archivo de configuración de Vercel que no está en el repositorio.
 
 La métrica p95 no acumula en producción por el estado en memoria de la función serverless, y está bien que lo hayan documentado. Cierren el enlace público del Quality Gate y la disciplina de ADR.
+
+## Semana 9 · S9 (pasada temprana, preliminar)
+
+Esta entrega es una lectura **preliminar**: la actividad S9 aún no ha cerrado (corte el 2026-10-05) y lo revisado es la punta actual de la rama principal, no un estado congelado; la valoración puede cambiar si el equipo empuja antes del cierre.
+
+La evidencia de S9 se lee con una regla decisiva: una fila solo se satisface con trabajo **del periodo S9**. Lo que ya estaba en el repositorio es línea base y se puede citar como contexto, pero no cuenta dos veces. La punta revisada sí avanzó con dos commits respecto al estado calificado de S8, pero ambos tocan únicamente `backend/DEPLOY_VERCEL.md` (documentación de Swagger UI): es material editorial y documental, no una porción del sistema, así que no satisface esa fila.
+
+**Qué falta para esta evidencia**
+- Una porción real del sistema construida con IA durante S9, con su cadena navegable en `docs/aspectos.md` hasta código, prueba y medición.
+- La prueba que falle ante el defecto que cubre: no hay run en rojo, prueba de mutación ni procedimiento documentado; la fila queda como pregunta de sustentación.
+- La medición del escenario asociado, contrastada con su umbral.
+- La actualización de `docs/ia.md` con lo aceptado, lo corregido y lo rechazado con su motivo, incluyendo al menos una entrada del periodo.
+- El ADR que decida sobre el componente generativo: evaluarlo con costo y latencia, o argumentar por qué no se incorpora.
+- La auditoría de erosión sobre límites de contexto y propiedad de datos del código generado en S9.
+- La verificación, contra su registro oficial, de las dependencias que se propongan en S9.
+
+**Recordatorios transversales que siguen abiertos**
+- El ADR `000.3-despliegue-busqueda-lostvault.md` está fuera de la convención de nombres (`NNNN-titulo-en-kebab-case.md`); conviene renombrarlo.
+- Hay ADR ya aceptados que se editaron sin declarar un reemplazo. Un ADR aceptado no se reescribe: cuando la decisión cambia, se escribe uno nuevo y el anterior se marca como reemplazado.
+- `docs/ia.md` debe quedar al día para la semana.
+- Los pipelines del tip pasan, pero falta publicar la URL del análisis en SonarCloud con el estado del Quality Gate; el paso de Quality Gate en el pipeline no sustituye el enlace público.

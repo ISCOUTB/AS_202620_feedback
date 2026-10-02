@@ -55,3 +55,13 @@ Está bien: la infraestructura como código versionada (el blueprint de desplieg
 Qué corregir: la sección 2 de arc42 debe recoger el límite de costo y la condición de tarjeta como restricciones (hoy solo viven en el ADR); la evidencia de SonarCloud (configuración, run y URL pública con el estado del Quality Gate) sigue ausente; conviene fijar el host real de la sección 7 en el proveedor elegido, que hoy sigue como una lista de opciones; los ADR aceptados no deben editarse sin declarar reemplazo; y la contribución debe repartirse para que todos los integrantes aparezcan en el historial.
 
 La URL del despliegue y la comprobación de salud quedan diferidas por decisión docente: se entregan por Moodle.
+
+## Semana 9 · S9 (pasada temprana, preliminar)
+
+Esta lectura es preliminar: la actividad todavía no cierra y se revisó la punta actual de la rama principal, no un estado congelado. No hay commits nuevos desde la entrega anterior, así que la evidencia de esta semana todavía no está en el repositorio.
+
+Cómo se lee esta evidencia: una fila de S9 solo se sostiene con trabajo del periodo de S9. Lo que ya estaba en el repositorio es línea base y se puede citar como contexto, pero no cuenta dos veces. Por eso, aunque el repositorio conserva piezas valiosas de semanas anteriores (el ADR de estilo bien argumentado, el registro de uso de IA con rechazos motivados y un run en rojo histórico que demostró que la prueba de contrato sirve), ninguna de ellas satisface por sí sola una fila de esta entrega.
+
+Qué falta para esta evidencia: 1) construir la porción nueva con IA y traer su cadena de trazabilidad; 2) completar la tabla de aspectos, cuya cadena se rompe en Pruebas y Evidencia para los cuatro escenarios; 3) aportar una prueba que falle ante el defecto que cubre, con evidencia del periodo (run en rojo, prueba de mutación o procedimiento documentado); 4) publicar la medición de los escenarios contrastada con su umbral; 5) documentar la auditoría de erosión sobre los límites de contexto y la propiedad de datos; 6) registrar en el archivo de uso de IA una entrada de esta semana y verificar en los registros oficiales las dependencias propuestas en el periodo; 7) si decidieron no incorporar un componente generativo, dejar el ADR que lo justifique (la ausencia de decisión no cuenta como decisión); y 8) sumar la evidencia de SonarCloud con su Quality Gate, pendiente desde S6.
+
+Recordatorios que siguen abiertos: los ADR aceptados no deben editarse sin declarar un reemplazo, y la contribución debe repartirse para que todos los integrantes aparezcan en el historial.

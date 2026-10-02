@@ -16,6 +16,7 @@ Hoja consolidada del equipo GimnasioUTB. Se actualiza tras cada revisión.
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 9 | S9 (prelim.) | `e6a7f58` (2026-09-28T01:32:10-05:00; punta actual) | 6/10 | 3.4 (prelim.; propuesta al docente) | sí, preliminar |
 | 6 | S6 | `106869b` (2026-09-13T22:19:08-05:00) | 6/8 | 4.0 (prelim.) | si |
 | 8 | S8 | `a71bc75` (2026-09-27T21:55:06-05:00) | 3/10 | 2.2 | sí, definitiva |
 | 7 | S7 | `0e3aeb5` (2026-09-20T23:29:29-05:00) | 8/10 | 4.2 | sí, auditada |
@@ -70,6 +71,10 @@ S8 se califica sobre 10 de las 12 filas de la ficha: quedan pendientes de califi
 | Despliegue público, health check e infraestructura como código ausentes | S8 | Sí | Publicar Render y versionar su definición. |
 | Sin logs estructurados, métrica consultable ni estimación de costo completa | S8 | Sí | Instrumentar observabilidad y calcular el punto de ruptura. |
 | arc42 §7 y ADR independiente de plataforma ausentes | S8 | Sí | Documentar cada pieza y su decisión de alojamiento. |
+| Prueba que demuestre fallar ante el defecto de la porción S9 (run en rojo, mutación o procedimiento) | S9 | Sí | La prueba PostgreSQL existe en el periodo, pero falta la evidencia del fallo controlado. |
+| Auditoría de erosión del periodo de generación S9 | S9 | Sí | Documentar si cruzó límites de contexto o reglas de propiedad de datos de S6, y su corrección. |
+| ADR de decisión sobre el componente generativo | S9 | Sí | La ausencia de decisión no es la decisión de no incorporarlo. |
+| `docs/ia.md` sin entrada de S9 (sigue en la semana 6) | S9 | Sí | Registrar lo aceptado, lo corregido y lo rechazado con motivo de la porción S9. |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

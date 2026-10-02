@@ -23,7 +23,7 @@
 | 7 | S7 | `c53ee32` (2026-09-18T21:11:48-05:00) | 10/10 | 5.0 | si |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `784d788` en `master` (2026-09-27T23:50:19-05:00) | 10/10 | 5.0 (2 filas de despliegue pendientes) | sí |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
-| 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
+| 9 | Evidencia S9 · Generación verificada y trazable | `784d788` en `master` (2026-09-27T23:50:19-05:00) | 1/10 | 1.4 (prelim.) | sí (preliminar) |
 | 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
 | 11 | Evidencia S11 · Fallos parciales y decisión de extracción | | | no aplica | |
 | 12 | Evidencia S12 · Estrategia de datos y eventos | | | no aplica | |

@@ -14,6 +14,7 @@
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 9 | S9 (prelim.) | `8a00556` (2026-09-30T22:34:57-05:00) | 10/10 | 5.0 (prelim.; propuesta al docente) | sí |
 | 8 | S8 | `74709aa` (2026-09-27T23:58:28-05:00) | 10/10 | 5.0 (prop. prov.; 2 filas de despliegue diferidas) | sí |
 | 7 | S7 | `9334a03` (2026-09-20T20:19:47-05:00) | 10/10 | 5.0 | si |
 | 6 | S6 | `5f7fa4c` (2026-09-13T22:07:49-05:00) | 5/8 | 3.5 (prelim.) | si |
@@ -100,15 +101,18 @@
 | Logs estructurados y metrica consultable ligada al escenario E1. | S8 | no (resuelto: `observability.py`, `/metrics` con `drift_search_latency_ms`) | |
 | Estimacion de costo mensual con supuestos; limite de costo y 'sin tarjeta' en arc42 seccion 2. | S8 | no (resuelto: `Estimacion_costos.md` y `arc42_2` §2.7) | |
 | arc42 seccion 7 y un ADR por decision de plataforma con alternativa descartada. | S8 | no (resuelto: `arc42_7` y ADR-0005/0006) | |
+| Nombres de ADR: el ADR-0007 usa `ó` acentuada y no es kebab-case ASCII. | S9 | sí | Ver feedback S9 |
+| Sin dependencias añadidas en el periodo de S9 (diff `74709aa..8a00556` vacío); verificación sobre el conjunto preexistente. | S9 | sí | Ver feedback S9 |
+| SonarCloud: run del scanner y URL pública con Quality Gate, pendiente desde S6. | S9 | sí | Ver feedback S9 |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | `AS_202620_Drift`, público. |
 | Estructura mínima | Cumple | Las seis rutas en su lugar desde la reorganización del 08-22. |
-| Convención de nombres de ADR | Cumple | `0001-arquitectura-base.md` conforme. |
+| Convención de nombres de ADR | No cumple | `0001`–`0006` conformes; el ADR-0007 nuevo (`0007-evaluacion-de-incorporación-coponente-generativo.md`, 2026-09-30) usa `ó` acentuada y no es kebab-case ASCII. |
 | ADR aceptados sin reescribir | No cumple | ADR-0002 (vigente, aceptado) editado el 2026-09-05 (`70e52e2`) y el 2026-09-13 (`9488544`), sin ADR de reemplazo. |
-| `docs/ia.md` al día | Cumple | Commits 08-21/08-22; rechazo narrado en §3.1 con motivo. |
+| `docs/ia.md` al día | Cumple | `d4c2fe7` (2026-09-30) añade los registros 24–40, con alternativas descartadas y su motivo. |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Sin coincidencias. |
 | Contribución de todos los integrantes | Cumple | Los 4 firman en S3, con desbalance (51/19/18/9). |
 | Pipeline en verde | No cumple | CI en verde (run 36379911184 sobre `74709aa`), pero SonarCloud no está integrado: `ci.yml` no invoca el scanner ni usa `SONAR_TOKEN`. |

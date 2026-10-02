@@ -23,7 +23,7 @@
 | 7 | S7 | `0a12f0c` (2026-09-17T15:27:54-05:00) | 10/10 | 5.0 | si |
 | 8 | S8 | `4b07242` en `origin/main` (2026-09-27T23:03:53-05:00) | 10/10 | 5.0 (propuesta; 2 filas de despliegue diferidas) | si |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
-| 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
+| 9 | Evidencia S9 · Generación verificada y trazable | `4b07242` en `origin/main` (2026-09-27T23:03:53-05:00) | 1/10 | 1.4 (preliminar; propuesta al docente) | sí |
 | 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
 | 11 | Evidencia S11 · Fallos parciales y decisión de extracción | | | no aplica | |
 | 12 | Evidencia S12 · Estrategia de datos y eventos | | | no aplica | |
@@ -124,11 +124,14 @@
 | ADR-0001 aceptado reescrito en `4dd3925` (2026-08-29) y `42c5b03` (2026-09-06) sin ADR sucesor. | S8 (definitiva) | si | No editar ADR aceptados; si cambia la decisión, crear uno nuevo y marcar el anterior como reemplazado. |
 | `docs/ia.md` sin commits en la ventana S8 (último `7b32b3f`, 2026-09-16). | S8 (definitiva) | si | Registrar el uso de IA del periodo. |
 | Sin SonarCloud: ni configuración, ni run del scanner, ni URL pública con Quality Gate. | S8 (definitiva) | si | Añadir el análisis estático auditable (CONTRATO §8). |
+| Periodo S9 vacío: la punta `4b07242` (2026-09-27) coincide con el hash calificado de S8; no hay porción nueva. | S9 (preliminar) | si | Empujar la porción construida con IA y su cadena antes del cierre del 2026-10-05. |
+| Cadena de aspectos, prueba que falla, medición, auditoría de erosión y dependencias del periodo: sin artefacto S9. | S9 (preliminar) | si | Aplicado CONTRATO §12: la evidencia previa es línea base y no se recalifica. |
+| Componente generativo (Gemini) sin conjunto de evaluación, costo por operación ni latencia del periodo. | S9 (preliminar) | si | Evaluar el componente o registrar el ADR de su no incorporación. |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
-| Nombre y visibilidad del repositorio | Cumple | Clon anónimo OK en S8 (`4b07242`) |
+| Nombre y visibilidad del repositorio | Cumple | Clon anónimo OK en S9 (`4b07242`, misma punta que S8) |
 | Estructura mínima | Cumple | Las seis rutas presentes en `4b07242` |
 | Convención de nombres de ADR | Cumple | `docs/adr/0001`–`0004` en kebab-case; filtro de §4 sin residuos |
 | ADR aceptados sin reescribir | No cumple | ADR-0001 aceptado y editado en `4dd3925` (2026-08-29) y `42c5b03` (2026-09-06) sin ADR sucesor |

@@ -25,7 +25,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 7 | S7 | `62a0d15` (2026-09-20T23:25:16-05:00) | 9/10 | 4.6 (propuesta) | sí (auditoría local) |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `f90f28d3` (2026-09-27T21:56:48-05:00) | 10/10 | 5.0 (propuesta; 2 filas de despliegue pendientes) | sí (definitiva) |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
-| 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
+| 9 | Evidencia S9 · Generación verificada y trazable | `f90f28d3` (2026-09-27T21:56:48-05:00) | 1/10 | 1.4 (preliminar) | sí (preliminar) |
 | 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
 | 11 | Evidencia S11 · Fallos parciales y decisión de extracción | | | no aplica | |
 | 12 | Evidencia S12 · Estrategia de datos y eventos | | | no aplica | |
@@ -102,15 +102,19 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Sin logs estructurados ni métrica operativa consultable | S8 | sí | Ligarlos a un escenario de calidad y al entorno desplegado. |
 | Sin estimación mensual de costo ni ADR de plataforma | S8 | sí | Calcular por volumen y documentar cada decisión de proveedor. |
 | `docs/arc42/07-Deployment View.md` vacío | S8 | sí | Completar una caja por pieza y dónde se ejecuta. |
+| Sin commits de S9: la punta coincide con el hash calificado de S8. | S9 | sí | Empujar la porción de la evidencia S9 antes del cierre. |
+| El sistema declara un componente de categorización con IA (`:aigemini`) sin evaluación de costo/latencia ni ADR de decisión. | S9 | sí | Evaluar el componente generativo o decidir su no incorporación con un ADR. |
+| ADR 0001–0005 editados el 2026-09-27 tras su aceptación, sin declarar reemplazo. | S9 | sí | No editar ADR aceptados; crear uno nuevo y marcar el anterior como reemplazado. |
+| Sin SonarCloud auditable (configuración, línea del scanner y URL pública con Quality Gate). | S9 | sí | Integrar y publicar el análisis estático. |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | `ISCOUTB/AS_202620_XALD`, público (antes privado: EQUIPOS.md) |
 | Estructura mínima | Cumple | seis rutas presentes; `docs/c4/` ahora en su carpeta |
-| Convención de nombres de ADR | Cumple | siete ADR con nombres `NNNN-titulo-en-kebab-case.md` |
-| ADR aceptados sin reescribir | No cumple | persiste: `0002-parsing-hibrido.md` fue editado el 2026-08-30 después de su aceptación, sin declarar reemplazo |
-| `docs/ia.md` al día | No cumple | último cambio 2026-09-20; no registra trabajo del periodo S8 |
+| Convención de nombres de ADR | Cumple | diez ADR con nombres `NNNN-titulo-en-kebab-case.md` |
+| ADR aceptados sin reescribir | No cumple | persiste: `0002-parsing-hibrido.md` (2026-08-30) y `0001`–`0005` (2026-09-27) editados después de su aceptación, sin declarar reemplazo |
+| `docs/ia.md` al día | No cumple | último cambio 2026-09-27 (`809ea69`), del periodo S8; no tiene entrada del periodo S9 |
 | Sin credenciales en el repositorio ni en el historial | Cumple | greps limpios; `local.properties` solo trae ruta de SDK (fuera del versionado de todas formas) |
 | Contribución de todos los integrantes | Cumple | 4 identidades = 4 integrantes |
 | Pipeline en verde | No cumple | CI del hash revisado en verde, pero sin scanner ni URL pública de SonarCloud con Quality Gate |

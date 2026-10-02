@@ -14,6 +14,7 @@
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 9 | S9 (prelim.) | `d72a10a` (2026-09-28T00:09:14-05:00) | 1/10 | 1.4 (prelim.; propuesta al docente) | sí |
 | 8 | S8 | `287c65d` (2026-09-27T23:57:31-05:00) | 10/10 | 5.0 (prop. prov.; 2 filas de despliegue diferidas) | sí |
 | 7 | S7 | `5e6fa73` (2026-09-20T23:57:27-05:00) | 10/10 | 5.0 | si |
 | 6 | S6 | `265e652` (2026-09-13T23:29:49-05:00) | 0/8 | 1.0 | si |
@@ -75,6 +76,9 @@
 | Un ADR por decisión de plataforma con alternativa descartada. | S8 | no (resuelto: ADR-0005/0006/0007) | |
 | Pendiente desde S6: URL pública del análisis en SonarCloud con estado del Quality Gate. | S8 | no (resuelto: scanner en CI y Quality Gate `OK`) | |
 | ADR-0005 y ADR-0006 editados tras su aceptación el 2026-09-27 | S8 | sí | Ver feedback S8 |
+| Sin entrega S9: la punta (`d72a10a`) es el estado de S8 más un commit de README | S9 | sí | Ver feedback S9 |
+| Sin artefactos de S9 (porción, cadena, ADR, prueba, medición, erosión, dependencias, componente generativo) | S9 | sí | Ver feedback S9 |
+| `docs/ia.md` sin actualización en el periodo de S9 | S9 | sí | Ver feedback S9 |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
@@ -83,7 +87,7 @@
 | Estructura mínima | Cumple | Las seis rutas presentes; arc42 con 12 secciones. |
 | Convención de nombres de ADR | Cumple | `0001-seleccion-monolito-modular.md` conforme. |
 | ADR aceptados sin reescribir | No cumple | ADR 0001 tuvo una actualización posterior a su aceptación el 1 de septiembre; debe preservarse y sucederse con un ADR nuevo. |
-| `docs/ia.md` al día | Cumple | Entradas del 23/08 con rechazos («Rechazado parcialmente») y motivo. |
+| `docs/ia.md` al día | No cumple | Sin commits en el periodo de S9 (`287c65d..d72a10a`); la última entrada es del 26/09 (S8). |
 | Sin credenciales en el repositorio ni en el historial | Cumple | Sin coincidencias. |
 | Contribución de todos los integrantes | Cumple | 4 de 4 en S3 (Juan 21, Gillianis 11, Luis 12, Esteban 2); desbalance anotado. |
 | Pipeline en verde | Cumple | CI en verde sobre `287c65d` (run 36379851321); SonarCloud con scanner en CI y Quality Gate `OK`. |

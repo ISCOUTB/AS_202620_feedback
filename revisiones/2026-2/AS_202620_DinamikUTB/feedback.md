@@ -61,3 +61,13 @@ El contrato OpenAPI versionado con esquemas y la prueba de contrato que falla an
 El despliegue reproducible quedó resuelto y es el avance más claro de la semana: la infraestructura está versionada como código, el entorno se recrea siguiendo el README y el pipeline corre en verde sobre la rama principal. También quedaron bien los logs estructurados en JSON, la métrica consultable ligada al escenario de disponibilidad, las variables declaradas fuera del código y tomadas del proveedor, la estimación de costo con sus puntos de ruptura, la vista de despliegue y las restricciones de costo en arc42, y los ADR por decisión de plataforma. El análisis estático ya tiene Quality Gate público, con lo que se cierra el pendiente que venía desde semanas atrás.
 
 Lo que hay que corregir: varios ADR aceptados fueron editados después de su aceptación. Un ADR aceptado no se edita ni se borra; si la decisión cambia, se escribe uno nuevo y el anterior queda marcado como reemplazado. Quedan además pendientes de calificar la URL del despliegue y la comprobación del health check, que se entregan por Moodle y no se abren en esta pasada.
+
+## Semana 9 · S9 (revisión preliminar)
+
+Revisión preliminar, antes del cierre: la nota puede cambiar si el equipo empuja antes de la fecha límite.
+
+No encontramos una entrega de S9 en el repositorio. La punta revisada coincide con el estado de la semana anterior más un único ajuste de README, así que no hay una porción nueva identificada, ni su cadena de trazabilidad, ni ADR, ni prueba que falle ante el defecto, ni medición contrastada con un umbral. `docs/ia.md` no se actualizó en el periodo y no hay un extracto de S9. La auditoría de erosión de propiedad de datos que existe es de la semana 6 y no se refrescó. Tampoco se añadieron dependencias que verificar ni hay un ADR que decida sobre un componente generativo.
+
+Lo que sí sigue bien: el repositorio mantiene el pipeline en verde y el barrido de credenciales no encontró valores sensibles. Ambas cosas son línea base de semanas anteriores, no evidencia de esta entrega.
+
+Para cerrar S9 hace falta, como mínimo, elegir una porción real del sistema construida con apoyo de IA y llevarla hasta su evidencia (fila de aspectos, ADR, código, prueba en rojo o procedimiento documentado, y medición), actualizar el registro de IA con lo aceptado, lo corregido y al menos un rechazo motivado, y documentar la auditoría de erosión con su hallazgo y su corrección. Si se decide no incorporar un componente generativo, debe quedar el ADR que lo justifique.

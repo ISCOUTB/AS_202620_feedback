@@ -52,3 +52,20 @@ La entrega cubre las diez filas graduables de la ficha. La infraestructura está
 - Conserven la evidencia del pipeline y del análisis estático para el commit que entreguen.
 
 Pendiente de calificar: las filas de URL accesible desde fuera de la red y de health check consultable, porque la URL se entrega por Moodle y no estaba disponible en esta pasada. El repositorio sí declara la URL pública y la ruta de salud, que se verificarán en la segunda pasada.
+
+## Semana 9 · S9 (revisión preliminar)
+
+Revisión preliminar, antes del cierre: la nota puede cambiar si el equipo empuja antes de la fecha límite.
+
+El trabajo del periodo es una migración de despliegue bien documentada: un segundo destino operativo con su definición reproducible, un ADR que argumenta la decisión con las restricciones del proyecto y compara las alternativas, y el registro de uso de IA actualizado con lo aceptado y lo rechazado con su motivo. La configuración de análisis estático y su resultado público siguen en orden, la contribución está repartida y el barrido de credenciales sigue limpio.
+
+Pero la evidencia S9 pide una porción real del sistema construida con apoyo de IA y su cadena completa, y eso todavía no está en el repositorio: en el periodo solo se tocó documentación y configuración de despliegue, sin código de aplicación ni pruebas. Para la entrega:
+
+1. Elijan una porción real del sistema construida con IA y hagan navegable su cadena: la fila de la tabla de aspectos, el ADR de esa decisión, el código, la prueba y la medición del escenario contrastada con su umbral.
+2. Aporten la prueba que falle ante el defecto que cubre: un run en rojo, una prueba de mutación o el procedimiento documentado.
+3. Registren en el archivo de uso de IA lo aceptado, lo corregido y al menos una salida rechazada con su motivo técnico para esa porción (el periodo ya trae una entrada; complétenla cuando exista la porción).
+4. Si la generación cruzó un límite de contexto o las reglas de propiedad de datos, documenten cómo lo detectaron y cómo lo corrigieron.
+5. Si el sistema no incorpora un componente generativo, dejen el ADR que lo justifica: la ausencia de decisión no es la decisión de no hacerlo.
+6. Transversal: no editen ADR aceptados; si una decisión cambia, escriban uno nuevo que la reemplace. El ADR nuevo del periodo está bien planteado como decisión complementaria.
+
+Esta revisión es preliminar: estas notas pueden cambiar si empujan antes del cierre.

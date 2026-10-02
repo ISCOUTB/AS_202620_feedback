@@ -8,13 +8,14 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Verifacts` |
 | Integrantes y su usuario de GitHub | Ver [EQUIPOS.md](../../../EQUIPOS.md); historial actual: `PedroC1213` (240 commits, dos correos consolidados) y `Cristian Cardeño` (31 commits, dos correos con la misma firma), sin correspondencia individual confirmada; falta una tercera identidad atribuible. |
 | URL del sistema desplegado | `https://verifacts-web.onrender.com` · API: `https://verifacts-api.onrender.com` (pendiente de comprobación externa fechada) |
-| Ultima revision | 2026-09-28 |
+| Ultima revision | 2026-10-01 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 8 | S8 | `d2d7b5c` (2026-09-25T16:38:43-05:00) | 10/10 | 5.0 (provisional; 2 filas de despliegue pendientes) | sí (definitiva) |
+| 9 | Evidencia S9 · Generación verificada y trazable | `dae98e8` en `origin/master` (2026-09-28T22:24:54-05:00) | 7/10 | 3.8 (preliminar; propuesta al docente) | sí |
 | 7 | S7 | `635f9b7` (2026-09-16T00:52:52-05:00) | 10/10 | 5.0 (auditada) | sí, auditada |
 | 6 | S6 | `5941c33` (2026-09-12T02:00:20-05:00) | 8/8 | 5.0 (prelim.) | si |
 | 1 | S1 | `(sin commits)` () | sin actividad | no aplica | si |
@@ -93,18 +94,24 @@ S8 se califica sobre 10 filas graduables. Quedan **pendientes de calificar** las
 | Asociar la métrica /metrics a un escenario de calidad y completar la medición de P95. | S8 | parcial | La métrica ya está ligada a Q-01; la medición formal del P95 sigue pendiente. |
 | Cerrar los huecos de docs/aspectos.md y corregir las secciones 3 y 10 desactualizadas. | S8 | si | |
 | Incluir un integrante declarado que aún no aparece en el historial. | S8 | si | |
+| S9 con evidencia: ADR-0006, pruebas de frontera y de límites de módulo, mutaciones inducidas (M1–M5), medición Q-01/Q-05 y auditoría de erosión (E-1…E-5). | S9 (preliminar) | no (trabajo del periodo) | Cumple las filas 1, 3, 4, 5, 7, 8 y 9 de la ficha S9. |
+| La fila A-06 de `docs/aspectos.md` enlaza un ADR con nombre inexistente (`0006-semantica-del-resultado.md`) y la auditoría desde `docs/`; la cadena se rompe en esos dos eslabones. | S9 (preliminar) | si | Corregir los enlaces. |
+| `docs/adr/ADR-0006.md` rompe la convención de nombres. | S9 (preliminar) | si | Renombrar a `0006-<kebab-case>.md`. |
+| `docs/ia.md` sin entrada del periodo S9; la corrección de la afirmación sobre `MLAnalyzer` que declara la auditoría no está en el repositorio. | S9 (preliminar) | si | Registrar el uso de IA del periodo. |
+| Sin ADR dedicado a la no incorporación del componente generativo. | S9 (preliminar) | si | Decidirlo en un ADR. |
+| Quality Gate de SonarCloud en rojo pese a los runs verdes del hash revisado. | S9 (preliminar) | si | Corregirlo. |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
 | Nombre y visibilidad del repositorio | Cumple | `ISCOUTB/AS_202620_Verifacts` respondió al clon público sin autenticación el 2026-09-24. |
 | Estructura mínima | Cumple | Las seis rutas están presentes; el glosario está numerado como sección 12. |
-| Convención de nombres de ADR | Cumple | Cuatro ADR con nombres `NNNN-titulo-en-kebab-case.md`. |
+| Convención de nombres de ADR | No cumple | Cinco ADR en convención, pero el del periodo (`docs/adr/ADR-0006.md`) no sigue `NNNN-titulo-en-kebab-case.md` |
 | ADR aceptados sin reescribir | No cumple | el ADR aceptado fue modificado, borrado y recreado |
-| `docs/ia.md` al día | Cumple | Entrada del 22–23 de septiembre sobre despliegue, observabilidad y decisiones aceptadas/descartadas. |
+| `docs/ia.md` al día | No cumple | Sin entrada del periodo S9; último commit `50568f1` (2026-09-23). La corrección de la afirmación sobre `MLAnalyzer` que declara la auditoría no está en el repositorio |
 | Sin credenciales en el repositorio ni en el historial | Cumple | git grep y `.env` sin coincidencias |
 | Contribución de todos los integrantes | No cumple | dos personas visibles; el tercer integrante sigue sin commits |
-| Pipeline en verde | Cumple | Tests y SonarCloud concluyeron `success` para `ef48c08`; el Quality Gate general documentado en rojo sigue como no conformidad transversal. |
+| Pipeline en verde | Cumple (con salvedad) | Tests `36517048309` y SonarCloud `36517048351` en `success` para `dae98e8`; el Quality Gate general sigue documentado en rojo (transversal en No cumple) |
 
 ## Contribución por integrante
 

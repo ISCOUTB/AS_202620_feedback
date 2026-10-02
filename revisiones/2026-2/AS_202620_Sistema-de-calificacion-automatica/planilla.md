@@ -23,7 +23,7 @@
 | 7 | S7 | `2269ca5` (2026-09-20T21:48:00-05:00) | 10/10 | 5.0 (propuesta) | sí |
 | 8 | S8 | `1f8f76d` (2026-09-27T19:55:57-05:00) | 10/10 graduables (2 filas de despliegue pendientes) | 5.0 (provisional) | si |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
-| 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
+| 9 | Evidencia S9 · Generación verificada y trazable (preliminar) | `1f8f76d` (2026-09-27T19:55:57-05:00) · punta sin commits nuevos desde S8 | 1/10 | 1.4 (prelim.) | si |
 | 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
 | 11 | Evidencia S11 · Fallos parciales y decisión de extracción | | | no aplica | |
 | 12 | Evidencia S12 · Estrategia de datos y eventos | | | no aplica | |
@@ -97,6 +97,10 @@
 | R-06 (persistencia) y V-5 (verificacion automatica de propiedad de datos) siguen abiertos | S8 | si | |
 | Evidencia auditable de SonarCloud: configuracion, invocacion del scanner en el workflow y URL publica con Quality Gate. | S6 | sí | El análisis corre desde la interfaz de SonarCloud; ningún paso del pipeline lo ejecuta. El equipo lo reconoce en `correcciones.md` y `docs/ia.md`. |
 | `ADR-0007` editado despues de aceptarse, sin reemplazo declarado. | S8 | sí | La edición (2026-09-26) solo actualiza enlaces de documentación; se registra por la regla del §4. |
+| Punta sin commits nuevos desde S8 (`1f8f76d`, 2026-09-27): el periodo S9 está vacío. | S9 (prelim.) | si | Empujar la evidencia S9 antes del cierre del 2026-10-05. |
+| Sin porción nueva construida con IA, sin ADR y sin extracto de `docs/ia.md` del periodo S9. | S9 (prelim.) | si | Aportar la porción real del sistema y su cadena para la evidencia S9. |
+| Componente generativo (LLM para distractores, ADR-0005) sin conjunto de evaluación, costo por operación ni latencia, ni contenedor externo en el C4 nivel 2. | S9 (prelim.) | si | Evaluar el componente con resultados, costo y latencia, y reflejarlo en el C4 nivel 2. |
+| Sin auditoría de erosión del periodo ni verificación de dependencias añadidas en S9. | S9 (prelim.) | si | Documentar límites de contexto/propiedad de datos y las dependencias del periodo. |
 
 ## Estado del contrato del repositorio
 
@@ -106,7 +110,7 @@
 | Estructura mínima | Cumple | Las seis rutas presentes en `1f8f76d` |
 | Convención de nombres de ADR | Cumple | `0001` a `0012`, todos `NNNN-kebab-case.md` |
 | ADR aceptados sin reescribir | No cumple | `ADR-0007` (aceptado el 2026-09-13) se edita el 2026-09-26 (`1c8bcfb`) sin reemplazo declarado; la edición solo cambia enlaces |
-| `docs/ia.md` al día | Cumple | Crece en el periodo y documenta lo aceptado y lo rechazado con motivo (S8) |
+| `docs/ia.md` al día | No cumple (S9) | Documenta lo aceptado y lo rechazado, pero la última entrada es del 27/09 (S8); sin entrada del periodo S9 |
 | Sin credenciales en el repositorio ni en el historial | Cumple | `git grep` §9 y `log -S` sin coincidencias; sin `.env` versionado |
 | Contribución de todos los integrantes | Cumple | 4 cuentas para los 4 integrantes (S8) |
 | Pipeline en verde | Cumple | Run `36364030158` (`success`) sobre el hash calificado: https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/actions/runs/36364030158 |

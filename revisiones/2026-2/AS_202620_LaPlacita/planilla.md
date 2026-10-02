@@ -10,12 +10,13 @@ Hoja consolidada del equipo LaPlacita. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_LaPlacita` |
 | Integrantes y su usuario de GitHub | Mateo Josue Buendia Barrios · Miguel Angel Isaza Montalvo · Samuel David Jimenez Alvarez · Jorge Alberto Martinez Castillo — cuentas abajo |
 | URL del sistema desplegado | declarada en el repo: `https://laplacita-app.graymoss-fdd72159.canadacentral.azurecontainerapps.io` (no consultada; pendiente por Moodle) |
-| Ultima revision | 2026-09-28 |
+| Ultima revision | 2026-10-01 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 9 | Evidencia S9 · Generación verificada y trazable | `b03a797` (2026-09-27T19:00:57-05:00) | 1/10 | 1.4 (provisional; sin entrega S9 en la punta al momento de la pasada) | sí, preliminar |
 | 8 | S8 (definitiva) | `b03a797` (2026-09-27T19:00:57-05:00) | 10/10 | 5.0 (provisional; 2 filas de despliegue pendientes) | sí, definitiva |
 | 7 | S7 | `8c2e1bc` (2026-09-20T22:47:32-05:00) | 10/10 | 5.0 | sí, auditada |
 | 6 | S6 | `2c0eb01` (2026-09-13T21:28:00-05:00) | 7/8 | 4.5 | si |
@@ -74,6 +75,8 @@ Hoja consolidada del equipo LaPlacita. Se actualiza tras cada revisión.
 | arc42 §7, restricción económica y ADR separados por plataforma ausentes | S8 | No (resuelto en S8) | §7 y RES-06 añadidos; ADR-0009/0010/0011 por decisión de plataforma. |
 | ADR aceptados editados sin reemplazo declarado (0003, 0009, 0010) | S8 | Sí | No editar ADR aceptados: si cambia la decisión, escribir otro y marcar el anterior como reemplazado. |
 | Quality Gate de SonarCloud sin URL pública (job `sonar` informativo) | S8 | Sí | Vincular org/proyecto y publicar la URL del Quality Gate. |
+| Sin entrega S9 en la punta: 0 commits entre el hash de S8 (`b03a797`) y `origin/master` | S9 | Sí (preliminar) | Empujar la porción construida con IA, su ADR, la prueba que falla y la medición antes del cierre del 2026-10-05T05:00:00Z. |
+| ADR aceptados editados sin reemplazo declarado (0001, 0003, 0009, 0010) | S8 | Sí | Persiste en S9; si la decisión cambia, escribir otro ADR y marcar el anterior como reemplazado. |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

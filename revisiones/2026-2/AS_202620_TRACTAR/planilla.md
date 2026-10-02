@@ -10,7 +10,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TRACTAR` |
 | Integrantes y su usuario de GitHub | Joriel Samir Barros Pena (sin cuentas en el historial) · Geronimo Alberto Cadena Garcia (sin cuentas) · Sebastian Garcia Devoz (firma con dos identidades de git, mismo correo, más el correo institucional) · Mateo Alfonso Millan Barraza (sin cuentas) |
 | URL del sistema desplegado | sin URL (sin despliegue todavía) |
-| Ultima revision | 2026-09-28 |
+| Ultima revision | 2026-10-01 |
 
 ## Estado por entrega
 
@@ -25,7 +25,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 7 | S7 | `7cfb872` (2026-08-31T12:27:23-05:00) | 2/10 | 1.8 (prelim.) | si |
 | 8 | S8 | `ae526db` (2026-09-25T11:36:43-05:00) | 1/10 | 1.4 (provisional; 2 filas de despliegue pendientes) | sí (definitiva) |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
-| 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
+| 9 | Evidencia S9 · Generación verificada y trazable | `ae526db` en `origin/main` (2026-09-25T11:36:43-05:00) | 1/10 | 1.4 (preliminar; propuesta al docente) | sí |
 | 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
 | 11 | Evidencia S11 · Fallos parciales y decisión de extracción | | | no aplica | |
 | 12 | Evidencia S12 · Estrategia de datos y eventos | | | no aplica | |
@@ -86,6 +86,10 @@ S8 se califica sobre 10 filas graduables. Quedan **pendientes de calificar** las
 | Análisis estático en SonarCloud con URL pública y Quality Gate | S8 | si | |
 | Registro de uso de IA actualizado con rechazos justificados | S8 | si | |
 | Evidencia de commits de los cuatro integrantes declarados | S8 | si | |
+| Periodo S9 vacío: la punta `ae526db` (2026-09-25) coincide con el hash calificado de S8; no hay porción nueva. | S9 (preliminar) | si | Empujar la porción con IA y su cadena antes del cierre del 2026-10-05. |
+| Cadena de aspectos, prueba que falla, medición, auditoría de erosión y dependencias del periodo: sin artefacto S9. | S9 (preliminar) | si | CONTRATO §12: la evidencia previa es línea base y no se recalifica. |
+| Componente generativo: sin ADR de no incorporarlo. | S9 (preliminar) | si | Registrar la decisión. |
+| Pipeline aún en rojo (`36161882569`) sin corregir en el periodo. | S9 (preliminar) | si | Recuperar el verde y citar la URL del run. |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

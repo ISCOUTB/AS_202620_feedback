@@ -23,7 +23,7 @@
 | 7 | S7 | `fe266aa` (2026-09-20T21:32:01-05:00) | 9/10 | 4.6 | si |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `eae667e` (2026-09-27T21:58:06-05:00) | 10/10 (2 filas de despliegue diferidas) | 5.0 (provisional) | si |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
-| 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
+| 9 | Evidencia S9 · Generación verificada y trazable (preliminar) | `eae667e` (2026-09-27T21:58:06-05:00) · punta sin commits nuevos desde S8 | 1/10 | 1.4 (prelim.) | si |
 | 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
 | 11 | Evidencia S11 · Fallos parciales y decisión de extracción | | | no aplica | |
 | 12 | Evidencia S12 · Estrategia de datos y eventos | | | no aplica | |
@@ -91,6 +91,10 @@
 | Declarar URL pública y health check verificables. | S8 | sí (diferido) | Fila diferida por decisión docente: la URL se entrega por Moodle. El README ya declara la URL y la ruta `/health` existe. |
 | SonarCloud sin invocación en el workflow ni URL pública del Quality Gate. | S6 | si | Falta la evidencia del contrato §8. |
 | ADR 0001, 0002, 0003, 0005 y 0006 editados después de aceptarse sin reemplazo declarado. | S8 | si | Crear un ADR sucesor en vez de editar uno aceptado. |
+| Punta sin commits nuevos desde S8 (`eae667e`, 2026-09-27): el periodo S9 está vacío. | S9 (prelim.) | si | Empujar la evidencia S9 antes del cierre del 2026-10-05. |
+| Sin porción nueva construida con IA, sin ADR y sin extracto de `docs/ia.md` del periodo S9. | S9 (prelim.) | si | Aportar la porción real del sistema y su cadena para la evidencia S9. |
+| Sin prueba que falle ante el defecto del periodo ni medición del escenario en S9. | S9 (prelim.) | si | Adjuntar run en rojo o procedimiento documentado y la medición contra umbral. |
+| Sin auditoría de erosión ni decisión sobre el componente generativo. | S9 (prelim.) | si | Documentar límites de contexto/propiedad de datos y el ADR del componente generativo (o de no incorporarlo). |
 
 ## Estado del contrato del repositorio
 
@@ -100,7 +104,7 @@
 | Estructura mínima | Cumple | Las seis rutas presentes en `corte-1` |
 | Convención de nombres de ADR | Cumple | 0001, 0002, 0003 con título de la decisión en kebab-case |
 | ADR aceptados sin reescribir | No cumple | ADR 0001 (`a94a1a3`), 0002 (`53ed7c3`), 0003 (`f706aa6`), 0005 y 0006 (`b0426fa`) editados después de aceptarse sin declarar reemplazo |
-| `docs/ia.md` al día | Cumple | Entrada de S5 fechada 05/09 |
+| `docs/ia.md` al día | No cumple (S9) | El archivo crece y documenta rechazos, pero la última entrada es del 24/09 (S8); sin entrada del periodo S9 |
 | Sin credenciales en el repositorio ni en el historial | Cumple | git grep sin secretos reales; sin `.env` |
 | Contribución de todos los integrantes | Cumple | 4 personas para 4 integrantes (MKeinerrr consolidado); muy concentrada en MKeinerrr |
 | Pipeline en verde | Cumple | Run público del estado S8 en `master` (`eae667e`) en verde: https://github.com/ISCOUTB/AS_202620_ROUTB/actions/runs/36371840003 |

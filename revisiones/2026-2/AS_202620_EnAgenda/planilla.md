@@ -10,12 +10,13 @@ Hoja consolidada del equipo EnAgenda. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_EnAgenda` |
 | Integrantes y su usuario de GitHub | Eliab Josue Arnedo Conde · Jeimy Yulieth Mendez Altamiranda · Gabriela Morales Cancino — cuentas abajo |
 | URL del sistema desplegado | sin desplegar aún |
-| Ultima revision | 2026-09-28 |
+| Ultima revision | 2026-10-01 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 9 | S9 | `2c7d77a` (2026-09-27T23:42:39-05:00) | 1/10 | 1.4 (preliminar, sin cierre) | sí |
 | 8 | S8 | `2c7d77a` (2026-09-27T23:42:39-05:00) | 5/10 (2 filas de despliegue diferidas) | 3.0 (provisional) | sí |
 | 7 | S7 | `849ee8c` (2026-09-20T23:59:07-05:00) | 4/10 | 2.6 | sí, auditada |
 | 6 | S6 | `0a58de8` (2026-09-13T23:38:41-05:00) | 7/8 | 4.5 | si |
@@ -80,6 +81,13 @@ Hoja consolidada del equipo EnAgenda. Se actualiza tras cada revisión.
 | Conflictos de merge sin resolver en `Dockerfile`, `docker-compose.yml`, `render.yaml`, `.dockerignore`, `.env.example` y `docs/evidencia.md` | S8 | Sí | Limpiar los marcadores; la infraestructura no compila y el CI del hash revisado queda en rojo. |
 | ADR-0003 cita un escenario inexistente («EC-03 — Observabilidad de solicitudes») | S8 | Sí | Alinear la métrica con un EC real de arc42 §10. |
 | SonarCloud sin configuración, run ni Quality Gate públicos | S5 | Sí | Integrar el análisis y publicar la evidencia del hash. |
+| Sin commits de S9: la punta es la de S8 (`2c7d77a`, 2026-09-27). | S9 | sí | La pasada S9 no tiene cierre y califica la punta actual; el equipo no ha empujado trabajo nuevo. |
+| Recalce S9 por CONTRATO §12: sin artefacto del periodo, las filas de porción con IA, cadena, ADR, extracto de `docs/ia.md` y auditoría de erosión pasan a No cumple; la de prueba que falla ante el defecto ya estaba en No verificado. | S9 | sí | Solo el barrido de credenciales queda en Cumple; la evidencia de S6/S8 se cita como contexto pero no se recalifica. |
+| Sin prueba que falle ante el defecto que cubre (run en rojo, mutación o procedimiento documentado). | S9 | sí | No verificado en la matriz de la ficha; queda como pregunta de sustentación. |
+| Sin medición de escenario contra umbral. | S5/S9 | sí | — |
+| Sin verificación de dependencias del periodo (diff vacío contra S8). | S9 | sí | — |
+| Sin ADR sobre el componente generativo (ni componente, ni decisión de no incorporarlo). | S9 | sí | La ausencia de decisión no es la decisión de no hacerlo. |
+| `docs/aspectos.md` sin fila de encabezado; `docs/evidencia.md` corrupto por conflictos de merge. | S9 | sí | La cadena A-01 navega, pero la evidencia no es un artefacto coherente. |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

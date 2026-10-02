@@ -14,6 +14,7 @@
 
 | Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 9 | S9 (preliminar) | `e4789d88` (2026-09-27T23:49:01-05:00; punta sin cambios desde S8) | 1/10 | 1.4 (preliminar; puede cambiar al cierre) | si |
 | 8 | S8 | `e4789d88` (2026-09-27T23:49:01-05:00) | 9/10 | 4.6 (provisional; 2 filas de despliegue diferidas por decisión docente) | si |
 | 6 | S6 | `4a0eba9` (2026-09-13T22:01:57-05:00) | 4/8 | 3.0 (prelim.) | si |
 | 7 | S7 | `0ada095` (2026-09-20T23:57:20-05:00) | 9/10 | 4.6 | si |
