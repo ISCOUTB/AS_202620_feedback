@@ -50,6 +50,8 @@ Qué corregir: dedicar el esfuerzo que sí se ve en el historial (que es real y 
 
 Sin actividad S6: el ultimo commit anterior al cierre es de la entrega previa, asi que esta evidencia no se pudo evaluar. Lo que se arrastra de semanas anteriores sigue abierto para el corte.
 
+Por indicación docente, la matriz de S6 se completó sobre el estado actual del repositorio, sin que ello altere el registro de la ventana original.
+
 ## Semana 7 · S7
 
 La entrega sí contiene el contrato OpenAPI ejecutable, con rutas, esquemas y versión alineados con la API. La prueba compara el contrato con FastAPI, valida respuestas reales y ejerce dos mutaciones incompatibles; además, el workflow la ejecuta y publica su reporte. La sección 6 de arc42 también documenta los flujos de arranque y navegación del catálogo.

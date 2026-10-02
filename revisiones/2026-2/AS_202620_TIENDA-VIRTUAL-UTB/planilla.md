@@ -21,7 +21,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `f4602a3` · 2026-08-21T13:22:16-05:00 | 6/9 | no se publica | sí |
 | 4 | S4 | `0d208a2` (2026-08-29T21:37:39-05:00) | 6/10 | 3.4 | si |
 | 5 | CORTE1 | `3d732d7` (2026-09-07T14:41:37-05:00) | 9/12 | 4.0 | si |
-| 6 | S6 | `3d732d7` (2026-09-07T14:41:37-05:00) | sin actividad | no aplica | si |
+| 6 | S6 | main `bc38c9b` — excepción docente | 7/8 | 4.5 | si |
 | 7 | S7 | `69aa82d` (2026-09-20T09:34:49-05:00) | 8/10 | 4.2 (propuesta) | sí |
 | 8 | S8 | `858e78f` en `origin/main` (2026-09-27T15:36:51-05:00) | 10/10 | 5.0 (propuesta; 2 filas de despliegue diferidas) | si |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
@@ -87,6 +87,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | `docs/aspectos.md` sin fila para la porción S9; sin prueba que falle, medición, auditoría de erosión ni decisión sobre componente generativo en el periodo. | S9 (preliminar) | si | Completar la cadena y la evidencia del periodo. |
 | Pipeline del hash revisado con runs `Keep-alive` en rojo y sin Quality Gate público de SonarCloud. | S9 (preliminar) | si | Corregir el cron y publicar el Quality Gate. |
 | El `apply` de Terraform no se ejecutó: producción sigue siendo la del 2026-09-27. | S9 (preliminar) | si | Crear los tokens y aplicar el corte. |
+| Excepción docente en S6: la matriz se completó sobre la punta actual porque no hubo actividad en la ventana de S6. | S6 | no (excepción aplicada) | — |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |

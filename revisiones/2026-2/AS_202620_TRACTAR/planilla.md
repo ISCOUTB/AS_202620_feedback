@@ -21,7 +21,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `5f923cd` · 2026-08-23T22:40:51-05:00 | 7/9 | no se publica | sí |
 | 4 | S4 | `2b16439` (2026-08-30T15:02:33-05:00) | 1/10 | 1.4 | si |
 | 5 | CORTE1 | `7cfb872` (2026-08-31T12:27:23-05:00) | 8/12 | 3.7 | si |
-| 6 | S6 | `7cfb872` (2026-08-31T12:27:23-05:00) | sin actividad | no aplica | si |
+| 6 | S6 | main `ae526db` — excepción docente | 0/8 | 1.0 | si |
 | 7 | S7 | `7cfb872` (2026-08-31T12:27:23-05:00) | 2/10 | 1.8 (prelim.) | si |
 | 8 | S8 | `ae526db` (2026-09-25T11:36:43-05:00) | 1/10 | 1.4 (provisional; 2 filas de despliegue pendientes) | sí (definitiva) |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
@@ -90,6 +90,7 @@ S8 se califica sobre 10 filas graduables. Quedan **pendientes de calificar** las
 | Cadena de aspectos, prueba que falla, medición, auditoría de erosión y dependencias del periodo: sin artefacto S9. | S9 (preliminar) | si | CONTRATO §12: la evidencia previa es línea base y no se recalifica. |
 | Componente generativo: sin ADR de no incorporarlo. | S9 (preliminar) | si | Registrar la decisión. |
 | Pipeline aún en rojo (`36161882569`) sin corregir en el periodo. | S9 (preliminar) | si | Recuperar el verde y citar la URL del run. |
+| Excepción docente en S6: la matriz se completó sobre la punta actual porque no hubo actividad en la ventana de S6. | S6 | no (excepción aplicada) | — |
 ## Estado del contrato del repositorio
 
 | Comprobación | Estado | Observaciones |
