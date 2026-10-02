@@ -24,7 +24,7 @@ Nota sugerida = 1 + 4 × (n/m) sobre la matriz de la ficha, **propuesta al docen
 | Calificación automática | `AS_202620_Sistema-de-calificacion-automatica` | `-` | - | - |
 | TAIA | `AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant` | `-` | - | - |
 | Tienda virtual UTB | `AS_202620_TIENDA-VIRTUAL-UTB` | `-` | - | - |
-| TRACTAR | `AS_202620_TRACTAR` | `(sin commits)` | sin actividad | - |
+| TRACTAR | `AS_202620_UTB_TRACKER` | `(sin commits)` | sin actividad | - |
 | Verifacts | `AS_202620_Verifacts` | `(sin commits)` | sin actividad | - |
 | XALD | `AS_202620_XALD` | `-` | - | - |
 | mapsutb | `AS_202620_mapsutb` | `-` | - | - |

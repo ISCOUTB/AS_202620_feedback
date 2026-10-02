@@ -24,7 +24,7 @@ Nota preliminar (pasada temprana): puede cambiar al cierre.
 | Calificación automática | `AS_202620_Sistema-de-calificacion-automatica` | `a47d5bd` | 3/8 | 2.5 |
 | TAIA | `AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant` | `c0c3adb` | 7/8 | 4.5 |
 | Tienda virtual UTB | `AS_202620_TIENDA-VIRTUAL-UTB` | `bc38c9b` * | 7/8 | 4.5 * |
-| TRACTAR | `AS_202620_TRACTAR` | `ae526db` * | 0/8 | 1.0 * |
+| TRACTAR | `AS_202620_UTB_TRACKER` | `ae526db` * | 0/8 | 1.0 * |
 | Verifacts | `AS_202620_Verifacts` | `5941c33` | 8/8 | 5.0 |
 | XALD | `AS_202620_XALD` | `55993cf` | 8/8 | 5.0 |
 | mapsutb | `AS_202620_mapsutb` | `8aee879` | 5/8 | 3.5 |
@@ -36,5 +36,7 @@ aplica». Por indicación del docente, su matriz de S6 se completó sobre la **p
 principal**: el hash es el de la punta, incluye trabajo de semanas posteriores y no es comparable
 con el resto de esta pasada. Queda registrado en el informe y en la planilla de cada equipo.
 
-\*\* `AS_202620_TRACTAR` fue renombrado a `AS_202620_UTB_TRACKER`; el URL anterior redirige y el
-repositorio sigue siendo público. El nombre de la carpeta de revisiones conserva el nombre antiguo.
+**Nota de nomenclatura.** `AS_202620_TRACTAR` fue renombrado a `AS_202620_UTB_TRACKER`; el URL
+anterior redirige (301) y el repositorio sigue siendo público. `EQUIPOS.md` y la carpeta de
+revisiones usan ya el nombre actual; los informes semanales escritos antes del cambio conservan el
+nombre antiguo y registran la discrepancia como hallazgo.

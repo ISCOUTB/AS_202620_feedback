@@ -34,7 +34,7 @@ Nota sugerida = 1 + 4 × (n/m) sobre la matriz de la ficha, **propuesta al docen
 | Calificación automática | `AS_202620_Sistema-de-calificacion-automatica` | `2269ca5` | 10/10 | 5.0 |
 | TAIA | `AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant` | `0a12f0c` | 10/10 | 5.0 |
 | Tienda virtual UTB | `AS_202620_TIENDA-VIRTUAL-UTB` | `69aa82d` | 8/10 | 4.2 |
-| TRACTAR | `AS_202620_TRACTAR` | `7cfb872` | 2/10 | 1.8 |
+| TRACTAR | `AS_202620_UTB_TRACKER` | `7cfb872` | 2/10 | 1.8 |
 | Verifacts | `AS_202620_Verifacts` | `635f9b7` | 10/10 | 5.0 |
 | XALD | `AS_202620_XALD` | `62a0d15` | 9/10 | 4.6 |
 | mapsutb | `AS_202620_mapsutb` | `5e2fdd5` | 10/10 | 5.0 |

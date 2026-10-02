@@ -32,7 +32,7 @@ prueba (URL declarada y ruta de health check), para que esa segunda pasada sea c
 | Calificación automática | `AS_202620_Sistema-de-calificacion-automatica` | `1f8f76d` | 10/10 | 5.0 |
 | TAIA | `AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant` | `4b07242` | 10/10 | 5.0 |
 | Tienda virtual UTB | `AS_202620_TIENDA-VIRTUAL-UTB` | `858e78f` | 10/10 | 5.0 |
-| TRACTAR | `AS_202620_TRACTAR` | `ae526db` | 1/10 | 1.4 |
+| TRACTAR | `AS_202620_UTB_TRACKER` | `ae526db` | 1/10 | 1.4 |
 | Verifacts | `AS_202620_Verifacts` | `d2d7b5c` | 10/10 | 5.0 |
 | XALD | `AS_202620_XALD` | `f90f28d` | 10/10 | 5.0 |
 | mapsutb | `AS_202620_mapsutb` | `8cfe458` | 10/10 | 5.0 |

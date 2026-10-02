@@ -7,7 +7,7 @@ Hoja consolidada del equipo a lo largo del semestre.
 | | |
 |---|---|
 | Equipo | TRACTAR |
-| Repositorio | `https://github.com/ISCOUTB/AS_202620_TRACTAR` |
+| Repositorio | `https://github.com/ISCOUTB/AS_202620_UTB_TRACKER` |
 | Integrantes y su usuario de GitHub | Joriel Samir Barros Pena (sin cuentas en el historial) · Geronimo Alberto Cadena Garcia (sin cuentas) · Sebastian Garcia Devoz (firma con dos identidades de git, mismo correo, más el correo institucional) · Mateo Alfonso Millan Barraza (sin cuentas) |
 | URL del sistema desplegado | sin URL (sin despliegue todavía) |
 | Ultima revision | 2026-10-01 |
