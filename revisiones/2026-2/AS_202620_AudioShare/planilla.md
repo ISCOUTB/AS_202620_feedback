@@ -6,15 +6,16 @@
 |---|---|
 | Equipo | AudioShare |
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_AudioShare` |
-| Integrantes y su usuario de GitHub | Santiago Adolfo Camacho Hernandez (commits como «Santiago Adolfo Camacho Hernández») · Vincent Cardona Castro (presumiblemente `cardonavincent26-design`, sin confirmar) · Elian Daniel Perea Vanegas («Elian Daniel Perea Vanegas») · Yeiver Andres Verjel Perez («Yeiver Andrés Vergel Pérez») |
-| URL del sistema desplegado | sin desplegar todavía |
-| Ultima revision | 2026-10-01 |
+| Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Santiago Adolfo Camacho Hernandez (commits como «Santiago Adolfo Camacho Hernández») · Vincent Cardona Castro (presumiblemente `cardonavincent26-design`, sin confirmar) · Elian Daniel Perea Vanegas («Elian Daniel Perea Vanegas») · Yeiver Andres Verjel Perez («Yeiver Andrés Vergel Pérez»); ver comprobación actual de contribución más abajo. |
+| URL del sistema desplegado | https://audioshare.iscoutb.dev · ver comprobación y límites en S10 |
+| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
 
 ## Estado por entrega
 
-| Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
+| Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 9 | S9 (preliminar) | `e4789d88` (2026-09-27T23:49:01-05:00; punta sin cambios desde S8) | 1/10 | 1.4 (preliminar; puede cambiar al cierre) | si |
+| 9 | S9 · definitiva | `master` · `6a03a9718776420d46ed40f7addc5667206908cd` · 2026-10-04T23:15:57-05:00 | 3/10 | 2.2 (propuesta al docente) | sí, 2026-10-06 |
+| 10 | Segundo corte · preliminar | `master` · `6a03a9718776420d46ed40f7addc5667206908cd` · 2026-10-04T23:15:57-05:00 | 3/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
 | 8 | S8 | `e4789d88` (2026-09-27T23:49:01-05:00) | 9/10 | 4.6 (provisional; 2 filas de despliegue diferidas por decisión docente) | si |
 | 6 | S6 | `4a0eba9` (2026-09-13T22:01:57-05:00) | 4/8 | 3.0 (prelim.) | si |
 | 7 | S7 | `0ada095` (2026-09-20T23:57:20-05:00) | 9/10 | 4.6 | si |
@@ -25,6 +26,22 @@
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `024ae3435` · 2026-08-23T23:47:38-05:00 | 5/9 | no se publica | sí (actualizada tras el cierre) |
 
 ## Lo que se arrastra
+
+Estado vigente observado en la punta citada en [S10](semana-10-corte2.md). Las correcciones tardías no cambian S9. El registro histórico siguiente conserva su contexto, pero no sustituye esta actualización ni implica cerrar hallazgos no revalidados.
+
+| Hallazgo actual | Estado | Evidencia y próximo paso |
+|---|---|---|
+| Sustituir la prueba de constantes por una que invoque la lógica real y falle al introducir un defecto de sincronización; registrar procedimiento y resultado. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Completar la cadena A-01 hacia ADR-0005, código exacto, prueba y medición reproducible. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Aportar mediciones de receptores y comparación con umbral, sin presentar un ejemplo sintético como experimento. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Localizar la consigna oficial S10 y definir línea base, hipótesis, variables y montaje. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Corregir Flutter CI, evidenciar SonarCloud/Quality Gate del hash y alinear Dokploy con ADR/C4/arc42. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Hacer específica la auditoría de erosión y la verificación de dependencias; registrar rechazo técnico propio de la entrega. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Existe decisión explícita de no incorporar componente generativo: [docs/adr/0006-no-incorporar-componente-generativo.md:22–45](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/6a03a9718776420d46ed40f7addc5667206908cd/docs/adr/0006-no-incorporar-componente-generativo.md#L22-L45). | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| URL y health check accesibles en la comprobación actual; no cambia retrospectivamente S8. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+
+<details>
+<summary>Registro histórico previo a esta revisión (estados a la fecha de cada observación)</summary>
 
 | Hallazgo | Primera vez que se detectó | Sigue abierto | Qué se le dijo al equipo |
 |---|---|---|---|
@@ -89,20 +106,30 @@
 | arc42 sección 7 con una caja por pieza y sección 2 con el límite de costo. | S8 | si | |
 | Un ADR por decisión de plataforma, con alternativa descartada. | S8 | si | |
 | Corrección del enlace a un ADR inexistente en `docs/aspectos.md` y de las columnas de la tabla de aspectos. | S8 | si | |
+
+</details>
+
 ## Estado del contrato del repositorio
+
+Actualizado desde la evaluación de la punta actual; no altera la matriz congelada de S9.
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
-| Nombre y visibilidad del repositorio | Cumple | `AS_202620_AudioShare`, público, clon anónimo OK. |
-| Estructura mínima | Cumple | Las seis rutas existen; arc42 en AsciiDoc (desviación de formato anotada). |
-| Convención de nombres de ADR | Cumple | `0001-usar-monolito-modular.md` conforme. |
-| ADR aceptados sin reescribir | Cumple | Iterado el mismo día de creación, pre-aceptación (estado «propuesto»). |
-| `docs/ia.md` al día | Cumple | Commit en S3 (`024ae34`) pero sin entradas de qué se rechazó y por qué. |
-| Sin credenciales en el repositorio ni en el historial | Cumple | Sin coincidencias; solo `.env.example`. |
-| Contribución de todos los integrantes | Cumple | 4 de 4 en S3: Santiago 11, Elian 11, Yeiver 7, Vincent 6. |
-| Pipeline en verde | No verificado | Prueba `tests/health.test.ts` y script `test`; sin workflow ni evidencia de ejecución. |
+| Repositorio en la organización, con el nombre de la convención y público | Cumple | Clon público por HTTPS y rama remota master; [README.md:1–10](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/6a03a9718776420d46ed40f7addc5667206908cd/README.md#L1-L10). |
+| Estructura mínima presente | Cumple | Presentes README, docs/arc42/, docs/adr/, docs/c4/, docs/aspectos.md y docs/ia.md; [docs/aspectos.md:36–43](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/6a03a9718776420d46ed40f7addc5667206908cd/docs/aspectos.md#L36-L43). arc42 usa AsciiDoc, desviación de formato frente a Markdown. |
+| Estado calificado identificable | Cumple | Hash y fecha completos en el encabezado, elegidos por git log --until sobre origin/master. |
+| Nombres de ADR según la convención | No cumple | El nombre [docs/adr/0005 Validación-sincronización-inicial.md:1–7](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/6a03a9718776420d46ed40f7addc5667206908cd/docs/adr/0005%20Validaci%C3%B3n-sincronizaci%C3%B3n-inicial.md#L1-L7) contiene espacio y acentos; no pasa NNNN-kebab-case. |
+| ADR aceptados no reescritos | No cumple | ADR-0001 ya estaba aceptado en 924d133 y fue modificado en 354f1f5: se verificaron ambas versiones y el diff. El texto actual solo dice complementado, sin preservar la versión aceptada mediante reemplazo; [docs/adr/0001-usar-monolito-modular.md:1–8](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/6a03a9718776420d46ed40f7addc5667206908cd/docs/adr/0001-usar-monolito-modular.md#L1-L8). |
+| docs/ia.md al día para la semana | No cumple | Hubo cambios de S9, pero el registro específico no separa una salida rechazada con motivo técnico y mantiene Estado «semana 7»; [docs/ia.md:112–112](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/6a03a9718776420d46ed40f7addc5667206908cd/docs/ia.md#L112-L112), [docs/ia.md:363–389](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/6a03a9718776420d46ed40f7addc5667206908cd/docs/ia.md#L363-L389). |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No cumple | Scanner configurado en [sonar-project.properties:1–5](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/6a03a9718776420d46ed40f7addc5667206908cd/sonar-project.properties#L1-L5) y [.github/workflows/ci.yml:18–23](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/6a03a9718776420d46ed40f7addc5667206908cd/.github/workflows/ci.yml#L18-L23); la organización configurada no es isco-utb. CI success, Flutter failure en el hash. Falta análisis público y Quality Gate atribuibles a esta revisión. |
+| Sin credenciales en el repositorio ni en el historial | No verificado | Sin credenciales reales en el árbol: coincidencias solo con referencias a secrets de Actions. Barrido histórico completo no concluyó; no se certifica el historial. |
+| Contribución de todos los integrantes | No verificado | Cuatro firmas de autor visibles, distribuidas en el historial. No se inventa la correspondencia entre cuentas y los cuatro integrantes; falta mapa verificable para acreditar a todas las personas. Punta actual: 4 firmas y 206 commits agregados; no equivalen automáticamente a personas. |
 
 ## Contribución por integrante
+
+Actualización agregada del 2026-10-06: Cuatro firmas de autor en el historial del estado S9; 206 commits agregados. Correspondencia completa cuenta-persona no verificada. En HEAD: 4 firmas y 206 commits agregados.
+
+La tabla individual conservada abajo corresponde al registro histórico anterior; no se infieren nuevas correspondencias entre cuentas y personas.
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
 |---|---|---:|---:|---:|---|
@@ -113,8 +140,8 @@
 
 ## Preguntas abiertas para la sustentación
 
-- Confirmar la cuenta de GitHub de Vincent Cardona Castro (¿`cardonavincent26-design`?) contra la matrícula.
-- ¿Por qué el C4 de contexto omite la red Wi-Fi y el moderador que declara la sección 3?
-- ¿Cómo medirán los escenarios (herramienta, carga, umbral)? Ninguno lo declara todavía.
-- ¿Por qué la sección 4 sigue declarando «pendiente» la selección del estilo si el ADR 0001 ya la decidió y el esqueleto ya está montado?
-- ¿Ratificarán el ADR como aceptado (hoy está «propuesto») y qué escenario lo motiva (el campo dice «EC-nn»)?
+Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
+
+- ¿Qué ocurriría si un receptor recibe startAt después del instante programado y qué prueba real detectaría el desfase?
+- ¿Qué consumo y persistencia necesita Dokploy y quién asume el costo al salir del recurso académico gratuito?
+- La prueba actual produce 40 ms por construcción: ¿qué cambiarían al medir relojes, red y reproducción física reales?

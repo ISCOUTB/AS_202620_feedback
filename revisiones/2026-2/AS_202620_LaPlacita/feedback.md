@@ -55,22 +55,10 @@ Quedan tres frentes:
 
 La base de infraestructura, observabilidad, costos y documentación operativa es sólida. Cierren el Quality Gate público y la disciplina de ADR.
 
-## Semana 9 · S9 (pasada temprana, preliminar)
+## Semana 9 · S9 (revisión definitiva)
 
-Esta entrega es una lectura **preliminar**: la actividad S9 aún no ha cerrado (corte el 2026-10-05) y lo revisado es la punta actual de la rama principal, no un estado congelado; la valoración puede cambiar si el equipo empuja antes del cierre.
+La corrección del borde HTTP ya tiene decisión, pruebas negativas y comparación antes/después. Completen la fila del aspecto con C4 y enlaces directos a la medición. Mantengan explícito que retirar el PIN del GET no resuelve la identidad del establecimiento. La revisión independiente de credenciales quedó bloqueada por una limitación del revisor, así que la propuesta de nota sigue pendiente.
 
-La evidencia de S9 se lee con una regla decisiva: una fila solo se satisface con trabajo **del periodo S9**. Lo que ya estaba en el repositorio es línea base y se puede citar como contexto, pero no cuenta dos veces. Al momento de esta pasada, la punta de la rama principal no registra commits posteriores al estado con que se calificó S8, así que la mayor parte de la matriz de esta semana todavía no tiene material propio del periodo.
+## Semana 10 · Segundo corte (avance preliminar)
 
-**Qué falta para esta evidencia**
-- Una porción real del sistema construida con IA durante S9, con su cadena navegable en `docs/aspectos.md` hasta código, prueba y medición.
-- La prueba que falle ante el defecto que cubre: no hay run en rojo, prueba de mutación ni procedimiento documentado; la fila queda como pregunta de sustentación.
-- La medición del escenario asociado, contrastada con su umbral.
-- La actualización de `docs/ia.md` con lo aceptado, lo corregido y lo rechazado con su motivo, incluyendo al menos una entrada del periodo.
-- El ADR que decida sobre el componente generativo: evaluarlo con costo y latencia, o argumentar por qué no se incorpora.
-- La auditoría de erosión sobre límites de contexto y propiedad de datos del código generado en S9.
-- La verificación, contra su registro oficial, de las dependencias que se propongan en S9.
-
-**Recordatorios transversales que siguen abiertos**
-- Hay ADR ya aceptados que se editaron sin declarar un reemplazo. Un ADR aceptado no se reescribe: cuando la decisión cambia, se escribe uno nuevo y el anterior se marca como reemplazado.
-- `docs/ia.md` debe quedar al día para la semana.
-- El paso de SonarCloud en el pipeline sigue siendo informativo y falta publicar la URL del Quality Gate.
+Para el segundo corte, identifiquen el escenario operativo asignado y prueben su respuesta en el despliegue con línea base reproducible. Actualicen los documentos de Sonar, hagan verificable el Quality Gate y preparen la defensa de identidad por establecimiento, persistencia y costos.

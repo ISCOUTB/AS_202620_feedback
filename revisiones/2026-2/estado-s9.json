@@ -1,1 +1,212 @@
-{"modo": "early", "ts": "2026-10-02T01:32:07.174083+00:00", "equipos": 23, "lote": "todos", "tamano_lote": 23, "origen": "consolidacion-local-preliminar", "publicado": false, "cierre": "2026-10-05T05:00:00Z", "nota": "pasada temprana sin corte: se califica la punta actual de la rama principal"}
+{
+  "modo": "definitive",
+  "ts": "2026-10-06T21:34:07.388616+00:00",
+  "equipos": 23,
+  "lote": "todos",
+  "tamano_lote": 23,
+  "origen": "revision-documental-completa",
+  "publicado": false,
+  "publicacion_pendiente": "Pendiente de revisión e incorporación a master; los cambios se proponen mediante un pull request en borrador. La evaluación conserva la fotografía del 6 de octubre de 2026.",
+  "cierre": "2026-10-05T05:00:00Z",
+  "pdf": "excluidos por indicacion docente; sin penalizacion",
+  "ejecucion_codigo_estudiantil": false,
+  "resultados": [
+    {
+      "repo": "AS_202620_AudioShare",
+      "rama": "master",
+      "hash": "6a03a9718776420d46ed40f7addc5667206908cd",
+      "fecha": "2026-10-04T23:15:57-05:00"
+    },
+    {
+      "repo": "AS_202620_Sistema-de-calificacion-automatica",
+      "rama": "master",
+      "hash": "72011933ff2238eaec697f565572fec6872a3cbc",
+      "fecha": "2026-10-04T22:36:29-05:00"
+    },
+    {
+      "repo": "AS_202620_PROYECTO_CAMPUSMARKET",
+      "rama": "master",
+      "hash": "de6ed67c05ccdb7eabd9b1951f146ab8958b1d00",
+      "fecha": "2026-10-04T02:14:34-05:00"
+    },
+    {
+      "repo": "AS_202620_Clubs_UTB",
+      "rama": "master",
+      "hash": "399565f527b633c49a71ac9b8a7f99daa85191d4",
+      "fecha": "2026-10-04T23:47:05-05:00"
+    },
+    {
+      "repo": "AS_202620_DinamikUTB",
+      "rama": "master",
+      "hash": "2326dd7f9d4dda08ba557ea6602b0a7085c97bee",
+      "fecha": "2026-10-04T21:47:16-05:00"
+    },
+    {
+      "repo": "AS_202620_Drift",
+      "rama": "master",
+      "hash": "3dee7e265eec021cbbba4af4d337e13c982df316",
+      "fecha": "2026-10-04T22:03:23-05:00"
+    },
+    {
+      "repo": "AS_202620_ElMapita",
+      "rama": "main",
+      "hash": "f3bcfa83e80f5c8d0e30a01b656d89160c907d64",
+      "fecha": "2026-10-04T21:11:20-06:00"
+    },
+    {
+      "repo": "AS_202620_EnAgenda",
+      "rama": "master",
+      "hash": "5aa889370dcf342ba06666893b97f8065b513de9",
+      "fecha": "2026-10-04T23:46:49-05:00"
+    },
+    {
+      "repo": "AS_202620_GimnasioUTB",
+      "rama": "main",
+      "hash": "af4796d6320766611d9fc01d7112a1c0e4112b40",
+      "fecha": "2026-10-04T16:52:10-05:00"
+    },
+    {
+      "repo": "AS_202620_InvenTrack",
+      "rama": "main",
+      "hash": "35a9c63dd603bab989a18ed17ca56063c5616585",
+      "fecha": "2026-10-04T22:14:10-05:00"
+    },
+    {
+      "repo": "AS_202620_LaPlacita",
+      "rama": "master",
+      "hash": "3a04706d27e49fb93c90c68f469442fb6f392710",
+      "fecha": "2026-10-04T15:39:16-05:00"
+    },
+    {
+      "repo": "AS_202620_LostVault",
+      "rama": "main",
+      "hash": "99fb413bda00c208ec42104dcfe6a4c189fbad77",
+      "fecha": "2026-10-04T22:30:53-05:00"
+    },
+    {
+      "repo": "AS_202620_mapsutb",
+      "rama": "master",
+      "hash": "1b296a37c575a751e99df1a1b288d70efba03d56",
+      "fecha": "2026-10-02T12:58:33-05:00"
+    },
+    {
+      "repo": "AS_202620_PideUtb",
+      "rama": "master",
+      "hash": "7e973faf7047e40137762befbc019f4736a813e6",
+      "fecha": "2026-10-04T12:47:55-05:00"
+    },
+    {
+      "repo": "AS_202620_Recobra",
+      "rama": "master",
+      "hash": "ebe6cca7a903bb333678bd20ba5327d8fcb127f7",
+      "fecha": "2026-10-04T23:40:37-05:00"
+    },
+    {
+      "repo": "AS_202620_ROUTB",
+      "rama": "master",
+      "hash": "7c6573e68a5fdab019fab8fddfe1acb2a451cb27",
+      "fecha": "2026-10-03T18:20:32-05:00"
+    },
+    {
+      "repo": "AS_202620_ShareU",
+      "rama": "master",
+      "hash": "39508608eae4c1a56a5e4fc11a055bf6afb2c003",
+      "fecha": "2026-09-28T19:56:57-05:00"
+    },
+    {
+      "repo": "AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant",
+      "rama": "main",
+      "hash": "72a8b6a0b3680a59c235f9225f90bc260093d86b",
+      "fecha": "2026-10-04T23:39:00-05:00"
+    },
+    {
+      "repo": "AS_202620_TIENDA-VIRTUAL-UTB",
+      "rama": "main",
+      "hash": "76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33",
+      "fecha": "2026-10-04T18:07:32-05:00"
+    },
+    {
+      "repo": "AS_202620_uniTeam",
+      "rama": "master",
+      "hash": "6e04b35317a0a68d239ae85c71cd60e21982b195",
+      "fecha": "2026-10-04T16:37:55-05:00"
+    },
+    {
+      "repo": "AS_202620_UTB_TRACKER",
+      "rama": "main",
+      "hash": "ae526db29b4f2d1f5981536e18438f9a62b1516d",
+      "fecha": "2026-09-25T11:36:43-05:00"
+    },
+    {
+      "repo": "AS_202620_Verifacts",
+      "rama": "master",
+      "hash": "4f0652291c47f5093da1230b245a980614220e80",
+      "fecha": "2026-10-02T00:01:45-05:00"
+    },
+    {
+      "repo": "AS_202620_XALD",
+      "rama": "master",
+      "hash": "9236ff97218b632eeb9a1910f6083968e2c22909",
+      "fecha": "2026-10-04T23:53:02-05:00"
+    }
+  ],
+  "nota": "S9 congelada; 1 + 4 * Cumple/10 para las propuestas verificadas; las comprobaciones bloqueadas del revisor quedan pendientes, sin penalizar al equipo. Nota final en Moodle",
+  "propuestas_pendientes_por_limite_revisor": [
+    {
+      "repo": "AS_202620_Sistema-de-calificacion-automatica",
+      "criterios": [
+        {
+          "criterion": "Sin credenciales en código, ejemplos ni documentación generada",
+          "reason": "Herramienta interrumpió barrido independiente: automatic approval review was cancelled. Impedimento del entorno revisor, no defecto del equipo."
+        }
+      ],
+      "intervalo_min": 4.6,
+      "intervalo_max": 5.0
+    },
+    {
+      "repo": "AS_202620_InvenTrack",
+      "criterios": [
+        "Sin credenciales en código, ejemplos ni documentación generada"
+      ],
+      "intervalo_min": 4.2,
+      "intervalo_max": 4.6
+    },
+    {
+      "repo": "AS_202620_LaPlacita",
+      "criterios": [
+        "Sin credenciales en código, ejemplos ni documentación generada"
+      ],
+      "intervalo_min": 4.2,
+      "intervalo_max": 4.6
+    },
+    {
+      "repo": "AS_202620_LostVault",
+      "criterios": [
+        "Sin credenciales en código, ejemplos ni documentación generada"
+      ],
+      "intervalo_min": 2.6,
+      "intervalo_max": 3.0
+    },
+    {
+      "repo": "AS_202620_mapsutb",
+      "criterios": [
+        "Sin credenciales en código, ejemplos ni documentación generada"
+      ],
+      "intervalo_min": 4.2,
+      "intervalo_max": 4.6
+    },
+    {
+      "repo": "AS_202620_ROUTB",
+      "criterios": [
+        {
+          "criterion": "Sin credenciales en código, ejemplos ni documentación generada",
+          "reason": "Herramienta de revisión interrumpió el barrido independiente: automatic approval review was cancelled. No es evidencia de incumplimiento del equipo."
+        }
+      ],
+      "intervalo_min": 4.6,
+      "intervalo_max": 5.0
+    }
+  ],
+  "propuestas_numericas": 17,
+  "rama_revision": "revision/s9-final-s10-prelim-20261006"
+}

@@ -77,25 +77,10 @@ Dos filas de despliegue quedaron pendientes de calificar porque la URL se entreg
 
 Para cerrar: (1) el cron de keep-alive inunda el listado de ejecuciones y deja el run de la revisión fuera del alcance de la comprobación, así que citen el run de la rama principal que confirme el resultado; (2) el análisis estático no deja evidencia auditable mientras el token no esté configurado, de modo que el pipeline ejecute el scanner y publique el Quality Gate; y (3) no reescriban un ADR ya aceptado: si la decisión cambia, escriban uno nuevo y marquen el anterior como reemplazado.
 
-## Semana 9 · S9 (pasada temprana, previa al cierre)
+## Semana 9 · S9 (revisión definitiva)
 
-La rama principal sí se movió en esta ventana: el equipo declaró la infraestructura de producción como
-código con Terraform, con una decisión arquitectónica que compara alternativas (ADR), un workflow de
-verificación estática y el registro de IA actualizado con lo aceptado y lo rechazado. Eso cubre tres
-criterios de la evidencia.
+La separación Catálogo–Inventario ya tiene una cadena sólida: prueba negativa, medición local y auditoría de propiedad de datos. Falta que el equipo ratifique las decisiones de separación y de no incorporar generación; ambas siguen como propuestas. Corrijan además el README que aún presenta Inventario vacío y aporten la evidencia pública del scanner y Quality Gate.
 
-Lo que falta para cerrarla antes del cierre:
+## Semana 10 · Segundo corte (avance preliminar)
 
-- La fila de la tabla de aspectos para esa porción: sigue sin existir, así que la cadena
-  escenario → C4 → ADR → código → prueba → medición no arranca.
-- La prueba que falla ante el defecto que cubre: validar el formato de Terraform no es esa prueba;
-  hace falta un run en rojo, una prueba de mutación o el procedimiento documentado.
-- La medición del escenario asociado, contrastada con su umbral.
-- La auditoría de erosión y, si aplica, la verificación de propiedad de datos.
-- La verificación de las dependencias propuestas (los proveedores de Terraform no están en los
-  registros que se revisan; si añaden dependencias de npm o PyPI, compruébenlas contra su registro).
-- La decisión registrada en un ADR de no incorporar un componente generativo.
-
-Además: el cron de keep-alive deja runs en rojo sobre el hash revisado y sigue sin publicarse el
-Quality Gate de SonarCloud; y los ADR aceptados siguen editándose sin declarar un reemplazo. El
-despliegue real todavía no se migró: falta crear los tokens de Terraform y aplicar el corte.
+Antes del corte, documenten cuál fue el escenario operativo asignado y midan una línea base reproducible en el entorno desplegado. Publiquen el dominio vigente de Dokploy, sus comprobaciones de salud y flujo, el resultado del experimento frente al umbral y el costo real de servidor y backups. La medición local de cinco usuarios es un insumo, pero todavía no acredita el reto asignado.

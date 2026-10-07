@@ -44,8 +44,10 @@ La entrega cambió respecto de la revisión temprana: el sitio está desplegado 
 
 Para cerrar: dejen de reescribir ADR ya aceptados —registren el cambio como un ADR nuevo y marquen el anterior como reemplazado—. Las filas de URL desplegada y de health quedan pendientes de calificar porque la URL se entrega por Moodle.
 
-## Semana 9 · S9
+## Semana 9 · S9 (revisión definitiva)
 
-La entrega de esta semana es sustantiva y está bien trazada: construyeron el ruteo a pie completo —grafo peatonal derivado de OpenStreetMap y del levantamiento propio, dueño del grafo, servicio de ruteo con Dijkstra, pantalla de mapa y herramientas web de campo—, con pruebas que incluyen una de mutación (una búsqueda por número de tramos falla la verificación de metros), la medición del escenario de ruteo contrastada contra su umbral con amplio margen, y tres ADR que argumentan la decisión del equipo con alternativas descartadas y las restricciones del proyecto. La auditoría de erosión está contrastada sobre el código y reconoce un hallazgo con su control, y el registro de IA distingue lo aceptado, lo corregido y lo rechazado con motivo.
+El ruteo ya tiene decisión, pruebas de defecto y mediciones de cálculo y pantalla; la decisión de no incorporar generación quedó aceptada. Completen los enlaces de A-01 y actualicen el C4 que todavía declara el repositorio de mapas pendiente. Distingan el resultado con GPS simulado de la precisión en campo. La comprobación independiente de credenciales sigue pendiente por una limitación del revisor.
 
-Para cerrar la semana: (1) el ADR del componente generativo quedó en estado *Propuesto*; la ficha pide la decisión, no la propuesta, así que márchenlo como aceptado o tomen la decisión antes del cierre; (2) la fila del ruteo en `docs/aspectos.md` aún declara pendiente la pantalla de mapa que ya está en el repositorio: actualicen la celda de código; (3) la sección de dependencias de la evidencia afirma que no añadieron ninguna, cuando el manifiesto ya incorpora el paquete del mapa y el de coordenadas: alinéenla. El pipeline de la punta está en verde con el análisis estático y su puerta de calidad visibles. Sigue abierta la observación de no reescribir ADR ya aceptados.
+## Semana 10 · Segundo corte (avance preliminar)
+
+El health público identifica el mismo commit revisado. Para el segundo corte, confirmen el escenario asignado y midan su línea base/respuesta sobre el entorno real. Comprueben la caché efectiva de cada recurso y la experiencia tras una reversión, y alineen C4 y aspectos con el código ya entregado.

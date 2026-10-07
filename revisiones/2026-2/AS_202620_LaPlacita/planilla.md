@@ -8,15 +8,16 @@ Hoja consolidada del equipo LaPlacita. Se actualiza tras cada revisión.
 |---|---|
 | Equipo | LaPlacita |
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_LaPlacita` |
-| Integrantes y su usuario de GitHub | Mateo Josue Buendia Barrios · Miguel Angel Isaza Montalvo · Samuel David Jimenez Alvarez · Jorge Alberto Martinez Castillo — cuentas abajo |
-| URL del sistema desplegado | declarada en el repo: `https://laplacita-app.graymoss-fdd72159.canadacentral.azurecontainerapps.io` (no consultada; pendiente por Moodle) |
-| Ultima revision | 2026-10-01 |
+| Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Mateo Josue Buendia Barrios · Miguel Angel Isaza Montalvo · Samuel David Jimenez Alvarez · Jorge Alberto Martinez Castillo — cuentas abajo; ver comprobación actual de contribución más abajo. |
+| URL del sistema desplegado | https://laplacita-app.graymoss-fdd72159.canadacentral.azurecontainerapps.io · ver comprobación y límites en S10 |
+| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
 
 ## Estado por entrega
 
-| Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
+| Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 9 | Evidencia S9 · Generación verificada y trazable | `b03a797` (2026-09-27T19:00:57-05:00) | 1/10 | 1.4 (provisional; sin entrega S9 en la punta al momento de la pasada) | sí, preliminar |
+| 9 | S9 · definitiva | `master` · `3a04706d27e49fb93c90c68f469442fb6f392710` · 2026-10-04T15:39:16-05:00 | 8/10 | Pendiente por limitación de verificación; intervalo documental 4.2–4.6, sin descontar la comprobación bloqueada | sí, 2026-10-06 |
+| 10 | Segundo corte · preliminar | `master` · `3a04706d27e49fb93c90c68f469442fb6f392710` · 2026-10-04T15:39:16-05:00 | 2/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
 | 8 | S8 (definitiva) | `b03a797` (2026-09-27T19:00:57-05:00) | 10/10 | 5.0 (provisional; 2 filas de despliegue pendientes) | sí, definitiva |
 | 7 | S7 | `8c2e1bc` (2026-09-20T22:47:32-05:00) | 10/10 | 5.0 | sí, auditada |
 | 6 | S6 | `2c0eb01` (2026-09-13T21:28:00-05:00) | 7/8 | 4.5 | si |
@@ -27,6 +28,23 @@ Hoja consolidada del equipo LaPlacita. Se actualiza tras cada revisión.
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `014751df` · 2026-08-23T19:30:17-05:00 | 9/9 | no se publica | sí |
 
 ## Lo que se arrastra
+
+Estado vigente observado en la punta citada en [S10](semana-10-corte2.md). Las correcciones tardías no cambian S9. El registro histórico siguiente conserva su contexto, pero no sustituye esta actualización ni implica cerrar hallazgos no revalidados.
+
+| Hallazgo actual | Estado | Evidencia y próximo paso |
+|---|---|---|
+| Completar C4 y enlaces de evidencia en A-06. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Resolver identidad de tenant y persistencia antes de declarar seguridad integral. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Acreditar scanner/run/Quality Gate y corregir documentos que aún llaman informativo al job. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Resolver historial de ADR aceptados y confirmar autoría sin inferencias. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Asignación S10 y comprobación independiente de credenciales pendientes. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| La ausencia preliminar de entrega S9 queda cerrada: existe porción real, ADR y evidencia de defecto/medición. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| Se corrige la exposición del PIN en GET y el setter genérico del borde HTTP; no se da por resuelta autorización. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| Registro IA y ADR de no generación incorporados. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| Se retiró continue-on-error del job Sonar; falta demostrar el gate y su bloqueo. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+
+<details>
+<summary>Registro histórico previo a esta revisión (estados a la fecha de cada observación)</summary>
 
 | Hallazgo | Primera vez que se detectó | Sigue abierto | Qué se le dijo al equipo |
 |---|---|---|---|
@@ -77,20 +95,30 @@ Hoja consolidada del equipo LaPlacita. Se actualiza tras cada revisión.
 | Quality Gate de SonarCloud sin URL pública (job `sonar` informativo) | S8 | Sí | Vincular org/proyecto y publicar la URL del Quality Gate. |
 | Sin entrega S9 en la punta: 0 commits entre el hash de S8 (`b03a797`) y `origin/master` | S9 | Sí (preliminar) | Empujar la porción construida con IA, su ADR, la prueba que falla y la medición antes del cierre del 2026-10-05T05:00:00Z. |
 | ADR aceptados editados sin reemplazo declarado (0001, 0003, 0009, 0010) | S8 | Sí | Persiste en S9; si la decisión cambia, escribir otro ADR y marcar el anterior como reemplazado. |
+
+</details>
+
 ## Estado del contrato del repositorio
+
+Actualizado desde la evaluación de la punta actual; no altera la matriz congelada de S9.
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
-| Nombre y visibilidad del repositorio | Cumple | `ISCOUTB/AS_202620_LaPlacita`, público |
-| Estructura mínima | Cumple | Seis rutas; C4 en `docs/c4/contexto.md` con leyenda |
-| Convención de nombres de ADR | Cumple | `0001-adopcion-monolito-modular.md` |
-| ADR aceptados sin reescribir | No cumple | ADR-0003 (`745e799`→`95ec841`), ADR-0009 (`9452e43`→`4f38051`) y ADR-0010 (`c46fd36`→`c99f542`) editados tras su aceptación sin reemplazo declarado. |
-| `docs/ia.md` al día | Cumple | Actualizado el 27/09/2026 con decisiones y rechazos técnicos. |
-| Sin credenciales en el repositorio ni en el historial | Cumple | Greps limpios |
-| Contribución de todos los integrantes | Cumple | 4 identidades consolidadas / 4 integrantes (64+34+29+20) |
-| Pipeline en verde | Cumple | Run `36360634637` sobre `b03a797` en `master`, en verde; `sonar` informativo. |
+| Repositorio en la organización, con el nombre de la convención y público | Cumple | Clon público anónimo de https://github.com/ISCOUTB/AS_202620_LaPlacita; [docs/evidencias/evidencias-s9.md:8-10](https://github.com/ISCOUTB/AS_202620_LaPlacita/blob/3a04706d27e49fb93c90c68f469442fb6f392710/docs/evidencias/evidencias-s9.md#L8-L10). |
+| Estructura mínima presente | Cumple | Árbol Git con las seis rutas mínimas; [docs/aspectos.md:9-17](https://github.com/ISCOUTB/AS_202620_LaPlacita/blob/3a04706d27e49fb93c90c68f469442fb6f392710/docs/aspectos.md#L9-L17) y ADR/código/evidencia enlazados existentes. |
+| Estado calificado identificable | Cumple | origin/master 3a04706d27e49fb93c90c68f469442fb6f392710; hash/fecha y corte en cabecera. |
+| Nombres de ADR según la convención | Cumple | Los archivos 0001–0013 de docs/adr siguen NNNN-titulo-en-kebab-case; [docs/adr/0013-proyeccion-publica-pedido-sin-pin.md:1-7](https://github.com/ISCOUTB/AS_202620_LaPlacita/blob/3a04706d27e49fb93c90c68f469442fb6f392710/docs/adr/0013-proyeccion-publica-pedido-sin-pin.md#L1-L7). |
+| ADR aceptados no reescritos | No cumple | Historial verificado de 0003/0009/0010 contiene ediciones posteriores a aceptación, por ejemplo [4f380512](https://github.com/ISCOUTB/AS_202620_LaPlacita/commit/4f3805127ec8e55890ea029b8c4489c1c7932753) y [c99f542b](https://github.com/ISCOUTB/AS_202620_LaPlacita/commit/c99f542b48b9b51f93da24464cfa7250091fa00d). [docs/aspectos.md:23-25](https://github.com/ISCOUTB/AS_202620_LaPlacita/blob/3a04706d27e49fb93c90c68f469442fb6f392710/docs/aspectos.md#L23-L25) reconoce arrastre; ADR-0013 sí complementa sin reescribir 0007. |
+| docs/ia.md al día para la semana | Cumple | [docs/ia.md:54-58](https://github.com/ISCOUTB/AS_202620_LaPlacita/blob/3a04706d27e49fb93c90c68f469442fb6f392710/docs/ia.md#L54-L58) registra S9 y rechazo técnico. |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No cumple | [.github/workflows/ci.yml:51-78](https://github.com/ISCOUTB/AS_202620_LaPlacita/blob/3a04706d27e49fb93c90c68f469442fb6f392710/.github/workflows/ci.yml#L51-L78) ya no contiene continue-on-error, pero scanner sigue condicionado a token y no espera Quality Gate. [docs/semana-08.md:119-129](https://github.com/ISCOUTB/AS_202620_LaPlacita/blob/3a04706d27e49fb93c90c68f469442fb6f392710/docs/semana-08.md#L119-L129) mantiene ejecución/URL de gate pendientes. Única consulta PR del hash vacía; no se infiere inexistencia de runs push. No hay trío verificable del contrato para este cierre. |
+| Sin credenciales en el repositorio ni en el historial | No verificado | El equipo documenta su barrido en [docs/evidencias/evidencias-s9.md:280-295](https://github.com/ISCOUTB/AS_202620_LaPlacita/blob/3a04706d27e49fb93c90c68f469442fb6f392710/docs/evidencias/evidencias-s9.md#L280-L295). La revisión independiente ampliada fue cancelada dos veces por la herramienta y no se repite por otra vía: no se afirma limpieza ni exposición a partir de ese bloqueo; comprobación pendiente del revisor. |
+| Contribución de todos los integrantes | No verificado | Las correspondencias de la planilla anterior están declaradas inferidas y pendientes de docente. No se convierten cuatro firmas en cuatro personas verificadas; confirmar atribución y contribución sustantiva. |
 
 ## Contribución por integrante
+
+Actualización agregada del 2026-10-06: Historial de la punta: 156 commits y 5 firmas de autor distintas (firmas, no personas). Las correspondencias de la planilla anterior están declaradas inferidas y pendientes de docente. No se convierten cuatro firmas en cuatro personas verificadas; confirmar atribución y contribución sustantiva.
+
+La tabla individual conservada abajo corresponde al registro histórico anterior; no se infieren nuevas correspondencias entre cuentas y personas.
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
 |---|---|---:|---:|---:|---|
@@ -103,7 +131,8 @@ Correspondencia cuenta↔persona inferida del correo de los commits; la confirma
 
 ## Preguntas abiertas para la sustentación
 
-- ¿Por qué se retiró de `aspectos.md` la sección de enlaces a los escenarios (commit `b1f8da2`) que existía en `a484f1a`? (parcialmente resuelto: la tabla ya enlaza ADR y código; los RF-xx siguen sin enlazar a los escenarios).
-- ¿Cuál es el artefacto (módulo) que recibe el estímulo en cada uno de los cinco escenarios? (resuelto en S3: la sección 4.3 asigna módulo por escenario).
-- ¿Cuándo piensan montar el pipeline para que la prueba en verde deje de descansar en la declaración de `ia.md`?
-- ¿Ratifican el ADR 0001 como «aceptado» (hoy dice «propuesto»)?
+Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
+
+- Fallo: si un cliente proporciona tiendaId ajeno o reinicia la instancia, ¿qué protege el pedido y qué observación detectaría el problema?
+- Costo: ¿cómo cambia la cuenta al introducir PostgreSQL y autenticación de tenants y qué supuesto de la capa gratuita deja de valer?
+- Medición: después de observar la exposición del PIN, ¿qué canal o consumidor medirían a continuación y qué evidencia los haría cambiar el diseño?

@@ -54,10 +54,10 @@ Qué corregir, por prioridad: el commit revisado es un merge con conflictos sin 
 
 La URL del despliegue y la comprobación de salud quedan diferidas por decisión docente: se entregan por Moodle.
 
-## Semana 9 · S9 (pasada temprana, preliminar)
+## Semana 9 · S9 (revisión definitiva)
 
-Esta lectura es preliminar: la actividad todavía no cierra y se revisó la punta actual de la rama principal, no un estado congelado. No hay commits nuevos desde la entrega anterior, así que la evidencia propia de esta semana todavía no está en el repositorio.
+La creación múltiple de invitaciones es trabajo nuevo y el registro de IA explica decisiones y rechazos. Falta completar la cadena con ADR coherente, prueba que demuestre el defecto, medición y auditoría de erosión. La plantilla intermedia faltaba al cierre y llegó después. Revisen además la exposición de tokens en las rutas publicadas por métricas.
 
-Cómo se lee esta evidencia: una fila de S9 solo se sostiene con trabajo del periodo de S9. Lo que ya estaba en el repositorio es línea base y se puede citar como contexto, pero no cuenta dos veces. Por eso, aunque el repositorio conserva piezas valiosas de semanas anteriores (la fila de aspectos navegable, los ADR argumentados, el registro de uso de IA con rechazos motivados y la verificación de propiedad de datos de la semana 6), ninguna satisface por sí sola una fila de esta entrega.
+## Semana 10 · Segundo corte (avance preliminar)
 
-Qué corregir, por prioridad: 1) construir la porción nueva con IA y su cadena de trazabilidad; 2) resolver los conflictos de merge que siguen en varios archivos de infraestructura y en la evidencia: mientras estén ahí, la infraestructura como código es inválida y el pipeline del estado revisado permanece en rojo; 3) aportar una prueba que falle ante el defecto que cubre, con evidencia del periodo (run en rojo, prueba de mutación o procedimiento documentado), que hoy no existe; 4) publicar la medición de un escenario contrastada con su umbral; 5) documentar una auditoría de erosión del periodo y registrar una entrada de uso de IA de esta semana; 6) verificar en los registros oficiales las dependencias propuestas en el periodo; 7) si decidieron no incorporar un componente generativo, dejar el ADR que lo justifique: la ausencia de decisión no es lo mismo que decidir no hacerlo; 8) recomponer la tabla de aspectos, que perdió su fila de encabezado y cuya evidencia está partida por los marcadores de conflicto; y 9) sumar SonarCloud con su URL y el estado del Quality Gate.
+La plantilla faltante ya está en la punta y CI está en verde. Siguen pendientes URL pública, umbral y medición del escenario asignado. Normalicen las rutas de métricas para no divulgar tokens de invitación, completen la prueba del flujo entero y conserven las decisiones anteriores mediante ADR sustitutos.

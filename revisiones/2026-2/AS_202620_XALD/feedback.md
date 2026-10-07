@@ -54,8 +54,10 @@ La entrega cambió por completo respecto de la revisión temprana: ahora hay un 
 
 Para cerrar: integren el análisis estático de SonarCloud al pipeline y publiquen el análisis con su Quality Gate; dejen de editar los ADR ya aceptados —si una decisión cambia, escriban uno nuevo y marquen el anterior como reemplazado—; y retiren del control de versiones los archivos compilados de Python que siguen en `__pycache__`. Las filas de URL desplegada y de health quedan pendientes de calificar porque la URL se entrega por Moodle.
 
-## Semana 9 · S9
+## Semana 9 · S9 (revisión definitiva)
 
-La rama principal no se movió desde la entrega anterior: no hay una porción nueva de esta evidencia. Como la revisión de esta semana premia el trabajo del periodo, sin commits nuevos no hay artefacto que citar y todo lo revisado en entregas anteriores queda como línea base, aunque se conserve en el repositorio.
+Hay avances verificables en pruebas, auditoría y decisiones, pero el handler LWW no cambió respecto a la semana anterior. La medición 30/30 procesa pares en secuencia y solo observa aceptaciones y un contador; no demuestra conflictos simultáneos ni el estado ganador completo. Repitan ese experimento, precisen lo corregido en el registro de IA y actualicen los enlaces y las discrepancias de la arquitectura.
 
-Lo que hay que hacer para esta evidencia: construir una porción real del sistema con apoyo de IA y dejar su cadena completa navegable —fila de la tabla de aspectos hasta el código, la prueba y la medición—; escribir el ADR con la decisión del equipo y las restricciones del proyecto; aportar una prueba que falle ante el defecto que cubre (run en rojo, prueba de mutación o procedimiento documentado); medir el escenario contra su umbral; y registrar en la bitácora de IA lo aceptado, lo corregido y lo rechazado con motivo. El sistema declara un componente de categorización con IA: si lo mantienen, la ficha pide su conjunto de evaluación con costo por operación y latencia; si deciden no incorporarlo, un ADR que lo justifique. También falta la verificación de dependencias añadidas en el periodo y sigue pendiente el análisis estático con su puerta de calidad. Lo que ya estaba bien —despliegue, observabilidad y ADR de plataforma— se conserva como base, pero no cuenta como trabajo de esta semana.
+## Semana 10 · Segundo corte (avance preliminar)
+
+Confirmen la consigna operativa asignada y registren una línea base antes de cambiar el MVP. El experimento debe reproducir la carga real y verificar estado final, pérdida y recuperación, además de respuestas HTTP. Mantengan visible que los datos siguen en memoria y que Gemini es un mock. Falta la evidencia pública de SonarCloud y demostrar el flujo del despliegue, además del health check.

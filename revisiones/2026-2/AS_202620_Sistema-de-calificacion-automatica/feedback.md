@@ -64,14 +64,10 @@ La segunda es pequeña pero conviene corregirla: un ADR ya aceptado se editó de
 
 En resumen: la semana está completa en la ficha y muy bien evidenciada. Cierren SonarCloud y cuiden la inmutabilidad de los ADR de cara a la sustentación del corte.
 
-## Semana 9 · S9 (revisión preliminar)
+## Semana 9 · S9 (revisión definitiva)
 
-Esta revisión es preliminar y no tiene corte todavía: se califica la punta actual de la rama principal y la nota puede cambiar si empujan antes del cierre del 2026-10-05.
+RF-11 ya cuenta con cadena completa, prueba de defecto, auditoría de fronteras y evaluación generativa con datos versionados, costo y latencia. La lectura del resultado confirma las cifras de cuarenta solicitudes y distingue medición interna de experiencia pública. Conservan límites importantes: propuestas revisadas por una persona, equivalencias matemáticas y ruta que consume cuota sin autenticación. Cierren Sonar y la prueba de dueño único. El barrido independiente de secretos quedó pendiente por el entorno revisor, sin una credencial encontrada.
 
-Al momento de revisar, la rama principal no tenía ningún commit nuevo desde la entrega anterior. Por la regla del contrato, el trabajo de semanas previas es línea base y no se vuelve a calificar por existir: las filas que describen la entrega S9 —la porción construida con apoyo de IA y su cadena, el ADR de esa porción, la prueba que falla ante el defecto, la medición del escenario y la entrada del registro de IA del periodo— quedan sin cumplir hasta que empujen la evidencia de esta semana. La única comprobación que sí se resuelve sobre el estado actual es el barrido de credenciales, que sigue limpio.
+## Semana 10 · Segundo corte (avance preliminar)
 
-Para cerrar S9 antes del cierre necesitan: (1) una porción real del sistema construida con IA en el periodo, con sus rutas de código y commits; (2) la fila de la tabla de aspectos que la recorre hasta el código, la prueba y la medición; (3) el ADR donde la decisión la argumenta el equipo con las restricciones del proyecto; (4) una prueba que falle ante el defecto que cubre (run en rojo, prueba de mutación o procedimiento documentado); (5) la medición del escenario contrastada con su umbral; (6) el extracto del registro de IA con lo aceptado, lo corregido y al menos un rechazo con motivo técnico; (7) la auditoría de erosión sobre límites de contexto y propiedad de datos; y (8) la verificación de las dependencias añadidas en el periodo contra su registro oficial.
-
-Un punto propio de este proyecto: el sistema contempla un componente generativo —el modelo que propone distractores diagnósticos—, así que la ficha no se satisface con un ADR de no incorporarlo. Necesitan su conjunto de evaluación con resultados, el costo por operación y la latencia, y que aparezca en el C4 nivel 2 como contenedor externo con su protocolo y su costo.
-
-Siguen abiertas, además, dos no conformidades transversales de semanas anteriores: el análisis estático no es auditable desde el pipeline —falta el paso que invoca el scanner y la URL pública con su Quality Gate— y un ADR aceptado se editó después sin declarar un ADR de reemplazo.
+Antes de evaluar el segundo corte identifiquen la asignación operativa oficial. La evaluación de distractores es una buena base de S9, pero no prueba por sí sola una línea base y respuesta al reto S10. Frontend y salud responden; falta demostrar el flujo principal, seguridad de acceso/cuota, métrica del reto y pipeline en vivo. La sustentación queda pendiente.

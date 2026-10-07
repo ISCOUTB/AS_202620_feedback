@@ -1,70 +1,76 @@
-> Pasada temprana (previa al cierre del 2026-10-05T05:00:00Z): el hash y la nota son preliminares y pueden cambiar si el equipo empuja antes del cierre.
+# Evidencia S9 definitiva · DinamikUTB
 
-# semana-09-evidencia-s9 · DinamikUTB
+Revisión actualizada tras el cierre del **2026-10-05T05:00:00Z** (domingo a medianoche COT).
 
 | Campo | Valor |
 |---|---|
-| Repositorio | `https://github.com/ISCOUTB/AS_202620_DinamikUTB` |
-| Estado revisado | `d72a10a` en `origin/master` (`2026-09-28T00:09:14-05:00`) |
-| Cierre | 2026-10-05T05:00:00Z |
-| Revisor | auditoría local preliminar sobre clon público efímero |
+| Repositorio | [AS_202620_DinamikUTB](https://github.com/ISCOUTB/AS_202620_DinamikUTB) |
+| Rama remota principal | `master` |
+| Base S5 del segundo corte | `72bfc7e206eac4147dd244c03fa09b4b32b9a7e7` |
+| Base S8 | `287c65d46a8469142baf5dc57da296c0bc80e0fb` |
+| Estado revisado | `2326dd7f9d4dda08ba557ea6602b0a7085c97bee` en `origin/master` (2026-10-04T21:47:16-05:00) |
+| S9 congelada | `2326dd7f9d4dda08ba557ea6602b0a7085c97bee` · 2026-10-04T21:47:16-05:00 |
+| Punta actual / S10 preliminar | `5dc9acf9335fec70e274a2e5c494b3805b0e9646` · 2026-10-05T22:06:45-05:00 |
+| Comprobación | 2026-10-06T21:23:08Z |
 
-> Esta pasada **no tiene cierre**: se califica la punta actual de `origin/master` (`d72a10a`). No hay entrega S9 en el repositorio: la punta coincide con el estado de S8 más un único commit posterior de README (`git log 287c65d..origin/master` = `d72a10a` «Update README.md»). El baseline del periodo es `287c65d` (S8). Bajo CONTRATO §12 la evidencia previa es línea base y no se recalifica por existir, de modo que las filas que dependen de la entrega nueva de S9 quedan en No cumple por ausencia.
+Revisión por Git y lectura estática; no se ejecutó código, instalación, pruebas ni despliegue de estudiantes. Una consulta de Actions por repositorio. Los procedimientos y resultados documentados por el equipo se identifican como tales; no equivalen a una ejecución del revisor. PDF excluido por decisión docente: no se abrió ni se penaliza. No se consultaron etiquetas.
 
-## Matriz de la ficha
+## Matriz S9
 
-| Criterio de evaluación | Evidencia técnica | Estado | Observaciones |
-|---|---|---|---|
-| Porción real del sistema construida con apoyo de IA | No hay artefacto S9. `git log 287c65d..origin/master` solo devuelve `d72a10a` («Update README.md»); no se identifica en el periodo ninguna porción nueva. | No cumple | La única porción trazable como asistida por IA (`backend/app/requisitos/`, entrada del 30/08 en `docs/ia.md`) es de S4 y no se presenta como evidencia S9. |
-| Cadena completa navegable para esa porción | `docs/aspectos.md`: la columna «Evidencia» vale «Pendiente» en las ocho filas (A-01…A-08). | No cumple | La cadena se rompe en el eslabón de evidencia; A-01 sí enlaza código, pruebas y un run, pero deja la evidencia pendiente. |
-| ADR con la decisión argumentada por el equipo | `docs/adr/0001`…`0007` existen, pero ninguno se redactó para esta evidencia ni argumenta una decisión de generación verificada. | No cumple | Son ADR de arquitectura/tecnología/plataforma anteriores a S9; no hay ADR nuevo en el periodo. |
-| Prueba que falla ante el defecto que cubre | No hay evidencia S9. `docs/api/evidencia-prueba-contrato.md` documenta un run en rojo, pero es línea base de S7. | No cumple | Sin run en rojo, prueba de mutación ni procedimiento nuevo para S9. |
-| Medición del escenario asociado | No hay resultado S9 contrastado con umbral. `backend/app/main.py:78` expone `/metrics`, pero sin medición registrada. | No cumple | La métrica existe; no hay valor medido ni comparación con el umbral. |
-| `docs/ia.md` con lo aceptado, lo corregido y lo rechazado con motivo | `docs/ia.md` no se actualizó en el periodo (sin commits entre `287c65d` y `d72a10a`). | No cumple | El archivo sí contiene rechazos motivados previos (p. ej. «Rechazado parcialmente» por sobrecarga visual), pero no hay extracto nuevo para S9. |
-| Auditoría de erosión sobre límites de contexto y propiedad de datos | La auditoría de propiedad de datos está en `docs/arc42/08-cross-cutting-concepts.md:67` («Violaciones de propiedad de datos detectadas»), fechada en el periodo de S6. | No cumple | Es línea base de S6; no se refrescó para S9 ni acompaña a una generación nueva. |
-| Dependencias propuestas verificadas en su registro oficial | `git diff 287c65d..origin/master` sobre `backend/requirements.txt`, `backend/pyproject.toml` y `frontend/pubspec.yaml` está vacío. | No cumple | No se añadieron dependencias en el periodo; no hay lista que verificar. |
-| Sin credenciales en código, ejemplos ni documentación generada | `git grep` del barrido de CONTRATO §9 sobre `d72a10a`: única coincidencia `.github/workflows/deploy-pages.yml:11 id-token: write` (permiso de workflow); sin `.env` versionado (solo `.env.example`). | Cumple | Barrido sin credenciales reales en el árbol revisado. |
-| Componente generativo evaluado, con costo y latencia, o ADR de no incorporarlo | Ningún ADR de `docs/adr/` trata la incorporación de un componente generativo. | No cumple | No hay conjunto de evaluación ni ADR de decisión de no incorporarlo. |
+| Criterio | Estado | Evidencia y observaciones |
+|---|---|---|
+| Porción real del sistema construida con apoyo de IA | No cumple | La porción señalada es el endpoint construido en S4 y la prueba de S7, como reconoce [docs/evidencia-s9.md:3–8](https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/2326dd7f9d4dda08ba557ea6602b0a7085c97bee/docs/evidencia-s9.md#L3-L8). En S9 solo cambia documentación: no hay implementación/corrección nueva de esa porción. |
+| Cadena completa navegable para esa porción | No cumple | La fila A-01 mejora con enlace al ADR-0008 y evidencia, pero código/pruebas son textos no navegables, el run enlazado es previo y la medición solo cubre 5 de 20 casos; [docs/aspectos.md:9–11](https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/2326dd7f9d4dda08ba557ea6602b0a7085c97bee/docs/aspectos.md#L9-L11), [docs/evidencia-s9.md:25–29](https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/2326dd7f9d4dda08ba557ea6602b0a7085c97bee/docs/evidencia-s9.md#L25-L29). La mejora documental no acredita cadena completa de una porción nueva. |
+| ADR con la decisión argumentada por el equipo | Cumple | ADR-0008 decide verificar identificadores oficiales, compara tres opciones, justifica costo/esfuerzo y reconoce alcance de proceso; [docs/adr/0008-verificacion-de-artefactos-sugeridos-por-ia.md:17–69](https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/2326dd7f9d4dda08ba557ea6602b0a7085c97bee/docs/adr/0008-verificacion-de-artefactos-sugeridos-por-ia.md#L17-L69). |
+| Prueba que falla ante el defecto que cubre | No verificado | La evidencia remite al fallo contractual real de S7, sin nueva mutación/procedimiento ejecutado sobre una corrección del periodo S9; [docs/evidencia-s9.md:19–24](https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/2326dd7f9d4dda08ba557ea6602b0a7085c97bee/docs/evidencia-s9.md#L19-L24). Falta demostración específica de esta entrega. |
+| Medición del escenario asociado | No cumple | Se documenta 5/5 frente a objetivo de 20 casos; el propio equipo deja la carga completa pendiente. No se acredita el umbral completo de Q-01; [docs/evidencia-s9.md:25–29](https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/2326dd7f9d4dda08ba557ea6602b0a7085c97bee/docs/evidencia-s9.md#L25-L29). |
+| docs/ia.md con lo aceptado, lo corregido y lo rechazado con motivo | No cumple | La nueva entrada solo declara Aceptado. Los rechazos citados en el extracto son de S4/S7 y uno no estaba registrado aún en docs/ia.md congelado; [docs/evidencia-s9.md:31–38](https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/2326dd7f9d4dda08ba557ea6602b0a7085c97bee/docs/evidencia-s9.md#L31-L38), [docs/ia.md:41–41](https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/2326dd7f9d4dda08ba557ea6602b0a7085c97bee/docs/ia.md#L41-L41). |
+| Auditoría de erosión sobre límites de contexto y propiedad de datos | Cumple | Auditoría nueva declara comando, alcance y ausencia de escrituras cruzadas; [docs/evidencia-s9.md:40–51](https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/2326dd7f9d4dda08ba557ea6602b0a7085c97bee/docs/evidencia-s9.md#L40-L51). Contraste estático: actualizar_estado_requisito escribe Requisito dentro de su módulo dueño, [backend/app/requisitos/service.py:13–20](https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/2326dd7f9d4dda08ba557ea6602b0a7085c97bee/backend/app/requisitos/service.py#L13-L20). |
+| Dependencias propuestas verificadas en su registro oficial | Cumple | Inventario nuevo de pytest-cov 7.1.0 y coverage 7.16.2 con verificación PyPI; [docs/evidencia-s9.md:53–59](https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/2326dd7f9d4dda08ba557ea6602b0a7085c97bee/docs/evidencia-s9.md#L53-L59). Consultas oficiales /pypi/pytest-cov/7.1.0/json y /pypi/coverage/7.16.2/json respondieron HTTP 200 y proyectos legítimos. Sin altas de dependencias en S9, lo que no se penaliza. |
+| Sin credenciales en código, ejemplos ni documentación generada | Cumple | Barrido del snapshot sin credenciales reales, .env no versionado; variables/secretos se toman del entorno, [render.yaml:1–25](https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/2326dd7f9d4dda08ba557ea6602b0a7085c97bee/render.yaml#L1-L25), [.github/workflows/ci.yml:75–78](https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/2326dd7f9d4dda08ba557ea6602b0a7085c97bee/.github/workflows/ci.yml#L75-L78). |
+| Componente generativo evaluado, con costo y latencia, o ADR de no incorporarlo | Cumple | ADR-0009 compara alternativas y decide no incorporar componente generativo por determinismo, costos, disponibilidad y alcance de A-03; [docs/adr/0009-no-incorporacion-componente-generativo.md:17–68](https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/2326dd7f9d4dda08ba557ea6602b0a7085c97bee/docs/adr/0009-no-incorporacion-componente-generativo.md#L17-L68). |
 
-## Matriz transversal (CONTRATO §11)
+## Matriz transversal · CONTRATO §11
 
-| Criterio | Evidencia | Estado | Observaciones |
-|---|---|---|---|
-| Repositorio en la organización, con el nombre de la convención y público | `ISCOUTB/AS_202620_DinamikUTB`, clonado sin autenticación. | Cumple | Nombre conforme y público. |
-| Estructura mínima presente | Árbol de `d72a10a`: `docs/arc42/01..12`, `docs/adr/0001..0007`, `docs/c4/*.puml`, `docs/aspectos.md`, `docs/ia.md`, `README.md`. | Cumple | Las seis rutas del contrato están presentes. |
-| Estado calificado identificable | Rama `origin/master`; hash `d72a10a` (`2026-09-28T00:09:14-05:00`), punta actual. | Cumple | En esta pasada no hay cierre; se califica la punta. |
-| Nombres de ADR según la convención | `docs/adr/0001-seleccion-monolito-modular.md` … `0007-persistencia-render-postgres.md`, todos `NNNN-kebab-case.md`. | Cumple | Siete nombres conformes. |
-| ADR aceptados no reescritos | `docs/adr/0001`, `0002`, `0005` y `0006` tienen ediciones posteriores a su aceptación y ningún ADR que los reemplace (histórico citado en la revisión S8). | No cumple | Hallazgo arrastrado desde S8; sigue abierto. |
-| `docs/ia.md` al día para la semana | Sin commits sobre `docs/ia.md` en el periodo (`287c65d..d72a10a`). | No cumple | La última entrada es del 26/09 (S8); no hay registro de S9. |
-| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | `sonar-project.properties` (projectKey `ISCOUTB_AS_202620_DinamikUTB`) y job `sonarcloud` con `SonarCloud Scan` en `.github/workflows/ci.yml:55-78`; run `CI` sobre `d72a10a` en verde: https://github.com/ISCOUTB/AS_202620_DinamikUTB/actions/runs/36380658219; Quality Gate público `OK` (verificado en S8). | Cumple | Las tres evidencias del contrato §8 presentes; el run verde corresponde al hash revisado. |
-| Sin credenciales en el repositorio ni en el historial | `git grep` de CONTRATO §9 sin coincidencias reales; sin `.env` versionado. | Cumple | Única coincidencia `id-token: write` (permiso). |
-| Contribución de todos los integrantes | `git shortlog -sne d72a10a` consolida por correo en 4 personas: `404Vargas`+`JuanchisV`+«Juan José Vargas Pérez» (188), `Daniel-dev02`+«LUIS DANIEL» (60), `gillianisperez-prog` (26) y `Eramirezr` (12). | Cumple | Coinciden con los 4 integrantes de `EQUIPOS.md`; desbalance anotado. |
+| Criterio | Estado | Evidencia y observaciones |
+|---|---|---|
+| Repositorio en la organización, con el nombre de la convención y público | Cumple | Clon público ISCOUTB/AS_202620_DinamikUTB, rama master; [README.md:1–5](https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/2326dd7f9d4dda08ba557ea6602b0a7085c97bee/README.md#L1-L5). |
+| Estructura mínima presente | Cumple | Las seis rutas mínimas están presentes; arc42 01–12 y C4 en fuentes PlantUML, [docs/aspectos.md:9–18](https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/2326dd7f9d4dda08ba557ea6602b0a7085c97bee/docs/aspectos.md#L9-L18). |
+| Estado calificado identificable | Cumple | Estado S9 y base S8 identificados por Git en el encabezado; cambios del 5 de octubre separados. |
+| Nombres de ADR según la convención | Cumple | Los nueve ADR cumplen NNNN-kebab-case; [docs/adr/0008-verificacion-de-artefactos-sugeridos-por-ia.md:1–9](https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/2326dd7f9d4dda08ba557ea6602b0a7085c97bee/docs/adr/0008-verificacion-de-artefactos-sugeridos-por-ia.md#L1-L9), [docs/adr/0009-no-incorporacion-componente-generativo.md:1–9](https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/2326dd7f9d4dda08ba557ea6602b0a7085c97bee/docs/adr/0009-no-incorporacion-componente-generativo.md#L1-L9). |
+| ADR aceptados no reescritos | No verificado | Hay ediciones históricas de ADR-0001/0002/0005/0006; falta terminar contraste independiente de las versiones aceptadas. No se presume cerrado el arrastre de inmutabilidad. |
+| docs/ia.md al día para la semana | No cumple | Hay entrada S9 de aceptación, pero no documenta rechazo técnico propio de esa verificación. El incidente que se atribuye a IA en ADR-0008 aún no aparece como entrada en docs/ia.md del snapshot S9; [docs/ia.md:37–41](https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/2326dd7f9d4dda08ba557ea6602b0a7085c97bee/docs/ia.md#L37-L41), [docs/adr/0008-verificacion-de-artefactos-sugeridos-por-ia.md:93–95](https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/2326dd7f9d4dda08ba557ea6602b0a7085c97bee/docs/adr/0008-verificacion-de-artefactos-sugeridos-por-ia.md#L93-L95). |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No verificado | Configuración de isco-utb en [sonar-project.properties:1–11](https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/2326dd7f9d4dda08ba557ea6602b0a7085c97bee/sonar-project.properties#L1-L11), scanner en [.github/workflows/ci.yml:55–78](https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/2326dd7f9d4dda08ba557ea6602b0a7085c97bee/.github/workflows/ci.yml#L55-L78) y run CI success del hash. Consultas públicas de Quality Gate y último análisis respondieron HTTP 403 a las 21:23 UTC del 6 de octubre; no se pudo comprobar el Gate/revisión. No se infiere del badge. |
+| Sin credenciales en el repositorio ni en el historial | No verificado | Barrido del snapshot sin valores de credencial: solo secretos de Actions y permisos id-token. Sin .env versionado. Historial completo no certificado. |
+| Contribución de todos los integrantes | No verificado | Siete firmas, 294 commits agregados en S9. Variantes de identidad no equivalen a siete personas; falta correspondencia verificable completa con los cuatro integrantes. |
 
-## Estado global del proyecto (overall · punta actual de la misma rama)
+## Actions en el estado congelado
 
-- **Punta actual revisada**: `d72a10a` (`2026-09-28T00:09:14-05:00`, «Update README.md»), la misma punta que registró la revisión S8.
-- **Veredicto**: sin entrega S9.
-- Resumen: entre el baseline de S8 (`287c65d`) y la punta actual solo hay un commit de README. No se incorporó ningún artefacto de S9 (porción, ADR, prueba, medición, auditoría de erosión, verificación de dependencias o ADR de componente generativo). El repositorio conserva las piezas de S8 (IaC, logs JSON, `/metrics` ligado a Q-05, costos, arc42 §7/§2, ADR de plataforma, SonarCloud en CI), que son línea base y no se recalifican aquí. Las filas de S8 siguen vigentes salvo lo que esta pasada registra como ausencia de entrega.
+- [Deploy frontend (GitHub Pages): success](https://github.com/ISCOUTB/AS_202620_DinamikUTB/actions/runs/37256763460), 2026-10-05T02:47:18Z, SHA exacto del estado indicado.
+- [CI: success](https://github.com/ISCOUTB/AS_202620_DinamikUTB/actions/runs/37256763408), 2026-10-05T02:47:18Z, SHA exacto del estado indicado.
+## Alcance del barrido de seguridad
+Lectura estática del código, ejemplos y documentación: las coincidencias son SONAR_TOKEN del almacén de Actions y permiso id-token, no valores de secretos. No hay .env versionado. No se certificó todo el historial; esa limitación es transversal, no se descuenta de la fila S9 comprobada en snapshot.
 
-Pendientes que siguen abiertos:
-- No hay entrega S9 en el repositorio.
-- ADR-0001, 0002, 0005 y 0006 editados después de su aceptación, sin ADR de reemplazo (arrastre de S8).
-- URL del despliegue y health check: diferidos a la entrega por Moodle (arrastre de S8).
+## Estado global del proyecto (overall · punta actual)
+
+S9 aporta nueva verificación documental, política de identificadores oficiales, auditoría y decisión sobre IA generativa; no cambia producción. Después del cierre se añadieron casos para Q-01, entradas de IA, ampliación de inventario y documentación de despliegue. Esa mejoría es tardía y no cambia S9. La punta declara 20/20, pero su CI falla: hay que conciliar la afirmación con un run exacto y corregir el caso de id no entero. Las rutas académicas siguen sin autenticación; los documentos limitan el despliegue a datos ficticios, sin que el revisor consulte registros personales.
+
+El delta S9 contiene 9 commits respecto de S8; hay 5 commits posteriores a S9 en la misma rama. Los cambios tardíos solo afectan este overall y el avance S10, nunca el recuento congelado.
 
 ## Recuento y nota sugerida
 
-**1 de 10 criterios.**
+**5 de 10 criterios Cumple. Nota sugerida: 3.0 = 1 + 4 × (5/10).** Propuesta al docente; la nota final se fija en Moodle. La matriz transversal no integra este cálculo.
 
-**Nota sugerida preliminar (propuesta al docente; puede cambiar al cierre): 1.4 = 1 + 4 × (1/10).** La nota final la fija el profesor en Moodle.
+## Acciones prioritarias
 
-## No verificado / pendientes
+- Aportar escenario S10 asignado, línea base y experimento reproducible sobre el MVP.
+- Corregir CI HEAD y adjuntar resultados de las pruebas ampliadas; no declarar 20/20 solo por contarlas.
+- Convertir rutas de código/pruebas de A-01 en enlaces y verificar cadena completa con medición.
+- Terminar controles de identidad y autorización antes de cargar información real; mantener datos ficticios mientras tanto.
+- Comprobar Quality Gate público y fijar fecha real de vencimiento/renovación de la base Render.
 
-- Sustentación: no evaluable desde el repositorio.
-- URL del despliegue y health check: diferidos a la entrega por Moodle (no se abrió ninguna URL).
-- Fila transversal de ADR aceptados no reescritos: No cumple, arrastrada de S8.
+## Hallazgos cerrados con evidencia nueva
 
-## Hallazgos para la planilla
-
-- No hay entrega S9: la punta `d72a10a` es el estado de S8 más un commit de README. La matriz de S9 se califica por ausencia.
-- Se mantiene abierto el hallazgo de ADR aceptados editados después de su aceptación (ADR-0001/0002/0005/0006), sin ADR de reemplazo.
-- El repositorio conserva en verde su pipeline y su análisis estático (CI `36380658219` sobre `d72a10a`), pero eso es línea base de S8, no evidencia de S9.
+- Se añade auditoría S9 de propiedad de datos con comando y localización; [docs/evidencia-s9.md:40–51](https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/2326dd7f9d4dda08ba557ea6602b0a7085c97bee/docs/evidencia-s9.md#L40-L51).
+- Se incorporan ADR de verificación de artefactos y no incorporación generativa; [docs/adr/0008-verificacion-de-artefactos-sugeridos-por-ia.md:51–69](https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/2326dd7f9d4dda08ba557ea6602b0a7085c97bee/docs/adr/0008-verificacion-de-artefactos-sugeridos-por-ia.md#L51-L69), [docs/adr/0009-no-incorporacion-componente-generativo.md:52–68](https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/2326dd7f9d4dda08ba557ea6602b0a7085c97bee/docs/adr/0009-no-incorporacion-componente-generativo.md#L52-L68).
+- Después del cierre se incorpora rechazo explícito de hash inventado al registro de IA; [docs/ia.md:14–16](https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/5dc9acf9335fec70e274a2e5c494b3805b0e9646/docs/ia.md#L14-L16).

@@ -6,14 +6,16 @@
 |---|---|
 | Equipo | CampusMarket |
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET` |
-| Integrantes y su usuario de GitHub | Nilver Garcia Pimentel · Camilo Jose Martinez Berrio · Joshua Jose Tenorio Alvarez — cuentas consolidadas: `nilver-garcia`/`Nnigarp` (mismo id de cuenta, es una sola persona), `camilixo92`, `Carulla-sd` |
-| URL del sistema desplegado | Declaradas, no comprobadas en esta pasada: sitio `https://nnigarp.github.io/AS_202620_PROYECTO_CAMPUSMARKET/`; API `https://campusmarket-s8-api-nilver.azurewebsites.net` (health `/health`) |
-| Ultima revision | 2026-09-28 |
+| Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Nilver Garcia Pimentel · Camilo Jose Martinez Berrio · Joshua Jose Tenorio Alvarez — cuentas consolidadas: `nilver-garcia`/`Nnigarp` (mismo id de cuenta, es una sola persona), `camilixo92`, `Carulla-sd`; ver comprobación actual de contribución más abajo. |
+| URL del sistema desplegado | https://nnigarp.github.io/AS_202620_PROYECTO_CAMPUSMARKET/ · ver comprobación y límites en S10 |
+| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
 
 ## Estado por entrega
 
-| Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
+| Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 9 | S9 · definitiva | `master` · `de6ed67c05ccdb7eabd9b1951f146ab8958b1d00` · 2026-10-04T02:14:34-05:00 | 10/10 | 5.0 (propuesta al docente) | sí, 2026-10-06 |
+| 10 | Segundo corte · preliminar | `master` · `de6ed67c05ccdb7eabd9b1951f146ab8958b1d00` · 2026-10-04T02:14:34-05:00 | 4/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `81ef5f1` · 2026-08-08T20:17:21-05:00 | 4/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `4f72799` · 2026-08-16T22:01:41-05:00 | 7/9 | no se publica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `4dd857a` · 2026-08-23T23:54:16-05:00 | 9/9 | no se publica | sí |
@@ -23,8 +25,6 @@
 | 7 | S7 | `c53ee32` (2026-09-18T21:11:48-05:00) | 10/10 | 5.0 | si |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `784d788` en `master` (2026-09-27T23:50:19-05:00) | 10/10 | 5.0 (2 filas de despliegue pendientes) | sí |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
-| 9 | Evidencia S9 · Generación verificada y trazable | `784d788` en `master` (2026-09-27T23:50:19-05:00) | 1/10 | 1.4 (prelim.) | sí (preliminar) |
-| 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
 | 11 | Evidencia S11 · Fallos parciales y decisión de extracción | | | no aplica | |
 | 12 | Evidencia S12 · Estrategia de datos y eventos | | | no aplica | |
 | 12 | Taller aplicado · Mensajes y consistencia | | | no aplica | |
@@ -34,6 +34,23 @@
 | 17 | Aplicación de cambios y cierre arquitectónico | | | | |
 
 ## Lo que se arrastra
+
+Estado vigente observado en la punta citada en [S10](semana-10-corte2.md). Las correcciones tardías no cambian S9. El registro histórico siguiente conserva su contexto, pero no sustituye esta actualización ni implica cerrar hallazgos no revalidados.
+
+| Hallazgo actual | Estado | Evidencia y próximo paso |
+|---|---|---|
+| Acreditar el escenario operativo asignado de S10 y preparar baseline/resultado comparables sobre el MVP desplegado. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Incorporar scanner Sonar y enlazar run del hash, análisis público y Quality Gate; demostrar bloqueo de integración. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Completar EC-01 público con 1000 filas, sin equiparar los tiempos loopback de CI al navegador. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Mantener constancia del historial de ADR aceptados reescritos; no repetir la práctica. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Completar barrido independiente del historial y confirmar mapa de identidades de autoría. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Revisar avisos vigentes que PyPI lista para python-multipart 0.0.20 y su aplicabilidad a la configuración; legitimidad del paquete no demuestra seguridad de la versión. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| La ausencia de entrega S9 de la preliminar queda superada: existen porción, trazabilidad, mutaciones, medición, IA, auditoría y ADR de no componente generativo. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| La URL pública y el health check de S8 diferidos pudieron comprobarse por lectura en la revisión actual; esto no modifica retroactivamente S8. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| La declaración inicial de ausencia de dependencias fue corregida por auditoría ampliada del periodo completo. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+
+<details>
+<summary>Registro histórico previo a esta revisión (estados a la fecha de cada observación)</summary>
 
 | Hallazgo | Primera vez que se detectó | Sigue abierto | Qué se le dijo al equipo |
 |---|---|---|---|
@@ -83,20 +100,29 @@
 | Acreditar SonarCloud: línea del scanner en el workflow y URL pública del análisis con Quality Gate. | S7 | sí (reiterado en S8: `.sonarcloud.properties` sin invocación del scanner ni URL pública) | Añadir el paso `sonar` al workflow y publicar el análisis con su Quality Gate |
 | No editar ADR aceptados sin declarar reemplazo. | S8 | sí (ADR-0002, ADR-0003 y ADR-0005) | Los ajustes debieron ir en un ADR nuevo o declarar el reemplazo |
 
+</details>
+
 ## Estado del contrato del repositorio
+
+Actualizado desde la evaluación de la punta actual; no altera la matriz congelada de S9.
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
-| Nombre y visibilidad del repositorio | Cumple | Público (clon sin auth) |
-| Estructura mínima | Cumple | Las seis rutas presentes en `corte-1`, en minúsculas |
-| Convención de nombres de ADR | Cumple | `0001-usar-monolito-modular.md`, `0002-manejo-bloqueo-sqlite.md` |
-| ADR aceptados sin reescribir | No cumple | ADR-0002 aceptado 09-05 y editado 09-06 (`d72d6ac`, `3bb84a9`, `04fe631`); ADR-0003 aceptado 09-15 y editado 09-16 (`df72b1c`); ADR-0005 aceptado 09-27 y reescrito el mismo día (`0e2b85b`) sin declarar reemplazo |
-| `docs/ia.md` al día | Cumple | `083bcc3` (2026-09-27) registra el uso de IA de S8 con lo rechazado y su motivo |
-| Sin credenciales en el repositorio ni en el historial | Cumple | git grep y `.env` sin coincidencias reales en `784d788` |
-| Contribución de todos los integrantes | Cumple | 3 personas consolidadas: Nilver Garcia (193, `nilver-garcia`/`Nnigarp` mismo correo), Camilo Martinez (26), Joshua Tenorio (19) |
-| Pipeline en verde | Cumple | Run público exitoso de `784d788`: https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/actions/runs/36379371983; SonarCloud sigue sin verificación pública (sin paso del scanner en el workflow). |
+| Repositorio en la organización, con el nombre de la convención y público | Cumple | Clon git público de ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET y rama master; URL oficial y nombre conforme. |
+| Estructura mínima presente | Cumple | Árbol con README, docs/arc42, docs/adr, docs/c4, docs/aspectos.md y docs/ia.md; entrada navegable [README.md:13–28](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/de6ed67c05ccdb7eabd9b1951f146ab8958b1d00/README.md#L13-L28). |
+| Estado calificado identificable | Cumple | Último commit de origin/master anterior o igual al cierre: de6ed67c05ccdb7eabd9b1951f146ab8958b1d00, 2026-10-04T02:14:34-05:00; coincide con HEAD observado. |
+| Nombres de ADR según la convención | Cumple | Inventario git de docs/adr: 0001–0019 siguen NNNN-titulo-en-kebab-case.md. Ejemplo [docs/adr/0019-consultar-imagenes-en-lote-a-traves-de-publicaciones.md:1–6](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/de6ed67c05ccdb7eabd9b1951f146ab8958b1d00/docs/adr/0019-consultar-imagenes-en-lote-a-traves-de-publicaciones.md#L1-L6). |
+| ADR aceptados no reescritos | No cumple | Historial revalidado de ADR-0002 (77e1323 → d72d6ac/3bb84a9/04fe631), 0003 (485249a → df72b1c), 0005 (39f0952 → 0e2b85b): ediciones después de aceptación sin reemplazo. El cierre reconoce que el hallazgo persiste: [docs/evidencias/evidencia-s9-2026-10-01.md:414–425](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/de6ed67c05ccdb7eabd9b1951f146ab8958b1d00/docs/evidencias/evidencia-s9-2026-10-01.md#L414-L425). No se penaliza por añadir ADR sucesores nuevos. |
+| docs/ia.md al día para la semana | Cumple | Registro S9 actualizado y rechazo razonado: [docs/ia.md:482–506](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/de6ed67c05ccdb7eabd9b1951f146ab8958b1d00/docs/ia.md#L482-L506). Para S10 aún no se acredita un registro específico del reto asignado. |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No cumple | CI backend y otros tres workflows del hash están success, pero backend-tests solo ejecuta Ruff/Gitleaks/pruebas: [.github/workflows/backend-tests.yml:61–78](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/de6ed67c05ccdb7eabd9b1951f146ab8958b1d00/.github/workflows/backend-tests.yml#L61-L78), [.github/workflows/backend-tests.yml:105–130](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/de6ed67c05ccdb7eabd9b1951f146ab8958b1d00/.github/workflows/backend-tests.yml#L105-L130). Falta scanner Sonar en CI; la documentación lo reconoce: [README.md:67–69](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/de6ed67c05ccdb7eabd9b1951f146ab8958b1d00/README.md#L67-L69). Gate automático o badge no satisface los tres eslabones del contrato. |
+| Sin credenciales en el repositorio ni en el historial | No verificado | Checkout y CI sin hallazgos productivos observados. El barrido independiente amplio del historial no concluyó por interrupción de la herramienta; CI solo cubre el intervalo fijado en [.github/workflows/backend-tests.yml:70–78](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/de6ed67c05ccdb7eabd9b1951f146ab8958b1d00/.github/workflows/backend-tests.yml#L70-L78). El barrido histórico documentado distingue cinco falsos positivos: [docs/evidencias/evidencia-s9-2026-10-01.md:529–555](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/de6ed67c05ccdb7eabd9b1951f146ab8958b1d00/docs/evidencias/evidencia-s9-2026-10-01.md#L529-L555). Falta completar comprobación independiente del historial completo. |
+| Contribución de todos los integrantes | No verificado | Historial agregado: 365 commits y cinco nombres de autor; dos firmas comparten dirección y se consolidan, sin publicar correos. [README.md:5–9](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/de6ed67c05ccdb7eabd9b1951f146ab8958b1d00/README.md#L5-L9) enumera integrantes sin mapear todas las cuentas. La correspondencia previa no se da por probada por parecido de nombres; confirmar mapa explícito persona–cuenta. |
 
 ## Contribución por integrante
+
+Actualización agregada del 2026-10-06: 365 commits; cinco nombres de autor, dos firmas consolidables por dirección idéntica. Correspondencia completa persona–cuenta pendiente; sin inferencias por semejanza de nombres.
+
+La tabla individual conservada abajo corresponde al registro histórico anterior; no se infieren nuevas correspondencias entre cuentas y personas.
 
 | Integrante | Usuario de GitHub | Commits (HEAD) | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
 |---|---|---:|---:|---:|---|
@@ -106,5 +132,8 @@
 
 ## Preguntas abiertas para la sustentación
 
-- ¿Pueden mostrar en vivo el Quality Gate de SonarCloud para confirmar la afirmación de `correcciones.md`?
-- ¿Cuándo materializarán ASP-01 y ASP-02 en el corte vertical?
+Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
+
+- Fallo: ¿qué ocurre con catálogo, health y datos si MySQL falla, y qué evidencia distingue recuperación de API de recreación de ambos contenedores?
+- Costo: ¿qué límite de memoria, CPU o volumen haría inviable la solución actual y por qué la lectura en lote fue preferible a aumentar recursos?
+- Medición: si el navegador público sigue sobre dos segundos mientras loopback cumple, ¿qué medirían y cambiarían primero?

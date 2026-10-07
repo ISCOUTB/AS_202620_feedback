@@ -8,14 +8,16 @@ Hoja consolidada del equipo a lo largo del semestre.
 |---|---|
 | Equipo | uniTeam |
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_uniTeam` |
-| Integrantes y su usuario de GitHub | Julio Cesar Emiliani Ramos · Ian Novoa Carrillo · Juan Jose Bustamante More · Daniel Isaac Manjarres Herrera. Identidades observadas: `super-gremlin`, `Ian Novoa`, `Julio Cesar Emiliani`, `JuanB`/`JuanBustamante`, `Daniel Manjarres Herrera` y `DaniGamer0907`; ninguna correspondencia individual se da por confirmada. La cuenta listada `iansx` no aparece. |
-| URL del sistema desplegado | sin URL (sin despliegue todavía) |
-| Ultima revision | 2026-10-01 |
+| Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Julio Cesar Emiliani Ramos · Ian Novoa Carrillo · Juan Jose Bustamante More · Daniel Isaac Manjarres Herrera. Identidades observadas: `super-gremlin`, `Ian Novoa`, `Julio Cesar Emiliani`, `JuanB`/`JuanBustamante`, `Daniel Manjarres Herrera` y `DaniGamer0907`; ninguna correspondencia individual se da por confirmada. La cuenta listada `iansx` no aparece.; ver comprobación actual de contribución más abajo. |
+| URL del sistema desplegado | https://uniteam-web.onrender.com · ver comprobación y límites en S10 |
+| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
 
 ## Estado por entrega
 
-| Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
+| Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 9 | S9 · definitiva | `master` · `6e04b35317a0a68d239ae85c71cd60e21982b195` · 2026-10-04T16:37:55-05:00 | 10/10 | 5.0 (propuesta al docente) | sí, 2026-10-06 |
+| 10 | Segundo corte · preliminar | `master` · `6e04b35317a0a68d239ae85c71cd60e21982b195` · 2026-10-04T16:37:55-05:00 | 2/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `4b4c5c0` · 2026-08-09T11:22:38-05:00 | 6/9 | 3.7 (propuesta) | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `ca7726a` · 2026-08-16T13:01:06-05:00 | 9/9 | 5.0 (propuesta) | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `ca44917` · 2026-08-23T13:38:40-05:00 | 5/9 | no se publica | sí |
@@ -25,8 +27,6 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 7 | S7 | `1ea4aba` (2026-09-18T22:21:34Z) | 9/10 | 4.6 | sí (auditoría definitiva corregida) |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `0f3da0f3` (2026-09-27T22:52:09-05:00) | 9/10 | 4.6 (propuesta; 2 filas de despliegue pendientes) | sí (definitiva) |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
-| 9 | Evidencia S9 · Generación verificada y trazable | `0f3da0f3` (2026-09-27T22:52:09-05:00) | 1/10 | 1.4 (preliminar) | sí (preliminar) |
-| 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
 | 11 | Evidencia S11 · Fallos parciales y decisión de extracción | | | no aplica | |
 | 12 | Evidencia S12 · Estrategia de datos y eventos | | | no aplica | |
 | 12 | Taller aplicado · Mensajes y consistencia | | | no aplica | |
@@ -36,6 +36,25 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 17 | Aplicación de cambios y cierre arquitectónico | | | | |
 
 ## Lo que se arrastra
+
+Estado vigente observado en la punta citada en [S10](semana-10-corte2.md). Las correcciones tardías no cambian S9. El registro histórico siguiente conserva su contexto, pero no sustituye esta actualización ni implica cerrar hallazgos no revalidados.
+
+| Hallazgo actual | Estado | Evidencia y próximo paso |
+|---|---|---|
+| Recuperar CI del hash actual y comprobación periódica de despliegue; publicar resultado verificable del scanner y Quality Gate. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Medir el costo de consulta adicional en MySQL y carga real: la evidencia S9 es SQLite secuencial en proceso. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Precisar la asignación operativa S10; no equipararla automáticamente con ESC-01/ESC-03. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Completar arc42 §8 y reconciliar auditoría/mapa/ADRs con el MVP actual. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| No reescribir ADR aceptados; el antecedente de ADR 0011 sigue abierto. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Confirmar correspondencia de firmas del historial con integrantes, sin atribuciones por parecido. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Ya hay incremento S9 y cadena A-12 completa: [docs/aspectos.md:29](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/aspectos.md#L29). | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| Auditoría de erosión, corrección y prueba negativa ahora documentadas: [docs/calidad/mediciones/mis-tareas-limite-contexto.md:19–23](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/calidad/mediciones/mis-tareas-limite-contexto.md#L19-L23) y [docs/calidad/propiedad-datos.md:28–46](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/calidad/propiedad-datos.md#L28-L46). | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| La no incorporación generativa ya es una decisión aceptada en ADR 0014: [docs/adr/0014-no-incorporar-un-componente-generativo.md:3–32](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/adr/0014-no-incorporar-un-componente-generativo.md#L3-L32). | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| El registro de IA sí creció en S9 con aceptado/corregido/rechazado y verificación de dependencias: [docs/ia.md:86–121](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/ia.md#L86-L121). | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| La planilla antigua dice sin URL, pero el README publica sitio/API y la portada respondió HTTP 200. [README.md:18–22](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/README.md#L18-L22). No se da por probado el flujo. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+
+<details>
+<summary>Registro histórico previo a esta revisión (estados a la fecha de cada observación)</summary>
 
 | Hallazgo | Primera vez que se detectó | Sigue abierto | Qué se le dijo al equipo |
 |---|---|---|---|
@@ -71,20 +90,30 @@ Hoja consolidada del equipo a lo largo del semestre.
 | ADR 0011 editado el 2026-09-27 tras su aceptación, sin declarar reemplazo. | S9 | sí | No editar ADR aceptados; crear uno nuevo y marcar el anterior como reemplazado. |
 | Contribución por integrante sin atribuir: seis identidades de correo para cuatro personas. | S9 | No verificado | Confirmar con el docente a qué persona corresponde cada cuenta. |
 | Sin evaluación ni ADR sobre el componente generativo. | S9 | sí | Evaluar el componente o decidir su no incorporación con un ADR. |
+
+</details>
+
 ## Estado del contrato del repositorio
+
+Actualizado desde la evaluación de la punta actual; no altera la matriz congelada de S9.
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
-| Nombre y visibilidad del repositorio | Cumple | `ISCOUTB/AS_202620_uniTeam`, público |
-| Estructura mínima | Cumple | seis rutas presentes |
-| Convención de nombres de ADR | Cumple | seis ADR con nombres `NNNN-titulo-en-kebab-case.md` |
-| ADR aceptados sin reescribir | No cumple | El ADR 0011 se editó el 2026-09-27 después de aceptarse, sin declarar reemplazo; el ADR 0001 sí declara reemplazo por 0002. |
-| `docs/ia.md` al día | No cumple | última modificación 2026-09-27, del periodo S8; no tiene entrada del periodo S9. |
-| Sin credenciales en el repositorio ni en el historial | Cumple | barridos limpios; menciones de token son identificadores de código |
-| Contribución de todos los integrantes | No verificado | El historial contiene seis grupos de identidades; solo `JuanB`/`JuanBustamante` se consolidan por compartir cuenta. `EQUIPOS.md` no ofrece correspondencias individuales y `iansx` no aparece. |
-| Pipeline en verde | No cumple | El run del estado S8 revisado falla y no se encontró análisis público de SonarCloud con Quality Gate. |
+| Repositorio en la organización, con el nombre de la convención y público | Cumple | Clon público ISCOUTB/AS_202620_uniTeam correcto; [README.md:14–23](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/README.md#L14-L23). |
+| Estructura mínima presente | Cumple | README y docs/arc42, adr, c4, aspectos.md, ia.md presentes; [docs/aspectos.md:44–51](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/aspectos.md#L44-L51). |
+| Estado calificado identificable | Cumple | master y hash/fecha del encabezado; último commit ≤ cierre, sin etiquetas. |
+| Nombres de ADR según la convención | Cumple | ADR 0001–0014 con nombres NNNN-titulo-en-kebab-case.md; [docs/adr/0013-tareas-no-lee-las-tablas-de-proyectos.md:1–6](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/adr/0013-tareas-no-lee-las-tablas-de-proyectos.md#L1-L6). |
+| ADR aceptados no reescritos | No cumple | Historial leído: ADR 0011 creado en 369b0d9 y editado en 0f3da0f tras figurar Aceptada; [docs/adr/0011-mantener-la-api-despierta-con-un-sondeo-externo.md:3–7](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/adr/0011-mantener-la-api-despierta-con-un-sondeo-externo.md#L3-L7). El reemplazo parcial de 0008 por 0011 está declarado, pero no reemplaza la edición posterior de 0011. |
+| docs/ia.md al día para la semana | Cumple | [docs/ia.md:86–121](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/ia.md#L86-L121) aporta entrada y auditoría del periodo S9. |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No cumple | [CI del hash actual](https://github.com/ISCOUTB/AS_202620_uniTeam/actions/runs/37236877375) concluye failure. [.github/workflows/ci.yml:161–179](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/.github/workflows/ci.yml#L161-L179) exige scanner y espera Quality Gate, pero configuración no equivale a resultado; falta gate público satisfactorio de este estado. [Comprobación de despliegue](https://github.com/ISCOUTB/AS_202620_uniTeam/actions/runs/37512258356) también falla. |
+| Sin credenciales en el repositorio ni en el historial | Cumple | Barrido de árbol e historial con patrones de alta especificidad sin credenciales reales confirmadas; valores locales/marcadores revisados en [compose.yaml:9–27](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/compose.yaml#L9-L27). Alcance de patrones declarado; no prueba sobre secretos externos. |
+| Contribución de todos los integrantes | No verificado | 75 commits con siete firmas de autor y variantes; no se atribuyen las firmas a las cuatro personas de matrícula sin correspondencia confirmada. |
 
 ## Contribución por integrante
+
+Actualización agregada del 2026-10-06: 75 commits repartidos entre siete firmas visibles; existen variantes de firma. Correspondencia individual con la matrícula No verificado; no se publican correos.
+
+La tabla individual conservada abajo corresponde al registro histórico anterior; no se infieren nuevas correspondencias entre cuentas y personas.
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
 |---|---|---:|---:|---:|---|
@@ -97,6 +126,8 @@ Hoja consolidada del equipo a lo largo del semestre.
 
 ## Preguntas abiertas para la sustentación
 
-- ¿A quién corresponde la cuenta `super-gremlin`? Con eso se cierra el contraste de contribución.
-- ¿Qué pasó con el proyecto anterior cuyos artefactos se borraron del repo (historial público)?
-- ¿El esqueleto arranca y la prueba pasa en el entorno del equipo? (no ejecutado por regla del kit; el README no documenta el arranque y `requirements.txt` trae el paquete inexistente `httpx2`)
+Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
+
+- ¿Qué ocurre si cambia la pertenencia a un proyecto entre las dos consultas y cómo evitan o detectan una respuesta no autorizada?
+- ¿Cuál es el costo de la consulta adicional sobre MySQL gestionado, en latencia y capacidad, frente a los 1,2 ms locales?
+- ¿Qué cambiarían si la medición en MySQL con concurrencia contradice el resultado de SQLite?

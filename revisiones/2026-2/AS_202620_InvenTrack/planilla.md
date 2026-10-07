@@ -8,15 +8,16 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 |---|---|
 | Equipo | InvenTrack |
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_InvenTrack` |
-| Integrantes y su usuario de GitHub | Javier Alejandro Carta Lacharme · Esteban Javier Peluffo Marquez · Felix Andres Taborda Jimenez · Jose Gabriel Vargas Perez — cuentas abajo |
-| URL del sistema desplegado | sin desplegar aún |
-| Ultima revision | 2026-09-24 |
+| Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Javier Alejandro Carta Lacharme · Esteban Javier Peluffo Marquez · Felix Andres Taborda Jimenez · Jose Gabriel Vargas Perez — cuentas abajo; ver comprobación actual de contribución más abajo. |
+| URL del sistema desplegado | https://inventrack.iscoutb.dev · ver comprobación y límites en S10 |
+| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
 
 ## Estado por entrega
 
-| Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
+| Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 9 | S9 (prelim.) | `f12bba8` (2026-09-30T00:41:30-05:00; punta actual) | 3/10 | 2.2 (prelim.; propuesta al docente) | sí, preliminar |
+| 9 | S9 · definitiva | `main` · `35a9c63dd603bab989a18ed17ca56063c5616585` · 2026-10-04T22:14:10-05:00 | 8/10 | Pendiente por limitación de verificación; intervalo documental 4.2–4.6, sin descontar la comprobación bloqueada | sí, 2026-10-06 |
+| 10 | Segundo corte · preliminar | `main` · `35a9c63dd603bab989a18ed17ca56063c5616585` · 2026-10-04T22:14:10-05:00 | 3/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
 | 8 | S8 | `48aeecf` (2026-09-27T23:48:02-05:00) | 10/10 | 5.0 | sí, definitiva |
 | 7 | S7 | `f10fd01` (2026-09-20T23:01:13-05:00) | 9/10 | 4.6 | sí, auditada |
 | 6 | S6 | `d6f2b19` (2026-09-13T23:37:36-05:00) | 7/8 | 4.5 | si |
@@ -29,6 +30,23 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 S8 se califica sobre 10 de las 12 filas de la ficha: quedan pendientes de calificar las dos filas de despliegue (URL del sistema accesible desde fuera de la red de la universidad y health check consultable), porque la URL se entrega por Moodle. La nota publicada es provisional.
 
 ## Lo que se arrastra
+
+Estado vigente observado en la punta citada en [S10](semana-10-corte2.md). Las correcciones tardías no cambian S9. El registro histórico siguiente conserva su contexto, pero no sustituye esta actualización ni implica cerrar hallazgos no revalidados.
+
+| Hallazgo actual | Estado | Evidencia y próximo paso |
+|---|---|---|
+| Medir catálogo/stock con la carga y condiciones de ESC-04; la sonda /health no es un sustituto. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Completar el registro inmutable/reemplazo de ADR anteriores y aportar run/scanner/Quality Gate público del hash revisado. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Terminar la verificación independiente de secretos e identidad de contribuciones; la limitación de herramienta no demuestra exposición. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Identificar escenario S10, línea base del despliegue y resultado reproducible. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Se cierra «sin porción S9»: app/main.py y tests/test_metrics.py cambian dentro del periodo. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| ASP-03 ya enlaza ocho eslabones y existe mutación documentada que falla. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| Hay auditoría de límites con universo de dependencias nuevo vacío explícito; se corrige la lectura anterior que penalizaba no añadir paquetes. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| ADR-0008 formaliza no incorporar generación; ADR-0009 reconoce el problema de inmutabilidad, aunque su resolución es parcial. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| Sondas del despliegue institucional responden; la falta de URL/health no sigue abierta como ausencia de artefacto. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+
+<details>
+<summary>Registro histórico previo a esta revisión (estados a la fecha de cada observación)</summary>
 
 | Hallazgo | Primera vez que se detectó | Sigue abierto | Qué se le dijo al equipo |
 |---|---|---|---|
@@ -89,20 +107,30 @@ S8 se califica sobre 10 de las 12 filas de la ficha: quedan pendientes de califi
 | Sin porción de sistema, cadena, prueba ni medición en el periodo S9 (solo despliegue a Dokploy) | S9 | Sí | Entregar la porción construida con IA con su cadena completa antes del cierre. |
 | Auditoría de erosión del periodo de generación S9 | S9 | Sí | Documentar si cruzó límites de contexto o reglas de propiedad de datos de S6, y su corrección. |
 | ADR de decisión sobre el componente generativo | S9 | Sí | La ausencia de decisión no es la decisión de no incorporarlo. |
+
+</details>
+
 ## Estado del contrato del repositorio
+
+Actualizado desde la evaluación de la punta actual; no altera la matriz congelada de S9.
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
-| Nombre y visibilidad del repositorio | Cumple | `ISCOUTB/AS_202620_InvenTrack`, público |
-| Estructura mínima | Cumple | Seis rutas presentes; arc42 en `docs/arc42/arc42-template-EN.md` |
-| Convención de nombres de ADR | Cumple | `0001-usar-monolito-modular-con-hexagonal-por-modulo.md`; placeholder eliminado |
-| ADR aceptados sin reescribir | No cumple | ADR-0002, aceptado en `80c7d0a`, editado en `7aae9a8`, `66116c6`, `7b0aad5` (2026-09-06) y `af24edb` (2026-09-19); ADR-0004 y ADR-0005 también con ediciones posteriores a su aceptación, sin reemplazo declarado. |
-| `docs/ia.md` al día | Cumple | Entrada S8 del 2026-09-27 (`04f5e33`) con lo aceptado y lo rechazado. |
-| Sin credenciales en el repositorio ni en el historial | Cumple | Escaneos limpios. |
-| Contribución de todos los integrantes | Cumple | Cuatro personas consolidadas para cuatro integrantes en HEAD. |
-| Pipeline en verde | Cumple | El run de la punta actual concluye en verde y ejecuta SonarCloud. |
+| Repositorio en la organización, con el nombre de la convención y público | Cumple | Clon público anónimo de https://github.com/ISCOUTB/AS_202620_InvenTrack; [README.md:1-5](https://github.com/ISCOUTB/AS_202620_InvenTrack/blob/35a9c63dd603bab989a18ed17ca56063c5616585/README.md#L1-L5). |
+| Estructura mínima presente | Cumple | Árbol Git contiene seis rutas mínimas; tabla de aspectos [docs/aspectos.md:15-19](https://github.com/ISCOUTB/AS_202620_InvenTrack/blob/35a9c63dd603bab989a18ed17ca56063c5616585/docs/aspectos.md#L15-L19) y documentos enlazados existentes. |
+| Estado calificado identificable | Cumple | main, 35a9c63dd603bab989a18ed17ca56063c5616585, fecha y corte en cabecera. |
+| Nombres de ADR según la convención | Cumple | Listado docs/adr: 0001–0009, todos NNNN-titulo-en-kebab-case; [docs/adr/0009-consolidacion-inmutabilidad-adrs-previos.md:1-15](https://github.com/ISCOUTB/AS_202620_InvenTrack/blob/35a9c63dd603bab989a18ed17ca56063c5616585/docs/adr/0009-consolidacion-inmutabilidad-adrs-previos.md#L1-L15). |
+| ADR aceptados no reescritos | No cumple | [docs/adr/0009-consolidacion-inmutabilidad-adrs-previos.md:7-15](https://github.com/ISCOUTB/AS_202620_InvenTrack/blob/35a9c63dd603bab989a18ed17ca56063c5616585/docs/adr/0009-consolidacion-inmutabilidad-adrs-previos.md#L7-L15) reconoce ediciones aceptadas de 0002/0004/0005 y declara consolidación futura; no marca cada decisión anterior reemplazada con enlaces. Historial del periodo incluye restauración [193e2628](https://github.com/ISCOUTB/AS_202620_InvenTrack/commit/193e2628757f3e8987ae5a01a90b8e8cce45d7a0). La corrección de política se reconoce, pero no borra las reescrituras. |
+| docs/ia.md al día para la semana | Cumple | [docs/ia.md:23-25](https://github.com/ISCOUTB/AS_202620_InvenTrack/blob/35a9c63dd603bab989a18ed17ca56063c5616585/docs/ia.md#L23-L25) contiene usos hasta S9, aceptado y rechazos. |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No verificado | [sonar-project.properties:1-7](https://github.com/ISCOUTB/AS_202620_InvenTrack/blob/35a9c63dd603bab989a18ed17ca56063c5616585/sonar-project.properties#L1-L7) y [.github/workflows/test.yml:23-45](https://github.com/ISCOUTB/AS_202620_InvenTrack/blob/35a9c63dd603bab989a18ed17ca56063c5616585/.github/workflows/test.yml#L23-L45) acreditan configuración/scanner. Una consulta de runs del commit (limitada a pull_request por el conector) no devolvió registros; no acredita ausencia de push ni éxito. No se verificó el Quality Gate público para este hash; además el YAML no incluye espera/bloqueo explícito de Quality Gate. |
+| Sin credenciales en el repositorio ni en el historial | No verificado | La auditoría del equipo declara ausencia de credenciales en [docs/evidencia-ia-corte-s6.md:176-180](https://github.com/ISCOUTB/AS_202620_InvenTrack/blob/35a9c63dd603bab989a18ed17ca56063c5616585/docs/evidencia-ia-corte-s6.md#L176-L180). Las referencias de secretos de CI son variables en [.github/workflows/test.yml:37-41](https://github.com/ISCOUTB/AS_202620_InvenTrack/blob/35a9c63dd603bab989a18ed17ca56063c5616585/.github/workflows/test.yml#L37-L41). El barrido independiente ampliado fue cancelado por la herramienta y el único reintento no lo completó; no se convierte esa limitación en evidencia de exposición ni en un árbol limpio verificado. |
+| Contribución de todos los integrantes | No verificado | El historial contiene varias firmas; las atribuciones por semejanza no se usan. La planilla previa reconoce correspondencias pendientes. Se debe validar cuenta–integrante y distribución, sin publicar correos. |
 
 ## Contribución por integrante
+
+Actualización agregada del 2026-10-06: Historial de la punta: 236 commits y 7 firmas de autor distintas (firmas, no personas). El historial contiene varias firmas; las atribuciones por semejanza no se usan. La planilla previa reconoce correspondencias pendientes. Se debe validar cuenta–integrante y distribución, sin publicar correos.
+
+La tabla individual conservada abajo corresponde al registro histórico anterior; no se infieren nuevas correspondencias entre cuentas y personas.
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
 |---|---|---:|---:|---:|---|
@@ -113,6 +141,8 @@ S8 se califica sobre 10 de las 12 filas de la ficha: quedan pendientes de califi
 
 ## Preguntas abiertas para la sustentación
 
-- ¿`jxviercarta-a11y` corresponde efectivamente a Javier Carta Lacharme?
-- ¿`FlexT21` corresponde efectivamente a Felix Taborda?
-- ¿Por qué el ADR 0001 sigue «propuesto» y cuándo lo ratifican como aceptado?
+Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
+
+- Fallo: si se reinicia o replica el proceso, ¿qué ocurre con stock, locks y el historial p95 y cómo detectarán inconsistencias?
+- Costo: ¿qué volumen o necesidad de persistencia obligaría a abandonar el presupuesto cero y qué alternativa compararon?
+- Medición: si las consultas reales de stock incumplen 400 ms aunque /health sea rápido, ¿qué cambio harían y con qué experimento lo validarían?

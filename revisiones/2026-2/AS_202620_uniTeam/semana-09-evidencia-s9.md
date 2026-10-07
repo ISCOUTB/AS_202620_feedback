@@ -1,103 +1,79 @@
-> Pasada temprana (previa al cierre del 2026-10-05T05:00:00Z): el hash y la nota son preliminares y pueden cambiar si el equipo empuja antes del cierre.
+# Evidencia S9 definitiva · uniTeam
 
-# semana-09-evidencia-s9 · uniTeam
+Revisión actualizada tras el cierre. Estado congelado al **2026-10-05T05:00:00Z** (domingo a medianoche en Colombia).
 
 | Campo | Valor |
 |---|---|
-| Repositorio | `https://github.com/ISCOUTB/AS_202620_uniTeam` |
-| Estado revisado | `0f3da0f36f8cd7b829106667de88a56a1bc81f54` en `origin/master` (2026-09-27T22:52:09-05:00) |
-| Cierre | 2026-10-05T05:00:00Z |
-| Revisor | auditoría local preliminar sobre clon público efímero |
+| Repositorio | https://github.com/ISCOUTB/AS_202620_uniTeam |
+| Rama principal remota | `master` |
+| Base S5 publicada | `dc14298c32a4fde0956266b0300063c24d7a9486` |
+| Base S8 | `0f3da0f36f8cd7b829106667de88a56a1bc81f54` |
+| Estado revisado | `6e04b35317a0a68d239ae85c71cd60e21982b195` en `origin/master` (2026-10-04T16:37:55-05:00) |
+| Punta actual / S10 preliminar | `6e04b35317a0a68d239ae85c71cd60e21982b195` · 2026-10-04T16:37:55-05:00 |
+| Observado | 2026-10-06T21:29:11.332360Z |
 
-La punta actual **no tiene commits posteriores a S8**: coincide exactamente con el hash calificado de
-S8 (`0f3da0f3`) y su fecha es del 2026-09-27. Esta pasada **no tiene corte**: se califica la punta
-actual. El periodo S9 (`0f3da0f3..origin/master`) está vacío: el equipo no empujó ninguna porción
-nueva. Bajo CONTRATO §12, la evidencia previa es línea base y **no se recalifica por existir**: las
-filas que describen la entrega S9 quedan en No cumple (o No verificado) por ausencia de artefacto del
-periodo, citando el artefacto anterior solo como contexto. La fila de credenciales y la matriz
-transversal se deciden sobre el estado en la punta.
+## Alcance y método
 
-## Matriz de la ficha
+Revisión de archivos y del historial mediante Git, sin ejecutar código, pruebas, scripts ni despliegues de estudiantes. Se consultó una vez el listado de runs de GitHub Actions; un run verde se limita a los pasos que declara su workflow y no acredita la sustentación, el flujo desplegado ni un Quality Gate omitido. No se consultaron etiquetas. No se leyó ningún PDF; el criterio PDF se excluye por decisión docente, sin penalización. Las mediciones documentadas se atribuyen al equipo y no se presentan como ejecuciones del revisor.
 
-| Criterio de evaluación | Evidencia técnica | Estado | Observaciones |
-|---|---|---|---|
-| Porción real del sistema construida con apoyo de IA | Contexto (semana anterior): `docs/ia.md` (entradas hasta el 2026-09-28) registra el trabajo asistido de S8: funcionalidades de tareas, flujo de estados, interfaz Kanban y correcciones detectadas por revisión de IA; el sistema está desplegado en cuatro piezas. | No cumple | El periodo S9 (`0f3da0f3..origin/master`) no tiene commits: no hay porción nueva construida en esta evidencia. El artefacto citado es de S8 y es línea base (CONTRATO §12): se cita como contexto pero no satisface la fila. |
-| Cadena completa navegable para esa porción | Contexto: `docs/aspectos.md` y `docs/c4/nivel2-contenedores.md` describen escenarios y métricas de S8 (ESC-01/ESC-03). | No cumple | No hay cadena de una porción S9 que recorrer. |
-| ADR con la decisión argumentada por el equipo | Contexto (semanas anteriores): `docs/adr/0001`…`0012` con alternativas; `0007`–`0011` son de plataforma (S8) y `0012-publicar-el-flujo-de-estados-desde-el-dominio.md` es de S8. | No cumple | No hay ADR del periodo S9 para la porción de esta evidencia. Los ADR citados son línea base que no se recalifica por existir (CONTRATO §12). |
-| Prueba que falla ante el defecto que cubre | Contexto (semana anterior): S8 aportó `test/test_autenticacion.py` y el workflow `CI`, pero el run de CI del hash revisado está en rojo. | No verificado | No hay run en rojo, prueba de mutación ni procedimiento documentado del periodo S9 para la porción de esta evidencia; queda como pregunta para la sustentación (CONTRATO §13). |
-| Medición del escenario asociado | No hay resultado de escenario del periodo S9: la punta no cambió desde S8 y no se publicó una medición nueva contra umbral. | No cumple | Sin medición en el periodo. |
-| `docs/ia.md` con lo aceptado, lo corregido y lo rechazado con motivo | Contexto (semana anterior): `docs/ia.md`, última modificación `0f3da0f` (2026-09-27T22:52:09), con entradas del 2026-09-27/28 y correcciones detectadas por IA. | No cumple | El registro no tiene entrada del periodo S9; la última es de S8. Línea base que no satisface la fila (CONTRATO §12). |
-| Auditoría de erosión sobre límites de contexto y propiedad de datos | No se encontró auditoría de erosión en `docs/`: el barrido `erosión\|límite de contexto\|propiedad de datos` no devuelve coincidencias. | No cumple | Falta la auditoría exigida por la ficha. |
-| Dependencias propuestas verificadas en su registro oficial | El diff del periodo contra el hash de S8 (`0f3da0f3..origin/master`) está vacío: no hay dependencias añadidas en el periodo ni, por tanto, verificación que citar. | No cumple | Sin dependencias nuevas respecto de S8; no hay lista ni comprobación en el registro oficial. |
-| Sin credenciales en código, ejemplos ni documentación generada | Barrido del contrato sobre la punta: las coincidencias son nombres de parámetros y variables (`app/api/seguridad.py:103`, `web/lib/api.ts`, `scripts/medir_esc01.py`), no credenciales reales; el workflow de CI genera la contraseña de MySQL de un solo uso; sin `.env` versionado. | Cumple | Sin credenciales reales; el despliegue usa la configuración del proveedor. |
-| Componente generativo evaluado, con costo y latencia, o ADR de no incorporarlo | No aparece un conjunto de evaluación con costo y latencia, ni un ADR que decida no incorporar un componente generativo. | No cumple | La ausencia de decisión no es la decisión de no hacerlo; falta el ADR que lo justifique si esa es la posición del equipo. |
+El delta se contrasta contra S8; los artefactos previos sirven de línea base y no vuelven a premiarse por existir. Los cambios tardíos se separan en overall.
 
-## Matriz transversal (CONTRATO §11)
+## Matriz de la ficha S9
 
-| Criterio | Evidencia | Estado | Observaciones |
-|---|---|---|---|
-| Repositorio en la organización, con el nombre de la convención y público | `https://github.com/ISCOUTB/AS_202620_uniTeam`, clonado sin autenticación; rama principal `origin/master`. | Cumple | Nombre `AS_202620_uniTeam` conforme y visibilidad pública. |
-| Estructura mínima presente | En `0f3da0f3`: `docs/arc42/`, `docs/adr/` (0001-0012), `docs/c4/`, `docs/aspectos.md`, `docs/ia.md` y `README.md`. | Cumple | Las seis rutas del contrato §2; `docs/adr/` incluye `.gitkeep`. |
-| Estado calificado identificable | `0f3da0f36f8cd7b829106667de88a56a1bc81f54` en `origin/master`, commit del 2026-09-27T22:52:09-05:00. | Cumple | Sin cierre en esta pasada: se identifica la punta actual. Coincide con el hash de S8; no hay commits posteriores. |
-| Nombres de ADR según la convención | `docs/adr/0001-*` … `0012-*`, todos `NNNN-titulo-en-kebab-case.md`; el único elemento fuera del patrón es el marcador de carpeta `.gitkeep`, que no es un ADR. | Cumple | Doce ADR conformes. |
-| ADR aceptados no reescritos | El ADR `0011-mantener-la-api-despierta-con-un-sondeo-externo.md` se creó en `369b0d9` (2026-09-27T20:09) y se editó en `0f3da0f` (2026-09-27T22:52) tras su aceptación, sin declarar que ese ADR fuera reemplazado. | No cumple | El contrato §4 prohíbe editar un ADR aceptado; el resto de ADR conserva un solo commit. |
-| `docs/ia.md` al día para la semana | Historial de `docs/ia.md`: última modificación `0f3da0f` (2026-09-27T22:52:09), dentro de la ventana de S8. No hay commits sobre el archivo en el periodo S9. | No cumple | El registro no tiene entrada de la semana S9. |
-| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | `sonar-project.properties` y `.github/workflows/ci.yml:175` invocan el scanner con espera del Quality Gate (`-Dsonar.qualitygate.wait=true`), pero en el hash revisado el **CI falla**: [36375435263](https://github.com/ISCOUTB/AS_202620_uniTeam/actions/runs/36375435263) y [36379268907](https://github.com/ISCOUTB/AS_202620_uniTeam/actions/runs/36379268907), ambos `failure`. Las 15 corridas de «Comprobación del despliegue» del mismo hash son mixtas (varias en `failure`). | No cumple | Un Quality Gate que no termina en un run exitoso no es evidencia auditable del estado calificado; el CI del hash revisado está en rojo. |
-| Sin credenciales en el repositorio ni en el historial | `git grep` del contrato sin credenciales reales; sin `.env` versionado; el workflow de CI genera la contraseña de MySQL por ejecución. | Cumple | Sin credenciales; las coincidencias son identificadores de código. |
-| Contribución de todos los integrantes | `git shortlog -sne`: seis grupos de identidades — `Julio Cesar Emiliani` (20), `super-gremlin` (15), `Ian Novoa` (12), `JuanB`/`JuanBustamante` (10+4, misma cuenta), `Daniel Manjarres Herrera` (7), `DaniGamer0907` (1) — para cuatro integrantes declarados. | No verificado | Seis identidades no se reducen a cuatro personas sin la confirmación del docente; no se atribuyen cuentas por parecido de nombre. |
+| Criterio | Estado | Evidencia y observaciones |
+|---|---|---|
+| Porción real del sistema construida con apoyo de IA | Cumple | [docs/ia.md:86](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/ia.md#L86) identifica el refactor real de Mis tareas; [app/application/servicio_tareas.py:219–232](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/app/application/servicio_tareas.py#L219-L232) y [app/infrastructure/repositorios.py:170–191](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/app/infrastructure/repositorios.py#L170-L191) están cambiados en el delta S8→S9. |
+| Cadena completa navegable para esa porción | Cumple | [docs/aspectos.md:29](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/aspectos.md#L29) A-12 enlaza requisito, C4, ADR 0013, servicio/repositorio, pruebas y medición; se recorrieron los destinos. |
+| ADR con la decisión argumentada por el equipo | Cumple | [docs/adr/0013-tareas-no-lee-las-tablas-de-proyectos.md:3–6](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/adr/0013-tareas-no-lee-las-tablas-de-proyectos.md#L3-L6) y [docs/adr/0013-tareas-no-lee-las-tablas-de-proyectos.md:19–49](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/adr/0013-tareas-no-lee-las-tablas-de-proyectos.md#L19-L49): decisión aceptada, alternativas JOIN/puerto/proyección por eventos, efectos de autorización, costo y reversión; [docs/ia.md:38–39](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/ia.md#L38-L39) registra decisión del equipo. |
+| Prueba que falla ante el defecto que cubre | Cumple | [docs/calidad/mediciones/mis-tareas-limite-contexto.md:19–23](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/calidad/mediciones/mis-tareas-limite-contexto.md#L19-L23) registra cuatro fallos antes del cambio y cuatro pases después; [test/test_limites_contexto.py:21–33](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/test/test_limites_contexto.py#L21-L33) detecta tablas ajenas mediante AST. Procedimiento documentado admitido por la ficha; no ejecutado por el revisor. |
+| Medición del escenario asociado | Cumple | [docs/calidad/mediciones/mis-tareas-limite-contexto.md:7–39](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/calidad/mediciones/mis-tareas-limite-contexto.md#L7-L39): 3×300 peticiones con 200 tareas/20 proyectos, p95 posterior 11,5–11,8 ms contra 2000 ms, tablas cruzadas de 2 a 0. Medición local SQLite, secuencial y en proceso; no acredita ESC-01 completo con 30 usuarios ni MySQL/despliegue. |
+| docs/ia.md con lo aceptado, lo corregido y lo rechazado con motivo | Cumple | [docs/ia.md:86](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/ia.md#L86): identifica aceptado, dos alternativas rechazadas con razón y correcciones de percentil/importación; decisiones propias en D-025/D-026. |
+| Auditoría de erosión sobre límites de contexto y propiedad de datos | Cumple | [docs/ia.md:90–100](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/ia.md#L90-L100) y [docs/calidad/propiedad-datos.md:28–46](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/calidad/propiedad-datos.md#L28-L46) describen causa, ubicación y corrección; el servicio consulta Proyectos por puerto y el repositorio filtra solo TareaTabla. Persiste una dependencia bidireccional por puertos señalada en la auditoría. |
+| Dependencias propuestas verificadas en su registro oficial | Cumple | [docs/ia.md:102–108](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/ia.md#L102-L108): no añade dependencias, confirmado por diff de requirements.txt/web/package.json. Registra 18/18 existentes y comprobación de procedencia PyPI/npm; [scripts/verificar_dependencias.py:28–62](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/scripts/verificar_dependencias.py#L28-L62) es inspeccionado, no ejecutado. El método npm consulta paquete y origen, sin prueba exhaustiva de resolución de todo rango/transitivas. |
+| Sin credenciales en código, ejemplos ni documentación generada | Cumple | Barrido estático del árbol y revisión de coincidencias: sin credenciales productivas reales detectadas. [.env.example:1–21](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/.env.example#L1-L21) contiene marcadores; [compose.yaml:9–27](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/compose.yaml#L9-L27) acota valores de desarrollo a contenedor local; [.github/workflows/ci.yml:23–40](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/.github/workflows/ci.yml#L23-L40) genera contraseña efímera. No se reproducen valores en este informe. |
+| Componente generativo evaluado, con costo y latencia, o ADR de no incorporarlo | Cumple | [docs/adr/0014-no-incorporar-un-componente-generativo.md:3–32](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/adr/0014-no-incorporar-un-componente-generativo.md#L3-L32): ADR aceptado de no incorporar generación; justifica requisito, presupuesto, privacidad y latencia, compara alternativas y fija condiciones para reabrir. |
 
-## Estado global del proyecto (overall · punta actual de la misma rama)
+## Matriz transversal · CONTRATO §11
 
-- **Punta actual revisada**: `0f3da0f36f8cd7b829106667de88a56a1bc81f54` (2026-09-27T22:52:09-05:00) (`origin/master`)
-- **Veredicto**: sin trabajo nuevo de S9; base de S8 con el CI en rojo y la contribución sin cerrar
-- Resumen: la rama `master` no se movió desde S8 (`0f3da0f3`). El repositorio conserva la base de S8:
-  despliegue en cuatro piezas (sitio estático, API Docker, MySQL gestionado, Auth0) con IaC, health que
-  comprueba la base, logs JSON, métricas ligadas a ESC-01/ESC-03, secretos fuera del código, arc42 §7/§2
-  y ADR de plataforma. Esa base es línea base bajo CONTRATO §12 y no satisface las filas de S9. Punto
-  débil de la punta: el CI del hash revisado está en rojo (incluido el Quality Gate), y la contribución
-  por integrante sigue sin poder atribuirse. Para esta evidencia faltan la porción nueva con IA y su
-  cadena, la prueba del periodo, la medición, la auditoría de erosión, la verificación de dependencias
-  y la decisión sobre el componente generativo.
-
-Pendientes que siguen abiertos:
-- Sin commits de S9: la punta es la de S8.
-- Sin porción S9, sin prueba del periodo y sin extracto de `docs/ia.md` del periodo: por CONTRATO §12
-  las filas 1, 2, 3, 5, 6, 7 y 8 pasan a No cumple y la fila 4 a No verificado.
-- CI del hash revisado en rojo (`36375435263`, `36379268907`), incluido el Quality Gate.
-- Sin medición contra umbral de ningún escenario en el periodo.
-- Sin auditoría de erosión del periodo.
-- Sin dependencias nuevas que verificar en el periodo.
-- Sin evaluación ni ADR sobre el componente generativo.
-- ADR 0011 editado tras su aceptación sin declarar reemplazo (fila transversal en No cumple).
-- Contribución por integrante sin atribución confirmada (seis identidades para cuatro personas).
+| Criterio | Estado | Evidencia y observaciones |
+|---|---|---|
+| Repositorio en la organización, con el nombre de la convención y público | Cumple | Clon público ISCOUTB/AS_202620_uniTeam correcto; [README.md:14–23](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/README.md#L14-L23). |
+| Estructura mínima presente | Cumple | README y docs/arc42, adr, c4, aspectos.md, ia.md presentes; [docs/aspectos.md:44–51](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/aspectos.md#L44-L51). |
+| Estado calificado identificable | Cumple | master y hash/fecha del encabezado; último commit ≤ cierre, sin etiquetas. |
+| Nombres de ADR según la convención | Cumple | ADR 0001–0014 con nombres NNNN-titulo-en-kebab-case.md; [docs/adr/0013-tareas-no-lee-las-tablas-de-proyectos.md:1–6](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/adr/0013-tareas-no-lee-las-tablas-de-proyectos.md#L1-L6). |
+| ADR aceptados no reescritos | No cumple | Historial leído: ADR 0011 creado en 369b0d9 y editado en 0f3da0f tras figurar Aceptada; [docs/adr/0011-mantener-la-api-despierta-con-un-sondeo-externo.md:3–7](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/adr/0011-mantener-la-api-despierta-con-un-sondeo-externo.md#L3-L7). El reemplazo parcial de 0008 por 0011 está declarado, pero no reemplaza la edición posterior de 0011. |
+| docs/ia.md al día para la semana | Cumple | [docs/ia.md:86–121](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/ia.md#L86-L121) aporta entrada y auditoría del periodo S9. |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No cumple | [CI del hash actual](https://github.com/ISCOUTB/AS_202620_uniTeam/actions/runs/37236877375) concluye failure. [.github/workflows/ci.yml:161–179](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/.github/workflows/ci.yml#L161-L179) exige scanner y espera Quality Gate, pero configuración no equivale a resultado; falta gate público satisfactorio de este estado. [Comprobación de despliegue](https://github.com/ISCOUTB/AS_202620_uniTeam/actions/runs/37512258356) también falla. |
+| Sin credenciales en el repositorio ni en el historial | Cumple | Barrido de árbol e historial con patrones de alta especificidad sin credenciales reales confirmadas; valores locales/marcadores revisados en [compose.yaml:9–27](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/compose.yaml#L9-L27). Alcance de patrones declarado; no prueba sobre secretos externos. |
+| Contribución de todos los integrantes | No verificado | 75 commits con siete firmas de autor y variantes; no se atribuyen las firmas a las cuatro personas de matrícula sin correspondencia confirmada. |
 
 ## Recuento y nota sugerida
 
-**1 de 10 criterios** de la ficha en Cumple.
+**10 de 10 criterios Cumple. Nota sugerida: 5.0 = 1 + 4 × (10/10). Propuesta al docente; la nota final se fija en Moodle.** No verificado no se convierte en Cumple ni en una ejecución fallida.
 
-**Nota sugerida preliminar (propuesta al docente; puede cambiar al cierre): 1.4 = 1 + 4 × (1/10).** La nota final la fija el profesor en Moodle.
+## Estado global del proyecto (overall)
 
-Bajo CONTRATO §12, el único criterio que se resuelve sobre el estado en la punta es el barrido de
-credenciales; las demás filas describen la entrega S9, cuyo periodo (`0f3da0f3..origin/master`) está
-vacío: la evidencia previa es línea base y no se recalifica por existir.
+Punta de la misma rama: `6e04b35317a0a68d239ae85c71cd60e21982b195` (2026-10-04T16:37:55-05:00). Hay **6 commits en el delta S8→S9** y **0 commits posteriores al cierre S9**. La punta incorpora seis commits S9 que corrigen la lectura cruzada de tablas y añaden ADR aceptados, pruebas, medición y auditoría. No hay tardíos. Persisten CI y chequeos de despliegue en failure; se distinguen esos runs de los resultados locales documentados.
 
-## No verificado / pendientes
+La aplicación pública devolvió HTTP 200 en 6,029311 s en la consulta iniciada 2026-10-06T21:21:59Z. La consulta de /health iniciada 2026-10-06T21:22:05Z agotó 25,001788 s sin bytes recibidos (curl 28, HTTP 000); es timeout de esta comprobación, no prueba concluyente de caída del servidor. Un segundo intento de /health iniciado 2026-10-06T21:27:21Z también agotó 90,000219 s sin bytes (HTTP 000). No se probó el flujo autenticado.
 
-- Prueba que falla ante el defecto: **No verificado**. No hay run en rojo, prueba de mutación ni
-  procedimiento documentado del periodo S9; queda como pregunta de sustentación.
-- Contribución de todos los integrantes: **No verificado**. Hace falta la confirmación del docente
-  para atribuir las seis identidades a las cuatro personas declaradas.
-- Medición de escenarios: sin medición del periodo.
-- Auditoría de erosión: no existe artefacto del periodo.
-- Dependencias del periodo: el diff contra S8 está vacío, no hay nada que comprobar en los registros.
-- Componente generativo: no hay evaluación ni ADR del periodo.
-- CI del hash revisado en rojo.
+### Hallazgos abiertos
 
-## Hallazgos para la planilla
+- Recuperar CI del hash actual y comprobación periódica de despliegue; publicar resultado verificable del scanner y Quality Gate.
+- Medir el costo de consulta adicional en MySQL y carga real: la evidencia S9 es SQLite secuencial en proceso.
+- Precisar la asignación operativa S10; no equipararla automáticamente con ESC-01/ESC-03.
+- Completar arc42 §8 y reconciliar auditoría/mapa/ADRs con el MVP actual.
+- No reescribir ADR aceptados; el antecedente de ADR 0011 sigue abierto.
+- Confirmar correspondencia de firmas del historial con integrantes, sin atribuciones por parecido.
 
-- La punta de `origin/master` (`0f3da0f3`, 2026-09-27) es idéntica al hash calificado de S8: el periodo S9 está vacío.
-- Aplicado CONTRATO §12: sin artefacto del periodo, las filas 1, 2, 3, 5, 6, 7, 8 y 10 quedan en No cumple y la fila 4 en No verificado; solo el barrido de credenciales queda en Cumple.
-- El CI del hash revisado falla (`36375435263`, `36379268907`), incluido el Quality Gate: la fila transversal de pipeline sigue en No cumple.
-- ADR 0011 editado el 2026-09-27 tras su aceptación, sin declarar reemplazo.
-- Contribución: seis identidades de correo para cuatro integrantes; no se atribuyen por parecido de nombre.
-- Sin auditoría de erosión y sin decisión sobre el componente generativo, exigidas por la evidencia S9.
+### Hallazgos cerrados o sustituidos con evidencia actual
+
+- Ya hay incremento S9 y cadena A-12 completa: [docs/aspectos.md:29](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/aspectos.md#L29).
+- Auditoría de erosión, corrección y prueba negativa ahora documentadas: [docs/calidad/mediciones/mis-tareas-limite-contexto.md:19–23](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/calidad/mediciones/mis-tareas-limite-contexto.md#L19-L23) y [docs/calidad/propiedad-datos.md:28–46](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/calidad/propiedad-datos.md#L28-L46).
+- La no incorporación generativa ya es una decisión aceptada en ADR 0014: [docs/adr/0014-no-incorporar-un-componente-generativo.md:3–32](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/adr/0014-no-incorporar-un-componente-generativo.md#L3-L32).
+- El registro de IA sí creció en S9 con aceptado/corregido/rechazado y verificación de dependencias: [docs/ia.md:86–121](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/ia.md#L86-L121).
+- La planilla antigua dice sin URL, pero el README publica sitio/API y la portada respondió HTTP 200. [README.md:18–22](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/README.md#L18-L22). No se da por probado el flujo.
+
+## Próximos pasos
+
+La nueva porción de Mis tareas completa la cadena exigida: decisión aceptada, código, prueba que detecta el defecto, medición y auditoría de erosión. Mantengan explícito que la medición es SQLite en proceso; todavía falta comprobar el costo de la consulta extra en MySQL. El cumplimiento de S9 no cierra los fallos actuales del pipeline ni el Quality Gate.

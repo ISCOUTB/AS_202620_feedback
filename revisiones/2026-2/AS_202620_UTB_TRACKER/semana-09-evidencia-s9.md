@@ -1,95 +1,78 @@
-> Pasada temprana (previa al cierre del 2026-10-05T05:00:00Z): el hash y la nota son preliminares y pueden cambiar si el equipo empuja antes del cierre.
+# Evidencia S9 definitiva · UTB Tracker
 
-# semana-09-evidencia-s9 · UTB Tracker
+Revisión actualizada tras el cierre. Estado congelado al **2026-10-05T05:00:00Z** (domingo a medianoche en Colombia).
 
 | Campo | Valor |
 |---|---|
-| Repositorio | `https://github.com/ISCOUTB/AS_202620_TRACTAR` (redirige a `AS_202620_UTB_TRACKER`) |
+| Repositorio | https://github.com/ISCOUTB/AS_202620_UTB_TRACKER |
+| Rama principal remota | `main` |
+| Base S5 publicada | `7cfb8729db79435bf9de7d3975a9a3bd7ac5b849` |
+| Base S8 | `ae526db29b4f2d1f5981536e18438f9a62b1516d` |
 | Estado revisado | `ae526db29b4f2d1f5981536e18438f9a62b1516d` en `origin/main` (2026-09-25T11:36:43-05:00) |
-| Cierre | 2026-10-05T05:00:00Z |
-| Revisor | auditoría local preliminar sobre clon público efímero |
+| Punta actual / S10 preliminar | `d17c9eb241e56755d48b022dc00ddb865e40c391` · 2026-10-06T01:08:05-05:00 |
+| Observado | 2026-10-06T21:28:33.555768Z |
 
-La punta actual de `origin/main` **es idéntica al hash calificado de S8** (`ae526db`, 2026-09-25):
-el periodo S9 (`ae526db..origin/main`) está **vacío**, el equipo no empujó ninguna porción nueva.
-Esta pasada **no tiene corte**: se califica la punta actual del 2026-10-01. Bajo CONTRATO §12 la
-evidencia previa es línea base y **no se recalifica por existir**: las filas de la entrega S9 quedan
-en No cumple (o No verificado) por ausencia de artefacto del periodo. La fila de credenciales y la
-matriz transversal se deciden sobre el estado en la punta.
+## Alcance y método
 
-## Matriz de la ficha
+Revisión de archivos y del historial mediante Git, sin ejecutar código, pruebas, scripts ni despliegues de estudiantes. Se consultó una vez el listado de runs de GitHub Actions; un run verde se limita a los pasos que declara su workflow y no acredita la sustentación, el flujo desplegado ni un Quality Gate omitido. No se consultaron etiquetas. No se leyó ningún PDF; el criterio PDF se excluye por decisión docente, sin penalización. Las mediciones documentadas se atribuyen al equipo y no se presentan como ejecuciones del revisor.
 
-| Criterio de evaluación | Evidencia técnica | Estado | Observaciones |
-|---|---|---|---|
-| Porción real del sistema construida con apoyo de IA | Contexto (semanas anteriores): `docs/ia.md` (2026-08-16) registra el uso de Claude para estructura y redacción; código del esqueleto Django en `app/`. | No cumple | El periodo S9 (`ae526db..origin/main`) no tiene commits: no hay porción nueva construida en esta evidencia. El artefacto citado es de S2: línea base (CONTRATO §12). |
-| Cadena completa navegable para esa porción | `docs/aspectos.md` describe `A-01`…`A-04` con varias columnas en `—`; el propio documento declara que faltan ADRs, código y pruebas. | No cumple | La cadena no llega a evidencia y no se tocó en el periodo; no satisface la fila S9. |
-| ADR con la decisión argumentada por el equipo | Contexto (semanas anteriores): `docs/adr/0001-estilo-arquitectonico.md`, `0002-cambio-stack-fastapi-flutter.md` y `0003-integracion-sincrona.md`. | No cumple | No hay ADR del periodo S9; los citados son de S3/S4/S7 (línea base, CONTRATO §12). |
-| Prueba que falla ante el defecto que cubre | No hay run en rojo, prueba de mutación ni procedimiento documentado del periodo en `docs/`. | No verificado | No se encontró evidencia del periodo; queda como pregunta para la sustentación (CONTRATO §13). |
-| Medición del escenario asociado | No hay documento de medición ni resultado contrastado con umbral en el periodo. | No cumple | Sin medición de escenario publicada en la punta. |
-| `docs/ia.md` con lo aceptado, lo corregido y lo rechazado con motivo | El último commit sobre `docs/ia.md` es `e84871f` (2026-08-16); contiene dos filas de uso sin columna de rechazo. | No cumple | No hay extracto del periodo S9 y la evidencia histórica no documenta lo rechazado con motivo. |
-| Auditoría de erosión sobre límites de contexto y propiedad de datos | El barrido `erosión\|límite de contexto\|propiedad de datos` no devuelve coincidencias en `docs/`. | No cumple | No hay auditoría de erosión del periodo. |
-| Dependencias propuestas verificadas en su registro oficial | El diff del periodo contra el hash de S8 está vacío; `requirements.txt` existe pero sin cambios en el periodo. | No cumple | Sin dependencias nuevas respecto de S8; no hay lista ni comprobación en npm/PyPI que citar. |
-| Sin credenciales en código, ejemplos ni documentación generada | `git grep` §9 sobre `ae526db` sin coincidencias; sin `.env` versionado; `git log -S'BEGIN PRIVATE KEY'` y `-S'AKIA'` sin resultados. | Cumple | Barrido limpio. |
-| Componente generativo evaluado, con costo y latencia, o ADR de no incorporarlo | No hay componente generativo en el sistema ni un ADR que decida no incorporarlo; el barrido `generativ\|LLM\|openai\|gemini` no devuelve coincidencias en `docs/`. | No cumple | La ausencia de decisión no es la decisión de no hacerlo; falta el ADR que lo justifique si esa es la posición del equipo. |
+El delta se contrasta contra S8; los artefactos previos sirven de línea base y no vuelven a premiarse por existir. Los cambios tardíos se separan en overall.
 
-## Matriz transversal (CONTRATO §11)
+## Matriz de la ficha S9
 
-| Criterio | Evidencia | Estado | Observaciones |
-|---|---|---|---|
-| Repositorio en la organización, con el nombre de la convención y público | El clon sin autenticación de `ISCOUTB/AS_202620_TRACTAR` responde y redirige a `AS_202620_UTB_TRACKER`. | Cumple | Conserva el patrón `AS_202620_<PROYECTO>` y es público; `EQUIPOS.md` aún registra el nombre corto anterior. |
-| Estructura mínima presente | En `ae526db`: `README.md`, `docs/arc42/`, `docs/adr/`, `docs/c4/`, `docs/aspectos.md` y `docs/ia.md`. | Cumple | Las seis rutas están presentes; arc42 vive en un único `arc42.md`. |
-| Estado calificado identificable | `origin/main`, `ae526db29b4f2d1f5981536e18438f9a62b1516d`, 2026-09-25T11:36:43-05:00. | Cumple | Sin cierre en esta pasada: se identifica la punta actual. Coincide con el hash de S8. |
-| Nombres de ADR según la convención | Tres ADR con nombres `NNNN-titulo-en-kebab-case.md`; el filtro de la convención no devuelve salida. | Cumple | — |
-| ADR aceptados no reescritos | `git log --follow` de cada ADR en `ae526db` muestra un solo commit (el de creación): `5f923cd`, `e88a3d6`, `9cf1ac9`. | Cumple | No hay ediciones posteriores a la aceptación. |
-| `docs/ia.md` al día para la semana | Último commit sobre el archivo: `e84871f`, 2026-08-16. Sin entradas del periodo S9. | No cumple | El registro no crece desde agosto y no documenta nada descartado. |
-| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | Único run del hash revisado: `UTB Tracker CI` `36161882569` en `main`, conclusión `failure`; no hay `sonar-project.properties` ni paso del scanner. | No cumple | Un pipeline en rojo es no conformidad; no se compensa con que el workflow haya arrancado. |
-| Sin credenciales en el repositorio ni en el historial | `git grep` de patrones de credenciales en `ae526db` sin coincidencias; sin `.env` versionado; `git log -S'BEGIN PRIVATE KEY'` sin resultados. | Cumple | Barrido limpio. |
-| Contribución de todos los integrantes | `git shortlog -sne ae526db` consolidado por correo idéntico: Sebastián García Devoz (22, tres identidades del mismo correo) y Joriel Samir (3). | No cumple | Solo 2 de los 4 integrantes declarados aparecen; Gerónimo y Mateo no tienen commits. |
+| Criterio | Estado | Evidencia y observaciones |
+|---|---|---|
+| Porción real del sistema construida con apoyo de IA | No cumple | Delta Git S8→S9 vacío: ambos hashes son ae526db29b4f2d1f5981536e18438f9a62b1516d. [README.md:5–15](https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/ae526db29b4f2d1f5981536e18438f9a62b1516d/README.md#L5-L15) describe el corte S4 y [docs/ia.md:11–14](https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/ae526db29b4f2d1f5981536e18438f9a62b1516d/docs/ia.md#L11-L14) usos de agosto; no hay porción S9 identificada. |
+| Cadena completa navegable para esa porción | No cumple | [docs/aspectos.md:65–82](https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/ae526db29b4f2d1f5981536e18438f9a62b1516d/docs/aspectos.md#L65-L82): persisten celdas vacías y rutas a arc42 inexistentes; el material corresponde a entregas previas y no hay cadena nueva S9. |
+| ADR con la decisión argumentada por el equipo | No cumple | [docs/adr/0003-integracion-sincrona.md:7–25](https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/ae526db29b4f2d1f5981536e18438f9a62b1516d/docs/adr/0003-integracion-sincrona.md#L7-L25): decisión anterior de integración síncrona, sin ADR de una porción S9; el delta es vacío. |
+| Prueba que falla ante el defecto que cubre | No verificado | [tests/test_loans.py:32–49](https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/ae526db29b4f2d1f5981536e18438f9a62b1516d/tests/test_loans.py#L32-L49) comprueba rechazo de un segundo préstamo, pero no hay evidencia de que una prueba detecte un defecto inducido para S9. Un CI fallido no demuestra por sí solo esta sensibilidad. |
+| Medición del escenario asociado | No cumple | [docs/aspectos.md:65–82](https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/ae526db29b4f2d1f5981536e18438f9a62b1516d/docs/aspectos.md#L65-L82): evidencia narrativa del corte vertical, sin cifra, herramienta/carga y umbral medidos en S9. |
+| docs/ia.md con lo aceptado, lo corregido y lo rechazado con motivo | No cumple | [docs/ia.md:11–14](https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/ae526db29b4f2d1f5981536e18438f9a62b1516d/docs/ia.md#L11-L14): registro limitado a dos entradas de agosto, sin aceptado/corregido/rechazado con motivo para el periodo. |
+| Auditoría de erosión sobre límites de contexto y propiedad de datos | No cumple | El [árbol congelado](https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/tree/ae526db29b4f2d1f5981536e18438f9a62b1516d) y [docs/aspectos.md:65–82](https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/ae526db29b4f2d1f5981536e18438f9a62b1516d/docs/aspectos.md#L65-L82) no contienen una auditoría de erosión S9 ni contraste de propiedad de datos para una porción del periodo. |
+| Dependencias propuestas verificadas en su registro oficial | No verificado | No hay dependencias añadidas en el delta vacío; no se penaliza esa ausencia. [requirements.txt:1–7](https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/ae526db29b4f2d1f5981536e18438f9a62b1516d/requirements.txt#L1-L7) lista dependencias previas, pero no identifica propuestas del modelo ni su verificación oficial en una porción S9. |
+| Sin credenciales en código, ejemplos ni documentación generada | Cumple | Barrido del árbol congelado sin credenciales reales detectadas; sin .env versionado. [app/database.py:15–18](https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/ae526db29b4f2d1f5981536e18438f9a62b1516d/app/database.py#L15-L18) toma DATABASE_URL del entorno. No se ejecutó el sistema. |
+| Componente generativo evaluado, con costo y latencia, o ADR de no incorporarlo | No cumple | Los únicos ADR del [árbol](https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/tree/ae526db29b4f2d1f5981536e18438f9a62b1516d) son 0001–0003; [docs/adr/0003-integracion-sincrona.md:7–25](https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/ae526db29b4f2d1f5981536e18438f9a62b1516d/docs/adr/0003-integracion-sincrona.md#L7-L25) no decide un componente generativo ni justifica no incorporarlo. |
 
-## Estado global del proyecto (overall · punta actual de la misma rama)
+## Matriz transversal · CONTRATO §11
 
-- **Punta actual revisada**: `ae526db29b4f2d1f5981536e18438f9a62b1516d` 2026-09-25T11:36:43-05:00 `hotfix` (`origin/main`)
-- **Veredicto**: sin trabajo nuevo de S9; pipeline en rojo y deudas de S8 abiertas
-- Resumen: la punta de `main` coincide con el estado calificado de S8, así que no hay entregas
-  nuevas. Los tres commits del 25 de septiembre (`dc4099d`, `6d7300c`, `ae526db`) añadieron un paso
-  de despliegue por SSH al workflow y cambiaron la base de datos a `DATABASE_URL`, pero no
-  versionaron infraestructura ni documentación S9; dejaron el pipeline en rojo. Sigue sin existir la
-  URL pública, la IaC, los logs estructurados, la métrica con escenario, el documento de costos, la
-  sección 2/7 del arc42 con límite de costo y un ADR de plataforma. `docs/ia.md` no crece desde
-  agosto. La entrega S9 no existe en esta punta.
-
-Pendientes que siguen abiertos:
-- Sin commits de S9: la punta es la de S8.
-- Pipeline en rojo: run `36161882569` de `UTB Tracker CI` en `main`.
-- Sin porción S9, sin prueba del periodo y sin extracto de `docs/ia.md` del periodo.
-- Sin medición de escenario, sin auditoría de erosión y sin ADR de no incorporar componente generativo.
-- URL pública, IaC, logs, métrica, costo, arc42 §2/§7 y ADR de plataforma: sin resolver.
-- Análisis estático en SonarCloud con URL pública y Quality Gate.
-- Dos de los cuatro integrantes declarados sin commits en el historial.
+| Criterio | Estado | Evidencia y observaciones |
+|---|---|---|
+| Repositorio en la organización, con el nombre de la convención y público | Cumple | Clon público correcto del repositorio vigente AS_202620_UTB_TRACKER; no se usó el nombre histórico TRACTAR como destino. |
+| Estructura mínima presente | Cumple | Las seis rutas mínimas están presentes en el [árbol congelado](https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/tree/ae526db29b4f2d1f5981536e18438f9a62b1516d); los enlaces rotos se registran aparte. |
+| Estado calificado identificable | Cumple | main, hash y fecha exactos del encabezado. El estado S9 es anterior al cierre y no incluye los siete commits tardíos. |
+| Nombres de ADR según la convención | Cumple | Tres nombres conformes: 0001-estilo-arquitectonico.md, 0002-cambio-stack-fastapi-flutter.md y 0003-integracion-sincrona.md; [docs/adr/0003-integracion-sincrona.md:7–25](https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/ae526db29b4f2d1f5981536e18438f9a62b1516d/docs/adr/0003-integracion-sincrona.md#L7-L25). |
+| ADR aceptados no reescritos | Cumple | Historial de los tres ADR: solo sus commits de creación (5f923cd, e88a3d6, 9cf1ac9); sin ediciones posteriores. [docs/adr/0003-integracion-sincrona.md:3–5](https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/ae526db29b4f2d1f5981536e18438f9a62b1516d/docs/adr/0003-integracion-sincrona.md#L3-L5). |
+| docs/ia.md al día para la semana | No cumple | [docs/ia.md:11–14](https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/ae526db29b4f2d1f5981536e18438f9a62b1516d/docs/ia.md#L11-L14): sin actualización del periodo ni rechazo con motivo técnico. |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No cumple | [Run del hash S9](https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/actions/runs/36161882569) en failure; [.github/workflows/ci.yml:1–15](https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/ae526db29b4f2d1f5981536e18438f9a62b1516d/.github/workflows/ci.yml#L1-L15). No hay scanner ni configuración o resultado público de SonarCloud. |
+| Sin credenciales en el repositorio ni en el historial | Cumple | Barrido estático de árbol e historial de patrones de alta especificidad sin incidentes confirmados; [app/database.py:15–18](https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/ae526db29b4f2d1f5981536e18438f9a62b1516d/app/database.py#L15-L18) usa entorno. Alcance estático, no auditoría de los secretos externos. |
+| Contribución de todos los integrantes | No verificado | Firmas del historial agregadas, con variantes de identidad; correspondencia con toda la matrícula no verificada. No se mantienen inferencias individuales de informes anteriores. |
 
 ## Recuento y nota sugerida
 
-**1 de 10 criterios** de la ficha en Cumple.
+**1 de 10 criterios Cumple. Nota sugerida: 1.4 = 1 + 4 × (1/10). Propuesta al docente; la nota final se fija en Moodle.** No verificado no se convierte en Cumple ni en una ejecución fallida.
 
-**Nota sugerida preliminar (propuesta al docente; puede cambiar al cierre): 1.4 = 1 + 4 × (1/10).** La nota final la fija el profesor en Moodle.
+## Estado global del proyecto (overall)
 
-Bajo CONTRATO §12, el único criterio que se resuelve sobre el estado en la punta es el barrido de
-credenciales; las demás filas describen la entrega S9, cuyo periodo (`ae526db..origin/main`) está
-vacío: la evidencia previa es línea base y no se recalifica por existir.
+Punta de la misma rama: `d17c9eb241e56755d48b022dc00ddb865e40c391` (2026-10-06T01:08:05-05:00). Hay **0 commits en el delta S8→S9** y **7 commits posteriores al cierre S9**. S9 está congelada sin cambios respecto de S8. Después del cierre hay siete commits, incluida reorganización del backend y autenticación JWT. El CI sigue fallando y la documentación no refleja todavía la nueva estructura.
 
-## No verificado / pendientes
 
-- Prueba que falla ante el defecto: **No verificado**. No hay run en rojo, prueba de mutación ni
-  procedimiento documentado del periodo S9. Queda como pregunta de sustentación.
-- Medición de escenarios: no existe medición del periodo.
-- Auditoría de erosión: no existe artefacto que la documente.
-- Dependencias del periodo: el diff contra S8 está vacío.
-- Componente generativo: no hay componente ni ADR de no incorporarlo.
 
-## Hallazgos para la planilla
+### Hallazgos abiertos
 
-- La punta de `main` (`ae526db`, 2026-09-25) es idéntica al hash calificado de S8: el periodo S9 está vacío.
-- El pipeline quedó en rojo (`runs/36161882569`); no se corrigió en el periodo.
-- `docs/ia.md` no crece desde 2026-08-16 y no registra rechazos con motivo.
-- Sin medición, sin auditoría de erosión y sin decisión sobre componente generativo.
-- Dos de los cuatro integrantes declarados siguen sin commits en el historial.
-- El repositorio fue renombrado a `AS_202620_UTB_TRACKER`; `EQUIPOS.md` aún lista el nombre corto anterior.
+- S9 no incorpora commits nuevos frente a S8; la autenticación de octubre es tardía y solo se valora en overall/S10.
+- Recuperar el CI y ejecutar también tests/ de contratos, préstamos y recursos; actualmente solo se invoca app/tests/.
+- Actualizar README, enlaces de aspectos y C4 para la nueva estructura; completar arc42 de despliegue.
+- Publicar URL de despliegue, procedimiento reproducible, logs estructurados, métricas y costo.
+- Registrar la asignación S10, la línea base, ADR y experimento con resultados.
+- Actualizar docs/ia.md, auditar propiedad de datos y decidir sobre componente generativo.
+- Corregir configuración de expiración JWT: [app/core/config.py:10](https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/d17c9eb241e56755d48b022dc00ddb865e40c391/app/core/config.py#L10) devuelve texto y [app/core/security.py:10](https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/d17c9eb241e56755d48b022dc00ddb865e40c391/app/core/security.py#L10) lo pasa a timedelta(minutes=...). Hallazgo estático; no se ejecutó.
+- Verificar correspondencia de las identidades del historial con los integrantes.
+
+### Hallazgos cerrados o sustituidos con evidencia actual
+
+- El workflow actual coloca preparación de Python y pruebas antes del despliegue mediante needs: test: [.github/workflows/ci.yml:7–26](https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/d17c9eb241e56755d48b022dc00ddb865e40c391/.github/workflows/ci.yml#L7-L26). Es una mejora tardía; el run aún falla y no cierra CI.
+- Aparecen firmas adicionales en el historial actual; se retira la afirmación categórica antigua de que solo una persona ha contribuido. No se atribuye por nombre una firma a una persona.
+
+## Próximos pasos
+
+El estado al cierre es el mismo de la semana anterior y no contiene una porción nueva S9. Falta la cadena con ADR, prueba sensible al defecto, medición y auditoría de erosión, además del registro de IA y la decisión sobre componente generativo. La reorganización y autenticación de octubre llegan después del cierre y se reconocen en el estado actual, sin cambiar esta revisión.

@@ -8,14 +8,16 @@ Hoja consolidada del equipo a lo largo del semestre.
 |---|---|
 | Equipo | UTB Tracker |
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_UTB_TRACKER` |
-| Integrantes y su usuario de GitHub | Joriel Samir Barros Pena (sin cuentas en el historial) · Geronimo Alberto Cadena Garcia (sin cuentas) · Sebastian Garcia Devoz (firma con dos identidades de git, mismo correo, más el correo institucional) · Mateo Alfonso Millan Barraza (sin cuentas) |
-| URL del sistema desplegado | sin URL (sin despliegue todavía) |
-| Ultima revision | 2026-10-01 |
+| Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Joriel Samir Barros Pena (sin cuentas en el historial) · Geronimo Alberto Cadena Garcia (sin cuentas) · Sebastian Garcia Devoz (firma con dos identidades de git, mismo correo, más el correo institucional) · Mateo Alfonso Millan Barraza (sin cuentas); ver comprobación actual de contribución más abajo. |
+| URL del sistema desplegado | URL pública vigente no localizada; despliegue No verificado. Ver [S10](semana-10-corte2.md). |
+| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
 
 ## Estado por entrega
 
-| Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
+| Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 9 | S9 · definitiva | `main` · `ae526db29b4f2d1f5981536e18438f9a62b1516d` · 2026-09-25T11:36:43-05:00 | 1/10 | 1.4 (propuesta al docente) | sí, 2026-10-06 |
+| 10 | Segundo corte · preliminar | `main` · `d17c9eb241e56755d48b022dc00ddb865e40c391` · 2026-10-06T01:08:05-05:00 | 2/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
 | 1 | S1 | `(sin commits)` () | sin actividad | no aplica | si |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `0a23855` · 2026-08-16T20:05:46-05:00 | 6/9 | 3.7 (propuesta) | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `5f923cd` · 2026-08-23T22:40:51-05:00 | 7/9 | no se publica | sí |
@@ -25,8 +27,6 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 7 | S7 | `7cfb872` (2026-08-31T12:27:23-05:00) | 2/10 | 1.8 (prelim.) | si |
 | 8 | S8 | `ae526db` (2026-09-25T11:36:43-05:00) | 1/10 | 1.4 (provisional; 2 filas de despliegue pendientes) | sí (definitiva) |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
-| 9 | Evidencia S9 · Generación verificada y trazable | `ae526db` en `origin/main` (2026-09-25T11:36:43-05:00) | 1/10 | 1.4 (preliminar; propuesta al docente) | sí |
-| 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
 | 11 | Evidencia S11 · Fallos parciales y decisión de extracción | | | no aplica | |
 | 12 | Evidencia S12 · Estrategia de datos y eventos | | | no aplica | |
 | 12 | Taller aplicado · Mensajes y consistencia | | | no aplica | |
@@ -38,6 +38,24 @@ Hoja consolidada del equipo a lo largo del semestre.
 S8 se califica sobre 10 filas graduables. Quedan **pendientes de calificar** las dos filas de despliegue («URL del sistema accesible desde fuera de la red de la universidad» y «Health check consultable»): la URL se entrega por Moodle y no está disponible en esta pasada.
 
 ## Lo que se arrastra
+
+Estado vigente observado en la punta citada en [S10](semana-10-corte2.md). Las correcciones tardías no cambian S9. El registro histórico siguiente conserva su contexto, pero no sustituye esta actualización ni implica cerrar hallazgos no revalidados.
+
+| Hallazgo actual | Estado | Evidencia y próximo paso |
+|---|---|---|
+| S9 no incorpora commits nuevos frente a S8; la autenticación de octubre es tardía y solo se valora en overall/S10. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Recuperar el CI y ejecutar también tests/ de contratos, préstamos y recursos; actualmente solo se invoca app/tests/. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Actualizar README, enlaces de aspectos y C4 para la nueva estructura; completar arc42 de despliegue. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Publicar URL de despliegue, procedimiento reproducible, logs estructurados, métricas y costo. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Registrar la asignación S10, la línea base, ADR y experimento con resultados. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Actualizar docs/ia.md, auditar propiedad de datos y decidir sobre componente generativo. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Corregir configuración de expiración JWT: [app/core/config.py:10](https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/d17c9eb241e56755d48b022dc00ddb865e40c391/app/core/config.py#L10) devuelve texto y [app/core/security.py:10](https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/d17c9eb241e56755d48b022dc00ddb865e40c391/app/core/security.py#L10) lo pasa a timedelta(minutes=...). Hallazgo estático; no se ejecutó. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Verificar correspondencia de las identidades del historial con los integrantes. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| El workflow actual coloca preparación de Python y pruebas antes del despliegue mediante needs: test: [.github/workflows/ci.yml:7–26](https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/d17c9eb241e56755d48b022dc00ddb865e40c391/.github/workflows/ci.yml#L7-L26). Es una mejora tardía; el run aún falla y no cierra CI. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| Aparecen firmas adicionales en el historial actual; se retira la afirmación categórica antigua de que solo una persona ha contribuido. No se atribuye por nombre una firma a una persona. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+
+<details>
+<summary>Registro histórico previo a esta revisión (estados a la fecha de cada observación)</summary>
 
 | Hallazgo | Primera vez que se detectó | Sigue abierto | Qué se le dijo al equipo |
 |---|---|---|---|
@@ -91,20 +109,30 @@ S8 se califica sobre 10 filas graduables. Quedan **pendientes de calificar** las
 | Componente generativo: sin ADR de no incorporarlo. | S9 (preliminar) | si | Registrar la decisión. |
 | Pipeline aún en rojo (`36161882569`) sin corregir en el periodo. | S9 (preliminar) | si | Recuperar el verde y citar la URL del run. |
 | Excepción docente en S6: la matriz se completó sobre la punta actual porque no hubo actividad en la ventana de S6. | S6 | no (excepción aplicada) | — |
+
+</details>
+
 ## Estado del contrato del repositorio
+
+Actualizado desde la evaluación de la punta actual; no altera la matriz congelada de S9.
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
-| Nombre y visibilidad del repositorio | Cumple | El URL público responde con redirección al nombre actual del proyecto |
-| Estructura mínima | Cumple | seis rutas obligatorias presentes en HEAD |
-| Convención de nombres de ADR | Cumple | `0001-estilo-arquitectonico.md`, `0002-cambio-stack-fastapi-flutter.md` |
-| ADR aceptados sin reescribir | Cumple | `git log --follow` sobre cada ADR muestra un solo commit (creación); sin reescritura tras la aceptación (corrige la revisión previa) |
-| `docs/ia.md` al día | No cumple | último cambio 2026-08-16; sin entrada S5 |
-| Sin credenciales en el repositorio ni en el historial | Cumple | barridos limpios |
-| Contribución de todos los integrantes | No cumple | una persona concentra las identidades; 3 integrantes sin commits |
-| Pipeline en verde | No cumple | run de `ae526db` en `main` concluyó `failure`: https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/actions/runs/36161882569 |
+| Repositorio en la organización, con el nombre de la convención y público | Cumple | Clon público del repositorio vigente; [README.md:1–3](https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/d17c9eb241e56755d48b022dc00ddb865e40c391/README.md#L1-L3). |
+| Estructura mínima presente | Cumple | Las seis rutas mínimas siguen presentes en la punta. La vigencia de enlaces/diagramas se evalúa por separado. [docs/aspectos.md:63–72](https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/d17c9eb241e56755d48b022dc00ddb865e40c391/docs/aspectos.md#L63-L72). |
+| Estado calificado identificable | Cumple | main d17c9eb241e56755d48b022dc00ddb865e40c391 del 2026-10-06; punta preliminar distinta del estado S9 congelado. |
+| Nombres de ADR según la convención | Cumple | Tres nombres conformes: 0001-estilo-arquitectonico.md, 0002-cambio-stack-fastapi-flutter.md y 0003-integracion-sincrona.md; [docs/adr/0003-integracion-sincrona.md:7–25](https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/ae526db29b4f2d1f5981536e18438f9a62b1516d/docs/adr/0003-integracion-sincrona.md#L7-L25). |
+| ADR aceptados no reescritos | Cumple | Historial de los tres ADR: solo sus commits de creación (5f923cd, e88a3d6, 9cf1ac9); sin ediciones posteriores. [docs/adr/0003-integracion-sincrona.md:3–5](https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/ae526db29b4f2d1f5981536e18438f9a62b1516d/docs/adr/0003-integracion-sincrona.md#L3-L5). |
+| docs/ia.md al día para la semana | No cumple | [docs/ia.md:11–14](https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/d17c9eb241e56755d48b022dc00ddb865e40c391/docs/ia.md#L11-L14): no documenta tampoco la nueva autenticación y reorganización de octubre. |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No cumple | [Run de la punta](https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/actions/runs/37422096531) en failure. [.github/workflows/ci.yml:19–23](https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/d17c9eb241e56755d48b022dc00ddb865e40c391/.github/workflows/ci.yml#L19-L23) solo invoca app/tests/, omitiendo tests/ de contratos/préstamos/recursos; no incluye scanner SonarCloud. |
+| Sin credenciales en el repositorio ni en el historial | Cumple | Barrido de la punta sin credenciales reales; [app/core/config.py:7–11](https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/d17c9eb241e56755d48b022dc00ddb865e40c391/app/core/config.py#L7-L11) toma las claves del entorno. No se verificó rotación ni configuración del servidor externo. |
+| Contribución de todos los integrantes | No verificado | Firmas del historial agregadas, con variantes de identidad; correspondencia con toda la matrícula no verificada. No se mantienen inferencias individuales de informes anteriores. |
 
 ## Contribución por integrante
+
+Actualización agregada del 2026-10-06: S9 conserva 25 commits; la punta tiene 32. Variantes de firmas presentes y una firma adicional en octubre; correspondencia completa con la matrícula no verificada, sin inferencias por parecido.
+
+La tabla individual conservada abajo corresponde al registro histórico anterior; no se infieren nuevas correspondencias entre cuentas y personas.
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
 |---|---|---:|---:|---:|---|
@@ -115,6 +143,8 @@ S8 se califica sobre 10 filas graduables. Quedan **pendientes de calificar** las
 
 ## Preguntas abiertas para la sustentación
 
-- ¿Tienen los cuatro integrantes acceso al repositorio? ¿Por qué solo uno ha empujado commits?
-- El diagrama C4: ¿se puede entregar como código (workspace.dsl) para poder revisar leyenda y flechas?
-- ¿La prueba `manage.py test` pasa en verde en el entorno del equipo? (sin pipeline ni evidencia; se comprobará con CI)
+Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
+
+- ¿Cómo evitarían dos préstamos simultáneos del mismo recurso y qué prueba o métrica evidencia que el control funciona?
+- ¿Qué servidor y base de datos sostienen el despliegue y cuál es su costo mensual y límite de capacidad?
+- ¿Qué decisión cambiarían después de comparar la línea base con el experimento del escenario asignado?

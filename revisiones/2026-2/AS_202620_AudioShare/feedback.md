@@ -54,17 +54,10 @@ Para cerrar del todo:
 
 La URL del despliegue se entrega por Moodle y no se califica en esta pasada.
 
-## Semana 9 · S9 (pasada temprana, preliminar)
+## Semana 9 · S9 (revisión definitiva)
 
-Revisión preliminar de la semana 9, previa al cierre. A la fecha de esta pasada la rama principal no tiene ningún commit nuevo desde la entrega anterior: no hay todavía porción construida con apoyo de IA, ni la cadena que la acompaña (fila de aspectos recorrida hasta la evidencia), ni un ADR nuevo, ni una prueba que falle ante el defecto que cubre, ni la medición del escenario. El registro de uso de IA no pasa de la semana 7, y el barrido de credenciales sigue limpio.
+Hay dos decisiones nuevas y una URL accesible. La prueba de sincronización calcula números fijos sin llamar al sistema, así que todavía no demuestra el comportamiento del producto. Conecten la cadena del aspecto con el ADR nuevo, código real, prueba que falle ante el defecto y medición. Precisen la auditoría y las propuestas de IA rechazadas.
 
-Lo que falta para la entrega S9:
-1. Elijan una porción real del sistema construida con IA y hagan navegable su cadena completa, con las rutas del código, el commit y la medición del escenario contrastada con su umbral.
-2. Escriban el ADR de esa decisión argumentado con las restricciones del proyecto, no como transcripción de lo que propuso la herramienta.
-3. Aporten la prueba que falle ante el defecto que cubre: un run en rojo, una prueba de mutación o el procedimiento documentado.
-4. Actualicen el registro de IA con lo aceptado, lo corregido y al menos una salida rechazada con su motivo técnico.
-5. Si la generación cruzó un límite de contexto o las reglas de propiedad de datos de la semana 6, documenten cómo se detectó y cómo se corrigió.
-6. Verifiquen en el registro oficial cada dependencia que la IA haya propuesto y confirmen que no quedó ninguna credencial en el código ni en los ejemplos.
-7. Si el sistema no incorpora un componente generativo, dejen el ADR que lo justifica: la ausencia de decisión no es la decisión de no hacerlo.
+## Semana 10 · Segundo corte (avance preliminar)
 
-Esta revisión es preliminar: estas notas pueden cambiar si empujan antes del cierre.
+Antes del corte, identifiquen el escenario operativo asignado y midan una línea base reproducible. El health check responde, pero falta demostrar el flujo principal, corregir el pipeline Flutter y alinear la documentación con Dokploy. La sustentación y los niveles dependientes del reto quedan pendientes.

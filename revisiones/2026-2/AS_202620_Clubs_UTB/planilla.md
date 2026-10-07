@@ -6,15 +6,16 @@
 |---|---|
 | Equipo | Clubs UTB |
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Clubs_UTB` |
-| Integrantes y su usuario de GitHub | Hollman Jose De Orta Gonzalez (`deortahollman-star`) · Josh Robinson Ortega Castellon (`Josh4OP`) · Diego Andres Ramos De Avila (`Zavod Dev`, atribución sin confirmar) · Luis Daniel Salas Reyes (`Luis-Salas-Reyes`) |
-| URL del sistema desplegado | sin desplegar todavía |
-| Ultima revision | 2026-10-01 |
+| Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Hollman Jose De Orta Gonzalez (`deortahollman-star`) · Josh Robinson Ortega Castellon (`Josh4OP`) · Diego Andres Ramos De Avila (`Zavod Dev`, atribución sin confirmar) · Luis Daniel Salas Reyes (`Luis-Salas-Reyes`); ver comprobación actual de contribución más abajo. |
+| URL del sistema desplegado | URL pública vigente no localizada; despliegue No verificado. Ver [S10](semana-10-corte2.md). |
+| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
 
 ## Estado por entrega
 
-| Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
+| Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 9 | S9 (preliminar) | `652f78b7` (2026-09-27T23:39:11-05:00; punta sin cambios desde S8) | 1/10 | 1.4 (preliminar; puede cambiar al cierre) | si |
+| 9 | S9 · definitiva | `master` · `399565f527b633c49a71ac9b8a7f99daa85191d4` · 2026-10-04T23:47:05-05:00 | 6/10 | 3.4 (propuesta al docente) | sí, 2026-10-06 |
+| 10 | Segundo corte · preliminar | `master` · `cd0ad9c64925863ed5067ed53da7f3c6dcf09895` · 2026-10-05T00:46:29-05:00 | 2/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
 | 8 | S8 | `652f78b7` (2026-09-27T23:39:11-05:00) | 5/10 | 3.0 (provisional; 2 filas de despliegue diferidas por decisión docente) | si |
 | 7 | S7 | `dc211b8` (2026-09-20T23:56:51-05:00) | 8/10 | 4.2 | si |
 | 6 | S6 | `743cc1f` (2026-09-13T23:55:10-05:00) | 6/8 | 4.0 (prelim.) | si |
@@ -25,6 +26,22 @@
 | 3 | S3 | `5bf86ea` (2026-08-23T23:05:10-05:00) | 6/9 | 3.7 | si |
 
 ## Lo que se arrastra
+
+Estado vigente observado en la punta citada en [S10](semana-10-corte2.md). Las correcciones tardías no cambian S9. El registro histórico siguiente conserva su contexto, pero no sustituye esta actualización ni implica cerrar hallazgos no revalidados.
+
+| Hallazgo actual | Estado | Evidencia y próximo paso |
+|---|---|---|
+| Corregir los dos workflows fallidos y publicar evidencia del hash con SonarCloud/Quality Gate. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Completar enlaces de U2/U3 y medir disponibilidad/rendimiento: un health fijo no comprueba el proveedor. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Para S10, aportar consigna oficial, URL pública y línea base reproducible; contrastar resultados con el umbral. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Validar autenticación con token real, comportamiento sin JWKS y control de roles; resolver exposición pública de autor_id antes de declarar seguridad completa. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Preservar evidencia exacta del defecto, su corrección y las pruebas, sin incorporar el cambio tardío a S9. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Se incorporó decisión explícita de no incorporar LLM; [docs/adr/0005-no-incorporacion-llm.md:25–38](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/399565f527b633c49a71ac9b8a7f99daa85191d4/docs/adr/0005-no-incorporacion-llm.md#L25-L38). | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| Se documentaron auditoría y procedimiento de mutación para health; [docs/ia.md:21–31](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/399565f527b633c49a71ac9b8a7f99daa85191d4/docs/ia.md#L21-L31). | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| En la punta, el caso de uso ya recibe autor_id explícito y el router lo toma de autenticación; [backend/src/linkclub/application/use_cases/crear_publicacion.py:10–35](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/backend/src/linkclub/application/use_cases/crear_publicacion.py#L10-L35). Corrección posterior al cierre S9. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+
+<details>
+<summary>Registro histórico previo a esta revisión (estados a la fecha de cada observación)</summary>
 
 | Hallazgo | Primera vez que se detectó | Sigue abierto | Qué se le dijo al equipo |
 |---|---|---|---|
@@ -95,20 +112,30 @@
 | Runs de CI y análisis público de SonarCloud | S8 | si | |
 | Corregir nombres y duplicados de ADR y el enlace roto de la sección 9 | S8 | si | |
 | Resolver NC-01 y NC-02 de docs/arc42/lista_errores.md | S8 | si | |
+
+</details>
+
 ## Estado del contrato del repositorio
+
+Actualizado desde la evaluación de la punta actual; no altera la matriz congelada de S9.
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
-| Nombre y visibilidad del repositorio | Cumple | `AS_202620_Clubs_UTB`, público. |
-| Estructura mínima | Cumple | Las seis rutas existen; `docs/C4/` en mayúscula (desviación de ruta). |
-| Convención de nombres de ADR | Cumple | `0001-hexagonal.md` conforme; `docs/adr/.temp` residual a borrar. |
-| ADR aceptados sin reescribir | No cumple | Aceptado en `2c316f4` (23/08); editado nuevamente en `c6c46e3` (30/08, "correción de feedback") sin ADR de reemplazo. Corrige la fila anterior, que solo había mirado hasta S4. |
-| `docs/ia.md` al día | Cumple | Releído en S7: último commit `d2d1450` (2026-09-15), dentro del periodo revisado, con lo rechazado y su motivo. |
-| Sin credenciales en el repositorio ni en el historial | Cumple | Sin coincidencias. |
-| Contribución de todos los integrantes | Cumple | 4 de 4 en S3: Luis 2, Diego 2, Hollman 1, Josh 1 (Josh4OP = «Josh Ortega», mismo correo). |
-| Pipeline en verde | No cumple | Sin workflow; la prueba estaba vacía en el hash calificado (contenido tardío). |
+| Repositorio en la organización, con el nombre de la convención y público | Cumple | Clon público de ISCOUTB/AS_202620_Clubs_UTB; master declarado por el remoto; [README.md:1–10](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/399565f527b633c49a71ac9b8a7f99daa85191d4/README.md#L1-L10). |
+| Estructura mínima presente | Cumple | Seis rutas mínimas presentes, incluyendo arc42 01–12, C4, ADR, aspectos e IA; [docs/aspectos.md:26–34](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/399565f527b633c49a71ac9b8a7f99daa85191d4/docs/aspectos.md#L26-L34). |
+| Estado calificado identificable | Cumple | Punta master cd0ad9c64925863ed5067ed53da7f3c6dcf09895 de 2026-10-05T00:46:29-05:00; preliminar anterior al cierre S10, posterior al cierre S9. |
+| Nombres de ADR según la convención | No cumple | [docs/adr/0003- integacion rest openapi.md:1–8](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/399565f527b633c49a71ac9b8a7f99daa85191d4/docs/adr/0003-%20integacion%20rest%20openapi.md#L1-L8) conserva espacios y no usa kebab-case. La copia duplicada 0003-API.md fue eliminada en S9. |
+| ADR aceptados no reescritos | No verificado | Se observan revisiones de ADR previos; sin completar contraste del estado de aceptación en toda la historia no se certifica inmutabilidad. No se presume cerrado el arrastre anterior. |
+| docs/ia.md al día para la semana | Cumple | Entrada y sección S9 nuevas con aceptación, corrección y rechazo técnico explícitos; [docs/ia.md:21–31](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/399565f527b633c49a71ac9b8a7f99daa85191d4/docs/ia.md#L21-L31). |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No cumple | Los dos workflows de la punta siguen failure; no se acredita SonarCloud ni Quality Gate. [.github/workflows/backend-tests.yml:13–30](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/.github/workflows/backend-tests.yml#L13-L30). |
+| Sin credenciales en el repositorio ni en el historial | No verificado | Sin credenciales reales en el snapshot; el historial completo no se certificó. [infra/terraform/provider.tf:11–13](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/399565f527b633c49a71ac9b8a7f99daa85191d4/infra/terraform/provider.tf#L11-L13) lee el token de archivo externo y [infra/terraform/resource.tf:11–18](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/399565f527b633c49a71ac9b8a7f99daa85191d4/infra/terraform/resource.tf#L11-L18) usa placeholder. |
+| Contribución de todos los integrantes | No verificado | Seis firmas de autor, 134 commits agregados, para cuatro integrantes declarados. Hay variantes de identidad; sin mapeo comprobable completo no se infiere quién falta ni se suman firmas como personas. Punta actual: 6 firmas y 137 commits agregados; no equivalen automáticamente a personas. |
 
 ## Contribución por integrante
+
+Actualización agregada del 2026-10-06: Seis firmas observadas, 134 commits agregados en S9. Correspondencia de variantes con cuatro integrantes pendiente de validación; sin correos publicados. En HEAD: 6 firmas y 137 commits agregados.
+
+La tabla individual conservada abajo corresponde al registro histórico anterior; no se infieren nuevas correspondencias entre cuentas y personas.
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
 |---|---|---:|---:|---:|---|
@@ -119,8 +146,8 @@
 
 ## Preguntas abiertas para la sustentación
 
-- Confirmar que `Zavod Dev` es Diego Andres Ramos De Avila.
-- ¿Existen restricciones legales aplicables o hay que declarar que no aplican?
-- ¿Por qué `docs/aspectos.md` no usa la tabla de 8 columnas y no enlaza el ADR 0001?
-- ¿Por qué el esqueleto ejecutable (main.py + prueba) llegó 21 minutos después del cierre, con archivos vacíos en el commit calificado?
-- De los 6 escenarios (U1–U3, C1–C3), ¿cuáles se conservarán si el rango pedido es 3–5?
+Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
+
+- ¿Cómo se recuperan las escrituras si Supabase rota claves o JWKS no responde, y cómo distinguirán 401 de 503?
+- ¿Qué costo y límite de llamadas evita verificar JWKS localmente, y qué costo de seguridad asumen por tokens revocados?
+- Tras medir rutas protegidas, ¿qué cambiarían para impedir que un usuario autenticado publique en un club ajeno?

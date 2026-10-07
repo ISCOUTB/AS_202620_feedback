@@ -1,96 +1,81 @@
-> Pasada temprana (previa al cierre del 2026-10-05T05:00:00Z): el hash y la nota son preliminares y pueden cambiar si el equipo empuja antes del cierre.
+# Evidencia S9 definitiva · Verifacts
 
-# semana-09-evidencia-s9 · Verifacts
+Revisión actualizada tras el cierre. Estado congelado al **2026-10-05T05:00:00Z** (domingo a medianoche en Colombia).
 
 | Campo | Valor |
 |---|---|
-| Repositorio | `https://github.com/ISCOUTB/AS_202620_Verifacts` |
-| Estado revisado | `dae98e8d322b33898dd24622b0f5fbbeca6fa5a2` en `origin/master` (2026-09-28T22:24:54-05:00) |
-| Cierre | 2026-10-05T05:00:00Z |
-| Revisor | auditoría local preliminar sobre clon público efímero |
+| Repositorio | https://github.com/ISCOUTB/AS_202620_Verifacts |
+| Rama principal remota | `master` |
+| Base S5 publicada | `67f8cea03e6a7b827aced6b60d3af8cf4307b237` |
+| Base S8 | `d2d7b5c3d5b64a7008c20d1aa0961d3e0c69053f` |
+| Estado revisado | `4f0652291c47f5093da1230b245a980614220e80` en `origin/master` (2026-10-02T00:01:45-05:00) |
+| Punta actual / S10 preliminar | `4f0652291c47f5093da1230b245a980614220e80` · 2026-10-02T00:01:45-05:00 |
+| Observado | 2026-10-06T21:29:11.297297Z |
 
-Esta pasada **no tiene corte**: se califica la punta actual del 2026-10-01. El periodo S9
-(`d2d7b5c..dae98e8`) tiene **22 commits** del 2026-09-28 con artefactos específicos de la evidencia:
-ADR-0006, pruebas de frontera, mutaciones inducidas, medición de Q-01/Q-05 y auditoría de erosión.
-Bajo CONTRATO §12 las filas que describen la entrega S9 se deciden con la evidencia del periodo; la
-fila de credenciales y la matriz transversal se deciden sobre el estado en la punta. La excepción
-docente de S1/S2 no aplica a S9.
+## Alcance y método
 
-## Matriz de la ficha
+Revisión de archivos y del historial mediante Git, sin ejecutar código, pruebas, scripts ni despliegues de estudiantes. Se consultó una vez el listado de runs de GitHub Actions; un run verde se limita a los pasos que declara su workflow y no acredita la sustentación, el flujo desplegado ni un Quality Gate omitido. No se consultaron etiquetas. No se leyó ningún PDF; el criterio PDF se excluye por decisión docente, sin penalización. Las mediciones documentadas se atribuyen al equipo y no se presentan como ejecuciones del revisor.
 
-| Criterio de evaluación | Evidencia técnica | Estado | Observaciones |
-|---|---|---|---|
-| Porción real del sistema construida con apoyo de IA | En el periodo: `app/modules/scoring/service.py` (constantes `MAX_SCORE`, `UMBRAL_RIESGO_MEDIO`, `UMBRAL_RIESGO_ALTO` y `classify_score`), pesos en `app/modules/analysis/analyzer.py`; commits `1893548`, `a73c226` y `8538bd5`. | Cumple | Porción real del sistema (módulo `Scoring`) modificada en el periodo; el ADR-0006 declara que se construyó con apoyo de IA. |
-| Cadena completa navegable para esa porción | Fila `A-06` de `docs/aspectos.md` (nueva en el periodo) con enlaces a escenarios, C4, ADR, pruebas y evidencia. La celda ADR enlaza `adr/0006-semantica-del-resultado.md`, que **no existe** (el archivo real es `docs/adr/ADR-0006.md`); el enlace a la auditoría apunta a `auditoria-s9.md` bajo `docs/`, pero el archivo está en la raíz. | No cumple | La cadena se rompe en el eslabón ADR y en el enlace a la auditoría; los enlaces a pruebas y medición sí resuelven. |
-| ADR con la decisión argumentada por el equipo | `docs/adr/ADR-0006.md`: «Decisor: Equipo VeriFacts (no la herramienta)»; contexto con tres hallazgos de la auditoría, decisión (significado, valores, regla de cambio), alternativas descartadas con motivo (bajar el umbral, subir pesos, delegar a un modelo generativo, renombrar etiquetas) y consecuencias. | Cumple | La decisión está argumentada por el equipo con las restricciones del proyecto; no es un «se eligió lo que propuso la herramienta». |
-| Prueba que falla ante el defecto que cubre | `docs/evidencia/mutaciones-s9.md` + `scripts/mutaciones_s9.py`: cinco defectos inducidos (M1–M5); la suite previa no detectaba 3 y `tests/test_scoring_boundaries.py` detecta los 5. | Cumple | Evidencia de mutación del periodo que demuestra el fallo ante el defecto. |
-| Medición del escenario asociado | `docs/evidencia/medicion-q01-q05.md` + `scripts/medir_q01_q05.py`: Q-01 P95 = 46.9 ms contra umbral ≤ 3000 ms (CUMPLE); Q-05 100 % de coincidencia (CUMPLE). | Cumple | Resultado contrastado con el umbral del escenario. |
-| `docs/ia.md` con lo aceptado, lo corregido y lo rechazado con motivo | El último commit sobre `docs/ia.md` es `50568f1` (2026-09-23), anterior al periodo; no hay extracto de la semana S9. | No cumple | El registro histórico documenta aceptados y rechazos, pero no creció en el periodo S9; la evidencia previa no satisface la fila (CONTRATO §12). |
-| Auditoría de erosión sobre límites de contexto y propiedad de datos | `auditoria-s9.md` §1 (E-1…E-5) documenta la detección y corrección de la erosión sobre límites de contexto y propiedad de datos (`scoring` importaba `analyzer.py` — corregido; pruebas escribían en `data/verifacts.db` — corregido; `sqlite3` solo en `repository.py`); contrastado con el código (`git grep sqlite3 -- app` solo `repository.py`) y vigilado por `tests/test_boundaries.py`. | Cumple | Hallazgos con su ubicación y corrección; se contrastó sobre el código generado. |
-| Dependencias propuestas verificadas en su registro oficial | El periodo cambia `requirements.txt`: `pytest>=9.0.3,<10`. Verificado contra PyPI: `https://pypi.org/pypi/pytest/9.0.3/json` responde HTTP 200 y la versión figura entre las publicadas. | Cumple | Dependencia del periodo existente y con nombre legítimo. |
-| Sin credenciales en código, ejemplos ni documentación generada | Barrido de patrones de credenciales sobre `dae98e8` sin coincidencias; `.env.example` y `frontend/.env.example` versionados sin valores; `.gitignore` cubre `.env`, `.pem` y `.key`; `git log -S'BEGIN PRIVATE KEY'` sin coincidencias. | Cumple | El único secreto referenciado es `${{ secrets.SONAR_TOKEN }}`, no un valor. |
-| Componente generativo evaluado, con costo y latencia, o ADR de no incorporarlo | El sistema no incorpora un componente generativo en ejecución; `ADR-0006` descarta delegar la calibración a un modelo generativo y cita el rechazo del LLM como clasificador en el registro de `docs/ia.md`. | No cumple | No hay ADR dedicado a la decisión de no incorporar un componente generativo; el rechazo de ADR-0006 es sobre la calibración, no sobre el componente. La ausencia de decisión no es la decisión de no hacerlo. |
+El delta se contrasta contra S8; los artefactos previos sirven de línea base y no vuelven a premiarse por existir. Los cambios tardíos se separan en overall.
 
-## Matriz transversal (CONTRATO §11)
+## Matriz de la ficha S9
 
-| Criterio | Evidencia | Estado | Observaciones |
-|---|---|---|---|
-| Repositorio en la organización, con el nombre de la convención y público | `https://github.com/ISCOUTB/AS_202620_Verifacts`, clonado sin autenticación; rama principal `origin/master`. | Cumple | Nombre conforme y visibilidad pública. |
-| Estructura mínima presente | En `dae98e8`: `README.md`, `docs/arc42/`, `docs/adr/`, `docs/c4/`, `docs/aspectos.md` y `docs/ia.md`. | Cumple | Las seis rutas están presentes. |
-| Estado calificado identificable | `origin/master`, `dae98e8d322b33898dd24622b0f5fbbeca6fa5a2`, 2026-09-28T22:24:54-05:00. | Cumple | Sin cierre en esta pasada: se identifica la punta actual. |
-| Nombres de ADR según la convención | El filtro de §4 devuelve `ADR-0006.md`: no sigue `NNNN-titulo-en-kebab-case.md` (mayúsculas y sin número inicial). | No cumple | El ADR del periodo rompe la convención de nombres. |
-| ADR aceptados no reescritos | `git log --follow`: `9430845` (2026-09-23) editó ADR-0001, 0002, 0003 y 0004 después de su aceptación, sin ADR de reemplazo declarado. | No cumple | Viene registrado desde S8; el historial de la punta conserva esas ediciones. |
-| `docs/ia.md` al día para la semana | Último commit sobre el archivo: `50568f1` (2026-09-23); sin entrada del periodo S9. | No cumple | El registro no creció en la ventana de esta evidencia. |
-| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | Runs del hash revisado: `Tests` `36517048309` y `SonarCloud` `36517048351`, ambos `success`; `sonar-project.properties` existe; URL pública `https://sonarcloud.io/project/overview?id=ISCOUTB_AS_202620_Verifacts`, pero `docs/despliegue.md:37` declara el **Quality Gate general en rojo**. | No cumple | El run ejecutó el scanner y la URL es pública, pero un Quality Gate en rojo es no conformidad (CONTRATO §8). |
-| Sin credenciales en el repositorio ni en el historial | `git grep` de patrones de credenciales en `dae98e8` sin coincidencias; sin `.env`, `.pem` ni `.key` versionados; `git log -S'BEGIN PRIVATE KEY'` sin resultados. | Cumple | Barrido limpio. |
-| Contribución de todos los integrantes | `git shortlog -sne dae98e8` consolidado por correo idéntico: `PedroC1213` (262, dos correos y dos firmas) y `Cristian Cardeño` (33, dos correos). | No cumple | Solo 2 de los 3 integrantes declarados aparecen; el tercer integrante no tiene commits. |
+| Criterio | Estado | Evidencia y observaciones |
+|---|---|---|
+| Porción real del sistema construida con apoyo de IA | Cumple | [docs/adr/ADR-0006.md:9–30](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/docs/adr/ADR-0006.md#L9-L30) identifica Scoring/RuleAnalyzer construidos con apoyo IA; [app/modules/scoring/service.py:1–24](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/app/modules/scoring/service.py#L1-L24) cambia en el delta S8→S9 para separar constantes y respetar frontera mediante analysis.service; hay pruebas y herramientas nuevas reales. |
+| Cadena completa navegable para esa porción | No cumple | [docs/aspectos.md:25](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/docs/aspectos.md#L25) enlaza docs/adr/0006-semantica-del-resultado.md y docs/auditoria-s9.md, ausentes. Los artefactos reales son [docs/adr/ADR-0006.md:1–5](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/docs/adr/ADR-0006.md#L1-L5) y [auditoria-s9.md:1–5](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/auditoria-s9.md#L1-L5). La cadena no es navegable aunque se puedan localizar manualmente. |
+| ADR con la decisión argumentada por el equipo | Cumple | [docs/adr/ADR-0006.md:32–96](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/docs/adr/ADR-0006.md#L32-L96): decisión aceptada del equipo sobre semántica, pesos, umbrales y límites; compara bajar umbral, subir pesos, calibración generativa y renombrar etiquetas. Advierte que las reglas miden estilo, no veracidad. |
+| Prueba que falla ante el defecto que cubre | Cumple | [docs/evidencia/mutaciones-s9.md:3–11](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/docs/evidencia/mutaciones-s9.md#L3-L11) documenta cinco defectos y comparación suite previa/nueva; [scripts/mutaciones_s9.py:18–29](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/scripts/mutaciones_s9.py#L18-L29) define mutaciones concretas, contrastadas con [tests/test_scoring_boundaries.py:22–44](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/tests/test_scoring_boundaries.py#L22-L44). Procedimiento leído, no ejecutado. El script debería diferenciar fallos de aserción de errores de infraestructura antes de llamar detectado a todo exit no cero. |
+| Medición del escenario asociado | Cumple | [docs/evidencia/medicion-q01-q05.md:3–12](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/docs/evidencia/medicion-q01-q05.md#L3-L12): 200 corridas y 100 repeticiones con 10.000 caracteres, un cliente, SQLite temporal, P95 46,9 ms contra 3000 ms y repetibilidad 100 %. [docs/escenarios-de-calidad.md:18–34](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/docs/escenarios-de-calidad.md#L18-L34) define precisamente entorno local; no se extrapola a URL ni producción. |
+| docs/ia.md con lo aceptado, lo corregido y lo rechazado con motivo | No cumple | [docs/ia.md:14–22](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/docs/ia.md#L14-L22): última entrada 22–23 sep, archivo sin cambios S9; no hay extracto de aceptado/corregido/rechazado del periodo. La supuesta corrección de MLAnalyzer en [auditoria-s9.md:21](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/auditoria-s9.md#L21) no existe: [docs/ia.md:19](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/docs/ia.md#L19) aún lo registra como aceptado. |
+| Auditoría de erosión sobre límites de contexto y propiedad de datos | Cumple | [auditoria-s9.md:7–15](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/auditoria-s9.md#L7-L15) identifica E-1…E-4 con detección/corrección; [app/modules/scoring/service.py:1](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/app/modules/scoring/service.py#L1) usa analysis.service y [tests/conftest.py:1–13](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/tests/conftest.py#L1-L13) aísla la base. [tests/test_boundaries.py:27–57](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/tests/test_boundaries.py#L27-L57) vigila imports y persistencia. Las afirmaciones documentales D-1/D-5/D-6/D-7 no se dan por cerradas y se corrigen en overall. |
+| Dependencias propuestas verificadas en su registro oficial | Cumple | [requirements.txt:1–7](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/requirements.txt#L1-L7) incorpora pytest>=9.0.3 y [.github/workflows/sonarcloud.yml:26–32](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/.github/workflows/sonarcloud.yml#L26-L32) añade pytest-cov. Verificación externa de lectura el 2026-10-06: [PyPI pytest 9.0.3](https://pypi.org/pypi/pytest/9.0.3/json) existe y refiere pytest-dev/pytest; [PyPI pytest-cov](https://pypi.org/pypi/pytest-cov/json) existe y refiere pytest-dev/pytest-cov. El inventario de [auditoria-s9.md:30–49](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/auditoria-s9.md#L30-L49) no incluye aún pytest-cov, instalado sin fijar versión. |
+| Sin credenciales en código, ejemplos ni documentación generada | Cumple | Barrido estático del árbol sin credenciales reales detectadas; referencias al secreto de CI en [.github/workflows/sonarcloud.yml:34–38](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/.github/workflows/sonarcloud.yml#L34-L38) no son valores. Sin .env real versionado. El historial se informa con alcance de patrones en transversal. |
+| Componente generativo evaluado, con costo y latencia, o ADR de no incorporarlo | No cumple | [auditoria-s9.md:27](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/auditoria-s9.md#L27) dice corregido mediante ADR-0007, pero ese archivo no está en el árbol. [docs/adr/ADR-0006.md:66–70](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/docs/adr/ADR-0006.md#L66-L70) solo rechaza delegar calibración, no decide la incorporación del componente al producto. Falta ADR real de no incorporarlo o evaluación si se proyecta usarlo. |
 
-## Estado global del proyecto (overall · punta actual de la misma rama)
+## Matriz transversal · CONTRATO §11
 
-- **Punta actual revisada**: `dae98e8d322b33898dd24622b0f5fbbeca6fa5a2` 2026-09-28T22:24:54-05:00 `S9: pruebas de frontera y erosion, medicion Q-01/Q-05` (`origin/master`)
-- **Veredicto**: al día en el trabajo de S9; con no conformidades transversales
-- Resumen: la punta de `master` contiene la evidencia S9 completa: ADR-0006 con la decisión del
-  equipo sobre pesos y umbrales, pruebas de frontera (`tests/test_scoring_boundaries.py`), pruebas de
-  límites de módulo (`tests/test_boundaries.py`), evidencia de mutaciones, medición de Q-01/Q-05 y la
-  auditoría de erosión. El avance satisface las filas 1, 3, 4, 5, 7, 8 y 9 de la ficha. Quedan
-  abiertos: la cadena de aspectos se rompe en el enlace al ADR-0006 (nombre de archivo distinto) y al
-  informe de auditoría; `docs/ia.md` no se actualizó en el periodo; no hay ADR de no incorporar un
-  componente generativo. En lo transversal persisten el ADR-0006 fuera de convención, ediciones de ADR
-  aceptados sin reemplazo, Quality Gate de SonarCloud en rojo y un integrante sin contribución.
-
-Pendientes que siguen abiertos:
-- Corregir los enlaces de la fila `A-06` de `docs/aspectos.md`: el ADR apunta a `adr/0006-semantica-del-resultado.md` y la auditoría a `docs/auditoria-s9.md`; ambos no existen.
-- Renombrar `docs/adr/ADR-0006.md` a la convención `0006-<kebab-case>.md` (el código y el ADR referencian `0006-semantica-del-resultado.md`).
-- Registrar el uso de IA del periodo S9 en `docs/ia.md`.
-- Decidir en un ADR propio la no incorporación del componente generativo (hoy solo parcial en ADR-0006).
-- Corregir el Quality Gate de SonarCloud, documentado en rojo.
-- Dejar de editar ADR aceptados sin declarar reemplazo.
-- Confirmar la contribución del tercer integrante sin inferir identidades.
+| Criterio | Estado | Evidencia y observaciones |
+|---|---|---|
+| Repositorio en la organización, con el nombre de la convención y público | Cumple | Clon público de ISCOUTB/AS_202620_Verifacts; [README.md:1–4](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/README.md#L1-L4). |
+| Estructura mínima presente | Cumple | Las seis rutas mínimas están presentes. [docs/aspectos.md:17–25](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/docs/aspectos.md#L17-L25) y [docs/arc42/09-decisiones-arquitectonicas.md:8–17](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/docs/arc42/09-decisiones-arquitectonicas.md#L8-L17); enlaces rotos y nombre con espacio se registran aparte. |
+| Estado calificado identificable | Cumple | master y hash/fecha exactos del encabezado; último commit ≤ cierre, sin uso de etiquetas. |
+| Nombres de ADR según la convención | No cumple | [docs/adr/ADR-0006.md:1–5](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/docs/adr/ADR-0006.md#L1-L5): archivo ADR-0006.md no sigue NNNN-titulo-en-kebab-case.md. [auditoria-s9.md:25](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/auditoria-s9.md#L25) afirma renombre que el árbol no contiene. |
+| ADR aceptados no reescritos | No cumple | Historial 9430845 añade secciones a ADR 0001–0004 ya aceptados; por ejemplo [docs/adr/0002-contextos-sin-cambios.md:29–34](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/docs/adr/0002-contextos-sin-cambios.md#L29-L34). [auditoria-s9.md:26](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/auditoria-s9.md#L26) dice que una tabla de enmiendas lo declara, pero [docs/arc42/09-decisiones-arquitectonicas.md:1–17](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/docs/arc42/09-decisiones-arquitectonicas.md#L1-L17) y el resto del archivo no la contienen. |
+| docs/ia.md al día para la semana | No cumple | [docs/ia.md:19–22](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/docs/ia.md#L19-L22): sin cambio desde 50568f1 (23-sep), no documenta S9 y conserva MLAnalyzer como aceptado pese a que el servicio solo instancia RuleAnalyzer. |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No cumple | [Tests](https://github.com/ISCOUTB/AS_202620_Verifacts/actions/runs/36967117516) y [SonarCloud](https://github.com/ISCOUTB/AS_202620_Verifacts/actions/runs/36967117556) del hash actual en success; scanner y cobertura presentes en [.github/workflows/sonarcloud.yml:26–38](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/.github/workflows/sonarcloud.yml#L26-L38) y [sonar-project.properties:1–6](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/sonar-project.properties#L1-L6). Sigue faltando Quality Gate satisfactorio asociado a la revisión: [docs/despliegue.md:37](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/docs/despliegue.md#L37) declara gate general rojo y [auditoria-s9.md:28](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/auditoria-s9.md#L28) confirmación pendiente. La consulta pública al endpoint de gate no fue accesible; no se infiere el estado actual desde el run verde. |
+| Sin credenciales en el repositorio ni en el historial | Cumple | Barrido de árbol e historial con patrones de alta especificidad sin credenciales reales confirmadas; ejemplos sin valores productivos. [.github/workflows/sonarcloud.yml:34–38](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/.github/workflows/sonarcloud.yml#L34-L38). Alcance estático, no prueba sobre servicios externos. |
+| Contribución de todos los integrantes | No verificado | 300 commits en tres firmas de autor, incluidas variantes; README/Equipo declaran dos integrantes y EQUIPOS del curso tres. La correspondencia y matrícula deben confirmarse; no se identifica a una persona como ausente por parecido de cuenta. |
 
 ## Recuento y nota sugerida
 
-**7 de 10 criterios** de la ficha en Cumple.
+**7 de 10 criterios Cumple. Nota sugerida: 3.8 = 1 + 4 × (7/10). Propuesta al docente; la nota final se fija en Moodle.** No verificado no se convierte en Cumple ni en una ejecución fallida.
 
-**Nota sugerida preliminar (propuesta al docente; puede cambiar al cierre): 3.8 = 1 + 4 × (7/10).** La nota final la fija el profesor en Moodle.
+## Estado global del proyecto (overall)
 
-Bajo CONTRATO §12, las filas 1, 3, 4, 5, 7, 8 y 9 se resuelven con evidencia del periodo S9 y el
-barrido de credenciales sobre la punta; la fila 2 se rompe por enlaces no resolubles, la fila 6 carece
-de entrada de `docs/ia.md` del periodo y la fila 10 no tiene el ADR que exige.
+Punta de la misma rama: `4f0652291c47f5093da1230b245a980614220e80` (2026-10-02T00:01:45-05:00). Hay **27 commits en el delta S8→S9** y **0 commits posteriores al cierre S9**. Hay veintisiete commits S9 y ningún tardío: constantes/contrato de Scoring, pruebas, mutaciones, medición local y cobertura en SonarCloud. Se verifican los cambios reales y se mantienen abiertas las correcciones declaradas pero ausentes del árbol. Las pruebas/scanner del hash pasan; el Quality Gate no queda confirmado.
 
-## No verificado / pendientes
+GET https://verifacts-api.onrender.com/health: primer intento iniciado 2026-10-06T21:26:41Z agotó 25,002888 s; segundo intento iniciado 2026-10-06T21:27:21Z devolvió HTTP 200 en 7,138084 s, cuerpo status=ok. Salud puntual confirmada; no se probó el flujo de análisis.
 
-- No quedó ninguna fila en No verificado: las comprobaciones se resolvieron con archivos legibles del
-  repositorio o con el registro público.
-- La afirmación de `auditoria-s9.md` de que `docs/ia.md` y ADR-0002 se «corrigieron» en S9 no se
-  corresponde con el estado del repositorio: `docs/ia.md` no cambió en el periodo y sigue listando
-  `MLAnalyzer` como «Aceptado» aunque el código no lo contiene. Queda como hallazgo para la sustentación.
+### Hallazgos abiertos
 
-## Hallazgos para la planilla
+- Corregir enlaces y nombre de ADR-0006: la fila A-06 y README apuntan a archivos que no existen.
+- Registrar IA de S9 y corregir la afirmación de MLAnalyzer; no basta escribir Corregido en la auditoría.
+- Crear realmente el ADR de no incorporar componente generativo si esa es la decisión; ADR-0007 citado no existe.
+- Contrastar fila a fila D-1/D-5/D-6/D-7 de auditoria-s9.md: las correcciones anunciadas no están versionadas.
+- Confirmar Quality Gate público y revisión asociada; scanner verde con cobertura no garantiza gate aprobado.
+- Añadir pytest-cov al inventario de dependencias y fijar su versión o cierre reproducible.
+- Confirmar si la comparación Render/Lambda corresponde al escenario operativo asignado S10 y medir operación/carga equivalentes en ambos.
+- Aclarar matrícula y correspondencia de autoría; README/Equipo y listado docente discrepan.
+- Verificar disponibilidad pública con evidencia fechada y recuperación/persistencia del historial tras reinicios.
 
-- S9 con evidencia completa: ADR-0006, pruebas de frontera y de módulos, mutaciones inducidas, medición de Q-01/Q-05 y auditoría de erosión (E-1…E-5).
-- La fila `A-06` de `docs/aspectos.md` enlaza un ADR con nombre inexistente (`0006-semantica-del-resultado.md`) y la auditoría desde `docs/`; la cadena no es navegable en esos dos eslabones.
-- `docs/adr/ADR-0006.md` rompe la convención de nombres; el código y los documentos esperan `0006-semantica-del-resultado.md`.
-- `docs/ia.md` no creció en el periodo; la corrección de la afirmación sobre `MLAnalyzer` que declara la auditoría no está en el repositorio.
-- `pytest` sube a `9.0.3` y la versión existe en PyPI; verificación correcta.
-- Quality Gate de SonarCloud en rojo pese a los runs verdes.
-- ADR 0001-0004 editados en `9430845` sin reemplazo declarado; el tercer integrante sigue sin commits.
+### Hallazgos cerrados o sustituidos con evidencia actual
+
+- Scoring ya importa el servicio público de Analysis y la base de pruebas queda aislada: [app/modules/scoring/service.py:1](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/app/modules/scoring/service.py#L1) y [tests/conftest.py:1–13](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/tests/conftest.py#L1-L13).
+- Medición formal local de Q-01 y Q-05 publicada: [docs/evidencia/medicion-q01-q05.md:3–12](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/docs/evidencia/medicion-q01-q05.md#L3-L12). Cierra la ausencia de medición para texto local, no la de URL o producción.
+- El workflow SonarCloud ahora genera y entrega coverage.xml: [.github/workflows/sonarcloud.yml:21–38](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/.github/workflows/sonarcloud.yml#L21-L38) y [sonar-project.properties:5–6](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/sonar-project.properties#L5-L6). No se declara cerrado el Quality Gate.
+- Los runs del hash actual de Tests y SonarCloud pasan: [Tests](https://github.com/ISCOUTB/AS_202620_Verifacts/actions/runs/36967117516), [scanner](https://github.com/ISCOUTB/AS_202620_Verifacts/actions/runs/36967117556).
+
+## Próximos pasos
+
+Las pruebas de frontera, las mutaciones y la medición local aportan evidencia sólida. Quedan tres faltantes: la cadena de enlaces de la nueva porción, el registro de IA del periodo y la decisión real sobre componente generativo. La auditoría afirma que varios ya se corrigieron, pero los archivos del repositorio todavía no reflejan esas correcciones; revisen cada cierre contra su destino.

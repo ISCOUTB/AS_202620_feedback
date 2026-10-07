@@ -6,15 +6,16 @@
 |---|---|
 | Equipo | ElMapita |
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_ElMapita` |
-| Integrantes y su usuario de GitHub | Angel Fabian Gutierrez Gomez (sin cuenta identificada en el historial) · Diego Rosales Garza (sin cuenta identificada) · Rodrigo Vazquez Rico (firma con su nombre). Historial: `RobotDRMX` (sin atribuir) y, en EQUIPOS.md, `YOOUYII` (nunca vista). |
-| URL del sistema desplegado | sin desplegar todavía |
-| Ultima revision | 2026-10-01 |
+| Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Angel Fabian Gutierrez Gomez (sin cuenta identificada en el historial) · Diego Rosales Garza (sin cuenta identificada) · Rodrigo Vazquez Rico (firma con su nombre). Historial: `RobotDRMX` (sin atribuir) y, en EQUIPOS.md, `YOOUYII` (nunca vista).; ver comprobación actual de contribución más abajo. |
+| URL del sistema desplegado | https://elmapita-utb-api.onrender.com · ver comprobación y límites en S10 |
+| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
 
 ## Estado por entrega
 
-| Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
+| Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 9 | S9 | `e5c3ac6` (2026-09-27T16:26:27-06:00) | 1/10 | 1.4 (preliminar, sin cierre) | si |
+| 9 | S9 · definitiva | `main` · `f3bcfa83e80f5c8d0e30a01b656d89160c907d64` · 2026-10-04T21:11:20-06:00 | 9/10 | 4.6 (propuesta al docente) | sí, 2026-10-06 |
+| 10 | Segundo corte · preliminar | `main` · `f3bcfa83e80f5c8d0e30a01b656d89160c907d64` · 2026-10-04T21:11:20-06:00 | 4/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
 | 8 | S8 | `e5c3ac6` (2026-09-27T16:26:27-06:00) | 9/10 (2 filas de despliegue diferidas) | 4.6 (provisional) | si |
 | 6 | S6 | `a22f0a4` (2026-09-13T22:21:07-05:00) | 0/8 | 1.0 (prelim.) | si |
 | 7 | S7 | `afae3be` (2026-09-20T19:09:25-06:00) | 8/10 | 4.2 | si |
@@ -25,6 +26,23 @@
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `8e30f616` · 2026-08-22T16:12:55-06:00 | 4/9 | no se publica | sí |
 
 ## Lo que se arrastra
+
+Estado vigente observado en la punta citada en [S10](semana-10-corte2.md). Las correcciones tardías no cambian S9. El registro histórico siguiente conserva su contexto, pero no sustituye esta actualización ni implica cerrar hallazgos no revalidados.
+
+| Hallazgo actual | Estado | Evidencia y próximo paso |
+|---|---|---|
+| Integrar GetValidatedLocationUseCase en el recorrido real y medir el fallback de Flutter; no basta registrarlo como provider. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Completar enlaces de código/pruebas/medición y actualizar EC-03 hacia los archivos nuevos. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Corregir acceso a modelo/edificio, repetir EC-01 con respuestas exitosas y medir render 3D real; implementar caché de datos y banner offline antes de cerrar EC-04. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Resolver permiso de análisis SonarCloud con quien administra la organización; retirar continue-on-error solo cuando exista run/Gate verificable. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Aportar consigna oficial S10 y conectar hipótesis, línea base, cambio y experimento con esa asignación. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Arrastre de reescritura de ADR-0001/0003 corregido: restaurados textos aceptados y sustitución explícita por 0005/0006, comprobada por diff. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| Se corrige la anterior falta de atribución de RobotDRMX mediante .mailmap explícito; no corresponde mantener afirmación de cero contribuciones de esa persona. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| Existen porción S9, prueba negativa, auditoría y ADR de no incorporar IA generativa; [docs/ia.md:395–419](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/ia.md#L395-L419). | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| El error genérico al faltar un modelo se convierte en NotFoundException y tiene prueba; [backend/src/modules/mapas/infrastructure/storage/supabase-storage.ts:22–30](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/modules/mapas/infrastructure/storage/supabase-storage.ts#L22-L30). No se afirma recuperación operativa sin re-medición. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+
+<details>
+<summary>Registro histórico previo a esta revisión (estados a la fecha de cada observación)</summary>
 
 | Hallazgo | Primera vez que se detectó | Sigue abierto | Qué se le dijo al equipo |
 |---|---|---|---|
@@ -92,20 +110,30 @@
 | Sin auditoría de erosión ni verificación de propiedad de datos. | S9 | sí | Fila de la ficha en No cumple. |
 | Sin verificación de dependencias del periodo (diff vacío contra S8). | S9 | sí | — |
 | Sin ADR sobre el componente generativo (ni componente, ni decisión de no incorporarlo). | S9 | sí | La ausencia de decisión no es la decisión de no hacerlo. |
+
+</details>
+
 ## Estado del contrato del repositorio
+
+Actualizado desde la evaluación de la punta actual; no altera la matriz congelada de S9.
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
-| Nombre y visibilidad del repositorio | Cumple | `AS_202620_ElMapita`, público. |
-| Estructura mínima | Cumple | Las seis rutas; arc42 en plantilla única y C4 solo PNG (anotado desde S2). |
-| Convención de nombres de ADR | Cumple | `0001-estilo-arquitectonico-propuesto.md` conforme. |
-| ADR aceptados sin reescribir | No cumple | `docs/adr/0001-estilo-arquitectonico-propuesto.md` declara `status: Accepted` (2026-08-22) y fue editado en `07b36f4` (2026-08-30) sin declarar reemplazo; el informe S7 lo registra en No cumple. |
-| `docs/ia.md` al día | No cumple | Sigue documentando usos y rechazos con su motivo, pero su última entrada es del 2026-09-27 (S8): no se actualizó en la semana S9. |
-| Sin credenciales en el repositorio ni en el historial | Cumple | Coincidencias solo en tipos (`password: string`) y badge placeholder del boilerplate. |
-| Contribución de todos los integrantes | No cumple | Confirmado hasta el corte 1: `RobotDRMX` 12 commits (86%), `dgarza2705`/Diego Rosales Garza 1, Rodrigo Vazquez Rico 1; Angel Fabian Gutierrez Gomez sigue sin ningún commit identificable en todo el historial. |
-| Pipeline en verde | Cumple | Último run de `main` en `e5c3ac6` en verde (run 36355303177); SonarCloud sigue ausente y queda en la fila transversal. |
+| Repositorio en la organización, con el nombre de la convención y público | Cumple | Repositorio público ISCOUTB/AS_202620_ElMapita, rama main; [README.md:1–7](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/README.md#L1-L7). |
+| Estructura mínima presente | Cumple | README, arc42 en plantilla única, ADR, C4, aspectos e IA presentes; [docs/aspectos.md:1–8](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/aspectos.md#L1-L8). |
+| Estado calificado identificable | Cumple | Hash main congelado y fecha en encabezado; coincide con punta actual. |
+| Nombres de ADR según la convención | Cumple | ADR-0001 a 0007 usan NNNN-kebab-case; [docs/adr/0005-reemplazo-adr-0001-estilo-arquitectonico.md:1–11](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/adr/0005-reemplazo-adr-0001-estilo-arquitectonico.md#L1-L11). |
+| ADR aceptados no reescritos | Cumple | Se verificó diff de ADR-0001 contra aa16382 y ADR-0003 contra afae3be: únicamente cambia status a Superseded. Los cambios viven en ADR-0005/0006; [docs/adr/0005-reemplazo-adr-0001-estilo-arquitectonico.md:13–33](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/adr/0005-reemplazo-adr-0001-estilo-arquitectonico.md#L13-L33), [docs/adr/0006-reemplazo-adr-0003-contrato-openapi.md:13–26](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/adr/0006-reemplazo-adr-0003-contrato-openapi.md#L13-L26). Arrastre corregido, sin borrar que ocurrió históricamente. |
+| docs/ia.md al día para la semana | Cumple | Entradas S9 distinguen aceptado, corregido y rechazos técnicos, incluidas mediciones falsas y pruebas que no representan producto; [docs/ia.md:395–419](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/ia.md#L395-L419), [docs/ia.md:452–469](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/ia.md#L452-L469). |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No cumple | Workflow CI general success, pero Sonar es no bloqueante y está excluido del fallo del gate; [.github/workflows/ci.yml:254–283](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/.github/workflows/ci.yml#L254-L283), [.github/workflows/ci.yml:297–313](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/.github/workflows/ci.yml#L297-L313). El equipo documenta fallo por permisos, [docs/ia.md:434–439](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/ia.md#L434-L439); no se acredita análisis/Gate ejecutado. |
+| Sin credenciales en el repositorio ni en el historial | No verificado | Snapshot sin valores de credencial reales. Gitleaks excluye fingerprints de ejemplos y projectKey públicos; historial completo independiente no certificado. |
+| Contribución de todos los integrantes | No verificado | Cuatro firmas visibles tras .mailmap: 40 commits agregados. La correspondencia RobotDRMX con integrante queda explícita en .mailmap, pero no se inventa un mapa completo del resto; [docs/ia.md:397–402](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/ia.md#L397-L402). Punta actual: 4 firmas y 40 commits agregados; no equivalen automáticamente a personas. |
 
 ## Contribución por integrante
+
+Actualización agregada del 2026-10-06: 40 commits y cuatro firmas tras aplicar .mailmap. La atribución de RobotDRMX está declarada explícitamente y corrige el arrastre de autoría ausente; la consolidación completa de las otras variantes queda pendiente. En HEAD: 4 firmas y 40 commits agregados.
+
+La atribución histórica de RobotDRMX como no identificado quedó superada por la .mailmap citada en la revisión actual; la fila de 0 (S3) no describe su contribución vigente. La tabla individual conservada abajo corresponde al registro histórico anterior; no se infieren nuevas correspondencias entre cuentas y personas.
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
 |---|---|---:|---:|---:|---|
@@ -115,8 +143,8 @@
 
 ## Preguntas abiertas para la sustentación
 
-- ¿A quién pertenece `RobotDRMX` y por qué `YOOUYII` nunca aparece?
-- ¿Quién escribió el ADR y el esqueleto si solo una cuenta firma en S3?
-- ¿Qué criterios aplicaron para aceptar o rechazar cada uso listado en `docs/ia.md`?
-- ¿Cuándo se escribirá la sección 4 de arc42 en su sitio (hoy está vacía y la estrategia vive en el ADR)?
-- ¿Publicarán el C4 como código para reparar el enlace roto a `docs/c4/contexto.md`?
+Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
+
+- ¿Qué recibe hoy el usuario si GPS entrega 999 m y por qué el controlador no llama al validador nuevo?
+- ¿Qué costo de almacenamiento/egreso tendría descargar modelos sin caché y qué supuesto cambia al habilitar modo offline real?
+- Las pruebas detectaron HTTP500 y 0/20 offline: ¿qué cambiarían primero y cómo evitarían medir un placeholder como si fuera el mapa3D?

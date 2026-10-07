@@ -1,108 +1,78 @@
-> Pasada temprana (previa al cierre del 2026-10-05T05:00:00Z): el hash y la nota son preliminares y pueden cambiar si el equipo empuja antes del cierre.
+# Evidencia S9 definitiva · EnAgenda
 
-# semana-09-evidencia-s9 · EnAgenda
+Revisión actualizada tras el cierre del **2026-10-05T05:00:00Z** (domingo a medianoche COT).
 
 | Campo | Valor |
 |---|---|
-| Repositorio | `https://github.com/ISCOUTB/AS_202620_EnAgenda` |
-| Estado revisado | `2c7d77a421ab95b89dd68d696d49277e9f36a45c` en `origin/master` (2026-09-27T23:42:39-05:00) |
-| Cierre | 2026-10-05T05:00:00Z |
-| Revisor | auditoría local preliminar sobre clon público efímero |
+| Repositorio | [AS_202620_EnAgenda](https://github.com/ISCOUTB/AS_202620_EnAgenda) |
+| Rama remota principal | `master` |
+| Base S5 del segundo corte | `696882ecb889c01bdc93170556c90044acf4fcff` |
+| Base S8 | `2c7d77a421ab95b89dd68d696d49277e9f36a45c` |
+| Estado revisado | `5aa889370dcf342ba06666893b97f8065b513de9` en `origin/master` (2026-10-04T23:46:49-05:00) |
+| S9 congelada | `5aa889370dcf342ba06666893b97f8065b513de9` · 2026-10-04T23:46:49-05:00 |
+| Punta actual / S10 preliminar | `c2077ac55a29562adc728734ca4c283ccb40f310` · 2026-10-05T10:40:19-05:00 |
+| Comprobación | 2026-10-06T21:29:42Z |
 
-La punta actual **no tiene commits posteriores a S8**: coincide exactamente con el hash calificado de
-S8 (`2c7d77a`) y su fecha es del 2026-09-27. Esta pasada **no tiene corte**: se califica la punta
-actual del 2026-10-01, no un commit anterior a un cierre. El repositorio declara `master` como rama
-principal (`origin/HEAD → origin/master`); existe además una rama `main` (`41f6517`) que es ancestro
-y no se mezcla. La punta conserva los marcadores de conflicto de merge sin resolver detectados en S8.
-El periodo S9 (`2c7d77a..origin/master`) está vacío: no hay porción nueva. Bajo CONTRATO §12 la
-evidencia previa es línea base y **no se recalifica por existir**; por eso las filas que describen la
-entrega S9 quedan en No cumple (o No verificado) por ausencia de artefacto del periodo, citando el
-artefacto anterior solo como contexto. La fila de credenciales y la matriz transversal se deciden
-sobre el estado en la punta.
+Revisión por Git y lectura estática; no se ejecutó código, instalación, pruebas ni despliegue de estudiantes. Una consulta de Actions por repositorio. Los procedimientos y resultados documentados por el equipo se identifican como tales; no equivalen a una ejecución del revisor. PDF excluido por decisión docente: no se abrió ni se penaliza. No se consultaron etiquetas.
 
-## Matriz de la ficha
+## Matriz S9
 
-| Criterio de evaluación | Evidencia técnica | Estado | Observaciones |
-|---|---|---|---|
-| Porción real del sistema construida con apoyo de IA | Contexto (semana anterior): `docs/ia.md` (entrada 30/08/2026) documenta la construcción del módulo de Invitaciones con ChatGPT; código en `src/invitaciones/{aplicacion,dominio,infraestructura}/` y `app/web.py`, con commits en el historial. | No cumple | El periodo S9 (`2c7d77a..origin/master`) no tiene commits: no hay porción nueva construida en esta evidencia. El artefacto citado es de la semana del 30/08 y es línea base (CONTRATO §12): no satisface la fila. |
-| Cadena completa navegable para esa porción | Contexto (semanas anteriores): `docs/aspectos.md:3` fila A-01 enlaza C4 niveles 1-3, ADR-0001, `src/invitaciones/`, `app/web.py`, `tests/test_invitaciones.py`, `tests/test_api_invitaciones.py`, `tests/test_contrato_openapi.py` y `docs/evidencia.md`; los destinos existen. | No cumple | La fila citada no se modificó en el periodo S9 (`2c7d77a..origin/master` vacío): es línea base (CONTRATO §12) y no satisface la fila. Además la tabla carece de fila de encabezado y `docs/evidencia.md` conserva marcadores de conflicto (ver overall). |
-| ADR con la decisión argumentada por el equipo | Contexto (semanas anteriores): `docs/adr/0001-usar-monolito-modular.md` compara capas, hexagonal y monolito modular con las restricciones del proyecto (equipo de 3, herramientas gratuitas, privacidad) y decide; `docs/adr/0002-estrategia-integracion-api.md` y `docs/adr/0003-desplegar-api-flask-en-render.md` argumentan con alternativas descartadas. | No cumple | No hay ADR del periodo S9 para la porción de esta evidencia. Los ADR citados son de semanas anteriores: línea base que no se recalifica por existir (CONTRATO §12). Se mantiene la observación de que ADR-0001 describe Next.js/Server Actions mientras el código es Flask y ADR-0003 deja «Decide: [COMPLETAR CON INTEGRANTES]». |
-| Prueba que falla ante el defecto que cubre | No hay run en rojo, prueba de mutación ni procedimiento documentado: `docs/evidencia.md` solo registra `pytest -q → 12 passed`; la prueba de contrato (`tests/test_contrato_openapi.py`) no tiene evidencia de fallo controlado. | No verificado | Falta una de las tres evidencias que admite la ficha; queda como pregunta de sustentación. |
-| Medición del escenario asociado | No hay resultado contrastado contra un umbral. `docs/evidencia.md` muestra valores de la métrica (`0` y `1`) pero no un escenario de calidad con umbral; `docs/aspectos.md` no declara escenarios EC con medida. | No cumple | Sin medición publicada en la punta. |
-| `docs/ia.md` con lo aceptado, lo corregido y lo rechazado con motivo | Contexto (semanas anteriores): `docs/ia.md` tiene columnas «Qué se rechazó o modificó» con motivos: rechazo del envío por correo por exposición de datos en repo público (08-Ago), rechazo del rol colaborador por innecesario (07-Ago), rechazo de Next.js/Server Actions (30/08). | No cumple | El extracto citado pertenece a semanas anteriores y la última entrada es del 27-Sep-2026 (S8); no hay entrada del periodo S9. Línea base que no satisface la fila (CONTRATO §12). |
-| Auditoría de erosión sobre límites de contexto y propiedad de datos | Contexto (semana anterior): `docs/arquitectura/contextos-y-propiedad-de-datos.md:80` «Verificación de violaciones de propiedad»: tabla con comprobaciones de escrituras fuera del contexto dueño, entidades de negocio en `compartido/` y acceso directo al repositorio, con resultado y plan de corrección. | No cumple | Es un artefacto de S6, no del periodo S9, y no está enmarcado como auditoría de generación. Bajo CONTRATO §12 la evidencia previa es línea base y no satisface la fila; no hay auditoría de erosión del periodo. |
-| Dependencias propuestas verificadas en su registro oficial | El diff del periodo contra el hash de S8 (`2c7d77a`) sobre `requerimiento.txt` está vacío: no hay dependencias añadidas en el periodo ni verificación que citar. | No cumple | Sin dependencias nuevas respecto de S8; no hay comprobación en PyPI. |
-| Sin credenciales en código, ejemplos ni documentación generada | Barrido del contrato sobre la punta: coincidencias solo en tokens de dominio y generación (`app/web.py:85` `token=invitacion.token`; `src/invitaciones/dominio/invitaciones.py:26` `secrets.token_urlsafe(32)`); sin `.env` versionado; `git log -S'BEGIN PRIVATE KEY'` sin coincidencias. | Cumple | Sin credenciales reales; `.env.example` está versionado con marcadores de conflicto, no con secretos. |
-| Componente generativo evaluado, con costo y latencia, o ADR de no incorporarlo | No hay componente generativo en el sistema ni un ADR que decida no incorporarlo; el uso de IA registrado es apoyo de construcción, no un componente de la aplicación. | No cumple | La ausencia de decisión no es la decisión de no hacerlo; falta el ADR que lo justifique. |
+| Criterio | Estado | Evidencia y observaciones |
+|---|---|---|
+| Porción real del sistema construida con apoyo de IA | Cumple | Nueva creación múltiple de invitaciones, fecha común, UI y pruebas con IA explícita; [docs/ia.md:44–66](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/5aa889370dcf342ba06666893b97f8065b513de9/docs/ia.md#L44-L66), [app/web.py:120–225](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/5aa889370dcf342ba06666893b97f8065b513de9/app/web.py#L120-L225), [tests/test_api_invitaciones.py:16–42](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/5aa889370dcf342ba06666893b97f8065b513de9/tests/test_api_invitaciones.py#L16-L42). Hay delta real S9. Límite: invitados.html aún no estaba en el árbol congelado aunque la ruta lo requería. |
+| Cadena completa navegable para esa porción | No cumple | A-01 enlaza artefactos reales, pero no llega a medición contra umbral ni ADR de las decisiones nuevas de creación múltiple; [docs/aspectos.md:3–5](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/5aa889370dcf342ba06666893b97f8065b513de9/docs/aspectos.md#L3-L5), [docs/despliegue/medicion-dokploy.md:9–25](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/5aa889370dcf342ba06666893b97f8065b513de9/docs/despliegue/medicion-dokploy.md#L9-L25). El enlace a evidencia documenta Docker/pruebas, no resultado del escenario. |
+| ADR con la decisión argumentada por el equipo | No cumple | ADR-0003 nuevo justifica plataforma, pero la porción IA de invitaciones múltiples se remite a ADR-0001, que aún prescribe Next.js/Server Actions y ausencia de API pública. No hay decisión coherente trazada de esa porción; [docs/adr/0001-usar-monolito-modular.md:108–125](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/5aa889370dcf342ba06666893b97f8065b513de9/docs/adr/0001-usar-monolito-modular.md#L108-L125), [docs/aspectos.md:5–5](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/5aa889370dcf342ba06666893b97f8065b513de9/docs/aspectos.md#L5-L5). |
+| Prueba que falla ante el defecto que cubre | No verificado | Se documentan 14 passed y adaptación de pruebas, sin run rojo, mutación o procedimiento que introduzca el defecto y muestre el fallo; [docs/ia.md:86–98](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/5aa889370dcf342ba06666893b97f8065b513de9/docs/ia.md#L86-L98), [docs/evidencia.md:116–125](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/5aa889370dcf342ba06666893b97f8065b513de9/docs/evidencia.md#L116-L125). La prueba de creación llama directamente /crear-invitaciones y no cubre la plantilla intermedia faltante. |
+| Medición del escenario asociado | No cumple | Medición externa expresamente pendiente, escenario EC-XX y umbral [umbral aprobado]; [docs/despliegue/medicion-dokploy.md:3–25](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/5aa889370dcf342ba06666893b97f8065b513de9/docs/despliegue/medicion-dokploy.md#L3-L25). Contar solicitudes no prueba latencia ni disponibilidad contra umbral. |
+| docs/ia.md con lo aceptado, lo corregido y lo rechazado con motivo | Cumple | Registro específico nuevo con aceptado/corregido/rechazado y motivos: eliminar invitado automático, fecha global, controles horarios e integración manual; [docs/ia.md:44–98](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/5aa889370dcf342ba06666893b97f8065b513de9/docs/ia.md#L44-L98). |
+| Auditoría de erosión sobre límites de contexto y propiedad de datos | No cumple | No hay auditoría del cambio nuevo contra límites y propiedad de datos. El registro describe merge, no hallazgos arquitectónicos localizados; [docs/ia.md:68–88](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/5aa889370dcf342ba06666893b97f8065b513de9/docs/ia.md#L68-L88). La auditoría de contextos previa no se recalifica por existir. |
+| Dependencias propuestas verificadas en su registro oficial | No verificado | requerimiento.txt no cambió S8→S9. No se castiga que no se agreguen paquetes, pero no se encontró inventario explícito de propuestas/dependencias auditadas ni verificación oficial del alcance de esta generación; [docs/ia.md:44–98](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/5aa889370dcf342ba06666893b97f8065b513de9/docs/ia.md#L44-L98). |
+| Sin credenciales en código, ejemplos ni documentación generada | Cumple | Barrido del snapshot sin credenciales reales en código, ejemplos ni docs. Tokens se generan en ejecución y las claves de CI son valores de prueba; [src/invitaciones/dominio/invitaciones.py:23–29](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/5aa889370dcf342ba06666893b97f8065b513de9/src/invitaciones/dominio/invitaciones.py#L23-L29), [.github/workflows/ci.yml:32–41](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/5aa889370dcf342ba06666893b97f8065b513de9/.github/workflows/ci.yml#L32-L41). Riesgo de fuga por métricas se trata separadamente en overall. |
+| Componente generativo evaluado, con costo y latencia, o ADR de no incorporarlo | No cumple | El árbol solo contiene ADR-0001/0002/0003 de estilo, integración y despliegue, sin componente generativo evaluado ni decisión explícita de no incorporarlo; [docs/adr/0003-desplegar-api-flask-en-dokploy.md:1–18](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/5aa889370dcf342ba06666893b97f8065b513de9/docs/adr/0003-desplegar-api-flask-en-dokploy.md#L1-L18). |
 
-## Matriz transversal (CONTRATO §11)
+## Matriz transversal · CONTRATO §11
 
-| Criterio | Evidencia | Estado | Observaciones |
-|---|---|---|---|
-| Repositorio en la organización, con el nombre de la convención y público | `https://github.com/ISCOUTB/AS_202620_EnAgenda`, clonado sin autenticación; rama principal `origin/master`. | Cumple | Nombre `AS_202620_EnAgenda` conforme y visibilidad pública. |
-| Estructura mínima presente | En `2c7d77a`: `docs/arc42/`, `docs/adr/` (0001-0003), `docs/c4/`, `docs/aspectos.md`, `docs/ia.md` y `README.md`. | Cumple | Las seis rutas del contrato §2. No conformidad aparte: `Dockerfile`, `docker-compose.yml`, `render.yaml`, `.dockerignore`, `.env.example` y `docs/evidencia.md` conservan marcadores de conflicto sin resolver (no afecta la presencia de las rutas exigidas). |
-| Estado calificado identificable | `2c7d77a421ab95b89dd68d696d49277e9f36a45c` en `origin/master`, commit del 2026-09-27T23:42:39-05:00. | Cumple | Sin cierre en esta pasada: se identifica la punta actual. `master` es la rama principal declarada por el remoto; `main` es ancestro y no se mezcla. |
-| Nombres de ADR según la convención | `docs/adr/0001-usar-monolito-modular.md`, `0002-estrategia-integracion-api.md` y `0003-desplegar-api-flask-en-render.md`. | Cumple | Los tres cumplen `NNNN-titulo-en-kebab-case.md`. |
-| ADR aceptados no reescritos | ADR-0001 nace como propuesta (`e1219bf`) y se reemplaza por la decisión de monolito modular (`c38adfb`, 2026-08-23) antes de declararse aceptado; ADR-0002 y ADR-0003 no tienen commits de reescritura posteriores a su aceptación. | Cumple | No se observa reescritura de un ADR aceptado sin reemplazo declarado. |
-| `docs/ia.md` al día para la semana | Historial de `docs/ia.md`: la última modificación es del 2026-09-27 (`f7bc011`), dentro de la ventana de S8. No hay commits sobre el archivo después del cierre de S8. | No cumple | El registro no tiene entrada de la semana S9. |
-| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | Runs del hash revisado: [CI 36378874812](https://github.com/ISCOUTB/AS_202620_EnAgenda/actions/runs/36378874812), conclusión `failure`, y `pages build` 36378874993. No existe configuración ni URL pública de SonarCloud. | No cumple | CI en rojo en el hash revisado y SonarCloud ausente; faltan todas las evidencias del contrato §8. |
-| Sin credenciales en el repositorio ni en el historial | Barrido del contrato y `git log -S` sin coincidencias de claves reales; sin `.env` versionado. | Cumple | Sin credenciales; las coincidencias son tokens de dominio y de generación. |
-| Contribución de todos los integrantes | `git shortlog -sne 2c7d77a`: `Jein-12` 70, `Daoisttl0FB3` 69 y `GabrielaMorales Cancino` 5 (mismo correo `gabimoralesc30`, se consolidan), `eliabarnedocondef10-gif` 18. | Cumple | Tres personas consolidadas por correo para tres integrantes declarados; todas con commits. |
+| Criterio | Estado | Evidencia y observaciones |
+|---|---|---|
+| Repositorio en la organización, con el nombre de la convención y público | Cumple | Clon público en organización ISCOUTB y nombre conforme; master declarado remoto, [README.md:1–8](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/5aa889370dcf342ba06666893b97f8065b513de9/README.md#L1-L8). |
+| Estructura mínima presente | Cumple | Seis rutas mínimas presentes; se recupera tabla de aspectos con encabezado y la infraestructura ya no tiene conflictos de merge. [docs/aspectos.md:1–5](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/5aa889370dcf342ba06666893b97f8065b513de9/docs/aspectos.md#L1-L5). |
+| Estado calificado identificable | Cumple | Hash S9 congelado por fecha, indicado en encabezado. Runs exactos consultados fueron ejecutados después del cierre y solo corroboran ese código, no su despliegue antes del cierre. |
+| Nombres de ADR según la convención | Cumple | ADR 0001–0003 usan convención de nombres; [docs/adr/0003-desplegar-api-flask-en-dokploy.md:1–4](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/5aa889370dcf342ba06666893b97f8065b513de9/docs/adr/0003-desplegar-api-flask-en-dokploy.md#L1-L4). |
+| ADR aceptados no reescritos | No cumple | El ADR-0003 aceptado de Render en S8 fue eliminado y sustituido por otro 0003 de Dokploy sin preservar la decisión ni declarar nuevo ADR supersedes. [docs/adr/0003-desplegar-api-flask-en-dokploy.md:1–18](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/5aa889370dcf342ba06666893b97f8065b513de9/docs/adr/0003-desplegar-api-flask-en-dokploy.md#L1-L18). Se verificó el original aceptado en el hash S8. |
+| docs/ia.md al día para la semana | Cumple | Registro del 4 de octubre incluye implementación asistida, cambios, rechazos con motivo y validación; [docs/ia.md:44–98](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/5aa889370dcf342ba06666893b97f8065b513de9/docs/ia.md#L44-L98). |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No cumple | CI exacto success, pero no hay scanner/configuración/Quality Gate SonarCloud en el árbol; [.github/workflows/ci.yml:13–45](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/5aa889370dcf342ba06666893b97f8065b513de9/.github/workflows/ci.yml#L13-L45) solo prueba y build. |
+| Sin credenciales en el repositorio ni en el historial | No verificado | No hay credenciales reales hardcodeadas ni .env versionado en el snapshot; no se certifica todo el historial. Existe riesgo operativo distinto: métricas exponen request.path, que puede contener tokens de invitación. |
+| Contribución de todos los integrantes | No verificado | Cuatro firmas, 173 commits agregados en S9, para tres integrantes. Variantes deben consolidarse por evidencia de identidad; no se adivina la equivalencia. |
 
-## Estado global del proyecto (overall · punta actual de la misma rama)
+## Actions en el estado congelado
 
-- **Punta actual revisada**: `2c7d77a421ab95b89dd68d696d49277e9f36a45c 2026-09-27T23:42:39-05:00 algo` (`origin/master`)
-- **Veredicto**: sin trabajo nuevo de S9; punta con conflictos de merge sin resolver
-- Resumen: la rama `master` no se movió desde S8 (`2c7d77a`). La punta sigue siendo el merge con
-  marcadores de conflicto sin resolver en `.dockerignore:3`, `.env.example:1`, `Dockerfile:11`,
-  `docker-compose.yml:5`, `render.yaml:3` y `docs/evidencia.md:44`, lo que deja la infraestructura
-  como código inválida y el CI del hash en rojo (run 36378874812). Todas las piezas de S8 y anteriores
-  (cadena de aspectos navegable, ADRs argumentados, registro de IA con rechazos motivados y
-  verificación de propiedad de datos de S6) son línea base bajo CONTRATO §12 y no satisfacen las filas
-  de S9. Para esta evidencia faltan la porción nueva con IA y su cadena, la prueba que falle ante el
-  defecto del periodo, la medición contra umbral, la verificación de dependencias del periodo, la
-  auditoría de erosión, la decisión sobre el componente generativo, una entrada de IA de la semana y
-  SonarCloud.
+- [CI: success](https://github.com/ISCOUTB/AS_202620_EnAgenda/actions/runs/37306348930), 2026-10-05T11:58:07Z, SHA exacto del estado indicado.
+- [pages build and deployment: success](https://github.com/ISCOUTB/AS_202620_EnAgenda/actions/runs/37306347582), 2026-10-05T11:58:06Z, SHA exacto del estado indicado.
+## Alcance del barrido de seguridad
+Barrido estático sin credenciales reales; tokens de invitación se generan con secrets.token_urlsafe y el workflow usa claves efímeras de prueba. No hay .env versionado. No se certifica historia completa. Hallazgo de privacidad por lectura de código: los paths con tokens se agregan a http_requests_by_path y se publican en /metrics. Se recomienda usar plantillas de ruta/redactar tokens y restringir acceso a métricas; no se accedió a invitaciones reales.
 
-Pendientes que siguen abiertos:
-- Sin commits de S9: la punta es la de S8.
-- Sin artefactos del periodo S9: por CONTRATO §12 las filas 1, 2, 3, 6 y 7 pasan a No cumple; solo el
-  barrido de credenciales queda en Cumple.
-- Conflictos de merge sin resolver en seis archivos de infraestructura y en `docs/evidencia.md`.
-- CI del hash revisado en rojo.
-- Prueba que falle ante el defecto que cubre: sin evidencia.
-- Medición de escenario contra umbral: ausente.
-- Sin dependencias nuevas que verificar en el periodo.
-- Sin ADR sobre el componente generativo.
-- Sin SonarCloud (configuración, run y URL pública con Quality Gate), pendiente desde S5/S6.
-- `docs/aspectos.md` sin fila de encabezado.
+## Estado global del proyecto (overall · punta actual)
+
+Se resolvieron los conflictos de merge de infraestructura y el CI del hash S9 está en verde en ejecución posterior al cierre. El flujo S9 requería invitados.html, ausente en ese árbol: la plantilla y CSS llegaron después, junto a documentación y tabla de aspectos ampliadas. Se reconoce la corrección tardía sin modificar S9. La URL pública/HTTPS, medición y umbral siguen pendientes. La nueva observabilidad puede divulgar tokens por rutas crudas y debe normalizarse antes de exponer usuarios reales.
+
+El delta S9 contiene 11 commits respecto de S8; hay 4 commits posteriores a S9 en la misma rama. Los cambios tardíos solo afectan este overall y el avance S10, nunca el recuento congelado.
 
 ## Recuento y nota sugerida
 
-**1 de 10 criterios** de la ficha en Cumple.
+**3 de 10 criterios Cumple. Nota sugerida: 2.2 = 1 + 4 × (3/10).** Propuesta al docente; la nota final se fija en Moodle. La matriz transversal no integra este cálculo.
 
-**Nota sugerida preliminar (propuesta al docente; puede cambiar al cierre): 1.4 = 1 + 4 × (1/10).** La nota final la fija el profesor en Moodle.
+## Acciones prioritarias
 
-Bajo CONTRATO §12, el único criterio que se resuelve sobre el estado en la punta es el barrido de
-credenciales; las demás filas describen la entrega S9, cuyo periodo (`2c7d77a..origin/master`) está
-vacío: la evidencia previa es línea base y no se recalifica por existir.
+- Normalizar/redactar tokens en métricas y restringir /metrics: no publicar rutas crudas de invitaciones.
+- Crear prueba del flujo completo POST / → plantilla de invitados → creación → respuesta; un test directo a /crear-invitaciones omite la pantalla intermedia.
+- Configurar host/HTTPS, medir salud y flujo principal con umbral y línea base identificables.
+- Aportar ADR coherente de evolución del flujo y preservar decisiones aceptadas con un ADR sustituto para Dokploy.
+- Añadir auditoría de erosión del cambio, inventario verificado de propuestas/dependencias y decisión sobre componente generativo.
+- Integrar SonarCloud y publicar scanner, run y Quality Gate; aclarar asignación operativa S10.
 
-## No verificado / pendientes
+## Hallazgos cerrados con evidencia nueva
 
-- Prueba que falla ante el defecto: No verificado; no hay run en rojo, mutación ni procedimiento documentado del periodo S9. Queda como pregunta de sustentación.
-- Auditoría de erosión: no hay artefacto del periodo S9; la verificación de propiedad de datos de S6 es línea base y no satisface la fila.
-- Medición de escenario contra umbral: ausente.
-- Dependencias del periodo: el diff contra S8 está vacío, no hay nada que comprobar en PyPI.
-- Componente generativo: no hay componente ni ADR de no incorporarlo.
-- Conflictos de merge sin resolver en `Dockerfile`, `docker-compose.yml`, `render.yaml`, `.dockerignore`, `.env.example` y `docs/evidencia.md`.
-
-## Hallazgos para la planilla
-
-- La punta de `origin/master` (`2c7d77a`, 2026-09-27) es idéntica al hash calificado de S8: el periodo S9 está vacío.
-- Aplicado CONTRATO §12: sin artefacto del periodo, las filas 1, 2, 3, 6 y 7 pasan de Cumple a No cumple; solo el barrido de credenciales queda en Cumple.
-- Persisten marcadores de conflicto de merge sin resolver en `.dockerignore`, `.env.example`, `Dockerfile`, `docker-compose.yml`, `render.yaml` y `docs/evidencia.md`.
-- CI del hash revisado en rojo (run 36378874812); sin SonarCloud ni Quality Gate.
-- `docs/aspectos.md` no tiene fila de encabezado y su cadena no enlaza una medición; `docs/evidencia.md` está corrupto por conflictos.
-- Sin prueba que falle ante el defecto que cubre (No verificado, pregunta de sustentación).
-- La verificación de propiedad de datos de `docs/arquitectura/contextos-y-propiedad-de-datos.md:80` (S6) es línea base: no se recalifica como auditoría de erosión de S9.
-- Sin decisión sobre el componente generativo, exigida por la evidencia S9.
+- Conflictos de merge de Docker/Compose/ejemplos/evidencia ya no están presentes en snapshot S9; [Dockerfile:1–15](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/5aa889370dcf342ba06666893b97f8065b513de9/Dockerfile#L1-L15), [docs/evidencia.md:58–125](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/5aa889370dcf342ba06666893b97f8065b513de9/docs/evidencia.md#L58-L125).
+- Se restauró encabezado de aspectos en S9 y se amplió tabla después del cierre; [docs/aspectos.md:1–5](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/5aa889370dcf342ba06666893b97f8065b513de9/docs/aspectos.md#L1-L5), [docs/aspectos.md:5–12](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/c2077ac55a29562adc728734ca4c283ccb40f310/docs/aspectos.md#L5-L12).
+- Plantilla invitados.html agregada después del cierre; fallo identificado y corregido según registro de IA actual, [docs/ia.md:47–47](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/c2077ac55a29562adc728734ca4c283ccb40f310/docs/ia.md#L47-L47).
+- CI pasa para hash S9 y HEAD; ello no cierra SonarCloud ni garantiza el flujo UI completo.

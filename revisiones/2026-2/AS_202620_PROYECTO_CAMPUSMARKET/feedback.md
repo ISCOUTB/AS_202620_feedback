@@ -54,6 +54,10 @@ La entrega S8 llegó y está bien armada: el despliegue público quedó document
 
 Para cerrar el flanco transversal, dos cosas: (1) la evidencia de SonarCloud sigue sin ser auditable —hay configuración, pero falta el paso del analizador en el workflow y la URL pública del análisis con el estado del Quality Gate; una afirmación o una insignia no sustituyen el run; (2) no editen un ADR ya aceptado: cuando la decisión cambie, escriban uno nuevo y marquen el anterior como reemplazado. Sigan así con el nivel de detalle y de declaración honesta de límites que mostraron en esta entrega.
 
-## Semana 9 · S9 (revisión preliminar)
+## Semana 9 · S9 (revisión definitiva)
 
-La rama principal no avanzó desde la entrega anterior: no hay commits nuevos, así que todavía no hay nada de la entrega de generación verificada y trazable. Cuando empujen, la calificación sube sola al aparecer el trabajo del periodo. Mientras tanto, aprovechen para cerrar los dos flancos que siguen abiertos: incorporar el paso del analizador estático al workflow —hoy el análisis público existe y su Quality Gate está correcto, pero el pipeline no lo ejecuta y falta el run que lo acredite— y dejar de editar ADR ya aceptados sin declarar cuál los reemplaza.
+La entrega final incorpora una porción real de Catálogo y una cadena navegable hasta mutaciones y medición HTTP/MySQL bajo cuota. La auditoría amplía correctamente el alcance de dependencias y distingue pruebas locales de experiencia pública. Mantengan esa separación: aún falta medir EC-01 desde el navegador público con el conjunto completo, integrar el scanner Sonar y preservar los ADR aceptados. Revisen además los avisos vigentes de la versión de python-multipart.
+
+## Semana 10 · Segundo corte (avance preliminar)
+
+Para el segundo corte falta identificar el escenario operativo asignado por el docente. El despliegue y el health check responden; preparen la línea base, la intervención y el resultado comparable del reto, con métrica y límites de validez. No presenten el experimento de S9 como respuesta a una asignación todavía no confirmada. La sustentación y el pipeline en vivo quedan pendientes.

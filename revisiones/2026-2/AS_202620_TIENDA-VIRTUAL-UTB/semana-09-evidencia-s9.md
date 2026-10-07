@@ -1,104 +1,77 @@
-> Pasada temprana (previa al cierre del 2026-10-05T05:00:00Z): el hash y la nota son preliminares y pueden cambiar si el equipo empuja antes del cierre.
+# Evidencia S9 definitiva · Tienda virtual UTB
 
-# semana-09-evidencia-s9 · Tienda virtual UTB
+Revisión actualizada tras el cierre. Estado congelado al **2026-10-05T05:00:00Z** (domingo a medianoche en Colombia).
 
 | Campo | Valor |
 |---|---|
-| Repositorio | `https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB` |
-| Estado revisado | `bc38c9bab2830e8f2c855c0e36542d849565955e` en `origin/main` (2026-09-28T10:22:29-05:00) |
-| Cierre | 2026-10-05T05:00:00Z |
-| Revisor | auditoría local preliminar sobre clon público efímero |
+| Repositorio | https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB |
+| Rama principal remota | `main` |
+| Base S5 publicada | `3d732d740053c8f10ad4c618d3031024c72630bc` |
+| Base S8 | `858e78f9e34ee4e205bdc84982ed8b04bd0dbb0d` |
+| Estado revisado | `76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33` en `origin/main` (2026-10-04T18:07:32-05:00) |
+| Punta actual / S10 preliminar | `76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33` · 2026-10-04T18:07:32-05:00 |
+| Observado | 2026-10-06T21:28:33.520983Z |
 
-Esta pasada **no tiene corte**: se califica la punta actual del 2026-10-01. El periodo S9
-(`858e78f..bc38c9b`) tiene **cuatro commits** del 2026-09-28 que declaran la infraestructura de
-producción como código con Terraform (`4904d94`, `4665f80`, `f28563b`, `bc38c9b`), más un quinto
-commit `858e78f` ya calificado en S8. Bajo CONTRATO §12 las filas que describen la entrega S9 se
-deciden con la evidencia del periodo; la fila de credenciales y la matriz transversal se deciden
-sobre el estado en la punta. Existe también `master`, residual (2026-08-09): la rama principal es
-`main`.
+## Alcance y método
 
-## Matriz de la ficha
+Revisión de archivos y del historial mediante Git, sin ejecutar código, pruebas, scripts ni despliegues de estudiantes. Se consultó una vez el listado de runs de GitHub Actions; un run verde se limita a los pasos que declara su workflow y no acredita la sustentación, el flujo desplegado ni un Quality Gate omitido. No se consultaron etiquetas. No se leyó ningún PDF; el criterio PDF se excluye por decisión docente, sin penalización. Las mediciones documentadas se atribuyen al equipo y no se presentan como ejecuciones del revisor.
 
-| Criterio de evaluación | Evidencia técnica | Estado | Observaciones |
-|---|---|---|---|
-| Porción real del sistema construida con apoyo de IA | En el periodo: `infra/providers.tf`, `infra/neon-project.tf`, `infra/render-web-service.tf`, `infra/vercel-project.tf`, `infra/github-branch-protection.tf` y `.github/workflows/terraform.yml`; commits `4904d94`…`bc38c9b`; `docs/ia.md` (entrada 2026-09-28, herramienta «OpenCode (big-pickle)»). | Cumple | Porción real del sistema (IaC de despliegue) versionada en el periodo y construida con apoyo de IA declarado. |
-| Cadena completa navegable para esa porción | `docs/aspectos.md` no se modificó en el periodo (diff `858e78f..bc38c9b` vacío para ese archivo); sus filas `AC-01`…`AC-04` siguen siendo de S6/S8. | No cumple | No hay fila de aspectos que lleve a la porción S9; la cadena no existe para esta evidencia. |
-| ADR con la decisión argumentada por el equipo | `docs/adr/0006-infra-como-codigo-terraform.md`: contexto de los cinco sitios dispersos, alternativas (OpenTofu, Pulumi, Terraform Cloud, estado versionado) con motivo de descarte, decisión y consecuencias con las restricciones del proyecto (cuatro capas gratuitas, «secretos nunca en el repo»). | Cumple | ADR del periodo que argumenta la decisión con alternativas y restricciones; el propio documento se declara pendiente de aprobación final del equipo. |
-| Prueba que falla ante el defecto que cubre | El workflow `terraform.yml` corre `fmt`, `validate` y `tflint`, pero no hay run en rojo, prueba de mutación ni procedimiento documentado que demuestre un fallo inducido en el periodo. | No verificado | La verificación estática es correcta pero no es la prueba que falla ante el defecto; queda como pregunta de sustentación (CONTRATO §13). |
-| Medición del escenario asociado | No hay medición nueva del periodo contrastada con umbral; `docs/despliegue-terraform.md` documenta el runbook, no una medición. | No cumple | Sin medición del escenario asociado a la porción S9. |
-| `docs/ia.md` con lo aceptado, lo corregido y lo rechazado con motivo | `docs/ia.md` (entrada 2026-09-28) documenta lo aceptado y varios rechazos con motivo técnico: descarta `terraform import`, Terraform Cloud, el estado cifrado/versionado, el subdirectorio por proveedor, `terraform plan` en CI y exigir el check `sonarcloud`. | Cumple | Extracto del periodo con lo aceptado y lo rechazado con su motivo técnico. |
-| Auditoría de erosión sobre límites de contexto y propiedad de datos | El barrido `erosión\|límite de contexto` en `docs/` (excluido `docs/openapi`) no devuelve coincidencias. | No cumple | No hay auditoría de erosión del periodo; la deuda de esquema (V6) se menciona en ADR-0006 pero no es una auditoría de erosión. |
-| Dependencias propuestas verificadas en su registro oficial | El diff del periodo contra `858e78f` está vacío en `package.json`, `backend/requirements.txt`, `frontend/package.json` y demás manifiestos. | No cumple | La porción S9 añade proveedores Terraform (`infra/.terraform.lock.hcl`), fuera de los registros npm/PyPI que designa el método; no hay dependencias de esos manifiestos que verificar. |
-| Sin credenciales en código, ejemplos ni documentación generada | Barrido de patrones de credenciales sobre la punta: sin coincidencias; `infra/terraform.tfvars.example` sin valores reales y `infra/README.md` indica exportar los tokens por shell; `.gitignore` excluye `*.tfstate` y `terraform.tfvars`; `git log -S'BEGIN PRIVATE KEY'` sin coincidencias. | Cumple | Sin credenciales reales; `.env.example` versionado sin valores. |
-| Componente generativo evaluado, con costo y latencia, o ADR de no incorporarlo | No hay componente generativo en el sistema ni ADR que decida no incorporarlo; el barrido `generativ\|llm\|openai\|anthropic\|gemini` no devuelve coincidencias en `docs/`. | No cumple | La porción S9 es IaC; no hay decisión registrada sobre un componente generativo. |
+El delta se contrasta contra S8; los artefactos previos sirven de línea base y no vuelven a premiarse por existir. Los cambios tardíos se separan en overall.
 
-## Matriz transversal (CONTRATO §11)
+## Matriz de la ficha S9
 
-| Criterio | Evidencia | Estado | Observaciones |
-|---|---|---|---|
-| Repositorio en la organización, con el nombre de la convención y público | `https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB`, clonado sin autenticación; rama principal `origin/main`. | Cumple | Nombre `AS_202620_<PROYECTO>` conforme y visibilidad pública. |
-| Estructura mínima presente | En `bc38c9b`: `README.md`, `docs/arc42/`, `docs/adr/` (0001-0006), `docs/c4/`, `docs/aspectos.md` y `docs/ia.md`. | Cumple | Las seis rutas; arc42 vive en un único archivo (desviación de ruta admitida por CONTRATO §2). |
-| Estado calificado identificable | `origin/main`, `bc38c9bab2830e8f2c855c0e36542d849565955e`, 2026-09-28T10:22:29-05:00. | Cumple | Sin cierre en esta pasada: se identifica la punta actual. |
-| Nombres de ADR según la convención | `docs/adr/0001`…`0006` en kebab-case; el filtro de la convención no devuelve residuos. | Cumple | — |
-| ADR aceptados no reescritos | `git log --follow`: ADR-0001 creado `f4602a3` (2026-08-21) y editado `e8ae57d` (2026-08-31); ADR-0002 creado `0416e62` (2026-09-15) y editado `befb0bc` (2026-09-27), sin ADR sucesor declarado. | No cumple | Se editaron ADR aceptados sin declarar reemplazo; ya venía registrado desde S7/S8. |
-| `docs/ia.md` al día para la semana | Commit `4904d94` (2026-09-28) añade la entrada del periodo, con lo aceptado y lo rechazado con motivo. | Cumple | El registro creció dentro del periodo S9. |
-| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | Runs del hash revisado (`head_sha=bc38c9b`): 324 runs, en su mayoría del cron `Keep-alive`; hay al menos dos en `failure` ([36826802735](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/actions/runs/36826802735) y [36802694698](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/actions/runs/36802694698)). No hay URL pública de análisis con Quality Gate verificable. | No cumple | Hay runs en rojo sobre el hash revisado y falta la evidencia de SonarCloud que exige CONTRATO §8. |
-| Sin credenciales en el repositorio ni en el historial | Barridos de credenciales sobre `bc38c9b` sin coincidencias más allá de variables `token` de un HTML de terceros en `docs/openapi/`; sin `.env` versionado; `.gitignore` cubre el estado de Terraform. | Cumple | Sin credenciales reales. |
-| Contribución de todos los integrantes | `git shortlog -sne bc38c9b` consolidado por correo idéntico: Jasen/Jasen Yukopila (15), RAZOR7150 (11), pxtroniwnl (10) y shalom-A26 (2). | Cumple | Los cuatro integrantes declarados en EQUIPOS.md tienen commits. |
+| Criterio | Estado | Evidencia y observaciones |
+|---|---|---|
+| Porción real del sistema construida con apoyo de IA | Cumple | [docs/entrega-cadena-ia.md:7–23](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/docs/entrega-cadena-ia.md#L7-L23) y [backend/app/modules/inventory/repository.py:1–13](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/backend/app/modules/inventory/repository.py#L1-L13): separación real de stock respecto de Catálogo, incorporada en el delta S8→S9; apoyo de IA identificado en [docs/ia.md:26](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/docs/ia.md#L26). |
+| Cadena completa navegable para esa porción | Cumple | [docs/aspectos.md:37](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/docs/aspectos.md#L37) conduce a ADR 0008, contratos, código y entrega; esta última enlaza la prueba y el medidor. Cadena recorrida y destinos presentes; aceptación del ADR se valora por separado. |
+| ADR con la decisión argumentada por el equipo | No cumple | [docs/adr/0008-separar-catalogo-inventario.md:3–6](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/docs/adr/0008-separar-catalogo-inventario.md#L3-L6) y [docs/adr/0008-separar-catalogo-inventario.md:48–52](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/docs/adr/0008-separar-catalogo-inventario.md#L48-L52): hay alternativas y razones del proyecto, pero el documento declara explícitamente que la decisión colectiva está pendiente. El commit no ratifica por sí solo la propuesta. |
+| Prueba que falla ante el defecto que cubre | Cumple | [docs/entrega-cadena-ia.md:25–51](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/docs/entrega-cadena-ia.md#L25-L51) documenta cómo reintroducir la columna indebida y el import cruzado, con fallo y restauración; [backend/tests/test_inventory.py:19–22](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/backend/tests/test_inventory.py#L19-L22). Se admite el procedimiento documentado que exige la ficha; no fue ejecutado por el revisor. |
+| Medición del escenario asociado | Cumple | [docs/entrega-cadena-ia.md:54–85](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/docs/entrega-cadena-ia.md#L54-L85): cinco usuarios concurrentes, 5/5 respuestas correctas, cero errores y salud posterior; 173,81 ms total, frente al umbral explícito. Alcance local Uvicorn/SQLite, no producción. |
+| docs/ia.md con lo aceptado, lo corregido y lo rechazado con motivo | Cumple | [docs/ia.md:26](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/docs/ia.md#L26): aceptado para candidato, correcciones de propiedad/imports/documentación y descartes razonados; la validación humana final sigue declarada pendiente, sin ocultarla. |
+| Auditoría de erosión sobre límites de contexto y propiedad de datos | Cumple | [docs/violaciones-s6.md:7–43](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/docs/violaciones-s6.md#L7-L43) contrastada con [backend/tests/test_inventory.py:19–22](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/backend/tests/test_inventory.py#L19-L22) y [backend/tests/test_architecture.py:33–57](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/backend/tests/test_architecture.py#L33-L57): dueño único, detección AST y límites del método explícitos; V5/V6 siguen como deuda. |
+| Dependencias propuestas verificadas en su registro oficial | Cumple | [docs/entrega-cadena-ia.md:164–176](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/docs/entrega-cadena-ia.md#L164-L176): no se añaden dependencias de ejecución y el diff de manifiestos Python/frontend lo confirma; se documenta la revisión de versiones y procedencias PyPI/npm existentes. Cumplimiento documental acotado, sin ejecutar descargas ni auditar todo el árbol transitivo. |
+| Sin credenciales en código, ejemplos ni documentación generada | Cumple | Barrido estático del árbol de este hash, incluidos ejemplos y Markdown, sin credenciales reales detectadas. La coincidencia de [compose.yaml:4–8](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/compose.yaml#L4-L8) es interpolación obligatoria de entorno; los valores de prueba de [docs/entrega-cadena-ia.md:125–125](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/docs/entrega-cadena-ia.md#L125-L125) están identificados como efímeros. No prueba revocación de credenciales compartidas fuera de Git. |
+| Componente generativo evaluado, con costo y latencia, o ADR de no incorporarlo | No cumple | [docs/adr/0009-sin-componente-generativo.md:25–42](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/docs/adr/0009-sin-componente-generativo.md#L25-L42): el ADR existe y justifica no generar en producción, pero dice que el equipo aún debe aceptarlo. Ratificar o rechazar; la falta de aceptación no equivale a una decisión aprobada. |
 
-## Estado global del proyecto (overall · punta actual de la misma rama)
+## Matriz transversal · CONTRATO §11
 
-- **Punta actual revisada**: `bc38c9bab2830e8f2c855c0e36542d849565955e` 2026-09-28T10:22:29-05:00 `Corrige la region de Render, que estaba sin verificar, y registra el estado real de las credenciales` (`origin/main`)
-- **Veredicto**: con avance de S9 (IaC con Terraform) y pendientes operativos
-- Resumen: la punta de `main` va cuatro commits por delante del hash calificado de S8. El periodo
-  declara la infraestructura de producción como código con Terraform (cuatro proveedores), con
-  workflow de verificación estática, ADR-0006, runbook de corte, `docs/pendientes.md` y una entrada
-  de `docs/ia.md` que documenta lo aceptado y lo rechazado. Ese avance satisface la porción real con
-  IA (fila 1), el ADR (fila 3) y el extracto de `docs/ia.md` (fila 6); no cumple la cadena de
-  aspectos (fila 2, `docs/aspectos.md` sin tocar), la prueba que falla (fila 4), la medición (fila 5),
-  la auditoría de erosión (fila 7), las dependencias de los manifiestos (fila 8) ni la decisión sobre
-  el componente generativo (fila 10). Se mantienen las no conformidades transversales: ADR aceptados
-  reescritos, `docs/ia.md` con pendientes, y pipeline con runs en rojo y sin Quality Gate público. El
-  despliegue real sigue siendo el del 2026-09-27: **no se ejecutó ningún `apply`**.
-
-Pendientes que siguen abiertos:
-- Cadena de aspectos para la porción S9: `docs/aspectos.md` no se actualizó en el periodo.
-- Prueba que falle ante el defecto: solo hay `fmt`/`validate`/`tflint`, no un defecto inducido.
-- Medición del escenario asociado a la porción S9.
-- Auditoría de erosión del periodo.
-- Verificación de las dependencias de los manifiestos del periodo (no hubo).
-- Decisión registrada sobre el componente generativo.
-- Runs `Keep-alive` en rojo y falta el Quality Gate público de SonarCloud.
-- ADR-0001 (`e8ae57d`) y ADR-0002 (`befb0bc`) editados tras aceptarse sin sucesor.
-- El despliegue de producción no se migró: falta crear los cuatro tokens de Terraform y ejecutar el `apply`.
+| Criterio | Estado | Evidencia y observaciones |
+|---|---|---|
+| Repositorio en la organización, con el nombre de la convención y público | Cumple | Clon público correcto del repositorio vigente ISCOUTB; [README.md:1–3](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/README.md#L1-L3). |
+| Estructura mínima presente | Cumple | Árbol Git con README, docs/arc42, docs/adr, docs/c4, docs/aspectos.md y docs/ia.md; [README.md:224–228](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/README.md#L224-L228). |
+| Estado calificado identificable | Cumple | Rama main; hash y fecha exactos del encabezado, último commit ≤ cierre, sin etiquetas. |
+| Nombres de ADR según la convención | Cumple | ADR 0001–0009 siguen NNNN-titulo-en-kebab-case.md; [docs/adr/0008-separar-catalogo-inventario.md:3–6](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/docs/adr/0008-separar-catalogo-inventario.md#L3-L6). |
+| ADR aceptados no reescritos | No cumple | [docs/adr/0001-monolito-modular.md:19–35](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/docs/adr/0001-monolito-modular.md#L19-L35): el historial confirma edición posterior a aceptación en e8ae57df776b3d171957f4d0c8a1e19cfb968ba5. El reemplazo 0003–0006 por 0007 sí está declarado en [docs/adr/0007-despliegue-dokploy.md:3–5](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/docs/adr/0007-despliegue-dokploy.md#L3-L5), pero no cierra la reescritura histórica de 0001. |
+| docs/ia.md al día para la semana | Cumple | [docs/ia.md:26](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/docs/ia.md#L26) añadida en el delta S9, con correcciones y descartes técnicos. |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No cumple | [Pruebas del hash en success](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/actions/runs/37242837748); [.github/workflows/tests.yml:64–80](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/.github/workflows/tests.yml#L64-L80) omite el scanner si falta SONAR_TOKEN y [docs/pendientes.md:20–23](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/docs/pendientes.md#L20-L23) aún solicita configurarlo. No se acredita run del scanner más Quality Gate público de la revisión; verde global no basta. |
+| Sin credenciales en el repositorio ni en el historial | Cumple | Barrido del árbol sin credenciales reales y búsqueda histórica de patrones de alta especificidad sin incidentes confirmados. [compose.yaml:4–8](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/compose.yaml#L4-L8). Alcance estático; la rotación externa pendiente en [docs/pendientes.md:17–18](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/docs/pendientes.md#L17-L18) debe verificarse por separado. |
+| Contribución de todos los integrantes | No verificado | El historial presenta varias firmas y variantes; no hay correspondencia individual verificada suficiente para afirmar contribución de todos. No se atribuyen cuentas por semejanza de nombre. |
 
 ## Recuento y nota sugerida
 
-**4 de 10 criterios** de la ficha en Cumple.
+**8 de 10 criterios Cumple. Nota sugerida: 4.2 = 1 + 4 × (8/10). Propuesta al docente; la nota final se fija en Moodle.** No verificado no se convierte en Cumple ni en una ejecución fallida.
 
-**Nota sugerida preliminar (propuesta al docente; puede cambiar al cierre): 2.6 = 1 + 4 × (4/10).** La nota final la fija el profesor en Moodle.
+## Estado global del proyecto (overall)
 
-Bajo CONTRATO §12, las filas 1, 3 y 6 se resuelven con evidencia del periodo S9 (la IaC con Terraform,
-su ADR-0006 y la entrada de `docs/ia.md`), y el barrido de credenciales sobre la punta; las demás
-filas de la entrega S9 carecen de artefacto del periodo y quedan en No cumple o No verificado.
+Punta de la misma rama: `76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33` (2026-10-04T18:07:32-05:00). Hay **8 commits en el delta S8→S9** y **0 commits posteriores al cierre S9**. El nuevo incremento de inventario ya está presente en S9; no hay commits tardíos en la punta revisada. La migración documental a Dokploy reemplaza Vercel/Render/Neon, pero el dominio continúa pendiente. Las pruebas y mediciones documentadas son locales.
 
-## No verificado / pendientes
 
-- Prueba que falla ante el defecto: **No verificado**. El workflow `terraform.yml` valida estáticamente
-  pero no hay run en rojo, prueba de mutación ni procedimiento documentado del periodo. Queda como
-  pregunta de sustentación.
-- Medición de escenarios: no hay medición nueva del periodo.
-- Auditoría de erosión: no existe artefacto del periodo que la documente.
-- Dependencias del periodo: los manifiestos npm/PyPI no cambiaron; los proveedores Terraform quedan
-  fuera de los registros que designa el método.
-- Componente generativo: no existe ni hay ADR de no incorporarlo.
-- La migración a Terraform no se aplicó: producción sigue siendo la del 2026-09-27.
 
-## Hallazgos para la planilla
+### Hallazgos abiertos
 
-- S9 con avance real: IaC de despliegue con Terraform en `infra/` (cuatro proveedores), workflow de verificación estática, ADR-0006 con alternativas y `docs/ia.md` actualizado con rechazos motivados.
-- `docs/aspectos.md` no se tocó en el periodo: no hay fila de trazabilidad para la porción S9.
-- No hay prueba que falle ante el defecto, medición del escenario, auditoría de erosión ni decisión sobre componente generativo.
-- Pipeline del hash revisado con runs `Keep-alive` en rojo y sin Quality Gate público de SonarCloud.
-- ADR-0001 y ADR-0002 editados tras aceptarse sin declarar reemplazo.
-- El `apply` de Terraform no se ejecutó: el despliegue real sigue siendo el del 2026-09-27.
+- Ratificar ADR 0008 y 0009 con decisión y razones propias del equipo; ambos se declaran propuestas.
+- Registrar dominio público vigente y evidencias fechadas de salud/flujo Dokploy; el costo del servidor y backups está por confirmar.
+- Completar SonarCloud: scanner realmente ejecutado y Quality Gate público de la revisión.
+- Corregir contradicciones del README y pendientes que todavía presentan Inventario vacío.
+- Precisar asignación S10 y registrar línea base, experimento, resultado y límites de validez.
+- Confirmar correspondencia de autoría sin inferencias y verificar rotación de credenciales compartidas fuera del repositorio.
+
+### Hallazgos cerrados o sustituidos con evidencia actual
+
+- Cadena, prueba negativa, medición y auditoría S9 ya están documentadas y enlazadas: [docs/entrega-cadena-ia.md:7–23](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/docs/entrega-cadena-ia.md#L7-L23).
+- La migración a Terraform pendiente deja de ser el plan vigente: ADR 0007 reemplaza 0003–0006; no se declara ejecutado Terraform. [docs/adr/0007-despliegue-dokploy.md:3–12](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/docs/adr/0007-despliegue-dokploy.md#L3-L12).
+- CI del hash actual pasa [Pruebas](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/actions/runs/37242837748); el cron keep-alive fue retirado. Esto no cierra SonarCloud ni demuestra despliegue.
+
+## Próximos pasos
+
+La separación Catálogo–Inventario ya tiene una cadena sólida: prueba negativa, medición local y auditoría de propiedad de datos. Falta que el equipo ratifique las decisiones de separación y de no incorporar generación; ambas siguen como propuestas. Corrijan además el README que aún presenta Inventario vacío y aporten la evidencia pública del scanner y Quality Gate.

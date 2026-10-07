@@ -6,14 +6,16 @@
 |---|---|
 | Equipo | Calificación automática |
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica` |
-| Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo |
-| URL del sistema desplegado | — |
-| Ultima revision | 2026-10-01 |
+| Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo; ver comprobación actual de contribución más abajo. |
+| URL del sistema desplegado | https://quantia-utb.onrender.com · ver comprobación y límites en S10 |
+| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
 
 ## Estado por entrega
 
-| Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
+| Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 9 | S9 · definitiva | `master` · `72011933ff2238eaec697f565572fec6872a3cbc` · 2026-10-04T22:36:29-05:00 | 9/10 | Pendiente por limitación de verificación; intervalo documental 4.6–5.0, sin descontar la comprobación bloqueada | sí, 2026-10-06 |
+| 10 | Segundo corte · preliminar | `master` · `72011933ff2238eaec697f565572fec6872a3cbc` · 2026-10-04T22:36:29-05:00 | 3/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `4f6f568` · 2026-08-09T13:16:43-05:00 | 7/9 | no aplica | sí |
 | 2 | S2 | `d4302f4` (2026-08-16T23:17:26-05:00) | 3/9 | no aplica | si |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `dd422fb` · 2026-08-23T23:52:23-05:00 | 6/9 | no se publica | sí |
@@ -23,8 +25,6 @@
 | 7 | S7 | `2269ca5` (2026-09-20T21:48:00-05:00) | 10/10 | 5.0 (propuesta) | sí |
 | 8 | S8 | `1f8f76d` (2026-09-27T19:55:57-05:00) | 10/10 graduables (2 filas de despliegue pendientes) | 5.0 (provisional) | si |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
-| 9 | Evidencia S9 · Generación verificada y trazable (preliminar) | `1f8f76d` (2026-09-27T19:55:57-05:00) · punta sin commits nuevos desde S8 | 1/10 | 1.4 (prelim.) | si |
-| 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
 | 11 | Evidencia S11 · Fallos parciales y decisión de extracción | | | no aplica | |
 | 12 | Evidencia S12 · Estrategia de datos y eventos | | | no aplica | |
 | 12 | Taller aplicado · Mensajes y consistencia | | | no aplica | |
@@ -34,6 +34,25 @@
 | 17 | Aplicación de cambios y cierre arquitectónico | | | | |
 
 ## Lo que se arrastra
+
+Estado vigente observado en la punta citada en [S10](semana-10-corte2.md). Las correcciones tardías no cambian S9. El registro histórico siguiente conserva su contexto, pero no sustituye esta actualización ni implica cerrar hallazgos no revalidados.
+
+| Hallazgo actual | Estado | Evidencia y próximo paso |
+|---|---|---|
+| Aportar escenario operativo asignado para S10 y distinguirlo de EC-07/EC-08 elegidos en el proyecto. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Integrar scanner Sonar con run y Quality Gate del hash; demostrar bloqueo de integración. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Mitigar el consumo de cuota de POST /distractores sin autenticación, riesgo reconocido en ADR-0013; no se usó esa ruta durante esta revisión. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Mantener revisión humana de calidad y equivalencias; el 73 % válido no habilita aceptación automática de propuestas. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Conservar constancia del ajuste de enlaces ADR-0007, sin adoptar una excepción local a la regla del curso. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Completar barrido independiente de secretos cuando se resuelva el bloqueo del entorno revisor; no es incumplimiento demostrado del equipo. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| La prueba automática de dueño único sigue pendiente (V-5), aunque la porción declara propiedad y la auditoría de erosión está documentada. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| La ausencia de porción, cadena y extracto IA de la preliminar queda superada por RF-11/A-06. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| La evaluación generativa, costo/latencia y proveedor externo en C4 ya cuentan con evidencia; dataset y resultados se inspeccionaron. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| El ADR-0014 aclara que la edición histórica del ADR-0007 fue de cuatro enlaces; no borra el hecho ni modifica el contrato. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| El frontend y health check antes diferidos pudieron consultarse en la revisión actual, sin recalificar S8. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+
+<details>
+<summary>Registro histórico previo a esta revisión (estados a la fecha de cada observación)</summary>
 
 | Hallazgo | Primera vez que se detectó | Sigue abierto | Qué se le dijo al equipo |
 |---|---|---|---|
@@ -102,22 +121,29 @@
 | Componente generativo (LLM para distractores, ADR-0005) sin conjunto de evaluación, costo por operación ni latencia, ni contenedor externo en el C4 nivel 2. | S9 (prelim.) | si | Evaluar el componente con resultados, costo y latencia, y reflejarlo en el C4 nivel 2. |
 | Sin auditoría de erosión del periodo ni verificación de dependencias añadidas en S9. | S9 (prelim.) | si | Documentar límites de contexto/propiedad de datos y las dependencias del periodo. |
 
+</details>
+
 ## Estado del contrato del repositorio
+
+Actualizado desde la evaluación de la punta actual; no altera la matriz congelada de S9.
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
-| Nombre y visibilidad del repositorio | Cumple | Público y con el nombre de la convención (S8) |
-| Estructura mínima | Cumple | Las seis rutas presentes en `1f8f76d` |
-| Convención de nombres de ADR | Cumple | `0001` a `0012`, todos `NNNN-kebab-case.md` |
-| ADR aceptados sin reescribir | No cumple | `ADR-0007` (aceptado el 2026-09-13) se edita el 2026-09-26 (`1c8bcfb`) sin reemplazo declarado; la edición solo cambia enlaces |
-| `docs/ia.md` al día | No cumple (S9) | Documenta lo aceptado y lo rechazado, pero la última entrada es del 27/09 (S8); sin entrada del periodo S9 |
-| Sin credenciales en el repositorio ni en el historial | Cumple | `git grep` §9 y `log -S` sin coincidencias; sin `.env` versionado |
-| Contribución de todos los integrantes | Cumple | 4 cuentas para los 4 integrantes (S8) |
-| Pipeline en verde | Cumple | Run `36364030158` (`success`) sobre el hash calificado: https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/actions/runs/36364030158 |
-| Pipeline, SonarCloud y Quality Gate públicos | No cumple | CI verde, pero el workflow no invoca el scanner y no hay `sonar-project.properties`; solo enlace a SonarCloud |
-| Etiqueta corte-1 (corte 1) | Cumple | `201acac`, 2026-09-07T04:34:17Z, antes del cierre |
+| Repositorio en la organización, con el nombre de la convención y público | Cumple | Clon git público ISCOUTB/AS_202620_Sistema-de-calificacion-automatica; rama master y nombre conforme. |
+| Estructura mínima presente | Cumple | README, docs/arc42, docs/adr, docs/c4, docs/aspectos.md y docs/ia.md presentes; la fila [docs/aspectos.md:40](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/72011933ff2238eaec697f565572fec6872a3cbc/docs/aspectos.md#L40) enlaza la porción. |
+| Estado calificado identificable | Cumple | 72011933ff2238eaec697f565572fec6872a3cbc, 2026-10-04T22:36:29-05:00, último master anterior al cierre; HEAD coincide. |
+| Nombres de ADR según la convención | Cumple | Inventario docs/adr: 0001–0014, nombres conformes NNNN-kebab-case.md. [docs/adr/0014-dejar-constancia-del-ajuste-de-enlaces-en-adr-0007.md:1–6](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/72011933ff2238eaec697f565572fec6872a3cbc/docs/adr/0014-dejar-constancia-del-ajuste-de-enlaces-en-adr-0007.md#L1-L6). |
+| ADR aceptados no reescritos | No cumple | Historial de ADR-0007 confirma creación c0f976d y edición 1c8bcfb el 26-sep tras aceptación. ADR-0014 explica cuatro cambios de enlace y conserva la decisión, pero no reemplaza el ADR ni borra la edición: [docs/adr/0014-dejar-constancia-del-ajuste-de-enlaces-en-adr-0007.md:14–26](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/72011933ff2238eaec697f565572fec6872a3cbc/docs/adr/0014-dejar-constancia-del-ajuste-de-enlaces-en-adr-0007.md#L14-L26), [docs/adr/0014-dejar-constancia-del-ajuste-de-enlaces-en-adr-0007.md:64–68](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/72011933ff2238eaec697f565572fec6872a3cbc/docs/adr/0014-dejar-constancia-del-ajuste-de-enlaces-en-adr-0007.md#L64-L68). Su regla local más flexible no modifica el contrato del curso; queda aclarada la naturaleza del cambio, no cumplimiento retroactivo. |
+| docs/ia.md al día para la semana | Cumple | Entrada S9 actualizada hasta el commit final; acepta, corrige y rechaza con motivo técnico: [docs/ia.md:215–232](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/72011933ff2238eaec697f565572fec6872a3cbc/docs/ia.md#L215-L232). S10 requiere registro de su trabajo cuando se identifique el reto. |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No cumple | [CI del hash final success](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/actions/runs/37260121474). [.github/workflows/ci.yml:20–60](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/72011933ff2238eaec697f565572fec6872a3cbc/.github/workflows/ci.yml#L20-L60) instala y prueba backend/frontend sin invocación Sonar; enlace genérico en [README.md:67–68](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/72011933ff2238eaec697f565572fec6872a3cbc/README.md#L67-L68) no acredita scanner ni Quality Gate del hash. |
+| Sin credenciales en el repositorio ni en el historial | No verificado | El barrido independiente de snapshot e historial no concluyó por interrupción de herramienta. La revisión documental [docs/evidencia/auditoria-s9.md:130–146](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/72011933ff2238eaec697f565572fec6872a3cbc/docs/evidencia/auditoria-s9.md#L130-L146) explica las coincidencias de patrones citados, pero no sustituye la verificación pendiente. |
+| Contribución de todos los integrantes | Cumple | README mapea explícitamente las cuatro cuentas a integrantes: [README.md:9–13](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/72011933ff2238eaec697f565572fec6872a3cbc/README.md#L9-L13). Shortlog del hash observado: cuatro firmas con 91, 44, 27 y 23 commits (185 total); sin correos publicados. Esta evidencia acredita presencia, no igualdad de esfuerzo ni comprensión individual. |
 
 ## Contribución por integrante
+
+Actualización agregada del 2026-10-06: 185 commits en cuatro firmas explícitamente asociadas a los cuatro integrantes en README: distribución 91/44/27/23. No se publican correos ni se infiere comprensión individual.
+
+La tabla individual conservada abajo corresponde al registro histórico anterior; no se infieren nuevas correspondencias entre cuentas y personas.
 
 | Integrante | Usuario de GitHub | Commits (a S8, `1f8f76d`) | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
 |---|---|---:|---:|---:|---|
@@ -130,5 +156,8 @@ Corrección aceptada (hallazgo 8 de `correcciones_feedback.md`): la tabla anteri
 
 ## Preguntas abiertas para la sustentación
 
-- ¿Por qué el esqueleto y el README del stack entraron 1 y 2 horas después del cierre de S3?
-- ¿Cuándo entregarán el run en verde del pipeline sobre el esqueleto ya existente?
+Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
+
+- Fallo: si el proveedor devuelve 429, JSON inválido o tarda más del límite, ¿cómo mantienen disponible la calificación y comprueban esa independencia en el despliegue?
+- Costo: con los tokens medidos por solicitud, ¿cuántos exámenes agotan primero la cuota y cómo impedirán que una ruta pública la consuma sin control?
+- Medición: al observar 44 de 60 propuestas válidas y errores de etiquetado, ¿qué cambiarían en el conjunto, la revisión o la implementación antes de ampliar el uso?
