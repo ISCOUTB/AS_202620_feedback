@@ -60,24 +60,10 @@ Quedan pendientes la verificación de salud, los logs estructurados, una métric
 
 Mantengan el registro de uso de IA al día (hoy no crece desde agosto y no documenta rechazos con motivo) y repartan el trabajo: dos integrantes siguen sin aparecer en el historial de commits. La higiene de secretos sí está bien resuelta: las credenciales se toman del entorno y del almacén del proveedor, sin nada versionado.
 
-## Semana 9 · S9 (pasada temprana, previa al cierre)
+## Semana 9 · S9 (revisión definitiva)
 
-En esta pasada temprana la rama principal no se movió desde la entrega anterior: el periodo de la
-evidencia está vacío. Bajo la regla del contrato, la evidencia previa no se recalifica por existir.
+El estado al cierre es el mismo de la semana anterior y no contiene una porción nueva S9. Falta la cadena con ADR, prueba sensible al defecto, medición y auditoría de erosión, además del registro de IA y la decisión sobre componente generativo. La reorganización y autenticación de octubre llegan después del cierre y se reconocen en el estado actual, sin cambiar esta revisión.
 
-Qué falta para cerrarla antes del cierre:
+## Semana 10 · Segundo corte (avance preliminar)
 
-- Empujar la porción del sistema construida con apoyo de IA, con sus rutas de código y sus commits.
-- Llevar su cadena completa en la tabla de aspectos: escenario, elementos C4, ADR, código, prueba y
-  medición, navegable hasta la evidencia.
-- La prueba que falla ante el defecto que cubre (run en rojo, prueba de mutación o procedimiento
-  documentado).
-- La medición del escenario asociado, contrastada con su umbral.
-- El registro de uso de IA de la semana, con lo aceptado y al menos un rechazo con su motivo.
-- La auditoría de erosión sobre límites de contexto y propiedad de datos.
-- La verificación de las dependencias propuestas en su registro oficial.
-
-Además: el pipeline sigue en rojo y conviene recuperar el verde antes de seguir; falta decidir en un
-ADR la no incorporación de un componente generativo (hoy no hay ni componente ni decisión); el registro
-de IA no crece desde agosto; y dos integrantes declarados siguen sin commits visibles en el historial.
-La higiene de secretos sigue correcta.
+Primero recuperen el pipeline y hagan que incluya también las pruebas de contratos, préstamos y recursos. Revisen la conversión de la duración del token a número, actualicen documentación y configuración de arranque y publiquen la URL del entorno. Para el reto, falta identificar la asignación, medir línea base y resultado y añadir observabilidad y costo. La defensa queda pendiente del docente.

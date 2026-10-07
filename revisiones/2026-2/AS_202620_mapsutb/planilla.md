@@ -6,14 +6,16 @@
 |---|---|
 | Equipo | mapsutb |
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_mapsutb` |
-| Integrantes y su usuario de GitHub | Carlos Alberto Galvis Zuluaga · Carlos David Manrique Fals · Nerlis Nikol Otero Perez · Isabel Sofia Paez Matallana — cuentas observadas en el historial: `charlygz21`, `nerlis-otero`, `CarlosManrique-1397`, `i-matallana` (correspondencias por confirmar con el docente) |
-| URL del sistema desplegado | — |
-| Ultima revision | 2026-10-01 |
+| Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Carlos Alberto Galvis Zuluaga · Carlos David Manrique Fals · Nerlis Nikol Otero Perez · Isabel Sofia Paez Matallana — cuentas observadas en el historial: `charlygz21`, `nerlis-otero`, `CarlosManrique-1397`, `i-matallana` (correspondencias por confirmar con el docente); ver comprobación actual de contribución más abajo. |
+| URL del sistema desplegado | https://mapsutb.web.app/ · ver comprobación y límites en S10 |
+| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
 
 ## Estado por entrega
 
-| Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
+| Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 9 | S9 · definitiva | `master` · `1b296a37c575a751e99df1a1b288d70efba03d56` · 2026-10-02T12:58:33-05:00 | 8/10 | Pendiente por limitación de verificación; intervalo documental 4.2–4.6, sin descontar la comprobación bloqueada | sí, 2026-10-06 |
+| 10 | Segundo corte · preliminar | `master` · `1b296a37c575a751e99df1a1b288d70efba03d56` · 2026-10-02T12:58:33-05:00 | 2/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `7e56ad3` · 2026-08-09T23:27:46-05:00 | 5/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `1cf1576` · 2026-08-16T21:26:05-05:00 | 4/9 | 2.8 | sí (revisión manual confirmatoria) |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `ed55eda` · 2026-08-23T21:44:05-05:00 | 5/9 | no se publica | sí |
@@ -23,8 +25,6 @@
 | 7 | S7 | `5e2fdd5` (2026-09-20T21:15:28-05:00) | 10/10 | 5.0 | sí (auditoría definitiva corregida) |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `8cfe4581` (2026-09-27T16:35:57-05:00) | 10/10 | 5.0 (propuesta; 2 filas de despliegue pendientes) | sí (definitiva) |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
-| 9 | Evidencia S9 · Generación verificada y trazable | `0190115c` (2026-10-01T14:53:58-05:00) | 9/10 | 4.6 (preliminar) | sí (preliminar) |
-| 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
 | 11 | Evidencia S11 · Fallos parciales y decisión de extracción | | | no aplica | |
 | 12 | Evidencia S12 · Estrategia de datos y eventos | | | no aplica | |
 | 12 | Taller aplicado · Mensajes y consistencia | | | no aplica | |
@@ -34,6 +34,24 @@
 | 17 | Aplicación de cambios y cierre arquitectónico | | | | |
 
 ## Lo que se arrastra
+
+Estado vigente observado en la punta citada en [S10](semana-10-corte2.md). Las correcciones tardías no cambian S9. El registro histórico siguiente conserva su contexto, pero no sustituye esta actualización ni implica cerrar hallazgos no revalidados.
+
+| Hallazgo actual | Estado | Evidencia y próximo paso |
+|---|---|---|
+| Convertir rutas en enlaces navegables de A-01 y corregir C4 que todavía dice MapaRepository pendiente. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Separar medición de cálculo/pantalla de GPS real y precisión geográfica; no afirmar un flujo físico completo desde un test sintético. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Verificar política de caché efectiva por URL y qué ve un usuario previo a un rollback. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Aportar run/Quality Gate del hash, confirmar atribución y completar barrido independiente pendiente. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Identificar el reto S10 antes de puntuar su respuesta. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| ADR-0014 ahora aceptado por el equipo; no sigue pendiente de decisión. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| Evidencia S9 incluye medición de pantalla además del algoritmo. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| La sección de dependencias coincide con las incorporaciones flutter_map/latlong2. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| A-01 ya reconoce la pantalla implementada; queda otro texto anterior en C4. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| URL y health hoy accesibles, con commit desplegado igual al revisado. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+
+<details>
+<summary>Registro histórico previo a esta revisión (estados a la fecha de cada observación)</summary>
 
 | Hallazgo | Primera vez que se detectó | Sigue abierto | Qué se le dijo al equipo |
 |---|---|---|---|
@@ -81,20 +99,30 @@
 | `docs/aspectos.md` (A-01) declara pendiente la pantalla de mapa que ya existe en la punta (`b679886`). | S9 | sí | Actualizar la celda Código de A-01. |
 | `docs/evidencia-s9.md` §8 afirma «ninguna dependencia nueva» mientras `pubspec.yaml` añade `flutter_map` y `latlong2`. | S9 | sí | Alinear la sección de dependencias con el manifiesto. |
 | GPS real y coordenadas definitivas de las 11 zonas, declarados pendientes por el equipo. | S9 | sí | Registrar los datos en campo y regenerar el grafo. |
+
+</details>
+
 ## Estado del contrato del repositorio
+
+Actualizado desde la evaluación de la punta actual; no altera la matriz congelada de S9.
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
-| Nombre y visibilidad del repositorio | Cumple | `github.com/ISCOUTB/AS_202620_mapsutb`, público (clon sin auth el 2026-09-07) |
-| Estructura mínima | Cumple | La punta aceptada usa `docs/arc42/`, `docs/c4/` y `docs/adr/`. |
-| Convención de nombres de ADR | Cumple | Los ADR actuales están numerados y titulados en kebab-case. |
-| ADR aceptados sin reescribir | No cumple | `0001-patrones-de-diseno.md` tiene múltiples reescrituras posteriores a su creación |
-| `docs/ia.md` al día | Cumple | Actualizado el 2026-10-01 (`265da7f`) dentro del periodo S9, con aceptado, corregido y rechazado con motivo. |
-| Sin credenciales en el repositorio ni en el historial | Cumple | greps limpios en HEAD `f40775d` |
-| Contribución de todos los integrantes | Cumple | 4 personas consolidadas en HEAD: CarlosManrique-1397 (41), i-matallana (39, dos correos), charlygz21 (13), nerlis-otero (6) |
-| Pipeline en verde | Cumple | 104 runs del hash `8cfe4581`, todos `success`: `CI` #31 y `Despliegue web (Firebase Hosting)` #6, más los crons de sonda y sincronización de Sonar; URLs citadas en la evidencia S8 |
+| Repositorio en la organización, con el nombre de la convención y público | Cumple | Clon público anónimo de https://github.com/ISCOUTB/AS_202620_mapsutb; [README.md:1-5](https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/README.md#L1-L5). |
+| Estructura mínima presente | Cumple | Seis rutas mínimas presentes en árbol; arc42 mezcla adoc y md como desviación de formato, sin tratar artefactos existentes como ausentes; [docs/aspectos.md:5-9](https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/docs/aspectos.md#L5-L9). |
+| Estado calificado identificable | Cumple | origin/master 1b296a37c575a751e99df1a1b288d70efba03d56; fecha/corte en cabecera. |
+| Nombres de ADR según la convención | Cumple | Listado docs/adr 0001–0015 conforme; [docs/adr/0015-cache-del-sitio-revalidar.md:1-9](https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/docs/adr/0015-cache-del-sitio-revalidar.md#L1-L9). |
+| ADR aceptados no reescritos | No cumple | [docs/adr/0001-patrones-de-diseno.md:5-14](https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/docs/adr/0001-patrones-de-diseno.md#L5-L14) reconoce ediciones aceptadas; el historial confirma cambios antes del reemplazo. ADR-0015 sí complementa decisiones sin reescribirlas; es una mejora de práctica, no eliminación del historial. |
+| docs/ia.md al día para la semana | Cumple | [docs/ia.md:21-25](https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/docs/ia.md#L21-L25) contiene S9 y rechazos motivados. |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No verificado | [.github/workflows/ci.yml:44-64](https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/.github/workflows/ci.yml#L44-L64) contiene suite, scanner y gate. El conector consultó una vez el hash con filtro PR y devolvió cero registros; no demuestra falta de runs push. Los runs enlazados en [docs/evidencia-s9.md:52](https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/docs/evidencia-s9.md#L52) son evidencia documental; falta trío de comprobación pública vigente para este hash. |
+| Sin credenciales en el repositorio ni en el historial | No verificado | El equipo declara su barrido en [docs/evidencia-s9.md:104-109](https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/docs/evidencia-s9.md#L104-L109). El barrido independiente agregado fue cancelado por la herramienta y no se completó en el único reintento; no hay base para certificar limpieza integral ni para atribuir exposición al equipo. La comprobación permanece pendiente del revisor. |
+| Contribución de todos los integrantes | No verificado | La planilla anterior mantiene correspondencias cuenta–persona por confirmar. No se atribuyen identidades por nombres parecidos ni se reutilizan conteos anteriores como comprobación vigente. |
 
 ## Contribución por integrante
+
+Actualización agregada del 2026-10-06: Historial de la punta: 211 commits y 5 firmas de autor distintas (firmas, no personas). La planilla anterior mantiene correspondencias cuenta–persona por confirmar. No se atribuyen identidades por nombres parecidos ni se reutilizan conteos anteriores como comprobación vigente.
+
+La tabla individual conservada abajo corresponde al registro histórico anterior; no se infieren nuevas correspondencias entre cuentas y personas.
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
 |---|---|---:|---:|---:|---|
@@ -105,6 +133,8 @@
 
 ## Preguntas abiertas para la sustentación
 
-- ¿`i-matallana` corresponde a Isabel Sofia Paez Matallana? Confirmar con el docente.
-- ¿Cómo demuestran que el recorrido de zonas funciona de extremo a extremo, con una prueba y run de CI asociados a la entrega?
-- ¿Cómo se conserva la historia de ADR 0001 al cambiar una decisión aceptada y cómo se conecta la fila A-01 con C4, ADR, código y pruebas?
+Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
+
+- Fallo: si el GPS entrega una posición errónea o el usuario conserva una versión cacheada, ¿qué señal evita una ruta engañosa y cómo verificarán el rollback desde su navegador?
+- Costo: ¿cuál de las cuotas de Hosting/teselas/transferencia rompe primero el presupuesto cero y cómo cambia al revalidar recursos?
+- Medición: ¿qué cambiarían si el tiempo de cálculo sigue siendo bajo pero el usuario tarda o se localiza a más de 10 metros del camino real?

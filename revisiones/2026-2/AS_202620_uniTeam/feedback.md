@@ -54,8 +54,10 @@ El proyecto ya se despliega en cuatro piezas (sitio estático, API en contenedor
 
 Lo prioritario: reparen el workflow de integración continua en la rama principal, que en el estado calificado termina en rojo (incluido el Quality Gate), y no editen ADR ya aceptados —si una decisión cambia, escriban uno nuevo y marquen el anterior como reemplazado—. Queda pendiente confirmar con el docente a qué integrante corresponde cada cuenta del historial. Las filas de URL desplegada y de health quedan pendientes de calificar porque la URL se entrega por Moodle.
 
-## Semana 9 · S9
+## Semana 9 · S9 (revisión definitiva)
 
-La rama principal no se movió desde la entrega anterior: no hay una porción nueva de esta evidencia. Como esta revisión premia el trabajo del periodo, sin commits nuevos no hay artefacto que citar y todo lo anterior queda como línea base, aunque se conserve en el repositorio.
+La nueva porción de Mis tareas completa la cadena exigida: decisión aceptada, código, prueba que detecta el defecto, medición y auditoría de erosión. Mantengan explícito que la medición es SQLite en proceso; todavía falta comprobar el costo de la consulta extra en MySQL. El cumplimiento de S9 no cierra los fallos actuales del pipeline ni el Quality Gate.
 
-Para esta evidencia hay que construir una porción real del sistema con apoyo de IA y dejar su cadena completa navegable —fila de la tabla de aspectos hasta el código, la prueba y la medición—; escribir el ADR con la decisión del equipo y las restricciones del proyecto; aportar una prueba que falle ante el defecto que cubre (run en rojo, prueba de mutación o procedimiento documentado); medir el escenario contra su umbral; verificar las dependencias añadidas en el periodo; y registrar en la bitácora de IA lo aceptado, lo corregido y lo rechazado con motivo. Si mantienen un componente generativo, la ficha pide su conjunto de evaluación con costo por operación y latencia; si deciden no incorporarlo, un ADR que lo justifique. Sigue pendiente reparar el workflow de integración continua en la rama principal, que en la punta revisada termina en rojo incluida la puerta de calidad, y sigue abierta la observación de no editar ADR ya aceptados. La contribución por integrante continúa sin poder atribuirse: hay más cuentas en el historial que personas declaradas y hace falta la confirmación del docente.
+## Semana 10 · Segundo corte (avance preliminar)
+
+Identifiquen la consigna operativa asignada y diseñen su experimento con línea base en el MVP desplegado. Recuperen CI y los chequeos de despliegue, repitan la medición relevante con MySQL y carga de red, y completen arc42 y propiedad de datos. La comparación local es un buen punto de partida, pero no sustituye el resultado operativo ni la sustentación.

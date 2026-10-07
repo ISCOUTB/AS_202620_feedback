@@ -1,100 +1,117 @@
-> Pasada temprana (previa al cierre del 2026-10-05T05:00:00Z): el hash y la nota son preliminares y pueden cambiar si el equipo empuja antes del cierre.
+# Semana 9 · Generación verificada y trazable · ShareU
 
-# semana-09-evidencia-s9 · ShareU
+Revisión definitiva; reemplaza la preliminar.
 
 | Campo | Valor |
 |---|---|
-| Repositorio | `https://github.com/ISCOUTB/AS_202620_ShareU` |
+| Repositorio | https://github.com/ISCOUTB/AS_202620_ShareU |
+| Rama principal remota | `master` |
 | Estado revisado | `39508608eae4c1a56a5e4fc11a055bf6afb2c003` en `origin/master` (2026-09-28T19:56:57-05:00) |
-| Cierre | 2026-10-05T05:00:00Z |
-| Revisor | auditoría local preliminar sobre clon público efímero |
+| Línea base S8 | `332f67f726969e0c73b98dd4705aea6c37e5603b` |
+| Punta actual / S10 preliminar | `39508608eae4c1a56a5e4fc11a055bf6afb2c003` · 2026-09-28T19:56:57-05:00 |
+| Cierre S9 | 2026-10-05T05:00:00Z |
+| Cierre eventual S10 | 2026-10-12T05:00:00Z |
+| Revisión | 2026-10-06 (UTC) |
 
-Esta pasada **no tiene corte**: se califica la punta actual del 2026-09-28, no un commit anterior a un
-cierre. El periodo S9 (`332f67f..origin/master`, con `332f67f` el hash de S8) contiene cuatro commits
-(`21256e5`, `0e14454`, `c552056`, `3950860`): la evidencia S9 (`docs/evidencia/evidencia-s9.md`), los
-ADR-0008 y ADR-0009, la fachada `app/administracion/service.py`, tres pruebas nuevas y la corrección
-del cruce de frontera detectado por la auditoría de erosión. La porción de la cadena incluye código del
-propio periodo (la fachada y su consumo), aunque la métrica de origen sea de S8. La fila de credenciales
-y la matriz transversal se deciden sobre el estado en la punta.
+## Alcance y método
 
-## Matriz de la ficha
+Se consultó la rama principal remota mediante git y se eligió su último commit anterior o igual al cierre S9; no se consultaron etiquetas. S10 es preliminar y usa la punta actual. Se comparó S9 con la línea base S8; no se vuelven a puntuar entregas anteriores por existir. No se ejecutó código, pruebas ni despliegues del equipo. Los registros de ejecución del repositorio se distinguen de la comprobación externa. Por exclusión docente no se abrieron PDFs ni se evaluó su presencia, contenido, extensión o ubicación.
 
-| Criterio de evaluación | Evidencia técnica | Estado | Observaciones |
-|---|---|---|---|
-| Porción real del sistema construida con apoyo de IA | `app/administracion/service.py` (nuevo en `3950860`, interfaz pública de administración), `app/busqueda/service.py` (modificado en `3950860` para consumir la fachada), `tests/test_fronteras.py`, `tests/test_metricas.py`, `tests/test_escenario_usabilidad.py`. `docs/ia/ia.md` fila 9 atribuye a IA la redacción de la fachada y las pruebas. | Cumple | La corrección de frontera es una porción real del sistema construida en el periodo con apoyo de IA. La métrica de origen es de S8 (`332f67f`); lo que el periodo aporta es la fachada, su consumo y las pruebas. |
-| Cadena completa navegable para esa porción | `docs/evidencia/evidencia-s9.md` §1: aspecto (fila nueva en `docs/aspectos/aspectos.md`) → ADR-0008 → `app/administracion/service.py`, `app/busqueda/service.py` → `tests/test_metricas.py`, `test_fronteras.py`, `test_escenario_usabilidad.py` → medición (§3). Todas las rutas existen en la punta. | Cumple | La fila nueva de la tabla de aspectos llega al código, las pruebas y la evidencia; la cadena no se rompe. |
-| ADR con la decisión argumentada por el equipo | `docs/adr/0008-metrica-tras-interfaz-de-administracion.md` compara cuatro alternativas (dejar el import, middleware, SQLite, fachada) contra las restricciones del proyecto: costo USD 0, sin disco persistente, ADR-0001 y equipo pequeño; incluye criterio de reapertura y trazabilidad. | Cumple | La decisión la argumenta el equipo con las restricciones del proyecto, no la herramienta. El ADR está en estado «Propuesto» (pendiente de aprobación formal del equipo). |
-| Prueba que falla ante el defecto que cubre | `docs/evidencia/evidencia-s9.md` §2 documenta tres defectos introducidos a propósito y la prueba que falla en cada caso: `test_fronteras.py` (`AssertionError: ['busqueda/se…ion.metricas'] == []`), `test_metricas.py` (2 fallos al invertir la condición) y `test_escenario_usabilidad.py` (`assert 6 <= 3`); estado final `pytest -q` 12 passed. | Cumple | Procedimiento documentado con el defecto, la prueba y el mensaje de fallo; cada defecto se revirtió. El CI del hash revisado está en rojo (ver matriz transversal), lo que no permite confirmar desde el pipeline el «12 passed» local. |
-| Medición del escenario asociado | `docs/evidencia/evidencia-s9.md` §3: interacciones mínimas (campos llenados + clic) para encontrar cada documento; máximo 2 frente al umbral ≤ 3, sobre cinco documentos de ejemplo. | Cumple | Resultado contrastado con el umbral; se declara como indicador técnico sobre datos de ejemplo, no como prueba con estudiantes. |
-| `docs/ia.md` con lo aceptado, lo corregido y lo rechazado con motivo | `docs/ia/ia.md` fila 9 (agregada en `3950860`) registra lo rechazado con motivo (dejar el import cruzado, middleware, SQLite, componente generativo), lo corregido (el marcador sin resolver de la fila 8) y lo aceptado (la fachada y la guardia de fronteras). | Cumple | Extracto del periodo con aceptado, corregido y rechazo motivado; el archivo vive en `docs/ia/ia.md` y se evalúa donde está. |
-| Auditoría de erosión sobre límites de contexto y propiedad de datos | `docs/evidencia/evidencia-s9.md` §5: barrido de escrituras y de imports; hallazgos E1–E4 con ubicación y corrección. E1 (cruce `busqueda` → `administracion.metricas`) se corrigió con la fachada y la guardia `test_fronteras.py`; E2 (propiedad de datos) se actualizó. E3 y E4 quedan declarados como pendientes. | Cumple | Auditoría real con hallazgo, ubicación y corrección sobre el código; los pendientes E3/E4 se registran como hallazgo. |
-| Dependencias propuestas verificadas en su registro oficial | El diff del periodo contra el hash de S8 (`332f67f`) sobre `requirements.txt`, `app/frontend/package.json` y su lock está vacío: no hay dependencias añadidas en el periodo. La verificación de `pyyaml`, `jsonschema` y los paquetes de Next.js que cita la evidencia corresponde a commits anteriores (`0c2b53a`, ancestro de S8). | No cumple | No hay dependencias añadidas en el periodo S9 que verificar; la verificación citada es de línea base (CONTRATO §12). Se registra además el hallazgo del equipo: `next@14.2.15` está marcado como vulnerable y la corrección propuesta es subir a 14.2.35. |
-| Sin credenciales en código, ejemplos ni documentación generada | Barrido del contrato sobre la punta sin coincidencias; sin `.env` versionado; `app/frontend/.env.example` contiene solo una URL local; `git log -S'BEGIN PRIVATE KEY'` sin coincidencias. Las únicas menciones son `secrets.GITHUB_TOKEN` y `secrets.SONAR_TOKEN` en el workflow. | Cumple | Sin credenciales reales del equipo en la punta ni en el historial. |
-| Componente generativo evaluado, con costo y latencia, o ADR de no incorporarlo | `docs/adr/0009-no-incorporar-componente-generativo.md` decide no incorporarlo y argumenta con costo USD 0/sin tarjeta, latencia y disponibilidad del flujo de búsqueda, y simplicidad; incluye criterio de reapertura. | Cumple | Existe el ADR de no incorporarlo, exigido por la ficha. El ADR está en estado «Propuesto» (pendiente de aprobación formal del equipo). |
+La consulta general de Actions se verificó mediante GET /actions/runs (100 registros como máximo); se distinguen el hash, la rama y la conclusión de cada run. Un intento inicial filtrado a pull requests no se usó para decidir. No se consultaron jobs ni logs adicionales.
 
-## Matriz transversal (CONTRATO §11)
+El delta S8→S9 contiene 4 commits. Cuatro commits: ajustes de CI/frontend y corrección de frontera con fachada, pruebas, ADR 0008/0009 y evidencia S9.
 
-| Criterio | Evidencia | Estado | Observaciones |
-|---|---|---|---|
-| Repositorio en la organización, con el nombre de la convención y público | `https://github.com/ISCOUTB/AS_202620_ShareU`, clonado sin autenticación; rama principal `origin/master`. | Cumple | Nombre `AS_202620_ShareU` conforme y visibilidad pública. |
-| Estructura mínima presente | En `3950860`: `README.md`, `docs/arc42/arc42.md`, `docs/adr/`, `docs/c4/`; `docs/aspectos/aspectos.md` y `docs/ia/ia.md` viven en subcarpetas propias, no en las rutas contractuales. | No cumple | Los artefactos existen (desviación, no ausencia), pero `docs/aspectos.md` y `docs/ia.md` no están en la ruta mínima del contrato §2. |
-| Estado calificado identificable | `39508608eae4c1a56a5e4fc11a055bf6afb2c003` en `origin/master`, commit del 2026-09-28T19:56:57-05:00. | Cumple | Sin cierre en esta pasada: se identifica la punta actual. |
-| Nombres de ADR según la convención | `docs/adr/` contiene `0001`–`0004`, `0008` y `0009` con `NNNN-kebab-case.md`, más `ShareU_Trazabilida.pdf`, que no cumple la convención. | No cumple | El PDF ajeno a la convención sigue presente en el estado calificado. |
-| ADR aceptados no reescritos | `git log --follow`: ADR-0008 y ADR-0009 tienen un único commit cada uno (`3950860`); los ADR 0001–0004 no registran ediciones en el periodo. | Cumple | Ninguna decisión aceptada se reescribe en el periodo; ADR-0001 conserva su contenido de línea base. |
-| `docs/ia.md` al día para la semana | `docs/ia/ia.md` suma la fila 9 en `3950860`, dentro del periodo revisado, con lo aceptado, lo corregido y lo rechazado con motivo. | Cumple | El archivo está en la ruta desviada `docs/ia/ia.md`; se evalúa donde está. |
-| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | Único run del hash revisado: [Tests 36505758458](https://github.com/ISCOUTB/AS_202620_ShareU/actions/runs/36505758458), conclusión `failure`. Existe `sonar-project.properties` y el workflow invoca `SonarSource/sonarcloud-github-action`, pero el run está en rojo. | No cumple | El pipeline de la rama principal en el hash revisado falla; sin run exitoso no se puede acreditar el Quality Gate público exigido por el contrato §8. |
-| Sin credenciales en el repositorio ni en el historial | `git grep` del contrato y `git log -S'BEGIN PRIVATE KEY'` sin coincidencias; sin `.env` versionado. | Cumple | El repositorio no expone credenciales. |
-| Contribución de todos los integrantes | `git shortlog -sne 3950860`: `Nicolas-HH` 14; `Dayana` 13 más `daynarvaez` 7 (mismo correo, consolidado); `luiscorredor` 11; `steven` 5. | Cumple | Cuatro personas para cuatro integrantes; la contribución está repartida. |
+## Matriz de la ficha S9
 
-## Estado global del proyecto (overall · punta actual de la misma rama)
+| Criterio | Estado | Evidencia y observaciones |
+|---|---|---|
+| Porción real del sistema construida con apoyo de IA | Cumple | [app/administracion/service.py:1–8](https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/app/administracion/service.py#L1-L8) y [app/busqueda/service.py:5–6](https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/app/busqueda/service.py#L5-L6): fachada e import corregido nuevos en 3950860; [docs/ia/ia.md:33](https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/docs/ia/ia.md#L33) atribuye apoyo de IA. Se evalúa esta corrección del periodo, no la métrica previa de S8. |
+| Cadena completa navegable para esa porción | No cumple | [docs/aspectos/aspectos.md:50–56](https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/docs/aspectos/aspectos.md#L50-L56). La fila nueva enlaza ADR, código, pruebas y evidencia, pero la tabla conserva seis columnas: faltan ID y, sobre todo, el eslabón C4 de la cadena exigida. La referencia indirecta en el ADR no completa una fila aspecto→requisito→C4→ADR→código→prueba→medición. |
+| ADR con la decisión argumentada por el equipo | Cumple | [docs/adr/0008-metrica-tras-interfaz-de-administracion.md:9–86](https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/docs/adr/0008-metrica-tras-interfaz-de-administracion.md#L9-L86). Compara cuatro alternativas y decide fachada con restricciones de costo cero, propiedad y simplicidad; el estado Propuesto en líneas 1–4 deja pendiente ratificación del equipo, que debe aclararse. |
+| Prueba que falla ante el defecto que cubre | Cumple | [docs/evidencia/evidencia-s9.md:18–43](https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/docs/evidencia/evidencia-s9.md#L18-L43). Procedimiento documentado introduce tres defectos y sus fallos y declara reversión; los archivos de prueba existen. La ficha permite este procedimiento. No se ejecutaron; CI rojo no confirma el 12 passed local. |
+| Medición del escenario asociado | Cumple | [docs/evidencia/evidencia-s9.md:18–43](https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/docs/evidencia/evidencia-s9.md#L18-L43) y [tests/test_escenario_usabilidad.py:1–33](https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/tests/test_escenario_usabilidad.py#L1-L33). Se reporta máximo 2 interacciones frente al umbral 3 para cinco documentos. Alcance técnico sintético, no prueba con usuarios ni despliegue. |
+| docs/ia.md con lo aceptado, lo corregido y lo rechazado con motivo | Cumple | [docs/ia/ia.md:33](https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/docs/ia/ia.md#L33). Registra aceptación de fachada, corrección y cuatro rechazos técnicos. La fila 8 mantiene un marcador pese a declararlo resuelto; se señala sin negar la entrada S9. |
+| Auditoría de erosión sobre límites de contexto y propiedad de datos | Cumple | [docs/evidencia/evidencia-s9.md:50–61](https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/docs/evidencia/evidencia-s9.md#L50-L61) y [tests/test_fronteras.py:15–26](https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/tests/test_fronteras.py#L15-L26). E1 corregido con fachada; E2 propiedad documentada; E3/E4 explícitamente pendientes. Lectura confirma que búsqueda consume administracion.service. |
+| Dependencias propuestas verificadas en su registro oficial | Cumple | [docs/evidencia/evidencia-s9.md:63–73](https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/docs/evidencia/evidencia-s9.md#L63-L73). No cambia requirements ni package.json respecto a S8; la evidencia NUEVA de S9 audita 26 versiones PyPI y 7 npm. Consulta externa el 2026-10-06 confirma todas esas versiones, incluidos [PyYAML](https://pypi.org/pypi/pyyaml/6.0.2/json), [jsonschema](https://pypi.org/pypi/jsonschema/4.23.0/json) y [Next](https://registry.npmjs.org/next/14.2.15). Ausencia de altas no es incumplimiento. Next existe y es legítimo, pero el registro advierte vulnerabilidad: corrección de seguridad pendiente. |
+| Sin credenciales en código, ejemplos ni documentación generada | Cumple | [app/frontend/.env.example:1](https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/app/frontend/.env.example#L1) y [.github/workflows/tests.yml:22–32](https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/.github/workflows/tests.yml#L22-L32). Barrido actual y patrones históricos sin credenciales reales identificadas; variables de GitHub y URL local no son secretos. |
+| Componente generativo evaluado, con costo y latencia, o ADR de no incorporarlo | Cumple | [docs/adr/0009-no-incorporar-componente-generativo.md:13–58](https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/docs/adr/0009-no-incorporar-componente-generativo.md#L13-L58). La decisión escrita de no incorporarlo está razonada por costo, disponibilidad y alcance; no hay LLM en ejecución. El encabezado aún Propuesto requiere ratificación expresa. |
 
-- **Punta actual revisada**: `39508608eae4c1a56a5e4fc11a055bf6afb2c003 2026-09-28T19:56:57-05:00 semana 9` (`origin/master`)
-- **Veredicto**: evidencia S9 sólida y bien trazada; el pipeline en rojo impide cerrar la semana
-- Resumen: el equipo respondió a la auditoría de erosión con una corrección real: detectó que un módulo
-  importaba un archivo interno de otro, lo reemplazó por una fachada de servicio y añadió una prueba que
-  falla si vuelve a ocurrir. La cadena del aspecto nuevo es navegable hasta el código, las pruebas y la
-  medición, y los ADR-0008 y ADR-0009 argumentan la decisión con las restricciones del proyecto. La
-  prueba de mutación está documentada con el defecto, la prueba y el mensaje de fallo. El punto que
-  impide cerrar la semana es el pipeline: el run del hash revisado está en rojo, aunque la evidencia
-  afirme 12 pruebas en verde en local. Quedan además las desviaciones de estructura (aspectos e IA fuera
-  de la ruta contractual), el PDF fuera de convención en `docs/adr/`, y los pendientes E3/E4 de la propia
-  auditoría (referencias a archivos inexistentes y marcadores sin resolver). El periodo no añadió
-  dependencias, así que la fila de verificación de dependencias no se satisface.
+## Matriz transversal · CONTRATO §11
 
-Pendientes que siguen abiertos:
-- Pipeline de `master` en rojo en el hash revisado (`36505758458`, failure); sin run exitoso no hay Quality Gate acreditable.
-- `docs/aspectos.md` y `docs/ia.md` fuera de la ruta mínima.
-- `docs/adr/ShareU_Trazabilida.pdf` fuera de la convención de nombres.
-- E3/E4 de la auditoría: README y arc42 citan `Dockerfile`, `render.yaml`, ADR 0005–0007 y `tests/test_contrato.py` que no están en el árbol; marcadores `<URL Render>`, `<URL Vercel>`, `<integrante>` y `<URL del run>` sin resolver.
-- Sin dependencias añadidas en el periodo que verificar.
-- ADR-0008 y ADR-0009 en estado «Propuesto», pendientes de aprobación formal del equipo.
+| Criterio | Estado | Evidencia y observaciones |
+|---|---|---|
+| Repositorio en la organización, con el nombre de la convención y público | Cumple | Clon anónimo público de https://github.com/ISCOUTB/AS_202620_ShareU; organización y nombre conformes. |
+| Estructura mínima presente | No cumple | [README.md:191–200](https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/README.md#L191-L200). Aspectos e IA existen en subcarpetas, no docs/aspectos.md y docs/ia.md. Desviación de ruta, no ausencia. |
+| Estado calificado identificable | Cumple | origin/master 39508608eae4c1a56a5e4fc11a055bf6afb2c003, 2026-09-28T19:56:57-05:00; último ≤ cierre S9 y punta preliminar S10. |
+| Nombres de ADR según la convención | Cumple | Los seis ADR Markdown 0001–0004, 0008 y 0009 siguen NNNN-kebab-case; [docs/adr/0008-metrica-tras-interfaz-de-administracion.md:1–4](https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/docs/adr/0008-metrica-tras-interfaz-de-administracion.md#L1-L4). Archivos PDF excluidos expresamente del criterio por decisión docente. |
+| ADR aceptados no reescritos | Cumple | Historial de ADR leído: 0002/0003/0004/0008/0009 creados una vez; ADR-0001 solo movimientos de ruta sin edición de contenido. [docs/adr/0008-metrica-tras-interfaz-de-administracion.md:1–7](https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/docs/adr/0008-metrica-tras-interfaz-de-administracion.md#L1-L7) nuevo en 3950860. |
+| docs/ia.md al día para la semana | Cumple | [docs/ia/ia.md:33](https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/docs/ia/ia.md#L33). Nueva entrada del periodo S9; ruta desviada evaluada por contenido. Aún no hay actividad adicional S10. |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No cumple | [.github/workflows/tests.yml:22–32](https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/.github/workflows/tests.yml#L22-L32). Consulta general Actions confirma [run 36505758458](https://github.com/ISCOUTB/AS_202620_ShareU/actions/runs/36505758458) en el hash revisado, conclusión failure (2026-09-29T00:59:44Z). Sin run exitoso de scanner y Quality Gate de esta revisión acreditados. |
+| Sin credenciales en el repositorio ni en el historial | Cumple | Barrido del contrato sobre HEAD, docs y ejemplos sin credenciales identificadas; sin .env versionado; búsqueda histórica de patrones de claves privadas/tokens de alta confianza sin coincidencias. [docs/evidencia/evidencia-s9.md:75–80](https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/docs/evidencia/evidencia-s9.md#L75-L80). Resultado acotado al barrido, no garantía absoluta. |
+| Contribución de todos los integrantes | No verificado | 50 commits en cuatro grupos por identidad de correo; dos firmas se consolidan por coincidencia exacta, sin publicar correos. No se deduce la correspondencia completa con los cuatro integrantes solo por nombres de cuenta; validación docente pendiente, sin afirmar ausencia individual. |
+
+## Estado global del proyecto (overall)
+
+La punta actual de `master` es `39508608eae4c1a56a5e4fc11a055bf6afb2c003` (2026-09-28T19:56:57-05:00) y coincide con S9 congelada: no hay commits tardíos hasta esta revisión. Hay una corrección de erosión comprobable y medición sintética explícita. La cadena conserva una omisión de C4. El pipeline sigue fallando y la URL de salud no entrega el health esperado; la infraestructura y decisiones de plataforma documentadas siguen ausentes.
+
+### Hallazgos abiertos
+
+- Identificar el escenario oficialmente asignado y su línea base medida para S10.
+- Pipeline de la punta en rojo: [run 36505758458](https://github.com/ISCOUTB/AS_202620_ShareU/actions/runs/36505758458).
+- Health de la URL declarada respondió 404; confirmar URL vigente y restablecer despliegue.
+- Completar ID y C4 en la tabla de trazabilidad; normalizar rutas de aspectos e IA. [docs/aspectos/aspectos.md:50–56](https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/docs/aspectos/aspectos.md#L50-L56)
+- Versionar los archivos declarados ausentes o corregir documentos: Dockerfile, render.yaml, ADR 0005–0007 y prueba de contrato. [docs/evidencia/evidencia-s9.md:56–61](https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/docs/evidencia/evidencia-s9.md#L56-L61)
+- Actualizar Next a una versión corregida tras revisar el aviso oficial: el registro de next 14.2.15 confirma advertencia de seguridad. [app/frontend/package.json:11–14](https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/app/frontend/package.json#L11-L14)
+- Ratificar ADR-0008/0009 y resolver marcadores documentales sin atribuir al equipo decisiones pendientes.
+
+### Hallazgos cerrados o corregidos en esta revisión
+
+- El cruce búsqueda→interno de administración está corregido mediante fachada y prueba de fronteras. [app/busqueda/service.py:5–6](https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/app/busqueda/service.py#L5-L6)
+- Se corrige el hallazgo preliminar de dependencias: no añadir paquetes no obliga a fallar; hay auditoría nueva del periodo y existencia contrastada en registros oficiales.
+- Se excluye el hallazgo de convención sobre PDF por decisión docente; los ADR Markdown sí siguen la convención.
 
 ## Recuento y nota sugerida
 
-**9 de 10 criterios** de la ficha en Cumple.
+**9 de 10 criterios Cumple. Propuesta al docente: 4.6 = 1 + 4 × (9/10).** La nota final la fija el profesor en Moodle; la matriz transversal no entra en esta fórmula.
 
-**Nota sugerida preliminar (propuesta al docente; puede cambiar al cierre): 4.6 = 1 + 4 × (9/10).** La nota final la fija el profesor en Moodle.
+## Próximo paso
 
-La fila 8 no se satisface porque el periodo S9 no añadió dependencias que verificar contra los registros
-oficiales (CONTRATO §12).
+La corrección de frontera está implementada y respaldada por pruebas que documentan el fallo esperado. Completen el eslabón C4 en la fila de aspectos y ratifiquen los ADR propuestos. La auditoría de dependencias es válida aunque no hayan añadido paquetes; atiendan la vulnerabilidad registrada de Next y las referencias a archivos todavía ausentes.
 
-## No verificado / pendientes
+## Comprobación independiente de registros (2026-10-06)
 
-- Nada quedó en **No verificado** en la ficha: todas las comprobaciones se resolvieron sobre archivos
-  legibles del repositorio.
-- El CI del hash revisado está en rojo; no se pudo confirmar desde el pipeline el «12 passed» que
-  reporta la evidencia. No se ejecutó el código (fuera del alcance de la revisión).
-- Dependencias del periodo: el diff contra S8 está vacío; no hay nada que comprobar en los registros.
+Se consultaron las 26 versiones de requirements.txt y los 7 paquetes directos de frontend; todas existen. Esto verifica identidad/versiones, no ausencia de vulnerabilidades. No se instalaron paquetes.
 
-## Hallazgos para la planilla
-
-- El periodo S9 corrige un cruce de frontera real: `app/busqueda/service.py` importaba `administracion.metricas`; se reemplazó por la fachada `app/administracion/service.py` con la guardia `tests/test_fronteras.py`.
-- La cadena de `docs/aspectos/aspectos.md` (fila nueva) llega a código, pruebas y medición; no se rompe.
-- ADR-0008 (métrica tras interfaz de servicio) y ADR-0009 (no incorporar componente generativo) argumentan la decisión con las restricciones del proyecto; ambos en estado «Propuesto».
-- Prueba de mutación documentada con tres defectos y sus mensajes de fallo; estado final declarado 12 passed.
-- Medición del escenario de usabilidad: máximo 2 interacciones frente al umbral ≤ 3.
-- Sin credenciales en la punta ni en el historial; cuatro integrantes contribuyen.
-- CI del hash revisado en rojo (run 36505758458): fila transversal de pipeline/SonarCloud en No cumple.
-- Desviaciones de estructura (aspectos e IA fuera de ruta) y PDF fuera de convención en `docs/adr/`.
-- Sin dependencias añadidas en el periodo; la verificación de `pyyaml`/`jsonschema`/Next.js es de línea base.
-- Hallazgo de seguridad del equipo: `next@14.2.15` marcado como vulnerable; corrección propuesta a 14.2.35.
+- [annotated-types==0.8.0](https://pypi.org/pypi/annotated-types/0.8.0/json): annotated-types 0.8.0
+- [anyio==4.15.1](https://pypi.org/pypi/anyio/4.15.1/json): anyio 4.15.1
+- [attrs==26.1.0](https://pypi.org/pypi/attrs/26.1.0/json): attrs 26.1.0
+- [certifi==2026.7.22](https://pypi.org/pypi/certifi/2026.7.22/json): certifi 2026.7.22
+- [click==8.5.0](https://pypi.org/pypi/click/8.5.0/json): click 8.5.0
+- [fastapi==0.115.0](https://pypi.org/pypi/fastapi/0.115.0/json): fastapi 0.115.0
+- [h11==0.16.0](https://pypi.org/pypi/h11/0.16.0/json): h11 0.16.0
+- [httpcore==1.0.9](https://pypi.org/pypi/httpcore/1.0.9/json): httpcore 1.0.9
+- [httpx==0.27.2](https://pypi.org/pypi/httpx/0.27.2/json): httpx 0.27.2
+- [idna==3.20](https://pypi.org/pypi/idna/3.20/json): idna 3.20
+- [iniconfig==2.3.0](https://pypi.org/pypi/iniconfig/2.3.0/json): iniconfig 2.3.0
+- [jsonschema==4.23.0](https://pypi.org/pypi/jsonschema/4.23.0/json): jsonschema 4.23.0
+- [jsonschema-specifications==2025.9.1](https://pypi.org/pypi/jsonschema-specifications/2025.9.1/json): jsonschema-specifications 2025.9.1
+- [packaging==26.3](https://pypi.org/pypi/packaging/26.3/json): packaging 26.3
+- [pluggy==1.6.0](https://pypi.org/pypi/pluggy/1.6.0/json): pluggy 1.6.0
+- [pydantic==2.13.5](https://pypi.org/pypi/pydantic/2.13.5/json): pydantic 2.13.5
+- [pydantic-core==2.46.5](https://pypi.org/pypi/pydantic-core/2.46.5/json): pydantic_core 2.46.5
+- [pytest==8.3.3](https://pypi.org/pypi/pytest/8.3.3/json): pytest 8.3.3
+- [pyyaml==6.0.2](https://pypi.org/pypi/pyyaml/6.0.2/json): PyYAML 6.0.2
+- [referencing==0.37.0](https://pypi.org/pypi/referencing/0.37.0/json): referencing 0.37.0
+- [rpds-py==2026.6.3](https://pypi.org/pypi/rpds-py/2026.6.3/json): rpds-py 2026.6.3
+- [sniffio==1.3.1](https://pypi.org/pypi/sniffio/1.3.1/json): sniffio 1.3.1
+- [starlette==0.38.6](https://pypi.org/pypi/starlette/0.38.6/json): starlette 0.38.6
+- [typing-extensions==4.16.0](https://pypi.org/pypi/typing-extensions/4.16.0/json): typing-extensions 4.16.0
+- [typing-inspection==0.4.4](https://pypi.org/pypi/typing-inspection/0.4.4/json): typing-inspection 0.4.4
+- [uvicorn==0.32.0](https://pypi.org/pypi/uvicorn/0.32.0/json): uvicorn 0.32.0
+- [next==14.2.15](https://registry.npmjs.org/next/14.2.15): next 14.2.15 · advertencia de seguridad del registro
+- [react==18.3.1](https://registry.npmjs.org/react/18.3.1): react 18.3.1
+- [react-dom==18.3.1](https://registry.npmjs.org/react-dom/18.3.1): react-dom 18.3.1
+- [typescript==5.6.3](https://registry.npmjs.org/typescript/5.6.3): typescript 5.6.3
+- [@types/node==20.16.11](https://registry.npmjs.org/@types%2Fnode/20.16.11): @types/node 20.16.11
+- [@types/react==18.3.11](https://registry.npmjs.org/@types%2Freact/18.3.11): @types/react 18.3.11
+- [@types/react-dom==18.3.0](https://registry.npmjs.org/@types%2Freact-dom/18.3.0): @types/react-dom 18.3.0

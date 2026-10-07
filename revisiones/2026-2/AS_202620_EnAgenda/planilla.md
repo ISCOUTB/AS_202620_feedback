@@ -8,15 +8,16 @@ Hoja consolidada del equipo EnAgenda. Se actualiza tras cada revisión.
 |---|---|
 | Equipo | EnAgenda |
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_EnAgenda` |
-| Integrantes y su usuario de GitHub | Eliab Josue Arnedo Conde · Jeimy Yulieth Mendez Altamiranda · Gabriela Morales Cancino — cuentas abajo |
-| URL del sistema desplegado | sin desplegar aún |
-| Ultima revision | 2026-10-01 |
+| Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Eliab Josue Arnedo Conde · Jeimy Yulieth Mendez Altamiranda · Gabriela Morales Cancino — cuentas abajo; ver comprobación actual de contribución más abajo. |
+| URL del sistema desplegado | URL pública vigente no localizada; despliegue No verificado. Ver [S10](semana-10-corte2.md). |
+| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
 
 ## Estado por entrega
 
-| Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
+| Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 9 | S9 | `2c7d77a` (2026-09-27T23:42:39-05:00) | 1/10 | 1.4 (preliminar, sin cierre) | sí |
+| 9 | S9 · definitiva | `master` · `5aa889370dcf342ba06666893b97f8065b513de9` · 2026-10-04T23:46:49-05:00 | 3/10 | 2.2 (propuesta al docente) | sí, 2026-10-06 |
+| 10 | Segundo corte · preliminar | `master` · `c2077ac55a29562adc728734ca4c283ccb40f310` · 2026-10-05T10:40:19-05:00 | 2/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
 | 8 | S8 | `2c7d77a` (2026-09-27T23:42:39-05:00) | 5/10 (2 filas de despliegue diferidas) | 3.0 (provisional) | sí |
 | 7 | S7 | `849ee8c` (2026-09-20T23:59:07-05:00) | 4/10 | 2.6 | sí, auditada |
 | 6 | S6 | `0a58de8` (2026-09-13T23:38:41-05:00) | 7/8 | 4.5 | si |
@@ -27,6 +28,24 @@ Hoja consolidada del equipo EnAgenda. Se actualiza tras cada revisión.
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `c38adfb94` · 2026-08-23T23:49:01-05:00 | 3/9 | no se publica | sí (actualizada tras el cierre) |
 
 ## Lo que se arrastra
+
+Estado vigente observado en la punta citada en [S10](semana-10-corte2.md). Las correcciones tardías no cambian S9. El registro histórico siguiente conserva su contexto, pero no sustituye esta actualización ni implica cerrar hallazgos no revalidados.
+
+| Hallazgo actual | Estado | Evidencia y próximo paso |
+|---|---|---|
+| Normalizar/redactar tokens en métricas y restringir /metrics: no publicar rutas crudas de invitaciones. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Crear prueba del flujo completo POST / → plantilla de invitados → creación → respuesta; un test directo a /crear-invitaciones omite la pantalla intermedia. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Configurar host/HTTPS, medir salud y flujo principal con umbral y línea base identificables. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Aportar ADR coherente de evolución del flujo y preservar decisiones aceptadas con un ADR sustituto para Dokploy. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Añadir auditoría de erosión del cambio, inventario verificado de propuestas/dependencias y decisión sobre componente generativo. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Integrar SonarCloud y publicar scanner, run y Quality Gate; aclarar asignación operativa S10. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Conflictos de merge de Docker/Compose/ejemplos/evidencia ya no están presentes en snapshot S9; [Dockerfile:1–15](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/5aa889370dcf342ba06666893b97f8065b513de9/Dockerfile#L1-L15), [docs/evidencia.md:58–125](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/5aa889370dcf342ba06666893b97f8065b513de9/docs/evidencia.md#L58-L125). | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| Se restauró encabezado de aspectos en S9 y se amplió tabla después del cierre; [docs/aspectos.md:1–5](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/5aa889370dcf342ba06666893b97f8065b513de9/docs/aspectos.md#L1-L5), [docs/aspectos.md:5–12](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/c2077ac55a29562adc728734ca4c283ccb40f310/docs/aspectos.md#L5-L12). | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| Plantilla invitados.html agregada después del cierre; fallo identificado y corregido según registro de IA actual, [docs/ia.md:47–47](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/c2077ac55a29562adc728734ca4c283ccb40f310/docs/ia.md#L47-L47). | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| CI pasa para hash S9 y HEAD; ello no cierra SonarCloud ni garantiza el flujo UI completo. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+
+<details>
+<summary>Registro histórico previo a esta revisión (estados a la fecha de cada observación)</summary>
 
 | Hallazgo | Primera vez que se detectó | Sigue abierto | Qué se le dijo al equipo |
 |---|---|---|---|
@@ -88,20 +107,30 @@ Hoja consolidada del equipo EnAgenda. Se actualiza tras cada revisión.
 | Sin verificación de dependencias del periodo (diff vacío contra S8). | S9 | sí | — |
 | Sin ADR sobre el componente generativo (ni componente, ni decisión de no incorporarlo). | S9 | sí | La ausencia de decisión no es la decisión de no hacerlo. |
 | `docs/aspectos.md` sin fila de encabezado; `docs/evidencia.md` corrupto por conflictos de merge. | S9 | sí | La cadena A-01 navega, pero la evidencia no es un artefacto coherente. |
+
+</details>
+
 ## Estado del contrato del repositorio
+
+Actualizado desde la evaluación de la punta actual; no altera la matriz congelada de S9.
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
-| Nombre y visibilidad del repositorio | Cumple | `ISCOUTB/AS_202620_EnAgenda`, público, verificable sin autenticación |
-| Estructura mínima | Cumple | Las seis rutas del contrato están presentes en HEAD. |
-| Convención de nombres de ADR | Cumple | ADR 0001 y 0002 siguen `NNNN-titulo-en-kebab-case.md`. |
-| ADR aceptados sin reescribir | Cumple | Cada ADR aceptado tiene una sola revisión en su ruta actual. |
-| `docs/ia.md` al día | No cumple | La última entrada es del 2026-09-13; no registra S8. |
-| Sin credenciales en el repositorio ni en el historial | Cumple | Sin credenciales; coincidencias con `token` son identificadores de dominio y datos de prueba. |
-| Contribución de todos los integrantes | Cumple | Tres identidades consolidadas para tres integrantes en HEAD. |
-| Pipeline en verde | No cumple | CI del hash revisado `2c7d77a` en rojo (run 36378874812); el commit anterior `387b4b3` sí estaba en verde. SonarCloud sigue ausente. |
+| Repositorio en la organización, con el nombre de la convención y público | Cumple | Clon público en organización ISCOUTB y nombre conforme; master declarado remoto, [README.md:1–8](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/5aa889370dcf342ba06666893b97f8065b513de9/README.md#L1-L8). |
+| Estructura mínima presente | Cumple | Seis rutas mínimas presentes y tablas ampliadas; [docs/aspectos.md:1–12](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/c2077ac55a29562adc728734ca4c283ccb40f310/docs/aspectos.md#L1-L12). |
+| Estado calificado identificable | Cumple | Punta master c2077ac55a29562adc728734ca4c283ccb40f310 de 2026-10-05T10:40:19-05:00, preliminar anterior a cierre S10. |
+| Nombres de ADR según la convención | Cumple | ADR 0001–0003 usan convención de nombres; [docs/adr/0003-desplegar-api-flask-en-dokploy.md:1–4](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/5aa889370dcf342ba06666893b97f8065b513de9/docs/adr/0003-desplegar-api-flask-en-dokploy.md#L1-L4). |
+| ADR aceptados no reescritos | No cumple | El ADR-0003 aceptado de Render en S8 fue eliminado y sustituido por otro 0003 de Dokploy sin preservar la decisión ni declarar nuevo ADR supersedes. [docs/adr/0003-desplegar-api-flask-en-dokploy.md:1–18](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/5aa889370dcf342ba06666893b97f8065b513de9/docs/adr/0003-desplegar-api-flask-en-dokploy.md#L1-L18). Se verificó el original aceptado en el hash S8. |
+| docs/ia.md al día para la semana | Cumple | Registro condensado en tabla y nueva entrada de diagnóstico de plantilla faltante; [docs/ia.md:43–47](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/c2077ac55a29562adc728734ca4c283ccb40f310/docs/ia.md#L43-L47). |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No cumple | CI exacto success, pero no hay scanner/configuración/Quality Gate SonarCloud en el árbol; [.github/workflows/ci.yml:13–45](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/5aa889370dcf342ba06666893b97f8065b513de9/.github/workflows/ci.yml#L13-L45) solo prueba y build. |
+| Sin credenciales en el repositorio ni en el historial | No verificado | No hay credenciales reales hardcodeadas ni .env versionado en el snapshot; no se certifica todo el historial. Existe riesgo operativo distinto: métricas exponen request.path, que puede contener tokens de invitación. |
+| Contribución de todos los integrantes | No verificado | Cuatro firmas, 173 commits agregados en S9, para tres integrantes. Variantes deben consolidarse por evidencia de identidad; no se adivina la equivalencia. Punta actual: 4 firmas y 177 commits agregados; no equivalen automáticamente a personas. |
 
 ## Contribución por integrante
+
+Actualización agregada del 2026-10-06: Cuatro firmas y 173 commits agregados en S9; consolidación de variantes no acreditada de forma independiente para todas las personas. En HEAD: 4 firmas y 177 commits agregados.
+
+La tabla individual conservada abajo corresponde al registro histórico anterior; no se infieren nuevas correspondencias entre cuentas y personas.
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
 |---|---|---:|---:|---:|---|
@@ -113,7 +142,8 @@ Correspondencia cuenta↔persona inferida del correo de los commits, no de parec
 
 ## Preguntas abiertas para la sustentación
 
-- ¿El tercer integrante (Eliab) tenía acceso al repositorio desde la semana 1? (la lista de colaboradores no se pudo consultar por límite de API).
-- ¿Cómo justificaría el equipo la priorización del árbol de utilidad en términos de riesgo?
-- ¿Por qué el ADR decide «monolito modular» pero el archivo conserva el nombre de la decisión de producto, y por qué sus enlaces internos apuntan a archivos que no existen?
-- ¿Cuándo montarán el esqueleto prometido (`src/` con los 6 módulos, prueba y comando de arranque) para llegar al corte 1 con el montaje listo?
+Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
+
+- ¿Qué pasa con invitaciones, tokens y contadores si el contenedor reinicia, y cómo evitarían exponer tokens mediante /metrics?
+- ¿Qué cuotas de CPU/RAM/tráfico ofrece Dokploy y cuándo deja de ser válida la estimación de costo cero?
+- El test directo no detectó TemplateNotFound: ¿qué cambiarían en la prueba para cubrir el recorrido real del organizador?

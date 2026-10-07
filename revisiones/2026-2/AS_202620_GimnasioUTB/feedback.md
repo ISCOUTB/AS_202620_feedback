@@ -71,19 +71,10 @@ Pendiente de calificar: las filas de URL accesible desde fuera de la red y de he
 
 El mapa de contextos y la auditoría de propiedad de datos están bien construidos: los contextos, las relaciones tipificadas y los hallazgos citan rutas concretas del código y traen plan de corrección accionable. Para el siguiente corte, cierren la deuda transversal: integren el scanner de SonarCloud en el workflow y publiquen la URL del análisis con su Quality Gate; unifiquen los ADR en un archivo con la convención NNNN-titulo; completen la tabla de aspectos con las ocho columnas, incluida la evidencia de calidad; confirmen la sección 8 del arc42 con lenguaje ubicuo y el mapa de contextos. Si los límites de los contextos cambiaron respecto al primer corte, añadan el C4 nivel 3 y el ADR del reajuste. Y apliquen ya lo acordado en el plan: encapsular el estado del adaptador, crear el caso de uso de consulta y definir el puerto de lectura.
 
-## Semana 9 · S9 (revisión preliminar)
+## Semana 9 · S9 (revisión definitiva)
 
-Revisión preliminar, antes del cierre: la nota puede cambiar si el equipo empuja antes de la fecha límite.
+La verificación del contador ya incluye un defecto controlado, resultados y correcciones de erosión. Completen los enlaces de la tabla de aspectos y un ADR que justifique no incorporar un modelo generativo. La auditoría de dependencias debe incluir también la nueva UI Flutter; lleven la prueba PostgreSQL a CI y mantengan inmutables los ADR aceptados.
 
-Hay un avance sustantivo respecto de la entrega anterior. La porción elegida —el adaptador de persistencia con transacción y bloqueo de fila— es parte real del sistema y su cadena es recorrible: la fila del aspecto enlaza el ADR de concurrencia, el código del adaptador y la prueba de integración, y el escenario con su resultado está documentado en el arc42. El ADR argumenta la decisión con las restricciones del proyecto y compara alternativas. La medición del escenario es honesta: veinte operaciones concurrentes, resultado final consistente y el límite declarado (es una prueba del adaptador, no una prueba de carga). La contribución sigue repartida entre los integrantes y el barrido de credenciales sigue limpio.
+## Semana 10 · Segundo corte (avance preliminar)
 
-Lo que hay que cerrar para la entrega S9:
-
-1. Prueben que la prueba falla ante el defecto que cubre: un run en rojo, una prueba de mutación o el procedimiento documentado. Hoy solo se ve la prueba en verde.
-2. Registren en el archivo de uso de IA lo aceptado, lo corregido y al menos una salida rechazada con su motivo técnico para esta porción; el registro no tiene entrada de la semana.
-3. Si la generación cruzó un límite de contexto o las reglas de propiedad de datos del primer corte, documenten cómo lo detectaron y cómo lo corrigieron.
-4. Verifiquen en el registro oficial cada dependencia que el modelo haya propuesto (la añadida en el periodo se comprobó y es legítima).
-5. Si el sistema no incorpora un componente generativo, dejen el ADR que lo justifica: la ausencia de decisión no es la decisión de no hacerlo.
-6. Transversal: unifiquen el ADR que queda fuera de la convención de nombres y no editen ADR aceptados; si una decisión cambia, escriban uno nuevo que la reemplace. Pongan el registro de IA al día e integren el análisis estático con su evidencia pública.
-
-Esta revisión es preliminar: estas notas pueden cambiar si empujan antes del cierre.
+El despliegue responde a las sondas de salud y disponibilidad. Para el segundo corte, identifiquen el escenario operativo asignado y midan su línea base y respuesta en ese entorno; la prueba del adaptador y el contador de operaciones no sustituyen una medición del flujo HTTP. Formalicen el despliegue en ADR y preparen el pipeline en vivo.

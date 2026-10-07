@@ -8,14 +8,16 @@ Hoja consolidada del equipo a lo largo del semestre.
 |---|---|
 | Equipo | XALD |
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_XALD` |
-| Integrantes y su usuario de GitHub | Xavier Yesid Garcia Diaz (xaviergarciadiaz20-commits) · Dilan Joan Gonzalez Bejarano (dilanbejarano011) · Luis Estheban Lozano Colmenares (colmenares2007-crypto) · Axel Jair Ruiz Bolano (axeljruiz717-hash) — correspondencias por los correos de los commits (nombres explícitos), por confirmar con el docente |
-| URL del sistema desplegado | sin URL (sin despliegue todavía) |
-| Ultima revision | 2026-10-01 |
+| Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Xavier Yesid Garcia Diaz (xaviergarciadiaz20-commits) · Dilan Joan Gonzalez Bejarano (dilanbejarano011) · Luis Estheban Lozano Colmenares (colmenares2007-crypto) · Axel Jair Ruiz Bolano (axeljruiz717-hash) — correspondencias por los correos de los commits (nombres explícitos), por confirmar con el docente; ver comprobación actual de contribución más abajo. |
+| URL del sistema desplegado | https://xald-backend.onrender.com · ver comprobación y límites en S10 |
+| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
 
 ## Estado por entrega
 
-| Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
+| Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 9 | S9 · definitiva | `master` · `9236ff97218b632eeb9a1910f6083968e2c22909` · 2026-10-04T23:53:02-05:00 | 7/10 | 3.8 (propuesta al docente) | sí, 2026-10-06 |
+| 10 | Segundo corte · preliminar | `master` · `9236ff97218b632eeb9a1910f6083968e2c22909` · 2026-10-04T23:53:02-05:00 | 3/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `bf81545` · 2026-08-08T13:39:21-05:00 | 5/9 | 3.2 (propuesta) | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `8c37887` · 2026-08-16T13:45:27-05:00 | 1/9 | 1.4 (propuesta) | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `dc38992` · 2026-08-23T22:07:19-05:00 | 5/9 | no se publica | sí |
@@ -25,8 +27,6 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 7 | S7 | `62a0d15` (2026-09-20T23:25:16-05:00) | 9/10 | 4.6 (propuesta) | sí (auditoría local) |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `f90f28d3` (2026-09-27T21:56:48-05:00) | 10/10 | 5.0 (propuesta; 2 filas de despliegue pendientes) | sí (definitiva) |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
-| 9 | Evidencia S9 · Generación verificada y trazable | `f90f28d3` (2026-09-27T21:56:48-05:00) | 1/10 | 1.4 (preliminar) | sí (preliminar) |
-| 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
 | 11 | Evidencia S11 · Fallos parciales y decisión de extracción | | | no aplica | |
 | 12 | Evidencia S12 · Estrategia de datos y eventos | | | no aplica | |
 | 12 | Taller aplicado · Mensajes y consistencia | | | no aplica | |
@@ -36,6 +36,27 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 17 | Aplicación de cambios y cierre arquitectónico | | | | |
 
 ## Lo que se arrastra
+
+Estado vigente observado en la punta citada en [S10](semana-10-corte2.md). Las correcciones tardías no cambian S9. El registro histórico siguiente conserva su contexto, pero no sustituye esta actualización ni implica cerrar hallazgos no revalidados.
+
+| Hallazgo actual | Estado | Evidencia y próximo paso |
+|---|---|---|
+| Repetir ESC-05 con conflictos realmente simultáneos, verificar estado ganador completo y distinguir aceptación HTTP de persistencia sin pérdidas. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Precisar cuál código fue generado en S9: el handler LWW no cambia desde S8; sí cambian pruebas, medidor y documentación. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Completar en docs/ia.md qué se corrigió del periodo, o declarar honestamente que no se requirió corrección. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Cambiar enlaces de aspectos desde experimental al estado revisable y reconciliar Room/AES/TLS con el MVP real. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Resolver o priorizar H-1…H-5 de la auditoría; no presentar la auditoría como corrección ya implementada. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Integrar SonarCloud con scanner, run y Quality Gate públicos; retirar __pycache__ versionado. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Identificar la consigna operativa S10 y medir línea base en el despliegue; documentar estabilidad y recuperación tras el primer timeout. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Antes de incorporar Gemini, aportar conjunto de evaluación con resultados, costo y latencia; el ADR actual solo aplaza la integración. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Hay nueva prueba dirigida al defecto y procedimiento de mutación: [backend/tests/test_lww.py:5–8](https://github.com/ISCOUTB/AS_202620_XALD/blob/9236ff97218b632eeb9a1910f6083968e2c22909/backend/tests/test_lww.py#L5-L8) y [docs/adr/0011-resolucion-conflictos-lww.md:24](https://github.com/ISCOUTB/AS_202620_XALD/blob/9236ff97218b632eeb9a1910f6083968e2c22909/docs/adr/0011-resolucion-conflictos-lww.md#L24). | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| La auditoría y la verificación de dependencias S9 ya están presentes: [docs/EVIDENCIA-S9.md:1–67](https://github.com/ISCOUTB/AS_202620_XALD/blob/9236ff97218b632eeb9a1910f6083968e2c22909/docs/EVIDENCIA-S9.md#L1-L67). | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| La decisión sobre Gemini ya está explicitada para este corte y coincide con el mock: [docs/adr/0012-aplazamiento-integracion-gemini.md:17–31](https://github.com/ISCOUTB/AS_202620_XALD/blob/9236ff97218b632eeb9a1910f6083968e2c22909/docs/adr/0012-aplazamiento-integracion-gemini.md#L17-L31). | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| El pipeline sí corre sobre master y el hash actual pasa: [run](https://github.com/ISCOUTB/AS_202620_XALD/actions/runs/37265397606); no cierra SonarCloud. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| La planilla antigua decía sin URL, pero el README declara el servicio y health públicos: [README.md:8–11](https://github.com/ISCOUTB/AS_202620_XALD/blob/9236ff97218b632eeb9a1910f6083968e2c22909/README.md#L8-L11). Salud actual confirmada por HTTP 200 en la segunda consulta; no se probó flujo. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+
+<details>
+<summary>Registro histórico previo a esta revisión (estados a la fecha de cada observación)</summary>
 
 | Hallazgo | Primera vez que se detectó | Sigue abierto | Qué se le dijo al equipo |
 |---|---|---|---|
@@ -106,20 +127,30 @@ Hoja consolidada del equipo a lo largo del semestre.
 | El sistema declara un componente de categorización con IA (`:aigemini`) sin evaluación de costo/latencia ni ADR de decisión. | S9 | sí | Evaluar el componente generativo o decidir su no incorporación con un ADR. |
 | ADR 0001–0005 editados el 2026-09-27 tras su aceptación, sin declarar reemplazo. | S9 | sí | No editar ADR aceptados; crear uno nuevo y marcar el anterior como reemplazado. |
 | Sin SonarCloud auditable (configuración, línea del scanner y URL pública con Quality Gate). | S9 | sí | Integrar y publicar el análisis estático. |
+
+</details>
+
 ## Estado del contrato del repositorio
+
+Actualizado desde la evaluación de la punta actual; no altera la matriz congelada de S9.
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
-| Nombre y visibilidad del repositorio | Cumple | `ISCOUTB/AS_202620_XALD`, público (antes privado: EQUIPOS.md) |
-| Estructura mínima | Cumple | seis rutas presentes; `docs/c4/` ahora en su carpeta |
-| Convención de nombres de ADR | Cumple | diez ADR con nombres `NNNN-titulo-en-kebab-case.md` |
-| ADR aceptados sin reescribir | No cumple | persiste: `0002-parsing-hibrido.md` (2026-08-30) y `0001`–`0005` (2026-09-27) editados después de su aceptación, sin declarar reemplazo |
-| `docs/ia.md` al día | No cumple | último cambio 2026-09-27 (`809ea69`), del periodo S8; no tiene entrada del periodo S9 |
-| Sin credenciales en el repositorio ni en el historial | Cumple | greps limpios; `local.properties` solo trae ruta de SDK (fuera del versionado de todas formas) |
-| Contribución de todos los integrantes | Cumple | 4 identidades = 4 integrantes |
-| Pipeline en verde | No cumple | CI del hash revisado en verde, pero sin scanner ni URL pública de SonarCloud con Quality Gate |
+| Repositorio en la organización, con el nombre de la convención y público | Cumple | Clon público ISCOUTB/AS_202620_XALD; [README.md:1–9](https://github.com/ISCOUTB/AS_202620_XALD/blob/9236ff97218b632eeb9a1910f6083968e2c22909/README.md#L1-L9). |
+| Estructura mínima presente | Cumple | README y seis rutas mínimas presentes; [docs/aspectos.md:5–11](https://github.com/ISCOUTB/AS_202620_XALD/blob/9236ff97218b632eeb9a1910f6083968e2c22909/docs/aspectos.md#L5-L11) enlaza arquitectura y ADR. Hay binarios __pycache__ que deben retirarse sin confundirlos con ausencia documental. |
+| Estado calificado identificable | Cumple | Rama master y hash/fecha exactos del encabezado, anterior al cierre; no se usaron etiquetas ni experimental para calificar. |
+| Nombres de ADR según la convención | Cumple | Doce ADR con nombres NNNN-titulo-en-kebab-case.md; [docs/adr/0011-resolucion-conflictos-lww.md:1–5](https://github.com/ISCOUTB/AS_202620_XALD/blob/9236ff97218b632eeb9a1910f6083968e2c22909/docs/adr/0011-resolucion-conflictos-lww.md#L1-L5). |
+| ADR aceptados no reescritos | No cumple | Historial confirma adición de fechas a ADR 0001–0005 ya aprobados el 27-sep; por ejemplo efcc3902311cc8fec393fccf4f1cc7a95badf976 sobre [docs/adr/0001-patron-offline-first.md:1–4](https://github.com/ISCOUTB/AS_202620_XALD/blob/9236ff97218b632eeb9a1910f6083968e2c22909/docs/adr/0001-patron-offline-first.md#L1-L4). Son ediciones de metadatos, no se afirma cambio de decisión; registrar adendas sin reescribir aceptados conforme al contrato. |
+| docs/ia.md al día para la semana | Cumple | [docs/ia.md:39–41](https://github.com/ISCOUTB/AS_202620_XALD/blob/9236ff97218b632eeb9a1910f6083968e2c22909/docs/ia.md#L39-L41) crece en S9 con aceptados y rechazos motivados. La falta de un apartado de corrección se recoge en la fila específica S9. |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No cumple | [Android CI del hash](https://github.com/ISCOUTB/AS_202620_XALD/actions/runs/37265397606) en success; [.github/workflows/ci.yml:29–57](https://github.com/ISCOUTB/AS_202620_XALD/blob/9236ff97218b632eeb9a1910f6083968e2c22909/.github/workflows/ci.yml#L29-L57) ejecuta Gradle, Redocly y pytest, pero no scanner SonarCloud. No hay configuración ni Quality Gate público de la revisión: el verde de pruebas no lo sustituye. |
+| Sin credenciales en el repositorio ni en el historial | Cumple | Barrido del árbol y búsqueda histórica de patrones de alta especificidad sin credenciales reales confirmadas; [backend/app/main.py:59–65](https://github.com/ISCOUTB/AS_202620_XALD/blob/9236ff97218b632eeb9a1910f6083968e2c22909/backend/app/main.py#L59-L65). Ejemplos y valores de pruebas revisados, sin publicar valores. |
+| Contribución de todos los integrantes | No verificado | 419 commits con cuatro firmas observadas (186, 98, 72 y 63); la cantidad de firmas no verifica por sí sola correspondencia con cuatro integrantes ni distribución sustantiva. |
 
 ## Contribución por integrante
+
+Actualización agregada del 2026-10-06: 419 commits en cuatro firmas visibles: 186, 98, 72 y 63. Correspondencia individual no verificada; no se infiere desde el número de cuentas.
+
+La tabla individual conservada abajo corresponde al registro histórico anterior; no se infieren nuevas correspondencias entre cuentas y personas.
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
 |---|---|---:|---:|---:|---|
@@ -130,6 +161,8 @@ Hoja consolidada del equipo a lo largo del semestre.
 
 ## Preguntas abiertas para la sustentación
 
-- ¿Dónde quedaron los escenarios de calidad de seis partes y el árbol de utilidad de la entrega S2?
-- ¿La suite `gradlew.bat -p XALDAPP test` pasa en verde en el entorno del equipo? (el README muestra una salida esperada, no un run verificado)
-- ¿Los commits del 23/08 («Create/Delete PROYECTO_XALD») fueron accidentales? Conviene aclararlo.
+Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
+
+- ¿Qué pasa con los conflictos aceptados si Render reinicia y se borra ultima_version; qué estado y datos se recuperan?
+- ¿Cuál es el costo y umbral de capacidad al agregar persistencia y eventualmente Gemini, frente al supuesto de 50 usuarios?
+- Si la prueba simultánea o con relojes desfasados cambia el resultado 30/30, ¿qué política de conflicto o diseño modificarían?

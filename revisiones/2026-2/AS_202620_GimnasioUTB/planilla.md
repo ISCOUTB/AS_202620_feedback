@@ -8,15 +8,16 @@ Hoja consolidada del equipo GimnasioUTB. Se actualiza tras cada revisión.
 |---|---|
 | Equipo | GimnasioUTB |
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_GimnasioUTB` |
-| Integrantes y su usuario de GitHub | Sebastian Felipe Caicedo Acosta · Rodrigo Andres Facio Lince Beltran · Pedro Luis Pallares De La Hoz — cuentas abajo |
-| URL del sistema desplegado | sin desplegar aún |
-| Ultima revision | 2026-09-24 |
+| Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Sebastian Felipe Caicedo Acosta · Rodrigo Andres Facio Lince Beltran · Pedro Luis Pallares De La Hoz — cuentas abajo; ver comprobación actual de contribución más abajo. |
+| URL del sistema desplegado | https://gimnasio-utb.iscoutb.dev · ver comprobación y límites en S10 |
+| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
 
 ## Estado por entrega
 
-| Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
+| Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 9 | S9 (prelim.) | `e6a7f58` (2026-09-28T01:32:10-05:00; punta actual) | 6/10 | 3.4 (prelim.; propuesta al docente) | sí, preliminar |
+| 9 | S9 · definitiva | `main` · `af4796d6320766611d9fc01d7112a1c0e4112b40` · 2026-10-04T16:52:10-05:00 | 8/10 | 4.2 (propuesta al docente) | sí, 2026-10-06 |
+| 10 | Segundo corte · preliminar | `main` · `c0a6a78f0ce87ea59040662b5abbbb4d2ab99aec` · 2026-10-05T18:16:08-05:00 | 3/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
 | 6 | S6 | `106869b` (2026-09-13T22:19:08-05:00) | 6/8 | 4.0 (prelim.) | si |
 | 8 | S8 | `a71bc75` (2026-09-27T21:55:06-05:00) | 3/10 | 2.2 | sí, definitiva |
 | 7 | S7 | `0e3aeb5` (2026-09-20T23:29:29-05:00) | 8/10 | 4.2 | sí, auditada |
@@ -29,6 +30,22 @@ Hoja consolidada del equipo GimnasioUTB. Se actualiza tras cada revisión.
 S8 se califica sobre 10 de las 12 filas de la ficha: quedan pendientes de calificar las dos filas de despliegue (URL del sistema accesible desde fuera de la red de la universidad y health check consultable), porque la URL se entrega por Moodle. La nota publicada es provisional.
 
 ## Lo que se arrastra
+
+Estado vigente observado en la punta citada en [S10](semana-10-corte2.md). Las correcciones tardías no cambian S9. El registro histórico siguiente conserva su contexto, pero no sustituye esta actualización ni implica cerrar hallazgos no revalidados.
+
+| Hallazgo actual | Estado | Evidencia y próximo paso |
+|---|---|---|
+| Convertir aspectos en cadena de ocho columnas con enlaces reales a C4, código, prueba y medición. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Formalizar mediante ADR la decisión de no incorporar generación y la plataforma Dokploy. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Incluir PostgreSQL real en CI y aportar scanner, run y Quality Gate público. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Conservar ADR aceptados y resolver duplicación del 0001. Confirmar cuentas sin inferir personas. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Identificar el escenario asignado de S10 y levantar una línea base del despliegue. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Ya existe registro IA S9 con rechazo técnico y auditoría de erosión; V1 y V2 están corregidas en código. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| La prueba de fallo por pérdida de bloqueo está documentada; no sigue simplemente «sin evidencia». | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| En la punta posterior al cierre ya existen Dockerfile, Compose, URL pública y arc42 de despliegue; no modificar notas S8/S9 por ello. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+
+<details>
+<summary>Registro histórico previo a esta revisión (estados a la fecha de cada observación)</summary>
 
 | Hallazgo | Primera vez que se detectó | Sigue abierto | Qué se le dijo al equipo |
 |---|---|---|---|
@@ -75,20 +92,30 @@ S8 se califica sobre 10 de las 12 filas de la ficha: quedan pendientes de califi
 | Auditoría de erosión del periodo de generación S9 | S9 | Sí | Documentar si cruzó límites de contexto o reglas de propiedad de datos de S6, y su corrección. |
 | ADR de decisión sobre el componente generativo | S9 | Sí | La ausencia de decisión no es la decisión de no incorporarlo. |
 | `docs/ia.md` sin entrada de S9 (sigue en la semana 6) | S9 | Sí | Registrar lo aceptado, lo corregido y lo rechazado con motivo de la porción S9. |
+
+</details>
+
 ## Estado del contrato del repositorio
+
+Actualizado desde la evaluación de la punta actual; no altera la matriz congelada de S9.
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
-| Nombre y visibilidad del repositorio | Cumple | `ISCOUTB/AS_202620_GimnasioUTB`, público |
-| Estructura mínima | Cumple | Las seis rutas del contrato están presentes en HEAD. |
-| Convención de nombres de ADR | No cumple | `ADR0001.md` duplica el número 0001 y no sigue la convención. |
-| ADR aceptados sin reescribir | No cumple | El ADR 0001, aceptado en `92f4a53`, fue editado después en `c271073`, `b556737`, `59b6d3e` y `47a18d0` (2026-08-30), sin ADR de reemplazo. |
-| `docs/ia.md` al día | No cumple | La última entrada es del 2026-09-13; no registra S8. |
-| Sin credenciales en el repositorio ni en el historial | Cumple | Escaneos limpios; solo `.env.example`. |
-| Contribución de todos los integrantes | Cumple | Tres personas consolidadas para tres integrantes en HEAD. |
-| Pipeline en verde | Cumple | El run de la punta actual concluye en verde; SonarCloud sigue pendiente. |
+| Repositorio en la organización, con el nombre de la convención y público | Cumple | Clon público anónimo de https://github.com/ISCOUTB/AS_202620_GimnasioUTB; [README.md:1-5](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/c0a6a78f0ce87ea59040662b5abbbb4d2ab99aec/README.md#L1-L5). |
+| Estructura mínima presente | Cumple | Árbol Git con README, docs/arc42, docs/adr, docs/c4, docs/aspectos.md y docs/ia.md; índice en [README.md:108-121](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/c0a6a78f0ce87ea59040662b5abbbb4d2ab99aec/README.md#L108-L121). |
+| Estado calificado identificable | Cumple | Punta preliminar origin/main c0a6a78f0ce87ea59040662b5abbbb4d2ab99aec; fecha anterior al cierre futuro S10. No modifica S9. |
+| Nombres de ADR según la convención | No cumple | [docs/adr/ADR0001.md:1-8](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/c0a6a78f0ce87ea59040662b5abbbb4d2ab99aec/docs/adr/ADR0001.md#L1-L8) no sigue NNNN-titulo-en-kebab-case y duplica el número de [docs/adr/0001-arquitectura-hexagonal.md:1-5](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/c0a6a78f0ce87ea59040662b5abbbb4d2ab99aec/docs/adr/0001-arquitectura-hexagonal.md#L1-L5). |
+| ADR aceptados no reescritos | No cumple | El ADR-0001 ya aceptado sigue reescrito sin reemplazo: historial verificado en [3fae092f](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/commit/3fae092fe6d33872772f106dc2737f88339ba82c) y estado canónico [docs/adr/0001-arquitectura-hexagonal.md:1-15](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/c0a6a78f0ce87ea59040662b5abbbb4d2ab99aec/docs/adr/0001-arquitectura-hexagonal.md#L1-L15). La punta añade otra edición tardía. |
+| docs/ia.md al día para la semana | Cumple | [docs/ia.md:100-112](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/c0a6a78f0ce87ea59040662b5abbbb4d2ab99aec/docs/ia.md#L100-L112) incorpora S9 con correcciones/rechazos. |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No cumple | [README.md:86-88](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/c0a6a78f0ce87ea59040662b5abbbb4d2ab99aec/README.md#L86-L88) declara ausencia de PostgreSQL en CI y de SonarCloud/Quality Gate; no se verificó run de esta punta. |
+| Sin credenciales en el repositorio ni en el historial | No verificado | Barrido estático del árbol textual, incluidos ejemplos y documentación: sin candidatos de credenciales reales; no hay .env versionado. [.github/workflows/ci.yml:11-23](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/c0a6a78f0ce87ea59040662b5abbbb4d2ab99aec/.github/workflows/ci.yml#L11-L23) y variables de entorno en [src/modules/aforo/infrastructure/persistence/aforo-postgres.adapter.js:14-27](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/c0a6a78f0ce87ea59040662b5abbbb4d2ab99aec/src/modules/aforo/infrastructure/persistence/aforo-postgres.adapter.js#L14-L27). Los PDF se excluyeron. No equivale a una certificación exhaustiva de secretos. El recorrido histórico ampliado está pendiente de completar; no se afirma ausencia histórica por el resultado del árbol actual. |
+| Contribución de todos los integrantes | No verificado | Historial agregado a la punta: 5 grupos por correo idéntico frente a 3 integrantes; firmas distintas no se atribuyen por semejanza. Se requiere confirmar correspondencia cuenta–persona, sin publicar correos. |
 
 ## Contribución por integrante
+
+Actualización agregada del 2026-10-06: Historial de la punta: 108 commits y 7 firmas de autor distintas (firmas, no personas). Historial agregado a la punta: 5 grupos por correo idéntico frente a 3 integrantes; firmas distintas no se atribuyen por semejanza. Se requiere confirmar correspondencia cuenta–persona, sin publicar correos.
+
+La tabla individual conservada abajo corresponde al registro histórico anterior; no se infieren nuevas correspondencias entre cuentas y personas.
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
 |---|---|---:|---:|---:|---|
@@ -100,7 +127,8 @@ Correspondencia cuenta↔persona inferida del correo institucional de los commit
 
 ## Preguntas abiertas para la sustentación
 
-- ¿El diagrama C4 (imagen) tiene leyenda y flechas etiquetadas? (no se pudo inspeccionar desde el repositorio).
-- ¿Por qué 8 escenarios si la ficha pedía entre 3 y 5?
-- ¿Cuándo van a repartir el arc42 en `docs/arc42/` y el C4 en `docs/c4/`? (arrastrado desde S1).
-- ¿Por qué la restricción OC5 dice «equipo de 4 personas» si la matrícula registra 3?
+Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
+
+- Fallo: si PostgreSQL deja de responder o el pool se agota, ¿qué timeout y señal operativa impedirán que las solicitudes queden esperando indefinidamente?
+- Costo: ¿qué recursos consume el Compose completo y cuál es el límite que obliga a abandonar el alojamiento sin costo?
+- Medición: ¿qué cambiarían al pasar de 20 llamadas directas al adaptador a carga HTTP y qué resultado justificaría esa decisión?

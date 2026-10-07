@@ -1,105 +1,76 @@
-> Pasada temprana (previa al cierre del 2026-10-05T05:00:00Z): el hash y la nota son preliminares y pueden cambiar si el equipo empuja antes del cierre.
+# Evidencia S9 definitiva · ElMapita
 
-# semana-09-evidencia-s9 · ElMapita
+Revisión actualizada tras el cierre del **2026-10-05T05:00:00Z** (domingo a medianoche COT).
 
 | Campo | Valor |
 |---|---|
-| Repositorio | `https://github.com/ISCOUTB/AS_202620_ElMapita` |
-| Estado revisado | `e5c3ac6ecb598c8e126aaa091cce9af01fe818c4` en `origin/main` (2026-09-27T16:26:27-06:00) |
-| Cierre | 2026-10-05T05:00:00Z |
-| Revisor | auditoría local preliminar sobre clon público efímero |
+| Repositorio | [AS_202620_ElMapita](https://github.com/ISCOUTB/AS_202620_ElMapita) |
+| Rama remota principal | `main` |
+| Base S5 del segundo corte | `b28e0684d4b38267c0a7d48152b0f5558a789b8c` |
+| Base S8 | `e5c3ac6ecb598c8e126aaa091cce9af01fe818c4` |
+| Estado revisado | `f3bcfa83e80f5c8d0e30a01b656d89160c907d64` en `origin/main` (2026-10-04T21:11:20-06:00) |
+| S9 congelada | `f3bcfa83e80f5c8d0e30a01b656d89160c907d64` · 2026-10-04T21:11:20-06:00 |
+| Punta actual / S10 preliminar | `f3bcfa83e80f5c8d0e30a01b656d89160c907d64` · 2026-10-04T21:11:20-06:00 |
+| Comprobación | 2026-10-06T21:27:01Z |
 
-La punta actual **no tiene commits posteriores a S8**: coincide exactamente con el hash calificado de
-S8 (`e5c3ac6`) y su fecha es del 2026-09-27. Esta pasada **no tiene corte**: se califica la punta
-actual del 2026-10-01, no un commit anterior a un cierre. El periodo S9 (`e5c3ac6..origin/main`) está
-vacío: el equipo no empujó ninguna porción nueva. Bajo CONTRATO §12, la evidencia previa es línea base
-y **no se recalifica por existir**: las filas que describen la entrega S9 quedan en No cumple (o No
-verificado) por ausencia de artefacto del periodo, citando el artefacto anterior solo como contexto.
-La fila de credenciales y la matriz transversal se deciden sobre el estado en la punta.
+Revisión por Git y lectura estática; no se ejecutó código, instalación, pruebas ni despliegue de estudiantes. Una consulta de Actions por repositorio. Los procedimientos y resultados documentados por el equipo se identifican como tales; no equivalen a una ejecución del revisor. PDF excluido por decisión docente: no se abrió ni se penaliza. No se consultaron etiquetas.
 
-## Matriz de la ficha
+## Matriz S9
 
-| Criterio de evaluación | Evidencia técnica | Estado | Observaciones |
-|---|---|---|---|
-| Porción real del sistema construida con apoyo de IA | Contexto (semana anterior): `docs/ia.md` (entrada 2026-09-20) documenta la construcción asistida del contrato de integración; código en `docs/api/openapi.v1.yaml`, `backend/test/contract/openapi.contract-spec.ts`, controladores de `backend/src/modules/*/interfaces/`; commits `afae3be` (creación, S7) y `9ee88c5` (cierre de RSK-04, S8). | No cumple | El periodo S9 (`e5c3ac6..origin/main`) no tiene commits: no hay porción nueva construida en esta evidencia. El artefacto citado pertenece a S7/S8 y es línea base (CONTRATO §12): se cita como contexto pero no satisface la fila. |
-| Cadena completa navegable para esa porción | `docs/aspectos.md` filas `EC-01`…`EC-04`: la columna Pruebas dice «(pendiente)» y Evidencia dice «Pendiente» en las cuatro. El contrato de A-01 sí enlaza ADR-0003 y el job `contract`, pero la fila de aspectos no llega a prueba ni a medición. | No cumple | La cadena se rompe en Pruebas y en Evidencia para los cuatro escenarios. |
-| ADR con la decisión argumentada por el equipo | Contexto (semanas anteriores): `docs/adr/0001-estilo-arquitectonico-propuesto.md:5` (`status: Accepted`, S3) argumenta Monolito Modular con las restricciones del proyecto (3 devs junior/medio, riesgo de lock-in de Supabase, testabilidad sin device farm); `docs/adr/0003-contrato-openapi-versionado.md` (S7/S8) y `docs/adr/0004-despliegue-render-docker.md` (S8) comparan alternativas y descartan opciones. | No cumple | No hay ADR del periodo S9 para la porción de esta evidencia. Los ADR citados son de S3/S7/S8: línea base que no se recalifica por existir (CONTRATO §12). |
-| Prueba que falla ante el defecto que cubre | Contexto (semana anterior): `docs/adr/0003-contrato-openapi-versionado.md` (sección «Cierre de RSK-04», S8) cita el run en rojo [35549974182](https://github.com/ISCOUTB/AS_202620_ElMapita/actions/runs/35549974182) que capturó la deriva de prefijo; `docs/ia.md` (2026-09-20) registra «falla en las 16» antes del fix. | No verificado | El run en rojo citado es de S8, no del periodo S9. No hay run en rojo, prueba de mutación ni procedimiento documentado del periodo; queda como pregunta para la sustentación (CONTRATO §13). |
-| Medición del escenario asociado | `docs/aspectos.md` filas `EC-01`…`EC-04`: la columna Evidencia sigue en «Pendiente»; no hay resultado contrastado contra el umbral (p95 < 5 s, ≥ 30 FPS, accuracy ≤ 15 m, offline < 5 s). | No cumple | Sin medición publicada en la punta. |
-| `docs/ia.md` con lo aceptado, lo corregido y lo rechazado con motivo | Contexto (semana anterior): `docs/ia.md` documenta rechazos con motivo técnico: H-09 clasificado como falso positivo con justificación línea por línea, descarte del formato `.svg`, descarte del catálogo de no conformidades anterior y no elección de Hexagonal pese al puntaje. | No cumple | El extracto citado pertenece a S8: la última entrada es del 2026-09-27 y no hay entrada del periodo S9. Línea base que no satisface la fila (CONTRATO §12). |
-| Auditoría de erosión sobre límites de contexto y propiedad de datos | No se encontró auditoría de erosión ni verificación de propiedad de datos en `docs/`: el barrido `erosión\|límite de contexto\|propiedad de datos` no devuelve coincidencias. | No cumple | Falta la auditoría exigida por la ficha, incluidos los hallazgos con ubicación y corrección. |
-| Dependencias propuestas verificadas en su registro oficial | El diff del periodo contra el hash de S8 (`e5c3ac6`) sobre `backend/package.json` y `frontend/pubspec.yaml` está vacío: no hay dependencias añadidas en el periodo ni, por tanto, verificación que citar. | No cumple | Sin dependencias nuevas respecto de S8; no hay lista ni comprobación en npm/PyPI. |
-| Sin credenciales en código, ejemplos ni documentación generada | Barrido del contrato sobre la punta: coincidencias solo en tipos y datos de prueba (`backend/src/modules/auth/domain/index.ts:27` `password: string`; `backend/test/contract/openapi.contract-spec.ts:221` `password: 'clave-segura'`); sin `.env` versionado; `git log -S'BEGIN PRIVATE KEY'` sin coincidencias. | Cumple | Sin credenciales reales; `.gitleaksignore` documenta falsos positivos históricos. |
-| Componente generativo evaluado, con costo y latencia, o ADR de no incorporarlo | No hay componente generativo en el sistema ni un ADR que decida no incorporarlo; el único uso de IA es como apoyo de construcción, no como componente de la aplicación. | No cumple | La ausencia de decisión no es la decisión de no hacerlo; falta el ADR que lo justifique si esa es la posición del equipo. |
+| Criterio | Estado | Evidencia y observaciones |
+|---|---|---|
+| Porción real del sistema construida con apoyo de IA | Cumple | Nueva política de precisión y caso de uso en el módulo Ubicacion, con apoyo IA explícito; [backend/src/modules/ubicacion/domain/accuracy-policy.ts:1–26](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/modules/ubicacion/domain/accuracy-policy.ts#L1-L26), [backend/src/modules/ubicacion/application/get-validated-location.use-case.ts:15–43](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/modules/ubicacion/application/get-validated-location.use-case.ts#L15-L43), [docs/ia.md:399–413](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/ia.md#L399-L413). También hay corrección real de mapas por error 500. Límite: el controlador aún llama al caso de uso anterior, no al validador nuevo. |
+| Cadena completa navegable para esa porción | No cumple | La fila EC-03 mantiene rutas antiguas de implementación en texto; menciona la prueba nueva pero no enlaza la política/caso de uso nuevo ni completa medición de fallback UI. Las otras filas conservan pruebas pendientes; [docs/aspectos.md:3–8](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/aspectos.md#L3-L8). Registrar el proveedor no completa la cadena funcional. |
+| ADR con la decisión argumentada por el equipo | Cumple | La decisión vigente de monolito, desacoplo y fallback se confirma formalmente en ADR-0005; ADR-0006 explicita el contrato y correcciones de rutas/DI. Son decisiones del equipo aplicadas al nuevo trabajo, [docs/adr/0005-reemplazo-adr-0001-estilo-arquitectonico.md:13–33](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/adr/0005-reemplazo-adr-0001-estilo-arquitectonico.md#L13-L33), [docs/adr/0006-reemplazo-adr-0003-contrato-openapi.md:17–26](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/adr/0006-reemplazo-adr-0003-contrato-openapi.md#L17-L26). |
+| Prueba que falla ante el defecto que cubre | Cumple | Logs versionados y commits del defecto de borde: rojo para accuracy<15 en 7d64d5f, corrección <=15 en cac2f97; [docs/evidencia/s9-run-rojo.txt:1–26](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/evidencia/s9-run-rojo.txt#L1-L26), [docs/evidencia/s9-run-verde.txt:1–8](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/evidencia/s9-run-verde.txt#L1-L8), [backend/src/modules/ubicacion/domain/accuracy-policy.ts:18–25](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/modules/ubicacion/domain/accuracy-policy.ts#L18-L25). Se acredita evidencia documentada, sin ejecutar pruebas. |
+| Medición del escenario asociado | Cumple | Hay medición nueva de la porción mapas que detectó defecto y motivó corrección: benchmark 30 peticiones, p95=1637 ms frente a 5000, pero todas fallan y cumple=false; [docs/evidencia/s9-ec01-benchmark.json:1–15](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/evidencia/s9-ec01-benchmark.json#L1-L15), [docs/ia.md:428–430](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/ia.md#L428-L430). Se cumple documentar y contrastar la medición, NO el escenario de calidad. EC-03 en UI sigue sin medición completa. |
+| docs/ia.md con lo aceptado, lo corregido y lo rechazado con motivo | Cumple | Aceptado, correcciones concretas, y rechazo de datos inventados/dependencia innecesaria con motivo técnico; [docs/ia.md:404–419](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/ia.md#L404-L419). Seguimiento distingue fallos del arnés y del producto, [docs/ia.md:456–469](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/ia.md#L456-L469). |
+| Auditoría de erosión sobre límites de contexto y propiedad de datos | Cumple | Auditoría con ubicaciones, propiedad de datos, hallazgos y acciones. Se corrige política EC-03 y tratamiento de falta de modelo; otras deudas se reconocen abiertas. [docs/auditoria-erosion-s9.md:1–16](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/auditoria-erosion-s9.md#L1-L16), [backend/src/modules/mapas/infrastructure/storage/supabase-storage.ts:22–30](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/modules/mapas/infrastructure/storage/supabase-storage.ts#L22-L30). No implica que toda erosión quede corregida. |
+| Dependencias propuestas verificadas en su registro oficial | Cumple | La nueva dependencia es integration_test de desarrollo, procedente del SDK Flutter: [frontend/pubspec.yaml:53–57](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/frontend/pubspec.yaml#L53-L57) y [docs/ia.md:452–456](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/ia.md#L452-L456). Verificada contra [documentación oficial Flutter](https://docs.flutter.dev/testing/integration-tests), que la declara con sdk: flutter. El validador backend no añadió paquetes; no se exige un diff artificial. |
+| Sin credenciales en código, ejemplos ni documentación generada | Cumple | Barrido del snapshot en código, ejemplos y docs sin secretos reales; claves Supabase se reciben por configuración y SONAR_TOKEN desde almacén. [backend/src/shared/supabase/client.ts:11–25](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/shared/supabase/client.ts#L11-L25), [.github/workflows/ci.yml:274–283](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/.github/workflows/ci.yml#L274-L283). Los tipos password/token y fixtures no son credenciales activas. |
+| Componente generativo evaluado, con costo y latencia, o ADR de no incorporarlo | Cumple | ADR-0007 compara alternativas y justifica no incorporar modelo generativo frente a latencia, offline, costo, determinismo y privacidad; [docs/adr/0007-no-incorporar-componente-generativo.md:12–40](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/adr/0007-no-incorporar-componente-generativo.md#L12-L40). |
 
-## Matriz transversal (CONTRATO §11)
+## Matriz transversal · CONTRATO §11
 
-| Criterio | Evidencia | Estado | Observaciones |
-|---|---|---|---|
-| Repositorio en la organización, con el nombre de la convención y público | `https://github.com/ISCOUTB/AS_202620_ElMapita`, clonado sin autenticación; rama principal `origin/main`. | Cumple | Nombre `AS_202620_ElMapita` conforme y visibilidad pública. |
-| Estructura mínima presente | En `e5c3ac6`: `docs/arc42/`, `docs/adr/` (0001-0004), `docs/c4/`, `docs/aspectos.md`, `docs/ia.md` y `README.md`. | Cumple | Las seis rutas del contrato §2; arc42 en plantilla única y C4 en Markdown más PNG. |
-| Estado calificado identificable | `e5c3ac6ecb598c8e126aaa091cce9af01fe818c4` en `origin/main`, commit del 2026-09-27T16:26:27-06:00. | Cumple | Sin cierre en esta pasada: se identifica la punta actual. Coincide con el hash de S8; no hay commits posteriores. |
-| Nombres de ADR según la convención | `docs/adr/0001-estilo-arquitectonico-propuesto.md`, `0002-restriccion-rendimiento-compatibilidad-dispositivos.md`, `0003-contrato-openapi-versionado.md` y `0004-despliegue-render-docker.md`. | Cumple | Los cuatro cumplen `NNNN-titulo-en-kebab-case.md`. |
-| ADR aceptados no reescritos | ADR-0001 declara `status: Accepted` (2026-08-22) y fue editado en `07b36f4` (2026-08-30T23:31:03-05:00) sin declarar reemplazo; ADR-0003 se editó en `9ee88c5` (2026-09-27T00:57:42-06:00) después de crearse en `afae3be` (2026-09-20). | No cumple | El contrato §4 prohíbe editar un ADR aceptado sin reemplazo declarado; ninguna de las dos ediciones lo declara. |
-| `docs/ia.md` al día para la semana | Historial de `docs/ia.md`: la última modificación es del 2026-09-27 (`e5c3ac6`), dentro de la ventana de S8. No hay commits sobre el archivo después del cierre de S8. | No cumple | El registro no tiene entrada de la semana S9; no se actualizó en el periodo revisado. |
-| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | Único run del hash revisado: [CI 36355303177](https://github.com/ISCOUTB/AS_202620_ElMapita/actions/runs/36355303177), conclusión `success`. No existe `sonar-project.properties` ni paso `sonar` en el workflow; no hay URL pública de análisis ni Quality Gate. | No cumple | El CI está en verde, pero falta la evidencia de SonarCloud exigida por el contrato §8. |
-| Sin credenciales en el repositorio ni en el historial | Barrido del contrato y `git log -S` sin coincidencias de claves reales; sin `.env` versionado; `.env.example` con placeholders. | Cumple | Sin credenciales; coincidencias solo en tipos y datos de prueba. |
-| Contribución de todos los integrantes | `git shortlog -sne e5c3ac6`: `RobotDRMX` 26, `Rodrigo Vazquez Rico` 4, `dgarza2705` 1. El integrante Angel Fabian Gutierrez Gomez no tiene ningún commit atribuible en todo el historial. | No cumple | Una persona de tres sin contribución visible en Git; `RobotDRMX` sigue sin atribuir. |
+| Criterio | Estado | Evidencia y observaciones |
+|---|---|---|
+| Repositorio en la organización, con el nombre de la convención y público | Cumple | Repositorio público ISCOUTB/AS_202620_ElMapita, rama main; [README.md:1–7](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/README.md#L1-L7). |
+| Estructura mínima presente | Cumple | README, arc42 en plantilla única, ADR, C4, aspectos e IA presentes; [docs/aspectos.md:1–8](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/aspectos.md#L1-L8). |
+| Estado calificado identificable | Cumple | Hash main congelado y fecha en encabezado; coincide con punta actual. |
+| Nombres de ADR según la convención | Cumple | ADR-0001 a 0007 usan NNNN-kebab-case; [docs/adr/0005-reemplazo-adr-0001-estilo-arquitectonico.md:1–11](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/adr/0005-reemplazo-adr-0001-estilo-arquitectonico.md#L1-L11). |
+| ADR aceptados no reescritos | Cumple | Se verificó diff de ADR-0001 contra aa16382 y ADR-0003 contra afae3be: únicamente cambia status a Superseded. Los cambios viven en ADR-0005/0006; [docs/adr/0005-reemplazo-adr-0001-estilo-arquitectonico.md:13–33](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/adr/0005-reemplazo-adr-0001-estilo-arquitectonico.md#L13-L33), [docs/adr/0006-reemplazo-adr-0003-contrato-openapi.md:13–26](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/adr/0006-reemplazo-adr-0003-contrato-openapi.md#L13-L26). Arrastre corregido, sin borrar que ocurrió históricamente. |
+| docs/ia.md al día para la semana | Cumple | Entradas S9 distinguen aceptado, corregido y rechazos técnicos, incluidas mediciones falsas y pruebas que no representan producto; [docs/ia.md:395–419](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/ia.md#L395-L419), [docs/ia.md:452–469](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/ia.md#L452-L469). |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No cumple | Workflow CI general success, pero Sonar es no bloqueante y está excluido del fallo del gate; [.github/workflows/ci.yml:254–283](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/.github/workflows/ci.yml#L254-L283), [.github/workflows/ci.yml:297–313](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/.github/workflows/ci.yml#L297-L313). El equipo documenta fallo por permisos, [docs/ia.md:434–439](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/ia.md#L434-L439); no se acredita análisis/Gate ejecutado. |
+| Sin credenciales en el repositorio ni en el historial | No verificado | Snapshot sin valores de credencial reales. Gitleaks excluye fingerprints de ejemplos y projectKey públicos; historial completo independiente no certificado. |
+| Contribución de todos los integrantes | No verificado | Cuatro firmas visibles tras .mailmap: 40 commits agregados. La correspondencia RobotDRMX con integrante queda explícita en .mailmap, pero no se inventa un mapa completo del resto; [docs/ia.md:397–402](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/ia.md#L397-L402). |
 
-## Estado global del proyecto (overall · punta actual de la misma rama)
+## Actions en el estado congelado
 
-- **Punta actual revisada**: `e5c3ac6ecb598c8e126aaa091cce9af01fe818c4 2026-09-27T16:26:27-06:00 url 27-09-2026` (`origin/main`)
-- **Veredicto**: sin trabajo nuevo de S9; base previa con deudas abiertas
-- Resumen: la rama `main` no se movió desde S8 (`e5c3ac6`). El repositorio conserva la base de S8:
-  contrato OpenAPI versionado con prueba de contrato, ADRs con alternativas, CI en verde (run
-  36355303177) y un `docs/ia.md` que crece y documenta rechazos. Esa base es línea base bajo
-  CONTRATO §12 y no satisface las filas de S9. Para esta evidencia faltan la porción nueva con IA y
-  su cadena, la medición de los escenarios (`aspectos.md` con Pruebas y Evidencia en «Pendiente»), la
-  prueba que falle ante el defecto del periodo, la auditoría de erosión, la verificación de
-  dependencias, la decisión sobre el componente generativo y la evidencia de SonarCloud. Se mantienen
-  las no conformidades transversales ya detectadas: ADR aceptados editados sin reemplazo y
-  contribución de un integrante ausente.
+- [CI: success](https://github.com/ISCOUTB/AS_202620_ElMapita/actions/runs/37258414405), 2026-10-05T03:11:23Z, SHA exacto del estado indicado.
+## Alcance del barrido de seguridad
+Se revisó el texto del snapshot, incluidos ejemplos/docs. Las coincidencias corresponden a interfaces password/token, variables de entorno, fixtures y referencias al almacén de Actions. No hay .env versionado. Las exclusiones de gitleaks para projectKey/documentación deben seguir justificadas; no se certifica el historial exhaustivo independiente.
 
-Pendientes que siguen abiertos:
-- Sin commits de S9: la punta es la de S8.
-- Sin porción S9, sin prueba del periodo y sin extracto de `docs/ia.md` del periodo: por CONTRATO §12
-  las filas 1, 3 y 6 pasan a No cumple y la fila 4 a No verificado.
-- `docs/aspectos.md` con Pruebas y Evidencia en «Pendiente» (EC-01…EC-04).
-- Sin medición contra umbral de ningún escenario.
-- Sin auditoría de erosión ni verificación de propiedad de datos.
-- Sin dependencias nuevas que verificar en el periodo.
-- Sin ADR sobre el componente generativo.
-- Sin SonarCloud (configuración, run y URL pública con Quality Gate), pendiente desde S6.
-- ADR-0001 (`07b36f4`) y ADR-0003 (`9ee88c5`) editados después de aceptarse sin declarar reemplazo.
-- Angel Fabian Gutierrez Gomez sin commits atribuibles.
+## Estado global del proyecto (overall · punta actual)
+
+El avance S9 es sustantivo y honesto sobre sus límites: nuevo validador, rojo→verde documentado, corrección 500→404, pruebas en dispositivo y ADR sustitutos. La medición descubre defectos reales, no demuestra éxito del producto: EC-04 falla 20/20 y el rendimiento de un placeholder no representa render 3D. El validador está registrado pero el controlador sigue usando el caso de uso anterior. La punta coincide con S9, y SonarCloud está no bloqueante pese al CI general verde.
+
+El delta S9 contiene 9 commits respecto de S8; hay 0 commits posteriores a S9 en la misma rama. Los cambios tardíos solo afectan este overall y el avance S10, nunca el recuento congelado.
 
 ## Recuento y nota sugerida
 
-**1 de 10 criterios** de la ficha en Cumple.
+**9 de 10 criterios Cumple. Nota sugerida: 4.6 = 1 + 4 × (9/10).** Propuesta al docente; la nota final se fija en Moodle. La matriz transversal no integra este cálculo.
 
-**Nota sugerida preliminar (propuesta al docente; puede cambiar al cierre): 1.4 = 1 + 4 × (1/10).** La nota final la fija el profesor en Moodle.
+## Acciones prioritarias
 
-Bajo CONTRATO §12, el único criterio que se resuelve sobre el estado en la punta es el barrido de
-credenciales; las demás filas describen la entrega S9, cuyo periodo (`e5c3ac6..origin/main`) está
-vacío: la evidencia previa es línea base y no se recalifica por existir.
+- Integrar GetValidatedLocationUseCase en el recorrido real y medir el fallback de Flutter; no basta registrarlo como provider.
+- Completar enlaces de código/pruebas/medición y actualizar EC-03 hacia los archivos nuevos.
+- Corregir acceso a modelo/edificio, repetir EC-01 con respuestas exitosas y medir render 3D real; implementar caché de datos y banner offline antes de cerrar EC-04.
+- Resolver permiso de análisis SonarCloud con quien administra la organización; retirar continue-on-error solo cuando exista run/Gate verificable.
+- Aportar consigna oficial S10 y conectar hipótesis, línea base, cambio y experimento con esa asignación.
 
-## No verificado / pendientes
+## Hallazgos cerrados con evidencia nueva
 
-- Prueba que falla ante el defecto: **No verificado**. No hay run en rojo, prueba de mutación ni
-  procedimiento documentado del periodo S9; el run en rojo citado en ADR-0003 es de S8. Queda como
-  pregunta de sustentación.
-- Medición de escenarios: la columna Evidencia de `docs/aspectos.md` está en «Pendiente» para EC-01…EC-04.
-- Auditoría de erosión: no existe artefacto que la documente.
-- Dependencias del periodo: el diff contra S8 está vacío, no hay nada que comprobar en los registros.
-- Componente generativo: no hay componente ni ADR de no incorporarlo.
-
-## Hallazgos para la planilla
-
-- La punta de `origin/main` (`e5c3ac6`, 2026-09-27) es idéntica al hash calificado de S8: el periodo S9 está vacío.
-- Aplicado CONTRATO §12: sin artefacto del periodo, las filas 1, 3 y 6 pasan de Cumple a No cumple y la fila 4 de Cumple a No verificado; solo el barrido de credenciales queda en Cumple.
-- `docs/aspectos.md` mantiene Pruebas «(pendiente)» y Evidencia «Pendiente» en los cuatro escenarios: la cadena no llega a prueba ni a medición.
-- La prueba de contrato demuestra fallo controlado en S8: run histórico en rojo [35549974182](https://github.com/ISCOUTB/AS_202620_ElMapita/actions/runs/35549974182) citado en ADR-0003; no es evidencia del periodo S9.
-- CI del hash revisado en verde (run 36355303177), pero sin SonarCloud ni Quality Gate.
-- ADR-0001 y ADR-0003 editados después de aceptarse sin declarar reemplazo (fila transversal en No cumple).
-- Contribución: un integrante declarado sin commits atribuibles.
-- Sin auditoría de erosión y sin decisión sobre el componente generativo, exigidas por la evidencia S9.
+- Arrastre de reescritura de ADR-0001/0003 corregido: restaurados textos aceptados y sustitución explícita por 0005/0006, comprobada por diff.
+- Se corrige la anterior falta de atribución de RobotDRMX mediante .mailmap explícito; no corresponde mantener afirmación de cero contribuciones de esa persona.
+- Existen porción S9, prueba negativa, auditoría y ADR de no incorporar IA generativa; [docs/ia.md:395–419](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/ia.md#L395-L419).
+- El error genérico al faltar un modelo se convierte en NotFoundException y tiene prueba; [backend/src/modules/mapas/infrastructure/storage/supabase-storage.ts:22–30](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/modules/mapas/infrastructure/storage/supabase-storage.ts#L22-L30). No se afirma recuperación operativa sin re-medición.

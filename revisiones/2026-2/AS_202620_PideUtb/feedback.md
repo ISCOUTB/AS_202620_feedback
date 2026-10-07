@@ -62,6 +62,10 @@ La entrega cambió de forma sustancial respecto de la pasada temprana: ahora hay
 
 Para cerrar, cuatro cosas concretas: (1) la sección 2 de arc42 debe recoger el límite de costo y la restricción de tarjeta; hoy la condición de tarjeta solo vive en el documento de comparación y en el ADR; (2) registren el uso de IA de la semana dentro del periodo —la entrada llegó después del cierre—; (3) no reescriban un ADR aceptado: cuando la decisión cambie, escriban uno nuevo y marquen el anterior como reemplazado; y (4) acrediten el pipeline y SonarCloud sobre el hash entregado, porque el job de análisis está condicionado a un token que sigue marcado como pendiente y falta la URL pública con el estado del Quality Gate.
 
-## Semana 9 · S9 (revisión preliminar)
+## Semana 9 · S9 (revisión definitiva)
 
-La rama principal avanzó, pero con el cierre de la entrega anterior —migración de la persistencia a PostgreSQL, panel del mostrador que completa el escenario de gestión de pedidos, y saneamiento de dependencias—, no con la entrega de generación verificada y trazable. Es un avance real y la porción de la semana ya deja su auditoría de propiedad de datos actualizada y sus dependencias verificadas; lo que todavía no tiene la entrega es la cadena completa: falta la medición del escenario, un ADR propio de esa porción y el registro de IA de la semana. Dos cosas para atender: el Quality Gate público quedó en rojo para la punta (el README lo declara correcto) y el job del analizador estático no corre porque el token sigue pendiente; y no editen ADR aceptados sin declarar su reemplazo.
+La auditoría detectó problemas reales y el código ya rechaza firmas cuando falta el secreto de la pasarela. Completen la rotación y configuración segura y acrediten el despliegue de la corrección, sin publicar valores. Enlacen el ADR del panel y la medición desde ESC-03; mantengan separado el tiempo programático local del flujo completo con una persona y red.
+
+## Semana 10 · Segundo corte (avance preliminar)
+
+Antes de la defensa, acrediten la corrección y configuración segura del secreto en el despliegue, y resuelvan o delimiten el panel sin autenticación. Confirmen el escenario operativo asignado y midan su línea base y respuesta en el entorno real. La disponibilidad actual no pudo comprobarse por una cancelación de la herramienta; eso no demuestra que el servicio esté caído.

@@ -6,14 +6,16 @@
 |---|---|
 | Equipo | ShareU |
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_ShareU` |
-| Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo |
-| URL del sistema desplegado | — |
-| Ultima revision | 2026-10-01 |
+| Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo; ver comprobación actual de contribución más abajo. |
+| URL del sistema desplegado | https://shareu-backend.onrender.com · ver comprobación y límites en S10 |
+| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
 
 ## Estado por entrega
 
-| Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
+| Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 9 | S9 · definitiva | `master` · `39508608eae4c1a56a5e4fc11a055bf6afb2c003` · 2026-09-28T19:56:57-05:00 | 9/10 | 4.6 (propuesta al docente) | sí, 2026-10-06 |
+| 10 | Segundo corte · preliminar | `master` · `39508608eae4c1a56a5e4fc11a055bf6afb2c003` · 2026-09-28T19:56:57-05:00 | 2/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
 | 1 | S1 | `(sin commits)` () | sin actividad | no aplica | si |
 | 2 | S2 | `(sin commits)` () | sin actividad | no aplica | si |
 | 3 | S3 | `master` `0bae184` · excepción docente | 7/9 | 4.1 | sí |
@@ -23,8 +25,6 @@
 | 7 | S7 | `29184bc` (2026-09-20T23:34:09-05:00) | 6/10 | 3.4 | si |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `332f67f` (2026-09-27T23:57:16-05:00) | 7/10 graduables (2 filas de despliegue pendientes) | 3.8 (provisional) | si |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
-| 9 | Evidencia S9 · Generación verificada y trazable (preliminar) | `3950860` (2026-09-28T19:56:57-05:00) | 9/10 | 4.6 (prelim.) | si |
-| 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
 | 11 | Evidencia S11 · Fallos parciales y decisión de extracción | | | no aplica | |
 | 12 | Evidencia S12 · Estrategia de datos y eventos | | | no aplica | |
 | 12 | Taller aplicado · Mensajes y consistencia | | | no aplica | |
@@ -34,6 +34,24 @@
 | 17 | Aplicación de cambios y cierre arquitectónico | | | | |
 
 ## Lo que se arrastra
+
+Estado vigente observado en la punta citada en [S10](semana-10-corte2.md). Las correcciones tardías no cambian S9. El registro histórico siguiente conserva su contexto, pero no sustituye esta actualización ni implica cerrar hallazgos no revalidados.
+
+| Hallazgo actual | Estado | Evidencia y próximo paso |
+|---|---|---|
+| Identificar el escenario oficialmente asignado y su línea base medida para S10. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Pipeline de la punta en rojo: [run 36505758458](https://github.com/ISCOUTB/AS_202620_ShareU/actions/runs/36505758458). | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Health de la URL declarada respondió 404; confirmar URL vigente y restablecer despliegue. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Completar ID y C4 en la tabla de trazabilidad; normalizar rutas de aspectos e IA. [docs/aspectos/aspectos.md:50–56](https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/docs/aspectos/aspectos.md#L50-L56) | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Versionar los archivos declarados ausentes o corregir documentos: Dockerfile, render.yaml, ADR 0005–0007 y prueba de contrato. [docs/evidencia/evidencia-s9.md:56–61](https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/docs/evidencia/evidencia-s9.md#L56-L61) | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Actualizar Next a una versión corregida tras revisar el aviso oficial: el registro de next 14.2.15 confirma advertencia de seguridad. [app/frontend/package.json:11–14](https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/app/frontend/package.json#L11-L14) | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Ratificar ADR-0008/0009 y resolver marcadores documentales sin atribuir al equipo decisiones pendientes. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| El cruce búsqueda→interno de administración está corregido mediante fachada y prueba de fronteras. [app/busqueda/service.py:5–6](https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/app/busqueda/service.py#L5-L6) | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| Se corrige el hallazgo preliminar de dependencias: no añadir paquetes no obliga a fallar; hay auditoría nueva del periodo y existencia contrastada en registros oficiales. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| Se excluye el hallazgo de convención sobre PDF por decisión docente; los ADR Markdown sí siguen la convención. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+
+<details>
+<summary>Registro histórico previo a esta revisión (estados a la fecha de cada observación)</summary>
 
 | Hallazgo | Primera vez que se detectó | Sigue abierto | Qué se le dijo al equipo |
 |---|---|---|---|
@@ -107,21 +125,29 @@
 | CI de `master` en rojo en el hash revisado (`3950860`, run `36505758458`, failure). | S9 (prelim.) | si | Dejar el commit calificado en verde. |
 | ADR-0008 y ADR-0009 en estado «Propuesto», pendientes de aprobación formal del equipo. | S9 (prelim.) | si | Aprobar los ADR y marcarlos como Aceptados. |
 
+</details>
+
 ## Estado del contrato del repositorio
+
+Actualizado desde la evaluación de la punta actual; no altera la matriz congelada de S9.
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
-| Nombre y visibilidad del repositorio | Cumple | Público y con el nombre de la convención (S8) |
-| Estructura mínima | No cumple | `docs/aspectos.md` y `docs/ia.md` no están en la ruta mínima; los artefactos viven en `docs/aspectos/aspectos.md` y `docs/ia/ia.md` |
-| Convención de nombres de ADR | No cumple | `docs/adr/ShareU_Trazabilida.pdf` no sigue `NNNN-kebab-case.md` |
-| ADR aceptados sin reescribir | Cumple | `0001` solo se movió de carpeta; `0002`–`0004` con una creación cada uno |
-| `docs/ia.md` al día | Cumple | `docs/ia/ia.md` crece en el periodo y registra lo rechazado con motivo, incluida la fila 9 de S9 |
-| Sin credenciales en el repositorio ni en el historial | Cumple | `git grep` §9 y `log -S` sin coincidencias |
-| Contribución de todos los integrantes | Cumple | Los 4 integrantes aparecen en el historial consolidado por correo (S9) |
-| Pipeline en verde | No cumple | El run del hash calificado `36505758458` termina en `failure`: https://github.com/ISCOUTB/AS_202620_ShareU/actions/runs/36505758458 |
-| Pipeline, SonarCloud y Quality Gate públicos | No cumple | Scanner en el workflow, pero el run del hash revisado está en rojo y no hay URL pública con Quality Gate |
+| Repositorio en la organización, con el nombre de la convención y público | Cumple | Clon anónimo público de https://github.com/ISCOUTB/AS_202620_ShareU; organización y nombre conformes. |
+| Estructura mínima presente | No cumple | [README.md:191–200](https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/README.md#L191-L200). Aspectos e IA existen en subcarpetas, no docs/aspectos.md y docs/ia.md. Desviación de ruta, no ausencia. |
+| Estado calificado identificable | Cumple | origin/master 39508608eae4c1a56a5e4fc11a055bf6afb2c003, 2026-09-28T19:56:57-05:00; último ≤ cierre S9 y punta preliminar S10. |
+| Nombres de ADR según la convención | Cumple | Los seis ADR Markdown 0001–0004, 0008 y 0009 siguen NNNN-kebab-case; [docs/adr/0008-metrica-tras-interfaz-de-administracion.md:1–4](https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/docs/adr/0008-metrica-tras-interfaz-de-administracion.md#L1-L4). Archivos PDF excluidos expresamente del criterio por decisión docente. |
+| ADR aceptados no reescritos | Cumple | Historial de ADR leído: 0002/0003/0004/0008/0009 creados una vez; ADR-0001 solo movimientos de ruta sin edición de contenido. [docs/adr/0008-metrica-tras-interfaz-de-administracion.md:1–7](https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/docs/adr/0008-metrica-tras-interfaz-de-administracion.md#L1-L7) nuevo en 3950860. |
+| docs/ia.md al día para la semana | Cumple | [docs/ia/ia.md:33](https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/docs/ia/ia.md#L33). Nueva entrada del periodo S9; ruta desviada evaluada por contenido. Aún no hay actividad adicional S10. |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No cumple | [.github/workflows/tests.yml:22–32](https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/.github/workflows/tests.yml#L22-L32). Consulta general Actions confirma [run 36505758458](https://github.com/ISCOUTB/AS_202620_ShareU/actions/runs/36505758458) en el hash revisado, conclusión failure (2026-09-29T00:59:44Z). Sin run exitoso de scanner y Quality Gate de esta revisión acreditados. |
+| Sin credenciales en el repositorio ni en el historial | Cumple | Barrido del contrato sobre HEAD, docs y ejemplos sin credenciales identificadas; sin .env versionado; búsqueda histórica de patrones de claves privadas/tokens de alta confianza sin coincidencias. [docs/evidencia/evidencia-s9.md:75–80](https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/docs/evidencia/evidencia-s9.md#L75-L80). Resultado acotado al barrido, no garantía absoluta. |
+| Contribución de todos los integrantes | No verificado | 50 commits en cuatro grupos por identidad de correo; dos firmas se consolidan por coincidencia exacta, sin publicar correos. No se deduce la correspondencia completa con los cuatro integrantes solo por nombres de cuenta; validación docente pendiente, sin afirmar ausencia individual. |
 
 ## Contribución por integrante
+
+Actualización agregada del 2026-10-06: 50 commits en cuatro grupos por identidad de correo; dos firmas se consolidan por coincidencia exacta, sin publicar correos. No se deduce la correspondencia completa con los cuatro integrantes solo por nombres de cuenta; validación docente pendiente, sin afirmar ausencia individual.
+
+La tabla individual conservada abajo corresponde al registro histórico anterior; no se infieren nuevas correspondencias entre cuentas y personas.
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
 |---|---|---:|---:|---:|---|
@@ -132,6 +158,8 @@
 
 ## Preguntas abiertas para la sustentación
 
-- ¿Por qué cambió el problema del proyecto entre la semana 1 (EncuentraUTB) y la semana 2 (ShareU)?
-- ¿Luis Carlos Corredor Altamiranda tiene acceso al repositorio y con qué cuenta contribuirá?
-- ¿Por qué la sección «Esqueleto ejecutable — arranque» del README quedó sin el comando, y dónde está el manifest de dependencias de FastAPI?
+Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
+
+- Si se reinicia el backend y se pierden los contadores en memoria, ¿cómo distinguirán una mejora real de una métrica reiniciada?
+- ¿Qué costo y cambio de plataforma requiere conservar SQLite y métricas entre reinicios o escalar a más de una réplica?
+- ¿Qué cambiarían en el experimento después de comprobar que cinco documentos sintéticos se encuentran en dos interacciones, y cómo validarían que representa el uso real?

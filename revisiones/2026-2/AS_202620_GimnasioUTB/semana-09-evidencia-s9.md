@@ -1,86 +1,74 @@
-> Pasada temprana (previa al cierre del 2026-10-05T05:00:00Z): el hash y la nota son preliminares y pueden cambiar si el equipo empuja antes del cierre.
-
 # Semana 9 · Generación verificada y trazable · GimnasioUTB
+
+Revisión definitiva actualizada tras el cierre. Propuesta al docente; la nota final se fija en Moodle.
 
 | Campo | Valor |
 |---|---|
-| Repositorio | `https://github.com/ISCOUTB/AS_202620_GimnasioUTB` |
-| Estado revisado | `e6a7f58e10123723a51de38e6368f8c81449804f` en `origin/main` (2026-09-28T01:32:10-05:00) |
-| Cierre | 2026-10-05T05:00:00Z |
-| Revisor | auditoría local preliminar sobre clon público efímero |
+| Repositorio | https://github.com/ISCOUTB/AS_202620_GimnasioUTB |
+| Rama remota principal | `origin/main` |
+| Observación | 2026-10-06T21:31:50.150883+00:00 |
+| Cierre S9 | 2026-10-05T05:00:00Z (medianoche de Colombia) |
+| Estado revisado | `af4796d6320766611d9fc01d7112a1c0e4112b40` en `origin/main` (2026-10-04T16:52:10-05:00) |
+| Línea base S8 | `a71bc7583b67cd4f5eca11dd6d356f7d08d1cdc7` |
+| Commits del delta S8 → S9 | 12 |
 
-Esta pasada **no tiene cierre**: se califica la punta actual de `origin/main`. El baseline del periodo
-S9 es el hash calificado de S8 (`a71bc7583b67cd4f5eca11dd6d356f7d08d1cdc7`). Entre ese hash y la
-punta hay seis commits (todos del 2026-09-28): `201a8cf` (persistencia PostgreSQL y control de
-concurrencia), `b5a4fce` (manejo de errores), `ddb27d4` (composición del servidor y observabilidad),
-`3fae092` (documentación de arquitectura), `5213f49` (pruebas de integración y health) y `e6a7f58`
-(merge). Esos commits son posteriores al cierre de S8 y constituyen el periodo evaluado. Bajo
-CONTRATO §12 la evidencia previa es línea base y no se recalifica por existir.
+## Alcance y método
 
-## Matriz de la ficha
+Revisión estática de repositorio público mediante Git. No se ejecutó código, pruebas, contenedores, despliegues ni workflows de estudiantes. Los procedimientos y resultados documentados se distinguen de una ejecución independiente. No se consultaron etiquetas. Los PDF quedan excluidos por instrucción docente: no se leyeron y su ausencia no se penaliza. Una lectura HTTP de salud no prueba el flujo principal ni acredita por sí sola la revisión desplegada.
 
-| Criterio de evaluación | Evidencia técnica esperada | Estado | Observaciones |
-|---|---|---|---|
-| Porción real del sistema construida con apoyo de IA | rutas del código y commits | Cumple | La porción es el adaptador PostgreSQL del contador de aforo: `src/modules/aforo/infrastructure/persistence/aforo-postgres.adapter.js` (nuevo, 97 líneas, commit `201a8cf`), `src/modules/aforo/infrastructure/persistence/schema.sql` y `src/shared/logger.js` (commit `ddb27d4`), más el manejo de errores en `src/server.js` (`b5a4fce`). Es código del sistema, integrado por `AforoRepositoryPort`, no un ejercicio aparte. `docs/ia.md` no registra el uso de IA de esta porción (ver fila 6). |
-| Cadena completa navegable para esa porción | fila de `docs/aspectos.md` recorrida hasta la evidencia | Cumple | La fila S1 de `docs/aspectos.md` (reescrita en el periodo) enlaza ADR-0001 y `docs/adr/0004-concurrencia-postgresql.md`, el adaptador PostgreSQL y `tests/postgres/aforo-postgres.integration.test.js`; el escenario y su resultado están en `docs/arc42/arc42_gimnasio_utb.md:246` (§10.2). El eslabón más débil es la evidencia de calidad: se reporta como recuento (12/12, 11/11, 8/8) y no como artefacto enlazado. |
-| ADR con la decisión argumentada por el equipo | `docs/adr/NNNN-*.md` con restricciones del proyecto | Cumple | `docs/adr/0004-concurrencia-postgresql.md` (nuevo en `201a8cf`): decisión de usar PostgreSQL con `BEGIN`/`SELECT ... FOR UPDATE`/`UPDATE`/`COMMIT`, alternativas evaluadas (leer-modificar-guardar sin bloqueo, bloqueo optimista, Redis) y consecuencias/límites. Argumenta con las restricciones del proyecto (sin infraestructura extra, dominio aislado). |
-| Prueba que falla ante el defecto que cubre | run en rojo, prueba de mutación o procedimiento documentado | No verificado | La prueba existe en el periodo (`tests/postgres/aforo-postgres.integration.test.js`, incluido el subtest «serializa 20 entradas concurrentes sin lost updates»), pero no hay run en rojo, prueba de mutación ni procedimiento documentado que muestre que falla ante el defecto. Queda como pregunta de sustentación (CONTRATO §13). |
-| Medición del escenario asociado | resultado contrastado con el umbral | Cumple | `docs/arc42/arc42_gimnasio_utb.md:246` (§10.2, periodo) documenta el escenario S1: veinte entradas concurrentes, resultado «el aforo final es 20 … no se observaron lost updates», con el límite declarado (prueba de integración del adaptador, no de carga HTTP). Resultado contrastado con el criterio del escenario. |
-| `docs/ia.md` con lo aceptado, lo corregido y lo rechazado con motivo | extracto citado del archivo | No cumple | `docs/ia.md` no se modificó en el periodo: último commit `a59410d` (2026-09-13, semana 6). Tiene rechazos motivados previos, pero ninguna entrada de S9. |
-| Auditoría de erosión sobre límites de contexto y propiedad de datos | hallazgos con su ubicación y su corrección | No cumple | `docs/contextos-delimitados.md` se editó en el periodo, pero solo para acotar el mapa conceptual (relación HTTP/REST) y ajustar la redacción de V1; no es una auditoría de erosión de la generación. No hay artefacto de auditoría del periodo. Contra el código, la única escritura de persistencia nueva es `aforo-postgres.adapter.js:71` (`UPDATE aforo_estado …`) y `schema.sql:6` (`INSERT INTO aforo_estado …`), dentro del módulo aforo, sin contraste documentado de propiedad de datos. |
-| Dependencias propuestas verificadas en su registro oficial | lista de dependencias añadidas y su comprobación | Cumple | `package.json` añade una dependencia en el periodo: `pg: ^8.16.3`. Verificado sin autenticar en npm: `pg` («PostgreSQL client», último `8.23.1`) existe y es el paquete legítimo. |
-| Sin credenciales en código, ejemplos ni documentación generada | barrido del contrato, incluido `docs/` | Cumple | `git grep` de CONTRATO §9 sobre la punta sin coincidencias; sin `.env` versionado; `git log -S"BEGIN PRIVATE KEY"` vacío. `.env.example` solo declara `DATABASE_URL` con marcadores de posición (`USER`, `PASSWORD`, `HOST`, `DATABASE`). |
-| Componente generativo evaluado, con costo y latencia, o ADR de no incorporarlo | conjunto de evaluación con resultados, o el ADR | No cumple | El sistema no incorpora componente generativo (grep de `openai\|anthropic\|gemini\|llm\|gpt\|generative` sin coincidencias) y no existe el ADR que justifique no incorporarlo. |
+El delta S8→S9 contiene 12 commits, desde la integración PostgreSQL hasta la UI Flutter. La verificación explícita de S9 entra en [25bd0918](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/commit/25bd091809025d772b89a8730f35cf9f316b2166); no se confunde la UI con integración móvil ya probada.
+
+## Matriz de la ficha (10 criterios)
+
+| Criterio de evaluación | Estado | Evidencia técnica y observaciones |
+|---|---|---|
+| Porción real del sistema construida con apoyo de IA | Cumple | [docs/ia.md:100-112](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/af4796d6320766611d9fc01d7112a1c0e4112b40/docs/ia.md#L100-L112) registra la generación y revisión de correcciones V1/V2, verificadas en [src/modules/aforo/infrastructure/persistence/aforo-memoria.adapter.js:13-27](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/af4796d6320766611d9fc01d7112a1c0e4112b40/src/modules/aforo/infrastructure/persistence/aforo-memoria.adapter.js#L13-L27) y [src/modules/aforo/application/consultar-aforo.usecase.js:1-17](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/af4796d6320766611d9fc01d7112a1c0e4112b40/src/modules/aforo/application/consultar-aforo.usecase.js#L1-L17). El delta añade también PostgreSQL y una UI Flutter, pero la porción de IA acreditada es la cadena del contador y sus correcciones. |
+| Cadena completa navegable para esa porción | No cumple | [docs/aspectos.md:29-35](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/af4796d6320766611d9fc01d7112a1c0e4112b40/docs/aspectos.md#L29-L35) conserva una tabla de cinco columnas: faltan enlaces navegables de código, pruebas, evidencia y C4. [docs/s9-cadena-verificada.md:11-20](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/af4796d6320766611d9fc01d7112a1c0e4112b40/docs/s9-cadena-verificada.md#L11-L20) enumera rutas como texto; no repara la fila de ocho columnas del contrato. Los artefactos sí existen y se evalúan por separado. |
+| ADR con la decisión argumentada por el equipo | Cumple | [docs/adr/0004-concurrencia-postgresql.md:7-33](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/af4796d6320766611d9fc01d7112a1c0e4112b40/docs/adr/0004-concurrencia-postgresql.md#L7-L33) y [docs/adr/0004-concurrencia-postgresql.md:43-81](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/af4796d6320766611d9fc01d7112a1c0e4112b40/docs/adr/0004-concurrencia-postgresql.md#L43-L81): bloqueo de fila, alternativas optimista/Redis y límites del contador; decisión fundada en infraestructura y dominio. |
+| Prueba que falla ante el defecto que cubre | Cumple | [docs/s9-cadena-verificada.md:22-34](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/af4796d6320766611d9fc01d7112a1c0e4112b40/docs/s9-cadena-verificada.md#L22-L34) documenta quitar FOR UPDATE, repetir tres veces y obtener 5/6/5 en vez de 20; la aserción existe en [tests/postgres/aforo-postgres.integration.test.js:86-98](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/af4796d6320766611d9fc01d7112a1c0e4112b40/tests/postgres/aforo-postgres.integration.test.js#L86-L98). Cumplimiento por procedimiento documentado permitido por la ficha, no por ejecución de esta revisión; [docs/ia.md:108](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/af4796d6320766611d9fc01d7112a1c0e4112b40/docs/ia.md#L108) aún deja pendiente reproducción por el equipo. El dossier rotula estos datos como ejecutados/reales y el registro indica herramienta con entorno de ejecución; la casilla es una repetición humana pendiente, no una declaración de simulación. Se conserva Cumple por la vía documental de la ficha, con esa limitación explícita. |
+| Medición del escenario asociado | Cumple | [docs/s9-cadena-verificada.md:7-34](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/af4796d6320766611d9fc01d7112a1c0e4112b40/docs/s9-cadena-verificada.md#L7-L34) aporta entorno, 20 operaciones, 8/8 y resultado 20; [docs/adr/0004-concurrencia-postgresql.md:55-55](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/af4796d6320766611d9fc01d7112a1c0e4112b40/docs/adr/0004-concurrencia-postgresql.md#L55-L55) limita correctamente el alcance al adaptador. No acredita carga HTTP ni identidad de estudiantes. |
+| docs/ia.md con lo aceptado, lo corregido y lo rechazado con motivo | Cumple | [docs/ia.md:100-112](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/af4796d6320766611d9fc01d7112a1c0e4112b40/docs/ia.md#L100-L112): aceptado, corrección de includeOnly y rechazos técnicos explícitos (evaluación de generación inexistente, migraciones mayores sin defecto que las justifique). |
+| Auditoría de erosión sobre límites de contexto y propiedad de datos | Cumple | [docs/auditoria-erosion.md:7-67](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/af4796d6320766611d9fc01d7112a1c0e4112b40/docs/auditoria-erosion.md#L7-L67) enlaza reglas S6, V1/V2 corregidas y E1–E6; contrastado con el campo privado y caso de uso citados en la fila 1 y escrituras confinadas al adaptador [src/modules/aforo/infrastructure/persistence/aforo-postgres.adapter.js:44-88](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/af4796d6320766611d9fc01d7112a1c0e4112b40/src/modules/aforo/infrastructure/persistence/aforo-postgres.adapter.js#L44-L88). |
+| Dependencias propuestas verificadas en su registro oficial | Cumple | [docs/auditoria-dependencias.md:7-28](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/af4796d6320766611d9fc01d7112a1c0e4112b40/docs/auditoria-dependencias.md#L7-L28) audita npm; delta [package.json:21-28](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/af4796d6320766611d9fc01d7112a1c0e4112b40/package.json#L21-L28) y [docs/Flutter/pubspec.yaml:7-55](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/af4796d6320766611d9fc01d7112a1c0e4112b40/docs/Flutter/pubspec.yaml#L7-L55). Se comprobó el nombre exacto de pg y dependency-cruiser en [npm pg](https://registry.npmjs.org/pg) / [dependency-cruiser](https://registry.npmjs.org/dependency-cruiser), y las 42 dependencias con versión del pubspec en pub.dev (incluidas versiones publicadas; SDK Flutter queda aparte). Ejemplos: [google_fonts](https://pub.dev/api/packages/google_fonts), [go_router](https://pub.dev/api/packages/go_router). La auditoría del equipo precede a Flutter y debería ampliar su inventario; la verificación de registro de esta revisión cubre ese delta, sin ejecutar paquetes. |
+| Sin credenciales en código, ejemplos ni documentación generada | Cumple | Barrido estático del árbol textual, incluidos ejemplos y documentación: sin candidatos de credenciales reales; no hay .env versionado. [.github/workflows/ci.yml:11-23](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/af4796d6320766611d9fc01d7112a1c0e4112b40/.github/workflows/ci.yml#L11-L23) y variables de entorno en [src/modules/aforo/infrastructure/persistence/aforo-postgres.adapter.js:14-27](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/af4796d6320766611d9fc01d7112a1c0e4112b40/src/modules/aforo/infrastructure/persistence/aforo-postgres.adapter.js#L14-L27). Los PDF se excluyeron. No equivale a una certificación exhaustiva de secretos. |
+| Componente generativo evaluado, con costo y latencia, o ADR de no incorporarlo | No cumple | [docs/s9-cadena-verificada.md:54-61](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/af4796d6320766611d9fc01d7112a1c0e4112b40/docs/s9-cadena-verificada.md#L54-L61) explica que no hay modelo generativo, pero no existe un ADR de no incorporarlo en docs/adr. «No aplica» en un informe no sustituye la decisión formal exigida. |
 
 ## Matriz transversal (CONTRATO §11)
 
-| Criterio | Estado | Evidencia y observaciones |
+| Criterio de evaluación | Estado | Evidencia técnica y observaciones |
 |---|---|---|
-| Repositorio en la organización, con el nombre de la convención y público | Cumple | `ISCOUTB/AS_202620_GimnasioUTB`, clon anónimo con `--filter=blob:none` exitoso; rama `origin/main`. |
-| Estructura mínima presente | Cumple | `README.md`, `docs/arc42/`, `docs/adr/`, `docs/c4/`, `docs/aspectos.md`, `docs/ia.md` presentes en la punta. |
-| Estado calificado identificable | Cumple | En esta pasada sin cierre se califica la punta: `e6a7f58` en `origin/main` (2026-09-28T01:32:10-05:00). |
-| Nombres de ADR según la convención | No cumple | `docs/adr/ADR0001.md` no sigue `NNNN-titulo-kebab-case.md` y duplica el número 0001 de `docs/adr/0001-arquitectura-hexagonal.md`. |
-| ADR aceptados no reescritos | No cumple | ADR-0001, aceptado en `92f4a53`, fue editado después en `c271073`, `b556737`, `59b6d3e`, `47a18d0` (2026-08-30) y de nuevo en `3fae092` (2026-09-28); ADR-0003 también fue editado en `3fae092`, sin ADR de reemplazo declarado. |
-| `docs/ia.md` al día para la semana | No cumple | Sin commits sobre `docs/ia.md` en el periodo; la última entrada es del 2026-09-13 (semana 6). |
-| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No cumple | CI en verde sobre la punta (`CI`, `e6a7f58`, `success`: https://github.com/ISCOUTB/AS_202620_GimnasioUTB/actions/runs/36387447299), pero no hay `sonar-project.properties`, ni scanner en `.github/workflows/ci.yml`, ni URL pública del análisis con Quality Gate. |
-| Sin credenciales en el repositorio ni en el historial | Cumple | Barrido sin coincidencias reales; sin `.env` versionado; `git log -S` vacío. |
-| Contribución de todos los integrantes | Cumple | `shortlog -sne` consolida tres personas para los tres integrantes declarados: una firma con dos identidades (correo institucional y personal) y otra con correo institucional compartido; el resto del historial corresponde a la tercera. |
+| Repositorio en la organización, con el nombre de la convención y público | Cumple | Clon público anónimo de https://github.com/ISCOUTB/AS_202620_GimnasioUTB; [README.md:1-5](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/af4796d6320766611d9fc01d7112a1c0e4112b40/README.md#L1-L5). |
+| Estructura mínima presente | Cumple | Árbol Git con README, docs/arc42, docs/adr, docs/c4, docs/aspectos.md y docs/ia.md; índice en [README.md:108-121](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/af4796d6320766611d9fc01d7112a1c0e4112b40/README.md#L108-L121). |
+| Estado calificado identificable | Cumple | origin/main, af4796d6320766611d9fc01d7112a1c0e4112b40; último commit al cierre y baseline S8 declarados en cabecera. |
+| Nombres de ADR según la convención | No cumple | [docs/adr/ADR0001.md:1-8](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/af4796d6320766611d9fc01d7112a1c0e4112b40/docs/adr/ADR0001.md#L1-L8) no sigue NNNN-titulo-en-kebab-case y duplica el número de [docs/adr/0001-arquitectura-hexagonal.md:1-5](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/af4796d6320766611d9fc01d7112a1c0e4112b40/docs/adr/0001-arquitectura-hexagonal.md#L1-L5). |
+| ADR aceptados no reescritos | No cumple | El ADR-0001 ya aceptado sigue reescrito sin reemplazo: historial verificado en [3fae092f](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/commit/3fae092fe6d33872772f106dc2737f88339ba82c) y estado canónico [docs/adr/0001-arquitectura-hexagonal.md:1-15](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/af4796d6320766611d9fc01d7112a1c0e4112b40/docs/adr/0001-arquitectura-hexagonal.md#L1-L15). La punta añade otra edición tardía. |
+| docs/ia.md al día para la semana | Cumple | [docs/ia.md:100-112](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/af4796d6320766611d9fc01d7112a1c0e4112b40/docs/ia.md#L100-L112) incorpora S9 con correcciones/rechazos. |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No cumple | [.github/workflows/ci.yml:11-23](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/af4796d6320766611d9fc01d7112a1c0e4112b40/.github/workflows/ci.yml#L11-L23) carece de scanner y Quality Gate; [README.md:77-79](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/af4796d6320766611d9fc01d7112a1c0e4112b40/README.md#L77-L79) lo declara pendiente. Única consulta de runs PR del hash devolvió cero registros; no prueba que no haya runs push y no se reutilizan resultados antiguos. |
+| Sin credenciales en el repositorio ni en el historial | No verificado | Barrido estático del árbol textual, incluidos ejemplos y documentación: sin candidatos de credenciales reales; no hay .env versionado. [.github/workflows/ci.yml:11-23](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/af4796d6320766611d9fc01d7112a1c0e4112b40/.github/workflows/ci.yml#L11-L23) y variables de entorno en [src/modules/aforo/infrastructure/persistence/aforo-postgres.adapter.js:14-27](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/af4796d6320766611d9fc01d7112a1c0e4112b40/src/modules/aforo/infrastructure/persistence/aforo-postgres.adapter.js#L14-L27). Los PDF se excluyeron. No equivale a una certificación exhaustiva de secretos. El recorrido histórico ampliado está pendiente de completar; no se afirma ausencia histórica por el resultado del árbol actual. |
+| Contribución de todos los integrantes | No verificado | Historial agregado a la punta: 5 grupos por correo idéntico frente a 3 integrantes; firmas distintas no se atribuyen por semejanza. Se requiere confirmar correspondencia cuenta–persona, sin publicar correos. |
 
-## Estado global del proyecto (overall · punta actual de la misma rama)
+## Estado global del proyecto (overall)
 
-- **Punta actual revisada**: `e6a7f58` en `origin/main` (2026-09-28T01:32:10-05:00).
-- **Commits del periodo S9** (posteriores al hash calificado de S8 `a71bc75`): `201a8cf`, `b5a4fce`,
-  `ddb27d4`, `3fae092`, `5213f49`, `e6a7f58`.
-- **Veredicto**: con entrega parcial de S9. El equipo sí incorporó una porción real (adaptador
-  PostgreSQL transaccional, logger y manejo de errores), su ADR (ADR-0004) y la medición del
-  escenario en arc42 §10.2. Faltan la prueba que falle ante el defecto, la entrada de `docs/ia.md`,
-  la auditoría de erosión y la decisión sobre el componente generativo. No hay commits posteriores
-  a la punta a la fecha de esta pasada.
-- Resumen: el repositorio conserva las piezas de S8 (backend local, health/ready, CI) que son línea
-  base. Transversalmente siguen abiertos el ADR fuera de convención, los ADR aceptados editados
-  (incluido uno en este mismo periodo), `docs/ia.md` sin la semana y SonarCloud sin evidencia pública.
+Punta observada de `origin/main`: `c0a6a78f0ce87ea59040662b5abbbb4d2ab99aec` (2026-10-05T18:16:08-05:00). Hay 3 commits posteriores al estado congelado S9. Después del cierre se añadieron Dockerfile/Compose y documentación de Dokploy; las sondas públicas responden. Esto cierra deuda operativa en la punta, pero no altera S9. [README.md:40-46](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/c0a6a78f0ce87ea59040662b5abbbb4d2ab99aec/README.md#L40-L46) distingue PostgreSQL de Compose, UI sin integración y ausencia de prueba de retención tras redeploy.
+
+- Convertir aspectos en cadena de ocho columnas con enlaces reales a C4, código, prueba y medición.
+- Formalizar mediante ADR la decisión de no incorporar generación y la plataforma Dokploy.
+- Incluir PostgreSQL real en CI y aportar scanner, run y Quality Gate público.
+- Conservar ADR aceptados y resolver duplicación del 0001. Confirmar cuentas sin inferir personas.
+- Identificar el escenario asignado de S10 y levantar una línea base del despliegue.
+
+### Hallazgos anteriores cerrados o delimitados
+
+- Ya existe registro IA S9 con rechazo técnico y auditoría de erosión; V1 y V2 están corregidas en código.
+- La prueba de fallo por pérdida de bloqueo está documentada; no sigue simplemente «sin evidencia».
+- En la punta posterior al cierre ya existen Dockerfile, Compose, URL pública y arc42 de despliegue; no modificar notas S8/S9 por ello.
 
 ## Recuento y nota sugerida
 
-**6 de 10 criterios cumplidos** (filas 1, 2, 3, 5, 8 y 9).
+**8 de 10 criterios Cumple**,  2 No cumple y 0 No verificado. La transversal no entra en el cálculo.
 
-**Nota sugerida preliminar (propuesta al docente; puede cambiar al cierre): 3.4 = 1 + 4 × (6/10).** La nota final la fija el profesor en Moodle.
+**Nota sugerida definitiva: 4.2 = 1 + 4 × (8/10). Propuesta al docente; la nota final se fija en Moodle.**
 
-## No verificado / pendientes
+## Próximos pasos
 
-- Fila 4 (prueba que falla ante el defecto que cubre): No verificado. La prueba existe en el
-  periodo, pero no hay run en rojo, prueba de mutación ni procedimiento documentado que demuestre
-  que falla ante el defecto. Queda como pregunta de sustentación.
-
-## Hallazgos para la planilla
-
-- S9 incorpora una porción real (adaptador PostgreSQL con bloqueo de fila, `logger` y manejo de
-  errores), su ADR-0004 y la medición del escenario S1 en arc42 §10.2: es un avance sustantivo
-  respecto de S8.
-- `docs/ia.md` no registra el uso de IA de esta porción y se mantiene en la semana 6.
-- No hay prueba que demuestre fallar ante el defecto (run en rojo, mutación o procedimiento) ni
-  auditoría de erosión del periodo.
-- No hay ADR de decisión sobre el componente generativo.
-- Transversal: `ADR0001.md` fuera de convención y duplicando el número; ADR-0001 y ADR-0003
-  editados tras su aceptación, uno de ellos en este periodo; SonarCloud sin configuración, scanner
-  ni URL pública. El barrido de credenciales y la contribución de los tres integrantes siguen bien.
+La verificación del contador ya incluye un defecto controlado, resultados y correcciones de erosión. Completen los enlaces de la tabla de aspectos y un ADR que justifique no incorporar un modelo generativo. La auditoría de dependencias debe incluir también la nueva UI Flutter; lleven la prueba PostgreSQL a CI y mantengan inmutables los ADR aceptados.

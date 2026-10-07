@@ -6,14 +6,16 @@
 |---|---|
 | Equipo | TAIA |
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant` |
-| Integrantes y su usuario de GitHub | ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo |
-| URL del sistema desplegado | — |
-| Ultima revision | 2026-10-01 |
+| Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo; ver comprobación actual de contribución más abajo. |
+| URL del sistema desplegado | http://taia-sistema-jkbo9i-ec2cd4-144-24-4-187.sslip.io · ver comprobación y límites en S10 |
+| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
 
 ## Estado por entrega
 
-| Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
+| Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 9 | S9 · definitiva | `main` · `72a8b6a0b3680a59c235f9225f90bc260093d86b` · 2026-10-04T23:39:00-05:00 | 9/10 | 4.6 (propuesta al docente) | sí, 2026-10-06 |
+| 10 | Segundo corte · preliminar | `main` · `72a8b6a0b3680a59c235f9225f90bc260093d86b` · 2026-10-04T23:39:00-05:00 | 3/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `76d4a91` · 2026-08-07T03:34:26-05:00 | 6/9 | no aplica | sí |
 | 2 | S2 | `59590c9` (2026-08-16T19:15:15-05:00) | 5/9 | no aplica | si |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `46257a03` · 2026-08-23T16:47:00-05:00 | 5/9 | no se publica | sí |
@@ -23,8 +25,6 @@
 | 7 | S7 | `0a12f0c` (2026-09-17T15:27:54-05:00) | 10/10 | 5.0 | si |
 | 8 | S8 | `4b07242` en `origin/main` (2026-09-27T23:03:53-05:00) | 10/10 | 5.0 (propuesta; 2 filas de despliegue diferidas) | si |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
-| 9 | Evidencia S9 · Generación verificada y trazable | `4b07242` en `origin/main` (2026-09-27T23:03:53-05:00) | 1/10 | 1.4 (preliminar; propuesta al docente) | sí |
-| 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
 | 11 | Evidencia S11 · Fallos parciales y decisión de extracción | | | no aplica | |
 | 12 | Evidencia S12 · Estrategia de datos y eventos | | | no aplica | |
 | 12 | Taller aplicado · Mensajes y consistencia | | | no aplica | |
@@ -34,6 +34,28 @@
 | 17 | Aplicación de cambios y cierre arquitectónico | | | | |
 
 ## Lo que se arrastra
+
+Estado vigente observado en la punta citada en [S10](semana-10-corte2.md). Las correcciones tardías no cambian S9. El registro histórico siguiente conserva su contexto, pero no sustituye esta actualización ni implica cerrar hallazgos no revalidados.
+
+| Hallazgo actual | Estado | Evidencia y próximo paso |
+|---|---|---|
+| Identificar el escenario oficialmente asignado de S10 y separar hipótesis, línea base, cambio y experimento. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| CI actual failure y CD skipped: no afirmar que la corrección del NULL o el hash actual estén desplegados. [CI 37264440690](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/actions/runs/37264440690); [CD 37264470652](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/actions/runs/37264470652) | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| S1 de campos persistidos y S3 del backend al canal continúan sin medición completa; el 91,8 % corresponde solo a extracción. [docs/evaluacion_ia/contraste_umbrales.md:22–37](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/docs/evaluacion_ia/contraste_umbrales.md#L22-L37) | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Resolver marcadores de merge y rutas de operación contradictorias. [docs/arc42/07-vista-de-despliegue.md:67–96](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/docs/arc42/07-vista-de-despliegue.md#L67-L96) | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Degradación del proveedor: timeout 20 s frente a presupuesto 7 s; falta evento de error y last_usage puede repetir tokens tras fallo. [docs/adr/0007-comportamiento-ante-fallo-del-proveedor-llm.md:82–85](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/docs/adr/0007-comportamiento-ante-fallo-del-proveedor-llm.md#L82-L85) | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Valor predeterminado histórico de firma JWT retirado: confirmar sustitución/rotación e invalidación de sesiones en los entornos que lo usaron, sin divulgar el valor. [run.bat:4–11](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/run.bat#L4-L11) | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| SonarCloud/Quality Gate públicos pendientes y ADR-0001 editado sin sucesor. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| La URL publicada usa HTTP: validar un acceso HTTPS antes de transmitir credenciales o tokens. [README.md:5–12](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/README.md#L5-L12) | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Se cierra la falta de actividad/porción S9 de la preliminar: 23 commits y normalización real con prueba roja/verde. [backend/app/modules/ai/application/use_cases/handle_message.py:35–51](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/backend/app/modules/ai/application/use_cases/handle_message.py#L35-L51) | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| Registro de IA actualizado con aceptado/corregido/rechazado y razones. [docs/ia.md:709–787](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/docs/ia.md#L709-L787) | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| Hay evaluación real del componente generativo con dataset, resultado, costo, latencia y ADR de fallo; no confundir este cierre con cumplimiento de S1/S3 completos. [docs/evaluacion_ia/resultado_s1_100.json:13–27](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/docs/evaluacion_ia/resultado_s1_100.json#L13-L27) | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| Plantilla .env.example versionada sin claves reales y retirada de valores predeterminados en el arranque actual. [.env.example:25–41](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/.env.example#L25-L41) | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| E-02/E-05 corregidos en el código: composición centralizada y contrato público de Academic; la evidencia histórica se conserva claramente como anterior. [docs/auditoria_erosion.md:3–13](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/docs/auditoria_erosion.md#L3-L13) | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| Health externo vigente HTTP 200; no cambia retroactivamente la evaluación S8 ni verifica el flujo conversacional. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+
+<details>
+<summary>Registro histórico previo a esta revisión (estados a la fecha de cada observación)</summary>
 
 | Hallazgo | Primera vez que se detectó | Sigue abierto | Qué se le dijo al equipo |
 |---|---|---|---|
@@ -127,23 +149,30 @@
 | Periodo S9 vacío: la punta `4b07242` (2026-09-27) coincide con el hash calificado de S8; no hay porción nueva. | S9 (preliminar) | si | Empujar la porción construida con IA y su cadena antes del cierre del 2026-10-05. |
 | Cadena de aspectos, prueba que falla, medición, auditoría de erosión y dependencias del periodo: sin artefacto S9. | S9 (preliminar) | si | Aplicado CONTRATO §12: la evidencia previa es línea base y no se recalifica. |
 | Componente generativo (Gemini) sin conjunto de evaluación, costo por operación ni latencia del periodo. | S9 (preliminar) | si | Evaluar el componente o registrar el ADR de su no incorporación. |
+
+</details>
+
 ## Estado del contrato del repositorio
+
+Actualizado desde la evaluación de la punta actual; no altera la matriz congelada de S9.
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
-| Nombre y visibilidad del repositorio | Cumple | Clon anónimo OK en S9 (`4b07242`, misma punta que S8) |
-| Estructura mínima | Cumple | Las seis rutas presentes en `4b07242` |
-| Convención de nombres de ADR | Cumple | `docs/adr/0001`–`0004` en kebab-case; filtro de §4 sin residuos |
-| ADR aceptados sin reescribir | No cumple | ADR-0001 aceptado y editado en `4dd3925` (2026-08-29) y `42c5b03` (2026-09-06) sin ADR sucesor |
-| `docs/ia.md` al día | No cumple | Sin commits en la ventana S8; último sobre el archivo `7b32b3f` (2026-09-16) |
-| Sin credenciales en el repositorio ni en el historial | Cumple | `git grep` §9 limpio sobre `4b07242`; sin `.env` versionado; pickaxe coincide solo con la regex documentada en `correcciones.md` |
-| Contribución de todos los integrantes | Cumple | 4 identidades consolidadas = 4 integrantes (val 42, dei0811 31, Luis Mendoza/luis20072002 28, mark 3) |
-| Pipeline en verde | Cumple | Run CI `36376147005` y CD `36376186792` success sobre `4b07242` en `main` (2026-09-28T04:04Z) |
-| SonarCloud y Quality Gate públicos | No cumple | Sin `sonar-project.properties`, sin scanner en el workflow y sin URL pública con Quality Gate |
-| Etiqueta corte-1 (corte 1) | No cumple | No existe; solo `corrections-s4` |
-| ADR aceptados sin reescribir (corte 1) | No cumple | El commit `42c5b03` edita el ADR-0001 aceptado en vez de crear uno nuevo o marcarlo reemplazado |
+| Repositorio en la organización, con el nombre de la convención y público | Cumple | Clon anónimo público desde https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant; nombre y organización conformes. |
+| Estructura mínima presente | Cumple | [README.md:99–107](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/README.md#L99-L107). Seis rutas mínimas presentes en el árbol: README, docs/arc42, docs/adr, docs/c4, docs/aspectos.md y docs/ia.md. |
+| Estado calificado identificable | Cumple | origin/main 72a8b6a0b3680a59c235f9225f90bc260093d86b, 2026-10-04T23:39:00-05:00; último ≤ cierre S9 y punta actual preliminar S10. |
+| Nombres de ADR según la convención | Cumple | [README.md:84–90](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/README.md#L84-L90) y [docs/adr/0007-comportamiento-ante-fallo-del-proveedor-llm.md:1–5](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/docs/adr/0007-comportamiento-ante-fallo-del-proveedor-llm.md#L1-L5). Siete ADR Markdown en NNNN-kebab-case; PDFs excluidos. |
+| ADR aceptados no reescritos | No cumple | Historial leído de ADR-0001: aceptado, editado en 4dd3925 y 42c5b03; vuelve a corregir enlace en 8282044 sin sucesor. [docs/adr/0001-estilo-arquitectonico.md:85–107](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/docs/adr/0001-estilo-arquitectonico.md#L85-L107) y [docs/ia.md:555–558](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/docs/ia.md#L555-L558). Las nuevas aceptaciones de 0006/0007 no reemplazan 0001. |
+| docs/ia.md al día para la semana | Cumple | [docs/ia.md:709–787](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/docs/ia.md#L709-L787). Entradas 011–017 incorporadas en el periodo S9 con decisiones y rechazos; no hay commits posteriores de S10 aún. |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No cumple | [.github/workflows/ci.yml:43–81](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/.github/workflows/ci.yml#L43-L81). [CI 37264440690](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/actions/runs/37264440690) failure para el hash revisado; [CD 37264470652](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/actions/runs/37264470652) skipped. No hay scanner SonarCloud ni configuración/Quality Gate públicos verificados; workflow actual ejecuta pruebas/auditorías, no scanner. No confundir corridas verdes históricas de otras ramas con main actual. |
+| Sin credenciales en el repositorio ni en el historial | No cumple | HEAD sin credenciales reales identificadas. El historial conserva un valor predeterminado de firma JWT en run.bat:5 del estado S8 4b07242, retirado en 8282044; [run.bat:4–11](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/run.bat#L4-L11) y [docs/ia.md:538–546](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/docs/ia.md#L538-L546) reconocen el hecho. No se publica su valor ni se afirma uso productivo. Confirmar reemplazo/rotación en cualquier entorno que lo haya usado; borrar del árbol no borra exposición histórica. |
+| Contribución de todos los integrantes | No verificado | 127 commits y seis grupos por identidad de correo; dos firmas comparten exactamente identidad y pueden consolidarse, pero otras no. Sin correspondencia explícita suficiente no se asignan cuentas por parecido ni se afirma que falte un integrante. Validación docente de autoría y contribución sustantiva pendiente. |
 
 ## Contribución por integrante
+
+Actualización agregada del 2026-10-06: 127 commits y seis grupos por identidad de correo; dos firmas comparten exactamente identidad y pueden consolidarse, pero otras no. Sin correspondencia explícita suficiente no se asignan cuentas por parecido ni se afirma que falte un integrante. Validación docente de autoría y contribución sustantiva pendiente.
+
+La tabla individual conservada abajo corresponde al registro histórico anterior; no se infieren nuevas correspondencias entre cuentas y personas.
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
 |---|---|---:|---:|---:|---|
@@ -154,5 +183,8 @@
 
 ## Preguntas abiertas para la sustentación
 
-- ¿La cuenta «mark» es la misma persona que «EtienneGW» del listado de EQUIPOS.md?
-- ¿El arranque real (`.\run.bat`) y la prueba (`pytest backend/tests`) pasan en el entorno del equipo? (no ejecutado por regla del kit)
+Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
+
+- Si Gemini agota el timeout mientras existe una confirmación pendiente, ¿qué puede seguir funcionando y cómo distinguirán en logs la degradación de una respuesta exitosa HTTP 200?
+- ¿Cómo calculan el costo por operación con una llamada fallida sin tokens y con last_usage conservando el consumo anterior, además del costo fijo de infraestructura?
+- A la luz del 91,8 % de extracción, los fallos de estado y el máximo de 20,2 s, ¿qué cambiarían y qué prueba extremo a extremo confirmaría la mejora sin alterar las etiquetas después de ver el resultado?

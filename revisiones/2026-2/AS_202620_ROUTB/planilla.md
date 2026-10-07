@@ -6,14 +6,16 @@
 |---|---|
 | Equipo | ROUTB |
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_ROUTB` |
-| Integrantes y su usuario de GitHub | Diego Jose Baron Ruiz (`diegobrr999-commits`) · Julian David Manjarrez Guzman (`juliandmanjarrez-tech`) · Keiner Enrique Mendivil Diaz (`MKeinerrr`, dos correos) · Junior Jose Orozco Atencio (`junior14700`) |
-| URL del sistema desplegado | — |
-| Ultima revision | 2026-10-01 |
+| Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Diego Jose Baron Ruiz (`diegobrr999-commits`) · Julian David Manjarrez Guzman (`juliandmanjarrez-tech`) · Keiner Enrique Mendivil Diaz (`MKeinerrr`, dos correos) · Junior Jose Orozco Atencio (`junior14700`); ver comprobación actual de contribución más abajo. |
+| URL del sistema desplegado | https://as-202620-routb.onrender.com · ver comprobación y límites en S10 |
+| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
 
 ## Estado por entrega
 
-| Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
+| Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 9 | S9 · definitiva | `master` · `7c6573e68a5fdab019fab8fddfe1acb2a451cb27` · 2026-10-03T18:20:32-05:00 | 9/10 | Pendiente por limitación de verificación; intervalo documental 4.6–5.0, sin descontar la comprobación bloqueada | sí, 2026-10-06 |
+| 10 | Segundo corte · preliminar | `master` · `7c6573e68a5fdab019fab8fddfe1acb2a451cb27` · 2026-10-03T18:20:32-05:00 | 2/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `68b0b05` · 2026-08-09T14:48:08-05:00 | 5/9 | no aplica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `14e6688` · 2026-08-16T12:44:08-05:00 | 2/9 | no aplica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `1ed002b` · 2026-08-23T20:31:54-05:00 | 6/9 | no se publica | sí |
@@ -23,8 +25,6 @@
 | 7 | S7 | `fe266aa` (2026-09-20T21:32:01-05:00) | 9/10 | 4.6 | si |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `eae667e` (2026-09-27T21:58:06-05:00) | 10/10 (2 filas de despliegue diferidas) | 5.0 (provisional) | si |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
-| 9 | Evidencia S9 · Generación verificada y trazable (preliminar) | `eae667e` (2026-09-27T21:58:06-05:00) · punta sin commits nuevos desde S8 | 1/10 | 1.4 (prelim.) | si |
-| 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
 | 11 | Evidencia S11 · Fallos parciales y decisión de extracción | | | no aplica | |
 | 12 | Evidencia S12 · Estrategia de datos y eventos | | | no aplica | |
 | 12 | Taller aplicado · Mensajes y consistencia | | | no aplica | |
@@ -34,6 +34,23 @@
 | 17 | Aplicación de cambios y cierre arquitectónico | | | | |
 
 ## Lo que se arrastra
+
+Estado vigente observado en la punta citada en [S10](semana-10-corte2.md). Las correcciones tardías no cambian S9. El registro histórico siguiente conserva su contexto, pero no sustituye esta actualización ni implica cerrar hallazgos no revalidados.
+
+| Hallazgo actual | Estado | Evidencia y próximo paso |
+|---|---|---|
+| Identificar enunciado oficial de S10 y construir baseline/experimento comparable. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Confirmar versión pública: la evidencia histórica registró API sin seat_count; health 200 no cierra ese problema. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Obtener medición interna oficial en el mismo despliegue y declarar sus diferencias con la medición externa. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Integrar scanner Sonar y aportar run/Gate correspondientes al estado revisado. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Completar barrido de seguridad cuando el entorno de revisión lo permita; no es un defecto demostrado del proyecto. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Revalidar historial de ADR y confirmar mapeo explícito de identidades. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| La preliminar sin entrega S9 queda superada por reserva grupal, ADR, pruebas, medición y registro IA. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| Se aporta auditoría de erosión E1–E6 con cambios observables y ADR de no incorporar generación. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| La salud pública anteriormente diferida pudo comprobarse ahora por HTTP; no modifica S8 retroactivamente. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+
+<details>
+<summary>Registro histórico previo a esta revisión (estados a la fecha de cada observación)</summary>
 
 | Hallazgo | Primera vez que se detectó | Sigue abierto | Qué se le dijo al equipo |
 |---|---|---|---|
@@ -96,21 +113,29 @@
 | Sin prueba que falle ante el defecto del periodo ni medición del escenario en S9. | S9 (prelim.) | si | Adjuntar run en rojo o procedimiento documentado y la medición contra umbral. |
 | Sin auditoría de erosión ni decisión sobre el componente generativo. | S9 (prelim.) | si | Documentar límites de contexto/propiedad de datos y el ADR del componente generativo (o de no incorporarlo). |
 
+</details>
+
 ## Estado del contrato del repositorio
+
+Actualizado desde la evaluación de la punta actual; no altera la matriz congelada de S9.
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
-| Nombre y visibilidad del repositorio | Cumple | Público y con el nombre de la convención |
-| Estructura mínima | Cumple | Las seis rutas presentes en `corte-1` |
-| Convención de nombres de ADR | Cumple | 0001, 0002, 0003 con título de la decisión en kebab-case |
-| ADR aceptados sin reescribir | No cumple | ADR 0001 (`a94a1a3`), 0002 (`53ed7c3`), 0003 (`f706aa6`), 0005 y 0006 (`b0426fa`) editados después de aceptarse sin declarar reemplazo |
-| `docs/ia.md` al día | No cumple (S9) | El archivo crece y documenta rechazos, pero la última entrada es del 24/09 (S8); sin entrada del periodo S9 |
-| Sin credenciales en el repositorio ni en el historial | Cumple | git grep sin secretos reales; sin `.env` |
-| Contribución de todos los integrantes | Cumple | 4 personas para 4 integrantes (MKeinerrr consolidado); muy concentrada en MKeinerrr |
-| Pipeline en verde | Cumple | Run público del estado S8 en `master` (`eae667e`) en verde: https://github.com/ISCOUTB/AS_202620_ROUTB/actions/runs/36371840003 |
-| Pipeline, SonarCloud y Quality Gate públicos | No cumple | CI en verde, pero el workflow no invoca el scanner de SonarCloud ni publica URL del Quality Gate |
+| Repositorio en la organización, con el nombre de la convención y público | Cumple | Repositorio ISCOUTB/AS_202620_ROUTB visible por clon git público, rama master. |
+| Estructura mínima presente | Cumple | Árbol con README, docs/arc42, adr, c4, aspectos e ia. Cadena [docs/aspectos.md:5–12](https://github.com/ISCOUTB/AS_202620_ROUTB/blob/7c6573e68a5fdab019fab8fddfe1acb2a451cb27/docs/aspectos.md#L5-L12). |
+| Estado calificado identificable | Cumple | 7c6573e68a5fdab019fab8fddfe1acb2a451cb27, 2026-10-03T18:20:32-05:00, último master ≤ cierre; HEAD coincide. |
+| Nombres de ADR según la convención | Cumple | Ocho ADR con nombre NNNN-kebab-case.md; nuevos [docs/adr/0007-reserva-grupal-de-cupos.md:1–5](https://github.com/ISCOUTB/AS_202620_ROUTB/blob/7c6573e68a5fdab019fab8fddfe1acb2a451cb27/docs/adr/0007-reserva-grupal-de-cupos.md#L1-L5) y [docs/adr/0008-no-componente-generativo.md:1–5](https://github.com/ISCOUTB/AS_202620_ROUTB/blob/7c6573e68a5fdab019fab8fddfe1acb2a451cb27/docs/adr/0008-no-componente-generativo.md#L1-L5). |
+| ADR aceptados no reescritos | No verificado | Las revisiones previas señalaban edición de ADR 0001/0002/0003/0005/0006. Se mantiene como antecedente pendiente de comprobación histórica completa en esta pasada; no se eleva texto previo no revalidado a evidencia nueva. Los nuevos ADR no sustituyen explícitamente esos registros. |
+| docs/ia.md al día para la semana | Cumple | Entrada S9 del 2-oct con decisiones y rechazo: [docs/ia.md:109–119](https://github.com/ISCOUTB/AS_202620_ROUTB/blob/7c6573e68a5fdab019fab8fddfe1acb2a451cb27/docs/ia.md#L109-L119). No se acredita todavía un registro del reto S10. |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No cumple | [CI final success](https://github.com/ISCOUTB/AS_202620_ROUTB/actions/runs/37161463477), pero [.github/workflows/ci.yml:29–67](https://github.com/ISCOUTB/AS_202620_ROUTB/blob/7c6573e68a5fdab019fab8fddfe1acb2a451cb27/.github/workflows/ci.yml#L29-L67) ejecuta pytest/build sin scanner Sonar. [README.md:91–95](https://github.com/ISCOUTB/AS_202620_ROUTB/blob/7c6573e68a5fdab019fab8fddfe1acb2a451cb27/README.md#L91-L95) contiene enlace genérico; falta cadena scanner→run→Gate de la revisión. |
+| Sin credenciales en el repositorio ni en el historial | No verificado | Barrido snapshot/histórico interrumpido por herramienta; no se presume limpio el historial ni se afirma un incidente. Debe completarse sin publicar valores sensibles. |
+| Contribución de todos los integrantes | No verificado | 71 commits distribuidos en cuatro nombres de autor; aporte concentrado (60 de 71 bajo una firma). [README.md:36–41](https://github.com/ISCOUTB/AS_202620_ROUTB/blob/7c6573e68a5fdab019fab8fddfe1acb2a451cb27/README.md#L36-L41) lista miembros sin correspondencia completa con cuentas. Confirmar mapeo; no se deduce por parecido. |
 
 ## Contribución por integrante
+
+Actualización agregada del 2026-10-06: 71 commits, cuatro nombres de autor; 60 bajo una firma. Mapeo completo persona–cuenta pendiente, sin adivinar identidades.
+
+La tabla individual conservada abajo corresponde al registro histórico anterior; no se infieren nuevas correspondencias entre cuentas y personas.
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
 |---|---|---:|---:|---:|---|
@@ -121,6 +146,8 @@
 
 ## Preguntas abiertas para la sustentación
 
-- ¿Cuál fue exactamente la restricción individual asignada al equipo?
-- ¿Por qué SonarCloud nunca pasó en verde y qué plan tienen para resolverlo?
-- ¿Cómo van a repartir mejor la contribución? Casi todo el reto S5 lo hizo una sola persona.
+Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
+
+- Fallo: ¿cómo evitan aceptar dos grupos simultáneos sin capacidad suficiente y liberar dos veces los cupos al repetir una cancelación?
+- Costo: ¿qué límite de Render o Supabase agotaría primero el presupuesto cero y cómo afectaría la latencia caliente y fría?
+- Medición: ante el aumento del p95 externo frente a la base, ¿qué repetirían para separar efecto de red, versión desplegada y cambio funcional?

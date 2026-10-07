@@ -62,12 +62,10 @@ El despliegue reproducible quedó resuelto y es el avance más claro de la seman
 
 Lo que hay que corregir: varios ADR aceptados fueron editados después de su aceptación. Un ADR aceptado no se edita ni se borra; si la decisión cambia, se escribe uno nuevo y el anterior queda marcado como reemplazado. Quedan además pendientes de calificar la URL del despliegue y la comprobación del health check, que se entregan por Moodle y no se abren en esta pasada.
 
-## Semana 9 · S9 (revisión preliminar)
+## Semana 9 · S9 (revisión definitiva)
 
-Revisión preliminar, antes del cierre: la nota puede cambiar si el equipo empuja antes de la fecha límite.
+La nueva política de verificación, la auditoría de escrituras y el ADR de no incorporar IA generativa están sustentados. La porción y la prueba reutilizadas son de entregas anteriores, y la medición al cierre cubre cinco de los veinte casos previstos. Completen la cadena navegable y distingan el trabajo nuevo de la línea base.
 
-No encontramos una entrega de S9 en el repositorio. La punta revisada coincide con el estado de la semana anterior más un único ajuste de README, así que no hay una porción nueva identificada, ni su cadena de trazabilidad, ni ADR, ni prueba que falle ante el defecto, ni medición contrastada con un umbral. `docs/ia.md` no se actualizó en el periodo y no hay un extracto de S9. La auditoría de erosión de propiedad de datos que existe es de la semana 6 y no se refrescó. Tampoco se añadieron dependencias que verificar ni hay un ADR que decida sobre un componente generativo.
+## Semana 10 · Segundo corte (avance preliminar)
 
-Lo que sí sigue bien: el repositorio mantiene el pipeline en verde y el barrido de credenciales no encontró valores sensibles. Ambas cosas son línea base de semanas anteriores, no evidencia de esta entrega.
-
-Para cerrar S9 hace falta, como mínimo, elegir una porción real del sistema construida con apoyo de IA y llevarla hasta su evidencia (fila de aspectos, ADR, código, prueba en rojo o procedimiento documentado, y medición), actualizar el registro de IA con lo aceptado, lo corregido y al menos un rechazo motivado, y documentar la auditoría de erosión con su hallazgo y su corrección. Si se decide no incorporar un componente generativo, debe quedar el ADR que lo justifique.
+La punta amplía pruebas y mejora documentación, pero el CI falla mientras la evidencia afirma que todos los casos pasan. Corrijan esa contradicción y documenten el experimento del escenario asignado. No carguen datos reales mientras lectura y escritura sigan sin autenticación. La sustentación queda pendiente.

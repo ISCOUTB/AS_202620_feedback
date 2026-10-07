@@ -6,16 +6,17 @@
 |---|---|
 | Equipo | Verifacts |
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Verifacts` |
-| Integrantes y su usuario de GitHub | Ver [EQUIPOS.md](../../../EQUIPOS.md); historial actual: `PedroC1213` (240 commits, dos correos consolidados) y `Cristian Cardeño` (31 commits, dos correos con la misma firma), sin correspondencia individual confirmada; falta una tercera identidad atribuible. |
-| URL del sistema desplegado | `https://verifacts-web.onrender.com` · API: `https://verifacts-api.onrender.com` (pendiente de comprobación externa fechada) |
-| Ultima revision | 2026-10-01 |
+| Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Ver [EQUIPOS.md](../../../EQUIPOS.md); historial actual: `PedroC1213` (240 commits, dos correos consolidados) y `Cristian Cardeño` (31 commits, dos correos con la misma firma), sin correspondencia individual confirmada; falta una tercera identidad atribuible.; ver comprobación actual de contribución más abajo. |
+| URL del sistema desplegado | https://verifacts-web.onrender.com · ver comprobación y límites en S10 |
+| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
 
 ## Estado por entrega
 
-| Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
+| Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 9 | S9 · definitiva | `master` · `4f0652291c47f5093da1230b245a980614220e80` · 2026-10-02T00:01:45-05:00 | 7/10 | 3.8 (propuesta al docente) | sí, 2026-10-06 |
+| 10 | Segundo corte · preliminar | `master` · `4f0652291c47f5093da1230b245a980614220e80` · 2026-10-02T00:01:45-05:00 | 3/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
 | 8 | S8 | `d2d7b5c` (2026-09-25T16:38:43-05:00) | 10/10 | 5.0 (provisional; 2 filas de despliegue pendientes) | sí (definitiva) |
-| 9 | Evidencia S9 · Generación verificada y trazable | `dae98e8` en `origin/master` (2026-09-28T22:24:54-05:00) | 7/10 | 3.8 (preliminar; propuesta al docente) | sí |
 | 7 | S7 | `635f9b7` (2026-09-16T00:52:52-05:00) | 10/10 | 5.0 (auditada) | sí, auditada |
 | 6 | S6 | `5941c33` (2026-09-12T02:00:20-05:00) | 8/8 | 5.0 (prelim.) | si |
 | 1 | S1 | `(sin commits)` () | sin actividad | no aplica | si |
@@ -27,6 +28,27 @@
 S8 se califica sobre 10 filas graduables. Quedan **pendientes de calificar** las dos filas de despliegue («URL del sistema accesible desde fuera de la red de la universidad» y «Health check consultable»): la URL se entrega por Moodle y no está disponible en esta pasada.
 
 ## Lo que se arrastra
+
+Estado vigente observado en la punta citada en [S10](semana-10-corte2.md). Las correcciones tardías no cambian S9. El registro histórico siguiente conserva su contexto, pero no sustituye esta actualización ni implica cerrar hallazgos no revalidados.
+
+| Hallazgo actual | Estado | Evidencia y próximo paso |
+|---|---|---|
+| Corregir enlaces y nombre de ADR-0006: la fila A-06 y README apuntan a archivos que no existen. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Registrar IA de S9 y corregir la afirmación de MLAnalyzer; no basta escribir Corregido en la auditoría. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Crear realmente el ADR de no incorporar componente generativo si esa es la decisión; ADR-0007 citado no existe. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Contrastar fila a fila D-1/D-5/D-6/D-7 de auditoria-s9.md: las correcciones anunciadas no están versionadas. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Confirmar Quality Gate público y revisión asociada; scanner verde con cobertura no garantiza gate aprobado. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Añadir pytest-cov al inventario de dependencias y fijar su versión o cierre reproducible. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Confirmar si la comparación Render/Lambda corresponde al escenario operativo asignado S10 y medir operación/carga equivalentes en ambos. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Aclarar matrícula y correspondencia de autoría; README/Equipo y listado docente discrepan. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Verificar disponibilidad pública con evidencia fechada y recuperación/persistencia del historial tras reinicios. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Scoring ya importa el servicio público de Analysis y la base de pruebas queda aislada: [app/modules/scoring/service.py:1](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/app/modules/scoring/service.py#L1) y [tests/conftest.py:1–13](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/tests/conftest.py#L1-L13). | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| Medición formal local de Q-01 y Q-05 publicada: [docs/evidencia/medicion-q01-q05.md:3–12](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/docs/evidencia/medicion-q01-q05.md#L3-L12). Cierra la ausencia de medición para texto local, no la de URL o producción. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| El workflow SonarCloud ahora genera y entrega coverage.xml: [.github/workflows/sonarcloud.yml:21–38](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/.github/workflows/sonarcloud.yml#L21-L38) y [sonar-project.properties:5–6](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/sonar-project.properties#L5-L6). No se declara cerrado el Quality Gate. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| Los runs del hash actual de Tests y SonarCloud pasan: [Tests](https://github.com/ISCOUTB/AS_202620_Verifacts/actions/runs/36967117516), [scanner](https://github.com/ISCOUTB/AS_202620_Verifacts/actions/runs/36967117556). | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+
+<details>
+<summary>Registro histórico previo a esta revisión (estados a la fecha de cada observación)</summary>
 
 | Hallazgo | Primera vez que se detectó | Sigue abierto | Qué se le dijo al equipo |
 |---|---|---|---|
@@ -100,20 +122,30 @@ S8 se califica sobre 10 filas graduables. Quedan **pendientes de calificar** las
 | `docs/ia.md` sin entrada del periodo S9; la corrección de la afirmación sobre `MLAnalyzer` que declara la auditoría no está en el repositorio. | S9 (preliminar) | si | Registrar el uso de IA del periodo. |
 | Sin ADR dedicado a la no incorporación del componente generativo. | S9 (preliminar) | si | Decidirlo en un ADR. |
 | Quality Gate de SonarCloud en rojo pese a los runs verdes del hash revisado. | S9 (preliminar) | si | Corregirlo. |
+
+</details>
+
 ## Estado del contrato del repositorio
+
+Actualizado desde la evaluación de la punta actual; no altera la matriz congelada de S9.
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
-| Nombre y visibilidad del repositorio | Cumple | `ISCOUTB/AS_202620_Verifacts` respondió al clon público sin autenticación el 2026-09-24. |
-| Estructura mínima | Cumple | Las seis rutas están presentes; el glosario está numerado como sección 12. |
-| Convención de nombres de ADR | No cumple | Cinco ADR en convención, pero el del periodo (`docs/adr/ADR-0006.md`) no sigue `NNNN-titulo-en-kebab-case.md` |
-| ADR aceptados sin reescribir | No cumple | el ADR aceptado fue modificado, borrado y recreado |
-| `docs/ia.md` al día | No cumple | Sin entrada del periodo S9; último commit `50568f1` (2026-09-23). La corrección de la afirmación sobre `MLAnalyzer` que declara la auditoría no está en el repositorio |
-| Sin credenciales en el repositorio ni en el historial | Cumple | git grep y `.env` sin coincidencias |
-| Contribución de todos los integrantes | No cumple | dos personas visibles; el tercer integrante sigue sin commits |
-| Pipeline en verde | Cumple (con salvedad) | Tests `36517048309` y SonarCloud `36517048351` en `success` para `dae98e8`; el Quality Gate general sigue documentado en rojo (transversal en No cumple) |
+| Repositorio en la organización, con el nombre de la convención y público | Cumple | Clon público de ISCOUTB/AS_202620_Verifacts; [README.md:1–4](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/README.md#L1-L4). |
+| Estructura mínima presente | Cumple | Las seis rutas mínimas están presentes. [docs/aspectos.md:17–25](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/docs/aspectos.md#L17-L25) y [docs/arc42/09-decisiones-arquitectonicas.md:8–17](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/docs/arc42/09-decisiones-arquitectonicas.md#L8-L17); enlaces rotos y nombre con espacio se registran aparte. |
+| Estado calificado identificable | Cumple | master y hash/fecha exactos del encabezado; último commit ≤ cierre, sin uso de etiquetas. |
+| Nombres de ADR según la convención | No cumple | [docs/adr/ADR-0006.md:1–5](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/docs/adr/ADR-0006.md#L1-L5): archivo ADR-0006.md no sigue NNNN-titulo-en-kebab-case.md. [auditoria-s9.md:25](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/auditoria-s9.md#L25) afirma renombre que el árbol no contiene. |
+| ADR aceptados no reescritos | No cumple | Historial 9430845 añade secciones a ADR 0001–0004 ya aceptados; por ejemplo [docs/adr/0002-contextos-sin-cambios.md:29–34](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/docs/adr/0002-contextos-sin-cambios.md#L29-L34). [auditoria-s9.md:26](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/auditoria-s9.md#L26) dice que una tabla de enmiendas lo declara, pero [docs/arc42/09-decisiones-arquitectonicas.md:1–17](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/docs/arc42/09-decisiones-arquitectonicas.md#L1-L17) y el resto del archivo no la contienen. |
+| docs/ia.md al día para la semana | No cumple | [docs/ia.md:19–22](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/docs/ia.md#L19-L22): sin cambio desde 50568f1 (23-sep), no documenta S9 y conserva MLAnalyzer como aceptado pese a que el servicio solo instancia RuleAnalyzer. |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No cumple | [Tests](https://github.com/ISCOUTB/AS_202620_Verifacts/actions/runs/36967117516) y [SonarCloud](https://github.com/ISCOUTB/AS_202620_Verifacts/actions/runs/36967117556) del hash actual en success; scanner y cobertura presentes en [.github/workflows/sonarcloud.yml:26–38](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/.github/workflows/sonarcloud.yml#L26-L38) y [sonar-project.properties:1–6](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/sonar-project.properties#L1-L6). Sigue faltando Quality Gate satisfactorio asociado a la revisión: [docs/despliegue.md:37](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/docs/despliegue.md#L37) declara gate general rojo y [auditoria-s9.md:28](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/auditoria-s9.md#L28) confirmación pendiente. La consulta pública al endpoint de gate no fue accesible; no se infiere el estado actual desde el run verde. |
+| Sin credenciales en el repositorio ni en el historial | Cumple | Barrido de árbol e historial con patrones de alta especificidad sin credenciales reales confirmadas; ejemplos sin valores productivos. [.github/workflows/sonarcloud.yml:34–38](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/4f0652291c47f5093da1230b245a980614220e80/.github/workflows/sonarcloud.yml#L34-L38). Alcance estático, no prueba sobre servicios externos. |
+| Contribución de todos los integrantes | No verificado | 300 commits en tres firmas de autor, incluidas variantes; README/Equipo declaran dos integrantes y EQUIPOS del curso tres. La correspondencia y matrícula deben confirmarse; no se identifica a una persona como ausente por parecido de cuenta. |
 
 ## Contribución por integrante
+
+Actualización agregada del 2026-10-06: 300 commits con tres firmas observadas (241, 33 y 26), incluidas variantes no atribuidas automáticamente. Documentos del proyecto enumeran dos personas; listado docente tres. Correspondencia y matrícula pendientes.
+
+La tabla individual conservada abajo corresponde al registro histórico anterior; no se infieren nuevas correspondencias entre cuentas y personas.
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
 |---|---|---:|---:|---:|---|
@@ -123,7 +155,8 @@ S8 se califica sobre 10 filas graduables. Quedan **pendientes de calificar** las
 
 ## Preguntas abiertas para la sustentación
 
-- ¿Qué cuentas de GitHub corresponden a los integrantes que no aparecen en el historial?
-- ¿El esqueleto arranca con `python run.py` y la prueba `pytest tests/` pasa en el entorno del equipo? (no ejecutado por regla del kit; el README no lo documenta)
-- ¿Por qué se borraron y recrearon los documentos a las 00:xx del 24-ago, después del cierre? ¿Cuál es la versión canónica?
-- ¿Dónde está el run de CI que verifica `tests/test_health.py` en verde? La URL citada en `docs/aspectos.md` (run 33235835069) devuelve 404 y la API no reporta runs del repositorio.
+Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
+
+- ¿Qué pasa con los análisis guardados cuando Render reinicia su disco efímero, y cómo demostrarían recuperación sin pérdida?
+- ¿Cómo cambia el costo real de Lambda si se mide POST /analysis con la carga de Q-01 en vez de GET /health local?
+- Si el experimento equivalente contradice el P95 local documentado, ¿mantendrían Render o qué cambio de arquitectura justificarían?

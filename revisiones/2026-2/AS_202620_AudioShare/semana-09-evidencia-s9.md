@@ -1,73 +1,77 @@
-> Pasada temprana (previa al cierre del 2026-10-05T05:00:00Z): el hash y la nota son preliminares y pueden cambiar si el equipo empuja antes del cierre.
+# Evidencia S9 definitiva · AudioShare
 
-# semana-09-evidencia-s9 · AudioShare
-
+Revisión actualizada tras el cierre del **2026-10-05T05:00:00Z** (domingo a medianoche COT).
 
 | Campo | Valor |
 |---|---|
-| Repositorio | `https://github.com/ISCOUTB/AS_202620_AudioShare` |
-| Estado revisado | `e4789d887fe59b2ace65bd1d2680f79758db5b54` en `origin/master` (2026-09-27T23:49:01-05:00) |
-| Cierre | 2026-10-05T05:00:00Z |
-| Revisor | auditoría local preliminar sobre clon público efímero |
+| Repositorio | [AS_202620_AudioShare](https://github.com/ISCOUTB/AS_202620_AudioShare) |
+| Rama remota principal | `master` |
+| Base S5 del segundo corte | `cb65d13134b220c020d0facaa00d0a779d584245` |
+| Base S8 | `e4789d887fe59b2ace65bd1d2680f79758db5b54` |
+| Estado revisado | `6a03a9718776420d46ed40f7addc5667206908cd` en `origin/master` (2026-10-04T23:15:57-05:00) |
+| S9 congelada | `6a03a9718776420d46ed40f7addc5667206908cd` · 2026-10-04T23:15:57-05:00 |
+| Punta actual / S10 preliminar | `6a03a9718776420d46ed40f7addc5667206908cd` · 2026-10-04T23:15:57-05:00 |
+| Comprobación | 2026-10-06T21:16:50Z |
 
-Esta pasada **no tiene cierre**: se califica la punta actual de `origin/master`. La punta actual es idéntica al estado calificado de S8 (`e4789d887fe59b2ace65bd1d2680f79758db5b54`) y `git log e4789d88..origin/master` está vacío: no hay ningún commit nuevo desde el cierre de S8. Por eso no hay porción S9 entregada y todas las filas se deciden contra el estado existente.
+Revisión por Git y lectura estática; no se ejecutó código, instalación, pruebas ni despliegue de estudiantes. Una consulta de Actions por repositorio. Los procedimientos y resultados documentados por el equipo se identifican como tales; no equivalen a una ejecución del revisor. PDF excluido por decisión docente: no se abrió ni se penaliza. No se consultaron etiquetas.
 
-## Matriz de la ficha
+## Matriz S9
 
-| Criterio de evaluación | Evidencia técnica esperada | Estado (Cumple / No cumple) | Observaciones |
-|---|---|---|---|
-| Porción real del sistema construida con apoyo de IA | rutas del código y commits | No cumple | No hay porción S9: `git log e4789d88..origin/master` vacío. El código asistido por IA del repositorio es línea base (corte vertical A-01, `docs/ia.md` usos de semana 4 y migración Flutter de semana 7), no una porción nueva del periodo. |
-| Cadena completa navegable para esa porción | fila de `docs/aspectos.md` recorrida hasta la evidencia | No cumple | `docs/aspectos.md` (último cambio `ddaf474`, 2026-09-25) trae la fila A-01 con ADR, C4, `lib/` y `test/`, pero es de S7/S8 y no corresponde a una porción del periodo. La propia fila declara la medición pendiente (`docs/aspectos.md:158`, «mediciones ... no deben presentarse como verificadas»). |
-| ADR con la decisión argumentada por el equipo | `docs/adr/NNNN-*.md` con restricciones del proyecto | No cumple | No se añadió ningún ADR en el periodo: `docs/adr/` llega hasta `0004-despliegue-api-azure-vs-laboratorio.md` (fecha interna 2026-09-28, de S8). No hay ADR de la porción S9. |
-| Prueba que falla ante el defecto que cubre | run en rojo, prueba de mutación o procedimiento documentado | No cumple | No hay prueba ni procedimiento nuevo del periodo. Existen `test/models_test.dart`, `test/view_model_test.dart`, `test/widget_test.dart`, `tests/a01.test.ts`, `tests/contract.test.ts` y `tests/health.test.ts`, todos anteriores a la punta de S8; ninguno documenta un fallo ante un defecto. |
-| Medición del escenario asociado | resultado contrastado con el umbral | No cumple | No hay medición en el periodo. `docs/aspectos.md:158` afirma que las métricas de EC-01..EC-04 «se mantienen como objetivos arquitectónicos» sin resultado experimental. |
-| `docs/ia.md` con lo aceptado, lo corregido y lo rechazado con motivo | extracto citado del archivo | No cumple | Último commit sobre `docs/ia.md`: `5a6d73b` (2026-09-20T23:24:35-05:00). El documento cierra con «Documento actualizado durante la semana 7» (`docs/ia.md`, sección Estado); no hay entrada de S9. Tiene rechazos motivados de semanas anteriores, pero no del periodo evaluado. |
-| Auditoría de erosión sobre límites de contexto y propiedad de datos | hallazgos con su ubicación y su corrección | No cumple | No hay auditoría del periodo. La única es `docs/auditoria-propiedad-datos.md` (`963dba7`, 2026-09-20), de S6: detecta que `SQLiteRoomRepository` escribe `start_at`/`playback_state`/`status` y lo declara NC-10, sin corrección documentada. Contra el código, `src/modules/session/infrastructure/persistence/sqlite-room-repository.ts:73,139,157` sigue siendo la única fuente de escrituras. |
-| Dependencias propuestas verificadas en su registro oficial | lista de dependencias añadidas y su comprobación | No cumple | `git diff e4789d88..origin/master -- package.json requirements.txt pyproject.toml pom.xml go.mod Gemfile pubspec.yaml` está vacío: no se añadió ninguna dependencia en el periodo, así que no hay propuesta que verificar. |
-| Sin credenciales en código, ejemplos ni documentación generada | barrido del contrato, incluido `docs/` | Cumple | `git grep` de patrones sobre la punta solo coincide con `origin/master:.github/workflows/publish-image.yml:19` (`password: ${{ secrets.DOCKERHUB_TOKEN }}`), referencia a secreto, no credencial. Ningún `.env` versionado; `git log -S"BEGIN PRIVATE KEY"` sin coincidencias. |
-| Componente generativo evaluado, con costo y latencia, o ADR de no incorporarlo | conjunto de evaluación con resultados, o el ADR | No cumple | El sistema no incorpora componente generativo (grep de `openai\|anthropic\|gemini\|llm\|gpt` sobre código sin coincidencias). No existe el ADR que justifique no incorporarlo: `docs/adr/` no tiene ninguna decisión al respecto. |
+| Criterio | Estado | Evidencia y observaciones |
+|---|---|---|
+| Porción real del sistema construida con apoyo de IA | No cumple | El delta contra S8 no cambia código de producción; solo añade la prueba [tests/sync-a01.test.ts:1–20](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/6a03a9718776420d46ed40f7addc5667206908cd/tests/sync-a01.test.ts#L1-L20), que calcula constantes sin importar módulos del sistema. La porción previa no se recalifica por existir. |
+| Cadena completa navegable para esa porción | No cumple | La fila A-01 sigue apuntando a ADR-0001/0003 y pruebas Flutter previas, sin ADR-0005 ni prueba nueva ni medición navegable; [docs/aspectos.md:38–43](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/6a03a9718776420d46ed40f7addc5667206908cd/docs/aspectos.md#L38-L43). |
+| ADR con la decisión argumentada por el equipo | Cumple | ADR-0005 elige referencia startAt y compara reproducción al recibir y reloj local, con límites explícitos; [docs/adr/0005 Validación-sincronización-inicial.md:9–69](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/6a03a9718776420d46ed40f7addc5667206908cd/docs/adr/0005%20Validaci%C3%B3n-sincronizaci%C3%B3n-inicial.md#L9-L69). Esto acredita la decisión documental, no la medición. |
+| Prueba que falla ante el defecto que cubre | No verificado | La prueba nueva obtiene siempre 40 ms a partir de 20/35/60; no ejercita el sistema ni documenta una mutación aplicada al código real. Falta run rojo, mutación o procedimiento reproducible del defecto; [tests/sync-a01.test.ts:5–18](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/6a03a9718776420d46ed40f7addc5667206908cd/tests/sync-a01.test.ts#L5-L18). |
+| Medición del escenario asociado | No cumple | No hay medición de receptores: el resultado aritmético es sintético. El propio README mantiene pendientes las mediciones físicas; [tests/sync-a01.test.ts:5–18](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/6a03a9718776420d46ed40f7addc5667206908cd/tests/sync-a01.test.ts#L5-L18), [README.md:203–210](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/6a03a9718776420d46ed40f7addc5667206908cd/README.md#L203-L210). |
+| docs/ia.md con lo aceptado, lo corregido y lo rechazado con motivo | No cumple | La fila añadida registra aceptación parcial y correcciones, pero no una salida rechazada del alcance S9 con razón técnica diferenciada; [docs/ia.md:112–112](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/6a03a9718776420d46ed40f7addc5667206908cd/docs/ia.md#L112-L112). Los rechazos de semanas previas son línea base. |
+| Auditoría de erosión sobre límites de contexto y propiedad de datos | No cumple | La auditoría es una declaración general de revisión sin hallazgo localizado, propuesta concreta ni corrección contrastable del periodo; [docs/ia.md:253–294](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/6a03a9718776420d46ed40f7addc5667206908cd/docs/ia.md#L253-L294). |
+| Dependencias propuestas verificadas en su registro oficial | No verificado | No cambiaron package.json ni pubspec.yaml en S9. No se penaliza ese delta vacío: falta un inventario explícito de propuestas auditadas y su comprobación oficial; la declaración genérica no cita paquetes ni registros, [docs/ia.md:296–318](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/6a03a9718776420d46ed40f7addc5667206908cd/docs/ia.md#L296-L318). |
+| Sin credenciales en código, ejemplos ni documentación generada | Cumple | Barrido estático de código, ejemplos y documentación del hash sin credenciales reales. [.env.example:1–3](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/6a03a9718776420d46ed40f7addc5667206908cd/.env.example#L1-L3) y [.github/workflows/ci.yml:20–23](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/6a03a9718776420d46ed40f7addc5667206908cd/.github/workflows/ci.yml#L20-L23) usan configuración/secretos externos; este resultado se limita al snapshot. |
+| Componente generativo evaluado, con costo y latencia, o ADR de no incorporarlo | Cumple | ADR-0006 justifica no incorporar modelo generativo por alcance, costo, latencia y mantenimiento; [docs/adr/0006-no-incorporar-componente-generativo.md:8–63](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/6a03a9718776420d46ed40f7addc5667206908cd/docs/adr/0006-no-incorporar-componente-generativo.md#L8-L63). |
 
-## Matriz transversal (CONTRATO §11)
+## Matriz transversal · CONTRATO §11
 
-| Criterio | Evidencia | Estado | Observaciones |
-|---|---|---|---|
-| Repositorio en la organización, con el nombre de la convención y público | `https://github.com/ISCOUTB/AS_202620_AudioShare`, clon anónimo con `--filter=blob:none` exitoso; rama `origin/master`. | Cumple | Responde sin autenticación y el nombre sigue `AS_202620_<PROYECTO>`. |
-| Estructura mínima presente | Árbol con `docs/arc42/`, `docs/adr/`, `docs/c4/`, `docs/aspectos.md`, `docs/ia.md` y `README.md`. | Cumple | Las seis rutas existen; arc42 en AsciiDoc (desviación de formato ya anotada en S8). |
-| Estado calificado identificable | `e4789d887fe59b2ace65bd1d2680f79758db5b54` en `origin/master`, `2026-09-27T23:49:01-05:00`. | Cumple | En esta pasada sin cierre se califica la punta actual; coincide con el hash de S8 y no hay commits posteriores. |
-| Nombres de ADR según la convención | `docs/adr/0001-usar-monolito-modular.md`, `0002-estrategia-integracion.md`, `0003-transicion-a-flutter.md`, `0004-despliegue-api-azure-vs-laboratorio.md`. | Cumple | Los cuatro siguen `NNNN-titulo-kebab-case.md`. |
-| ADR aceptados no reescritos | ADR-0001 aceptado en `924d133` (2026-09-04) y editado después en `354f1f5`/`453710f` (2026-09-21); ADR-0003 aceptado (`e27fe2f`) y editado en `d11f39a` (2026-09-25). | No cumple | Las ediciones son posteriores a la aceptación y no declaran ADR de reemplazo (CONTRATO §4). |
-| `docs/ia.md` al día para la semana | Último commit `5a6d73b` (2026-09-20); el documento cierra en «actualizado durante la semana 7». | No cumple | No hay entrada de la semana 9. |
-| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | Runs del hash revisado: `Flutter` `failure` (https://github.com/ISCOUTB/AS_202620_AudioShare/actions/runs/36379253148); `CI` `success` (runs/36379253187) y `Publicar imagen` `success` (runs/36379253129). | No cumple | Hay un run en rojo en la rama y no se aporta la URL pública del análisis con Quality Gate. |
-| Sin credenciales en el repositorio ni en el historial | Barrido sin credenciales reales (solo `secrets.DOCKERHUB_TOKEN`); ningún `.env` versionado; `git log -S"BEGIN PRIVATE KEY"` vacío. | Cumple | Sin hallazgos de secretos. |
-| Contribución de todos los integrantes | `shortlog -sne`: Elian Daniel Perea Vanegas 60, cardonavincent26-design 59, Yeiver Andrés Vergel Pérez 41, Santiago Adolfo Camacho Hernández 37. | Cumple | Cuatro identidades para cuatro integrantes declarados; la atribución de `cardonavincent26-design` a Vincent Cardona es presunta (no se consolida por parecido de nombre). |
+| Criterio | Estado | Evidencia y observaciones |
+|---|---|---|
+| Repositorio en la organización, con el nombre de la convención y público | Cumple | Clon público por HTTPS y rama remota master; [README.md:1–10](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/6a03a9718776420d46ed40f7addc5667206908cd/README.md#L1-L10). |
+| Estructura mínima presente | Cumple | Presentes README, docs/arc42/, docs/adr/, docs/c4/, docs/aspectos.md y docs/ia.md; [docs/aspectos.md:36–43](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/6a03a9718776420d46ed40f7addc5667206908cd/docs/aspectos.md#L36-L43). arc42 usa AsciiDoc, desviación de formato frente a Markdown. |
+| Estado calificado identificable | Cumple | Hash y fecha completos en el encabezado, elegidos por git log --until sobre origin/master. |
+| Nombres de ADR según la convención | No cumple | El nombre [docs/adr/0005 Validación-sincronización-inicial.md:1–7](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/6a03a9718776420d46ed40f7addc5667206908cd/docs/adr/0005%20Validaci%C3%B3n-sincronizaci%C3%B3n-inicial.md#L1-L7) contiene espacio y acentos; no pasa NNNN-kebab-case. |
+| ADR aceptados no reescritos | No cumple | ADR-0001 ya estaba aceptado en 924d133 y fue modificado en 354f1f5: se verificaron ambas versiones y el diff. El texto actual solo dice complementado, sin preservar la versión aceptada mediante reemplazo; [docs/adr/0001-usar-monolito-modular.md:1–8](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/6a03a9718776420d46ed40f7addc5667206908cd/docs/adr/0001-usar-monolito-modular.md#L1-L8). |
+| docs/ia.md al día para la semana | No cumple | Hubo cambios de S9, pero el registro específico no separa una salida rechazada con motivo técnico y mantiene Estado «semana 7»; [docs/ia.md:112–112](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/6a03a9718776420d46ed40f7addc5667206908cd/docs/ia.md#L112-L112), [docs/ia.md:363–389](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/6a03a9718776420d46ed40f7addc5667206908cd/docs/ia.md#L363-L389). |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No cumple | Scanner configurado en [sonar-project.properties:1–5](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/6a03a9718776420d46ed40f7addc5667206908cd/sonar-project.properties#L1-L5) y [.github/workflows/ci.yml:18–23](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/6a03a9718776420d46ed40f7addc5667206908cd/.github/workflows/ci.yml#L18-L23); la organización configurada no es isco-utb. CI success, Flutter failure en el hash. Falta análisis público y Quality Gate atribuibles a esta revisión. |
+| Sin credenciales en el repositorio ni en el historial | No verificado | Sin credenciales reales en el árbol: coincidencias solo con referencias a secrets de Actions. Barrido histórico completo no concluyó; no se certifica el historial. |
+| Contribución de todos los integrantes | No verificado | Cuatro firmas de autor visibles, distribuidas en el historial. No se inventa la correspondencia entre cuentas y los cuatro integrantes; falta mapa verificable para acreditar a todas las personas. |
 
-## Estado global del proyecto (overall · punta actual de la misma rama)
+## Actions en el estado congelado
 
-- **Punta actual revisada**: `e4789d887fe59b2ace65bd1d2680f79758db5b54 2026-09-27T23:49:01-05:00 S8: URL desplegada en Azure, evidencia de health y restricciones de la suscripción`
-- **Veredicto**: sin entrega S9
-- **Commits posteriores al cierre de S8**: ninguno; la punta actual es idéntica al hash calificado de S8.
-- Resumen: no hay trabajo nuevo desde S8. El repositorio conserva la entrega de despliegue de la semana anterior (Dockerfile, compose, publish-image, `docs/despliegue.md`, ADR-0004, logs JSON, métrica de A-01) y arrastra sus pendientes: el workflow `Flutter` sigue en rojo en `origin/master`, no hay URL pública de SonarCloud con Quality Gate, ADR-0001 y ADR-0003 fueron editados tras su aceptación, y `docs/ia.md` no pasa de la semana 7. Para S9 no hay porción construida con IA, ni cadena, ni ADR, ni prueba, ni medición, ni entrada de IA, ni verificación de dependencias.
+- [Flutter: failure](https://github.com/ISCOUTB/AS_202620_AudioShare/actions/runs/37262748991), 2026-10-05T04:16:00Z, SHA exacto del estado indicado.
+- [Publicar imagen: success](https://github.com/ISCOUTB/AS_202620_AudioShare/actions/runs/37262748932), 2026-10-05T04:16:00Z, SHA exacto del estado indicado.
+- [CI: success](https://github.com/ISCOUTB/AS_202620_AudioShare/actions/runs/37262748924), 2026-10-05T04:16:00Z, SHA exacto del estado indicado.
+## Alcance del barrido de seguridad
+Barrido del snapshot completo de texto, incluidos docs y ejemplos: las coincidencias fueron referencias a secretos del almacén de Actions, no valores. No hay .env versionado. El recorrido histórico con git log -S no terminó por cancelación del entorno: la fila transversal conserva No verificado.
 
-Pendientes que siguen abiertos:
-- Entregar la porción S9 con su cadena completa (aspectos → ADR → código → prueba que falle ante el defecto → medición).
-- Añadir a `docs/ia.md` lo aceptado, lo corregido y lo rechazado con motivo de la generación del periodo.
-- Documentar la auditoría de erosión si la generación cruzó límites de contexto o las reglas de propiedad de datos de la semana 6.
-- Poner en verde el workflow `Flutter` sobre `origin/master`.
-- Publicar la URL pública del análisis de SonarCloud con Quality Gate (y alinear la organización, hoy `cardonavincent26`).
-- Dejar de editar ADR aceptados sin declarar reemplazo.
+## Estado global del proyecto (overall · punta actual)
+
+La punta coincide con S9. Se incorporaron dos ADR y una prueba adicional, pero esta no valida la sincronización real. La aplicación responde al health check actual, lo cual no demuestra flujo de audio ni identidad entre despliegue y commit. La documentación reconoce audio simulado y mediciones pendientes. CI de backend e imagen están en verde; Flutter sigue en rojo. La plataforma declarada cambió a Dokploy sin alinear completamente la vista de despliegue y ADR.
+
+El delta S9 contiene 9 commits respecto de S8; hay 0 commits posteriores a S9 en la misma rama. Los cambios tardíos solo afectan este overall y el avance S10, nunca el recuento congelado.
 
 ## Recuento y nota sugerida
 
-**1 de 10 criterios cumplidos.**
+**3 de 10 criterios Cumple. Nota sugerida: 2.2 = 1 + 4 × (3/10).** Propuesta al docente; la nota final se fija en Moodle. La matriz transversal no integra este cálculo.
 
-**Nota sugerida preliminar (propuesta al docente; puede cambiar al cierre): 1.4 = 1 + 4 × (1/10).** La nota final la fija el profesor en Moodle.
+## Acciones prioritarias
 
-## No verificado / pendientes
+- Sustituir la prueba de constantes por una que invoque la lógica real y falle al introducir un defecto de sincronización; registrar procedimiento y resultado.
+- Completar la cadena A-01 hacia ADR-0005, código exacto, prueba y medición reproducible.
+- Aportar mediciones de receptores y comparación con umbral, sin presentar un ejemplo sintético como experimento.
+- Localizar la consigna oficial S10 y definir línea base, hipótesis, variables y montaje.
+- Corregir Flutter CI, evidenciar SonarCloud/Quality Gate del hash y alinear Dokploy con ADR/C4/arc42.
+- Hacer específica la auditoría de erosión y la verificación de dependencias; registrar rechazo técnico propio de la entrega.
 
-- Este informe no contiene filas No verificado: todas las comprobaciones se resolvieron leyendo el árbol de la punta. La ausencia de la entrega S9 es evidencia de ausencia, no una imposibilidad de comprobar.
+## Hallazgos cerrados con evidencia nueva
 
-## Hallazgos para la planilla
-
-- La punta actual de `origin/master` es idéntica al hash calificado de S8: no hay ningún commit desde el cierre de S8, por lo que S9 no está entregada a la fecha de esta pasada temprana.
-- No hay porción S9 ni su cadena; se arrastran los pendientes de S8 (workflow `Flutter` en rojo, SonarCloud sin URL pública con Quality Gate, ADR aceptados editados, `docs/ia.md` sin entrada posterior a la semana 7).
-- El barrido de credenciales sigue limpio y la contribución sigue repartida entre los cuatro integrantes.
+- Existe decisión explícita de no incorporar componente generativo: [docs/adr/0006-no-incorporar-componente-generativo.md:22–45](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/6a03a9718776420d46ed40f7addc5667206908cd/docs/adr/0006-no-incorporar-componente-generativo.md#L22-L45).
+- URL y health check accesibles en la comprobación actual; no cambia retrospectivamente S8.

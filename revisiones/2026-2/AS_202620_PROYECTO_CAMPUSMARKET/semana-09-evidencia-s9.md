@@ -1,78 +1,72 @@
-> Pasada temprana (previa al cierre del 2026-10-05T05:00:00Z): el hash y la nota son preliminares y pueden cambiar si el equipo empuja antes del cierre.
+# Semana 9 · Generación verificada y trazable · CampusMarket
 
-# Semana 9 · Evidencia S9 · Generación verificada y trazable · CampusMarket
-
+> Revisión definitiva actualizada tras el cierre. Propuesta al docente; la nota final se fija en Moodle.
 
 | Campo | Valor |
 |---|---|
-| Repositorio | `https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET` |
-| Estado revisado | `784d788` en `origin/master` (2026-09-27T23:50:19-05:00) |
-| Cierre | 2026-10-05T05:00:00Z |
-| Revisor | auditoría local preliminar sobre clon público efímero |
+| Repositorio | https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET |
+| Rama remota principal | `origin/master` |
+| Base S8 | `784d788c19418099decde77a2cfb5ba831ab993b` |
+| Estado revisado | `de6ed67c05ccdb7eabd9b1951f146ab8958b1d00` en `origin/master` (2026-10-04T02:14:34-05:00) |
+| Cierre S9 | 2026-10-05T05:00:00Z |
+| Observación | 2026-10-06T21:17:09Z |
 
-La punta actual de `origin/master` coincide con el hash calificado de S8 (`784d788`). El
-periodo S9 es **vacío**: `git rev-list --count 784d788..origin/master` = **0**. No hay ninguna
-porción, cadena, ADR, prueba, medición ni extracto de IA producido entre el hash de S8 y la
-punta. Por la regla del periodo, ninguna fila de la entrega S9 puede apoyarse en el artefacto de
-una semana anterior: la evidencia S8 es línea base y no satisface la fila.
+## Alcance y método
 
-## Matriz de la ficha
+Se revisó el delta de S8 a S9: **110 commits**. Se leyeron código, pruebas, documentos y configuración mediante git; no se ejecutó código estudiantil, pruebas ni despliegue. Una consulta de Actions por repositorio identifica las conclusiones de los runs; no se presentan logs no obtenidos como inspeccionados. Los procedimientos documentados se admiten donde lo permite la ficha. No se consultaron etiquetas. **PDF excluido por instrucción docente: no se leyó ni penalizó.**
 
-| Criterio de evaluación | Evidencia técnica esperada | Estado | Observaciones |
+La preliminar revisaba una punta sin trabajo nuevo. El cierre sí incorpora Catálogo, consulta de imágenes en lote, pruebas de erosión y mutación, medición HTTP/MySQL bajo cuota y auditoría de dependencias. El cumplimiento de S9 se limita a la evidencia efectivamente medida; no certifica el flujo público completo.
+
+## Matriz de la ficha S9
+
+| Criterio | Evidencia técnica esperada | Estado | Observaciones y evidencia |
 |---|---|---|---|
-| Porción real del sistema construida con apoyo de IA | rutas del código y commits | No cumple | Periodo vacío: no hay commits entre `784d788` y la punta. No existe porción construida en el periodo S9. |
-| Cadena completa navegable para esa porción | fila de `docs/aspectos.md` recorrida hasta la evidencia | No cumple | Sin fila de `docs/aspectos.md` añadida o modificada en el periodo. |
-| ADR con la decisión argumentada por el equipo | `docs/adr/NNNN-*.md` con restricciones del proyecto | No cumple | `docs/adr/` sin cambios en el periodo (siguen los ADR 0001-0008 del estado de S8). |
-| Prueba que falla ante el defecto que cubre | run en rojo, prueba de mutación o procedimiento documentado | No verificado | No hay run en rojo, mutación ni procedimiento de S9. La evidencia más reciente es de S7 (`docs/evidencias/fallo-contrato-s7-2026-09-15.md`), línea base. Queda como pregunta de sustentación. |
-| Medición del escenario asociado | resultado contrastado con el umbral | No cumple | Sin medición nueva en el periodo. |
-| `docs/ia.md` con lo aceptado, lo corregido y lo rechazado con motivo | extracto citado del archivo | No cumple | El último cambio de `docs/ia.md` es `083bcc3` (2026-09-27, registro de S8), anterior al periodo S9. |
-| Auditoría de erosión sobre límites de contexto y propiedad de datos | hallazgos con su ubicación y su corrección | No cumple | Sin auditoría de erosión en el periodo. |
-| Dependencias propuestas verificadas en su registro oficial | lista de dependencias añadidas y su comprobación | No cumple | `git diff 784d788..origin/master -- backend/requirements.txt requirements.txt package.json …` vacío: no se añadió ninguna dependencia en el periodo. |
-| Sin credenciales en código, ejemplos ni documentación generada | barrido del contrato, incluido `docs/` | Cumple | `git grep` del contrato sobre la punta: solo `password=os.environ["CAMPUSMARKET_DB_PASSWORD"]` en `.github/workflows/backend-tests.yml:78` y `scripts/run_s4.ps1:31` (referencias, no valores). Sin `.env` versionado. |
-| Componente generativo evaluado, con costo y latencia, o ADR de no incorporarlo | conjunto de evaluación con resultados, o el ADR | No cumple | Sin conjunto de evaluación, costo/latencia ni ADR de no incorporarlo. |
+| Porción real del sistema construida con apoyo de IA | Rutas del código y commits | Cumple | Catálogo implementado con lectura del servicio propietario y composición en lote: [backend/app/catalogo/service.py:1–72](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/de6ed67c05ccdb7eabd9b1951f146ab8958b1d00/backend/app/catalogo/service.py#L1-L72). El criterio humano sobre IA está en [docs/ia.md:442–502](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/de6ed67c05ccdb7eabd9b1951f146ab8958b1d00/docs/ia.md#L442-L502); el delta incorpora esta porción real. |
+| Cadena completa navegable para esa porción | Aspecto → requisito → C4 → ADR → código → prueba → medición | Cumple | ASP-01 enlaza EC-01, C4, ADR-0009/0019, código, pruebas, mutaciones y medición: [docs/aspectos.md:25–29](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/de6ed67c05ccdb7eabd9b1951f146ab8958b1d00/docs/aspectos.md#L25-L29). Se comprobaron los destinos; [docs/evidencias/evidencia-s9-2026-10-01.md:273–295](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/de6ed67c05ccdb7eabd9b1951f146ab8958b1d00/docs/evidencias/evidencia-s9-2026-10-01.md#L273-L295) explicita la cadena. |
+| ADR con la decisión argumentada por el equipo | Restricciones, alternativas y consecuencias | Cumple | ADR-0019 compara acceso a repository ajeno, SQL duplicado y lectura por el servicio propietario. Justifica la opción por frontera y cuota, conserva contrato y declara costo de filtros en memoria: [docs/adr/0019-consultar-imagenes-en-lote-a-traves-de-publicaciones.md:8–51](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/de6ed67c05ccdb7eabd9b1951f146ab8958b1d00/docs/adr/0019-consultar-imagenes-en-lote-a-traves-de-publicaciones.md#L8-L51). |
+| Prueba que falla ante el defecto que cubre | Run rojo, mutación o procedimiento documentado | Cumple | El procedimiento introduce N+1 e import ajeno en copias, ejecuta la prueba correspondiente y exige exit 1 más fallo de aserción; no acepta error de colección: [scripts/verificar_mutaciones_mvp.py:11–18](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/de6ed67c05ccdb7eabd9b1951f146ab8958b1d00/scripts/verificar_mutaciones_mvp.py#L11-L18), [scripts/verificar_mutaciones_mvp.py:75–105](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/de6ed67c05ccdb7eabd9b1951f146ab8958b1d00/scripts/verificar_mutaciones_mvp.py#L75-L105). CI lo invoca en [.github/workflows/backend-tests.yml:105–123](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/de6ed67c05ccdb7eabd9b1951f146ab8958b1d00/.github/workflows/backend-tests.yml#L105-L123) y el [run del hash revisado](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/actions/runs/37185185530) concluyó success. No se ejecutó localmente. |
+| Medición del escenario asociado | Resultado contrastado con el umbral | Cumple | Resultado documentado HTTP loopback + MySQL real, 1000 filas y cuota 512 MiB: diez muestras 255,65–299,32 ms; 10/10 ≤2000 ms frente a ≥9/10: [docs/evidencias/evidencia-s9-2026-10-01.md:501–508](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/de6ed67c05ccdb7eabd9b1951f146ab8958b1d00/docs/evidencias/evidencia-s9-2026-10-01.md#L501-L508). Pertenece al checkpoint citado, no se reasignan sus cifras al merge documental. El [run Compose del hash final](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/actions/runs/37185185484) concluyó success. EC-01 público con navegador/1000 filas continúa abierto, explícitamente. |
+| docs/ia.md con lo aceptado, lo corregido y lo rechazado con motivo | Extracto de criterio técnico de S9 | Cumple | Registro de la semana con herramienta, aceptación, corrección N+1/dependencias y rechazo técnico de SQL ajeno, más recursos para ocultar el defecto y equiparar loopback a público: [docs/ia.md:442–502](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/de6ed67c05ccdb7eabd9b1951f146ab8958b1d00/docs/ia.md#L442-L502). |
+| Auditoría de erosión sobre límites de contexto y propiedad de datos | Ubicación de hallazgos y correcciones | Cumple | Auditoría localiza fronteras, escritor único, imports y N+1: [docs/evidencias/evidencia-s9-2026-10-01.md:314–348](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/de6ed67c05ccdb7eabd9b1951f146ab8958b1d00/docs/evidencias/evidencia-s9-2026-10-01.md#L314-L348). Código inspeccionado llama al service, no al repository: [backend/app/catalogo/service.py:1–5](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/de6ed67c05ccdb7eabd9b1951f146ab8958b1d00/backend/app/catalogo/service.py#L1-L5). Las reglas verificables aparecen en [backend/tests/test_erosion_s9.py:21–39](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/de6ed67c05ccdb7eabd9b1951f146ab8958b1d00/backend/tests/test_erosion_s9.py#L21-L39) y la mutación protege su detección. |
+| Dependencias propuestas verificadas en su registro oficial | Inventario del delta y comprobación de legitimidad | Cumple | El delta completo añade python-multipart, Pillow, file_picker e integration_test; la auditoría corrige expresamente la primera declaración de ausencia: [docs/evidencias/auditoria-s9-dependencias-secretos-2026-10-01.md:84–114](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/de6ed67c05ccdb7eabd9b1951f146ab8958b1d00/docs/evidencias/auditoria-s9-dependencias-secretos-2026-10-01.md#L84-L114). Se contrastaron [python-multipart 0.0.20](https://pypi.org/pypi/python-multipart/0.0.20/json), [Pillow 12.3.0](https://pypi.org/pypi/Pillow/12.3.0/json), [file_picker 13.1.0](https://pub.dev/packages/file_picker/versions/13.1.0) y [integration_test oficial de Flutter](https://docs.flutter.dev/testing/integration-tests). Legitimidad no equivale a ausencia de vulnerabilidades. |
+| Sin credenciales en código, ejemplos ni documentación generada | Barrido estático del CONTRATO §9 | Cumple | Barrido de patrones de alto riesgo sobre backend/docs/scripts/workflows/README sin coincidencias; sin .env versionado. Gitleaks sobre checkout incluido docs/ejemplos forma parte del [CI final success](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/actions/runs/37185185530): [.github/workflows/backend-tests.yml:70–78](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/de6ed67c05ccdb7eabd9b1951f146ab8958b1d00/.github/workflows/backend-tests.yml#L70-L78). Variables del entorno y valores efímeros de CI no se clasifican como secretos productivos. No se extiende esta conclusión a una garantía absoluta del historial. |
+| Componente generativo evaluado, con costo y latencia, o ADR de no incorporarlo | Resultados, costo, latencia, C4 y degradación; o ADR de exclusión | Cumple | Decisión explícita de no incorporar generación en el producto, alternativas y costo/latencia/riesgo: [docs/adr/0010-no-incorporar-componente-generativo-en-campusmarket.md:111–172](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/de6ed67c05ccdb7eabd9b1951f146ab8958b1d00/docs/adr/0010-no-incorporar-componente-generativo-en-campusmarket.md#L111-L172). Se observa contradicción editorial entre estado Aceptado del encabezado y futura aceptación del cierre, sin invalidar la decisión argumentada; corregir mediante constancia nueva, sin reescribir ADR aceptado. |
 
-## Matriz transversal (CONTRATO §11)
+## Matriz transversal · CONTRATO §11
 
-| Criterio | Evidencia | Estado | Observaciones |
-|---|---|---|---|
-| Repositorio en la organización, con el nombre de la convención y público | `https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET`; clon anónimo `--filter=blob:none` exitoso; rama `origin/master`. | Cumple | Responde sin autenticación; el nombre sigue `AS_202620_<PROYECTO>`. |
-| Estructura mínima presente | El árbol contiene `docs/arc42/`, `docs/adr/` (0001-0008), `docs/c4/`, `docs/aspectos.md`, `docs/ia.md` y `README.md`. | Cumple | Las seis rutas del contrato §2. |
-| Estado calificado identificable | `784d788` en `origin/master`, `2026-09-27T23:50:19-05:00`: `Merge pull request #44 from ISCOUTB/S8-cierre-evidencia`. | Cumple | La punta actual coincide con el hash de S8; no hay commits posteriores. |
-| Nombres de ADR según la convención | `0001-usar-monolito-modular.md` … `0008-desplegar-mysql-en-azure-flexible-server.md`. | Cumple | Los ocho pasan el filtro `NNNN-titulo-en-kebab-case.md`. |
-| ADR aceptados no reescritos | ADR-0002 aceptado `77e1323` (2026-09-05) y editado en `d72d6ac`, `3bb84a9`, `04fe631`; ADR-0003 aceptado `485249a` (2026-09-15) y editado en `df72b1c`; ADR-0005 aceptado `39f0952` (2026-09-27) y reescrito en `0e2b85b`. Sin cambios en el periodo S9, pero el hallazgo sigue abierto. | No cumple | El contrato §4 prohíbe editar un ADR aceptado sin declarar reemplazo; ninguna edición lo declara. |
-| `docs/ia.md` al día para la semana | Sin commit sobre `docs/ia.md` en el periodo S9; el último es `083bcc3` (2026-09-27, S8). | No cumple | No hay registro de uso de IA de la semana 9. |
-| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | Run del hash revisado: `Pruebas del backend` — `success` (https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/actions/runs/36379371983). Análisis público en SonarCloud para la revisión `784d788`: Quality Gate **OK**. Pero `.github/workflows/backend-tests.yml` no invoca el scanner (solo `pytest` y `ruff`) y ningún run de CI ejecutó el scanner. | No cumple | El contrato §8 exige la línea del workflow que invoca el scanner y el run que lo ejecutó; esa parte falta. El análisis público existe, pero llega por análisis automático, no por la cadena auditable exigida. |
-| Sin credenciales en el repositorio ni en el historial | `git grep` del contrato sobre la punta sin valores reales; ningún `.env` versionado; `git log -S'BEGIN PRIVATE KEY'` sin coincidencias. | Cumple | El password de CI (`campusmarket_ci`) es un valor efímero de prueba del propio workflow, no una credencial de producción. |
-| Contribución de todos los integrantes | `shortlog -sne` consolidado por correo idéntico: `nilver-garcia` + `Nnigarp` (193), `camilixo92` (26), `Carulla-sd` (19). | Cumple | Los tres integrantes declarados tienen commits. |
+| Criterio transversal | Estado | Evidencia y observaciones |
+|---|---|---|
+| Repositorio en la organización, con el nombre de la convención y público | Cumple | Clon git público de ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET y rama master; URL oficial y nombre conforme. |
+| Estructura mínima presente | Cumple | Árbol con README, docs/arc42, docs/adr, docs/c4, docs/aspectos.md y docs/ia.md; entrada navegable [README.md:13–28](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/de6ed67c05ccdb7eabd9b1951f146ab8958b1d00/README.md#L13-L28). |
+| Estado calificado identificable | Cumple | Último commit de origin/master anterior o igual al cierre: de6ed67c05ccdb7eabd9b1951f146ab8958b1d00, 2026-10-04T02:14:34-05:00; coincide con HEAD observado. |
+| Nombres de ADR según la convención | Cumple | Inventario git de docs/adr: 0001–0019 siguen NNNN-titulo-en-kebab-case.md. Ejemplo [docs/adr/0019-consultar-imagenes-en-lote-a-traves-de-publicaciones.md:1–6](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/de6ed67c05ccdb7eabd9b1951f146ab8958b1d00/docs/adr/0019-consultar-imagenes-en-lote-a-traves-de-publicaciones.md#L1-L6). |
+| ADR aceptados no reescritos | No cumple | Historial revalidado de ADR-0002 (77e1323 → d72d6ac/3bb84a9/04fe631), 0003 (485249a → df72b1c), 0005 (39f0952 → 0e2b85b): ediciones después de aceptación sin reemplazo. El cierre reconoce que el hallazgo persiste: [docs/evidencias/evidencia-s9-2026-10-01.md:414–425](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/de6ed67c05ccdb7eabd9b1951f146ab8958b1d00/docs/evidencias/evidencia-s9-2026-10-01.md#L414-L425). No se penaliza por añadir ADR sucesores nuevos. |
+| docs/ia.md al día para la semana | Cumple | Registro S9 actualizado y rechazo razonado: [docs/ia.md:482–506](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/de6ed67c05ccdb7eabd9b1951f146ab8958b1d00/docs/ia.md#L482-L506). Para S10 aún no se acredita un registro específico del reto asignado. |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No cumple | CI backend y otros tres workflows del hash están success, pero backend-tests solo ejecuta Ruff/Gitleaks/pruebas: [.github/workflows/backend-tests.yml:61–78](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/de6ed67c05ccdb7eabd9b1951f146ab8958b1d00/.github/workflows/backend-tests.yml#L61-L78), [.github/workflows/backend-tests.yml:105–130](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/de6ed67c05ccdb7eabd9b1951f146ab8958b1d00/.github/workflows/backend-tests.yml#L105-L130). Falta scanner Sonar en CI; la documentación lo reconoce: [README.md:67–69](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/de6ed67c05ccdb7eabd9b1951f146ab8958b1d00/README.md#L67-L69). Gate automático o badge no satisface los tres eslabones del contrato. |
+| Sin credenciales en el repositorio ni en el historial | No verificado | Checkout y CI sin hallazgos productivos observados. El barrido independiente amplio del historial no concluyó por interrupción de la herramienta; CI solo cubre el intervalo fijado en [.github/workflows/backend-tests.yml:70–78](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/de6ed67c05ccdb7eabd9b1951f146ab8958b1d00/.github/workflows/backend-tests.yml#L70-L78). El barrido histórico documentado distingue cinco falsos positivos: [docs/evidencias/evidencia-s9-2026-10-01.md:529–555](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/de6ed67c05ccdb7eabd9b1951f146ab8958b1d00/docs/evidencias/evidencia-s9-2026-10-01.md#L529-L555). Falta completar comprobación independiente del historial completo. |
+| Contribución de todos los integrantes | No verificado | Historial agregado: 365 commits y cinco nombres de autor; dos firmas comparten dirección y se consolidan, sin publicar correos. [README.md:5–9](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/de6ed67c05ccdb7eabd9b1951f146ab8958b1d00/README.md#L5-L9) enumera integrantes sin mapear todas las cuentas. La correspondencia previa no se da por probada por parecido de nombres; confirmar mapa explícito persona–cuenta. |
 
-## Estado global del proyecto (overall · punta actual de la misma rama)
+## Estado global del proyecto (overall)
 
-- **Punta actual revisada**: `784d788` — `2026-09-27T23:50:19-05:00 Merge pull request #44 from ISCOUTB/S8-cierre-evidencia`.
-- **Veredicto**: sin entrega S9; la punta no avanzó desde S8.
-- **Commits posteriores al cierre de S8**: ninguno; la punta coincide con el hash calificado de S8.
-- Resumen: entre el hash calificado de S8 y la punta no hay ningún commit. No existe una porción S9, ni cadena, ni ADR, ni prueba, ni medición, ni registro de IA de la semana. La única evidencia del periodo es la del estado de S8, que es línea base y no se recalifica. Siguen abiertos los pendientes transversales arrastrados de S8: la evidencia auditable de SonarCloud (el workflow no invoca el scanner) y la edición de ADR aceptados (ADR-0002, ADR-0003 y ADR-0005).
-
-Pendientes que siguen abiertos:
-- Sin entrega S9: cuando el equipo empuje, la nota sube sola al aparecer el periodo.
-- SonarCloud: añadir el paso del scanner al workflow y aportar el run que lo ejecute.
-- No editar ADR aceptados sin declarar reemplazo (ADR-0002, ADR-0003, ADR-0005).
+Punta actual de la misma rama: `de6ed67c05ccdb7eabd9b1951f146ab8958b1d00` · 2026-10-04T02:14:34-05:00. **0 commits posteriores al estado S9**. La punta coincide con S9; no hay cambios tardíos que alteren la calificación. Cuatro runs del hash están success. El frontend público y /health respondieron 200 en esta revisión. S9 presenta evidencia completa dentro de su alcance; siguen abiertos Sonar en pipeline, medición pública extremo a extremo y las ediciones históricas de ADR. La asignación específica S10 no se localizó.
 
 ## Recuento y nota sugerida
 
-**1 de 10 criterios Cumple** (el criterio 9, barrido de credenciales sobre la punta).
+**10 de 10 criterios Cumple; 0 No cumple; 0 No verificado.**
 
-**Nota sugerida preliminar (propuesta al docente; puede cambiar al cierre): 1.4 = 1 + 4 × (1/10).** La nota final la fija el profesor en Moodle.
+**Nota sugerida: 5.0 = 1 + 4 × (10/10)**, propuesta al docente. La matriz transversal no entra en la fórmula.
 
-## No verificado / pendientes
+## Pendientes y acciones concretas
 
-- Criterio 4 (prueba que falla): No verificado por ausencia de run en rojo, mutación o procedimiento de S9; queda como pregunta de sustentación.
-- SonarCloud: el análisis público existe con Quality Gate OK, pero el workflow no invoca el scanner y ningún run de CI lo ejecutó: fila transversal No cumple.
-- `docs/ia.md` y los ADR aceptados siguen como en S8: sin entrada de S9 y con ediciones sin reemplazo declarado.
+- Acreditar el escenario operativo asignado de S10 y preparar baseline/resultado comparables sobre el MVP desplegado.
+- Incorporar scanner Sonar y enlazar run del hash, análisis público y Quality Gate; demostrar bloqueo de integración.
+- Completar EC-01 público con 1000 filas, sin equiparar los tiempos loopback de CI al navegador.
+- Mantener constancia del historial de ADR aceptados reescritos; no repetir la práctica.
+- Completar barrido independiente del historial y confirmar mapa de identidades de autoría.
+- Revisar avisos vigentes que PyPI lista para python-multipart 0.0.20 y su aplicabilidad a la configuración; legitimidad del paquete no demuestra seguridad de la versión.
 
-## Hallazgos para la planilla
+## Hallazgos previos cerrados o aclarados
 
-- La punta de `origin/master` no avanzó desde S8: `git rev-list --count 784d788..origin/master` = 0.
-- Sin evidencia S9 en el periodo: ninguna fila de la entrega puede cumplirse con un artefacto de S8 (línea base).
-- El barrido de credenciales sobre la punta está limpio (solo referencias a variables de entorno).
-- SonarCloud sigue sin la cadena auditable del §8 pese a existir análisis público con Quality Gate OK.
-- ADR-0002, ADR-0003 y ADR-0005 fueron editados después de su aceptación sin declarar un ADR de reemplazo.
+- La ausencia de entrega S9 de la preliminar queda superada: existen porción, trazabilidad, mutaciones, medición, IA, auditoría y ADR de no componente generativo.
+- La URL pública y el health check de S8 diferidos pudieron comprobarse por lectura en la revisión actual; esto no modifica retroactivamente S8.
+- La declaración inicial de ausencia de dependencias fue corregida por auditoría ampliada del periodo completo.

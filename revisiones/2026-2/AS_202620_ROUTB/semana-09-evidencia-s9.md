@@ -1,101 +1,72 @@
-> Pasada temprana (previa al cierre del 2026-10-05T05:00:00Z): el hash y la nota son preliminares y pueden cambiar si el equipo empuja antes del cierre.
+# Semana 9 · Generación verificada y trazable · ROUTB
 
-# semana-09-evidencia-s9 · ROUTB
+> Revisión definitiva actualizada tras el cierre. Propuesta al docente; la nota final se fija en Moodle.
 
 | Campo | Valor |
 |---|---|
-| Repositorio | `https://github.com/ISCOUTB/AS_202620_ROUTB` |
-| Estado revisado | `eae667ef4339d3e8e89461b1e5f865a08eb21d10` en `origin/master` (2026-09-27T21:58:06-05:00) |
-| Cierre | 2026-10-05T05:00:00Z |
-| Revisor | auditoría local preliminar sobre clon público efímero |
+| Repositorio | https://github.com/ISCOUTB/AS_202620_ROUTB |
+| Rama remota principal | `origin/master` |
+| Base S8 | `eae667ef4339d3e8e89461b1e5f865a08eb21d10` |
+| Estado revisado | `7c6573e68a5fdab019fab8fddfe1acb2a451cb27` en `origin/master` (2026-10-03T18:20:32-05:00) |
+| Cierre S9 | 2026-10-05T05:00:00Z |
+| Observación | 2026-10-06T21:18:51Z |
 
-La punta actual **no tiene commits posteriores a S8**: coincide exactamente con el hash calificado de
-S8 (`eae667e`) y su fecha es del 2026-09-27. Esta pasada **no tiene corte**: se califica la punta
-actual del 2026-10-01, no un commit anterior a un cierre. El periodo S9 (`eae667e..origin/master`)
-está vacío: el equipo no empujó ninguna porción nueva. Bajo CONTRATO §12, la evidencia previa es
-línea base y **no se recalifica por existir**: las filas que describen la entrega S9 quedan en No
-cumple (o No verificado) por ausencia de artefacto del periodo, citando el artefacto anterior solo
-como contexto. La fila de credenciales y la matriz transversal se deciden sobre el estado en la
-punta.
+## Alcance y método
 
-## Matriz de la ficha
+Se revisó el delta de S8 a S9: **5 commits**. Se leyeron código, pruebas, documentos y configuración mediante git; no se ejecutó código estudiantil, pruebas ni despliegue. Una consulta de Actions por repositorio identifica las conclusiones de los runs; no se presentan logs no obtenidos como inspeccionados. Los procedimientos documentados se admiten donde lo permite la ficha. No se consultaron etiquetas. **PDF excluido por instrucción docente: no se leyó ni penalizó.**
 
-| Criterio de evaluación | Evidencia técnica | Estado | Observaciones |
+La entrega final ya incluye reserva grupal entre uno y cuatro cupos, nueva operación atómica de trips, pruebas de concurrencia, auditoría de fronteras y decisión de no usar IA en ejecución. El impedimento del barrido de seguridad es del entorno revisor, no evidencia de una credencial expuesta.
+
+## Matriz de la ficha S9
+
+| Criterio | Evidencia técnica esperada | Estado | Observaciones y evidencia |
 |---|---|---|---|
-| Porción real del sistema construida con apoyo de IA | Contexto (semanas anteriores): `docs/ia.md` (entradas S5–S8) documenta construcción asistida del módulo `backend/app/modules/trips/` (control atómico de cupos, ADR-0003) y de observabilidad/despliegue; commits `e9d337c` (S5), `78200a6` y `b0426fa` (S8). | No cumple | El periodo S9 (`eae667e..origin/master`) no tiene commits: no hay porción nueva construida en esta evidencia. El artefacto citado es línea base (CONTRATO §12): se cita como contexto pero no satisface la fila. |
-| Cadena completa navegable para esa porción | `docs/aspectos.md` filas 1–5 enlazan C4, ADR, código, pruebas y evidencia de las piezas previas; la fila 5 llega a `arc42/07_vista_de_despliegue.md` y `evidencia/costo_mensual.md`. No hay fila que corresponda a una porción de S9. | No cumple | La cadena de la línea base está completa, pero no describe una porción del periodo S9; no hay aspecto nuevo que recorrer. |
-| ADR con la decisión argumentada por el equipo | Contexto (semanas anteriores): ADR-0003 (control atómico de cupos), ADR-0004 (integración síncrona REST, con alternativa asíncrona descartada) y ADR-0005/0006 (Render/Supabase, con alternativas descartadas) argumentan con restricciones del proyecto. | No cumple | No hay ADR del periodo S9 para la porción de esta evidencia; los citados son de S5–S8: línea base que no se recalifica por existir (CONTRATO §12). |
-| Prueba que falla ante el defecto que cubre | Contexto (semanas anteriores): ADR-0003 y `docs/ia.md` (Semana 7, 2026-09-19) documentan la salida real de `pytest` en rojo ante la ruta `/trips/` eliminada; la prueba de concurrencia mide 20 intentos sobre 4 cupos. | No verificado | No hay run en rojo, prueba de mutación ni procedimiento documentado del periodo S9; el artefacto citado es de S7. Queda como pregunta para la sustentación (CONTRATO §13). |
-| Medición del escenario asociado | Contexto (semanas anteriores): `docs/evidencia/metricas-escenario-calidad.md` y ADR-0003 registran la medición de latencia (p95) del escenario de rendimiento. | No cumple | Sin medición publicada en el periodo S9; la medición citada es línea base (S5/S8). |
-| `docs/ia.md` con lo aceptado, lo corregido y lo rechazado con motivo | Contexto (semana anterior): `docs/ia.md` incluye la entrada «Semana 8» (2026-09-24) con lo aceptado y lo rechazado (nubes mayores, Fly.io, Railway, secretos en el repositorio) y su motivo técnico. | No cumple | La última entrada es del 2026-09-24; no hay entrada del periodo S9. Línea base que no satisface la fila (CONTRATO §12). |
-| Auditoría de erosión sobre límites de contexto y propiedad de datos | El barrido `(INSERT INTO\|UPDATE \|\.save\(\|\.create\(\|repository\.)` sobre el código de la punta no devuelve coincidencias y no existe documento de auditoría de erosión en `docs/`. | No cumple | Falta la auditoría exigida por la ficha, con hallazgos, ubicación y corrección, del periodo S9. |
-| Dependencias propuestas verificadas en su registro oficial | El diff del periodo contra el hash de S8 (`eae667e`) sobre `backend/requirements.txt`, `frontend/pubspec.yaml` y demás manifiestos está vacío: no hay dependencias añadidas en el periodo ni, por tanto, verificación que citar. | No cumple | Sin dependencias nuevas respecto de S8; no hay lista ni comprobación en npm/PyPI. |
-| Sin credenciales en código, ejemplos ni documentación generada | Barrido del contrato sobre la punta: coincidencias solo en identificadores y datos de prueba (`backend/app/modules/auth/infrastructure/schemas.py:6` `password: str`; `backend/tests/test_trips_flow.py:18` `hashed_password="hash"`); sin `.env` versionado; `git log -S'BEGIN PRIVATE KEY'` sin coincidencias. No aparece `docs/` en el barrido. | Cumple | Sin credenciales reales; los aciertos son nombres de campo y valores de prueba. |
-| Componente generativo evaluado, con costo y latencia, o ADR de no incorporarlo | No hay componente generativo en el sistema (búsqueda de `openai\|anthropic\|gemini\|llm\|gpt\|generativ` sin coincidencias en el código) ni un ADR que decida no incorporarlo; el único uso de IA es como apoyo de construcción. | No cumple | La ausencia de decisión no es la decisión de no hacerlo; falta el ADR que lo justifique si esa es la posición del equipo. |
+| Porción real del sistema construida con apoyo de IA | Rutas del código y commits | Cumple | Porción de reserva grupal descrita en [docs/evidencia/SEMANA9.md:5–15](https://github.com/ISCOUTB/AS_202620_ROUTB/blob/7c6573e68a5fdab019fab8fddfe1acb2a451cb27/docs/evidencia/SEMANA9.md#L5-L15) e implementada mediante operación atómica con cantidad: [backend/app/modules/trips/application/request_seats.py:35–61](https://github.com/ISCOUTB/AS_202620_ROUTB/blob/7c6573e68a5fdab019fab8fddfe1acb2a451cb27/backend/app/modules/trips/application/request_seats.py#L35-L61). IA y decisión humana en [docs/ia.md:109–119](https://github.com/ISCOUTB/AS_202620_ROUTB/blob/7c6573e68a5fdab019fab8fddfe1acb2a451cb27/docs/ia.md#L109-L119). |
+| Cadena completa navegable para esa porción | Aspecto → requisito → C4 → ADR → código → prueba → medición | Cumple | Fila 6 enlaza requisito, C4, ADR-0007/0003, operaciones trips, requests, Flutter, pruebas, auditoría y medición: [docs/aspectos.md:12](https://github.com/ISCOUTB/AS_202620_ROUTB/blob/7c6573e68a5fdab019fab8fddfe1acb2a451cb27/docs/aspectos.md#L12). Destinos inspeccionados; prueba y medición distinguen alcance local y producción. |
+| ADR con la decisión argumentada por el equipo | Restricciones, alternativas y consecuencias | Cumple | ADR-0007 define dueño de disponibilidad y solicitud, transacción, compatibilidad por defecto de un cupo y alternativas descartadas; costo y límites explícitos: [docs/adr/0007-reserva-grupal-de-cupos.md:7–65](https://github.com/ISCOUTB/AS_202620_ROUTB/blob/7c6573e68a5fdab019fab8fddfe1acb2a451cb27/docs/adr/0007-reserva-grupal-de-cupos.md#L7-L65). |
+| Prueba que falla ante el defecto que cubre | Run rojo, mutación o procedimiento documentado | Cumple | Procedimiento retira `available_seats >= seat_count`, registra fallo de aserción [200,200] frente a [200,409] y restauración: [docs/evidencia/prueba-reserva-grupal-semana9.md:37–51](https://github.com/ISCOUTB/AS_202620_ROUTB/blob/7c6573e68a5fdab019fab8fddfe1acb2a451cb27/docs/evidencia/prueba-reserva-grupal-semana9.md#L37-L51). Código conserva condición: [backend/app/modules/trips/application/request_seats.py:35–47](https://github.com/ISCOUTB/AS_202620_ROUTB/blob/7c6573e68a5fdab019fab8fddfe1acb2a451cb27/backend/app/modules/trips/application/request_seats.py#L35-L47). El [CI del hash final](https://github.com/ISCOUTB/AS_202620_ROUTB/actions/runs/37161463477) está success; no se atribuyen logs del run rojo sin consultarlos. La ficha admite procedimiento documentado. |
+| Medición del escenario asociado | Resultado contrastado con el umbral | Cumple | 100 respuestas externas con p95 697,82 ms frente a base 585,10 ms y umbral 3990 ms: [docs/evidencia/medicion-reserva-grupal-semana9.md:3–32](https://github.com/ISCOUTB/AS_202620_ROUTB/blob/7c6573e68a5fdab019fab8fddfe1acb2a451cb27/docs/evidencia/medicion-reserva-grupal-semana9.md#L3-L32). Hay medición y contraste; la fuente admite que falta la medición interna oficial. No demuestra causalidad ni que producción ejecute el hash final; [docs/evidencia/prueba-reserva-grupal-semana9.md:53–57](https://github.com/ISCOUTB/AS_202620_ROUTB/blob/7c6573e68a5fdab019fab8fddfe1acb2a451cb27/docs/evidencia/prueba-reserva-grupal-semana9.md#L53-L57) registra desalineación de versión observada el 2-oct. |
+| docs/ia.md con lo aceptado, lo corregido y lo rechazado con motivo | Extracto de criterio técnico de S9 | Cumple | Uso de Codex/Copilot con aceptado, corrección del máximo de personas y rechazo de extensión/dependencia y de generación en runtime, justificados por alcance y propiedad: [docs/ia.md:109–119](https://github.com/ISCOUTB/AS_202620_ROUTB/blob/7c6573e68a5fdab019fab8fddfe1acb2a451cb27/docs/ia.md#L109-L119). Reforzar la explicación técnica de por qué no se añade dependencia, sin tratar el grep como razón arquitectónica. |
+| Auditoría de erosión sobre límites de contexto y propiedad de datos | Ubicación de hallazgos y correcciones | Cumple | Auditoría E1–E6 ubica y corrige ORM ajeno, helper privado entre routers y acoplamiento auth/users: [docs/evidencia/auditoria-erosion-semana9.md:3–33](https://github.com/ISCOUTB/AS_202620_ROUTB/blob/7c6573e68a5fdab019fab8fddfe1acb2a451cb27/docs/evidencia/auditoria-erosion-semana9.md#L3-L33). requests llama operaciones públicas de trips y confirma transacción: [backend/app/modules/requests/application/manage_request.py:1–57](https://github.com/ISCOUTB/AS_202620_ROUTB/blob/7c6573e68a5fdab019fab8fddfe1acb2a451cb27/backend/app/modules/requests/application/manage_request.py#L1-L57). |
+| Dependencias propuestas verificadas en su registro oficial | Inventario del delta y comprobación de legitimidad | Cumple | Alcance documentado sin nuevas dependencias de esta porción: [docs/ia.md:113–118](https://github.com/ISCOUTB/AS_202620_ROUTB/blob/7c6573e68a5fdab019fab8fddfe1acb2a451cb27/docs/ia.md#L113-L118), [docs/evidencia/SEMANA9.md:77–83](https://github.com/ISCOUTB/AS_202620_ROUTB/blob/7c6573e68a5fdab019fab8fddfe1acb2a451cb27/docs/evidencia/SEMANA9.md#L77-L83). Diff S8→S9 de requirements sin cambios; pubspec reordena/documenta paquetes ya existentes y añade fuentes, sin incorporar un paquete. No se exige instalar una biblioteca nueva para cumplir ni se acepta el supuesto «acuerdo» del ADR como excepción docente; el alcance vacío se corroboró en git. |
+| Sin credenciales en código, ejemplos ni documentación generada | Barrido estático del CONTRATO §9 | No verificado | El barrido independiente fue interrumpido por la herramienta con “automatic approval review was cancelled”, sin resultados completos. [docs/evidencia/SEMANA9.md:77–83](https://github.com/ISCOUTB/AS_202620_ROUTB/blob/7c6573e68a5fdab019fab8fddfe1acb2a451cb27/docs/evidencia/SEMANA9.md#L77-L83) declara revisión de credenciales, pero eso no reemplaza el barrido pendiente. No se detectó ni se afirma un secreto. Fila bloqueada por entorno revisor; no se convierte en defecto del equipo. |
+| Componente generativo evaluado, con costo y latencia, o ADR de no incorporarlo | Resultados, costo, latencia, C4 y degradación; o ADR de exclusión | Cumple | ADR-0008 compara chatbot, resúmenes y clasificación generativa; descarta costo y latencia externos con presupuesto cero y p95 <3,99 s: [docs/adr/0008-no-componente-generativo.md:7–35](https://github.com/ISCOUTB/AS_202620_ROUTB/blob/7c6573e68a5fdab019fab8fddfe1acb2a451cb27/docs/adr/0008-no-componente-generativo.md#L7-L35). |
 
-## Matriz transversal (CONTRATO §11)
+## Matriz transversal · CONTRATO §11
 
-| Criterio | Evidencia | Estado | Observaciones |
-|---|---|---|---|
-| Repositorio en la organización, con el nombre de la convención y público | `https://github.com/ISCOUTB/AS_202620_ROUTB`, clonado sin autenticación; rama principal `origin/master`. | Cumple | Nombre `AS_202620_ROUTB` conforme y visibilidad pública. |
-| Estructura mínima presente | En `eae667e`: `docs/arc42/` (01–12), `docs/adr/` (0001–0006), `docs/c4/context.md`, `docs/aspectos.md`, `docs/ia.md` y `README.md`. | Cumple | Las seis rutas del contrato §2. |
-| Estado calificado identificable | `eae667ef4339d3e8e89461b1e5f865a08eb21d10` en `origin/master`, commit del 2026-09-27T21:58:06-05:00. | Cumple | Sin cierre en esta pasada: se identifica la punta actual, que coincide con el hash de S8. |
-| Nombres de ADR según la convención | `docs/adr/0001-usar-monolito-modular.md` … `docs/adr/0006-base-de-datos-supabase.md`. | Cumple | Los seis cumplen `NNNN-titulo-en-kebab-case.md`. |
-| ADR aceptados no reescritos | `git log --follow`: ADR-0001 creado `1ed002b` y editado `a94a1a3` (2026-08-30); ADR-0002 creado `e9d337c` y editado `53ed7c3` (2026-09-19); ADR-0003 creado `e9d337c` y editado `f706aa6` (2026-09-06); ADR-0005 y ADR-0006 creados `78200a6`/`35d088c` y editados `b0426fa` (2026-09-25). Ninguna edición declara un ADR de reemplazo. | No cumple | CONTRATO §4 prohíbe editar un ADR aceptado sin declarar reemplazo; las ediciones son posteriores a la aceptación y no hay ADR sucesor. |
-| `docs/ia.md` al día para la semana | Historial de `docs/ia.md`: la última modificación es del 2026-09-24 (`78200a6`), dentro de la ventana de S8. No hay commits sobre el archivo en el periodo S9. | No cumple | El registro no tiene entrada de la semana S9; no se actualizó en el periodo revisado. |
-| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | Único run del hash revisado: [CI ROUTB 36371840003](https://github.com/ISCOUTB/AS_202620_ROUTB/actions/runs/36371840003), conclusión `success`. Existe `sonar-project.properties`, pero `.github/workflows/ci.yml` no invoca el scanner y no hay URL pública de análisis ni Quality Gate. | No cumple | El CI está en verde, pero falta la evidencia de SonarCloud exigida por el contrato §8. |
-| Sin credenciales en el repositorio ni en el historial | Barrido del contrato y `git log -S` sin coincidencias de claves reales; sin `.env` versionado; `backend/.env.example` con placeholders. | Cumple | Sin credenciales; coincidencias solo en identificadores y datos de prueba. |
-| Contribución de todos los integrantes | `git shortlog -sne eae667e`: `MKeinerrr` 53 más 2 con un segundo correo institucional (consolidado), `diegobrr999-commits` 6, `juliandmanjarrez-tech` 3, `junior14700` 2. | Cumple | Cuatro identidades para cuatro integrantes; aporte concentrado en un integrante, ya señalado en planilla. |
+| Criterio transversal | Estado | Evidencia y observaciones |
+|---|---|---|
+| Repositorio en la organización, con el nombre de la convención y público | Cumple | Repositorio ISCOUTB/AS_202620_ROUTB visible por clon git público, rama master. |
+| Estructura mínima presente | Cumple | Árbol con README, docs/arc42, adr, c4, aspectos e ia. Cadena [docs/aspectos.md:5–12](https://github.com/ISCOUTB/AS_202620_ROUTB/blob/7c6573e68a5fdab019fab8fddfe1acb2a451cb27/docs/aspectos.md#L5-L12). |
+| Estado calificado identificable | Cumple | 7c6573e68a5fdab019fab8fddfe1acb2a451cb27, 2026-10-03T18:20:32-05:00, último master ≤ cierre; HEAD coincide. |
+| Nombres de ADR según la convención | Cumple | Ocho ADR con nombre NNNN-kebab-case.md; nuevos [docs/adr/0007-reserva-grupal-de-cupos.md:1–5](https://github.com/ISCOUTB/AS_202620_ROUTB/blob/7c6573e68a5fdab019fab8fddfe1acb2a451cb27/docs/adr/0007-reserva-grupal-de-cupos.md#L1-L5) y [docs/adr/0008-no-componente-generativo.md:1–5](https://github.com/ISCOUTB/AS_202620_ROUTB/blob/7c6573e68a5fdab019fab8fddfe1acb2a451cb27/docs/adr/0008-no-componente-generativo.md#L1-L5). |
+| ADR aceptados no reescritos | No verificado | Las revisiones previas señalaban edición de ADR 0001/0002/0003/0005/0006. Se mantiene como antecedente pendiente de comprobación histórica completa en esta pasada; no se eleva texto previo no revalidado a evidencia nueva. Los nuevos ADR no sustituyen explícitamente esos registros. |
+| docs/ia.md al día para la semana | Cumple | Entrada S9 del 2-oct con decisiones y rechazo: [docs/ia.md:109–119](https://github.com/ISCOUTB/AS_202620_ROUTB/blob/7c6573e68a5fdab019fab8fddfe1acb2a451cb27/docs/ia.md#L109-L119). No se acredita todavía un registro del reto S10. |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No cumple | [CI final success](https://github.com/ISCOUTB/AS_202620_ROUTB/actions/runs/37161463477), pero [.github/workflows/ci.yml:29–67](https://github.com/ISCOUTB/AS_202620_ROUTB/blob/7c6573e68a5fdab019fab8fddfe1acb2a451cb27/.github/workflows/ci.yml#L29-L67) ejecuta pytest/build sin scanner Sonar. [README.md:91–95](https://github.com/ISCOUTB/AS_202620_ROUTB/blob/7c6573e68a5fdab019fab8fddfe1acb2a451cb27/README.md#L91-L95) contiene enlace genérico; falta cadena scanner→run→Gate de la revisión. |
+| Sin credenciales en el repositorio ni en el historial | No verificado | Barrido snapshot/histórico interrumpido por herramienta; no se presume limpio el historial ni se afirma un incidente. Debe completarse sin publicar valores sensibles. |
+| Contribución de todos los integrantes | No verificado | 71 commits distribuidos en cuatro nombres de autor; aporte concentrado (60 de 71 bajo una firma). [README.md:36–41](https://github.com/ISCOUTB/AS_202620_ROUTB/blob/7c6573e68a5fdab019fab8fddfe1acb2a451cb27/README.md#L36-L41) lista miembros sin correspondencia completa con cuentas. Confirmar mapeo; no se deduce por parecido. |
 
-## Estado global del proyecto (overall · punta actual de la misma rama)
+## Estado global del proyecto (overall)
 
-- **Punta actual revisada**: `eae667ef4339d3e8e89461b1e5f865a08eb21d10 2026-09-27T21:58:06-05:00 Semana 8 - ROUTB` (`origin/master`)
-- **Veredicto**: sin trabajo nuevo de S9; base previa con deudas abiertas
-- Resumen: la rama `master` no se movió desde S8 (`eae667e`). El repositorio conserva la base de S8:
-  infraestructura como código (`render.yaml`, `backend/Dockerfile`, `docker-compose.yml`), logs JSON,
-  métrica ligada al escenario, secretos por configuración del proveedor, estimación de costo, arc42
-  §7 con Render/Supabase, ADR-0005/0006 y CI en verde (run 36371840003). Esa base es línea base bajo
-  CONTRATO §12 y no satisface las filas de S9. Para esta evidencia faltan la porción nueva con IA y
-  su cadena, la medición del periodo, la prueba que falle ante el defecto del periodo, la auditoría de
-  erosión, la verificación de dependencias y la decisión sobre el componente generativo. Se mantienen
-  las no conformidades transversales: ADR aceptados editados sin reemplazo y SonarCloud sin invocación
-  en el pipeline.
-
-Pendientes que siguen abiertos:
-- Sin commits de S9: la punta es la de S8.
-- Sin porción S9, sin prueba del periodo y sin extracto de `docs/ia.md` del periodo: por CONTRATO §12
-  las filas 1, 3, 5 y 6 quedan en No cumple y la fila 4 en No verificado.
-- Sin auditoría de erosión ni verificación de propiedad de datos del periodo.
-- Sin dependencias nuevas que verificar en el periodo.
-- Sin ADR sobre el componente generativo.
-- SonarCloud sin invocación en el workflow ni URL pública del Quality Gate (pendiente desde S6).
-- ADR-0001, 0002, 0003, 0005 y 0006 editados después de aceptarse sin declarar reemplazo.
+Punta actual de la misma rama: `7c6573e68a5fdab019fab8fddfe1acb2a451cb27` · 2026-10-03T18:20:32-05:00. **0 commits posteriores al estado S9**. La punta coincide con S9. Cinco commits nuevos desde S8, con reserva grupal y documentación; CI final success. Health público responde 200. La evidencia del 2-oct señalaba producción 0.2.0 frente a contrato 0.3.0; en esta revisión solo se comprobó salud y no se afirma que esa divergencia esté corregida. La medición interna, Sonar y asignación S10 siguen pendientes. El barrido de seguridad quedó bloqueado por herramienta.
 
 ## Recuento y nota sugerida
 
-**1 de 10 criterios** de la ficha en Cumple.
+**9 de 10 criterios Cumple; 0 No cumple; 1 No verificado.**
 
-**Nota sugerida preliminar (propuesta al docente; puede cambiar al cierre): 1.4 = 1 + 4 × (1/10).** La nota final la fija el profesor en Moodle.
+**Propuesta numérica pendiente por bloqueo del entorno de revisión.** Hay 9 criterios acreditados; el rango posible con la fila bloqueada es 4.6–5.0. No se descuenta el impedimento técnico como defecto del equipo. La fórmula se aplicará sobre las diez filas cuando se resuelva la verificación. La matriz transversal no entra en la fórmula.
 
-Bajo CONTRATO §12, el único criterio que se resuelve sobre el estado en la punta es el barrido de
-credenciales; las demás filas describen la entrega S9, cuyo periodo (`eae667e..origin/master`) está
-vacío: la evidencia previa es línea base y no se recalifica por existir.
+## Pendientes y acciones concretas
 
-## No verificado / pendientes
+- Identificar enunciado oficial de S10 y construir baseline/experimento comparable.
+- Confirmar versión pública: la evidencia histórica registró API sin seat_count; health 200 no cierra ese problema.
+- Obtener medición interna oficial en el mismo despliegue y declarar sus diferencias con la medición externa.
+- Integrar scanner Sonar y aportar run/Gate correspondientes al estado revisado.
+- Completar barrido de seguridad cuando el entorno de revisión lo permita; no es un defecto demostrado del proyecto.
+- Revalidar historial de ADR y confirmar mapeo explícito de identidades.
 
-- Prueba que falla ante el defecto: **No verificado**. No hay run en rojo, prueba de mutación ni
-  procedimiento documentado del periodo S9; la evidencia de `pytest` en rojo citada en ADR-0003 es de
-  S7. Queda como pregunta de sustentación.
-- Medición del escenario en el periodo: sin resultado contrastado con umbral de S9.
-- Auditoría de erosión: no existe artefacto que la documente.
-- Dependencias del periodo: el diff contra S8 está vacío, no hay nada que comprobar en los registros.
-- Componente generativo: no hay componente ni ADR de no incorporarlo.
+## Hallazgos previos cerrados o aclarados
 
-## Hallazgos para la planilla
-
-- La punta de `origin/master` (`eae667e`, 2026-09-27) es idéntica al hash calificado de S8: el periodo S9 está vacío.
-- Aplicado CONTRATO §12: sin artefacto del periodo, solo el barrido de credenciales queda en Cumple.
-- La cadena de `docs/aspectos.md` (filas 1–5) sigue completa para la línea base, pero no describe una porción de S9.
-- CI del hash revisado en verde (run 36371840003), pero sin SonarCloud ni Quality Gate.
-- ADR-0001, 0002, 0003, 0005 y 0006 editados después de aceptarse sin declarar reemplazo (fila transversal en No cumple).
-- Sin auditoría de erosión y sin decisión sobre el componente generativo, exigidas por la evidencia S9.
+- La preliminar sin entrega S9 queda superada por reserva grupal, ADR, pruebas, medición y registro IA.
+- Se aporta auditoría de erosión E1–E6 con cambios observables y ADR de no incorporar generación.
+- La salud pública anteriormente diferida pudo comprobarse ahora por HTTP; no modifica S8 retroactivamente.

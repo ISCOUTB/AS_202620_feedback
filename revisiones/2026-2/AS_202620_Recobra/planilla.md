@@ -6,14 +6,16 @@
 |---|---|
 | Equipo | Recobra |
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Recobra` |
-| Integrantes y su usuario de GitHub | Camilo Andres Conde Corrales · Fernando Isacc Conde Herrera · Miguel Alejandro Iii Jacome Yanez · Veronica Ubarne Reyes — cuentas consolidadas: `Cconde31` (incluye la identidad `Steamlinker`, unificada por `.mailmap` el 05/09), `MiguelJacome`, `vylrir` (Verónica Ubarne), y un commit identificado con el nombre real de Fernando Isacc Conde Herrera |
-| URL del sistema desplegado | — |
-| Ultima revision | 2026-10-01 |
+| Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Camilo Andres Conde Corrales · Fernando Isacc Conde Herrera · Miguel Alejandro Iii Jacome Yanez · Veronica Ubarne Reyes — cuentas consolidadas: `Cconde31` (incluye la identidad `Steamlinker`, unificada por `.mailmap` el 05/09), `MiguelJacome`, `vylrir` (Verónica Ubarne), y un commit identificado con el nombre real de Fernando Isacc Conde Herrera; ver comprobación actual de contribución más abajo. |
+| URL del sistema desplegado | https://recobra-backend.onrender.com · ver comprobación y límites en S10 |
+| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
 
 ## Estado por entrega
 
-| Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
+| Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 9 | S9 · definitiva | `master` · `ebe6cca7a903bb333678bd20ba5327d8fcb127f7` · 2026-10-04T23:40:37-05:00 | 10/10 | 5.0 (propuesta al docente) | sí, 2026-10-06 |
+| 10 | Segundo corte · preliminar | `master` · `ebe6cca7a903bb333678bd20ba5327d8fcb127f7` · 2026-10-04T23:40:37-05:00 | 3/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `da5c15d` · 2026-08-07T17:54:04-05:00 | 3/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `d2dac73` · 2026-08-16T23:44:54-05:00 | 4/9 | no se publica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `cb5c579` · 2026-08-23T23:44:12-05:00 | 4/9 | no se publica | sí |
@@ -23,8 +25,6 @@
 | 7 | S7 | `8f25313` (2026-09-19T13:37:58-05:00) | 10/10 | 5.0 | si |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `5c7f77b` (2026-09-27T19:55:59-05:00) | 10/10 (2 filas de despliegue diferidas) | 5.0 (provisional) | si |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
-| 9 | Evidencia S9 · Generación verificada y trazable (preliminar) | `f8c0287` (2026-10-01T13:13:00-05:00) | 8/10 | 4.2 (prelim.) | si |
-| 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
 | 11 | Evidencia S11 · Fallos parciales y decisión de extracción | | | no aplica | |
 | 12 | Evidencia S12 · Estrategia de datos y eventos | | | no aplica | |
 | 12 | Taller aplicado · Mensajes y consistencia | | | no aplica | |
@@ -34,6 +34,24 @@
 | 17 | Aplicación de cambios y cierre arquitectónico | | | | |
 
 ## Lo que se arrastra
+
+Estado vigente observado en la punta citada en [S10](semana-10-corte2.md). Las correcciones tardías no cambian S9. El registro histórico siguiente conserva su contexto, pero no sustituye esta actualización ni implica cerrar hallazgos no revalidados.
+
+| Hallazgo actual | Estado | Evidencia y próximo paso |
+|---|---|---|
+| Identificar y documentar la asignación oficial de S10 antes de juzgar su hipótesis, línea base y resultado. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| SonarCloud: falta evidencia del scanner exitoso y Quality Gate de la revisión; continue-on-error no impone bloqueo de integración. [.github/workflows/ci.yml:31–49](https://github.com/ISCOUTB/AS_202620_Recobra/blob/ebe6cca7a903bb333678bd20ba5327d8fcb127f7/.github/workflows/ci.yml#L31-L49) | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| C4-C2/C3 no representan PostgreSQL en producción ni todos los componentes actuales. [docs/c4/C4-C2.md:9–34](https://github.com/ISCOUTB/AS_202620_Recobra/blob/ebe6cca7a903bb333678bd20ba5327d8fcb127f7/docs/c4/C4-C2.md#L9-L34) | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| S1 no está demostrado en producción: a 20 conexiones el documento informa p97,5=1113 ms; no se midieron 200. [docs/medicion-busqueda.md:27–80](https://github.com/ISCOUTB/AS_202620_Recobra/blob/ebe6cca7a903bb333678bd20ba5327d8fcb127f7/docs/medicion-busqueda.md#L27-L80) | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Regularizar sucesión de ADR-0002/0003 y el enlace del antecedente 0004 sin reescribir el historial. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| README mantiene descripción sin variables pese a DATABASE_URL y un ejemplo de error antiguo. [README.md:82–86](https://github.com/ISCOUTB/AS_202620_Recobra/blob/ebe6cca7a903bb333678bd20ba5327d8fcb127f7/README.md#L82-L86); [README.md:135](https://github.com/ISCOUTB/AS_202620_Recobra/blob/ebe6cca7a903bb333678bd20ba5327d8fcb127f7/README.md#L135) | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| La porción nueva S9 queda acreditada por búsqueda A6; el hallazgo preliminar de porción únicamente anterior a S8 se cierra. [docs/aspectos.md:15](https://github.com/ISCOUTB/AS_202620_Recobra/blob/ebe6cca7a903bb333678bd20ba5327d8fcb127f7/docs/aspectos.md#L15) | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| La dependencia nueva autocannon está identificada y verificada en npm; no se exige añadir dependencias para aprobar una auditoría. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| Health público comprobado HTTP 200. Esto cierra la falta de comprobación puntual, sin cambiar retroactivamente las filas S8 diferidas. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| ADR-0009 documenta sucesión parcial y reconoce la edición de ADR-0004; cierre parcial de ese hallazgo, sin ocultar incumplimientos históricos. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+
+<details>
+<summary>Registro histórico previo a esta revisión (estados a la fecha de cada observación)</summary>
 
 | Hallazgo | Primera vez que se detectó | Sigue abierto | Qué se le dijo al equipo |
 |---|---|---|---|
@@ -109,21 +127,29 @@
 | SonarCloud: scanner en `continue-on-error` y sin URL pública del Quality Gate. | S6 | si | Falta la evidencia auditable del contrato §8. |
 | ADR-0004 editado el 2026-09-28 (`34ab8f2`) después de aceptarse, sin reemplazo declarado. | S9 (prelim.) | si | Crear un ADR sucesor en vez de editar uno aceptado. |
 
+</details>
+
 ## Estado del contrato del repositorio
+
+Actualizado desde la evaluación de la punta actual; no altera la matriz congelada de S9.
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
-| Nombre y visibilidad del repositorio | Cumple | Público (clon sin auth) |
-| Estructura mínima | Cumple | Las seis rutas están, pero `docs/arc42.md` suelto convive con `docs/arc42/` |
-| Convención de nombres de ADR | Cumple | 0001, 0002, 0003 en kebab-case con la decisión en el título |
-| ADR aceptados sin reescribir | No cumple | ADR-0001 sí declara reemplazo, pero ADR-0002 y ADR-0003 se editaron en `f7c1a6c` (2026-09-07) y ADR-0004 en `34ab8f2` (2026-09-28) después de aceptarse, sin declarar reemplazo |
-| `docs/ia.md` al día | Cumple | Entradas por semana con aceptado/corregido/rechazado y motivo, incluidas las de S8 (2026-09-26) y S9 (2026-09-27/28 y 2026-10-01) |
-| Sin credenciales en el repositorio ni en el historial | Cumple | Barrido sin credenciales del equipo; el `repo_token` de Coveralls del historial es un artefacto público del paquete npm `debug` 2.6.9, documentado y cerrado en `docs/no-conformidades.md` |
-| Contribución de todos los integrantes | Cumple | 4 identidades para 4 integrantes; Fernando ya con 24 commits (supera la contribución mínima) |
-| Pipeline en verde | Cumple | Run público exitoso del estado revisado (`f8c0287`): https://github.com/ISCOUTB/AS_202620_Recobra/actions/runs/36905180747 |
-| Pipeline, SonarCloud y Quality Gate públicos | No cumple | CI en verde; el workflow ya invoca el scanner, pero está en `continue-on-error` y no publica URL del Quality Gate |
+| Repositorio en la organización, con el nombre de la convención y público | Cumple | Clon anónimo de https://github.com/ISCOUTB/AS_202620_Recobra; nombre y organización conformes. |
+| Estructura mínima presente | Cumple | [README.md:163–180](https://github.com/ISCOUTB/AS_202620_Recobra/blob/ebe6cca7a903bb333678bd20ba5327d8fcb127f7/README.md#L163-L180). Árbol con README, docs/arc42, docs/adr, docs/c4, docs/aspectos.md y docs/ia.md. |
+| Estado calificado identificable | Cumple | origin/master, ebe6cca7a903bb333678bd20ba5327d8fcb127f7, 2026-10-04T23:40:37-05:00, último commit ≤ cierre S9. Para S10 es la punta preliminar actual. |
+| Nombres de ADR según la convención | Cumple | [docs/adr/0008-busqueda-con-filtros-en-el-repositorio.md:1–9](https://github.com/ISCOUTB/AS_202620_Recobra/blob/ebe6cca7a903bb333678bd20ba5327d8fcb127f7/docs/adr/0008-busqueda-con-filtros-en-el-repositorio.md#L1-L9); nueve archivos Markdown con NNNN-kebab-case. |
+| ADR aceptados no reescritos | No cumple | [docs/no-conformidades.md:167–194](https://github.com/ISCOUTB/AS_202620_Recobra/blob/ebe6cca7a903bb333678bd20ba5327d8fcb127f7/docs/no-conformidades.md#L167-L194). Historial leído: ADR-0002/0003 editados en f7c1a6c tras aceptación; ADR-0004 modificado en 34ab8f2. [docs/adr/0009-versionado-del-contrato-y-error-unico.md:3–31](https://github.com/ISCOUTB/AS_202620_Recobra/blob/ebe6cca7a903bb333678bd20ba5327d8fcb127f7/docs/adr/0009-versionado-del-contrato-y-error-unico.md#L3-L31) registra sucesión parcial de 0004; falta enlace de reemplazo en el antecedente y no regulariza todos los ADR. |
+| docs/ia.md al día para la semana | Cumple | [docs/ia.md:63](https://github.com/ISCOUTB/AS_202620_Recobra/blob/ebe6cca7a903bb333678bd20ba5327d8fcb127f7/docs/ia.md#L63). Registro actualizado en S9 con aceptado, corregido, rechazado y motivo; no hay actividad posterior en S10 aún. |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No cumple | [.github/workflows/ci.yml:31–49](https://github.com/ISCOUTB/AS_202620_Recobra/blob/ebe6cca7a903bb333678bd20ba5327d8fcb127f7/.github/workflows/ci.yml#L31-L49). Scanner explícito pero continue-on-error; [docs/no-conformidades.md:98–110](https://github.com/ISCOUTB/AS_202620_Recobra/blob/ebe6cca7a903bb333678bd20ba5327d8fcb127f7/docs/no-conformidades.md#L98-L110) declara token pendiente. Configuración en [sonar-project.properties:1–8](https://github.com/ISCOUTB/AS_202620_Recobra/blob/ebe6cca7a903bb333678bd20ba5327d8fcb127f7/sonar-project.properties#L1-L8). No hay run exitoso del scanner y Quality Gate de esta revisión acreditados; CI general verificado success para el hash en [run 37264560596](https://github.com/ISCOUTB/AS_202620_Recobra/actions/runs/37264560596), creado 2026-10-05T04:40:41Z; no acredita el scanner, que admite fallo. |
+| Sin credenciales en el repositorio ni en el historial | Cumple | Barrido del contrato en HEAD, ejemplos y docs sin secretos del equipo identificados; búsqueda histórica de claves privadas/tokens de alta confianza sin coincidencias fuera de dependencias. [docs/no-conformidades.md:8–40](https://github.com/ISCOUTB/AS_202620_Recobra/blob/ebe6cca7a903bb333678bd20ba5327d8fcb127f7/docs/no-conformidades.md#L8-L40) identifica el artefacto histórico Coveralls de un paquete tercero; no se publica su valor ni se atribuye al equipo. Alcance de barrido, no garantía universal. |
+| Contribución de todos los integrantes | No verificado | Historial agregado: 128 commits; cinco grupos por identidad de correo, con .mailmap que vincula dos firmas. Se observan aportes de cuatro grupos consolidados. La correspondencia completa grupo→integrante y la sustantividad individual requieren validación docente; no se infieren identidades por parecido. |
 
 ## Contribución por integrante
+
+Actualización agregada del 2026-10-06: Historial agregado: 128 commits; cinco grupos por identidad de correo, con .mailmap que vincula dos firmas. Se observan aportes de cuatro grupos consolidados. La correspondencia completa grupo→integrante y la sustantividad individual requieren validación docente; no se infieren identidades por parecido.
+
+La tabla individual conservada abajo corresponde al registro histórico anterior; no se infieren nuevas correspondencias entre cuentas y personas.
 
 | Integrante | Usuario de GitHub | Commits (HEAD) | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
 |---|---|---:|---:|---:|---|
@@ -134,6 +160,8 @@
 
 ## Preguntas abiertas para la sustentación
 
-- ¿Rotaron el token de Coveralls expuesto en el historial? Muestren evidencia.
-- ¿Por qué se siguió moviendo la etiqueta `corte-1` después del cierre en vez de fijarla antes?
-- ¿Cómo va a contribuir Fernando de forma sustantiva en los próximos cortes?
+Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
+
+- Si Neon deja de responder durante una búsqueda, ¿cómo se detecta el fallo y qué respuesta observa el usuario sin confundir salud del proceso con disponibilidad de datos?
+- Con el presupuesto de cero y la saturación observada, ¿qué costo mensual tendría la alternativa elegida y a qué carga deja de ser suficiente la opción gratuita?
+- ¿Qué cambiarían primero después de medir la brecha entre memoria local y Render/Neon, y qué experimento permitiría distinguir CPU, red y consulta SQL?

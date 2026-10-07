@@ -8,14 +8,16 @@ Hoja consolidada del equipo a lo largo del semestre.
 |---|---|
 | Equipo | Tienda virtual UTB |
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB` |
-| Integrantes y su usuario de GitHub | Shalom Jhoanna Arrieta Marrugo (shalom-A26) · Levis Adrian Ortiz Cano (RAZOR7150) · Alejandro Patron Montero (pxtroniwnl) · Jasen Mihovil Yukopila Escobar (Jmyukopila) — correspondencias por los correos de los commits, por confirmar con el docente |
-| URL del sistema desplegado | sin URL (sin despliegue todavía) |
-| Ultima revision | 2026-10-01 |
+| Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Shalom Jhoanna Arrieta Marrugo (shalom-A26) · Levis Adrian Ortiz Cano (RAZOR7150) · Alejandro Patron Montero (pxtroniwnl) · Jasen Mihovil Yukopila Escobar (Jmyukopila) — correspondencias por los correos de los commits, por confirmar con el docente; ver comprobación actual de contribución más abajo. |
+| URL del sistema desplegado | URL pública vigente no localizada; despliegue No verificado. Ver [S10](semana-10-corte2.md). |
+| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
 
 ## Estado por entrega
 
-| Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
+| Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 9 | S9 · definitiva | `main` · `76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33` · 2026-10-04T18:07:32-05:00 | 8/10 | 4.2 (propuesta al docente) | sí, 2026-10-06 |
+| 10 | Segundo corte · preliminar | `main` · `76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33` · 2026-10-04T18:07:32-05:00 | 2/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `d414ecf` · 2026-08-09T14:08:31-05:00 | 7/9 | 4.1 (propuesta) | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `456365b` · 2026-08-15T14:07:47-05:00 | 6/9 | 3.7 (propuesta) | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `f4602a3` · 2026-08-21T13:22:16-05:00 | 6/9 | no se publica | sí |
@@ -25,8 +27,6 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 7 | S7 | `69aa82d` (2026-09-20T09:34:49-05:00) | 8/10 | 4.2 (propuesta) | sí |
 | 8 | S8 | `858e78f` en `origin/main` (2026-09-27T15:36:51-05:00) | 10/10 | 5.0 (propuesta; 2 filas de despliegue diferidas) | si |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
-| 9 | Evidencia S9 · Generación verificada y trazable | `bc38c9b` en `origin/main` (2026-09-28T10:22:29-05:00) | 4/10 | 2.6 (preliminar; propuesta al docente) | sí |
-| 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
 | 11 | Evidencia S11 · Fallos parciales y decisión de extracción | | | no aplica | |
 | 12 | Evidencia S12 · Estrategia de datos y eventos | | | no aplica | |
 | 12 | Taller aplicado · Mensajes y consistencia | | | no aplica | |
@@ -36,6 +36,23 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 17 | Aplicación de cambios y cierre arquitectónico | | | | |
 
 ## Lo que se arrastra
+
+Estado vigente observado en la punta citada en [S10](semana-10-corte2.md). Las correcciones tardías no cambian S9. El registro histórico siguiente conserva su contexto, pero no sustituye esta actualización ni implica cerrar hallazgos no revalidados.
+
+| Hallazgo actual | Estado | Evidencia y próximo paso |
+|---|---|---|
+| Ratificar ADR 0008 y 0009 con decisión y razones propias del equipo; ambos se declaran propuestas. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Registrar dominio público vigente y evidencias fechadas de salud/flujo Dokploy; el costo del servidor y backups está por confirmar. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Completar SonarCloud: scanner realmente ejecutado y Quality Gate público de la revisión. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Corregir contradicciones del README y pendientes que todavía presentan Inventario vacío. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Precisar asignación S10 y registrar línea base, experimento, resultado y límites de validez. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Confirmar correspondencia de autoría sin inferencias y verificar rotación de credenciales compartidas fuera del repositorio. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Cadena, prueba negativa, medición y auditoría S9 ya están documentadas y enlazadas: [docs/entrega-cadena-ia.md:7–23](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/docs/entrega-cadena-ia.md#L7-L23). | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| La migración a Terraform pendiente deja de ser el plan vigente: ADR 0007 reemplaza 0003–0006; no se declara ejecutado Terraform. [docs/adr/0007-despliegue-dokploy.md:3–12](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/docs/adr/0007-despliegue-dokploy.md#L3-L12). | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| CI del hash actual pasa [Pruebas](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/actions/runs/37242837748); el cron keep-alive fue retirado. Esto no cierra SonarCloud ni demuestra despliegue. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+
+<details>
+<summary>Registro histórico previo a esta revisión (estados a la fecha de cada observación)</summary>
 
 | Hallazgo | Primera vez que se detectó | Sigue abierto | Qué se le dijo al equipo |
 |---|---|---|---|
@@ -88,22 +105,30 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Pipeline del hash revisado con runs `Keep-alive` en rojo y sin Quality Gate público de SonarCloud. | S9 (preliminar) | si | Corregir el cron y publicar el Quality Gate. |
 | El `apply` de Terraform no se ejecutó: producción sigue siendo la del 2026-09-27. | S9 (preliminar) | si | Crear los tokens y aplicar el corte. |
 | Excepción docente en S6: la matriz se completó sobre la punta actual porque no hubo actividad en la ventana de S6. | S6 | no (excepción aplicada) | — |
+
+</details>
+
 ## Estado del contrato del repositorio
+
+Actualizado desde la evaluación de la punta actual; no altera la matriz congelada de S9.
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
-| Nombre y visibilidad del repositorio | Cumple | `ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB`, público; clon anónimo OK en `bc38c9b` |
-| Estructura mínima | Cumple | Seis rutas presentes; arc42 en un único archivo, no en `docs/arc42/01..12` (desviación de ruta, no ausencia) |
-| Convención de nombres de ADR | Cumple | `0001`–`0005` en kebab-case |
-| ADR aceptados sin reescribir | No cumple | ADR-0001 editado en `e8ae57d` (2026-08-31) y ADR-0002 en `befb0bc` (2026-09-27) tras aceptarse, sin sucesor |
-| `docs/ia.md` al día | Cumple | Commit `4904d94` (2026-09-28) añade la entrada del periodo S9 con lo aceptado y lo rechazado con motivo |
-| Sin credenciales en el repositorio ni en el historial | Cumple | `git grep` §9 limpio (solo `token` de SVG en un HTML de terceros); sin `.env` versionado; `.env.example` sí versionado |
-| Contribución de todos los integrantes | Cumple | 4 identidades consolidadas = 4 integrantes |
-| Pipeline en verde | No cumple | El hash revisado `bc38c9b` acumula runs del cron `Keep-alive`; al menos dos en `failure` (`36826802735`, `36802694698`) |
-| SonarCloud y Quality Gate públicos | No cumple | `sonar-project.properties` existe, pero el job está condicionado a `SONAR_TOKEN` y no hay run del scanner ni Quality Gate verificables para el hash revisado |
-| Etiqueta corte-1 (corte 1) | No cumple | `git tag --list` vacío; no existe ninguna etiqueta en el repositorio |
+| Repositorio en la organización, con el nombre de la convención y público | Cumple | Clon público correcto del repositorio vigente ISCOUTB; [README.md:1–3](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/README.md#L1-L3). |
+| Estructura mínima presente | Cumple | Árbol Git con README, docs/arc42, docs/adr, docs/c4, docs/aspectos.md y docs/ia.md; [README.md:224–228](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/README.md#L224-L228). |
+| Estado calificado identificable | Cumple | Rama main; hash y fecha exactos del encabezado, último commit ≤ cierre, sin etiquetas. |
+| Nombres de ADR según la convención | Cumple | ADR 0001–0009 siguen NNNN-titulo-en-kebab-case.md; [docs/adr/0008-separar-catalogo-inventario.md:3–6](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/docs/adr/0008-separar-catalogo-inventario.md#L3-L6). |
+| ADR aceptados no reescritos | No cumple | [docs/adr/0001-monolito-modular.md:19–35](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/docs/adr/0001-monolito-modular.md#L19-L35): el historial confirma edición posterior a aceptación en e8ae57df776b3d171957f4d0c8a1e19cfb968ba5. El reemplazo 0003–0006 por 0007 sí está declarado en [docs/adr/0007-despliegue-dokploy.md:3–5](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/docs/adr/0007-despliegue-dokploy.md#L3-L5), pero no cierra la reescritura histórica de 0001. |
+| docs/ia.md al día para la semana | Cumple | [docs/ia.md:26](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/docs/ia.md#L26) añadida en el delta S9, con correcciones y descartes técnicos. |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No cumple | [Pruebas del hash en success](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/actions/runs/37242837748); [.github/workflows/tests.yml:64–80](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/.github/workflows/tests.yml#L64-L80) omite el scanner si falta SONAR_TOKEN y [docs/pendientes.md:20–23](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/docs/pendientes.md#L20-L23) aún solicita configurarlo. No se acredita run del scanner más Quality Gate público de la revisión; verde global no basta. |
+| Sin credenciales en el repositorio ni en el historial | Cumple | Barrido del árbol sin credenciales reales y búsqueda histórica de patrones de alta especificidad sin incidentes confirmados. [compose.yaml:4–8](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/compose.yaml#L4-L8). Alcance estático; la rotación externa pendiente en [docs/pendientes.md:17–18](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/docs/pendientes.md#L17-L18) debe verificarse por separado. |
+| Contribución de todos los integrantes | No verificado | El historial presenta varias firmas y variantes; no hay correspondencia individual verificada suficiente para afirmar contribución de todos. No se atribuyen cuentas por semejanza de nombre. |
 
 ## Contribución por integrante
+
+Actualización agregada del 2026-10-06: 42 commits con seis firmas visibles de autor y variantes de identidad; no se atribuyen automáticamente a los cuatro integrantes. Correspondencia individual pendiente.
+
+La tabla individual conservada abajo corresponde al registro histórico anterior; no se infieren nuevas correspondencias entre cuentas y personas.
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
 |---|---|---:|---:|---:|---|
@@ -114,6 +139,8 @@ Hoja consolidada del equipo a lo largo del semestre.
 
 ## Preguntas abiertas para la sustentación
 
-- ¿Los cuatro integrantes tienen acceso de escritura al repositorio? (sin API no se pudo listar colaboradores).
-- ¿Por qué la sección 10 del arc42 está vacía si los escenarios existen en `docs/escenarios-calidad.md`?
-- ¿El arranque real con `docker compose up --build` funciona en el entorno del equipo? (no ejecutado por regla del kit)
+Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
+
+- ¿Qué ocurre si Catálogo responde y la lectura de Inventario falla o devuelve referencias distintas, y cómo se observa?
+- ¿Cuánto cuesta el host Dokploy con backups y cuál es el umbral de capacidad que obliga a ampliarlo?
+- Con 5/5 respuestas locales, ¿qué cambiarían en el experimento al pasar a PostgreSQL y al despliegue real antes de decidir?

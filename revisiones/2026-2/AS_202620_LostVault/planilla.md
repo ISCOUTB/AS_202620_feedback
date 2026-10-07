@@ -6,14 +6,16 @@
 |---|---|
 | Equipo | LostVault |
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_LostVault` |
-| Integrantes y su usuario de GitHub | Jose Faustino Espana Noriega · Roy Andres Gonzalez Blanco · Shamara Llorente Tapias · Kiefer Monterroza Manjarres — identidades del historial: Roy Gonzalez (¿`RGBlanco18`?), `shamarallorente-blip`, `Fausto-4` (correo `ganonimo2504`), `weller-rar` (correo `pelu.kiefer`); correspondencias por confirmar con el docente |
-| URL del sistema desplegado | declarada en el repo: `https://backend-nu-self-91.vercel.app` (no consultada; pendiente por Moodle) |
-| Ultima revision | 2026-10-01 |
+| Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Jose Faustino Espana Noriega · Roy Andres Gonzalez Blanco · Shamara Llorente Tapias · Kiefer Monterroza Manjarres — identidades del historial: Roy Gonzalez (¿`RGBlanco18`?), `shamarallorente-blip`, `Fausto-4` (correo `ganonimo2504`), `weller-rar` (correo `pelu.kiefer`); correspondencias por confirmar con el docente; ver comprobación actual de contribución más abajo. |
+| URL del sistema desplegado | https://backend-nu-self-91.vercel.app · ver comprobación y límites en S10 |
+| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
 
 ## Estado por entrega
 
-| Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
+| Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 9 | S9 · definitiva | `main` · `99fb413bda00c208ec42104dcfe6a4c189fbad77` · 2026-10-04T22:30:53-05:00 | 4/10 | Pendiente por limitación de verificación; intervalo documental 2.6–3.0, sin descontar la comprobación bloqueada | sí, 2026-10-06 |
+| 10 | Segundo corte · preliminar | `main` · `99fb413bda00c208ec42104dcfe6a4c189fbad77` · 2026-10-04T22:30:53-05:00 | 2/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `560ba89` · 2026-08-09T21:10:31-05:00 | 4/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `af94a30` · 2026-08-16T22:09:43-05:00 | 7/9 | no se publica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `1ddb826` · 2026-08-23T23:57:37-05:00 | 4/9 | no se publica | sí |
@@ -23,8 +25,6 @@
 | 7 | S7 | `7bf515f` (2026-09-20T23:55:34-05:00) | 7/10 | 3.8 | sí, auditada |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `4a9ecc94` (2026-09-27T23:52:06-05:00) | 10/10 | 5.0 (provisional; 2 filas de despliegue pendientes) | sí, definitiva |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
-| 9 | Evidencia S9 · Generación verificada y trazable | | | no aplica | |
-| 10 | Segundo corte · reto aplicado sobre el MVP | `corte-2` | | | |
 | 11 | Evidencia S11 · Fallos parciales y decisión de extracción | | | no aplica | |
 | 12 | Evidencia S12 · Estrategia de datos y eventos | | | no aplica | |
 | 12 | Taller aplicado · Mensajes y consistencia | | | no aplica | |
@@ -34,6 +34,24 @@
 | 17 | Aplicación de cambios y cierre arquitectónico | | | | |
 
 ## Lo que se arrastra
+
+Estado vigente observado en la punta citada en [S10](semana-10-corte2.md). Las correcciones tardías no cambian S9. El registro histórico siguiente conserva su contexto, pero no sustituye esta actualización ni implica cerrar hallazgos no revalidados.
+
+| Hallazgo actual | Estado | Evidencia y próximo paso |
+|---|---|---|
+| Completar cadena navegable de AS-04 con C4, código, prueba y medición. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Formalizar la decisión de la porción p95; demostrar la prueba ante defecto concreto y registrar rechazo técnico de IA. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Corregir NC6 o justificar una arquitectura actual que preserve dueño único, con prueba que la proteja. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Agregación de métricas/persistencia en despliegue serverless y tratamiento del fallo con 200 conexiones. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Eliminar referencias a IaC inexistente, ordenar ADR y aportar run/Quality Gate actual. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Asignación S10, autoría y barrido independiente de secretos pendientes. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Se cierra la ausencia preliminar de porción S9: métrica con objective_ms/met y test nuevos. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| Registro IA S9 y auditoría NC6 existen, aunque no completan todos sus criterios. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| ADR-0004 formaliza no generación. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| Existe medición del despliegue real con umbral y fallos declarados; health accesible hoy. | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+
+<details>
+<summary>Registro histórico previo a esta revisión (estados a la fecha de cada observación)</summary>
 
 | Hallazgo | Primera vez que se detectó | Sigue abierto | Qué se le dijo al equipo |
 |---|---|---|---|
@@ -82,20 +100,30 @@
 | URL pública del Quality Gate de SonarCloud | S8 | Sí | Publicar el enlace del análisis y el estado del Quality Gate. |
 | `backend/vercel.json` citado por arc42 §7 y Terraform no existe en el repo | S8 | Sí | Versionarlo o corregir las referencias documentales. |
 | Sin entrega S9 en la punta: el periodo `4a9ecc94..a5faf6a` solo modifica `backend/DEPLOY_VERCEL.md` (Swagger UI) | S9 | Sí (preliminar) | Empujar la porción construida con IA, su ADR, la prueba que falla y la medición antes del cierre del 2026-10-05T05:00:00Z. |
+
+</details>
+
 ## Estado del contrato del repositorio
+
+Actualizado desde la evaluación de la punta actual; no altera la matriz congelada de S9.
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
-| Nombre y visibilidad del repositorio | Cumple | `github.com/ISCOUTB/AS_202620_LostVault`, público (ls-remote sin auth) |
-| Estructura mínima | Cumple | Las seis rutas mínimas, incluido `docs/c4/`, están presentes. |
-| Convención de nombres de ADR | No cumple | `000.3-despliegue-busqueda-lostvault.md` no sigue `NNNN-titulo-en-kebab-case.md` |
-| ADR aceptados sin reescribir | No cumple | ADR-0001 (`edd78d7`) y ADR-0002 (`b561576`) editados tras su aceptación sin reemplazo declarado |
-| `docs/ia.md` al día | Cumple | Actualizado el 27/09/2026 con lo aceptado y lo rechazado (Vercel frente a Render) |
-| Sin credenciales en el repositorio ni en el historial | Cumple | git grep, .env y `log -S` sin credenciales reales |
-| Contribución de todos los integrantes | Cumple | 4 personas consolidadas de 4 en el historial (46+36+21+11) |
-| Pipeline en verde | Cumple | Runs de Flutter, Backend y Build (con Quality Gate) del hash vigente en verde |
+| Repositorio en la organización, con el nombre de la convención y público | Cumple | Clon público anónimo de https://github.com/ISCOUTB/AS_202620_LostVault; [README.md:1-9](https://github.com/ISCOUTB/AS_202620_LostVault/blob/99fb413bda00c208ec42104dcfe6a4c189fbad77/README.md#L1-L9). |
+| Estructura mínima presente | Cumple | Árbol Git contiene las seis rutas mínimas; índice [README.md:207-224](https://github.com/ISCOUTB/AS_202620_LostVault/blob/99fb413bda00c208ec42104dcfe6a4c189fbad77/README.md#L207-L224). |
+| Estado calificado identificable | Cumple | origin/main 99fb413bda00c208ec42104dcfe6a4c189fbad77; último commit anterior al cierre en cabecera. |
+| Nombres de ADR según la convención | No cumple | [docs/adr/000.3-despliegue-busqueda-lostvault.md:1-4](https://github.com/ISCOUTB/AS_202620_LostVault/blob/99fb413bda00c208ec42104dcfe6a4c189fbad77/docs/adr/000.3-despliegue-busqueda-lostvault.md#L1-L4) usa 000.3, fuera de convención; [docs/adr/0003-plataforma-despliegue-vercel.md:23-30](https://github.com/ISCOUTB/AS_202620_LostVault/blob/99fb413bda00c208ec42104dcfe6a4c189fbad77/docs/adr/0003-plataforma-despliegue-vercel.md#L23-L30) reconoce el typo y que es un taller distinto. |
+| ADR aceptados no reescritos | No cumple | Historial verificado de ADR-0001/0002: [edd78d72](https://github.com/ISCOUTB/AS_202620_LostVault/commit/edd78d72afe70c55ca77e37b909f2ab8ab442834) y [b5615768](https://github.com/ISCOUTB/AS_202620_LostVault/commit/b5615768472c8c64dc3abff3dbf701faa40c2420) modifican decisiones aceptadas; no se localizó reemplazo declarado que resuelva el arrastre. |
+| docs/ia.md al día para la semana | No cumple | [docs/ia.md:181-223](https://github.com/ISCOUTB/AS_202620_LostVault/blob/99fb413bda00c208ec42104dcfe6a4c189fbad77/docs/ia.md#L181-L223) está al día temporalmente, pero falta rechazo con motivo técnico de S9; la razón de propiedad individual no satisface esa parte. |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No verificado | [.github/workflows/build.yml:62-76](https://github.com/ISCOUTB/AS_202620_LostVault/blob/99fb413bda00c208ec42104dcfe6a4c189fbad77/.github/workflows/build.yml#L62-L76) tiene scanner y Quality Gate; configuración versionada sonar-project.properties. Única consulta PR del hash devolvió cero runs, sin demostrar inexistencia de runs push. No se verificó run/Quality Gate público de este hash y no se recicla el verde S8. |
+| Sin credenciales en el repositorio ni en el historial | No verificado | El equipo auditó main.py/Dockerfile en [docs/ddd/auditoria_backend.md:29-44](https://github.com/ISCOUTB/AS_202620_LostVault/blob/99fb413bda00c208ec42104dcfe6a4c189fbad77/docs/ddd/auditoria_backend.md#L29-L44) y el código lee JWT_SECRET del entorno en [backend/main.py:50-55](https://github.com/ISCOUTB/AS_202620_LostVault/blob/99fb413bda00c208ec42104dcfe6a4c189fbad77/backend/main.py#L50-L55). El barrido independiente completo fue cancelado por la herramienta, también en el reintento autorizado. No se atribuye exposición ni incumplimiento académico por esa limitación; falta cerrar la comprobación del revisor. El literal de CI en [.github/workflows/build.yml:55-60](https://github.com/ISCOUTB/AS_202620_LostVault/blob/99fb413bda00c208ec42104dcfe6a4c189fbad77/.github/workflows/build.yml#L55-L60) está rotulado como prueba efímera y no se presenta como secreto de producción. |
+| Contribución de todos los integrantes | No verificado | La planilla anterior deja asociaciones de varias cuentas por confirmar. No se asignan personas por semejanza ni se repiten conteos antiguos como estado vigente; pendiente validación docente de autoría. |
 
 ## Contribución por integrante
+
+Actualización agregada del 2026-10-06: Historial de la punta: 124 commits y 9 firmas de autor distintas (firmas, no personas). La planilla anterior deja asociaciones de varias cuentas por confirmar. No se asignan personas por semejanza ni se repiten conteos antiguos como estado vigente; pendiente validación docente de autoría.
+
+La tabla individual conservada abajo corresponde al registro histórico anterior; no se infieren nuevas correspondencias entre cuentas y personas.
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
 |---|---|---:|---:|---:|---|
@@ -106,7 +134,8 @@
 
 ## Preguntas abiertas para la sustentación
 
-- ¿Quién es la cuenta `Fausto-4` (correo `ganonimo2504`) y la cuenta `weller-rar` (correo `pelu.kiefer`)?
-- C4 de contexto: ¿tiene leyenda y flechas etiquetadas? Solo existe como imagen.
-- ¿Por qué la matriz comparativa de S3 no usa los escenarios 1-4 del equipo (tabla genérica)?
-- ¿Cuándo van a crear los paquetes `lib/<modulo>/` que declara el ADR (hoy solo `lib/main.dart`) y a mover el C4 a `docs/c4/`?
+Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
+
+- Fallo: ¿cómo evitarán dos reclamaciones inconsistentes o pérdida de datos cuando Vercel atienda solicitudes en instancias distintas?
+- Costo: ¿cuánto cuestan persistencia y métricas compartidas para sostener 200 conexiones, frente al plan gratuito actual?
+- Medición: con ~44 % de fallos bajo la carga prevista, ¿qué decisión de plataforma o control de carga cambiarían y qué resultado demostraría la mejora?

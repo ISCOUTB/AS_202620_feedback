@@ -6,15 +6,16 @@
 |---|---|
 | Equipo | Drift |
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Drift` |
-| Integrantes y su usuario de GitHub | Jerry Daniel Buelvas Mejia (`JerryDBM`) · Mauricio Andres Fernandez Espinosa (`maufern4ndez`) · Luis Mario Perez Diaz (`lmpdiaz12`) · Joshua David Reyes Leones (`JoshuaR01` y `JoshXX`, mismo correo) |
-| URL del sistema desplegado | sin desplegar todavía |
-| Ultima revision | 2026-10-01 |
+| Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Jerry Daniel Buelvas Mejia (`JerryDBM`) · Mauricio Andres Fernandez Espinosa (`maufern4ndez`) · Luis Mario Perez Diaz (`lmpdiaz12`) · Joshua David Reyes Leones (`JoshuaR01` y `JoshXX`, mismo correo); ver comprobación actual de contribución más abajo. |
+| URL del sistema desplegado | https://drift-utb-202620-g5fvchdcgpcthkeg.mexicocentral-01.azurewebsites.net · ver comprobación y límites en S10 |
+| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
 
 ## Estado por entrega
 
-| Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
+| Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 9 | S9 (prelim.) | `8a00556` (2026-09-30T22:34:57-05:00) | 10/10 | 5.0 (prelim.; propuesta al docente) | sí |
+| 9 | S9 · definitiva | `master` · `3dee7e265eec021cbbba4af4d337e13c982df316` · 2026-10-04T22:03:23-05:00 | 7/10 | 3.8 (propuesta al docente) | sí, 2026-10-06 |
+| 10 | Segundo corte · preliminar | `master` · `3dee7e265eec021cbbba4af4d337e13c982df316` · 2026-10-04T22:03:23-05:00 | 2/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
 | 8 | S8 | `74709aa` (2026-09-27T23:58:28-05:00) | 10/10 | 5.0 (prop. prov.; 2 filas de despliegue diferidas) | sí |
 | 7 | S7 | `9334a03` (2026-09-20T20:19:47-05:00) | 10/10 | 5.0 | si |
 | 6 | S6 | `5f7fa4c` (2026-09-13T22:07:49-05:00) | 5/8 | 3.5 (prelim.) | si |
@@ -25,6 +26,21 @@
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `0d006bba` · 2026-08-23T18:05:58-05:00 | 5/9 | no se publica | sí |
 
 ## Lo que se arrastra
+
+Estado vigente observado en la punta citada en [S10](semana-10-corte2.md). Las correcciones tardías no cambian S9. El registro histórico siguiente conserva su contexto, pero no sustituye esta actualización ni implica cerrar hallazgos no revalidados.
+
+| Hallazgo actual | Estado | Evidencia y próximo paso |
+|---|---|---|
+| Cerrar la cadena de la corrección GameCatalogRepository hacia aspecto, ADR, prueba que falle ante erosión y evidencia del escenario. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Distinguir mediciones de septiembre de un experimento nuevo del reto asignado, con factores de confusión y límites. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Reintegrar scanner SonarCloud de forma verificable y aportar Quality Gate de la revisión. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Alinear C4/arc42/ADR con la persistencia y forma de ejecución reales; usar ADR sustituto donde cambie una decisión aceptada. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Confirmar consigna oficial S10 y demostrar el flujo principal en el despliegue antes de la sustentación. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Erosión aplicación→infraestructura corregida mediante puerto explícito en S9; [backend/app/application/usecases/sync_playstation_catalog.py:3–20](https://github.com/ISCOUTB/AS_202620_Drift/blob/3dee7e265eec021cbbba4af4d337e13c982df316/backend/app/application/usecases/sync_playstation_catalog.py#L3-L20). | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| Decisión explícita de no incorporar IA generativa, [docs/adr/0007-evaluacion-de-incorporación-coponente-generativo.md:17–27](https://github.com/ISCOUTB/AS_202620_Drift/blob/3dee7e265eec021cbbba4af4d337e13c982df316/docs/adr/0007-evaluacion-de-incorporaci%C3%B3n-coponente-generativo.md#L17-L27). | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+
+<details>
+<summary>Registro histórico previo a esta revisión (estados a la fecha de cada observación)</summary>
 
 | Hallazgo | Primera vez que se detectó | Sigue abierto | Qué se le dijo al equipo |
 |---|---|---|---|
@@ -104,20 +120,30 @@
 | Nombres de ADR: el ADR-0007 usa `ó` acentuada y no es kebab-case ASCII. | S9 | sí | Ver feedback S9 |
 | Sin dependencias añadidas en el periodo de S9 (diff `74709aa..8a00556` vacío); verificación sobre el conjunto preexistente. | S9 | sí | Ver feedback S9 |
 | SonarCloud: run del scanner y URL pública con Quality Gate, pendiente desde S6. | S9 | sí | Ver feedback S9 |
+
+</details>
+
 ## Estado del contrato del repositorio
+
+Actualizado desde la evaluación de la punta actual; no altera la matriz congelada de S9.
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
-| Nombre y visibilidad del repositorio | Cumple | `AS_202620_Drift`, público. |
-| Estructura mínima | Cumple | Las seis rutas en su lugar desde la reorganización del 08-22. |
-| Convención de nombres de ADR | No cumple | `0001`–`0006` conformes; el ADR-0007 nuevo (`0007-evaluacion-de-incorporación-coponente-generativo.md`, 2026-09-30) usa `ó` acentuada y no es kebab-case ASCII. |
-| ADR aceptados sin reescribir | No cumple | ADR-0002 (vigente, aceptado) editado el 2026-09-05 (`70e52e2`) y el 2026-09-13 (`9488544`), sin ADR de reemplazo. |
-| `docs/ia.md` al día | Cumple | `d4c2fe7` (2026-09-30) añade los registros 24–40, con alternativas descartadas y su motivo. |
-| Sin credenciales en el repositorio ni en el historial | Cumple | Sin coincidencias. |
-| Contribución de todos los integrantes | Cumple | Los 4 firman en S3, con desbalance (51/19/18/9). |
-| Pipeline en verde | No cumple | CI en verde (run 36379911184 sobre `74709aa`), pero SonarCloud no está integrado: `ci.yml` no invoca el scanner ni usa `SONAR_TOKEN`. |
+| Repositorio en la organización, con el nombre de la convención y público | Cumple | Clon público en ISCOUTB con nombre conforme, rama master; [README.md:1–10](https://github.com/ISCOUTB/AS_202620_Drift/blob/3dee7e265eec021cbbba4af4d337e13c982df316/README.md#L1-L10). |
+| Estructura mínima presente | Cumple | Seis rutas presentes; arc42 no incluye sección 11, deuda de completitud aunque existe directorio. [docs/aspectos.md:48–58](https://github.com/ISCOUTB/AS_202620_Drift/blob/3dee7e265eec021cbbba4af4d337e13c982df316/docs/aspectos.md#L48-L58). |
+| Estado calificado identificable | Cumple | Snapshot y fecha completos en encabezado; coincide con la punta actual. |
+| Nombres de ADR según la convención | No cumple | ADR-0007 usa acento y nombre no conforme al patrón; [docs/adr/0007-evaluacion-de-incorporación-coponente-generativo.md:1–7](https://github.com/ISCOUTB/AS_202620_Drift/blob/3dee7e265eec021cbbba4af4d337e13c982df316/docs/adr/0007-evaluacion-de-incorporaci%C3%B3n-coponente-generativo.md#L1-L7). |
+| ADR aceptados no reescritos | No verificado | El historial de ADR previos requiere confirmar inmutabilidad desde aceptación; no se declara resuelto el hallazgo anterior. Los ADR nuevos no reemplazan expresamente los reescritos. |
+| docs/ia.md al día para la semana | Cumple | Registros nuevos de revisión y organización S9 con validación y alternativas descartadas por razones técnicas; [docs/ia.md:831–919](https://github.com/ISCOUTB/AS_202620_Drift/blob/3dee7e265eec021cbbba4af4d337e13c982df316/docs/ia.md#L831-L919). |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No cumple | CI y Azure deployment success en el hash, pero el scanner fue añadido y revertido antes del cierre. El workflow actual no invoca SonarCloud; [.github/workflows/ci.yml:1–54](https://github.com/ISCOUTB/AS_202620_Drift/blob/3dee7e265eec021cbbba4af4d337e13c982df316/.github/workflows/ci.yml#L1-L54), [sonar-project.properties:1–6](https://github.com/ISCOUTB/AS_202620_Drift/blob/3dee7e265eec021cbbba4af4d337e13c982df316/sonar-project.properties#L1-L6). Archivo de propiedades por sí solo no prueba análisis/Gate. |
+| Sin credenciales en el repositorio ni en el historial | No verificado | Snapshot sin credenciales reales; referencias de Actions, permisos y ejemplos de patrón. No se certificó revisión exhaustiva de todos los blobs históricos. |
+| Contribución de todos los integrantes | No verificado | Ocho firmas, 384 commits agregados. Sin atribuir variantes por parecido; correspondencia completa con cuatro integrantes no verificada. Punta actual: 8 firmas y 384 commits agregados; no equivalen automáticamente a personas. |
 
 ## Contribución por integrante
+
+Actualización agregada del 2026-10-06: Ocho firmas y 384 commits en S9; variantes sin consolidación por persona no se contabilizan como ocho integrantes. En HEAD: 8 firmas y 384 commits agregados.
+
+La tabla individual conservada abajo corresponde al registro histórico anterior; no se infieren nuevas correspondencias entre cuentas y personas.
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
 |---|---|---:|---:|---:|---|
@@ -128,8 +154,8 @@
 
 ## Preguntas abiertas para la sustentación
 
-- Confirmar que `JoshuaR01`/`JoshXX` corresponden a Joshua David Reyes Leones (mismo correo).
-- ¿Por qué el árbol de utilidad no muestra la priorización por impacto y riesgo si la sección 1 sí la tiene?
-- ¿Qué herramienta usarán para medir los p95 declarados en los escenarios?
-- ¿Cuál es el comando único real de arranque (backend Python + frontend Next) y por qué el README menciona `mvn spring-boot:run` sin pom.xml?
-- ¿Cómo van a equilibrar la contribución (51 vs 9 commits en S3)?
+Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
+
+- ¿Qué devuelve la búsqueda si Steam se cae y el catálogo de PlayStation está vacío después de un reinicio?
+- ¿Cómo cambia el costo por búsqueda si se elimina la caché o se replica el backend, y qué límite gratuito se alcanza primero?
+- ¿Qué cambiarían tras repetir la medición controlando caché caliente, arranque en frío y variación de Steam?

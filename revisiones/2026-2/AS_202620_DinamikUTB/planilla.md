@@ -6,15 +6,16 @@
 |---|---|
 | Equipo | DinamikUTB |
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_DinamikUTB` |
-| Integrantes y su usuario de GitHub | Luis Daniel Padilla Leottau (`Daniel-dev02`) · Gillianis Del Carmen Perez Revolledo (`gillianisperez-prog`) · Esteban Ramirez Rios (`Eramirezr`) · Juan Jose Vargas Perez (`JuanchisV`, firma también como «Juan José Vargas Pérez» con el mismo correo) |
-| URL del sistema desplegado | sin desplegar todavía |
-| Ultima revision | 2026-10-01 |
+| Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Luis Daniel Padilla Leottau (`Daniel-dev02`) · Gillianis Del Carmen Perez Revolledo (`gillianisperez-prog`) · Esteban Ramirez Rios (`Eramirezr`) · Juan Jose Vargas Perez (`JuanchisV`, firma también como «Juan José Vargas Pérez» con el mismo correo); ver comprobación actual de contribución más abajo. |
+| URL del sistema desplegado | https://dinamikutb-api.onrender.com · ver comprobación y límites en S10 |
+| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
 
 ## Estado por entrega
 
-| Semana | Entrega | Estado revisado (etiqueta o hash) | Criterios | Sugerido | Revisada |
+| Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 9 | S9 (prelim.) | `d72a10a` (2026-09-28T00:09:14-05:00) | 1/10 | 1.4 (prelim.; propuesta al docente) | sí |
+| 9 | S9 · definitiva | `master` · `2326dd7f9d4dda08ba557ea6602b0a7085c97bee` · 2026-10-04T21:47:16-05:00 | 5/10 | 3.0 (propuesta al docente) | sí, 2026-10-06 |
+| 10 | Segundo corte · preliminar | `master` · `5dc9acf9335fec70e274a2e5c494b3805b0e9646` · 2026-10-05T22:06:45-05:00 | 3/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
 | 8 | S8 | `287c65d` (2026-09-27T23:57:31-05:00) | 10/10 | 5.0 (prop. prov.; 2 filas de despliegue diferidas) | sí |
 | 7 | S7 | `5e6fa73` (2026-09-20T23:57:27-05:00) | 10/10 | 5.0 | si |
 | 6 | S6 | `265e652` (2026-09-13T23:29:49-05:00) | 0/8 | 1.0 | si |
@@ -25,6 +26,22 @@
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `fe52ab594` · 2026-08-23T23:20:33-05:00 | 5/9 | no se publica | sí (actualizada tras el cierre) |
 
 ## Lo que se arrastra
+
+Estado vigente observado en la punta citada en [S10](semana-10-corte2.md). Las correcciones tardías no cambian S9. El registro histórico siguiente conserva su contexto, pero no sustituye esta actualización ni implica cerrar hallazgos no revalidados.
+
+| Hallazgo actual | Estado | Evidencia y próximo paso |
+|---|---|---|
+| Aportar escenario S10 asignado, línea base y experimento reproducible sobre el MVP. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Corregir CI HEAD y adjuntar resultados de las pruebas ampliadas; no declarar 20/20 solo por contarlas. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Convertir rutas de código/pruebas de A-01 en enlaces y verificar cadena completa con medición. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Terminar controles de identidad y autorización antes de cargar información real; mantener datos ficticios mientras tanto. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Comprobar Quality Gate público y fijar fecha real de vencimiento/renovación de la base Render. | Abierto / pendiente de verificar según la matriz | Ver [S9](semana-09-evidencia-s9.md), [S10](semana-10-corte2.md) y retroalimentación |
+| Se añade auditoría S9 de propiedad de datos con comando y localización; [docs/evidencia-s9.md:40–51](https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/2326dd7f9d4dda08ba557ea6602b0a7085c97bee/docs/evidencia-s9.md#L40-L51). | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| Se incorporan ADR de verificación de artefactos y no incorporación generativa; [docs/adr/0008-verificacion-de-artefactos-sugeridos-por-ia.md:51–69](https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/2326dd7f9d4dda08ba557ea6602b0a7085c97bee/docs/adr/0008-verificacion-de-artefactos-sugeridos-por-ia.md#L51-L69), [docs/adr/0009-no-incorporacion-componente-generativo.md:52–68](https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/2326dd7f9d4dda08ba557ea6602b0a7085c97bee/docs/adr/0009-no-incorporacion-componente-generativo.md#L52-L68). | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+| Después del cierre se incorpora rechazo explícito de hash inventado al registro de IA; [docs/ia.md:14–16](https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/5dc9acf9335fec70e274a2e5c494b3805b0e9646/docs/ia.md#L14-L16). | Cierre o corrección documentada | Ver evidencia en [overall S10](semana-10-corte2.md) |
+
+<details>
+<summary>Registro histórico previo a esta revisión (estados a la fecha de cada observación)</summary>
 
 | Hallazgo | Primera vez que se detectó | Sigue abierto | Qué se le dijo al equipo |
 |---|---|---|---|
@@ -79,20 +96,30 @@
 | Sin entrega S9: la punta (`d72a10a`) es el estado de S8 más un commit de README | S9 | sí | Ver feedback S9 |
 | Sin artefactos de S9 (porción, cadena, ADR, prueba, medición, erosión, dependencias, componente generativo) | S9 | sí | Ver feedback S9 |
 | `docs/ia.md` sin actualización en el periodo de S9 | S9 | sí | Ver feedback S9 |
+
+</details>
+
 ## Estado del contrato del repositorio
+
+Actualizado desde la evaluación de la punta actual; no altera la matriz congelada de S9.
 
 | Comprobación | Estado | Observaciones |
 |---|---|---|
-| Nombre y visibilidad del repositorio | Cumple | `AS_202620_DinamikUTB`, público. |
-| Estructura mínima | Cumple | Las seis rutas presentes; arc42 con 12 secciones. |
-| Convención de nombres de ADR | Cumple | `0001-seleccion-monolito-modular.md` conforme. |
-| ADR aceptados sin reescribir | No cumple | ADR 0001 tuvo una actualización posterior a su aceptación el 1 de septiembre; debe preservarse y sucederse con un ADR nuevo. |
-| `docs/ia.md` al día | No cumple | Sin commits en el periodo de S9 (`287c65d..d72a10a`); la última entrada es del 26/09 (S8). |
-| Sin credenciales en el repositorio ni en el historial | Cumple | Sin coincidencias. |
-| Contribución de todos los integrantes | Cumple | 4 de 4 en S3 (Juan 21, Gillianis 11, Luis 12, Esteban 2); desbalance anotado. |
-| Pipeline en verde | Cumple | CI en verde sobre `287c65d` (run 36379851321); SonarCloud con scanner en CI y Quality Gate `OK`. |
+| Repositorio en la organización, con el nombre de la convención y público | Cumple | Clon público ISCOUTB/AS_202620_DinamikUTB, rama master; [README.md:1–5](https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/2326dd7f9d4dda08ba557ea6602b0a7085c97bee/README.md#L1-L5). |
+| Estructura mínima presente | Cumple | Las seis rutas mínimas están presentes; arc42 01–12 y C4 en fuentes PlantUML, [docs/aspectos.md:9–18](https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/2326dd7f9d4dda08ba557ea6602b0a7085c97bee/docs/aspectos.md#L9-L18). |
+| Estado calificado identificable | Cumple | Punta master 5dc9acf9335fec70e274a2e5c494b3805b0e9646 de 2026-10-05T22:06:45-05:00; preliminar anterior a cierre S10. |
+| Nombres de ADR según la convención | Cumple | Los nueve ADR cumplen NNNN-kebab-case; [docs/adr/0008-verificacion-de-artefactos-sugeridos-por-ia.md:1–9](https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/2326dd7f9d4dda08ba557ea6602b0a7085c97bee/docs/adr/0008-verificacion-de-artefactos-sugeridos-por-ia.md#L1-L9), [docs/adr/0009-no-incorporacion-componente-generativo.md:1–9](https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/2326dd7f9d4dda08ba557ea6602b0a7085c97bee/docs/adr/0009-no-incorporacion-componente-generativo.md#L1-L9). |
+| ADR aceptados no reescritos | No verificado | Hay ediciones históricas de ADR-0001/0002/0005/0006; falta terminar contraste independiente de las versiones aceptadas. No se presume cerrado el arrastre de inmutabilidad. |
+| docs/ia.md al día para la semana | Cumple | La punta añade entrada específica de hash inventado, verificado y rechazado, junto al registro de trabajo S9; [docs/ia.md:14–16](https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/5dc9acf9335fec70e274a2e5c494b3805b0e9646/docs/ia.md#L14-L16), [docs/ia.md:39–39](https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/5dc9acf9335fec70e274a2e5c494b3805b0e9646/docs/ia.md#L39-L39). |
+| Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No cumple | CI de HEAD concluye failure aunque Deploy frontend success. Configuración y scanner existen; no se acredita pipeline integral en verde ni Quality Gate de esta revisión; [.github/workflows/ci.yml:55–78](https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/5dc9acf9335fec70e274a2e5c494b3805b0e9646/.github/workflows/ci.yml#L55-L78). |
+| Sin credenciales en el repositorio ni en el historial | No verificado | Barrido del snapshot sin valores de credencial: solo secretos de Actions y permisos id-token. Sin .env versionado. Historial completo no certificado. |
+| Contribución de todos los integrantes | No verificado | Siete firmas, 294 commits agregados en S9. Variantes de identidad no equivalen a siete personas; falta correspondencia verificable completa con los cuatro integrantes. Punta actual: 7 firmas y 299 commits agregados; no equivalen automáticamente a personas. |
 
 ## Contribución por integrante
+
+Actualización agregada del 2026-10-06: Siete firmas de autor, 294 commits en el estado S9. Identidades variantes requieren consolidación acreditada; no se deducen personas por parecido. En HEAD: 7 firmas y 299 commits agregados.
+
+La tabla individual conservada abajo corresponde al registro histórico anterior; no se infieren nuevas correspondencias entre cuentas y personas.
 
 | Integrante | Usuario de GitHub | Commits | PR abiertos | Revisiones con comentarios de fondo | Observaciones |
 |---|---|---:|---:|---:|---|
@@ -103,7 +130,8 @@
 
 ## Preguntas abiertas para la sustentación
 
-- ¿Por qué la ficha del problema declara una sola tensión de calidad cuando se pedían dos?
-- ¿Cómo se repartirá el trabajo de las próximas entregas para equilibrar la contribución del historial?
-- ¿Por qué la columna ADR de `docs/aspectos.md` sigue en «Pendiente» si el ADR 0001 existe desde el 23 de agosto (y la nota dice que los elementos «todavía no existen»)?
-- ¿Qué tácticas concretas aplicarán a Q-01, Q-02 y Q-03 para la semana 4?
+Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
+
+- ¿Qué sucede con Q-01 y /health si Render pierde PostgreSQL o expira la instancia, y cómo demostrarían recuperación sin datos reales?
+- ¿Cuál es la fecha concreta de expiración de la base gratuita y qué opción conserva datos dentro del presupuesto?
+- ¿Qué cambiarían en la estrategia de pruebas al descubrir que contar 20 casos no garantiza un run verde ni cubre autorización?
