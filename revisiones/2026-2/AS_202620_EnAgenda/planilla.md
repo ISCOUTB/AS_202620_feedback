@@ -10,14 +10,14 @@ Hoja consolidada del equipo EnAgenda. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_EnAgenda` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Eliab Josue Arnedo Conde · Jeimy Yulieth Mendez Altamiranda · Gabriela Morales Cancino — cuentas abajo; ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | URL pública vigente no localizada; despliegue No verificado. Ver [S10](semana-10-corte2.md). |
-| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
+| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar; corrección documental de S10: 2026-10-07 |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 9 | S9 · definitiva | `master` · `5aa889370dcf342ba06666893b97f8065b513de9` · 2026-10-04T23:46:49-05:00 | 3/10 | 2.2 (propuesta al docente) | sí, 2026-10-06 |
-| 10 | Segundo corte · preliminar | `master` · `c2077ac55a29562adc728734ca4c283ccb40f310` · 2026-10-05T10:40:19-05:00 | 2/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
+| 10 | Segundo corte · preliminar | `master` · `c2077ac55a29562adc728734ca4c283ccb40f310` · 2026-10-05T10:40:19-05:00 | 1/12 de comprobación (sin PDF): 1 Cumple, 6 No cumple y 5 No verificado | C3: Insuficiente (0,00); total pendiente, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06; corrección documental 2026-10-07 |
 | 8 | S8 | `2c7d77a` (2026-09-27T23:42:39-05:00) | 5/10 (2 filas de despliegue diferidas) | 3.0 (provisional) | sí |
 | 7 | S7 | `849ee8c` (2026-09-20T23:59:07-05:00) | 4/10 | 2.6 | sí, auditada |
 | 6 | S6 | `0a58de8` (2026-09-13T23:38:41-05:00) | 7/8 | 4.5 | si |
