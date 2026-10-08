@@ -15,7 +15,7 @@ La matriz de comprobación tiene 12 filas después de excluir el PDF; su recuent
 | DinamikUTB | [S10](AS_202620_DinamikUTB/semana-10-corte2.md) | `5dc9acf9335fec70e274a2e5c494b3805b0e9646` | No verificado | NV | NV | NV | NV | Pendiente docente |
 | Drift | [S10](AS_202620_Drift/semana-10-corte2.md) | `3dee7e265eec021cbbba4af4d337e13c982df316` | No verificado | NV | NV | NV | NV | Pendiente docente |
 | ElMapita | [S10](AS_202620_ElMapita/semana-10-corte2.md) | `f3bcfa83e80f5c8d0e30a01b656d89160c907d64` | No verificado | NV | NV | NV | NV | Pendiente docente |
-| EnAgenda | [S10](AS_202620_EnAgenda/semana-10-corte2.md) | `c2077ac55a29562adc728734ca4c283ccb40f310` | No verificado | NV | NV | NV | NV | Pendiente docente |
+| EnAgenda | [S10](AS_202620_EnAgenda/semana-10-corte2.md) | `c2077ac55a29562adc728734ca4c283ccb40f310` | No verificado | NV | NV | 0.00 | NV | Pendiente docente |
 | GimnasioUTB | [S10](AS_202620_GimnasioUTB/semana-10-corte2.md) | `c0a6a78f0ce87ea59040662b5abbbb4d2ab99aec` | No verificado | NV | NV | NV | NV | Pendiente docente |
 | InvenTrack | [S10](AS_202620_InvenTrack/semana-10-corte2.md) | `35a9c63dd603bab989a18ed17ca56063c5616585` | No verificado | NV | NV | NV | NV | Pendiente docente |
 | LaPlacita | [S10](AS_202620_LaPlacita/semana-10-corte2.md) | `3a04706d27e49fb93c90c68f469442fb6f392710` | No verificado | NV | NV | NV | NV | Pendiente docente |
@@ -33,6 +33,8 @@ La matriz de comprobación tiene 12 filas después de excluir el PDF; su recuent
 | XALD | [S10](AS_202620_XALD/semana-10-corte2.md) | `9236ff97218b632eeb9a1910f6083968e2c22909` | No verificado | NV | NV | NV | 0.60 | Pendiente docente |
 
 C1: caracterización; C2: decisión e implementación; C3: operación, seguridad y observabilidad; C4: evolución trazable. NV = No verificado, sin puntaje asignado. Los puntajes parciales son propuestas al docente sobre lo verificable, sujetas a la evidencia de asignación y a la revisión al cierre.
+
+**Corrección documental del 7 de octubre de 2026, solo EnAgenda:** C3 pasa a **Insuficiente (0,00)** por el tratamiento de tokens en métricas del hash ya revisado. El [informe S10](AS_202620_EnAgenda/semana-10-corte2.md) cita la evidencia estática; no se comprobó exposición en producción. Se mantiene la observación original del 6 de octubre y no se calcula una nota final.
 
 ## Para cerrar el segundo corte
 

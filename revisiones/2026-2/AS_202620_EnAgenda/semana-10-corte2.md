@@ -12,6 +12,7 @@
 | S9 congelada | `5aa889370dcf342ba06666893b97f8065b513de9` · 2026-10-04T23:46:49-05:00 |
 | Punta actual / S10 preliminar | `c2077ac55a29562adc728734ca4c283ccb40f310` · 2026-10-05T10:40:19-05:00 |
 | Comprobación | 2026-10-06T21:29:42Z |
+| Corrección documental | 2026-10-07 · seguridad y C3; se conservan el hash y la observación original |
 
 Revisión por Git y lectura estática; no se ejecutó código, instalación, pruebas ni despliegue de estudiantes. Una consulta de Actions por repositorio. Los procedimientos y resultados documentados por el equipo se identifican como tales; no equivalen a una ejecución del revisor. PDF excluido por decisión docente: no se abrió ni se penaliza. No se consultaron etiquetas.
 
@@ -37,10 +38,12 @@ Se omite la fila de PDF de dos páginas por exclusión docente. Quedan 12 filas 
 | Respuesta implementada o configurada sobre el MVP | No verificado | Cambios reales de UI/observabilidad y plantilla tardía, pero falta conocer escenario asignado para juzgar respuesta; [docs/ia.md:45–47](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/c2077ac55a29562adc728734ca4c283ccb40f310/docs/ia.md#L45-L47). |
 | Resultado contrastado con el umbral | No cumple | Medición externa y umbral siguen pendientes en la punta; [docs/despliegue/medicion-dokploy.md:51–58](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/c2077ac55a29562adc728734ca4c283ccb40f310/docs/despliegue/medicion-dokploy.md#L51-L58). |
 | Pipeline, health check, logs estructurados y métrica ligada al escenario | No cumple | CI success, health y contadores presentes; no logs estructurados ni métrica ligada al escenario definido. Riesgo: request.path se almacena sin normalizar y /metrics lo devuelve públicamente, exponiendo tokens usados en rutas; [app/web.py:45–58](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/c2077ac55a29562adc728734ca4c283ccb40f310/app/web.py#L45-L58), [app/web.py:87–101](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/c2077ac55a29562adc728734ca4c283ccb40f310/app/web.py#L87-L101). No se consultaron tokens ni datos reales. |
-| Secretos protegidos | Cumple | Sin credenciales hardcodeadas en snapshot; protección del dato dinámico en métricas sigue como hallazgo operativo, no como secreto literal encontrado. |
+| Secretos protegidos | No cumple | El código conserva `request.path` sin normalizar en `http_requests_by_path` ([app/web.py:45–58](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/c2077ac55a29562adc728734ca4c283ccb40f310/app/web.py#L45-L58)) y lo devuelve desde `/metrics`, definido sin autenticación en la aplicación ([app/web.py:87–101](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/c2077ac55a29562adc728734ca4c283ccb40f310/app/web.py#L87-L101)). Las rutas de invitación llevan un token cuya posesión permite consultar y responder ([app/web.py:360–411](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/c2077ac55a29562adc728734ca4c283ccb40f310/app/web.py#L360-L411)); por tanto, la ausencia de credenciales hardcodeadas no acredita la protección de estos secretos dinámicos. Conclusión por lectura estática del hash revisado: no se consultaron métricas ni tokens reales y no se verificó exposición o incidente en producción. |
 | C4, arc42, ADR y contratos correspondientes al MVP | No cumple | La documentación actual mejora Flask/plantillas, pero ADR-0001 sigue describiendo Next.js sin API y el contrato no representa todas las rutas de UI nuevas; [docs/adr/0001-usar-monolito-modular.md:116–125](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/c2077ac55a29562adc728734ca4c283ccb40f310/docs/adr/0001-usar-monolito-modular.md#L116-L125), [docs/aspectos.md:5–12](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/c2077ac55a29562adc728734ca4c283ccb40f310/docs/aspectos.md#L5-L12). |
 | Decisión anterior confirmada o reemplazada con evidencia | No cumple | La transición Render→Dokploy reescribe/elimina ADR-0003 aceptado, en vez de preservarlo y sustituirlo con evidencia; [docs/adr/0003-desplegar-api-flask-en-dokploy.md:1–18](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/c2077ac55a29562adc728734ca4c283ccb40f310/docs/adr/0003-desplegar-api-flask-en-dokploy.md#L1-L18). |
 | Sustentación del reto sobre el entorno desplegado | No verificado | Pendiente del docente en sustentación con entorno desplegado y pipeline en vivo. |
+
+Recuento corregido el **2026-10-07**: **1/12 Cumple, 6/12 No cumple y 5/12 No verificado**. Este recuento de comprobación no calcula una nota final de S10.
 
 ## Rúbrica específica de cinco criterios
 
@@ -48,7 +51,7 @@ Se omite la fila de PDF de dos páginas por exclusión docente. Quedan 12 filas 
 |---|---|---:|---|
 | Caracterización del escenario operativo | No verificado | Pendiente | No se localizó evidencia de asignación oficial del escenario; no se sustituye por un escenario genérico. |
 | Decisión e implementación | No verificado | Pendiente | No se puede juzgar la respuesta al escenario asignado hasta identificarlo. |
-| Operación, seguridad y observabilidad | No verificado | Pendiente | Hay evidencia técnica parcial descrita en la matriz; falta vincularla con el escenario asignado y verificar la operación completa. |
+| Operación, seguridad y observabilidad | Insuficiente | 0,00 | La ruta de exposición de tokens está acreditada en el código citado en «Secretos protegidos». La [instrucción 7 de la ficha S10](https://github.com/ISCOUTB/AS_202620_feedback/blob/94d9261bb265315dd31eec984ce9abd34fe33bb2/fichas/semana-10-corte2.md#L61-L62) sitúa este criterio en insuficiente si se exponen secretos. Este nivel sugerido se funda en la evidencia estática; no afirma un incidente en producción ni resuelve la asignación del escenario o la sustentación. |
 | Evolución arquitectónica trazable | No verificado | Pendiente | La coherencia documental se informa en la matriz; falta demostrar la evolución específica exigida por el reto. |
 | Sustentación del reto | Pendiente del docente | Pendiente | Sustentación sobre el entorno desplegado y pipeline en vivo; no se puntúa desde el repositorio. |
 
@@ -73,7 +76,7 @@ Escala aplicable: 0,00 / 0,60 / 0,80 / 1,00 por criterio. **No se calcula total 
 - [CI: success](https://github.com/ISCOUTB/AS_202620_EnAgenda/actions/runs/37334800510), 2026-10-05T15:41:02Z, SHA exacto del estado indicado.
 - [pages build and deployment: success](https://github.com/ISCOUTB/AS_202620_EnAgenda/actions/runs/37334799574), 2026-10-05T15:41:02Z, SHA exacto del estado indicado.
 ## Alcance del barrido de seguridad
-Barrido estático sin credenciales reales; tokens de invitación se generan con secrets.token_urlsafe y el workflow usa claves efímeras de prueba. No hay .env versionado. No se certifica historia completa. Hallazgo de privacidad por lectura de código: los paths con tokens se agregan a http_requests_by_path y se publican en /metrics. Se recomienda usar plantillas de ruta/redactar tokens y restringir acceso a métricas; no se accedió a invitaciones reales.
+Barrido estático sin credenciales reales hardcodeadas; tokens de invitación se generan con secrets.token_urlsafe y el workflow usa claves efímeras de prueba. No hay .env versionado. No se certifica historia completa. Hallazgo de privacidad por lectura de código: los paths con tokens se agregan a http_requests_by_path y se publican en /metrics. Se recomienda usar plantillas de ruta/redactar tokens y restringir acceso a métricas; no se accedió a invitaciones reales.
 
 ## Estado global del proyecto (overall)
 
