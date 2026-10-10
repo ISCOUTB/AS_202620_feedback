@@ -55,3 +55,13 @@ La búsqueda con filtros ya es una porción nueva y trazable: la mutación detec
 ## Semana 10 · Segundo corte (avance preliminar)
 
 Documenten cuál es el escenario operativo asignado y preparen una línea base y un resultado comparables en el despliegue. La salud responde, pero eso no prueba el flujo principal. Añadan la métrica del escenario al entorno, resuelvan la brecha de capacidad que midieron y expliquen la decisión frente al presupuesto antes de la sustentación.
+
+### Actualización del 10 de octubre de 2026
+
+La actualización del segundo corte incorpora un experimento propio sobre Dokploy, una decisión de plataforma con alternativas y costo, la métrica de búsqueda y la separación entre proceso vivo y disponibilidad de la base. La comprobación actual de salud y readiness responde correctamente; C4 ya incluye PostgreSQL, búsqueda y Emparejamiento, y los antecedentes de los ADR tienen enlaces de sucesión.
+
+La elección de S1 está explicada como una indicación del docente comunicada por el equipo. Falta corroborar esa procedencia. Para defender el experimento, conserven las salidas originales y el estado desplegado exacto: la tabla declara mejora y cumplimiento a doscientas conexiones, pero cambia el volumen respecto de la base y solo hay una corrida por nivel. El percentil del servidor, calculado sobre éxitos recientes, no sustituye la latencia de extremo a extremo ni demuestra por sí solo que toda la diferencia sea red.
+
+Completen las vistas de construcción y ejecución de arc42, actualicen C4-C3 con readiness, búsqueda y manejo de almacenamiento caído, y añadan al contrato la respuesta de indisponibilidad al consultar por identificador. SonarCloud sigue pendiente de evidencia actual de análisis y Quality Gate bloqueante; el verde general de CI no lo acredita cuando el scanner admite fallos. Las correcciones actuales no modifican la evaluación definitiva de la semana anterior.
+
+Para la sustentación, preparen una demostración de fallo y recuperación de la base, expliquen el costo y los riesgos del servidor compartido y diseñen una comparación controlada que permita distinguir plataforma, datos y red.
