@@ -87,3 +87,11 @@ Las pruebas de frontera, las mutaciones y la medición local aportan evidencia s
 ## Semana 10 · Segundo corte (avance preliminar)
 
 Confirmen si Render frente a Lambda es la consigna operativa asignada. La comparación debe medir la misma operación y carga: GET /health local en SAM no es equivalente al análisis de texto que exige Q-01. Añadan línea base comparable, resultado y límites, reparen enlaces y confirmen el Quality Gate y la disponibilidad del entorno. El pipeline verde y la cobertura no sustituyen la sustentación.
+
+### Actualización del 10 de octubre de 2026
+
+En esta actualización sí aparecen las correcciones anunciadas: el ADR de semántica y la auditoría resuelven sus rutas, existe el ADR de no incorporar un componente generativo, se rectifica MLAnalyzer y se amplía el registro de IA. También están la tabla de enmiendas y la distinción entre fallos de prueba y errores de infraestructura en el script de mutaciones. Las pruebas y el scanner del estado actual concluyen satisfactoriamente. Estas correcciones actualizan el estado del proyecto; la evaluación histórica de la semana anterior permanece igual.
+
+El reto ya tiene hipótesis, variables y umbral declarados, pero aún deben confirmar su correspondencia con la consigna asignada y medir una comparación equivalente. El evento serverless contiene 63 caracteres, mientras el ADR declara 10.000; la referencia de 46,9 ms es local y usa otro runtime, y el mismo P95 de SAM se asigna a dos operaciones sin series separadas. Publiquen resultados identificados por operación, entorno, fecha y versión, y distingan frío/caliente, duración interna y latencia del usuario. No basta renombrar la medición existente como resultado de otra plataforma.
+
+La API respondió al health check público, pero una respuesta de salud no prueba el flujo de análisis ni recuperación de datos. El equipo ahora documenta un Quality Gate satisfactorio; la consulta pública del evaluador fue bloqueada, por lo que falta verificación independiente de su revisión. Actualicen las vistas que aún niegan el soporte de URL o dejan la medición local como inexistente, mantengan el historial de ADR mediante decisiones nuevas y fijen la versión de pytest-cov. Los límites de comprobación de seguridad y de autoría quedan pendientes, sin presumir una exposición ni atribuir cuentas a personas.

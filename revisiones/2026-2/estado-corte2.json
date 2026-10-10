@@ -1,12 +1,12 @@
 {
   "modo": "early",
-  "ts": "2026-10-06T21:34:07.388616+00:00",
+  "ts": "2026-10-10T13:16:36.581915+00:00",
   "equipos": 23,
-  "lote": "todos",
-  "tamano_lote": 23,
-  "origen": "revision-documental-completa",
+  "lote": "delta-2026-10-10",
+  "tamano_lote": 2,
+  "origen": "revision-documental-delta",
   "publicado": false,
-  "publicacion_pendiente": "Pendiente de revisión e incorporación a master; los cambios se proponen mediante un pull request en borrador. La evaluación conserva la fotografía del 6 de octubre de 2026.",
+  "publicacion_pendiente": "Esta actualización se propone mediante un pull request en borrador, pendiente de incorporación a master. La base de las revisiones del 6 y la corrección de EnAgenda del 7 ya están incorporadas.",
   "cierre": "2026-10-12T05:00:00Z",
   "pdf": "excluidos por indicacion docente; sin penalizacion",
   "ejecucion_codigo_estudiantil": false,
@@ -98,8 +98,11 @@
     {
       "repo": "AS_202620_Recobra",
       "rama": "master",
-      "hash": "ebe6cca7a903bb333678bd20ba5327d8fcb127f7",
-      "fecha": "2026-10-04T23:40:37-05:00"
+      "hash": "ac3cbb64a70fa5f23d270ab83b0a210106aded28",
+      "fecha": "2026-10-08T18:26:27-05:00",
+      "revision": "2026-10-10",
+      "observacion_salud": "2026-10-10T13:05:05.086537Z",
+      "hash_previo": "ebe6cca7a903bb333678bd20ba5327d8fcb127f7"
     },
     {
       "repo": "AS_202620_ROUTB",
@@ -140,8 +143,11 @@
     {
       "repo": "AS_202620_Verifacts",
       "rama": "master",
-      "hash": "4f0652291c47f5093da1230b245a980614220e80",
-      "fecha": "2026-10-02T00:01:45-05:00"
+      "hash": "5c643bd03f19630d6459da79fb13fb2d5f943c7b",
+      "fecha": "2026-10-07T15:32:38-05:00",
+      "revision": "2026-10-10",
+      "observacion_salud": "2026-10-10T13:05:25Z",
+      "hash_previo": "4f0652291c47f5093da1230b245a980614220e80"
     },
     {
       "repo": "AS_202620_XALD",
@@ -153,5 +159,9 @@
   "nota": "Rubrica 5 criterios 0/0.60/0.80/1; sin nota final ni formula semanal",
   "sustentacion": "pendiente docente",
   "escenarios_no_acreditados": "No verificado",
-  "rama_revision": "revision/s9-final-s10-prelim-20261006"
+  "rama_revision": "revision/s10-delta-recobra-verifacts-20261010",
+  "equipos_revisados_en_esta_pasada": 2,
+  "ultima_revision_completa": "2026-10-06",
+  "deteccion_actividad": "2026-10-10T12:55:00Z",
+  "alcance": "Recobra y Verifacts reexaminados. Los otros 21 conservan la evaluación del 6 de octubre; sus ramas principales no cambiaron en la detección de actividad del 10. Se preserva la corrección documental de EnAgenda del 7."
 }
