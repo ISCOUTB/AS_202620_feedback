@@ -15,7 +15,7 @@
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 9 | S9 · definitiva | `master` · `4f0652291c47f5093da1230b245a980614220e80` · 2026-10-02T00:01:45-05:00 | 7/10 | 3.8 (propuesta al docente) | sí, 2026-10-06 |
-| 10 | Segundo corte · preliminar | `master` · `5c643bd03f19630d6459da79fb13fb2d5f943c7b` · 2026-10-07T15:32:38-05:00 | 4/12 de comprobación (sin PDF): 4 Cumple, 6 No cumple, 2 No verificado | C1/C2 pendientes; C3/C4 Básico (0,60 cada uno), propuestas al docente. Sin total; sustentación pendiente. Ver [S10](semana-10-corte2.md) | sí, avance 2026-10-10 |
+| 10 | Segundo corte · preliminar | `master` · `5c643bd03f19630d6459da79fb13fb2d5f943c7b` · 2026-10-07T15:32:38-05:00 | 3/12 de comprobación (sin PDF): 3 Cumple, 6 No cumple, 3 No verificado | C1/C2 pendientes; C3/C4 Básico (0,60 cada uno), propuestas al docente. Sin total; sustentación pendiente. Ver [S10](semana-10-corte2.md) | sí, avance 2026-10-10 |
 | 8 | S8 | `d2d7b5c` (2026-09-25T16:38:43-05:00) | 10/10 | 5.0 (provisional; 2 filas de despliegue pendientes) | sí (definitiva) |
 | 7 | S7 | `635f9b7` (2026-09-16T00:52:52-05:00) | 10/10 | 5.0 (auditada) | sí, auditada |
 | 6 | S6 | `5941c33` (2026-09-12T02:00:20-05:00) | 8/8 | 5.0 (prelim.) | si |
