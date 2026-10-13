@@ -31,11 +31,11 @@ Se valora el escenario documentado disponible; no se afirma asignación docente 
 | C2 · Decisión e implementación | Básico | 0,60 / 1,00 |
 | C3 · Operación, seguridad y observabilidad | Básico | 0,60 / 1,00 |
 | C4 · Evolución arquitectónica trazable | Básico | 0,60 / 1,00 |
-| C5 · Sustentación del reto | Pendiente docente | Pendiente |
+| C5 · Sustentación del reto | Calificación comunicada por el docente | 0,80 / 1,00 |
 
-**Subtotal técnico: 2,40 / 4,00. Total sobre 5,00 pendiente de C5.**
+**Subtotal técnico: 2,40 / 4,00. Total consolidado C1–C5: 3,20 / 5,00.**
 
-C5 sigue pendiente de calificación docente. No se registra como cero ni se estima a partir del repositorio.
+Calificación de sustentación comunicada por el docente: **4,00 / 5,00**, incorporada como **C5 = 0,80 / 1,00**. La conversión proporcional se conserva sin redondearla a los niveles de los criterios técnicos.
 
 Los componentes técnicos se publican como propuesta al docente. Publicar esta consolidación no acredita un registro de la calificación en Moodle.
 

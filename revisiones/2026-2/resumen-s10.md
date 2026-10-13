@@ -1,6 +1,6 @@
 # Resumen · S10 · Segundo corte consolidado
 
-**Actualización: 13 de octubre de 2026.** Se publican los comentarios y componentes técnicos de los 23 equipos y las 16 sustentaciones comunicadas por el docente. Los otros 7 equipos conservan C5 pendiente, sin asignarle cero ni escalar el subtotal técnico.
+**Actualización: 13 de octubre de 2026.** Se publican los comentarios y componentes técnicos de los 23 equipos y las 19 sustentaciones comunicadas por el docente. Los otros 4 equipos conservan C5 pendiente, sin asignarle cero ni escalar el subtotal técnico.
 
 El límite exclusivo es **2026-10-13T05:00:00Z**: se incluye hasta el **12 de octubre, 23:59:59, Colombia (UTC-5)**. Sustituye el cierre preliminar del 12 de octubre a las 05:00Z, que permanece identificado como histórico. Los 23 hashes se contrastaron con la rama principal y son anteriores al límite.
 
@@ -14,19 +14,19 @@ PDF excluidos, sin penalización; S9 no se modifica. C5 procede del docente, no 
 | Calificación automática (Quantia) | [S10](AS_202620_Sistema-de-calificacion-automatica/semana-10-corte2.md) | `85da6d3ab6ef882582839362b56981fa7cb53949` | 1,00 | 1,00 | 1,00 | 1,00 | 4,00 | 4,00 | 0,80 | 4,80 |
 | CampusMarket | [S10](AS_202620_PROYECTO_CAMPUSMARKET/semana-10-corte2.md) | `1582c1ff609202fa2cc4a06fa14d18b9b61bed74` | 1,00 | 1,00 | 1,00 | 1,00 | 4,00 | 4,00 | 0,80 | 4,80 |
 | Clubs UTB | [S10](AS_202620_Clubs_UTB/semana-10-corte2.md) | `cd0ad9c64925863ed5067ed53da7f3c6dcf09895` | 0,60 | 0,60 | 0,00 | 0,60 | 1,80 | 4,00 | 0,80 | 2,60 |
-| DinamikUTB | [S10](AS_202620_DinamikUTB/semana-10-corte2.md) | `5dc9acf9335fec70e274a2e5c494b3805b0e9646` | 0,60 | 0,60 | 0,60 | 0,60 | 2,40 | Pendiente | Pendiente | **Pendiente C5** |
+| DinamikUTB | [S10](AS_202620_DinamikUTB/semana-10-corte2.md) | `5dc9acf9335fec70e274a2e5c494b3805b0e9646` | 0,60 | 0,60 | 0,60 | 0,60 | 2,40 | 4,00 | 0,80 | 3,20 |
 | Drift | [S10](AS_202620_Drift/semana-10-corte2.md) | `04874b8744dfa345a7fa7e12775e629c410fc870` | 1,00 | 0,80 | 0,80 | 0,80 | 3,40 | 4,80 | 0,96 | 4,36 |
 | ElMapita | [S10](AS_202620_ElMapita/semana-10-corte2.md) | `f3bcfa83e80f5c8d0e30a01b656d89160c907d64` | 0,80 | 0,60 | 0,60 | 0,60 | 2,60 | 4,00 | 0,80 | 3,40 |
 | EnAgenda | [S10](AS_202620_EnAgenda/semana-10-corte2.md) | `4bec22f3821493014e8352ece8274bb2950e97db` | 0,60 | 0,60 | 0,60 | 0,60 | 2,40 | 4,20 | 0,84 | 3,24 |
 | GimnasioUTB | [S10](AS_202620_GimnasioUTB/semana-10-corte2.md) | `46742e5feaa3c8a06b7aebeb7a31fb93628e40b6` | 0,60 | 0,80 | 0,60 | 0,80 | 2,80 | 3,80 | 0,76 | 3,56 |
 | InvenTrack | [S10](AS_202620_InvenTrack/semana-10-corte2.md) | `539840be57f8a0b719bb33e19d05031489a25b86` | 0,60 | 0,80 | 0,80 | 0,60 | 2,80 | Pendiente | Pendiente | **Pendiente C5** |
 | LaPlacita | [S10](AS_202620_LaPlacita/semana-10-corte2.md) | `2c711d44b31a41a09306f7840da480a21e8c749a` | 0,80 | 0,60 | 0,80 | 0,60 | 2,80 | 4,00 | 0,80 | 3,60 |
-| LostVault | [S10](AS_202620_LostVault/semana-10-corte2.md) | `99fb413bda00c208ec42104dcfe6a4c189fbad77` | 0,60 | 0,60 | 0,60 | 0,60 | 2,40 | Pendiente | Pendiente | **Pendiente C5** |
+| LostVault | [S10](AS_202620_LostVault/semana-10-corte2.md) | `99fb413bda00c208ec42104dcfe6a4c189fbad77` | 0,60 | 0,60 | 0,60 | 0,60 | 2,40 | 4,00 | 0,80 | 3,20 |
 | mapsutb | [S10](AS_202620_mapsutb/semana-10-corte2.md) | `1b296a37c575a751e99df1a1b288d70efba03d56` | 0,60 | 0,80 | 0,60 | 0,60 | 2,60 | 4,00 | 0,80 | 3,40 |
 | PideUtb | [S10](AS_202620_PideUtb/semana-10-corte2.md) | `2497bfe7e0c7dc04e4cdf9b550254b9fd73df956` | 0,60 | 0,80 | 0,00 | 0,80 | 2,20 | Pendiente | Pendiente | **Pendiente C5** |
 | Recobra | [S10](AS_202620_Recobra/semana-10-corte2.md) | `eae8471c932f430d56b757dfb3e79e57a647f4b8` | 0,80 | 0,80 | 0,80 | 1,00 | 3,40 | 4,00 | 0,80 | 4,20 |
 | ROUTB | [S10](AS_202620_ROUTB/semana-10-corte2.md) | `adde017b72d73f210eef6cb48d97cdf1687f5141` | 0,80 | 0,80 | 0,80 | 0,80 | 3,20 | 4,00 | 0,80 | 4,00 |
-| ShareU | [S10](AS_202620_ShareU/semana-10-corte2.md) | `39508608eae4c1a56a5e4fc11a055bf6afb2c003` | 0,60 | 0,60 | 0,60 | 0,60 | 2,40 | Pendiente | Pendiente | **Pendiente C5** |
+| ShareU | [S10](AS_202620_ShareU/semana-10-corte2.md) | `39508608eae4c1a56a5e4fc11a055bf6afb2c003` | 0,60 | 0,60 | 0,60 | 0,60 | 2,40 | 4,00 | 0,80 | 3,20 |
 | TAIA | [S10](AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/semana-10-corte2.md) | `72a8b6a0b3680a59c235f9225f90bc260093d86b` | 0,80 | 0,80 | 0,60 | 0,60 | 2,80 | 4,00 | 0,80 | 3,60 |
 | Tienda virtual UTB | [S10](AS_202620_TIENDA-VIRTUAL-UTB/semana-10-corte2.md) | `76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33` | 0,60 | 0,60 | 0,60 | 0,60 | 2,40 | 4,00 | 0,80 | 3,20 |
 | uniTeam | [S10](AS_202620_uniTeam/semana-10-corte2.md) | `6e04b35317a0a68d239ae85c71cd60e21982b195` | 0,80 | 0,80 | 0,60 | 0,60 | 2,80 | 4,50 | 0,90 | 3,70 |

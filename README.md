@@ -203,7 +203,7 @@ Los **resúmenes** de cada semana, con el recuento y la nota sugerida de los 23 
 [S7](revisiones/2026-2/resumen-s7.md), [S8](revisiones/2026-2/resumen-s8.md),
 [S9 definitiva](revisiones/2026-2/resumen-s9.md) y [S10 / CORTE2 consolidado](revisiones/2026-2/resumen-s10.md).
 
-**Feedback S10 consolidado el 13 de octubre de 2026:** se publican comentarios y componentes técnicos de los 23 equipos, con 16 sustentaciones comunicadas por el docente y 7 pendientes. El [resumen S10](revisiones/2026-2/resumen-s10.md) distingue subtotal técnico /4, C5 docente /1 y total /5 cuando está completo.
+**Feedback S10 consolidado el 13 de octubre de 2026:** se publican comentarios y componentes técnicos de los 23 equipos, con 19 sustentaciones comunicadas por el docente y 4 pendientes. El [resumen S10](revisiones/2026-2/resumen-s10.md) distingue subtotal técnico /4, C5 docente /1 y total /5 cuando está completo.
 
 La auditoría de [deriva arquitectónica](revisiones/2026-2/resumen-s10.md#deriva-arquitectónica-de-los-23-equipos) contrasta documentación e implementación al cierre: **36 hallazgos en 18 equipos** y **5 sin deriva material observada**. Cada equipo tiene evidencia, alcance y correcciones propuestas en su informe, planilla y feedback.
 
