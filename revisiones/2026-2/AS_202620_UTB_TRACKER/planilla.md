@@ -10,14 +10,14 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_UTB_TRACKER` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Joriel Samir Barros Pena (sin cuentas en el historial) · Geronimo Alberto Cadena Garcia (sin cuentas) · Sebastian Garcia Devoz (firma con dos identidades de git, mismo correo, más el correo institucional) · Mateo Alfonso Millan Barraza (sin cuentas); ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | URL pública vigente no localizada; despliegue No verificado. Ver [S10](semana-10-corte2.md). |
-| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
+| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 9 | S9 · definitiva | `main` · `ae526db29b4f2d1f5981536e18438f9a62b1516d` · 2026-09-25T11:36:43-05:00 | 1/10 | 1.4 (propuesta al docente) | sí, 2026-10-06 |
-| 10 | Segundo corte · preliminar | `main` · `d17c9eb241e56755d48b022dc00ddb865e40c391` · 2026-10-06T01:08:05-05:00 | 2/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
+| 10 | Segundo corte · consolidado al cierre | `main` · `d17c9eb241e56755d48b022dc00ddb865e40c391` · 2026-10-06T01:08:05-05:00 | C1 0,60; C2 0,60; C3 0,00; C4 0,60 (cada uno /1) | Total 2,60/5; técnica 1,80/4 + C5 docente 0,80/1; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
 | 1 | S1 | `(sin commits)` () | sin actividad | no aplica | si |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `0a23855` · 2026-08-16T20:05:46-05:00 | 6/9 | 3.7 (propuesta) | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `5f923cd` · 2026-08-23T22:40:51-05:00 | 7/9 | no se publica | sí |
@@ -36,6 +36,35 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 17 | Aplicación de cambios y cierre arquitectónico | | | | |
 
 S8 se califica sobre 10 filas graduables. Quedan **pendientes de calificar** las dos filas de despliegue («URL del sistema accesible desde fuera de la red de la universidad» y «Health check consultable»): la URL se entrega por Moodle y no está disponible en esta pasada.
+
+## Feedback S10 vigente · 13 de octubre de 2026
+
+Límite exclusivo: **2026-10-13T05:00:00Z**, fin del 12 de octubre en Colombia. Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
+
+**Subtotal técnico: 1,80 / 4,00. Total consolidado C1–C5: 2,60 / 5,00.**
+
+Calificación de sustentación comunicada por el docente: **4,00 / 5,00**, incorporada como **C5 = 0,80 / 1,00**. La conversión proporcional se conserva sin redondearla a los niveles de los criterios técnicos.
+
+El escenario está formulado, sin línea base ni resultado numérico reproducible. La integración y autenticación son parciales y no hay ADR del nuevo cambio. No se instrumentan la métrica del escenario ni logs estructurados; el despliegue sigue como plantilla.
+
+Fuentes y alcance completos: [informe S10](semana-10-corte2.md#fundamento-técnico-y-comentarios-vigentes). Las referencias de identidad, contribución y despliegue heredadas conservan sus fechas originales; no constituyen una nueva verificación en esta consolidación.
+
+### Deriva arquitectónica al cierre S10
+
+Autorización desconectada; concurrencia y guía de persistencia divergentes.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+- **Alta · La seguridad declarada no está conectada al camino de escritura y gestión de usuarios:** Quien alcance estas rutas de la aplicación puede invocar creación de recursos/préstamos y gestión de usuarios sin verificación de identidad/rol en el código. Es de alta prioridad por integridad y datos; no se verificó publicación ni explotación remota. Además, el camino de login no llega al servicio por sombreado del nombre. **Acción:** Conectar una dependencia de identidad y otra de roles en rutas protegidas; derivar usuario desde el token cuando corresponda. Renombrar handler/servicio de login para evitar sombreado, verificar hashes con bcrypt y añadir pruebas 401/403. No se afirma cómo están almacenadas contraseñas reales: únicamente ausencia de hash/verificación en esta cadena. [Contraste y evidencia](semana-10-corte2.md#deriva-d1).
+- **Media · La exclusión de dos préstamos activos está validada antes de escribir, sin arbitraje atómico:** En una ejecución concurrente dos transacciones pueden leer disponible antes de que alguna actualice; no se ve bloqueo de fila, actualización condicional ni restricción única de préstamo activo. El test secuencial no demuestra la garantía nunca dos préstamos. No se observó un duplicado real. **Acción:** Proteger la decisión con UPDATE condicional y chequeo de filas afectadas o bloqueo transaccional apropiado a PostgreSQL; sumar restricción de unicidad activa donde aplique y prueba concurrente. Mantener 409 como rechazo de la operación perdedora. [Contraste y evidencia](semana-10-corte2.md#deriva-d2).
+- **Media · El arranque de persistencia ya requiere configuración aunque README promete SQLite automático:** Un clon sin DATABASE_URL no sigue el recorrido local prometido: la lectura obligatoria de la variable ocurre al importar la configuración. Esto afecta reproducibilidad del despliegue de desarrollo; no es prueba de indisponibilidad remota. **Acción:** Actualizar el contrato operativo a DATABASE_URL obligatoria y dar plantilla sin secretos, o recuperar fallback explícito y seguro solo en desarrollo. Mantener Alembic como deuda aceptada, sin presentarlo ya implementado. [Contraste y evidencia](semana-10-corte2.md#deriva-d3).
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Seguimiento anterior a la consolidación S10; estados históricos superados</summary>
+
+**Historial superado por la consolidación del 13 de octubre de 2026.** Se conserva lo publicado como registro de las observaciones de cada fecha, no como la evaluación vigente. El cierre preliminar 2026-10-12T05:00:00Z que aparece abajo fue sustituido para S10 por el límite exclusivo 2026-10-13T05:00:00Z. Las notas parciales, pendientes de sustentación y bloqueos por asignación del escenario de ese historial no reemplazan la tabla actual.
 
 ## Lo que se arrastra
 
@@ -148,3 +177,5 @@ Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
 - ¿Cómo evitarían dos préstamos simultáneos del mismo recurso y qué prueba o métrica evidencia que el control funciona?
 - ¿Qué servidor y base de datos sostienen el despliegue y cuál es su costo mensual y límite de capacidad?
 - ¿Qué decisión cambiarían después de comparar la línea base con el experimento del escenario asignado?
+
+</details>

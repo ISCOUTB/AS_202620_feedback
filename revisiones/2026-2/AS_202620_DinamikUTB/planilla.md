@@ -8,14 +8,14 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_DinamikUTB` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Luis Daniel Padilla Leottau (`Daniel-dev02`) · Gillianis Del Carmen Perez Revolledo (`gillianisperez-prog`) · Esteban Ramirez Rios (`Eramirezr`) · Juan Jose Vargas Perez (`JuanchisV`, firma también como «Juan José Vargas Pérez» con el mismo correo); ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | https://dinamikutb-api.onrender.com · ver comprobación y límites en S10 |
-| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
+| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 9 | S9 · definitiva | `master` · `2326dd7f9d4dda08ba557ea6602b0a7085c97bee` · 2026-10-04T21:47:16-05:00 | 5/10 | 3.0 (propuesta al docente) | sí, 2026-10-06 |
-| 10 | Segundo corte · preliminar | `master` · `5dc9acf9335fec70e274a2e5c494b3805b0e9646` · 2026-10-05T22:06:45-05:00 | 3/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
+| 10 | Segundo corte · consolidado al cierre | `master` · `5dc9acf9335fec70e274a2e5c494b3805b0e9646` · 2026-10-05T22:06:45-05:00 | C1 0,60; C2 0,60; C3 0,60; C4 0,60 (cada uno /1) | Técnica 2,40/4; C5 pendiente; sin total /5; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
 | 8 | S8 | `287c65d` (2026-09-27T23:57:31-05:00) | 10/10 | 5.0 (prop. prov.; 2 filas de despliegue diferidas) | sí |
 | 7 | S7 | `5e6fa73` (2026-09-20T23:57:27-05:00) | 10/10 | 5.0 | si |
 | 6 | S6 | `265e652` (2026-09-13T23:29:49-05:00) | 0/8 | 1.0 | si |
@@ -24,6 +24,33 @@
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `769f970` · 2026-08-09T21:24:49-05:00 | 7/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `58734e1c` · 2026-08-16T23:33:53-05:00 | 9/9 | no se publica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `fe52ab594` · 2026-08-23T23:20:33-05:00 | 5/9 | no se publica | sí (actualizada tras el cierre) |
+
+## Feedback S10 vigente · 13 de octubre de 2026
+
+Límite exclusivo: **2026-10-13T05:00:00Z**, fin del 12 de octubre en Colombia. Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
+
+**Subtotal técnico: 2,40 / 4,00. Total sobre 5,00 pendiente de C5.**
+
+C5 sigue pendiente de calificación docente. No se registra como cero ni se estima a partir del repositorio.
+
+El resultado declarado de 20/20 no coincide con el CI fallido y no constituye una línea base operacional. Hay health check, JSON y métricas, pero las cadenas arquitectónicas están incompletas y algunos controles documentados no están implementados.
+
+Fuentes y alcance completos: [informe S10](semana-10-corte2.md#fundamento-técnico-y-comentarios-vigentes). Las referencias de identidad, contribución y despliegue heredadas conservan sus fechas originales; no constituyen una nueva verificación en esta consolidación.
+
+### Deriva arquitectónica al cierre S10
+
+C4 no distingue SQLite local de PostgreSQL desplegado.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+- **Baja · C4 muestra SQLite sin distinguir PostgreSQL del ambiente desplegado:** Puede inducir una configuración de almacenamiento equivocada si C4 se lee de forma aislada. **Acción:** Separar en C4 SQLite local y PostgreSQL desplegado y marcar como previstos los módulos sin implementación. Conservar ADR3 como historia y enlazar ADR7 vigente. [Contraste y evidencia](semana-10-corte2.md#deriva-d1).
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Seguimiento anterior a la consolidación S10; estados históricos superados</summary>
+
+**Historial superado por la consolidación del 13 de octubre de 2026.** Se conserva lo publicado como registro de las observaciones de cada fecha, no como la evaluación vigente. El cierre preliminar 2026-10-12T05:00:00Z que aparece abajo fue sustituido para S10 por el límite exclusivo 2026-10-13T05:00:00Z. Las notas parciales, pendientes de sustentación y bloqueos por asignación del escenario de ese historial no reemplazan la tabla actual.
 
 ## Lo que se arrastra
 
@@ -135,3 +162,5 @@ Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
 - ¿Qué sucede con Q-01 y /health si Render pierde PostgreSQL o expira la instancia, y cómo demostrarían recuperación sin datos reales?
 - ¿Cuál es la fecha concreta de expiración de la base gratuita y qué opción conserva datos dentro del presupuesto?
 - ¿Qué cambiarían en la estrategia de pruebas al descubrir que contar 20 casos no garantiza un run verde ni cubre autorización?
+
+</details>

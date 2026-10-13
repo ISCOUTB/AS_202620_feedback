@@ -1,3 +1,220 @@
+# Segundo corte · S10 · ElMapita · consolidación al cierre
+
+**Actualización del feedback: 13 de octubre de 2026.** La tabla siguiente sustituye la valoración preliminar conservada al final.
+
+| Campo | Valor |
+|---|---|
+| Repositorio | https://github.com/ISCOUTB/AS_202620_ElMapita |
+| Rama evaluada | `main` |
+| Hash calificado | `f3bcfa83e80f5c8d0e30a01b656d89160c907d64` |
+| Fecha del commit | 2026-10-04T21:11:20-06:00 |
+| Límite exclusivo S10 | `2026-10-13T05:00:00Z` |
+| Último instante incluido | 12 de octubre de 2026, 23:59:59, Colombia (UTC-5) |
+
+## Alcance vigente
+
+Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
+
+Los PDF están excluidos sin penalización. No se ejecutó código estudiantil en la revisión. Las cifras y experimentos documentados por los equipos se distinguen de las comprobaciones del revisor; esta publicación consolida la evaluación ya realizada y no representa una nueva prueba de flujo principal, despliegue, carga o seguridad. La lista de comprobación y la matriz transversal de las pasadas anteriores se conservan abajo con su alcance histórico; no se recalculan ni se convierten en una nota mediante la fórmula semanal. S9 permanece congelada.
+
+## Escenario documentado
+
+EC-04: mapa offline con caché
+
+Se valora el escenario documentado disponible; no se afirma asignación docente verificada ni nueva entrega específica S10. Evidencias previas se usan como estado del repositorio, no se traslada ni promedia su nota anterior.
+
+## Rúbrica consolidada
+
+| Criterio | Nivel técnico / origen | Puntaje |
+|---|---|---:|
+| C1 · Caracterización del escenario operativo | Competente | 0,80 / 1,00 |
+| C2 · Decisión e implementación | Básico | 0,60 / 1,00 |
+| C3 · Operación, seguridad y observabilidad | Básico | 0,60 / 1,00 |
+| C4 · Evolución arquitectónica trazable | Básico | 0,60 / 1,00 |
+| C5 · Sustentación del reto | Calificación comunicada por el docente | 0,80 / 1,00 |
+
+**Subtotal técnico: 2,60 / 4,00. Total consolidado C1–C5: 3,40 / 5,00.**
+
+Calificación de sustentación comunicada por el docente: **4,00 / 5,00**, incorporada como **C5 = 0,80 / 1,00**. La conversión proporcional se conserva sin redondearla a los niveles de los criterios técnicos.
+
+Los componentes técnicos se publican como propuesta al docente. Publicar esta consolidación no acredita un registro de la calificación en Moodle.
+
+## Fundamento técnico y comentarios vigentes
+
+La caracterización se apoya en un estado inicial negativo de 0/20, con control online y procedimiento. Ese resultado no se interpreta como cumplimiento del comportamiento offline. La respuesta offline y la coherencia documental siguen incompletas.
+
+Los puntajes C1–C4 se conservan de la evaluación consolidada; el comentario y las fuentes siguientes sustentan la valoración conjunta, sin inferir puntajes nuevos de los recuentos preliminares.
+
+### Fuentes del estado calificado
+
+1. [docs/evidencia/s9-ec04-offline-dispositivo.txt:1–31](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/evidencia/s9-ec04-offline-dispositivo.txt#L1-L31)
+2. [docs/aspectos.md:3–8](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/aspectos.md#L3-L8)
+3. [backend/src/modules/ubicacion/interfaces/ubicacion.controller.ts:12–24](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/modules/ubicacion/interfaces/ubicacion.controller.ts#L12-L24)
+
+## Deriva arquitectónica al cierre S10
+
+Auditoría estática de la arquitectura declarada frente a las rutas implementadas en el mismo hash del cierre S10. Se revisaron capas y dominio, persistencia, API y autorización, despliegue, asincronía y observabilidad. Se excluyeron PDF y commits posteriores al cierre; no se ejecutó código estudiantil ni se probó el servicio remoto. Una funcionalidad futura explícitamente delimitada o una deuda aceptada por un ADR vigente no se cuenta por sí sola como deriva. La gravedad indica prioridad técnica del hallazgo; no equivale a un descuento automático en la rúbrica. Los hallazgos se incorporan como feedback y propuestas de corrección; los puntajes C1–C4 conservan la matriz técnica vigente, sin recalificación por esta auditoría.
+
+**Resultado:** Cuatro brechas concretas, una alta: autorización de escritura; además ruta de ubicación mal conectada, recuperación offline incompleta y dependencia de adaptadores concretos. Se respetó ADR5/6 vigente y no se trató Supabase Realtime pendiente como mensajería ya obligatoria.
+
+**Arquitectura declarada:** Monolito modular NestJS/Flutter, Supabase aislado por adaptadores, RBAC JWT, caché dos niveles y ubicación con precisión/fallback; ADR5 mantiene DEC01-06.
+
+**Arquitectura implementada:** Módulos Nest inyectan repositorios Supabase y cliente service-role; frontend auth directo permitido; Flutter Mapas usa API/cache concretos. Backend current sigue caso sin filtro; caché binaria solo tras metadatos online.
+
+**Hallazgos materiales: 4.** Prioridad máxima: **Alta**.
+
+<a id="deriva-d1"></a>
+
+### D1 · La escritura de POIs anunciada como admin no atraviesa autorización
+
+**Naturaleza:** implementación. **Prioridad:** Alta. **Confianza:** Alta sobre el código y la documentación al hash; no acredita comportamiento del despliegue..
+
+**Motivo de prioridad:** Se trata de una frontera de seguridad en una operación de escritura con credencial de servicio, no solo de una anotación ausente.
+
+**Declaración contrastada:**
+
+- [docs/c4/C4_L2_Container.md:16–17](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/c4/C4_L2_Container.md#L16-L17) — C4 describe al backend como monolito REST con RBAC JWT y al cliente con caché/fallback de ubicación.
+- [docs/c4/C4_L2_Container.md:41–43](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/c4/C4_L2_Container.md#L41-L43) — C4 asigna al backend validación JWT/roles, CRUD geoespacial y operaciones administrativas de almacenamiento.
+
+**Implementación contrastada:**
+
+- [backend/src/modules/pois/interfaces/pois.controller.ts:43–49](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/modules/pois/interfaces/pois.controller.ts#L43-L49) — El POST descrito como Crear nuevo POI (admin) envía directamente el body al caso de uso sin guard visible.
+- [backend/src/modules/pois/application/use-cases.ts:64–81](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/modules/pois/application/use-cases.ts#L64-L81) — CreatePoiUseCase construye la entidad y llama poiRepository.save sin recibir ni comprobar identidad del solicitante.
+- [backend/src/modules/pois/infrastructure/supabase-poi-repository.ts:68–84](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/modules/pois/infrastructure/supabase-poi-repository.ts#L68-L84) — SupabasePoiRepository.save ejecuta upsert en pois y devuelve el registro obtenido.
+- [backend/src/shared/supabase/client.ts:9–24](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/shared/supabase/client.ts#L9-L24) — El cliente compartido se construye con SUPABASE_SERVICE_ROLE_KEY y no persiste sesión.
+- [backend/src/main.ts:7–24](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/main.ts#L7-L24) — El bootstrap configura logger, prefijo, CORS y ValidationPipe, sin registrar guard global.
+- [backend/src/app.module.ts:11–23](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/app.module.ts#L11-L23) — AppModule importa módulos de features y declara providers vacío, sin guard global en este bloque.
+- [backend/src/modules/pois/pois.module.ts:11–24](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/modules/pois/pois.module.ts#L11-L24) — PoisModule inyecta SupabasePoiRepository como PoiRepository y no registra un guard en sus providers.
+
+**Efecto y alcance:** Si la API está expuesta con la configuración prevista, el código no exige identidad/rol antes de solicitar un upsert. No se afirma explotación ni éxito contra una BD real.
+
+**Corrección propuesta:** Añadir guard JWT validado y guard de rol admin en la entrada, pasar identidad al caso de uso y verificar 401/403 y ausencia de escritura con pruebas. Revisar también las operaciones administrativas de Auth. Swagger addBearerAuth no aplica autorización.
+
+<a id="deriva-d2"></a>
+
+### D2 · La ruta real de ubicación omite el caso de uso que filtra precisión y timeout
+
+**Naturaleza:** implementación. **Prioridad:** Media. **Confianza:** Alta sobre el código y la documentación al hash; no acredita comportamiento del despliegue..
+
+**Motivo de prioridad:** Existe una política/caso validado, pero la ruta pública sigue usando el caso anterior; es un defecto de cableado verificable.
+
+**Declaración contrastada:**
+
+- [docs/arc42/arc42-template-EN.md:535–536](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/arc42/arc42-template-EN.md#L535-L536) — DEC04 exige recuperación offline y DEC05 rechazo de precisión superior a 15 m con fallback tras timeout.
+- [docs/c4/C4_L3_Component_Backend.md:29–32](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/c4/C4_L3_Component_Backend.md#L29-L32) — C4 atribuye al servicio de Ubicación control del margen GPS y al adaptador conexión con sensores del teléfono.
+
+**Implementación contrastada:**
+
+- [backend/src/modules/ubicacion/interfaces/ubicacion.controller.ts:13–24](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/modules/ubicacion/interfaces/ubicacion.controller.ts#L13-L24) — UbicacionController inyecta GetCurrentLocationUseCase y lo ejecuta en GET current.
+- [backend/src/modules/ubicacion/application/use-cases.ts:18–26](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/modules/ubicacion/application/use-cases.ts#L18-L26) — GetCurrentLocationUseCase devuelve el resultado del proveedor sin filtro de precisión ni timeout.
+- [backend/src/modules/ubicacion/ubicacion.module.ts:16–27](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/modules/ubicacion/ubicacion.module.ts#L16-L27) — UbicacionModule registra ambos casos de uso, pero selecciona PlatformLocationAdapter fuera de test.
+- [backend/src/modules/ubicacion/infrastructure/platform/location-adapter.ts:4–14](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/modules/ubicacion/infrastructure/platform/location-adapter.ts#L4-L14) — PlatformLocationAdapter devuelve coordenadas 0,0, precisión 999 y source gps como datos fijos.
+- [backend/src/modules/ubicacion/application/get-validated-location.use-case.ts:25–40](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/modules/ubicacion/application/get-validated-location.use-case.ts#L25-L40) — GetValidatedLocationUseCase aplica carrera contra timeout, evalúa precisión y devuelve rechazo ante errores.
+
+**Efecto y alcance:** GET current puede entregar la ubicación ficticia de precisión 999 m en vez del veredicto de fallback. No se atribuye ese resultado al GPS físico de Flutter.
+
+**Corrección propuesta:** Conectar la entrada HTTP a GetValidatedLocationUseCase o retirar/etiquetar ese endpoint como simulación de servidor. Definir claramente que el GPS real vive en el móvil; añadir prueba de integración router→provider impreciso/timeout.
+
+<a id="deriva-d3"></a>
+
+### D3 · La recuperación offline documentada queda detrás de una llamada de red obligatoria
+
+**Naturaleza:** implementación. **Prioridad:** Media. **Confianza:** Alta sobre el código y la documentación al hash; no acredita comportamiento del despliegue..
+
+**Motivo de prioridad:** La caché binaria existe, pero el orden de llamadas impide alcanzarla cuando falla la consulta de metadatos.
+
+**Declaración contrastada:**
+
+- [docs/arc42/arc42-template-EN.md:465–472](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/arc42/arc42-template-EN.md#L465-L472) — arc42 describe recuperar escena de caché, emitir MapLoadedOffline y mostrar mapa utilizable sin conexión.
+- [docs/c4/C4_L2_Container.md:64–66](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/c4/C4_L2_Container.md#L64-L66) — C4 afirma desacoplo Supabase y recuperación offline mediante Hive/Filesystem versionados.
+
+**Implementación contrastada:**
+
+- [frontend/lib/features/mapas/application/load_building_use_case.dart:18–37](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/frontend/lib/features/mapas/application/load_building_use_case.dart#L18-L37) — LoadBuildingUseCase retorna Left cuando falla la API antes de llamar getOrDownloadModel.
+- [frontend/lib/features/mapas/infrastructure/storage/model_cache.dart:21–33](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/frontend/lib/features/mapas/infrastructure/storage/model_cache.dart#L21-L33) — ModelCache reutiliza la ruta almacenada o descarga el modelo si no está en caché.
+- [frontend/lib/core/di/injector.dart:46–55](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/frontend/lib/core/di/injector.dart#L46-L55) — DI conecta MapasApi y ModelCache concretos con LoadBuildingUseCase y este con MapasBloc.
+
+**Efecto y alcance:** LoadBuildingUseCase retorna error antes de consultar ModelCache ante fallo de API, por lo que una caché caliente no basta para el modo offline descrito.
+
+**Corrección propuesta:** Persistir metadatos/versiones junto al binario y resolverlos desde caché al fallar la red; emitir estado offline explícito y probar caché válida sin backend. La evidencia S9 ya caracteriza la carencia; no se vende como una regresión nueva.
+
+<a id="deriva-d4"></a>
+
+### D4 · LoadBuildingUseCase depende de adaptadores concretos pese a la regla de interfaces
+
+**Naturaleza:** implementación. **Prioridad:** Media. **Confianza:** Alta sobre el código y la documentación al hash; no acredita comportamiento del despliegue..
+
+**Motivo de prioridad:** ADR5 mantiene la regla de aplicación dependiente de interfaces; no se exige pureza hexagonal genérica.
+
+**Declaración contrastada:**
+
+- [docs/adr/0005-reemplazo-adr-0001-estilo-arquitectonico.md:19–28](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/adr/0005-reemplazo-adr-0001-estilo-arquitectonico.md#L19-L28) — ADR5 mantiene las decisiones DEC01-06 y remite al contenido de ADR1 con referencias actualizadas.
+- [docs/adr/0001-estilo-arquitectonico-propuesto.md:133–140](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/adr/0001-estilo-arquitectonico-propuesto.md#L133-L140) — La regla de límites exige application dependiente de dominio e interfaces, no implementaciones concretas.
+
+**Implementación contrastada:**
+
+- [frontend/lib/features/mapas/application/load_building_use_case.dart:3–16](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/frontend/lib/features/mapas/application/load_building_use_case.dart#L3-L16) — LoadBuildingUseCase importa MapasApi y ModelCache concretos y los exige como tipos de constructor.
+- [frontend/lib/core/di/injector.dart:46–52](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/frontend/lib/core/di/injector.dart#L46-L52) — DI registra MapasApi/ModelCache e inyecta ambas implementaciones directamente en el caso de uso.
+
+**Efecto y alcance:** Cambiar API/cache puede requerir editar el caso de uso y sus pruebas en lugar de sustituir implementaciones detrás de puertos.
+
+**Corrección propuesta:** Definir puertos de consulta de edificios y caché en dominio/aplicación; inyectar implementaciones MapasApi y ModelCache desde DI. Alternativamente aprobar y documentar el acoplamiento pragmático, sin seguir afirmando solo interfaces.
+
+### Cobertura y límites de la auditoría
+
+**Capas y dominio:** Mapas backend usa tokens de repositorio; aplicación Flutter depende de adaptadores concretos. No se calificó uso de Nest en aplicación por sí solo como erosión.
+
+Límite: Inspección estática; no se ejecutaron pruebas ni se comprobó el servicio remoto.
+
+- [backend/src/modules/mapas/mapas.module.ts:18–35](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/modules/mapas/mapas.module.ts#L18-L35) — MapasModule vincula los tokens BuildingRepository, FloorRepository y Model3DStorage a adaptadores Supabase.
+- [backend/src/modules/mapas/application/use-cases.ts:28–51](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/modules/mapas/application/use-cases.ts#L28-L51) — GetBuildingUseCase recibe repositorios por tokens, consulta edificio/pisos y solicita una URL firmada.
+- [frontend/lib/features/mapas/application/load_building_use_case.dart:3–16](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/frontend/lib/features/mapas/application/load_building_use_case.dart#L3-L16) — LoadBuildingUseCase importa MapasApi y ModelCache concretos y los exige como tipos de constructor.
+
+**Persistencia:** Supabase repositorios y storage tras DI; Hive/archivo de modelos en frontend. Upsert de POIs rastreado.
+
+Límite: Inspección estática; no se ejecutaron pruebas ni se comprobó el servicio remoto.
+
+- [backend/src/modules/pois/infrastructure/supabase-poi-repository.ts:68–84](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/modules/pois/infrastructure/supabase-poi-repository.ts#L68-L84) — SupabasePoiRepository.save ejecuta upsert en pois y devuelve el registro obtenido.
+- [frontend/lib/features/mapas/infrastructure/storage/model_cache.dart:41–61](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/frontend/lib/features/mapas/infrastructure/storage/model_cache.dart#L41-L61) — ModelCache descarga el binario a un archivo versionado y registra su ruta en almacenamiento local.
+
+**API y autorización:** Contrato REST y bootstrap; búsqueda de guards en backend/src y revisión main/AppModule/PoisModule no muestran aplicación de guard a POST POIs. Auth frontend directa está permitida por C4.
+
+Límite: Inspección estática; no se ejecutaron pruebas ni se comprobó el servicio remoto.
+
+- [backend/src/main.ts:7–36](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/main.ts#L7-L36) — El bootstrap instala logger, CORS y validación global; addBearerAuth configura Swagger, sin aplicar un guard.
+- [backend/src/app.module.ts:11–23](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/app.module.ts#L11-L23) — AppModule importa módulos de features y declara providers vacío, sin guard global en este bloque.
+- [docs/c4/C4_L2_Container.md:33–41](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/c4/C4_L2_Container.md#L33-L41) — C4 permite autenticación directa opcional con Supabase y dibuja llamadas REST/Realtime del cliente.
+- [frontend/lib/features/auth/infrastructure/supabase_auth_client.dart:15–21](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/frontend/lib/features/auth/infrastructure/supabase_auth_client.dart#L15-L21) — El adaptador Flutter de auth llama signInWithPassword directamente mediante Supabase SDK.
+
+**Despliegue:** Render Docker con health y variables de entorno; no se comprobó estado remoto ni credenciales.
+
+Límite: Inspección estática; no se ejecutaron pruebas ni se comprobó el servicio remoto.
+
+- [render.yaml:10–30](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/render.yaml#L10-L30) — render.yaml define un servicio Docker con /health y variables de Supabase inyectadas por el entorno.
+
+**Asincronía:** REST, promesas de I/O y timeout de ubicación; Realtime declarado deuda en decisión de contrato, no se considera incumplimiento de broker.
+
+Límite: Inspección estática; no se ejecutaron pruebas ni se comprobó el servicio remoto.
+
+- [docs/arc42/arc42-template-EN.md:538–539](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/arc42/arc42-template-EN.md#L538-L539) — arc42 declara Realtime como deuda, REST como integración actual y Render con logs/métricas como despliegue elegido.
+- [backend/src/modules/ubicacion/application/get-validated-location.use-case.ts:25–40](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/modules/ubicacion/application/get-validated-location.use-case.ts#L25-L40) — GetValidatedLocationUseCase aplica carrera contra timeout, evalúa precisión y devuelve rechazo ante errores.
+
+**Observabilidad:** Interceptor de histograma registra éxitos y excepciones; main instala logger. No se midieron p95 ni FPS.
+
+Límite: Inspección estática; no se ejecutaron pruebas ni se comprobó el servicio remoto.
+
+- [backend/src/shared/observability/http-metrics.interceptor.ts:31–49](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/shared/observability/http-metrics.interceptor.ts#L31-L49) — El interceptor observa duración/status tanto en respuestas satisfactorias como en excepciones.
+- [backend/src/main.ts:7–9](https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/main.ts#L7-L9) — NestFactory crea AppModule y conecta el logger de la aplicación.
+
+## Estado global del proyecto (overall)
+
+La verificación de metadatos del 2026-10-13T16:45:53.951346+00:00 confirmó el hash anterior como último commit de `main` antes del límite exclusivo. La punta observada es [`f3bcfa83e80f5c8d0e30a01b656d89160c907d64`](https://github.com/ISCOUTB/AS_202620_ElMapita/commit/f3bcfa83e80f5c8d0e30a01b656d89160c907d64) (2026-10-04T21:11:20-06:00). Coincide con el estado calificado; no hay commits posteriores al cierre en esa rama al momento de la comprobación.
+
+<details>
+<summary>Historial S10 anterior, superado; conservar fechas y alcance originales</summary>
+
+**Historial superado por la consolidación del 13 de octubre de 2026.** Se conserva lo publicado como registro de las observaciones de cada fecha, no como la evaluación vigente. El cierre preliminar 2026-10-12T05:00:00Z que aparece abajo fue sustituido para S10 por el límite exclusivo 2026-10-13T05:00:00Z. Las notas parciales, pendientes de sustentación y bloqueos por asignación del escenario de ese historial no reemplazan la tabla actual.
+
 # Segundo corte S10 · avance preliminar · ElMapita
 
 **Preliminar, no es cierre ni calificación final.** Cierre previsto: **2026-10-12T05:00:00Z**.
@@ -93,3 +310,5 @@ El delta S9 contiene 9 commits respecto de S8; hay 0 commits posteriores a S9 en
 1. ¿Qué recibe hoy el usuario si GPS entrega 999 m y por qué el controlador no llama al validador nuevo?
 2. ¿Qué costo de almacenamiento/egreso tendría descargar modelos sin caché y qué supuesto cambia al habilitar modo offline real?
 3. Las pruebas detectaron HTTP500 y 0/20 offline: ¿qué cambiarían primero y cómo evitarían medir un placeholder como si fuera el mapa3D?
+
+</details>

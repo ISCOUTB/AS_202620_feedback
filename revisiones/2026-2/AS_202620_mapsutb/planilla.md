@@ -8,14 +8,14 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_mapsutb` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Carlos Alberto Galvis Zuluaga · Carlos David Manrique Fals · Nerlis Nikol Otero Perez · Isabel Sofia Paez Matallana — cuentas observadas en el historial: `charlygz21`, `nerlis-otero`, `CarlosManrique-1397`, `i-matallana` (correspondencias por confirmar con el docente); ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | https://mapsutb.web.app/ · ver comprobación y límites en S10 |
-| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
+| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 9 | S9 · definitiva | `master` · `1b296a37c575a751e99df1a1b288d70efba03d56` · 2026-10-02T12:58:33-05:00 | 8/10 | Pendiente por limitación de verificación; intervalo documental 4.2–4.6, sin descontar la comprobación bloqueada | sí, 2026-10-06 |
-| 10 | Segundo corte · preliminar | `master` · `1b296a37c575a751e99df1a1b288d70efba03d56` · 2026-10-02T12:58:33-05:00 | 2/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
+| 10 | Segundo corte · consolidado al cierre | `master` · `1b296a37c575a751e99df1a1b288d70efba03d56` · 2026-10-02T12:58:33-05:00 | C1 0,60; C2 0,80; C3 0,60; C4 0,60 (cada uno /1) | Total 3,40/5; técnica 2,60/4 + C5 docente 0,80/1; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `7e56ad3` · 2026-08-09T23:27:46-05:00 | 5/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `1cf1576` · 2026-08-16T21:26:05-05:00 | 4/9 | 2.8 | sí (revisión manual confirmatoria) |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `ed55eda` · 2026-08-23T21:44:05-05:00 | 5/9 | no se publica | sí |
@@ -32,6 +32,34 @@
 | 14 | Evidencia S14 · Medición de atributos de calidad | | | no aplica | |
 | 16 | Proyecto final · integración y desafío arquitectónico | `final` | | | |
 | 17 | Aplicación de cambios y cierre arquitectónico | | | | |
+
+## Feedback S10 vigente · 13 de octubre de 2026
+
+Límite exclusivo: **2026-10-13T05:00:00Z**, fin del 12 de octubre en Colombia. Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
+
+**Subtotal técnico: 2,60 / 4,00. Total consolidado C1–C5: 3,40 / 5,00.**
+
+Calificación de sustentación comunicada por el docente: **4,00 / 5,00**, incorporada como **C5 = 0,80 / 1,00**. La conversión proporcional se conserva sin redondearla a los niveles de los criterios técnicos.
+
+Dijkstra, sus alternativas y costo están justificados e implementados. Las medidas son posteriores y no identifican una línea base anterior. Logs y sonda aportan observabilidad parcial; C4 aún declara ausente MapaRepository. No se mezcla la línea base de caché con la de ruteo.
+
+Fuentes y alcance completos: [informe S10](semana-10-corte2.md#fundamento-técnico-y-comentarios-vigentes). Las referencias de identidad, contribución y despliegue heredadas conservan sus fechas originales; no constituyen una nueva verificación en esta consolidación.
+
+### Deriva arquitectónica al cierre S10
+
+Vistas de mapas y GPS no reflejan OSM, Dijkstra y ubicación simulada.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+- **Baja · Las vistas principales no incorporan por completo los ADR de OSM y ruteo:** Arc42 sigue dibujando un SDK Google embebido y el README dice que routing solo contiene .gitkeep, aunque el mapa solicita teselas OSM y Dijkstra está implementado y llamado. Esto cambia dependencias operativas y alcance disponible, no significa que la elección OSM sea deriva de implementación. **Acción:** Actualizar README/C4/arc42 en conjunto: OSM para mapa base, Dijkstra actual y tour aún pendiente. Dibujar por separado Geocoding/Static Maps opcionales; separar cálculo offline de carga de teselas. [Contraste y evidencia](semana-10-corte2.md#deriva-d1).
+- **Media · La vista de ejecución describe GPS actual, pero el arranque compone ubicación simulada:** El flujo documentado recibe posición del sensor; el flujo ejecutable emite coordenadas aleatorias alrededor de un punto fijo cada segundo y usa ese stream para origen de rutas. La interfaz no demuestra ubicación real por tener Observer. La implementación se identifica como simulada en código, por lo que se reporta como desajuste de la vista actual, no como obligación de implementar una función futura. **Acción:** Marcar el sensor/GPS real como objetivo y mostrar el simulador en la vista actual; identificar visiblemente modo demostración en UI. Cuando se integre GPS, sustituir el adaptador y probar permisos, ausencia de señal y precisión sin alterar el contrato Observer. [Contraste y evidencia](semana-10-corte2.md#deriva-d2).
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Seguimiento anterior a la consolidación S10; estados históricos superados</summary>
+
+**Historial superado por la consolidación del 13 de octubre de 2026.** Se conserva lo publicado como registro de las observaciones de cada fecha, no como la evaluación vigente. El cierre preliminar 2026-10-12T05:00:00Z que aparece abajo fue sustituido para S10 por el límite exclusivo 2026-10-13T05:00:00Z. Las notas parciales, pendientes de sustentación y bloqueos por asignación del escenario de ese historial no reemplazan la tabla actual.
 
 ## Lo que se arrastra
 
@@ -138,3 +166,5 @@ Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
 - Fallo: si el GPS entrega una posición errónea o el usuario conserva una versión cacheada, ¿qué señal evita una ruta engañosa y cómo verificarán el rollback desde su navegador?
 - Costo: ¿cuál de las cuotas de Hosting/teselas/transferencia rompe primero el presupuesto cero y cómo cambia al revalidar recursos?
 - Medición: ¿qué cambiarían si el tiempo de cálculo sigue siendo bajo pero el usuario tarda o se localiza a más de 10 metros del camino real?
+
+</details>

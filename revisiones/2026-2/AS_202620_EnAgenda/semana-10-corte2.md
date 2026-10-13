@@ -1,3 +1,168 @@
+# Segundo corte · S10 · EnAgenda · consolidación al cierre
+
+**Actualización del feedback: 13 de octubre de 2026.** La tabla siguiente sustituye la valoración preliminar conservada al final.
+
+| Campo | Valor |
+|---|---|
+| Repositorio | https://github.com/ISCOUTB/AS_202620_EnAgenda |
+| Rama evaluada | `master` |
+| Hash calificado | `4bec22f3821493014e8352ece8274bb2950e97db` |
+| Fecha del commit | 2026-10-11T23:47:24-05:00 |
+| Límite exclusivo S10 | `2026-10-13T05:00:00Z` |
+| Último instante incluido | 12 de octubre de 2026, 23:59:59, Colombia (UTC-5) |
+
+## Alcance vigente
+
+Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
+
+Los PDF están excluidos sin penalización. No se ejecutó código estudiantil en la revisión. Las cifras y experimentos documentados por los equipos se distinguen de las comprobaciones del revisor; esta publicación consolida la evaluación ya realizada y no representa una nueva prueba de flujo principal, despliegue, carga o seguridad. La lista de comprobación y la matriz transversal de las pasadas anteriores se conservan abajo con su alcance histórico; no se recalculan ni se convierten en una nota mediante la fórmula semanal. S9 permanece congelada.
+
+## Escenario documentado
+
+Solo documento operativo EC-XX de consulta pública/health y latencia; no se identificó reto S10 nuevo explícito.
+
+Se evalúa técnicamente el escenario declarado; no se afirma asignación docente verificada.
+
+## Rúbrica consolidada
+
+| Criterio | Nivel técnico / origen | Puntaje |
+|---|---|---:|
+| C1 · Caracterización del escenario operativo | Básico | 0,60 / 1,00 |
+| C2 · Decisión e implementación | Básico | 0,60 / 1,00 |
+| C3 · Operación, seguridad y observabilidad | Básico | 0,60 / 1,00 |
+| C4 · Evolución arquitectónica trazable | Básico | 0,60 / 1,00 |
+| C5 · Sustentación del reto | Calificación comunicada por el docente | 0,84 / 1,00 |
+
+**Subtotal técnico: 2,40 / 4,00. Total consolidado C1–C5: 3,24 / 5,00.**
+
+Calificación de sustentación comunicada por el docente: **4,20 / 5,00**, incorporada como **C5 = 0,84 / 1,00**. La conversión proporcional se conserva sin redondearla a los niveles de los criterios técnicos.
+
+Los componentes técnicos se publican como propuesta al docente. Publicar esta consolidación no acredita un registro de la calificación en Moodle.
+
+## Fundamento técnico y comentarios vigentes
+
+Se corrigieron la protección y normalización de métricas y se añadió la prueba de no filtración; el CI pasa. Faltan una línea base y un umbral medidos en el despliegue, así como una decisión coherente con toda la arquitectura.
+
+Los puntajes C1–C4 se conservan de la evaluación consolidada; el comentario y las fuentes siguientes sustentan la valoración conjunta, sin inferir puntajes nuevos de los recuentos preliminares.
+
+### Fuentes del estado calificado
+
+1. [docs/despliegue/medicion-dokploy.md:5–25](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docs/despliegue/medicion-dokploy.md#L5-L25); [docs/despliegue/medicion-dokploy.md:27–39](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docs/despliegue/medicion-dokploy.md#L27-L39); [docs/despliegue/medicion-dokploy.md:51–58](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docs/despliegue/medicion-dokploy.md#L51-L58) — URL, umbral y medición todavía pendientes
+2. [docs/adr/0003-desplegar-api-flask-en-dokploy.md:24–74](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docs/adr/0003-desplegar-api-flask-en-dokploy.md#L24-L74); [docs/adr/0003-desplegar-api-flask-en-dokploy.md:95–99](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docs/adr/0003-desplegar-api-flask-en-dokploy.md#L95-L99) — decisión de plataforma y pendientes
+3. [app/web.py:46–61](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/app/web.py#L46-L61); [app/web.py:79–114](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/app/web.py#L79-L114) — normalización, health y métricas protegidas
+
+## Deriva arquitectónica al cierre S10
+
+Auditoría estática de la arquitectura declarada frente a las rutas implementadas en el mismo hash del cierre S10. Se revisaron capas y dominio, persistencia, API y autorización, despliegue, asincronía y observabilidad. Se excluyeron PDF y commits posteriores al cierre; no se ejecutó código estudiantil ni se probó el servicio remoto. Una funcionalidad futura explícitamente delimitada o una deuda aceptada por un ADR vigente no se cuenta por sí sola como deriva. La gravedad indica prioridad técnica del hallazgo; no equivale a un descuento automático en la rúbrica. Los hallazgos se incorporan como feedback y propuestas de corrección; los puntajes C1–C4 conservan la matriz técnica vigente, sin recalificación por esta auditoría.
+
+**Resultado:** Dos desalineaciones documentales. El corte de invitaciones sigue la separación ligera declarada y la memoria temporal está expresamente reconocida; no se exige BD durable ni interfaces hexagonales no adoptadas.
+
+**Arquitectura declarada:** Monolito modular, entrada web Flask/Jinja y API de invitaciones; dominio de tokens/vigencia; repositorio memoria; Dokploy. ADR1 conserva una elección tecnológica anterior no reconciliada.
+
+**Arquitectura implementada:** Gunicorn→app.web:app; rutas web/REST→GestionarInvitacion→Invitacion→RepositorioInvitacionesMemoria. Métricas en memoria con Bearer y rutas normalizadas.
+
+**Hallazgos materiales: 2.** Prioridad máxima: **Media**.
+
+<a id="deriva-d1"></a>
+
+### D1 · ADR1 conserva Next.js/Server Actions y prohibición de API mientras el sistema vigente es Flask con REST
+
+**Naturaleza:** documentación desactualizada. **Prioridad:** Media. **Confianza:** Alta sobre el código y la documentación al hash; no acredita comportamiento del despliegue..
+
+**Motivo de prioridad:** ADR2/3 y arc42 ya describen la implementación reciente; falta marcar explícitamente el alcance sustituido del ADR1 aceptado.
+
+**Declaración contrastada:**
+
+- [docs/adr/0001-usar-monolito-modular.md:106–122](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docs/adr/0001-usar-monolito-modular.md#L106-L122) — ADR1 aceptado prescribe Next.js/Server Actions y afirma que EnAgenda no expondrá API pública.
+
+**Implementación contrastada:**
+
+- [app/web.py:22–35](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/app/web.py#L22-L35) — Flask crea una instancia del repositorio en memoria y la inyecta a GestionarInvitacion.
+- [app/web.py:427–439](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/app/web.py#L427-L439) — La aplicación registra una ruta REST GET de consulta de invitaciones y delega al servicio.
+- [docs/arc42/05-vista-de-bloques-de-construcción.md:19–21](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docs/arc42/05-vista-de-bloques-de-construcci%C3%B3n.md#L19-L21) — arc42 identifica Flask/Jinja2 como entrada web actual e Invitaciones como corte funcional.
+- [docs/adr/0003-desplegar-api-flask-en-dokploy.md:64–71](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docs/adr/0003-desplegar-api-flask-en-dokploy.md#L64-L71) — ADR3 adopta Dokploy y explicita API Flask construida con Dockerfile y ejecutada mediante Compose.
+
+**Efecto y alcance:** Las decisiones vigentes parecen contradictorias sobre cliente, entrada HTTP y contrato, dificultando futuras modificaciones.
+
+**Corrección propuesta:** Registrar aclaración/supersesión parcial de ADR1: mantener monolito modular, sustituir Next.js/Server Actions y actualizar exposición REST. No cambiar la implementación solo para seguir una decisión histórica.
+
+<a id="deriva-d2"></a>
+
+### D2 · El procedimiento operativo aún espera /metrics 200 sin explicar el token
+
+**Naturaleza:** documentación desactualizada. **Prioridad:** Baja. **Confianza:** Alta sobre el código y la documentación al hash; no acredita comportamiento del despliegue..
+
+**Motivo de prioridad:** La protección se implementó correctamente; lo rezagado es la instrucción de comprobación.
+
+**Declaración contrastada:**
+
+- [docs/arc42/07-vista-de-despliegue.md:86–93](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docs/arc42/07-vista-de-despliegue.md#L86-L93) — El procedimiento de arc42 espera HTTP 200 en GET /health y GET /metrics sin detallar autorización.
+- [README.md:289–295](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/README.md#L289-L295) — El smoke check de README propone curl a /metrics sin cabecera Bearer.
+
+**Implementación contrastada:**
+
+- [app/web.py:90–114](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/app/web.py#L90-L114) — /metrics exige token de observabilidad y después expone contadores generales/de invitaciones.
+
+**Efecto y alcance:** Un operador siguiendo README/arc42 interpreta 401/503 esperado como fallo del servicio o no configura el secreto requerido.
+
+**Corrección propuesta:** Actualizar smoke check para configurar ENAGENDA_METRICS_TOKEN, enviar Bearer de forma segura y distinguir 401/503 de liveness /health. No desproteger métricas para satisfacer el ejemplo antiguo.
+
+### Cobertura y límites de la auditoría
+
+**Capas y dominio:** Aplicación delega reglas al dominio; usa repositorio concreto dentro de módulo como capas ligeras. La dependencia concreta sola no viola ADR1 que descarta hexagonal completa.
+
+Límite: Inspección estática; no se ejecutaron pruebas ni se comprobó el servicio remoto.
+
+- [src/invitaciones/aplicacion/gestionar_invitacion.py:1–26](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/src/invitaciones/aplicacion/gestionar_invitacion.py#L1-L26) — GestionarInvitacion importa la entidad y el repositorio concreto e invoca Invitacion.crear antes de guardar.
+- [src/invitaciones/aplicacion/gestionar_invitacion.py:30–60](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/src/invitaciones/aplicacion/gestionar_invitacion.py#L30-L60) — El servicio busca por token, valida vigencia y delega cambio de estado a la entidad antes de guardar.
+- [docs/adr/0001-usar-monolito-modular.md:77–80](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docs/adr/0001-usar-monolito-modular.md#L77-L80) — ADR1 descarta hexagonal completa porque su coste no compensa todavía la complejidad del proyecto.
+
+**Persistencia:** Repositorio diccionario por proceso explícitamente temporal; no se infiere durabilidad ni incoherencia por ausencia de BD.
+
+Límite: Inspección estática; no se ejecutaron pruebas ni se comprobó el servicio remoto.
+
+- [src/invitaciones/infraestructura/repositorio_memoria.py:1–12](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/src/invitaciones/infraestructura/repositorio_memoria.py#L1-L12) — El repositorio guarda invitaciones en un diccionario del proceso y las busca por token.
+- [docs/arc42/05-vista-de-bloques-de-construcción.md:125–131](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docs/arc42/05-vista-de-bloques-de-construcci%C3%B3n.md#L125-L131) — arc42 declara almacenamiento temporal en memoria que no sobrevive al reinicio.
+
+**API y autorización:** GET/POST de invitación por token delega vigencia; métricas Bearer; no se verificó acceso real ni envío de correos.
+
+Límite: Inspección estática; no se ejecutaron pruebas ni se comprobó el servicio remoto.
+
+- [app/web.py:427–459](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/app/web.py#L427-L459) — GET /api/v1/invitaciones/{token} consulta el servicio, responde JSON y aumenta el contador de consultas.
+- [app/web.py:494–506](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/app/web.py#L494-L506) — El POST llama gestionar_invitacion.responder y convierte ValueError a respuesta 404.
+- [app/web.py:90–101](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/app/web.py#L90-L101) — /metrics devuelve 503 sin secreto configurado y 401 si falta o no coincide el Bearer.
+
+**Despliegue:** Docker/Gunicorn único servicio Compose y dominio aún pendiente declarado. No se afirma caída ni disponibilidad pública.
+
+Límite: Inspección estática; no se ejecutaron pruebas ni se comprobó el servicio remoto.
+
+- [Dockerfile:11–15](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/Dockerfile#L11-L15) — Dockerfile inicia Gunicorn apuntando a app.web:app en el puerto configurado.
+- [docker-compose.yml:1–11](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docker-compose.yml#L1-L11) — Compose define un único servicio construido desde Dockerfile, publica 5000 y carga .env.
+- [docs/adr/0003-desplegar-api-flask-en-dokploy.md:91–99](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docs/adr/0003-desplegar-api-flask-en-dokploy.md#L91-L99) — ADR3 deja URL pública, HTTPS, cuotas y rollback pendientes de confirmar.
+
+**Asincronía:** Llamadas en proceso y HTTP síncrono; no broker, worker ni envío de invitaciones automatizado en la ruta auditada.
+
+Límite: Inspección estática; no se ejecutaron pruebas ni se comprobó el servicio remoto.
+
+- [app/web.py:323–345](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/app/web.py#L323-L345) — El formulario crea invitaciones por el servicio y construye enlaces para renderizar la pantalla de resultados.
+- [src/invitaciones/aplicacion/gestionar_invitacion.py:16–28](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/src/invitaciones/aplicacion/gestionar_invitacion.py#L16-L28) — crear_invitacion delega construcción a Invitacion.crear y persiste mediante el repositorio.
+
+**Observabilidad:** Contadores por plantilla de ruta evitan tokens; /metrics requiere secreto y autorización.
+
+Límite: Inspección estática; no se ejecutaron pruebas ni se comprobó el servicio remoto.
+
+- [app/web.py:46–61](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/app/web.py#L46-L61) — El contador HTTP usa la plantilla de ruta de Flask para no guardar tokens de invitaciones.
+- [app/web.py:90–114](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/app/web.py#L90-L114) — /metrics exige token de observabilidad y después expone contadores generales/de invitaciones.
+
+## Estado global del proyecto (overall)
+
+La verificación de metadatos del 2026-10-13T16:45:53.877459+00:00 confirmó el hash anterior como último commit de `master` antes del límite exclusivo. La punta observada es [`4bec22f3821493014e8352ece8274bb2950e97db`](https://github.com/ISCOUTB/AS_202620_EnAgenda/commit/4bec22f3821493014e8352ece8274bb2950e97db) (2026-10-11T23:47:24-05:00). Coincide con el estado calificado; no hay commits posteriores al cierre en esa rama al momento de la comprobación.
+
+<details>
+<summary>Historial S10 anterior, superado; conservar fechas y alcance originales</summary>
+
+**Historial superado por la consolidación del 13 de octubre de 2026.** Se conserva lo publicado como registro de las observaciones de cada fecha, no como la evaluación vigente. El cierre preliminar 2026-10-12T05:00:00Z que aparece abajo fue sustituido para S10 por el límite exclusivo 2026-10-13T05:00:00Z. Las notas parciales, pendientes de sustentación y bloqueos por asignación del escenario de ese historial no reemplazan la tabla actual.
+
 # Segundo corte S10 · avance preliminar · EnAgenda
 
 **Preliminar, no es cierre ni calificación final.** Cierre previsto: **2026-10-12T05:00:00Z**.
@@ -98,3 +263,5 @@ El delta S9 contiene 11 commits respecto de S8; hay 4 commits posteriores a S9 e
 1. ¿Qué pasa con invitaciones, tokens y contadores si el contenedor reinicia, y cómo evitarían exponer tokens mediante /metrics?
 2. ¿Qué cuotas de CPU/RAM/tráfico ofrece Dokploy y cuándo deja de ser válida la estimación de costo cero?
 3. El test directo no detectó TemplateNotFound: ¿qué cambiarían en la prueba para cubrir el recorrido real del organizador?
+
+</details>

@@ -1,3 +1,128 @@
+# Segundo corte · S10 · Calificación automática (Quantia) · consolidación al cierre
+
+**Actualización del feedback: 13 de octubre de 2026.** La tabla siguiente sustituye la valoración preliminar conservada al final.
+
+| Campo | Valor |
+|---|---|
+| Repositorio | https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica |
+| Rama evaluada | `master` |
+| Hash calificado | `85da6d3ab6ef882582839362b56981fa7cb53949` |
+| Fecha del commit | 2026-10-11T23:36:26-05:00 |
+| Límite exclusivo S10 | `2026-10-13T05:00:00Z` |
+| Último instante incluido | 12 de octubre de 2026, 23:59:59, Colombia (UTC-5) |
+
+## Alcance vigente
+
+Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
+
+Los PDF están excluidos sin penalización. No se ejecutó código estudiantil en la revisión. Las cifras y experimentos documentados por los equipos se distinguen de las comprobaciones del revisor; esta publicación consolida la evaluación ya realizada y no representa una nueva prueba de flujo principal, despliegue, carga o seguridad. La lista de comprobación y la matriz transversal de las pasadas anteriores se conservan abajo con su alcance histórico; no se recalculan ni se convierten en una nota mediante la fórmula semanal. S9 permanece congelada.
+
+## Escenario documentado
+
+EC-09, límite de costo/cuota del proveedor LLM ante ráfaga a POST /distractores
+
+Se evalúa técnicamente el escenario declarado; no se afirma asignación docente verificada.
+
+## Rúbrica consolidada
+
+| Criterio | Nivel técnico / origen | Puntaje |
+|---|---|---:|
+| C1 · Caracterización del escenario operativo | Sobresaliente | 1,00 / 1,00 |
+| C2 · Decisión e implementación | Sobresaliente | 1,00 / 1,00 |
+| C3 · Operación, seguridad y observabilidad | Sobresaliente | 1,00 / 1,00 |
+| C4 · Evolución arquitectónica trazable | Sobresaliente | 1,00 / 1,00 |
+| C5 · Sustentación del reto | Calificación comunicada por el docente | 0,80 / 1,00 |
+
+**Subtotal técnico: 4,00 / 4,00. Total consolidado C1–C5: 4,80 / 5,00.**
+
+Calificación de sustentación comunicada por el docente: **4,00 / 5,00**, incorporada como **C5 = 0,80 / 1,00**. La conversión proporcional se conserva sin redondearla a los niveles de los criterios técnicos.
+
+Los componentes técnicos se publican como propuesta al docente. Publicar esta consolidación no acredita un registro de la calificación en Moodle.
+
+## Fundamento técnico y comentarios vigentes
+
+El presupuesto atómico responde al escenario con línea base, degradación medida y arquitectura y contrato actualizados. La auditoría de dependencias sigue vigente: los manifiestos no cambiaron de S9 a S10 y el código nuevo utiliza la biblioteca estándar. No se exige una auditoría nueva ni se añaden requisitos de vulnerabilidades ajenos a la ficha.
+
+Los puntajes C1–C4 se conservan de la evaluación consolidada; el comentario y las fuentes siguientes sustentan la valoración conjunta, sin inferir puntajes nuevos de los recuentos preliminares.
+
+### Fuentes del estado calificado
+
+1. [docs/evidencia/experimento-presupuesto.md:18–42](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/85da6d3ab6ef882582839362b56981fa7cb53949/docs/evidencia/experimento-presupuesto.md#L18-L42); [docs/evidencia/experimento-presupuesto.md:48–62](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/85da6d3ab6ef882582839362b56981fa7cb53949/docs/evidencia/experimento-presupuesto.md#L48-L62); [docs/evidencia/experimento-presupuesto.md:79–86](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/85da6d3ab6ef882582839362b56981fa7cb53949/docs/evidencia/experimento-presupuesto.md#L79-L86); [docs/evidencia/experimento-presupuesto.md:98–131](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/85da6d3ab6ef882582839362b56981fa7cb53949/docs/evidencia/experimento-presupuesto.md#L98-L131); [docs/evidencia/experimento-presupuesto.md:168–185](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/85da6d3ab6ef882582839362b56981fa7cb53949/docs/evidencia/experimento-presupuesto.md#L168-L185) — C1 y resultados; control de confusión y límites
+2. [docs/adr/0015-limitar-el-gasto-del-proveedor-de-llm-con-un-presupuesto-en-la-api.md:20–25](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/85da6d3ab6ef882582839362b56981fa7cb53949/docs/adr/0015-limitar-el-gasto-del-proveedor-de-llm-con-un-presupuesto-en-la-api.md#L20-L25); [docs/adr/0015-limitar-el-gasto-del-proveedor-de-llm-con-un-presupuesto-en-la-api.md:54–107](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/85da6d3ab6ef882582839362b56981fa7cb53949/docs/adr/0015-limitar-el-gasto-del-proveedor-de-llm-con-un-presupuesto-en-la-api.md#L54-L107); [docs/adr/0015-limitar-el-gasto-del-proveedor-de-llm-con-un-presupuesto-en-la-api.md:123–138](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/85da6d3ab6ef882582839362b56981fa7cb53949/docs/adr/0015-limitar-el-gasto-del-proveedor-de-llm-con-un-presupuesto-en-la-api.md#L123-L138); [docs/adr/0015-limitar-el-gasto-del-proveedor-de-llm-con-un-presupuesto-en-la-api.md:155–172](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/85da6d3ab6ef882582839362b56981fa7cb53949/docs/adr/0015-limitar-el-gasto-del-proveedor-de-llm-con-un-presupuesto-en-la-api.md#L155-L172) — C2/C4, alternativas, implementación, vigencia ADR-0013
+3. [backend/autoria/presupuesto.py:89–164](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/85da6d3ab6ef882582839362b56981fa7cb53949/backend/autoria/presupuesto.py#L89-L164); [backend/autoria/presupuesto.py:174–189](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/85da6d3ab6ef882582839362b56981fa7cb53949/backend/autoria/presupuesto.py#L174-L189) — reserva atómica, ventanas y adaptador reales
+
+## Deriva arquitectónica al cierre S10
+
+Auditoría estática de la arquitectura declarada frente a las rutas implementadas en el mismo hash del cierre S10. Se revisaron capas y dominio, persistencia, API y autorización, despliegue, asincronía y observabilidad. Se excluyeron PDF y commits posteriores al cierre; no se ejecutó código estudiantil ni se probó el servicio remoto. Una funcionalidad futura explícitamente delimitada o una deuda aceptada por un ADR vigente no se cuenta por sí sola como deriva. La gravedad indica prioridad técnica del hallazgo; no equivale a un descuento automático en la rúbrica. Los hallazgos se incorporan como feedback y propuestas de corrección; los puntajes C1–C4 conservan la matriz técnica vigente, sin recalificación por esta auditoría.
+
+**Resultado:** No se identificó deriva material nueva en las rutas auditadas. Los límites de memoria, ausencia de identidad y persistencia efímera están explicitados como decisiones/deudas acotadas; no se confundieron con funcionalidades ya terminadas.
+
+**Arquitectura declarada:** Monolito modular con ingesta, infraestructura y autoría implementadas; Redis/worker para recepción; puertos de LLM con presupuesto; Render de demostración.
+
+**Arquitectura implementada:** FastAPI→recibir_lote→almacén/bitácora→Redis; worker consume y registra, sin OMR/calificación. /distractores→regla de autoría→GeneradorConPresupuesto→proveedor. Un proceso uvicorn y worker supervisado.
+
+**Hallazgos materiales: 0.** No se observó deriva material en los recorridos inspeccionados; esto no acredita conformidad exhaustiva ni ejecución correcta en producción.
+
+### Cobertura y límites de la auditoría
+
+**Capas y dominio:** API traduce HTTP; reglas delegadas a ingesta/autoría; infraestructura es un contexto transversal declarado, no una violación inferida por su nombre.
+
+Límite: Inspección estática; no se ejecutaron pruebas ni se comprobó el servicio remoto.
+
+- [backend/api/main.py:40–55](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/85da6d3ab6ef882582839362b56981fa7cb53949/backend/api/main.py#L40-L55) — La entrada HTTP importa los servicios públicos de autoría e ingesta y los colaboradores de infraestructura.
+- [backend/ingesta/recepcion.py:19–30](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/85da6d3ab6ef882582839362b56981fa7cb53949/backend/ingesta/recepcion.py#L19-L30) — Ingesta recibe interfaces de almacenamiento/bitácora y funciones de cola definidas en infraestructura.
+- [docs/c4/doc-c4.md:571–582](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/85da6d3ab6ef882582839362b56981fa7cb53949/docs/c4/doc-c4.md#L571-L582) — C4 explica que infraestructura es la capa anticorrupción interna y api/worker son puntos de entrada.
+
+**Persistencia:** Almacén/bitácora en disco; PostgreSQL local previsto sin persistencia estructurada activa. Decisión aceptable para hojas sintéticas: ADR12 mantiene R-06 abierto.
+
+Límite: Inspección estática; no se ejecutaron pruebas ni se comprobó el servicio remoto.
+
+- [backend/api/main.py:82–92](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/85da6d3ab6ef882582839362b56981fa7cb53949/backend/api/main.py#L82-L92) — Las dependencias HTTP construyen AlmacenEnDisco y BitacoraEnDisco por petición.
+- [docs/adr/0012-mantener-el-almacen-en-el-disco-efimero-de-la-instancia-hasta-cerrar-r-06.md:33–45](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/85da6d3ab6ef882582839362b56981fa7cb53949/docs/adr/0012-mantener-el-almacen-en-el-disco-efimero-de-la-instancia-hasta-cerrar-r-06.md#L33-L45) — ADR12 acepta disco efímero solo para hojas sintéticas y mantiene abierta la decisión de persistencia R-06.
+- [docs/arc42/arc42-template-ES.md:319–332](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/85da6d3ab6ef882582839362b56981fa7cb53949/docs/arc42/arc42-template-ES.md#L319-L332) — arc42 distingue almacén implementado mediante puertos provisionales de PostgreSQL aún sin esquema funcional.
+
+**API y autorización:** Rutas de carga y distractores públicas, deuda declarada; presupuesto atómico antes del proveedor; 429 y Retry-After.
+
+Límite: Inspección estática; no se ejecutaron pruebas ni se comprobó el servicio remoto.
+
+- [backend/api/main.py:166–170](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/85da6d3ab6ef882582839362b56981fa7cb53949/backend/api/main.py#L166-L170) — El propio endpoint declara pendientes tanto la verificación de examen como identidad/autorización del docente.
+- [backend/api/main.py:281–311](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/85da6d3ab6ef882582839362b56981fa7cb53949/backend/api/main.py#L281-L311) — La ruta envuelve el generador con presupuesto y traduce falta de cupo a 429 con Retry-After.
+- [backend/autoria/presupuesto.py:122–151](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/85da6d3ab6ef882582839362b56981fa7cb53949/backend/autoria/presupuesto.py#L122-L151) — La reserva comprueba las ventanas diaria/minuto y añade la solicitud bajo un mismo threading.Lock.
+- [backend/autoria/presupuesto.py:174–189](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/85da6d3ab6ef882582839362b56981fa7cb53949/backend/autoria/presupuesto.py#L174-L189) — GeneradorConPresupuesto reserva cupo antes de delegar al proveedor real.
+
+**Despliegue:** Render API+worker juntos, Redis externo; frontend estático. Un proceso compatible con presupuesto en memoria.
+
+Límite: Inspección estática; no se ejecutaron pruebas ni se comprobó el servicio remoto.
+
+- [render.yaml:14–30](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/85da6d3ab6ef882582839362b56981fa7cb53949/render.yaml#L14-L30) — Render configura API y worker en la misma instancia Docker mediante un script de arranque.
+- [backend/arrancar-api-y-worker.sh:9–14](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/85da6d3ab6ef882582839362b56981fa7cb53949/backend/arrancar-api-y-worker.sh#L9-L14) — El script supervisa worker en segundo plano y ejecuta un único uvicorn como proceso principal.
+- [render.yaml:65–87](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/85da6d3ab6ef882582839362b56981fa7cb53949/render.yaml#L65-L87) — Render declara Redis privado y un frontend Flutter compilado como sitio estático.
+
+**Asincronía:** Recepción registra antes de encolar; worker consume/loguea y reconoce pipeline futuro. Reintento de pendientes aún manual/deuda explícita.
+
+Límite: Inspección estática; no se ejecutaron pruebas ni se comprobó el servicio remoto.
+
+- [backend/ingesta/recepcion.py:105–109](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/85da6d3ab6ef882582839362b56981fa7cb53949/backend/ingesta/recepcion.py#L105-L109) — Ingesta reconoce que los pendientes de bitácora todavía no tienen reintento automatizado.
+- [backend/ingesta/recepcion.py:128–156](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/85da6d3ab6ef882582839362b56981fa7cb53949/backend/ingesta/recepcion.py#L128-L156) — La recepción guarda el archivo, registra bitácora y después publica en Redis; conserva pendiente si falla la cola.
+- [backend/worker/main.py:35–60](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/85da6d3ab6ef882582839362b56981fa7cb53949/backend/worker/main.py#L35-L60) — El worker desencola y registra la hoja; el comentario delimita OMR/calificación como trabajo todavía pendiente.
+
+**Observabilidad:** Métricas del presupuesto y eventos del lote; reset/reinicio y cuotas globales explícitos, no deriva.
+
+Límite: Inspección estática; no se ejecutaron pruebas ni se comprobó el servicio remoto.
+
+- [backend/api/main.py:324–341](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/85da6d3ab6ef882582839362b56981fa7cb53949/backend/api/main.py#L324-L341) — GET /metricas publica el estado del presupuesto sin consultar proveedor ni disco.
+- [docs/adr/0015-limitar-el-gasto-del-proveedor-de-llm-con-un-presupuesto-en-la-api.md:123–134](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/85da6d3ab6ef882582839362b56981fa7cb53949/docs/adr/0015-limitar-el-gasto-del-proveedor-de-llm-con-un-presupuesto-en-la-api.md#L123-L134) — ADR15 acepta cuota global y pérdida del contador al reiniciar, y exige reconsiderarlo con múltiples procesos.
+- [backend/api/main.py:193–204](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/85da6d3ab6ef882582839362b56981fa7cb53949/backend/api/main.py#L193-L204) — El evento lote_confirmado registra cantidades aceptadas/pendientes/rechazadas y duración de confirmación.
+
+## Estado global del proyecto (overall)
+
+La verificación de metadatos del 2026-10-13T16:45:48.271081+00:00 confirmó el hash anterior como último commit de `master` antes del límite exclusivo. La punta observada es [`85da6d3ab6ef882582839362b56981fa7cb53949`](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/commit/85da6d3ab6ef882582839362b56981fa7cb53949) (2026-10-11T23:36:26-05:00). Coincide con el estado calificado; no hay commits posteriores al cierre en esa rama al momento de la comprobación.
+
+<details>
+<summary>Historial S10 anterior, superado; conservar fechas y alcance originales</summary>
+
+**Historial superado por la consolidación del 13 de octubre de 2026.** Se conserva lo publicado como registro de las observaciones de cada fecha, no como la evaluación vigente. El cierre preliminar 2026-10-12T05:00:00Z que aparece abajo fue sustituido para S10 por el límite exclusivo 2026-10-13T05:00:00Z. Las notas parciales, pendientes de sustentación y bloqueos por asignación del escenario de ese historial no reemplazan la tabla actual.
+
 # Semana 10 · Segundo corte · Calificación automática (QuantIA)
 
 > **Revisión preliminar**, realizada el 6 de octubre de 2026. El cierre de S10 todavía no ha ocurrido. No constituye nota aplicada ni evaluación de sustentación.
@@ -84,3 +209,5 @@ Antes de evaluar el segundo corte identifiquen la asignación operativa oficial.
 ## Delta arquitectónico desde el primer corte
 
 Base publicada de S5: `8b0d00b62d2a03dfe509edae578261748a842294`; comparación git contra HEAD `72011933ff2238eaec697f565572fec6872a3cbc`: 65 rutas cambiadas, de ellas 10 en ADR/arc42/C4 (sin leer PDF). Se inspeccionaron las decisiones, contratos, código y evidencia citados en las filas. El delta sirve para examinar evolución y consistencia del MVP, no para recalificar las entregas S6–S9. La correspondencia con el escenario asignado S10 sigue pendiente.
+
+</details>

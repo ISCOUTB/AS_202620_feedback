@@ -64,6 +64,33 @@ Mantengan el registro de uso de IA al día (hoy no crece desde agosto y no docum
 
 El estado al cierre es el mismo de la semana anterior y no contiene una porción nueva S9. Falta la cadena con ADR, prueba sensible al defecto, medición y auditoría de erosión, además del registro de IA y la decisión sobre componente generativo. La reorganización y autenticación de octubre llegan después del cierre y se reconocen en el estado actual, sin cambiar esta revisión.
 
-## Semana 10 · Segundo corte (avance preliminar)
+## Semana 10 · Segundo corte
+
+### Consolidación vigente · 13 de octubre de 2026
+
+El escenario está formulado, sin línea base ni resultado numérico reproducible. La integración y autenticación son parciales y no hay ADR del nuevo cambio. No se instrumentan la métrica del escenario ni logs estructurados; el despliegue sigue como plantilla.
+
+Se valora el escenario documentado bajo un supuesto explícito de pertinencia; su asignación oficial no se presenta como verificada. Las mediciones conservan el alcance y las limitaciones descritos en la evidencia. Los comentarios anteriores se mantienen como historial y la evaluación de la semana anterior permanece congelada.
+
+La sustentación comunicada por el docente ya está incorporada en la [planilla](planilla.md) y el [informe del corte](semana-10-corte2.md).
+
+### Deriva arquitectónica al cierre S10
+
+Autorización desconectada; concurrencia y guía de persistencia divergentes.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+- **Alta · La seguridad declarada no está conectada al camino de escritura y gestión de usuarios:** Quien alcance estas rutas de la aplicación puede invocar creación de recursos/préstamos y gestión de usuarios sin verificación de identidad/rol en el código. Es de alta prioridad por integridad y datos; no se verificó publicación ni explotación remota. Además, el camino de login no llega al servicio por sombreado del nombre. **Acción:** Conectar una dependencia de identidad y otra de roles en rutas protegidas; derivar usuario desde el token cuando corresponda. Renombrar handler/servicio de login para evitar sombreado, verificar hashes con bcrypt y añadir pruebas 401/403. No se afirma cómo están almacenadas contraseñas reales: únicamente ausencia de hash/verificación en esta cadena. [Contraste y evidencia](semana-10-corte2.md#deriva-d1).
+- **Media · La exclusión de dos préstamos activos está validada antes de escribir, sin arbitraje atómico:** En una ejecución concurrente dos transacciones pueden leer disponible antes de que alguna actualice; no se ve bloqueo de fila, actualización condicional ni restricción única de préstamo activo. El test secuencial no demuestra la garantía nunca dos préstamos. No se observó un duplicado real. **Acción:** Proteger la decisión con UPDATE condicional y chequeo de filas afectadas o bloqueo transaccional apropiado a PostgreSQL; sumar restricción de unicidad activa donde aplique y prueba concurrente. Mantener 409 como rechazo de la operación perdedora. [Contraste y evidencia](semana-10-corte2.md#deriva-d2).
+- **Media · El arranque de persistencia ya requiere configuración aunque README promete SQLite automático:** Un clon sin DATABASE_URL no sigue el recorrido local prometido: la lectura obligatoria de la variable ocurre al importar la configuración. Esto afecta reproducibilidad del despliegue de desarrollo; no es prueba de indisponibilidad remota. **Acción:** Actualizar el contrato operativo a DATABASE_URL obligatoria y dar plantilla sin secretos, o recuperar fallback explícito y seguro solo en desarrollo. Mantener Alembic como deuda aceptada, sin presentarlo ya implementado. [Contraste y evidencia](semana-10-corte2.md#deriva-d3).
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Comentarios preliminares anteriores, superados por la consolidación del 13 de octubre</summary>
+
+Estos comentarios corresponden al estado y a las comprobaciones de sus fechas originales. Las referencias a pendientes, disponibilidad y asignación del escenario no sustituyen el feedback vigente.
 
 Primero recuperen el pipeline y hagan que incluya también las pruebas de contratos, préstamos y recursos. Revisen la conversión de la duración del token a número, actualicen documentación y configuración de arranque y publiquen la URL del entorno. Para el reto, falta identificar la asignación, medir línea base y resultado y añadir observabilidad y costo. La defensa queda pendiente del docente.
+
+</details>

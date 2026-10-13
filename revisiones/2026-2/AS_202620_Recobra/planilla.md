@@ -8,14 +8,14 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Recobra` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Camilo Andres Conde Corrales · Fernando Isacc Conde Herrera · Miguel Alejandro Iii Jacome Yanez · Veronica Ubarne Reyes — cuentas consolidadas: `Cconde31` (incluye la identidad `Steamlinker`, unificada por `.mailmap` el 05/09), `MiguelJacome`, `vylrir` (Verónica Ubarne), y un commit identificado con el nombre real de Fernando Isacc Conde Herrera; ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | https://recobra.iscoutb.dev · salud/readiness observados el 2026-10-10; ver límites en S10 |
-| Última revisión | 2026-10-10 · actualización S10 preliminar; S9 definitiva del 2026-10-06 sin cambios |
+| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 9 | S9 · definitiva | `master` · `ebe6cca7a903bb333678bd20ba5327d8fcb127f7` · 2026-10-04T23:40:37-05:00 | 10/10 | 5.0 (propuesta al docente) | sí, 2026-10-06 |
-| 10 | Segundo corte · preliminar | `master` · `ac3cbb64a70fa5f23d270ab83b0a210106aded28` · 2026-10-08T18:26:27-05:00 | 9/12 de comprobación (sin PDF): 9 Cumple, 1 No cumple, 2 No verificado | C1/C2 pendientes; C3/C4 Básico (0,60 cada uno), propuestas al docente. Sin total; sustentación pendiente. Ver [S10](semana-10-corte2.md) | sí, avance 2026-10-10 |
+| 10 | Segundo corte · consolidado al cierre | `master` · `eae8471c932f430d56b757dfb3e79e57a647f4b8` · 2026-10-10T12:10:10-05:00 | C1 0,80; C2 0,80; C3 0,80; C4 1,00 (cada uno /1) | Total 4,20/5; técnica 3,40/4 + C5 docente 0,80/1; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `da5c15d` · 2026-08-07T17:54:04-05:00 | 3/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `d2dac73` · 2026-08-16T23:44:54-05:00 | 4/9 | no se publica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `cb5c579` · 2026-08-23T23:44:12-05:00 | 4/9 | no se publica | sí |
@@ -33,6 +33,33 @@
 | 16 | Proyecto final · integración y desafío arquitectónico | `final` | | | |
 | 17 | Aplicación de cambios y cierre arquitectónico | | | | |
 
+## Feedback S10 vigente · 13 de octubre de 2026
+
+Límite exclusivo: **2026-10-13T05:00:00Z**, fin del 12 de octubre en Colombia. Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
+
+**Subtotal técnico: 3,40 / 4,00. Total consolidado C1–C5: 4,20 / 5,00.**
+
+Calificación de sustentación comunicada por el docente: **4,00 / 5,00**, incorporada como **C5 = 0,80 / 1,00**. La conversión proporcional se conserva sin redondearla a los niveles de los criterios técnicos.
+
+Hay mejora operativa y un experimento S1, con límites de causalidad. Se corrigieron arc42, C4, readiness, medición GET, filtro 503 y contrato, y se enlazó la sucesión de ADR con la evidencia.
+
+Fuentes y alcance completos: [informe S10](semana-10-corte2.md#fundamento-técnico-y-comentarios-vigentes). Las referencias de identidad, contribución y despliegue heredadas conservan sus fechas originales; no constituyen una nueva verificación en esta consolidación.
+
+### Deriva arquitectónica al cierre S10
+
+Sin deriva material observada; acoplamientos aceptados por ADR.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+No se observó deriva material en los recorridos revisados; se conservan los límites y deudas explícitos del diseño.
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Seguimiento anterior a la consolidación S10; estados históricos superados</summary>
+
+**Historial superado por la consolidación del 13 de octubre de 2026.** Se conserva lo publicado como registro de las observaciones de cada fecha, no como la evaluación vigente. El cierre preliminar 2026-10-12T05:00:00Z que aparece abajo fue sustituido para S10 por el límite exclusivo 2026-10-13T05:00:00Z. Las notas parciales, pendientes de sustentación y bloqueos por asignación del escenario de ese historial no reemplazan la tabla actual.
+
 ## Lo que se arrastra
 
 Estado vigente observado el 2026-10-10 en la punta citada en [S10](semana-10-corte2.md). Las correcciones posteriores al cierre no cambian S9. El registro histórico siguiente conserva la fecha de cada observación.
@@ -42,7 +69,7 @@ Estado vigente observado el 2026-10-10 en la punta citada en [S10](semana-10-cor
 | Corroborar mediante fuente docente la autorización para que el equipo elija S1. La declaración nueva existe; no seguir afirmando que falta todo escenario. [docs/medicion-s10.md:3–43](https://github.com/ISCOUTB/AS_202620_Recobra/blob/ac3cbb64a70fa5f23d270ab83b0a210106aded28/docs/medicion-s10.md#L3-L43) | Abierto o pendiente de verificación, según la evidencia | Ver [S10](semana-10-corte2.md) y la actualización de retroalimentación |
 | Conservar JSON bruto de cada corrida, hora, entorno, versiones y SHA exacto desplegado. “a8068df o posterior” no fija el artefacto medido. Una sola corrida y el cambio de 1 a 1.000 filas impiden atribuir la mejora exclusivamente a la plataforma. [docs/medicion-s10.md:28–40](https://github.com/ISCOUTB/AS_202620_Recobra/blob/ac3cbb64a70fa5f23d270ab83b0a210106aded28/docs/medicion-s10.md#L28-L40); [docs/medicion-s10.md:78–96](https://github.com/ISCOUTB/AS_202620_Recobra/blob/ac3cbb64a70fa5f23d270ab83b0a210106aded28/docs/medicion-s10.md#L78-L96) | Abierto o pendiente de verificación, según la evidencia | Ver [S10](semana-10-corte2.md) y la actualización de retroalimentación |
 | Separar inferencia de medición: la resta aproximada entre p50 cliente y media/p95 servidor no aísla red ni descarta CPU/SQL; provienen de estadísticas/ventanas diferentes. La ventana contiene hasta 200 éxitos recientes, los errores son acumulados desde el arranque y cumpleObjetivo solo mira latencia. [docs/medicion-s10.md:67–76](https://github.com/ISCOUTB/AS_202620_Recobra/blob/ac3cbb64a70fa5f23d270ab83b0a210106aded28/docs/medicion-s10.md#L67-L76); [src/observabilidad/metricas.service.ts:3–50](https://github.com/ISCOUTB/AS_202620_Recobra/blob/ac3cbb64a70fa5f23d270ab83b0a210106aded28/src/observabilidad/metricas.service.ts#L3-L50); [src/observabilidad/latencia-busqueda.interceptor.ts:15–25](https://github.com/ISCOUTB/AS_202620_Recobra/blob/ac3cbb64a70fa5f23d270ab83b0a210106aded28/src/observabilidad/latencia-busqueda.interceptor.ts#L15-L25) | Abierto o pendiente de verificación, según la evidencia | Ver [S10](semana-10-corte2.md) y la actualización de retroalimentación |
-| Completar arc42§5/§6 y C4-C3 con PostgreSQL vigente, búsqueda, Emparejamiento, /health/ready, métrica GET y filtro 503. Ya no procede el hallazgo viejo de PostgreSQL planeado en C4-C2. [docs/arc42/arc42.md:141–183](https://github.com/ISCOUTB/AS_202620_Recobra/blob/ac3cbb64a70fa5f23d270ab83b0a210106aded28/docs/arc42/arc42.md#L141-L183); [docs/c4/C4-C3.md:39–72](https://github.com/ISCOUTB/AS_202620_Recobra/blob/ac3cbb64a70fa5f23d270ab83b0a210106aded28/docs/c4/C4-C3.md#L39-L72) | Abierto o pendiente de verificación, según la evidencia | Ver [S10](semana-10-corte2.md) y la actualización de retroalimentación |
+| Actualizar arc42 §5/§6 para representar PostgreSQL vigente, búsqueda y Emparejamiento. En C4-C3, que ya incorpora esos componentes, completar /health/ready, la medición GET de búsqueda y el filtro 503. Los componentes presentes se ven en [docs/c4/C4-C3.md:18–42](https://github.com/ISCOUTB/AS_202620_Recobra/blob/ac3cbb64a70fa5f23d270ab83b0a210106aded28/docs/c4/C4-C3.md#L18-L42). Ya no procede el hallazgo viejo de PostgreSQL planeado en C4-C2. [docs/arc42/arc42.md:141–183](https://github.com/ISCOUTB/AS_202620_Recobra/blob/ac3cbb64a70fa5f23d270ab83b0a210106aded28/docs/arc42/arc42.md#L141-L183); [docs/c4/C4-C3.md:39–72](https://github.com/ISCOUTB/AS_202620_Recobra/blob/ac3cbb64a70fa5f23d270ab83b0a210106aded28/docs/c4/C4-C3.md#L39-L72) | Abierto o pendiente de verificación, según la evidencia | Ver [S10](semana-10-corte2.md) y la actualización de retroalimentación |
 | Declarar 503 en GET /publicaciones/{id} y probarlo contra OpenAPI. La ruta usa el mismo repositorio y filtro global, pero el contrato solo declara 200/404. [docs/contracts/openapi.yaml:160–183](https://github.com/ISCOUTB/AS_202620_Recobra/blob/ac3cbb64a70fa5f23d270ab83b0a210106aded28/docs/contracts/openapi.yaml#L160-L183); [src/application/use-cases/consultar-publicacion.ts:5–11](https://github.com/ISCOUTB/AS_202620_Recobra/blob/ac3cbb64a70fa5f23d270ab83b0a210106aded28/src/application/use-cases/consultar-publicacion.ts#L5-L11); [src/publicaciones/publicaciones.module.ts:27–34](https://github.com/ISCOUTB/AS_202620_Recobra/blob/ac3cbb64a70fa5f23d270ab83b0a210106aded28/src/publicaciones/publicaciones.module.ts#L27-L34) | Abierto o pendiente de verificación, según la evidencia | Ver [S10](semana-10-corte2.md) y la actualización de retroalimentación |
 | No confundir SELECT 1 con esquema listo: readiness comprueba conectividad, mientras la creación de tabla/índice puede seguir fallando en el reintento. Mostrar fallo y recuperación de la dependencia, incluyendo un esquema no preparado, en la sustentación. [src/infrastructure/persistence/postgres-publicacion.repository.ts:51–78](https://github.com/ISCOUTB/AS_202620_Recobra/blob/ac3cbb64a70fa5f23d270ab83b0a210106aded28/src/infrastructure/persistence/postgres-publicacion.repository.ts#L51-L78); [src/infrastructure/persistence/postgres-publicacion.repository.ts:104–118](https://github.com/ISCOUTB/AS_202620_Recobra/blob/ac3cbb64a70fa5f23d270ab83b0a210106aded28/src/infrastructure/persistence/postgres-publicacion.repository.ts#L104-L118) | Abierto o pendiente de verificación, según la evidencia | Ver [S10](semana-10-corte2.md) y la actualización de retroalimentación |
 | Mantener abierto SonarCloud/QG: éxito global no prueba el scanner con continue-on-error. Actualizar correcciones.md, que aún dice que falta crear SONAR_TOKEN, frente a la explicación más reciente de permisos. No se propone reejecutar ni cambiar credenciales desde esta revisión. [correcciones.md:122–137](https://github.com/ISCOUTB/AS_202620_Recobra/blob/ac3cbb64a70fa5f23d270ab83b0a210106aded28/correcciones.md#L122-L137); [docs/no-conformidades.md:107–118](https://github.com/ISCOUTB/AS_202620_Recobra/blob/ac3cbb64a70fa5f23d270ab83b0a210106aded28/docs/no-conformidades.md#L107-L118) | Abierto o pendiente de verificación, según la evidencia | Ver [S10](semana-10-corte2.md) y la actualización de retroalimentación |
@@ -171,3 +198,5 @@ Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
 - Si PostgreSQL acepta SELECT 1 pero la creación de la tabla o del índice sigue fallando, ¿qué devolverán /health/ready, la búsqueda y la consulta por id? Demuestren detección, respuesta contractual y recuperación sin confundir conectividad con servicio útil.
 - La solución cuesta cero para el equipo, pero depende del servidor compartido y no tiene backups configurados. ¿Qué costo de operación, recuperación y alternativa asumirían si el laboratorio se retira o exige redespliegues sin corte, y qué evidencia fija hoy el límite de capacidad?
 - ¿Qué repetirían para probar la causa de la mejora entre Render y Dokploy? Usen el mismo conjunto de datos, cliente, carga, versión y varias corridas; expliquen por qué el p95 de las últimas doscientas búsquedas exitosas del servidor no es el p95 cliente de toda la prueba.
+
+</details>

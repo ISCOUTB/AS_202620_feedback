@@ -1,3 +1,165 @@
+# Segundo corte · S10 · Clubs UTB · consolidación al cierre
+
+**Actualización del feedback: 13 de octubre de 2026.** La tabla siguiente sustituye la valoración preliminar conservada al final.
+
+| Campo | Valor |
+|---|---|
+| Repositorio | https://github.com/ISCOUTB/AS_202620_Clubs_UTB |
+| Rama evaluada | `master` |
+| Hash calificado | `cd0ad9c64925863ed5067ed53da7f3c6dcf09895` |
+| Fecha del commit | 2026-10-05T00:46:29-05:00 |
+| Límite exclusivo S10 | `2026-10-13T05:00:00Z` |
+| Último instante incluido | 12 de octubre de 2026, 23:59:59, Colombia (UTC-5) |
+
+## Alcance vigente
+
+Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
+
+Los PDF están excluidos sin penalización. No se ejecutó código estudiantil en la revisión. Las cifras y experimentos documentados por los equipos se distinguen de las comprobaciones del revisor; esta publicación consolida la evaluación ya realizada y no representa una nueva prueba de flujo principal, despliegue, carga o seguridad. La lista de comprobación y la matriz transversal de las pasadas anteriores se conservan abajo con su alcance histórico; no se recalculan ni se convierten en una nota mediante la fórmula semanal. S9 permanece congelada.
+
+## Escenario documentado
+
+U3: autenticación de rutas de escritura
+
+Se valora el escenario documentado disponible; no se afirma asignación docente verificada ni nueva entrega específica S10. Evidencias previas se usan como estado del repositorio, no se traslada ni promedia su nota anterior.
+
+## Rúbrica consolidada
+
+| Criterio | Nivel técnico / origen | Puntaje |
+|---|---|---:|
+| C1 · Caracterización del escenario operativo | Básico | 0,60 / 1,00 |
+| C2 · Decisión e implementación | Básico | 0,60 / 1,00 |
+| C3 · Operación, seguridad y observabilidad | Insuficiente | 0,00 / 1,00 |
+| C4 · Evolución arquitectónica trazable | Básico | 0,60 / 1,00 |
+| C5 · Sustentación del reto | Calificación comunicada por el docente | 0,80 / 1,00 |
+
+**Subtotal técnico: 1,80 / 4,00. Total consolidado C1–C5: 2,60 / 5,00.**
+
+Calificación de sustentación comunicada por el docente: **4,00 / 5,00**, incorporada como **C5 = 0,80 / 1,00**. La conversión proporcional se conserva sin redondearla a los niveles de los criterios técnicos.
+
+Los componentes técnicos se publican como propuesta al docente. Publicar esta consolidación no acredita un registro de la calificación en Moodle.
+
+## Fundamento técnico y comentarios vigentes
+
+El escenario y el cambio de JWT están documentados. Faltan una línea base operacional reproducible y una prueba con sesión real; el ADR sigue propuesto. El health check es constante y no hay un conjunto de logs y métrica del escenario. La documentación sigue parcial.
+
+Los puntajes C1–C4 se conservan de la evaluación consolidada; el comentario y las fuentes siguientes sustentan la valoración conjunta, sin inferir puntajes nuevos de los recuentos preliminares.
+
+### Fuentes del estado calificado
+
+1. [docs/adr/0006-validacion-token-jwt-supabase.md:9–67](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/docs/adr/0006-validacion-token-jwt-supabase.md#L9-L67)
+2. [backend/src/linkclub/adapters/inbound/api/auth_dependency.py:1–33](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/backend/src/linkclub/adapters/inbound/api/auth_dependency.py#L1-L33)
+3. [backend/src/linkclub/main.py:1–20](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/backend/src/linkclub/main.py#L1-L20)
+
+## Deriva arquitectónica al cierre S10
+
+Auditoría estática de la arquitectura declarada frente a las rutas implementadas en el mismo hash del cierre S10. Se revisaron capas y dominio, persistencia, API y autorización, despliegue, asincronía y observabilidad. Se excluyeron PDF y commits posteriores al cierre; no se ejecutó código estudiantil ni se probó el servicio remoto. Una funcionalidad futura explícitamente delimitada o una deuda aceptada por un ADR vigente no se cuenta por sí sola como deriva. La gravedad indica prioridad técnica del hallazgo; no equivale a un descuento automático en la rúbrica. Los hallazgos se incorporan como feedback y propuestas de corrección; los puntajes C1–C4 conservan la matriz técnica vigente, sin recalificación por esta auditoría.
+
+**Resultado:** Dos contradicciones materiales de documentación operativa: persistencia y significado de health. La frontera hexagonal del caso de crear publicación sí se sigue; autorización por club está explícitamente pendiente.
+
+**Arquitectura declarada:** Hexagonal con puertos, FastAPI/Flutter y Supabase Auth/DB. C4 presenta datos persistidos en Supabase.
+
+**Arquitectura implementada:** main registra router; POST→require_auth JWT ES256→CrearPublicacionUseCase→puerto→lista en memoria. /health usa InMemoryStatusAdapter; Flutter catálogo hardcodeado declarado.
+
+**Hallazgos materiales: 2.** Prioridad máxima: **Media**.
+
+<a id="deriva-d1"></a>
+
+### D1 · La persistencia de publicaciones es memoria, no el adaptador Supabase dibujado
+
+**Naturaleza:** documentación desactualizada. **Prioridad:** Media. **Confianza:** Alta sobre el código y la documentación al hash; no acredita comportamiento del despliegue..
+
+**Motivo de prioridad:** Existe un camino concreto de escritura materializado que contradice la conexión de datos representada como actual.
+
+**Declaración contrastada:**
+
+- [docs/c4/contexto.md:39–47](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/docs/c4/contexto.md#L39-L47) — C4 dibuja a la API validando tokens y leyendo/escribiendo datos en Supabase.
+- [docs/c4/contexto.md:69–85](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/docs/c4/contexto.md#L69-L85) — El nivel de componentes dibuja un adaptador Supabase de datos como implementación del puerto de persistencia.
+
+**Implementación contrastada:**
+
+- [backend/src/linkclub/adapters/inbound/api/publicacion_router.py:7–16](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/backend/src/linkclub/adapters/inbound/api/publicacion_router.py#L7-L16) — publicacion_router instancia InMemoryPublicacionAdapter y lo inyecta a CrearPublicacionUseCase.
+- [backend/src/linkclub/application/use_cases/crear_publicacion.py:27–35](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/backend/src/linkclub/application/use_cases/crear_publicacion.py#L27-L35) — El caso de uso construye Publicacion y la guarda a través del puerto del repositorio.
+- [backend/src/linkclub/adapters/outbound/persistence/in_memory_publicacion_adapter.py:5–14](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/backend/src/linkclub/adapters/outbound/persistence/in_memory_publicacion_adapter.py#L5-L14) — InMemoryPublicacionAdapter conserva publicaciones en una lista Python y filtra por club.
+
+**Efecto y alcance:** Las publicaciones de la API no tienen durabilidad entre procesos/reinicios ni el respaldo PostgreSQL que un lector inferiría del C4.
+
+**Corrección propuesta:** Dibujar InMemoryPublicacionAdapter como implementación vigente y Supabase datos como objetivo; o conectar un adaptador durable detrás del puerto y probar reinicio. Separar Supabase Auth efectivamente usado de persistencia de publicaciones.
+
+<a id="deriva-d2"></a>
+
+### D2 · El health declarado como comprobación real del proveedor retorna un valor fijo
+
+**Naturaleza:** documentación desactualizada. **Prioridad:** Media. **Confianza:** Alta sobre el código y la documentación al hash; no acredita comportamiento del despliegue..
+
+**Motivo de prioridad:** La afirmación de readiness/BD en ADR4 es verificable y el recorrido no hace I/O.
+
+**Declaración contrastada:**
+
+- [docs/adr/0004-despliegue-base-de-datos.md:38–42](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/docs/adr/0004-despliegue-base-de-datos.md#L38-L42) — ADR4 afirma que un healthcheck asíncrono verifica la conexión real con el proveedor.
+
+**Implementación contrastada:**
+
+- [backend/src/linkclub/adapters/inbound/api/health_router.py:1–12](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/backend/src/linkclub/adapters/inbound/api/health_router.py#L1-L12) — El router health construye CheckHealthUseCase con InMemoryStatusAdapter.
+- [backend/src/linkclub/adapters/outbound/persistence/in_memory_status_adapter.py:1–6](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/backend/src/linkclub/adapters/outbound/persistence/in_memory_status_adapter.py#L1-L6) — InMemoryStatusAdapter.get_status devuelve literalmente ok, sin consultar servicios externos.
+
+**Efecto y alcance:** Un /health 200 demuestra respuesta de la API, no disponibilidad de Supabase; usarlo como readiness de BD puede ocultar una dependencia inaccesible.
+
+**Corrección propuesta:** Llamarlo liveness y corregir el ADR con una aclaración posterior; implementar readiness separado mediante un puerto real si el servicio depende de la BD. No afirmar que se probó Supabase con este health.
+
+### Cobertura y límites de la auditoría
+
+**Capas y dominio:** Caso de uso depende de puerto y entidad, con adaptador inyectado por router. Lectura usa repository desde adaptador de entrada; no se impone una pureza distinta de ADR1.
+
+Límite: Inspección estática; no se ejecutaron pruebas ni se comprobó el servicio remoto.
+
+- [docs/adr/0001-hexagonal.md:18–24](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/docs/adr/0001-hexagonal.md#L18-L24) — ADR1 separa dominio, aplicación, infraestructura y presentación mediante puertos y adaptadores.
+- [backend/src/linkclub/application/use_cases/crear_publicacion.py:1–8](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/backend/src/linkclub/application/use_cases/crear_publicacion.py#L1-L8) — CrearPublicacionUseCase depende de PublicacionRepositoryPort y entidades de dominio.
+- [backend/src/linkclub/adapters/inbound/api/publicacion_router.py:60–85](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/backend/src/linkclub/adapters/inbound/api/publicacion_router.py#L60-L85) — El POST obtiene autor_id mediante require_auth y delega al caso; el GET consulta el repositorio.
+
+**Persistencia:** Publicaciones en memoria y Supabase solo en autenticación del backend inspeccionado.
+
+Límite: Inspección estática; no se ejecutaron pruebas ni se comprobó el servicio remoto.
+
+- [backend/src/linkclub/adapters/outbound/persistence/in_memory_publicacion_adapter.py:5–14](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/backend/src/linkclub/adapters/outbound/persistence/in_memory_publicacion_adapter.py#L5-L14) — InMemoryPublicacionAdapter conserva publicaciones en una lista Python y filtra por club.
+
+**API y autorización:** Lecturas públicas, escritura con JWT firmado ES256 y sub; membresía/roles pendiente explícito, no nueva deriva.
+
+Límite: Inspección estática; no se ejecutaron pruebas ni se comprobó el servicio remoto.
+
+- [backend/src/linkclub/adapters/inbound/api/publicacion_router.py:60–73](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/backend/src/linkclub/adapters/inbound/api/publicacion_router.py#L60-L73) — La creación toma el autor desde Depends(require_auth), no desde el cuerpo de la solicitud.
+- [backend/src/linkclub/adapters/outbound/auth/supabase_jwt_adapter.py:16–31](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/backend/src/linkclub/adapters/outbound/auth/supabase_jwt_adapter.py#L16-L31) — SupabaseJwtAuthAdapter valida firma ES256, audiencia, emisor, expiración y sub mediante JWKS.
+- [docs/adr/0006-validacion-token-jwt-supabase.md:50–55](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/docs/adr/0006-validacion-token-jwt-supabase.md#L50-L55) — ADR6 reconoce que cualquier autenticado aún puede publicar en cualquier club y que faltan pruebas con token real.
+
+**Despliegue:** Arc42 propone Azure y Supabase; README calcula Render/Railway. No se deduce dónde está realmente alojado del Dockerfile.
+
+Límite: Destino efectivo no verificable con este alcance estático; no se consultó consola ni URL desplegada.
+
+- [docs/arc42/07_vista_de_despliegue.md:7–14](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/docs/arc42/07_vista_de_despliegue.md#L7-L14) — La vista de despliegue sitúa FastAPI en Azure Container Apps y datos/Auth en Supabase.
+- [README.md:162–168](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/README.md#L162-L168) — La tabla de costos de README usa Render/Railway para el backend y Supabase para datos/Auth.
+
+**Asincronía:** REST con función síncrona de crear/listar; no se encontró un broker o cola en la ruta materializada.
+
+Límite: Inspección estática; no se ejecutaron pruebas ni se comprobó el servicio remoto.
+
+- [backend/src/linkclub/adapters/inbound/api/publicacion_router.py:60–85](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/backend/src/linkclub/adapters/inbound/api/publicacion_router.py#L60-L85) — El POST obtiene autor_id mediante require_auth y delega al caso; el GET consulta el repositorio.
+
+**Observabilidad:** Health constante; no prueba de proveedor ni métricas en main que registra dos routers.
+
+Límite: Inspección estática; no se ejecutaron pruebas ni se comprobó el servicio remoto.
+
+- [backend/src/linkclub/main.py:1–20](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/backend/src/linkclub/main.py#L1-L20) — main registra únicamente los routers de health y publicaciones junto al manejador de validación.
+- [backend/src/linkclub/adapters/inbound/api/health_router.py:1–12](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/backend/src/linkclub/adapters/inbound/api/health_router.py#L1-L12) — El router health construye CheckHealthUseCase con InMemoryStatusAdapter.
+
+## Estado global del proyecto (overall)
+
+La verificación de metadatos del 2026-10-13T16:45:48.285819+00:00 confirmó el hash anterior como último commit de `master` antes del límite exclusivo. La punta observada es [`cd0ad9c64925863ed5067ed53da7f3c6dcf09895`](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/commit/cd0ad9c64925863ed5067ed53da7f3c6dcf09895) (2026-10-05T00:46:29-05:00). Coincide con el estado calificado; no hay commits posteriores al cierre en esa rama al momento de la comprobación.
+
+<details>
+<summary>Historial S10 anterior, superado; conservar fechas y alcance originales</summary>
+
+**Historial superado por la consolidación del 13 de octubre de 2026.** Se conserva lo publicado como registro de las observaciones de cada fecha, no como la evaluación vigente. El cierre preliminar 2026-10-12T05:00:00Z que aparece abajo fue sustituido para S10 por el límite exclusivo 2026-10-13T05:00:00Z. Las notas parciales, pendientes de sustentación y bloqueos por asignación del escenario de ese historial no reemplazan la tabla actual.
+
 # Segundo corte S10 · avance preliminar · Clubs UTB
 
 **Preliminar, no es cierre ni calificación final.** Cierre previsto: **2026-10-12T05:00:00Z**.
@@ -94,3 +256,5 @@ El delta S9 contiene 9 commits respecto de S8; hay 3 commits posteriores a S9 en
 1. ¿Cómo se recuperan las escrituras si Supabase rota claves o JWKS no responde, y cómo distinguirán 401 de 503?
 2. ¿Qué costo y límite de llamadas evita verificar JWKS localmente, y qué costo de seguridad asumen por tokens revocados?
 3. Tras medir rutas protegidas, ¿qué cambiarían para impedir que un usuario autenticado publique en un club ajeno?
+
+</details>

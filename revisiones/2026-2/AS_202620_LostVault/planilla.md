@@ -8,14 +8,14 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_LostVault` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Jose Faustino Espana Noriega · Roy Andres Gonzalez Blanco · Shamara Llorente Tapias · Kiefer Monterroza Manjarres — identidades del historial: Roy Gonzalez (¿`RGBlanco18`?), `shamarallorente-blip`, `Fausto-4` (correo `ganonimo2504`), `weller-rar` (correo `pelu.kiefer`); correspondencias por confirmar con el docente; ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | https://backend-nu-self-91.vercel.app · ver comprobación y límites en S10 |
-| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
+| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 9 | S9 · definitiva | `main` · `99fb413bda00c208ec42104dcfe6a4c189fbad77` · 2026-10-04T22:30:53-05:00 | 4/10 | Pendiente por limitación de verificación; intervalo documental 2.6–3.0, sin descontar la comprobación bloqueada | sí, 2026-10-06 |
-| 10 | Segundo corte · preliminar | `main` · `99fb413bda00c208ec42104dcfe6a4c189fbad77` · 2026-10-04T22:30:53-05:00 | 2/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
+| 10 | Segundo corte · consolidado al cierre | `main` · `99fb413bda00c208ec42104dcfe6a4c189fbad77` · 2026-10-04T22:30:53-05:00 | C1 0,60; C2 0,60; C3 0,60; C4 0,60 (cada uno /1) | Técnica 2,40/4; C5 pendiente; sin total /5; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `560ba89` · 2026-08-09T21:10:31-05:00 | 4/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `af94a30` · 2026-08-16T22:09:43-05:00 | 7/9 | no se publica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `1ddb826` · 2026-08-23T23:57:37-05:00 | 4/9 | no se publica | sí |
@@ -32,6 +32,34 @@
 | 14 | Evidencia S14 · Medición de atributos de calidad | | | no aplica | |
 | 16 | Proyecto final · integración y desafío arquitectónico | `final` | | | |
 | 17 | Aplicación de cambios y cierre arquitectónico | | | | |
+
+## Feedback S10 vigente · 13 de octubre de 2026
+
+Límite exclusivo: **2026-10-13T05:00:00Z**, fin del 12 de octubre en Colombia. Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
+
+**Subtotal técnico: 2,40 / 4,00. Total sobre 5,00 pendiente de C5.**
+
+C5 sigue pendiente de calificación docente. No se registra como cero ni se estima a partir del repositorio.
+
+Se comparan cargas en Vercel y un proxy local, sin un antes y después equivalente. Con 200 conexiones se reconocen fallos; el p95 en memoria no se acumula entre invocaciones. El código y la arquitectura documentada divergen.
+
+Fuentes y alcance completos: [informe S10](semana-10-corte2.md#fundamento-técnico-y-comentarios-vigentes). Las referencias de identidad, contribución y despliegue heredadas conservan sus fechas originales; no constituyen una nueva verificación en esta consolidación.
+
+### Deriva arquitectónica al cierre S10
+
+Handler Python cruza límites modulares; README anterior al proveedor.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+- **Media · La reclamación HTTP evita los límites de aplicación y propiedad del monolito modular:** El handler create_claim mezcla HTTP, autenticación, regla de disponibilidad, verificación y escritura directa de _claims/_objects. A diferencia del flujo Dart por interfaces, el backend carece de un dueño encapsulado de Objects que reciba la transición; cambios de persistencia y reglas afectan la frontera HTTP. Es una deuda ya reconocida como NC6, todavía presente en el SHA. **Acción:** Extraer caso de uso Python y servicio/repositorio dueño de objetos; el router traduce HTTP, Claims solicita reserva al contrato de Objects y la atomicidad permanece en una unidad de trabajo. Probar la ruta HTTP y los límites de imports, no solo la estructura Dart. [Contraste y evidencia](semana-10-corte2.md#deriva-d1).
+- **Baja · README aún describe como futuro un proveedor HTTP que ya tiene implementación:** El lector del README recibe una arquitectura anterior: contrato previo a implementar el proveedor, mientras ADR0003 y backend/main.py ya definen API separada. Puede confundirse el demo Flutter en memoria con un flujo móvil conectado a esa API. **Acción:** Actualizar README y vistas con dos rutas actuales: demo Flutter local y proveedor FastAPI; señalar explícitamente que el cliente aún no lo consume. Separar diagrama implementado de integración futura y corregir la referencia obsoleta a vercel.json. [Contraste y evidencia](semana-10-corte2.md#deriva-d2).
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Seguimiento anterior a la consolidación S10; estados históricos superados</summary>
+
+**Historial superado por la consolidación del 13 de octubre de 2026.** Se conserva lo publicado como registro de las observaciones de cada fecha, no como la evaluación vigente. El cierre preliminar 2026-10-12T05:00:00Z que aparece abajo fue sustituido para S10 por el límite exclusivo 2026-10-13T05:00:00Z. Las notas parciales, pendientes de sustentación y bloqueos por asignación del escenario de ese historial no reemplazan la tabla actual.
 
 ## Lo que se arrastra
 
@@ -139,3 +167,5 @@ Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
 - Fallo: ¿cómo evitarán dos reclamaciones inconsistentes o pérdida de datos cuando Vercel atienda solicitudes en instancias distintas?
 - Costo: ¿cuánto cuestan persistencia y métricas compartidas para sostener 200 conexiones, frente al plan gratuito actual?
 - Medición: con ~44 % de fallos bajo la carga prevista, ¿qué decisión de plataforma o control de carga cambiarían y qué resultado demostraría la mejora?
+
+</details>

@@ -8,14 +8,14 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_ElMapita` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Angel Fabian Gutierrez Gomez (sin cuenta identificada en el historial) · Diego Rosales Garza (sin cuenta identificada) · Rodrigo Vazquez Rico (firma con su nombre). Historial: `RobotDRMX` (sin atribuir) y, en EQUIPOS.md, `YOOUYII` (nunca vista).; ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | https://elmapita-utb-api.onrender.com · ver comprobación y límites en S10 |
-| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
+| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 9 | S9 · definitiva | `main` · `f3bcfa83e80f5c8d0e30a01b656d89160c907d64` · 2026-10-04T21:11:20-06:00 | 9/10 | 4.6 (propuesta al docente) | sí, 2026-10-06 |
-| 10 | Segundo corte · preliminar | `main` · `f3bcfa83e80f5c8d0e30a01b656d89160c907d64` · 2026-10-04T21:11:20-06:00 | 4/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
+| 10 | Segundo corte · consolidado al cierre | `main` · `f3bcfa83e80f5c8d0e30a01b656d89160c907d64` · 2026-10-04T21:11:20-06:00 | C1 0,80; C2 0,60; C3 0,60; C4 0,60 (cada uno /1) | Total 3,40/5; técnica 2,60/4 + C5 docente 0,80/1; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
 | 8 | S8 | `e5c3ac6` (2026-09-27T16:26:27-06:00) | 9/10 (2 filas de despliegue diferidas) | 4.6 (provisional) | si |
 | 6 | S6 | `a22f0a4` (2026-09-13T22:21:07-05:00) | 0/8 | 1.0 (prelim.) | si |
 | 7 | S7 | `afae3be` (2026-09-20T19:09:25-06:00) | 8/10 | 4.2 | si |
@@ -24,6 +24,36 @@
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `938d0206` · 2026-08-07T21:36:01-06:00 | 5/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `c5d9964c` · 2026-08-16T14:21:20-05:00 | 8/9 | no se publica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `8e30f616` · 2026-08-22T16:12:55-06:00 | 4/9 | no se publica | sí |
+
+## Feedback S10 vigente · 13 de octubre de 2026
+
+Límite exclusivo: **2026-10-13T05:00:00Z**, fin del 12 de octubre en Colombia. Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
+
+**Subtotal técnico: 2,60 / 4,00. Total consolidado C1–C5: 3,40 / 5,00.**
+
+Calificación de sustentación comunicada por el docente: **4,00 / 5,00**, incorporada como **C5 = 0,80 / 1,00**. La conversión proporcional se conserva sin redondearla a los niveles de los criterios técnicos.
+
+La caracterización se apoya en un estado inicial negativo de 0/20, con control online y procedimiento. Ese resultado no se interpreta como cumplimiento del comportamiento offline. La respuesta offline y la coherencia documental siguen incompletas.
+
+Fuentes y alcance completos: [informe S10](semana-10-corte2.md#fundamento-técnico-y-comentarios-vigentes). Las referencias de identidad, contribución y despliegue heredadas conservan sus fechas originales; no constituyen una nueva verificación en esta consolidación.
+
+### Deriva arquitectónica al cierre S10
+
+Escritura sin autorización; ubicación, caché offline y dependencias divergentes.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+- **Alta · La escritura de POIs anunciada como admin no atraviesa autorización:** Si la API está expuesta con la configuración prevista, el código no exige identidad/rol antes de solicitar un upsert. No se afirma explotación ni éxito contra una BD real. **Acción:** Añadir guard JWT validado y guard de rol admin en la entrada, pasar identidad al caso de uso y verificar 401/403 y ausencia de escritura con pruebas. Revisar también las operaciones administrativas de Auth. Swagger addBearerAuth no aplica autorización. [Contraste y evidencia](semana-10-corte2.md#deriva-d1).
+- **Media · La ruta real de ubicación omite el caso de uso que filtra precisión y timeout:** GET current puede entregar la ubicación ficticia de precisión 999 m en vez del veredicto de fallback. No se atribuye ese resultado al GPS físico de Flutter. **Acción:** Conectar la entrada HTTP a GetValidatedLocationUseCase o retirar/etiquetar ese endpoint como simulación de servidor. Definir claramente que el GPS real vive en el móvil; añadir prueba de integración router→provider impreciso/timeout. [Contraste y evidencia](semana-10-corte2.md#deriva-d2).
+- **Media · La recuperación offline documentada queda detrás de una llamada de red obligatoria:** LoadBuildingUseCase retorna error antes de consultar ModelCache ante fallo de API, por lo que una caché caliente no basta para el modo offline descrito. **Acción:** Persistir metadatos/versiones junto al binario y resolverlos desde caché al fallar la red; emitir estado offline explícito y probar caché válida sin backend. La evidencia S9 ya caracteriza la carencia; no se vende como una regresión nueva. [Contraste y evidencia](semana-10-corte2.md#deriva-d3).
+- **Media · LoadBuildingUseCase depende de adaptadores concretos pese a la regla de interfaces:** Cambiar API/cache puede requerir editar el caso de uso y sus pruebas en lugar de sustituir implementaciones detrás de puertos. **Acción:** Definir puertos de consulta de edificios y caché en dominio/aplicación; inyectar implementaciones MapasApi y ModelCache desde DI. Alternativamente aprobar y documentar el acoplamiento pragmático, sin seguir afirmando solo interfaces. [Contraste y evidencia](semana-10-corte2.md#deriva-d4).
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Seguimiento anterior a la consolidación S10; estados históricos superados</summary>
+
+**Historial superado por la consolidación del 13 de octubre de 2026.** Se conserva lo publicado como registro de las observaciones de cada fecha, no como la evaluación vigente. El cierre preliminar 2026-10-12T05:00:00Z que aparece abajo fue sustituido para S10 por el límite exclusivo 2026-10-13T05:00:00Z. Las notas parciales, pendientes de sustentación y bloqueos por asignación del escenario de ese historial no reemplazan la tabla actual.
 
 ## Lo que se arrastra
 
@@ -148,3 +178,5 @@ Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
 - ¿Qué recibe hoy el usuario si GPS entrega 999 m y por qué el controlador no llama al validador nuevo?
 - ¿Qué costo de almacenamiento/egreso tendría descargar modelos sin caché y qué supuesto cambia al habilitar modo offline real?
 - Las pruebas detectaron HTTP500 y 0/20 offline: ¿qué cambiarían primero y cómo evitarían medir un placeholder como si fuera el mapa3D?
+
+</details>

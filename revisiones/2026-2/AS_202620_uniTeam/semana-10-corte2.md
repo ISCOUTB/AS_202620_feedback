@@ -1,3 +1,144 @@
+# Segundo corte · S10 · uniTeam · consolidación al cierre
+
+**Actualización del feedback: 13 de octubre de 2026.** La tabla siguiente sustituye la valoración preliminar conservada al final.
+
+| Campo | Valor |
+|---|---|
+| Repositorio | https://github.com/ISCOUTB/AS_202620_uniTeam |
+| Rama evaluada | `master` |
+| Hash calificado | `6e04b35317a0a68d239ae85c71cd60e21982b195` |
+| Fecha del commit | 2026-10-04T16:37:55-05:00 |
+| Límite exclusivo S10 | `2026-10-13T05:00:00Z` |
+| Último instante incluido | 12 de octubre de 2026, 23:59:59, Colombia (UTC-5) |
+
+## Alcance vigente
+
+Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
+
+Los PDF están excluidos sin penalización. No se ejecutó código estudiantil en la revisión. Las cifras y experimentos documentados por los equipos se distinguen de las comprobaciones del revisor; esta publicación consolida la evaluación ya realizada y no representa una nueva prueba de flujo principal, despliegue, carga o seguridad. La lista de comprobación y la matriz transversal de las pasadas anteriores se conservan abajo con su alcance histórico; no se recalculan ni se convierten en una nota mediante la fórmula semanal. S9 permanece congelada.
+
+## Escenario documentado
+
+Mis tareas: fronteras de datos con límites ESC-01/ESC-03
+
+Se valora el escenario documentado disponible; no se afirma asignación docente verificada ni nueva entrega específica S10. Evidencias previas se usan como estado del repositorio, no se traslada ni promedia su nota anterior.
+
+## Rúbrica consolidada
+
+| Criterio | Nivel técnico / origen | Puntaje |
+|---|---|---:|
+| C1 · Caracterización del escenario operativo | Competente | 0,80 / 1,00 |
+| C2 · Decisión e implementación | Competente | 0,80 / 1,00 |
+| C3 · Operación, seguridad y observabilidad | Básico | 0,60 / 1,00 |
+| C4 · Evolución arquitectónica trazable | Básico | 0,60 / 1,00 |
+| C5 · Sustentación del reto | Calificación comunicada por el docente | 0,90 / 1,00 |
+
+**Subtotal técnico: 2,80 / 4,00. Total consolidado C1–C5: 3,70 / 5,00.**
+
+Calificación de sustentación comunicada por el docente: **4,50 / 5,00**, incorporada como **C5 = 0,90 / 1,00**. La conversión proporcional se conserva sin redondearla a los niveles de los criterios técnicos.
+
+Los componentes técnicos se publican como propuesta al docente. Publicar esta consolidación no acredita un registro de la calificación en Moodle.
+
+## Fundamento técnico y comentarios vigentes
+
+El ensayo antes y después tiene tres corridas de 300 peticiones y está separado de producción, MySQL, red y concurrencia. ADR-0013 justifica el costo de una consulta adicional y la separación implementada. El CI falla y permanecen incompletos la documentación transversal y el esquema.
+
+Los puntajes C1–C4 se conservan de la evaluación consolidada; el comentario y las fuentes siguientes sustentan la valoración conjunta, sin inferir puntajes nuevos de los recuentos preliminares.
+
+### Fuentes del estado calificado
+
+1. [docs/calidad/mediciones/mis-tareas-limite-contexto.md:7–32](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/calidad/mediciones/mis-tareas-limite-contexto.md#L7-L32)
+2. [docs/adr/0013-tareas-no-lee-las-tablas-de-proyectos.md:19–49](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/adr/0013-tareas-no-lee-las-tablas-de-proyectos.md#L19-L49)
+3. [docs/arc42/arc42-uniteam.md:557–575](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/arc42/arc42-uniteam.md#L557-L575)
+
+## Deriva arquitectónica al cierre S10
+
+Auditoría estática de la arquitectura declarada frente a las rutas implementadas en el mismo hash del cierre S10. Se revisaron capas y dominio, persistencia, API y autorización, despliegue, asincronía y observabilidad. Se excluyeron PDF y commits posteriores al cierre; no se ejecutó código estudiantil ni se probó el servicio remoto. Una funcionalidad futura explícitamente delimitada o una deuda aceptada por un ADR vigente no se cuenta por sí sola como deriva. La gravedad indica prioridad técnica del hallazgo; no equivale a un descuento automático en la rúbrica. Los hallazgos se incorporan como feedback y propuestas de corrección; los puntajes C1–C4 conservan la matriz técnica vigente, sin recalificación por esta auditoría.
+
+**Resultado:** Las rutas inspeccionadas respetan autorización síncrona por pertenencia y puertos de repositorio; Mis tareas no consulta tablas de Proyectos desde el repositorio de Tareas. El despacho síncrono está aceptado por ADR-006. Hay una garantía de aislamiento de fallos demasiado amplia frente a consumidores de operaciones permitidas (TareaCreada/EstadoCambiado) que comparten transacción SQL. La auditoría de acceso denegado sí utiliza sesión propia y queda fuera de ese hallazgo.
+
+**Arquitectura declarada:** API FastAPI con servicios/dominio/puertos y adaptadores SQLAlchemy, eventos de dominio en proceso y síncronos (ADR-006), MySQL y OIDC/Auth0. Auditoría permitida comparte transacción; denegaciones usan sesión independiente.
+
+**Arquitectura implementada:** Router→dependencias→ServicioTareas/Proyectos→puertos→repositorios SQL. Servicio verifica pertenencia antes de acciones. Bus llama consumidores de manera síncrona y captura Exception; auditoría permitida hace flush sobre la misma sesión de la operación. Web estática Next.js usa OIDC/PKCE y Bearer; API valida JWKS.
+
+**Hallazgos materiales: 1.** Prioridad máxima: **Media**.
+
+<a id="deriva-d1"></a>
+
+### D1 · Capturar la excepción del consumidor no aísla un fallo SQL de la sesión compartida
+
+**Naturaleza:** implementación. **Prioridad:** Media. **Confianza:** alta sobre la estructura; media sobre manifestación sin ejecutar fallo.
+
+**Declaración contrastada:**
+
+- [docs/adr/0006-estilo-sincrono-con-eventos-en-proceso.md:111–118](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/adr/0006-estilo-sincrono-con-eventos-en-proceso.md#L111-L118) — Relaciona ESC-04 con la garantía un consumidor falla no tumba la petición.
+- [app/application/bus.py:1–6](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/app/application/bus.py#L1-L6) — El propio contrato del bus promete aislamiento del consumidor.
+
+**Implementación contrastada:**
+
+- [app/application/bus.py:26–35](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/app/application/bus.py#L26-L35) — Captura y registra la excepción sin aislar la transacción.
+- [app/events/consumidores.py:40–54](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/app/events/consumidores.py#L40-L54) — Auditoría permitida comparte la sesión de la operación.
+- [app/infrastructure/repositorios.py:260–276](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/app/infrastructure/repositorios.py#L260-L276) — Registrar auditoría añade y hace flush sobre esa sesión.
+- [app/api/dependencias.py:24–33](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/app/api/dependencias.py#L24-L33) — La dependencia intenta commit y hace rollback al fallar.
+
+**Efecto y alcance:** Los consumidores de auditoría de operaciones permitidas (TareaCreada/EstadoCambiado) pueden fallar en flush y dejar fallida la misma unidad de trabajo que el handler intentará confirmar. El consumidor de acceso denegado sí crea y confirma una sesión propia (consumidores.py:27–37), por lo que no está incluido en este riesgo de sesión compartida. Por tanto, la garantía general de que un consumidor no tumba la petición no está sustentada para errores SQL. Es un riesgo estático condicionado al fallo, no una caída observada.
+
+**Corrección propuesta:** Elegir y documentar una semántica única: si auditoría es atómica, propagar el fallo y retirar la promesa de disponibilidad independiente; si es secundaria, usar savepoint correctamente delimitado u outbox/otra unidad de trabajo. Añadir prueba de fallo real de flush/commit del consumidor, no solo excepción Python. No introducir asincronía sin nuevo ADR.
+
+### Cobertura y límites de la auditoría
+
+**Capas, dominio y adaptadores:** Servicios dependen de dominio/puertos, no API ni infraestructura. La composición ocurre en dependencias.
+
+Límite: Paquetes por capa no se consideran deriva; import común de modelos no implica uso lateral.
+
+- [app/api/dependencias.py:36–55](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/app/api/dependencias.py#L36-L55) — Composición de servicios y adaptadores.
+- [app/application/servicio_tareas.py:11–27](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/app/application/servicio_tareas.py#L11-L27) — Inversión hacia puertos del servicio.
+
+**Persistencia:** Mis tareas recibe IDs autorizados y solo consulta TareaTabla; Proyectos mantiene sus consultas de membresía. SQLite de desarrollo separado de MySQL de despliegue.
+
+Límite: No se midió coste de consultas ni se inspeccionó BD remota.
+
+- [docs/adr/0013-tareas-no-lee-las-tablas-de-proyectos.md:33–42](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/adr/0013-tareas-no-lee-las-tablas-de-proyectos.md#L33-L42) — Regla vigente de propiedad de tablas.
+- [app/infrastructure/repositorios.py:170–191](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/app/infrastructure/repositorios.py#L170-L191) — Repositorio de Tareas filtra sobre IDs ya autorizados.
+
+**API y autorización:** OIDC/JWKS valida firma, issuer/audience y expiración; servicios comprueban pertenencia antes de acceder/emitir eventos de operación.
+
+Límite: No se probaron tokens ni configuración Auth0 real.
+
+- [app/api/seguridad.py:106–117](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/app/api/seguridad.py#L106-L117) — Decodificación/verificación del token.
+- [app/application/servicio_tareas.py:30–49](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/app/application/servicio_tareas.py#L30-L49) — Autorización de pertenencia y evento de denegación.
+
+**Despliegue:** render.yaml declara API y web estática; configuración MySQL/Aiven y OIDC. next.config exporta frontend.
+
+Límite: Se excluyen ocho commits posteriores al corte; servicio y secretos no comprobados.
+
+- [docs/c4/nivel2-contenedores.md:79–86](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/c4/nivel2-contenedores.md#L79-L86) — Correspondencia de contenedores y eventos.
+- [web/next.config.mjs:1–15](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/web/next.config.mjs#L1-L15) — Configuración de build estático.
+
+**Asincronía:** ADR-006 mantiene consumidores síncronos y sin entrega garantizada/reintentos; no se reclama ausencia de broker como deriva.
+
+Límite: La cobertura de fallos SQL compartidos requiere prueba específica.
+
+- [docs/adr/0006-estilo-sincrono-con-eventos-en-proceso.md:53–71](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/adr/0006-estilo-sincrono-con-eventos-en-proceso.md#L53-L71) — Semántica síncrona vigente.
+- [docs/adr/0006-estilo-sincrono-con-eventos-en-proceso.md:94–107](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/adr/0006-estilo-sincrono-con-eventos-en-proceso.md#L94-L107) — Atomicidad y límites declarados.
+
+**Observabilidad:** Métricas/logs en app.observabilidad y auditoría por consumidores; métrica denegados solo después de commit propio.
+
+Límite: No se verificó recolección externa ni disponibilidad mensual.
+
+- [app/events/consumidores.py:27–38](https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/app/events/consumidores.py#L27-L38) — Sesión propia y contador posterior al commit para denegaciones.
+
+**Límites adicionales:** Auditoría estática por git show al hash fijo, sin checkout, ejecución de código estudiantil, lectura de PDF, escritura en GitHub, pruebas en producción ni cambios de notas. No certifica ausencia de defectos fuera de las rutas revisadas.
+
+## Estado global del proyecto (overall)
+
+La verificación de metadatos del 2026-10-13T16:46:10.608524+00:00 confirmó el hash anterior como último commit de `master` antes del límite exclusivo. La punta observada es [`2c73ffce2d9b92e71697a7313f829789b4471639`](https://github.com/ISCOUTB/AS_202620_uniTeam/commit/2c73ffce2d9b92e71697a7313f829789b4471639) (2026-10-13T10:44:44-05:00). Hay **8 commits posteriores al cierre**. Se registran como actividad posterior, sin revisión sustantiva ni modificación de los puntajes congelados.
+
+<details>
+<summary>Historial S10 anterior, superado; conservar fechas y alcance originales</summary>
+
+**Historial superado por la consolidación del 13 de octubre de 2026.** Se conserva lo publicado como registro de las observaciones de cada fecha, no como la evaluación vigente. El cierre preliminar 2026-10-12T05:00:00Z que aparece abajo fue sustituido para S10 por el límite exclusivo 2026-10-13T05:00:00Z. Las notas parciales, pendientes de sustentación y bloqueos por asignación del escenario de ese historial no reemplazan la tabla actual.
+
 # Segundo corte S10 · revisión preliminar · uniTeam
 
 **Preliminar; no es la calificación del corte.** Se revisa la punta actual, con cierre futuro **2026-10-12T05:00:00Z**. S9 queda congelada de forma independiente.
@@ -116,3 +257,5 @@ Cambios documentales contrastados:
 - docs/arc42/arc42-uniteam.md                        | 243 ++++++++++++++++++++-
 - docs/c4/nivel2-contenedores.md                     |  28 +--
 - 11 files changed, 962 insertions(+), 17 deletions(-)
+
+</details>

@@ -1,3 +1,129 @@
+# Segundo corte · S10 · CampusMarket · consolidación al cierre
+
+**Actualización del feedback: 13 de octubre de 2026.** La tabla siguiente sustituye la valoración preliminar conservada al final.
+
+| Campo | Valor |
+|---|---|
+| Repositorio | https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET |
+| Rama evaluada | `master` |
+| Hash calificado | `1582c1ff609202fa2cc4a06fa14d18b9b61bed74` |
+| Fecha del commit | 2026-10-11T23:50:44-05:00 |
+| Límite exclusivo S10 | `2026-10-13T05:00:00Z` |
+| Último instante incluido | 12 de octubre de 2026, 23:59:59, Colombia (UTC-5) |
+
+## Alcance vigente
+
+Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
+
+Los PDF están excluidos sin penalización. No se ejecutó código estudiantil en la revisión. Las cifras y experimentos documentados por los equipos se distinguen de las comprobaciones del revisor; esta publicación consolida la evaluación ya realizada y no representa una nueva prueba de flujo principal, despliegue, carga o seguridad. La lista de comprobación y la matriz transversal de las pasadas anteriores se conservan abajo con su alcance histórico; no se recalculan ni se convierten en una nota mediante la fórmula semanal. S9 permanece congelada.
+
+## Escenario documentado
+
+S10-CT-01: incompatibilidad del consumidor sale frente a enum venta/alquiler; conservar API v2 y adaptar consumidor
+
+Se evalúa técnicamente el escenario declarado; no se afirma asignación docente verificada.
+
+## Rúbrica consolidada
+
+| Criterio | Nivel técnico / origen | Puntaje |
+|---|---|---:|
+| C1 · Caracterización del escenario operativo | Sobresaliente | 1,00 / 1,00 |
+| C2 · Decisión e implementación | Sobresaliente | 1,00 / 1,00 |
+| C3 · Operación, seguridad y observabilidad | Sobresaliente | 1,00 / 1,00 |
+| C4 · Evolución arquitectónica trazable | Sobresaliente | 1,00 / 1,00 |
+| C5 · Sustentación del reto | Calificación comunicada por el docente | 0,80 / 1,00 |
+
+**Subtotal técnico: 4,00 / 4,00. Total consolidado C1–C5: 4,80 / 5,00.**
+
+Calificación de sustentación comunicada por el docente: **4,00 / 5,00**, incorporada como **C5 = 0,80 / 1,00**. La conversión proporcional se conserva sin redondearla a los niveles de los criterios técnicos.
+
+Los componentes técnicos se publican como propuesta al docente. Publicar esta consolidación no acredita un registro de la calificación en Moodle.
+
+## Fundamento técnico y comentarios vigentes
+
+El experimento del consumidor incompatible tiene línea base y 58 observaciones contrastadas en la evaluación, correlación en las 58 y secuencia de rechazo y recuperación 200→422→200. El ADR-0020 confirma decisiones previas mediante evidencia. Se recupera el consumidor experimental; no se demuestra recuperación de infraestructura.
+
+Los puntajes C1–C4 se conservan de la evaluación consolidada; el comentario y las fuentes siguientes sustentan la valoración conjunta, sin inferir puntajes nuevos de los recuentos preliminares.
+
+### Fuentes del estado calificado
+
+1. [docs/evidencias/evidencia-s10-corte2-2026-10-11.md:7](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/1582c1ff609202fa2cc4a06fa14d18b9b61bed74/docs/evidencias/evidencia-s10-corte2-2026-10-11.md#L7); [docs/evidencias/evidencia-s10-corte2-2026-10-11.md:26–43](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/1582c1ff609202fa2cc4a06fa14d18b9b61bed74/docs/evidencias/evidencia-s10-corte2-2026-10-11.md#L26-L43); [docs/evidencias/evidencia-s10-corte2-2026-10-11.md:45–85](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/1582c1ff609202fa2cc4a06fa14d18b9b61bed74/docs/evidencias/evidencia-s10-corte2-2026-10-11.md#L45-L85); [docs/evidencias/evidencia-s10-corte2-2026-10-11.md:87–108](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/1582c1ff609202fa2cc4a06fa14d18b9b61bed74/docs/evidencias/evidencia-s10-corte2-2026-10-11.md#L87-L108); [docs/evidencias/evidencia-s10-corte2-2026-10-11.md:129–145](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/1582c1ff609202fa2cc4a06fa14d18b9b61bed74/docs/evidencias/evidencia-s10-corte2-2026-10-11.md#L129-L145) — asignación pendiente, escenario, resultados, observabilidad, trazabilidad y límites
+2. [docs/adr/0020-preservar-contrato-v2-y-adaptar-consumidor-incompatible.md:3–42](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/1582c1ff609202fa2cc4a06fa14d18b9b61bed74/docs/adr/0020-preservar-contrato-v2-y-adaptar-consumidor-incompatible.md#L3-L42) — alternativas, no-cambio justificado, confirmación previa
+3. [scripts/experimento_s10_contrato.py:33–35](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/1582c1ff609202fa2cc4a06fa14d18b9b61bed74/scripts/experimento_s10_contrato.py#L33-L35); [scripts/experimento_s10_contrato.py:47–104](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/1582c1ff609202fa2cc4a06fa14d18b9b61bed74/scripts/experimento_s10_contrato.py#L47-L104); [scripts/experimento_s10_contrato.py:124–149](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/1582c1ff609202fa2cc4a06fa14d18b9b61bed74/scripts/experimento_s10_contrato.py#L124-L149) — adaptación, observación, cálculo y plan previo
+
+## Deriva arquitectónica al cierre S10
+
+Auditoría estática de la arquitectura declarada frente a las rutas implementadas en el mismo hash del cierre S10. Se revisaron capas y dominio, persistencia, API y autorización, despliegue, asincronía y observabilidad. Se excluyeron PDF y commits posteriores al cierre; no se ejecutó código estudiantil ni se probó el servicio remoto. Una funcionalidad futura explícitamente delimitada o una deuda aceptada por un ADR vigente no se cuenta por sí sola como deriva. La gravedad indica prioridad técnica del hallazgo; no equivale a un descuento automático en la rúbrica. Los hallazgos se incorporan como feedback y propuestas de corrección; los puntajes C1–C4 conservan la matriz técnica vigente, sin recalificación por esta auditoría.
+
+**Resultado:** No se observó deriva material en los recorridos muestreados. La adaptación S10 vive en el consumidor experimental; no se atribuyó al proveedor un cambio inexistente. MySQL, fronteras de servicios y volúmenes concuerdan con las decisiones recientes.
+
+**Arquitectura declarada:** Monolito modular FastAPI con Usuarios, Publicaciones, Catálogo y Administración; único escritor por tabla; Flutter, MySQL y Dokploy.
+
+**Arquitectura implementada:** Routers→servicios→repositorios propietarios; Catálogo pide publicaciones/imágenes al servicio Publicaciones; Administración solicita ocultamiento por servicio; identidad mediante sesión opaca.
+
+**Hallazgos materiales: 0.** No se observó deriva material en los recorridos inspeccionados; esto no acredita conformidad exhaustiva ni ejecución correcta en producción.
+
+### Cobertura y límites de la auditoría
+
+**Capas y dominio:** Rastreo de GET /catalogo hasta lectura por Publicaciones; moderación pasa por servicio propietario, no repository ajeno.
+
+Límite: Inspección estática; no se ejecutaron pruebas ni se comprobó el servicio remoto.
+
+- [docs/arc42/05-bloques-de-construccion.md:9–27](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/1582c1ff609202fa2cc4a06fa14d18b9b61bed74/docs/arc42/05-bloques-de-construccion.md#L9-L27) — arc42 asigna tablas a sus contextos y exige que Catálogo/Administración consuman el servicio de Publicaciones.
+- [backend/app/catalogo/router.py:41–65](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/1582c1ff609202fa2cc4a06fa14d18b9b61bed74/backend/app/catalogo/router.py#L41-L65) — El router de catálogo valida filtros y llama buscar_publicaciones con los parámetros aceptados.
+- [backend/app/catalogo/service.py:1–5](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/1582c1ff609202fa2cc4a06fa14d18b9b61bed74/backend/app/catalogo/service.py#L1-L5) — Catálogo importa capacidades de publicaciones.service, no su repositorio SQL.
+- [backend/app/catalogo/service.py:55–62](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/1582c1ff609202fa2cc4a06fa14d18b9b61bed74/backend/app/catalogo/service.py#L55-L62) — El catálogo consulta imágenes agrupadas por IDs y compone las respuestas sin consultas por fila.
+- [backend/app/administracion/service.py:24–30](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/1582c1ff609202fa2cc4a06fa14d18b9b61bed74/backend/app/administracion/service.py#L24-L30) — La resolución de reportes solicita ocultamiento al servicio Publicaciones dentro de la revisión del reporte.
+
+**Persistencia:** MySQL y volumen de uploads; bloqueo de reporte con transacción. Fallo parcial entre contextos/SQL-filesystem reconocido, no atomicidad global prometida.
+
+Límite: Inspección estática; no se ejecutaron pruebas ni se comprobó el servicio remoto.
+
+- [deploy/compose.lab.yaml:42–54](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/1582c1ff609202fa2cc4a06fa14d18b9b61bed74/deploy/compose.lab.yaml#L42-L54) — Compose configura MySQL 8.4 y monta mysql_data en el directorio de datos.
+- [backend/app/administracion/repository.py:59–69](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/1582c1ff609202fa2cc4a06fa14d18b9b61bed74/backend/app/administracion/repository.py#L59-L69) — open_review bloquea el reporte con SELECT FOR UPDATE y rechaza reportes ya resueltos.
+- [docs/arc42/08-conceptos-transversales.md:69–76](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/1582c1ff609202fa2cc4a06fa14d18b9b61bed74/docs/arc42/08-conceptos-transversales.md#L69-L76) — arc42 reconoce transacciones separadas para ocultamiento/resolución y compensación entre SQL y filesystem.
+
+**API y autorización:** v2 admite venta/alquiler; Dependencias de sesión y moderación; adaptación experimental no cambia servidor.
+
+Límite: Inspección estática; no se ejecutaron pruebas ni se comprobó el servicio remoto.
+
+- [backend/app/catalogo/router.py:41–46](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/1582c1ff609202fa2cc4a06fa14d18b9b61bed74/backend/app/catalogo/router.py#L41-L46) — El esquema de query restringe modalidad a venta/alquiler y valida rangos de precio.
+- [backend/app/usuarios/dependencies.py:12–34](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/1582c1ff609202fa2cc4a06fa14d18b9b61bed74/backend/app/usuarios/dependencies.py#L12-L34) — Las dependencias exigen Bearer, resuelven usuario y devuelven 403 si no tiene capacidad de moderación.
+- [docs/adr/0020-preservar-contrato-v2-y-adaptar-consumidor-incompatible.md:20–30](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/1582c1ff609202fa2cc4a06fa14d18b9b61bed74/docs/adr/0020-preservar-contrato-v2-y-adaptar-consumidor-incompatible.md#L20-L30) — ADR20 mantiene proveedor v2 y transforma sale a venta solo en el consumidor experimental.
+
+**Despliegue:** API y MySQL con volúmenes/256 MiB por servicio; Pages fuera de Compose. Arc42 distingue revisión realmente observada del commit documental.
+
+Límite: Inspección estática; no se ejecutaron pruebas ni se comprobó el servicio remoto.
+
+- [deploy/compose.lab.yaml:19–24](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/1582c1ff609202fa2cc4a06fa14d18b9b61bed74/deploy/compose.lab.yaml#L19-L24) — La API monta publication_images y depende de que MySQL reporte salud.
+- [deploy/compose.lab.yaml:36–54](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/1582c1ff609202fa2cc4a06fa14d18b9b61bed74/deploy/compose.lab.yaml#L36-L54) — Compose limita API a 256 MiB y define MySQL con su volumen de datos separado.
+- [docs/arc42/s10-adenda-operativa.md:15–19](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/1582c1ff609202fa2cc4a06fa14d18b9b61bed74/docs/arc42/s10-adenda-operativa.md#L15-L19) — La adenda mantiene Pages/Dokploy y distingue revisión del proveedor observado de la documentación posterior.
+
+**Asincronía:** HTTP/JSON y llamadas internas síncronas; no se prometen broker ni servicios por contexto.
+
+Límite: Inspección estática; no se ejecutaron pruebas ni se comprobó el servicio remoto.
+
+- [docs/arc42/08-conceptos-transversales.md:25–33](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/1582c1ff609202fa2cc4a06fa14d18b9b61bed74/docs/arc42/08-conceptos-transversales.md#L25-L33) — El mapa de contextos define relaciones internas por servicios y descarta servicios desplegables por contexto.
+- [docs/arc42/08-conceptos-transversales.md:62–67](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/1582c1ff609202fa2cc4a06fa14d18b9b61bed74/docs/arc42/08-conceptos-transversales.md#L62-L67) — El contrato vigente es HTTP/JSON síncrono con Bearer/OpenAPI v2; v1 queda histórico.
+- [backend/app/catalogo/service.py:17–24](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/1582c1ff609202fa2cc4a06fa14d18b9b61bed74/backend/app/catalogo/service.py#L17-L24) — buscar_publicaciones obtiene primero la colección del servicio de Publicaciones para aplicar filtros.
+
+**Observabilidad:** Middleware de logs/correlación, health dependiente de persistencia y métrica EC01; S10 usa observador externo, explícitamente no logs privados.
+
+Límite: Inspección estática; no se ejecutaron pruebas ni se comprobó el servicio remoto.
+
+- [backend/app/main.py:52–65](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/1582c1ff609202fa2cc4a06fa14d18b9b61bed74/backend/app/main.py#L52-L65) — main instala límite de cuerpo, observabilidad y manejadores que devuelven errores de persistencia/validación seguros.
+- [backend/app/main.py:101–120](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/1582c1ff609202fa2cc4a06fa14d18b9b61bed74/backend/app/main.py#L101-L120) — main expone la métrica EC01 y /health, que consulta disponibilidad de la persistencia.
+- [docs/adr/0020-preservar-contrato-v2-y-adaptar-consumidor-incompatible.md:32–37](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/1582c1ff609202fa2cc4a06fa14d18b9b61bed74/docs/adr/0020-preservar-contrato-v2-y-adaptar-consumidor-incompatible.md#L32-L37) — ADR20 limita las observaciones productivas a HTTP/correlación y distingue los logs verificados localmente.
+
+## Estado global del proyecto (overall)
+
+La verificación de metadatos del 2026-10-13T16:45:48.479240+00:00 confirmó el hash anterior como último commit de `master` antes del límite exclusivo. La punta observada es [`1582c1ff609202fa2cc4a06fa14d18b9b61bed74`](https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/commit/1582c1ff609202fa2cc4a06fa14d18b9b61bed74) (2026-10-11T23:50:44-05:00). Coincide con el estado calificado; no hay commits posteriores al cierre en esa rama al momento de la comprobación.
+
+<details>
+<summary>Historial S10 anterior, superado; conservar fechas y alcance originales</summary>
+
+**Historial superado por la consolidación del 13 de octubre de 2026.** Se conserva lo publicado como registro de las observaciones de cada fecha, no como la evaluación vigente. El cierre preliminar 2026-10-12T05:00:00Z que aparece abajo fue sustituido para S10 por el límite exclusivo 2026-10-13T05:00:00Z. Las notas parciales, pendientes de sustentación y bloqueos por asignación del escenario de ese historial no reemplazan la tabla actual.
+
 # Semana 10 · Segundo corte · CampusMarket
 
 > **Revisión preliminar**, realizada el 6 de octubre de 2026. El cierre de S10 todavía no ha ocurrido. No constituye nota aplicada ni evaluación de sustentación.
@@ -84,3 +210,5 @@ Para el segundo corte falta identificar el escenario operativo asignado por el d
 ## Delta arquitectónico desde el primer corte
 
 Base publicada de S5: `8044215811e53b111888f75b30fc175fb889dc56`; comparación git contra HEAD `de6ed67c05ccdb7eabd9b1951f146ab8958b1d00`: 157 rutas cambiadas, de ellas 34 en ADR/arc42/C4 (sin leer PDF). Se inspeccionaron las decisiones, contratos, código y evidencia citados en las filas. El delta sirve para examinar evolución y consistencia del MVP, no para recalificar las entregas S6–S9. La correspondencia con el escenario asignado S10 sigue pendiente.
+
+</details>

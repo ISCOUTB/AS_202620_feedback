@@ -66,6 +66,33 @@ Para cerrar, cuatro cosas concretas: (1) la sección 2 de arc42 debe recoger el 
 
 La auditoría detectó problemas reales y el código ya rechaza firmas cuando falta el secreto de la pasarela. Completen la rotación y configuración segura y acrediten el despliegue de la corrección, sin publicar valores. Enlacen el ADR del panel y la medición desde ESC-03; mantengan separado el tiempo programático local del flujo completo con una persona y red.
 
-## Semana 10 · Segundo corte (avance preliminar)
+## Semana 10 · Segundo corte
+
+### Consolidación vigente · 13 de octubre de 2026
+
+ESC-04 incorpora autenticación, contrato 2.0 y ADR-0007, pero sesiones, tablas y cuentas no están acreditadas en producción. El GET público devuelve el código de canje, que funciona como secreto de retiro, a partir de un identificador entero. Es un hallazgo estático de operación y seguridad; no se consultaron pedidos reales ni se afirma explotación en producción.
+
+Se valora el escenario documentado bajo un supuesto explícito de pertinencia; su asignación oficial no se presenta como verificada. Las mediciones conservan el alcance y las limitaciones descritos en la evidencia. Los comentarios anteriores se mantienen como historial y la evaluación de la semana anterior permanece congelada.
+
+La sustentación sigue pendiente de calificación docente; no se infiere a partir del repositorio. El [informe del corte](semana-10-corte2.md) y la [planilla](planilla.md) separan ese pendiente del componente técnico.
+
+### Deriva arquitectónica al cierre S10
+
+Canje sin arbitraje atómico; eventos síncronos y README rezagado.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+- **Alta · La transición de entrega valida fuera de la escritura atómica:** ADR0007 atribuye el rechazo de todas las reutilizaciones del canje al estado final. Sin embargo, dos peticiones autorizadas concurrentes pueden leer Listo, validar el mismo código y ejecutar ambas UPDATE por id. También una transición basada en estado atrasado puede sobrescribir otra más reciente. La garantía del estado final necesita protección en persistencia; se trata de un interleaving permitido por el código, no de una duplicación observada en producción. **Acción:** Exponer una operación de repositorio que cambie estado solo si coincide el estado/version leído, y devuelva conflicto si otra petición ganó; mantener validación de tenant/código en la misma transacción o condición. Añadir prueba concurrente de dos entregas y de cancelar frente a preparar, exigiendo un único éxito. [Contraste y evidencia](semana-10-corte2.md#deriva-d1).
+- **Media · El canal al panel descrito como asíncrono es un bus síncrono sin consumidor de producción:** ADR0003 afirma que API→panel usa evento asíncrono y desacopla el momento. publicar invoca cada handler inline; confirmar_pago lo llama antes de retornar. Además el panel actual obtiene novedades por polling HTTP, no por ese canal. Capturar excepciones aísla errores, pero no el tiempo de ejecución. Hoy no se halló suscriptor de producción, por lo que no se afirma latencia real por callbacks. **Acción:** Ratificar en un ADR el diseño actual: webhook externo y polling de panel, con bus local síncrono para extensiones; o implementar un transporte/worker realmente desacoplado con consumidor y política de entrega. No basta devolver202 o ignorar el resultado del callback. [Contraste y evidencia](semana-10-corte2.md#deriva-d2).
+- **Baja · El README sigue anunciando memoria y contrato1.1 pese a la evolución vigente:** La entrada principal dice que hoy el estado vive en memoria y lista OpenAPI 1.1; el repositorio ya selecciona PostgreSQL y la aplicación anuncia 2.0 con sesiones. Esto oculta requisitos de migración y autenticación para quien instala o integra. **Acción:** Actualizar guía de arranque/estado y tabla de contratos a la versión vigente, distinguendo memoria de pruebas de PostgreSQL cuando está configurado e incorporando requisitos de sesiones y migraciones. Mantener el historial de contratos como histórico. [Contraste y evidencia](semana-10-corte2.md#deriva-d3).
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Comentarios preliminares anteriores, superados por la consolidación del 13 de octubre</summary>
+
+Estos comentarios corresponden al estado y a las comprobaciones de sus fechas originales. Las referencias a pendientes, disponibilidad y asignación del escenario no sustituyen el feedback vigente.
 
 Antes de la defensa, acrediten la corrección y configuración segura del secreto en el despliegue, y resuelvan o delimiten el panel sin autenticación. Confirmen el escenario operativo asignado y midan su línea base y respuesta en el entorno real. La disponibilidad actual no pudo comprobarse por una cancelación de la herramienta; eso no demuestra que el servicio esté caído.
+
+</details>

@@ -8,14 +8,14 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Drift` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Jerry Daniel Buelvas Mejia (`JerryDBM`) · Mauricio Andres Fernandez Espinosa (`maufern4ndez`) · Luis Mario Perez Diaz (`lmpdiaz12`) · Joshua David Reyes Leones (`JoshuaR01` y `JoshXX`, mismo correo); ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | https://drift-utb-202620-g5fvchdcgpcthkeg.mexicocentral-01.azurewebsites.net · ver comprobación y límites en S10 |
-| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
+| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 9 | S9 · definitiva | `master` · `3dee7e265eec021cbbba4af4d337e13c982df316` · 2026-10-04T22:03:23-05:00 | 7/10 | 3.8 (propuesta al docente) | sí, 2026-10-06 |
-| 10 | Segundo corte · preliminar | `master` · `3dee7e265eec021cbbba4af4d337e13c982df316` · 2026-10-04T22:03:23-05:00 | 2/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
+| 10 | Segundo corte · consolidado al cierre | `master` · `04874b8744dfa345a7fa7e12775e629c410fc870` · 2026-10-12T14:42:40-05:00 | C1 1,00; C2 0,80; C3 0,80; C4 0,80 (cada uno /1) | Total 4,36/5; técnica 3,40/4 + C5 docente 0,96/1; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
 | 8 | S8 | `74709aa` (2026-09-27T23:58:28-05:00) | 10/10 | 5.0 (prop. prov.; 2 filas de despliegue diferidas) | sí |
 | 7 | S7 | `9334a03` (2026-09-20T20:19:47-05:00) | 10/10 | 5.0 | si |
 | 6 | S6 | `5f7fa4c` (2026-09-13T22:07:49-05:00) | 5/8 | 3.5 (prelim.) | si |
@@ -24,6 +24,33 @@
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `b7ec296c` · 2026-08-09T22:59:42-05:00 | 4/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `23fb8c29` · 2026-08-16T22:39:37-05:00 | 6/9 | no se publica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `0d006bba` · 2026-08-23T18:05:58-05:00 | 5/9 | no se publica | sí |
+
+## Feedback S10 vigente · 13 de octubre de 2026
+
+Límite exclusivo: **2026-10-13T05:00:00Z**, fin del 12 de octubre en Colombia. Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
+
+**Subtotal técnico: 3,40 / 4,00. Total consolidado C1–C5: 4,36 / 5,00.**
+
+Calificación de sustentación comunicada por el docente: **4,80 / 5,00**, incorporada como **C5 = 0,96 / 1,00**. La conversión proporcional se conserva sin redondearla a los niveles de los criterios técnicos.
+
+E6 tiene tres corridas de base y tres de fallo controladas, con respuesta mediante timeout, caché y logs. El experimento es simulado y excluye TLS y el efecto en producción. Persisten coherencia parcial y una métrica de fuentes vacía.
+
+Fuentes y alcance completos: [informe S10](semana-10-corte2.md#fundamento-técnico-y-comentarios-vigentes). Las referencias de identidad, contribución y despliegue heredadas conservan sus fechas originales; no constituyen una nueva verificación en esta consolidación.
+
+### Deriva arquitectónica al cierre S10
+
+Sin deriva material observada; ADR vigente actualiza memoria y sincronía.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+No se observó deriva material en los recorridos revisados; se conservan los límites y deudas explícitos del diseño.
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Seguimiento anterior a la consolidación S10; estados históricos superados</summary>
+
+**Historial superado por la consolidación del 13 de octubre de 2026.** Se conserva lo publicado como registro de las observaciones de cada fecha, no como la evaluación vigente. El cierre preliminar 2026-10-12T05:00:00Z que aparece abajo fue sustituido para S10 por el límite exclusivo 2026-10-13T05:00:00Z. Las notas parciales, pendientes de sustentación y bloqueos por asignación del escenario de ese historial no reemplazan la tabla actual.
 
 ## Lo que se arrastra
 
@@ -159,3 +186,5 @@ Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
 - ¿Qué devuelve la búsqueda si Steam se cae y el catálogo de PlayStation está vacío después de un reinicio?
 - ¿Cómo cambia el costo por búsqueda si se elimina la caché o se replica el backend, y qué límite gratuito se alcanza primero?
 - ¿Qué cambiarían tras repetir la medición controlando caché caliente, arranque en frío y variación de Steam?
+
+</details>

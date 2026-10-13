@@ -58,6 +58,31 @@ Para cerrar el flanco transversal, dos cosas: (1) la evidencia de SonarCloud sig
 
 La entrega final incorpora una porción real de Catálogo y una cadena navegable hasta mutaciones y medición HTTP/MySQL bajo cuota. La auditoría amplía correctamente el alcance de dependencias y distingue pruebas locales de experiencia pública. Mantengan esa separación: aún falta medir EC-01 desde el navegador público con el conjunto completo, integrar el scanner Sonar y preservar los ADR aceptados. Revisen además los avisos vigentes de la versión de python-multipart.
 
-## Semana 10 · Segundo corte (avance preliminar)
+## Semana 10 · Segundo corte
+
+### Consolidación vigente · 13 de octubre de 2026
+
+El experimento del consumidor incompatible tiene línea base y 58 observaciones contrastadas en la evaluación, correlación en las 58 y secuencia de rechazo y recuperación 200→422→200. El ADR-0020 confirma decisiones previas mediante evidencia. Se recupera el consumidor experimental; no se demuestra recuperación de infraestructura.
+
+Se valora el escenario documentado bajo un supuesto explícito de pertinencia; su asignación oficial no se presenta como verificada. Las mediciones conservan el alcance y las limitaciones descritos en la evidencia. Los comentarios anteriores se mantienen como historial y la evaluación de la semana anterior permanece congelada.
+
+La sustentación comunicada por el docente ya está incorporada en la [planilla](planilla.md) y el [informe del corte](semana-10-corte2.md).
+
+### Deriva arquitectónica al cierre S10
+
+Sin deriva material observada en los recorridos inspeccionados.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+No se observó deriva material en los recorridos revisados; se conservan los límites y deudas explícitos del diseño.
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Comentarios preliminares anteriores, superados por la consolidación del 13 de octubre</summary>
+
+Estos comentarios corresponden al estado y a las comprobaciones de sus fechas originales. Las referencias a pendientes, disponibilidad y asignación del escenario no sustituyen el feedback vigente.
 
 Para el segundo corte falta identificar el escenario operativo asignado por el docente. El despliegue y el health check responden; preparen la línea base, la intervención y el resultado comparable del reto, con métrica y límites de validez. No presenten el experimento de S9 como respuesta a una asignación todavía no confirmada. La sustentación y el pipeline en vivo quedan pendientes.
+
+</details>

@@ -66,6 +66,31 @@ Lo que hay que corregir: varios ADR aceptados fueron editados después de su ace
 
 La nueva política de verificación, la auditoría de escrituras y el ADR de no incorporar IA generativa están sustentados. La porción y la prueba reutilizadas son de entregas anteriores, y la medición al cierre cubre cinco de los veinte casos previstos. Completen la cadena navegable y distingan el trabajo nuevo de la línea base.
 
-## Semana 10 · Segundo corte (avance preliminar)
+## Semana 10 · Segundo corte
+
+### Consolidación vigente · 13 de octubre de 2026
+
+El resultado declarado de 20/20 no coincide con el CI fallido y no constituye una línea base operacional. Hay health check, JSON y métricas, pero las cadenas arquitectónicas están incompletas y algunos controles documentados no están implementados.
+
+Se valora el escenario documentado bajo un supuesto explícito de pertinencia; su asignación oficial no se presenta como verificada. Las mediciones conservan el alcance y las limitaciones descritos en la evidencia. Los comentarios anteriores se mantienen como historial y la evaluación de la semana anterior permanece congelada.
+
+La sustentación sigue pendiente de calificación docente; no se infiere a partir del repositorio. El [informe del corte](semana-10-corte2.md) y la [planilla](planilla.md) separan ese pendiente del componente técnico.
+
+### Deriva arquitectónica al cierre S10
+
+C4 no distingue SQLite local de PostgreSQL desplegado.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+- **Baja · C4 muestra SQLite sin distinguir PostgreSQL del ambiente desplegado:** Puede inducir una configuración de almacenamiento equivocada si C4 se lee de forma aislada. **Acción:** Separar en C4 SQLite local y PostgreSQL desplegado y marcar como previstos los módulos sin implementación. Conservar ADR3 como historia y enlazar ADR7 vigente. [Contraste y evidencia](semana-10-corte2.md#deriva-d1).
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Comentarios preliminares anteriores, superados por la consolidación del 13 de octubre</summary>
+
+Estos comentarios corresponden al estado y a las comprobaciones de sus fechas originales. Las referencias a pendientes, disponibilidad y asignación del escenario no sustituyen el feedback vigente.
 
 La punta amplía pruebas y mejora documentación, pero el CI falla mientras la evidencia afirma que todos los casos pasan. Corrijan esa contradicción y documenten el experimento del escenario asignado. No carguen datos reales mientras lectura y escritura sigan sin autenticación. La sustentación queda pendiente.
+
+</details>

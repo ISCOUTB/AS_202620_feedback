@@ -1,167 +1,2669 @@
 {
-  "modo": "early",
-  "ts": "2026-10-10T13:16:36.581915+00:00",
+  "modo": "final",
+  "ts": "2026-10-13T18:36:13.534495+00:00",
   "equipos": 23,
-  "lote": "delta-2026-10-10",
-  "tamano_lote": 2,
-  "origen": "revision-documental-delta",
-  "publicado": false,
-  "publicacion_pendiente": "Esta actualización se propone mediante un pull request en borrador, pendiente de incorporación a master. La base de las revisiones del 6 y la corrección de EnAgenda del 7 ya están incorporadas.",
-  "cierre": "2026-10-12T05:00:00Z",
+  "origen": "consolidacion-de-evaluacion-tecnica-y-sustentaciones-docentes",
+  "publicado": true,
+  "destino": "master",
+  "cierre": "2026-10-13T05:00:00Z",
+  "semantica_cierre": "limite exclusivo; ultimo instante incluido 2026-10-12T23:59:59-05:00",
+  "cierre_preliminar_sustituido": "2026-10-12T05:00:00Z",
   "pdf": "excluidos por indicacion docente; sin penalizacion",
   "ejecucion_codigo_estudiantil": false,
+  "regla_nota": "C1-C4 sobre4 sin reescalar; C5 docente sobre1. Total sobre5 solo con C5 confirmado.",
+  "supuesto_escenarios": "Se evalua el escenario documentado bajo supuesto explicito de pertinencia; asignacion oficial no verificada.",
+  "equipos_con_C5": 16,
+  "equipos_C5_pendiente": 7,
+  "s9": "sin cambios",
+  "correcciones_previas_incorporadas": "Correcciones de despliegue y C4 propuestas en PR4 incorporadas en el historial; no se realizo una nueva comprobacion externa.",
   "resultados": [
     {
       "repo": "AS_202620_AudioShare",
+      "equipo": "AudioShare",
       "rama": "master",
-      "hash": "6a03a9718776420d46ed40f7addc5667206908cd",
-      "fecha": "2026-10-04T23:15:57-05:00"
+      "hash": "1da287c662986033871ef0e044ed29894b978593",
+      "fecha": "2026-10-12T17:35:29-05:00",
+      "criterios_tecnicos": {
+        "C1": 0.8,
+        "C2": 0.6,
+        "C3": 0.8,
+        "C4": 0.6
+      },
+      "subtotal_tecnico_sobre_4": 2.8,
+      "C5_docente": 0.8,
+      "sustentacion_docente_sobre_5": 4,
+      "total_sobre_5": 3.6,
+      "estado_total": "Consolidado con C5 docente",
+      "escenario": "Escenario documentado",
+      "asignacion_oficial": "No verificado; supuesto explícito de pertinencia",
+      "comentario": "El protocolo de sincronización incorpora medición y mutación, pero la comparación mezcla relojes. Flutter aún no integra /time ni ACK, y la arquitectura conserva desalineaciones.",
+      "fuentes": [
+        "https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/docs/evidencia-a01-ec01.md#L8-L64",
+        "https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/docs/adr/0007-correccion-de-reloj-y-ack-de-arranque.md#L3-L7",
+        "https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/.github/workflows/ci.yml#L1-L23"
+      ],
+      "head_observado": "240605533aac563c80a1cab648d6ce7dcea2f6f1",
+      "commits_posteriores_al_cierre": 3,
+      "observacion_metadatos": "2026-10-13T16:45:48.697435+00:00",
+      "deriva_arquitectonica": {
+        "hash": "1da287c662986033871ef0e044ed29894b978593",
+        "hallazgos": 3,
+        "prioridad_maxima": "Media",
+        "resumen": "C4 y despliegue rezagados; Session aún escribe el estado asignado a Sync.",
+        "arquitectura_declarada": "Monolito modular Session/Sync/Audio, SQLite backend, Flutter por HTTP/JSON y distribución NDJSON.",
+        "arquitectura_implementada": "createApp conecta SessionApplication→SQLiteRoomRepository; /play invoca SyncCoordinator y Session; Flutter ViewModel→RoomRepository→ApiClient. Stream y medición ACK en backend; audio cliente simulado.",
+        "detalle": [
+          {
+            "title": "C4 omite Flutter y conserva solo la vista del cliente web legado",
+            "nature": "documentación desactualizada",
+            "severity": "Media",
+            "severity_reason": "La vista principal omite Flutter y atribuye recepción de eventos al único cliente representado; el web legado sí existe como fallback.",
+            "impact": "La vista incompleta de las alternativas de cliente no permite distinguir el fallback public/ del cliente Flutter preferido por el bootstrap ni qué alternativa consume actualmente NDJSON.",
+            "confidence": "Alta sobre el código y la documentación al hash; no acredita comportamiento del despliegue.",
+            "correction": "Actualizar L2 con Flutter y web legado como alternativas; marcar NDJSON, /time y ACK como pendientes de integrar en Flutter. No presentar ADR-0007 propuesto como decisión ya aceptada.",
+            "declared": [
+              {
+                "path": "docs/c4/C4 Nivel 2 - Contenedores.mmd",
+                "start_line": 23,
+                "end_line": 30,
+                "url": "https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/docs/c4/C4%20Nivel%202%20-%20Contenedores.mmd#L23-L30",
+                "description": "C4 describe exclusivamente WebClient servido desde public/ y AppServer con API REST/NDJSON."
+              },
+              {
+                "path": "docs/c4/C4 Nivel 2 - Contenedores.mmd",
+                "start_line": 44,
+                "end_line": 47,
+                "url": "https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/docs/c4/C4%20Nivel%202%20-%20Contenedores.mmd#L44-L47",
+                "description": "C4 atribuye al cliente web llamadas REST y recepción de eventos NDJSON, con SQLite detrás del servidor."
+              }
+            ],
+            "evidence": [
+              {
+                "path": "src/app.ts",
+                "start_line": 74,
+                "end_line": 84,
+                "url": "https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/src/app.ts#L74-L84",
+                "description": "Express elige build/web cuando se solicita Flutter y existe index.html; en otro caso conserva public/ como fallback."
+              },
+              {
+                "path": "src/server.ts",
+                "start_line": 1,
+                "end_line": 5,
+                "url": "https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/src/server.ts#L1-L5",
+                "description": "El bootstrap llama createApp con serveFlutterWeb: true."
+              },
+              {
+                "path": "lib/features/session/data/repositories/room_repository.dart",
+                "start_line": 42,
+                "end_line": 58,
+                "url": "https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/lib/features/session/data/repositories/room_repository.dart#L42-L58",
+                "description": "RoomRepository consulta salas por GET y realiza play/pause por POST seguido de otra consulta GET."
+              },
+              {
+                "path": "README.md",
+                "start_line": 128,
+                "end_line": 134,
+                "url": "https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/README.md#L128-L134",
+                "description": "README distingue cliente Flutter implementado, audio simulado y consumo NDJSON/control de acceso pendientes."
+              }
+            ]
+          },
+          {
+            "title": "Session sigue escribiendo el estado que el diseño asigna a Sync",
+            "nature": "implementación",
+            "severity": "Media",
+            "severity_reason": "Es una violación de propiedad reconocida explícitamente por el propio diseño, no un hallazgo basado en nombres de carpetas.",
+            "impact": "La evolución del estado de sincronización exige modificar también el modelo y persistencia de Session; existen dos representaciones acopladas.",
+            "confidence": "Alta sobre el código y la documentación al hash; no acredita comportamiento del despliegue.",
+            "correction": "Cerrar NC-10: hacer a Sync dueño del estado persistido y publicar una interfaz que Session consulte, o registrar formalmente un modelo compartido deliberado con responsabilidades y pruebas. La no conformidad ya estaba reconocida; no se presenta como descubrimiento nuevo.",
+            "declared": [
+              {
+                "path": "docs/contextos-delimitados.md",
+                "start_line": 122,
+                "end_line": 129,
+                "url": "https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/docs/contextos-delimitados.md#L122-L129",
+                "description": "El mapa de contextos califica la copia del estado Sync en Session como NC-10 y propone conservar solo referencias."
+              }
+            ],
+            "evidence": [
+              {
+                "path": "src/app.ts",
+                "start_line": 212,
+                "end_line": 215,
+                "url": "https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/src/app.ts#L212-L215",
+                "description": "play toma el evento de Sync y entrega su startAt a sessions.startPlayback."
+              },
+              {
+                "path": "src/modules/session/application/session-application.ts",
+                "start_line": 29,
+                "end_line": 40,
+                "url": "https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/src/modules/session/application/session-application.ts#L29-L40",
+                "description": "SessionApplication.startPlayback modifica la reproducción de la sala mediante el repositorio de Session."
+              },
+              {
+                "path": "src/modules/session/infrastructure/persistence/sqlite-room-repository.ts",
+                "start_line": 132,
+                "end_line": 145,
+                "url": "https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/src/modules/session/infrastructure/persistence/sqlite-room-repository.ts#L132-L145",
+                "description": "El repositorio SQLite de Session actualiza status, playback_state y start_at dentro de la tabla rooms."
+              }
+            ]
+          },
+          {
+            "title": "La plataforma principal de arc42/ADR no coincide con la guía operativa vigente",
+            "nature": "documentación desactualizada",
+            "severity": "Baja",
+            "severity_reason": "El laboratorio ya era alternativa permitida; se trata de reconciliar cuál entorno es principal, no de un despliegue inválido.",
+            "impact": "Una persona que siga arc42 puede preparar Azure cuando README guía a Dokploy.",
+            "confidence": "Alta sobre el código y la documentación al hash; no acredita comportamiento del despliegue.",
+            "correction": "Registrar Dokploy como entorno principal actual, conservar Azure como alternativa si sigue vigente y enlazar la decisión de transición sin reescribir la historia.",
+            "declared": [
+              {
+                "path": "docs/arc42/src/07_deployment_view.adoc",
+                "start_line": 16,
+                "end_line": 18,
+                "url": "https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/docs/arc42/src/07_deployment_view.adoc#L16-L18",
+                "description": "arc42 identifica Azure Container Apps como entorno público principal y el laboratorio como alternativa."
+              }
+            ],
+            "evidence": [
+              {
+                "path": "README.md",
+                "start_line": 185,
+                "end_line": 193,
+                "url": "https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/README.md#L185-L193",
+                "description": "README identifica Dokploy como plataforma productiva que ejecuta docker-compose.yml."
+              },
+              {
+                "path": "docker-compose.yml",
+                "start_line": 10,
+                "end_line": 23,
+                "url": "https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/docker-compose.yml#L10-L23",
+                "description": "Compose materializa una sola API con DATABASE_FILE y volumen persistente local."
+              }
+            ]
+          }
+        ],
+        "informe": "revisiones/2026-2/AS_202620_AudioShare/semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10"
+      }
     },
     {
       "repo": "AS_202620_Sistema-de-calificacion-automatica",
+      "equipo": "Calificación automática (Quantia)",
       "rama": "master",
-      "hash": "72011933ff2238eaec697f565572fec6872a3cbc",
-      "fecha": "2026-10-04T22:36:29-05:00"
+      "hash": "85da6d3ab6ef882582839362b56981fa7cb53949",
+      "fecha": "2026-10-11T23:36:26-05:00",
+      "criterios_tecnicos": {
+        "C1": 1,
+        "C2": 1,
+        "C3": 1,
+        "C4": 1
+      },
+      "subtotal_tecnico_sobre_4": 4,
+      "C5_docente": 0.8,
+      "sustentacion_docente_sobre_5": 4,
+      "total_sobre_5": 4.8,
+      "estado_total": "Consolidado con C5 docente",
+      "escenario": "EC-09, límite de costo/cuota del proveedor LLM ante ráfaga a POST /distractores",
+      "asignacion_oficial": "No verificado; supuesto explícito de pertinencia",
+      "comentario": "El presupuesto atómico responde al escenario con línea base, degradación medida y arquitectura y contrato actualizados. La auditoría de dependencias sigue vigente: los manifiestos no cambiaron de S9 a S10 y el código nuevo utiliza la biblioteca estándar. No se exige una auditoría nueva ni se añaden requisitos de vulnerabilidades ajenos a la ficha.",
+      "fuentes": [
+        "https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/85da6d3ab6ef882582839362b56981fa7cb53949/docs/evidencia/experimento-presupuesto.md",
+        "https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/85da6d3ab6ef882582839362b56981fa7cb53949/docs/adr/0015-limitar-el-gasto-del-proveedor-de-llm-con-un-presupuesto-en-la-api.md",
+        "https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/blob/85da6d3ab6ef882582839362b56981fa7cb53949/backend/autoria/presupuesto.py"
+      ],
+      "head_observado": "85da6d3ab6ef882582839362b56981fa7cb53949",
+      "commits_posteriores_al_cierre": 0,
+      "observacion_metadatos": "2026-10-13T16:45:48.271081+00:00",
+      "deriva_arquitectonica": {
+        "hash": "85da6d3ab6ef882582839362b56981fa7cb53949",
+        "hallazgos": 0,
+        "prioridad_maxima": "Sin hallazgos",
+        "resumen": "Sin deriva material observada en los recorridos inspeccionados.",
+        "arquitectura_declarada": "Monolito modular con ingesta, infraestructura y autoría implementadas; Redis/worker para recepción; puertos de LLM con presupuesto; Render de demostración.",
+        "arquitectura_implementada": "FastAPI→recibir_lote→almacén/bitácora→Redis; worker consume y registra, sin OMR/calificación. /distractores→regla de autoría→GeneradorConPresupuesto→proveedor. Un proceso uvicorn y worker supervisado.",
+        "detalle": [],
+        "informe": "revisiones/2026-2/AS_202620_Sistema-de-calificacion-automatica/semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10"
+      }
     },
     {
       "repo": "AS_202620_PROYECTO_CAMPUSMARKET",
+      "equipo": "CampusMarket",
       "rama": "master",
-      "hash": "de6ed67c05ccdb7eabd9b1951f146ab8958b1d00",
-      "fecha": "2026-10-04T02:14:34-05:00"
+      "hash": "1582c1ff609202fa2cc4a06fa14d18b9b61bed74",
+      "fecha": "2026-10-11T23:50:44-05:00",
+      "criterios_tecnicos": {
+        "C1": 1,
+        "C2": 1,
+        "C3": 1,
+        "C4": 1
+      },
+      "subtotal_tecnico_sobre_4": 4,
+      "C5_docente": 0.8,
+      "sustentacion_docente_sobre_5": 4,
+      "total_sobre_5": 4.8,
+      "estado_total": "Consolidado con C5 docente",
+      "escenario": "S10-CT-01: incompatibilidad del consumidor sale frente a enum venta/alquiler; conservar API v2 y adaptar consumidor",
+      "asignacion_oficial": "No verificado; supuesto explícito de pertinencia",
+      "comentario": "El experimento del consumidor incompatible tiene línea base y 58 observaciones contrastadas en la evaluación, correlación en las 58 y secuencia de rechazo y recuperación 200→422→200. El ADR-0020 confirma decisiones previas mediante evidencia. Se recupera el consumidor experimental; no se demuestra recuperación de infraestructura.",
+      "fuentes": [
+        "https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/1582c1ff609202fa2cc4a06fa14d18b9b61bed74/docs/evidencias/evidencia-s10-corte2-2026-10-11.md",
+        "https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/1582c1ff609202fa2cc4a06fa14d18b9b61bed74/docs/adr/0020-preservar-contrato-v2-y-adaptar-consumidor-incompatible.md",
+        "https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/blob/1582c1ff609202fa2cc4a06fa14d18b9b61bed74/scripts/experimento_s10_contrato.py"
+      ],
+      "head_observado": "1582c1ff609202fa2cc4a06fa14d18b9b61bed74",
+      "commits_posteriores_al_cierre": 0,
+      "observacion_metadatos": "2026-10-13T16:45:48.479240+00:00",
+      "deriva_arquitectonica": {
+        "hash": "1582c1ff609202fa2cc4a06fa14d18b9b61bed74",
+        "hallazgos": 0,
+        "prioridad_maxima": "Sin hallazgos",
+        "resumen": "Sin deriva material observada en los recorridos inspeccionados.",
+        "arquitectura_declarada": "Monolito modular FastAPI con Usuarios, Publicaciones, Catálogo y Administración; único escritor por tabla; Flutter, MySQL y Dokploy.",
+        "arquitectura_implementada": "Routers→servicios→repositorios propietarios; Catálogo pide publicaciones/imágenes al servicio Publicaciones; Administración solicita ocultamiento por servicio; identidad mediante sesión opaca.",
+        "detalle": [],
+        "informe": "revisiones/2026-2/AS_202620_PROYECTO_CAMPUSMARKET/semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10"
+      }
     },
     {
       "repo": "AS_202620_Clubs_UTB",
+      "equipo": "Clubs UTB",
       "rama": "master",
       "hash": "cd0ad9c64925863ed5067ed53da7f3c6dcf09895",
-      "fecha": "2026-10-05T00:46:29-05:00"
+      "fecha": "2026-10-05T00:46:29-05:00",
+      "criterios_tecnicos": {
+        "C1": 0.6,
+        "C2": 0.6,
+        "C3": 0,
+        "C4": 0.6
+      },
+      "subtotal_tecnico_sobre_4": 1.8,
+      "C5_docente": 0.8,
+      "sustentacion_docente_sobre_5": 4,
+      "total_sobre_5": 2.6,
+      "estado_total": "Consolidado con C5 docente",
+      "escenario": "U3: autenticación de rutas de escritura",
+      "asignacion_oficial": "No verificado; supuesto explícito de pertinencia",
+      "comentario": "El escenario y el cambio de JWT están documentados. Faltan una línea base operacional reproducible y una prueba con sesión real; el ADR sigue propuesto. El health check es constante y no hay un conjunto de logs y métrica del escenario. La documentación sigue parcial.",
+      "fuentes": [
+        "https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/docs/adr/0006-validacion-token-jwt-supabase.md#L9-L67",
+        "https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/backend/src/linkclub/adapters/inbound/api/auth_dependency.py#L1-L33",
+        "https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/backend/src/linkclub/main.py#L1-L20"
+      ],
+      "head_observado": "cd0ad9c64925863ed5067ed53da7f3c6dcf09895",
+      "commits_posteriores_al_cierre": 0,
+      "observacion_metadatos": "2026-10-13T16:45:48.285819+00:00",
+      "deriva_arquitectonica": {
+        "hash": "cd0ad9c64925863ed5067ed53da7f3c6dcf09895",
+        "hallazgos": 2,
+        "prioridad_maxima": "Media",
+        "resumen": "Documentación sobrestima persistencia y comprobación del proveedor en health.",
+        "arquitectura_declarada": "Hexagonal con puertos, FastAPI/Flutter y Supabase Auth/DB. C4 presenta datos persistidos en Supabase.",
+        "arquitectura_implementada": "main registra router; POST→require_auth JWT ES256→CrearPublicacionUseCase→puerto→lista en memoria. /health usa InMemoryStatusAdapter; Flutter catálogo hardcodeado declarado.",
+        "detalle": [
+          {
+            "title": "La persistencia de publicaciones es memoria, no el adaptador Supabase dibujado",
+            "nature": "documentación desactualizada",
+            "severity": "Media",
+            "severity_reason": "Existe un camino concreto de escritura materializado que contradice la conexión de datos representada como actual.",
+            "impact": "Las publicaciones de la API no tienen durabilidad entre procesos/reinicios ni el respaldo PostgreSQL que un lector inferiría del C4.",
+            "confidence": "Alta sobre el código y la documentación al hash; no acredita comportamiento del despliegue.",
+            "correction": "Dibujar InMemoryPublicacionAdapter como implementación vigente y Supabase datos como objetivo; o conectar un adaptador durable detrás del puerto y probar reinicio. Separar Supabase Auth efectivamente usado de persistencia de publicaciones.",
+            "declared": [
+              {
+                "path": "docs/c4/contexto.md",
+                "start_line": 39,
+                "end_line": 47,
+                "url": "https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/docs/c4/contexto.md#L39-L47",
+                "description": "C4 dibuja a la API validando tokens y leyendo/escribiendo datos en Supabase."
+              },
+              {
+                "path": "docs/c4/contexto.md",
+                "start_line": 69,
+                "end_line": 85,
+                "url": "https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/docs/c4/contexto.md#L69-L85",
+                "description": "El nivel de componentes dibuja un adaptador Supabase de datos como implementación del puerto de persistencia."
+              }
+            ],
+            "evidence": [
+              {
+                "path": "backend/src/linkclub/adapters/inbound/api/publicacion_router.py",
+                "start_line": 7,
+                "end_line": 16,
+                "url": "https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/backend/src/linkclub/adapters/inbound/api/publicacion_router.py#L7-L16",
+                "description": "publicacion_router instancia InMemoryPublicacionAdapter y lo inyecta a CrearPublicacionUseCase."
+              },
+              {
+                "path": "backend/src/linkclub/application/use_cases/crear_publicacion.py",
+                "start_line": 27,
+                "end_line": 35,
+                "url": "https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/backend/src/linkclub/application/use_cases/crear_publicacion.py#L27-L35",
+                "description": "El caso de uso construye Publicacion y la guarda a través del puerto del repositorio."
+              },
+              {
+                "path": "backend/src/linkclub/adapters/outbound/persistence/in_memory_publicacion_adapter.py",
+                "start_line": 5,
+                "end_line": 14,
+                "url": "https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/backend/src/linkclub/adapters/outbound/persistence/in_memory_publicacion_adapter.py#L5-L14",
+                "description": "InMemoryPublicacionAdapter conserva publicaciones en una lista Python y filtra por club."
+              }
+            ]
+          },
+          {
+            "title": "El health declarado como comprobación real del proveedor retorna un valor fijo",
+            "nature": "documentación desactualizada",
+            "severity": "Media",
+            "severity_reason": "La afirmación de readiness/BD en ADR4 es verificable y el recorrido no hace I/O.",
+            "impact": "Un /health 200 demuestra respuesta de la API, no disponibilidad de Supabase; usarlo como readiness de BD puede ocultar una dependencia inaccesible.",
+            "confidence": "Alta sobre el código y la documentación al hash; no acredita comportamiento del despliegue.",
+            "correction": "Llamarlo liveness y corregir el ADR con una aclaración posterior; implementar readiness separado mediante un puerto real si el servicio depende de la BD. No afirmar que se probó Supabase con este health.",
+            "declared": [
+              {
+                "path": "docs/adr/0004-despliegue-base-de-datos.md",
+                "start_line": 38,
+                "end_line": 42,
+                "url": "https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/docs/adr/0004-despliegue-base-de-datos.md#L38-L42",
+                "description": "ADR4 afirma que un healthcheck asíncrono verifica la conexión real con el proveedor."
+              }
+            ],
+            "evidence": [
+              {
+                "path": "backend/src/linkclub/adapters/inbound/api/health_router.py",
+                "start_line": 1,
+                "end_line": 12,
+                "url": "https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/backend/src/linkclub/adapters/inbound/api/health_router.py#L1-L12",
+                "description": "El router health construye CheckHealthUseCase con InMemoryStatusAdapter."
+              },
+              {
+                "path": "backend/src/linkclub/adapters/outbound/persistence/in_memory_status_adapter.py",
+                "start_line": 1,
+                "end_line": 6,
+                "url": "https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/backend/src/linkclub/adapters/outbound/persistence/in_memory_status_adapter.py#L1-L6",
+                "description": "InMemoryStatusAdapter.get_status devuelve literalmente ok, sin consultar servicios externos."
+              }
+            ]
+          }
+        ],
+        "informe": "revisiones/2026-2/AS_202620_Clubs_UTB/semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10"
+      }
     },
     {
       "repo": "AS_202620_DinamikUTB",
+      "equipo": "DinamikUTB",
       "rama": "master",
       "hash": "5dc9acf9335fec70e274a2e5c494b3805b0e9646",
-      "fecha": "2026-10-05T22:06:45-05:00"
+      "fecha": "2026-10-05T22:06:45-05:00",
+      "criterios_tecnicos": {
+        "C1": 0.6,
+        "C2": 0.6,
+        "C3": 0.6,
+        "C4": 0.6
+      },
+      "subtotal_tecnico_sobre_4": 2.4,
+      "C5_docente": null,
+      "sustentacion_docente_sobre_5": null,
+      "total_sobre_5": null,
+      "estado_total": "Pendiente C5",
+      "escenario": "Q-01: exactitud de requisitos; Q-05 como soporte operacional",
+      "asignacion_oficial": "No verificado; supuesto explícito de pertinencia",
+      "comentario": "El resultado declarado de 20/20 no coincide con el CI fallido y no constituye una línea base operacional. Hay health check, JSON y métricas, pero las cadenas arquitectónicas están incompletas y algunos controles documentados no están implementados.",
+      "fuentes": [
+        "https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/5dc9acf9335fec70e274a2e5c494b3805b0e9646/docs/evidencia-s9.md#L25-L29",
+        "https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/5dc9acf9335fec70e274a2e5c494b3805b0e9646/backend/app/main.py#L38-L80",
+        "https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/5dc9acf9335fec70e274a2e5c494b3805b0e9646/docs/aspectos.md#L9-L18"
+      ],
+      "head_observado": "5dc9acf9335fec70e274a2e5c494b3805b0e9646",
+      "commits_posteriores_al_cierre": 0,
+      "observacion_metadatos": "2026-10-13T16:45:54.161744+00:00",
+      "deriva_arquitectonica": {
+        "hash": "5dc9acf9335fec70e274a2e5c494b3805b0e9646",
+        "hallazgos": 1,
+        "prioridad_maxima": "Baja",
+        "resumen": "C4 no distingue SQLite local de PostgreSQL desplegado.",
+        "arquitectura_declarada": "Monolito modular FastAPI/Flutter, servicios por contexto; SQLite local/PostgreSQL Render según ADR7. Usuarios, Programas y Ayuda previstos.",
+        "arquitectura_implementada": "Frontend RequisitosService→GET /requisitos→service→SQLAlchemy; PUT modifica por ID en el servicio. Main incorpora routers Requisitos/Estudiantes, health SQL y métricas HTTP.",
+        "detalle": [
+          {
+            "title": "C4 muestra SQLite sin distinguir PostgreSQL del ambiente desplegado",
+            "nature": "documentación desactualizada",
+            "severity": "Baja",
+            "severity_reason": "README y ADR7 ya aclaran correctamente los dos ambientes; la desalineación queda en una vista.",
+            "impact": "Puede inducir una configuración de almacenamiento equivocada si C4 se lee de forma aislada.",
+            "confidence": "Alta sobre el código y la documentación al hash; no acredita comportamiento del despliegue.",
+            "correction": "Separar en C4 SQLite local y PostgreSQL desplegado y marcar como previstos los módulos sin implementación. Conservar ADR3 como historia y enlazar ADR7 vigente.",
+            "declared": [
+              {
+                "path": "docs/c4/contenedores.puml",
+                "start_line": 11,
+                "end_line": 21,
+                "url": "https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/5dc9acf9335fec70e274a2e5c494b3805b0e9646/docs/c4/contenedores.puml#L11-L21",
+                "description": "El C4 de contenedores muestra una sola BD SQLite sin distinguir el entorno PostgreSQL desplegado."
+              }
+            ],
+            "evidence": [
+              {
+                "path": "docs/adr/0007-persistencia-render-postgres.md",
+                "start_line": 27,
+                "end_line": 33,
+                "url": "https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/5dc9acf9335fec70e274a2e5c494b3805b0e9646/docs/adr/0007-persistencia-render-postgres.md#L27-L33",
+                "description": "ADR7 elige PostgreSQL en Render y conserva SQLite para desarrollo local mediante DATABASE_URL."
+              },
+              {
+                "path": "backend/app/core/database.py",
+                "start_line": 7,
+                "end_line": 21,
+                "url": "https://github.com/ISCOUTB/AS_202620_DinamikUTB/blob/5dc9acf9335fec70e274a2e5c494b3805b0e9646/backend/app/core/database.py#L7-L21",
+                "description": "La conexión acepta postgres/postgresql y los adapta a psycopg, aunque el fallback local sea SQLite."
+              }
+            ]
+          }
+        ],
+        "informe": "revisiones/2026-2/AS_202620_DinamikUTB/semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10"
+      }
     },
     {
       "repo": "AS_202620_Drift",
+      "equipo": "Drift",
       "rama": "master",
-      "hash": "3dee7e265eec021cbbba4af4d337e13c982df316",
-      "fecha": "2026-10-04T22:03:23-05:00"
+      "hash": "04874b8744dfa345a7fa7e12775e629c410fc870",
+      "fecha": "2026-10-12T14:42:40-05:00",
+      "criterios_tecnicos": {
+        "C1": 1,
+        "C2": 0.8,
+        "C3": 0.8,
+        "C4": 0.8
+      },
+      "subtotal_tecnico_sobre_4": 3.4,
+      "C5_docente": 0.96,
+      "sustentacion_docente_sobre_5": 4.8,
+      "total_sobre_5": 4.36,
+      "estado_total": "Consolidado con C5 docente",
+      "escenario": "E6: degradación de una fuente bajo carga",
+      "asignacion_oficial": "No verificado; supuesto explícito de pertinencia",
+      "comentario": "E6 tiene tres corridas de base y tres de fallo controladas, con respuesta mediante timeout, caché y logs. El experimento es simulado y excluye TLS y el efecto en producción. Persisten coherencia parcial y una métrica de fuentes vacía.",
+      "fuentes": [
+        "https://github.com/ISCOUTB/AS_202620_Drift/blob/04874b8744dfa345a7fa7e12775e629c410fc870/docs/evidencias/e6-degradacion-bajo-carga.md#L16-L101",
+        "https://github.com/ISCOUTB/AS_202620_Drift/blob/04874b8744dfa345a7fa7e12775e629c410fc870/docs/adr/0008-persistencia-ejecucion-y-degradacion-de-fuentes.md#L99-L159",
+        "https://github.com/ISCOUTB/AS_202620_Drift/blob/04874b8744dfa345a7fa7e12775e629c410fc870/backend/app/infrastructure/observability.py#L9-L95"
+      ],
+      "head_observado": "04874b8744dfa345a7fa7e12775e629c410fc870",
+      "commits_posteriores_al_cierre": 0,
+      "observacion_metadatos": "2026-10-13T16:45:53.940060+00:00",
+      "deriva_arquitectonica": {
+        "hash": "04874b8744dfa345a7fa7e12775e629c410fc870",
+        "hallazgos": 0,
+        "prioridad_maxima": "Sin hallazgos",
+        "resumen": "Sin deriva material observada; ADR vigente actualiza memoria y sincronía.",
+        "arquitectura_declarada": "Puertos y adaptadores en frontend/backend; fuentes Steam, CheapShark y PlayStation; memoria, hilos y degradación por fuente según ADR8.",
+        "arquitectura_implementada": "GET /games/search→SearchGames→GameRepository→Combined anidado→Resilient Steam/fallback + CheapShark + PlayStation. Catálogo PlayStation busca remotamente ante miss; POST sync reemplaza memoria.",
+        "detalle": [],
+        "informe": "revisiones/2026-2/AS_202620_Drift/semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10"
+      }
     },
     {
       "repo": "AS_202620_ElMapita",
+      "equipo": "ElMapita",
       "rama": "main",
       "hash": "f3bcfa83e80f5c8d0e30a01b656d89160c907d64",
-      "fecha": "2026-10-04T21:11:20-06:00"
+      "fecha": "2026-10-04T21:11:20-06:00",
+      "criterios_tecnicos": {
+        "C1": 0.8,
+        "C2": 0.6,
+        "C3": 0.6,
+        "C4": 0.6
+      },
+      "subtotal_tecnico_sobre_4": 2.6,
+      "C5_docente": 0.8,
+      "sustentacion_docente_sobre_5": 4,
+      "total_sobre_5": 3.4,
+      "estado_total": "Consolidado con C5 docente",
+      "escenario": "EC-04: mapa offline con caché",
+      "asignacion_oficial": "No verificado; supuesto explícito de pertinencia",
+      "comentario": "La caracterización se apoya en un estado inicial negativo de 0/20, con control online y procedimiento. Ese resultado no se interpreta como cumplimiento del comportamiento offline. La respuesta offline y la coherencia documental siguen incompletas.",
+      "fuentes": [
+        "https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/evidencia/s9-ec04-offline-dispositivo.txt#L1-L31",
+        "https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/aspectos.md#L3-L8",
+        "https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/modules/ubicacion/interfaces/ubicacion.controller.ts#L12-L24"
+      ],
+      "head_observado": "f3bcfa83e80f5c8d0e30a01b656d89160c907d64",
+      "commits_posteriores_al_cierre": 0,
+      "observacion_metadatos": "2026-10-13T16:45:53.951346+00:00",
+      "deriva_arquitectonica": {
+        "hash": "f3bcfa83e80f5c8d0e30a01b656d89160c907d64",
+        "hallazgos": 4,
+        "prioridad_maxima": "Alta",
+        "resumen": "Escritura sin autorización; ubicación, caché offline y dependencias divergentes.",
+        "arquitectura_declarada": "Monolito modular NestJS/Flutter, Supabase aislado por adaptadores, RBAC JWT, caché dos niveles y ubicación con precisión/fallback; ADR5 mantiene DEC01-06.",
+        "arquitectura_implementada": "Módulos Nest inyectan repositorios Supabase y cliente service-role; frontend auth directo permitido; Flutter Mapas usa API/cache concretos. Backend current sigue caso sin filtro; caché binaria solo tras metadatos online.",
+        "detalle": [
+          {
+            "title": "La escritura de POIs anunciada como admin no atraviesa autorización",
+            "nature": "implementación",
+            "severity": "Alta",
+            "severity_reason": "Se trata de una frontera de seguridad en una operación de escritura con credencial de servicio, no solo de una anotación ausente.",
+            "impact": "Si la API está expuesta con la configuración prevista, el código no exige identidad/rol antes de solicitar un upsert. No se afirma explotación ni éxito contra una BD real.",
+            "confidence": "Alta sobre el código y la documentación al hash; no acredita comportamiento del despliegue.",
+            "correction": "Añadir guard JWT validado y guard de rol admin en la entrada, pasar identidad al caso de uso y verificar 401/403 y ausencia de escritura con pruebas. Revisar también las operaciones administrativas de Auth. Swagger addBearerAuth no aplica autorización.",
+            "declared": [
+              {
+                "path": "docs/c4/C4_L2_Container.md",
+                "start_line": 16,
+                "end_line": 17,
+                "url": "https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/c4/C4_L2_Container.md#L16-L17",
+                "description": "C4 describe al backend como monolito REST con RBAC JWT y al cliente con caché/fallback de ubicación."
+              },
+              {
+                "path": "docs/c4/C4_L2_Container.md",
+                "start_line": 41,
+                "end_line": 43,
+                "url": "https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/c4/C4_L2_Container.md#L41-L43",
+                "description": "C4 asigna al backend validación JWT/roles, CRUD geoespacial y operaciones administrativas de almacenamiento."
+              }
+            ],
+            "evidence": [
+              {
+                "path": "backend/src/modules/pois/interfaces/pois.controller.ts",
+                "start_line": 43,
+                "end_line": 49,
+                "url": "https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/modules/pois/interfaces/pois.controller.ts#L43-L49",
+                "description": "El POST descrito como Crear nuevo POI (admin) envía directamente el body al caso de uso sin guard visible."
+              },
+              {
+                "path": "backend/src/modules/pois/application/use-cases.ts",
+                "start_line": 64,
+                "end_line": 81,
+                "url": "https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/modules/pois/application/use-cases.ts#L64-L81",
+                "description": "CreatePoiUseCase construye la entidad y llama poiRepository.save sin recibir ni comprobar identidad del solicitante."
+              },
+              {
+                "path": "backend/src/modules/pois/infrastructure/supabase-poi-repository.ts",
+                "start_line": 68,
+                "end_line": 84,
+                "url": "https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/modules/pois/infrastructure/supabase-poi-repository.ts#L68-L84",
+                "description": "SupabasePoiRepository.save ejecuta upsert en pois y devuelve el registro obtenido."
+              },
+              {
+                "path": "backend/src/shared/supabase/client.ts",
+                "start_line": 9,
+                "end_line": 24,
+                "url": "https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/shared/supabase/client.ts#L9-L24",
+                "description": "El cliente compartido se construye con SUPABASE_SERVICE_ROLE_KEY y no persiste sesión."
+              },
+              {
+                "path": "backend/src/main.ts",
+                "start_line": 7,
+                "end_line": 24,
+                "url": "https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/main.ts#L7-L24",
+                "description": "El bootstrap configura logger, prefijo, CORS y ValidationPipe, sin registrar guard global."
+              },
+              {
+                "path": "backend/src/app.module.ts",
+                "start_line": 11,
+                "end_line": 23,
+                "url": "https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/app.module.ts#L11-L23",
+                "description": "AppModule importa módulos de features y declara providers vacío, sin guard global en este bloque."
+              },
+              {
+                "path": "backend/src/modules/pois/pois.module.ts",
+                "start_line": 11,
+                "end_line": 24,
+                "url": "https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/modules/pois/pois.module.ts#L11-L24",
+                "description": "PoisModule inyecta SupabasePoiRepository como PoiRepository y no registra un guard en sus providers."
+              }
+            ]
+          },
+          {
+            "title": "La ruta real de ubicación omite el caso de uso que filtra precisión y timeout",
+            "nature": "implementación",
+            "severity": "Media",
+            "severity_reason": "Existe una política/caso validado, pero la ruta pública sigue usando el caso anterior; es un defecto de cableado verificable.",
+            "impact": "GET current puede entregar la ubicación ficticia de precisión 999 m en vez del veredicto de fallback. No se atribuye ese resultado al GPS físico de Flutter.",
+            "confidence": "Alta sobre el código y la documentación al hash; no acredita comportamiento del despliegue.",
+            "correction": "Conectar la entrada HTTP a GetValidatedLocationUseCase o retirar/etiquetar ese endpoint como simulación de servidor. Definir claramente que el GPS real vive en el móvil; añadir prueba de integración router→provider impreciso/timeout.",
+            "declared": [
+              {
+                "path": "docs/arc42/arc42-template-EN.md",
+                "start_line": 535,
+                "end_line": 536,
+                "url": "https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/arc42/arc42-template-EN.md#L535-L536",
+                "description": "DEC04 exige recuperación offline y DEC05 rechazo de precisión superior a 15 m con fallback tras timeout."
+              },
+              {
+                "path": "docs/c4/C4_L3_Component_Backend.md",
+                "start_line": 29,
+                "end_line": 32,
+                "url": "https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/c4/C4_L3_Component_Backend.md#L29-L32",
+                "description": "C4 atribuye al servicio de Ubicación control del margen GPS y al adaptador conexión con sensores del teléfono."
+              }
+            ],
+            "evidence": [
+              {
+                "path": "backend/src/modules/ubicacion/interfaces/ubicacion.controller.ts",
+                "start_line": 13,
+                "end_line": 24,
+                "url": "https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/modules/ubicacion/interfaces/ubicacion.controller.ts#L13-L24",
+                "description": "UbicacionController inyecta GetCurrentLocationUseCase y lo ejecuta en GET current."
+              },
+              {
+                "path": "backend/src/modules/ubicacion/application/use-cases.ts",
+                "start_line": 18,
+                "end_line": 26,
+                "url": "https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/modules/ubicacion/application/use-cases.ts#L18-L26",
+                "description": "GetCurrentLocationUseCase devuelve el resultado del proveedor sin filtro de precisión ni timeout."
+              },
+              {
+                "path": "backend/src/modules/ubicacion/ubicacion.module.ts",
+                "start_line": 16,
+                "end_line": 27,
+                "url": "https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/modules/ubicacion/ubicacion.module.ts#L16-L27",
+                "description": "UbicacionModule registra ambos casos de uso, pero selecciona PlatformLocationAdapter fuera de test."
+              },
+              {
+                "path": "backend/src/modules/ubicacion/infrastructure/platform/location-adapter.ts",
+                "start_line": 4,
+                "end_line": 14,
+                "url": "https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/modules/ubicacion/infrastructure/platform/location-adapter.ts#L4-L14",
+                "description": "PlatformLocationAdapter devuelve coordenadas 0,0, precisión 999 y source gps como datos fijos."
+              },
+              {
+                "path": "backend/src/modules/ubicacion/application/get-validated-location.use-case.ts",
+                "start_line": 25,
+                "end_line": 40,
+                "url": "https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/backend/src/modules/ubicacion/application/get-validated-location.use-case.ts#L25-L40",
+                "description": "GetValidatedLocationUseCase aplica carrera contra timeout, evalúa precisión y devuelve rechazo ante errores."
+              }
+            ]
+          },
+          {
+            "title": "La recuperación offline documentada queda detrás de una llamada de red obligatoria",
+            "nature": "implementación",
+            "severity": "Media",
+            "severity_reason": "La caché binaria existe, pero el orden de llamadas impide alcanzarla cuando falla la consulta de metadatos.",
+            "impact": "LoadBuildingUseCase retorna error antes de consultar ModelCache ante fallo de API, por lo que una caché caliente no basta para el modo offline descrito.",
+            "confidence": "Alta sobre el código y la documentación al hash; no acredita comportamiento del despliegue.",
+            "correction": "Persistir metadatos/versiones junto al binario y resolverlos desde caché al fallar la red; emitir estado offline explícito y probar caché válida sin backend. La evidencia S9 ya caracteriza la carencia; no se vende como una regresión nueva.",
+            "declared": [
+              {
+                "path": "docs/arc42/arc42-template-EN.md",
+                "start_line": 465,
+                "end_line": 472,
+                "url": "https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/arc42/arc42-template-EN.md#L465-L472",
+                "description": "arc42 describe recuperar escena de caché, emitir MapLoadedOffline y mostrar mapa utilizable sin conexión."
+              },
+              {
+                "path": "docs/c4/C4_L2_Container.md",
+                "start_line": 64,
+                "end_line": 66,
+                "url": "https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/c4/C4_L2_Container.md#L64-L66",
+                "description": "C4 afirma desacoplo Supabase y recuperación offline mediante Hive/Filesystem versionados."
+              }
+            ],
+            "evidence": [
+              {
+                "path": "frontend/lib/features/mapas/application/load_building_use_case.dart",
+                "start_line": 18,
+                "end_line": 37,
+                "url": "https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/frontend/lib/features/mapas/application/load_building_use_case.dart#L18-L37",
+                "description": "LoadBuildingUseCase retorna Left cuando falla la API antes de llamar getOrDownloadModel."
+              },
+              {
+                "path": "frontend/lib/features/mapas/infrastructure/storage/model_cache.dart",
+                "start_line": 21,
+                "end_line": 33,
+                "url": "https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/frontend/lib/features/mapas/infrastructure/storage/model_cache.dart#L21-L33",
+                "description": "ModelCache reutiliza la ruta almacenada o descarga el modelo si no está en caché."
+              },
+              {
+                "path": "frontend/lib/core/di/injector.dart",
+                "start_line": 46,
+                "end_line": 55,
+                "url": "https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/frontend/lib/core/di/injector.dart#L46-L55",
+                "description": "DI conecta MapasApi y ModelCache concretos con LoadBuildingUseCase y este con MapasBloc."
+              }
+            ]
+          },
+          {
+            "title": "LoadBuildingUseCase depende de adaptadores concretos pese a la regla de interfaces",
+            "nature": "implementación",
+            "severity": "Media",
+            "severity_reason": "ADR5 mantiene la regla de aplicación dependiente de interfaces; no se exige pureza hexagonal genérica.",
+            "impact": "Cambiar API/cache puede requerir editar el caso de uso y sus pruebas en lugar de sustituir implementaciones detrás de puertos.",
+            "confidence": "Alta sobre el código y la documentación al hash; no acredita comportamiento del despliegue.",
+            "correction": "Definir puertos de consulta de edificios y caché en dominio/aplicación; inyectar implementaciones MapasApi y ModelCache desde DI. Alternativamente aprobar y documentar el acoplamiento pragmático, sin seguir afirmando solo interfaces.",
+            "declared": [
+              {
+                "path": "docs/adr/0005-reemplazo-adr-0001-estilo-arquitectonico.md",
+                "start_line": 19,
+                "end_line": 28,
+                "url": "https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/adr/0005-reemplazo-adr-0001-estilo-arquitectonico.md#L19-L28",
+                "description": "ADR5 mantiene las decisiones DEC01-06 y remite al contenido de ADR1 con referencias actualizadas."
+              },
+              {
+                "path": "docs/adr/0001-estilo-arquitectonico-propuesto.md",
+                "start_line": 133,
+                "end_line": 140,
+                "url": "https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/docs/adr/0001-estilo-arquitectonico-propuesto.md#L133-L140",
+                "description": "La regla de límites exige application dependiente de dominio e interfaces, no implementaciones concretas."
+              }
+            ],
+            "evidence": [
+              {
+                "path": "frontend/lib/features/mapas/application/load_building_use_case.dart",
+                "start_line": 3,
+                "end_line": 16,
+                "url": "https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/frontend/lib/features/mapas/application/load_building_use_case.dart#L3-L16",
+                "description": "LoadBuildingUseCase importa MapasApi y ModelCache concretos y los exige como tipos de constructor."
+              },
+              {
+                "path": "frontend/lib/core/di/injector.dart",
+                "start_line": 46,
+                "end_line": 52,
+                "url": "https://github.com/ISCOUTB/AS_202620_ElMapita/blob/f3bcfa83e80f5c8d0e30a01b656d89160c907d64/frontend/lib/core/di/injector.dart#L46-L52",
+                "description": "DI registra MapasApi/ModelCache e inyecta ambas implementaciones directamente en el caso de uso."
+              }
+            ]
+          }
+        ],
+        "informe": "revisiones/2026-2/AS_202620_ElMapita/semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10"
+      }
     },
     {
       "repo": "AS_202620_EnAgenda",
+      "equipo": "EnAgenda",
       "rama": "master",
-      "hash": "c2077ac55a29562adc728734ca4c283ccb40f310",
-      "fecha": "2026-10-05T10:40:19-05:00"
+      "hash": "4bec22f3821493014e8352ece8274bb2950e97db",
+      "fecha": "2026-10-11T23:47:24-05:00",
+      "criterios_tecnicos": {
+        "C1": 0.6,
+        "C2": 0.6,
+        "C3": 0.6,
+        "C4": 0.6
+      },
+      "subtotal_tecnico_sobre_4": 2.4,
+      "C5_docente": 0.84,
+      "sustentacion_docente_sobre_5": 4.2,
+      "total_sobre_5": 3.24,
+      "estado_total": "Consolidado con C5 docente",
+      "escenario": "Solo documento operativo EC-XX de consulta pública/health y latencia; no se identificó reto S10 nuevo explícito.",
+      "asignacion_oficial": "No verificado; supuesto explícito de pertinencia",
+      "comentario": "Se corrigieron la protección y normalización de métricas y se añadió la prueba de no filtración; el CI pasa. Faltan una línea base y un umbral medidos en el despliegue, así como una decisión coherente con toda la arquitectura.",
+      "fuentes": [
+        "https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docs/despliegue/medicion-dokploy.md",
+        "https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docs/adr/0003-desplegar-api-flask-en-dokploy.md",
+        "https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/app/web.py"
+      ],
+      "head_observado": "4bec22f3821493014e8352ece8274bb2950e97db",
+      "commits_posteriores_al_cierre": 0,
+      "observacion_metadatos": "2026-10-13T16:45:53.877459+00:00",
+      "deriva_arquitectonica": {
+        "hash": "4bec22f3821493014e8352ece8274bb2950e97db",
+        "hallazgos": 2,
+        "prioridad_maxima": "Media",
+        "resumen": "ADR de stack y guía de métricas desactualizados.",
+        "arquitectura_declarada": "Monolito modular, entrada web Flask/Jinja y API de invitaciones; dominio de tokens/vigencia; repositorio memoria; Dokploy. ADR1 conserva una elección tecnológica anterior no reconciliada.",
+        "arquitectura_implementada": "Gunicorn→app.web:app; rutas web/REST→GestionarInvitacion→Invitacion→RepositorioInvitacionesMemoria. Métricas en memoria con Bearer y rutas normalizadas.",
+        "detalle": [
+          {
+            "title": "ADR1 conserva Next.js/Server Actions y prohibición de API mientras el sistema vigente es Flask con REST",
+            "nature": "documentación desactualizada",
+            "severity": "Media",
+            "severity_reason": "ADR2/3 y arc42 ya describen la implementación reciente; falta marcar explícitamente el alcance sustituido del ADR1 aceptado.",
+            "impact": "Las decisiones vigentes parecen contradictorias sobre cliente, entrada HTTP y contrato, dificultando futuras modificaciones.",
+            "confidence": "Alta sobre el código y la documentación al hash; no acredita comportamiento del despliegue.",
+            "correction": "Registrar aclaración/supersesión parcial de ADR1: mantener monolito modular, sustituir Next.js/Server Actions y actualizar exposición REST. No cambiar la implementación solo para seguir una decisión histórica.",
+            "declared": [
+              {
+                "path": "docs/adr/0001-usar-monolito-modular.md",
+                "start_line": 106,
+                "end_line": 122,
+                "url": "https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docs/adr/0001-usar-monolito-modular.md#L106-L122",
+                "description": "ADR1 aceptado prescribe Next.js/Server Actions y afirma que EnAgenda no expondrá API pública."
+              }
+            ],
+            "evidence": [
+              {
+                "path": "app/web.py",
+                "start_line": 22,
+                "end_line": 35,
+                "url": "https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/app/web.py#L22-L35",
+                "description": "Flask crea una instancia del repositorio en memoria y la inyecta a GestionarInvitacion."
+              },
+              {
+                "path": "app/web.py",
+                "start_line": 427,
+                "end_line": 439,
+                "url": "https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/app/web.py#L427-L439",
+                "description": "La aplicación registra una ruta REST GET de consulta de invitaciones y delega al servicio."
+              },
+              {
+                "path": "docs/arc42/05-vista-de-bloques-de-construcción.md",
+                "start_line": 19,
+                "end_line": 21,
+                "url": "https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docs/arc42/05-vista-de-bloques-de-construcci%C3%B3n.md#L19-L21",
+                "description": "arc42 identifica Flask/Jinja2 como entrada web actual e Invitaciones como corte funcional."
+              },
+              {
+                "path": "docs/adr/0003-desplegar-api-flask-en-dokploy.md",
+                "start_line": 64,
+                "end_line": 71,
+                "url": "https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docs/adr/0003-desplegar-api-flask-en-dokploy.md#L64-L71",
+                "description": "ADR3 adopta Dokploy y explicita API Flask construida con Dockerfile y ejecutada mediante Compose."
+              }
+            ]
+          },
+          {
+            "title": "El procedimiento operativo aún espera /metrics 200 sin explicar el token",
+            "nature": "documentación desactualizada",
+            "severity": "Baja",
+            "severity_reason": "La protección se implementó correctamente; lo rezagado es la instrucción de comprobación.",
+            "impact": "Un operador siguiendo README/arc42 interpreta 401/503 esperado como fallo del servicio o no configura el secreto requerido.",
+            "confidence": "Alta sobre el código y la documentación al hash; no acredita comportamiento del despliegue.",
+            "correction": "Actualizar smoke check para configurar ENAGENDA_METRICS_TOKEN, enviar Bearer de forma segura y distinguir 401/503 de liveness /health. No desproteger métricas para satisfacer el ejemplo antiguo.",
+            "declared": [
+              {
+                "path": "docs/arc42/07-vista-de-despliegue.md",
+                "start_line": 86,
+                "end_line": 93,
+                "url": "https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docs/arc42/07-vista-de-despliegue.md#L86-L93",
+                "description": "El procedimiento de arc42 espera HTTP 200 en GET /health y GET /metrics sin detallar autorización."
+              },
+              {
+                "path": "README.md",
+                "start_line": 289,
+                "end_line": 295,
+                "url": "https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/README.md#L289-L295",
+                "description": "El smoke check de README propone curl a /metrics sin cabecera Bearer."
+              }
+            ],
+            "evidence": [
+              {
+                "path": "app/web.py",
+                "start_line": 90,
+                "end_line": 114,
+                "url": "https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/app/web.py#L90-L114",
+                "description": "/metrics exige token de observabilidad y después expone contadores generales/de invitaciones."
+              }
+            ]
+          }
+        ],
+        "informe": "revisiones/2026-2/AS_202620_EnAgenda/semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10"
+      }
     },
     {
       "repo": "AS_202620_GimnasioUTB",
+      "equipo": "GimnasioUTB",
       "rama": "main",
-      "hash": "c0a6a78f0ce87ea59040662b5abbbb4d2ab99aec",
-      "fecha": "2026-10-05T18:16:08-05:00"
+      "hash": "46742e5feaa3c8a06b7aebeb7a31fb93628e40b6",
+      "fecha": "2026-10-11T14:41:07-05:00",
+      "criterios_tecnicos": {
+        "C1": 0.6,
+        "C2": 0.8,
+        "C3": 0.6,
+        "C4": 0.8
+      },
+      "subtotal_tecnico_sobre_4": 2.8,
+      "C5_docente": 0.76,
+      "sustentacion_docente_sobre_5": 3.8,
+      "total_sobre_5": 3.56,
+      "estado_total": "Consolidado con C5 docente",
+      "escenario": "S1: consistencia del contador de aforo con20 entradasconcurrentes (antecedenteS9, pertinenciaS10 supuestoexplícito)",
+      "asignacion_oficial": "No verificado; supuesto explícito de pertinencia",
+      "comentario": "La concurrencia con PostgreSQL y FOR UPDATE tiene implementación y ADR coherentes. La instrumentación es parcial y el CI no ejecuta la prueba PostgreSQL del escenario. Hay actualización operacional, pero no un experimento nuevo completo sobre el despliegue.",
+      "fuentes": [
+        "https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/46742e5feaa3c8a06b7aebeb7a31fb93628e40b6/docs/s9-cadena-verificada.md#L7-L34",
+        "https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/46742e5feaa3c8a06b7aebeb7a31fb93628e40b6/docs/adr/0004-concurrencia-postgresql.md#L13-L81",
+        "https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/46742e5feaa3c8a06b7aebeb7a31fb93628e40b6/.github/workflows/ci.yml#L15-L23"
+      ],
+      "head_observado": "46742e5feaa3c8a06b7aebeb7a31fb93628e40b6",
+      "commits_posteriores_al_cierre": 0,
+      "observacion_metadatos": "2026-10-13T16:45:59.849908+00:00",
+      "deriva_arquitectonica": {
+        "hash": "46742e5feaa3c8a06b7aebeb7a31fb93628e40b6",
+        "hallazgos": 0,
+        "prioridad_maxima": "Sin hallazgos",
+        "resumen": "Sin deriva material observada; funciones futuras claramente delimitadas.",
+        "arquitectura_declarada": "Monolito Node/Express con puertos y adaptadores. Un módulo de aforo, dominio puro y transacción PostgreSQL síncrona respecto de la respuesta HTTP; Compose/Dokploy y observabilidad por proceso.",
+        "arquitectura_implementada": "src/server.js monta /api/v1/aforo e inyecta los casos de uso; el arranque ejecutable inyecta AforoPostgresAdapter. POST → router → registrarAcceso → actualizarAforo(callback de dominio) → BEGIN/SELECT FOR UPDATE/UPDATE/COMMIT. GET usa caso de consulta. createApp sin argumentos usa memoria para pruebas, como se declara.",
+        "detalle": [],
+        "informe": "revisiones/2026-2/AS_202620_GimnasioUTB/semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10"
+      }
     },
     {
       "repo": "AS_202620_InvenTrack",
+      "equipo": "InvenTrack",
       "rama": "main",
-      "hash": "35a9c63dd603bab989a18ed17ca56063c5616585",
-      "fecha": "2026-10-04T22:14:10-05:00"
+      "hash": "539840be57f8a0b719bb33e19d05031489a25b86",
+      "fecha": "2026-10-11T23:05:35-05:00",
+      "criterios_tecnicos": {
+        "C1": 0.6,
+        "C2": 0.8,
+        "C3": 0.8,
+        "C4": 0.6
+      },
+      "subtotal_tecnico_sobre_4": 2.8,
+      "C5_docente": null,
+      "sustentacion_docente_sobre_5": null,
+      "total_sobre_5": null,
+      "estado_total": "Pendiente C5",
+      "escenario": "Concurrencia sobre inventario:20 peticiones sobreSKU,stock100→80,p95≤400 ms, reporteS10 autodeclarado",
+      "asignacion_oficial": "No verificado; supuesto explícito de pertinencia",
+      "comentario": "El reporte S10 define el escenario y un cambio coherente. La cifra de 28 ms no tiene una prueba o serie que mida latencia; faltan una línea base y una nueva medición demostrada. La documentación continúa parcial.",
+      "fuentes": [
+        "https://github.com/ISCOUTB/AS_202620_InvenTrack/blob/539840be57f8a0b719bb33e19d05031489a25b86/docs/retos/corte-2-experimento.md#L7-L33",
+        "https://github.com/ISCOUTB/AS_202620_InvenTrack/blob/539840be57f8a0b719bb33e19d05031489a25b86/docs/adr/0002-control-concurrencia-memoria-inventario.md#L5-L28",
+        "https://github.com/ISCOUTB/AS_202620_InvenTrack/blob/539840be57f8a0b719bb33e19d05031489a25b86/.github/workflows/test.yml#L23-L45"
+      ],
+      "head_observado": "539840be57f8a0b719bb33e19d05031489a25b86",
+      "commits_posteriores_al_cierre": 0,
+      "observacion_metadatos": "2026-10-13T16:45:59.555681+00:00",
+      "deriva_arquitectonica": {
+        "hash": "539840be57f8a0b719bb33e19d05031489a25b86",
+        "hallazgos": 1,
+        "prioridad_maxima": "Media",
+        "resumen": "Errores de dominio no se traducen al contrato HTTP.",
+        "arquitectura_declarada": "Monolito modular FastAPI, hexagonal por módulo, integración síncrona por puertos consumidores y adaptadores cruzados hacia application; repositorios en memoria y lock por SKU. Otros módulos y persistencia relacional son objetivos.",
+        "arquitectura_implementada": "app/main.py crea repositorios, casos de uso y adaptadores cruzados y entrega dependencias a crear_router. Inventario valida producto vía ConsultarProducto, serializa movimiento con asyncio.Lock y guarda stock/historial. Productos consulta historial por adaptador de aplicación. Lectura de stock accede al puerto desde router, tal como C4 vigente lo representa.",
+        "detalle": [
+          {
+            "title": "Errores de cantidad del dominio escapan al borde HTTP",
+            "nature": "implementación",
+            "severity": "Media",
+            "severity_reason": "Media: una entrada inválida atraviesa el límite de validación y se convierte en error interno no contractual, sin evidencia de corrupción del stock ni de incidente desplegado.",
+            "impact": "El contrato enumera rechazos controlados pero una cantidad 0 o negativa, admitida como int por el esquema HTTP, llega al dominio y lanza ValueError sin traducción. La ruta puede producir un 500 genérico donde debería rechazar una entrada inválida; se debilita la frontera HTTP/dominio. Es deducción estática, no fallo observado en producción.",
+            "confidence": "Alta sobre el camino de excepciones; no ejecutado.",
+            "correction": "Definir un error de cantidad de dominio y mapearlo a 400/422 en ambos handlers, o validar también cantidad>0 en el esquema conservando la regla de dominio. Actualizar OpenAPI y pruebas negativas HTTP de entrada/salida con 0 y negativos.",
+            "declared": [
+              {
+                "path": "docs/api/inventrack-contrato.md",
+                "start_line": 45,
+                "end_line": 62,
+                "url": "https://github.com/ISCOUTB/AS_202620_InvenTrack/blob/539840be57f8a0b719bb33e19d05031489a25b86/docs/api/inventrack-contrato.md#L45-L62",
+                "description": "El contrato vigente enumera las respuestas y la traducción de errores de dominio."
+              },
+              {
+                "path": "contracts/openapi/v1.json",
+                "start_line": 288,
+                "end_line": 295,
+                "url": "https://github.com/ISCOUTB/AS_202620_InvenTrack/blob/539840be57f8a0b719bb33e19d05031489a25b86/contracts/openapi/v1.json#L288-L295"
+              }
+            ],
+            "evidence": [
+              {
+                "path": "app/inventario/infrastructure/router.py",
+                "start_line": 10,
+                "end_line": 12,
+                "url": "https://github.com/ISCOUTB/AS_202620_InvenTrack/blob/539840be57f8a0b719bb33e19d05031489a25b86/app/inventario/infrastructure/router.py#L10-L12",
+                "description": "El esquema HTTP acepta cualquier entero, sin mínimo positivo."
+              },
+              {
+                "path": "app/inventario/infrastructure/router.py",
+                "start_line": 25,
+                "end_line": 36,
+                "url": "https://github.com/ISCOUTB/AS_202620_InvenTrack/blob/539840be57f8a0b719bb33e19d05031489a25b86/app/inventario/infrastructure/router.py#L25-L36",
+                "description": "El handler solo captura producto inválido y timeout, no ValueError."
+              },
+              {
+                "path": "app/inventario/domain/stock.py",
+                "start_line": 9,
+                "end_line": 18,
+                "url": "https://github.com/ISCOUTB/AS_202620_InvenTrack/blob/539840be57f8a0b719bb33e19d05031489a25b86/app/inventario/domain/stock.py#L9-L18",
+                "description": "El dominio rechaza cantidades cero o negativas mediante ValueError."
+              },
+              {
+                "path": "app/inventario/application/registrar_movimiento.py",
+                "start_line": 38,
+                "end_line": 49,
+                "url": "https://github.com/ISCOUTB/AS_202620_InvenTrack/blob/539840be57f8a0b719bb33e19d05031489a25b86/app/inventario/application/registrar_movimiento.py#L38-L49",
+                "description": "La ruta de aplicación llama directamente a la regla de stock."
+              }
+            ]
+          }
+        ],
+        "informe": "revisiones/2026-2/AS_202620_InvenTrack/semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10"
+      }
     },
     {
       "repo": "AS_202620_LaPlacita",
+      "equipo": "LaPlacita",
       "rama": "master",
-      "hash": "3a04706d27e49fb93c90c68f469442fb6f392710",
-      "fecha": "2026-10-04T15:39:16-05:00"
+      "hash": "2c711d44b31a41a09306f7840da480a21e8c749a",
+      "fecha": "2026-10-12T17:41:41-05:00",
+      "criterios_tecnicos": {
+        "C1": 0.8,
+        "C2": 0.6,
+        "C3": 0.8,
+        "C4": 0.6
+      },
+      "subtotal_tecnico_sobre_4": 2.8,
+      "C5_docente": 0.8,
+      "sustentacion_docente_sobre_5": 4,
+      "total_sobre_5": 3.6,
+      "estado_total": "Consolidado con C5 docente",
+      "escenario": "ESC-01: supervivencia y consistencia de pedidos tras reinicio, subconjunto del escenario de picos",
+      "asignacion_oficial": "No verificado; supuesto explícito de pertinencia",
+      "comentario": "El nuevo ensayo de staging acredita tres supervivientes de tres y corrige el arranque antes del POST. El UPSERT sigue sin orden garantizado y la respuesta HTTP no espera la durabilidad. C4 conserva PostgreSQL como planeado.",
+      "fuentes": [
+        "https://github.com/ISCOUTB/AS_202620_LaPlacita/blob/2c711d44b31a41a09306f7840da480a21e8c749a/docs/evidencias/evidencias-s10.md#L49-L91",
+        "https://github.com/ISCOUTB/AS_202620_LaPlacita/blob/2c711d44b31a41a09306f7840da480a21e8c749a/backend/app/api/v1/pedidos/route.js#L9-L21",
+        "https://github.com/ISCOUTB/AS_202620_LaPlacita/blob/2c711d44b31a41a09306f7840da480a21e8c749a/backend/src/metricas.js#L1-L27"
+      ],
+      "head_observado": "2c711d44b31a41a09306f7840da480a21e8c749a",
+      "commits_posteriores_al_cierre": 0,
+      "observacion_metadatos": "2026-10-13T16:45:59.427982+00:00",
+      "deriva_arquitectonica": {
+        "hash": "2c711d44b31a41a09306f7840da480a21e8c749a",
+        "hallazgos": 2,
+        "prioridad_maxima": "Media",
+        "resumen": "C4 rezagado y persistencia sin el orden de escritura prometido.",
+        "arquitectura_declarada": "Cinco contextos en un backend Next.js; llamadas ESM síncronas y dueño único Pedidos para estado/PIN. ADR0014 incorpora PostgreSQL en Dokploy; API Azure. Redis, identidad de tenant y clientes completos siguen pendientes.",
+        "arquitectura_implementada": "Los Route Handlers llaman a funciones públicas de módulos, sin pasar por corte-vertical.js (ese archivo es un ejecutable de demostración). POST pedidos espera rehidratación y llama crearPedido; este modifica Map y lanza espejo SQL. Confirmación de pago y entrega usan métodos de intención. PostgreSQL se carga al arranque del módulo; el proceso mantiene estado local y writes en vuelo.",
+        "detalle": [
+          {
+            "title": "C4 conserva PostgreSQL planeado y un protocolo de persistencia incorrecto",
+            "nature": "documentación desactualizada",
+            "severity": "Baja",
+            "severity_reason": "Baja: el código y el ADR reciente coinciden; la discrepancia está en las vistas que guían operación y mantenimiento.",
+            "impact": "La vista de contenedores clasifica PostgreSQL como futuro y dibuja HTTP REST/JSON a la BD; la de componentes también lo marca planeado. ADR0014 y el adaptador actual ya contienen conexión pg y SQL, por lo que onboarding y análisis de fallos parten de una topología vieja.",
+            "confidence": "Alta: comparación directa de vistas y código.",
+            "correction": "Actualizar C4 con PostgreSQL implementado condicional a DATABASE_URL, relación PostgreSQL/TCP mediante pg, Maps como cache/estado local y espejo asíncrono. Mantener Redis y auth marcados futuros.",
+            "declared": [
+              {
+                "path": "docs/c4/contenedores.md",
+                "start_line": 18,
+                "end_line": 33,
+                "url": "https://github.com/ISCOUTB/AS_202620_LaPlacita/blob/2c711d44b31a41a09306f7840da480a21e8c749a/docs/c4/contenedores.md#L18-L33",
+                "description": "C4 presenta PostgreSQL como planeado y dibuja REST hacia la BD."
+              },
+              {
+                "path": "docs/c4/componentes.md",
+                "start_line": 20,
+                "end_line": 26,
+                "url": "https://github.com/ISCOUTB/AS_202620_LaPlacita/blob/2c711d44b31a41a09306f7840da480a21e8c749a/docs/c4/componentes.md#L20-L26",
+                "description": "C4 de componentes aún clasifica PostgreSQL como futuro."
+              }
+            ],
+            "evidence": [
+              {
+                "path": "docs/adr/0014-base-de-datos-postgresql-dokploy.md",
+                "start_line": 48,
+                "end_line": 58,
+                "url": "https://github.com/ISCOUTB/AS_202620_LaPlacita/blob/2c711d44b31a41a09306f7840da480a21e8c749a/docs/adr/0014-base-de-datos-postgresql-dokploy.md#L48-L58",
+                "description": "ADR0014 ya adopta PostgreSQL gestionado con Dokploy y DATABASE_URL."
+              },
+              {
+                "path": "backend/src/persistencia/index.js",
+                "start_line": 92,
+                "end_line": 108,
+                "url": "https://github.com/ISCOUTB/AS_202620_LaPlacita/blob/2c711d44b31a41a09306f7840da480a21e8c749a/backend/src/persistencia/index.js#L92-L108",
+                "description": "El adaptador abre Pool pg y carga pedidos mediante SQL."
+              },
+              {
+                "path": "backend/src/modules/pedidos/index.js",
+                "start_line": 14,
+                "end_line": 16,
+                "url": "https://github.com/ISCOUTB/AS_202620_LaPlacita/blob/2c711d44b31a41a09306f7840da480a21e8c749a/backend/src/modules/pedidos/index.js#L14-L16",
+                "description": "Pedidos importa el adaptador de escritura y rehidratación."
+              }
+            ]
+          },
+          {
+            "title": "La supuesta cola de persistencia inicia UPSERT independientes",
+            "nature": "implementación",
+            "severity": "Media",
+            "severity_reason": "Media: falta una garantía de orden de persistencia del estado del pedido; existe riesgo plausible de estado atrasado, pero no se reprodujo ni se observó pérdida efectiva.",
+            "impact": "El objetivo de conservar el último estado confirmado y el comentario de serialización no se sustentan en la ruta de escritura: cada llamada invoca escribirFila inmediatamente; ultimaEscritura solo se reasigna. Un pool puede solapar escrituras y no se impone orden causal por pedido. Existe riesgo de persistir una instantánea atrasada sin caída de proceso, distinto de la ventana de pérdida ya aceptada. No se afirma que haya ocurrido.",
+            "confidence": "Alta sobre ausencia de encadenamiento; media sobre manifestación de reordenamiento bajo carga.",
+            "correction": "Capturar una instantánea inmutable por mutación y encadenar su persistencia a la promesa anterior (idealmente por pedido), o usar versión creciente/UPDATE condicional. Añadir prueba que retrase y reordene dos escrituras y compruebe el estado final; conservar documentado el límite fire-and-forget.",
+            "declared": [
+              {
+                "path": "docs/adr/0014-base-de-datos-postgresql-dokploy.md",
+                "start_line": 18,
+                "end_line": 20,
+                "url": "https://github.com/ISCOUTB/AS_202620_LaPlacita/blob/2c711d44b31a41a09306f7840da480a21e8c749a/docs/adr/0014-base-de-datos-postgresql-dokploy.md#L18-L20",
+                "description": "El requisito exige conservar el último estado confirmado."
+              },
+              {
+                "path": "docs/evidencias/evidencias-s10.md",
+                "start_line": 168,
+                "end_line": 176,
+                "url": "https://github.com/ISCOUTB/AS_202620_LaPlacita/blob/2c711d44b31a41a09306f7840da480a21e8c749a/docs/evidencias/evidencias-s10.md#L168-L176",
+                "description": "La ventana de pérdida por crash está aceptada, pero no una inversión de orden sin crash."
+              }
+            ],
+            "evidence": [
+              {
+                "path": "backend/src/persistencia/index.js",
+                "start_line": 49,
+                "end_line": 54,
+                "url": "https://github.com/ISCOUTB/AS_202620_LaPlacita/blob/2c711d44b31a41a09306f7840da480a21e8c749a/backend/src/persistencia/index.js#L49-L54",
+                "description": "El comentario promete una cola de UPSERT encadenados."
+              },
+              {
+                "path": "backend/src/persistencia/index.js",
+                "start_line": 188,
+                "end_line": 210,
+                "url": "https://github.com/ISCOUTB/AS_202620_LaPlacita/blob/2c711d44b31a41a09306f7840da480a21e8c749a/backend/src/persistencia/index.js#L188-L210",
+                "description": "Cada escritura arranca inmediatamente; ultimaEscritura solo se reemplaza."
+              },
+              {
+                "path": "backend/src/persistencia/index.js",
+                "start_line": 162,
+                "end_line": 185,
+                "url": "https://github.com/ISCOUTB/AS_202620_LaPlacita/blob/2c711d44b31a41a09306f7840da480a21e8c749a/backend/src/persistencia/index.js#L162-L185",
+                "description": "escribirFila envía el UPSERT al pool sin comprobar versión causal."
+              },
+              {
+                "path": "backend/src/modules/pedidos/index.js",
+                "start_line": 108,
+                "end_line": 117,
+                "url": "https://github.com/ISCOUTB/AS_202620_LaPlacita/blob/2c711d44b31a41a09306f7840da480a21e8c749a/backend/src/modules/pedidos/index.js#L108-L117",
+                "description": "Cada transición del pedido dispara una escritura."
+              },
+              {
+                "path": "backend/app/api/v1/pagos/[pedidoId]/confirmar/route.js",
+                "start_line": 10,
+                "end_line": 21,
+                "url": "https://github.com/ISCOUTB/AS_202620_LaPlacita/blob/2c711d44b31a41a09306f7840da480a21e8c749a/backend/app/api/v1/pagos/%5BpedidoId%5D/confirmar/route.js#L10-L21",
+                "description": "La ruta de confirmación llega al módulo de pagos y responde sin esperar el espejo SQL."
+              }
+            ]
+          }
+        ],
+        "informe": "revisiones/2026-2/AS_202620_LaPlacita/semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10"
+      }
     },
     {
       "repo": "AS_202620_LostVault",
+      "equipo": "LostVault",
       "rama": "main",
       "hash": "99fb413bda00c208ec42104dcfe6a4c189fbad77",
-      "fecha": "2026-10-04T22:30:53-05:00"
+      "fecha": "2026-10-04T22:30:53-05:00",
+      "criterios_tecnicos": {
+        "C1": 0.6,
+        "C2": 0.6,
+        "C3": 0.6,
+        "C4": 0.6
+      },
+      "subtotal_tecnico_sobre_4": 2.4,
+      "C5_docente": null,
+      "sustentacion_docente_sobre_5": null,
+      "total_sobre_5": null,
+      "estado_total": "Pendiente C5",
+      "escenario": "Búsqueda con 200 conexiones y p95 ≤2 s",
+      "asignacion_oficial": "No verificado; supuesto explícito de pertinencia",
+      "comentario": "Se comparan cargas en Vercel y un proxy local, sin un antes y después equivalente. Con 200 conexiones se reconocen fallos; el p95 en memoria no se acumula entre invocaciones. El código y la arquitectura documentada divergen.",
+      "fuentes": [
+        "https://github.com/ISCOUTB/AS_202620_LostVault/blob/99fb413bda00c208ec42104dcfe6a4c189fbad77/docs/adr/000.3-despliegue-busqueda-lostvault.md#L65-L106",
+        "https://github.com/ISCOUTB/AS_202620_LostVault/blob/99fb413bda00c208ec42104dcfe6a4c189fbad77/docs/arc42/07_vista_despliegue.md#L30-L65",
+        "https://github.com/ISCOUTB/AS_202620_LostVault/blob/99fb413bda00c208ec42104dcfe6a4c189fbad77/docs/ddd/auditoria_backend.md#L58-L92"
+      ],
+      "head_observado": "99fb413bda00c208ec42104dcfe6a4c189fbad77",
+      "commits_posteriores_al_cierre": 0,
+      "observacion_metadatos": "2026-10-13T16:45:59.573402+00:00",
+      "deriva_arquitectonica": {
+        "hash": "99fb413bda00c208ec42104dcfe6a4c189fbad77",
+        "hallazgos": 2,
+        "prioridad_maxima": "Media",
+        "resumen": "Handler Python cruza límites modulares; README anterior al proveedor.",
+        "arquitectura_declarada": "Monolito modular con hexagonal selectiva, módulos accesibles solo por public/. Flujo de reclamación exige autenticación y verificación; proveedor HTTP síncrono en Vercel con estado volátil explícitamente aceptado.",
+        "arquitectura_implementada": "Flutter main compone servicios en memoria y llama ClaimObjectUseCase a través de interfaces públicas. Separadamente backend/main.py expone FastAPI: JWT→diccionario de objetos→verificación de identidad simplificada→lista de claims y modificación de objeto bajo lock local. No existe una llamada HTTP desde el flujo Flutter examinado al proveedor; ambos son rutas independientes.",
+        "detalle": [
+          {
+            "title": "La reclamación HTTP evita los límites de aplicación y propiedad del monolito modular",
+            "nature": "implementación",
+            "severity": "Media",
+            "severity_reason": "Media: la ruta crítica concentra escrituras de dos contextos en HTTP y viola el límite modular vigente; no se acredita acceso fraudulento ni pérdida de datos.",
+            "impact": "El handler create_claim mezcla HTTP, autenticación, regla de disponibilidad, verificación y escritura directa de _claims/_objects. A diferencia del flujo Dart por interfaces, el backend carece de un dueño encapsulado de Objects que reciba la transición; cambios de persistencia y reglas afectan la frontera HTTP. Es una deuda ya reconocida como NC6, todavía presente en el SHA.",
+            "confidence": "Alta: ruta ejecutable y escrituras inspeccionadas.",
+            "correction": "Extraer caso de uso Python y servicio/repositorio dueño de objetos; el router traduce HTTP, Claims solicita reserva al contrato de Objects y la atomicidad permanece en una unidad de trabajo. Probar la ruta HTTP y los límites de imports, no solo la estructura Dart.",
+            "declared": [
+              {
+                "path": "docs/arc42/04_estilo_arquitectonico.md",
+                "start_line": 27,
+                "end_line": 33,
+                "url": "https://github.com/ISCOUTB/AS_202620_LostVault/blob/99fb413bda00c208ec42104dcfe6a4c189fbad77/docs/arc42/04_estilo_arquitectonico.md#L27-L33",
+                "description": "La estrategia exige fronteras públicas e inversión de dependencias."
+              },
+              {
+                "path": "docs/ddd/auditoria_backend.md",
+                "start_line": 86,
+                "end_line": 92,
+                "url": "https://github.com/ISCOUTB/AS_202620_LostVault/blob/99fb413bda00c208ec42104dcfe6a4c189fbad77/docs/ddd/auditoria_backend.md#L86-L92",
+                "description": "El propio equipo mantiene NC6 como corrección pendiente."
+              }
+            ],
+            "evidence": [
+              {
+                "path": "backend/main.py",
+                "start_line": 213,
+                "end_line": 230,
+                "url": "https://github.com/ISCOUTB/AS_202620_LostVault/blob/99fb413bda00c208ec42104dcfe6a4c189fbad77/backend/main.py#L213-L230",
+                "description": "El handler HTTP valida negocio y modifica ambos almacenes directamente."
+              },
+              {
+                "path": "backend/main.py",
+                "start_line": 136,
+                "end_line": 151,
+                "url": "https://github.com/ISCOUTB/AS_202620_LostVault/blob/99fb413bda00c208ec42104dcfe6a4c189fbad77/backend/main.py#L136-L151",
+                "description": "Objects y Claims son estado global del mismo archivo."
+              },
+              {
+                "path": "lib/features/claims/application/claim_object_use_case.dart",
+                "start_line": 1,
+                "end_line": 22,
+                "url": "https://github.com/ISCOUTB/AS_202620_LostVault/blob/99fb413bda00c208ec42104dcfe6a4c189fbad77/lib/features/claims/application/claim_object_use_case.dart#L1-L22",
+                "description": "En Dart sí se consumen interfaces públicas de los otros módulos."
+              }
+            ]
+          },
+          {
+            "title": "README aún describe como futuro un proveedor HTTP que ya tiene implementación",
+            "nature": "documentación desactualizada",
+            "severity": "Baja",
+            "severity_reason": "Baja: el desfase puede confundir integración y despliegue, pero no identifica un fallo nuevo del proveedor.",
+            "impact": "El lector del README recibe una arquitectura anterior: contrato previo a implementar el proveedor, mientras ADR0003 y backend/main.py ya definen API separada. Puede confundirse el demo Flutter en memoria con un flujo móvil conectado a esa API.",
+            "confidence": "Alta.",
+            "correction": "Actualizar README y vistas con dos rutas actuales: demo Flutter local y proveedor FastAPI; señalar explícitamente que el cliente aún no lo consume. Separar diagrama implementado de integración futura y corregir la referencia obsoleta a vercel.json.",
+            "declared": [
+              {
+                "path": "README.md",
+                "start_line": 172,
+                "end_line": 185,
+                "url": "https://github.com/ISCOUTB/AS_202620_LostVault/blob/99fb413bda00c208ec42104dcfe6a4c189fbad77/README.md#L172-L185",
+                "description": "El README sigue llamando futuro al proveedor HTTP."
+              }
+            ],
+            "evidence": [
+              {
+                "path": "backend/main.py",
+                "start_line": 198,
+                "end_line": 230,
+                "url": "https://github.com/ISCOUTB/AS_202620_LostVault/blob/99fb413bda00c208ec42104dcfe6a4c189fbad77/backend/main.py#L198-L230",
+                "description": "FastAPI ya implementa consulta de objetos y reclamación."
+              },
+              {
+                "path": "docs/adr/0003-plataforma-despliegue-vercel.md",
+                "start_line": 45,
+                "end_line": 60,
+                "url": "https://github.com/ISCOUTB/AS_202620_LostVault/blob/99fb413bda00c208ec42104dcfe6a4c189fbad77/docs/adr/0003-plataforma-despliegue-vercel.md#L45-L60",
+                "description": "El ADR vigente adopta el proveedor Vercel."
+              },
+              {
+                "path": "lib/main.dart",
+                "start_line": 49,
+                "end_line": 68,
+                "url": "https://github.com/ISCOUTB/AS_202620_LostVault/blob/99fb413bda00c208ec42104dcfe6a4c189fbad77/lib/main.dart#L49-L68",
+                "description": "El cliente continúa compuesto con servicios en memoria."
+              }
+            ]
+          }
+        ],
+        "informe": "revisiones/2026-2/AS_202620_LostVault/semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10"
+      }
     },
     {
       "repo": "AS_202620_mapsutb",
+      "equipo": "mapsutb",
       "rama": "master",
       "hash": "1b296a37c575a751e99df1a1b288d70efba03d56",
-      "fecha": "2026-10-02T12:58:33-05:00"
+      "fecha": "2026-10-02T12:58:33-05:00",
+      "criterios_tecnicos": {
+        "C1": 0.6,
+        "C2": 0.8,
+        "C3": 0.6,
+        "C4": 0.6
+      },
+      "subtotal_tecnico_sobre_4": 2.6,
+      "C5_docente": 0.8,
+      "sustentacion_docente_sobre_5": 4,
+      "total_sobre_5": 3.4,
+      "estado_total": "Consolidado con C5 docente",
+      "escenario": "Escenario2: ruteo sin conexión y ruta mostrada ≤5 s",
+      "asignacion_oficial": "No verificado; supuesto explícito de pertinencia",
+      "comentario": "Dijkstra, sus alternativas y costo están justificados e implementados. Las medidas son posteriores y no identifican una línea base anterior. Logs y sonda aportan observabilidad parcial; C4 aún declara ausente MapaRepository. No se mezcla la línea base de caché con la de ruteo.",
+      "fuentes": [
+        "https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/docs/evidencia-s9.md#L50-L62",
+        "https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/docs/adr/0013-ruteo-dijkstra-grafo-propio.md#L17-L59",
+        "https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/docs/c4/C2.md#L39-L50"
+      ],
+      "head_observado": "1b296a37c575a751e99df1a1b288d70efba03d56",
+      "commits_posteriores_al_cierre": 0,
+      "observacion_metadatos": "2026-10-13T16:46:04.996618+00:00",
+      "deriva_arquitectonica": {
+        "hash": "1b296a37c575a751e99df1a1b288d70efba03d56",
+        "hallazgos": 2,
+        "prioridad_maxima": "Media",
+        "resumen": "Vistas de mapas y GPS no reflejan OSM, Dijkstra y ubicación simulada.",
+        "arquitectura_declarada": "Una app Flutter, sin backend propio; Repository para JSON/grafo, Adapter para servicios externos y Observer de ubicación. ADR0012 reemplaza Google Maps SDK por flutter_map/OSM; ADR0013 concreta Dijkstra offline. Hosting web Firebase y sondas externas.",
+        "arquitectura_implementada": "main.dart compone ZonaRepositoryLocal y MapaRepositoryLocal, crea UbicacionServiceSimulado y los inyecta en MapaScreen. La pantalla carga grafo/zonas, escucha el stream y llama ServicioRuteo; MapaWidget solicita teselas OSM. Geocoding/Static Maps/Analytics solo se componen si existen defines; no hay base de datos propia.",
+        "detalle": [
+          {
+            "title": "Las vistas principales no incorporan por completo los ADR de OSM y ruteo",
+            "nature": "documentación desactualizada",
+            "severity": "Baja",
+            "severity_reason": "Baja: son vistas y alcance desactualizados; las decisiones nuevas están formalizadas y el código las sigue.",
+            "impact": "Arc42 sigue dibujando un SDK Google embebido y el README dice que routing solo contiene .gitkeep, aunque el mapa solicita teselas OSM y Dijkstra está implementado y llamado. Esto cambia dependencias operativas y alcance disponible, no significa que la elección OSM sea deriva de implementación.",
+            "confidence": "Alta.",
+            "correction": "Actualizar README/C4/arc42 en conjunto: OSM para mapa base, Dijkstra actual y tour aún pendiente. Dibujar por separado Geocoding/Static Maps opcionales; separar cálculo offline de carga de teselas.",
+            "declared": [
+              {
+                "path": "docs/arc42/05_building_block_view.md",
+                "start_line": 18,
+                "end_line": 29,
+                "url": "https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/docs/arc42/05_building_block_view.md#L18-L29",
+                "description": "Arc42 conserva el SDK Google como mapa base embebido."
+              },
+              {
+                "path": "README.md",
+                "start_line": 53,
+                "end_line": 57,
+                "url": "https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/README.md#L53-L57",
+                "description": "README afirma que routing solo es un molde pendiente."
+              }
+            ],
+            "evidence": [
+              {
+                "path": "docs/adr/0012-mapa-base-flutter-map-osm.md",
+                "start_line": 5,
+                "end_line": 9,
+                "url": "https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/docs/adr/0012-mapa-base-flutter-map-osm.md#L5-L9",
+                "description": "ADR0012 reemplaza explícitamente la elección Google Maps SDK."
+              },
+              {
+                "path": "lib/adapters/mapa_widget.dart",
+                "start_line": 95,
+                "end_line": 110,
+                "url": "https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/lib/adapters/mapa_widget.dart#L95-L110",
+                "description": "MapaWidget realmente carga teselas OSM con flutter_map."
+              },
+              {
+                "path": "lib/routing/servicio_ruteo.dart",
+                "start_line": 28,
+                "end_line": 53,
+                "url": "https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/lib/routing/servicio_ruteo.dart#L28-L53",
+                "description": "ServicioRuteo implementa rutas por grafo e ids de zona."
+              },
+              {
+                "path": "lib/features/mapas_ruteo/presentation/screens/mapa_screen.dart",
+                "start_line": 113,
+                "end_line": 120,
+                "url": "https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/lib/features/mapas_ruteo/presentation/screens/mapa_screen.dart#L113-L120",
+                "description": "La pantalla llama al cálculo de ruta durante su flujo real."
+              }
+            ]
+          },
+          {
+            "title": "La vista de ejecución describe GPS actual, pero el arranque compone ubicación simulada",
+            "nature": "documentación desactualizada",
+            "severity": "Media",
+            "severity_reason": "Media: la vista presenta como posición actual del usuario un flujo que realmente parte de un simulador; afecta la interpretación funcional del origen de las rutas, sin afirmar que GPS real ya sea obligación del incremento.",
+            "impact": "El flujo documentado recibe posición del sensor; el flujo ejecutable emite coordenadas aleatorias alrededor de un punto fijo cada segundo y usa ese stream para origen de rutas. La interfaz no demuestra ubicación real por tener Observer. La implementación se identifica como simulada en código, por lo que se reporta como desajuste de la vista actual, no como obligación de implementar una función futura.",
+            "confidence": "Alta: composición y generación del stream verificadas.",
+            "correction": "Marcar el sensor/GPS real como objetivo y mostrar el simulador en la vista actual; identificar visiblemente modo demostración en UI. Cuando se integre GPS, sustituir el adaptador y probar permisos, ausencia de señal y precisión sin alterar el contrato Observer.",
+            "declared": [
+              {
+                "path": "docs/arc42/06_runtime_view.md",
+                "start_line": 36,
+                "end_line": 43,
+                "url": "https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/docs/arc42/06_runtime_view.md#L36-L43",
+                "description": "La secuencia representa lecturas reales del sensor GPS."
+              },
+              {
+                "path": "docs/arc42/06_runtime_view.md",
+                "start_line": 57,
+                "end_line": 64,
+                "url": "https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/docs/arc42/06_runtime_view.md#L57-L64",
+                "description": "La explicación atribuye el origen de ruta a posición actual del usuario."
+              }
+            ],
+            "evidence": [
+              {
+                "path": "lib/main.dart",
+                "start_line": 47,
+                "end_line": 51,
+                "url": "https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/lib/main.dart#L47-L51",
+                "description": "El punto de composición instancia UbicacionServiceSimulado."
+              },
+              {
+                "path": "lib/services/ubicacion_service.dart",
+                "start_line": 15,
+                "end_line": 25,
+                "url": "https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/lib/services/ubicacion_service.dart#L15-L25",
+                "description": "El adaptador declara que no usa GPS real."
+              },
+              {
+                "path": "lib/services/ubicacion_service.dart",
+                "start_line": 41,
+                "end_line": 51,
+                "url": "https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/lib/services/ubicacion_service.dart#L41-L51",
+                "description": "Timer genera desplazamientos aleatorios sobre un punto fijo."
+              },
+              {
+                "path": "lib/features/mapas_ruteo/presentation/screens/mapa_screen.dart",
+                "start_line": 55,
+                "end_line": 63,
+                "url": "https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/lib/features/mapas_ruteo/presentation/screens/mapa_screen.dart#L55-L63",
+                "description": "MapaScreen usa ese stream como posición."
+              }
+            ]
+          }
+        ],
+        "informe": "revisiones/2026-2/AS_202620_mapsutb/semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10"
+      }
     },
     {
       "repo": "AS_202620_PideUtb",
+      "equipo": "PideUtb",
       "rama": "master",
-      "hash": "7e973faf7047e40137762befbc019f4736a813e6",
-      "fecha": "2026-10-04T12:47:55-05:00"
+      "hash": "2497bfe7e0c7dc04e4cdf9b550254b9fd73df956",
+      "fecha": "2026-10-12T14:27:07-05:00",
+      "criterios_tecnicos": {
+        "C1": 0.6,
+        "C2": 0.8,
+        "C3": 0,
+        "C4": 0.8
+      },
+      "subtotal_tecnico_sobre_4": 2.2,
+      "C5_docente": null,
+      "sustentacion_docente_sobre_5": null,
+      "total_sobre_5": null,
+      "estado_total": "Pendiente C5",
+      "escenario": "ESC-04: validar el código de recogida en menos de 2 s y rechazar el 100 % de reutilizaciones; nueva autenticación y autorización del panel con sesiones y contrato 2.0.0.",
+      "asignacion_oficial": "No verificado; supuesto explícito de pertinencia",
+      "comentario": "ESC-04 incorpora autenticación, contrato 2.0 y ADR-0007, pero sesiones, tablas y cuentas no están acreditadas en producción. El GET público devuelve el código de canje, que funciona como secreto de retiro, a partir de un identificador entero. Es un hallazgo estático de operación y seguridad; no se consultaron pedidos reales ni se afirma explotación en producción.",
+      "fuentes": [
+        "https://github.com/ISCOUTB/AS_202620_PideUtb/blob/2497bfe7e0c7dc04e4cdf9b550254b9fd73df956/docs/evidencia-s10.md#L39-L65",
+        "https://github.com/ISCOUTB/AS_202620_PideUtb/blob/2497bfe7e0c7dc04e4cdf9b550254b9fd73df956/docs/adr/0007-autenticacion-del-panel.md#L27-L103",
+        "https://github.com/ISCOUTB/AS_202620_PideUtb/blob/2497bfe7e0c7dc04e4cdf9b550254b9fd73df956/backend/app/pedidos/router.py#L45-L54"
+      ],
+      "head_observado": "2497bfe7e0c7dc04e4cdf9b550254b9fd73df956",
+      "commits_posteriores_al_cierre": 0,
+      "observacion_metadatos": "2026-10-13T16:46:05.402055+00:00",
+      "deriva_arquitectonica": {
+        "hash": "2497bfe7e0c7dc04e4cdf9b550254b9fd73df956",
+        "hallazgos": 3,
+        "prioridad_maxima": "Alta",
+        "resumen": "Canje sin arbitraje atómico; eventos síncronos y README rezagado.",
+        "arquitectura_declarada": "Monolito modular FastAPI con módulos menu/pedidos/pagos/usuarios, interfaces de service y contracts, repositorios propios. PostgreSQL/Supabase; ADR0003 distingue API síncrona, webhook de pago y evento de panel asíncrono. ADR0007 adopta sesiones opacas propias y tenant derivado de sesión.",
+        "arquitectura_implementada": "main incluye routers y abre pool; crear pedido cruza service de menú/usuarios y escribe mediante repositorio propio. Webhook verifica HMAC, ejecuta procesar_evento en la petición y confirmar_pago usa UPDATE condicional atómico; a continuación publicar recorre callbacks locales. Panel HTML/JS consulta la cola por HTTP cada 8 s. Avanzar estado lee pedido, valida en servicio y guarda con UPDATE por id sin comparar estado anterior.",
+        "detalle": [
+          {
+            "title": "La transición de entrega valida fuera de la escritura atómica",
+            "nature": "implementación",
+            "severity": "Alta",
+            "severity_reason": "Alta: está comprometida la garantía explícita de uso único del código de canje y de estados terminales en una operación central de entrega. Dos solicitudes concurrentes autorizadas pueden superar la misma validación y ser aceptadas. No se afirma entrega física duplicada, perjuicio monetario ni explotación observada.",
+            "impact": "ADR0007 atribuye el rechazo de todas las reutilizaciones del canje al estado final. Sin embargo, dos peticiones autorizadas concurrentes pueden leer Listo, validar el mismo código y ejecutar ambas UPDATE por id. También una transición basada en estado atrasado puede sobrescribir otra más reciente. La garantía del estado final necesita protección en persistencia; se trata de un interleaving permitido por el código, no de una duplicación observada en producción.",
+            "confidence": "Alta sobre la ausencia de condición/transacción de lectura-escritura; el interleaving no se ejecutó.",
+            "correction": "Exponer una operación de repositorio que cambie estado solo si coincide el estado/version leído, y devuelva conflicto si otra petición ganó; mantener validación de tenant/código en la misma transacción o condición. Añadir prueba concurrente de dos entregas y de cancelar frente a preparar, exigiendo un único éxito.",
+            "declared": [
+              {
+                "path": "docs/adr/0007-autenticacion-del-panel.md",
+                "start_line": 109,
+                "end_line": 115,
+                "url": "https://github.com/ISCOUTB/AS_202620_PideUtb/blob/2497bfe7e0c7dc04e4cdf9b550254b9fd73df956/docs/adr/0007-autenticacion-del-panel.md#L109-L115",
+                "description": "ADR0007 atribuye el rechazo de toda reutilización al estado final."
+              }
+            ],
+            "evidence": [
+              {
+                "path": "backend/app/pedidos/router.py",
+                "start_line": 125,
+                "end_line": 141,
+                "url": "https://github.com/ISCOUTB/AS_202620_PideUtb/blob/2497bfe7e0c7dc04e4cdf9b550254b9fd73df956/backend/app/pedidos/router.py#L125-L141",
+                "description": "La ruta autenticada invoca avanzar_estado antes de responder."
+              },
+              {
+                "path": "backend/app/pedidos/service.py",
+                "start_line": 222,
+                "end_line": 239,
+                "url": "https://github.com/ISCOUTB/AS_202620_PideUtb/blob/2497bfe7e0c7dc04e4cdf9b550254b9fd73df956/backend/app/pedidos/service.py#L222-L239",
+                "description": "El servicio lee y valida el estado antes de la escritura."
+              },
+              {
+                "path": "backend/app/pedidos/service.py",
+                "start_line": 251,
+                "end_line": 257,
+                "url": "https://github.com/ISCOUTB/AS_202620_PideUtb/blob/2497bfe7e0c7dc04e4cdf9b550254b9fd73df956/backend/app/pedidos/service.py#L251-L257",
+                "description": "El canje se compara antes de llamar guardar."
+              },
+              {
+                "path": "backend/app/pedidos/repository.py",
+                "start_line": 101,
+                "end_line": 121,
+                "url": "https://github.com/ISCOUTB/AS_202620_PideUtb/blob/2497bfe7e0c7dc04e4cdf9b550254b9fd73df956/backend/app/pedidos/repository.py#L101-L121",
+                "description": "La escritura SQL solo filtra por id, sin estado previo o versión."
+              },
+              {
+                "path": "backend/app/pedidos/repository.py",
+                "start_line": 158,
+                "end_line": 166,
+                "url": "https://github.com/ISCOUTB/AS_202620_PideUtb/blob/2497bfe7e0c7dc04e4cdf9b550254b9fd73df956/backend/app/pedidos/repository.py#L158-L166",
+                "description": "La lectura usa su propio bloque de conexión y retorna después de cerrarlo."
+              },
+              {
+                "path": "backend/app/base_de_datos.py",
+                "start_line": 119,
+                "end_line": 136,
+                "url": "https://github.com/ISCOUTB/AS_202620_PideUtb/blob/2497bfe7e0c7dc04e4cdf9b550254b9fd73df956/backend/app/base_de_datos.py#L119-L136",
+                "description": "Cada bloque with tiene su propia transacción; leer y guardar no comparten una unidad atómica."
+              }
+            ]
+          },
+          {
+            "title": "El canal al panel descrito como asíncrono es un bus síncrono sin consumidor de producción",
+            "nature": "implementación",
+            "severity": "Media",
+            "severity_reason": "Media: se describe un desacoplamiento temporal que el mecanismo no ofrece y un canal que el panel no consume; con ningún suscriptor productivo observado, no se presume bloqueo actual.",
+            "impact": "ADR0003 afirma que API→panel usa evento asíncrono y desacopla el momento. publicar invoca cada handler inline; confirmar_pago lo llama antes de retornar. Además el panel actual obtiene novedades por polling HTTP, no por ese canal. Capturar excepciones aísla errores, pero no el tiempo de ejecución. Hoy no se halló suscriptor de producción, por lo que no se afirma latencia real por callbacks.",
+            "confidence": "Alta: dispatch y consumidor real revisados; ausencia de suscriptores acotada a backend/app y sitio.",
+            "correction": "Ratificar en un ADR el diseño actual: webhook externo y polling de panel, con bus local síncrono para extensiones; o implementar un transporte/worker realmente desacoplado con consumidor y política de entrega. No basta devolver202 o ignorar el resultado del callback.",
+            "declared": [
+              {
+                "path": "docs/adr/0003-estrategia-integracion.md",
+                "start_line": 128,
+                "end_line": 143,
+                "url": "https://github.com/ISCOUTB/AS_202620_PideUtb/blob/2497bfe7e0c7dc04e4cdf9b550254b9fd73df956/docs/adr/0003-estrategia-integracion.md#L128-L143",
+                "description": "ADR0003 declara un canal asíncrono desde API al panel."
+              },
+              {
+                "path": "docs/adr/0003-estrategia-integracion.md",
+                "start_line": 190,
+                "end_line": 201,
+                "url": "https://github.com/ISCOUTB/AS_202620_PideUtb/blob/2497bfe7e0c7dc04e4cdf9b550254b9fd73df956/docs/adr/0003-estrategia-integracion.md#L190-L201",
+                "description": "La decisión dice que el canal en proceso desacopla el momento."
+              }
+            ],
+            "evidence": [
+              {
+                "path": "backend/app/eventos.py",
+                "start_line": 48,
+                "end_line": 70,
+                "url": "https://github.com/ISCOUTB/AS_202620_PideUtb/blob/2497bfe7e0c7dc04e4cdf9b550254b9fd73df956/backend/app/eventos.py#L48-L70",
+                "description": "publicar ejecuta los callbacks secuencialmente en la misma llamada."
+              },
+              {
+                "path": "backend/app/pedidos/service.py",
+                "start_line": 150,
+                "end_line": 167,
+                "url": "https://github.com/ISCOUTB/AS_202620_PideUtb/blob/2497bfe7e0c7dc04e4cdf9b550254b9fd73df956/backend/app/pedidos/service.py#L150-L167",
+                "description": "confirmar_pago llama publicar antes de retornar."
+              },
+              {
+                "path": "sitio/panel.js",
+                "start_line": 327,
+                "end_line": 337,
+                "url": "https://github.com/ISCOUTB/AS_202620_PideUtb/blob/2497bfe7e0c7dc04e4cdf9b550254b9fd73df956/sitio/panel.js#L327-L337",
+                "description": "El panel obtiene su cola mediante petición HTTP."
+              },
+              {
+                "path": "sitio/panel.js",
+                "start_line": 468,
+                "end_line": 470,
+                "url": "https://github.com/ISCOUTB/AS_202620_PideUtb/blob/2497bfe7e0c7dc04e4cdf9b550254b9fd73df956/sitio/panel.js#L468-L470",
+                "description": "Un setInterval dispara el refresco periódico."
+              }
+            ]
+          },
+          {
+            "title": "El README sigue anunciando memoria y contrato1.1 pese a la evolución vigente",
+            "nature": "documentación desactualizada",
+            "severity": "Baja",
+            "severity_reason": "Baja: desalineación de la guía principal frente a una evolución ya documentada e implementada.",
+            "impact": "La entrada principal dice que hoy el estado vive en memoria y lista OpenAPI 1.1; el repositorio ya selecciona PostgreSQL y la aplicación anuncia 2.0 con sesiones. Esto oculta requisitos de migración y autenticación para quien instala o integra.",
+            "confidence": "Alta.",
+            "correction": "Actualizar guía de arranque/estado y tabla de contratos a la versión vigente, distinguendo memoria de pruebas de PostgreSQL cuando está configurado e incorporando requisitos de sesiones y migraciones. Mantener el historial de contratos como histórico.",
+            "declared": [
+              {
+                "path": "README.md",
+                "start_line": 25,
+                "end_line": 28,
+                "url": "https://github.com/ISCOUTB/AS_202620_PideUtb/blob/2497bfe7e0c7dc04e4cdf9b550254b9fd73df956/README.md#L25-L28",
+                "description": "README afirma que el estado actual vive en memoria."
+              },
+              {
+                "path": "README.md",
+                "start_line": 75,
+                "end_line": 78,
+                "url": "https://github.com/ISCOUTB/AS_202620_PideUtb/blob/2497bfe7e0c7dc04e4cdf9b550254b9fd73df956/README.md#L75-L78",
+                "description": "La tabla principal aún anuncia OpenAPI 1.1.0."
+              }
+            ],
+            "evidence": [
+              {
+                "path": "backend/app/pedidos/repository.py",
+                "start_line": 23,
+                "end_line": 24,
+                "url": "https://github.com/ISCOUTB/AS_202620_PideUtb/blob/2497bfe7e0c7dc04e4cdf9b550254b9fd73df956/backend/app/pedidos/repository.py#L23-L24",
+                "description": "Memoria es la alternativa cuando falta DATABASE_URL."
+              },
+              {
+                "path": "backend/app/pedidos/repository.py",
+                "start_line": 84,
+                "end_line": 98,
+                "url": "https://github.com/ISCOUTB/AS_202620_PideUtb/blob/2497bfe7e0c7dc04e4cdf9b550254b9fd73df956/backend/app/pedidos/repository.py#L84-L98",
+                "description": "El repositorio implementa creación SQL con PostgreSQL."
+              },
+              {
+                "path": "backend/app/main.py",
+                "start_line": 62,
+                "end_line": 70,
+                "url": "https://github.com/ISCOUTB/AS_202620_PideUtb/blob/2497bfe7e0c7dc04e4cdf9b550254b9fd73df956/backend/app/main.py#L62-L70",
+                "description": "La aplicación anuncia contrato 2.0.0."
+              },
+              {
+                "path": "docs/adr/0007-autenticacion-del-panel.md",
+                "start_line": 121,
+                "end_line": 126,
+                "url": "https://github.com/ISCOUTB/AS_202620_PideUtb/blob/2497bfe7e0c7dc04e4cdf9b550254b9fd73df956/docs/adr/0007-autenticacion-del-panel.md#L121-L126",
+                "description": "ADR0007 documenta el cambio incompatible de autenticación."
+              }
+            ]
+          }
+        ],
+        "informe": "revisiones/2026-2/AS_202620_PideUtb/semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10"
+      }
     },
     {
       "repo": "AS_202620_Recobra",
+      "equipo": "Recobra",
       "rama": "master",
-      "hash": "ac3cbb64a70fa5f23d270ab83b0a210106aded28",
-      "fecha": "2026-10-08T18:26:27-05:00",
-      "revision": "2026-10-10",
-      "observacion_salud": "2026-10-10T13:05:05.086537Z",
-      "hash_previo": "ebe6cca7a903bb333678bd20ba5327d8fcb127f7"
+      "hash": "eae8471c932f430d56b757dfb3e79e57a647f4b8",
+      "fecha": "2026-10-10T12:10:10-05:00",
+      "criterios_tecnicos": {
+        "C1": 0.8,
+        "C2": 0.8,
+        "C3": 0.8,
+        "C4": 1
+      },
+      "subtotal_tecnico_sobre_4": 3.4,
+      "C5_docente": 0.8,
+      "sustentacion_docente_sobre_5": 4,
+      "total_sobre_5": 4.2,
+      "estado_total": "Consolidado con C5 docente",
+      "escenario": "S1: p95 búsqueda ≤400 ms con hasta 200 conexiones sobre PostgreSQL",
+      "asignacion_oficial": "No verificado; supuesto explícito de pertinencia",
+      "comentario": "Hay mejora operativa y un experimento S1, con límites de causalidad. Se corrigieron arc42, C4, readiness, medición GET, filtro 503 y contrato, y se enlazó la sucesión de ADR con la evidencia.",
+      "fuentes": [
+        "https://github.com/ISCOUTB/AS_202620_Recobra/blob/eae8471c932f430d56b757dfb3e79e57a647f4b8/docs/medicion-s10.md#L16-L46",
+        "https://github.com/ISCOUTB/AS_202620_Recobra/blob/eae8471c932f430d56b757dfb3e79e57a647f4b8/docs/adr/0010-despliegue-en-dokploy-servidor-del-laboratorio.md#L33-L111",
+        "https://github.com/ISCOUTB/AS_202620_Recobra/blob/eae8471c932f430d56b757dfb3e79e57a647f4b8/src/observabilidad/metricas.service.ts#L54-L91"
+      ],
+      "head_observado": "e0082dea0aa6fad7985d6acad138736eee8ffbfa",
+      "commits_posteriores_al_cierre": 1,
+      "observacion_metadatos": "2026-10-13T16:46:05.198633+00:00",
+      "deriva_arquitectonica": {
+        "hash": "eae8471c932f430d56b757dfb3e79e57a647f4b8",
+        "hallazgos": 0,
+        "prioridad_maxima": "Sin hallazgos",
+        "resumen": "Sin deriva material observada; acoplamientos aceptados por ADR.",
+        "arquitectura_declarada": "Backend hexagonal NestJS y cliente Flutter; puertos de persistencia y dominio puro, composición de PostgreSQL/memoria. ADR0004 adopta emisión en proceso hacia Emparejamiento asíncrono; C4 actual distingue repositorio de coincidencias en memoria. ADR0010 reemplaza Render/Neon por Dokploy.",
+        "arquitectura_implementada": "PublicacionesController→Crear/Buscar/Consultar→PublicacionRepository. PublicacionesModule selecciona pg si DATABASE_URL existe. Crear guarda antes de emitir publicacion.creada; listener async:true ejecuta BuscarCoincidencias y captura errores. El caso de uso lee publicaciones vía puerto y escribe coincidencias vía su propio puerto. Health distingue liveness/readiness y la búsqueda usa SQL parametrizado/limitado.",
+        "detalle": [],
+        "informe": "revisiones/2026-2/AS_202620_Recobra/semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10"
+      }
     },
     {
       "repo": "AS_202620_ROUTB",
+      "equipo": "ROUTB",
       "rama": "master",
-      "hash": "7c6573e68a5fdab019fab8fddfe1acb2a451cb27",
-      "fecha": "2026-10-03T18:20:32-05:00"
+      "hash": "adde017b72d73f210eef6cb48d97cdf1687f5141",
+      "fecha": "2026-10-12T22:02:26-05:00",
+      "criterios_tecnicos": {
+        "C1": 0.8,
+        "C2": 0.8,
+        "C3": 0.8,
+        "C4": 0.8
+      },
+      "subtotal_tecnico_sobre_4": 3.2,
+      "C5_docente": 0.8,
+      "sustentacion_docente_sobre_5": 4,
+      "total_sobre_5": 4,
+      "estado_total": "Consolidado con C5 docente",
+      "escenario": "Resiliencia de routing/geocodificación ante fallos OSRM/Photon/Nominatim: 0HTTP500, fallback tipado, p95<3,99 s; escenario ampliado en el delta elegible.",
+      "asignacion_oficial": "No verificado; supuesto explícito de pertinencia",
+      "comentario": "El nuevo experimento incluye 50 observaciones de base y 50 de fallo, con ajuste de timeout y caché. Las pruebas simulan timeout sin esperar y no demuestran degradación de extremo a extremo real. El CI está verde, pero el paso Sonar es un echo.",
+      "fuentes": [
+        "https://github.com/ISCOUTB/AS_202620_ROUTB/blob/adde017b72d73f210eef6cb48d97cdf1687f5141/docs/evidencia/corte2-fallo-escenario.md#L3-L26",
+        "https://github.com/ISCOUTB/AS_202620_ROUTB/blob/adde017b72d73f210eef6cb48d97cdf1687f5141/backend/app/shared/routing/service.py#L54-L64",
+        "https://github.com/ISCOUTB/AS_202620_ROUTB/blob/adde017b72d73f210eef6cb48d97cdf1687f5141/backend/app/main.py#L32-L47"
+      ],
+      "head_observado": "adde017b72d73f210eef6cb48d97cdf1687f5141",
+      "commits_posteriores_al_cierre": 0,
+      "observacion_metadatos": "2026-10-13T16:46:05.211820+00:00",
+      "deriva_arquitectonica": {
+        "hash": "adde017b72d73f210eef6cb48d97cdf1687f5141",
+        "hallazgos": 3,
+        "prioridad_maxima": "Media",
+        "resumen": "Requests escribe Trips; push síncrono y timeout distinto del ADR.",
+        "arquitectura_declarada": "Monolito modular FastAPI con capas (no hexagonal), PostgreSQL/PostGIS, JWT y Flutter por repositorios/ApiClient. Dueño único por entidad; cupos mediante UPDATE condicional. Integración REST principal; FCM secundario no bloqueante; ADR0014 fija timeout 1,4 s.",
+        "arquitectura_implementada": "main monta routers autenticados. PATCH requests/{id}/accept llama caso de uso, reserva cupos por trips.application y confirma; después llama recálculo de ruta y send_push inline. order_stops ejecuta UPDATE trips desde Requests. render.yaml selecciona rama Changes y timeout 3.0; config lee esa variable con default 1.4. Geocode usa Photon→Nominatim y cache; purga SQL está programada en workflow con salida exitosa si falta secreto.",
+        "detalle": [
+          {
+            "title": "Requests modifica directamente los datos de ruta cuyo dueño es Trips",
+            "nature": "implementación",
+            "severity": "Media",
+            "severity_reason": "Media: se viola el dueño de los datos de ruta y se reparte la responsabilidad de actualización; las reservas atómicas de cupos no se consideran rotas.",
+            "impact": "La operación real accept_request llama refresh_trip_route_and_stop_eta y esta ejecuta UPDATE trips sobre route_geom, route_distance_m, route_duration_s y route_source. El límite de dueño único deja de proteger la actualización de rutas y la lógica de derivación queda repartida. Los cupos sí usan reserve/release públicos y no forman parte de este hallazgo.",
+            "confidence": "Alta: llamada alcanzable y SQL exacto verificados.",
+            "correction": "Mover la actualización de geometría y métricas de viaje a una operación pública de trips.application; Requests entrega las paradas/ids y conserva sus propias ETA. Eliminar también el import de helper privado de create_trip, o promoverlo a contrato público. Añadir regla de dependencias/escrituras entre módulos.",
+            "declared": [
+              {
+                "path": "docs/evidencia/propiedad_de_datos.md",
+                "start_line": 3,
+                "end_line": 14,
+                "url": "https://github.com/ISCOUTB/AS_202620_ROUTB/blob/adde017b72d73f210eef6cb48d97cdf1687f5141/docs/evidencia/propiedad_de_datos.md#L3-L14",
+                "description": "La matriz asigna a Trips la creación, modificación y validación del recorrido."
+              }
+            ],
+            "evidence": [
+              {
+                "path": "backend/app/modules/requests/infrastructure/router.py",
+                "start_line": 125,
+                "end_line": 133,
+                "url": "https://github.com/ISCOUTB/AS_202620_ROUTB/blob/adde017b72d73f210eef6cb48d97cdf1687f5141/backend/app/modules/requests/infrastructure/router.py#L125-L133",
+                "description": "El router llama al caso de uso de aceptar una solicitud."
+              },
+              {
+                "path": "backend/app/modules/requests/application/manage_request.py",
+                "start_line": 124,
+                "end_line": 133,
+                "url": "https://github.com/ISCOUTB/AS_202620_ROUTB/blob/adde017b72d73f210eef6cb48d97cdf1687f5141/backend/app/modules/requests/application/manage_request.py#L124-L133",
+                "description": "El caso de uso llama al recálculo después del commit de cupos."
+              },
+              {
+                "path": "backend/app/modules/requests/application/order_stops.py",
+                "start_line": 53,
+                "end_line": 70,
+                "url": "https://github.com/ISCOUTB/AS_202620_ROUTB/blob/adde017b72d73f210eef6cb48d97cdf1687f5141/backend/app/modules/requests/application/order_stops.py#L53-L70",
+                "description": "Requests ejecuta UPDATE trips sobre geometría y métricas de ruta."
+              }
+            ]
+          },
+          {
+            "title": "El envío FCM secundario permanece en el camino síncrono de la respuesta",
+            "nature": "implementación",
+            "severity": "Media",
+            "severity_reason": "Media: una dependencia secundaria de red entra en el presupuesto de respuesta de una operación ya confirmada; no se conoce si FCM está activo ni su latencia efectiva.",
+            "impact": "ADR0013 exige que push no bloquee el flujo principal. El commit sucede antes y las excepciones se contienen, pero accept_request espera send_push y este llama send_each antes de retornar. Con FCM configurado, latencia/timeout de entrega se suma a la respuesta REST aunque la reserva ya esté confirmada. No se afirma que FCM esté configurado ni que haya lentitud real.",
+            "confidence": "Alta sobre dependencia temporal; runtime externo no verificado.",
+            "correction": "Desacoplar envío después del commit mediante tarea/background worker con su propia sesión y timeout, o ratificar que es síncrono best-effort y acotar su presupuesto. Si se necesita entrega garantizada, usar outbox/reintentos; no reutilizar una sesión request cerrada en la tarea.",
+            "declared": [
+              {
+                "path": "docs/adr/0013-notificaciones-push-fcm.md",
+                "start_line": 28,
+                "end_line": 29,
+                "url": "https://github.com/ISCOUTB/AS_202620_ROUTB/blob/adde017b72d73f210eef6cb48d97cdf1687f5141/docs/adr/0013-notificaciones-push-fcm.md#L28-L29",
+                "description": "ADR0013 exige que push no bloquee la transacción ni la respuesta."
+              },
+              {
+                "path": "docs/adr/0004-integracion-sincrona-rest.md",
+                "start_line": 38,
+                "end_line": 41,
+                "url": "https://github.com/ISCOUTB/AS_202620_ROUTB/blob/adde017b72d73f210eef6cb48d97cdf1687f5141/docs/adr/0004-integracion-sincrona-rest.md#L38-L41",
+                "description": "ADR0004 separa notificaciones secundarias del flujo principal."
+              }
+            ],
+            "evidence": [
+              {
+                "path": "backend/app/modules/requests/application/manage_request.py",
+                "start_line": 124,
+                "end_line": 149,
+                "url": "https://github.com/ISCOUTB/AS_202620_ROUTB/blob/adde017b72d73f210eef6cb48d97cdf1687f5141/backend/app/modules/requests/application/manage_request.py#L124-L149",
+                "description": "La llamada send_push ocurre después del commit pero antes del return."
+              },
+              {
+                "path": "backend/app/modules/notifications/application/send_notification.py",
+                "start_line": 79,
+                "end_line": 107,
+                "url": "https://github.com/ISCOUTB/AS_202620_ROUTB/blob/adde017b72d73f210eef6cb48d97cdf1687f5141/backend/app/modules/notifications/application/send_notification.py#L79-L107",
+                "description": "send_push espera messaging.send_each y procesa el resultado."
+              },
+              {
+                "path": "backend/app/modules/requests/infrastructure/router.py",
+                "start_line": 125,
+                "end_line": 133,
+                "url": "https://github.com/ISCOUTB/AS_202620_ROUTB/blob/adde017b72d73f210eef6cb48d97cdf1687f5141/backend/app/modules/requests/infrastructure/router.py#L125-L133",
+                "description": "El router espera el caso de uso para construir la respuesta."
+              }
+            ]
+          },
+          {
+            "title": "La configuración Render sobreescribe el timeout ratificado de 1,4 s con 3,0 s",
+            "nature": "implementación",
+            "severity": "Media",
+            "severity_reason": "Media: una recreación del despliegue con el manifiesto restaura el valor descartado y debilita una mitigación de latencia; no se ha verificado el valor real de producción.",
+            "impact": "La configuración versionada que recrea Render introduce ROUTING_TIMEOUT_SECONDS=3.0, anulando el default 1.4 que sostiene el presupuesto de ADR0014. Una recreación con ese manifiesto no conserva la mitigación documentada; el valor efectivo del panel y la latencia en producción no se verificaron.",
+            "confidence": "Alta sobre contradicción del manifiesto; no verificable el valor remoto actual.",
+            "correction": "Cambiar el manifiesto a 1.4 o eliminar el override para usar el default ratificado; revisar la variable efectiva del panel con autorización y añadir prueba estática que compare configuración de despliegue y ADR/config. Medir nuevamente bajo condiciones relevantes, sin prometer el p95 a partir del valor nominal.",
+            "declared": [
+              {
+                "path": "docs/adr/0014-fallback-geocode-cache.md",
+                "start_line": 19,
+                "end_line": 31,
+                "url": "https://github.com/ISCOUTB/AS_202620_ROUTB/blob/adde017b72d73f210eef6cb48d97cdf1687f5141/docs/adr/0014-fallback-geocode-cache.md#L19-L31",
+                "description": "ADR0014 ratifica timeout 1.4 s y descarta 3.0 s."
+              }
+            ],
+            "evidence": [
+              {
+                "path": "render.yaml",
+                "start_line": 21,
+                "end_line": 24,
+                "url": "https://github.com/ISCOUTB/AS_202620_ROUTB/blob/adde017b72d73f210eef6cb48d97cdf1687f5141/render.yaml#L21-L24",
+                "description": "El manifiesto Render inyecta explícitamente 3.0 s."
+              },
+              {
+                "path": "backend/app/core/config.py",
+                "start_line": 42,
+                "end_line": 45,
+                "url": "https://github.com/ISCOUTB/AS_202620_ROUTB/blob/adde017b72d73f210eef6cb48d97cdf1687f5141/backend/app/core/config.py#L42-L45",
+                "description": "Config prioriza la variable de entorno sobre el default 1.4 s."
+              },
+              {
+                "path": "backend/app/shared/geocode/service.py",
+                "start_line": 98,
+                "end_line": 105,
+                "url": "https://github.com/ISCOUTB/AS_202620_ROUTB/blob/adde017b72d73f210eef6cb48d97cdf1687f5141/backend/app/shared/geocode/service.py#L98-L105",
+                "description": "El cliente HTTP utiliza el valor efectivo de config."
+              }
+            ]
+          }
+        ],
+        "informe": "revisiones/2026-2/AS_202620_ROUTB/semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10"
+      }
     },
     {
       "repo": "AS_202620_ShareU",
+      "equipo": "ShareU",
       "rama": "master",
       "hash": "39508608eae4c1a56a5e4fc11a055bf6afb2c003",
-      "fecha": "2026-09-28T19:56:57-05:00"
+      "fecha": "2026-09-28T19:56:57-05:00",
+      "criterios_tecnicos": {
+        "C1": 0.6,
+        "C2": 0.6,
+        "C3": 0.6,
+        "C4": 0.6
+      },
+      "subtotal_tecnico_sobre_4": 2.4,
+      "C5_docente": null,
+      "sustentacion_docente_sobre_5": null,
+      "total_sobre_5": null,
+      "estado_total": "Pendiente C5",
+      "escenario": "Usabilidad: localizar documento en ≤3 interacciones",
+      "asignacion_oficial": "No verificado; supuesto explícito de pertinencia",
+      "comentario": "La muestra sintética de 2≤3 no aporta una línea base operacional. La fachada, la métrica real de búsquedas sin resultados, JSON y request_id dan observabilidad parcial. CI, URL y archivos declarados ausentes impiden el nivel competente. La consolidación reconoce esa observabilidad parcial bajo el alcance de revisión del repositorio.",
+      "fuentes": [
+        "https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/docs/evidencia/evidencia-s9.md#L18-L61",
+        "https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/app/main.py#L24-L105",
+        "https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/docs/adr/0008-metrica-tras-interfaz-de-administracion.md#L9-L86"
+      ],
+      "head_observado": "39508608eae4c1a56a5e4fc11a055bf6afb2c003",
+      "commits_posteriores_al_cierre": 0,
+      "observacion_metadatos": "2026-10-13T16:46:10.266961+00:00",
+      "deriva_arquitectonica": {
+        "hash": "39508608eae4c1a56a5e4fc11a055bf6afb2c003",
+        "hallazgos": 2,
+        "prioridad_maxima": "Media",
+        "resumen": "Documentación de despliegue y prueba de contrato sobrestima el snapshot.",
+        "arquitectura_declarada": "Monolito modular FastAPI con Documentos dueño de SQLite; Búsqueda consulta su servicio y registra métricas por Administración. Next.js separado. Correo asíncrono y autenticación completa son futuros.",
+        "arquitectura_implementada": "app.main monta cinco routers. GET /busqueda/documentos → buscar_documentos → obtener_documentos → repositorio SQLite; el filtro y ranking ocurren en Búsqueda. Frontend en app/frontend solicita una sola llamada HTTP. Usuarios/Calificaciones son ping. Middleware JSON y métricas en proceso.",
+        "detalle": [
+          {
+            "title": "La vista de despliegue afirma artefactos y rutas que este snapshot no contiene",
+            "nature": "documentación desactualizada",
+            "severity": "Media",
+            "impact": "No permite reproducir desde el repositorio la topología Render/Vercel descrita; dificulta distinguir despliegue real de diseño. No demuestra que un servicio remoto esté caído.",
+            "confidence": "alta",
+            "correction": "Marcar el despliegue como no verificable hasta aportar manifiestos y URL comprobable; corregir ruta a app/frontend y documentar comandos realmente disponibles. La inspección completa de ls-tree no encontró Dockerfile, compose ni render.yaml.",
+            "declared": [
+              {
+                "path": "docs/arc42/arc42.md",
+                "start_line": 269,
+                "end_line": 285,
+                "url": "https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/docs/arc42/arc42.md#L269-L285",
+                "description": "Afirma Dockerfile, Blueprint render.yaml y build de /frontend para el despliegue."
+              },
+              {
+                "path": "README.md",
+                "start_line": 88,
+                "end_line": 103,
+                "url": "https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/README.md#L88-L103",
+                "description": "Indica docker compose y cd frontend como recorridos operativos."
+              }
+            ],
+            "evidence": [
+              {
+                "path": "app/frontend/lib/api.ts",
+                "start_line": 22,
+                "end_line": 32,
+                "url": "https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/app/frontend/lib/api.ts#L22-L32",
+                "description": "El cliente implementado está bajo app/frontend y consume una URL configurable."
+              },
+              {
+                "path": ".github/workflows/tests.yml",
+                "start_line": 7,
+                "end_line": 32,
+                "url": "https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/.github/workflows/tests.yml#L7-L32",
+                "description": "El workflow versionado ejecuta tests y análisis, sin publicar infraestructura."
+              }
+            ]
+          },
+          {
+            "title": "La prueba de contrato anunciada no está implementada en la suite versionada",
+            "nature": "documentación desactualizada",
+            "severity": "Media",
+            "impact": "Se declara una protección contra incompatibilidades que pytest no aporta: un cambio de esquema puede no ser detectado por las aserciones funcionales parciales.",
+            "confidence": "alta",
+            "correction": "Añadir una prueba que cargue docs/api/openapi.yaml, resuelva referencias y valide respuestas/casos inválidos, más una mutación incompatible; mientras tanto retirar la garantía. Inspeccionados los cinco archivos de tests: ninguno carga OpenAPI/YAML/JSON Schema y test_contrato.py no existe.",
+            "declared": [
+              {
+                "path": "docs/arc42/arc42.md",
+                "start_line": 353,
+                "end_line": 360,
+                "url": "https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/docs/arc42/arc42.md#L353-L360",
+                "description": "Asegura que tests/test_contrato.py valida respuestas contra OpenAPI y detiene cambios incompatibles."
+              }
+            ],
+            "evidence": [
+              {
+                "path": "tests/test_busqueda.py",
+                "start_line": 9,
+                "end_line": 24,
+                "url": "https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/tests/test_busqueda.py#L9-L24",
+                "description": "Las pruebas existentes comprueban algunos campos y cantidades, sin validar todo el esquema."
+              },
+              {
+                "path": ".github/workflows/tests.yml",
+                "start_line": 25,
+                "end_line": 26,
+                "url": "https://github.com/ISCOUTB/AS_202620_ShareU/blob/39508608eae4c1a56a5e4fc11a055bf6afb2c003/.github/workflows/tests.yml#L25-L26",
+                "description": "CI ejecuta pytest con la etiqueta incluye prueba de contrato."
+              }
+            ]
+          }
+        ],
+        "informe": "revisiones/2026-2/AS_202620_ShareU/semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10"
+      }
     },
     {
       "repo": "AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant",
+      "equipo": "TAIA",
       "rama": "main",
       "hash": "72a8b6a0b3680a59c235f9225f90bc260093d86b",
-      "fecha": "2026-10-04T23:39:00-05:00"
+      "fecha": "2026-10-04T23:39:00-05:00",
+      "criterios_tecnicos": {
+        "C1": 0.8,
+        "C2": 0.8,
+        "C3": 0.6,
+        "C4": 0.6
+      },
+      "subtotal_tecnico_sobre_4": 2.8,
+      "C5_docente": 0.8,
+      "sustentacion_docente_sobre_5": 4,
+      "total_sobre_5": 3.6,
+      "estado_total": "Consolidado con C5 docente",
+      "escenario": "Etapa de confirmación en español asociada a S1/S3",
+      "asignacion_oficial": "No verificado; supuesto explícito de pertinencia",
+      "comentario": "Antes fallaban siete de dieciséis variantes; después, la confirmación tiene medición y normalización implementada, con alternativas. Ese logro no se extiende a la persistencia S1 ni a la latencia S3 completas. El CI falla, CD se omite y arc42 contiene conflictos de merge.",
+      "fuentes": [
+        "https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/docs/evaluacion_ia/contraste_umbrales.md#L5-L37",
+        "https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/docs/adr/0005-normalizacion-confirmacion-espanol.md#L7-L59",
+        "https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/docs/arc42/07-vista-de-despliegue.md#L67-L96"
+      ],
+      "head_observado": "72a8b6a0b3680a59c235f9225f90bc260093d86b",
+      "commits_posteriores_al_cierre": 0,
+      "observacion_metadatos": "2026-10-13T16:46:10.466413+00:00",
+      "deriva_arquitectonica": {
+        "hash": "72a8b6a0b3680a59c235f9225f90bc260093d86b",
+        "hallazgos": 1,
+        "prioridad_maxima": "Media",
+        "resumen": "arc42 mantiene repositorios en memoria tras la migración SQL.",
+        "arquitectura_declarada": "Monolito modular Usuario/Academic/AI/Reminders, con puertos que aíslan PostgreSQL, Gemini y Telegram; identidad central y contexto del usuario. Despliegue vigente Dokploy; scheduler y móvil completos pendientes.",
+        "arquitectura_implementada": "main compone identidad, repositorios SQL, gateway AI→puerto Academic y lookup Reminders→Academic. /ai/message autenticado llama HandleUserMessageUseCase, Gemini y conversation store SQL. La ruta académica usa puerto de gestión, servicios/casos de uso y repositorios SQL. Health consulta BD; logs/métricas en middleware.",
+        "detalle": [
+          {
+            "title": "arc42 presenta repositorios volátiles como actuales después de la migración SQL",
+            "nature": "documentación desactualizada",
+            "severity": "Media",
+            "impact": "Una lectura de la vista de bloques conduce a configurar o evaluar una persistencia distinta de la realmente requerida para arrancar y operar. No es inversión incorrecta de dependencias: el reemplazo por adaptadores sí está realizado.",
+            "confidence": "alta",
+            "correction": "Actualizar arc42 §5.5/5.6 y diagramas a SQLAlchemy/PostgreSQL; conservar InMemory como dobles de prueba. Limpiar los conflictos de merge en §7, manteniendo explícita la precedencia de la guía Dokploy.",
+            "declared": [
+              {
+                "path": "docs/arc42/05-vista-de-bloques-de-construccion.md",
+                "start_line": 560,
+                "end_line": 580,
+                "url": "https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/docs/arc42/05-vista-de-bloques-de-construccion.md#L560-L580",
+                "description": "Presenta InMemory para todos los módulos y PostgreSQL como sustitución futura."
+              }
+            ],
+            "evidence": [
+              {
+                "path": "backend/app/modules/academic/adapters/outbound/repository_provider.py",
+                "start_line": 20,
+                "end_line": 29,
+                "url": "https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/backend/app/modules/academic/adapters/outbound/repository_provider.py#L20-L29",
+                "description": "El proveedor efectivo entrega repositorios SQLAlchemy."
+              },
+              {
+                "path": "backend/app/main.py",
+                "start_line": 38,
+                "end_line": 44,
+                "url": "https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/backend/app/main.py#L38-L44",
+                "description": "La composición de AI usa SqlAlchemyConversationStore."
+              },
+              {
+                "path": "backend/app/modules/reminders/adapters/outbound/repository_provider.py",
+                "start_line": 1,
+                "end_line": 7,
+                "url": "https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/backend/app/modules/reminders/adapters/outbound/repository_provider.py#L1-L7",
+                "description": "Reminders compone su repositorio SQL."
+              },
+              {
+                "path": "docs/despliegue-dokploy.md",
+                "start_line": 3,
+                "end_line": 6,
+                "url": "https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/docs/despliegue-dokploy.md#L3-L6",
+                "description": "La guía vigente exige PostgreSQL y migraciones."
+              }
+            ]
+          }
+        ],
+        "informe": "revisiones/2026-2/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10"
+      }
     },
     {
       "repo": "AS_202620_TIENDA-VIRTUAL-UTB",
+      "equipo": "Tienda virtual UTB",
       "rama": "main",
       "hash": "76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33",
-      "fecha": "2026-10-04T18:07:32-05:00"
+      "fecha": "2026-10-04T18:07:32-05:00",
+      "criterios_tecnicos": {
+        "C1": 0.6,
+        "C2": 0.6,
+        "C3": 0.6,
+        "C4": 0.6
+      },
+      "subtotal_tecnico_sobre_4": 2.4,
+      "C5_docente": 0.8,
+      "sustentacion_docente_sobre_5": 4,
+      "total_sobre_5": 3.2,
+      "estado_total": "Consolidado con C5 docente",
+      "escenario": "AC-04: disponibilidad y coherencia catálogo/inventario",
+      "asignacion_oficial": "No verificado; supuesto explícito de pertinencia",
+      "comentario": "Hay una medición local posterior con cinco usuarios, sin línea base del despliegue. La implementación existe, pero el ADR-0008 sigue propuesto y README declara el inventario vacío. CI, health, readiness y logs están en el código; no se declara una URL pública vigente.",
+      "fuentes": [
+        "https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/docs/entrega-cadena-ia.md#L54-L85",
+        "https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/docs/adr/0008-separar-catalogo-inventario.md#L1-L25",
+        "https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/docs/c4/container.md#L22-L32"
+      ],
+      "head_observado": "76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33",
+      "commits_posteriores_al_cierre": 0,
+      "observacion_metadatos": "2026-10-13T16:46:10.697786+00:00",
+      "deriva_arquitectonica": {
+        "hash": "76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33",
+        "hallazgos": 1,
+        "prioridad_maxima": "Baja",
+        "resumen": "README llama vacío a Inventario ya implementado.",
+        "arquitectura_declarada": "Monolito modular FastAPI, Next.js SSR y PostgreSQL. ADR-0008 candidato separa propiedad de Catálogo/Inventario, dos contratos y composición en el cliente. Identidad/Pedidos son futuros; despliegue vigente Dokploy.",
+        "arquitectura_implementada": "Next.js Promise.all consulta /catalog/products e /inventory y une por product_id. Cada router usa repositorio/modelo propios. main invoca inicializadores públicos. Dokploy contiene PostgreSQL con volumen, API interna y web; métricas, liveness y readiness diferenciados.",
+        "detalle": [
+          {
+            "title": "README conserva Inventario como paquete vacío aunque ya sirve un contrato separado",
+            "nature": "documentación desactualizada",
+            "severity": "Baja",
+            "impact": "Confunde el mapa de responsabilidades y el número de llamadas del corte vertical, pero las vistas C4 y el código sí preservan la separación.",
+            "confidence": "alta",
+            "correction": "Actualizar README: distinguir identity/orders pendientes de inventory operativo; describir los dos recorridos y enlazar el ADR-0008 sin cambiar su estado de ratificación pendiente.",
+            "declared": [
+              {
+                "path": "README.md",
+                "start_line": 88,
+                "end_line": 89,
+                "url": "https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/README.md#L88-L89",
+                "description": "Asegura que inventory sigue vacío."
+              },
+              {
+                "path": "README.md",
+                "start_line": 195,
+                "end_line": 204,
+                "url": "https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/README.md#L195-L204",
+                "description": "Árbol ejecutable todavía lo marca reservado."
+              }
+            ],
+            "evidence": [
+              {
+                "path": "backend/app/modules/inventory/router.py",
+                "start_line": 10,
+                "end_line": 16,
+                "url": "https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/backend/app/modules/inventory/router.py#L10-L16",
+                "description": "GET /inventory está implementado."
+              },
+              {
+                "path": "frontend/app/page.tsx",
+                "start_line": 33,
+                "end_line": 55,
+                "url": "https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/frontend/app/page.tsx#L33-L55",
+                "description": "El cliente consume el segundo contrato y compone disponibilidad."
+              },
+              {
+                "path": "docs/c4/container.md",
+                "start_line": 23,
+                "end_line": 25,
+                "url": "https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/docs/c4/container.md#L23-L25",
+                "description": "C4 ya reconoce ambos módulos implementados."
+              }
+            ]
+          }
+        ],
+        "informe": "revisiones/2026-2/AS_202620_TIENDA-VIRTUAL-UTB/semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10"
+      }
     },
     {
       "repo": "AS_202620_uniTeam",
+      "equipo": "uniTeam",
       "rama": "master",
       "hash": "6e04b35317a0a68d239ae85c71cd60e21982b195",
-      "fecha": "2026-10-04T16:37:55-05:00"
+      "fecha": "2026-10-04T16:37:55-05:00",
+      "criterios_tecnicos": {
+        "C1": 0.8,
+        "C2": 0.8,
+        "C3": 0.6,
+        "C4": 0.6
+      },
+      "subtotal_tecnico_sobre_4": 2.8,
+      "C5_docente": 0.9,
+      "sustentacion_docente_sobre_5": 4.5,
+      "total_sobre_5": 3.7,
+      "estado_total": "Consolidado con C5 docente",
+      "escenario": "Mis tareas: fronteras de datos con límites ESC-01/ESC-03",
+      "asignacion_oficial": "No verificado; supuesto explícito de pertinencia",
+      "comentario": "El ensayo antes y después tiene tres corridas de 300 peticiones y está separado de producción, MySQL, red y concurrencia. ADR-0013 justifica el costo de una consulta adicional y la separación implementada. El CI falla y permanecen incompletos la documentación transversal y el esquema.",
+      "fuentes": [
+        "https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/calidad/mediciones/mis-tareas-limite-contexto.md#L7-L32",
+        "https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/adr/0013-tareas-no-lee-las-tablas-de-proyectos.md#L19-L49",
+        "https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/arc42/arc42-uniteam.md#L557-L575"
+      ],
+      "head_observado": "2c73ffce2d9b92e71697a7313f829789b4471639",
+      "commits_posteriores_al_cierre": 8,
+      "observacion_metadatos": "2026-10-13T16:46:10.608524+00:00",
+      "deriva_arquitectonica": {
+        "hash": "6e04b35317a0a68d239ae85c71cd60e21982b195",
+        "hallazgos": 1,
+        "prioridad_maxima": "Media",
+        "resumen": "Consumidores comparten sesión SQL pese a garantía de aislamiento de fallos.",
+        "arquitectura_declarada": "API FastAPI con servicios/dominio/puertos y adaptadores SQLAlchemy, eventos de dominio en proceso y síncronos (ADR-006), MySQL y OIDC/Auth0. Auditoría permitida comparte transacción; denegaciones usan sesión independiente.",
+        "arquitectura_implementada": "Router→dependencias→ServicioTareas/Proyectos→puertos→repositorios SQL. Servicio verifica pertenencia antes de acciones. Bus llama consumidores de manera síncrona y captura Exception; auditoría permitida hace flush sobre la misma sesión de la operación. Web estática Next.js usa OIDC/PKCE y Bearer; API valida JWKS.",
+        "detalle": [
+          {
+            "title": "Capturar la excepción del consumidor no aísla un fallo SQL de la sesión compartida",
+            "nature": "implementación",
+            "severity": "Media",
+            "impact": "Los consumidores de auditoría de operaciones permitidas (TareaCreada/EstadoCambiado) pueden fallar en flush y dejar fallida la misma unidad de trabajo que el handler intentará confirmar. El consumidor de acceso denegado sí crea y confirma una sesión propia (consumidores.py:27–37), por lo que no está incluido en este riesgo de sesión compartida. Por tanto, la garantía general de que un consumidor no tumba la petición no está sustentada para errores SQL. Es un riesgo estático condicionado al fallo, no una caída observada.",
+            "confidence": "alta sobre la estructura; media sobre manifestación sin ejecutar fallo",
+            "correction": "Elegir y documentar una semántica única: si auditoría es atómica, propagar el fallo y retirar la promesa de disponibilidad independiente; si es secundaria, usar savepoint correctamente delimitado u outbox/otra unidad de trabajo. Añadir prueba de fallo real de flush/commit del consumidor, no solo excepción Python. No introducir asincronía sin nuevo ADR.",
+            "declared": [
+              {
+                "path": "docs/adr/0006-estilo-sincrono-con-eventos-en-proceso.md",
+                "start_line": 111,
+                "end_line": 118,
+                "url": "https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/docs/adr/0006-estilo-sincrono-con-eventos-en-proceso.md#L111-L118",
+                "description": "Relaciona ESC-04 con la garantía un consumidor falla no tumba la petición."
+              },
+              {
+                "path": "app/application/bus.py",
+                "start_line": 1,
+                "end_line": 6,
+                "url": "https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/app/application/bus.py#L1-L6",
+                "description": "El propio contrato del bus promete aislamiento del consumidor."
+              }
+            ],
+            "evidence": [
+              {
+                "path": "app/application/bus.py",
+                "start_line": 26,
+                "end_line": 35,
+                "url": "https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/app/application/bus.py#L26-L35",
+                "description": "Captura y registra la excepción sin aislar la transacción."
+              },
+              {
+                "path": "app/events/consumidores.py",
+                "start_line": 40,
+                "end_line": 54,
+                "url": "https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/app/events/consumidores.py#L40-L54",
+                "description": "Auditoría permitida comparte la sesión de la operación."
+              },
+              {
+                "path": "app/infrastructure/repositorios.py",
+                "start_line": 260,
+                "end_line": 276,
+                "url": "https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/app/infrastructure/repositorios.py#L260-L276",
+                "description": "Registrar auditoría añade y hace flush sobre esa sesión."
+              },
+              {
+                "path": "app/api/dependencias.py",
+                "start_line": 24,
+                "end_line": 33,
+                "url": "https://github.com/ISCOUTB/AS_202620_uniTeam/blob/6e04b35317a0a68d239ae85c71cd60e21982b195/app/api/dependencias.py#L24-L33",
+                "description": "La dependencia intenta commit y hace rollback al fallar."
+              }
+            ]
+          }
+        ],
+        "informe": "revisiones/2026-2/AS_202620_uniTeam/semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10"
+      }
     },
     {
       "repo": "AS_202620_UTB_TRACKER",
+      "equipo": "UTB Tracker",
       "rama": "main",
       "hash": "d17c9eb241e56755d48b022dc00ddb865e40c391",
-      "fecha": "2026-10-06T01:08:05-05:00"
+      "fecha": "2026-10-06T01:08:05-05:00",
+      "criterios_tecnicos": {
+        "C1": 0.6,
+        "C2": 0.6,
+        "C3": 0,
+        "C4": 0.6
+      },
+      "subtotal_tecnico_sobre_4": 1.8,
+      "C5_docente": 0.8,
+      "sustentacion_docente_sobre_5": 4,
+      "total_sobre_5": 2.6,
+      "estado_total": "Consolidado con C5 docente",
+      "escenario": "QS-06: confiabilidad de recursos y préstamos",
+      "asignacion_oficial": "No verificado; supuesto explícito de pertinencia",
+      "comentario": "El escenario está formulado, sin línea base ni resultado numérico reproducible. La integración y autenticación son parciales y no hay ADR del nuevo cambio. No se instrumentan la métrica del escenario ni logs estructurados; el despliegue sigue como plantilla.",
+      "fuentes": [
+        "https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/d17c9eb241e56755d48b022dc00ddb865e40c391/docs/aspectos.md#L65-L82",
+        "https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/d17c9eb241e56755d48b022dc00ddb865e40c391/.github/workflows/ci.yml#L19-L23",
+        "https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/d17c9eb241e56755d48b022dc00ddb865e40c391/docs/arc42/arc42.md#L249-L278"
+      ],
+      "head_observado": "d17c9eb241e56755d48b022dc00ddb865e40c391",
+      "commits_posteriores_al_cierre": 0,
+      "observacion_metadatos": "2026-10-13T16:46:15.728011+00:00",
+      "deriva_arquitectonica": {
+        "hash": "d17c9eb241e56755d48b022dc00ddb865e40c391",
+        "hallazgos": 3,
+        "prioridad_maxima": "Alta",
+        "resumen": "Autorización desconectada; concurrencia y guía de persistencia divergentes.",
+        "arquitectura_declarada": "Monolito modular FastAPI y cliente Flutter previsto; SQLAlchemy, PostgreSQL en despliegue/SQLite automático en desarrollo; integración síncrona. Arc42 declara Depends de autorización y bcrypt; regla un recurso, un préstamo activo. Alembic pendiente aceptado.",
+        "arquitectura_implementada": "main monta routers sin dependencias de seguridad globales. Recursos/Préstamos operan directamente sobre modelos SQL y comparten recurso_models; esa dependencia está expresamente documentada. Auth crea JWT pero no hay guardia en las rutas inspeccionadas; login sombrea su servicio. DATABASE_URL es obligatoria. Préstamo hace SELECT, verifica estado en Python y luego INSERT/UPDATE/commit.",
+        "detalle": [
+          {
+            "title": "La seguridad declarada no está conectada al camino de escritura y gestión de usuarios",
+            "nature": "implementación",
+            "severity": "Alta",
+            "impact": "Quien alcance estas rutas de la aplicación puede invocar creación de recursos/préstamos y gestión de usuarios sin verificación de identidad/rol en el código. Es de alta prioridad por integridad y datos; no se verificó publicación ni explotación remota. Además, el camino de login no llega al servicio por sombreado del nombre.",
+            "confidence": "alta",
+            "correction": "Conectar una dependencia de identidad y otra de roles en rutas protegidas; derivar usuario desde el token cuando corresponda. Renombrar handler/servicio de login para evitar sombreado, verificar hashes con bcrypt y añadir pruebas 401/403. No se afirma cómo están almacenadas contraseñas reales: únicamente ausencia de hash/verificación en esta cadena.",
+            "declared": [
+              {
+                "path": "docs/arc42/arc42.md",
+                "start_line": 139,
+                "end_line": 142,
+                "url": "https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/d17c9eb241e56755d48b022dc00ddb865e40c391/docs/arc42/arc42.md#L139-L142",
+                "description": "Afirma políticas de autorización por Depends y bcrypt."
+              },
+              {
+                "path": "docs/arc42/arc42.md",
+                "start_line": 374,
+                "end_line": 383,
+                "url": "https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/d17c9eb241e56755d48b022dc00ddb865e40c391/docs/arc42/arc42.md#L374-L383",
+                "description": "Define rechazo de modificaciones fuera de rol como escenario de seguridad."
+              }
+            ],
+            "evidence": [
+              {
+                "path": "app/main.py",
+                "start_line": 9,
+                "end_line": 14,
+                "url": "https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/d17c9eb241e56755d48b022dc00ddb865e40c391/app/main.py#L9-L14",
+                "description": "No se configura guardia global ni al montar routers."
+              },
+              {
+                "path": "app/routers/resources.py",
+                "start_line": 17,
+                "end_line": 26,
+                "url": "https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/d17c9eb241e56755d48b022dc00ddb865e40c391/app/routers/resources.py#L17-L26",
+                "description": "Escritura solo depende de la sesión de BD."
+              },
+              {
+                "path": "app/routers/loans.py",
+                "start_line": 20,
+                "end_line": 35,
+                "url": "https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/d17c9eb241e56755d48b022dc00ddb865e40c391/app/routers/loans.py#L20-L35",
+                "description": "Préstamo acepta usuario_id del payload, sin identidad autenticada."
+              },
+              {
+                "path": "app/routers/auth.py",
+                "start_line": 1,
+                "end_line": 24,
+                "url": "https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/d17c9eb241e56755d48b022dc00ddb865e40c391/app/routers/auth.py#L1-L24",
+                "description": "Login redefine el nombre importado y se llama a sí mismo; consultar/borrar usuario no usan guardia."
+              },
+              {
+                "path": "app/services/auth.py",
+                "start_line": 21,
+                "end_line": 27,
+                "url": "https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/d17c9eb241e56755d48b022dc00ddb865e40c391/app/services/auth.py#L21-L27",
+                "description": "La cadena escrita compara password directamente; no verifica hash bcrypt."
+              }
+            ]
+          },
+          {
+            "title": "La exclusión de dos préstamos activos está validada antes de escribir, sin arbitraje atómico",
+            "nature": "implementación",
+            "severity": "Media",
+            "impact": "En una ejecución concurrente dos transacciones pueden leer disponible antes de que alguna actualice; no se ve bloqueo de fila, actualización condicional ni restricción única de préstamo activo. El test secuencial no demuestra la garantía nunca dos préstamos. No se observó un duplicado real.",
+            "confidence": "alta en ausencia de mecanismo; media sobre concurrencia efectiva",
+            "correction": "Proteger la decisión con UPDATE condicional y chequeo de filas afectadas o bloqueo transaccional apropiado a PostgreSQL; sumar restricción de unicidad activa donde aplique y prueba concurrente. Mantener 409 como rechazo de la operación perdedora.",
+            "declared": [
+              {
+                "path": "docs/arc42/arc42.md",
+                "start_line": 240,
+                "end_line": 247,
+                "url": "https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/d17c9eb241e56755d48b022dc00ddb865e40c391/docs/arc42/arc42.md#L240-L247",
+                "description": "Afirma que nunca permite dos préstamos activos por recurso."
+              }
+            ],
+            "evidence": [
+              {
+                "path": "app/routers/loans.py",
+                "start_line": 20,
+                "end_line": 36,
+                "url": "https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/d17c9eb241e56755d48b022dc00ddb865e40c391/app/routers/loans.py#L20-L36",
+                "description": "SELECT seguido de validación Python y escritura separada."
+              },
+              {
+                "path": "app/models/recurso_models.py",
+                "start_line": 30,
+                "end_line": 40,
+                "url": "https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/d17c9eb241e56755d48b022dc00ddb865e40c391/app/models/recurso_models.py#L30-L40",
+                "description": "Modelo de préstamos no declara unicidad activa por recurso."
+              },
+              {
+                "path": "tests/test_loans.py",
+                "start_line": 32,
+                "end_line": 49,
+                "url": "https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/d17c9eb241e56755d48b022dc00ddb865e40c391/tests/test_loans.py#L32-L49",
+                "description": "Prueba dos solicitudes sucesivas, no simultáneas."
+              }
+            ]
+          },
+          {
+            "title": "El arranque de persistencia ya requiere configuración aunque README promete SQLite automático",
+            "nature": "documentación desactualizada",
+            "severity": "Media",
+            "impact": "Un clon sin DATABASE_URL no sigue el recorrido local prometido: la lectura obligatoria de la variable ocurre al importar la configuración. Esto afecta reproducibilidad del despliegue de desarrollo; no es prueba de indisponibilidad remota.",
+            "confidence": "alta",
+            "correction": "Actualizar el contrato operativo a DATABASE_URL obligatoria y dar plantilla sin secretos, o recuperar fallback explícito y seguro solo en desarrollo. Mantener Alembic como deuda aceptada, sin presentarlo ya implementado.",
+            "declared": [
+              {
+                "path": "README.md",
+                "start_line": 65,
+                "end_line": 67,
+                "url": "https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/d17c9eb241e56755d48b022dc00ddb865e40c391/README.md#L65-L67",
+                "description": "Promete SQLite sin configuración en desarrollo/CI y DATABASE_URL solo en despliegue."
+              }
+            ],
+            "evidence": [
+              {
+                "path": "app/core/database.py",
+                "start_line": 1,
+                "end_line": 12,
+                "url": "https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/d17c9eb241e56755d48b022dc00ddb865e40c391/app/core/database.py#L1-L12",
+                "description": "Carga dotenv y exige os.environ[DATABASE_URL], sin fallback SQLite."
+              },
+              {
+                "path": "app/main.py",
+                "start_line": 3,
+                "end_line": 7,
+                "url": "https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/blob/d17c9eb241e56755d48b022dc00ddb865e40c391/app/main.py#L3-L7",
+                "description": "El punto de entrada importa engine y crea tablas al cargar."
+              }
+            ]
+          }
+        ],
+        "informe": "revisiones/2026-2/AS_202620_UTB_TRACKER/semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10"
+      }
     },
     {
       "repo": "AS_202620_Verifacts",
+      "equipo": "Verifacts",
       "rama": "master",
-      "hash": "5c643bd03f19630d6459da79fb13fb2d5f943c7b",
-      "fecha": "2026-10-07T15:32:38-05:00",
-      "revision": "2026-10-10",
-      "observacion_salud": "2026-10-10T13:05:25Z",
-      "hash_previo": "4f0652291c47f5093da1230b245a980614220e80"
+      "hash": "6c08cc536ac7bd294c749548bd70276044ee511e",
+      "fecha": "2026-10-10T18:23:32-05:00",
+      "criterios_tecnicos": {
+        "C1": 0.8,
+        "C2": 0.6,
+        "C3": 0.6,
+        "C4": 0.6
+      },
+      "subtotal_tecnico_sobre_4": 2.6,
+      "C5_docente": null,
+      "sustentacion_docente_sobre_5": null,
+      "total_sobre_5": null,
+      "estado_total": "Pendiente C5",
+      "escenario": "Q-01: tiempo análisis y arranque frío Render; decisión mantener Render+keepalive",
+      "asignacion_oficial": "No verificado; supuesto explícito de pertinencia",
+      "comentario": "Se documentan estados warm y cold, pero faltan POST en frío, hash desplegado y efecto tras la mitigación. Persisten afirmaciones de causalidad y costo incompatibles con la rectificación del ADR-0008, además de documentación parcial.",
+      "fuentes": [
+        "https://github.com/ISCOUTB/AS_202620_Verifacts/blob/6c08cc536ac7bd294c749548bd70276044ee511e/docs/evidencia/medicion-render-s10.md#L3-L61",
+        "https://github.com/ISCOUTB/AS_202620_Verifacts/blob/6c08cc536ac7bd294c749548bd70276044ee511e/docs/adr/0008-mantener-render-mitigar-arranque-frio.md#L39-L65",
+        "https://github.com/ISCOUTB/AS_202620_Verifacts/blob/6c08cc536ac7bd294c749548bd70276044ee511e/app/observability.py#L136-L178"
+      ],
+      "head_observado": "6c08cc536ac7bd294c749548bd70276044ee511e",
+      "commits_posteriores_al_cierre": 0,
+      "observacion_metadatos": "2026-10-13T16:46:16.110926+00:00",
+      "deriva_arquitectonica": {
+        "hash": "6c08cc536ac7bd294c749548bd70276044ee511e",
+        "hallazgos": 1,
+        "prioridad_maxima": "Media",
+        "resumen": "Vistas asignan la orquestación del análisis al componente equivocado.",
+        "arquitectura_declarada": "Monolito modular API/Content/Analysis/Scoring con contexto separado de Historial, frontend React/Vite, REST síncrono y SQLite. ADR-0006 conserva semántica de señales de estilo, no veracidad; ADR-0008 mantiene Render y acepta almacenamiento efímero.",
+        "arquitectura_implementada": "POST /analysis orquesta desde routes.py: extrae/normaliza Content, invoca Analysis, calcula Scoring y guarda/lee Historial por funciones públicas del repositorio. Analysis no llama a Historial; Content no encadena Analysis. /analysis GET expone historial. SQLite solo se abre en repository.py. Frontend consume HTTP; middleware instala logs y métricas.",
+        "detalle": [
+          {
+            "title": "Las vistas de bloques y componentes no reflejan quién orquesta el análisis",
+            "nature": "documentación desactualizada",
+            "severity": "Media",
+            "impact": "Asignan las dependencias a componentes que no las tienen y presentan POST /analysis como futuro; un mantenedor puede extender el módulo equivocado o evaluar una frontera inexistente. No se evidencia acceso SQL fuera del dueño de Historial.",
+            "confidence": "alta",
+            "correction": "Actualizar C4 con Ingesta/API→Análisis y API→Historial, y arc42 §5 con POST/GET /analysis implementados; remitir a la vista de ejecución §6 que ya explica la orquestación. No forzar una capa nueva si la orquestación actual sigue siendo la decisión elegida.",
+            "declared": [
+              {
+                "path": "docs/c4/03-componentes.md",
+                "start_line": 5,
+                "end_line": 16,
+                "url": "https://github.com/ISCOUTB/AS_202620_Verifacts/blob/6c08cc536ac7bd294c749548bd70276044ee511e/docs/c4/03-componentes.md#L5-L16",
+                "description": "Dibuja Análisis→Historial como dependencia interna."
+              },
+              {
+                "path": "docs/arc42/05-vista-de-bloques.md",
+                "start_line": 24,
+                "end_line": 48,
+                "url": "https://github.com/ISCOUTB/AS_202620_Verifacts/blob/6c08cc536ac7bd294c749548bd70276044ee511e/docs/arc42/05-vista-de-bloques.md#L24-L48",
+                "description": "Describe API como esqueleto solo health y analysis pendiente."
+              }
+            ],
+            "evidence": [
+              {
+                "path": "app/api/routes.py",
+                "start_line": 4,
+                "end_line": 12,
+                "url": "https://github.com/ISCOUTB/AS_202620_Verifacts/blob/6c08cc536ac7bd294c749548bd70276044ee511e/app/api/routes.py#L4-L12",
+                "description": "API importa interfaces públicas de los servicios y del Historial."
+              },
+              {
+                "path": "app/api/routes.py",
+                "start_line": 62,
+                "end_line": 101,
+                "url": "https://github.com/ISCOUTB/AS_202620_Verifacts/blob/6c08cc536ac7bd294c749548bd70276044ee511e/app/api/routes.py#L62-L101",
+                "description": "API orquesta normalización, análisis, puntuación y persistencia."
+              },
+              {
+                "path": "app/modules/analysis/service.py",
+                "start_line": 1,
+                "end_line": 7,
+                "url": "https://github.com/ISCOUTB/AS_202620_Verifacts/blob/6c08cc536ac7bd294c749548bd70276044ee511e/app/modules/analysis/service.py#L1-L7",
+                "description": "Analysis solo invoca RuleAnalyzer."
+              }
+            ]
+          }
+        ],
+        "informe": "revisiones/2026-2/AS_202620_Verifacts/semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10"
+      }
     },
     {
       "repo": "AS_202620_XALD",
+      "equipo": "XALD",
       "rama": "master",
       "hash": "9236ff97218b632eeb9a1910f6083968e2c22909",
-      "fecha": "2026-10-04T23:53:02-05:00"
+      "fecha": "2026-10-04T23:53:02-05:00",
+      "criterios_tecnicos": {
+        "C1": 0.6,
+        "C2": 0.6,
+        "C3": 0.6,
+        "C4": 0.6
+      },
+      "subtotal_tecnico_sobre_4": 2.4,
+      "C5_docente": null,
+      "sustentacion_docente_sobre_5": null,
+      "total_sobre_5": null,
+      "estado_total": "Pendiente C5",
+      "escenario": "ESC-05: conflictos de sincronización Last-Write-Wins",
+      "asignacion_oficial": "No verificado; supuesto explícito de pertinencia",
+      "comentario": "LWW y el contador existen, pero 30/30 no demuestra concurrencia ni la versión ganadora: el script cuenta respuestas 202 y conflictos y no comprueba el estado final. Falta línea base. Cliente HTTP, persistencia, cifrado y coherencia documental siguen parciales.",
+      "fuentes": [
+        "https://github.com/ISCOUTB/AS_202620_XALD/blob/9236ff97218b632eeb9a1910f6083968e2c22909/docs/adr/0011-resolucion-conflictos-lww.md#L9-L32",
+        "https://github.com/ISCOUTB/AS_202620_XALD/blob/9236ff97218b632eeb9a1910f6083968e2c22909/backend/scripts/medir_esc05.py#L61-L79",
+        "https://github.com/ISCOUTB/AS_202620_XALD/blob/9236ff97218b632eeb9a1910f6083968e2c22909/docs/EVIDENCIA-S9.md#L34-L40"
+      ],
+      "head_observado": "9236ff97218b632eeb9a1910f6083968e2c22909",
+      "commits_posteriores_al_cierre": 0,
+      "observacion_metadatos": "2026-10-13T16:46:16.166728+00:00",
+      "deriva_arquitectonica": {
+        "hash": "9236ff97218b632eeb9a1910f6083968e2c22909",
+        "hallazgos": 2,
+        "prioridad_maxima": "Media",
+        "resumen": "Vistas mezclan objetivo y prototipo; ACK promete un encolado inexistente.",
+        "arquitectura_declarada": "Android offline-first con orquestación :app, interfaces de parser/aigemini/corefinanciero/syncqueue y backend FastAPI LWW. ADR-0012 acepta Gemini mock; ADR-0011 acepta estado LWW solo en memoria. C4/arc42 aún muestran UI/SMS, Room cifrado y conector HTTP móvil como actuales.",
+        "arquitectura_implementada": "MainActivity presenta Hello Android y no invoca ProcesarNotificacionUseCase. El caso de uso existe y llama interfaces, pero core y cola almacenan mutableListOf; cola no hace HTTP. Backend valida API key y DTO, conserva solo fecha por ID para LWW e incrementa métricas; no persiste payload ni lo inserta en una cola de procesamiento.",
+        "detalle": [
+          {
+            "title": "La arquitectura de ejecución publicada mezcla diseño objetivo con prototipo en memoria",
+            "nature": "documentación desactualizada",
+            "severity": "Media",
+            "impact": "Las vistas atribuyen al artefacto garantías offline-first, cifrado y conectividad no implementadas. La auditoría S9 ya reconoce la brecha, pero no sustituye una vista de ejecución consistente. No se afirma fuga de datos reales ni se penaliza el aplazamiento explícito de Gemini.",
+            "confidence": "alta",
+            "correction": "Separar claramente vista actual y objetivo; marcar UI/SMS, Room/cifrado y envío HTTP como pendientes. Documentar que el flujo es de componentes/pruebas, no integrado a la actividad Android. Para reclamar end-to-end, cablear la entrada real al caso de uso y demostrar persistencia/reinicio y envío autenticado.",
+            "declared": [
+              {
+                "path": "docs/arc42/05-Building Block View.md",
+                "start_line": 30,
+                "end_line": 48,
+                "url": "https://github.com/ISCOUTB/AS_202620_XALD/blob/9236ff97218b632eeb9a1910f6083968e2c22909/docs/arc42/05-Building%20Block%20View.md#L30-L48",
+                "description": "Describe arranque AppModule, UI/SMS, Room cifrado y sincronización real."
+              },
+              {
+                "path": "docs/c4/c2.md",
+                "start_line": 23,
+                "end_line": 32,
+                "url": "https://github.com/ISCOUTB/AS_202620_XALD/blob/9236ff97218b632eeb9a1910f6083968e2c22909/docs/c4/c2.md#L23-L32",
+                "description": "Presenta los conectores SMS, Gemini y backend sin marcar objetivo."
+              }
+            ],
+            "evidence": [
+              {
+                "path": "XALDAPP/app/src/main/java/com/proyecto/xald/MainActivity.kt",
+                "start_line": 16,
+                "end_line": 38,
+                "url": "https://github.com/ISCOUTB/AS_202620_XALD/blob/9236ff97218b632eeb9a1910f6083968e2c22909/XALDAPP/app/src/main/java/com/proyecto/xald/MainActivity.kt#L16-L38",
+                "description": "Entrada Android solo muestra saludo y no conecta el caso de uso."
+              },
+              {
+                "path": "XALDAPP/app/src/main/java/ProcesarNotificacionUseCase.kt",
+                "start_line": 12,
+                "end_line": 39,
+                "url": "https://github.com/ISCOUTB/AS_202620_XALD/blob/9236ff97218b632eeb9a1910f6083968e2c22909/XALDAPP/app/src/main/java/ProcesarNotificacionUseCase.kt#L12-L39",
+                "description": "Orquestación disponible por interfaces; no es bootstrap de AppModule."
+              },
+              {
+                "path": "XALDAPP/corefinanciero/src/main/java/com/proyecto/xald/corefinanciero/GestorCoreFinanciero.kt",
+                "start_line": 9,
+                "end_line": 24,
+                "url": "https://github.com/ISCOUTB/AS_202620_XALD/blob/9236ff97218b632eeb9a1910f6083968e2c22909/XALDAPP/corefinanciero/src/main/java/com/proyecto/xald/corefinanciero/GestorCoreFinanciero.kt#L9-L24",
+                "description": "Datos locales son una lista en memoria, sin Room/KeyStore."
+              },
+              {
+                "path": "XALDAPP/syncqueue/src/main/java/ColaSincronizacion.kt",
+                "start_line": 9,
+                "end_line": 23,
+                "url": "https://github.com/ISCOUTB/AS_202620_XALD/blob/9236ff97218b632eeb9a1910f6083968e2c22909/XALDAPP/syncqueue/src/main/java/ColaSincronizacion.kt#L9-L23",
+                "description": "Cola solo añade/consulta una lista, sin envío HTTP."
+              },
+              {
+                "path": "docs/EVIDENCIA-S9.md",
+                "start_line": 34,
+                "end_line": 40,
+                "url": "https://github.com/ISCOUTB/AS_202620_XALD/blob/9236ff97218b632eeb9a1910f6083968e2c22909/docs/EVIDENCIA-S9.md#L34-L40",
+                "description": "El propio equipo mantiene abierta la brecha documental del prototipo."
+              }
+            ]
+          },
+          {
+            "title": "El ACK de sincronización promete encolado aunque únicamente guarda una marca temporal",
+            "nature": "implementación",
+            "severity": "Media",
+            "impact": "El consumidor recibe ACEPTADO/encolada sin que exista cola ni almacenamiento del cuerpo de la transacción en el handler. Si un futuro cliente usa ese ACK para retirar su copia pendiente, no hay respaldo recuperable del payload en este backend. La app actual no implementa ese consumidor; no se afirma pérdida real en producción.",
+            "confidence": "alta",
+            "correction": "Alinear semántica de API/ADR: declarar aceptación de una simulación de versiones, sin promesa de cola, o conservar payload completo y encolarlo antes del ACK. Añadir una prueba de recuperación del cuerpo aceptado/estado de cola, sin exigir persistencia durable si sigue fuera del corte.",
+            "declared": [
+              {
+                "path": "docs/api/contrato.md",
+                "start_line": 34,
+                "end_line": 40,
+                "url": "https://github.com/ISCOUTB/AS_202620_XALD/blob/9236ff97218b632eeb9a1910f6083968e2c22909/docs/api/contrato.md#L34-L40",
+                "description": "Define 202 como transacción recibida y encolada."
+              }
+            ],
+            "evidence": [
+              {
+                "path": "backend/app/main.py",
+                "start_line": 103,
+                "end_line": 133,
+                "url": "https://github.com/ISCOUTB/AS_202620_XALD/blob/9236ff97218b632eeb9a1910f6083968e2c22909/backend/app/main.py#L103-L133",
+                "description": "El handler actualiza timestamp/métricas y devuelve mensaje encolada; no conserva datos ni encola."
+              },
+              {
+                "path": "docs/adr/0011-resolucion-conflictos-lww.md",
+                "start_line": 13,
+                "end_line": 19,
+                "url": "https://github.com/ISCOUTB/AS_202620_XALD/blob/9236ff97218b632eeb9a1910f6083968e2c22909/docs/adr/0011-resolucion-conflictos-lww.md#L13-L19",
+                "description": "La decisión vigente acota LWW a diccionario de fechas en memoria."
+              }
+            ]
+          }
+        ],
+        "informe": "revisiones/2026-2/AS_202620_XALD/semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10"
+      }
     }
   ],
-  "nota": "Rubrica 5 criterios 0/0.60/0.80/1; sin nota final ni formula semanal",
-  "sustentacion": "pendiente docente",
-  "escenarios_no_acreditados": "No verificado",
-  "rama_revision": "revision/s10-delta-recobra-verifacts-20261010",
-  "equipos_revisados_en_esta_pasada": 2,
-  "ultima_revision_completa": "2026-10-06",
-  "deteccion_actividad": "2026-10-10T12:55:00Z",
-  "alcance": "Recobra y Verifacts reexaminados. Los otros 21 conservan la evaluación del 6 de octubre; sus ramas principales no cambiaron en la detección de actividad del 10. Se preserva la corrección documental de EnAgenda del 7."
+  "deriva_arquitectonica": {
+    "teams": 23,
+    "teams_with_findings": 18,
+    "findings": 36,
+    "severity": {
+      "Media": 25,
+      "Baja": 8,
+      "Alta": 3
+    },
+    "nature": {
+      "documentación desactualizada": 19,
+      "implementación": 17
+    },
+    "metodo": "Auditoría estática de la arquitectura declarada frente a las rutas implementadas en el mismo hash del cierre S10. Se revisaron capas y dominio, persistencia, API y autorización, despliegue, asincronía y observabilidad. Se excluyeron PDF y commits posteriores al cierre; no se ejecutó código estudiantil ni se probó el servicio remoto. Una funcionalidad futura explícitamente delimitada o una deuda aceptada por un ADR vigente no se cuenta por sí sola como deriva. La gravedad indica prioridad técnica del hallazgo; no equivale a un descuento automático en la rúbrica. Los hallazgos se incorporan como feedback y propuestas de corrección; los puntajes C1–C4 conservan la matriz técnica vigente, sin recalificación por esta auditoría.",
+    "fecha_auditoria": "2026-10-13",
+    "cierre_exclusivo": "2026-10-13T05:00:00Z"
+  }
 }

@@ -57,6 +57,31 @@ Pendiente de calificar: las filas de URL accesible desde fuera de la red y de he
 
 La porción p95 ya está implementada, enlazada y acompañada de una prueba que distingue el percentil del máximo. La medición debe ejercitar consultas reales de catálogo o stock con la carga declarada: medir /health local no demuestra ese escenario. Mantengan la justificación de no añadir dependencias y completen la trazabilidad de reemplazo de ADR anteriores. La comprobación de credenciales quedó pendiente por una limitación técnica del revisor; no se atribuye al equipo y la propuesta de nota permanece abierta.
 
-## Semana 10 · Segundo corte (avance preliminar)
+## Semana 10 · Segundo corte
+
+### Consolidación vigente · 13 de octubre de 2026
+
+El reporte S10 define el escenario y un cambio coherente. La cifra de 28 ms no tiene una prueba o serie que mida latencia; faltan una línea base y una nueva medición demostrada. La documentación continúa parcial.
+
+Se valora el escenario documentado bajo un supuesto explícito de pertinencia; su asignación oficial no se presenta como verificada. Las mediciones conservan el alcance y las limitaciones descritos en la evidencia. Los comentarios anteriores se mantienen como historial y la evaluación de la semana anterior permanece congelada.
+
+La sustentación sigue pendiente de calificación docente; no se infiere a partir del repositorio. El [informe del corte](semana-10-corte2.md) y la [planilla](planilla.md) separan ese pendiente del componente técnico.
+
+### Deriva arquitectónica al cierre S10
+
+Errores de dominio no se traducen al contrato HTTP.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+- **Media · Errores de cantidad del dominio escapan al borde HTTP:** El contrato enumera rechazos controlados pero una cantidad 0 o negativa, admitida como int por el esquema HTTP, llega al dominio y lanza ValueError sin traducción. La ruta puede producir un 500 genérico donde debería rechazar una entrada inválida; se debilita la frontera HTTP/dominio. Es deducción estática, no fallo observado en producción. **Acción:** Definir un error de cantidad de dominio y mapearlo a 400/422 en ambos handlers, o validar también cantidad>0 en el esquema conservando la regla de dominio. Actualizar OpenAPI y pruebas negativas HTTP de entrada/salida con 0 y negativos. [Contraste y evidencia](semana-10-corte2.md#deriva-d1).
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Comentarios preliminares anteriores, superados por la consolidación del 13 de octubre</summary>
+
+Estos comentarios corresponden al estado y a las comprobaciones de sus fechas originales. Las referencias a pendientes, disponibilidad y asignación del escenario no sustituyen el feedback vigente.
 
 Las sondas públicas de salud y métricas responden. Confirmen el escenario operativo asignado, midan una línea base del flujo de negocio y comparen la respuesta con el umbral en el despliegue. Aporten evidencia actual del pipeline y Quality Gate y preparen la defensa del almacenamiento en memoria y de su costo de evolución.
+
+</details>

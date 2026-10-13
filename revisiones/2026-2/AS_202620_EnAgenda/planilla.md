@@ -10,14 +10,14 @@ Hoja consolidada del equipo EnAgenda. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_EnAgenda` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Eliab Josue Arnedo Conde · Jeimy Yulieth Mendez Altamiranda · Gabriela Morales Cancino — cuentas abajo; ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | URL pública vigente no localizada; despliegue No verificado. Ver [S10](semana-10-corte2.md). |
-| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar; corrección documental de S10: 2026-10-07 |
+| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 9 | S9 · definitiva | `master` · `5aa889370dcf342ba06666893b97f8065b513de9` · 2026-10-04T23:46:49-05:00 | 3/10 | 2.2 (propuesta al docente) | sí, 2026-10-06 |
-| 10 | Segundo corte · preliminar | `master` · `c2077ac55a29562adc728734ca4c283ccb40f310` · 2026-10-05T10:40:19-05:00 | 1/12 de comprobación (sin PDF): 1 Cumple, 6 No cumple y 5 No verificado | C3: Insuficiente (0,00); total pendiente, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06; corrección documental 2026-10-07 |
+| 10 | Segundo corte · consolidado al cierre | `master` · `4bec22f3821493014e8352ece8274bb2950e97db` · 2026-10-11T23:47:24-05:00 | C1 0,60; C2 0,60; C3 0,60; C4 0,60 (cada uno /1) | Total 3,24/5; técnica 2,40/4 + C5 docente 0,84/1; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
 | 8 | S8 | `2c7d77a` (2026-09-27T23:42:39-05:00) | 5/10 (2 filas de despliegue diferidas) | 3.0 (provisional) | sí |
 | 7 | S7 | `849ee8c` (2026-09-20T23:59:07-05:00) | 4/10 | 2.6 | sí, auditada |
 | 6 | S6 | `0a58de8` (2026-09-13T23:38:41-05:00) | 7/8 | 4.5 | si |
@@ -26,6 +26,34 @@ Hoja consolidada del equipo EnAgenda. Se actualiza tras cada revisión.
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `13f61b10` · 2026-08-09T05:34:14-05:00 | 8/9 | 4,6 * | sí |
 | 2 | S2 | `5b6f7a8` (2026-08-16T23:33:20-05:00) | 5/9 | no aplica | si |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `c38adfb94` · 2026-08-23T23:49:01-05:00 | 3/9 | no se publica | sí (actualizada tras el cierre) |
+
+## Feedback S10 vigente · 13 de octubre de 2026
+
+Límite exclusivo: **2026-10-13T05:00:00Z**, fin del 12 de octubre en Colombia. Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
+
+**Subtotal técnico: 2,40 / 4,00. Total consolidado C1–C5: 3,24 / 5,00.**
+
+Calificación de sustentación comunicada por el docente: **4,20 / 5,00**, incorporada como **C5 = 0,84 / 1,00**. La conversión proporcional se conserva sin redondearla a los niveles de los criterios técnicos.
+
+Se corrigieron la protección y normalización de métricas y se añadió la prueba de no filtración; el CI pasa. Faltan una línea base y un umbral medidos en el despliegue, así como una decisión coherente con toda la arquitectura.
+
+Fuentes y alcance completos: [informe S10](semana-10-corte2.md#fundamento-técnico-y-comentarios-vigentes). Las referencias de identidad, contribución y despliegue heredadas conservan sus fechas originales; no constituyen una nueva verificación en esta consolidación.
+
+### Deriva arquitectónica al cierre S10
+
+ADR de stack y guía de métricas desactualizados.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+- **Media · ADR1 conserva Next.js/Server Actions y prohibición de API mientras el sistema vigente es Flask con REST:** Las decisiones vigentes parecen contradictorias sobre cliente, entrada HTTP y contrato, dificultando futuras modificaciones. **Acción:** Registrar aclaración/supersesión parcial de ADR1: mantener monolito modular, sustituir Next.js/Server Actions y actualizar exposición REST. No cambiar la implementación solo para seguir una decisión histórica. [Contraste y evidencia](semana-10-corte2.md#deriva-d1).
+- **Baja · El procedimiento operativo aún espera /metrics 200 sin explicar el token:** Un operador siguiendo README/arc42 interpreta 401/503 esperado como fallo del servicio o no configura el secreto requerido. **Acción:** Actualizar smoke check para configurar ENAGENDA_METRICS_TOKEN, enviar Bearer de forma segura y distinguir 401/503 de liveness /health. No desproteger métricas para satisfacer el ejemplo antiguo. [Contraste y evidencia](semana-10-corte2.md#deriva-d2).
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Seguimiento anterior a la consolidación S10; estados históricos superados</summary>
+
+**Historial superado por la consolidación del 13 de octubre de 2026.** Se conserva lo publicado como registro de las observaciones de cada fecha, no como la evaluación vigente. El cierre preliminar 2026-10-12T05:00:00Z que aparece abajo fue sustituido para S10 por el límite exclusivo 2026-10-13T05:00:00Z. Las notas parciales, pendientes de sustentación y bloqueos por asignación del escenario de ese historial no reemplazan la tabla actual.
 
 ## Lo que se arrastra
 
@@ -147,3 +175,5 @@ Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
 - ¿Qué pasa con invitaciones, tokens y contadores si el contenedor reinicia, y cómo evitarían exponer tokens mediante /metrics?
 - ¿Qué cuotas de CPU/RAM/tráfico ofrece Dokploy y cuándo deja de ser válida la estimación de costo cero?
 - El test directo no detectó TemplateNotFound: ¿qué cambiarían en la prueba para cubrir el recorrido real del organizador?
+
+</details>

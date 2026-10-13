@@ -59,6 +59,32 @@ La base de infraestructura, observabilidad, costos y documentación operativa es
 
 La corrección del borde HTTP ya tiene decisión, pruebas negativas y comparación antes/después. Completen la fila del aspecto con C4 y enlaces directos a la medición. Mantengan explícito que retirar el PIN del GET no resuelve la identidad del establecimiento. La revisión independiente de credenciales quedó bloqueada por una limitación del revisor, así que la propuesta de nota sigue pendiente.
 
-## Semana 10 · Segundo corte (avance preliminar)
+## Semana 10 · Segundo corte
+
+### Consolidación vigente · 13 de octubre de 2026
+
+El nuevo ensayo de staging acredita tres supervivientes de tres y corrige el arranque antes del POST. El UPSERT sigue sin orden garantizado y la respuesta HTTP no espera la durabilidad. C4 conserva PostgreSQL como planeado.
+
+Se valora el escenario documentado bajo un supuesto explícito de pertinencia; su asignación oficial no se presenta como verificada. Las mediciones conservan el alcance y las limitaciones descritos en la evidencia. Los comentarios anteriores se mantienen como historial y la evaluación de la semana anterior permanece congelada.
+
+La sustentación comunicada por el docente ya está incorporada en la [planilla](planilla.md) y el [informe del corte](semana-10-corte2.md).
+
+### Deriva arquitectónica al cierre S10
+
+C4 rezagado y persistencia sin el orden de escritura prometido.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+- **Baja · C4 conserva PostgreSQL planeado y un protocolo de persistencia incorrecto:** La vista de contenedores clasifica PostgreSQL como futuro y dibuja HTTP REST/JSON a la BD; la de componentes también lo marca planeado. ADR0014 y el adaptador actual ya contienen conexión pg y SQL, por lo que onboarding y análisis de fallos parten de una topología vieja. **Acción:** Actualizar C4 con PostgreSQL implementado condicional a DATABASE_URL, relación PostgreSQL/TCP mediante pg, Maps como cache/estado local y espejo asíncrono. Mantener Redis y auth marcados futuros. [Contraste y evidencia](semana-10-corte2.md#deriva-d1).
+- **Media · La supuesta cola de persistencia inicia UPSERT independientes:** El objetivo de conservar el último estado confirmado y el comentario de serialización no se sustentan en la ruta de escritura: cada llamada invoca escribirFila inmediatamente; ultimaEscritura solo se reasigna. Un pool puede solapar escrituras y no se impone orden causal por pedido. Existe riesgo de persistir una instantánea atrasada sin caída de proceso, distinto de la ventana de pérdida ya aceptada. No se afirma que haya ocurrido. **Acción:** Capturar una instantánea inmutable por mutación y encadenar su persistencia a la promesa anterior (idealmente por pedido), o usar versión creciente/UPDATE condicional. Añadir prueba que retrase y reordene dos escrituras y compruebe el estado final; conservar documentado el límite fire-and-forget. [Contraste y evidencia](semana-10-corte2.md#deriva-d2).
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Comentarios preliminares anteriores, superados por la consolidación del 13 de octubre</summary>
+
+Estos comentarios corresponden al estado y a las comprobaciones de sus fechas originales. Las referencias a pendientes, disponibilidad y asignación del escenario no sustituyen el feedback vigente.
 
 Para el segundo corte, identifiquen el escenario operativo asignado y prueben su respuesta en el despliegue con línea base reproducible. Actualicen los documentos de Sonar, hagan verificable el Quality Gate y preparen la defensa de identidad por establecimiento, persistencia y costos.
+
+</details>

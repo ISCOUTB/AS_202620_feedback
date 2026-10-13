@@ -52,7 +52,30 @@ La entrega cambió de forma notable respecto de la revisión anterior: el proyec
 
 La búsqueda con filtros ya es una porción nueva y trazable: la mutación detectó una prueba débil y la corrigieron. Mantengan la separación explícita entre las mediciones locales y la brecha de producción. Sincronicen los C4 con la persistencia real, completen la sucesión de ADR y acrediten el scanner y Quality Gate del commit entregado.
 
-## Semana 10 · Segundo corte (avance preliminar)
+## Semana 10 · Segundo corte
+
+### Consolidación vigente · 13 de octubre de 2026
+
+Hay mejora operativa y un experimento S1, con límites de causalidad. Se corrigieron arc42, C4, readiness, medición GET, filtro 503 y contrato, y se enlazó la sucesión de ADR con la evidencia.
+
+Se valora el escenario documentado bajo un supuesto explícito de pertinencia; su asignación oficial no se presenta como verificada. Las mediciones conservan el alcance y las limitaciones descritos en la evidencia. Los comentarios anteriores se mantienen como historial y la evaluación de la semana anterior permanece congelada.
+
+La sustentación comunicada por el docente ya está incorporada en la [planilla](planilla.md) y el [informe del corte](semana-10-corte2.md).
+
+### Deriva arquitectónica al cierre S10
+
+Sin deriva material observada; acoplamientos aceptados por ADR.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+No se observó deriva material en los recorridos revisados; se conservan los límites y deudas explícitos del diseño.
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Comentarios preliminares anteriores, superados por la consolidación del 13 de octubre</summary>
+
+Estos comentarios corresponden al estado y a las comprobaciones de sus fechas originales. Las referencias a pendientes, disponibilidad y asignación del escenario no sustituyen el feedback vigente.
 
 Documenten cuál es el escenario operativo asignado y preparen una línea base y un resultado comparables en el despliegue. La salud responde, pero eso no prueba el flujo principal. Añadan la métrica del escenario al entorno, resuelvan la brecha de capacidad que midieron y expliquen la decisión frente al presupuesto antes de la sustentación.
 
@@ -62,6 +85,8 @@ La actualización del segundo corte incorpora un experimento propio sobre Dokplo
 
 La elección de S1 está explicada como una indicación del docente comunicada por el equipo. Falta corroborar esa procedencia. Para defender el experimento, conserven las salidas originales y el estado desplegado exacto: la tabla declara mejora y cumplimiento a doscientas conexiones, pero cambia el volumen respecto de la base y solo hay una corrida por nivel. El percentil del servidor, calculado sobre éxitos recientes, no sustituye la latencia de extremo a extremo ni demuestra por sí solo que toda la diferencia sea red.
 
-Completen las vistas de construcción y ejecución de arc42, actualicen C4-C3 con readiness, búsqueda y manejo de almacenamiento caído, y añadan al contrato la respuesta de indisponibilidad al consultar por identificador. SonarCloud sigue pendiente de evidencia actual de análisis y Quality Gate bloqueante; el verde general de CI no lo acredita cuando el scanner admite fallos. Las correcciones actuales no modifican la evaluación definitiva de la semana anterior.
+Completen las vistas de construcción y ejecución de arc42, actualicen C4-C3 con readiness, la medición GET de la búsqueda ya representada y el filtro 503 de almacenamiento no disponible, y añadan al contrato la respuesta de indisponibilidad al consultar por identificador. SonarCloud sigue pendiente de evidencia actual de análisis y Quality Gate bloqueante; el verde general de CI no lo acredita cuando el scanner admite fallos. Las correcciones actuales no modifican la evaluación definitiva de la semana anterior.
 
 Para la sustentación, preparen una demostración de fallo y recuperación de la base, expliquen el costo y los riesgos del servidor compartido y diseñen una comparación controlada que permita distinguir plataforma, datos y red.
+
+</details>

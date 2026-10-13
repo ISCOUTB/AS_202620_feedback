@@ -58,6 +58,33 @@ El avance de la semana es sólido: la infraestructura está versionada como cód
 
 La reserva grupal ya tiene implementación, decisión, trazabilidad, prueba de mutación y medición. La auditoría concreta corrige accesos entre módulos y conserva la escritura de cupos en su propietario. Completen la medición interna en la versión desplegada y comprueben que producción recibe y devuelve la cantidad solicitada. Falta cerrar Sonar. La comprobación independiente de secretos quedó pendiente por un bloqueo del entorno de revisión, no por una credencial encontrada.
 
-## Semana 10 · Segundo corte (avance preliminar)
+## Semana 10 · Segundo corte
+
+### Consolidación vigente · 13 de octubre de 2026
+
+El nuevo experimento incluye 50 observaciones de base y 50 de fallo, con ajuste de timeout y caché. Las pruebas simulan timeout sin esperar y no demuestran degradación de extremo a extremo real. El CI está verde, pero el paso Sonar es un echo.
+
+Se valora el escenario documentado bajo un supuesto explícito de pertinencia; su asignación oficial no se presenta como verificada. Las mediciones conservan el alcance y las limitaciones descritos en la evidencia. Los comentarios anteriores se mantienen como historial y la evaluación de la semana anterior permanece congelada.
+
+La sustentación comunicada por el docente ya está incorporada en la [planilla](planilla.md) y el [informe del corte](semana-10-corte2.md).
+
+### Deriva arquitectónica al cierre S10
+
+Requests escribe Trips; push síncrono y timeout distinto del ADR.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+- **Media · Requests modifica directamente los datos de ruta cuyo dueño es Trips:** La operación real accept_request llama refresh_trip_route_and_stop_eta y esta ejecuta UPDATE trips sobre route_geom, route_distance_m, route_duration_s y route_source. El límite de dueño único deja de proteger la actualización de rutas y la lógica de derivación queda repartida. Los cupos sí usan reserve/release públicos y no forman parte de este hallazgo. **Acción:** Mover la actualización de geometría y métricas de viaje a una operación pública de trips.application; Requests entrega las paradas/ids y conserva sus propias ETA. Eliminar también el import de helper privado de create_trip, o promoverlo a contrato público. Añadir regla de dependencias/escrituras entre módulos. [Contraste y evidencia](semana-10-corte2.md#deriva-d1).
+- **Media · El envío FCM secundario permanece en el camino síncrono de la respuesta:** ADR0013 exige que push no bloquee el flujo principal. El commit sucede antes y las excepciones se contienen, pero accept_request espera send_push y este llama send_each antes de retornar. Con FCM configurado, latencia/timeout de entrega se suma a la respuesta REST aunque la reserva ya esté confirmada. No se afirma que FCM esté configurado ni que haya lentitud real. **Acción:** Desacoplar envío después del commit mediante tarea/background worker con su propia sesión y timeout, o ratificar que es síncrono best-effort y acotar su presupuesto. Si se necesita entrega garantizada, usar outbox/reintentos; no reutilizar una sesión request cerrada en la tarea. [Contraste y evidencia](semana-10-corte2.md#deriva-d2).
+- **Media · La configuración Render sobreescribe el timeout ratificado de 1,4 s con 3,0 s:** La configuración versionada que recrea Render introduce ROUTING_TIMEOUT_SECONDS=3.0, anulando el default 1.4 que sostiene el presupuesto de ADR0014. Una recreación con ese manifiesto no conserva la mitigación documentada; el valor efectivo del panel y la latencia en producción no se verificaron. **Acción:** Cambiar el manifiesto a 1.4 o eliminar el override para usar el default ratificado; revisar la variable efectiva del panel con autorización y añadir prueba estática que compare configuración de despliegue y ADR/config. Medir nuevamente bajo condiciones relevantes, sin prometer el p95 a partir del valor nominal. [Contraste y evidencia](semana-10-corte2.md#deriva-d3).
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Comentarios preliminares anteriores, superados por la consolidación del 13 de octubre</summary>
+
+Estos comentarios corresponden al estado y a las comprobaciones de sus fechas originales. Las referencias a pendientes, disponibilidad y asignación del escenario no sustituyen el feedback vigente.
 
 Identifiquen el escenario operativo asignado antes de presentar la reserva grupal o el rendimiento como respuesta al segundo corte. Salud responde, pero aún deben demostrar el flujo sobre la versión desplegada, línea base y resultado comparables, observabilidad del reto y pipeline bloqueante. La sustentación permanece pendiente.
+
+</details>

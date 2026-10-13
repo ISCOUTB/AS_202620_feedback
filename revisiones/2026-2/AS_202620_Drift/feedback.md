@@ -58,6 +58,31 @@ Lo que hay que corregir: integren SonarCloud al pipeline con un paso que ejecute
 
 La corrección de la dependencia entre aplicación e infraestructura es real y está documentada. También están sustentados los rechazos de IA y la decisión de no incorporar un modelo generativo. Falta enlazar esa corrección con su prueba negativa y medición nueva: las pruebas y cifras de septiembre no se vuelven a acreditar por existir.
 
-## Semana 10 · Segundo corte (avance preliminar)
+## Semana 10 · Segundo corte
+
+### Consolidación vigente · 13 de octubre de 2026
+
+E6 tiene tres corridas de base y tres de fallo controladas, con respuesta mediante timeout, caché y logs. El experimento es simulado y excluye TLS y el efecto en producción. Persisten coherencia parcial y una métrica de fuentes vacía.
+
+Se valora el escenario documentado bajo un supuesto explícito de pertinencia; su asignación oficial no se presenta como verificada. Las mediciones conservan el alcance y las limitaciones descritos en la evidencia. Los comentarios anteriores se mantienen como historial y la evaluación de la semana anterior permanece congelada.
+
+La sustentación comunicada por el docente ya está incorporada en la [planilla](planilla.md) y el [informe del corte](semana-10-corte2.md).
+
+### Deriva arquitectónica al cierre S10
+
+Sin deriva material observada; ADR vigente actualiza memoria y sincronía.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+No se observó deriva material en los recorridos revisados; se conservan los límites y deudas explícitos del diseño.
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Comentarios preliminares anteriores, superados por la consolidación del 13 de octubre</summary>
+
+Estos comentarios corresponden al estado y a las comprobaciones de sus fechas originales. Las referencias a pendientes, disponibilidad y asignación del escenario no sustituyen el feedback vigente.
 
 CI y despliegue están en verde, pero el scanner SonarCloud fue revertido. Identifiquen la consigna operativa del corte y ejecuten un experimento con línea base, carga y límites claros. Alineen la documentación de MySQL y procesamiento asíncrono con el catálogo en memoria que implementa la punta.
+
+</details>

@@ -1,3 +1,145 @@
+# Segundo corte · S10 · TAIA · consolidación al cierre
+
+**Actualización del feedback: 13 de octubre de 2026.** La tabla siguiente sustituye la valoración preliminar conservada al final.
+
+| Campo | Valor |
+|---|---|
+| Repositorio | https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant |
+| Rama evaluada | `main` |
+| Hash calificado | `72a8b6a0b3680a59c235f9225f90bc260093d86b` |
+| Fecha del commit | 2026-10-04T23:39:00-05:00 |
+| Límite exclusivo S10 | `2026-10-13T05:00:00Z` |
+| Último instante incluido | 12 de octubre de 2026, 23:59:59, Colombia (UTC-5) |
+
+## Alcance vigente
+
+Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
+
+Los PDF están excluidos sin penalización. No se ejecutó código estudiantil en la revisión. Las cifras y experimentos documentados por los equipos se distinguen de las comprobaciones del revisor; esta publicación consolida la evaluación ya realizada y no representa una nueva prueba de flujo principal, despliegue, carga o seguridad. La lista de comprobación y la matriz transversal de las pasadas anteriores se conservan abajo con su alcance histórico; no se recalculan ni se convierten en una nota mediante la fórmula semanal. S9 permanece congelada.
+
+## Escenario documentado
+
+Etapa de confirmación en español asociada a S1/S3
+
+Se valora el escenario documentado disponible; no se afirma asignación docente verificada ni nueva entrega específica S10. Evidencias previas se usan como estado del repositorio, no se traslada ni promedia su nota anterior.
+
+## Rúbrica consolidada
+
+| Criterio | Nivel técnico / origen | Puntaje |
+|---|---|---:|
+| C1 · Caracterización del escenario operativo | Competente | 0,80 / 1,00 |
+| C2 · Decisión e implementación | Competente | 0,80 / 1,00 |
+| C3 · Operación, seguridad y observabilidad | Básico | 0,60 / 1,00 |
+| C4 · Evolución arquitectónica trazable | Básico | 0,60 / 1,00 |
+| C5 · Sustentación del reto | Calificación comunicada por el docente | 0,80 / 1,00 |
+
+**Subtotal técnico: 2,80 / 4,00. Total consolidado C1–C5: 3,60 / 5,00.**
+
+Calificación de sustentación comunicada por el docente: **4,00 / 5,00**, incorporada como **C5 = 0,80 / 1,00**. La conversión proporcional se conserva sin redondearla a los niveles de los criterios técnicos.
+
+Los componentes técnicos se publican como propuesta al docente. Publicar esta consolidación no acredita un registro de la calificación en Moodle.
+
+## Fundamento técnico y comentarios vigentes
+
+Antes fallaban siete de dieciséis variantes; después, la confirmación tiene medición y normalización implementada, con alternativas. Ese logro no se extiende a la persistencia S1 ni a la latencia S3 completas. El CI falla, CD se omite y arc42 contiene conflictos de merge.
+
+Los puntajes C1–C4 se conservan de la evaluación consolidada; el comentario y las fuentes siguientes sustentan la valoración conjunta, sin inferir puntajes nuevos de los recuentos preliminares.
+
+### Fuentes del estado calificado
+
+1. [docs/evaluacion_ia/contraste_umbrales.md:5–37](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/docs/evaluacion_ia/contraste_umbrales.md#L5-L37)
+2. [docs/adr/0005-normalizacion-confirmacion-espanol.md:7–59](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/docs/adr/0005-normalizacion-confirmacion-espanol.md#L7-L59)
+3. [docs/arc42/07-vista-de-despliegue.md:67–96](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/docs/arc42/07-vista-de-despliegue.md#L67-L96)
+
+## Deriva arquitectónica al cierre S10
+
+Auditoría estática de la arquitectura declarada frente a las rutas implementadas en el mismo hash del cierre S10. Se revisaron capas y dominio, persistencia, API y autorización, despliegue, asincronía y observabilidad. Se excluyeron PDF y commits posteriores al cierre; no se ejecutó código estudiantil ni se probó el servicio remoto. Una funcionalidad futura explícitamente delimitada o una deuda aceptada por un ADR vigente no se cuenta por sí sola como deriva. La gravedad indica prioridad técnica del hallazgo; no equivale a un descuento automático en la rúbrica. Los hallazgos se incorporan como feedback y propuestas de corrección; los puntajes C1–C4 conservan la matriz técnica vigente, sin recalificación por esta auditoría.
+
+**Resultado:** La composición real respeta puertos/adaptadores selectivos y usa SQLAlchemy/PostgreSQL. La vista de bloques todavía presenta persistencia en memoria como estado actual. Dokploy y el fallo cerrado de Gemini están documentados por guías/ADR más recientes y no deben confundirse con la vista histórica.
+
+**Arquitectura declarada:** Monolito modular Usuario/Academic/AI/Reminders, con puertos que aíslan PostgreSQL, Gemini y Telegram; identidad central y contexto del usuario. Despliegue vigente Dokploy; scheduler y móvil completos pendientes.
+
+**Arquitectura implementada:** main compone identidad, repositorios SQL, gateway AI→puerto Academic y lookup Reminders→Academic. /ai/message autenticado llama HandleUserMessageUseCase, Gemini y conversation store SQL. La ruta académica usa puerto de gestión, servicios/casos de uso y repositorios SQL. Health consulta BD; logs/métricas en middleware.
+
+**Hallazgos materiales: 1.** Prioridad máxima: **Media**.
+
+<a id="deriva-d1"></a>
+
+### D1 · arc42 presenta repositorios volátiles como actuales después de la migración SQL
+
+**Naturaleza:** documentación desactualizada. **Prioridad:** Media. **Confianza:** alta.
+
+**Declaración contrastada:**
+
+- [docs/arc42/05-vista-de-bloques-de-construccion.md:560–580](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/docs/arc42/05-vista-de-bloques-de-construccion.md#L560-L580) — Presenta InMemory para todos los módulos y PostgreSQL como sustitución futura.
+
+**Implementación contrastada:**
+
+- [backend/app/modules/academic/adapters/outbound/repository_provider.py:20–29](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/backend/app/modules/academic/adapters/outbound/repository_provider.py#L20-L29) — El proveedor efectivo entrega repositorios SQLAlchemy.
+- [backend/app/main.py:38–44](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/backend/app/main.py#L38-L44) — La composición de AI usa SqlAlchemyConversationStore.
+- [backend/app/modules/reminders/adapters/outbound/repository_provider.py:1–7](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/backend/app/modules/reminders/adapters/outbound/repository_provider.py#L1-L7) — Reminders compone su repositorio SQL.
+- [docs/despliegue-dokploy.md:3–6](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/docs/despliegue-dokploy.md#L3-L6) — La guía vigente exige PostgreSQL y migraciones.
+
+**Efecto y alcance:** Una lectura de la vista de bloques conduce a configurar o evaluar una persistencia distinta de la realmente requerida para arrancar y operar. No es inversión incorrecta de dependencias: el reemplazo por adaptadores sí está realizado.
+
+**Corrección propuesta:** Actualizar arc42 §5.5/5.6 y diagramas a SQLAlchemy/PostgreSQL; conservar InMemory como dobles de prueba. Limpiar los conflictos de merge en §7, manteniendo explícita la precedencia de la guía Dokploy.
+
+### Cobertura y límites de la auditoría
+
+**Capas, dominio y adaptadores:** Se inspeccionaron imports de todos los .py de application/domain sin referencias directas a adapters; composición en main. AI y Reminders usan puertas de Academic.
+
+Límite: Inspección estática de dependencias, no prueba de sustitución en ejecución.
+
+- [docs/adr/0001-estilo-arquitectonico.md:67–79](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/docs/adr/0001-estilo-arquitectonico.md#L67-L79) — Hexagonal selectiva, no obligación de hexagonal en cada archivo.
+- [backend/app/main.py:15–20](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/backend/app/main.py#L15-L20) — Composición de identidad y Academic.
+- [backend/app/main.py:81–96](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/backend/app/main.py#L81-L96) — Composición de estructura académica y recordatorios.
+
+**Persistencia:** Providers SQL, conversación SQL y session factory; se examinó health de BD y migraciones versionadas.
+
+Límite: No se conectó a la base remota.
+
+- [backend/app/main.py:128–130](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/backend/app/main.py#L128-L130) — Health exige disponibilidad de BD.
+
+**API y autorización:** POST /academic/tasks obtiene CurrentUserId y puerto TaskManagement; POST /ai/message genera IncomingRequest con identidad autenticada.
+
+Límite: Contrato completo no ejecutado; no prueba de aislamiento multiusuario en runtime.
+
+- [backend/app/modules/academic/adapters/inbound/api.py:126–141](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/backend/app/modules/academic/adapters/inbound/api.py#L126-L141) — Handler académico con contexto de usuario y traducción de errores.
+- [backend/app/modules/ai/adapters/inbound/api.py:54–68](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/backend/app/modules/ai/adapters/inbound/api.py#L54-L68) — Handler AI autenticado.
+
+**Despliegue:** Dokploy/Compose sustituyen SSH/GHCR históricos; variables obligatorias en guía coinciden con construcción de Gemini.
+
+Límite: Estado del servicio y TLS del proveedor no comprobados; §7 contiene material histórico y conflictos.
+
+- [docs/arc42/07-vista-de-despliegue.md:3–6](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/docs/arc42/07-vista-de-despliegue.md#L3-L6) — Precedencia explícita de la guía vigente.
+- [docs/despliegue-dokploy.md:13–26](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/docs/despliegue-dokploy.md#L13-L26) — Configuración actual de secretos/red.
+- [docs/despliegue-dokploy.md:63–68](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/docs/despliegue-dokploy.md#L63-L68) — Guía reconoce que aceptación de CD no garantiza finalización.
+
+**Asincronía:** API síncrona y envío explícito de notificaciones; scheduler persistente y Telegram entrante aún pendientes.
+
+Límite: No se exige broker ni scheduler donde el alcance los declara futuros.
+
+- [docs/arc42/05-vista-de-bloques-de-construccion.md:606–612](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/docs/arc42/05-vista-de-bloques-de-construccion.md#L606-L612) — Pendientes explícitos.
+
+**Observabilidad:** Observabilidad instalada y coste IA registrado; ADR-0007 acepta timeout 20 s frente a objetivo 7 s y fallo sin reintentos.
+
+Límite: No se infiere cumplimiento de latencia del análisis estático.
+
+- [backend/app/main.py:110–117](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/backend/app/main.py#L110-L117) — Instalación de observabilidad.
+- [docs/adr/0007-comportamiento-ante-fallo-del-proveedor-llm.md:58–67](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/docs/adr/0007-comportamiento-ante-fallo-del-proveedor-llm.md#L58-L67) — Errores de proveedor y credencial ausente definidos.
+- [docs/adr/0007-comportamiento-ante-fallo-del-proveedor-llm.md:80–86](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/blob/72a8b6a0b3680a59c235f9225f90bc260093d86b/docs/adr/0007-comportamiento-ante-fallo-del-proveedor-llm.md#L80-L86) — Timeout y ausencia de respaldo aceptados.
+
+**Límites adicionales:** Auditoría estática por git show al hash fijo, sin checkout, ejecución de código estudiantil, lectura de PDF, escritura en GitHub, pruebas en producción ni cambios de notas. No certifica ausencia de defectos fuera de las rutas revisadas.
+
+## Estado global del proyecto (overall)
+
+La verificación de metadatos del 2026-10-13T16:46:10.466413+00:00 confirmó el hash anterior como último commit de `main` antes del límite exclusivo. La punta observada es [`72a8b6a0b3680a59c235f9225f90bc260093d86b`](https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/commit/72a8b6a0b3680a59c235f9225f90bc260093d86b) (2026-10-04T23:39:00-05:00). Coincide con el estado calificado; no hay commits posteriores al cierre en esa rama al momento de la comprobación.
+
+<details>
+<summary>Historial S10 anterior, superado; conservar fechas y alcance originales</summary>
+
+**Historial superado por la consolidación del 13 de octubre de 2026.** Se conserva lo publicado como registro de las observaciones de cada fecha, no como la evaluación vigente. El cierre preliminar 2026-10-12T05:00:00Z que aparece abajo fue sustituido para S10 por el límite exclusivo 2026-10-13T05:00:00Z. Las notas parciales, pendientes de sustentación y bloqueos por asignación del escenario de ese historial no reemplazan la tabla actual.
+
 # Semana 10 · Segundo corte · TAIA
 
 **Revisión preliminar abierta al cierre del 2026-10-12T05:00:00Z.** No reemplaza S9 definitiva ni aplica la fórmula semanal.
@@ -111,3 +253,5 @@ Documenten el escenario operativo oficialmente asignado, con un antes y un despu
 1. Si Gemini agota el timeout mientras existe una confirmación pendiente, ¿qué puede seguir funcionando y cómo distinguirán en logs la degradación de una respuesta exitosa HTTP 200?
 2. ¿Cómo calculan el costo por operación con una llamada fallida sin tokens y con last_usage conservando el consumo anterior, además del costo fijo de infraestructura?
 3. A la luz del 91,8 % de extracción, los fallos de estado y el máximo de 20,2 s, ¿qué cambiarían y qué prueba extremo a extremo confirmaría la mejora sin alterar las etiquetas después de ver el resultado?
+
+</details>

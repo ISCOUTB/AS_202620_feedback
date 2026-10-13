@@ -8,14 +8,14 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_ShareU` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo; ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | https://shareu-backend.onrender.com · ver comprobación y límites en S10 |
-| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
+| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 9 | S9 · definitiva | `master` · `39508608eae4c1a56a5e4fc11a055bf6afb2c003` · 2026-09-28T19:56:57-05:00 | 9/10 | 4.6 (propuesta al docente) | sí, 2026-10-06 |
-| 10 | Segundo corte · preliminar | `master` · `39508608eae4c1a56a5e4fc11a055bf6afb2c003` · 2026-09-28T19:56:57-05:00 | 2/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
+| 10 | Segundo corte · consolidado al cierre | `master` · `39508608eae4c1a56a5e4fc11a055bf6afb2c003` · 2026-09-28T19:56:57-05:00 | C1 0,60; C2 0,60; C3 0,60; C4 0,60 (cada uno /1) | Técnica 2,40/4; C5 pendiente; sin total /5; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
 | 1 | S1 | `(sin commits)` () | sin actividad | no aplica | si |
 | 2 | S2 | `(sin commits)` () | sin actividad | no aplica | si |
 | 3 | S3 | `master` `0bae184` · excepción docente | 7/9 | 4.1 | sí |
@@ -32,6 +32,34 @@
 | 14 | Evidencia S14 · Medición de atributos de calidad | | | no aplica | |
 | 16 | Proyecto final · integración y desafío arquitectónico | `final` | | | |
 | 17 | Aplicación de cambios y cierre arquitectónico | | | | |
+
+## Feedback S10 vigente · 13 de octubre de 2026
+
+Límite exclusivo: **2026-10-13T05:00:00Z**, fin del 12 de octubre en Colombia. Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
+
+**Subtotal técnico: 2,40 / 4,00. Total sobre 5,00 pendiente de C5.**
+
+C5 sigue pendiente de calificación docente. No se registra como cero ni se estima a partir del repositorio.
+
+La muestra sintética de 2≤3 no aporta una línea base operacional. La fachada, la métrica real de búsquedas sin resultados, JSON y request_id dan observabilidad parcial. CI, URL y archivos declarados ausentes impiden el nivel competente. La consolidación reconoce esa observabilidad parcial bajo el alcance de revisión del repositorio.
+
+Fuentes y alcance completos: [informe S10](semana-10-corte2.md#fundamento-técnico-y-comentarios-vigentes). Las referencias de identidad, contribución y despliegue heredadas conservan sus fechas originales; no constituyen una nueva verificación en esta consolidación.
+
+### Deriva arquitectónica al cierre S10
+
+Documentación de despliegue y prueba de contrato sobrestima el snapshot.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+- **Media · La vista de despliegue afirma artefactos y rutas que este snapshot no contiene:** No permite reproducir desde el repositorio la topología Render/Vercel descrita; dificulta distinguir despliegue real de diseño. No demuestra que un servicio remoto esté caído. **Acción:** Marcar el despliegue como no verificable hasta aportar manifiestos y URL comprobable; corregir ruta a app/frontend y documentar comandos realmente disponibles. La inspección completa de ls-tree no encontró Dockerfile, compose ni render.yaml. [Contraste y evidencia](semana-10-corte2.md#deriva-d1).
+- **Media · La prueba de contrato anunciada no está implementada en la suite versionada:** Se declara una protección contra incompatibilidades que pytest no aporta: un cambio de esquema puede no ser detectado por las aserciones funcionales parciales. **Acción:** Añadir una prueba que cargue docs/api/openapi.yaml, resuelva referencias y valide respuestas/casos inválidos, más una mutación incompatible; mientras tanto retirar la garantía. Inspeccionados los cinco archivos de tests: ninguno carga OpenAPI/YAML/JSON Schema y test_contrato.py no existe. [Contraste y evidencia](semana-10-corte2.md#deriva-d2).
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Seguimiento anterior a la consolidación S10; estados históricos superados</summary>
+
+**Historial superado por la consolidación del 13 de octubre de 2026.** Se conserva lo publicado como registro de las observaciones de cada fecha, no como la evaluación vigente. El cierre preliminar 2026-10-12T05:00:00Z que aparece abajo fue sustituido para S10 por el límite exclusivo 2026-10-13T05:00:00Z. Las notas parciales, pendientes de sustentación y bloqueos por asignación del escenario de ese historial no reemplazan la tabla actual.
 
 ## Lo que se arrastra
 
@@ -163,3 +191,5 @@ Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
 - Si se reinicia el backend y se pierden los contadores en memoria, ¿cómo distinguirán una mejora real de una métrica reiniciada?
 - ¿Qué costo y cambio de plataforma requiere conservar SQLite y métricas entre reinicios o escalar a más de una réplica?
 - ¿Qué cambiarían en el experimento después de comprobar que cinco documentos sintéticos se encuentran en dos interacciones, y cómo validarían que representa el uso real?
+
+</details>

@@ -58,6 +58,33 @@ La URL del despliegue se entrega por Moodle y no se califica en esta pasada.
 
 Hay dos decisiones nuevas y una URL accesible. La prueba de sincronización calcula números fijos sin llamar al sistema, así que todavía no demuestra el comportamiento del producto. Conecten la cadena del aspecto con el ADR nuevo, código real, prueba que falle ante el defecto y medición. Precisen la auditoría y las propuestas de IA rechazadas.
 
-## Semana 10 · Segundo corte (avance preliminar)
+## Semana 10 · Segundo corte
+
+### Consolidación vigente · 13 de octubre de 2026
+
+El protocolo de sincronización incorpora medición y mutación, pero la comparación mezcla relojes. Flutter aún no integra /time ni ACK, y la arquitectura conserva desalineaciones.
+
+Se valora el escenario documentado bajo un supuesto explícito de pertinencia; su asignación oficial no se presenta como verificada. Las mediciones conservan el alcance y las limitaciones descritos en la evidencia. Los comentarios anteriores se mantienen como historial y la evaluación de la semana anterior permanece congelada.
+
+La sustentación comunicada por el docente ya está incorporada en la [planilla](planilla.md) y el [informe del corte](semana-10-corte2.md).
+
+### Deriva arquitectónica al cierre S10
+
+C4 y despliegue rezagados; Session aún escribe el estado asignado a Sync.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+- **Media · C4 omite Flutter y conserva solo la vista del cliente web legado:** La vista incompleta de las alternativas de cliente no permite distinguir el fallback public/ del cliente Flutter preferido por el bootstrap ni qué alternativa consume actualmente NDJSON. **Acción:** Actualizar L2 con Flutter y web legado como alternativas; marcar NDJSON, /time y ACK como pendientes de integrar en Flutter. No presentar ADR-0007 propuesto como decisión ya aceptada. [Contraste y evidencia](semana-10-corte2.md#deriva-d1).
+- **Media · Session sigue escribiendo el estado que el diseño asigna a Sync:** La evolución del estado de sincronización exige modificar también el modelo y persistencia de Session; existen dos representaciones acopladas. **Acción:** Cerrar NC-10: hacer a Sync dueño del estado persistido y publicar una interfaz que Session consulte, o registrar formalmente un modelo compartido deliberado con responsabilidades y pruebas. La no conformidad ya estaba reconocida; no se presenta como descubrimiento nuevo. [Contraste y evidencia](semana-10-corte2.md#deriva-d2).
+- **Baja · La plataforma principal de arc42/ADR no coincide con la guía operativa vigente:** Una persona que siga arc42 puede preparar Azure cuando README guía a Dokploy. **Acción:** Registrar Dokploy como entorno principal actual, conservar Azure como alternativa si sigue vigente y enlazar la decisión de transición sin reescribir la historia. [Contraste y evidencia](semana-10-corte2.md#deriva-d3).
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Comentarios preliminares anteriores, superados por la consolidación del 13 de octubre</summary>
+
+Estos comentarios corresponden al estado y a las comprobaciones de sus fechas originales. Las referencias a pendientes, disponibilidad y asignación del escenario no sustituyen el feedback vigente.
 
 Antes del corte, identifiquen el escenario operativo asignado y midan una línea base reproducible. El health check responde, pero falta demostrar el flujo principal, corregir el pipeline Flutter y alinear la documentación con Dokploy. La sustentación y los niveles dependientes del reto quedan pendientes.
+
+</details>

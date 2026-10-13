@@ -1,3 +1,191 @@
+# Segundo corte · S10 · AudioShare · consolidación al cierre
+
+**Actualización del feedback: 13 de octubre de 2026.** La tabla siguiente sustituye la valoración preliminar conservada al final.
+
+| Campo | Valor |
+|---|---|
+| Repositorio | https://github.com/ISCOUTB/AS_202620_AudioShare |
+| Rama evaluada | `master` |
+| Hash calificado | `1da287c662986033871ef0e044ed29894b978593` |
+| Fecha del commit | 2026-10-12T17:35:29-05:00 |
+| Límite exclusivo S10 | `2026-10-13T05:00:00Z` |
+| Último instante incluido | 12 de octubre de 2026, 23:59:59, Colombia (UTC-5) |
+
+## Alcance vigente
+
+Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
+
+Los PDF están excluidos sin penalización. No se ejecutó código estudiantil en la revisión. Las cifras y experimentos documentados por los equipos se distinguen de las comprobaciones del revisor; esta publicación consolida la evaluación ya realizada y no representa una nueva prueba de flujo principal, despliegue, carga o seguridad. La lista de comprobación y la matriz transversal de las pasadas anteriores se conservan abajo con su alcance histórico; no se recalculan ni se convierten en una nota mediante la fórmula semanal. S9 permanece congelada.
+
+## Escenario documentado
+
+Escenario documentado
+
+Se evalúa el escenario declarado; asignación docente no verificada.
+
+## Rúbrica consolidada
+
+| Criterio | Nivel técnico / origen | Puntaje |
+|---|---|---:|
+| C1 · Caracterización del escenario operativo | Competente | 0,80 / 1,00 |
+| C2 · Decisión e implementación | Básico | 0,60 / 1,00 |
+| C3 · Operación, seguridad y observabilidad | Competente | 0,80 / 1,00 |
+| C4 · Evolución arquitectónica trazable | Básico | 0,60 / 1,00 |
+| C5 · Sustentación del reto | Calificación comunicada por el docente | 0,80 / 1,00 |
+
+**Subtotal técnico: 2,80 / 4,00. Total consolidado C1–C5: 3,60 / 5,00.**
+
+Calificación de sustentación comunicada por el docente: **4,00 / 5,00**, incorporada como **C5 = 0,80 / 1,00**. La conversión proporcional se conserva sin redondearla a los niveles de los criterios técnicos.
+
+Los componentes técnicos se publican como propuesta al docente. Publicar esta consolidación no acredita un registro de la calificación en Moodle.
+
+## Fundamento técnico y comentarios vigentes
+
+El protocolo de sincronización incorpora medición y mutación, pero la comparación mezcla relojes. Flutter aún no integra /time ni ACK, y la arquitectura conserva desalineaciones.
+
+Los puntajes C1–C4 se conservan de la evaluación consolidada; el comentario y las fuentes siguientes sustentan la valoración conjunta, sin inferir puntajes nuevos de los recuentos preliminares.
+
+### Fuentes del estado calificado
+
+1. [docs/evidencia-a01-ec01.md:8–64](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/docs/evidencia-a01-ec01.md#L8-L64)
+2. [docs/adr/0007-correccion-de-reloj-y-ack-de-arranque.md:3–7](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/docs/adr/0007-correccion-de-reloj-y-ack-de-arranque.md#L3-L7)
+3. [.github/workflows/ci.yml:1–23](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/.github/workflows/ci.yml#L1-L23)
+
+## Deriva arquitectónica al cierre S10
+
+Auditoría estática de la arquitectura declarada frente a las rutas implementadas en el mismo hash del cierre S10. Se revisaron capas y dominio, persistencia, API y autorización, despliegue, asincronía y observabilidad. Se excluyeron PDF y commits posteriores al cierre; no se ejecutó código estudiantil ni se probó el servicio remoto. Una funcionalidad futura explícitamente delimitada o una deuda aceptada por un ADR vigente no se cuenta por sí sola como deriva. La gravedad indica prioridad técnica del hallazgo; no equivale a un descuento automático en la rúbrica. Los hallazgos se incorporan como feedback y propuestas de corrección; los puntajes C1–C4 conservan la matriz técnica vigente, sin recalificación por esta auditoría.
+
+**Resultado:** Tres desalineaciones confirmadas: propiedad de estado ya reconocida y dos vistas documentales rezagadas. Audio físico, auth y consumo Flutter del stream están declarados pendientes; no se penalizan como arquitectura futura incumplida. Se excluyen los tres commits posteriores al corte.
+
+**Arquitectura declarada:** Monolito modular Session/Sync/Audio, SQLite backend, Flutter por HTTP/JSON y distribución NDJSON.
+
+**Arquitectura implementada:** createApp conecta SessionApplication→SQLiteRoomRepository; /play invoca SyncCoordinator y Session; Flutter ViewModel→RoomRepository→ApiClient. Stream y medición ACK en backend; audio cliente simulado.
+
+**Hallazgos materiales: 3.** Prioridad máxima: **Media**.
+
+<a id="deriva-d1"></a>
+
+### D1 · C4 omite Flutter y conserva solo la vista del cliente web legado
+
+**Naturaleza:** documentación desactualizada. **Prioridad:** Media. **Confianza:** Alta sobre el código y la documentación al hash; no acredita comportamiento del despliegue..
+
+**Motivo de prioridad:** La vista principal omite Flutter y atribuye recepción de eventos al único cliente representado; el web legado sí existe como fallback.
+
+**Declaración contrastada:**
+
+- [docs/c4/C4 Nivel 2 - Contenedores.mmd:23–30](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/docs/c4/C4%20Nivel%202%20-%20Contenedores.mmd#L23-L30) — C4 describe exclusivamente WebClient servido desde public/ y AppServer con API REST/NDJSON.
+- [docs/c4/C4 Nivel 2 - Contenedores.mmd:44–47](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/docs/c4/C4%20Nivel%202%20-%20Contenedores.mmd#L44-L47) — C4 atribuye al cliente web llamadas REST y recepción de eventos NDJSON, con SQLite detrás del servidor.
+
+**Implementación contrastada:**
+
+- [src/app.ts:74–84](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/src/app.ts#L74-L84) — Express elige build/web cuando se solicita Flutter y existe index.html; en otro caso conserva public/ como fallback.
+- [src/server.ts:1–5](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/src/server.ts#L1-L5) — El bootstrap llama createApp con serveFlutterWeb: true.
+- [lib/features/session/data/repositories/room_repository.dart:42–58](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/lib/features/session/data/repositories/room_repository.dart#L42-L58) — RoomRepository consulta salas por GET y realiza play/pause por POST seguido de otra consulta GET.
+- [README.md:128–134](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/README.md#L128-L134) — README distingue cliente Flutter implementado, audio simulado y consumo NDJSON/control de acceso pendientes.
+
+**Efecto y alcance:** La vista incompleta de las alternativas de cliente no permite distinguir el fallback public/ del cliente Flutter preferido por el bootstrap ni qué alternativa consume actualmente NDJSON.
+
+**Corrección propuesta:** Actualizar L2 con Flutter y web legado como alternativas; marcar NDJSON, /time y ACK como pendientes de integrar en Flutter. No presentar ADR-0007 propuesto como decisión ya aceptada.
+
+<a id="deriva-d2"></a>
+
+### D2 · Session sigue escribiendo el estado que el diseño asigna a Sync
+
+**Naturaleza:** implementación. **Prioridad:** Media. **Confianza:** Alta sobre el código y la documentación al hash; no acredita comportamiento del despliegue..
+
+**Motivo de prioridad:** Es una violación de propiedad reconocida explícitamente por el propio diseño, no un hallazgo basado en nombres de carpetas.
+
+**Declaración contrastada:**
+
+- [docs/contextos-delimitados.md:122–129](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/docs/contextos-delimitados.md#L122-L129) — El mapa de contextos califica la copia del estado Sync en Session como NC-10 y propone conservar solo referencias.
+
+**Implementación contrastada:**
+
+- [src/app.ts:212–215](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/src/app.ts#L212-L215) — play toma el evento de Sync y entrega su startAt a sessions.startPlayback.
+- [src/modules/session/application/session-application.ts:29–40](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/src/modules/session/application/session-application.ts#L29-L40) — SessionApplication.startPlayback modifica la reproducción de la sala mediante el repositorio de Session.
+- [src/modules/session/infrastructure/persistence/sqlite-room-repository.ts:132–145](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/src/modules/session/infrastructure/persistence/sqlite-room-repository.ts#L132-L145) — El repositorio SQLite de Session actualiza status, playback_state y start_at dentro de la tabla rooms.
+
+**Efecto y alcance:** La evolución del estado de sincronización exige modificar también el modelo y persistencia de Session; existen dos representaciones acopladas.
+
+**Corrección propuesta:** Cerrar NC-10: hacer a Sync dueño del estado persistido y publicar una interfaz que Session consulte, o registrar formalmente un modelo compartido deliberado con responsabilidades y pruebas. La no conformidad ya estaba reconocida; no se presenta como descubrimiento nuevo.
+
+<a id="deriva-d3"></a>
+
+### D3 · La plataforma principal de arc42/ADR no coincide con la guía operativa vigente
+
+**Naturaleza:** documentación desactualizada. **Prioridad:** Baja. **Confianza:** Alta sobre el código y la documentación al hash; no acredita comportamiento del despliegue..
+
+**Motivo de prioridad:** El laboratorio ya era alternativa permitida; se trata de reconciliar cuál entorno es principal, no de un despliegue inválido.
+
+**Declaración contrastada:**
+
+- [docs/arc42/src/07_deployment_view.adoc:16–18](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/docs/arc42/src/07_deployment_view.adoc#L16-L18) — arc42 identifica Azure Container Apps como entorno público principal y el laboratorio como alternativa.
+
+**Implementación contrastada:**
+
+- [README.md:185–193](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/README.md#L185-L193) — README identifica Dokploy como plataforma productiva que ejecuta docker-compose.yml.
+- [docker-compose.yml:10–23](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/docker-compose.yml#L10-L23) — Compose materializa una sola API con DATABASE_FILE y volumen persistente local.
+
+**Efecto y alcance:** Una persona que siga arc42 puede preparar Azure cuando README guía a Dokploy.
+
+**Corrección propuesta:** Registrar Dokploy como entorno principal actual, conservar Azure como alternativa si sigue vigente y enlazar la decisión de transición sin reescribir la historia.
+
+### Cobertura y límites de la auditoría
+
+**Capas y dominio:** Composición y propiedad Session/Sync/Audio; se siguió /play hasta escritura SQLite.
+
+Límite: Inspección estática; no se ejecutaron pruebas ni se comprobó el servicio remoto.
+
+- [src/app.ts:50–57](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/src/app.ts#L50-L57) — createApp instancia SessionApplication con SQLiteRoomRepository y mantiene audio, streams y mediciones en memoria.
+- [src/app.ts:212–223](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/src/app.ts#L212-L223) — La ruta play obtiene startAt de SyncCoordinator, lo pasa a Session y distribuye los eventos a los receptores conectados.
+
+**Persistencia:** SQLite a través del repositorio de Session; volumen Compose.
+
+Límite: Inspección estática; no se ejecutaron pruebas ni se comprobó el servicio remoto.
+
+- [src/modules/session/infrastructure/persistence/sqlite-room-repository.ts:132–145](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/src/modules/session/infrastructure/persistence/sqlite-room-repository.ts#L132-L145) — El repositorio SQLite de Session actualiza status, playback_state y start_at dentro de la tabla rooms.
+- [docker-compose.yml:17–23](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/docker-compose.yml#L17-L23) — Compose configura DATABASE_FILE y monta audioshare-data en /app/data.
+
+**API y autorización:** REST de salas y controles; control de acceso explícitamente pendiente. ADR7 propuesto no se trata como obligación aceptada.
+
+Límite: Inspección estática; no se ejecutaron pruebas ni se comprobó el servicio remoto.
+
+- [README.md:128–134](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/README.md#L128-L134) — README distingue cliente Flutter implementado, audio simulado y consumo NDJSON/control de acceso pendientes.
+- [docs/adr/0007-correccion-de-reloj-y-ack-de-arranque.md:3–7](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/docs/adr/0007-correccion-de-reloj-y-ack-de-arranque.md#L3-L7) — ADR7 figura como propuesto y complementa ADR5 sin reemplazarlo.
+- [docs/adr/0007-correccion-de-reloj-y-ack-de-arranque.md:64–68](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/docs/adr/0007-correccion-de-reloj-y-ack-de-arranque.md#L64-L68) — ADR7 reconoce que Flutter todavía no consulta /time ni envía ACK y que la prueba simulada excluye la salida física de audio.
+
+**Despliegue:** Bootstrap Express, Flutter estático y Compose con un servicio/volumen.
+
+Límite: Inspección estática; no se ejecutaron pruebas ni se comprobó el servicio remoto.
+
+- [src/app.ts:74–84](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/src/app.ts#L74-L84) — Express elige build/web cuando se solicita Flutter y existe index.html; en otro caso conserva public/ como fallback.
+- [docker-compose.yml:10–29](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/docker-compose.yml#L10-L29) — Compose define un servicio API con SQLite en volumen nombrado y healthcheck HTTP.
+
+**Asincronía:** NDJSON realmente emitido; Flutter solo hace REST y snapshots.
+
+Límite: Inspección estática; no se ejecutaron pruebas ni se comprobó el servicio remoto.
+
+- [src/app.ts:137–165](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/src/app.ts#L137-L165) — La ruta stream valida sala/receptor y abre una respuesta application/x-ndjson.
+- [src/app.ts:217–223](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/src/app.ts#L217-L223) — El servidor envía el evento de sincronización y el paquete de audio a cada cliente registrado en el stream.
+- [lib/features/session/presentation/viewmodels/session_view_model.dart:49–75](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/lib/features/session/presentation/viewmodels/session_view_model.dart#L49-L75) — El ViewModel inicia/pausa AudioService y actualiza un snapshot de sincronización a partir del resultado REST.
+
+**Observabilidad:** Contadores y ACK/sync report implementados; no son medición de audio físico.
+
+Límite: Inspección estática; no se ejecutaron pruebas ni se comprobó el servicio remoto.
+
+- [src/app.ts:366–390](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/src/app.ts#L366-L390) — El endpoint ACK convierte el instante al reloj servidor, registra el arranque y actualiza métricas de dispersión.
+- [src/app.ts:445–457](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/src/app.ts#L445-L457) — Express expone /health con la lista de módulos y /metrics mediante metricsHandler.
+- [docs/adr/0007-correccion-de-reloj-y-ack-de-arranque.md:64–68](https://github.com/ISCOUTB/AS_202620_AudioShare/blob/1da287c662986033871ef0e044ed29894b978593/docs/adr/0007-correccion-de-reloj-y-ack-de-arranque.md#L64-L68) — ADR7 reconoce que Flutter todavía no consulta /time ni envía ACK y que la prueba simulada excluye la salida física de audio.
+
+## Estado global del proyecto (overall)
+
+La verificación de metadatos del 2026-10-13T16:45:48.697435+00:00 confirmó el hash anterior como último commit de `master` antes del límite exclusivo. La punta observada es [`240605533aac563c80a1cab648d6ce7dcea2f6f1`](https://github.com/ISCOUTB/AS_202620_AudioShare/commit/240605533aac563c80a1cab648d6ce7dcea2f6f1) (2026-10-13T01:49:15-05:00). Hay **3 commits posteriores al cierre**. Se registran como actividad posterior, sin revisión sustantiva ni modificación de los puntajes congelados.
+
+<details>
+<summary>Historial S10 anterior, superado; conservar fechas y alcance originales</summary>
+
+**Historial superado por la consolidación del 13 de octubre de 2026.** Se conserva lo publicado como registro de las observaciones de cada fecha, no como la evaluación vigente. El cierre preliminar 2026-10-12T05:00:00Z que aparece abajo fue sustituido para S10 por el límite exclusivo 2026-10-13T05:00:00Z. Las notas parciales, pendientes de sustentación y bloqueos por asignación del escenario de ese historial no reemplazan la tabla actual.
+
 # Segundo corte S10 · avance preliminar · AudioShare
 
 **Preliminar, no es cierre ni calificación final.** Cierre previsto: **2026-10-12T05:00:00Z**.
@@ -96,3 +284,5 @@ El delta S9 contiene 9 commits respecto de S8; hay 0 commits posteriores a S9 en
 1. ¿Qué ocurriría si un receptor recibe startAt después del instante programado y qué prueba real detectaría el desfase?
 2. ¿Qué consumo y persistencia necesita Dokploy y quién asume el costo al salir del recurso académico gratuito?
 3. La prueba actual produce 40 ms por construcción: ¿qué cambiarían al medir relojes, red y reproducción física reales?
+
+</details>

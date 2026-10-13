@@ -8,14 +8,14 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Clubs_UTB` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Hollman Jose De Orta Gonzalez (`deortahollman-star`) · Josh Robinson Ortega Castellon (`Josh4OP`) · Diego Andres Ramos De Avila (`Zavod Dev`, atribución sin confirmar) · Luis Daniel Salas Reyes (`Luis-Salas-Reyes`); ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | URL pública vigente no localizada; despliegue No verificado. Ver [S10](semana-10-corte2.md). |
-| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
+| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 9 | S9 · definitiva | `master` · `399565f527b633c49a71ac9b8a7f99daa85191d4` · 2026-10-04T23:47:05-05:00 | 6/10 | 3.4 (propuesta al docente) | sí, 2026-10-06 |
-| 10 | Segundo corte · preliminar | `master` · `cd0ad9c64925863ed5067ed53da7f3c6dcf09895` · 2026-10-05T00:46:29-05:00 | 2/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
+| 10 | Segundo corte · consolidado al cierre | `master` · `cd0ad9c64925863ed5067ed53da7f3c6dcf09895` · 2026-10-05T00:46:29-05:00 | C1 0,60; C2 0,60; C3 0,00; C4 0,60 (cada uno /1) | Total 2,60/5; técnica 1,80/4 + C5 docente 0,80/1; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
 | 8 | S8 | `652f78b7` (2026-09-27T23:39:11-05:00) | 5/10 | 3.0 (provisional; 2 filas de despliegue diferidas por decisión docente) | si |
 | 7 | S7 | `dc211b8` (2026-09-20T23:56:51-05:00) | 8/10 | 4.2 | si |
 | 6 | S6 | `743cc1f` (2026-09-13T23:55:10-05:00) | 6/8 | 4.0 (prelim.) | si |
@@ -24,6 +24,34 @@
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `c92595ed` · 2026-08-09T13:25:24-05:00 | 2/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `69cfe68f` · 2026-08-16T18:33:10-05:00 | 7/9 | no se publica | sí |
 | 3 | S3 | `5bf86ea` (2026-08-23T23:05:10-05:00) | 6/9 | 3.7 | si |
+
+## Feedback S10 vigente · 13 de octubre de 2026
+
+Límite exclusivo: **2026-10-13T05:00:00Z**, fin del 12 de octubre en Colombia. Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
+
+**Subtotal técnico: 1,80 / 4,00. Total consolidado C1–C5: 2,60 / 5,00.**
+
+Calificación de sustentación comunicada por el docente: **4,00 / 5,00**, incorporada como **C5 = 0,80 / 1,00**. La conversión proporcional se conserva sin redondearla a los niveles de los criterios técnicos.
+
+El escenario y el cambio de JWT están documentados. Faltan una línea base operacional reproducible y una prueba con sesión real; el ADR sigue propuesto. El health check es constante y no hay un conjunto de logs y métrica del escenario. La documentación sigue parcial.
+
+Fuentes y alcance completos: [informe S10](semana-10-corte2.md#fundamento-técnico-y-comentarios-vigentes). Las referencias de identidad, contribución y despliegue heredadas conservan sus fechas originales; no constituyen una nueva verificación en esta consolidación.
+
+### Deriva arquitectónica al cierre S10
+
+Documentación sobrestima persistencia y comprobación del proveedor en health.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+- **Media · La persistencia de publicaciones es memoria, no el adaptador Supabase dibujado:** Las publicaciones de la API no tienen durabilidad entre procesos/reinicios ni el respaldo PostgreSQL que un lector inferiría del C4. **Acción:** Dibujar InMemoryPublicacionAdapter como implementación vigente y Supabase datos como objetivo; o conectar un adaptador durable detrás del puerto y probar reinicio. Separar Supabase Auth efectivamente usado de persistencia de publicaciones. [Contraste y evidencia](semana-10-corte2.md#deriva-d1).
+- **Media · El health declarado como comprobación real del proveedor retorna un valor fijo:** Un /health 200 demuestra respuesta de la API, no disponibilidad de Supabase; usarlo como readiness de BD puede ocultar una dependencia inaccesible. **Acción:** Llamarlo liveness y corregir el ADR con una aclaración posterior; implementar readiness separado mediante un puerto real si el servicio depende de la BD. No afirmar que se probó Supabase con este health. [Contraste y evidencia](semana-10-corte2.md#deriva-d2).
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Seguimiento anterior a la consolidación S10; estados históricos superados</summary>
+
+**Historial superado por la consolidación del 13 de octubre de 2026.** Se conserva lo publicado como registro de las observaciones de cada fecha, no como la evaluación vigente. El cierre preliminar 2026-10-12T05:00:00Z que aparece abajo fue sustituido para S10 por el límite exclusivo 2026-10-13T05:00:00Z. Las notas parciales, pendientes de sustentación y bloqueos por asignación del escenario de ese historial no reemplazan la tabla actual.
 
 ## Lo que se arrastra
 
@@ -151,3 +179,5 @@ Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
 - ¿Cómo se recuperan las escrituras si Supabase rota claves o JWKS no responde, y cómo distinguirán 401 de 503?
 - ¿Qué costo y límite de llamadas evita verificar JWKS localmente, y qué costo de seguridad asumen por tokens revocados?
 - Tras medir rutas protegidas, ¿qué cambiarían para impedir que un usuario autenticado publique en un club ajeno?
+
+</details>

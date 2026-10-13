@@ -60,6 +60,34 @@ La URL del despliegue y la comprobación de salud quedan diferidas por decisión
 
 Hay una porción nueva con IA, una prueba roja y verde documentada, mediciones honestas y ADR sustitutos. Se valora que los resultados fallidos se publiquen sin maquillarlos. Completen la cadena navegable e integren el validador en el flujo real; medir un fallo aporta evidencia, pero no significa que el escenario de calidad ya cumpla.
 
-## Semana 10 · Segundo corte (avance preliminar)
+## Semana 10 · Segundo corte
+
+### Consolidación vigente · 13 de octubre de 2026
+
+La caracterización se apoya en un estado inicial negativo de 0/20, con control online y procedimiento. Ese resultado no se interpreta como cumplimiento del comportamiento offline. La respuesta offline y la coherencia documental siguen incompletas.
+
+Se valora el escenario documentado bajo un supuesto explícito de pertinencia; su asignación oficial no se presenta como verificada. Las mediciones conservan el alcance y las limitaciones descritos en la evidencia. Los comentarios anteriores se mantienen como historial y la evaluación de la semana anterior permanece congelada.
+
+La sustentación comunicada por el docente ya está incorporada en la [planilla](planilla.md) y el [informe del corte](semana-10-corte2.md).
+
+### Deriva arquitectónica al cierre S10
+
+Escritura sin autorización; ubicación, caché offline y dependencias divergentes.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+- **Alta · La escritura de POIs anunciada como admin no atraviesa autorización:** Si la API está expuesta con la configuración prevista, el código no exige identidad/rol antes de solicitar un upsert. No se afirma explotación ni éxito contra una BD real. **Acción:** Añadir guard JWT validado y guard de rol admin en la entrada, pasar identidad al caso de uso y verificar 401/403 y ausencia de escritura con pruebas. Revisar también las operaciones administrativas de Auth. Swagger addBearerAuth no aplica autorización. [Contraste y evidencia](semana-10-corte2.md#deriva-d1).
+- **Media · La ruta real de ubicación omite el caso de uso que filtra precisión y timeout:** GET current puede entregar la ubicación ficticia de precisión 999 m en vez del veredicto de fallback. No se atribuye ese resultado al GPS físico de Flutter. **Acción:** Conectar la entrada HTTP a GetValidatedLocationUseCase o retirar/etiquetar ese endpoint como simulación de servidor. Definir claramente que el GPS real vive en el móvil; añadir prueba de integración router→provider impreciso/timeout. [Contraste y evidencia](semana-10-corte2.md#deriva-d2).
+- **Media · La recuperación offline documentada queda detrás de una llamada de red obligatoria:** LoadBuildingUseCase retorna error antes de consultar ModelCache ante fallo de API, por lo que una caché caliente no basta para el modo offline descrito. **Acción:** Persistir metadatos/versiones junto al binario y resolverlos desde caché al fallar la red; emitir estado offline explícito y probar caché válida sin backend. La evidencia S9 ya caracteriza la carencia; no se vende como una regresión nueva. [Contraste y evidencia](semana-10-corte2.md#deriva-d3).
+- **Media · LoadBuildingUseCase depende de adaptadores concretos pese a la regla de interfaces:** Cambiar API/cache puede requerir editar el caso de uso y sus pruebas en lugar de sustituir implementaciones detrás de puertos. **Acción:** Definir puertos de consulta de edificios y caché en dominio/aplicación; inyectar implementaciones MapasApi y ModelCache desde DI. Alternativamente aprobar y documentar el acoplamiento pragmático, sin seguir afirmando solo interfaces. [Contraste y evidencia](semana-10-corte2.md#deriva-d4).
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Comentarios preliminares anteriores, superados por la consolidación del 13 de octubre</summary>
+
+Estos comentarios corresponden al estado y a las comprobaciones de sus fechas originales. Las referencias a pendientes, disponibilidad y asignación del escenario no sustituyen el feedback vigente.
 
 El health check responde, pero siguen abiertos el flujo real del validador, el modelo3D y el modo offline. El CI general verde no demuestra SonarCloud porque ese job es no bloqueante. Para el corte, identifiquen la consigna asignada, midan la línea base y repitan el experimento tras corregir los defectos.
+
+</details>

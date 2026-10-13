@@ -201,16 +201,15 @@ Los **resúmenes** de cada semana, con el recuento y la nota sugerida de los 23 
 [S3](revisiones/2026-2/resumen-s3.md), [S4](revisiones/2026-2/resumen-s4.md),
 [CORTE1](revisiones/2026-2/resumen-s5.md), [S6](revisiones/2026-2/resumen-s6.md),
 [S7](revisiones/2026-2/resumen-s7.md), [S8](revisiones/2026-2/resumen-s8.md),
-[S9 definitiva](revisiones/2026-2/resumen-s9.md) y [S10 / CORTE2 preliminar](revisiones/2026-2/resumen-s10.md).
+[S9 definitiva](revisiones/2026-2/resumen-s9.md) y [S10 / CORTE2 consolidado](revisiones/2026-2/resumen-s10.md).
 
-**Revisión del 6 de octubre de 2026:** S9 queda congelada al cierre indicado en el calendario;
-S10 es un avance sobre la punta observada de cada rama principal. Los PDF se excluyen de esta
-revisión por indicación docente. La sustentación de S10 queda pendiente del profesor, y un
-escenario operativo cuya asignación no se pueda acreditar figura como **No verificado**.
+**Feedback S10 consolidado el 13 de octubre de 2026:** se publican comentarios y componentes técnicos de los 23 equipos, con 16 sustentaciones comunicadas por el docente y 7 pendientes. El [resumen S10](revisiones/2026-2/resumen-s10.md) distingue subtotal técnico /4, C5 docente /1 y total /5 cuando está completo.
 
-**Actualización S10 del 10 de octubre:** revisión en delta de Recobra y Verifacts sobre sus nuevos hashes, con informes, planillas y retroalimentación actualizados. Los otros 21 mantienen la observación del 6; se conserva la corrección de EnAgenda del 7. El [resumen S10](revisiones/2026-2/resumen-s10.md) separa el avance comprobado de los pendientes. S9 permanece congelada y no se publica una nota final de S10.
+La auditoría de [deriva arquitectónica](revisiones/2026-2/resumen-s10.md#deriva-arquitectónica-de-los-23-equipos) contrasta documentación e implementación al cierre: **36 hallazgos en 18 equipos** y **5 sin deriva material observada**. Cada equipo tiene evidencia, alcance y correcciones propuestas en su informe, planilla y feedback.
 
-| Equipo | Repositorio | Retroalimentación | Matriz S1 | Matriz S2 | Matriz S3 | Matriz S4 | Matriz CORTE1 | Matriz S6 | Matriz S7 | Matriz S8 | Matriz S9 | Matriz CORTE2 (preliminar) | Planilla |
+El límite exclusivo es **2026-10-13T05:00:00Z**, fin del 12 de octubre en Colombia. Reemplaza el cierre preliminar del 12-oct a las 05:00Z. Se evalúan los escenarios documentados bajo supuesto explícito de pertinencia, sin afirmar una asignación oficial verificada. S9 permanece congelada; los PDF se excluyen sin penalización. Las revisiones de los días 6 y 10 y las correcciones posteriores se conservan como historial superado dentro de los informes.
+
+| Equipo | Repositorio | Retroalimentación | Matriz S1 | Matriz S2 | Matriz S3 | Matriz S4 | Matriz CORTE1 | Matriz S6 | Matriz S7 | Matriz S8 | Matriz S9 | S10 / CORTE2 consolidado | Planilla |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | AudioShare | [`AS_202620_AudioShare`](https://github.com/ISCOUTB/AS_202620_AudioShare) | [ver](revisiones/2026-2/AS_202620_AudioShare/feedback.md) | [ver](revisiones/2026-2/AS_202620_AudioShare/semana-01-evidencia-s1.md) | [ver](revisiones/2026-2/AS_202620_AudioShare/semana-02-evidencia-s2.md) | [ver](revisiones/2026-2/AS_202620_AudioShare/semana-03-evidencia-s3.md) | [ver](revisiones/2026-2/AS_202620_AudioShare/semana-04-evidencia-s4.md) | [ver](revisiones/2026-2/AS_202620_AudioShare/semana-05-corte1.md) | [ver](revisiones/2026-2/AS_202620_AudioShare/semana-06-evidencia-s6.md) | [ver](revisiones/2026-2/AS_202620_AudioShare/semana-07-evidencia-s7.md) | [ver](revisiones/2026-2/AS_202620_AudioShare/semana-08-evidencia-s8.md) | [ver](revisiones/2026-2/AS_202620_AudioShare/semana-09-evidencia-s9.md) | [ver](revisiones/2026-2/AS_202620_AudioShare/semana-10-corte2.md) | [ver](revisiones/2026-2/AS_202620_AudioShare/planilla.md) |
 | Calificación automática | [`AS_202620_Sistema-de-calificacion-automatica`](https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica) | [ver](revisiones/2026-2/AS_202620_Sistema-de-calificacion-automatica/feedback.md) | [ver](revisiones/2026-2/AS_202620_Sistema-de-calificacion-automatica/semana-01-evidencia-s1.md) | [ver](revisiones/2026-2/AS_202620_Sistema-de-calificacion-automatica/semana-02-evidencia-s2.md) | [ver](revisiones/2026-2/AS_202620_Sistema-de-calificacion-automatica/semana-03-evidencia-s3.md) | [ver](revisiones/2026-2/AS_202620_Sistema-de-calificacion-automatica/semana-04-evidencia-s4.md) | [ver](revisiones/2026-2/AS_202620_Sistema-de-calificacion-automatica/semana-05-corte1.md) | [ver](revisiones/2026-2/AS_202620_Sistema-de-calificacion-automatica/semana-06-evidencia-s6.md) | [ver](revisiones/2026-2/AS_202620_Sistema-de-calificacion-automatica/semana-07-evidencia-s7.md) | [ver](revisiones/2026-2/AS_202620_Sistema-de-calificacion-automatica/semana-08-evidencia-s8.md) | [ver](revisiones/2026-2/AS_202620_Sistema-de-calificacion-automatica/semana-09-evidencia-s9.md) | [ver](revisiones/2026-2/AS_202620_Sistema-de-calificacion-automatica/semana-10-corte2.md) | [ver](revisiones/2026-2/AS_202620_Sistema-de-calificacion-automatica/planilla.md) |
@@ -263,7 +262,7 @@ la pregunta sigue siendo si puede leerlo cualquiera.
 
 **Estado comprobado el 6 de octubre de 2026:** el workflow está desactivado manualmente
 (`disabled_manually`, [estado público](https://api.github.com/repos/ISCOUTB/AS_202620_feedback/actions/workflows/342619957)).
-La revisión S9 definitiva y el avance S10 se publican mediante revisión manual; no se ha
+La revisión S9 definitiva y la consolidación S10 se publican mediante revisión manual; no se ha
 reactivado ni modificado la automatización. Su configuración prevista, cuando está habilitada, es:
 
 - **Lunes 06:00 COT**: pasada definitiva completa: los 23 equipos con `deepseek-v4.1-flash`, sobre el

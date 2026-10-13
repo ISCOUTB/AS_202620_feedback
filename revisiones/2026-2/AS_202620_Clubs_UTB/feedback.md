@@ -74,6 +74,32 @@ La URL del despliegue se entrega por Moodle y no se califica en esta pasada.
 
 La auditoría del health check, el rechazo de una dependencia inexistente y la decisión de no incorporar IA generativa aportan evidencia útil. La cadena sigue rota y falta medición frente al umbral. La implementación completa de autenticación llegó después del cierre; el estado congelado aún contiene una referencia a autor_id sin definir.
 
-## Semana 10 · Segundo corte (avance preliminar)
+## Semana 10 · Segundo corte
+
+### Consolidación vigente · 13 de octubre de 2026
+
+El escenario y el cambio de JWT están documentados. Faltan una línea base operacional reproducible y una prueba con sesión real; el ADR sigue propuesto. El health check es constante y no hay un conjunto de logs y métrica del escenario. La documentación sigue parcial.
+
+Se valora el escenario documentado bajo un supuesto explícito de pertinencia; su asignación oficial no se presenta como verificada. Las mediciones conservan el alcance y las limitaciones descritos en la evidencia. Los comentarios anteriores se mantienen como historial y la evaluación de la semana anterior permanece congelada.
+
+La sustentación comunicada por el docente ya está incorporada en la [planilla](planilla.md) y el [informe del corte](semana-10-corte2.md).
+
+### Deriva arquitectónica al cierre S10
+
+Documentación sobrestima persistencia y comprobación del proveedor en health.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+- **Media · La persistencia de publicaciones es memoria, no el adaptador Supabase dibujado:** Las publicaciones de la API no tienen durabilidad entre procesos/reinicios ni el respaldo PostgreSQL que un lector inferiría del C4. **Acción:** Dibujar InMemoryPublicacionAdapter como implementación vigente y Supabase datos como objetivo; o conectar un adaptador durable detrás del puerto y probar reinicio. Separar Supabase Auth efectivamente usado de persistencia de publicaciones. [Contraste y evidencia](semana-10-corte2.md#deriva-d1).
+- **Media · El health declarado como comprobación real del proveedor retorna un valor fijo:** Un /health 200 demuestra respuesta de la API, no disponibilidad de Supabase; usarlo como readiness de BD puede ocultar una dependencia inaccesible. **Acción:** Llamarlo liveness y corregir el ADR con una aclaración posterior; implementar readiness separado mediante un puerto real si el servicio depende de la BD. No afirmar que se probó Supabase con este health. [Contraste y evidencia](semana-10-corte2.md#deriva-d2).
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Comentarios preliminares anteriores, superados por la consolidación del 13 de octubre</summary>
+
+Estos comentarios corresponden al estado y a las comprobaciones de sus fechas originales. Las referencias a pendientes, disponibilidad y asignación del escenario no sustituyen el feedback vigente.
 
 El avance de autenticación ya separa puertos y adaptadores, pero los pipelines siguen fallando. Aporten URL pública y escenario operativo asignado, validen con un token real y midan el comportamiento ante caída de JWKS. Falta autorización por rol y una línea base para el experimento.
+
+</details>

@@ -8,14 +8,14 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo; ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | http://taia-sistema-jkbo9i-ec2cd4-144-24-4-187.sslip.io · ver comprobación y límites en S10 |
-| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
+| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 9 | S9 · definitiva | `main` · `72a8b6a0b3680a59c235f9225f90bc260093d86b` · 2026-10-04T23:39:00-05:00 | 9/10 | 4.6 (propuesta al docente) | sí, 2026-10-06 |
-| 10 | Segundo corte · preliminar | `main` · `72a8b6a0b3680a59c235f9225f90bc260093d86b` · 2026-10-04T23:39:00-05:00 | 3/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
+| 10 | Segundo corte · consolidado al cierre | `main` · `72a8b6a0b3680a59c235f9225f90bc260093d86b` · 2026-10-04T23:39:00-05:00 | C1 0,80; C2 0,80; C3 0,60; C4 0,60 (cada uno /1) | Total 3,60/5; técnica 2,80/4 + C5 docente 0,80/1; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `76d4a91` · 2026-08-07T03:34:26-05:00 | 6/9 | no aplica | sí |
 | 2 | S2 | `59590c9` (2026-08-16T19:15:15-05:00) | 5/9 | no aplica | si |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `46257a03` · 2026-08-23T16:47:00-05:00 | 5/9 | no se publica | sí |
@@ -32,6 +32,33 @@
 | 14 | Evidencia S14 · Medición de atributos de calidad | | | no aplica | |
 | 16 | Proyecto final · integración y desafío arquitectónico | `final` | | | |
 | 17 | Aplicación de cambios y cierre arquitectónico | | | | |
+
+## Feedback S10 vigente · 13 de octubre de 2026
+
+Límite exclusivo: **2026-10-13T05:00:00Z**, fin del 12 de octubre en Colombia. Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
+
+**Subtotal técnico: 2,80 / 4,00. Total consolidado C1–C5: 3,60 / 5,00.**
+
+Calificación de sustentación comunicada por el docente: **4,00 / 5,00**, incorporada como **C5 = 0,80 / 1,00**. La conversión proporcional se conserva sin redondearla a los niveles de los criterios técnicos.
+
+Antes fallaban siete de dieciséis variantes; después, la confirmación tiene medición y normalización implementada, con alternativas. Ese logro no se extiende a la persistencia S1 ni a la latencia S3 completas. El CI falla, CD se omite y arc42 contiene conflictos de merge.
+
+Fuentes y alcance completos: [informe S10](semana-10-corte2.md#fundamento-técnico-y-comentarios-vigentes). Las referencias de identidad, contribución y despliegue heredadas conservan sus fechas originales; no constituyen una nueva verificación en esta consolidación.
+
+### Deriva arquitectónica al cierre S10
+
+arc42 mantiene repositorios en memoria tras la migración SQL.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+- **Media · arc42 presenta repositorios volátiles como actuales después de la migración SQL:** Una lectura de la vista de bloques conduce a configurar o evaluar una persistencia distinta de la realmente requerida para arrancar y operar. No es inversión incorrecta de dependencias: el reemplazo por adaptadores sí está realizado. **Acción:** Actualizar arc42 §5.5/5.6 y diagramas a SQLAlchemy/PostgreSQL; conservar InMemory como dobles de prueba. Limpiar los conflictos de merge en §7, manteniendo explícita la precedencia de la guía Dokploy. [Contraste y evidencia](semana-10-corte2.md#deriva-d1).
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Seguimiento anterior a la consolidación S10; estados históricos superados</summary>
+
+**Historial superado por la consolidación del 13 de octubre de 2026.** Se conserva lo publicado como registro de las observaciones de cada fecha, no como la evaluación vigente. El cierre preliminar 2026-10-12T05:00:00Z que aparece abajo fue sustituido para S10 por el límite exclusivo 2026-10-13T05:00:00Z. Las notas parciales, pendientes de sustentación y bloqueos por asignación del escenario de ese historial no reemplazan la tabla actual.
 
 ## Lo que se arrastra
 
@@ -188,3 +215,5 @@ Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
 - Si Gemini agota el timeout mientras existe una confirmación pendiente, ¿qué puede seguir funcionando y cómo distinguirán en logs la degradación de una respuesta exitosa HTTP 200?
 - ¿Cómo calculan el costo por operación con una llamada fallida sin tokens y con last_usage conservando el consumo anterior, además del costo fijo de infraestructura?
 - A la luz del 91,8 % de extracción, los fallos de estado y el máximo de 20,2 s, ¿qué cambiarían y qué prueba extremo a extremo confirmaría la mejora sin alterar las etiquetas después de ver el resultado?
+
+</details>

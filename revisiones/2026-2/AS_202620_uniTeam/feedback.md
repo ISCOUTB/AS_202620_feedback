@@ -58,6 +58,31 @@ Lo prioritario: reparen el workflow de integración continua en la rama principa
 
 La nueva porción de Mis tareas completa la cadena exigida: decisión aceptada, código, prueba que detecta el defecto, medición y auditoría de erosión. Mantengan explícito que la medición es SQLite en proceso; todavía falta comprobar el costo de la consulta extra en MySQL. El cumplimiento de S9 no cierra los fallos actuales del pipeline ni el Quality Gate.
 
-## Semana 10 · Segundo corte (avance preliminar)
+## Semana 10 · Segundo corte
+
+### Consolidación vigente · 13 de octubre de 2026
+
+El ensayo antes y después tiene tres corridas de 300 peticiones y está separado de producción, MySQL, red y concurrencia. ADR-0013 justifica el costo de una consulta adicional y la separación implementada. El CI falla y permanecen incompletos la documentación transversal y el esquema.
+
+Se valora el escenario documentado bajo un supuesto explícito de pertinencia; su asignación oficial no se presenta como verificada. Las mediciones conservan el alcance y las limitaciones descritos en la evidencia. Los comentarios anteriores se mantienen como historial y la evaluación de la semana anterior permanece congelada.
+
+La sustentación comunicada por el docente ya está incorporada en la [planilla](planilla.md) y el [informe del corte](semana-10-corte2.md).
+
+### Deriva arquitectónica al cierre S10
+
+Consumidores comparten sesión SQL pese a garantía de aislamiento de fallos.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+- **Media · Capturar la excepción del consumidor no aísla un fallo SQL de la sesión compartida:** Los consumidores de auditoría de operaciones permitidas (TareaCreada/EstadoCambiado) pueden fallar en flush y dejar fallida la misma unidad de trabajo que el handler intentará confirmar. El consumidor de acceso denegado sí crea y confirma una sesión propia (consumidores.py:27–37), por lo que no está incluido en este riesgo de sesión compartida. Por tanto, la garantía general de que un consumidor no tumba la petición no está sustentada para errores SQL. Es un riesgo estático condicionado al fallo, no una caída observada. **Acción:** Elegir y documentar una semántica única: si auditoría es atómica, propagar el fallo y retirar la promesa de disponibilidad independiente; si es secundaria, usar savepoint correctamente delimitado u outbox/otra unidad de trabajo. Añadir prueba de fallo real de flush/commit del consumidor, no solo excepción Python. No introducir asincronía sin nuevo ADR. [Contraste y evidencia](semana-10-corte2.md#deriva-d1).
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Comentarios preliminares anteriores, superados por la consolidación del 13 de octubre</summary>
+
+Estos comentarios corresponden al estado y a las comprobaciones de sus fechas originales. Las referencias a pendientes, disponibilidad y asignación del escenario no sustituyen el feedback vigente.
 
 Identifiquen la consigna operativa asignada y diseñen su experimento con línea base en el MVP desplegado. Recuperen CI y los chequeos de despliegue, repitan la medición relevante con MySQL y carga de red, y completen arc42 y propiedad de datos. La comparación local es un buen punto de partida, pero no sustituye el resultado operativo ni la sustentación.
+
+</details>

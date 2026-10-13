@@ -10,14 +10,14 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Shalom Jhoanna Arrieta Marrugo (shalom-A26) · Levis Adrian Ortiz Cano (RAZOR7150) · Alejandro Patron Montero (pxtroniwnl) · Jasen Mihovil Yukopila Escobar (Jmyukopila) — correspondencias por los correos de los commits, por confirmar con el docente; ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | URL pública vigente no localizada; despliegue No verificado. Ver [S10](semana-10-corte2.md). |
-| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
+| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 9 | S9 · definitiva | `main` · `76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33` · 2026-10-04T18:07:32-05:00 | 8/10 | 4.2 (propuesta al docente) | sí, 2026-10-06 |
-| 10 | Segundo corte · preliminar | `main` · `76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33` · 2026-10-04T18:07:32-05:00 | 2/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
+| 10 | Segundo corte · consolidado al cierre | `main` · `76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33` · 2026-10-04T18:07:32-05:00 | C1 0,60; C2 0,60; C3 0,60; C4 0,60 (cada uno /1) | Total 3,20/5; técnica 2,40/4 + C5 docente 0,80/1; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `d414ecf` · 2026-08-09T14:08:31-05:00 | 7/9 | 4.1 (propuesta) | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `456365b` · 2026-08-15T14:07:47-05:00 | 6/9 | 3.7 (propuesta) | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `f4602a3` · 2026-08-21T13:22:16-05:00 | 6/9 | no se publica | sí |
@@ -34,6 +34,33 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 14 | Evidencia S14 · Medición de atributos de calidad | | | no aplica | |
 | 16 | Proyecto final · integración y desafío arquitectónico | `final` | | | |
 | 17 | Aplicación de cambios y cierre arquitectónico | | | | |
+
+## Feedback S10 vigente · 13 de octubre de 2026
+
+Límite exclusivo: **2026-10-13T05:00:00Z**, fin del 12 de octubre en Colombia. Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
+
+**Subtotal técnico: 2,40 / 4,00. Total consolidado C1–C5: 3,20 / 5,00.**
+
+Calificación de sustentación comunicada por el docente: **4,00 / 5,00**, incorporada como **C5 = 0,80 / 1,00**. La conversión proporcional se conserva sin redondearla a los niveles de los criterios técnicos.
+
+Hay una medición local posterior con cinco usuarios, sin línea base del despliegue. La implementación existe, pero el ADR-0008 sigue propuesto y README declara el inventario vacío. CI, health, readiness y logs están en el código; no se declara una URL pública vigente.
+
+Fuentes y alcance completos: [informe S10](semana-10-corte2.md#fundamento-técnico-y-comentarios-vigentes). Las referencias de identidad, contribución y despliegue heredadas conservan sus fechas originales; no constituyen una nueva verificación en esta consolidación.
+
+### Deriva arquitectónica al cierre S10
+
+README llama vacío a Inventario ya implementado.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+- **Baja · README conserva Inventario como paquete vacío aunque ya sirve un contrato separado:** Confunde el mapa de responsabilidades y el número de llamadas del corte vertical, pero las vistas C4 y el código sí preservan la separación. **Acción:** Actualizar README: distinguir identity/orders pendientes de inventory operativo; describir los dos recorridos y enlazar el ADR-0008 sin cambiar su estado de ratificación pendiente. [Contraste y evidencia](semana-10-corte2.md#deriva-d1).
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Seguimiento anterior a la consolidación S10; estados históricos superados</summary>
+
+**Historial superado por la consolidación del 13 de octubre de 2026.** Se conserva lo publicado como registro de las observaciones de cada fecha, no como la evaluación vigente. El cierre preliminar 2026-10-12T05:00:00Z que aparece abajo fue sustituido para S10 por el límite exclusivo 2026-10-13T05:00:00Z. Las notas parciales, pendientes de sustentación y bloqueos por asignación del escenario de ese historial no reemplazan la tabla actual.
 
 ## Lo que se arrastra
 
@@ -144,3 +171,5 @@ Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
 - ¿Qué ocurre si Catálogo responde y la lectura de Inventario falla o devuelve referencias distintas, y cómo se observa?
 - ¿Cuánto cuesta el host Dokploy con backups y cuál es el umbral de capacidad que obliga a ampliarlo?
 - Con 5/5 respuestas locales, ¿qué cambiarían en el experimento al pasar a PostgreSQL y al despliegue real antes de decidir?
+
+</details>

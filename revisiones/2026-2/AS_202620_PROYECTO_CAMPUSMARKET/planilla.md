@@ -8,14 +8,14 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Nilver Garcia Pimentel · Camilo Jose Martinez Berrio · Joshua Jose Tenorio Alvarez — cuentas consolidadas: `nilver-garcia`/`Nnigarp` (mismo id de cuenta, es una sola persona), `camilixo92`, `Carulla-sd`; ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | https://nnigarp.github.io/AS_202620_PROYECTO_CAMPUSMARKET/ · ver comprobación y límites en S10 |
-| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
+| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 9 | S9 · definitiva | `master` · `de6ed67c05ccdb7eabd9b1951f146ab8958b1d00` · 2026-10-04T02:14:34-05:00 | 10/10 | 5.0 (propuesta al docente) | sí, 2026-10-06 |
-| 10 | Segundo corte · preliminar | `master` · `de6ed67c05ccdb7eabd9b1951f146ab8958b1d00` · 2026-10-04T02:14:34-05:00 | 4/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
+| 10 | Segundo corte · consolidado al cierre | `master` · `1582c1ff609202fa2cc4a06fa14d18b9b61bed74` · 2026-10-11T23:50:44-05:00 | C1 1,00; C2 1,00; C3 1,00; C4 1,00 (cada uno /1) | Total 4,80/5; técnica 4,00/4 + C5 docente 0,80/1; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `81ef5f1` · 2026-08-08T20:17:21-05:00 | 4/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `4f72799` · 2026-08-16T22:01:41-05:00 | 7/9 | no se publica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `4dd857a` · 2026-08-23T23:54:16-05:00 | 9/9 | no se publica | sí |
@@ -32,6 +32,33 @@
 | 14 | Evidencia S14 · Medición de atributos de calidad | | | no aplica | |
 | 16 | Proyecto final · integración y desafío arquitectónico | `final` | | | |
 | 17 | Aplicación de cambios y cierre arquitectónico | | | | |
+
+## Feedback S10 vigente · 13 de octubre de 2026
+
+Límite exclusivo: **2026-10-13T05:00:00Z**, fin del 12 de octubre en Colombia. Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
+
+**Subtotal técnico: 4,00 / 4,00. Total consolidado C1–C5: 4,80 / 5,00.**
+
+Calificación de sustentación comunicada por el docente: **4,00 / 5,00**, incorporada como **C5 = 0,80 / 1,00**. La conversión proporcional se conserva sin redondearla a los niveles de los criterios técnicos.
+
+El experimento del consumidor incompatible tiene línea base y 58 observaciones contrastadas en la evaluación, correlación en las 58 y secuencia de rechazo y recuperación 200→422→200. El ADR-0020 confirma decisiones previas mediante evidencia. Se recupera el consumidor experimental; no se demuestra recuperación de infraestructura.
+
+Fuentes y alcance completos: [informe S10](semana-10-corte2.md#fundamento-técnico-y-comentarios-vigentes). Las referencias de identidad, contribución y despliegue heredadas conservan sus fechas originales; no constituyen una nueva verificación en esta consolidación.
+
+### Deriva arquitectónica al cierre S10
+
+Sin deriva material observada en los recorridos inspeccionados.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+No se observó deriva material en los recorridos revisados; se conservan los límites y deudas explícitos del diseño.
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Seguimiento anterior a la consolidación S10; estados históricos superados</summary>
+
+**Historial superado por la consolidación del 13 de octubre de 2026.** Se conserva lo publicado como registro de las observaciones de cada fecha, no como la evaluación vigente. El cierre preliminar 2026-10-12T05:00:00Z que aparece abajo fue sustituido para S10 por el límite exclusivo 2026-10-13T05:00:00Z. Las notas parciales, pendientes de sustentación y bloqueos por asignación del escenario de ese historial no reemplazan la tabla actual.
 
 ## Lo que se arrastra
 
@@ -137,3 +164,5 @@ Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
 - Fallo: ¿qué ocurre con catálogo, health y datos si MySQL falla, y qué evidencia distingue recuperación de API de recreación de ambos contenedores?
 - Costo: ¿qué límite de memoria, CPU o volumen haría inviable la solución actual y por qué la lectura en lote fue preferible a aumentar recursos?
 - Medición: si el navegador público sigue sobre dos segundos mientras loopback cumple, ¿qué medirían y cambiarían primero?
+
+</details>

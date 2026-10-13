@@ -8,14 +8,14 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_PideUtb` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Daniela Sofia Arrieta Guardo · Santiago Jose Cuesta Maza · Ruddy Rodriguez Romero — cuentas observadas: `daniarriet`, `Santiago Cuesta`/`Santiago-C0` (mismo correo, misma persona), `ruddy2000utb-droid`; ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | https://pideutb-api.onrender.com · ver comprobación y límites en S10 |
-| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
+| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 9 | S9 · definitiva | `master` · `7e973faf7047e40137762befbc019f4736a813e6` · 2026-10-04T12:47:55-05:00 | 8/10 | 4.2 (propuesta al docente) | sí, 2026-10-06 |
-| 10 | Segundo corte · preliminar | `master` · `7e973faf7047e40137762befbc019f4736a813e6` · 2026-10-04T12:47:55-05:00 | 1/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
+| 10 | Segundo corte · consolidado al cierre | `master` · `2497bfe7e0c7dc04e4cdf9b550254b9fd73df956` · 2026-10-12T14:27:07-05:00 | C1 0,60; C2 0,80; C3 0,00; C4 0,80 (cada uno /1) | Técnica 2,20/4; C5 pendiente; sin total /5; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `48cfbe3` · 2026-08-08T15:12:35-05:00 | 4/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `9b5f214` · 2026-08-16T12:47:26-05:00 | 9/9 | no se publica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `b5f0310` · 2026-08-23T19:42:42-05:00 | 5/9 | no se publica | sí |
@@ -32,6 +32,35 @@
 | 14 | Evidencia S14 · Medición de atributos de calidad | | | no aplica | |
 | 16 | Proyecto final · integración y desafío arquitectónico | `final` | | | |
 | 17 | Aplicación de cambios y cierre arquitectónico | | | | |
+
+## Feedback S10 vigente · 13 de octubre de 2026
+
+Límite exclusivo: **2026-10-13T05:00:00Z**, fin del 12 de octubre en Colombia. Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
+
+**Subtotal técnico: 2,20 / 4,00. Total sobre 5,00 pendiente de C5.**
+
+C5 sigue pendiente de calificación docente. No se registra como cero ni se estima a partir del repositorio.
+
+ESC-04 incorpora autenticación, contrato 2.0 y ADR-0007, pero sesiones, tablas y cuentas no están acreditadas en producción. El GET público devuelve el código de canje, que funciona como secreto de retiro, a partir de un identificador entero. Es un hallazgo estático de operación y seguridad; no se consultaron pedidos reales ni se afirma explotación en producción.
+
+Fuentes y alcance completos: [informe S10](semana-10-corte2.md#fundamento-técnico-y-comentarios-vigentes). Las referencias de identidad, contribución y despliegue heredadas conservan sus fechas originales; no constituyen una nueva verificación en esta consolidación.
+
+### Deriva arquitectónica al cierre S10
+
+Canje sin arbitraje atómico; eventos síncronos y README rezagado.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+- **Alta · La transición de entrega valida fuera de la escritura atómica:** ADR0007 atribuye el rechazo de todas las reutilizaciones del canje al estado final. Sin embargo, dos peticiones autorizadas concurrentes pueden leer Listo, validar el mismo código y ejecutar ambas UPDATE por id. También una transición basada en estado atrasado puede sobrescribir otra más reciente. La garantía del estado final necesita protección en persistencia; se trata de un interleaving permitido por el código, no de una duplicación observada en producción. **Acción:** Exponer una operación de repositorio que cambie estado solo si coincide el estado/version leído, y devuelva conflicto si otra petición ganó; mantener validación de tenant/código en la misma transacción o condición. Añadir prueba concurrente de dos entregas y de cancelar frente a preparar, exigiendo un único éxito. [Contraste y evidencia](semana-10-corte2.md#deriva-d1).
+- **Media · El canal al panel descrito como asíncrono es un bus síncrono sin consumidor de producción:** ADR0003 afirma que API→panel usa evento asíncrono y desacopla el momento. publicar invoca cada handler inline; confirmar_pago lo llama antes de retornar. Además el panel actual obtiene novedades por polling HTTP, no por ese canal. Capturar excepciones aísla errores, pero no el tiempo de ejecución. Hoy no se halló suscriptor de producción, por lo que no se afirma latencia real por callbacks. **Acción:** Ratificar en un ADR el diseño actual: webhook externo y polling de panel, con bus local síncrono para extensiones; o implementar un transporte/worker realmente desacoplado con consumidor y política de entrega. No basta devolver202 o ignorar el resultado del callback. [Contraste y evidencia](semana-10-corte2.md#deriva-d2).
+- **Baja · El README sigue anunciando memoria y contrato1.1 pese a la evolución vigente:** La entrada principal dice que hoy el estado vive en memoria y lista OpenAPI 1.1; el repositorio ya selecciona PostgreSQL y la aplicación anuncia 2.0 con sesiones. Esto oculta requisitos de migración y autenticación para quien instala o integra. **Acción:** Actualizar guía de arranque/estado y tabla de contratos a la versión vigente, distinguendo memoria de pruebas de PostgreSQL cuando está configurado e incorporando requisitos de sesiones y migraciones. Mantener el historial de contratos como histórico. [Contraste y evidencia](semana-10-corte2.md#deriva-d3).
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Seguimiento anterior a la consolidación S10; estados históricos superados</summary>
+
+**Historial superado por la consolidación del 13 de octubre de 2026.** Se conserva lo publicado como registro de las observaciones de cada fecha, no como la evaluación vigente. El cierre preliminar 2026-10-12T05:00:00Z que aparece abajo fue sustituido para S10 por el límite exclusivo 2026-10-13T05:00:00Z. Las notas parciales, pendientes de sustentación y bloqueos por asignación del escenario de ese historial no reemplazan la tabla actual.
 
 ## Lo que se arrastra
 
@@ -145,3 +174,5 @@ Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
 - Fallo: si falta la variable de la pasarela, ¿cómo se detecta que pagos legítimos se rechazan y cómo prueban el cierre seguro sin usar ni mostrar el valor expuesto?
 - Costo: ¿cómo cambian costo y tiempo de arranque al mantener pool PostgreSQL, agregar roles y sostener el pico de pedidos?
 - Medición: al incluir red y una persona real en ESC-03, ¿qué resultado los haría cambiar la interfaz o las transiciones y cómo aislarían ese efecto?
+
+</details>

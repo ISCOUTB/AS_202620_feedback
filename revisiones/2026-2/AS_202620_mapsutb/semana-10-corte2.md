@@ -1,3 +1,153 @@
+# Segundo corte · S10 · mapsutb · consolidación al cierre
+
+**Actualización del feedback: 13 de octubre de 2026.** La tabla siguiente sustituye la valoración preliminar conservada al final.
+
+| Campo | Valor |
+|---|---|
+| Repositorio | https://github.com/ISCOUTB/AS_202620_mapsutb |
+| Rama evaluada | `master` |
+| Hash calificado | `1b296a37c575a751e99df1a1b288d70efba03d56` |
+| Fecha del commit | 2026-10-02T12:58:33-05:00 |
+| Límite exclusivo S10 | `2026-10-13T05:00:00Z` |
+| Último instante incluido | 12 de octubre de 2026, 23:59:59, Colombia (UTC-5) |
+
+## Alcance vigente
+
+Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
+
+Los PDF están excluidos sin penalización. No se ejecutó código estudiantil en la revisión. Las cifras y experimentos documentados por los equipos se distinguen de las comprobaciones del revisor; esta publicación consolida la evaluación ya realizada y no representa una nueva prueba de flujo principal, despliegue, carga o seguridad. La lista de comprobación y la matriz transversal de las pasadas anteriores se conservan abajo con su alcance histórico; no se recalculan ni se convierten en una nota mediante la fórmula semanal. S9 permanece congelada.
+
+## Escenario documentado
+
+Escenario2: ruteo sin conexión y ruta mostrada ≤5 s
+
+Se valora el escenario documentado disponible; no se afirma asignación docente verificada ni nueva entrega específica S10. Evidencias previas se usan como estado del repositorio, no se traslada ni promedia su nota anterior.
+
+## Rúbrica consolidada
+
+| Criterio | Nivel técnico / origen | Puntaje |
+|---|---|---:|
+| C1 · Caracterización del escenario operativo | Básico | 0,60 / 1,00 |
+| C2 · Decisión e implementación | Competente | 0,80 / 1,00 |
+| C3 · Operación, seguridad y observabilidad | Básico | 0,60 / 1,00 |
+| C4 · Evolución arquitectónica trazable | Básico | 0,60 / 1,00 |
+| C5 · Sustentación del reto | Calificación comunicada por el docente | 0,80 / 1,00 |
+
+**Subtotal técnico: 2,60 / 4,00. Total consolidado C1–C5: 3,40 / 5,00.**
+
+Calificación de sustentación comunicada por el docente: **4,00 / 5,00**, incorporada como **C5 = 0,80 / 1,00**. La conversión proporcional se conserva sin redondearla a los niveles de los criterios técnicos.
+
+Los componentes técnicos se publican como propuesta al docente. Publicar esta consolidación no acredita un registro de la calificación en Moodle.
+
+## Fundamento técnico y comentarios vigentes
+
+Dijkstra, sus alternativas y costo están justificados e implementados. Las medidas son posteriores y no identifican una línea base anterior. Logs y sonda aportan observabilidad parcial; C4 aún declara ausente MapaRepository. No se mezcla la línea base de caché con la de ruteo.
+
+Los puntajes C1–C4 se conservan de la evaluación consolidada; el comentario y las fuentes siguientes sustentan la valoración conjunta, sin inferir puntajes nuevos de los recuentos preliminares.
+
+### Fuentes del estado calificado
+
+1. [docs/evidencia-s9.md:50–62](https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/docs/evidencia-s9.md#L50-L62)
+2. [docs/adr/0013-ruteo-dijkstra-grafo-propio.md:17–59](https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/docs/adr/0013-ruteo-dijkstra-grafo-propio.md#L17-L59)
+3. [docs/c4/C2.md:39–50](https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/docs/c4/C2.md#L39-L50)
+
+## Deriva arquitectónica al cierre S10
+
+Auditoría estática de la arquitectura declarada frente a las rutas implementadas en el mismo hash del cierre S10. Se revisaron capas y dominio, persistencia, API y autorización, despliegue, asincronía y observabilidad. Se excluyeron PDF y commits posteriores al cierre; no se ejecutó código estudiantil ni se probó el servicio remoto. Una funcionalidad futura explícitamente delimitada o una deuda aceptada por un ADR vigente no se cuenta por sí sola como deriva. La gravedad indica prioridad técnica del hallazgo; no equivale a un descuento automático en la rúbrica. Los hallazgos se incorporan como feedback y propuestas de corrección; los puntajes C1–C4 conservan la matriz técnica vigente, sin recalificación por esta auditoría.
+
+**Resultado:** El monolito Flutter implementa ruteo local con Dijkstra y mapa OSM conforme a ADR0012/0013. Las principales diferencias son documentales: vistas antiguas todavía muestran Google Maps SDK y GPS real aunque el punto de entrada conecta un generador simulado.
+
+**Arquitectura declarada:** Una app Flutter, sin backend propio; Repository para JSON/grafo, Adapter para servicios externos y Observer de ubicación. ADR0012 reemplaza Google Maps SDK por flutter_map/OSM; ADR0013 concreta Dijkstra offline. Hosting web Firebase y sondas externas.
+
+**Arquitectura implementada:** main.dart compone ZonaRepositoryLocal y MapaRepositoryLocal, crea UbicacionServiceSimulado y los inyecta en MapaScreen. La pantalla carga grafo/zonas, escucha el stream y llama ServicioRuteo; MapaWidget solicita teselas OSM. Geocoding/Static Maps/Analytics solo se componen si existen defines; no hay base de datos propia.
+
+**Hallazgos materiales: 2.** Prioridad máxima: **Media**.
+
+<a id="deriva-d1"></a>
+
+### D1 · Las vistas principales no incorporan por completo los ADR de OSM y ruteo
+
+**Naturaleza:** documentación desactualizada. **Prioridad:** Baja. **Confianza:** Alta..
+
+**Motivo de prioridad:** Baja: son vistas y alcance desactualizados; las decisiones nuevas están formalizadas y el código las sigue.
+
+**Declaración contrastada:**
+
+- [docs/arc42/05_building_block_view.md:18–29](https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/docs/arc42/05_building_block_view.md#L18-L29) — Arc42 conserva el SDK Google como mapa base embebido.
+- [README.md:53–57](https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/README.md#L53-L57) — README afirma que routing solo es un molde pendiente.
+
+**Implementación contrastada:**
+
+- [docs/adr/0012-mapa-base-flutter-map-osm.md:5–9](https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/docs/adr/0012-mapa-base-flutter-map-osm.md#L5-L9) — ADR0012 reemplaza explícitamente la elección Google Maps SDK.
+- [lib/adapters/mapa_widget.dart:95–110](https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/lib/adapters/mapa_widget.dart#L95-L110) — MapaWidget realmente carga teselas OSM con flutter_map.
+- [lib/routing/servicio_ruteo.dart:28–53](https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/lib/routing/servicio_ruteo.dart#L28-L53) — ServicioRuteo implementa rutas por grafo e ids de zona.
+- [lib/features/mapas_ruteo/presentation/screens/mapa_screen.dart:113–120](https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/lib/features/mapas_ruteo/presentation/screens/mapa_screen.dart#L113-L120) — La pantalla llama al cálculo de ruta durante su flujo real.
+
+**Efecto y alcance:** Arc42 sigue dibujando un SDK Google embebido y el README dice que routing solo contiene .gitkeep, aunque el mapa solicita teselas OSM y Dijkstra está implementado y llamado. Esto cambia dependencias operativas y alcance disponible, no significa que la elección OSM sea deriva de implementación.
+
+**Corrección propuesta:** Actualizar README/C4/arc42 en conjunto: OSM para mapa base, Dijkstra actual y tour aún pendiente. Dibujar por separado Geocoding/Static Maps opcionales; separar cálculo offline de carga de teselas.
+
+<a id="deriva-d2"></a>
+
+### D2 · La vista de ejecución describe GPS actual, pero el arranque compone ubicación simulada
+
+**Naturaleza:** documentación desactualizada. **Prioridad:** Media. **Confianza:** Alta: composición y generación del stream verificadas..
+
+**Motivo de prioridad:** Media: la vista presenta como posición actual del usuario un flujo que realmente parte de un simulador; afecta la interpretación funcional del origen de las rutas, sin afirmar que GPS real ya sea obligación del incremento.
+
+**Declaración contrastada:**
+
+- [docs/arc42/06_runtime_view.md:36–43](https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/docs/arc42/06_runtime_view.md#L36-L43) — La secuencia representa lecturas reales del sensor GPS.
+- [docs/arc42/06_runtime_view.md:57–64](https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/docs/arc42/06_runtime_view.md#L57-L64) — La explicación atribuye el origen de ruta a posición actual del usuario.
+
+**Implementación contrastada:**
+
+- [lib/main.dart:47–51](https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/lib/main.dart#L47-L51) — El punto de composición instancia UbicacionServiceSimulado.
+- [lib/services/ubicacion_service.dart:15–25](https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/lib/services/ubicacion_service.dart#L15-L25) — El adaptador declara que no usa GPS real.
+- [lib/services/ubicacion_service.dart:41–51](https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/lib/services/ubicacion_service.dart#L41-L51) — Timer genera desplazamientos aleatorios sobre un punto fijo.
+- [lib/features/mapas_ruteo/presentation/screens/mapa_screen.dart:55–63](https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/lib/features/mapas_ruteo/presentation/screens/mapa_screen.dart#L55-L63) — MapaScreen usa ese stream como posición.
+
+**Efecto y alcance:** El flujo documentado recibe posición del sensor; el flujo ejecutable emite coordenadas aleatorias alrededor de un punto fijo cada segundo y usa ese stream para origen de rutas. La interfaz no demuestra ubicación real por tener Observer. La implementación se identifica como simulada en código, por lo que se reporta como desajuste de la vista actual, no como obligación de implementar una función futura.
+
+**Corrección propuesta:** Marcar el sensor/GPS real como objetivo y mostrar el simulador en la vista actual; identificar visiblemente modo demostración en UI. Cuando se integre GPS, sustituir el adaptador y probar permisos, ausencia de señal y precisión sin alterar el contrato Observer.
+
+### Cobertura y límites de la auditoría
+
+**Capas, dominio y adaptadores:** Se siguió main→MapaScreen→repositorios/ServicioRuteo→MapaWidget. No se exige DDD/hexagonal; los patrones elegidos sí son reconocibles. Ruteo conoce ids de zona y grafo, no importa Zona.
+
+**Persistencia:** Assets locales y caches en memoria; no existe obligación actual de BD remota. No se valida precisión del grafo ni del levantamiento.
+
+**API y autorización:** APIs externas condicionales y contrato OpenAPI de consumidor presentes; no API backend propia ni auth interna que exigir. README advierte que dart-define queda embebido, por lo que no se inventa garantía de secretos ocultos.
+
+**Despliegue:** Workflow build web/Firebase, health estático generado y configuración de hosting revisados. Docker/nginx es alternativa de laboratorio, no sustitución silenciosa del hosting. No se abre producción.
+
+**Asincronía:** Stream basado en Timer simula Observer; Dijkstra local no necesita red. Analytics se invoca con ignore() desde selección de destino; no hay broker implícito.
+
+**Observabilidad:** Logs de ruta_calculada/ruta_mostrada revisados; README declara sonda de disponibilidad del health, no disponibilidad del algoritmo/GPS. Workflow revisado estáticamente; cifras, runtime de sensor y resultados CI no verificados.
+
+**Fuentes de la cobertura:**
+
+- [docs/adr/0013-ruteo-dijkstra-grafo-propio.md:25–36](https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/docs/adr/0013-ruteo-dijkstra-grafo-propio.md#L25-L36)
+- [lib/main.dart:47–68](https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/lib/main.dart#L47-L68)
+- [lib/main.dart:78–97](https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/lib/main.dart#L78-L97)
+- [lib/features/mapas_ruteo/presentation/screens/mapa_screen.dart:66–69](https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/lib/features/mapas_ruteo/presentation/screens/mapa_screen.dart#L66-L69)
+- [lib/adapters/mapa_widget.dart:20–22](https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/lib/adapters/mapa_widget.dart#L20-L22)
+- [lib/routing/servicio_ruteo.dart:56–76](https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/lib/routing/servicio_ruteo.dart#L56-L76)
+- [README.md:82–102](https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/README.md#L82-L102)
+- [README.md:158–166](https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/README.md#L158-L166)
+- [.github/workflows/deploy.yml:33–57](https://github.com/ISCOUTB/AS_202620_mapsutb/blob/1b296a37c575a751e99df1a1b288d70efba03d56/.github/workflows/deploy.yml#L33-L57)
+
+**Límites adicionales:** Auditoría estática nueva del SHA indicado mediante git show, sin checkout ni ejecución de código estudiantil, sin lectura de PDF, sin publicar ni cambiar notas. No se verificaron el runtime desplegado, secretos/configuración de panel, cargas, CI en vivo ni disponibilidad. Los documentos de pruebas aportan intención y alcance, no una ejecución independiente de esta auditoría.
+
+## Estado global del proyecto (overall)
+
+La verificación de metadatos del 2026-10-13T16:46:04.996618+00:00 confirmó el hash anterior como último commit de `master` antes del límite exclusivo. La punta observada es [`1b296a37c575a751e99df1a1b288d70efba03d56`](https://github.com/ISCOUTB/AS_202620_mapsutb/commit/1b296a37c575a751e99df1a1b288d70efba03d56) (2026-10-02T12:58:33-05:00). Coincide con el estado calificado; no hay commits posteriores al cierre en esa rama al momento de la comprobación.
+
+<details>
+<summary>Historial S10 anterior, superado; conservar fechas y alcance originales</summary>
+
+**Historial superado por la consolidación del 13 de octubre de 2026.** Se conserva lo publicado como registro de las observaciones de cada fecha, no como la evaluación vigente. El cierre preliminar 2026-10-12T05:00:00Z que aparece abajo fue sustituido para S10 por el límite exclusivo 2026-10-13T05:00:00Z. Las notas parciales, pendientes de sustentación y bloqueos por asignación del escenario de ese historial no reemplazan la tabla actual.
+
 # Semana 10 · Segundo corte · mapsutb
 
 **Revisión preliminar.** Cierre previsto: 2026-10-12T05:00:00Z (medianoche de Colombia). El estado puede cambiar antes del cierre y debe volver a congelarse entonces.
@@ -93,3 +243,5 @@ Punta observada de `origin/master`: `1b296a37c575a751e99df1a1b288d70efba03d56` (
 ## Próximos pasos
 
 El health público identifica el mismo commit revisado. Para el segundo corte, confirmen el escenario asignado y midan su línea base/respuesta sobre el entorno real. Comprueben la caché efectiva de cada recurso y la experiencia tras una reversión, y alineen C4 y aspectos con el código ya entregado.
+
+</details>

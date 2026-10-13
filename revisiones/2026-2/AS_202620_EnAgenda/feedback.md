@@ -58,6 +58,32 @@ La URL del despliegue y la comprobación de salud quedan diferidas por decisión
 
 La creación múltiple de invitaciones es trabajo nuevo y el registro de IA explica decisiones y rechazos. Falta completar la cadena con ADR coherente, prueba que demuestre el defecto, medición y auditoría de erosión. La plantilla intermedia faltaba al cierre y llegó después. Revisen además la exposición de tokens en las rutas publicadas por métricas.
 
-## Semana 10 · Segundo corte (avance preliminar)
+## Semana 10 · Segundo corte
+
+### Consolidación vigente · 13 de octubre de 2026
+
+Se corrigieron la protección y normalización de métricas y se añadió la prueba de no filtración; el CI pasa. Faltan una línea base y un umbral medidos en el despliegue, así como una decisión coherente con toda la arquitectura.
+
+Se valora el escenario documentado bajo un supuesto explícito de pertinencia; su asignación oficial no se presenta como verificada. Las mediciones conservan el alcance y las limitaciones descritos en la evidencia. Los comentarios anteriores se mantienen como historial y la evaluación de la semana anterior permanece congelada.
+
+La sustentación comunicada por el docente ya está incorporada en la [planilla](planilla.md) y el [informe del corte](semana-10-corte2.md).
+
+### Deriva arquitectónica al cierre S10
+
+ADR de stack y guía de métricas desactualizados.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+- **Media · ADR1 conserva Next.js/Server Actions y prohibición de API mientras el sistema vigente es Flask con REST:** Las decisiones vigentes parecen contradictorias sobre cliente, entrada HTTP y contrato, dificultando futuras modificaciones. **Acción:** Registrar aclaración/supersesión parcial de ADR1: mantener monolito modular, sustituir Next.js/Server Actions y actualizar exposición REST. No cambiar la implementación solo para seguir una decisión histórica. [Contraste y evidencia](semana-10-corte2.md#deriva-d1).
+- **Baja · El procedimiento operativo aún espera /metrics 200 sin explicar el token:** Un operador siguiendo README/arc42 interpreta 401/503 esperado como fallo del servicio o no configura el secreto requerido. **Acción:** Actualizar smoke check para configurar ENAGENDA_METRICS_TOKEN, enviar Bearer de forma segura y distinguir 401/503 de liveness /health. No desproteger métricas para satisfacer el ejemplo antiguo. [Contraste y evidencia](semana-10-corte2.md#deriva-d2).
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Comentarios preliminares anteriores, superados por la consolidación del 13 de octubre</summary>
+
+Estos comentarios corresponden al estado y a las comprobaciones de sus fechas originales. Las referencias a pendientes, disponibilidad y asignación del escenario no sustituyen el feedback vigente.
 
 La plantilla faltante ya está en la punta y CI está en verde. Siguen pendientes URL pública, umbral y medición del escenario asignado. Normalicen las rutas de métricas para no divulgar tokens de invitación, completen la prueba del flujo entero y conserven las decisiones anteriores mediante ADR sustitutos.
+
+</details>

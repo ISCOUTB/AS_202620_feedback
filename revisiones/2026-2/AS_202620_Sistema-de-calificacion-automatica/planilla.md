@@ -8,14 +8,14 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo; ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | https://quantia-utb.onrender.com · ver comprobación y límites en S10 |
-| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
+| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 9 | S9 · definitiva | `master` · `72011933ff2238eaec697f565572fec6872a3cbc` · 2026-10-04T22:36:29-05:00 | 9/10 | Pendiente por limitación de verificación; intervalo documental 4.6–5.0, sin descontar la comprobación bloqueada | sí, 2026-10-06 |
-| 10 | Segundo corte · preliminar | `master` · `72011933ff2238eaec697f565572fec6872a3cbc` · 2026-10-04T22:36:29-05:00 | 3/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
+| 10 | Segundo corte · consolidado al cierre | `master` · `85da6d3ab6ef882582839362b56981fa7cb53949` · 2026-10-11T23:36:26-05:00 | C1 1,00; C2 1,00; C3 1,00; C4 1,00 (cada uno /1) | Total 4,80/5; técnica 4,00/4 + C5 docente 0,80/1; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `4f6f568` · 2026-08-09T13:16:43-05:00 | 7/9 | no aplica | sí |
 | 2 | S2 | `d4302f4` (2026-08-16T23:17:26-05:00) | 3/9 | no aplica | si |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `dd422fb` · 2026-08-23T23:52:23-05:00 | 6/9 | no se publica | sí |
@@ -32,6 +32,33 @@
 | 14 | Evidencia S14 · Medición de atributos de calidad | | | no aplica | |
 | 16 | Proyecto final · integración y desafío arquitectónico | `final` | | | |
 | 17 | Aplicación de cambios y cierre arquitectónico | | | | |
+
+## Feedback S10 vigente · 13 de octubre de 2026
+
+Límite exclusivo: **2026-10-13T05:00:00Z**, fin del 12 de octubre en Colombia. Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
+
+**Subtotal técnico: 4,00 / 4,00. Total consolidado C1–C5: 4,80 / 5,00.**
+
+Calificación de sustentación comunicada por el docente: **4,00 / 5,00**, incorporada como **C5 = 0,80 / 1,00**. La conversión proporcional se conserva sin redondearla a los niveles de los criterios técnicos.
+
+El presupuesto atómico responde al escenario con línea base, degradación medida y arquitectura y contrato actualizados. La auditoría de dependencias sigue vigente: los manifiestos no cambiaron de S9 a S10 y el código nuevo utiliza la biblioteca estándar. No se exige una auditoría nueva ni se añaden requisitos de vulnerabilidades ajenos a la ficha.
+
+Fuentes y alcance completos: [informe S10](semana-10-corte2.md#fundamento-técnico-y-comentarios-vigentes). Las referencias de identidad, contribución y despliegue heredadas conservan sus fechas originales; no constituyen una nueva verificación en esta consolidación.
+
+### Deriva arquitectónica al cierre S10
+
+Sin deriva material observada en los recorridos inspeccionados.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+No se observó deriva material en los recorridos revisados; se conservan los límites y deudas explícitos del diseño.
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Seguimiento anterior a la consolidación S10; estados históricos superados</summary>
+
+**Historial superado por la consolidación del 13 de octubre de 2026.** Se conserva lo publicado como registro de las observaciones de cada fecha, no como la evaluación vigente. El cierre preliminar 2026-10-12T05:00:00Z que aparece abajo fue sustituido para S10 por el límite exclusivo 2026-10-13T05:00:00Z. Las notas parciales, pendientes de sustentación y bloqueos por asignación del escenario de ese historial no reemplazan la tabla actual.
 
 ## Lo que se arrastra
 
@@ -161,3 +188,5 @@ Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
 - Fallo: si el proveedor devuelve 429, JSON inválido o tarda más del límite, ¿cómo mantienen disponible la calificación y comprueban esa independencia en el despliegue?
 - Costo: con los tokens medidos por solicitud, ¿cuántos exámenes agotan primero la cuota y cómo impedirán que una ruta pública la consuma sin control?
 - Medición: al observar 44 de 60 propuestas válidas y errores de etiquetado, ¿qué cambiarían en el conjunto, la revisión o la implementación antes de ampliar el uso?
+
+</details>

@@ -1,3 +1,145 @@
+# Segundo corte · S10 · Verifacts · consolidación al cierre
+
+**Actualización del feedback: 13 de octubre de 2026.** La tabla siguiente sustituye la valoración preliminar conservada al final.
+
+| Campo | Valor |
+|---|---|
+| Repositorio | https://github.com/ISCOUTB/AS_202620_Verifacts |
+| Rama evaluada | `master` |
+| Hash calificado | `6c08cc536ac7bd294c749548bd70276044ee511e` |
+| Fecha del commit | 2026-10-10T18:23:32-05:00 |
+| Límite exclusivo S10 | `2026-10-13T05:00:00Z` |
+| Último instante incluido | 12 de octubre de 2026, 23:59:59, Colombia (UTC-5) |
+
+## Alcance vigente
+
+Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
+
+Los PDF están excluidos sin penalización. No se ejecutó código estudiantil en la revisión. Las cifras y experimentos documentados por los equipos se distinguen de las comprobaciones del revisor; esta publicación consolida la evaluación ya realizada y no representa una nueva prueba de flujo principal, despliegue, carga o seguridad. La lista de comprobación y la matriz transversal de las pasadas anteriores se conservan abajo con su alcance histórico; no se recalculan ni se convierten en una nota mediante la fórmula semanal. S9 permanece congelada.
+
+## Escenario documentado
+
+Q-01: tiempo análisis y arranque frío Render; decisión mantener Render+keepalive
+
+Se evalúa técnicamente el escenario declarado; no se afirma asignación docente verificada.
+
+## Rúbrica consolidada
+
+| Criterio | Nivel técnico / origen | Puntaje |
+|---|---|---:|
+| C1 · Caracterización del escenario operativo | Competente | 0,80 / 1,00 |
+| C2 · Decisión e implementación | Básico | 0,60 / 1,00 |
+| C3 · Operación, seguridad y observabilidad | Básico | 0,60 / 1,00 |
+| C4 · Evolución arquitectónica trazable | Básico | 0,60 / 1,00 |
+| C5 · Sustentación del reto | Pendiente docente | Pendiente |
+
+**Subtotal técnico: 2,60 / 4,00. Total sobre 5,00 pendiente de C5.**
+
+C5 sigue pendiente de calificación docente. No se registra como cero ni se estima a partir del repositorio.
+
+Los componentes técnicos se publican como propuesta al docente. Publicar esta consolidación no acredita un registro de la calificación en Moodle.
+
+## Fundamento técnico y comentarios vigentes
+
+Se documentan estados warm y cold, pero faltan POST en frío, hash desplegado y efecto tras la mitigación. Persisten afirmaciones de causalidad y costo incompatibles con la rectificación del ADR-0008, además de documentación parcial.
+
+Los puntajes C1–C4 se conservan de la evaluación consolidada; el comentario y las fuentes siguientes sustentan la valoración conjunta, sin inferir puntajes nuevos de los recuentos preliminares.
+
+### Fuentes del estado calificado
+
+1. [docs/evidencia/medicion-render-s10.md:3–61](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/6c08cc536ac7bd294c749548bd70276044ee511e/docs/evidencia/medicion-render-s10.md#L3-L61)
+2. [docs/adr/0008-mantener-render-mitigar-arranque-frio.md:39–65](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/6c08cc536ac7bd294c749548bd70276044ee511e/docs/adr/0008-mantener-render-mitigar-arranque-frio.md#L39-L65)
+3. [app/observability.py:136–178](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/6c08cc536ac7bd294c749548bd70276044ee511e/app/observability.py#L136-L178)
+
+## Deriva arquitectónica al cierre S10
+
+Auditoría estática de la arquitectura declarada frente a las rutas implementadas en el mismo hash del cierre S10. Se revisaron capas y dominio, persistencia, API y autorización, despliegue, asincronía y observabilidad. Se excluyeron PDF y commits posteriores al cierre; no se ejecutó código estudiantil ni se probó el servicio remoto. Una funcionalidad futura explícitamente delimitada o una deuda aceptada por un ADR vigente no se cuenta por sí sola como deriva. La gravedad indica prioridad técnica del hallazgo; no equivale a un descuento automático en la rúbrica. Los hallazgos se incorporan como feedback y propuestas de corrección; los puntajes C1–C4 conservan la matriz técnica vigente, sin recalificación por esta auditoría.
+
+**Resultado:** La implementación recorre API→servicios públicos de normalización/análisis/scoring→repositorio SQLite y mantiene la propiedad de datos. La documentación de bloques/C4 conserva un flujo que no es el real y llama pendiente a POST /analysis. Las limitaciones de SQLite efímero y RuleAnalyzer están expresamente aceptadas, por lo que no son deriva.
+
+**Arquitectura declarada:** Monolito modular API/Content/Analysis/Scoring con contexto separado de Historial, frontend React/Vite, REST síncrono y SQLite. ADR-0006 conserva semántica de señales de estilo, no veracidad; ADR-0008 mantiene Render y acepta almacenamiento efímero.
+
+**Arquitectura implementada:** POST /analysis orquesta desde routes.py: extrae/normaliza Content, invoca Analysis, calcula Scoring y guarda/lee Historial por funciones públicas del repositorio. Analysis no llama a Historial; Content no encadena Analysis. /analysis GET expone historial. SQLite solo se abre en repository.py. Frontend consume HTTP; middleware instala logs y métricas.
+
+**Hallazgos materiales: 1.** Prioridad máxima: **Media**.
+
+<a id="deriva-d1"></a>
+
+### D1 · Las vistas de bloques y componentes no reflejan quién orquesta el análisis
+
+**Naturaleza:** documentación desactualizada. **Prioridad:** Media. **Confianza:** alta.
+
+**Declaración contrastada:**
+
+- [docs/c4/03-componentes.md:5–16](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/6c08cc536ac7bd294c749548bd70276044ee511e/docs/c4/03-componentes.md#L5-L16) — Dibuja Análisis→Historial como dependencia interna.
+- [docs/arc42/05-vista-de-bloques.md:24–48](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/6c08cc536ac7bd294c749548bd70276044ee511e/docs/arc42/05-vista-de-bloques.md#L24-L48) — Describe API como esqueleto solo health y analysis pendiente.
+
+**Implementación contrastada:**
+
+- [app/api/routes.py:4–12](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/6c08cc536ac7bd294c749548bd70276044ee511e/app/api/routes.py#L4-L12) — API importa interfaces públicas de los servicios y del Historial.
+- [app/api/routes.py:62–101](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/6c08cc536ac7bd294c749548bd70276044ee511e/app/api/routes.py#L62-L101) — API orquesta normalización, análisis, puntuación y persistencia.
+- [app/modules/analysis/service.py:1–7](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/6c08cc536ac7bd294c749548bd70276044ee511e/app/modules/analysis/service.py#L1-L7) — Analysis solo invoca RuleAnalyzer.
+
+**Efecto y alcance:** Asignan las dependencias a componentes que no las tienen y presentan POST /analysis como futuro; un mantenedor puede extender el módulo equivocado o evaluar una frontera inexistente. No se evidencia acceso SQL fuera del dueño de Historial.
+
+**Corrección propuesta:** Actualizar C4 con Ingesta/API→Análisis y API→Historial, y arc42 §5 con POST/GET /analysis implementados; remitir a la vista de ejecución §6 que ya explica la orquestación. No forzar una capa nueva si la orquestación actual sigue siendo la decisión elegida.
+
+### Cobertura y límites de la auditoría
+
+**Capas, dominio y adaptadores:** Imports revisados en todos los módulos: Scoring recibe Finding reexportado por servicio de Analysis; API orquesta mediante funciones públicas. No se exige hexagonal.
+
+Límite: No se ejecutaron pruebas de fronteras.
+
+- [docs/arc42/08-conceptos-transversales.md:17–22](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/6c08cc536ac7bd294c749548bd70276044ee511e/docs/arc42/08-conceptos-transversales.md#L17-L22) — Los módulos internos no deben conocer HTTP.
+- [app/modules/content/service.py:4–14](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/6c08cc536ac7bd294c749548bd70276044ee511e/app/modules/content/service.py#L4-L14) — Normalización devuelve error Python, sin HTTP.
+- [app/modules/scoring/service.py:1–14](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/6c08cc536ac7bd294c749548bd70276044ee511e/app/modules/scoring/service.py#L1-L14) — Dependencia pública y cálculo del score.
+
+**Persistencia:** Repositorio concentra conexión y CRUD SQLite; memoria de API no sustituye persistencia del análisis. Render Free efímero es reconocido.
+
+Límite: No se exige durabilidad que ADR reciente aplaza; no se comprobaron datos reales.
+
+- [app/persistence/repository.py:13–19](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/6c08cc536ac7bd294c749548bd70276044ee511e/app/persistence/repository.py#L13-L19) — Conexión SQLite encapsulada.
+- [app/persistence/repository.py:95–136](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/6c08cc536ac7bd294c749548bd70276044ee511e/app/persistence/repository.py#L95-L136) — Escritura/commit de análisis.
+- [docs/adr/0008-mantener-render-mitigar-arranque-frio.md:64–65](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/6c08cc536ac7bd294c749548bd70276044ee511e/docs/adr/0008-mantener-render-mitigar-arranque-frio.md#L64-L65) — Riesgo aceptado de pérdida del historial al reiniciar/redesplegar.
+
+**API y autorización:** Análisis acepta exactamente texto o URL; traduce errores de contenido; historial paginado y contador en cabecera. No hay identidad de usuario en el corte.
+
+Límite: No se deriva fallo de autorización sin una promesa de autenticación en alcance; contrato no ejecutado.
+
+- [app/api/routes.py:21–35](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/6c08cc536ac7bd294c749548bd70276044ee511e/app/api/routes.py#L21-L35) — Validación de origen mutuamente excluyente.
+- [app/api/routes.py:129–153](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/6c08cc536ac7bd294c749548bd70276044ee511e/app/api/routes.py#L129-L153) — Ruta pública de historial y paginación.
+
+**Despliegue:** Render API Docker y frontend estático; prototipo Lambda no es producción elegida por ADR-0008.
+
+Límite: No se verificó live URL, keepalive ni SLA; costo/mediciones reportados por autores no reproducidos.
+
+- [render.yaml:1–25](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/6c08cc536ac7bd294c749548bd70276044ee511e/render.yaml#L1-L25) — Infraestructura versionada API y frontend.
+- [docs/adr/0008-mantener-render-mitigar-arranque-frio.md:1–8](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/6c08cc536ac7bd294c749548bd70276044ee511e/docs/adr/0008-mantener-render-mitigar-arranque-frio.md#L1-L8) — ADR vigente de continuidad en Render.
+
+**Asincronía:** Respuesta POST espera cálculo y commit SQLite; no hay cola/eventos reclamados en este corte.
+
+Límite: No se confunde biblioteca de extracción URL con arquitectura asíncrona.
+
+- [app/api/routes.py:85–113](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/6c08cc536ac7bd294c749548bd70276044ee511e/app/api/routes.py#L85-L113) — Cálculo y persistencia antes de responder.
+
+**Observabilidad:** main instala observability; logs JSON y métricas en app.observability. Semántica score limitada por ADR-0006.
+
+Límite: No se comprobó agregación multiproceso o estado externo; riesgo alto inalcanzable es decisión aceptada, no bug nuevo.
+
+- [app/main.py:28–30](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/6c08cc536ac7bd294c749548bd70276044ee511e/app/main.py#L28-L30) — Instalación de middleware y router.
+- [docs/adr/0006-semantica-del-resultado.md:34–46](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/6c08cc536ac7bd294c749548bd70276044ee511e/docs/adr/0006-semantica-del-resultado.md#L34-L46) — Semántica y umbrales aceptados.
+
+**Límites adicionales:** Auditoría estática por git show al hash fijo, sin checkout, ejecución de código estudiantil, lectura de PDF, escritura en GitHub, pruebas en producción ni cambios de notas. No certifica ausencia de defectos fuera de las rutas revisadas.
+
+## Estado global del proyecto (overall)
+
+La verificación de metadatos del 2026-10-13T16:46:16.110926+00:00 confirmó el hash anterior como último commit de `master` antes del límite exclusivo. La punta observada es [`6c08cc536ac7bd294c749548bd70276044ee511e`](https://github.com/ISCOUTB/AS_202620_Verifacts/commit/6c08cc536ac7bd294c749548bd70276044ee511e) (2026-10-10T18:23:32-05:00). Coincide con el estado calificado; no hay commits posteriores al cierre en esa rama al momento de la comprobación.
+
+<details>
+<summary>Historial S10 anterior, superado; conservar fechas y alcance originales</summary>
+
+**Historial superado por la consolidación del 13 de octubre de 2026.** Se conserva lo publicado como registro de las observaciones de cada fecha, no como la evaluación vigente. El cierre preliminar 2026-10-12T05:00:00Z que aparece abajo fue sustituido para S10 por el límite exclusivo 2026-10-13T05:00:00Z. Las notas parciales, pendientes de sustentación y bloqueos por asignación del escenario de ese historial no reemplazan la tabla actual.
+
 # Segundo corte S10 · revisión preliminar actualizada · Verifacts
 
 **Preliminar; no es la calificación del corte.** Cierre futuro: **2026-10-12T05:00:00Z**. Se revisa la punta actual de la misma rama y se conservan intactas la matriz, nota y evidencia histórica de S9.
@@ -34,7 +176,7 @@ Además, `lambda_handler.py` importa `app.main` a nivel de módulo y `content/se
 | Criterio | Estado | Evidencia y observaciones |
 |---|---|---|
 | Estado de S10 identificable y anterior al cierre | Cumple | Rama remota master comprobada mediante git ls-remote --symref; punta 5c643bd03f19630d6459da79fb13fb2d5f943c7b, fecha 2026-10-07T15:32:38-05:00. Es anterior al cierre futuro 2026-10-12T05:00:00Z. [Commit inmutable](https://github.com/ISCOUTB/AS_202620_Verifacts/commit/5c643bd03f19630d6459da79fb13fb2d5f943c7b). Solo preparación preliminar; no se seleccionaron etiquetas. |
-| Despliegue accesible en el momento de la revisión | Cumple | [docs/despliegue.md:1–2](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/5c643bd03f19630d6459da79fb13fb2d5f943c7b/docs/despliegue.md#L1-L2) identifica la API. GET https://verifacts-api.onrender.com/health iniciado el 2026-10-10T13:05:25Z: HTTP 200, 25,359958 s, cuerpo {"status":"ok"}. Una petición puntual; no se probó POST /analysis, ni se identificó la revisión desplegada, ni se infiere la causa de la latencia. El resultado acredita accesibilidad del health check, no el flujo principal ni Q-01. |
+| Despliegue accesible en el momento de la revisión | No verificado | [docs/despliegue.md:1–2](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/5c643bd03f19630d6459da79fb13fb2d5f943c7b/docs/despliegue.md#L1-L2) identifica la API. GET https://verifacts-api.onrender.com/health iniciado el 2026-10-10T13:05:25Z: HTTP 200, 25,359958 s, cuerpo {"status":"ok"}. Una petición puntual; no se probó POST /analysis, ni se identificó la revisión desplegada, ni se infiere la causa de la latencia. El resultado acredita accesibilidad del health check, no el flujo principal ni Q-01. Corrección documental del 10 de octubre: la [ficha S10, instrucción 2](https://github.com/ISCOUTB/AS_202620_feedback/blob/bb8bb783d0e07d78621b71527de5d49396f9d5a9/fichas/semana-10-corte2.md#L36-L37) exige comprobar el flujo principal además del health check. Esa comprobación conjunta queda No verificado porque no se probó el flujo principal en el momento de la revisión. Se conserva la evidencia positiva de salud; este límite de verificación no acredita un fallo del despliegue. No se realizó una nueva comprobación externa para esta corrección. |
 | Hipótesis, montaje, variables y umbral declarados | Cumple | [docs/adr/0005-comparacion-lambda-render.md:7–36](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/5c643bd03f19630d6459da79fb13fb2d5f943c7b/docs/adr/0005-comparacion-lambda-render.md#L7-L36) contiene hipótesis de penalización serverless, plataformas, montaje SAM, variables y P95 ≤ 3.000 ms. Cumple la declaración del escenario que propone el equipo; la asignación oficial sigue No verificado. Las contradicciones de control y medición se evalúan en línea base/resultados, no se ocultan. |
 | Línea base medida y reproducible | No cumple | [docs/adr/0005-comparacion-lambda-render.md:81–101](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/5c643bd03f19630d6459da79fb13fb2d5f943c7b/docs/adr/0005-comparacion-lambda-render.md#L81-L101) usa P95 local de 46,9 ms como base Render y añade ~250–350 ms en red sin serie, fecha ni procedimiento. [docs/evidencia/medicion-q01-q05.md:3–12](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/5c643bd03f19630d6459da79fb13fb2d5f943c7b/docs/evidencia/medicion-q01-q05.md#L3-L12) sí acredita una medición declarada local; [scripts/medir_q01_q05.py:33–37](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/5c643bd03f19630d6459da79fb13fb2d5f943c7b/scripts/medir_q01_q05.py#L33-L37) y [scripts/medir_q01_q05.py:52–73](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/5c643bd03f19630d6459da79fb13fb2d5f943c7b/scripts/medir_q01_q05.py#L52-L73) describen su carga/procedimiento. No hay una base Render equivalente a SAM: evento de 63 caracteres en [serverless-prototype/events/analysis_event.json:19](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/5c643bd03f19630d6459da79fb13fb2d5f943c7b/serverless-prototype/events/analysis_event.json#L19) frente a 10.000 y runtimes distintos. Incumplimiento técnico, independiente de la asignación oficial. |
 | Decisión registrada en ADR, coherente con dominio, contratos, despliegue y costo | No cumple | [docs/adr/0005-comparacion-lambda-render.md:106–138](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/5c643bd03f19630d6459da79fb13fb2d5f943c7b/docs/adr/0005-comparacion-lambda-render.md#L106-L138) registra costos, alternativas y mantener Render; [docs/adr/0005-comparacion-lambda-render.md:140–170](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/5c643bd03f19630d6459da79fb13fb2d5f943c7b/docs/adr/0005-comparacion-lambda-render.md#L140-L170) explica reversión y consecuencias. Se reconoce ese ADR y la restricción de no desplegar AWS. No alcanza la coherencia completa: la elección y el punto de quiebre se apoyan en Duration SAM trasladada a latencia/costo de nube sin comparación equivalente; la explicación de imports «dentro del handler» no corresponde a [serverless-prototype/lambda_handler.py:1–5](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/5c643bd03f19630d6459da79fb13fb2d5f943c7b/serverless-prototype/lambda_handler.py#L1-L5) y [app/modules/content/service.py:1–4](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/5c643bd03f19630d6459da79fb13fb2d5f943c7b/app/modules/content/service.py#L1-L4), que importan en nivel de módulo. No se exige migrar: mantener Render es admisible si se demuestra con evidencia válida. Tarifas/cifras son supuestos del equipo, no precios verificados por el revisor. |
@@ -46,7 +188,7 @@ Además, `lambda_handler.py` importa `app.main` a nivel de módulo y `content/se
 | Decisión anterior confirmada o reemplazada con evidencia | No cumple | [docs/adr/0005-comparacion-lambda-render.md:125–138](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/5c643bd03f19630d6459da79fb13fb2d5f943c7b/docs/adr/0005-comparacion-lambda-render.md#L125-L138) reafirma Render y [docs/adr/0005-comparacion-lambda-render.md:176–178](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/5c643bd03f19630d6459da79fb13fb2d5f943c7b/docs/adr/0005-comparacion-lambda-render.md#L176-L178) enlaza ADR-0004, pero el experimento no confirma todavía esa elección con cargas equivalentes. [docs/adr/0007-no-incorporar-componente-generativo.md:17–40](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/5c643bd03f19630d6459da79fb13fb2d5f943c7b/docs/adr/0007-no-incorporar-componente-generativo.md#L17-L40) es un nuevo ADR real sobre otra decisión y reconoce el motor actual; no demuestra la comparación de plataformas. Además ADR-0005 conserva «Aceptado — 2026-09-25» ([docs/adr/0005-comparacion-lambda-render.md:1–5](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/5c643bd03f19630d6459da79fb13fb2d5f943c7b/docs/adr/0005-comparacion-lambda-render.md#L1-L5)) pese a una reescritura sustantiva en el commit nuevo; no aparece en la tabla de enmiendas [docs/arc42/09-decisiones-arquitectonicas.md:20–27](https://github.com/ISCOUTB/AS_202620_Verifacts/blob/5c643bd03f19630d6459da79fb13fb2d5f943c7b/docs/arc42/09-decisiones-arquitectonicas.md#L20-L27). |
 | Sustentación del reto sobre el entorno desplegado | No verificado | La sesión, defensa del escenario asignado, prueba del flujo y pipeline en vivo los verifica el docente. No se infieren desde documentación ni runs anteriores. |
 
-**Recuento de comprobación:** 4/12 Cumple, 6/12 No cumple y 2/12 No verificado. Este recuento **no se convierte con la fórmula semanal en una nota de corte**. La diferencia frente a la pasada anterior incluye verificaciones y límites actualizados, no solo correcciones del equipo.
+**Recuento de comprobación:** 3/12 Cumple, 6/12 No cumple y 3/12 No verificado. Este recuento **no se convierte con la fórmula semanal en una nota de corte**. La diferencia frente a la pasada anterior incluye verificaciones y límites actualizados, no solo correcciones del equipo.
 
 ## Rúbrica específica de cinco criterios
 
@@ -156,3 +298,5 @@ python medir_cold_start.py --runs 15 --event events/analysis_event.json --out co
 ## Precisión metodológica del recuento de contribuciones
 
 Verificación adicional del 2026-10-10T13:15Z: git rev-list --count da 300 en la base 4f065229 y 304 en 5c643bd0, delta exacto 4. Incluye merges: 6 en ambos; sin merges son 294 y 298. Las firmas crudas contadas mediante git log --format=%an son 241/33/26 en la base y 241/37/26 en la punta, sin .mailmap en ninguno y sin consolidar nombres como personas. No hay aparición de nueva firma en el delta. La identificación histórica 240+31 corresponde a otro recuento antiguo; la planilla publicada ya contiene actualización agregada del 6-oct con 300 (241/33/26). No se altera la tabla individual histórica ni se atribuyen identidades por parecido.
+
+</details>

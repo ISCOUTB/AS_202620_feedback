@@ -1,3 +1,108 @@
+# Segundo corte · S10 · GimnasioUTB · consolidación al cierre
+
+**Actualización del feedback: 13 de octubre de 2026.** La tabla siguiente sustituye la valoración preliminar conservada al final.
+
+| Campo | Valor |
+|---|---|
+| Repositorio | https://github.com/ISCOUTB/AS_202620_GimnasioUTB |
+| Rama evaluada | `main` |
+| Hash calificado | `46742e5feaa3c8a06b7aebeb7a31fb93628e40b6` |
+| Fecha del commit | 2026-10-11T14:41:07-05:00 |
+| Límite exclusivo S10 | `2026-10-13T05:00:00Z` |
+| Último instante incluido | 12 de octubre de 2026, 23:59:59, Colombia (UTC-5) |
+
+## Alcance vigente
+
+Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
+
+Los PDF están excluidos sin penalización. No se ejecutó código estudiantil en la revisión. Las cifras y experimentos documentados por los equipos se distinguen de las comprobaciones del revisor; esta publicación consolida la evaluación ya realizada y no representa una nueva prueba de flujo principal, despliegue, carga o seguridad. La lista de comprobación y la matriz transversal de las pasadas anteriores se conservan abajo con su alcance histórico; no se recalculan ni se convierten en una nota mediante la fórmula semanal. S9 permanece congelada.
+
+## Escenario documentado
+
+S1: consistencia del contador de aforo con20 entradasconcurrentes (antecedenteS9, pertinenciaS10 supuestoexplícito)
+
+Se evalúa técnicamente el escenario declarado; no se afirma asignación docente verificada.
+
+## Rúbrica consolidada
+
+| Criterio | Nivel técnico / origen | Puntaje |
+|---|---|---:|
+| C1 · Caracterización del escenario operativo | Básico | 0,60 / 1,00 |
+| C2 · Decisión e implementación | Competente | 0,80 / 1,00 |
+| C3 · Operación, seguridad y observabilidad | Básico | 0,60 / 1,00 |
+| C4 · Evolución arquitectónica trazable | Competente | 0,80 / 1,00 |
+| C5 · Sustentación del reto | Calificación comunicada por el docente | 0,76 / 1,00 |
+
+**Subtotal técnico: 2,80 / 4,00. Total consolidado C1–C5: 3,56 / 5,00.**
+
+Calificación de sustentación comunicada por el docente: **3,80 / 5,00**, incorporada como **C5 = 0,76 / 1,00**. La conversión proporcional se conserva sin redondearla a los niveles de los criterios técnicos.
+
+Los componentes técnicos se publican como propuesta al docente. Publicar esta consolidación no acredita un registro de la calificación en Moodle.
+
+## Fundamento técnico y comentarios vigentes
+
+La concurrencia con PostgreSQL y FOR UPDATE tiene implementación y ADR coherentes. La instrumentación es parcial y el CI no ejecuta la prueba PostgreSQL del escenario. Hay actualización operacional, pero no un experimento nuevo completo sobre el despliegue.
+
+Los puntajes C1–C4 se conservan de la evaluación consolidada; el comentario y las fuentes siguientes sustentan la valoración conjunta, sin inferir puntajes nuevos de los recuentos preliminares.
+
+### Fuentes del estado calificado
+
+1. [docs/s9-cadena-verificada.md](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/46742e5feaa3c8a06b7aebeb7a31fb93628e40b6/docs/s9-cadena-verificada.md#L7-L34) — C1
+2. [docs/adr/0004-concurrencia-postgresql.md](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/46742e5feaa3c8a06b7aebeb7a31fb93628e40b6/docs/adr/0004-concurrencia-postgresql.md#L13-L81) — C2
+3. [.github/workflows/ci.yml](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/46742e5feaa3c8a06b7aebeb7a31fb93628e40b6/.github/workflows/ci.yml#L15-L23) — C3
+
+## Deriva arquitectónica al cierre S10
+
+Auditoría estática de la arquitectura declarada frente a las rutas implementadas en el mismo hash del cierre S10. Se revisaron capas y dominio, persistencia, API y autorización, despliegue, asincronía y observabilidad. Se excluyeron PDF y commits posteriores al cierre; no se ejecutó código estudiantil ni se probó el servicio remoto. Una funcionalidad futura explícitamente delimitada o una deuda aceptada por un ADR vigente no se cuenta por sí sola como deriva. La gravedad indica prioridad técnica del hallazgo; no equivale a un descuento automático en la rúbrica. Los hallazgos se incorporan como feedback y propuestas de corrección; los puntajes C1–C4 conservan la matriz técnica vigente, sin recalificación por esta auditoría.
+
+**Resultado:** No se observó deriva material en el backend de aforo examinado. Las vistas vigentes separan explícitamente el contador implementado de Flutter, QR, autenticación y notificaciones futuros.
+
+**Arquitectura declarada:** Monolito Node/Express con puertos y adaptadores. Un módulo de aforo, dominio puro y transacción PostgreSQL síncrona respecto de la respuesta HTTP; Compose/Dokploy y observabilidad por proceso.
+
+**Arquitectura implementada:** src/server.js monta /api/v1/aforo e inyecta los casos de uso; el arranque ejecutable inyecta AforoPostgresAdapter. POST → router → registrarAcceso → actualizarAforo(callback de dominio) → BEGIN/SELECT FOR UPDATE/UPDATE/COMMIT. GET usa caso de consulta. createApp sin argumentos usa memoria para pruebas, como se declara.
+
+**Hallazgos materiales: 0.** No se observó deriva material en los recorridos inspeccionados; esto no acredita conformidad exhaustiva ni ejecución correcta en producción.
+
+### Cobertura y límites de la auditoría
+
+**Capas, dominio y adaptadores:** Seguidas ambas rutas reales desde server.js al router, caso de uso, puerto y adaptador. No se encontró import de Express/pg en el caso de uso examinado; no se confunde composition root con fuga de infraestructura.
+
+**Persistencia:** Se revisó adaptador PostgreSQL, transacción, rollback y selección en arranque. No se validó ejecución ni supervivencia del volumen tras redeploy.
+
+**API y autorización:** README/OpenAPI contrastados con GET y POST; 400 de dominio/JSON y 503 de repositorio existen. Autenticación/identidad se declaran futuras y no se califican como deriva.
+
+**Despliegue:** Compose contiene PostgreSQL, inicializador y API dependiente de db-init; la API chequea /ready. Panel/proxy/TLS efectivos no verificados.
+
+**Asincronía:** await de persistencia antes del 201; WebSocket y FCM fuera de alcance explícito. APIs async de Node no equivalen a comunicación por eventos.
+
+**Observabilidad:** /health estático, /ready lee repositorio y /metrics cuenta accesos locales; logs y cierre SIGTERM presentes. No se infiere SLA, p95 ni métricas persistentes.
+
+**Fuentes de la cobertura:**
+
+- [README.md:5–26](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/46742e5feaa3c8a06b7aebeb7a31fb93628e40b6/README.md#L5-L26)
+- [docs/adr/0001-arquitectura-hexagonal.md:15–41](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/46742e5feaa3c8a06b7aebeb7a31fb93628e40b6/docs/adr/0001-arquitectura-hexagonal.md#L15-L41)
+- [docs/adr/0003-comunicacion-sincrona-asincrona.md:13–26](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/46742e5feaa3c8a06b7aebeb7a31fb93628e40b6/docs/adr/0003-comunicacion-sincrona-asincrona.md#L13-L26)
+- [docs/arc42/arc42_gimnasio_utb.md:97–114](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/46742e5feaa3c8a06b7aebeb7a31fb93628e40b6/docs/arc42/arc42_gimnasio_utb.md#L97-L114)
+- [docs/c4/C4_Level3.md:36–48](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/46742e5feaa3c8a06b7aebeb7a31fb93628e40b6/docs/c4/C4_Level3.md#L36-L48)
+- [docs/openapi.yaml:83–113](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/46742e5feaa3c8a06b7aebeb7a31fb93628e40b6/docs/openapi.yaml#L83-L113)
+- [src/server.js:25–65](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/46742e5feaa3c8a06b7aebeb7a31fb93628e40b6/src/server.js#L25-L65)
+- [src/server.js:70–88](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/46742e5feaa3c8a06b7aebeb7a31fb93628e40b6/src/server.js#L70-L88)
+- [src/modules/aforo/infrastructure/http/aforo.router.js:14–61](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/46742e5feaa3c8a06b7aebeb7a31fb93628e40b6/src/modules/aforo/infrastructure/http/aforo.router.js#L14-L61)
+- [src/modules/aforo/application/registrar-acceso.usecase.js:1–19](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/46742e5feaa3c8a06b7aebeb7a31fb93628e40b6/src/modules/aforo/application/registrar-acceso.usecase.js#L1-L19)
+- [src/modules/aforo/infrastructure/persistence/aforo-postgres.adapter.js:39–59](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/46742e5feaa3c8a06b7aebeb7a31fb93628e40b6/src/modules/aforo/infrastructure/persistence/aforo-postgres.adapter.js#L39-L59)
+- [deploy/compose.lab.yaml:22–55](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/blob/46742e5feaa3c8a06b7aebeb7a31fb93628e40b6/deploy/compose.lab.yaml#L22-L55)
+
+**Límites adicionales:** Auditoría estática nueva del SHA indicado mediante git show, sin checkout ni ejecución de código estudiantil, sin lectura de PDF, sin publicar ni cambiar notas. No se verificaron el runtime desplegado, secretos/configuración de panel, cargas, CI en vivo ni disponibilidad. Los documentos de pruebas aportan intención y alcance, no una ejecución independiente de esta auditoría.
+
+## Estado global del proyecto (overall)
+
+La verificación de metadatos del 2026-10-13T16:45:59.849908+00:00 confirmó el hash anterior como último commit de `main` antes del límite exclusivo. La punta observada es [`46742e5feaa3c8a06b7aebeb7a31fb93628e40b6`](https://github.com/ISCOUTB/AS_202620_GimnasioUTB/commit/46742e5feaa3c8a06b7aebeb7a31fb93628e40b6) (2026-10-11T14:41:07-05:00). Coincide con el estado calificado; no hay commits posteriores al cierre en esa rama al momento de la comprobación.
+
+<details>
+<summary>Historial S10 anterior, superado; conservar fechas y alcance originales</summary>
+
+**Historial superado por la consolidación del 13 de octubre de 2026.** Se conserva lo publicado como registro de las observaciones de cada fecha, no como la evaluación vigente. El cierre preliminar 2026-10-12T05:00:00Z que aparece abajo fue sustituido para S10 por el límite exclusivo 2026-10-13T05:00:00Z. Las notas parciales, pendientes de sustentación y bloqueos por asignación del escenario de ese historial no reemplazan la tabla actual.
+
 # Semana 10 · Segundo corte · GimnasioUTB
 
 **Revisión preliminar.** Cierre previsto: 2026-10-12T05:00:00Z (medianoche de Colombia). El estado puede cambiar antes del cierre y debe volver a congelarse entonces.
@@ -91,3 +196,5 @@ Punta observada de `origin/main`: `c0a6a78f0ce87ea59040662b5abbbb4d2ab99aec` (20
 ## Próximos pasos
 
 El despliegue responde a las sondas de salud y disponibilidad. Para el segundo corte, identifiquen el escenario operativo asignado y midan su línea base y respuesta en ese entorno; la prueba del adaptador y el contador de operaciones no sustituyen una medición del flujo HTTP. Formalicen el despliegue en ADR y preparen el pipeline en vivo.
+
+</details>

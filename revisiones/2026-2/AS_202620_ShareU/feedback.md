@@ -82,6 +82,32 @@ Quedan además desviaciones de estructura: la tabla de aspectos y el registro de
 
 La corrección de frontera está implementada y respaldada por pruebas que documentan el fallo esperado. Completen el eslabón C4 en la fila de aspectos y ratifiquen los ADR propuestos. La auditoría de dependencias es válida aunque no hayan añadido paquetes; atiendan la vulnerabilidad registrada de Next y las referencias a archivos todavía ausentes.
 
-## Semana 10 · Segundo corte (avance preliminar)
+## Semana 10 · Segundo corte
+
+### Consolidación vigente · 13 de octubre de 2026
+
+La muestra sintética de 2≤3 no aporta una línea base operacional. La fachada, la métrica real de búsquedas sin resultados, JSON y request_id dan observabilidad parcial. CI, URL y archivos declarados ausentes impiden el nivel competente. La consolidación reconoce esa observabilidad parcial bajo el alcance de revisión del repositorio.
+
+Se valora el escenario documentado bajo un supuesto explícito de pertinencia; su asignación oficial no se presenta como verificada. Las mediciones conservan el alcance y las limitaciones descritos en la evidencia. Los comentarios anteriores se mantienen como historial y la evaluación de la semana anterior permanece congelada.
+
+La sustentación sigue pendiente de calificación docente; no se infiere a partir del repositorio. El [informe del corte](semana-10-corte2.md) y la [planilla](planilla.md) separan ese pendiente del componente técnico.
+
+### Deriva arquitectónica al cierre S10
+
+Documentación de despliegue y prueba de contrato sobrestima el snapshot.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+- **Media · La vista de despliegue afirma artefactos y rutas que este snapshot no contiene:** No permite reproducir desde el repositorio la topología Render/Vercel descrita; dificulta distinguir despliegue real de diseño. No demuestra que un servicio remoto esté caído. **Acción:** Marcar el despliegue como no verificable hasta aportar manifiestos y URL comprobable; corregir ruta a app/frontend y documentar comandos realmente disponibles. La inspección completa de ls-tree no encontró Dockerfile, compose ni render.yaml. [Contraste y evidencia](semana-10-corte2.md#deriva-d1).
+- **Media · La prueba de contrato anunciada no está implementada en la suite versionada:** Se declara una protección contra incompatibilidades que pytest no aporta: un cambio de esquema puede no ser detectado por las aserciones funcionales parciales. **Acción:** Añadir una prueba que cargue docs/api/openapi.yaml, resuelva referencias y valide respuestas/casos inválidos, más una mutación incompatible; mientras tanto retirar la garantía. Inspeccionados los cinco archivos de tests: ninguno carga OpenAPI/YAML/JSON Schema y test_contrato.py no existe. [Contraste y evidencia](semana-10-corte2.md#deriva-d2).
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Comentarios preliminares anteriores, superados por la consolidación del 13 de octubre</summary>
+
+Estos comentarios corresponden al estado y a las comprobaciones de sus fechas originales. Las referencias a pendientes, disponibilidad y asignación del escenario no sustituyen el feedback vigente.
 
 Antes del corte, documenten el escenario operativo asignado y su línea base reproducible. La URL de salud respondió 404 y el pipeline de la punta falla: corrijan ambos y aporten el run exitoso. Sincronicen la documentación con los archivos realmente versionados, y midan la respuesta al reto sobre el MVP desplegado.
+
+</details>

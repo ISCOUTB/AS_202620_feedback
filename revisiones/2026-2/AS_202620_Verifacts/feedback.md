@@ -84,7 +84,30 @@ Para cerrar en el corte: corrijan el Quality Gate de SonarCloud, que sigue docum
 
 Las pruebas de frontera, las mutaciones y la medición local aportan evidencia sólida. Quedan tres faltantes: la cadena de enlaces de la nueva porción, el registro de IA del periodo y la decisión real sobre componente generativo. La auditoría afirma que varios ya se corrigieron, pero los archivos del repositorio todavía no reflejan esas correcciones; revisen cada cierre contra su destino.
 
-## Semana 10 · Segundo corte (avance preliminar)
+## Semana 10 · Segundo corte
+
+### Consolidación vigente · 13 de octubre de 2026
+
+Se documentan estados warm y cold, pero faltan POST en frío, hash desplegado y efecto tras la mitigación. Persisten afirmaciones de causalidad y costo incompatibles con la rectificación del ADR-0008, además de documentación parcial.
+
+Se valora el escenario documentado bajo un supuesto explícito de pertinencia; su asignación oficial no se presenta como verificada. Las mediciones conservan el alcance y las limitaciones descritos en la evidencia. Los comentarios anteriores se mantienen como historial y la evaluación de la semana anterior permanece congelada.
+
+La sustentación sigue pendiente de calificación docente; no se infiere a partir del repositorio. El [informe del corte](semana-10-corte2.md) y la [planilla](planilla.md) separan ese pendiente del componente técnico.
+
+### Deriva arquitectónica al cierre S10
+
+Vistas asignan la orquestación del análisis al componente equivocado.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+- **Media · Las vistas de bloques y componentes no reflejan quién orquesta el análisis:** Asignan las dependencias a componentes que no las tienen y presentan POST /analysis como futuro; un mantenedor puede extender el módulo equivocado o evaluar una frontera inexistente. No se evidencia acceso SQL fuera del dueño de Historial. **Acción:** Actualizar C4 con Ingesta/API→Análisis y API→Historial, y arc42 §5 con POST/GET /analysis implementados; remitir a la vista de ejecución §6 que ya explica la orquestación. No forzar una capa nueva si la orquestación actual sigue siendo la decisión elegida. [Contraste y evidencia](semana-10-corte2.md#deriva-d1).
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Comentarios preliminares anteriores, superados por la consolidación del 13 de octubre</summary>
+
+Estos comentarios corresponden al estado y a las comprobaciones de sus fechas originales. Las referencias a pendientes, disponibilidad y asignación del escenario no sustituyen el feedback vigente.
 
 Confirmen si Render frente a Lambda es la consigna operativa asignada. La comparación debe medir la misma operación y carga: GET /health local en SAM no es equivalente al análisis de texto que exige Q-01. Añadan línea base comparable, resultado y límites, reparen enlaces y confirmen el Quality Gate y la disponibilidad del entorno. El pipeline verde y la cobertura no sustituyen la sustentación.
 
@@ -95,3 +118,5 @@ En esta actualización sí aparecen las correcciones anunciadas: el ADR de semá
 El reto ya tiene hipótesis, variables y umbral declarados, pero aún deben confirmar su correspondencia con la consigna asignada y medir una comparación equivalente. El evento serverless contiene 63 caracteres, mientras el ADR declara 10.000; la referencia de 46,9 ms es local y usa otro runtime, y el mismo P95 de SAM se asigna a dos operaciones sin series separadas. Publiquen resultados identificados por operación, entorno, fecha y versión, y distingan frío/caliente, duración interna y latencia del usuario. No basta renombrar la medición existente como resultado de otra plataforma.
 
 La API respondió al health check público, pero una respuesta de salud no prueba el flujo de análisis ni recuperación de datos. El equipo ahora documenta un Quality Gate satisfactorio; la consulta pública del evaluador fue bloqueada, por lo que falta verificación independiente de su revisión. Actualicen las vistas que aún niegan el soporte de URL o dejan la medición local como inexistente, mantengan el historial de ADR mediante decisiones nuevas y fijen la versión de pytest-cov. Los límites de comprobación de seguridad y de autoría quedan pendientes, sin presumir una exposición ni atribuir cuentas a personas.
+
+</details>

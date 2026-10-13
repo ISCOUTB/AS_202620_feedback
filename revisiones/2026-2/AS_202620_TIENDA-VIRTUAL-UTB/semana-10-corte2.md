@@ -1,3 +1,145 @@
+# Segundo corte · S10 · Tienda virtual UTB · consolidación al cierre
+
+**Actualización del feedback: 13 de octubre de 2026.** La tabla siguiente sustituye la valoración preliminar conservada al final.
+
+| Campo | Valor |
+|---|---|
+| Repositorio | https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB |
+| Rama evaluada | `main` |
+| Hash calificado | `76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33` |
+| Fecha del commit | 2026-10-04T18:07:32-05:00 |
+| Límite exclusivo S10 | `2026-10-13T05:00:00Z` |
+| Último instante incluido | 12 de octubre de 2026, 23:59:59, Colombia (UTC-5) |
+
+## Alcance vigente
+
+Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
+
+Los PDF están excluidos sin penalización. No se ejecutó código estudiantil en la revisión. Las cifras y experimentos documentados por los equipos se distinguen de las comprobaciones del revisor; esta publicación consolida la evaluación ya realizada y no representa una nueva prueba de flujo principal, despliegue, carga o seguridad. La lista de comprobación y la matriz transversal de las pasadas anteriores se conservan abajo con su alcance histórico; no se recalculan ni se convierten en una nota mediante la fórmula semanal. S9 permanece congelada.
+
+## Escenario documentado
+
+AC-04: disponibilidad y coherencia catálogo/inventario
+
+Se valora el escenario documentado disponible; no se afirma asignación docente verificada ni nueva entrega específica S10. Evidencias previas se usan como estado del repositorio, no se traslada ni promedia su nota anterior.
+
+## Rúbrica consolidada
+
+| Criterio | Nivel técnico / origen | Puntaje |
+|---|---|---:|
+| C1 · Caracterización del escenario operativo | Básico | 0,60 / 1,00 |
+| C2 · Decisión e implementación | Básico | 0,60 / 1,00 |
+| C3 · Operación, seguridad y observabilidad | Básico | 0,60 / 1,00 |
+| C4 · Evolución arquitectónica trazable | Básico | 0,60 / 1,00 |
+| C5 · Sustentación del reto | Calificación comunicada por el docente | 0,80 / 1,00 |
+
+**Subtotal técnico: 2,40 / 4,00. Total consolidado C1–C5: 3,20 / 5,00.**
+
+Calificación de sustentación comunicada por el docente: **4,00 / 5,00**, incorporada como **C5 = 0,80 / 1,00**. La conversión proporcional se conserva sin redondearla a los niveles de los criterios técnicos.
+
+Los componentes técnicos se publican como propuesta al docente. Publicar esta consolidación no acredita un registro de la calificación en Moodle.
+
+## Fundamento técnico y comentarios vigentes
+
+Hay una medición local posterior con cinco usuarios, sin línea base del despliegue. La implementación existe, pero el ADR-0008 sigue propuesto y README declara el inventario vacío. CI, health, readiness y logs están en el código; no se declara una URL pública vigente.
+
+Los puntajes C1–C4 se conservan de la evaluación consolidada; el comentario y las fuentes siguientes sustentan la valoración conjunta, sin inferir puntajes nuevos de los recuentos preliminares.
+
+### Fuentes del estado calificado
+
+1. [docs/entrega-cadena-ia.md:54–85](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/docs/entrega-cadena-ia.md#L54-L85)
+2. [docs/adr/0008-separar-catalogo-inventario.md:1–25](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/docs/adr/0008-separar-catalogo-inventario.md#L1-L25)
+3. [docs/c4/container.md:22–32](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/docs/c4/container.md#L22-L32)
+
+## Deriva arquitectónica al cierre S10
+
+Auditoría estática de la arquitectura declarada frente a las rutas implementadas en el mismo hash del cierre S10. Se revisaron capas y dominio, persistencia, API y autorización, despliegue, asincronía y observabilidad. Se excluyeron PDF y commits posteriores al cierre; no se ejecutó código estudiantil ni se probó el servicio remoto. Una funcionalidad futura explícitamente delimitada o una deuda aceptada por un ADR vigente no se cuenta por sí sola como deriva. La gravedad indica prioridad técnica del hallazgo; no equivale a un descuento automático en la rúbrica. Los hallazgos se incorporan como feedback y propuestas de corrección; los puntajes C1–C4 conservan la matriz técnica vigente, sin recalificación por esta auditoría.
+
+**Resultado:** Catálogo e Inventario ya están separados en tablas, contratos y llamadas, con composición SSR en Next.js. C4/arc42 reflejan ese incremento; el README aún llama vacío a Inventario. No se observó deriva de implementación material en el corte de lectura inspeccionado.
+
+**Arquitectura declarada:** Monolito modular FastAPI, Next.js SSR y PostgreSQL. ADR-0008 candidato separa propiedad de Catálogo/Inventario, dos contratos y composición en el cliente. Identidad/Pedidos son futuros; despliegue vigente Dokploy.
+
+**Arquitectura implementada:** Next.js Promise.all consulta /catalog/products e /inventory y une por product_id. Cada router usa repositorio/modelo propios. main invoca inicializadores públicos. Dokploy contiene PostgreSQL con volumen, API interna y web; métricas, liveness y readiness diferenciados.
+
+**Hallazgos materiales: 1.** Prioridad máxima: **Baja**.
+
+<a id="deriva-d1"></a>
+
+### D1 · README conserva Inventario como paquete vacío aunque ya sirve un contrato separado
+
+**Naturaleza:** documentación desactualizada. **Prioridad:** Baja. **Confianza:** alta.
+
+**Declaración contrastada:**
+
+- [README.md:88–89](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/README.md#L88-L89) — Asegura que inventory sigue vacío.
+- [README.md:195–204](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/README.md#L195-L204) — Árbol ejecutable todavía lo marca reservado.
+
+**Implementación contrastada:**
+
+- [backend/app/modules/inventory/router.py:10–16](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/backend/app/modules/inventory/router.py#L10-L16) — GET /inventory está implementado.
+- [frontend/app/page.tsx:33–55](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/frontend/app/page.tsx#L33-L55) — El cliente consume el segundo contrato y compone disponibilidad.
+- [docs/c4/container.md:23–25](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/docs/c4/container.md#L23-L25) — C4 ya reconoce ambos módulos implementados.
+
+**Efecto y alcance:** Confunde el mapa de responsabilidades y el número de llamadas del corte vertical, pero las vistas C4 y el código sí preservan la separación.
+
+**Corrección propuesta:** Actualizar README: distinguir identity/orders pendientes de inventory operativo; describir los dos recorridos y enlazar el ADR-0008 sin cambiar su estado de ratificación pendiente.
+
+### Cobertura y límites de la auditoría
+
+**Capas, dominio y adaptadores:** Monolito modular sin exigir hexagonal: router→repository local; composition root importa superficies públicas catalog/inventory.
+
+Límite: El ADR-0008 continúa propuesto por el equipo; se informa implementación candidata, no ratificación.
+
+- [docs/adr/0008-separar-catalogo-inventario.md:27–37](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/docs/adr/0008-separar-catalogo-inventario.md#L27-L37) — Contrato y composición propuestos.
+- [backend/app/main.py:13–19](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/backend/app/main.py#L13-L19) — Importaciones del composition root.
+- [backend/app/main.py:42–56](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/backend/app/main.py#L42-L56) — Inicialización y montaje de routers.
+
+**Persistencia:** Catalog Product e Inventory Stock accedidos por sus respectivos repositorios; PostgreSQL configurable y SQLite en tests/local sin DB_HOST.
+
+Límite: Migración SQL existente no ejecutada; no se verifica estado de bases ya desplegadas.
+
+- [backend/app/modules/catalog/repository.py:8–13](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/backend/app/modules/catalog/repository.py#L8-L13) — Catálogo solo consulta su modelo.
+- [backend/app/modules/inventory/repository.py:8–13](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/backend/app/modules/inventory/repository.py#L8-L13) — Inventario solo consulta Stock.
+- [backend/app/shared/database.py:15–31](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/backend/app/shared/database.py#L15-L31) — Selección de motor por configuración.
+
+**API y autorización:** Lectura pública en /catalog/products y /inventory; se separan contrato vigente y documento de diseño anticipado.
+
+Límite: Identidad y pedidos no implementados: no se convierte autenticación futura en deriva.
+
+- [docs/c4/container.md:23–32](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/docs/c4/container.md#L23-L32) — Lecturas implementadas y gestión futura.
+- [backend/app/main.py:98–105](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/backend/app/main.py#L98-L105) — Contrato de diseño servido como documento auxiliar.
+
+**Despliegue:** Compose Dokploy: BD con volumen y red interna; API y web en la misma red, API_URL interno.
+
+Límite: Dominio/backups no verificados; no se extrapola disponibilidad.
+
+- [deploy/compose.lab.yaml:17–20](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/deploy/compose.lab.yaml#L17-L20) — Volumen PostgreSQL.
+- [deploy/compose.lab.yaml:22–39](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/deploy/compose.lab.yaml#L22-L39) — API interna con BD configurada.
+- [deploy/compose.lab.yaml:41–54](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/deploy/compose.lab.yaml#L41-L54) — Frontend SSR consume backend interno.
+
+**Asincronía:** Promise.all paraleliza lecturas HTTP, sin broker; respuesta del catálogo depende de las dos lecturas.
+
+Límite: No hay proceso de pedidos o stock asíncrono en alcance.
+
+- [frontend/app/page.tsx:41–58](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/frontend/app/page.tsx#L41-L58) — Composición SSR y camino de error.
+
+**Observabilidad:** Middleware de métricas; /health confirma proceso, /health/ready consulta BD y responde 503 ante fallo.
+
+Límite: No se ejecutaron sondas ni mediciones de disponibilidad.
+
+- [backend/app/main.py:68–95](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/blob/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33/backend/app/main.py#L68-L95) — Liveness, readiness y métricas diferenciados.
+
+**Límites adicionales:** Auditoría estática por git show al hash fijo, sin checkout, ejecución de código estudiantil, lectura de PDF, escritura en GitHub, pruebas en producción ni cambios de notas. No certifica ausencia de defectos fuera de las rutas revisadas.
+
+## Estado global del proyecto (overall)
+
+La verificación de metadatos del 2026-10-13T16:46:10.697786+00:00 confirmó el hash anterior como último commit de `main` antes del límite exclusivo. La punta observada es [`76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33`](https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/commit/76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33) (2026-10-04T18:07:32-05:00). Coincide con el estado calificado; no hay commits posteriores al cierre en esa rama al momento de la comprobación.
+
+<details>
+<summary>Historial S10 anterior, superado; conservar fechas y alcance originales</summary>
+
+**Historial superado por la consolidación del 13 de octubre de 2026.** Se conserva lo publicado como registro de las observaciones de cada fecha, no como la evaluación vigente. El cierre preliminar 2026-10-12T05:00:00Z que aparece abajo fue sustituido para S10 por el límite exclusivo 2026-10-13T05:00:00Z. Las notas parciales, pendientes de sustentación y bloqueos por asignación del escenario de ese historial no reemplazan la tabla actual.
+
 # Segundo corte S10 · revisión preliminar · Tienda virtual UTB
 
 **Preliminar; no es la calificación del corte.** Se revisa la punta actual, con cierre futuro **2026-10-12T05:00:00Z**. S9 queda congelada de forma independiente.
@@ -114,3 +256,5 @@ Cambios documentales contrastados:
 - docs/c4/container.md                         |  20 +--
 - docs/c4/context.md                           |  10 +-
 - 11 files changed, 626 insertions(+), 32 deletions(-)
+
+</details>

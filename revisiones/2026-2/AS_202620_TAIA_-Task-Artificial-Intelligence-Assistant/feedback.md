@@ -81,6 +81,31 @@ Para cerrar del todo: (1) versionen un `.env.example` sin valores reales, hoy el
 
 La nueva porción de confirmación tiene una decisión clara y pruebas rojas y verdes verificables. Ya hay evaluación real del modelo con costo y latencia, y los límites están bien declarados. Para cerrar la medición asociada, comprueben los campos persistidos tras confirmar y el tiempo hasta el canal; no presenten extracción como el escenario completo. Resuelvan CI, los conflictos de documentación y el cierre del valor predeterminado histórico de firma.
 
-## Semana 10 · Segundo corte (avance preliminar)
+## Semana 10 · Segundo corte
+
+### Consolidación vigente · 13 de octubre de 2026
+
+Antes fallaban siete de dieciséis variantes; después, la confirmación tiene medición y normalización implementada, con alternativas. Ese logro no se extiende a la persistencia S1 ni a la latencia S3 completas. El CI falla, CD se omite y arc42 contiene conflictos de merge.
+
+Se valora el escenario documentado bajo un supuesto explícito de pertinencia; su asignación oficial no se presenta como verificada. Las mediciones conservan el alcance y las limitaciones descritos en la evidencia. Los comentarios anteriores se mantienen como historial y la evaluación de la semana anterior permanece congelada.
+
+La sustentación comunicada por el docente ya está incorporada en la [planilla](planilla.md) y el [informe del corte](semana-10-corte2.md).
+
+### Deriva arquitectónica al cierre S10
+
+arc42 mantiene repositorios en memoria tras la migración SQL.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+- **Media · arc42 presenta repositorios volátiles como actuales después de la migración SQL:** Una lectura de la vista de bloques conduce a configurar o evaluar una persistencia distinta de la realmente requerida para arrancar y operar. No es inversión incorrecta de dependencias: el reemplazo por adaptadores sí está realizado. **Acción:** Actualizar arc42 §5.5/5.6 y diagramas a SQLAlchemy/PostgreSQL; conservar InMemory como dobles de prueba. Limpiar los conflictos de merge en §7, manteniendo explícita la precedencia de la guía Dokploy. [Contraste y evidencia](semana-10-corte2.md#deriva-d1).
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Comentarios preliminares anteriores, superados por la consolidación del 13 de octubre</summary>
+
+Estos comentarios corresponden al estado y a las comprobaciones de sus fechas originales. Las referencias a pendientes, disponibilidad y asignación del escenario no sustituyen el feedback vigente.
 
 Documenten el escenario operativo oficialmente asignado, con un antes y un después reproducibles en el despliegue. El health responde, pero el CI actual falla y CD queda omitido: verifiquen la versión desplegada y repitan el flujo conversacional después de corregirlo. Instrumenten fallos del proveedor y consumo por petición, revisen el timeout y sincronicen la documentación de Dokploy antes de la sustentación.
+
+</details>

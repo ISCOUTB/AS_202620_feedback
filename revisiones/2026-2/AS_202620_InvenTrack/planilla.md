@@ -10,14 +10,14 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_InvenTrack` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Javier Alejandro Carta Lacharme · Esteban Javier Peluffo Marquez · Felix Andres Taborda Jimenez · Jose Gabriel Vargas Perez — cuentas abajo; ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | https://inventrack.iscoutb.dev · ver comprobación y límites en S10 |
-| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
+| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 9 | S9 · definitiva | `main` · `35a9c63dd603bab989a18ed17ca56063c5616585` · 2026-10-04T22:14:10-05:00 | 8/10 | Pendiente por limitación de verificación; intervalo documental 4.2–4.6, sin descontar la comprobación bloqueada | sí, 2026-10-06 |
-| 10 | Segundo corte · preliminar | `main` · `35a9c63dd603bab989a18ed17ca56063c5616585` · 2026-10-04T22:14:10-05:00 | 3/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
+| 10 | Segundo corte · consolidado al cierre | `main` · `539840be57f8a0b719bb33e19d05031489a25b86` · 2026-10-11T23:05:35-05:00 | C1 0,60; C2 0,80; C3 0,80; C4 0,60 (cada uno /1) | Técnica 2,80/4; C5 pendiente; sin total /5; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
 | 8 | S8 | `48aeecf` (2026-09-27T23:48:02-05:00) | 10/10 | 5.0 | sí, definitiva |
 | 7 | S7 | `f10fd01` (2026-09-20T23:01:13-05:00) | 9/10 | 4.6 | sí, auditada |
 | 6 | S6 | `d6f2b19` (2026-09-13T23:37:36-05:00) | 7/8 | 4.5 | si |
@@ -28,6 +28,33 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `dd4ea1cb8` · 2026-08-23T23:46:24-05:00 | 9/9 | no se publica | sí (actualizada tras el cierre) |
 
 S8 se califica sobre 10 de las 12 filas de la ficha: quedan pendientes de calificar las dos filas de despliegue (URL del sistema accesible desde fuera de la red de la universidad y health check consultable), porque la URL se entrega por Moodle. La nota publicada es provisional.
+
+## Feedback S10 vigente · 13 de octubre de 2026
+
+Límite exclusivo: **2026-10-13T05:00:00Z**, fin del 12 de octubre en Colombia. Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
+
+**Subtotal técnico: 2,80 / 4,00. Total sobre 5,00 pendiente de C5.**
+
+C5 sigue pendiente de calificación docente. No se registra como cero ni se estima a partir del repositorio.
+
+El reporte S10 define el escenario y un cambio coherente. La cifra de 28 ms no tiene una prueba o serie que mida latencia; faltan una línea base y una nueva medición demostrada. La documentación continúa parcial.
+
+Fuentes y alcance completos: [informe S10](semana-10-corte2.md#fundamento-técnico-y-comentarios-vigentes). Las referencias de identidad, contribución y despliegue heredadas conservan sus fechas originales; no constituyen una nueva verificación en esta consolidación.
+
+### Deriva arquitectónica al cierre S10
+
+Errores de dominio no se traducen al contrato HTTP.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+- **Media · Errores de cantidad del dominio escapan al borde HTTP:** El contrato enumera rechazos controlados pero una cantidad 0 o negativa, admitida como int por el esquema HTTP, llega al dominio y lanza ValueError sin traducción. La ruta puede producir un 500 genérico donde debería rechazar una entrada inválida; se debilita la frontera HTTP/dominio. Es deducción estática, no fallo observado en producción. **Acción:** Definir un error de cantidad de dominio y mapearlo a 400/422 en ambos handlers, o validar también cantidad>0 en el esquema conservando la regla de dominio. Actualizar OpenAPI y pruebas negativas HTTP de entrada/salida con 0 y negativos. [Contraste y evidencia](semana-10-corte2.md#deriva-d1).
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Seguimiento anterior a la consolidación S10; estados históricos superados</summary>
+
+**Historial superado por la consolidación del 13 de octubre de 2026.** Se conserva lo publicado como registro de las observaciones de cada fecha, no como la evaluación vigente. El cierre preliminar 2026-10-12T05:00:00Z que aparece abajo fue sustituido para S10 por el límite exclusivo 2026-10-13T05:00:00Z. Las notas parciales, pendientes de sustentación y bloqueos por asignación del escenario de ese historial no reemplazan la tabla actual.
 
 ## Lo que se arrastra
 
@@ -146,3 +173,5 @@ Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
 - Fallo: si se reinicia o replica el proceso, ¿qué ocurre con stock, locks y el historial p95 y cómo detectarán inconsistencias?
 - Costo: ¿qué volumen o necesidad de persistencia obligaría a abandonar el presupuesto cero y qué alternativa compararon?
 - Medición: si las consultas reales de stock incumplen 400 ms aunque /health sea rápido, ¿qué cambio harían y con qué experimento lo validarían?
+
+</details>

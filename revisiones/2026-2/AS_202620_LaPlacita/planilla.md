@@ -10,14 +10,14 @@ Hoja consolidada del equipo LaPlacita. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_LaPlacita` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Mateo Josue Buendia Barrios · Miguel Angel Isaza Montalvo · Samuel David Jimenez Alvarez · Jorge Alberto Martinez Castillo — cuentas abajo; ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | https://laplacita-app.graymoss-fdd72159.canadacentral.azurecontainerapps.io · ver comprobación y límites en S10 |
-| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
+| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 9 | S9 · definitiva | `master` · `3a04706d27e49fb93c90c68f469442fb6f392710` · 2026-10-04T15:39:16-05:00 | 8/10 | Pendiente por limitación de verificación; intervalo documental 4.2–4.6, sin descontar la comprobación bloqueada | sí, 2026-10-06 |
-| 10 | Segundo corte · preliminar | `master` · `3a04706d27e49fb93c90c68f469442fb6f392710` · 2026-10-04T15:39:16-05:00 | 2/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
+| 10 | Segundo corte · consolidado al cierre | `master` · `2c711d44b31a41a09306f7840da480a21e8c749a` · 2026-10-12T17:41:41-05:00 | C1 0,80; C2 0,60; C3 0,80; C4 0,60 (cada uno /1) | Total 3,60/5; técnica 2,80/4 + C5 docente 0,80/1; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
 | 8 | S8 (definitiva) | `b03a797` (2026-09-27T19:00:57-05:00) | 10/10 | 5.0 (provisional; 2 filas de despliegue pendientes) | sí, definitiva |
 | 7 | S7 | `8c2e1bc` (2026-09-20T22:47:32-05:00) | 10/10 | 5.0 | sí, auditada |
 | 6 | S6 | `2c0eb01` (2026-09-13T21:28:00-05:00) | 7/8 | 4.5 | si |
@@ -26,6 +26,34 @@ Hoja consolidada del equipo LaPlacita. Se actualiza tras cada revisión.
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `37f1deb8` · 2026-08-08T15:37:16-05:00 | 8/9 | 4,6 * | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `fa7e13bc` · 2026-08-15T18:13:29-05:00 | 5/9 | 3,2 * | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `014751df` · 2026-08-23T19:30:17-05:00 | 9/9 | no se publica | sí |
+
+## Feedback S10 vigente · 13 de octubre de 2026
+
+Límite exclusivo: **2026-10-13T05:00:00Z**, fin del 12 de octubre en Colombia. Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
+
+**Subtotal técnico: 2,80 / 4,00. Total consolidado C1–C5: 3,60 / 5,00.**
+
+Calificación de sustentación comunicada por el docente: **4,00 / 5,00**, incorporada como **C5 = 0,80 / 1,00**. La conversión proporcional se conserva sin redondearla a los niveles de los criterios técnicos.
+
+El nuevo ensayo de staging acredita tres supervivientes de tres y corrige el arranque antes del POST. El UPSERT sigue sin orden garantizado y la respuesta HTTP no espera la durabilidad. C4 conserva PostgreSQL como planeado.
+
+Fuentes y alcance completos: [informe S10](semana-10-corte2.md#fundamento-técnico-y-comentarios-vigentes). Las referencias de identidad, contribución y despliegue heredadas conservan sus fechas originales; no constituyen una nueva verificación en esta consolidación.
+
+### Deriva arquitectónica al cierre S10
+
+C4 rezagado y persistencia sin el orden de escritura prometido.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+- **Baja · C4 conserva PostgreSQL planeado y un protocolo de persistencia incorrecto:** La vista de contenedores clasifica PostgreSQL como futuro y dibuja HTTP REST/JSON a la BD; la de componentes también lo marca planeado. ADR0014 y el adaptador actual ya contienen conexión pg y SQL, por lo que onboarding y análisis de fallos parten de una topología vieja. **Acción:** Actualizar C4 con PostgreSQL implementado condicional a DATABASE_URL, relación PostgreSQL/TCP mediante pg, Maps como cache/estado local y espejo asíncrono. Mantener Redis y auth marcados futuros. [Contraste y evidencia](semana-10-corte2.md#deriva-d1).
+- **Media · La supuesta cola de persistencia inicia UPSERT independientes:** El objetivo de conservar el último estado confirmado y el comentario de serialización no se sustentan en la ruta de escritura: cada llamada invoca escribirFila inmediatamente; ultimaEscritura solo se reasigna. Un pool puede solapar escrituras y no se impone orden causal por pedido. Existe riesgo de persistir una instantánea atrasada sin caída de proceso, distinto de la ventana de pérdida ya aceptada. No se afirma que haya ocurrido. **Acción:** Capturar una instantánea inmutable por mutación y encadenar su persistencia a la promesa anterior (idealmente por pedido), o usar versión creciente/UPDATE condicional. Añadir prueba que retrase y reordene dos escrituras y compruebe el estado final; conservar documentado el límite fire-and-forget. [Contraste y evidencia](semana-10-corte2.md#deriva-d2).
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Seguimiento anterior a la consolidación S10; estados históricos superados</summary>
+
+**Historial superado por la consolidación del 13 de octubre de 2026.** Se conserva lo publicado como registro de las observaciones de cada fecha, no como la evaluación vigente. El cierre preliminar 2026-10-12T05:00:00Z que aparece abajo fue sustituido para S10 por el límite exclusivo 2026-10-13T05:00:00Z. Las notas parciales, pendientes de sustentación y bloqueos por asignación del escenario de ese historial no reemplazan la tabla actual.
 
 ## Lo que se arrastra
 
@@ -136,3 +164,5 @@ Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
 - Fallo: si un cliente proporciona tiendaId ajeno o reinicia la instancia, ¿qué protege el pedido y qué observación detectaría el problema?
 - Costo: ¿cómo cambia la cuenta al introducir PostgreSQL y autenticación de tenants y qué supuesto de la capa gratuita deja de valer?
 - Medición: después de observar la exposición del PIN, ¿qué canal o consumidor medirían a continuación y qué evidencia los haría cambiar el diseño?
+
+</details>

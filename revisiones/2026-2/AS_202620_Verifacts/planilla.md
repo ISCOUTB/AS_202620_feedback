@@ -8,14 +8,14 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Verifacts` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Ver [EQUIPOS.md](../../../EQUIPOS.md); recuento histórico heredado (no vigente): `PedroC1213` (240 commits, dos correos consolidados) y `Cristian Cardeño` (31 commits, dos correos con la misma firma), sin correspondencia individual confirmada; falta una tercera identidad atribuible.; ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | https://verifacts-web.onrender.com · ver comprobación y límites en S10 |
-| Última revisión | 2026-10-10 · actualización S10 preliminar; S9 definitiva del 2026-10-06 sin cambios |
+| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 9 | S9 · definitiva | `master` · `4f0652291c47f5093da1230b245a980614220e80` · 2026-10-02T00:01:45-05:00 | 7/10 | 3.8 (propuesta al docente) | sí, 2026-10-06 |
-| 10 | Segundo corte · preliminar | `master` · `5c643bd03f19630d6459da79fb13fb2d5f943c7b` · 2026-10-07T15:32:38-05:00 | 4/12 de comprobación (sin PDF): 4 Cumple, 6 No cumple, 2 No verificado | C1/C2 pendientes; C3/C4 Básico (0,60 cada uno), propuestas al docente. Sin total; sustentación pendiente. Ver [S10](semana-10-corte2.md) | sí, avance 2026-10-10 |
+| 10 | Segundo corte · consolidado al cierre | `master` · `6c08cc536ac7bd294c749548bd70276044ee511e` · 2026-10-10T18:23:32-05:00 | C1 0,80; C2 0,60; C3 0,60; C4 0,60 (cada uno /1) | Técnica 2,60/4; C5 pendiente; sin total /5; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
 | 8 | S8 | `d2d7b5c` (2026-09-25T16:38:43-05:00) | 10/10 | 5.0 (provisional; 2 filas de despliegue pendientes) | sí (definitiva) |
 | 7 | S7 | `635f9b7` (2026-09-16T00:52:52-05:00) | 10/10 | 5.0 (auditada) | sí, auditada |
 | 6 | S6 | `5941c33` (2026-09-12T02:00:20-05:00) | 8/8 | 5.0 (prelim.) | si |
@@ -26,6 +26,33 @@
 | 5 | CORTE1 | `67f8cea` (2026-09-09T16:30:01-05:00) | 8/12 | 3.7 | si |
 
 S8 se califica sobre 10 filas graduables. Quedan **pendientes de calificar** las dos filas de despliegue («URL del sistema accesible desde fuera de la red de la universidad» y «Health check consultable»): la URL se entrega por Moodle y no está disponible en esta pasada.
+
+## Feedback S10 vigente · 13 de octubre de 2026
+
+Límite exclusivo: **2026-10-13T05:00:00Z**, fin del 12 de octubre en Colombia. Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
+
+**Subtotal técnico: 2,60 / 4,00. Total sobre 5,00 pendiente de C5.**
+
+C5 sigue pendiente de calificación docente. No se registra como cero ni se estima a partir del repositorio.
+
+Se documentan estados warm y cold, pero faltan POST en frío, hash desplegado y efecto tras la mitigación. Persisten afirmaciones de causalidad y costo incompatibles con la rectificación del ADR-0008, además de documentación parcial.
+
+Fuentes y alcance completos: [informe S10](semana-10-corte2.md#fundamento-técnico-y-comentarios-vigentes). Las referencias de identidad, contribución y despliegue heredadas conservan sus fechas originales; no constituyen una nueva verificación en esta consolidación.
+
+### Deriva arquitectónica al cierre S10
+
+Vistas asignan la orquestación del análisis al componente equivocado.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+- **Media · Las vistas de bloques y componentes no reflejan quién orquesta el análisis:** Asignan las dependencias a componentes que no las tienen y presentan POST /analysis como futuro; un mantenedor puede extender el módulo equivocado o evaluar una frontera inexistente. No se evidencia acceso SQL fuera del dueño de Historial. **Acción:** Actualizar C4 con Ingesta/API→Análisis y API→Historial, y arc42 §5 con POST/GET /analysis implementados; remitir a la vista de ejecución §6 que ya explica la orquestación. No forzar una capa nueva si la orquestación actual sigue siendo la decisión elegida. [Contraste y evidencia](semana-10-corte2.md#deriva-d1).
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Seguimiento anterior a la consolidación S10; estados históricos superados</summary>
+
+**Historial superado por la consolidación del 13 de octubre de 2026.** Se conserva lo publicado como registro de las observaciones de cada fecha, no como la evaluación vigente. El cierre preliminar 2026-10-12T05:00:00Z que aparece abajo fue sustituido para S10 por el límite exclusivo 2026-10-13T05:00:00Z. Las notas parciales, pendientes de sustentación y bloqueos por asignación del escenario de ese historial no reemplazan la tabla actual.
 
 ## Lo que se arrastra
 
@@ -166,3 +193,5 @@ Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
 - ¿Cómo distinguen el tiempo de activación de Render de duration_ms del middleware, y qué ocurre con el historial SQLite después de reiniciar o redeplegar? Demuéstrenlo en el entorno desplegado.
 - ¿Cómo cambiaría el punto de quiebre de costo si el POST usa realmente 10.000 caracteres y se separan invocaciones frías/calientes? ¿Qué parte de Duration medida en SAM están suponiendo facturable en AWS?
 - ¿Qué resultado de una comparación controlada les haría cambiar la decisión de mantener Render, y cómo registrarían ese cambio sin reescribir el ADR-0005 aceptado?
+
+</details>

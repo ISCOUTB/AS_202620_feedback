@@ -10,14 +10,14 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_uniTeam` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Julio Cesar Emiliani Ramos · Ian Novoa Carrillo · Juan Jose Bustamante More · Daniel Isaac Manjarres Herrera. Identidades observadas: `super-gremlin`, `Ian Novoa`, `Julio Cesar Emiliani`, `JuanB`/`JuanBustamante`, `Daniel Manjarres Herrera` y `DaniGamer0907`; ninguna correspondencia individual se da por confirmada. La cuenta listada `iansx` no aparece.; ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | https://uniteam-web.onrender.com · ver comprobación y límites en S10 |
-| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
+| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 9 | S9 · definitiva | `master` · `6e04b35317a0a68d239ae85c71cd60e21982b195` · 2026-10-04T16:37:55-05:00 | 10/10 | 5.0 (propuesta al docente) | sí, 2026-10-06 |
-| 10 | Segundo corte · preliminar | `master` · `6e04b35317a0a68d239ae85c71cd60e21982b195` · 2026-10-04T16:37:55-05:00 | 2/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
+| 10 | Segundo corte · consolidado al cierre | `master` · `6e04b35317a0a68d239ae85c71cd60e21982b195` · 2026-10-04T16:37:55-05:00 | C1 0,80; C2 0,80; C3 0,60; C4 0,60 (cada uno /1) | Total 3,70/5; técnica 2,80/4 + C5 docente 0,90/1; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `4b4c5c0` · 2026-08-09T11:22:38-05:00 | 6/9 | 3.7 (propuesta) | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `ca7726a` · 2026-08-16T13:01:06-05:00 | 9/9 | 5.0 (propuesta) | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `ca44917` · 2026-08-23T13:38:40-05:00 | 5/9 | no se publica | sí |
@@ -34,6 +34,33 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 14 | Evidencia S14 · Medición de atributos de calidad | | | no aplica | |
 | 16 | Proyecto final · integración y desafío arquitectónico | `final` | | | |
 | 17 | Aplicación de cambios y cierre arquitectónico | | | | |
+
+## Feedback S10 vigente · 13 de octubre de 2026
+
+Límite exclusivo: **2026-10-13T05:00:00Z**, fin del 12 de octubre en Colombia. Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
+
+**Subtotal técnico: 2,80 / 4,00. Total consolidado C1–C5: 3,70 / 5,00.**
+
+Calificación de sustentación comunicada por el docente: **4,50 / 5,00**, incorporada como **C5 = 0,90 / 1,00**. La conversión proporcional se conserva sin redondearla a los niveles de los criterios técnicos.
+
+El ensayo antes y después tiene tres corridas de 300 peticiones y está separado de producción, MySQL, red y concurrencia. ADR-0013 justifica el costo de una consulta adicional y la separación implementada. El CI falla y permanecen incompletos la documentación transversal y el esquema.
+
+Fuentes y alcance completos: [informe S10](semana-10-corte2.md#fundamento-técnico-y-comentarios-vigentes). Las referencias de identidad, contribución y despliegue heredadas conservan sus fechas originales; no constituyen una nueva verificación en esta consolidación.
+
+### Deriva arquitectónica al cierre S10
+
+Consumidores comparten sesión SQL pese a garantía de aislamiento de fallos.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+- **Media · Capturar la excepción del consumidor no aísla un fallo SQL de la sesión compartida:** Los consumidores de auditoría de operaciones permitidas (TareaCreada/EstadoCambiado) pueden fallar en flush y dejar fallida la misma unidad de trabajo que el handler intentará confirmar. El consumidor de acceso denegado sí crea y confirma una sesión propia (consumidores.py:27–37), por lo que no está incluido en este riesgo de sesión compartida. Por tanto, la garantía general de que un consumidor no tumba la petición no está sustentada para errores SQL. Es un riesgo estático condicionado al fallo, no una caída observada. **Acción:** Elegir y documentar una semántica única: si auditoría es atómica, propagar el fallo y retirar la promesa de disponibilidad independiente; si es secundaria, usar savepoint correctamente delimitado u outbox/otra unidad de trabajo. Añadir prueba de fallo real de flush/commit del consumidor, no solo excepción Python. No introducir asincronía sin nuevo ADR. [Contraste y evidencia](semana-10-corte2.md#deriva-d1).
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Seguimiento anterior a la consolidación S10; estados históricos superados</summary>
+
+**Historial superado por la consolidación del 13 de octubre de 2026.** Se conserva lo publicado como registro de las observaciones de cada fecha, no como la evaluación vigente. El cierre preliminar 2026-10-12T05:00:00Z que aparece abajo fue sustituido para S10 por el límite exclusivo 2026-10-13T05:00:00Z. Las notas parciales, pendientes de sustentación y bloqueos por asignación del escenario de ese historial no reemplazan la tabla actual.
 
 ## Lo que se arrastra
 
@@ -131,3 +158,5 @@ Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
 - ¿Qué ocurre si cambia la pertenencia a un proyecto entre las dos consultas y cómo evitan o detectan una respuesta no autorizada?
 - ¿Cuál es el costo de la consulta adicional sobre MySQL gestionado, en latencia y capacidad, frente a los 1,2 ms locales?
 - ¿Qué cambiarían si la medición en MySQL con concurrencia contradice el resultado de SQLite?
+
+</details>

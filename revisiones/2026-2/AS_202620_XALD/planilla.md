@@ -10,14 +10,14 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_XALD` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Xavier Yesid Garcia Diaz (xaviergarciadiaz20-commits) · Dilan Joan Gonzalez Bejarano (dilanbejarano011) · Luis Estheban Lozano Colmenares (colmenares2007-crypto) · Axel Jair Ruiz Bolano (axeljruiz717-hash) — correspondencias por los correos de los commits (nombres explícitos), por confirmar con el docente; ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | https://xald-backend.onrender.com · ver comprobación y límites en S10 |
-| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
+| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 9 | S9 · definitiva | `master` · `9236ff97218b632eeb9a1910f6083968e2c22909` · 2026-10-04T23:53:02-05:00 | 7/10 | 3.8 (propuesta al docente) | sí, 2026-10-06 |
-| 10 | Segundo corte · preliminar | `master` · `9236ff97218b632eeb9a1910f6083968e2c22909` · 2026-10-04T23:53:02-05:00 | 3/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
+| 10 | Segundo corte · consolidado al cierre | `master` · `9236ff97218b632eeb9a1910f6083968e2c22909` · 2026-10-04T23:53:02-05:00 | C1 0,60; C2 0,60; C3 0,60; C4 0,60 (cada uno /1) | Técnica 2,40/4; C5 pendiente; sin total /5; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `bf81545` · 2026-08-08T13:39:21-05:00 | 5/9 | 3.2 (propuesta) | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `8c37887` · 2026-08-16T13:45:27-05:00 | 1/9 | 1.4 (propuesta) | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `dc38992` · 2026-08-23T22:07:19-05:00 | 5/9 | no se publica | sí |
@@ -34,6 +34,34 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 14 | Evidencia S14 · Medición de atributos de calidad | | | no aplica | |
 | 16 | Proyecto final · integración y desafío arquitectónico | `final` | | | |
 | 17 | Aplicación de cambios y cierre arquitectónico | | | | |
+
+## Feedback S10 vigente · 13 de octubre de 2026
+
+Límite exclusivo: **2026-10-13T05:00:00Z**, fin del 12 de octubre en Colombia. Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
+
+**Subtotal técnico: 2,40 / 4,00. Total sobre 5,00 pendiente de C5.**
+
+C5 sigue pendiente de calificación docente. No se registra como cero ni se estima a partir del repositorio.
+
+LWW y el contador existen, pero 30/30 no demuestra concurrencia ni la versión ganadora: el script cuenta respuestas 202 y conflictos y no comprueba el estado final. Falta línea base. Cliente HTTP, persistencia, cifrado y coherencia documental siguen parciales.
+
+Fuentes y alcance completos: [informe S10](semana-10-corte2.md#fundamento-técnico-y-comentarios-vigentes). Las referencias de identidad, contribución y despliegue heredadas conservan sus fechas originales; no constituyen una nueva verificación en esta consolidación.
+
+### Deriva arquitectónica al cierre S10
+
+Vistas mezclan objetivo y prototipo; ACK promete un encolado inexistente.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+- **Media · La arquitectura de ejecución publicada mezcla diseño objetivo con prototipo en memoria:** Las vistas atribuyen al artefacto garantías offline-first, cifrado y conectividad no implementadas. La auditoría S9 ya reconoce la brecha, pero no sustituye una vista de ejecución consistente. No se afirma fuga de datos reales ni se penaliza el aplazamiento explícito de Gemini. **Acción:** Separar claramente vista actual y objetivo; marcar UI/SMS, Room/cifrado y envío HTTP como pendientes. Documentar que el flujo es de componentes/pruebas, no integrado a la actividad Android. Para reclamar end-to-end, cablear la entrada real al caso de uso y demostrar persistencia/reinicio y envío autenticado. [Contraste y evidencia](semana-10-corte2.md#deriva-d1).
+- **Media · El ACK de sincronización promete encolado aunque únicamente guarda una marca temporal:** El consumidor recibe ACEPTADO/encolada sin que exista cola ni almacenamiento del cuerpo de la transacción en el handler. Si un futuro cliente usa ese ACK para retirar su copia pendiente, no hay respaldo recuperable del payload en este backend. La app actual no implementa ese consumidor; no se afirma pérdida real en producción. **Acción:** Alinear semántica de API/ADR: declarar aceptación de una simulación de versiones, sin promesa de cola, o conservar payload completo y encolarlo antes del ACK. Añadir una prueba de recuperación del cuerpo aceptado/estado de cola, sin exigir persistencia durable si sigue fuera del corte. [Contraste y evidencia](semana-10-corte2.md#deriva-d2).
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Seguimiento anterior a la consolidación S10; estados históricos superados</summary>
+
+**Historial superado por la consolidación del 13 de octubre de 2026.** Se conserva lo publicado como registro de las observaciones de cada fecha, no como la evaluación vigente. El cierre preliminar 2026-10-12T05:00:00Z que aparece abajo fue sustituido para S10 por el límite exclusivo 2026-10-13T05:00:00Z. Las notas parciales, pendientes de sustentación y bloqueos por asignación del escenario de ese historial no reemplazan la tabla actual.
 
 ## Lo que se arrastra
 
@@ -166,3 +194,5 @@ Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
 - ¿Qué pasa con los conflictos aceptados si Render reinicia y se borra ultima_version; qué estado y datos se recuperan?
 - ¿Cuál es el costo y umbral de capacidad al agregar persistencia y eventualmente Gemini, frente al supuesto de 50 usuarios?
 - Si la prueba simultánea o con relojes desfasados cambia el resultado 30/30, ¿qué política de conflicto o diseño modificarían?
+
+</details>

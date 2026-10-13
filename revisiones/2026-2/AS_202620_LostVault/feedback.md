@@ -60,6 +60,32 @@ La métrica p95 no acumula en producción por el estado en memoria de la funció
 
 La entrega ya incorpora métricas, prueba nueva, auditoría y una medición real del despliegue. Completen el ADR y la cadena de esa porción, muestren la prueba ante un defecto concreto y registren un rechazo técnico de la IA. NC6 sigue siendo una corrección propuesta, no implementada. La comprobación independiente de credenciales quedó pendiente por una limitación del revisor, sin atribuirla al equipo.
 
-## Semana 10 · Segundo corte (avance preliminar)
+## Semana 10 · Segundo corte
+
+### Consolidación vigente · 13 de octubre de 2026
+
+Se comparan cargas en Vercel y un proxy local, sin un antes y después equivalente. Con 200 conexiones se reconocen fallos; el p95 en memoria no se acumula entre invocaciones. El código y la arquitectura documentada divergen.
+
+Se valora el escenario documentado bajo un supuesto explícito de pertinencia; su asignación oficial no se presenta como verificada. Las mediciones conservan el alcance y las limitaciones descritos en la evidencia. Los comentarios anteriores se mantienen como historial y la evaluación de la semana anterior permanece congelada.
+
+La sustentación sigue pendiente de calificación docente; no se infiere a partir del repositorio. El [informe del corte](semana-10-corte2.md) y la [planilla](planilla.md) separan ese pendiente del componente técnico.
+
+### Deriva arquitectónica al cierre S10
+
+Handler Python cruza límites modulares; README anterior al proveedor.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+- **Media · La reclamación HTTP evita los límites de aplicación y propiedad del monolito modular:** El handler create_claim mezcla HTTP, autenticación, regla de disponibilidad, verificación y escritura directa de _claims/_objects. A diferencia del flujo Dart por interfaces, el backend carece de un dueño encapsulado de Objects que reciba la transición; cambios de persistencia y reglas afectan la frontera HTTP. Es una deuda ya reconocida como NC6, todavía presente en el SHA. **Acción:** Extraer caso de uso Python y servicio/repositorio dueño de objetos; el router traduce HTTP, Claims solicita reserva al contrato de Objects y la atomicidad permanece en una unidad de trabajo. Probar la ruta HTTP y los límites de imports, no solo la estructura Dart. [Contraste y evidencia](semana-10-corte2.md#deriva-d1).
+- **Baja · README aún describe como futuro un proveedor HTTP que ya tiene implementación:** El lector del README recibe una arquitectura anterior: contrato previo a implementar el proveedor, mientras ADR0003 y backend/main.py ya definen API separada. Puede confundirse el demo Flutter en memoria con un flujo móvil conectado a esa API. **Acción:** Actualizar README y vistas con dos rutas actuales: demo Flutter local y proveedor FastAPI; señalar explícitamente que el cliente aún no lo consume. Separar diagrama implementado de integración futura y corregir la referencia obsoleta a vercel.json. [Contraste y evidencia](semana-10-corte2.md#deriva-d2).
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Comentarios preliminares anteriores, superados por la consolidación del 13 de octubre</summary>
+
+Estos comentarios corresponden al estado y a las comprobaciones de sus fechas originales. Las referencias a pendientes, disponibilidad y asignación del escenario no sustituyen el feedback vigente.
 
 La sonda de salud responde, pero el experimento documenta fallos importantes con 200 conexiones: el p95 de respuestas exitosas no demuestra disponibilidad. Identifiquen el reto asignado, resuelvan persistencia y agregación de métricas entre instancias y documenten qué decisión cambia a la luz de los fallos medidos.
+
+</details>

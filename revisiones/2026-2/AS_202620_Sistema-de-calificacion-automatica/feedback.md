@@ -68,6 +68,31 @@ En resumen: la semana está completa en la ficha y muy bien evidenciada. Cierren
 
 RF-11 ya cuenta con cadena completa, prueba de defecto, auditoría de fronteras y evaluación generativa con datos versionados, costo y latencia. La lectura del resultado confirma las cifras de cuarenta solicitudes y distingue medición interna de experiencia pública. Conservan límites importantes: propuestas revisadas por una persona, equivalencias matemáticas y ruta que consume cuota sin autenticación. Cierren Sonar y la prueba de dueño único. El barrido independiente de secretos quedó pendiente por el entorno revisor, sin una credencial encontrada.
 
-## Semana 10 · Segundo corte (avance preliminar)
+## Semana 10 · Segundo corte
+
+### Consolidación vigente · 13 de octubre de 2026
+
+El presupuesto atómico responde al escenario con línea base, degradación medida y arquitectura y contrato actualizados. La auditoría de dependencias sigue vigente: los manifiestos no cambiaron de S9 a S10 y el código nuevo utiliza la biblioteca estándar. No se exige una auditoría nueva ni se añaden requisitos de vulnerabilidades ajenos a la ficha.
+
+Se valora el escenario documentado bajo un supuesto explícito de pertinencia; su asignación oficial no se presenta como verificada. Las mediciones conservan el alcance y las limitaciones descritos en la evidencia. Los comentarios anteriores se mantienen como historial y la evaluación de la semana anterior permanece congelada.
+
+La sustentación comunicada por el docente ya está incorporada en la [planilla](planilla.md) y el [informe del corte](semana-10-corte2.md).
+
+### Deriva arquitectónica al cierre S10
+
+Sin deriva material observada en los recorridos inspeccionados.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+No se observó deriva material en los recorridos revisados; se conservan los límites y deudas explícitos del diseño.
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Comentarios preliminares anteriores, superados por la consolidación del 13 de octubre</summary>
+
+Estos comentarios corresponden al estado y a las comprobaciones de sus fechas originales. Las referencias a pendientes, disponibilidad y asignación del escenario no sustituyen el feedback vigente.
 
 Antes de evaluar el segundo corte identifiquen la asignación operativa oficial. La evaluación de distractores es una buena base de S9, pero no prueba por sí sola una línea base y respuesta al reto S10. Frontend y salud responden; falta demostrar el flujo principal, seguridad de acceso/cuota, métrica del reto y pipeline en vivo. La sustentación queda pendiente.
+
+</details>

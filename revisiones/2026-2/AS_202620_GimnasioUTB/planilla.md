@@ -10,14 +10,14 @@ Hoja consolidada del equipo GimnasioUTB. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_GimnasioUTB` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Sebastian Felipe Caicedo Acosta · Rodrigo Andres Facio Lince Beltran · Pedro Luis Pallares De La Hoz — cuentas abajo; ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | https://gimnasio-utb.iscoutb.dev · ver comprobación y límites en S10 |
-| Última revisión | 2026-10-06 · S9 definitiva / S10 preliminar |
+| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
 | 9 | S9 · definitiva | `main` · `af4796d6320766611d9fc01d7112a1c0e4112b40` · 2026-10-04T16:52:10-05:00 | 8/10 | 4.2 (propuesta al docente) | sí, 2026-10-06 |
-| 10 | Segundo corte · preliminar | `main` · `c0a6a78f0ce87ea59040662b5abbbb4d2ab99aec` · 2026-10-05T18:16:08-05:00 | 3/12 de comprobación (sin PDF) | Pendiente: rúbrica de 5 criterios, ver [S10](semana-10-corte2.md); sustentación docente | sí, avance 2026-10-06 |
+| 10 | Segundo corte · consolidado al cierre | `main` · `46742e5feaa3c8a06b7aebeb7a31fb93628e40b6` · 2026-10-11T14:41:07-05:00 | C1 0,60; C2 0,80; C3 0,60; C4 0,80 (cada uno /1) | Total 3,56/5; técnica 2,80/4 + C5 docente 0,76/1; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
 | 6 | S6 | `106869b` (2026-09-13T22:19:08-05:00) | 6/8 | 4.0 (prelim.) | si |
 | 8 | S8 | `a71bc75` (2026-09-27T21:55:06-05:00) | 3/10 | 2.2 | sí, definitiva |
 | 7 | S7 | `0e3aeb5` (2026-09-20T23:29:29-05:00) | 8/10 | 4.2 | sí, auditada |
@@ -28,6 +28,33 @@ Hoja consolidada del equipo GimnasioUTB. Se actualiza tras cada revisión.
 | 3 | S3 | `73c1f24` (2026-08-23T19:38:29-05:00) | 6/9 | 3.7 | si |
 
 S8 se califica sobre 10 de las 12 filas de la ficha: quedan pendientes de calificar las dos filas de despliegue (URL del sistema accesible desde fuera de la red de la universidad y health check consultable), porque la URL se entrega por Moodle. La nota publicada es provisional.
+
+## Feedback S10 vigente · 13 de octubre de 2026
+
+Límite exclusivo: **2026-10-13T05:00:00Z**, fin del 12 de octubre en Colombia. Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
+
+**Subtotal técnico: 2,80 / 4,00. Total consolidado C1–C5: 3,56 / 5,00.**
+
+Calificación de sustentación comunicada por el docente: **3,80 / 5,00**, incorporada como **C5 = 0,76 / 1,00**. La conversión proporcional se conserva sin redondearla a los niveles de los criterios técnicos.
+
+La concurrencia con PostgreSQL y FOR UPDATE tiene implementación y ADR coherentes. La instrumentación es parcial y el CI no ejecuta la prueba PostgreSQL del escenario. Hay actualización operacional, pero no un experimento nuevo completo sobre el despliegue.
+
+Fuentes y alcance completos: [informe S10](semana-10-corte2.md#fundamento-técnico-y-comentarios-vigentes). Las referencias de identidad, contribución y despliegue heredadas conservan sus fechas originales; no constituyen una nueva verificación en esta consolidación.
+
+### Deriva arquitectónica al cierre S10
+
+Sin deriva material observada; funciones futuras claramente delimitadas.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+No se observó deriva material en los recorridos revisados; se conservan los límites y deudas explícitos del diseño.
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Seguimiento anterior a la consolidación S10; estados históricos superados</summary>
+
+**Historial superado por la consolidación del 13 de octubre de 2026.** Se conserva lo publicado como registro de las observaciones de cada fecha, no como la evaluación vigente. El cierre preliminar 2026-10-12T05:00:00Z que aparece abajo fue sustituido para S10 por el límite exclusivo 2026-10-13T05:00:00Z. Las notas parciales, pendientes de sustentación y bloqueos por asignación del escenario de ese historial no reemplazan la tabla actual.
 
 ## Lo que se arrastra
 
@@ -132,3 +159,5 @@ Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
 - Fallo: si PostgreSQL deja de responder o el pool se agota, ¿qué timeout y señal operativa impedirán que las solicitudes queden esperando indefinidamente?
 - Costo: ¿qué recursos consume el Compose completo y cuál es el límite que obliga a abandonar el alojamiento sin costo?
 - Medición: ¿qué cambiarían al pasar de 20 llamadas directas al adaptador a carga HTTP y qué resultado justificaría esa decisión?
+
+</details>

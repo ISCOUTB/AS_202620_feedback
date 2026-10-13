@@ -81,6 +81,31 @@ Para cerrar: (1) el cron de keep-alive inunda el listado de ejecuciones y deja e
 
 La separación Catálogo–Inventario ya tiene una cadena sólida: prueba negativa, medición local y auditoría de propiedad de datos. Falta que el equipo ratifique las decisiones de separación y de no incorporar generación; ambas siguen como propuestas. Corrijan además el README que aún presenta Inventario vacío y aporten la evidencia pública del scanner y Quality Gate.
 
-## Semana 10 · Segundo corte (avance preliminar)
+## Semana 10 · Segundo corte
+
+### Consolidación vigente · 13 de octubre de 2026
+
+Hay una medición local posterior con cinco usuarios, sin línea base del despliegue. La implementación existe, pero el ADR-0008 sigue propuesto y README declara el inventario vacío. CI, health, readiness y logs están en el código; no se declara una URL pública vigente.
+
+Se valora el escenario documentado bajo un supuesto explícito de pertinencia; su asignación oficial no se presenta como verificada. Las mediciones conservan el alcance y las limitaciones descritos en la evidencia. Los comentarios anteriores se mantienen como historial y la evaluación de la semana anterior permanece congelada.
+
+La sustentación comunicada por el docente ya está incorporada en la [planilla](planilla.md) y el [informe del corte](semana-10-corte2.md).
+
+### Deriva arquitectónica al cierre S10
+
+README llama vacío a Inventario ya implementado.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+- **Baja · README conserva Inventario como paquete vacío aunque ya sirve un contrato separado:** Confunde el mapa de responsabilidades y el número de llamadas del corte vertical, pero las vistas C4 y el código sí preservan la separación. **Acción:** Actualizar README: distinguir identity/orders pendientes de inventory operativo; describir los dos recorridos y enlazar el ADR-0008 sin cambiar su estado de ratificación pendiente. [Contraste y evidencia](semana-10-corte2.md#deriva-d1).
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Comentarios preliminares anteriores, superados por la consolidación del 13 de octubre</summary>
+
+Estos comentarios corresponden al estado y a las comprobaciones de sus fechas originales. Las referencias a pendientes, disponibilidad y asignación del escenario no sustituyen el feedback vigente.
 
 Antes del corte, documenten cuál fue el escenario operativo asignado y midan una línea base reproducible en el entorno desplegado. Publiquen el dominio vigente de Dokploy, sus comprobaciones de salud y flujo, el resultado del experimento frente al umbral y el costo real de servidor y backups. La medición local de cinco usuarios es un insumo, pero todavía no acredita el reto asignado.
+
+</details>

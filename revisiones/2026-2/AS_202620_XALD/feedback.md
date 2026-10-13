@@ -58,6 +58,32 @@ Para cerrar: integren el análisis estático de SonarCloud al pipeline y publiqu
 
 Hay avances verificables en pruebas, auditoría y decisiones, pero el handler LWW no cambió respecto a la semana anterior. La medición 30/30 procesa pares en secuencia y solo observa aceptaciones y un contador; no demuestra conflictos simultáneos ni el estado ganador completo. Repitan ese experimento, precisen lo corregido en el registro de IA y actualicen los enlaces y las discrepancias de la arquitectura.
 
-## Semana 10 · Segundo corte (avance preliminar)
+## Semana 10 · Segundo corte
+
+### Consolidación vigente · 13 de octubre de 2026
+
+LWW y el contador existen, pero 30/30 no demuestra concurrencia ni la versión ganadora: el script cuenta respuestas 202 y conflictos y no comprueba el estado final. Falta línea base. Cliente HTTP, persistencia, cifrado y coherencia documental siguen parciales.
+
+Se valora el escenario documentado bajo un supuesto explícito de pertinencia; su asignación oficial no se presenta como verificada. Las mediciones conservan el alcance y las limitaciones descritos en la evidencia. Los comentarios anteriores se mantienen como historial y la evaluación de la semana anterior permanece congelada.
+
+La sustentación sigue pendiente de calificación docente; no se infiere a partir del repositorio. El [informe del corte](semana-10-corte2.md) y la [planilla](planilla.md) separan ese pendiente del componente técnico.
+
+### Deriva arquitectónica al cierre S10
+
+Vistas mezclan objetivo y prototipo; ACK promete un encolado inexistente.
+
+Se contrastaron las declaraciones con las rutas de código del cierre mediante inspección estática. No se ejecutó el sistema ni se verificó el comportamiento del servicio remoto.
+
+- **Media · La arquitectura de ejecución publicada mezcla diseño objetivo con prototipo en memoria:** Las vistas atribuyen al artefacto garantías offline-first, cifrado y conectividad no implementadas. La auditoría S9 ya reconoce la brecha, pero no sustituye una vista de ejecución consistente. No se afirma fuga de datos reales ni se penaliza el aplazamiento explícito de Gemini. **Acción:** Separar claramente vista actual y objetivo; marcar UI/SMS, Room/cifrado y envío HTTP como pendientes. Documentar que el flujo es de componentes/pruebas, no integrado a la actividad Android. Para reclamar end-to-end, cablear la entrada real al caso de uso y demostrar persistencia/reinicio y envío autenticado. [Contraste y evidencia](semana-10-corte2.md#deriva-d1).
+- **Media · El ACK de sincronización promete encolado aunque únicamente guarda una marca temporal:** El consumidor recibe ACEPTADO/encolada sin que exista cola ni almacenamiento del cuerpo de la transacción en el handler. Si un futuro cliente usa ese ACK para retirar su copia pendiente, no hay respaldo recuperable del payload en este backend. La app actual no implementa ese consumidor; no se afirma pérdida real en producción. **Acción:** Alinear semántica de API/ADR: declarar aceptación de una simulación de versiones, sin promesa de cola, o conservar payload completo y encolarlo antes del ACK. Añadir una prueba de recuperación del cuerpo aceptado/estado de cola, sin exigir persistencia durable si sigue fuera del corte. [Contraste y evidencia](semana-10-corte2.md#deriva-d2).
+
+[Ver cobertura, fuentes y límites de la auditoría](semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10).
+
+<details>
+<summary>Comentarios preliminares anteriores, superados por la consolidación del 13 de octubre</summary>
+
+Estos comentarios corresponden al estado y a las comprobaciones de sus fechas originales. Las referencias a pendientes, disponibilidad y asignación del escenario no sustituyen el feedback vigente.
 
 Confirmen la consigna operativa asignada y registren una línea base antes de cambiar el MVP. El experimento debe reproducir la carga real y verificar estado final, pérdida y recuperación, además de respuestas HTTP. Mantengan visible que los datos siguen en memoria y que Gemini es un mock. Falta la evidencia pública de SonarCloud y demostrar el flujo del despliegue, además del health check.
+
+</details>
