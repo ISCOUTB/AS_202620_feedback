@@ -78,7 +78,7 @@ La auditoría del health check, el rechazo de una dependencia inexistente y la d
 
 ### Consolidación vigente · 13 de octubre de 2026
 
-El escenario y el cambio de JWT están documentados. Faltan una línea base operacional reproducible y una prueba con sesión real; el ADR sigue propuesto. El health check es constante y no hay un conjunto de logs y métrica del escenario. La documentación sigue parcial.
+Se reconoce la decisión de autenticación JWT/JWKS y su implementación mediante puertos y adaptadores. La regresión funcional está documentada; falta validación con sesión real y medición operacional. Completen logs de intentos rechazados, métrica del escenario y trazabilidad documental. Los workflows son rechazados por YAML inválido antes de ejecutar jobs; esto no demuestra fallos del código ni de las pruebas.
 
 Se valora el escenario documentado bajo un supuesto explícito de pertinencia; su asignación oficial no se presenta como verificada. Las mediciones conservan el alcance y las limitaciones descritos en la evidencia. Los comentarios anteriores se mantienen como historial y la evaluación de la semana anterior permanece congelada.
 
@@ -103,3 +103,12 @@ Estos comentarios corresponden al estado y a las comprobaciones de sus fechas or
 El avance de autenticación ya separa puertos y adaptadores, pero los pipelines siguen fallando. Aporten URL pública y escenario operativo asignado, validen con un token real y midan el comportamiento ante caída de JWKS. Falta autorización por rol y una línea base para el experimento.
 
 </details>
+
+
+## Rectificación de la revisión · 14 de octubre de 2026
+
+La comparación del primer corte con la semana seis permite acreditar el diagrama de componentes y el ADR del reajuste que habían quedado pendientes de verificación. Se corrige también la atribución de la no conformidad de errores de conexión: la solución identificada está en la interfaz Flutter y llegó después de los cierres de las semanas seis y siete.
+
+En la semana nueve, la decisión arquitectónica debe ser pertinente a la porción revisada; no se exige que sea nueva. La decisión de no incorporar IA generativa ya había recibido reconocimiento en su criterio específico. Un fallo de configuración del workflow no demuestra que las pruebas fallen.
+
+En el segundo corte se reconoce plenamente la decisión JWT/JWKS y su materialización. La documentación funcional de regresión existe; las limitaciones restantes son su representatividad operacional, la observabilidad y la coherencia documental. Las matrices y la planilla contienen la rectificación aprobada y conservan los estados anteriores como historial.

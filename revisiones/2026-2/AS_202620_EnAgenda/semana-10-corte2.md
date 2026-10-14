@@ -1,6 +1,6 @@
 # Segundo corte · S10 · EnAgenda · consolidación al cierre
 
-**Actualización del feedback: 13 de octubre de 2026.** La tabla siguiente sustituye la valoración preliminar conservada al final.
+**Rectificación aprobada: 14 de octubre de 2026.** La tabla siguiente sustituye la valoración del 13 de octubre y las pasadas preliminares conservadas al final; mantiene el mismo estado y cierre calificados.
 
 | Campo | Valor |
 |---|---|
@@ -15,11 +15,11 @@
 
 Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
 
-Los PDF están excluidos sin penalización. No se ejecutó código estudiantil en la revisión. Las cifras y experimentos documentados por los equipos se distinguen de las comprobaciones del revisor; esta publicación consolida la evaluación ya realizada y no representa una nueva prueba de flujo principal, despliegue, carga o seguridad. La lista de comprobación y la matriz transversal de las pasadas anteriores se conservan abajo con su alcance histórico; no se recalculan ni se convierten en una nota mediante la fórmula semanal. S9 permanece congelada.
+Los PDF están excluidos sin penalización. No se ejecutó código estudiantil en la revisión. Las cifras y experimentos documentados por los equipos se distinguen de las comprobaciones del revisor; esta publicación consolida la evaluación ya realizada y no representa una nueva prueba de flujo principal, despliegue, carga o seguridad. La lista de comprobación y la matriz transversal de las pasadas anteriores se conservan abajo con su alcance histórico; no se recalculan ni se convierten en una nota mediante la fórmula semanal. La ficha y el puntaje de S9 permanecen congelados; su corrección transversal de autoría se documenta por separado.
 
 ## Escenario documentado
 
-Solo documento operativo EC-XX de consulta pública/health y latencia; no se identificó reto S10 nuevo explícito.
+El documento operativo de consulta pública/health y latencia conserva EC-XX y un umbral por concretar. arc42 §10 sí declara un objetivo general de latencia; no se identificó una asignación oficial nueva y explícita del reto S10. El fundamento de C1 distingue ese objetivo de la medición operativa aún pendiente.
 
 Se evalúa técnicamente el escenario declarado; no se afirma asignación docente verificada.
 
@@ -28,12 +28,12 @@ Se evalúa técnicamente el escenario declarado; no se afirma asignación docent
 | Criterio | Nivel técnico / origen | Puntaje |
 |---|---|---:|
 | C1 · Caracterización del escenario operativo | Básico | 0,60 / 1,00 |
-| C2 · Decisión e implementación | Básico | 0,60 / 1,00 |
+| C2 · Decisión e implementación | Sobresaliente | 1,00 / 1,00 |
 | C3 · Operación, seguridad y observabilidad | Básico | 0,60 / 1,00 |
 | C4 · Evolución arquitectónica trazable | Básico | 0,60 / 1,00 |
 | C5 · Sustentación del reto | Calificación comunicada por el docente | 0,84 / 1,00 |
 
-**Subtotal técnico: 2,40 / 4,00. Total consolidado C1–C5: 3,24 / 5,00.**
+**Subtotal técnico: 2,80 / 4,00. Total consolidado C1–C5: 3,64 / 5,00.**
 
 Calificación de sustentación comunicada por el docente: **4,20 / 5,00**, incorporada como **C5 = 0,84 / 1,00**. La conversión proporcional se conserva sin redondearla a los niveles de los criterios técnicos.
 
@@ -41,19 +41,28 @@ Los componentes técnicos se publican como propuesta al docente. Publicar esta c
 
 ## Fundamento técnico y comentarios vigentes
 
-Se corrigieron la protección y normalización de métricas y se añadió la prueba de no filtración; el CI pasa. Faltan una línea base y un umbral medidos en el despliegue, así como una decisión coherente con toda la arquitectura.
+Se reconoce la decisión e implementación del despliegue, incluida la comparación de una alternativa viable. La protección y normalización de métricas y la prueba de no filtración están presentes; el CI citado pasa. arc42 sí fija un objetivo de latencia, pero el documento operativo no lo concreta en una línea base y un resultado reproducible del despliegue. Siguen pendientes logs estructurados, instrumentación de latencia y reconciliar los documentos históricos con Flask/REST y la autorización de métricas.
 
-Los puntajes C1–C4 se conservan de la evaluación consolidada; el comentario y las fuentes siguientes sustentan la valoración conjunta, sin inferir puntajes nuevos de los recuentos preliminares.
+### Resolución de la apelación y fundamento por criterio
+
+La valoración del 13 de octubre asignaba **0,60 a cada criterio técnico**, subtotal **2,40/4** y total **3,24/5**. Esa valoración queda **superada solo en C2**. La rectificación reconoce evidencia ya presente al cierre; no usa trabajo tardío ni un recuento de lista de comprobación para producir el puntaje.
+
+- **C1 · 0,60, se conserva.** [arc42 §10:99–108](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docs/arc42/10-requisitos-de-calidad.md#L99-L108) sí declara p95 menor de 2 segundos para diez usuarios. No se sostiene una ausencia absoluta de umbral. Sin embargo, [medición Dokploy:9–39](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docs/despliegue/medicion-dokploy.md#L9-L39) sigue con EC-XX y «umbral aprobado» como marcador, sin línea base medida reproducible; [deuda DT04:81–91](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docs/arc42/11-riesgos-y-deuda-t%C3%A9cnica.md#L81-L91) mantiene pendiente la validación. El objetivo general no sustituye la caracterización experimental operativa.
+- **C2 · 1,00, corregido desde 0,60.** [ADR2:8–47](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docs/adr/0002-estrategia-integracion-api.md#L8-L47) y [ADR3:24–99](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docs/adr/0003-desplegar-api-flask-en-dokploy.md#L24-L99) justifican la integración y el despliegue; [Dockerfile:1–15](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/Dockerfile#L1-L15) y [Compose:1–11](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docker-compose.yml#L1-L11) materializan la decisión. [Costos:3–35](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docs/despliegue/costos.md#L3-L35) explicita costo directo cero, supuestos y punto de quiebre; [comparación de alternativa:9–36](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docs/despliegue/comparacion-api.md#L9-L36) contrasta un servidor institucional manual viable con el mismo Docker/Compose y sus costos de operación/configuración. La [rúbrica C2](https://github.com/ISCOUTB/AS_202620_feedback/blob/41cdedc48a4784900a54cfd5cd5a01b9edc7bc09/fichas/semana-10-corte2.md#L113-L116) otorga 0,80 por decisión coherente con dominio, contratos, despliegue y costo respaldada por ADR, y 1,00 al añadir una alternativa viable comparada. No exige desplegar la alternativa descartada. Las limitaciones experimentales y la deuda documental se ponderan en C1/C3/C4 y no anulan esta evidencia de C2.
+- **C3 · 0,60, se conserva.** [app/web.py:46–114](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/app/web.py#L46-L114) protege métricas y normaliza rutas; [test_metrics_auth.py:35–53](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/tests/test_metrics_auth.py#L35-L53) cubre la no filtración. Se reconocen estas correcciones oportunas y el CI citado. No están acreditados logs estructurados ni instrumentación de latencia que cierre el escenario; la protección de métricas no completa por sí sola la observabilidad exigida.
+- **C4 · 0,60, se conserva.** [ADR1:106–122](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docs/adr/0001-usar-monolito-modular.md#L106-L122) conserva Next.js/Server Actions y ausencia de API frente a Flask/REST. [README:289–295](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/README.md#L289-L295) y [arc42 §7:86–93](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docs/arc42/07-vista-de-despliegue.md#L86-L93) aún esperan métricas sin documentar Bearer. Son brechas concretas de trazabilidad y actualización, no una exigencia de cambiar el código para obedecer una decisión histórica.
+
+La sustentación comunicada se conserva en **0,84/1**. Resultado: **0,60 + 1,00 + 0,60 + 0,60 = 2,80/4**; **2,80 + 0,84 = 3,64/5**.
 
 ### Fuentes del estado calificado
 
-1. [docs/despliegue/medicion-dokploy.md:5–25](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docs/despliegue/medicion-dokploy.md#L5-L25); [docs/despliegue/medicion-dokploy.md:27–39](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docs/despliegue/medicion-dokploy.md#L27-L39); [docs/despliegue/medicion-dokploy.md:51–58](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docs/despliegue/medicion-dokploy.md#L51-L58) — URL, umbral y medición todavía pendientes
+1. [docs/despliegue/medicion-dokploy.md:5–25](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docs/despliegue/medicion-dokploy.md#L5-L25); [docs/despliegue/medicion-dokploy.md:27–39](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docs/despliegue/medicion-dokploy.md#L27-L39); [docs/despliegue/medicion-dokploy.md:51–58](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docs/despliegue/medicion-dokploy.md#L51-L58) — URL, concreción del umbral operativo y medición todavía pendientes; arc42 sí contiene un objetivo general de latencia
 2. [docs/adr/0003-desplegar-api-flask-en-dokploy.md:24–74](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docs/adr/0003-desplegar-api-flask-en-dokploy.md#L24-L74); [docs/adr/0003-desplegar-api-flask-en-dokploy.md:95–99](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docs/adr/0003-desplegar-api-flask-en-dokploy.md#L95-L99) — decisión de plataforma y pendientes
 3. [app/web.py:46–61](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/app/web.py#L46-L61); [app/web.py:79–114](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/app/web.py#L79-L114) — normalización, health y métricas protegidas
 
 ## Deriva arquitectónica al cierre S10
 
-Auditoría estática de la arquitectura declarada frente a las rutas implementadas en el mismo hash del cierre S10. Se revisaron capas y dominio, persistencia, API y autorización, despliegue, asincronía y observabilidad. Se excluyeron PDF y commits posteriores al cierre; no se ejecutó código estudiantil ni se probó el servicio remoto. Una funcionalidad futura explícitamente delimitada o una deuda aceptada por un ADR vigente no se cuenta por sí sola como deriva. La gravedad indica prioridad técnica del hallazgo; no equivale a un descuento automático en la rúbrica. Los hallazgos se incorporan como feedback y propuestas de corrección; los puntajes C1–C4 conservan la matriz técnica vigente, sin recalificación por esta auditoría.
+Auditoría estática de la arquitectura declarada frente a las rutas implementadas en el mismo hash del cierre S10. Se revisaron capas y dominio, persistencia, API y autorización, despliegue, asincronía y observabilidad. Se excluyeron PDF y commits posteriores al cierre; no se ejecutó código estudiantil ni se probó el servicio remoto. Una funcionalidad futura explícitamente delimitada o una deuda aceptada por un ADR vigente no se cuenta por sí sola como deriva. La gravedad indica prioridad técnica del hallazgo; no equivale a un descuento automático en la rúbrica. Los hallazgos se incorporan como feedback y propuestas de corrección; esta auditoría no genera descuentos automáticos y se interpreta junto con la rectificación de C2 del 14 de octubre.
 
 **Resultado:** Dos desalineaciones documentales. El corte de invitaciones sigue la separación ligera declarada y la memoria temporal está expresamente reconocida; no se exige BD durable ni interfaces hexagonales no adoptadas.
 
@@ -161,7 +170,7 @@ La verificación de metadatos del 2026-10-13T16:45:53.877459+00:00 confirmó el 
 <details>
 <summary>Historial S10 anterior, superado; conservar fechas y alcance originales</summary>
 
-**Historial superado por la consolidación del 13 de octubre de 2026.** Se conserva lo publicado como registro de las observaciones de cada fecha, no como la evaluación vigente. El cierre preliminar 2026-10-12T05:00:00Z que aparece abajo fue sustituido para S10 por el límite exclusivo 2026-10-13T05:00:00Z. Las notas parciales, pendientes de sustentación y bloqueos por asignación del escenario de ese historial no reemplazan la tabla actual.
+**Historial superado por la consolidación del 13 de octubre y la rectificación del 14 de octubre de 2026.** Se conserva lo publicado como registro de las observaciones de cada fecha, no como la evaluación vigente. El cierre preliminar 2026-10-12T05:00:00Z que aparece abajo fue sustituido para S10 por el límite exclusivo 2026-10-13T05:00:00Z. Las notas parciales, pendientes de sustentación y bloqueos por asignación del escenario de ese historial no reemplazan la tabla actual.
 
 # Segundo corte S10 · avance preliminar · EnAgenda
 
@@ -234,7 +243,7 @@ Escala aplicable: 0,00 / 0,60 / 0,80 / 1,00 por criterio. **No se calcula total 
 | docs/ia.md al día para la semana | Cumple | Registro condensado en tabla y nueva entrada de diagnóstico de plantilla faltante; [docs/ia.md:43–47](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/c2077ac55a29562adc728734ca4c283ccb40f310/docs/ia.md#L43-L47). |
 | Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No cumple | CI exacto success, pero no hay scanner/configuración/Quality Gate SonarCloud en el árbol; [.github/workflows/ci.yml:13–45](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/5aa889370dcf342ba06666893b97f8065b513de9/.github/workflows/ci.yml#L13-L45) solo prueba y build. |
 | Sin credenciales en el repositorio ni en el historial | No verificado | No hay credenciales reales hardcodeadas ni .env versionado en el snapshot; no se certifica todo el historial. Existe riesgo operativo distinto: métricas exponen request.path, que puede contener tokens de invitación. |
-| Contribución de todos los integrantes | No verificado | Cuatro firmas, 173 commits agregados en S9, para tres integrantes. Variantes deben consolidarse por evidencia de identidad; no se adivina la equivalencia. Punta actual: 4 firmas y 177 commits agregados; no equivalen automáticamente a personas. |
+| Contribución de todos los integrantes | No verificado en la pasada original; superado en S9 | Observación original: cuatro firmas y 173 commits agregados en S9; punta entonces observada: cuatro firmas y 177 commits. La rectificación del 14 de octubre consolida las firmas y acredita tres identidades en S9: véase [resolución transversal](semana-09-evidencia-s9.md#rectificación-transversal-aprobada--14-de-octubre-de-2026). No se recalcula aquí la distribución de la punta preliminar. |
 
 ## Actions en la punta actual
 
@@ -265,3 +274,4 @@ El delta S9 contiene 11 commits respecto de S8; hay 4 commits posteriores a S9 e
 3. El test directo no detectó TemplateNotFound: ¿qué cambiarían en la prueba para cubrir el recorrido real del organizador?
 
 </details>
+

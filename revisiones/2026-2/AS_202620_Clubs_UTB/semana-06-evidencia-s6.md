@@ -19,7 +19,7 @@
 | No conformidades de propiedad de datos detectadas sobre el código actual | docs/arc42/lista_errores.md NC-01 (datos de clubes en frontend/linkclub/lib/clubs_page.dart) y docs/adr/0002-hexagonal.md, trazabilidad: 'fuera del contexto Clubes' | Cumple | Entidad, dueño esperado y ubicación están; el patrón/alcance del recorrido de auditoría no se documenta. |
 | Plan de corrección por no conformidad | lista_errores.md columna 'plan de corrección': NC-01 'usar los datos de la base de datos cuando esté lista'; NC-02 'agregar estados de carga y error' | Cumple | Acciones concretas pero sin fecha ni responsable. |
 | arc42 sección 8 con lenguaje ubicuo y mapa de contextos | docs/arc42/08_conceptos_transversales.md §8.1 (glosario por contexto) y §8.2 (diagrama mermaid), en 743cc1f | Cumple | §8.3 mantiene como pendiente una alineación con tabla_modulo.md que el archivo ya refleja. |
-| C4 nivel 3 y ADR si los límites cambiaron desde el primer corte | docs/adr/0002-hexagonal.md (13/09/2026) documenta el reajuste y docs/c4/contexto.md incluye un diagrama de componentes (nivel 3) | No verificado | Falta el hash revisado en S5 para ejecutar git diff --stat <HASH_S5>..743cc1f -- docs/c4 docs/arc42 docs/adr y confirmar la actualización del nivel 3. |
+| C4 nivel 3 y ADR si los límites cambiaron desde el primer corte | Comparación [4ede977→743cc1f](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/compare/4ede977c7cccc335d878019ce06cba2e23cf76d2...743cc1fd41a2ee206ad148dda2d2bd40ef52ebaf): se incorporaron 38 líneas del nivel de componentes C4 y ADR 0002 aceptado sobre el reajuste; [docs/c4/contexto.md](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/743cc1fd41a2ee206ad148dda2d2bd40ef52ebaf/docs/c4/contexto.md) y [docs/adr/0002-hexagonal.md](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/743cc1fd41a2ee206ad148dda2d2bd40ef52ebaf/docs/adr/0002-hexagonal.md). | Cumple | La comparación pendiente se completó el 14 de octubre sobre los hashes originales; no se utiliza evidencia tardía. |
 | Aspectos relacionables con los contextos del mapa | docs/aspectos.md: columnas ID/Aspecto/Escenario/Requisito/C4/ADR/Código/Pruebas, sin columna de contexto; la columna C4 apunta a docs/c4/contexto.md (niveles 1-2) | No cumple | U3 es atribuible a Usuarios y C1 a Publicaciones, pero la correspondencia no está escrita; U1, C2 y C3 quedan sin contexto asignado. |
 
 ## Matriz transversal (CONTRATO §11)
@@ -48,7 +48,7 @@ Resuelto tarde (corregido despues del cierre, ahora al dia):
 
 Pendientes que siguen abiertos:
 - NC-01: datos de clubes hardcodeados en frontend/linkclub/lib/clubs_page.dart, sin consumir el contexto Clubes.
-- NC-02: ausencia de manejo de errores de conexión en el backend.
+- NC-02: manejo de errores de conexión; la atribución exclusiva al backend queda rectificada (ver nota del 14 de octubre).
 - Enlace roto a docs/adr/0002-ajuste-contextos-publicaciones.md y documentos que declaran pendiente una alineación ya aplicada.
 - Análisis estático SonarCloud ausente del pipeline y sin URL pública con Quality Gate.
 - docs/aspectos.md con celdas 'Pendiente' y sin columna de evidencia; sin mapeo a los contextos del mapa.
@@ -56,19 +56,19 @@ Pendientes que siguen abiertos:
 
 ## Recuento y nota sugerida
 
-6 de 8 criterios Cumple.
+7 de 8 criterios Cumple.
 
-**Nota sugerida preliminar (propuesta al docente; puede cambiar al cierre): 4.0 = 1 + 4 × (6/8).** La nota final la fija el profesor en Moodle.
+**Nota sugerida rectificada (propuesta al docente; rectificación aprobada): 4.5 = 1 + 4 × (7/8).** La nota final la fija el profesor en Moodle.
 
 ## No verificado / pendientes
 
-- Actualización del C4 nivel 3 tras el reajuste de límites: hace falta el hash revisado en S5 para ejecutar git diff --stat <HASH_S5>..743cc1f -- docs/c4 docs/arc42 docs/adr.
+- Comparación C4 S5→S6 completada: Cumple; el pendiente anterior queda cerrado por rectificación.
 - Arranque del backend no verificado por ejecución; evidencia indirecta: run 'Backend tests' conclusion success (https://github.com/ISCOUTB/AS_202620_Clubs_UTB/actions/runs/34801426289); comando anotado: uvicorn linkclub.main:app --app-dir src.
 - URL pública de SonarCloud y estado del Quality Gate: no encontrados; se buscó scanner en .github/workflows/backend-tests.yml y archivo de configuración del análisis en el árbol de 743cc1f.
 
 ## Hallazgos para la planilla
 
-- Ambas matrices quedan en 6 de 8 criterios cumplidos.
+- Matriz de la ficha: 7 de 8 criterios cumplidos; la transversal se conserva y no integra la nota.
 - El mapa de contextos tipifica relaciones con vocabulario DDD (núcleo compartido, cliente-proveedor, ACL).
 - ADR 0002 documenta la fusión de Actividades y Notificaciones en el contexto Publicaciones.
 - lista_errores.md reporta NC-01 sobre clubs_page.dart como violación de propiedad del contexto Clubes.
@@ -80,3 +80,10 @@ Pendientes que siguen abiertos:
 - Faltan las secciones arc42 07 y 11.
 - Sin coincidencias de secretos ni archivos .env versionados (743cc1f).
 - Commits posteriores al cierre (no calificados): d2d1450 2026-09-15T10:14:52-05:00 Update IA usage log for week 6
+
+
+## Rectificación aprobada · 14 de octubre de 2026
+
+Comparación [4ede977→743cc1f](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/compare/4ede977c7cccc335d878019ce06cba2e23cf76d2...743cc1fd41a2ee206ad148dda2d2bd40ef52ebaf): se incorporaron 38 líneas del nivel de componentes C4 y ADR 0002 aceptado sobre el reajuste; [docs/c4/contexto.md](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/743cc1fd41a2ee206ad148dda2d2bd40ef52ebaf/docs/c4/contexto.md) y [docs/adr/0002-hexagonal.md](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/743cc1fd41a2ee206ad148dda2d2bd40ef52ebaf/docs/adr/0002-hexagonal.md). El anterior No verificado por falta de hash queda superado: 6/8 y 4.0 se sustituyen por 7/8 y 4.5. El mapeo de aspectos a contextos sigue No cumple.
+
+NC-02 describe manejo de errores de conexión sin atribución específica al backend. La corrección verificable es frontend: AuthException/SnackBar aparece en [6965ad2](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/commit/6965ad23ff6fd865eed6aee36eb20644ae88ce25), del 25 de septiembre, y se declara resuelta en [c5c9923](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/commit/c5c9923f407d93426d113a1e88d6e02125bc0345), del 27 de septiembre. Es posterior a los cierres S6 y S7; corrige la atribución del comentario, sin acreditar cumplimiento oportuno adicional.

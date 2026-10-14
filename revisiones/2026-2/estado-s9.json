@@ -208,5 +208,14 @@
     }
   ],
   "propuestas_numericas": 17,
-  "rama_revision": "revision/s9-final-s10-prelim-20261006"
+  "rama_revision": "revision/s9-final-s10-prelim-20261006",
+  "rectificacion_apelaciones": {
+    "fecha": "2026-10-14",
+    "aprobada_por_docente": true,
+    "resultados": {
+      "AS_202620_EnAgenda": "Contribución transversal Cumple; nota2.2 sin cambio",
+      "AS_202620_Clubs_UTB": "Precisión ADR pertinente y CI invalid YAML; nota3.4 sin cambio"
+    },
+    "misma_evidencia_de_cierre": true
+  }
 }

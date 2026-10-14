@@ -7,11 +7,11 @@ Nota preliminar (pasada temprana): puede cambiar al cierre.
 | Equipo | Repo | Hash | n/m | Nota sugerida (preliminar) |
 |---|---|---|---|---|
 | AudioShare | `AS_202620_AudioShare` | `4a0eba9` | 4/8 | 3.0 |
-| Clubs UTB | `AS_202620_Clubs_UTB` | `743cc1f` | 6/8 | 4.0 |
+| Clubs UTB | `AS_202620_Clubs_UTB` | `743cc1f` | 7/8 | 4.5 |
 | DinamikUTB | `AS_202620_DinamikUTB` | `265e652` | 0/8 | 1.0 |
 | Drift | `AS_202620_Drift` | `5f7fa4c` | 5/8 | 3.5 |
 | ElMapita | `AS_202620_ElMapita` | `a22f0a4` | 0/8 | 1.0 |
-| EnAgenda | `AS_202620_EnAgenda` | `0a58de8` | 7/8 | 4.5 |
+| EnAgenda | `AS_202620_EnAgenda` | `0a58de8` | 8/8 | 5.0 |
 | GimnasioUTB | `AS_202620_GimnasioUTB` | `106869b` | 6/8 | 4.0 |
 | InvenTrack | `AS_202620_InvenTrack` | `d6f2b19` | 7/8 | 4.5 |
 | LaPlacita | `AS_202620_LaPlacita` | `2c0eb01` | 7/8 | 4.5 |
@@ -41,3 +41,8 @@ con el resto de esta pasada. Queda registrado en el informe y en la planilla de 
 anterior redirige (301) y el repositorio sigue siendo público. `EQUIPOS.md` y la carpeta de
 revisiones usan ya el nombre actual; los informes semanales escritos antes del cambio conservan el
 nombre antiguo y registran la discrepancia como hallazgo.
+
+
+## Rectificación aprobada · 14 de octubre de 2026
+
+Se completa la comparación S5→S6 en los mismos commits de cierre. EnAgenda pasa de 7/8 (4.5) a 8/8 (5.0); Clubs UTB de 6/8 (4.0) a 7/8 (4.5). Las cifras anteriores quedan superadas por esta revisión aprobada por el docente. Véanse [EnAgenda](AS_202620_EnAgenda/semana-06-evidencia-s6.md) y [Clubs UTB](AS_202620_Clubs_UTB/semana-06-evidencia-s6.md). No se acredita evidencia posterior al cierre ni se modifica a otros equipos.

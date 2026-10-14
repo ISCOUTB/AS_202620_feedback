@@ -39,3 +39,8 @@ Recuento documental: **166 de 230 criterios Cumple**. Promedio no cerrado: exist
 - No verificado indica qué falta comprobar, no una prueba inventada de cumplimiento.
 - Los informes citan el hash exacto y separan correcciones tardías del estado calificado.
 - El [avance de S10](resumen-s10.md) usa la rúbrica de cinco criterios y no recalifica S6–S9.
+
+
+## Rectificación de comentarios · 14 de octubre de 2026
+
+Se consolida la identidad de los alias de EnAgenda y su contribución transversal pasa a Cumple; esa matriz no integra el cálculo y la nota permanece 2.2 (3/10). En Clubs UTB se precisa que el ADR debe ser pertinente, no necesariamente nuevo, y que el fallo de CI ocurre al validar YAML antes de ejecutar jobs; permanece 3.4 (6/10). Se conservan los hashes de cierre y se excluyen las correcciones tardías. Véanse las matrices [EnAgenda](AS_202620_EnAgenda/semana-09-evidencia-s9.md) y [Clubs UTB](AS_202620_Clubs_UTB/semana-09-evidencia-s9.md).

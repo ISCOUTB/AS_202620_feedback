@@ -15,6 +15,12 @@ Revisión actualizada tras el cierre del **2026-10-05T05:00:00Z** (domingo a med
 
 Revisión por Git y lectura estática; no se ejecutó código, instalación, pruebas ni despliegue de estudiantes. Una consulta de Actions por repositorio. Los procedimientos y resultados documentados por el equipo se identifican como tales; no equivalen a una ejecución del revisor. PDF excluido por decisión docente: no se abrió ni se penaliza. No se consultaron etiquetas.
 
+## Rectificación transversal aprobada · 14 de octubre de 2026
+
+La contribución pasa de **No verificado a Cumple**. Las firmas `Daoisttl0FB3` y `GabrielaMorales Cancino` comparten correo de autor y asociación a la misma cuenta GitHub; no se infiere identidad por parecido de nombres. La evidencia se contrasta en los commits [02940e0](https://github.com/ISCOUTB/AS_202620_EnAgenda/commit/02940e0118e145d6af049f4f555dbeb2482e0a17) y [8eb89a0](https://github.com/ISCOUTB/AS_202620_EnAgenda/commit/8eb89a033b4154f3a319820137926c00de844743). Se omiten los correos de la publicación.
+
+El recuento histórico de cuatro firmas y 173 commits se conserva como dato bruto; queda **superada** la conclusión de que no se podía consolidar su identidad. Los tres integrantes están representados. La corrección es transversal y no entra en la fórmula de la ficha: **S9 conserva 3/10 y 2.2**, su hash congelado y los restantes hallazgos. No se traslada al cierre evidencia tardía del producto.
+
 ## Matriz S9
 
 | Criterio | Estado | Evidencia y observaciones |
@@ -42,7 +48,7 @@ Revisión por Git y lectura estática; no se ejecutó código, instalación, pru
 | docs/ia.md al día para la semana | Cumple | Registro del 4 de octubre incluye implementación asistida, cambios, rechazos con motivo y validación; [docs/ia.md:44–98](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/5aa889370dcf342ba06666893b97f8065b513de9/docs/ia.md#L44-L98). |
 | Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No cumple | CI exacto success, pero no hay scanner/configuración/Quality Gate SonarCloud en el árbol; [.github/workflows/ci.yml:13–45](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/5aa889370dcf342ba06666893b97f8065b513de9/.github/workflows/ci.yml#L13-L45) solo prueba y build. |
 | Sin credenciales en el repositorio ni en el historial | No verificado | No hay credenciales reales hardcodeadas ni .env versionado en el snapshot; no se certifica todo el historial. Existe riesgo operativo distinto: métricas exponen request.path, que puede contener tokens de invitación. |
-| Contribución de todos los integrantes | No verificado | Cuatro firmas, 173 commits agregados en S9, para tres integrantes. Variantes deben consolidarse por evidencia de identidad; no se adivina la equivalencia. |
+| Contribución de todos los integrantes | Cumple | Se consolidaron las dos firmas de la misma cuenta por coincidencia de correo y usuario GitHub, sin publicar el correo. Los 173 commits del estado S9 corresponden a tres identidades: Jein-12 78; Daoisttl0FB3 + GabrielaMorales Cancino 77 (70 + 7); eliabarnedocondef10-gif 18. Véase la rectificación y sus fuentes. |
 
 ## Actions en el estado congelado
 
@@ -76,3 +82,4 @@ El delta S9 contiene 11 commits respecto de S8; hay 4 commits posteriores a S9 e
 - Se restauró encabezado de aspectos en S9 y se amplió tabla después del cierre; [docs/aspectos.md:1–5](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/5aa889370dcf342ba06666893b97f8065b513de9/docs/aspectos.md#L1-L5), [docs/aspectos.md:5–12](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/c2077ac55a29562adc728734ca4c283ccb40f310/docs/aspectos.md#L5-L12).
 - Plantilla invitados.html agregada después del cierre; fallo identificado y corregido según registro de IA actual, [docs/ia.md:47–47](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/c2077ac55a29562adc728734ca4c283ccb40f310/docs/ia.md#L47-L47).
 - CI pasa para hash S9 y HEAD; ello no cierra SonarCloud ni garantiza el flujo UI completo.
+

@@ -1,1 +1,27 @@
-{"modo":"definitive","ts":"2026-09-24T19:10:43.4699986Z","equipos":23,"lote":"todos","tamano_lote":23,"origen":"consolidacion-local","publicado":false,"relectura":{"fecha":"2026-09-30","equipos":8,"filas":37,"motivo":"CONTRATO §13: filas en No verificado cuyo artefacto estaba en el árbol y era legible"}}
+{
+  "modo": "definitive",
+  "ts": "2026-09-24T19:10:43.4699986Z",
+  "equipos": 23,
+  "lote": "todos",
+  "tamano_lote": 23,
+  "origen": "consolidacion-local",
+  "publicado": false,
+  "relectura": {
+    "fecha": "2026-09-30",
+    "equipos": 8,
+    "filas": 37,
+    "motivo": "CONTRATO §13: filas en No verificado cuyo artefacto estaba en el árbol y era legible"
+  },
+  "rectificacion_apelaciones": {
+    "fecha": "2026-10-14",
+    "aprobada_por_docente": true,
+    "resultados": {
+      "AS_202620_EnAgenda": {
+        "cumple": 5,
+        "total": 10,
+        "nota": 3.0
+      }
+    },
+    "misma_evidencia_de_cierre": true
+  }
+}

@@ -1,23 +1,23 @@
 # Resumen · S10 · Segundo corte consolidado
 
-**Actualización: 13 de octubre de 2026.** Se publican los comentarios y componentes técnicos de los 23 equipos y las 19 sustentaciones comunicadas por el docente. Los otros 4 equipos conservan C5 pendiente, sin asignarle cero ni escalar el subtotal técnico.
+**Actualización: 14 de octubre de 2026.** Se publican los comentarios y componentes técnicos de los 23 equipos y las 19 sustentaciones comunicadas por el docente. Los otros 4 equipos conservan C5 pendiente, sin asignarle cero ni escalar el subtotal técnico.
 
 El límite exclusivo es **2026-10-13T05:00:00Z**: se incluye hasta el **12 de octubre, 23:59:59, Colombia (UTC-5)**. Sustituye el cierre preliminar del 12 de octubre a las 05:00Z, que permanece identificado como histórico. Los 23 hashes se contrastaron con la rama principal y son anteriores al límite.
 
 Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
 
-PDF excluidos, sin penalización; S9 no se modifica. C5 procede del docente, no de una inferencia desde el repositorio. Los totales con C5 son la suma de los componentes publicados; esta publicación no acredita su registro en Moodle.
+PDF excluidos, sin penalización; S9 conserva sus notas; las precisiones de la apelación se documentan en sus informes. C5 procede del docente, no de una inferencia desde el repositorio. Los totales con C5 son la suma de los componentes publicados; esta publicación no acredita su registro en Moodle.
 
 | Equipo | Informe | Hash calificado | C1 | C2 | C3 | C4 | Técnica /4 | Sustentación docente /5 | C5 /1 | Total /5 |
 |---|---|---|---:|---:|---:|---:|---:|---:|---:|---|
 | AudioShare | [S10](AS_202620_AudioShare/semana-10-corte2.md) | `1da287c662986033871ef0e044ed29894b978593` | 0,80 | 0,60 | 0,80 | 0,60 | 2,80 | 4,00 | 0,80 | 3,60 |
 | Calificación automática (Quantia) | [S10](AS_202620_Sistema-de-calificacion-automatica/semana-10-corte2.md) | `85da6d3ab6ef882582839362b56981fa7cb53949` | 1,00 | 1,00 | 1,00 | 1,00 | 4,00 | 4,00 | 0,80 | 4,80 |
 | CampusMarket | [S10](AS_202620_PROYECTO_CAMPUSMARKET/semana-10-corte2.md) | `1582c1ff609202fa2cc4a06fa14d18b9b61bed74` | 1,00 | 1,00 | 1,00 | 1,00 | 4,00 | 4,00 | 0,80 | 4,80 |
-| Clubs UTB | [S10](AS_202620_Clubs_UTB/semana-10-corte2.md) | `cd0ad9c64925863ed5067ed53da7f3c6dcf09895` | 0,60 | 0,60 | 0,00 | 0,60 | 1,80 | 4,00 | 0,80 | 2,60 |
+| Clubs UTB | [S10](AS_202620_Clubs_UTB/semana-10-corte2.md) | `cd0ad9c64925863ed5067ed53da7f3c6dcf09895` | 0,60 | 1,00 | 0,00 | 0,60 | 2,20 | 4,00 | 0,80 | 3,00 |
 | DinamikUTB | [S10](AS_202620_DinamikUTB/semana-10-corte2.md) | `5dc9acf9335fec70e274a2e5c494b3805b0e9646` | 0,60 | 0,60 | 0,60 | 0,60 | 2,40 | 4,00 | 0,80 | 3,20 |
 | Drift | [S10](AS_202620_Drift/semana-10-corte2.md) | `04874b8744dfa345a7fa7e12775e629c410fc870` | 1,00 | 0,80 | 0,80 | 0,80 | 3,40 | 4,80 | 0,96 | 4,36 |
 | ElMapita | [S10](AS_202620_ElMapita/semana-10-corte2.md) | `f3bcfa83e80f5c8d0e30a01b656d89160c907d64` | 0,80 | 0,60 | 0,60 | 0,60 | 2,60 | 4,00 | 0,80 | 3,40 |
-| EnAgenda | [S10](AS_202620_EnAgenda/semana-10-corte2.md) | `4bec22f3821493014e8352ece8274bb2950e97db` | 0,60 | 0,60 | 0,60 | 0,60 | 2,40 | 4,20 | 0,84 | 3,24 |
+| EnAgenda | [S10](AS_202620_EnAgenda/semana-10-corte2.md) | `4bec22f3821493014e8352ece8274bb2950e97db` | 0,60 | 1,00 | 0,60 | 0,60 | 2,80 | 4,20 | 0,84 | 3,64 |
 | GimnasioUTB | [S10](AS_202620_GimnasioUTB/semana-10-corte2.md) | `46742e5feaa3c8a06b7aebeb7a31fb93628e40b6` | 0,60 | 0,80 | 0,60 | 0,80 | 2,80 | 3,80 | 0,76 | 3,56 |
 | InvenTrack | [S10](AS_202620_InvenTrack/semana-10-corte2.md) | `539840be57f8a0b719bb33e19d05031489a25b86` | 0,60 | 0,80 | 0,80 | 0,60 | 2,80 | Pendiente | Pendiente | **Pendiente C5** |
 | LaPlacita | [S10](AS_202620_LaPlacita/semana-10-corte2.md) | `2c711d44b31a41a09306f7840da480a21e8c749a` | 0,80 | 0,60 | 0,80 | 0,60 | 2,80 | 4,00 | 0,80 | 3,60 |
@@ -41,11 +41,11 @@ La sustentación se incorpora proporcionalmente: calificación docente /5 → C5
 - **AudioShare:** El protocolo de sincronización incorpora medición y mutación, pero la comparación mezcla relojes. Flutter aún no integra /time ni ACK, y la arquitectura conserva desalineaciones. [Fuentes y alcance](AS_202620_AudioShare/semana-10-corte2.md#fuentes-del-estado-calificado).
 - **Calificación automática (Quantia):** El presupuesto atómico responde al escenario con línea base, degradación medida y arquitectura y contrato actualizados. La auditoría de dependencias sigue vigente: los manifiestos no cambiaron de S9 a S10 y el código nuevo utiliza la biblioteca estándar. No se exige una auditoría nueva ni se añaden requisitos de vulnerabilidades ajenos a la ficha. [Fuentes y alcance](AS_202620_Sistema-de-calificacion-automatica/semana-10-corte2.md#fuentes-del-estado-calificado).
 - **CampusMarket:** El experimento del consumidor incompatible tiene línea base y 58 observaciones contrastadas en la evaluación, correlación en las 58 y secuencia de rechazo y recuperación 200→422→200. El ADR-0020 confirma decisiones previas mediante evidencia. Se recupera el consumidor experimental; no se demuestra recuperación de infraestructura. [Fuentes y alcance](AS_202620_PROYECTO_CAMPUSMARKET/semana-10-corte2.md#fuentes-del-estado-calificado).
-- **Clubs UTB:** El escenario y el cambio de JWT están documentados. Faltan una línea base operacional reproducible y una prueba con sesión real; el ADR sigue propuesto. El health check es constante y no hay un conjunto de logs y métrica del escenario. La documentación sigue parcial. [Fuentes y alcance](AS_202620_Clubs_UTB/semana-10-corte2.md#fuentes-del-estado-calificado).
+- **Clubs UTB:** C2 se rectifica a 1,00 por la decisión JWT/JWKS implementada en puertos y adaptadores bajo el supuesto de pertinencia de U3. C1 y C4 permanecen en 0,60; C3 en 0,00 por ausencia del conjunto de logs y métrica del escenario. El fallo de Actions es de validación YAML antes de ejecutar jobs, no prueba de que fallen código o tests. Persisten límites de medición operacional y documentación. [Fundamento por criterio](AS_202620_Clubs_UTB/semana-10-corte2.md#fundamento-técnico-y-comentarios-vigentes).
 - **DinamikUTB:** El resultado declarado de 20/20 no coincide con el CI fallido y no constituye una línea base operacional. Hay health check, JSON y métricas, pero las cadenas arquitectónicas están incompletas y algunos controles documentados no están implementados. [Fuentes y alcance](AS_202620_DinamikUTB/semana-10-corte2.md#fuentes-del-estado-calificado).
 - **Drift:** E6 tiene tres corridas de base y tres de fallo controladas, con respuesta mediante timeout, caché y logs. El experimento es simulado y excluye TLS y el efecto en producción. Persisten coherencia parcial y una métrica de fuentes vacía. [Fuentes y alcance](AS_202620_Drift/semana-10-corte2.md#fuentes-del-estado-calificado).
 - **ElMapita:** La caracterización se apoya en un estado inicial negativo de 0/20, con control online y procedimiento. Ese resultado no se interpreta como cumplimiento del comportamiento offline. La respuesta offline y la coherencia documental siguen incompletas. [Fuentes y alcance](AS_202620_ElMapita/semana-10-corte2.md#fuentes-del-estado-calificado).
-- **EnAgenda:** Se corrigieron la protección y normalización de métricas y se añadió la prueba de no filtración; el CI pasa. Faltan una línea base y un umbral medidos en el despliegue, así como una decisión coherente con toda la arquitectura. [Fuentes y alcance](AS_202620_EnAgenda/semana-10-corte2.md#fuentes-del-estado-calificado).
+- **EnAgenda:** C2 se rectifica a 1,00 por la decisión justificada y su implementación coherente en el corte funcional. Las correcciones de métricas y no filtración anteriores al cierre se reconocen. C1, C3 y C4 permanecen en 0,60: faltan medición operacional contra umbral y trazabilidad documental completa; las desalineaciones documentales se valoran en C4, sin descontarlas de nuevo en C2. [Fundamento por criterio](AS_202620_EnAgenda/semana-10-corte2.md#fundamento-técnico-y-comentarios-vigentes).
 - **GimnasioUTB:** La concurrencia con PostgreSQL y FOR UPDATE tiene implementación y ADR coherentes. La instrumentación es parcial y el CI no ejecuta la prueba PostgreSQL del escenario. Hay actualización operacional, pero no un experimento nuevo completo sobre el despliegue. [Fuentes y alcance](AS_202620_GimnasioUTB/semana-10-corte2.md#fuentes-del-estado-calificado).
 - **InvenTrack:** El reporte S10 define el escenario y un cambio coherente. La cifra de 28 ms no tiene una prueba o serie que mida latencia; faltan una línea base y una nueva medición demostrada. La documentación continúa parcial. [Fuentes y alcance](AS_202620_InvenTrack/semana-10-corte2.md#fuentes-del-estado-calificado).
 - **LaPlacita:** El nuevo ensayo de staging acredita tres supervivientes de tres y corrige el arranque antes del POST. El UPSERT sigue sin orden garantizado y la respuesta HTTP no espera la durabilidad. C4 conserva PostgreSQL como planeado. [Fuentes y alcance](AS_202620_LaPlacita/semana-10-corte2.md#fuentes-del-estado-calificado).
@@ -99,6 +99,11 @@ Se confirmaron **36 hallazgos en 18 equipos**; en **5 equipos** no se observó d
 - AS_202620_AudioShare: 3 commits posteriores, punta `240605533aac563c80a1cab648d6ce7dcea2f6f1`. Sólo metadatos; no cambian esta valoración.
 - AS_202620_Recobra: 1 commits posteriores, punta `e0082dea0aa6fad7985d6acad138736eee8ffbfa`. Sólo metadatos; no cambian esta valoración.
 - AS_202620_uniTeam: 8 commits posteriores, punta `2c73ffce2d9b92e71697a7313f829789b4471639`. Sólo metadatos; no cambian esta valoración.
+
+
+## Rectificación aprobada · 14 de octubre de 2026
+
+Tras reconsideración de evidencia ya presente en los hashes de cierre, el docente aprueba C2 = 1,00 para EnAgenda y Clubs UTB. EnAgenda pasa de técnica 2,40 y total 3,24 a técnica 2,80 y total 3,64; Clubs UTB pasa de técnica 1,80 y total 2,60 a técnica 2,20 y total 3,00. Se conservan C1, C3, C4 y las sustentaciones docentes. La auditoría de deriva mantiene sus hallazgos; no constituye un descuento adicional. La corrección no acredita cambios tardíos ni registro en Moodle.
 
 <details>
 <summary>Resumen preliminar anterior, superado por la consolidación del 13 de octubre</summary>
@@ -162,3 +167,4 @@ En ambos, C1/C2 siguen sin puntaje hasta corroborar la asignación oficial. El e
 La evaluación definitiva de S9 permanece separada en [su resumen](resumen-s9.md).
 
 </details>
+

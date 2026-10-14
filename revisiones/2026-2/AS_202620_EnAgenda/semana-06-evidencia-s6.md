@@ -9,6 +9,12 @@
 | Cierre | 2026-09-14T05:00:00Z |
 | Revisor | pipeline automatico (GitHub Actions) |
 
+## Rectificación aprobada · 14 de octubre de 2026
+
+El informe definitivo de S5 ya identifica la base `696882ecb889c01bdc93170556c90044acf4fcff`. La [comparación S5→S6](https://github.com/ISCOUTB/AS_202620_EnAgenda/compare/696882ecb889c01bdc93170556c90044acf4fcff...0a58de865e0ddcde35c2b6fb73433c8611752219) modifica solo cinco documentos: arc42 §8, contextos/propiedad, aspectos, C4 nivel 3 y registro de IA. Los árboles `src/` y `app/` y los ADR no cambian; ADR1 y C4 nivel 2 en S5 ya describían los mismos límites de Invitaciones. S6 añade su representación de componentes. Se contrastó sin mover el cierre ni usar cambios tardíos. El criterio condicional de C4 nivel 3 y ADR pasa de **No verificado a Cumple**: la falta de hash alegada en la revisión original queda **superada**. Recuento anterior: **7/8, 4.5**; resultado vigente: **8/8, 5.0**.
+
+Las observaciones tempranas «C4 nivel 3 sin contenido», «arc42 sección 8 vacía» y «mapa de contextos y tabla módulo-datos ausentes» no describen el cierre definitivo: [C4 nivel 3](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/0a58de865e0ddcde35c2b6fb73433c8611752219/docs/c4/nivel-3-componentes.md), [arc42 §8](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/0a58de865e0ddcde35c2b6fb73433c8611752219/docs/arc42/08-conceptos-transversales.md) y [mapa/propiedad de datos](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/0a58de865e0ddcde35c2b6fb73433c8611752219/docs/arquitectura/contextos-y-propiedad-de-datos.md) aportan esos artefactos. Se conservan como historial expresamente superado en la planilla. Los pendientes transversales, incluido SonarCloud, no cambian esta corrección.
+
 ## Matriz de la ficha
 
 | Criterio de evaluacion | Evidencia tecnica | Estado | Observaciones |
@@ -19,7 +25,7 @@
 | Violaciones de propiedad de datos detectadas sobre el código actual | docs/arquitectura/contextos-y-propiedad-de-datos.md (tabla 'Verificación de violaciones de propiedad') | Cumple | Documenta el recorrido de verificación (escrituras y referencias) y concluye sin violaciones en el código actual. |
 | Plan de corrección por violación | docs/arquitectura/contextos-y-propiedad-de-datos.md (sección 'Plan de corrección') | Cumple | Define acción correctiva y responsable por tipo de violación, aunque no haya violaciones activas. |
 | arc42 sección 8 con lenguaje ubicuo y mapa de contextos | docs/arc42/08-conceptos-transversales.md | Cumple | Incluye lenguaje ubicuo en 8.1 y referencia al mapa de contextos en 8.2; el mapa está enlazado, no incrustado. |
-| C4 nivel 3 y ADR si los límites cambiaron desde el primer corte | docs/c4/nivel-3-componentes.md existe; falta hash de S5 para comparar | No verificado | No se pudo verificar si los límites cambiaron porque no se aportó el hash de la revisión definitiva de S5. |
+| C4 nivel 3 y ADR si los límites cambiaron desde el primer corte | Comparación de la base S5 `696882ecb889c01bdc93170556c90044acf4fcff` con S6 `0a58de865e0ddcde35c2b6fb73433c8611752219`; [C4 nivel 3 S5](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/696882ecb889c01bdc93170556c90044acf4fcff/docs/c4/nivel-3-componentes.md), [C4 nivel 3 S6](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/0a58de865e0ddcde35c2b6fb73433c8611752219/docs/c4/nivel-3-componentes.md). | Cumple | La base S5 estaba identificada. El C4 nivel 3 documenta el corte implementado y la comparación no acredita un cambio de límites que obligue a un ADR nuevo; se satisface la condición de la ficha. |
 | Aspectos relacionables con los contextos del mapa | docs/aspectos.md (fila A-01) y docs/arquitectura/contextos-y-propiedad-de-datos.md | Cumple | A-01 se relaciona con Invitaciones; los demás contextos aún no tienen aspectos, lo que es esperable en esta etapa. |
 
 ## Matriz transversal (CONTRATO §11)
@@ -43,26 +49,28 @@ Mira el repositorio **entero en la punta actual de la misma rama**, no solo la e
 - **Veredicto**: con pendientes
 - Resumen: Proyecto EnAgenda con monolito modular, corte vertical de invitaciones implementado y documentación arc42 completa. Mapa de contextos y propiedad de datos definidos para la semana 6.
 
+La exigencia histórica de un reto nuevo en S5 queda superada por su evaluación definitiva como compendio S1–S4; no se arrastra como incumplimiento de S6.
+
 Pendientes que siguen abiertos:
 - SonarCloud no configurado en el pipeline.
-- Pendientes de la semana 5: reto nuevo, medición, incremento y umbral.
 - Ampliar la tabla de aspectos a más contextos.
 - Eliminar archivos __pycache__ del repositorio.
 
 ## Recuento y nota sugerida
 
-7 de 8 criterios Cumple.
+8 de 8 criterios Cumple.
 
-**Nota sugerida (propuesta al docente, publicada por decision del profesor): 4.5 = 1 + 4 × (7/8).** La nota final la fija el profesor en Moodle.
+**Nota sugerida (propuesta al docente, publicada por decision del profesor): 5.0 = 1 + 4 × (8/8).** La nota final la fija el profesor en Moodle.
 
 ## No verificado / pendientes
 
-- Criterio 7 de la ficha: comparación de límites con S5 requiere el hash de la revisión definitiva de S5.
+- Ningún criterio de la ficha queda No verificado. Los pendientes transversales se conservan y no integran la fórmula semanal.
 
 ## Hallazgos para la planilla
 
 - Archivos __pycache__ versionados en src/ y tests/.
 - SonarCloud no configurado en el pipeline; solo pytest.
-- Pendientes de la semana 5 (reto nuevo, medición, incremento, umbral) declarados en docs/correcciones.md sin resolver.
+- La observación histórica de reto nuevo en S5 no es un pendiente vigente: rige la evaluación definitiva de S5 como compendio S1–S4.
 - Solo un aspecto (A-01) en docs/aspectos.md; Eventos, Tareas, Agenda, Presupuesto y Panel sin aspectos asociados.
-- C4 nivel 3 existe pero no se pudo verificar reajuste de límites por falta del hash de S5.
+- C4 nivel 3 y comparación con S5 verificados en la rectificación del 14 de octubre; la observación de falta de base queda superada.
+

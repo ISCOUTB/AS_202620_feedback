@@ -1,1 +1,24 @@
-{"modo": "early", "ts": "2026-09-17T22:00:00+00:00", "equipos": 23, "lote": "completado manual", "tamano_lote": 5}
+{
+  "modo": "early",
+  "ts": "2026-09-17T22:00:00+00:00",
+  "equipos": 23,
+  "lote": "completado manual",
+  "tamano_lote": 5,
+  "rectificacion_apelaciones": {
+    "fecha": "2026-10-14",
+    "aprobada_por_docente": true,
+    "resultados": {
+      "AS_202620_EnAgenda": {
+        "cumple": 8,
+        "total": 8,
+        "nota": 5.0
+      },
+      "AS_202620_Clubs_UTB": {
+        "cumple": 7,
+        "total": 8,
+        "nota": 4.5
+      }
+    },
+    "misma_evidencia_de_cierre": true
+  }
+}

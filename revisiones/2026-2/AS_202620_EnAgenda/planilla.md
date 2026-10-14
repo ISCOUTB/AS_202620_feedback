@@ -8,36 +8,56 @@ Hoja consolidada del equipo EnAgenda. Se actualiza tras cada revisión.
 |---|---|
 | Equipo | EnAgenda |
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_EnAgenda` |
-| Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Eliab Josue Arnedo Conde · Jeimy Yulieth Mendez Altamiranda · Gabriela Morales Cancino — cuentas abajo; ver comprobación actual de contribución más abajo. |
+| Integrantes y su usuario de GitHub | Identificación consolidada para S9 por correo y cuenta GitHub, sin publicar correos: Eliab Josue Arnedo Conde · Jeimy Yulieth Mendez Altamiranda · Gabriela Morales Cancino — ver rectificación transversal del 14 de octubre y registro histórico más abajo. |
 | URL del sistema desplegado | URL pública vigente no localizada; despliegue No verificado. Ver [S10](semana-10-corte2.md). |
-| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
+| Última revisión | 2026-10-14 · apelación aprobada S5/S6/S7/S9/S10; S9 conserva su puntaje |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 9 | S9 · definitiva | `master` · `5aa889370dcf342ba06666893b97f8065b513de9` · 2026-10-04T23:46:49-05:00 | 3/10 | 2.2 (propuesta al docente) | sí, 2026-10-06 |
-| 10 | Segundo corte · consolidado al cierre | `master` · `4bec22f3821493014e8352ece8274bb2950e97db` · 2026-10-11T23:47:24-05:00 | C1 0,60; C2 0,60; C3 0,60; C4 0,60 (cada uno /1) | Total 3,24/5; técnica 2,40/4 + C5 docente 0,84/1; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
+| 9 | S9 · definitiva | `master` · `5aa889370dcf342ba06666893b97f8065b513de9` · 2026-10-04T23:46:49-05:00 | 3/10; autoría transversal Cumple | 2.2 (sin cambio) | sí, rectificación transversal 2026-10-14 |
+| 10 | Segundo corte · consolidado al cierre | `master` · `4bec22f3821493014e8352ece8274bb2950e97db` · 2026-10-11T23:47:24-05:00 | C1 0,60; C2 1,00; C3 0,60; C4 0,60 (cada uno /1) | Total 3,64/5; técnica 2,80/4 + C5 docente 0,84/1; ver [S10](semana-10-corte2.md) | sí, rectificada 2026-10-14 |
 | 8 | S8 | `2c7d77a` (2026-09-27T23:42:39-05:00) | 5/10 (2 filas de despliegue diferidas) | 3.0 (provisional) | sí |
-| 7 | S7 | `849ee8c` (2026-09-20T23:59:07-05:00) | 4/10 | 2.6 | sí, auditada |
-| 6 | S6 | `0a58de8` (2026-09-13T23:38:41-05:00) | 7/8 | 4.5 | si |
-| 5 | CORTE1 | `696882e` (2026-09-07T16:21:16-05:00) | 10/12 | 4.3 | si |
+| 7 | S7 | `849ee8c` (2026-09-20T23:59:07-05:00) | 5/10 | 3.0 | sí, rectificada 2026-10-14 |
+| 6 | S6 | `0a58de8` (2026-09-13T23:38:41-05:00) | 8/8 | 5.0 | sí, rectificada 2026-10-14 |
+| 5 | CORTE1 | `696882e` (2026-09-07T16:21:16-05:00) | 10/12; valoración conservada por decisión docente | 4.3 (sin cambio) | sí, ubicación corregida 2026-10-14 |
 | 4 | S4 | `df724b8` (2026-08-30T23:57:42-05:00) | 8/10 | 4.2 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `13f61b10` · 2026-08-09T05:34:14-05:00 | 8/9 | 4,6 * | sí |
 | 2 | S2 | `5b6f7a8` (2026-08-16T23:33:20-05:00) | 5/9 | no aplica | si |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `c38adfb94` · 2026-08-23T23:49:01-05:00 | 3/9 | no se publica | sí (actualizada tras el cierre) |
 
-## Feedback S10 vigente · 13 de octubre de 2026
+## Resolución de apelación · 14 de octubre de 2026
+
+- **S5:** `docs/correcciones.md` está dentro de `docs/`, no en la raíz. Se rectifica esa afirmación, manteniendo por decisión docente el resultado publicado de **10/12 y 4.3**, sin una nueva penalización. [Detalle](semana-05-corte1.md#rectificación-aprobada--14-de-octubre-de-2026).
+- **S6:** la base definitiva S5 sí estaba identificada; no cambian los límites implementados y el C4 nivel 3 completa su representación. Criterio 7 **No verificado → Cumple**; **7/8 y 4.5 → 8/8 y 5.0**. Se superan expresamente los arrastres tempranos sobre C4 vacío, arc42 §8 vacía y mapa/tabla ausentes. [Fuentes](semana-06-evidencia-s6.md#rectificación-aprobada--14-de-octubre-de-2026).
+- **S7:** las rutas HTML no amplían la frontera de la API JSON contratada. Correspondencia **No cumple → Cumple**; **4/10 y 2.6 → 5/10 y 3.0**. Permanece la salvedad de fecha/hora sin zona, junto con las carencias de prueba contractual. [Fuentes](semana-07-evidencia-s7.md#rectificación-aprobada--14-de-octubre-de-2026).
+- **S9:** autoría transversal **No verificado → Cumple** al consolidar dos firmas de la misma cuenta. La matriz de la ficha conserva **3/10 y 2.2**. [Fuentes](semana-09-evidencia-s9.md#rectificación-transversal-aprobada--14-de-octubre-de-2026).
+- **S10:** C2 **0,60 → 1,00** por decisión implementada y comparación de una alternativa viable. C1/C3/C4 se mantienen en **0,60** y C5 en **0,84**. Subtotal **2,40 → 2,80** y total **3,24 → 3,64**. [Fundamento por criterio](semana-10-corte2.md#resolución-de-la-apelación-y-fundamento-por-criterio).
+
+Los valores anteriores se conservan aquí como historial explícitamente superado; las filas de «Estado por entrega» son las vigentes. Todas las notas son propuestas al docente; la nota final la fija en Moodle. No se cambiaron los hashes o cierres ni se ejecutó código estudiantil.
+
+### Contribución S9 verificada
+
+| Identidad de GitHub | Commits en el estado S9 | Evidencia |
+|---|---:|---|
+| Jein-12 | 78 | Historial agregado del estado S9 |
+| Daoisttl0FB3 / GabrielaMorales Cancino | 77 (70 + 7) | Firmas consolidadas por mismo correo y cuenta GitHub; correo omitido |
+| eliabarnedocondef10-gif | 18 | Historial agregado del estado S9 |
+
+Total **173 commits y tres identidades**, sin atribuir equivalencia por semejanza del nombre. [Comprobación y commits citados](semana-09-evidencia-s9.md#rectificación-transversal-aprobada--14-de-octubre-de-2026). La tabla histórica de S3 conservada abajo mantiene exclusivamente su alcance de S3.
+
+## Feedback S10 vigente · 14 de octubre de 2026
 
 Límite exclusivo: **2026-10-13T05:00:00Z**, fin del 12 de octubre en Colombia. Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
 
-**Subtotal técnico: 2,40 / 4,00. Total consolidado C1–C5: 3,24 / 5,00.**
+**Subtotal técnico: 2,80 / 4,00. Total consolidado C1–C5: 3,64 / 5,00.**
 
 Calificación de sustentación comunicada por el docente: **4,20 / 5,00**, incorporada como **C5 = 0,84 / 1,00**. La conversión proporcional se conserva sin redondearla a los niveles de los criterios técnicos.
 
-Se corrigieron la protección y normalización de métricas y se añadió la prueba de no filtración; el CI pasa. Faltan una línea base y un umbral medidos en el despliegue, así como una decisión coherente con toda la arquitectura.
+Se reconoce la decisión e implementación del despliegue, incluida la comparación de una alternativa viable. La protección y normalización de métricas y la prueba de no filtración están presentes; el CI citado pasa. arc42 sí fija un objetivo de latencia, pero el documento operativo no lo concreta en una línea base y un resultado reproducible del despliegue. Siguen pendientes logs estructurados, instrumentación de latencia y reconciliar los documentos históricos con Flask/REST y la autorización de métricas.
 
-Fuentes y alcance completos: [informe S10](semana-10-corte2.md#fundamento-técnico-y-comentarios-vigentes). Las referencias de identidad, contribución y despliegue heredadas conservan sus fechas originales; no constituyen una nueva verificación en esta consolidación.
+Fuentes y alcance completos: [informe S10](semana-10-corte2.md#fundamento-técnico-y-comentarios-vigentes). Las referencias heredadas conservan sus fechas originales; la contribución S9 se rectifica expresamente arriba. No se afirma una nueva verificación del despliegue.
 
 ### Deriva arquitectónica al cierre S10
 
@@ -53,7 +73,7 @@ Se contrastaron las declaraciones con las rutas de código del cierre mediante i
 <details>
 <summary>Seguimiento anterior a la consolidación S10; estados históricos superados</summary>
 
-**Historial superado por la consolidación del 13 de octubre de 2026.** Se conserva lo publicado como registro de las observaciones de cada fecha, no como la evaluación vigente. El cierre preliminar 2026-10-12T05:00:00Z que aparece abajo fue sustituido para S10 por el límite exclusivo 2026-10-13T05:00:00Z. Las notas parciales, pendientes de sustentación y bloqueos por asignación del escenario de ese historial no reemplazan la tabla actual.
+**Historial superado por la consolidación del 13 de octubre y la rectificación del 14 de octubre de 2026.** Se conserva lo publicado como registro de las observaciones de cada fecha, no como la evaluación vigente. El cierre preliminar 2026-10-12T05:00:00Z que aparece abajo fue sustituido para S10 por el límite exclusivo 2026-10-13T05:00:00Z. Las notas parciales, pendientes de sustentación y bloqueos por asignación del escenario de ese historial no reemplazan la tabla actual.
 
 ## Lo que se arrastra
 
@@ -103,20 +123,20 @@ Estado vigente observado en la punta citada en [S10](semana-10-corte2.md). Las c
 | Sin integración continua | S2 | si | |
 | docs/aspectos.md actualizado en commits 03c855c y 696882e (post-cierre) para corregir trazabilidad | S5 | no (resuelto tarde) | — |
 | docs/evidencia.md agregado en commit 5a8a5c5 (post-cierre) como evidencia de corte vertical | S5 | no (resuelto tarde) | — |
-| correcciones.md en la raíz | S5 | si | |
+| correcciones.md en la raíz | S5 | Ubicación rectificada, sin penalización nueva | Está en `docs/correcciones.md`; la apelación conserva la valoración S5 por decisión docente. |
 | Completar arc42 secciones 07, 08 y 11 | S5 | si | |
 | Completar C4 nivel 3 | S5 | si | |
 | Corregir enlace roto en aspectos.md | S5 | si | |
 | Configurar SonarCloud | S5 | si | |
-| C4 nivel 3 sin contenido | S6 | si | |
-| arc42 sección 8 vacía | S6 | si | |
-| Mapa de contextos y tabla módulo-datos ausentes | S6 | si | |
+| C4 nivel 3 sin contenido | S6 | No: observación temprana superada | Al cierre S6 existe representación de componentes y no cambian los límites de S5; rectificación del 14 de octubre. |
+| arc42 sección 8 vacía | S6 | No: observación temprana superada | La matriz definitiva S6 acredita lenguaje ubicuo y referencia al mapa en §8; rectificación del 14 de octubre. |
+| Mapa de contextos y tabla módulo-datos ausentes | S6 | No: observación temprana superada | El estado S6 contiene ambos artefactos y su contraste con el código; rectificación del 14 de octubre. |
 | SonarCloud no configurado | S6 | si | |
 | SonarCloud no configurado en el pipeline. | S6 | si | |
-| Pendientes de la semana 5: reto nuevo, medición, incremento y umbral. | S6 | si | |
+| Pendientes de la semana 5: reto nuevo, medición, incremento y umbral. | S6 | No como exigencia vigente de S5 | Registro histórico superado por la evaluación definitiva S5 como compendio S1–S4. |
 | Ampliar la tabla de aspectos a más contextos. | S6 | si | |
 | Eliminar archivos __pycache__ del repositorio. | S6 | si | |
-| Rutas web expuestas fuera del contrato OpenAPI | S7 | Sí | Declarar `/` y `/invitacion/<token>` o separar explícitamente la frontera contractual. |
+| Rutas web expuestas fuera del contrato OpenAPI | S7 | No: motivo de incumplimiento superado | Las rutas HTML están fuera de la API JSON contratada. La rectificación del 14 de octubre conserva la salvedad de fecha/hora y los pendientes de prueba contractual. |
 | Prueba funcional que no valida el OpenAPI ni se ejecuta como prueba contractual explícita | S7 | Sí | Hacer que la prueba lea la especificación y que el workflow invoque el paso contractual. |
 | Evidencia de fallo ante un cambio incompatible | S7 | Sí | Aportar un run o reproducción verificable de la rotura. |
 | ADR de integración incorporado después del cierre | S7 | No (resuelto tarde) | Existe en la punta actual, pero no modifica la calificación definitiva. |
@@ -152,11 +172,11 @@ Actualizado desde la evaluación de la punta actual; no altera la matriz congela
 | docs/ia.md al día para la semana | Cumple | Registro condensado en tabla y nueva entrada de diagnóstico de plantilla faltante; [docs/ia.md:43–47](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/c2077ac55a29562adc728734ca4c283ccb40f310/docs/ia.md#L43-L47). |
 | Pipeline, SonarCloud y Quality Gate públicos (desde S6) | No cumple | CI exacto success, pero no hay scanner/configuración/Quality Gate SonarCloud en el árbol; [.github/workflows/ci.yml:13–45](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/5aa889370dcf342ba06666893b97f8065b513de9/.github/workflows/ci.yml#L13-L45) solo prueba y build. |
 | Sin credenciales en el repositorio ni en el historial | No verificado | No hay credenciales reales hardcodeadas ni .env versionado en el snapshot; no se certifica todo el historial. Existe riesgo operativo distinto: métricas exponen request.path, que puede contener tokens de invitación. |
-| Contribución de todos los integrantes | No verificado | Cuatro firmas, 173 commits agregados en S9, para tres integrantes. Variantes deben consolidarse por evidencia de identidad; no se adivina la equivalencia. Punta actual: 4 firmas y 177 commits agregados; no equivalen automáticamente a personas. |
+| Contribución de todos los integrantes | No verificado en la pasada original; superado en S9 | Registro histórico: cuatro firmas, 173 commits en S9 y 177 en la punta entonces observada. La rectificación del 14 de octubre acredita tres identidades en S9 y Cumple; véase la sección vigente de contribución. |
 
 ## Contribución por integrante
 
-Actualización agregada del 2026-10-06: Cuatro firmas y 173 commits agregados en S9; consolidación de variantes no acreditada de forma independiente para todas las personas. En HEAD: 4 firmas y 177 commits agregados.
+Observación histórica del 2026-10-06, **superada en la consolidación de identidades S9 del 14 de octubre**: se contaron cuatro firmas y 173 commits en S9, y cuatro firmas y 177 commits en la punta entonces observada. La imposibilidad de consolidar variantes ya no es el estado vigente de S9.
 
 La tabla individual conservada abajo corresponde al registro histórico anterior; no se infieren nuevas correspondencias entre cuentas y personas.
 
@@ -177,3 +197,4 @@ Segundo corte, sobre el entorno desplegado y con el pipeline en vivo:
 - El test directo no detectó TemplateNotFound: ¿qué cambiarían en la prueba para cubrir el recorrido real del organizador?
 
 </details>
+

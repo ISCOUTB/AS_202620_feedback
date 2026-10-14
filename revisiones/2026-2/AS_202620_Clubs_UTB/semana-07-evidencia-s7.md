@@ -88,3 +88,10 @@ Filas releídas y resueltas en el hash dc211b8:
 - NC-01 (datos de clubes hardcodeados) y NC-02 (sin manejo de errores de conexión) siguen 'pendiente' en docs/arc42/lista_errores.md.
 - arc42 no incluye las secciones 07 y 11.
 - HEAD dc211b8 (2026-09-20T23:56:51-05:00) es anterior al cierre y no hay commits posteriores en la rama principal.
+
+
+## Aclaración aprobada · 14 de octubre de 2026
+
+Se conserva 8/10 y 4.2. Los runs existentes no demuestran una prueba que detecte un cambio incompatible: [Spectral](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/actions/runs/35560505103/job/106212362481) falla por falta de ruleset y el [comparador](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/actions/runs/35562749870/job/106218593545) informa NoChanges. Un fallo de configuración no acredita ese criterio.
+
+NC-02 describe manejo de errores de conexión sin atribución específica al backend. La corrección verificable es frontend: AuthException/SnackBar aparece en [6965ad2](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/commit/6965ad23ff6fd865eed6aee36eb20644ae88ce25), del 25 de septiembre, y se declara resuelta en [c5c9923](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/commit/c5c9923f407d93426d113a1e88d6e02125bc0345), del 27 de septiembre. Es posterior a los cierres S6 y S7; corrige la atribución del comentario, sin acreditar cumplimiento oportuno adicional.

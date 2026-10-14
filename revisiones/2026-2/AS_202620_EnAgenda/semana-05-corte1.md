@@ -9,12 +9,16 @@
 | Cierre | 2026-09-10T17:00:00Z |
 | Revisor | pipeline automatico (GitHub Actions) |
 
+## Rectificación aprobada · 14 de octubre de 2026
+
+Se corrige únicamente la afirmación de ubicación: el archivo real es [docs/correcciones.md](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/696882ecb889c01bdc93170556c90044acf4fcff/docs/correcciones.md), no `correcciones.md` en la raíz. La observación original «El archivo está en la raíz» queda **superada**. La discrepancia se deja explícita, sin ocultar la exigencia literal ni convertir esta apelación en una nueva penalización: por decisión docente se conservan **10/12 y 4.3**. No se cambian el hash ni el cierre calificados.
+
 ## Matriz de la ficha
 
 | Criterio de evaluacion | Evidencia tecnica | Estado | Observaciones |
 |---|---|---|---|
 | Estado de corte identificable y anterior al cierre | Rama origin/master, hash 696882e, fecha 2026-09-07T16:21:16-05:00, anterior al cierre 2026-09-10T17:00:00Z. | Cumple | El estado calificado es identificable y cumple la condición temporal. |
-| correcciones.md existe en la raíz del estado calificado | docs/correcciones.md presente en el árbol del hash 696882e. | Cumple | El archivo está en la raíz y dentro del estado calificado. |
+| correcciones.md existe en la raíz del estado calificado | [docs/correcciones.md](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/696882ecb889c01bdc93170556c90044acf4fcff/docs/correcciones.md) está presente dentro de `docs/`, no en la raíz. | Cumple | Valoración conservada por decisión docente; se corrige la ubicación factual. La ruta no satisface literalmente la ubicación exigida; la rectificación aprobada no reabre a la baja el primer corte. |
 | Correcciones trazables y contrastadas | docs/correcciones.md responde a hallazgos de S4 (C4 y aspectos) con enlaces a rutas y commits; se contrastó con el árbol y el historial. | Cumple | Las correcciones declaradas se verifican en el estado calificado. |
 | S1 al día: equipo, problema y repositorio | README.md y docs/ficha-problema.md describen problema, usuarios y alcance; integrantes en historial (Daoisttl0FB3, Jein-12, eliabarnedocondef10-gif). | Cumple | El repositorio es público y pertenece a la organización ISCOUTB. |
 | S2 al día: escenarios de calidad y restricciones | docs/arc42/10-requisitos-de-calidad.md incluye árbol de utilidad y EC-01 a EC-05; docs/arc42/02- restricciones.md define R-01 a R-06. | Cumple | Escenarios y restricciones están documentados y coherentes. |
@@ -67,3 +71,4 @@ Mira el repositorio **entero en la punta actual de la misma rama**, no solo la e
 - El C4 nivel 3 está vacío, aunque no se exige contenido en este corte.
 - No se evidencia análisis estático con SonarCloud en el pipeline.
 - El PDF de Moodle no está disponible para verificación.
+

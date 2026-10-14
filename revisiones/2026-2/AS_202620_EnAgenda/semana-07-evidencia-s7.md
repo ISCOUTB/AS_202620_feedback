@@ -9,13 +9,19 @@
 | Cierre | 2026-09-21T05:00:00Z |
 | Revisor | pipeline automatico (GitHub Actions) |
 
+## Rectificación aprobada · 14 de octubre de 2026
+
+La fila de correspondencia se recalifica por el alcance de la API JSON, usando el mismo estado cerrado. [app/web.py:30–82](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/849ee8cd1c89ed4ce2da1c7f0be8e058621bd0e1/app/web.py#L30-L82) sirve HTML y redirecciones; las operaciones JSON GET/POST de [app/web.py:141–205](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/849ee8cd1c89ed4ce2da1c7f0be8e058621bd0e1/app/web.py#L141-L205) corresponden a las declaradas en [OpenAPI:12–74](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/849ee8cd1c89ed4ce2da1c7f0be8e058621bd0e1/docs/api/openapi.yaml#L12-L74). No procede exigir que toda ruta web de Flask figure en ese contrato. La observación anterior sobre `/` y `/invitacion/<token>` queda **superada**. Recuento anterior: **4/10, 2.6**; resultado vigente: **5/10, 3.0**. Referencia: [ficha S7, criterios vigentes](https://github.com/ISCOUTB/AS_202620_feedback/blob/edb99b76f315ba8a6ee7a9e4fe64259c9c5c5f7c/fichas/semana-07-evidencia-s7.md#L17-L39).
+
+**Salvedad técnica conservada:** [OpenAPI:94–98](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/849ee8cd1c89ed4ce2da1c7f0be8e058621bd0e1/docs/api/openapi.yaml#L94-L98) declara `format: date-time`, mientras la creación usa `datetime.now()` sin zona y la respuesta serializa con `isoformat()` ([app/web.py:30–38](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/849ee8cd1c89ed4ce2da1c7f0be8e058621bd0e1/app/web.py#L30-L38), [app/web.py:153–162](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/849ee8cd1c89ed4ce2da1c7f0be8e058621bd0e1/app/web.py#L153-L162)). Debe declararse la zona y validarse el formato; reconocer la correspondencia de rutas no acredita conformidad completa del esquema. No se modifica la falta de prueba contractual, su integración al pipeline ni la demostración de fallo incompatible. El ADR y C4 tardíos siguen sin contar para el cierre.
+
 ## Matriz de la ficha
 
 | Criterio de evaluacion | Evidencia tecnica | Estado | Observaciones |
 |---|---|---|---|
 | Contrato en formato ejecutable versionado en el repositorio | docs/api/openapi.yaml:1 `openapi: 3.0.3`, presente en el árbol de 849ee8c (2026-09-20T23:59:07-05:00). | Cumple | Es especificación ejecutable, no prosa; servidor declarado http://localhost:5000. |
 | Contrato con rutas y esquemas de datos, no solo listado de endpoints | docs/api/openapi.yaml: paths `/api/v1/invitaciones/{token}` (GET, POST) con `$ref` a components.schemas.Invitacion, RespuestaInvitacion y Error en respuestas 200/400/404. | Cumple | Los esquemas declaran tipos, campos requeridos, enum de estado y ejemplos. |
-| Correspondencia entre el contrato y la API implementada | `app/web.py` implementa GET y POST en `/api/v1/invitaciones/<token>`, pero también expone `/` y `/invitacion/<token>` sin declararlos en `docs/api/openapi.yaml`. | No cumple | Hay correspondencia para las dos operaciones contratadas, pero una ruta del código no está en el contrato; la sincronización bidireccional exigida no se sostiene. |
+| Correspondencia entre el contrato y la API implementada | [OpenAPI:12–74](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/849ee8cd1c89ed4ce2da1c7f0be8e058621bd0e1/docs/api/openapi.yaml#L12-L74) y [app/web.py:141–205](https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/849ee8cd1c89ed4ce2da1c7f0be8e058621bd0e1/app/web.py#L141-L205): GET/POST JSON de `/api/v1/invitaciones/<token>`. | Cumple | Las operaciones de la API están representadas. `/` y `/invitacion/<token>` son rutas HTML/redirect de la interfaz web, fuera del alcance de este contrato JSON. Se conserva la salvedad de formato temporal detallada en la rectificación; este cumplimiento no certifica conformidad exhaustiva de todos los valores con el esquema. |
 | Versión de la API declarada y con historial | `docs/api/openapi.yaml` declara `info.version: 1.0.0`; `git log` registra su creación en `bda4116` (2026-09-20T17:40:38-05:00). | Cumple | La versión y el archivo están bajo control de versiones en el estado calificado. |
 | Prueba de contrato presente | `tests/test_api_invitaciones.py` prueba respuestas funcionales de GET/POST, pero no lee ni valida `docs/api/openapi.yaml` ni sus esquemas. | No cumple | Es una prueba de API, no una prueba de contrato contra la especificación ejecutable. |
 | El pipeline ejecuta la prueba de contrato | .github/workflows/ci.yml solo contiene `run: pytest -q` tras instalar dependencias; ninguna línea invoca contract/schemathesis/dredd/pact/prism/spectral/openapi. | No cumple | El run exitoso runs/35575083849 es un CI genérico de pytest, no identifica paso de contrato; se esperaba el comando de contrato en el workflow y su URL de run. |
@@ -43,7 +49,7 @@ Mira el repositorio **entero en la punta actual de la misma rama**, no solo la e
 
 - **Punta actual revisada**: `6db7cd98f957c757aa37aeda47a52b9e54831e12 2026-09-21T02:53:08-05:00 Update nivel-2-contenedores.md`
 - **Veredicto**: con pendientes
-- Resumen: En la punta de master (6db7cd9) el contrato OpenAPI 3.0.3 con esquemas está versionado y arc42 §6 ya era verificable al cierre. Siguen abiertas la sincronización bidireccional contrato-código, una prueba que valide el OpenAPI, su ejecución explícita y el fallo ante incompatibilidad; el ADR de integración y el ajuste del C4 llegaron después del cierre, y SonarCloud continúa sin evidencia pública.
+- Resumen: En la punta de master (6db7cd9) el contrato OpenAPI 3.0.3 con esquemas está versionado y arc42 §6 ya era verificable al cierre. Siguen abiertas una prueba que valide el OpenAPI, su ejecución explícita y el fallo ante incompatibilidad; la exclusión de rutas HTML no constituye una desincronización de esta API y queda la salvedad de fecha/hora; el ADR de integración y el ajuste del C4 llegaron después del cierre, y SonarCloud continúa sin evidencia pública.
 
 Resuelto tarde (corregido despues del cierre, ahora al dia):
 - 54ecb57 2026-09-21T02:36:10-05:00 Create 0002-estrategia-integracion-api.md (ADR posterior al cierre)
@@ -53,20 +59,20 @@ Resuelto tarde (corregido despues del cierre, ahora al dia):
 
 Pendientes que siguen abiertos:
 - Prueba de contrato ejecutada por el pipeline y evidencia de su fallo ante un cambio incompatible
-- Sincronizar con el contrato las rutas `/` y `/invitacion/<token>` expuestas por `app/web.py`
+- Alinear la fecha/hora de respuesta con `format: date-time`: declarar zona horaria y verificarla mediante validación contractual.
 - SonarCloud: scanner en el workflow, run exitoso del hash y URL pública con Quality Gate
 - C4 nivel 2 con protocolo y formato por flecha
 - Limpieza de __pycache__ versionado
 
 ## Recuento y nota sugerida
 
-4 de 10 criterios Cumple.
+5 de 10 criterios Cumple.
 
-**Nota sugerida (propuesta al docente, publicada por decision del profesor): 2.6 = 1 + 4 × (4/10).** La nota final la fija el profesor en Moodle.
+**Nota sugerida (propuesta al docente, publicada por decision del profesor): 3.0 = 1 + 4 × (5/10).** La nota final la fija el profesor en Moodle.
 
 ## No verificado / pendientes
 
-- Correspondencia contrato↔código: las rutas `/` y `/invitacion/<token>` no están en el OpenAPI.
+- La omisión de rutas HTML no es un incumplimiento del contrato JSON. Permanece la salvedad de fecha/hora sin zona y falta validarla contra el esquema.
 - Prueba de contrato: `tests/test_api_invitaciones.py` no valida la especificación OpenAPI.
 - Fallo de la prueba ante cambio incompatible: sin run en rojo ni evidencia aportada; pregunta de sustentación.
 - El ADR de integración y los ajustes de C4 posteriores al cierre no alteran el resultado definitivo de S7.
@@ -85,3 +91,4 @@ Pendientes que siguen abiertos:
 - Coincidencias de la búsqueda de secretos corresponden a tokens de invitación y variables locales, no a credenciales.
 - Se versionan archivos generados __pycache__/*.pyc en src/ y tests/.
 - Commits posteriores al cierre (no calificados): 6db7cd9 2026-09-21T02:53:08-05:00 Update nivel-2-contenedores.md; 9ebd147 2026-09-21T02:46:20-05:00 Update 06-vista-de-ejecución.md; 54ecb57 2026-09-21T02:36:10-05:00 Create 0002-estrategia-integracion-api.md; 61cb4d0 2026-09-21T02:31:44-05:00 Delete docs/adr/0002-estrategia-integracion; a02f375 2026-09-21T02:30:15-05:00  0002-estrategia-integracion
+

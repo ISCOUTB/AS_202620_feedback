@@ -21,7 +21,7 @@ Nota sugerida = 1 + 4 × (n/m) sobre la matriz de la ficha, **propuesta al docen
 | DinamikUTB | `AS_202620_DinamikUTB` | `5e6fa73` | 10/10 | 5.0 |
 | Drift | `AS_202620_Drift` | `9334a03` | 10/10 | 5.0 |
 | ElMapita | `AS_202620_ElMapita` | `afae3be` | 8/10 | 4.2 |
-| EnAgenda | `AS_202620_EnAgenda` | `849ee8c` | 4/10 | 2.6 |
+| EnAgenda | `AS_202620_EnAgenda` | `849ee8c` | 5/10 | 3.0 |
 | GimnasioUTB | `AS_202620_GimnasioUTB` | `0e3aeb5` | 8/10 | 4.2 |
 | InvenTrack | `AS_202620_InvenTrack` | `f10fd01` | 9/10 | 4.6 |
 | LaPlacita | `AS_202620_LaPlacita` | `8c2e1bc` | 10/10 | 5.0 |
@@ -97,3 +97,8 @@ Ninguna de estas correcciones cambia una nota: la matriz transversal no entra en
 - **Resuelto.** El mapeo del kit usa ya `AS_202620_UTB_TRACKER`: `EQUIPOS.md`, el README,
   `calificaciones.md`, los resúmenes y la carpeta `revisiones/2026-2/AS_202620_UTB_TRACKER/`.
   `AS_202620_TRACTAR` queda solo como nombre anterior en los informes escritos antes del cambio.
+
+
+## Rectificación aprobada · 14 de octubre de 2026
+
+EnAgenda: correspondencia contrato/API pasa a Cumple al distinguir las rutas HTML del alcance REST documentado; 4/10 (2.6) queda sustituido por 5/10 (3.0). Se conserva la salvedad sobre date-time y los demás criterios. Clubs UTB conserva 8/10 (4.2). Evidencia: [matriz EnAgenda](AS_202620_EnAgenda/semana-07-evidencia-s7.md).

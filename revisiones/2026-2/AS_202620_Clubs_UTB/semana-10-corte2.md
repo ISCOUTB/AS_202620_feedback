@@ -1,6 +1,6 @@
 # Segundo corte · S10 · Clubs UTB · consolidación al cierre
 
-**Actualización del feedback: 13 de octubre de 2026.** La tabla siguiente sustituye la valoración preliminar conservada al final.
+**Actualización del feedback: 14 de octubre de 2026.** La tabla siguiente sustituye la valoración preliminar conservada al final.
 
 | Campo | Valor |
 |---|---|
@@ -28,12 +28,12 @@ Se valora el escenario documentado disponible; no se afirma asignación docente 
 | Criterio | Nivel técnico / origen | Puntaje |
 |---|---|---:|
 | C1 · Caracterización del escenario operativo | Básico | 0,60 / 1,00 |
-| C2 · Decisión e implementación | Básico | 0,60 / 1,00 |
+| C2 · Decisión e implementación | Sobresaliente | 1,00 / 1,00 |
 | C3 · Operación, seguridad y observabilidad | Insuficiente | 0,00 / 1,00 |
 | C4 · Evolución arquitectónica trazable | Básico | 0,60 / 1,00 |
 | C5 · Sustentación del reto | Calificación comunicada por el docente | 0,80 / 1,00 |
 
-**Subtotal técnico: 1,80 / 4,00. Total consolidado C1–C5: 2,60 / 5,00.**
+**Subtotal técnico: 2,20 / 4,00. Total consolidado C1–C5: 3,00 / 5,00.**
 
 Calificación de sustentación comunicada por el docente: **4,00 / 5,00**, incorporada como **C5 = 0,80 / 1,00**. La conversión proporcional se conserva sin redondearla a los niveles de los criterios técnicos.
 
@@ -41,9 +41,12 @@ Los componentes técnicos se publican como propuesta al docente. Publicar esta c
 
 ## Fundamento técnico y comentarios vigentes
 
-El escenario y el cambio de JWT están documentados. Faltan una línea base operacional reproducible y una prueba con sesión real; el ADR sigue propuesto. El health check es constante y no hay un conjunto de logs y métrica del escenario. La documentación sigue parcial.
+La rectificación reconoce C2 sin duplicar descuentos de trazabilidad u operación. Se mantiene el supuesto explícito de pertinencia de U3, no una asignación oficial comprobada.
 
-Los puntajes C1–C4 se conservan de la evaluación consolidada; el comentario y las fuentes siguientes sustentan la valoración conjunta, sin inferir puntajes nuevos de los recuentos preliminares.
+- **C1 · 0,60:** sí hay evidencia funcional antes/después: el ADR describe 201→401, una prueba de regresión y mutación, con 21 pruebas en verde declaradas por el equipo; [docs/adr/0006-validacion-token-jwt-supabase.md:61–67](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/docs/adr/0006-validacion-token-jwt-supabase.md#L61-L67). No es correcto afirmar ausencia total de línea base. La prueba sustituye autenticación por AuthFalso ([backend/tests/conftest.py:18–29](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/backend/tests/conftest.py#L18-L29)), y quedan pendientes sesión JWT real y medición operacional representativa.
+- **C2 · 1,00:** el ADR compara JWKS con consulta remota auth.get_user y descarta HS256 por incompatibilidad; trata latencia, revocación y dependencia del proveedor ([docs/adr/0006-validacion-token-jwt-supabase.md:18–59](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/docs/adr/0006-validacion-token-jwt-supabase.md#L18-L59)). La implementación materializa la decisión mediante ES256/JWKS, audiencia, emisor, expiración y sub ([backend/src/linkclub/adapters/outbound/auth/supabase_jwt_adapter.py:16–31](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/backend/src/linkclub/adapters/outbound/auth/supabase_jwt_adapter.py#L16-L31)) y protege escritura con require_auth ([backend/src/linkclub/adapters/inbound/api/publicacion_router.py:15–73](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/backend/src/linkclub/adapters/inbound/api/publicacion_router.py#L15-L73)). No se comprobó incompatibilidad de despliegue específica de esta decisión. Las discrepancias documentales se valoran en C4, sin volver a descontarlas aquí.
+- **C3 · 0,00:** falta registro de intentos rechazados y métrica operacional ligada a U3, exigidos por el escenario ([docs/arc42/10_requisitos_de_calidad.md:83–88](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/docs/arc42/10_requisitos_de_calidad.md#L83-L88)). El health constante acredita liveness básico; por sí solo no justifica cero. Los workflows [backend-tests](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/actions/runs/37269279731) y [contrato](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/actions/runs/37269279042) son rechazados por YAML inválido antes de jobs, en líneas 24 y 31 respectivamente: no demuestran que falle código o tests.
+- **C4 · 0,60:** permanece desalineación entre Supabase dibujado y persistencia real en memoria ([docs/c4/contexto.md:39–85](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/docs/c4/contexto.md#L39-L85)); la vista de decisiones conserva una referencia obsoleta al ADR de JWT ([docs/arc42/09_decisiones_de_diseno.md:5–10](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/docs/arc42/09_decisiones_de_diseno.md#L5-L10)). La documentación no completa la trazabilidad, aunque la decisión focal de autenticación sí esté implementada.
 
 ### Fuentes del estado calificado
 
@@ -155,6 +158,11 @@ Límite: Inspección estática; no se ejecutaron pruebas ni se comprobó el serv
 
 La verificación de metadatos del 2026-10-13T16:45:48.285819+00:00 confirmó el hash anterior como último commit de `master` antes del límite exclusivo. La punta observada es [`cd0ad9c64925863ed5067ed53da7f3c6dcf09895`](https://github.com/ISCOUTB/AS_202620_Clubs_UTB/commit/cd0ad9c64925863ed5067ed53da7f3c6dcf09895) (2026-10-05T00:46:29-05:00). Coincide con el estado calificado; no hay commits posteriores al cierre en esa rama al momento de la comprobación.
 
+
+## Rectificación aprobada · 14 de octubre de 2026
+
+C2 pasa de 0,60 a 1,00; técnica 1,80→2,20 y total 2,60→3,00 con C5 docente 0,80 conservado. Se reconsidera el mismo hash de cierre. Los cambios del 13 y 14 de octubre no reciben crédito retroactivo. Los puntajes y comentarios previos quedan superados en lo indicado; los hallazgos de deriva se conservan.
+
 <details>
 <summary>Historial S10 anterior, superado; conservar fechas y alcance originales</summary>
 
@@ -258,3 +266,4 @@ El delta S9 contiene 9 commits respecto de S8; hay 3 commits posteriores a S9 en
 3. Tras medir rutas protegidas, ¿qué cambiarían para impedir que un usuario autenticado publique en un club ajeno?
 
 </details>
+

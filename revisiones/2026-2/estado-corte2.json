@@ -1,6 +1,6 @@
 {
   "modo": "final",
-  "ts": "2026-10-13T18:48:18.703757+00:00",
+  "ts": "2026-10-14T21:30:00+00:00",
   "equipos": 23,
   "origen": "consolidacion-de-evaluacion-tecnica-y-sustentaciones-docentes",
   "publicado": true,
@@ -14,7 +14,7 @@
   "supuesto_escenarios": "Se evalua el escenario documentado bajo supuesto explicito de pertinencia; asignacion oficial no verificada.",
   "equipos_con_C5": 19,
   "equipos_C5_pendiente": 4,
-  "s9": "sin cambios",
+  "s9": "Notas sin cambios; precisiones de comentarios e identidad en rectificación de 2026-10-14",
   "correcciones_previas_incorporadas": "Correcciones de despliegue y C4 propuestas en PR4 incorporadas en el historial; no se realizo una nueva comprobacion externa.",
   "resultados": [
     {
@@ -273,18 +273,18 @@
       "fecha": "2026-10-05T00:46:29-05:00",
       "criterios_tecnicos": {
         "C1": 0.6,
-        "C2": 0.6,
+        "C2": 1.0,
         "C3": 0,
         "C4": 0.6
       },
-      "subtotal_tecnico_sobre_4": 1.8,
+      "subtotal_tecnico_sobre_4": 2.2,
       "C5_docente": 0.8,
       "sustentacion_docente_sobre_5": 4,
-      "total_sobre_5": 2.6,
+      "total_sobre_5": 3.0,
       "estado_total": "Consolidado con C5 docente",
       "escenario": "U3: autenticación de rutas de escritura",
       "asignacion_oficial": "No verificado; supuesto explícito de pertinencia",
-      "comentario": "El escenario y el cambio de JWT están documentados. Faltan una línea base operacional reproducible y una prueba con sesión real; el ADR sigue propuesto. El health check es constante y no hay un conjunto de logs y métrica del escenario. La documentación sigue parcial.",
+      "comentario": "C2 se rectifica a 1,00 por la decisión JWT/JWKS implementada en puertos y adaptadores bajo el supuesto de pertinencia de U3. C1 y C4 permanecen en 0,60; C3 en 0,00 por ausencia del conjunto de logs y métrica del escenario. El fallo de Actions es de validación YAML antes de ejecutar jobs, no prueba de que fallen código o tests. Persisten límites de medición operacional y documentación.",
       "fuentes": [
         "https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/docs/adr/0006-validacion-token-jwt-supabase.md#L9-L67",
         "https://github.com/ISCOUTB/AS_202620_Clubs_UTB/blob/cd0ad9c64925863ed5067ed53da7f3c6dcf09895/backend/src/linkclub/adapters/inbound/api/auth_dependency.py#L1-L33",
@@ -385,6 +385,19 @@
           }
         ],
         "informe": "revisiones/2026-2/AS_202620_Clubs_UTB/semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10"
+      },
+      "rectificacion_2026_10_14": {
+        "anterior": {
+          "criterios_tecnicos": {
+            "C1": 0.6,
+            "C2": 0.6,
+            "C3": 0,
+            "C4": 0.6
+          },
+          "subtotal_tecnico_sobre_4": 1.8,
+          "total_sobre_5": 2.6
+        },
+        "motivo": "C2 reconocido como Sobresaliente tras reconsideración de evidencia del mismo hash de cierre; aprobado por el docente."
       }
     },
     {
@@ -775,18 +788,18 @@
       "fecha": "2026-10-11T23:47:24-05:00",
       "criterios_tecnicos": {
         "C1": 0.6,
-        "C2": 0.6,
+        "C2": 1.0,
         "C3": 0.6,
         "C4": 0.6
       },
-      "subtotal_tecnico_sobre_4": 2.4,
+      "subtotal_tecnico_sobre_4": 2.8,
       "C5_docente": 0.84,
       "sustentacion_docente_sobre_5": 4.2,
-      "total_sobre_5": 3.24,
+      "total_sobre_5": 3.64,
       "estado_total": "Consolidado con C5 docente",
       "escenario": "Solo documento operativo EC-XX de consulta pública/health y latencia; no se identificó reto S10 nuevo explícito.",
       "asignacion_oficial": "No verificado; supuesto explícito de pertinencia",
-      "comentario": "Se corrigieron la protección y normalización de métricas y se añadió la prueba de no filtración; el CI pasa. Faltan una línea base y un umbral medidos en el despliegue, así como una decisión coherente con toda la arquitectura.",
+      "comentario": "C2 se rectifica a 1,00 por la decisión justificada y su implementación coherente en el corte funcional. Las correcciones de métricas y no filtración anteriores al cierre se reconocen. C1, C3 y C4 permanecen en 0,60: faltan medición operacional contra umbral y trazabilidad documental completa; las desalineaciones documentales se valoran en C4, sin descontarlas de nuevo en C2.",
       "fuentes": [
         "https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docs/despliegue/medicion-dokploy.md",
         "https://github.com/ISCOUTB/AS_202620_EnAgenda/blob/4bec22f3821493014e8352ece8274bb2950e97db/docs/adr/0003-desplegar-api-flask-en-dokploy.md",
@@ -887,6 +900,19 @@
           }
         ],
         "informe": "revisiones/2026-2/AS_202620_EnAgenda/semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10"
+      },
+      "rectificacion_2026_10_14": {
+        "anterior": {
+          "criterios_tecnicos": {
+            "C1": 0.6,
+            "C2": 0.6,
+            "C3": 0.6,
+            "C4": 0.6
+          },
+          "subtotal_tecnico_sobre_4": 2.4,
+          "total_sobre_5": 3.24
+        },
+        "motivo": "C2 reconocido como Sobresaliente tras reconsideración de evidencia del mismo hash de cierre; aprobado por el docente."
       }
     },
     {
@@ -2665,5 +2691,15 @@
     "metodo": "Auditoría estática de la arquitectura declarada frente a las rutas implementadas en el mismo hash del cierre S10. Se revisaron capas y dominio, persistencia, API y autorización, despliegue, asincronía y observabilidad. Se excluyeron PDF y commits posteriores al cierre; no se ejecutó código estudiantil ni se probó el servicio remoto. Una funcionalidad futura explícitamente delimitada o una deuda aceptada por un ADR vigente no se cuenta por sí sola como deriva. La gravedad indica prioridad técnica del hallazgo; no equivale a un descuento automático en la rúbrica. Los hallazgos se incorporan como feedback y propuestas de corrección; los puntajes C1–C4 conservan la matriz técnica vigente, sin recalificación por esta auditoría.",
     "fecha_auditoria": "2026-10-13",
     "cierre_exclusivo": "2026-10-13T05:00:00Z"
+  },
+  "rectificacion_apelaciones": {
+    "fecha": "2026-10-14",
+    "aprobacion": "Docente aprueba correcciones y actualización directa del repositorio",
+    "alcance": [
+      "AS_202620_EnAgenda",
+      "AS_202620_Clubs_UTB"
+    ],
+    "sin_evidencia_tardia": true,
+    "consolidacion_anterior_ts": "2026-10-13T18:48:18.703757+00:00"
   }
 }

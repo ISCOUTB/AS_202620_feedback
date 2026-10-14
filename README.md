@@ -203,11 +203,13 @@ Los **resúmenes** de cada semana, con el recuento y la nota sugerida de los 23 
 [S7](revisiones/2026-2/resumen-s7.md), [S8](revisiones/2026-2/resumen-s8.md),
 [S9 definitiva](revisiones/2026-2/resumen-s9.md) y [S10 / CORTE2 consolidado](revisiones/2026-2/resumen-s10.md).
 
-**Feedback S10 consolidado el 13 de octubre de 2026:** se publican comentarios y componentes técnicos de los 23 equipos, con 19 sustentaciones comunicadas por el docente y 4 pendientes. El [resumen S10](revisiones/2026-2/resumen-s10.md) distingue subtotal técnico /4, C5 docente /1 y total /5 cuando está completo.
+**Feedback S10 consolidado el 13 de octubre y rectificado el 14 de octubre de 2026:** se publican comentarios y componentes técnicos de los 23 equipos, con 19 sustentaciones comunicadas por el docente y 4 pendientes. El [resumen S10](revisiones/2026-2/resumen-s10.md) distingue subtotal técnico /4, C5 docente /1 y total /5 cuando está completo.
+
+**Apelaciones aprobadas el 14 de octubre:** EnAgenda: S6 5,0; S7 3,0; S10 3,64. Clubs UTB (LinkClub): S6 4,5; S10 3,00. Las matrices y planillas registran los fundamentos y valores previos; S5 y S9 conservan sus notas. Son resultados del feedback, no un registro automático en Moodle.
 
 La auditoría de [deriva arquitectónica](revisiones/2026-2/resumen-s10.md#deriva-arquitectónica-de-los-23-equipos) contrasta documentación e implementación al cierre: **36 hallazgos en 18 equipos** y **5 sin deriva material observada**. Cada equipo tiene evidencia, alcance y correcciones propuestas en su informe, planilla y feedback.
 
-El límite exclusivo es **2026-10-13T05:00:00Z**, fin del 12 de octubre en Colombia. Reemplaza el cierre preliminar del 12-oct a las 05:00Z. Se evalúan los escenarios documentados bajo supuesto explícito de pertinencia, sin afirmar una asignación oficial verificada. S9 permanece congelada; los PDF se excluyen sin penalización. Las revisiones de los días 6 y 10 y las correcciones posteriores se conservan como historial superado dentro de los informes.
+El límite exclusivo es **2026-10-13T05:00:00Z**, fin del 12 de octubre en Colombia. Reemplaza el cierre preliminar del 12-oct a las 05:00Z. Se evalúan los escenarios documentados bajo supuesto explícito de pertinencia, sin afirmar una asignación oficial verificada. S9 conserva sus hashes y notas; la rectificación del 14 de octubre precisa comentarios e identidades sin recalcularla. Los PDF se excluyen sin penalización. Las revisiones de los días 6 y 10 y las correcciones posteriores se conservan como historial superado dentro de los informes.
 
 | Equipo | Repositorio | Retroalimentación | Matriz S1 | Matriz S2 | Matriz S3 | Matriz S4 | Matriz CORTE1 | Matriz S6 | Matriz S7 | Matriz S8 | Matriz S9 | S10 / CORTE2 consolidado | Planilla |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -402,3 +404,4 @@ en la conversación.
 Dos reglas de forma que evitan que el kit envejezca mal: **no se escriben pesos ni fechas**, que
 ya viven en el aula y se desincronizan en cuanto cambian; y las comprobaciones que se repiten en
 todas las entregas están en el contrato, no copiadas en cada ficha.
+
