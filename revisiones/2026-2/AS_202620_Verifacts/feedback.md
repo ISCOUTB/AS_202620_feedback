@@ -120,3 +120,19 @@ El reto ya tiene hipótesis, variables y umbral declarados, pero aún deben conf
 La API respondió al health check público, pero una respuesta de salud no prueba el flujo de análisis ni recuperación de datos. El equipo ahora documenta un Quality Gate satisfactorio; la consulta pública del evaluador fue bloqueada, por lo que falta verificación independiente de su revisión. Actualicen las vistas que aún niegan el soporte de URL o dejan la medición local como inexistente, mantengan el historial de ADR mediante decisiones nuevas y fijen la versión de pytest-cov. Los límites de comprobación de seguridad y de autoría quedan pendientes, sin presumir una exposición ni atribuir cuentas a personas.
 
 </details>
+
+## Semana 10 · Actualización docente
+
+Se incorporó la calificación de sustentación comunicada por el docente en la planilla y en el [informe S10](semana-10-corte2.md). La evaluación técnica del repositorio mantiene su fundamento y sus observaciones.
+
+## Semana 11 · Integración y resiliencia
+
+La integración, los modos de fallo y la decisión de no extraer están documentados, y hay un diseño explícito de idempotencia. Corrijan las afirmaciones de timeout, códigos de error y WAL/reintentos que todavía no corresponden al código: pueden declararlos pendientes con su plan. Falta incorporar los riesgos en arc42 y enlazar la entrega desde aspectos.
+
+Consulta la [matriz S11](semana-11-evidencia-s11.md) para las evidencias y los pendientes. La evidencia posterior al cierre aparece separada en el seguimiento actual.
+
+## Semana 12 · Avance preliminar: consistencia, caché y decisiones de datos
+
+Avance preliminar: SQLite está representado en C4 y el flujo actual es síncrono. Faltan tabla de consistencia por operación, dos contrastes de implementación, estrategia de caché e invalidación y una decisión de datos con costo de reversión argumentado. La sección 8 debe consolidar estas estrategias; los pings de mantenimiento no acreditan la suite ni el Quality Gate.
+
+Consulta la [matriz S12 preliminar](semana-12-evidencia-s12.md) para las evidencias y los pendientes. El plazo sigue abierto hasta el final del 25 de octubre en Colombia.

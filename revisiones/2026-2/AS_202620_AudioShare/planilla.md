@@ -8,12 +8,14 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_AudioShare` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Santiago Adolfo Camacho Hernandez (commits como «Santiago Adolfo Camacho Hernández») · Vincent Cardona Castro (presumiblemente `cardonavincent26-design`, sin confirmar) · Elian Daniel Perea Vanegas («Elian Daniel Perea Vanegas») · Yeiver Andres Verjel Perez («Yeiver Andrés Vergel Pérez»); ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | https://audioshare.iscoutb.dev · ver comprobación y límites en S10 |
-| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
+| Última revisión | 2026-10-19 · S11 definitiva y S12 preliminar (observación 21:35 UTC); rectificaciones aprobadas sincronizadas |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 12 | [S12 · preliminar](semana-12-evidencia-s12.md) | `master` · `1af6e5ca727e60ef64cda6e31af71ab73bc9c9da` | 2/9 | 1.9 (propuesta al docente; preliminar) | sí, 2026-10-19 |
+| 11 | [S11 · definitiva](semana-11-evidencia-s11.md) | `master` · `a0834d568625bca8094c17b736d93978ad812430` | 8/9 | 4.6 (propuesta al docente) | sí, 2026-10-19 |
 | 9 | S9 · definitiva | `master` · `6a03a9718776420d46ed40f7addc5667206908cd` · 2026-10-04T23:15:57-05:00 | 3/10 | 2.2 (propuesta al docente) | sí, 2026-10-06 |
 | 10 | Segundo corte · consolidado al cierre | `master` · `1da287c662986033871ef0e044ed29894b978593` · 2026-10-12T17:35:29-05:00 | C1 0,80; C2 0,60; C3 0,80; C4 0,60 (cada uno /1) | Total 3,60/5; técnica 2,80/4 + C5 docente 0,80/1; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
 | 8 | S8 | `e4789d88` (2026-09-27T23:49:01-05:00) | 9/10 | 4.6 (provisional; 2 filas de despliegue diferidas por decisión docente) | si |
@@ -24,6 +26,20 @@
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `1c9ebb0a` · 2026-08-09T20:31:49-05:00 | 2/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `d0760fdf` · 2026-08-16T23:31:32-05:00 | 4/9 | no se publica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `024ae3435` · 2026-08-23T23:47:38-05:00 | 5/9 | no se publica | sí (actualizada tras el cierre) |
+
+## Seguimiento vigente · S11 y avance S12 · 19 de octubre de 2026
+
+S11 se fija antes del límite exclusivo 2026-10-19T05:00:00Z. S12 es preliminar, observada a las 21:35 UTC del 19 de octubre, y cierra el 26 de octubre a las 05:00 UTC. Las matrices transversales actuales están en [S11](semana-11-evidencia-s11.md) y [S12](semana-12-evidencia-s12.md). Sus estados y límites sustituyen las inferencias de arrastre que no hayan sido revalidadas; el historial conserva su fecha.
+
+Dos commits posteriores al cierre incorporan reproducción de pista y posición de pausa/reanudación. `src/app.ts:239-252,302-315,365-382` y `tests/resume-position.test.ts:1-61` en punta muestran el cambio, sin mejorar retrospectivamente S11. Erosión vigente: `src/app.ts:57-64` concentra mapas de Sync y streams; Session persiste `start_at` (`sqlite-room-repository.ts:35-41,131-147`) aunque arc42 §8 atribuye ese dato a Sync. La documentación sigue describiendo audio simulado y pausa desde cero (`docs/arc42/src/08_concepts.adoc:103-106`; `docs/modos-de-fallo.md:39`), desactualizada frente a la punta. Repetir PLAY aún vuelve a llamar `sync.start`, no es deduplicación por estado. Falta sección 11 de arc42.
+
+Actividad en principal: 25 commits en la ventana S11 y 2 posteriores al cierre hasta la observación. El número de commits no determina la nota: se contrasta el contenido completo con la ficha.
+
+| Seguimiento | Estado y evidencia |
+|---|---|
+| Integración, modos de fallo y extracción | [Matriz S11](semana-11-evidencia-s11.md): distingue diseño, código y pendientes explícitos. |
+| Consistencia, caché y reversibilidad | [Matriz S12 preliminar](semana-12-evidencia-s12.md): completar los criterios pendientes antes del cierre. |
+| CI, seguridad, contribución y decisiones inmutables | Revisar la matriz transversal del informe actual; no se cierran por un CI verde genérico ni por la existencia de archivos. |
 
 ## Feedback S10 vigente · 13 de octubre de 2026
 

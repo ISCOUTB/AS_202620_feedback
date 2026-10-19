@@ -94,3 +94,15 @@ Estos comentarios corresponden al estado y a las comprobaciones de sus fechas or
 Primero recuperen el pipeline y hagan que incluya también las pruebas de contratos, préstamos y recursos. Revisen la conversión de la duración del token a número, actualicen documentación y configuración de arranque y publiquen la URL del entorno. Para el reto, falta identificar la asignación, medir línea base y resultado y añadir observabilidad y costo. La defensa queda pendiente del docente.
 
 </details>
+
+## Semana 11 · Integración y resiliencia
+
+Hay idempotencia en préstamos, utilidades de resiliencia y una decisión razonada de conservar el monolito. Falta una tabla que cubra no respuesta, respuesta tardía y duplicación con mitigación individual. Las pruebas de reenvío son secuenciales y el pipeline consultado falla; no presenten la suite como verificada en verde ni las utilidades aisladas como protección aplicada a toda la integración.
+
+Consulta la [matriz S11](semana-11-evidencia-s11.md) para las evidencias y los pendientes. La evidencia posterior al cierre aparece separada en el seguimiento actual.
+
+## Semana 12 · Avance preliminar: consistencia, caché y decisiones de datos
+
+Avance preliminar: se observan transacciones locales y PostgreSQL representado en C4. Faltan tabla de garantías por operación, contraste explícito de dos operaciones y diseño de caché con invalidación o justificación de no usarla. La decisión de datos más costosa debe identificarse y justificar su reversión.
+
+Consulta la [matriz S12 preliminar](semana-12-evidencia-s12.md) para las evidencias y los pendientes. El plazo sigue abierto hasta el final del 25 de octubre en Colombia.

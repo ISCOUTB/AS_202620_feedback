@@ -8,14 +8,16 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_PideUtb` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Daniela Sofia Arrieta Guardo · Santiago Jose Cuesta Maza · Ruddy Rodriguez Romero — cuentas observadas: `daniarriet`, `Santiago Cuesta`/`Santiago-C0` (mismo correo, misma persona), `ruddy2000utb-droid`; ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | https://pideutb-api.onrender.com · ver comprobación y límites en S10 |
-| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
+| Última revisión | 2026-10-19 · S11 definitiva y S12 preliminar (observación 21:35 UTC); rectificaciones aprobadas sincronizadas |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 12 | [S12 · preliminar](semana-12-evidencia-s12.md) | `master` · `2395d7812aa86ae98c177d58cbea0e927d9593d5` | 6/9 | 3.7 (propuesta al docente; preliminar) | sí, 2026-10-19 |
+| 11 | [S11 · definitiva](semana-11-evidencia-s11.md) | `master` · `2395d7812aa86ae98c177d58cbea0e927d9593d5` | 9/9 | 5.0 (propuesta al docente) | sí, 2026-10-19 |
 | 9 | S9 · definitiva | `master` · `7e973faf7047e40137762befbc019f4736a813e6` · 2026-10-04T12:47:55-05:00 | 8/10 | 4.2 (propuesta al docente) | sí, 2026-10-06 |
-| 10 | Segundo corte · consolidado al cierre | `master` · `2497bfe7e0c7dc04e4cdf9b550254b9fd73df956` · 2026-10-12T14:27:07-05:00 | C1 0,60; C2 0,80; C3 0,00; C4 0,80 (cada uno /1) | Técnica 2,20/4; C5 pendiente; sin total /5; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
+| 10 | Segundo corte · consolidado al cierre | `master` · `2497bfe7e0c7dc04e4cdf9b550254b9fd73df956` · 2026-10-12T14:27:07-05:00 | C1 0,60; C2 0,80; C3 0,00; C4 0,80 (cada uno /1) | Total 3,00/5; técnica 2,20/4 + C5 docente 0,80/1; ver [S10](semana-10-corte2.md) | sí, C5 sincronizado 2026-10-19 |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `48cfbe3` · 2026-08-08T15:12:35-05:00 | 4/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `9b5f214` · 2026-08-16T12:47:26-05:00 | 9/9 | no se publica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `b5f0310` · 2026-08-23T19:42:42-05:00 | 5/9 | no se publica | sí |
@@ -25,21 +27,33 @@
 | 7 | S7 | `3d78106` (2026-09-20T22:24:21-05:00) | 10/10 | 5.0 | si |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `a94bf4e` en `master` (2026-09-27T20:30:08-05:00) | 9/10 | 4.6 (2 filas de despliegue pendientes) | sí |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
-| 11 | Evidencia S11 · Fallos parciales y decisión de extracción | | | no aplica | |
-| 12 | Evidencia S12 · Estrategia de datos y eventos | | | no aplica | |
 | 12 | Taller aplicado · Mensajes y consistencia | | | no aplica | |
 | 13 | Evidencia S13 · Modelado de amenazas y plan de mitigación | | | no aplica | |
 | 14 | Evidencia S14 · Medición de atributos de calidad | | | no aplica | |
 | 16 | Proyecto final · integración y desafío arquitectónico | `final` | | | |
 | 17 | Aplicación de cambios y cierre arquitectónico | | | | |
 
+## Seguimiento vigente · S11 y avance S12 · 19 de octubre de 2026
+
+S11 se fija antes del límite exclusivo 2026-10-19T05:00:00Z. S12 es preliminar, observada a las 21:35 UTC del 19 de octubre, y cierra el 26 de octubre a las 05:00 UTC. Las matrices transversales actuales están en [S11](semana-11-evidencia-s11.md) y [S12](semana-12-evidencia-s12.md). Sus estados y límites sustituyen las inferencias de arrastre que no hayan sido revalidadas; el historial conserva su fecha.
+
+Punta y corte coinciden. PR 24, PR 25 (datos y eventos), PR 26 (rama de fallos parciales) y PR 27 (corrección migración) constan integrados antes del corte; se evalúa su código, no solo la etiqueta semanal. El bus carece de suscriptores; el panel usa sondeo, ahora 5 s, mientras S12/ADR-0010 conservan 8 s. La tabla sobrestima atomicidad del avance de estado y el C4 mantiene una llamada a pasarela inexistente. El equipo documenta caída 404 de unos 30 minutos por checksum de migración; el fix está versionado, pero la recuperación pública no fue verificada en esta auditoría. CI exitoso no acredita servicio recuperado.
+
+Actividad en principal: 44 commits en la ventana S11 y 0 posteriores al cierre hasta la observación. El número de commits no determina la nota: se contrasta el contenido completo con la ficha.
+
+| Seguimiento | Estado y evidencia |
+|---|---|
+| Integración, modos de fallo y extracción | [Matriz S11](semana-11-evidencia-s11.md): distingue diseño, código y pendientes explícitos. |
+| Consistencia, caché y reversibilidad | [Matriz S12 preliminar](semana-12-evidencia-s12.md): completar los criterios pendientes antes del cierre. |
+| CI, seguridad, contribución y decisiones inmutables | Revisar la matriz transversal del informe actual; no se cierran por un CI verde genérico ni por la existencia de archivos. |
+
 ## Feedback S10 vigente · 13 de octubre de 2026
 
 Límite exclusivo: **2026-10-13T05:00:00Z**, fin del 12 de octubre en Colombia. Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
 
-**Subtotal técnico: 2,20 / 4,00. Total sobre 5,00 pendiente de C5.**
+**Subtotal técnico: 2,20 / 4,00. Total consolidado C1–C5: 3,00 / 5,00.**
 
-C5 sigue pendiente de calificación docente. No se registra como cero ni se estima a partir del repositorio.
+Sustentación comunicada por el docente: 4,00/5, incorporada como C5 = 0,80/1. Sincronizada el 19 de octubre de 2026; no modifica C1–C4.
 
 ESC-04 incorpora autenticación, contrato 2.0 y ADR-0007, pero sesiones, tablas y cuentas no están acreditadas en producción. El GET público devuelve el código de canje, que funciona como secreto de retiro, a partir de un identificador entero. Es un hallazgo estático de operación y seguridad; no se consultaron pedidos reales ni se afirma explotación en producción.
 

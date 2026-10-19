@@ -86,3 +86,15 @@ Estos comentarios corresponden al estado y a las comprobaciones de sus fechas or
 Para el segundo corte falta identificar el escenario operativo asignado por el docente. El despliegue y el health check responden; preparen la línea base, la intervención y el resultado comparable del reto, con métrica y límites de validez. No presenten el experimento de S9 como respuesta a una asignación todavía no confirmada. La sustentación y el pipeline en vivo quedan pendientes.
 
 </details>
+
+## Semana 11 · Integración y resiliencia
+
+La evidencia S11 identifica la integración real, distingue los tres fallos y propone mitigaciones y una decisión argumentada de no extraer Catálogo. La idempotencia sigue diseñada y pendiente, lo cual está declarado correctamente; no debe presentarse como implementada ni confundir CI general con pruebas de fallos. Actualicen las referencias de CI, porque el flujo real fue exitoso en una revisión anterior y falló en la revisión final evaluada.
+
+Consulta la [matriz S11](semana-11-evidencia-s11.md) para las evidencias y los pendientes. La evidencia posterior al cierre aparece separada en el seguimiento actual.
+
+## Semana 12 · Avance preliminar: consistencia, caché y decisiones de datos
+
+El avance S12 permite contrastar crear publicaciones y cambiar su estado con transacciones locales y reconoce la ausencia de broker. Faltan tabla operación→garantía, decisión de caché e invalidación, ADR de la decisión de datos más costosa de revertir y su incorporación en arc42. El diagnóstico es preliminar y no corresponde a un cierre de S12.
+
+Consulta la [matriz S12 preliminar](semana-12-evidencia-s12.md) para las evidencias y los pendientes. El plazo sigue abierto hasta el final del 25 de octubre en Colombia.

@@ -87,3 +87,19 @@ Estos comentarios corresponden al estado y a las comprobaciones de sus fechas or
 Confirmen la consigna operativa asignada y registren una línea base antes de cambiar el MVP. El experimento debe reproducir la carga real y verificar estado final, pérdida y recuperación, además de respuestas HTTP. Mantengan visible que los datos siguen en memoria y que Gemini es un mock. Falta la evidencia pública de SonarCloud y demostrar el flujo del despliegue, además del health check.
 
 </details>
+
+## Semana 10 · Actualización docente
+
+Se incorporó la calificación de sustentación comunicada por el docente en la planilla y en el [informe S10](semana-10-corte2.md). La evaluación técnica del repositorio mantiene su fundamento y sus observaciones.
+
+## Semana 11 · Integración y resiliencia
+
+La evidencia distingue correctamente lo implementado y lo pendiente, con modos de fallo concretos, planes y pruebas de cierre. La decisión de no extraer está justificada; esos pendientes declarados son válidos para esta entrega. Acoten la deduplicación al proceso vivo, corrijan las referencias a otra rama y no describan el bucle secuencial de pruebas como carga concurrente.
+
+Consulta la [matriz S11](semana-11-evidencia-s11.md) para las evidencias y los pendientes. La evidencia posterior al cierre aparece separada en el seguimiento actual.
+
+## Semana 12 · Avance preliminar: consistencia, caché y decisiones de datos
+
+Avance preliminar: el diseño de sincronización declara al menos una vez y sus límites, pero aún faltan las garantías por operación y dos verificaciones completas. Definan caché e invalidación o argumenten su ausencia, y seleccionen la decisión de datos de mayor costo de reversión. El C4 debe separar almacenes propios con tecnología y distinguir memoria actual de persistencia futura.
+
+Consulta la [matriz S12 preliminar](semana-12-evidencia-s12.md) para las evidencias y los pendientes. El plazo sigue abierto hasta el final del 25 de octubre en Colombia.

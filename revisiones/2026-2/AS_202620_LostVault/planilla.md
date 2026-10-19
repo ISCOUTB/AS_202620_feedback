@@ -8,13 +8,15 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_LostVault` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Jose Faustino Espana Noriega · Roy Andres Gonzalez Blanco · Shamara Llorente Tapias · Kiefer Monterroza Manjarres — identidades del historial: Roy Gonzalez (¿`RGBlanco18`?), `shamarallorente-blip`, `Fausto-4` (correo `ganonimo2504`), `weller-rar` (correo `pelu.kiefer`); correspondencias por confirmar con el docente; ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | https://backend-nu-self-91.vercel.app · ver comprobación y límites en S10 |
-| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
+| Última revisión | 2026-10-19 · S11 definitiva y S12 preliminar (observación 21:35 UTC); rectificaciones aprobadas sincronizadas |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 9 | S9 · definitiva | `main` · `99fb413bda00c208ec42104dcfe6a4c189fbad77` · 2026-10-04T22:30:53-05:00 | 4/10 | Pendiente por limitación de verificación; intervalo documental 2.6–3.0, sin descontar la comprobación bloqueada | sí, 2026-10-06 |
+| 12 | [S12 · preliminar](semana-12-evidencia-s12.md) | `main` · `34c2c2ea71bbe0c2ec0ca0332489aeb14e78c79f` | 1/9 | 1.4 (propuesta al docente; preliminar) | sí, 2026-10-19 |
+| 11 | [S11 · definitiva](semana-11-evidencia-s11.md) | `main` · `34c2c2ea71bbe0c2ec0ca0332489aeb14e78c79f` | 8/9 | 4.6 (propuesta al docente) | sí, 2026-10-19 |
+| 9 | S9 · definitiva | `main` · `99fb413bda00c208ec42104dcfe6a4c189fbad77` · 2026-10-04T22:30:53-05:00 | 4/9 (una comprobación excluida por decisión docente) | 2.8 | sí, rectificación aprobada; sincronizada 2026-10-19 |
 | 10 | Segundo corte · consolidado al cierre | `main` · `99fb413bda00c208ec42104dcfe6a4c189fbad77` · 2026-10-04T22:30:53-05:00 | C1 0,60; C2 0,60; C3 0,60; C4 0,60 (cada uno /1) | Total 3,20/5; técnica 2,40/4 + C5 docente 0,80/1; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `560ba89` · 2026-08-09T21:10:31-05:00 | 4/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `af94a30` · 2026-08-16T22:09:43-05:00 | 7/9 | no se publica | sí |
@@ -25,13 +27,25 @@
 | 7 | S7 | `7bf515f` (2026-09-20T23:55:34-05:00) | 7/10 | 3.8 | sí, auditada |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `4a9ecc94` (2026-09-27T23:52:06-05:00) | 10/10 | 5.0 (provisional; 2 filas de despliegue pendientes) | sí, definitiva |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
-| 11 | Evidencia S11 · Fallos parciales y decisión de extracción | | | no aplica | |
-| 12 | Evidencia S12 · Estrategia de datos y eventos | | | no aplica | |
 | 12 | Taller aplicado · Mensajes y consistencia | | | no aplica | |
 | 13 | Evidencia S13 · Modelado de amenazas y plan de mitigación | | | no aplica | |
 | 14 | Evidencia S14 · Medición de atributos de calidad | | | no aplica | |
 | 16 | Proyecto final · integración y desafío arquitectónico | `final` | | | |
 | 17 | Aplicación de cambios y cierre arquitectónico | | | | |
+
+## Seguimiento vigente · S11 y avance S12 · 19 de octubre de 2026
+
+S11 se fija antes del límite exclusivo 2026-10-19T05:00:00Z. S12 es preliminar, observada a las 21:35 UTC del 19 de octubre, y cierra el 26 de octubre a las 05:00 UTC. Las matrices transversales actuales están en [S11](semana-11-evidencia-s11.md) y [S12](semana-12-evidencia-s12.md). Sus estados y límites sustituyen las inferencias de arrastre que no hayan sido revalidadas; el historial conserva su fecha.
+
+Punta y corte coinciden. La idempotencia está implementada y probada en memoria de un proceso; reinicios y múltiples funciones Vercel no comparten claves ni objetos. PostgreSQL es plan, no persistencia existente. Flutter sigue con adaptadores en memoria; timeout/backoff/breaker del cliente están especificados, no implementados. Persiste la divergencia entre modularidad Flutter y backend concentrado en main.py.
+
+Actividad en principal: 4 commits en la ventana S11 y 0 posteriores al cierre hasta la observación. El número de commits no determina la nota: se contrasta el contenido completo con la ficha.
+
+| Seguimiento | Estado y evidencia |
+|---|---|
+| Integración, modos de fallo y extracción | [Matriz S11](semana-11-evidencia-s11.md): distingue diseño, código y pendientes explícitos. |
+| Consistencia, caché y reversibilidad | [Matriz S12 preliminar](semana-12-evidencia-s12.md): completar los criterios pendientes antes del cierre. |
+| CI, seguridad, contribución y decisiones inmutables | Revisar la matriz transversal del informe actual; no se cierran por un CI verde genérico ni por la existencia de archivos. |
 
 ## Feedback S10 vigente · 13 de octubre de 2026
 

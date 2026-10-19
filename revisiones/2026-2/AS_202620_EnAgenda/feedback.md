@@ -100,3 +100,15 @@ La plantilla faltante ya está en la punta y CI está en verde. Siguen pendiente
 
 </details>
 
+
+## Semana 11 · Integración y resiliencia
+
+La integración HTTP con los casos de uso es identificable, pero faltan los artefactos específicos de fallos parciales, idempotencia y decisión de extracción. La deuda de persistencia reconocida no reemplaza una matriz de mitigaciones por modo. Actualizar aspectos, preservar ADR sustituidos y reconciliar la documentación con Flask y el despliegue vigente.
+
+Consulta la [matriz S11](semana-11-evidencia-s11.md) para las evidencias y los pendientes. La evidencia posterior al cierre aparece separada en el seguimiento actual.
+
+## Semana 12 · Avance preliminar: consistencia, caché y decisiones de datos
+
+El avance sigue siendo preliminar y no registra cambios posteriores al cierre. Completar garantías por operación, contrastar lecturas y escrituras reales, decidir caché e invalidación y justificar la decisión de datos más costosa de revertir. Revisar especialmente la creación de invitaciones en lote, que puede dejar efectos parciales ante una validación tardía.
+
+Consulta la [matriz S12 preliminar](semana-12-evidencia-s12.md) para las evidencias y los pendientes. El plazo sigue abierto hasta el final del 25 de octubre en Colombia.

@@ -91,3 +91,15 @@ Estos comentarios corresponden al estado y a las comprobaciones de sus fechas or
 El health check responde, pero siguen abiertos el flujo real del validador, el modelo3D y el modo offline. El CI general verde no demuestra SonarCloud porque ese job es no bloqueante. Para el corte, identifiquen la consigna asignada, midan la línea base y repitan el experimento tras corregir los defectos.
 
 </details>
+
+## Semana 11 · Integración y resiliencia
+
+El estado anterior al cierre solo acredita la integración principal y la evaluación de mantener el monolito. El ADR de extracción y la tabla agregados después del cierre se registran como avance actual y no recalifican S11. Completar los tres modos de fallo, la correspondencia de mitigaciones y el diseño de idempotencia para las escrituras existentes.
+
+Consulta la [matriz S11](semana-11-evidencia-s11.md) para las evidencias y los pendientes. La evidencia posterior al cierre aparece separada en el seguimiento actual.
+
+## Semana 12 · Avance preliminar: consistencia, caché y decisiones de datos
+
+La caché versionada, el flujo síncrono y los almacenes separados en C4 aportan evidencia inicial. Faltan garantías por operación con dos contrastes, invalidación efectiva, ADR comparativo de reversión de datos y actualización de arc42 sección 8. Reconciliar la promesa de funcionamiento offline con un caso de uso que consulta primero la API.
+
+Consulta la [matriz S12 preliminar](semana-12-evidencia-s12.md) para las evidencias y los pendientes. El plazo sigue abierto hasta el final del 25 de octubre en Colombia.

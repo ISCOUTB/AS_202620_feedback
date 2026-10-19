@@ -8,12 +8,14 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Nilver Garcia Pimentel · Camilo Jose Martinez Berrio · Joshua Jose Tenorio Alvarez — cuentas consolidadas: `nilver-garcia`/`Nnigarp` (mismo id de cuenta, es una sola persona), `camilixo92`, `Carulla-sd`; ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | https://nnigarp.github.io/AS_202620_PROYECTO_CAMPUSMARKET/ · ver comprobación y límites en S10 |
-| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
+| Última revisión | 2026-10-19 · S11 definitiva y S12 preliminar (observación 21:35 UTC); rectificaciones aprobadas sincronizadas |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 12 | [S12 · preliminar](semana-12-evidencia-s12.md) | `master` · `a237dd2f22b02bb547f87a07d15b6d31ea0dc758` | 3/9 | 2.3 (propuesta al docente; preliminar) | sí, 2026-10-19 |
+| 11 | [S11 · definitiva](semana-11-evidencia-s11.md) | `master` · `a237dd2f22b02bb547f87a07d15b6d31ea0dc758` | 9/9 | 5.0 (propuesta al docente) | sí, 2026-10-19 |
 | 9 | S9 · definitiva | `master` · `de6ed67c05ccdb7eabd9b1951f146ab8958b1d00` · 2026-10-04T02:14:34-05:00 | 10/10 | 5.0 (propuesta al docente) | sí, 2026-10-06 |
 | 10 | Segundo corte · consolidado al cierre | `master` · `1582c1ff609202fa2cc4a06fa14d18b9b61bed74` · 2026-10-11T23:50:44-05:00 | C1 1,00; C2 1,00; C3 1,00; C4 1,00 (cada uno /1) | Total 4,80/5; técnica 4,00/4 + C5 docente 0,80/1; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `81ef5f1` · 2026-08-08T20:17:21-05:00 | 4/9 | no se publica | sí |
@@ -25,13 +27,31 @@
 | 7 | S7 | `c53ee32` (2026-09-18T21:11:48-05:00) | 10/10 | 5.0 | si |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `784d788` en `master` (2026-09-27T23:50:19-05:00) | 10/10 | 5.0 (2 filas de despliegue pendientes) | sí |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
-| 11 | Evidencia S11 · Fallos parciales y decisión de extracción | | | no aplica | |
-| 12 | Evidencia S12 · Estrategia de datos y eventos | | | no aplica | |
 | 12 | Taller aplicado · Mensajes y consistencia | | | no aplica | |
 | 13 | Evidencia S13 · Modelado de amenazas y plan de mitigación | | | no aplica | |
 | 14 | Evidencia S14 · Medición de atributos de calidad | | | no aplica | |
 | 16 | Proyecto final · integración y desafío arquitectónico | `final` | | | |
 | 17 | Aplicación de cambios y cierre arquitectónico | | | | |
+
+## Seguimiento vigente · S11 y avance S12 · 19 de octubre de 2026
+
+S11 se fija antes del límite exclusivo 2026-10-19T05:00:00Z. S12 es preliminar, observada a las 21:35 UTC del 19 de octubre, y cierra el 26 de octubre a las 05:00 UTC. Las matrices transversales actuales están en [S11](semana-11-evidencia-s11.md) y [S12](semana-12-evidencia-s12.md). Sus estados y límites sustituyen las inferencias de arrastre que no hayan sido revalidadas; el historial conserva su fecha.
+
+PR 56/58 y correcciones 57/59 están incorporadas antes del cierre; se evalúa el commit, no el estado viejo de una rama.
+
+Idempotencia es diseño pendiente. No confundir avance documental y CI con pruebas de fallos inyectados T1–T7 o despliegue público comprobado.
+
+La evidencia S11 conserva referencias antiguas de CI. El run de flujo real en f2e9497 fue exitoso, pero el run del hash final es fallido; Android sí fue ejecutado en la cadena anterior. No atribuir el fallo actual a un job concreto sin sus logs.
+
+PR 60, posterior y abierto según contexto de seguimiento, no cambia la matriz principal; revisar contradicción ADR solo cuando se integre.
+
+Actividad en principal: 16 commits en la ventana S11 y 0 posteriores al cierre hasta la observación. El número de commits no determina la nota: se contrasta el contenido completo con la ficha.
+
+| Seguimiento | Estado y evidencia |
+|---|---|
+| Integración, modos de fallo y extracción | [Matriz S11](semana-11-evidencia-s11.md): distingue diseño, código y pendientes explícitos. |
+| Consistencia, caché y reversibilidad | [Matriz S12 preliminar](semana-12-evidencia-s12.md): completar los criterios pendientes antes del cierre. |
+| CI, seguridad, contribución y decisiones inmutables | Revisar la matriz transversal del informe actual; no se cierran por un CI verde genérico ni por la existencia de archivos. |
 
 ## Feedback S10 vigente · 13 de octubre de 2026
 

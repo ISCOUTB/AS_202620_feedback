@@ -90,3 +90,15 @@ Completen las vistas de construcción y ejecución de arc42, actualicen C4-C3 co
 Para la sustentación, preparen una demostración de fallo y recuperación de la base, expliquen el costo y los riesgos del servidor compartido y diseñen una comparación controlada que permita distinguir plataforma, datos y red.
 
 </details>
+
+## Semana 11 · Integración y resiliencia
+
+La entrega tiene evidencia sustantiva de idempotencia, límites de espera y recuperación, junto con una decisión fundamentada de no extraer Emparejamiento. Mantengan diferenciados eventos perdidos, mitigaciones probadas y planes pendientes. Actualicen las frases antiguas sobre ausencia de cuentas, única escritura y avisos no recuperables para que coincidan con el producto actual.
+
+Consulta la [matriz S11](semana-11-evidencia-s11.md) para las evidencias y los pendientes. La evidencia posterior al cierre aparece separada en el seguimiento actual.
+
+## Semana 12 · Avance preliminar: consistencia, caché y decisiones de datos
+
+Se reconoce el avance anticipado de consistencia eventual entre publicaciones y reclamaciones, con pasos retomables y reconciliadores, además de recuperación acotada de avisos. Faltan diseño de caché e invalidación o su exclusión argumentada, ADR de la decisión de datos más costosa de revertir y ambas estrategias en arc42 sección 8. Corrijan también la referencia residual a coincidencias en memoria en el C4.
+
+Consulta la [matriz S12 preliminar](semana-12-evidencia-s12.md) para las evidencias y los pendientes. El plazo sigue abierto hasta el final del 25 de octubre en Colombia.

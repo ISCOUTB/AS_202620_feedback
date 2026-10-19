@@ -103,3 +103,15 @@ Estos comentarios corresponden al estado y a las comprobaciones de sus fechas or
 El despliegue responde a las sondas de salud y disponibilidad. Para el segundo corte, identifiquen el escenario operativo asignado y midan su línea base y respuesta en ese entorno; la prueba del adaptador y el contador de operaciones no sustituyen una medición del flujo HTTP. Formalicen el despliegue en ADR y preparen el pipeline en vivo.
 
 </details>
+
+## Semana 11 · Integración y resiliencia
+
+El análisis de fallos distingue implementación, diseño y trabajo futuro; el plan de idempotencia es válido para esta evidencia. Actualicen aspectos con la decisión de extracción y las mitigaciones, y conserven los ADR aceptados sin reescribirlos. Las pruebas de PostgreSQL existen, pero el workflow citado no las ejecuta.
+
+Consulta la [matriz S11](semana-11-evidencia-s11.md) para las evidencias y los pendientes. La evidencia posterior al cierre aparece separada en el seguimiento actual.
+
+## Semana 12 · Avance preliminar: consistencia, caché y decisiones de datos
+
+El cliente Flutter ya llama a la API y aplica timeout; falta reconciliar ese avance con arc42 y C4. Para completar datos, declaren garantías por operación, justifiquen caché e invalidación y seleccionen la decisión de datos más difícil de revertir. El timeout del cliente no proporciona idempotencia.
+
+Consulta la [matriz S12 preliminar](semana-12-evidencia-s12.md) para las evidencias y los pendientes. El plazo sigue abierto hasta el final del 25 de octubre en Colombia.

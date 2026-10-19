@@ -94,3 +94,23 @@ Estos comentarios corresponden al estado y a las comprobaciones de sus fechas or
 La punta amplía pruebas y mejora documentación, pero el CI falla mientras la evidencia afirma que todos los casos pasan. Corrijan esa contradicción y documenten el experimento del escenario asignado. No carguen datos reales mientras lectura y escritura sigan sin autenticación. La sustentación queda pendiente.
 
 </details>
+
+## Semana 6 · Rectificación de la revisión
+
+La lectura completa confirma que el mapa de contextos, la propiedad de datos, los hallazgos con plan y la correspondencia de aspectos estaban en la entrega original. Se corrigen las observaciones producidas por una lectura parcial; no se exige un ADR de reajuste cuando no cambiaron los límites. Consulta la [matriz rectificada](semana-06-evidencia-s6.md) para los alcances y pendientes transversales.
+
+## Semana 9 · Rectificación de la revisión
+
+Se reconocen la porción real apoyada por IA, la prueba contractual que falló ante un defecto y los rechazos técnicos ya registrados antes del cierre. Quedan pendientes completar enlaces de la cadena y medir todos los casos del escenario. Consulta la [evidencia rectificada](semana-09-evidencia-s9.md).
+
+## Semana 11 · Integración y resiliencia
+
+La ficha queda cubierta con modos de fallo concretos, timeout y reintentos contrastados, idempotencia de la actualización absoluta y decisión razonada de mantener el monolito. Los pendientes están declarados y no obligan a una extracción prematura. Mantener la deuda de autenticación, concurrencia y diferencias entre bases de pruebas y despliegue visible y comprobable.
+
+Consulta la [matriz S11](semana-11-evidencia-s11.md) para las evidencias y los pendientes. La evidencia posterior al cierre aparece separada en el seguimiento actual.
+
+## Semana 12 · Avance preliminar: consistencia, caché y decisiones de datos
+
+Hay dos operaciones contrastables con la garantía declarada, un flujo síncrono justificado y almacenes separados en C4. Falta sistematizar la tabla operación-garantía, decidir caché e invalidación y justificar comparativamente la decisión de datos más costosa de revertir. Incorporar estos conceptos en arc42 sección 8.
+
+Consulta la [matriz S12 preliminar](semana-12-evidencia-s12.md) para las evidencias y los pendientes. El plazo sigue abierto hasta el final del 25 de octubre en Colombia.

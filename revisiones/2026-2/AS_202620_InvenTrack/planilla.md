@@ -10,14 +10,16 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_InvenTrack` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Javier Alejandro Carta Lacharme · Esteban Javier Peluffo Marquez · Felix Andres Taborda Jimenez · Jose Gabriel Vargas Perez — cuentas abajo; ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | https://inventrack.iscoutb.dev · ver comprobación y límites en S10 |
-| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
+| Última revisión | 2026-10-19 · S11 definitiva y S12 preliminar (observación 21:35 UTC); rectificaciones aprobadas sincronizadas |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 9 | S9 · definitiva | `main` · `35a9c63dd603bab989a18ed17ca56063c5616585` · 2026-10-04T22:14:10-05:00 | 8/10 | Pendiente por limitación de verificación; intervalo documental 4.2–4.6, sin descontar la comprobación bloqueada | sí, 2026-10-06 |
-| 10 | Segundo corte · consolidado al cierre | `main` · `539840be57f8a0b719bb33e19d05031489a25b86` · 2026-10-11T23:05:35-05:00 | C1 0,60; C2 0,80; C3 0,80; C4 0,60 (cada uno /1) | Técnica 2,80/4; C5 pendiente; sin total /5; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
+| 12 | [S12 · preliminar](semana-12-evidencia-s12.md) | `main` · `28506a8eabcde2234e56698d13ae1d8ae8d0ee24` | 1/9 | 1.4 (propuesta al docente; preliminar) | sí, 2026-10-19 |
+| 11 | [S11 · definitiva](semana-11-evidencia-s11.md) | `main` · `28506a8eabcde2234e56698d13ae1d8ae8d0ee24` | 8/9 | 4.6 (propuesta al docente) | sí, 2026-10-19 |
+| 9 | S9 · definitiva | `main` · `35a9c63dd603bab989a18ed17ca56063c5616585` · 2026-10-04T22:14:10-05:00 | 8/9 (una comprobación excluida por decisión docente) | 4.6 | sí, rectificación aprobada; sincronizada 2026-10-19 |
+| 10 | Segundo corte · consolidado al cierre | `main` · `539840be57f8a0b719bb33e19d05031489a25b86` · 2026-10-11T23:05:35-05:00 | C1 0,60; C2 0,80; C3 0,80; C4 0,60 (cada uno /1) | Total 3,60/5; técnica 2,80/4 + C5 docente 0,80/1; ver [S10](semana-10-corte2.md) | sí, C5 sincronizado 2026-10-19 |
 | 8 | S8 | `48aeecf` (2026-09-27T23:48:02-05:00) | 10/10 | 5.0 | sí, definitiva |
 | 7 | S7 | `f10fd01` (2026-09-20T23:01:13-05:00) | 9/10 | 4.6 | sí, auditada |
 | 6 | S6 | `d6f2b19` (2026-09-13T23:37:36-05:00) | 7/8 | 4.5 | si |
@@ -29,13 +31,27 @@ Hoja consolidada del equipo InvenTrack. Se actualiza tras cada revisión.
 
 S8 se califica sobre 10 de las 12 filas de la ficha: quedan pendientes de calificar las dos filas de despliegue (URL del sistema accesible desde fuera de la red de la universidad y health check consultable), porque la URL se entrega por Moodle. La nota publicada es provisional.
 
+## Seguimiento vigente · S11 y avance S12 · 19 de octubre de 2026
+
+S11 se fija antes del límite exclusivo 2026-10-19T05:00:00Z. S12 es preliminar, observada a las 21:35 UTC del 19 de octubre, y cierra el 26 de octubre a las 05:00 UTC. Las matrices transversales actuales están en [S11](semana-11-evidencia-s11.md) y [S12](semana-12-evidencia-s12.md). Sus estados y límites sustituyen las inferencias de arrastre que no hayan sido revalidadas; el historial conserva su fecha.
+
+Punta y corte coinciden. Hay integración modular en proceso, almacenamiento RAM y lock por SKU con timeout 2 s; no idempotencia de comandos, persistencia SQL ni coordinación entre instancias. ADR-0011 corrige conceptualmente la deduplicación, pero no reemplaza la afirmación errónea de la tabla S11. S12 todavía carece de tabla de garantías y decisión de datos/reversión.
+
+Actividad en principal: 15 commits en la ventana S11 y 0 posteriores al cierre hasta la observación. El número de commits no determina la nota: se contrasta el contenido completo con la ficha.
+
+| Seguimiento | Estado y evidencia |
+|---|---|
+| Integración, modos de fallo y extracción | [Matriz S11](semana-11-evidencia-s11.md): distingue diseño, código y pendientes explícitos. |
+| Consistencia, caché y reversibilidad | [Matriz S12 preliminar](semana-12-evidencia-s12.md): completar los criterios pendientes antes del cierre. |
+| CI, seguridad, contribución y decisiones inmutables | Revisar la matriz transversal del informe actual; no se cierran por un CI verde genérico ni por la existencia de archivos. |
+
 ## Feedback S10 vigente · 13 de octubre de 2026
 
 Límite exclusivo: **2026-10-13T05:00:00Z**, fin del 12 de octubre en Colombia. Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
 
-**Subtotal técnico: 2,80 / 4,00. Total sobre 5,00 pendiente de C5.**
+**Subtotal técnico: 2,80 / 4,00. Total consolidado C1–C5: 3,60 / 5,00.**
 
-C5 sigue pendiente de calificación docente. No se registra como cero ni se estima a partir del repositorio.
+Sustentación comunicada por el docente: 4,00/5, incorporada como C5 = 0,80/1. Sincronizada el 19 de octubre de 2026; no modifica C1–C4.
 
 El reporte S10 define el escenario y un cambio coherente. La cifra de 28 ms no tiene una prueba o serie que mida latencia; faltan una línea base y una nueva medición demostrada. La documentación continúa parcial.
 

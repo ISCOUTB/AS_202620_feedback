@@ -8,22 +8,38 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_DinamikUTB` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Luis Daniel Padilla Leottau (`Daniel-dev02`) · Gillianis Del Carmen Perez Revolledo (`gillianisperez-prog`) · Esteban Ramirez Rios (`Eramirezr`) · Juan Jose Vargas Perez (`JuanchisV`, firma también como «Juan José Vargas Pérez» con el mismo correo); ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | https://dinamikutb-api.onrender.com · ver comprobación y límites en S10 |
-| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
+| Última revisión | 2026-10-19 · S11 definitiva y S12 preliminar (observación 21:35 UTC); rectificaciones aprobadas sincronizadas |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 9 | S9 · definitiva | `master` · `2326dd7f9d4dda08ba557ea6602b0a7085c97bee` · 2026-10-04T21:47:16-05:00 | 5/10 | 3.0 (propuesta al docente) | sí, 2026-10-06 |
+| 12 | [S12 · preliminar](semana-12-evidencia-s12.md) | `master` · `37872ff7dbb08be833b92c0a4b6d1ca3152464a1` | 3/9 | 2.3 (propuesta al docente; preliminar) | sí, 2026-10-19 |
+| 11 | [S11 · definitiva](semana-11-evidencia-s11.md) | `master` · `37872ff7dbb08be833b92c0a4b6d1ca3152464a1` | 9/9 | 5.0 (propuesta al docente) | sí, 2026-10-19 |
+| 9 | S9 · definitiva | `master` · `2326dd7f9d4dda08ba557ea6602b0a7085c97bee` · 2026-10-04T21:47:16-05:00 | 8/10 | 4.2 (rectificación aprobada) | sí, sincronizada 2026-10-19 |
 | 10 | Segundo corte · consolidado al cierre | `master` · `5dc9acf9335fec70e274a2e5c494b3805b0e9646` · 2026-10-05T22:06:45-05:00 | C1 0,60; C2 0,60; C3 0,60; C4 0,60 (cada uno /1) | Total 3,20/5; técnica 2,40/4 + C5 docente 0,80/1; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
 | 8 | S8 | `287c65d` (2026-09-27T23:57:31-05:00) | 10/10 | 5.0 (prop. prov.; 2 filas de despliegue diferidas) | sí |
 | 7 | S7 | `5e6fa73` (2026-09-20T23:57:27-05:00) | 10/10 | 5.0 | si |
-| 6 | S6 | `265e652` (2026-09-13T23:29:49-05:00) | 0/8 | 1.0 | si |
+| 6 | S6 | `265e652` (2026-09-13T23:29:49-05:00) | 8/8 | 5.0 (rectificación aprobada) | sí, sincronizada 2026-10-19 |
 | 5 | CORTE1 | `72bfc7e` (2026-09-07T22:28:37-05:00) | 8/12 | 3.7 | sí (actualizada) |
 | 4 | S4 | `8558156` (2026-08-30T23:52:24-05:00) | 7/10 | 3.8 | si |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `769f970` · 2026-08-09T21:24:49-05:00 | 7/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `58734e1c` · 2026-08-16T23:33:53-05:00 | 9/9 | no se publica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `fe52ab594` · 2026-08-23T23:20:33-05:00 | 5/9 | no se publica | sí (actualizada tras el cierre) |
+
+## Seguimiento vigente · S11 y avance S12 · 19 de octubre de 2026
+
+S11 se fija antes del límite exclusivo 2026-10-19T05:00:00Z. S12 es preliminar, observada a las 21:35 UTC del 19 de octubre, y cierra el 26 de octubre a las 05:00 UTC. Las matrices transversales actuales están en [S11](semana-11-evidencia-s11.md) y [S12](semana-12-evidencia-s12.md). Sus estados y límites sustituyen las inferencias de arrastre que no hayan sido revalidadas; el historial conserva su fecha.
+
+Sin commits posteriores al cierre. El código de resiliencia coincide con arc42 y ADR-0010; el acceso SQL revisado permanece en el servicio dueño de Requisito. Hay deuda explícita, no microservicios obligatorios: sin autenticación en lectura/escritura y riesgo de última escritura gana, documentados en `docs/arc42/11-risks-and-technical-debt.md:11-12,51`. SQLite en CI frente a PostgreSQL desplegado exige validación adicional (`backend/app/core/database.py:16-22`). El mapa describe módulos todavía vacíos con ese límite explícito (`docs/arc42/08-cross-cutting-concepts.md:49-53`); no tratarlos como implementación. Fecha de recreación de BD antes del 25/10 declarada por el equipo en §11.2: comprobar operativamente, sin asumir estado del proveedor.
+
+Actividad en principal: 24 commits en la ventana S11 y 0 posteriores al cierre hasta la observación. El número de commits no determina la nota: se contrasta el contenido completo con la ficha.
+
+| Seguimiento | Estado y evidencia |
+|---|---|
+| Integración, modos de fallo y extracción | [Matriz S11](semana-11-evidencia-s11.md): distingue diseño, código y pendientes explícitos. |
+| Consistencia, caché y reversibilidad | [Matriz S12 preliminar](semana-12-evidencia-s12.md): completar los criterios pendientes antes del cierre. |
+| CI, seguridad, contribución y decisiones inmutables | Revisar la matriz transversal del informe actual; no se cierran por un CI verde genérico ni por la existencia de archivos. |
 
 ## Feedback S10 vigente · 13 de octubre de 2026
 

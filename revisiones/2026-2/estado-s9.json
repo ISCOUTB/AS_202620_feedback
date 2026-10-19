@@ -5,8 +5,7 @@
   "lote": "todos",
   "tamano_lote": 23,
   "origen": "revision-documental-completa",
-  "publicado": false,
-  "publicacion_pendiente": "Pendiente de revisión e incorporación a master; los cambios se proponen mediante un pull request en borrador. La evaluación conserva la fotografía del 6 de octubre de 2026.",
+  "publicado": true,
   "cierre": "2026-10-05T05:00:00Z",
   "pdf": "excluidos por indicacion docente; sin penalizacion",
   "ejecucion_codigo_estudiantil": false,
@@ -217,5 +216,54 @@
       "AS_202620_Clubs_UTB": "Precisión ADR pertinente y CI invalid YAML; nota3.4 sin cambio"
     },
     "misma_evidencia_de_cierre": true
+  },
+  "ultima_sincronizacion": "2026-10-19",
+  "rectificacion_docente": {
+    "fecha_sincronizacion": "2026-10-19",
+    "aprobada_por_docente": true,
+    "criterio_excluido": "Comprobación de credenciales bloqueada por el entorno del revisor; conserva No verificado",
+    "resultados": {
+      "AS_202620_Sistema-de-calificacion-automatica": {
+        "cumple": 9,
+        "total_computable": 9,
+        "nota": 5.0
+      },
+      "AS_202620_ROUTB": {
+        "cumple": 9,
+        "total_computable": 9,
+        "nota": 5.0
+      },
+      "AS_202620_InvenTrack": {
+        "cumple": 8,
+        "total_computable": 9,
+        "nota": 4.6
+      },
+      "AS_202620_LaPlacita": {
+        "cumple": 8,
+        "total_computable": 9,
+        "nota": 4.6
+      },
+      "AS_202620_mapsutb": {
+        "cumple": 8,
+        "total_computable": 9,
+        "nota": 4.6
+      },
+      "AS_202620_LostVault": {
+        "cumple": 4,
+        "total_computable": 9,
+        "nota": 2.8
+      }
+    }
+  },
+  "apelacion_dinamik": {
+    "aprobada_por_docente": true,
+    "cumple": 8,
+    "total_computable": 10,
+    "nota": 4.2,
+    "hash": "2326dd7f9d4dda08ba557ea6602b0a7085c97bee"
+  },
+  "recuento_vigente": {
+    "cumple": 169,
+    "total_computable": 224
   }
 }

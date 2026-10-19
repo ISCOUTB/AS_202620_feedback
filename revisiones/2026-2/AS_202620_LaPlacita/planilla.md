@@ -10,13 +10,15 @@ Hoja consolidada del equipo LaPlacita. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_LaPlacita` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Mateo Josue Buendia Barrios · Miguel Angel Isaza Montalvo · Samuel David Jimenez Alvarez · Jorge Alberto Martinez Castillo — cuentas abajo; ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | https://laplacita-app.graymoss-fdd72159.canadacentral.azurecontainerapps.io · ver comprobación y límites en S10 |
-| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
+| Última revisión | 2026-10-19 · S11 definitiva y S12 preliminar (observación 21:35 UTC); rectificaciones aprobadas sincronizadas |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 9 | S9 · definitiva | `master` · `3a04706d27e49fb93c90c68f469442fb6f392710` · 2026-10-04T15:39:16-05:00 | 8/10 | Pendiente por limitación de verificación; intervalo documental 4.2–4.6, sin descontar la comprobación bloqueada | sí, 2026-10-06 |
+| 12 | [S12 · preliminar](semana-12-evidencia-s12.md) | `master` · `0c9ce082b5850baf1ecda75e82d20757d0101234` | 2/9 | 1.9 (propuesta al docente; preliminar) | sí, 2026-10-19 |
+| 11 | [S11 · definitiva](semana-11-evidencia-s11.md) | `master` · `0c9ce082b5850baf1ecda75e82d20757d0101234` | 9/9 | 5.0 (propuesta al docente) | sí, 2026-10-19 |
+| 9 | S9 · definitiva | `master` · `3a04706d27e49fb93c90c68f469442fb6f392710` · 2026-10-04T15:39:16-05:00 | 8/9 (una comprobación excluida por decisión docente) | 4.6 | sí, rectificación aprobada; sincronizada 2026-10-19 |
 | 10 | Segundo corte · consolidado al cierre | `master` · `2c711d44b31a41a09306f7840da480a21e8c749a` · 2026-10-12T17:41:41-05:00 | C1 0,80; C2 0,60; C3 0,80; C4 0,60 (cada uno /1) | Total 3,60/5; técnica 2,80/4 + C5 docente 0,80/1; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
 | 8 | S8 (definitiva) | `b03a797` (2026-09-27T19:00:57-05:00) | 10/10 | 5.0 (provisional; 2 filas de despliegue pendientes) | sí, definitiva |
 | 7 | S7 | `8c2e1bc` (2026-09-20T22:47:32-05:00) | 10/10 | 5.0 | sí, auditada |
@@ -26,6 +28,20 @@ Hoja consolidada del equipo LaPlacita. Se actualiza tras cada revisión.
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `37f1deb8` · 2026-08-08T15:37:16-05:00 | 8/9 | 4,6 * | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `fa7e13bc` · 2026-08-15T18:13:29-05:00 | 5/9 | 3,2 * | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `014751df` · 2026-08-23T19:30:17-05:00 | 9/9 | no se publica | sí |
+
+## Seguimiento vigente · S11 y avance S12 · 19 de octubre de 2026
+
+S11 se fija antes del límite exclusivo 2026-10-19T05:00:00Z. S12 es preliminar, observada a las 21:35 UTC del 19 de octubre, y cierra el 26 de octubre a las 05:00 UTC. Las matrices transversales actuales están en [S11](semana-11-evidencia-s11.md) y [S12](semana-12-evidencia-s12.md). Sus estados y límites sustituyen las inferencias de arrastre que no hayan sido revalidadas; el historial conserva su fecha.
+
+Punta y corte coinciden. Backend y PWA han avanzado, con claves idempotentes limitadas a memoria y escritura FIFO por pedido; el 201 todavía no garantiza persistencia PostgreSQL. La cola ordena las escrituras, pero no equivale a outbox durable. Redis, push y pasarela real siguen declarados como futuros/no integrados. Completar S12 desde esta semántica real.
+
+Actividad en principal: 52 commits en la ventana S11 y 0 posteriores al cierre hasta la observación. El número de commits no determina la nota: se contrasta el contenido completo con la ficha.
+
+| Seguimiento | Estado y evidencia |
+|---|---|
+| Integración, modos de fallo y extracción | [Matriz S11](semana-11-evidencia-s11.md): distingue diseño, código y pendientes explícitos. |
+| Consistencia, caché y reversibilidad | [Matriz S12 preliminar](semana-12-evidencia-s12.md): completar los criterios pendientes antes del cierre. |
+| CI, seguridad, contribución y decisiones inmutables | Revisar la matriz transversal del informe actual; no se cierran por un CI verde genérico ni por la existencia de archivos. |
 
 ## Feedback S10 vigente · 13 de octubre de 2026
 

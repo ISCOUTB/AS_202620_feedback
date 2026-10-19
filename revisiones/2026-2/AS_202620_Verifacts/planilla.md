@@ -8,14 +8,16 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Verifacts` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Ver [EQUIPOS.md](../../../EQUIPOS.md); recuento histórico heredado (no vigente): `PedroC1213` (240 commits, dos correos consolidados) y `Cristian Cardeño` (31 commits, dos correos con la misma firma), sin correspondencia individual confirmada; falta una tercera identidad atribuible.; ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | https://verifacts-web.onrender.com · ver comprobación y límites en S10 |
-| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
+| Última revisión | 2026-10-19 · S11 definitiva y S12 preliminar (observación 21:35 UTC); rectificaciones aprobadas sincronizadas |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 12 | [S12 · preliminar](semana-12-evidencia-s12.md) | `master` · `e98575318f313fde96ef4c56603fbbc4f2984ae3` | 2/9 | 1.9 (propuesta al docente; preliminar) | sí, 2026-10-19 |
+| 11 | [S11 · definitiva](semana-11-evidencia-s11.md) | `master` · `e98575318f313fde96ef4c56603fbbc4f2984ae3` | 6/9 | 3.7 (propuesta al docente) | sí, 2026-10-19 |
 | 9 | S9 · definitiva | `master` · `4f0652291c47f5093da1230b245a980614220e80` · 2026-10-02T00:01:45-05:00 | 7/10 | 3.8 (propuesta al docente) | sí, 2026-10-06 |
-| 10 | Segundo corte · consolidado al cierre | `master` · `6c08cc536ac7bd294c749548bd70276044ee511e` · 2026-10-10T18:23:32-05:00 | C1 0,80; C2 0,60; C3 0,60; C4 0,60 (cada uno /1) | Técnica 2,60/4; C5 pendiente; sin total /5; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
+| 10 | Segundo corte · consolidado al cierre | `master` · `6c08cc536ac7bd294c749548bd70276044ee511e` · 2026-10-10T18:23:32-05:00 | C1 0,80; C2 0,60; C3 0,60; C4 0,60 (cada uno /1) | Total 3,40/5; técnica 2,60/4 + C5 docente 0,80/1; ver [S10](semana-10-corte2.md) | sí, C5 sincronizado 2026-10-19 |
 | 8 | S8 | `d2d7b5c` (2026-09-25T16:38:43-05:00) | 10/10 | 5.0 (provisional; 2 filas de despliegue pendientes) | sí (definitiva) |
 | 7 | S7 | `635f9b7` (2026-09-16T00:52:52-05:00) | 10/10 | 5.0 (auditada) | sí, auditada |
 | 6 | S6 | `5941c33` (2026-09-12T02:00:20-05:00) | 8/8 | 5.0 (prelim.) | si |
@@ -27,13 +29,27 @@
 
 S8 se califica sobre 10 filas graduables. Quedan **pendientes de calificar** las dos filas de despliegue («URL del sistema accesible desde fuera de la red de la universidad» y «Health check consultable»): la URL se entrega por Moodle y no está disponible en esta pasada.
 
+## Seguimiento vigente · S11 y avance S12 · 19 de octubre de 2026
+
+S11 se fija antes del límite exclusivo 2026-10-19T05:00:00Z. S12 es preliminar, observada a las 21:35 UTC del 19 de octubre, y cierra el 26 de octubre a las 05:00 UTC. Las matrices transversales actuales están en [S11](semana-11-evidencia-s11.md) y [S12](semana-12-evidencia-s12.md). Sus estados y límites sustituyen las inferencias de arrastre que no hayan sido revalidadas; el historial conserva su fecha.
+
+El pipeline de ingesta y persistencia existe y la decisión de no extraer es pertinente. El documento de S11 mezcla diseño futuro con lenguaje de mitigaciones aplicadas: ni timeout configurable de 4 s, ni respuestas 504/422 de extracción, ni WAL/retry constan en la implementación citada. La idempotencia se diseña pero POST /analysis aún inserta un nuevo registro por invocación. Corregir la correspondencia documental, añadir sección 11 de riesgos y actualizar aspectos antes de presentar el diseño como resiliencia ya probada.
+
+Actividad en principal: 2 commits en la ventana S11 y 0 posteriores al cierre hasta la observación. El número de commits no determina la nota: se contrasta el contenido completo con la ficha.
+
+| Seguimiento | Estado y evidencia |
+|---|---|
+| Integración, modos de fallo y extracción | [Matriz S11](semana-11-evidencia-s11.md): distingue diseño, código y pendientes explícitos. |
+| Consistencia, caché y reversibilidad | [Matriz S12 preliminar](semana-12-evidencia-s12.md): completar los criterios pendientes antes del cierre. |
+| CI, seguridad, contribución y decisiones inmutables | Revisar la matriz transversal del informe actual; no se cierran por un CI verde genérico ni por la existencia de archivos. |
+
 ## Feedback S10 vigente · 13 de octubre de 2026
 
 Límite exclusivo: **2026-10-13T05:00:00Z**, fin del 12 de octubre en Colombia. Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
 
-**Subtotal técnico: 2,60 / 4,00. Total sobre 5,00 pendiente de C5.**
+**Subtotal técnico: 2,60 / 4,00. Total consolidado C1–C5: 3,40 / 5,00.**
 
-C5 sigue pendiente de calificación docente. No se registra como cero ni se estima a partir del repositorio.
+Sustentación comunicada por el docente: 4,00/5, incorporada como C5 = 0,80/1. Sincronizada el 19 de octubre de 2026; no modifica C1–C4.
 
 Se documentan estados warm y cold, pero faltan POST en frío, hash desplegado y efecto tras la mitigación. Persisten afirmaciones de causalidad y costo incompatibles con la rectificación del ADR-0008, además de documentación parcial.
 

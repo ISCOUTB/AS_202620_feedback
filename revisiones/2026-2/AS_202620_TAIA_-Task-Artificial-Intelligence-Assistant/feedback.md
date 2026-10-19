@@ -109,3 +109,15 @@ Estos comentarios corresponden al estado y a las comprobaciones de sus fechas or
 Documenten el escenario operativo oficialmente asignado, con un antes y un después reproducibles en el despliegue. El health responde, pero el CI actual falla y CD queda omitido: verifiquen la versión desplegada y repitan el flujo conversacional después de corregirlo. Instrumenten fallos del proveedor y consumo por petición, revisen el timeout y sincronicen la documentación de Dokploy antes de la sustentación.
 
 </details>
+
+## Semana 11 · Integración y resiliencia
+
+S11 cubre integración, modos de fallo, mitigaciones y decisión de no extracción con trazabilidad. El reclamo atómico de confirmación está implementado, pero la escritura posterior de la tarea puede fallar y perder la acción, límite que está declarado. La idempotencia del registro de una notificación no demuestra que Telegram se envíe una sola vez.
+
+Consulta la [matriz S11](semana-11-evidencia-s11.md) para las evidencias y los pendientes. La evidencia posterior al cierre aparece separada en el seguimiento actual.
+
+## Semana 12 · Avance preliminar: consistencia, caché y decisiones de datos
+
+Se reconocen dos operaciones locales con transacción y bloqueo, pero falta tabla operación→garantía y una estrategia de caché con invalidación o exclusión justificada. También faltan ADR y costo comparativo de la decisión de datos más costosa de revertir, tecnología de la base en C4 y consolidación en arc42. El cambio posterior del Dockerfile no completa esos entregables.
+
+Consulta la [matriz S12 preliminar](semana-12-evidencia-s12.md) para las evidencias y los pendientes. El plazo sigue abierto hasta el final del 25 de octubre en Colombia.

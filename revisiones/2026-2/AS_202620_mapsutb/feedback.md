@@ -77,3 +77,19 @@ Estos comentarios corresponden al estado y a las comprobaciones de sus fechas or
 El health público identifica el mismo commit revisado. Para el segundo corte, confirmen el escenario asignado y midan su línea base/respuesta sobre el entorno real. Comprueben la caché efectiva de cada recurso y la experiencia tras una reversión, y alineen C4 y aspectos con el código ya entregado.
 
 </details>
+
+## Semana 9 · Aclaración de la revisión
+
+La comprobación de credenciales bloqueada por el entorno del revisor queda excluida del cálculo por decisión docente. Sigue sin verificarse y no implica un hallazgo de filtración. Los demás criterios conservan su valoración sobre la entrega de cierre; véase la [matriz actualizada](semana-09-evidencia-s9.md).
+
+## Semana 11 · Integración y resiliencia
+
+La decisión de no extraer, las mitigaciones y la trazabilidad están justificadas sobre las integraciones reales. Distingan las pruebas con dobles de las mediciones sobre GPS y proveedores reales. El flujo completo en campus sigue sin la medición que permitiría cerrar ese límite.
+
+Consulta la [matriz S11](semana-11-evidencia-s11.md) para las evidencias y los pendientes. La evidencia posterior al cierre aparece separada en el seguimiento actual.
+
+## Semana 12 · Avance preliminar: consistencia, caché y decisiones de datos
+
+Ya hay una política HTTP de revalidación y una garantía limitada para analítica. Falta integrar la caché interna del grafo, declarar garantías por operación y justificar la decisión de datos más costosa de revertir. Reúnan consistencia y caché en arc42, manteniendo separado lo vigente de los recorridos panorámicos diferidos.
+
+Consulta la [matriz S12 preliminar](semana-12-evidencia-s12.md) para las evidencias y los pendientes. El plazo sigue abierto hasta el final del 25 de octubre en Colombia.

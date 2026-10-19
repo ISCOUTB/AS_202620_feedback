@@ -8,12 +8,14 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Drift` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Jerry Daniel Buelvas Mejia (`JerryDBM`) · Mauricio Andres Fernandez Espinosa (`maufern4ndez`) · Luis Mario Perez Diaz (`lmpdiaz12`) · Joshua David Reyes Leones (`JoshuaR01` y `JoshXX`, mismo correo); ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | https://drift-utb-202620-g5fvchdcgpcthkeg.mexicocentral-01.azurewebsites.net · ver comprobación y límites en S10 |
-| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
+| Última revisión | 2026-10-19 · S11 definitiva y S12 preliminar (observación 21:35 UTC); rectificaciones aprobadas sincronizadas |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 12 | [S12 · preliminar](semana-12-evidencia-s12.md) | `master` · `1cead90c02d284f9261addd19e5979ab114b9aea` | 3/9 | 2.3 (propuesta al docente; preliminar) | sí, 2026-10-19 |
+| 11 | [S11 · definitiva](semana-11-evidencia-s11.md) | `master` · `1cead90c02d284f9261addd19e5979ab114b9aea` | 9/9 | 5.0 (propuesta al docente) | sí, 2026-10-19 |
 | 9 | S9 · definitiva | `master` · `3dee7e265eec021cbbba4af4d337e13c982df316` · 2026-10-04T22:03:23-05:00 | 7/10 | 3.8 (propuesta al docente) | sí, 2026-10-06 |
 | 10 | Segundo corte · consolidado al cierre | `master` · `04874b8744dfa345a7fa7e12775e629c410fc870` · 2026-10-12T14:42:40-05:00 | C1 1,00; C2 0,80; C3 0,80; C4 0,80 (cada uno /1) | Total 4,36/5; técnica 3,40/4 + C5 docente 0,96/1; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
 | 8 | S8 | `74709aa` (2026-09-27T23:58:28-05:00) | 10/10 | 5.0 (prop. prov.; 2 filas de despliegue diferidas) | sí |
@@ -24,6 +26,20 @@
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `b7ec296c` · 2026-08-09T22:59:42-05:00 | 4/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `23fb8c29` · 2026-08-16T22:39:37-05:00 | 6/9 | no se publica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `0d006bba` · 2026-08-23T18:05:58-05:00 | 5/9 | no se publica | sí |
+
+## Seguimiento vigente · S11 y avance S12 · 19 de octubre de 2026
+
+S11 se fija antes del límite exclusivo 2026-10-19T05:00:00Z. S12 es preliminar, observada a las 21:35 UTC del 19 de octubre, y cierra el 26 de octubre a las 05:00 UTC. Las matrices transversales actuales están en [S11](semana-11-evidencia-s11.md) y [S12](semana-12-evidencia-s12.md). Sus estados y límites sustituyen las inferencias de arrastre que no hayan sido revalidadas; el historial conserva su fecha.
+
+Sin delta después del cierre. Dependencias revisadas de `backend/app/domain/` y `backend/app/application/` no importan httpx/FastAPI/infraestructura; `sync_playstation_catalog.py:3-6` usa puertos. Erosión documental: `docs/c4/contenedores.md:28-68,138-157` mezcla componentes internos y persistencia futura; el anexo 171-190 aclara la realidad, pero conviene retirar/rotular la vista antigua. Sección 8 aún presenta repositorio de requisitos en memoria como único implementado mientras el árbol contiene adaptador Steam. Resiliencia no equivale a cumplir p95: timeout por fase y dos intentos pueden exceder E6; Steam vacío no lleva aviso al cliente (`arc42 §11.8:101-111`).
+
+Actividad en principal: 14 commits en la ventana S11 y 0 posteriores al cierre hasta la observación. El número de commits no determina la nota: se contrasta el contenido completo con la ficha.
+
+| Seguimiento | Estado y evidencia |
+|---|---|
+| Integración, modos de fallo y extracción | [Matriz S11](semana-11-evidencia-s11.md): distingue diseño, código y pendientes explícitos. |
+| Consistencia, caché y reversibilidad | [Matriz S12 preliminar](semana-12-evidencia-s12.md): completar los criterios pendientes antes del cierre. |
+| CI, seguridad, contribución y decisiones inmutables | Revisar la matriz transversal del informe actual; no se cierran por un CI verde genérico ni por la existencia de archivos. |
 
 ## Feedback S10 vigente · 13 de octubre de 2026
 

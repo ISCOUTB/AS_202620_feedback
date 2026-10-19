@@ -52,9 +52,9 @@ Punta actual de la misma rama: `72011933ff2238eaec697f565572fec6872a3cbc` · 202
 
 ## Recuento y nota sugerida
 
-**9 de 10 criterios Cumple; 0 No cumple; 1 No verificado.**
+**9 de 9 criterios computables Cumple. Nota sugerida: 5.0 = redondeo a un decimal de 1 + 4 × (9/9).** Propuesta al docente; la nota final la fija el profesor.
 
-**Propuesta numérica pendiente por bloqueo del entorno de revisión.** Hay 9 criterios acreditados; el rango posible con la fila bloqueada es 4.6–5.0. No se descuenta el impedimento técnico como defecto del equipo. La fórmula se aplicará sobre las diez filas cuando se resuelva la verificación. La matriz transversal no entra en la fórmula.
+**Rectificación aprobada por el docente, sincronizada el 19 de octubre de 2026:** se excluye exclusivamente del denominador la comprobación de credenciales bloqueada por el entorno del revisor. La matriz conserva sus diez filas y esa comprobación permanece «No verificado»: no se transforma en Cumple ni certifica ausencia de secretos. No se concede crédito por evidencia posterior al cierre. La matriz transversal no entra en el cálculo.
 
 ## Pendientes y acciones concretas
 

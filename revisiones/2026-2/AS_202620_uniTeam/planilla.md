@@ -10,12 +10,14 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_uniTeam` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Julio Cesar Emiliani Ramos · Ian Novoa Carrillo · Juan Jose Bustamante More · Daniel Isaac Manjarres Herrera. Identidades observadas: `super-gremlin`, `Ian Novoa`, `Julio Cesar Emiliani`, `JuanB`/`JuanBustamante`, `Daniel Manjarres Herrera` y `DaniGamer0907`; ninguna correspondencia individual se da por confirmada. La cuenta listada `iansx` no aparece.; ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | https://uniteam-web.onrender.com · ver comprobación y límites en S10 |
-| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
+| Última revisión | 2026-10-19 · S11 definitiva y S12 preliminar (observación 21:35 UTC); rectificaciones aprobadas sincronizadas |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 12 | [S12 · preliminar](semana-12-evidencia-s12.md) | `master` · `2c73ffce2d9b92e71697a7313f829789b4471639` | 3/9 | 2.3 (propuesta al docente; preliminar) | sí, 2026-10-19 |
+| 11 | [S11 · definitiva](semana-11-evidencia-s11.md) | `master` · `2c73ffce2d9b92e71697a7313f829789b4471639` | 1/9 | 1.4 (propuesta al docente) | sí, 2026-10-19 |
 | 9 | S9 · definitiva | `master` · `6e04b35317a0a68d239ae85c71cd60e21982b195` · 2026-10-04T16:37:55-05:00 | 10/10 | 5.0 (propuesta al docente) | sí, 2026-10-06 |
 | 10 | Segundo corte · consolidado al cierre | `master` · `6e04b35317a0a68d239ae85c71cd60e21982b195` · 2026-10-04T16:37:55-05:00 | C1 0,80; C2 0,80; C3 0,60; C4 0,60 (cada uno /1) | Total 3,70/5; técnica 2,80/4 + C5 docente 0,90/1; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `4b4c5c0` · 2026-08-09T11:22:38-05:00 | 6/9 | 3.7 (propuesta) | sí |
@@ -27,13 +29,25 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 7 | S7 | `1ea4aba` (2026-09-18T22:21:34Z) | 9/10 | 4.6 | sí (auditoría definitiva corregida) |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `0f3da0f3` (2026-09-27T22:52:09-05:00) | 9/10 | 4.6 (propuesta; 2 filas de despliegue pendientes) | sí (definitiva) |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
-| 11 | Evidencia S11 · Fallos parciales y decisión de extracción | | | no aplica | |
-| 12 | Evidencia S12 · Estrategia de datos y eventos | | | no aplica | |
 | 12 | Taller aplicado · Mensajes y consistencia | | | no aplica | |
 | 13 | Evidencia S13 · Modelado de amenazas y plan de mitigación | | | no aplica | |
 | 14 | Evidencia S14 · Medición de atributos de calidad | | | no aplica | |
 | 16 | Proyecto final · integración y desafío arquitectónico | `final` | | | |
 | 17 | Aplicación de cambios y cierre arquitectónico | | | | |
+
+## Seguimiento vigente · S11 y avance S12 · 19 de octubre de 2026
+
+S11 se fija antes del límite exclusivo 2026-10-19T05:00:00Z. S12 es preliminar, observada a las 21:35 UTC del 19 de octubre, y cierra el 26 de octubre a las 05:00 UTC. Las matrices transversales actuales están en [S11](semana-11-evidencia-s11.md) y [S12](semana-12-evidencia-s12.md). Sus estados y límites sustituyen las inferencias de arrastre que no hayan sido revalidadas; el historial conserva su fecha.
+
+Existe un producto con tareas, autorización por proyecto, persistencia MySQL, integración OIDC y eventos en proceso. Es una línea base sustancial, pero no sustituye los artefactos específicos S11/S12. El bus captura errores del consumidor, sin persistencia ni reentrega: hay que delimitar la afirmación del ADR 0006 de que no puede confirmarse una operación sin auditoría. La caché JWKS y la caché del flujo ya existen y merecen una política explícita de invalidación.
+
+Actividad en principal: 8 commits en la ventana S11 y 0 posteriores al cierre hasta la observación. El número de commits no determina la nota: se contrasta el contenido completo con la ficha.
+
+| Seguimiento | Estado y evidencia |
+|---|---|
+| Integración, modos de fallo y extracción | [Matriz S11](semana-11-evidencia-s11.md): distingue diseño, código y pendientes explícitos. |
+| Consistencia, caché y reversibilidad | [Matriz S12 preliminar](semana-12-evidencia-s12.md): completar los criterios pendientes antes del cierre. |
+| CI, seguridad, contribución y decisiones inmutables | Revisar la matriz transversal del informe actual; no se cierran por un CI verde genérico ni por la existencia de archivos. |
 
 ## Feedback S10 vigente · 13 de octubre de 2026
 

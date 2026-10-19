@@ -8,13 +8,15 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_ROUTB` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Diego Jose Baron Ruiz (`diegobrr999-commits`) · Julian David Manjarrez Guzman (`juliandmanjarrez-tech`) · Keiner Enrique Mendivil Diaz (`MKeinerrr`, dos correos) · Junior Jose Orozco Atencio (`junior14700`); ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | https://as-202620-routb.onrender.com · ver comprobación y límites en S10 |
-| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
+| Última revisión | 2026-10-19 · S11 definitiva y S12 preliminar (observación 21:35 UTC); rectificaciones aprobadas sincronizadas |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 9 | S9 · definitiva | `master` · `7c6573e68a5fdab019fab8fddfe1acb2a451cb27` · 2026-10-03T18:20:32-05:00 | 9/10 | Pendiente por limitación de verificación; intervalo documental 4.6–5.0, sin descontar la comprobación bloqueada | sí, 2026-10-06 |
+| 12 | [S12 · preliminar](semana-12-evidencia-s12.md) | `master` · `1bd9425e2675bd7531426b6e31e78546b3e55f2e` | 4/9 | 2.8 (propuesta al docente; preliminar) | sí, 2026-10-19 |
+| 11 | [S11 · definitiva](semana-11-evidencia-s11.md) | `master` · `1bd9425e2675bd7531426b6e31e78546b3e55f2e` | 8/9 | 4.6 (propuesta al docente) | sí, 2026-10-19 |
+| 9 | S9 · definitiva | `master` · `7c6573e68a5fdab019fab8fddfe1acb2a451cb27` · 2026-10-03T18:20:32-05:00 | 9/9 (una comprobación excluida por decisión docente) | 5.0 | sí, rectificación aprobada; sincronizada 2026-10-19 |
 | 10 | Segundo corte · consolidado al cierre | `master` · `adde017b72d73f210eef6cb48d97cdf1687f5141` · 2026-10-12T22:02:26-05:00 | C1 0,80; C2 0,80; C3 0,80; C4 0,80 (cada uno /1) | Total 4,00/5; técnica 3,20/4 + C5 docente 0,80/1; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `68b0b05` · 2026-08-09T14:48:08-05:00 | 5/9 | no aplica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `14e6688` · 2026-08-16T12:44:08-05:00 | 2/9 | no aplica | sí |
@@ -25,13 +27,31 @@
 | 7 | S7 | `fe266aa` (2026-09-20T21:32:01-05:00) | 9/10 | 4.6 | si |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `eae667e` (2026-09-27T21:58:06-05:00) | 10/10 (2 filas de despliegue diferidas) | 5.0 (provisional) | si |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
-| 11 | Evidencia S11 · Fallos parciales y decisión de extracción | | | no aplica | |
-| 12 | Evidencia S12 · Estrategia de datos y eventos | | | no aplica | |
 | 12 | Taller aplicado · Mensajes y consistencia | | | no aplica | |
 | 13 | Evidencia S13 · Modelado de amenazas y plan de mitigación | | | no aplica | |
 | 14 | Evidencia S14 · Medición de atributos de calidad | | | no aplica | |
 | 16 | Proyecto final · integración y desafío arquitectónico | `final` | | | |
 | 17 | Aplicación de cambios y cierre arquitectónico | | | | |
+
+## Seguimiento vigente · S11 y avance S12 · 19 de octubre de 2026
+
+S11 se fija antes del límite exclusivo 2026-10-19T05:00:00Z. S12 es preliminar, observada a las 21:35 UTC del 19 de octubre, y cierra el 26 de octubre a las 05:00 UTC. Las matrices transversales actuales están en [S11](semana-11-evidencia-s11.md) y [S12](semana-12-evidencia-s12.md). Sus estados y límites sustituyen las inferencias de arrastre que no hayan sido revalidadas; el historial conserva su fecha.
+
+PR 51 está antes del cierre. Los planes 2027 de mitigación se reconocen como planes; no se exige implementarlos todos para S11.
+
+La carrera de creación concurrente es un hallazgo de inspección estática, no una falla reproducida en esta revisión.
+
+Persiste un riesgo de privacidad de la línea base: backend/app/modules/trips/infrastructure/router.py:32-50,99-114,130-139 admite autenticación opcional y serializa campos de pasajeros. No se consultaron viajes ni datos reales; no se da por resuelto ni se afirma explotación observada.
+
+La caché verificada almacena geocodificación, no disponibilidad de cupos.
+
+Actividad en principal: 2 commits en la ventana S11 y 0 posteriores al cierre hasta la observación. El número de commits no determina la nota: se contrasta el contenido completo con la ficha.
+
+| Seguimiento | Estado y evidencia |
+|---|---|
+| Integración, modos de fallo y extracción | [Matriz S11](semana-11-evidencia-s11.md): distingue diseño, código y pendientes explícitos. |
+| Consistencia, caché y reversibilidad | [Matriz S12 preliminar](semana-12-evidencia-s12.md): completar los criterios pendientes antes del cierre. |
+| CI, seguridad, contribución y decisiones inmutables | Revisar la matriz transversal del informe actual; no se cierran por un CI verde genérico ni por la existencia de archivos. |
 
 ## Feedback S10 vigente · 13 de octubre de 2026
 

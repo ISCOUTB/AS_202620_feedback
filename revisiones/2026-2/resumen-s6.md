@@ -8,7 +8,7 @@ Nota preliminar (pasada temprana): puede cambiar al cierre.
 |---|---|---|---|---|
 | AudioShare | `AS_202620_AudioShare` | `4a0eba9` | 4/8 | 3.0 |
 | Clubs UTB | `AS_202620_Clubs_UTB` | `743cc1f` | 7/8 | 4.5 |
-| DinamikUTB | `AS_202620_DinamikUTB` | `265e652` | 0/8 | 1.0 |
+| DinamikUTB | `AS_202620_DinamikUTB` | `265e652` | 8/8 | 5.0 |
 | Drift | `AS_202620_Drift` | `5f7fa4c` | 5/8 | 3.5 |
 | ElMapita | `AS_202620_ElMapita` | `a22f0a4` | 0/8 | 1.0 |
 | EnAgenda | `AS_202620_EnAgenda` | `0a58de8` | 8/8 | 5.0 |
@@ -21,7 +21,7 @@ Nota preliminar (pasada temprana): puede cambiar al cierre.
 | ROUTB | `AS_202620_ROUTB` | `5b48dd0` | 4/8 | 3.0 |
 | Recobra | `AS_202620_Recobra` | `47fb44b` | 4/8 | 3.0 |
 | ShareU | `AS_202620_ShareU` | `c389364` | 7/8 | 4.5 |
-| Calificación automática | `AS_202620_Sistema-de-calificacion-automatica` | `a47d5bd` | 3/8 | 2.5 |
+| Calificación automática | `AS_202620_Sistema-de-calificacion-automatica` | `a47d5bd` | 8/8 | 5.0 |
 | TAIA | `AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant` | `c0c3adb` | 7/8 | 4.5 |
 | Tienda virtual UTB | `AS_202620_TIENDA-VIRTUAL-UTB` | `bc38c9b` * | 7/8 | 4.5 * |
 | UTB Tracker | `AS_202620_UTB_TRACKER` | `ae526db` * | 0/8 | 1.0 * |
@@ -46,3 +46,7 @@ nombre antiguo y registran la discrepancia como hallazgo.
 ## Rectificación aprobada · 14 de octubre de 2026
 
 Se completa la comparación S5→S6 en los mismos commits de cierre. EnAgenda pasa de 7/8 (4.5) a 8/8 (5.0); Clubs UTB de 6/8 (4.0) a 7/8 (4.5). Las cifras anteriores quedan superadas por esta revisión aprobada por el docente. Véanse [EnAgenda](AS_202620_EnAgenda/semana-06-evidencia-s6.md) y [Clubs UTB](AS_202620_Clubs_UTB/semana-06-evidencia-s6.md). No se acredita evidencia posterior al cierre ni se modifica a otros equipos.
+
+## Rectificaciones aprobadas · sincronización 19 de octubre de 2026
+
+DinamikUTB y Calificación automática quedan en 8/8 y 5.0 sobre sus mismos commits de cierre. La lectura completa recupera contenido omitido en la pasada parcial. Estos dos resultados ya están rectificados; el encabezado de pasada temprana describe el origen histórico de los demás registros, no revoca estas decisiones.

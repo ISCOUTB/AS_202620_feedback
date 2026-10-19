@@ -1,6 +1,6 @@
 # Segundo corte · S10 · PideUtb · consolidación al cierre
 
-**Actualización del feedback: 13 de octubre de 2026.** La tabla siguiente sustituye la valoración preliminar conservada al final.
+**Actualización del feedback: 19 de octubre de 2026.** La tabla siguiente sustituye la valoración preliminar conservada al final.
 
 | Campo | Valor |
 |---|---|
@@ -31,11 +31,11 @@ Valoración técnica condicionada al escenario que el equipo declara en dossier 
 | C2 · Decisión e implementación | Competente | 0,80 / 1,00 |
 | C3 · Operación, seguridad y observabilidad | Insuficiente | 0,00 / 1,00 |
 | C4 · Evolución arquitectónica trazable | Competente | 0,80 / 1,00 |
-| C5 · Sustentación del reto | Pendiente docente | Pendiente |
+| C5 · Sustentación del reto | Calificación docente: 4,00 / 5,00 | 0,80 / 1,00 |
 
-**Subtotal técnico: 2,20 / 4,00. Total sobre 5,00 pendiente de C5.**
+**Subtotal técnico: 2,20 / 4,00. C5 docente: 0,80 / 1,00. Total S10: 3,00 / 5,00.**
 
-C5 sigue pendiente de calificación docente. No se registra como cero ni se estima a partir del repositorio.
+C5 incorpora la calificación de sustentación 4,00 / 5,00 indicada por el docente el 18 de octubre de 2026 y sincronizada en esta publicación. Su aporte es 4,00 / 5 = 0,80. Los puntajes C1–C4 y el hash técnico del cierre se conservan; no se infiere la sustentación del repositorio.
 
 Los componentes técnicos se publican como propuesta al docente. Publicar esta consolidación no acredita un registro de la calificación en Moodle.
 

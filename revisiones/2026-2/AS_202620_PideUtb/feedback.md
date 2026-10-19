@@ -96,3 +96,19 @@ Estos comentarios corresponden al estado y a las comprobaciones de sus fechas or
 Antes de la defensa, acrediten la corrección y configuración segura del secreto en el despliegue, y resuelvan o delimiten el panel sin autenticación. Confirmen el escenario operativo asignado y midan su línea base y respuesta en el entorno real. La disponibilidad actual no pudo comprobarse por una cancelación de la herramienta; eso no demuestra que el servicio esté caído.
 
 </details>
+
+## Semana 10 · Actualización docente
+
+Se incorporó la calificación de sustentación comunicada por el docente en la planilla y en el [informe S10](semana-10-corte2.md). La evaluación técnica del repositorio mantiene su fundamento y sus observaciones.
+
+## Semana 11 · Integración y resiliencia
+
+La tabla de fallos, las pruebas de conciliación y la decisión razonada de no extraer cubren la evidencia. No confundan el run verde ni la corrección de la migración con recuperación de producción comprobada. Actualicen la bitácora de IA y preserven los ADR aceptados mediante decisiones sucesoras.
+
+Consulta la [matriz S11](semana-11-evidencia-s11.md) para las evidencias y los pendientes. La evidencia posterior al cierre aparece separada en el seguimiento actual.
+
+## Semana 12 · Avance preliminar: consistencia, caché y decisiones de datos
+
+La estrategia de no caché y los límites del bus están documentados. Corrijan la garantía de avance de estado: se valida antes de un UPDATE por identificador, sin la condición de estado prometida en la tabla. Falta un ADR que justifique la decisión de datos más costosa de revertir y su costo; alineen además el intervalo de sondeo y la flecha a la pasarela con el código vigente.
+
+Consulta la [matriz S12 preliminar](semana-12-evidencia-s12.md) para las evidencias y los pendientes. El plazo sigue abierto hasta el final del 25 de octubre en Colombia.

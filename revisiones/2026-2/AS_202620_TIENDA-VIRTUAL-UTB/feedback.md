@@ -109,3 +109,15 @@ Estos comentarios corresponden al estado y a las comprobaciones de sus fechas or
 Antes del corte, documenten cuál fue el escenario operativo asignado y midan una línea base reproducible en el entorno desplegado. Publiquen el dominio vigente de Dokploy, sus comprobaciones de salud y flujo, el resultado del experimento frente al umbral y el costo real de servidor y backups. La medición local de cinco usuarios es un insumo, pero todavía no acredita el reto asignado.
 
 </details>
+
+## Semana 11 · Integración y resiliencia
+
+La decisión de no extraer está razonada y el diseño de idempotencia y saga distingue lo pendiente. Completen los tres modos de fallo sobre las consultas reales de catálogo e inventario, y actualicen aspectos y referencias que todavía llaman vacío al inventario. Para el final, las mitigaciones diseñadas necesitan pruebas de fallo sobre la integración real.
+
+Consulta la [matriz S11](semana-11-evidencia-s11.md) para las evidencias y los pendientes. La evidencia posterior al cierre aparece separada en el seguimiento actual.
+
+## Semana 12 · Avance preliminar: consistencia, caché y decisiones de datos
+
+Avance preliminar: la lectura sin caché está justificada y PostgreSQL aparece en el C4. Falta la tabla operación a garantía, contrastar dos operaciones y elegir la decisión de datos de mayor costo de reversión. La estrategia de consistencia y caché debe quedar reunida en la sección 8.
+
+Consulta la [matriz S12 preliminar](semana-12-evidencia-s12.md) para las evidencias y los pendientes. El plazo sigue abierto hasta el final del 25 de octubre en Colombia.

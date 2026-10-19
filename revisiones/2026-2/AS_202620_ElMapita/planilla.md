@@ -8,12 +8,14 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_ElMapita` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Angel Fabian Gutierrez Gomez (sin cuenta identificada en el historial) · Diego Rosales Garza (sin cuenta identificada) · Rodrigo Vazquez Rico (firma con su nombre). Historial: `RobotDRMX` (sin atribuir) y, en EQUIPOS.md, `YOOUYII` (nunca vista).; ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | https://elmapita-utb-api.onrender.com · ver comprobación y límites en S10 |
-| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
+| Última revisión | 2026-10-19 · S11 definitiva y S12 preliminar (observación 21:35 UTC); rectificaciones aprobadas sincronizadas |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 12 | [S12 · preliminar](semana-12-evidencia-s12.md) | `main` · `0421885424d13478cf33c717fdd933a4748d9025` | 3/9 | 2.3 (propuesta al docente; preliminar) | sí, 2026-10-19 |
+| 11 | [S11 · definitiva](semana-11-evidencia-s11.md) | `main` · `f3bcfa83e80f5c8d0e30a01b656d89160c907d64` | 2/9 | 1.9 (propuesta al docente) | sí, 2026-10-19 |
 | 9 | S9 · definitiva | `main` · `f3bcfa83e80f5c8d0e30a01b656d89160c907d64` · 2026-10-04T21:11:20-06:00 | 9/10 | 4.6 (propuesta al docente) | sí, 2026-10-06 |
 | 10 | Segundo corte · consolidado al cierre | `main` · `f3bcfa83e80f5c8d0e30a01b656d89160c907d64` · 2026-10-04T21:11:20-06:00 | C1 0,80; C2 0,60; C3 0,60; C4 0,60 (cada uno /1) | Total 3,40/5; técnica 2,60/4 + C5 docente 0,80/1; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
 | 8 | S8 | `e5c3ac6` (2026-09-27T16:26:27-06:00) | 9/10 (2 filas de despliegue diferidas) | 4.6 (provisional) | si |
@@ -24,6 +26,22 @@
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `938d0206` · 2026-08-07T21:36:01-06:00 | 5/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `c5d9964c` · 2026-08-16T14:21:20-05:00 | 8/9 | no se publica | sí |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `8e30f616` · 2026-08-22T16:12:55-06:00 | 4/9 | no se publica | sí |
+
+## Seguimiento vigente · S11 y avance S12 · 19 de octubre de 2026
+
+S11 se fija antes del límite exclusivo 2026-10-19T05:00:00Z. S12 es preliminar, observada a las 21:35 UTC del 19 de octubre, y cierra el 26 de octubre a las 05:00 UTC. Las matrices transversales actuales están en [S11](semana-11-evidencia-s11.md) y [S12](semana-12-evidencia-s12.md). Sus estados y límites sustituyen las inferencias de arrastre que no hayan sido revalidadas; el historial conserva su fecha.
+
+Dos commits posteriores al cierre: `d77eb7132df6e9dc33001686d47fb50babdc405f` (2026-10-19T08:24:11Z) y `0421885424d13478cf33c717fdd933a4748d9025` (08:33:59Z). El segundo incorpora ADR-0008 con criterios y alternativa no extraer (`docs/adr/0008-decision-extraccion.md:18-41`), tabla de fallos y argumento sobre sagas (`arc42-template-EN.md:664-679`) y enlace en aspectos (`:45-47`); no cambia S11 histórica. Incluso ahora la tabla no incluye explícitamente respuesta duplicada, y el argumento de escrituras futuras debe reconciliarse con registro/cambio de rol existentes (`backend/src/modules/auth/application/use-cases.ts:48-68,145-157`).
+
+Erosión arquitectónica: arc42 describe recuperación offline y caché de metadatos, pero `load_building_use_case.dart:18-23` exige primero la API y `model_cache.dart:69-75` no invalida. `docs/aspectos.md:5-8` reconoce medición HTTP 500, visualización placeholder y 0/20 offline; esos resultados previos no se presentan como nuevas pruebas de esta revisión. Se preservan los límites de módulos del backend, mientras el caso de uso Flutter importa adaptadores concretos (`load_building_use_case.dart:5-16`), divergencia respecto al desacoplo proclamado. CI verde no demuestra todo: pruebas Flutter/E2E y Sonar pueden no bloquear (`.github/workflows/ci.yml:68-74,189-211,253-260,297-309`).
+
+Actividad en principal: 0 commits en la ventana S11 y 2 posteriores al cierre hasta la observación. El número de commits no determina la nota: se contrasta el contenido completo con la ficha.
+
+| Seguimiento | Estado y evidencia |
+|---|---|
+| Integración, modos de fallo y extracción | [Matriz S11](semana-11-evidencia-s11.md): distingue diseño, código y pendientes explícitos. |
+| Consistencia, caché y reversibilidad | [Matriz S12 preliminar](semana-12-evidencia-s12.md): completar los criterios pendientes antes del cierre. |
+| CI, seguridad, contribución y decisiones inmutables | Revisar la matriz transversal del informe actual; no se cierran por un CI verde genérico ni por la existencia de archivos. |
 
 ## Feedback S10 vigente · 13 de octubre de 2026
 

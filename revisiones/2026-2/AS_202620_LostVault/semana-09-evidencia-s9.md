@@ -67,9 +67,11 @@ Punta observada de `origin/main`: `99fb413bda00c208ec42104dcfe6a4c189fbad77` (20
 
 ## Recuento y nota sugerida
 
-**4 de 10 criterios Cumple**,  4 No cumple y 2 No verificado. La transversal no entra en el cálculo.
+**4 de 9 criterios computables Cumple. Nota sugerida: 2.8 = redondeo a un decimal de 1 + 4 × (4/9).** Propuesta al docente; la nota final la fija el profesor.
 
-**Nota propuesta pendiente de completar la comprobación bloqueada del revisor.** El recuento documental es 4/10; si las 1 comprobaciones bloqueadas resultan conformes, el intervalo resultante es 2.6–3.0. No es una nota cerrada ni se atribuye el bloqueo al equipo. La nota final la fija el docente en Moodle.
+**Rectificación aprobada por el docente, sincronizada el 19 de octubre de 2026:** se excluye exclusivamente del denominador la comprobación de credenciales bloqueada por el entorno del revisor. La matriz conserva sus diez filas y esa comprobación permanece «No verificado»: no se transforma en Cumple ni certifica ausencia de secretos. No se concede crédito por evidencia posterior al cierre. La matriz transversal no entra en el cálculo.
+
+El otro «No verificado», correspondiente a la prueba que falla ante el defecto, permanece entre los nueve criterios computables y no suma un cumplimiento.
 
 ## Próximos pasos
 

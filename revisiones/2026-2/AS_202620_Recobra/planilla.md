@@ -8,12 +8,14 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Recobra` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Camilo Andres Conde Corrales · Fernando Isacc Conde Herrera · Miguel Alejandro Iii Jacome Yanez · Veronica Ubarne Reyes — cuentas consolidadas: `Cconde31` (incluye la identidad `Steamlinker`, unificada por `.mailmap` el 05/09), `MiguelJacome`, `vylrir` (Verónica Ubarne), y un commit identificado con el nombre real de Fernando Isacc Conde Herrera; ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | https://recobra.iscoutb.dev · salud/readiness observados el 2026-10-10; ver límites en S10 |
-| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
+| Última revisión | 2026-10-19 · S11 definitiva y S12 preliminar (observación 21:35 UTC); rectificaciones aprobadas sincronizadas |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 12 | [S12 · preliminar](semana-12-evidencia-s12.md) | `master` · `15e39a1bffec7c0383f90b2a38c2a9304e2b2052` | 4/9 | 2.8 (propuesta al docente; preliminar) | sí, 2026-10-19 |
+| 11 | [S11 · definitiva](semana-11-evidencia-s11.md) | `master` · `15e39a1bffec7c0383f90b2a38c2a9304e2b2052` | 9/9 | 5.0 (propuesta al docente) | sí, 2026-10-19 |
 | 9 | S9 · definitiva | `master` · `ebe6cca7a903bb333678bd20ba5327d8fcb127f7` · 2026-10-04T23:40:37-05:00 | 10/10 | 5.0 (propuesta al docente) | sí, 2026-10-06 |
 | 10 | Segundo corte · consolidado al cierre | `master` · `eae8471c932f430d56b757dfb3e79e57a647f4b8` · 2026-10-10T12:10:10-05:00 | C1 0,80; C2 0,80; C3 0,80; C4 1,00 (cada uno /1) | Total 4,20/5; técnica 3,40/4 + C5 docente 0,80/1; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `da5c15d` · 2026-08-07T17:54:04-05:00 | 3/9 | no se publica | sí |
@@ -25,13 +27,31 @@
 | 7 | S7 | `8f25313` (2026-09-19T13:37:58-05:00) | 10/10 | 5.0 | si |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `5c7f77b` (2026-09-27T19:55:59-05:00) | 10/10 (2 filas de despliegue diferidas) | 5.0 (provisional) | si |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
-| 11 | Evidencia S11 · Fallos parciales y decisión de extracción | | | no aplica | |
-| 12 | Evidencia S12 · Estrategia de datos y eventos | | | no aplica | |
 | 12 | Taller aplicado · Mensajes y consistencia | | | no aplica | |
 | 13 | Evidencia S13 · Modelado de amenazas y plan de mitigación | | | no aplica | |
 | 14 | Evidencia S14 · Medición de atributos de calidad | | | no aplica | |
 | 16 | Proyecto final · integración y desafío arquitectónico | `final` | | | |
 | 17 | Aplicación de cambios y cierre arquitectónico | | | | |
+
+## Seguimiento vigente · S11 y avance S12 · 19 de octubre de 2026
+
+S11 se fija antes del límite exclusivo 2026-10-19T05:00:00Z. S12 es preliminar, observada a las 21:35 UTC del 19 de octubre, y cierra el 26 de octubre a las 05:00 UTC. Las matrices transversales actuales están en [S11](semana-11-evidencia-s11.md) y [S12](semana-12-evidencia-s12.md). Sus estados y límites sustituyen las inferencias de arrastre que no hayan sido revalidadas; el historial conserva su fecha.
+
+S11 sustantiva: idempotencia, límites de BD y no extracción con criterios; los planes no implementados se separan de lo construido.
+
+Avance S12 ya integrado antes del corte: ADR-0020 y reconciliadores; no inventar commits durante el lunes por tener contenido anticipado.
+
+docs/modos-de-fallo.md:56-58,86 conserva frases antiguas (única escritura y sin cuentas); el código actual compara autor y existen reclamaciones. docs/modos-de-fallo.md:50 sobre avisos debe leerse con ADR-0024, que ya implementa conciliación acotada.
+
+Eventos de coincidencias/avisos no equivalen a un broker durable. La recuperación de avisos no demuestra recuperación de todos los eventos perdidos.
+
+Actividad en principal: 26 commits en la ventana S11 y 0 posteriores al cierre hasta la observación. El número de commits no determina la nota: se contrasta el contenido completo con la ficha.
+
+| Seguimiento | Estado y evidencia |
+|---|---|
+| Integración, modos de fallo y extracción | [Matriz S11](semana-11-evidencia-s11.md): distingue diseño, código y pendientes explícitos. |
+| Consistencia, caché y reversibilidad | [Matriz S12 preliminar](semana-12-evidencia-s12.md): completar los criterios pendientes antes del cierre. |
+| CI, seguridad, contribución y decisiones inmutables | Revisar la matriz transversal del informe actual; no se cierran por un CI verde genérico ni por la existencia de archivos. |
 
 ## Feedback S10 vigente · 13 de octubre de 2026
 

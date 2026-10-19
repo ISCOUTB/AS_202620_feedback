@@ -96,3 +96,23 @@ Estos comentarios corresponden al estado y a las comprobaciones de sus fechas or
 Antes de evaluar el segundo corte identifiquen la asignación operativa oficial. La evaluación de distractores es una buena base de S9, pero no prueba por sí sola una línea base y respuesta al reto S10. Frontend y salud responden; falta demostrar el flujo principal, seguridad de acceso/cuota, métrica del reto y pipeline en vivo. La sustentación queda pendiente.
 
 </details>
+
+## Semana 9 · Aclaración de la revisión
+
+La comprobación de credenciales bloqueada por el entorno del revisor queda excluida del cálculo por decisión docente. Sigue sin verificarse y no implica un hallazgo de filtración. Los demás criterios conservan su valoración sobre la entrega de cierre; véase la [matriz actualizada](semana-09-evidencia-s9.md).
+
+## Semana 6 · Rectificación de la revisión
+
+La lectura completa confirma que el mapa de contextos, la propiedad de datos, los hallazgos con plan y la correspondencia de aspectos estaban en la entrega original. Se corrigen las observaciones producidas por una lectura parcial; no se exige un ADR de reajuste cuando no cambiaron los límites. Consulta la [matriz rectificada](semana-06-evidencia-s6.md) para los alcances y pendientes transversales.
+
+## Semana 11 · Integración y resiliencia
+
+S11 presenta una tabla completa de fallos, mitigaciones coherentes y una comparación seria que justifica no extraer módulos. Los límites de BLPOP, premarcado y deduplicación temporal se reconocen, sin exigir que se implemente ahora toda la solución futura. Conserven la distinción entre el worker que consume y registra y el procesamiento de calificaciones aún previsto.
+
+Consulta la [matriz S11](semana-11-evidencia-s11.md) para las evidencias y los pendientes. La evidencia posterior al cierre aparece separada en el seguimiento actual.
+
+## Semana 12 · Avance preliminar: consistencia, caché y decisiones de datos
+
+El avance distingue almacenes y broker en C4 y declara pérdidas y duplicados posibles del flujo Redis. Aún faltan tabla de consistencia con dos operaciones verificables, diseño de caché e invalidación, ADR del mayor costo de reversión y estrategia completa en arc42. Una marca de deduplicación con expiración no sustituye el diseño de caché de datos.
+
+Consulta la [matriz S12 preliminar](semana-12-evidencia-s12.md) para las evidencias y los pendientes. El plazo sigue abierto hasta el final del 25 de octubre en Colombia.

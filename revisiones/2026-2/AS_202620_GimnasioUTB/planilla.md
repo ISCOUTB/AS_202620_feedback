@@ -10,12 +10,14 @@ Hoja consolidada del equipo GimnasioUTB. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_GimnasioUTB` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Sebastian Felipe Caicedo Acosta · Rodrigo Andres Facio Lince Beltran · Pedro Luis Pallares De La Hoz — cuentas abajo; ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | https://gimnasio-utb.iscoutb.dev · ver comprobación y límites en S10 |
-| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
+| Última revisión | 2026-10-19 · S11 definitiva y S12 preliminar (observación 21:35 UTC); rectificaciones aprobadas sincronizadas |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 12 | [S12 · preliminar](semana-12-evidencia-s12.md) | `main` · `2227faf9919983e5835d484a848301d67a0e5866` | 2/9 | 1.9 (propuesta al docente; preliminar) | sí, 2026-10-19 |
+| 11 | [S11 · definitiva](semana-11-evidencia-s11.md) | `main` · `2f97dbc42cc957f35f9aab280dfb8122bdbeb6bf` | 8/9 | 4.6 (propuesta al docente) | sí, 2026-10-19 |
 | 9 | S9 · definitiva | `main` · `af4796d6320766611d9fc01d7112a1c0e4112b40` · 2026-10-04T16:52:10-05:00 | 8/10 | 4.2 (propuesta al docente) | sí, 2026-10-06 |
 | 10 | Segundo corte · consolidado al cierre | `main` · `46742e5feaa3c8a06b7aebeb7a31fb93628e40b6` · 2026-10-11T14:41:07-05:00 | C1 0,60; C2 0,80; C3 0,60; C4 0,80 (cada uno /1) | Total 3,56/5; técnica 2,80/4 + C5 docente 0,76/1; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
 | 6 | S6 | `106869b` (2026-09-13T22:19:08-05:00) | 6/8 | 4.0 (prelim.) | si |
@@ -28,6 +30,20 @@ Hoja consolidada del equipo GimnasioUTB. Se actualiza tras cada revisión.
 | 3 | S3 | `73c1f24` (2026-08-23T19:38:29-05:00) | 6/9 | 3.7 | si |
 
 S8 se califica sobre 10 de las 12 filas de la ficha: quedan pendientes de calificar las dos filas de despliegue (URL del sistema accesible desde fuera de la red de la universidad y health check consultable), porque la URL se entrega por Moodle. La nota publicada es provisional.
+
+## Seguimiento vigente · S11 y avance S12 · 19 de octubre de 2026
+
+S11 se fija antes del límite exclusivo 2026-10-19T05:00:00Z. S12 es preliminar, observada a las 21:35 UTC del 19 de octubre, y cierra el 26 de octubre a las 05:00 UTC. Las matrices transversales actuales están en [S11](semana-11-evidencia-s11.md) y [S12](semana-12-evidencia-s12.md). Sus estados y límites sustituyen las inferencias de arrastre que no hayan sido revalidadas; el historial conserva su fecha.
+
+El único commit posterior al cierre incorpora AforoApi en Flutter con GET/POST reales y timeout de 8 s (docs/Flutter/lib/core/api/aforo_api.dart:24-89), pantallas y pruebas. No cambia retroactivamente S11. No incorpora Idempotency-Key ni idempotencia durable; timeout del cliente no equivale a deduplicación. arc42 y C4 todavía describen Flutter como no integrado y deben reconciliarse con esta punta. Backend conserva transacción PostgreSQL; QR, identidad y FCM siguen fuera del alcance implementado.
+
+Actividad en principal: 9 commits en la ventana S11 y 1 posteriores al cierre hasta la observación. El número de commits no determina la nota: se contrasta el contenido completo con la ficha.
+
+| Seguimiento | Estado y evidencia |
+|---|---|
+| Integración, modos de fallo y extracción | [Matriz S11](semana-11-evidencia-s11.md): distingue diseño, código y pendientes explícitos. |
+| Consistencia, caché y reversibilidad | [Matriz S12 preliminar](semana-12-evidencia-s12.md): completar los criterios pendientes antes del cierre. |
+| CI, seguridad, contribución y decisiones inmutables | Revisar la matriz transversal del informe actual; no se cierran por un CI verde genérico ni por la existencia de archivos. |
 
 ## Feedback S10 vigente · 13 de octubre de 2026
 

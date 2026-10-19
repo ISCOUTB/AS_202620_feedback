@@ -10,12 +10,14 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Shalom Jhoanna Arrieta Marrugo (shalom-A26) · Levis Adrian Ortiz Cano (RAZOR7150) · Alejandro Patron Montero (pxtroniwnl) · Jasen Mihovil Yukopila Escobar (Jmyukopila) — correspondencias por los correos de los commits, por confirmar con el docente; ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | URL pública vigente no localizada; despliegue No verificado. Ver [S10](semana-10-corte2.md). |
-| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
+| Última revisión | 2026-10-19 · S11 definitiva y S12 preliminar (observación 21:35 UTC); rectificaciones aprobadas sincronizadas |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 12 | [S12 · preliminar](semana-12-evidencia-s12.md) | `main` · `c58fddfe790932538b37f62017d307ef56bf90d5` | 4/9 | 2.8 (propuesta al docente; preliminar) | sí, 2026-10-19 |
+| 11 | [S11 · definitiva](semana-11-evidencia-s11.md) | `main` · `c58fddfe790932538b37f62017d307ef56bf90d5` | 7/9 | 4.1 (propuesta al docente) | sí, 2026-10-19 |
 | 9 | S9 · definitiva | `main` · `76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33` · 2026-10-04T18:07:32-05:00 | 8/10 | 4.2 (propuesta al docente) | sí, 2026-10-06 |
 | 10 | Segundo corte · consolidado al cierre | `main` · `76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33` · 2026-10-04T18:07:32-05:00 | C1 0,60; C2 0,60; C3 0,60; C4 0,60 (cada uno /1) | Total 3,20/5; técnica 2,40/4 + C5 docente 0,80/1; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `d414ecf` · 2026-08-09T14:08:31-05:00 | 7/9 | 4.1 (propuesta) | sí |
@@ -27,13 +29,25 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 7 | S7 | `69aa82d` (2026-09-20T09:34:49-05:00) | 8/10 | 4.2 (propuesta) | sí |
 | 8 | S8 | `858e78f` en `origin/main` (2026-09-27T15:36:51-05:00) | 10/10 | 5.0 (propuesta; 2 filas de despliegue diferidas) | si |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
-| 11 | Evidencia S11 · Fallos parciales y decisión de extracción | | | no aplica | |
-| 12 | Evidencia S12 · Estrategia de datos y eventos | | | no aplica | |
 | 12 | Taller aplicado · Mensajes y consistencia | | | no aplica | |
 | 13 | Evidencia S13 · Modelado de amenazas y plan de mitigación | | | no aplica | |
 | 14 | Evidencia S14 · Medición de atributos de calidad | | | no aplica | |
 | 16 | Proyecto final · integración y desafío arquitectónico | `final` | | | |
 | 17 | Aplicación de cambios y cierre arquitectónico | | | | |
+
+## Seguimiento vigente · S11 y avance S12 · 19 de octubre de 2026
+
+S11 se fija antes del límite exclusivo 2026-10-19T05:00:00Z. S12 es preliminar, observada a las 21:35 UTC del 19 de octubre, y cierra el 26 de octubre a las 05:00 UTC. Las matrices transversales actuales están en [S11](semana-11-evidencia-s11.md) y [S12](semana-12-evidencia-s12.md). Sus estados y límites sustituyen las inferencias de arrastre que no hayan sido revalidadas; el historial conserva su fecha.
+
+El corte vigente es un sistema de lectura de catálogo e inventario con frontend Next.js, API FastAPI y PostgreSQL. La entrega S11 agrega análisis y decisión de no extraer; no convierte pedidos, saga, Redis o reintentos en funcionalidades ejecutadas. La documentación todavía llama vacío al inventario ya implementado (docs/modos-fallo-s11.md:18; backend/app/modules/inventory/repository.py:11-13). Para S12, conservar la decisión sin caché si sigue justificada y especificar las garantías de las dos lecturas independientes.
+
+Actividad en principal: 1 commits en la ventana S11 y 0 posteriores al cierre hasta la observación. El número de commits no determina la nota: se contrasta el contenido completo con la ficha.
+
+| Seguimiento | Estado y evidencia |
+|---|---|
+| Integración, modos de fallo y extracción | [Matriz S11](semana-11-evidencia-s11.md): distingue diseño, código y pendientes explícitos. |
+| Consistencia, caché y reversibilidad | [Matriz S12 preliminar](semana-12-evidencia-s12.md): completar los criterios pendientes antes del cierre. |
+| CI, seguridad, contribución y decisiones inmutables | Revisar la matriz transversal del informe actual; no se cierran por un CI verde genérico ni por la existencia de archivos. |
 
 ## Feedback S10 vigente · 13 de octubre de 2026
 

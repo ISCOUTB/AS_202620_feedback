@@ -20,5 +20,21 @@
       }
     },
     "misma_evidencia_de_cierre": true
+  },
+  "rectificaciones_2026_10_19": {
+    "aprobadas_por_docente": true,
+    "misma_evidencia_de_cierre": true,
+    "resultados": {
+      "AS_202620_DinamikUTB": {
+        "cumple": 8,
+        "total": 8,
+        "nota": 5.0
+      },
+      "AS_202620_Sistema-de-calificacion-automatica": {
+        "cumple": 8,
+        "total": 8,
+        "nota": 5.0
+      }
+    }
   }
 }

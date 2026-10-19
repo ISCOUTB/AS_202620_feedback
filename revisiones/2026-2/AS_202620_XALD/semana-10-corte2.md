@@ -1,6 +1,6 @@
 # Segundo corte · S10 · XALD · consolidación al cierre
 
-**Actualización del feedback: 13 de octubre de 2026.** La tabla siguiente sustituye la valoración preliminar conservada al final.
+**Actualización del feedback: 19 de octubre de 2026.** La tabla siguiente sustituye la valoración preliminar conservada al final.
 
 | Campo | Valor |
 |---|---|
@@ -31,11 +31,11 @@ Se valora el escenario documentado disponible; no se afirma asignación docente 
 | C2 · Decisión e implementación | Básico | 0,60 / 1,00 |
 | C3 · Operación, seguridad y observabilidad | Básico | 0,60 / 1,00 |
 | C4 · Evolución arquitectónica trazable | Básico | 0,60 / 1,00 |
-| C5 · Sustentación del reto | Pendiente docente | Pendiente |
+| C5 · Sustentación del reto | Calificación docente: 4,00 / 5,00 | 0,80 / 1,00 |
 
-**Subtotal técnico: 2,40 / 4,00. Total sobre 5,00 pendiente de C5.**
+**Subtotal técnico: 2,40 / 4,00. C5 docente: 0,80 / 1,00. Total S10: 3,20 / 5,00.**
 
-C5 sigue pendiente de calificación docente. No se registra como cero ni se estima a partir del repositorio.
+C5 incorpora la calificación de sustentación 4,00 / 5,00 indicada por el docente el 18 de octubre de 2026 y sincronizada en esta publicación. Su aporte es 4,00 / 5 = 0,80. Los puntajes C1–C4 y el hash técnico del cierre se conservan; no se infiere la sustentación del repositorio.
 
 Los componentes técnicos se publican como propuesta al docente. Publicar esta consolidación no acredita un registro de la calificación en Moodle.
 

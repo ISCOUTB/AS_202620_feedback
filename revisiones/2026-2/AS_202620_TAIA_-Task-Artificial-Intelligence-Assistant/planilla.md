@@ -8,12 +8,14 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo; ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | http://taia-sistema-jkbo9i-ec2cd4-144-24-4-187.sslip.io · ver comprobación y límites en S10 |
-| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
+| Última revisión | 2026-10-19 · S11 definitiva y S12 preliminar (observación 21:35 UTC); rectificaciones aprobadas sincronizadas |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 12 | [S12 · preliminar](semana-12-evidencia-s12.md) | `main` · `eb4d915c00024c8e7c5c03536a0d979a9c0a88f6` | 2/9 | 1.9 (propuesta al docente; preliminar) | sí, 2026-10-19 |
+| 11 | [S11 · definitiva](semana-11-evidencia-s11.md) | `main` · `e755759bd80ef94ffe809cc6ceee0c1d2a0044c6` | 9/9 | 5.0 (propuesta al docente) | sí, 2026-10-19 |
 | 9 | S9 · definitiva | `main` · `72a8b6a0b3680a59c235f9225f90bc260093d86b` · 2026-10-04T23:39:00-05:00 | 9/10 | 4.6 (propuesta al docente) | sí, 2026-10-06 |
 | 10 | Segundo corte · consolidado al cierre | `main` · `72a8b6a0b3680a59c235f9225f90bc260093d86b` · 2026-10-04T23:39:00-05:00 | C1 0,80; C2 0,80; C3 0,60; C4 0,60 (cada uno /1) | Total 3,60/5; técnica 2,80/4 + C5 docente 0,80/1; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `76d4a91` · 2026-08-07T03:34:26-05:00 | 6/9 | no aplica | sí |
@@ -25,13 +27,31 @@
 | 7 | S7 | `0a12f0c` (2026-09-17T15:27:54-05:00) | 10/10 | 5.0 | si |
 | 8 | S8 | `4b07242` en `origin/main` (2026-09-27T23:03:53-05:00) | 10/10 | 5.0 (propuesta; 2 filas de despliegue diferidas) | si |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
-| 11 | Evidencia S11 · Fallos parciales y decisión de extracción | | | no aplica | |
-| 12 | Evidencia S12 · Estrategia de datos y eventos | | | no aplica | |
 | 12 | Taller aplicado · Mensajes y consistencia | | | no aplica | |
 | 13 | Evidencia S13 · Modelado de amenazas y plan de mitigación | | | no aplica | |
 | 14 | Evidencia S14 · Medición de atributos de calidad | | | no aplica | |
 | 16 | Proyecto final · integración y desafío arquitectónico | `final` | | | |
 | 17 | Aplicación de cambios y cierre arquitectónico | | | | |
+
+## Seguimiento vigente · S11 y avance S12 · 19 de octubre de 2026
+
+S11 se fija antes del límite exclusivo 2026-10-19T05:00:00Z. S12 es preliminar, observada a las 21:35 UTC del 19 de octubre, y cierra el 26 de octubre a las 05:00 UTC. Las matrices transversales actuales están en [S11](semana-11-evidencia-s11.md) y [S12](semana-12-evidencia-s12.md). Sus estados y límites sustituyen las inferencias de arrastre que no hayan sido revalidadas; el historial conserva su fecha.
+
+La idempotencia de confirmación sí está implementada antes del corte y tiene pruebas concurrentes declaradas. La entrada IA anterior que la decía pendiente fue superada por la entrada 019.
+
+El reclamo de acción se confirma antes de escribir la tarea: se acepta explícitamente pérdida ante ese segundo fallo. No equivale a una transacción integral.
+
+Enviar notificaciones con push_sent_at/reintentos sigue pendiente según evidencia; crear su registro idempotentemente no garantiza el envío una sola vez.
+
+Único commit principal posterior al cierre cambia backend/Dockerfile; no completa artefactos S12. CD verde no comprueba revisión final desplegada ni disponibilidad real.
+
+Actividad en principal: 24 commits en la ventana S11 y 1 posteriores al cierre hasta la observación. El número de commits no determina la nota: se contrasta el contenido completo con la ficha.
+
+| Seguimiento | Estado y evidencia |
+|---|---|
+| Integración, modos de fallo y extracción | [Matriz S11](semana-11-evidencia-s11.md): distingue diseño, código y pendientes explícitos. |
+| Consistencia, caché y reversibilidad | [Matriz S12 preliminar](semana-12-evidencia-s12.md): completar los criterios pendientes antes del cierre. |
+| CI, seguridad, contribución y decisiones inmutables | Revisar la matriz transversal del informe actual; no se cierran por un CI verde genérico ni por la existencia de archivos. |
 
 ## Feedback S10 vigente · 13 de octubre de 2026
 

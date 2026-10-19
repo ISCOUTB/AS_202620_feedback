@@ -1,12 +1,12 @@
 # Resumen · S10 · Segundo corte consolidado
 
-**Actualización: 14 de octubre de 2026.** Se publican los comentarios y componentes técnicos de los 23 equipos y las 19 sustentaciones comunicadas por el docente. Los otros 4 equipos conservan C5 pendiente, sin asignarle cero ni escalar el subtotal técnico.
+**Actualización: 19 de octubre de 2026.** Se publican los comentarios y componentes técnicos de los 23 equipos y las 23 sustentaciones comunicadas por el docente. Se incorporan los 4,00 / 5,00 indicados el 18 de octubre para InvenTrack, PideUtb, Verifacts y XALD, sin modificar sus componentes técnicos.
 
 El límite exclusivo es **2026-10-13T05:00:00Z**: se incluye hasta el **12 de octubre, 23:59:59, Colombia (UTC-5)**. Sustituye el cierre preliminar del 12 de octubre a las 05:00Z, que permanece identificado como histórico. Los 23 hashes se contrastaron con la rama principal y son anteriores al límite.
 
 Los criterios C1–C4 son la evaluación técnica del repositorio, cada uno sobre 1,00; el subtotal se conserva sobre 4,00, sin reescalarlo. Se evalúa el escenario documentado bajo el **supuesto explícito de pertinencia**. Su asignación oficial no fue verificada de forma independiente y no se presenta como una confirmación docente. A diferencia de las pasadas preliminares archivadas, esta consolidación expresa la valoración técnica bajo ese supuesto.
 
-PDF excluidos, sin penalización; S9 conserva sus notas; las precisiones de la apelación se documentan en sus informes. C5 procede del docente, no de una inferencia desde el repositorio. Los totales con C5 son la suma de los componentes publicados; esta publicación no acredita su registro en Moodle.
+PDF excluidos, sin penalización. Las rectificaciones aprobadas de S6/S9 se documentan en sus propios informes y no alteran los componentes técnicos de S10. C5 procede del docente, no de una inferencia desde el repositorio. Los totales con C5 son la suma de los componentes publicados; esta publicación no acredita su registro en Moodle.
 
 | Equipo | Informe | Hash calificado | C1 | C2 | C3 | C4 | Técnica /4 | Sustentación docente /5 | C5 /1 | Total /5 |
 |---|---|---|---:|---:|---:|---:|---:|---:|---:|---|
@@ -19,11 +19,11 @@ PDF excluidos, sin penalización; S9 conserva sus notas; las precisiones de la a
 | ElMapita | [S10](AS_202620_ElMapita/semana-10-corte2.md) | `f3bcfa83e80f5c8d0e30a01b656d89160c907d64` | 0,80 | 0,60 | 0,60 | 0,60 | 2,60 | 4,00 | 0,80 | 3,40 |
 | EnAgenda | [S10](AS_202620_EnAgenda/semana-10-corte2.md) | `4bec22f3821493014e8352ece8274bb2950e97db` | 0,60 | 1,00 | 0,60 | 0,60 | 2,80 | 4,20 | 0,84 | 3,64 |
 | GimnasioUTB | [S10](AS_202620_GimnasioUTB/semana-10-corte2.md) | `46742e5feaa3c8a06b7aebeb7a31fb93628e40b6` | 0,60 | 0,80 | 0,60 | 0,80 | 2,80 | 3,80 | 0,76 | 3,56 |
-| InvenTrack | [S10](AS_202620_InvenTrack/semana-10-corte2.md) | `539840be57f8a0b719bb33e19d05031489a25b86` | 0,60 | 0,80 | 0,80 | 0,60 | 2,80 | Pendiente | Pendiente | **Pendiente C5** |
+| InvenTrack | [S10](AS_202620_InvenTrack/semana-10-corte2.md) | `539840be57f8a0b719bb33e19d05031489a25b86` | 0,60 | 0,80 | 0,80 | 0,60 | 2,80 | 4,00 | 0,80 | 3,60 |
 | LaPlacita | [S10](AS_202620_LaPlacita/semana-10-corte2.md) | `2c711d44b31a41a09306f7840da480a21e8c749a` | 0,80 | 0,60 | 0,80 | 0,60 | 2,80 | 4,00 | 0,80 | 3,60 |
 | LostVault | [S10](AS_202620_LostVault/semana-10-corte2.md) | `99fb413bda00c208ec42104dcfe6a4c189fbad77` | 0,60 | 0,60 | 0,60 | 0,60 | 2,40 | 4,00 | 0,80 | 3,20 |
 | mapsutb | [S10](AS_202620_mapsutb/semana-10-corte2.md) | `1b296a37c575a751e99df1a1b288d70efba03d56` | 0,60 | 0,80 | 0,60 | 0,60 | 2,60 | 4,00 | 0,80 | 3,40 |
-| PideUtb | [S10](AS_202620_PideUtb/semana-10-corte2.md) | `2497bfe7e0c7dc04e4cdf9b550254b9fd73df956` | 0,60 | 0,80 | 0,00 | 0,80 | 2,20 | Pendiente | Pendiente | **Pendiente C5** |
+| PideUtb | [S10](AS_202620_PideUtb/semana-10-corte2.md) | `2497bfe7e0c7dc04e4cdf9b550254b9fd73df956` | 0,60 | 0,80 | 0,00 | 0,80 | 2,20 | 4,00 | 0,80 | 3,00 |
 | Recobra | [S10](AS_202620_Recobra/semana-10-corte2.md) | `eae8471c932f430d56b757dfb3e79e57a647f4b8` | 0,80 | 0,80 | 0,80 | 1,00 | 3,40 | 4,00 | 0,80 | 4,20 |
 | ROUTB | [S10](AS_202620_ROUTB/semana-10-corte2.md) | `adde017b72d73f210eef6cb48d97cdf1687f5141` | 0,80 | 0,80 | 0,80 | 0,80 | 3,20 | 4,00 | 0,80 | 4,00 |
 | ShareU | [S10](AS_202620_ShareU/semana-10-corte2.md) | `39508608eae4c1a56a5e4fc11a055bf6afb2c003` | 0,60 | 0,60 | 0,60 | 0,60 | 2,40 | 4,00 | 0,80 | 3,20 |
@@ -31,8 +31,8 @@ PDF excluidos, sin penalización; S9 conserva sus notas; las precisiones de la a
 | Tienda virtual UTB | [S10](AS_202620_TIENDA-VIRTUAL-UTB/semana-10-corte2.md) | `76a9cae697ec03d65a8b8752e4b0d7c5e49e8a33` | 0,60 | 0,60 | 0,60 | 0,60 | 2,40 | 4,00 | 0,80 | 3,20 |
 | uniTeam | [S10](AS_202620_uniTeam/semana-10-corte2.md) | `6e04b35317a0a68d239ae85c71cd60e21982b195` | 0,80 | 0,80 | 0,60 | 0,60 | 2,80 | 4,50 | 0,90 | 3,70 |
 | UTB Tracker | [S10](AS_202620_UTB_TRACKER/semana-10-corte2.md) | `d17c9eb241e56755d48b022dc00ddb865e40c391` | 0,60 | 0,60 | 0,00 | 0,60 | 1,80 | 4,00 | 0,80 | 2,60 |
-| Verifacts | [S10](AS_202620_Verifacts/semana-10-corte2.md) | `6c08cc536ac7bd294c749548bd70276044ee511e` | 0,80 | 0,60 | 0,60 | 0,60 | 2,60 | Pendiente | Pendiente | **Pendiente C5** |
-| XALD | [S10](AS_202620_XALD/semana-10-corte2.md) | `9236ff97218b632eeb9a1910f6083968e2c22909` | 0,60 | 0,60 | 0,60 | 0,60 | 2,40 | Pendiente | Pendiente | **Pendiente C5** |
+| Verifacts | [S10](AS_202620_Verifacts/semana-10-corte2.md) | `6c08cc536ac7bd294c749548bd70276044ee511e` | 0,80 | 0,60 | 0,60 | 0,60 | 2,60 | 4,00 | 0,80 | 3,40 |
+| XALD | [S10](AS_202620_XALD/semana-10-corte2.md) | `9236ff97218b632eeb9a1910f6083968e2c22909` | 0,60 | 0,60 | 0,60 | 0,60 | 2,40 | 4,00 | 0,80 | 3,20 |
 
 La sustentación se incorpora proporcionalmente: calificación docente /5 → C5 /1. Se conservan 0,96 para Drift y 0,90 para uniTeam, sin redondeo a las anclas técnicas.
 

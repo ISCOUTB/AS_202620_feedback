@@ -86,3 +86,15 @@ Estos comentarios corresponden al estado y a las comprobaciones de sus fechas or
 Identifiquen la consigna operativa asignada y diseñen su experimento con línea base en el MVP desplegado. Recuperen CI y los chequeos de despliegue, repitan la medición relevante con MySQL y carga de red, y completen arc42 y propiedad de datos. La comparación local es un buen punto de partida, pero no sustituye el resultado operativo ni la sustentación.
 
 </details>
+
+## Semana 11 · Integración y resiliencia
+
+La aplicación y sus integraciones están presentes, pero falta la entrega específica de fallos parciales. Documenten los tres modos con mitigaciones, diseñen la idempotencia de creación de tareas y evalúen extraer o no un módulo. La sección de riesgos y la tabla de aspectos deben incorporar ese análisis; el comprobador público de despliegue está fallando.
+
+Consulta la [matriz S11](semana-11-evidencia-s11.md) para las evidencias y los pendientes. La evidencia posterior al cierre aparece separada en el seguimiento actual.
+
+## Semana 12 · Avance preliminar: consistencia, caché y decisiones de datos
+
+Avance preliminar: existen caché JWKS, caché de flujo y eventos síncronos con límites declarados. Falta la política completa de invalidación, la tabla de garantías y el contraste de dos operaciones; la sección 8 sigue pendiente. Comparen las decisiones de datos para justificar cuál sería más costosa de revertir, sin confundir el costo operativo con el de migración.
+
+Consulta la [matriz S12 preliminar](semana-12-evidencia-s12.md) para las evidencias y los pendientes. El plazo sigue abierto hasta el final del 25 de octubre en Colombia.

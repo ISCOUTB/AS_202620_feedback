@@ -88,3 +88,15 @@ Estos comentarios corresponden al estado y a las comprobaciones de sus fechas or
 Antes del corte, identifiquen el escenario operativo asignado y midan una línea base reproducible. El health check responde, pero falta demostrar el flujo principal, corregir el pipeline Flutter y alinear la documentación con Dokploy. La sustentación y los niveles dependientes del reto quedan pendientes.
 
 </details>
+
+## Semana 11 · Integración y resiliencia
+
+El análisis de fallos, diseño de idempotencia y decisión de no extraer satisfacen la ficha, distinguiendo correctamente implementación y pendientes con plan. Falta incorporar los modos de fallo en la sección 11 de arc42. Los cambios posteriores al cierre quedan únicamente en overall y no modifican esta revisión histórica.
+
+Consulta la [matriz S11](semana-11-evidencia-s11.md) para las evidencias y los pendientes. La evidencia posterior al cierre aparece separada en el seguimiento actual.
+
+## Semana 12 · Avance preliminar: consistencia, caché y decisiones de datos
+
+La vista de contenedores y la caché HTTP de la pista aportan evidencia inicial. Falta explicitar garantías por operación, contrastar dos operaciones, definir invalidación y entrega de eventos, y justificar la decisión de datos más costosa de revertir. Actualizar arc42 y la documentación de audio para que reflejen el comportamiento actual.
+
+Consulta la [matriz S12 preliminar](semana-12-evidencia-s12.md) para las evidencias y los pendientes. El plazo sigue abierto hasta el final del 25 de octubre en Colombia.

@@ -85,3 +85,23 @@ Estos comentarios corresponden al estado y a las comprobaciones de sus fechas or
 Las sondas públicas de salud y métricas responden. Confirmen el escenario operativo asignado, midan una línea base del flujo de negocio y comparen la respuesta con el umbral en el despliegue. Aporten evidencia actual del pipeline y Quality Gate y preparen la defensa del almacenamiento en memoria y de su costo de evolución.
 
 </details>
+
+## Semana 9 · Aclaración de la revisión
+
+La comprobación de credenciales bloqueada por el entorno del revisor queda excluida del cálculo por decisión docente. Sigue sin verificarse y no implica un hallazgo de filtración. Los demás criterios conservan su valoración sobre la entrega de cierre; véase la [matriz actualizada](semana-09-evidencia-s9.md).
+
+## Semana 10 · Actualización docente
+
+Se incorporó la calificación de sustentación comunicada por el docente en la planilla y en el [informe S10](semana-10-corte2.md). La evaluación técnica del repositorio mantiene su fundamento y sus observaciones.
+
+## Semana 11 · Integración y resiliencia
+
+El análisis y la decisión de no extraer están trazados al inventario real. Corrijan la tabla que equipara serialización con prevención de duplicados: el ADR nuevo reconoce correctamente que la idempotencia sigue pendiente. La contención local tiene prueba, pero no demuestra durabilidad ni coordinación entre réplicas.
+
+Consulta la [matriz S11](semana-11-evidencia-s11.md) para las evidencias y los pendientes. La evidencia posterior al cierre aparece separada en el seguimiento actual.
+
+## Semana 12 · Avance preliminar: consistencia, caché y decisiones de datos
+
+Todavía faltan la tabla de garantías por operación, una estrategia razonada de caché e invalidación y la decisión de datos con costo de reversión. Los repositorios RAM son el almacenamiento primario y viven dentro de la API. Mantengan explícita la separación entre arquitectura vigente y SQL futuro. Corrijan el límite del contenedor: los repositorios RAM no constituyen un desplegable independiente.
+
+Consulta la [matriz S12 preliminar](semana-12-evidencia-s12.md) para las evidencias y los pendientes. El plazo sigue abierto hasta el final del 25 de octubre en Colombia.

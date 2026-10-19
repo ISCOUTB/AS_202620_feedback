@@ -111,3 +111,15 @@ Estos comentarios corresponden al estado y a las comprobaciones de sus fechas or
 Antes del corte, documenten el escenario operativo asignado y su línea base reproducible. La URL de salud respondió 404 y el pipeline de la punta falla: corrijan ambos y aporten el run exitoso. Sincronicen la documentación con los archivos realmente versionados, y midan la respuesta al reto sobre el MVP desplegado.
 
 </details>
+
+## Semana 11 · Integración y resiliencia
+
+La línea base permite identificar la integración de búsqueda, pero no hay entrega nueva de S11 en la rama principal. Faltan tabla de tres fallos, mitigaciones concretas, diseño de idempotencia o inaplicabilidad y evaluación de extracción con criterios, además de actualizar riesgos y aspectos. Las listas genéricas de fallos y el correo previsto no sustituyen ese análisis.
+
+Consulta la [matriz S11](semana-11-evidencia-s11.md) para las evidencias y los pendientes. La evidencia posterior al cierre aparece separada en el seguimiento actual.
+
+## Semana 12 · Avance preliminar: consistencia, caché y decisiones de datos
+
+Se reconoce SQLite como almacén propio en C4. Faltan tabla de consistencia, dos operaciones contrastadas, caché e invalidación, garantías concretas para el correo previsto, ADR del mayor costo de reversión y estrategias en arc42. La evaluación sigue siendo un diagnóstico preliminar sobre la línea base disponible.
+
+Consulta la [matriz S12 preliminar](semana-12-evidencia-s12.md) para las evidencias y los pendientes. El plazo sigue abierto hasta el final del 25 de octubre en Colombia.

@@ -86,3 +86,15 @@ Estos comentarios corresponden al estado y a las comprobaciones de sus fechas or
 CI y despliegue están en verde, pero el scanner SonarCloud fue revertido. Identifiquen la consigna operativa del corte y ejecuten un experimento con línea base, carga y límites claros. Alineen la documentación de MySQL y procesamiento asíncrono con el catálogo en memoria que implementa la punta.
 
 </details>
+
+## Semana 11 · Integración y resiliencia
+
+La ficha está cubierta con fallos específicos, mitigaciones implementadas y pendientes claramente delimitados, diseño de idempotencia y decisión argumentada de no extraer. La implementación conserva puertos y límites de capas en el código revisado. Consolidar las vistas documentales y no equiparar resiliencia o CI verde con cumplimiento del objetivo de latencia.
+
+Consulta la [matriz S11](semana-11-evidencia-s11.md) para las evidencias y los pendientes. La evidencia posterior al cierre aparece separada en el seguimiento actual.
+
+## Semana 12 · Avance preliminar: consistencia, caché y decisiones de datos
+
+El diseño de caché y sus duraciones, la ausencia justificada de eventos y la vista actual de contenedores aportan evidencia inicial. Faltan tabla de garantías, contraste de dos operaciones, invalidación tras cambios externos y ADR comparativo sobre reversión de datos. Actualizar arc42 y retirar o rotular las vistas antiguas que mezclan implementación y planes.
+
+Consulta la [matriz S12 preliminar](semana-12-evidencia-s12.md) para las evidencias y los pendientes. El plazo sigue abierto hasta el final del 25 de octubre en Colombia.

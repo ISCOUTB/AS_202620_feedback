@@ -88,3 +88,19 @@ Estos comentarios corresponden al estado y a las comprobaciones de sus fechas or
 Para el segundo corte, identifiquen el escenario operativo asignado y prueben su respuesta en el despliegue con línea base reproducible. Actualicen los documentos de Sonar, hagan verificable el Quality Gate y preparen la defensa de identidad por establecimiento, persistencia y costos.
 
 </details>
+
+## Semana 9 · Aclaración de la revisión
+
+La comprobación de credenciales bloqueada por el entorno del revisor queda excluida del cálculo por decisión docente. Sigue sin verificarse y no implica un hallazgo de filtración. Los demás criterios conservan su valoración sobre la entrega de cierre; véase la [matriz actualizada](semana-09-evidencia-s9.md).
+
+## Semana 11 · Integración y resiliencia
+
+La evidencia distingue los mecanismos presentes de las mitigaciones planificadas y evalúa explícitamente no extraer. La deduplicación actual está limitada a memoria del proceso y no ofrece durabilidad tras reinicio. Mantengan trazabilidad e inmutabilidad de decisiones históricas, sin presentar una ratificación como eliminación de las ediciones anteriores.
+
+Consulta la [matriz S11](semana-11-evidencia-s11.md) para las evidencias y los pendientes. La evidencia posterior al cierre aparece separada en el seguimiento actual.
+
+## Semana 12 · Avance preliminar: consistencia, caché y decisiones de datos
+
+La siguiente entrega necesita tabla operación–consistencia y contraste de dos operaciones, especialmente el desacople entre memoria y escritura PostgreSQL. Faltan política de caché/invalidación y ADR de la decisión de datos más costosa de revertir. Redis y outbox deben conservarse identificados como futuros mientras no estén implementados.
+
+Consulta la [matriz S12 preliminar](semana-12-evidencia-s12.md) para las evidencias y los pendientes. El plazo sigue abierto hasta el final del 25 de octubre en Colombia.

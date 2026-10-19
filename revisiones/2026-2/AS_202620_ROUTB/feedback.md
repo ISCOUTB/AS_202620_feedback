@@ -88,3 +88,19 @@ Estos comentarios corresponden al estado y a las comprobaciones de sus fechas or
 Identifiquen el escenario operativo asignado antes de presentar la reserva grupal o el rendimiento como respuesta al segundo corte. Salud responde, pero aún deben demostrar el flujo sobre la versión desplegada, línea base y resultado comparables, observabilidad del reto y pipeline bloqueante. La sustentación permanece pendiente.
 
 </details>
+
+## Semana 9 · Aclaración de la revisión
+
+La comprobación de credenciales bloqueada por el entorno del revisor queda excluida del cálculo por decisión docente. Sigue sin verificarse y no implica un hallazgo de filtración. Los demás criterios conservan su valoración sobre la entrega de cierre; véase la [matriz actualizada](semana-09-evidencia-s9.md).
+
+## Semana 11 · Integración y resiliencia
+
+La entrega analiza fallos y alternativas de extracción con criterios; las mitigaciones planificadas para 2027 son válidas como pendientes declarados. Corrijan la afirmación de unicidad atómica al crear solicitudes: el código consulta y luego inserta sin una restricción que impida la carrera concurrente. La aceptación de cupos sí tiene controles transaccionales y no debe confundirse con esa creación; el riesgo previo de privacidad tampoco está demostrado como resuelto.
+
+Consulta la [matriz S11](semana-11-evidencia-s11.md) para las evidencias y los pendientes. La evidencia posterior al cierre aparece separada en el seguimiento actual.
+
+## Semana 12 · Avance preliminar: consistencia, caché y decisiones de datos
+
+Se reconoce caché geográfica con duración definida, transacciones de aceptación/rechazo y push como aviso con resincronización REST. Faltan tabla operación→garantía, política de invalidación de la caché, ADR del mayor costo de reversión y consolidación en arc42. No se ha demostrado un fallo de caché sobre cupos: el caché revisado es de geocodificación.
+
+Consulta la [matriz S12 preliminar](semana-12-evidencia-s12.md) para las evidencias y los pendientes. El plazo sigue abierto hasta el final del 25 de octubre en Colombia.

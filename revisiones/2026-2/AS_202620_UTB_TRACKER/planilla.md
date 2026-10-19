@@ -10,12 +10,14 @@ Hoja consolidada del equipo a lo largo del semestre.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_UTB_TRACKER` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Joriel Samir Barros Pena (sin cuentas en el historial) · Geronimo Alberto Cadena Garcia (sin cuentas) · Sebastian Garcia Devoz (firma con dos identidades de git, mismo correo, más el correo institucional) · Mateo Alfonso Millan Barraza (sin cuentas); ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | URL pública vigente no localizada; despliegue No verificado. Ver [S10](semana-10-corte2.md). |
-| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
+| Última revisión | 2026-10-19 · S11 definitiva y S12 preliminar (observación 21:35 UTC); rectificaciones aprobadas sincronizadas |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 12 | [S12 · preliminar](semana-12-evidencia-s12.md) | `main` · `277098684766fdf35f12b9d6713ee78c423a08b4` | 2/9 | 1.9 (propuesta al docente; preliminar) | sí, 2026-10-19 |
+| 11 | [S11 · definitiva](semana-11-evidencia-s11.md) | `main` · `277098684766fdf35f12b9d6713ee78c423a08b4` | 7/9 | 4.1 (propuesta al docente) | sí, 2026-10-19 |
 | 9 | S9 · definitiva | `main` · `ae526db29b4f2d1f5981536e18438f9a62b1516d` · 2026-09-25T11:36:43-05:00 | 1/10 | 1.4 (propuesta al docente) | sí, 2026-10-06 |
 | 10 | Segundo corte · consolidado al cierre | `main` · `d17c9eb241e56755d48b022dc00ddb865e40c391` · 2026-10-06T01:08:05-05:00 | C1 0,60; C2 0,60; C3 0,00; C4 0,60 (cada uno /1) | Total 2,60/5; técnica 1,80/4 + C5 docente 0,80/1; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
 | 1 | S1 | `(sin commits)` () | sin actividad | no aplica | si |
@@ -27,8 +29,6 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 7 | S7 | `7cfb872` (2026-08-31T12:27:23-05:00) | 2/10 | 1.8 (prelim.) | si |
 | 8 | S8 | `ae526db` (2026-09-25T11:36:43-05:00) | 1/10 | 1.4 (provisional; 2 filas de despliegue pendientes) | sí (definitiva) |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
-| 11 | Evidencia S11 · Fallos parciales y decisión de extracción | | | no aplica | |
-| 12 | Evidencia S12 · Estrategia de datos y eventos | | | no aplica | |
 | 12 | Taller aplicado · Mensajes y consistencia | | | no aplica | |
 | 13 | Evidencia S13 · Modelado de amenazas y plan de mitigación | | | no aplica | |
 | 14 | Evidencia S14 · Medición de atributos de calidad | | | no aplica | |
@@ -36,6 +36,20 @@ Hoja consolidada del equipo a lo largo del semestre.
 | 17 | Aplicación de cambios y cierre arquitectónico | | | | |
 
 S8 se califica sobre 10 filas graduables. Quedan **pendientes de calificar** las dos filas de despliegue («URL del sistema accesible desde fuera de la red de la universidad» y «Health check consultable»): la URL se entrega por Moodle y no está disponible en esta pasada.
+
+## Seguimiento vigente · S11 y avance S12 · 19 de octubre de 2026
+
+S11 se fija antes del límite exclusivo 2026-10-19T05:00:00Z. S12 es preliminar, observada a las 21:35 UTC del 19 de octubre, y cierra el 26 de octubre a las 05:00 UTC. Las matrices transversales actuales están en [S11](semana-11-evidencia-s11.md) y [S12](semana-12-evidencia-s12.md). Sus estados y límites sustituyen las inferencias de arrastre que no hayan sido revalidadas; el historial conserva su fecha.
+
+Se incorporaron capas de servicio, JWT, pooling, idempotencia y utilidades de resiliencia. El diseño de no extracción es válido. El timeout de pool no es límite de duración de una consulta; las utilidades retry/breaker no están aplicadas a la operación de préstamos. La búsqueda de idempotencia antecede al bloqueo (app/services/loans.py:29-49): no se demuestra aquí la carrera de dos solicitudes con la misma clave ni se garantiza aislamiento por usuario/payload. No se ejecutó código para confirmar esos riesgos.
+
+Actividad en principal: 2 commits en la ventana S11 y 0 posteriores al cierre hasta la observación. El número de commits no determina la nota: se contrasta el contenido completo con la ficha.
+
+| Seguimiento | Estado y evidencia |
+|---|---|
+| Integración, modos de fallo y extracción | [Matriz S11](semana-11-evidencia-s11.md): distingue diseño, código y pendientes explícitos. |
+| Consistencia, caché y reversibilidad | [Matriz S12 preliminar](semana-12-evidencia-s12.md): completar los criterios pendientes antes del cierre. |
+| CI, seguridad, contribución y decisiones inmutables | Revisar la matriz transversal del informe actual; no se cierran por un CI verde genérico ni por la existencia de archivos. |
 
 ## Feedback S10 vigente · 13 de octubre de 2026
 

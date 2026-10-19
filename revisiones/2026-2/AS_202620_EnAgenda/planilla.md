@@ -10,12 +10,14 @@ Hoja consolidada del equipo EnAgenda. Se actualiza tras cada revisión.
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_EnAgenda` |
 | Integrantes y su usuario de GitHub | Identificación consolidada para S9 por correo y cuenta GitHub, sin publicar correos: Eliab Josue Arnedo Conde · Jeimy Yulieth Mendez Altamiranda · Gabriela Morales Cancino — ver rectificación transversal del 14 de octubre y registro histórico más abajo. |
 | URL del sistema desplegado | URL pública vigente no localizada; despliegue No verificado. Ver [S10](semana-10-corte2.md). |
-| Última revisión | 2026-10-14 · apelación aprobada S5/S6/S7/S9/S10; S9 conserva su puntaje |
+| Última revisión | 2026-10-19 · S11 definitiva y S12 preliminar (observación 21:35 UTC); rectificaciones aprobadas sincronizadas |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 12 | [S12 · preliminar](semana-12-evidencia-s12.md) | `master` · `4bec22f3821493014e8352ece8274bb2950e97db` | 2/9 | 1.9 (propuesta al docente; preliminar) | sí, 2026-10-19 |
+| 11 | [S11 · definitiva](semana-11-evidencia-s11.md) | `master` · `4bec22f3821493014e8352ece8274bb2950e97db` | 1/9 | 1.4 (propuesta al docente) | sí, 2026-10-19 |
 | 9 | S9 · definitiva | `master` · `5aa889370dcf342ba06666893b97f8065b513de9` · 2026-10-04T23:46:49-05:00 | 3/10; autoría transversal Cumple | 2.2 (sin cambio) | sí, rectificación transversal 2026-10-14 |
 | 10 | Segundo corte · consolidado al cierre | `master` · `4bec22f3821493014e8352ece8274bb2950e97db` · 2026-10-11T23:47:24-05:00 | C1 0,60; C2 1,00; C3 0,60; C4 0,60 (cada uno /1) | Total 3,64/5; técnica 2,80/4 + C5 docente 0,84/1; ver [S10](semana-10-corte2.md) | sí, rectificada 2026-10-14 |
 | 8 | S8 | `2c7d77a` (2026-09-27T23:42:39-05:00) | 5/10 (2 filas de despliegue diferidas) | 3.0 (provisional) | sí |
@@ -46,6 +48,22 @@ Los valores anteriores se conservan aquí como historial explícitamente superad
 | eliabarnedocondef10-gif | 18 | Historial agregado del estado S9 |
 
 Total **173 commits y tres identidades**, sin atribuir equivalencia por semejanza del nombre. [Comprobación y commits citados](semana-09-evidencia-s9.md#rectificación-transversal-aprobada--14-de-octubre-de-2026). La tabla histórica de S3 conservada abajo mantiene exclusivamente su alcance de S3.
+
+## Seguimiento vigente · S11 y avance S12 · 19 de octubre de 2026
+
+S11 se fija antes del límite exclusivo 2026-10-19T05:00:00Z. S12 es preliminar, observada a las 21:35 UTC del 19 de octubre, y cierra el 26 de octubre a las 05:00 UTC. Las matrices transversales actuales están en [S11](semana-11-evidencia-s11.md) y [S12](semana-12-evidencia-s12.md). Sus estados y límites sustituyen las inferencias de arrastre que no hayan sido revalidadas; el historial conserva su fecha.
+
+La punta de `origin/master` coincide con el estado histórico: no hay commits en S11 ni en el avance observado S12. El CI del hash exacto es exitoso, pero `.github/workflows/ci.yml:1-45` solo ejecuta pytest/contrato y build Docker; no contiene scanner ni Quality Gate de SonarCloud.
+
+Erosión arquitectónica: `docs/adr/0001-usar-monolito-modular.md:94-95,116-122` todavía prescribe Next.js/Server Actions y ausencia de API, mientras `app/web.py:427-517` implementa Flask y API JSON. `docs/arc42/11-riesgos-y-deuda-técnica.md:70-79` mantiene el despliegue como pendiente, aunque ADR-0003 ya documenta Dokploy. El repositorio en memoria (`repositorio_memoria.py:4-12`) pierde estado al reiniciar; es deuda reconocida, no persistencia durable. `app/web.py:306-339` valida y guarda dentro del mismo bucle: un invitado inválido posterior deja altas previas realizadas, sin atomicidad de lote. La capa aplicación depende de la implementación concreta de infraestructura (`gestionar_invitacion.py:7-14`).
+
+Actividad en principal: 0 commits en la ventana S11 y 0 posteriores al cierre hasta la observación. El número de commits no determina la nota: se contrasta el contenido completo con la ficha.
+
+| Seguimiento | Estado y evidencia |
+|---|---|
+| Integración, modos de fallo y extracción | [Matriz S11](semana-11-evidencia-s11.md): distingue diseño, código y pendientes explícitos. |
+| Consistencia, caché y reversibilidad | [Matriz S12 preliminar](semana-12-evidencia-s12.md): completar los criterios pendientes antes del cierre. |
+| CI, seguridad, contribución y decisiones inmutables | Revisar la matriz transversal del informe actual; no se cierran por un CI verde genérico ni por la existencia de archivos. |
 
 ## Feedback S10 vigente · 14 de octubre de 2026
 

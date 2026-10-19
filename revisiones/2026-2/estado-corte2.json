@@ -1,6 +1,6 @@
 {
   "modo": "final",
-  "ts": "2026-10-14T21:30:00+00:00",
+  "ts": "2026-10-19T21:39:00+00:00",
   "equipos": 23,
   "origen": "consolidacion-de-evaluacion-tecnica-y-sustentaciones-docentes",
   "publicado": true,
@@ -12,9 +12,9 @@
   "ejecucion_codigo_estudiantil": false,
   "regla_nota": "C1-C4 sobre4 sin reescalar; C5 docente sobre1. Total sobre5 solo con C5 confirmado.",
   "supuesto_escenarios": "Se evalua el escenario documentado bajo supuesto explicito de pertinencia; asignacion oficial no verificada.",
-  "equipos_con_C5": 19,
-  "equipos_C5_pendiente": 4,
-  "s9": "Notas sin cambios; precisiones de comentarios e identidad en rectificación de 2026-10-14",
+  "equipos_con_C5": 23,
+  "equipos_C5_pendiente": 0,
+  "s9": "Rectificaciones aprobadas sincronizadas 2026-10-19: seis excepciones de denominador y apelación Dinamik; véase estado-s9.json. S10 C1–C4 conservados.",
   "correcciones_previas_incorporadas": "Correcciones de despliegue y C4 propuestas en PR4 incorporadas en el historial; no se realizo una nueva comprobacion externa.",
   "resultados": [
     {
@@ -967,10 +967,10 @@
         "C4": 0.6
       },
       "subtotal_tecnico_sobre_4": 2.8,
-      "C5_docente": null,
-      "sustentacion_docente_sobre_5": null,
-      "total_sobre_5": null,
-      "estado_total": "Pendiente C5",
+      "C5_docente": 0.8,
+      "sustentacion_docente_sobre_5": 4,
+      "total_sobre_5": 3.6,
+      "estado_total": "Consolidado con C5 docente",
       "escenario": "Concurrencia sobre inventario:20 peticiones sobreSKU,stock100→80,p95≤400 ms, reporteS10 autodeclarado",
       "asignacion_oficial": "No verificado; supuesto explícito de pertinencia",
       "comentario": "El reporte S10 define el escenario y un cambio coherente. La cifra de 28 ms no tiene una prueba o serie que mida latencia; faltan una línea base y una nueva medición demostrada. La documentación continúa parcial.",
@@ -1046,7 +1046,8 @@
           }
         ],
         "informe": "revisiones/2026-2/AS_202620_InvenTrack/semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10"
-      }
+      },
+      "actualizacion_C5": "Calificación 4/5 indicada por el docente el 2026-10-18; sincronizada el 2026-10-19 sin recalificar C1-C4."
     },
     {
       "repo": "AS_202620_LaPlacita",
@@ -1490,10 +1491,10 @@
         "C4": 0.8
       },
       "subtotal_tecnico_sobre_4": 2.2,
-      "C5_docente": null,
-      "sustentacion_docente_sobre_5": null,
-      "total_sobre_5": null,
-      "estado_total": "Pendiente C5",
+      "C5_docente": 0.8,
+      "sustentacion_docente_sobre_5": 4,
+      "total_sobre_5": 3.0,
+      "estado_total": "Consolidado con C5 docente",
       "escenario": "ESC-04: validar el código de recogida en menos de 2 s y rechazar el 100 % de reutilizaciones; nueva autenticación y autorización del panel con sesiones y contrato 2.0.0.",
       "asignacion_oficial": "No verificado; supuesto explícito de pertinencia",
       "comentario": "ESC-04 incorpora autenticación, contrato 2.0 y ADR-0007, pero sesiones, tablas y cuentas no están acreditadas en producción. El GET público devuelve el código de canje, que funciona como secreto de retiro, a partir de un identificador entero. Es un hallazgo estático de operación y seguridad; no se consultaron pedidos reales ni se afirma explotación en producción.",
@@ -1687,7 +1688,8 @@
           }
         ],
         "informe": "revisiones/2026-2/AS_202620_PideUtb/semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10"
-      }
+      },
+      "actualizacion_C5": "Calificación 4/5 indicada por el docente el 2026-10-18; sincronizada el 2026-10-19 sin recalificar C1-C4."
     },
     {
       "repo": "AS_202620_Recobra",
@@ -2466,10 +2468,10 @@
         "C4": 0.6
       },
       "subtotal_tecnico_sobre_4": 2.6,
-      "C5_docente": null,
-      "sustentacion_docente_sobre_5": null,
-      "total_sobre_5": null,
-      "estado_total": "Pendiente C5",
+      "C5_docente": 0.8,
+      "sustentacion_docente_sobre_5": 4,
+      "total_sobre_5": 3.4,
+      "estado_total": "Consolidado con C5 docente",
       "escenario": "Q-01: tiempo análisis y arranque frío Render; decisión mantener Render+keepalive",
       "asignacion_oficial": "No verificado; supuesto explícito de pertinencia",
       "comentario": "Se documentan estados warm y cold, pero faltan POST en frío, hash desplegado y efecto tras la mitigación. Persisten afirmaciones de causalidad y costo incompatibles con la rectificación del ADR-0008, además de documentación parcial.",
@@ -2538,7 +2540,8 @@
           }
         ],
         "informe": "revisiones/2026-2/AS_202620_Verifacts/semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10"
-      }
+      },
+      "actualizacion_C5": "Calificación 4/5 indicada por el docente el 2026-10-18; sincronizada el 2026-10-19 sin recalificar C1-C4."
     },
     {
       "repo": "AS_202620_XALD",
@@ -2553,10 +2556,10 @@
         "C4": 0.6
       },
       "subtotal_tecnico_sobre_4": 2.4,
-      "C5_docente": null,
-      "sustentacion_docente_sobre_5": null,
-      "total_sobre_5": null,
-      "estado_total": "Pendiente C5",
+      "C5_docente": 0.8,
+      "sustentacion_docente_sobre_5": 4,
+      "total_sobre_5": 3.2,
+      "estado_total": "Consolidado con C5 docente",
       "escenario": "ESC-05: conflictos de sincronización Last-Write-Wins",
       "asignacion_oficial": "No verificado; supuesto explícito de pertinencia",
       "comentario": "LWW y el contador existen, pero 30/30 no demuestra concurrencia ni la versión ganadora: el script cuenta respuestas 202 y conflictos y no comprueba el estado final. Falta línea base. Cliente HTTP, persistencia, cifrado y coherencia documental siguen parciales.",
@@ -2672,7 +2675,8 @@
           }
         ],
         "informe": "revisiones/2026-2/AS_202620_XALD/semana-10-corte2.md#deriva-arquitectónica-al-cierre-s10"
-      }
+      },
+      "actualizacion_C5": "Calificación 4/5 indicada por el docente el 2026-10-18; sincronizada el 2026-10-19 sin recalificar C1-C4."
     }
   ],
   "deriva_arquitectonica": {

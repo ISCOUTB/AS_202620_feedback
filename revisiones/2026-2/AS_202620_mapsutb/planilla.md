@@ -8,13 +8,15 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_mapsutb` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Carlos Alberto Galvis Zuluaga · Carlos David Manrique Fals · Nerlis Nikol Otero Perez · Isabel Sofia Paez Matallana — cuentas observadas en el historial: `charlygz21`, `nerlis-otero`, `CarlosManrique-1397`, `i-matallana` (correspondencias por confirmar con el docente); ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | https://mapsutb.web.app/ · ver comprobación y límites en S10 |
-| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
+| Última revisión | 2026-10-19 · S11 definitiva y S12 preliminar (observación 21:35 UTC); rectificaciones aprobadas sincronizadas |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 9 | S9 · definitiva | `master` · `1b296a37c575a751e99df1a1b288d70efba03d56` · 2026-10-02T12:58:33-05:00 | 8/10 | Pendiente por limitación de verificación; intervalo documental 4.2–4.6, sin descontar la comprobación bloqueada | sí, 2026-10-06 |
+| 12 | [S12 · preliminar](semana-12-evidencia-s12.md) | `master` · `4b8fa088faec96772e76c8c4f2782919ec87a9b9` | 4/9 | 2.8 (propuesta al docente; preliminar) | sí, 2026-10-19 |
+| 11 | [S11 · definitiva](semana-11-evidencia-s11.md) | `master` · `4b8fa088faec96772e76c8c4f2782919ec87a9b9` | 9/9 | 5.0 (propuesta al docente) | sí, 2026-10-19 |
+| 9 | S9 · definitiva | `master` · `1b296a37c575a751e99df1a1b288d70efba03d56` · 2026-10-02T12:58:33-05:00 | 8/9 (una comprobación excluida por decisión docente) | 4.6 | sí, rectificación aprobada; sincronizada 2026-10-19 |
 | 10 | Segundo corte · consolidado al cierre | `master` · `1b296a37c575a751e99df1a1b288d70efba03d56` · 2026-10-02T12:58:33-05:00 | C1 0,60; C2 0,80; C3 0,60; C4 0,60 (cada uno /1) | Total 3,40/5; técnica 2,60/4 + C5 docente 0,80/1; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `7e56ad3` · 2026-08-09T23:27:46-05:00 | 5/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `1cf1576` · 2026-08-16T21:26:05-05:00 | 4/9 | 2.8 | sí (revisión manual confirmatoria) |
@@ -25,13 +27,25 @@
 | 7 | S7 | `5e2fdd5` (2026-09-20T21:15:28-05:00) | 10/10 | 5.0 | sí (auditoría definitiva corregida) |
 | 8 | Evidencia S8 · Despliegue reproducible, CI y observabilidad | `8cfe4581` (2026-09-27T16:35:57-05:00) | 10/10 | 5.0 (propuesta; 2 filas de despliegue pendientes) | sí (definitiva) |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
-| 11 | Evidencia S11 · Fallos parciales y decisión de extracción | | | no aplica | |
-| 12 | Evidencia S12 · Estrategia de datos y eventos | | | no aplica | |
 | 12 | Taller aplicado · Mensajes y consistencia | | | no aplica | |
 | 13 | Evidencia S13 · Modelado de amenazas y plan de mitigación | | | no aplica | |
 | 14 | Evidencia S14 · Medición de atributos de calidad | | | no aplica | |
 | 16 | Proyecto final · integración y desafío arquitectónico | `final` | | | |
 | 17 | Aplicación de cambios y cierre arquitectónico | | | | |
+
+## Seguimiento vigente · S11 y avance S12 · 19 de octubre de 2026
+
+S11 se fija antes del límite exclusivo 2026-10-19T05:00:00Z. S12 es preliminar, observada a las 21:35 UTC del 19 de octubre, y cierra el 26 de octubre a las 05:00 UTC. Las matrices transversales actuales están en [S11](semana-11-evidencia-s11.md) y [S12](semana-12-evidencia-s12.md). Sus estados y límites sustituyen las inferencias de arrastre que no hayan sido revalidadas; el historial conserva su fecha.
+
+Punta y corte coinciden. La ruta se calcula localmente; teselas OSM, GPS y adaptadores HTTP tienen tratamientos diferenciados. Google Geocoding/Static Maps no deben confundirse con integración activa sin credenciales. S12 tiene base aprovechable en caché HTTP y entrega analítica, pero faltan garantías por operación, ADR de datos/costo de reversión y actualización de arc42 §8.
+
+Actividad en principal: 9 commits en la ventana S11 y 0 posteriores al cierre hasta la observación. El número de commits no determina la nota: se contrasta el contenido completo con la ficha.
+
+| Seguimiento | Estado y evidencia |
+|---|---|
+| Integración, modos de fallo y extracción | [Matriz S11](semana-11-evidencia-s11.md): distingue diseño, código y pendientes explícitos. |
+| Consistencia, caché y reversibilidad | [Matriz S12 preliminar](semana-12-evidencia-s12.md): completar los criterios pendientes antes del cierre. |
+| CI, seguridad, contribución y decisiones inmutables | Revisar la matriz transversal del informe actual; no se cierran por un CI verde genérico ni por la existencia de archivos. |
 
 ## Feedback S10 vigente · 13 de octubre de 2026
 

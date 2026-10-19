@@ -112,3 +112,15 @@ La comparación del primer corte con la semana seis permite acreditar el diagram
 En la semana nueve, la decisión arquitectónica debe ser pertinente a la porción revisada; no se exige que sea nueva. La decisión de no incorporar IA generativa ya había recibido reconocimiento en su criterio específico. Un fallo de configuración del workflow no demuestra que las pruebas fallen.
 
 En el segundo corte se reconoce plenamente la decisión JWT/JWKS y su materialización. La documentación funcional de regresión existe; las limitaciones restantes son su representatividad operacional, la observabilidad y la coherencia documental. Las matrices y la planilla contienen la rectificación aprobada y conservan los estados anteriores como historial.
+
+## Semana 11 · Integración y resiliencia
+
+Se identifica la integración, hay mitigaciones, diseño de idempotencia y una decisión argumentada de no extraer. La tabla debe cubrir explícitamente la respuesta duplicada y separar lo implementado de lo pendiente: el adaptador actual agrega registros en memoria sin deduplicar, pese a las afirmaciones de persistencia transaccional. Actualizar riesgos y aspectos y corregir el CI fallido.
+
+Consulta la [matriz S11](semana-11-evidencia-s11.md) para las evidencias y los pendientes. La evidencia posterior al cierre aparece separada en el seguimiento actual.
+
+## Semana 12 · Avance preliminar: consistencia, caché y decisiones de datos
+
+El flujo síncrono justifica que no se exijan garantías de un broker inexistente. Faltan tabla de consistencia, contraste de dos operaciones, diseño e invalidación de caché y ADR comparativo de costo de reversión. Reconciliar C4 y arc42 con la persistencia y el despliegue reales.
+
+Consulta la [matriz S12 preliminar](semana-12-evidencia-s12.md) para las evidencias y los pendientes. El plazo sigue abierto hasta el final del 25 de octubre en Colombia.

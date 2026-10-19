@@ -8,30 +8,50 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): ver [EQUIPOS.md](../../../EQUIPOS.md) y tabla de contribución abajo; ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | https://quantia-utb.onrender.com · ver comprobación y límites en S10 |
-| Última revisión | 2026-10-13 · consolidación S10 al cierre; S9 permanece sin cambios |
+| Última revisión | 2026-10-19 · S11 definitiva y S12 preliminar (observación 21:35 UTC); rectificaciones aprobadas sincronizadas |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
-| 9 | S9 · definitiva | `master` · `72011933ff2238eaec697f565572fec6872a3cbc` · 2026-10-04T22:36:29-05:00 | 9/10 | Pendiente por limitación de verificación; intervalo documental 4.6–5.0, sin descontar la comprobación bloqueada | sí, 2026-10-06 |
+| 12 | [S12 · preliminar](semana-12-evidencia-s12.md) | `master` · `98a9dcc8f22c77ac5d0dfcea4055865e7727a21e` | 2/9 | 1.9 (propuesta al docente; preliminar) | sí, 2026-10-19 |
+| 11 | [S11 · definitiva](semana-11-evidencia-s11.md) | `master` · `98a9dcc8f22c77ac5d0dfcea4055865e7727a21e` | 9/9 | 5.0 (propuesta al docente) | sí, 2026-10-19 |
+| 9 | S9 · definitiva | `master` · `72011933ff2238eaec697f565572fec6872a3cbc` · 2026-10-04T22:36:29-05:00 | 9/9 (una comprobación excluida por decisión docente) | 5.0 | sí, rectificación aprobada; sincronizada 2026-10-19 |
 | 10 | Segundo corte · consolidado al cierre | `master` · `85da6d3ab6ef882582839362b56981fa7cb53949` · 2026-10-11T23:36:26-05:00 | C1 1,00; C2 1,00; C3 1,00; C4 1,00 (cada uno /1) | Total 4,80/5; técnica 4,00/4 + C5 docente 0,80/1; ver [S10](semana-10-corte2.md) | sí, 2026-10-13 |
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `4f6f568` · 2026-08-09T13:16:43-05:00 | 7/9 | no aplica | sí |
 | 2 | S2 | `d4302f4` (2026-08-16T23:17:26-05:00) | 3/9 | no aplica | si |
 | 3 | Evidencia S3 · Estrategia de solución y primer ADR | `dd422fb` · 2026-08-23T23:52:23-05:00 | 6/9 | no se publica | sí |
 | 4 | S4 | `cede35e` (2026-08-30T23:51:34-05:00) | 6/10 | 3.4 | si |
 | 5 | CORTE1 | `8b0d00b` (2026-09-07T14:29:28-05:00) | 8/12 | 3.7 | si |
-| 6 | S6 | `a47d5bd` (2026-09-13T23:21:55-05:00) | 3/8 | 2.5 (prelim.) | si |
+| 6 | S6 | `a47d5bd` (2026-09-13T23:21:55-05:00) | 8/8 | 5.0 (rectificación aprobada) | sí, sincronizada 2026-10-19 |
 | 7 | S7 | `2269ca5` (2026-09-20T21:48:00-05:00) | 10/10 | 5.0 (propuesta) | sí |
 | 8 | S8 | `1f8f76d` (2026-09-27T19:55:57-05:00) | 10/10 graduables (2 filas de despliegue pendientes) | 5.0 (provisional) | si |
 | 8 | Taller aplicado de despliegue | | | no aplica | |
-| 11 | Evidencia S11 · Fallos parciales y decisión de extracción | | | no aplica | |
-| 12 | Evidencia S12 · Estrategia de datos y eventos | | | no aplica | |
 | 12 | Taller aplicado · Mensajes y consistencia | | | no aplica | |
 | 13 | Evidencia S13 · Modelado de amenazas y plan de mitigación | | | no aplica | |
 | 14 | Evidencia S14 · Medición de atributos de calidad | | | no aplica | |
 | 16 | Proyecto final · integración y desafío arquitectónico | `final` | | | |
 | 17 | Aplicación de cambios y cierre arquitectónico | | | | |
+
+## Seguimiento vigente · S11 y avance S12 · 19 de octubre de 2026
+
+S11 se fija antes del límite exclusivo 2026-10-19T05:00:00Z. S12 es preliminar, observada a las 21:35 UTC del 19 de octubre, y cierra el 26 de octubre a las 05:00 UTC. Las matrices transversales actuales están en [S11](semana-11-evidencia-s11.md) y [S12](semana-12-evidencia-s12.md). Sus estados y límites sustituyen las inferencias de arrastre que no hayan sido revalidadas; el historial conserva su fecha.
+
+S11 completa con límites honestos: API 2 s, socket worker 10 s, BLPOP 5 s, marca NX 7 días y sin retry oculto.
+
+Worker actualmente consume y registra, no ejecuta OMR/calificación; PostgreSQL está previsto sin uso por esos componentes. C4 lo declara en tabla aunque las cajas puedan parecer producto terminado.
+
+Los archivos de medición y pruebas son evidencia del equipo; esta auditoría solo inspeccionó código/configuración y resultados CI públicos, sin ejecutar suites.
+
+R22/R23 reconocen pérdida después de BLPOP o de marcar visto antes del procesamiento; el plan futuro es válido para S11, no garantía de entrega durable hoy.
+
+Actividad en principal: 31 commits en la ventana S11 y 0 posteriores al cierre hasta la observación. El número de commits no determina la nota: se contrasta el contenido completo con la ficha.
+
+| Seguimiento | Estado y evidencia |
+|---|---|
+| Integración, modos de fallo y extracción | [Matriz S11](semana-11-evidencia-s11.md): distingue diseño, código y pendientes explícitos. |
+| Consistencia, caché y reversibilidad | [Matriz S12 preliminar](semana-12-evidencia-s12.md): completar los criterios pendientes antes del cierre. |
+| CI, seguridad, contribución y decisiones inmutables | Revisar la matriz transversal del informe actual; no se cierran por un CI verde genérico ni por la existencia de archivos. |
 
 ## Feedback S10 vigente · 13 de octubre de 2026
 

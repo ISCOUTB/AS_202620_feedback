@@ -8,12 +8,14 @@
 | Repositorio | `https://github.com/ISCOUTB/AS_202620_Clubs_UTB` |
 | Integrantes y su usuario de GitHub | Identificación histórica (no acredita por sí sola la correspondencia actual): Hollman Jose De Orta Gonzalez (`deortahollman-star`) · Josh Robinson Ortega Castellon (`Josh4OP`) · Diego Andres Ramos De Avila (`Zavod Dev`, atribución sin confirmar) · Luis Daniel Salas Reyes (`Luis-Salas-Reyes`); ver comprobación actual de contribución más abajo. |
 | URL del sistema desplegado | URL pública vigente no localizada; despliegue No verificado. Ver [S10](semana-10-corte2.md). |
-| Última revisión | 2026-10-14 · rectificación de apelación aprobada; notas S7 y S9 conservadas |
+| Última revisión | 2026-10-19 · S11 definitiva y S12 preliminar (observación 21:35 UTC); rectificaciones aprobadas sincronizadas |
 
 ## Estado por entrega
 
 | Semana | Entrega | Estado revisado (rama y hash) | Criterios | Sugerido | Revisada |
 |---:|---|---|---|---|---|
+| 12 | [S12 · preliminar](semana-12-evidencia-s12.md) | `master` · `1642a9c1a0a99ef766cd6e27460d9b8b8cd3312f` | 1/9 | 1.4 (propuesta al docente; preliminar) | sí, 2026-10-19 |
+| 11 | [S11 · definitiva](semana-11-evidencia-s11.md) | `master` · `1642a9c1a0a99ef766cd6e27460d9b8b8cd3312f` | 5/9 | 3.2 (propuesta al docente) | sí, 2026-10-19 |
 | 9 | S9 · definitiva | `master` · `399565f527b633c49a71ac9b8a7f99daa85191d4` · 2026-10-04T23:47:05-05:00 | 6/10 | 3.4 (propuesta al docente) | sí, 2026-10-06 |
 | 10 | Segundo corte · consolidado al cierre | `master` · `cd0ad9c64925863ed5067ed53da7f3c6dcf09895` · 2026-10-05T00:46:29-05:00 | C1 0,60; C2 1,00; C3 0,00; C4 0,60 (cada uno /1) | Total 3,00/5; técnica 2,20/4 + C5 docente 0,80/1; ver [S10](semana-10-corte2.md) | sí, rectificada 2026-10-14 |
 | 8 | S8 | `652f78b7` (2026-09-27T23:39:11-05:00) | 5/10 | 3.0 (provisional; 2 filas de despliegue diferidas por decisión docente) | si |
@@ -24,6 +26,20 @@
 | 1 | Evidencia S1 · Equipo, problema y repositorio | `c92595ed` · 2026-08-09T13:25:24-05:00 | 2/9 | no se publica | sí |
 | 2 | Evidencia S2 · Escenarios de calidad y restricciones | `69cfe68f` · 2026-08-16T18:33:10-05:00 | 7/9 | no se publica | sí |
 | 3 | S3 | `5bf86ea` (2026-08-23T23:05:10-05:00) | 6/9 | 3.7 | si |
+
+## Seguimiento vigente · S11 y avance S12 · 19 de octubre de 2026
+
+S11 se fija antes del límite exclusivo 2026-10-19T05:00:00Z. S12 es preliminar, observada a las 21:35 UTC del 19 de octubre, y cierra el 26 de octubre a las 05:00 UTC. Las matrices transversales actuales están en [S11](semana-11-evidencia-s11.md) y [S12](semana-12-evidencia-s12.md). Sus estados y límites sustituyen las inferencias de arrastre que no hayan sido revalidadas; el historial conserva su fecha.
+
+La punta no cambió después del cierre. Erosión: `docs/adr/0008-no-extraer-publicaciones.md:24-26` habla de transacción y FK actuales, pero router usa `InMemoryPublicacionAdapter` (`publicacion_router.py:15-16`) y `guardar` hace append (`in_memory_publicacion_adapter.py:9-11`). La llave viaja hasta la entidad sin deduplicar. `frontend/linkclub/lib/presentation/clubs_page.dart:15-91` conserva datos hardcodeados y el C4 sigue apuntando a Supabase frente a la decisión Dokploy. El CI exacto está fallido; no se atribuye una causa concreta sin logs.
+
+Actividad en principal: 18 commits en la ventana S11 y 0 posteriores al cierre hasta la observación. El número de commits no determina la nota: se contrasta el contenido completo con la ficha.
+
+| Seguimiento | Estado y evidencia |
+|---|---|
+| Integración, modos de fallo y extracción | [Matriz S11](semana-11-evidencia-s11.md): distingue diseño, código y pendientes explícitos. |
+| Consistencia, caché y reversibilidad | [Matriz S12 preliminar](semana-12-evidencia-s12.md): completar los criterios pendientes antes del cierre. |
+| CI, seguridad, contribución y decisiones inmutables | Revisar la matriz transversal del informe actual; no se cierran por un CI verde genérico ni por la existencia de archivos. |
 
 ## Feedback S10 vigente · 14 de octubre de 2026
 

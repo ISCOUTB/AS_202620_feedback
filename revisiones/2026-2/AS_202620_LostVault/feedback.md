@@ -89,3 +89,19 @@ Estos comentarios corresponden al estado y a las comprobaciones de sus fechas or
 La sonda de salud responde, pero el experimento documenta fallos importantes con 200 conexiones: el p95 de respuestas exitosas no demuestra disponibilidad. Identifiquen el reto asignado, resuelvan persistencia y agregación de métricas entre instancias y documenten qué decisión cambia a la luz de los fallos medidos.
 
 </details>
+
+## Semana 9 · Aclaración de la revisión
+
+La comprobación de credenciales bloqueada por el entorno del revisor queda excluida del cálculo por decisión docente. Sigue sin verificarse y no implica un hallazgo de filtración. Los demás criterios conservan su valoración sobre la entrega de cierre; véase la [matriz actualizada](semana-09-evidencia-s9.md).
+
+## Semana 11 · Integración y resiliencia
+
+El backend tiene deduplicación y exclusión mutua locales, y el diseño reconoce sus límites frente a reinicio o varias instancias. Actualicen aspectos para enlazar los fallos, la decisión de extracción y sus pruebas. La propagación de la clave desde Flutter sigue pendiente y no debe presentarse como completada.
+
+Consulta la [matriz S11](semana-11-evidencia-s11.md) para las evidencias y los pendientes. La evidencia posterior al cierre aparece separada en el seguimiento actual.
+
+## Semana 12 · Avance preliminar: consistencia, caché y decisiones de datos
+
+Faltan tabla de garantías, contraste de operaciones, caché e invalidación y decisión de datos con costo de reversión. El C4 necesita identificar la tecnología y distinguir el almacenamiento RAM vigente de la base de datos prevista. Incorporen esas decisiones a la sección de conceptos de arc42.
+
+Consulta la [matriz S12 preliminar](semana-12-evidencia-s12.md) para las evidencias y los pendientes. El plazo sigue abierto hasta el final del 25 de octubre en Colombia.
