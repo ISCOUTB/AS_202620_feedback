@@ -181,3 +181,9 @@ Avance preliminar: el diseño de sincronización declara al menos una vez y sus 
 Se leyeron documentación, código, pruebas e historial sin ejecutar software estudiantil. Se consultaron runs públicos de CI cuando estaban disponibles; un run exitoso no prueba despliegue, Quality Gate ni tolerancia real a fallos. No se consultaron datos personales del sistema. Los PDF se excluyen sin penalización. Las correcciones aprobadas S6/S9/S10 se sincronizan por separado, manteniendo sus hashes de cierre.
 
 [Resumen S11](resumen-s11.md) · [Avance S12](resumen-s12.md) · [S10 consolidado](resumen-s10.md)
+
+## Actualización documental posterior · 20 de octubre de 2026
+
+El docente confirmó presentaciones/avances de TAIA, ElMapita, ROUTB, PideUtb y Recobra, con el alcance individual registrado en [avances presentados](avances-presentados-2026-10-20.md). TAIA y ElMapita funcionan según esa confirmación; PideUtb tiene despliegues. Esto complementa el seguimiento sin alterar la matriz, el corte de consulta o las notas preliminares anteriores.
+
+Se añaden [issues de los 23 equipos](seguimiento-issues-2026-10-20.md) y [URL de README y dominio iscoutb.dev](seguimiento-despliegues-2026-10-20.md). No confundir un tablero desactualizado, una URL ausente o el bloqueo de Cloudflare con ausencia de trabajo o caída del servicio.

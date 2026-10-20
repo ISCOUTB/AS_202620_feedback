@@ -100,3 +100,11 @@ Consulta la [matriz S11](semana-11-evidencia-s11.md) para las evidencias y los p
 La vista de contenedores y la caché HTTP de la pista aportan evidencia inicial. Falta explicitar garantías por operación, contrastar dos operaciones, definir invalidación y entrega de eventos, y justificar la decisión de datos más costosa de revertir. Actualizar arc42 y la documentación de audio para que reflejen el comportamiento actual.
 
 Consulta la [matriz S12 preliminar](semana-12-evidencia-s12.md) para las evidencias y los pendientes. El plazo sigue abierto hasta el final del 25 de octubre en Colombia.
+
+## Seguimiento documental · 20 de octubre de 2026
+
+Issues al corte de consulta: **2 abiertas, 2 cerradas, 4 en total**. Los 2 cierres figuran como completed. Estos estados no equivalen por sí solos a implementación verificada.
+
+README y despliegue: **Institucional**. Cliente legado; no acredita Flutter web. Dirección(es) documentada(s): https://audioshare.iscoutb.dev.
+
+Consulta el [recuento y análisis de issues](../seguimiento-issues-2026-10-20.md) y la [revisión de URL/dominio](../seguimiento-despliegues-2026-10-20.md). El requisito docente es publicar la URL oficial en el README con subdominio iscoutb.dev; una URL de API no sustituye la del sitio cuando sean diferentes. El bloqueo de la consulta automatizada no demuestra caída. Este seguimiento no modifica notas ni matrices históricas.

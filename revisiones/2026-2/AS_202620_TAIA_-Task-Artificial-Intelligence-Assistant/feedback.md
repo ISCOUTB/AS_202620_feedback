@@ -121,3 +121,13 @@ Consulta la [matriz S11](semana-11-evidencia-s11.md) para las evidencias y los p
 Se reconocen dos operaciones locales con transacción y bloqueo, pero falta tabla operación→garantía y una estrategia de caché con invalidación o exclusión justificada. También faltan ADR y costo comparativo de la decisión de datos más costosa de revertir, tecnología de la base en C4 y consolidación en arc42. El cambio posterior del Dockerfile no completa esos entregables.
 
 Consulta la [matriz S12 preliminar](semana-12-evidencia-s12.md) para las evidencias y los pendientes. El plazo sigue abierto hasta el final del 25 de octubre en Colombia.
+
+## Seguimiento documental · 20 de octubre de 2026
+
+Presentó avances y despliega bien, según confirmación docente. El README aún publica sslip.io/Render: actualizar la URL oficial bajo iscoutb.dev. Las issues antiguas no invalidan el avance presentado.
+
+Issues al corte de consulta: **3 abiertas, 4 cerradas, 7 en total**. Los 4 cierres figuran como completed. Estos estados no equivalen por sí solos a implementación verificada.
+
+README y despliegue: **Externo**. Actualizar URL oficial; el docente confirmó avance y despliegue funcionando. Dirección(es) documentada(s): http://taia-sistema-jkbo9i-ec2cd4-144-24-4-187.sslip.io ; https://taia-backend-latest.onrender.com/health.
+
+Consulta el [recuento y análisis de issues](../seguimiento-issues-2026-10-20.md) y la [revisión de URL/dominio](../seguimiento-despliegues-2026-10-20.md). El requisito docente es publicar la URL oficial en el README con subdominio iscoutb.dev; una URL de API no sustituye la del sitio cuando sean diferentes. El bloqueo de la consulta automatizada no demuestra caída. Este seguimiento no modifica notas ni matrices históricas.

@@ -103,3 +103,13 @@ Consulta la [matriz S11](semana-11-evidencia-s11.md) para las evidencias y los p
 La caché versionada, el flujo síncrono y los almacenes separados en C4 aportan evidencia inicial. Faltan garantías por operación con dos contrastes, invalidación efectiva, ADR comparativo de reversión de datos y actualización de arc42 sección 8. Reconciliar la promesa de funcionamiento offline con un caso de uso que consulta primero la API.
 
 Consulta la [matriz S12 preliminar](semana-12-evidencia-s12.md) para las evidencias y los pendientes. El plazo sigue abierto hasta el final del 25 de octubre en Colombia.
+
+## Seguimiento documental · 20 de octubre de 2026
+
+Presentó avance y está funcionando, según confirmación docente. Falta la URL pública concreta en el README; esta carencia documental no significa ausencia de despliegue.
+
+Issues al corte de consulta: **1 abiertas, 0 cerradas, 1 en total**. Sin cierres registrados. Estos estados no equivalen por sí solos a implementación verificada.
+
+README y despliegue: **Sin URL vigente**. Solo localhost y placeholder de Supabase; funcionamiento confirmado por docente.
+
+Consulta el [recuento y análisis de issues](../seguimiento-issues-2026-10-20.md) y la [revisión de URL/dominio](../seguimiento-despliegues-2026-10-20.md). El requisito docente es publicar la URL oficial en el README con subdominio iscoutb.dev; una URL de API no sustituye la del sitio cuando sean diferentes. El bloqueo de la consulta automatizada no demuestra caída. Este seguimiento no modifica notas ni matrices históricas.

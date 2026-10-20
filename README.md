@@ -14,6 +14,14 @@ Este material vive en [`ISCOUTB/AS_202620_feedback`](https://github.com/ISCOUTB/
 abierto para que puedas leerlo, citarlo y proponer cambios. Si tienes delante una copia descargada,
 la versión que manda es la de ahí.
 
+## Seguimiento actualizado · 20 de octubre de 2026
+
+- [Issues de los 23 proyectos: abiertas, cerradas y estados](revisiones/2026-2/seguimiento-issues-2026-10-20.md).
+- [URL de despliegue en los README y requisito iscoutb.dev](revisiones/2026-2/seguimiento-despliegues-2026-10-20.md).
+- [Avances presentados confirmados por el docente](revisiones/2026-2/avances-presentados-2026-10-20.md): TAIA, ElMapita, ROUTB, PideUtb y Recobra.
+
+Seguimiento complementario, sin cambios de calificaciones ni reinterpretación retroactiva de cierres. Los estados de issues, la documentación y el funcionamiento son evidencias distintas.
+
 ## Cómo está organizado el repositorio
 
 ```text

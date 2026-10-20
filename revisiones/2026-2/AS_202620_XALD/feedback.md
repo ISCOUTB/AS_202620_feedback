@@ -103,3 +103,11 @@ Consulta la [matriz S11](semana-11-evidencia-s11.md) para las evidencias y los p
 Avance preliminar: el diseño de sincronización declara al menos una vez y sus límites, pero aún faltan las garantías por operación y dos verificaciones completas. Definan caché e invalidación o argumenten su ausencia, y seleccionen la decisión de datos de mayor costo de reversión. El C4 debe separar almacenes propios con tecnología y distinguir memoria actual de persistencia futura.
 
 Consulta la [matriz S12 preliminar](semana-12-evidencia-s12.md) para las evidencias y los pendientes. El plazo sigue abierto hasta el final del 25 de octubre en Colombia.
+
+## Seguimiento documental · 20 de octubre de 2026
+
+Issues al corte de consulta: **0 abiertas, 6 cerradas, 6 en total**. Cinco cierres figuran como completed y uno como duplicate. Estos estados no equivalen por sí solos a implementación verificada.
+
+README y despliegue: **Externo**. Backend en Render. Dirección(es) documentada(s): https://xald-backend.onrender.com.
+
+Consulta el [recuento y análisis de issues](../seguimiento-issues-2026-10-20.md) y la [revisión de URL/dominio](../seguimiento-despliegues-2026-10-20.md). El requisito docente es publicar la URL oficial en el README con subdominio iscoutb.dev; una URL de API no sustituye la del sitio cuando sean diferentes. El bloqueo de la consulta automatizada no demuestra caída. Este seguimiento no modifica notas ni matrices históricas.

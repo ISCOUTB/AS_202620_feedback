@@ -104,3 +104,13 @@ Consulta la [matriz S11](semana-11-evidencia-s11.md) para las evidencias y los p
 Se reconoce caché geográfica con duración definida, transacciones de aceptación/rechazo y push como aviso con resincronización REST. Faltan tabla operación→garantía, política de invalidación de la caché, ADR del mayor costo de reversión y consolidación en arc42. No se ha demostrado un fallo de caché sobre cupos: el caché revisado es de geocodificación.
 
 Consulta la [matriz S12 preliminar](semana-12-evidencia-s12.md) para las evidencias y los pendientes. El plazo sigue abierto hasta el final del 25 de octubre en Colombia.
+
+## Seguimiento documental · 20 de octubre de 2026
+
+Entregó avance, según confirmación docente. El README publica el backend bajo iscoutb.dev. No se infiere una demostración funcional adicional ni una nota.
+
+Issues al corte de consulta: **0 abiertas, 0 cerradas, 0 en total**. Sin cierres registrados. Estos estados no equivalen por sí solos a implementación verificada.
+
+README y despliegue: **Institucional**. Backend; avance presentado confirmado por docente. Dirección(es) documentada(s): https://routb.iscoutb.dev.
+
+Consulta el [recuento y análisis de issues](../seguimiento-issues-2026-10-20.md) y la [revisión de URL/dominio](../seguimiento-despliegues-2026-10-20.md). El requisito docente es publicar la URL oficial en el README con subdominio iscoutb.dev; una URL de API no sustituye la del sitio cuando sean diferentes. El bloqueo de la consulta automatizada no demuestra caída. Este seguimiento no modifica notas ni matrices históricas.

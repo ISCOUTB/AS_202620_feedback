@@ -123,3 +123,11 @@ Consulta la [matriz S11](semana-11-evidencia-s11.md) para las evidencias y los p
 Se reconoce SQLite como almacén propio en C4. Faltan tabla de consistencia, dos operaciones contrastadas, caché e invalidación, garantías concretas para el correo previsto, ADR del mayor costo de reversión y estrategias en arc42. La evaluación sigue siendo un diagnóstico preliminar sobre la línea base disponible.
 
 Consulta la [matriz S12 preliminar](semana-12-evidencia-s12.md) para las evidencias y los pendientes. El plazo sigue abierto hasta el final del 25 de octubre en Colombia.
+
+## Seguimiento documental · 20 de octubre de 2026
+
+Issues al corte de consulta: **10 abiertas, 10 cerradas, 20 en total**. Los 10 cierres figuran como completed. Estos estados no equivalen por sí solos a implementación verificada.
+
+README y despliegue: **Sin URL vigente**. Campos «URL Vercel» y «URL Render» sin completar.
+
+Consulta el [recuento y análisis de issues](../seguimiento-issues-2026-10-20.md) y la [revisión de URL/dominio](../seguimiento-despliegues-2026-10-20.md). El requisito docente es publicar la URL oficial en el README con subdominio iscoutb.dev; una URL de API no sustituye la del sitio cuando sean diferentes. El bloqueo de la consulta automatizada no demuestra caída. Este seguimiento no modifica notas ni matrices históricas.

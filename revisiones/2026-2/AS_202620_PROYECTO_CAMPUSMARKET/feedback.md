@@ -98,3 +98,11 @@ Consulta la [matriz S11](semana-11-evidencia-s11.md) para las evidencias y los p
 El avance S12 permite contrastar crear publicaciones y cambiar su estado con transacciones locales y reconoce la ausencia de broker. Faltan tabla operación→garantía, decisión de caché e invalidación, ADR de la decisión de datos más costosa de revertir y su incorporación en arc42. El diagnóstico es preliminar y no corresponde a un cierre de S12.
 
 Consulta la [matriz S12 preliminar](semana-12-evidencia-s12.md) para las evidencias y los pendientes. El plazo sigue abierto hasta el final del 25 de octubre en Colombia.
+
+## Seguimiento documental · 20 de octubre de 2026
+
+Issues al corte de consulta: **1 abiertas, 0 cerradas, 1 en total**. Sin cierres registrados. Estos estados no equivalen por sí solos a implementación verificada.
+
+README y despliegue: **Institucional**. Cumple la API; frontend en GitHub Pages, cumplimiento parcial del sitio. Dirección(es) documentada(s): https://campusmarket.iscoutb.dev ; https://nnigarp.github.io/AS_202620_PROYECTO_CAMPUSMARKET/.
+
+Consulta el [recuento y análisis de issues](../seguimiento-issues-2026-10-20.md) y la [revisión de URL/dominio](../seguimiento-despliegues-2026-10-20.md). El requisito docente es publicar la URL oficial en el README con subdominio iscoutb.dev; una URL de API no sustituye la del sitio cuando sean diferentes. El bloqueo de la consulta automatizada no demuestra caída. Este seguimiento no modifica notas ni matrices históricas.

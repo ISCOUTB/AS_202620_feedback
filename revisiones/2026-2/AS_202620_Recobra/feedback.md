@@ -102,3 +102,13 @@ Consulta la [matriz S11](semana-11-evidencia-s11.md) para las evidencias y los p
 Se reconoce el avance anticipado de consistencia eventual entre publicaciones y reclamaciones, con pasos retomables y reconciliadores, además de recuperación acotada de avisos. Faltan diseño de caché e invalidación o su exclusión argumentada, ADR de la decisión de datos más costosa de revertir y ambas estrategias en arc42 sección 8. Corrijan también la referencia residual a coincidencias en memoria en el C4.
 
 Consulta la [matriz S12 preliminar](semana-12-evidencia-s12.md) para las evidencias y los pendientes. El plazo sigue abierto hasta el final del 25 de octubre en Colombia.
+
+## Seguimiento documental · 20 de octubre de 2026
+
+Presentó, según confirmación docente. El README publica dirección institucional. No se infiere funcionamiento integral ni calificación de la presentación.
+
+Issues al corte de consulta: **0 abiertas, 0 cerradas, 0 en total**. Sin cierres registrados. Estos estados no equivalen por sí solos a implementación verificada.
+
+README y despliegue: **Institucional**. Presentación confirmada por docente; no se infiere demostración funcional adicional. Dirección(es) documentada(s): https://recobra.iscoutb.dev ; https://recobra.iscoutb.dev/app/.
+
+Consulta el [recuento y análisis de issues](../seguimiento-issues-2026-10-20.md) y la [revisión de URL/dominio](../seguimiento-despliegues-2026-10-20.md). El requisito docente es publicar la URL oficial en el README con subdominio iscoutb.dev; una URL de API no sustituye la del sitio cuando sean diferentes. El bloqueo de la consulta automatizada no demuestra caída. Este seguimiento no modifica notas ni matrices históricas.

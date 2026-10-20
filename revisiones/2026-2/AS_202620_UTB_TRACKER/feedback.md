@@ -106,3 +106,11 @@ Consulta la [matriz S11](semana-11-evidencia-s11.md) para las evidencias y los p
 Avance preliminar: se observan transacciones locales y PostgreSQL representado en C4. Faltan tabla de garantías por operación, contraste explícito de dos operaciones y diseño de caché con invalidación o justificación de no usarla. La decisión de datos más costosa debe identificarse y justificar su reversión.
 
 Consulta la [matriz S12 preliminar](semana-12-evidencia-s12.md) para las evidencias y los pendientes. El plazo sigue abierto hasta el final del 25 de octubre en Colombia.
+
+## Seguimiento documental · 20 de octubre de 2026
+
+Issues al corte de consulta: **1 abiertas, 0 cerradas, 1 en total**. Sin cierres registrados. Estos estados no equivalen por sí solos a implementación verificada.
+
+README y despliegue: **Sin URL vigente**. Solo dirección local 127.0.0.1.
+
+Consulta el [recuento y análisis de issues](../seguimiento-issues-2026-10-20.md) y la [revisión de URL/dominio](../seguimiento-despliegues-2026-10-20.md). El requisito docente es publicar la URL oficial en el README con subdominio iscoutb.dev; una URL de API no sustituye la del sitio cuando sean diferentes. El bloqueo de la consulta automatizada no demuestra caída. Este seguimiento no modifica notas ni matrices históricas.

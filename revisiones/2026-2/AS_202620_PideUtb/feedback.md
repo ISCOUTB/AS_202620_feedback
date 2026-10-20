@@ -112,3 +112,13 @@ Consulta la [matriz S11](semana-11-evidencia-s11.md) para las evidencias y los p
 La estrategia de no caché y los límites del bus están documentados. Corrijan la garantía de avance de estado: se valida antes de un UPDATE por identificador, sin la condición de estado prometida en la tabla. Falta un ADR que justifique la decisión de datos más costosa de revertir y su costo; alineen además el intervalo de sondeo y la flecha a la pasarela con el código vigente.
 
 Consulta la [matriz S12 preliminar](semana-12-evidencia-s12.md) para las evidencias y los pendientes. El plazo sigue abierto hasta el final del 25 de octubre en Colombia.
+
+## Seguimiento documental · 20 de octubre de 2026
+
+Presentó actualización y ya tiene despliegues, según confirmación docente. El README publica sitio y API bajo iscoutb.dev. El tablero genérico no representa todo el avance.
+
+Issues al corte de consulta: **1 abiertas, 0 cerradas, 1 en total**. Sin cierres registrados. Estos estados no equivalen por sí solos a implementación verificada.
+
+README y despliegue: **Institucional**. Sitio y API; actualización y despliegues confirmados por docente. Dirección(es) documentada(s): https://pideutb.iscoutb.dev ; https://api-pideutb.iscoutb.dev/docs.
+
+Consulta el [recuento y análisis de issues](../seguimiento-issues-2026-10-20.md) y la [revisión de URL/dominio](../seguimiento-despliegues-2026-10-20.md). El requisito docente es publicar la URL oficial en el README con subdominio iscoutb.dev; una URL de API no sustituye la del sitio cuando sean diferentes. El bloqueo de la consulta automatizada no demuestra caída. Este seguimiento no modifica notas ni matrices históricas.

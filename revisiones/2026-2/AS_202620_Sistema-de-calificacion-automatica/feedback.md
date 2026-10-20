@@ -116,3 +116,11 @@ Consulta la [matriz S11](semana-11-evidencia-s11.md) para las evidencias y los p
 El avance distingue almacenes y broker en C4 y declara pérdidas y duplicados posibles del flujo Redis. Aún faltan tabla de consistencia con dos operaciones verificables, diseño de caché e invalidación, ADR del mayor costo de reversión y estrategia completa en arc42. Una marca de deduplicación con expiración no sustituye el diseño de caché de datos.
 
 Consulta la [matriz S12 preliminar](semana-12-evidencia-s12.md) para las evidencias y los pendientes. El plazo sigue abierto hasta el final del 25 de octubre en Colombia.
+
+## Seguimiento documental · 20 de octubre de 2026
+
+Issues al corte de consulta: **0 abiertas, 0 cerradas, 0 en total**. Sin cierres registrados. Estos estados no equivalen por sí solos a implementación verificada.
+
+README y despliegue: **Externo**. Frontend y API en Render. Dirección(es) documentada(s): https://quantia-utb.onrender.com ; https://quantia-utb-api.onrender.com/health.
+
+Consulta el [recuento y análisis de issues](../seguimiento-issues-2026-10-20.md) y la [revisión de URL/dominio](../seguimiento-despliegues-2026-10-20.md). El requisito docente es publicar la URL oficial en el README con subdominio iscoutb.dev; una URL de API no sustituye la del sitio cuando sean diferentes. El bloqueo de la consulta automatizada no demuestra caída. Este seguimiento no modifica notas ni matrices históricas.
