@@ -114,3 +114,15 @@ Issues al corte de consulta: **1 abiertas, 0 cerradas, 1 en total**. Sin cierres
 README y despliegue: **Sin URL vigente**. Solo dirección local 127.0.0.1.
 
 Consulta el [recuento y análisis de issues](../seguimiento-issues-2026-10-20.md) y la [revisión de URL/dominio](../seguimiento-despliegues-2026-10-20.md). El requisito docente es publicar la URL oficial en el README con subdominio iscoutb.dev; una URL de API no sustituye la del sitio cuando sean diferentes. El bloqueo de la consulta automatizada no demuestra caída. Este seguimiento no modifica notas ni matrices históricas.
+
+## Seguimiento actual · 22 de octubre de 2026 · S12 abierta
+
+Esta actualización orienta el trabajo pendiente hasta el final del 25 de octubre en Colombia. No modifica calificaciones ni matrices anteriores; los faltantes históricos deben leerse junto con este avance.
+
+Los hotfix del 20 de octubre son posteriores al corte previo, pero el último CI sigue fallido: 17 pruebas pasan y 5 de autenticación fallan. El log registra colisión usuarios_pkey al registrar usuarios, seguida de errores de login y de lectura de id; revisar el aislamiento/siembra y secuencia de claves de PostgreSQL antes de concluir que el problema es solo Sonar. Scanner y despliegue quedaron omitidos por ese fallo. El README todavía afirma siete pruebas en verde y solo publica localhost: actualizarlo con el estado actual y la URL real bajo iscoutb.dev. Para S12, declarar garantías al crear recursos/prestar equipos, contrastarlas con transacciones/bloqueo y evidencia concurrente, justificar caché/no caché e invalidación, y comparar el costo de revertir la decisión de datos. Dividir la única issue genérica, vacía y sin asignar en tareas con aceptación y responsables.
+
+**Issues:** 1 abiertas y 0 cerradas; 1 abiertas sin responsable. El estado del tablero no equivale a implementación verificada.
+
+**README/despliegue:** Sin URL concreta. Solo localhost; falta URL pública concreta. Debe figurar la URL oficial exacta bajo iscoutb.dev, diferenciando interfaz y API cuando corresponda.
+
+[Fuentes y alcance de esta revisión](../seguimiento-s12-2026-10-22.md#utb_tracker) · [Issues y estados](../seguimiento-issues-2026-10-22.md) · [URL y dominio](../seguimiento-despliegues-2026-10-22.md).

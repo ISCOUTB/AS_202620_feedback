@@ -101,3 +101,20 @@ Issues al corte de consulta: **2 abiertas, 52 cerradas, 54 en total**. Los 52 ci
 README y despliegue: **Externo**. Firebase; pendiente dominio institucional. Dirección(es) documentada(s): https://mapsutb.web.app/.
 
 Consulta el [recuento y análisis de issues](../seguimiento-issues-2026-10-20.md) y la [revisión de URL/dominio](../seguimiento-despliegues-2026-10-20.md). El requisito docente es publicar la URL oficial en el README con subdominio iscoutb.dev; una URL de API no sustituye la del sitio cuando sean diferentes. El bloqueo de la consulta automatizada no demuestra caída. Este seguimiento no modifica notas ni matrices históricas.
+
+## Seguimiento actual · 22 de octubre de 2026 · S12 abierta
+
+Esta actualización orienta el trabajo pendiente hasta el final del 25 de octubre en Colombia. No modifica calificaciones ni matrices anteriores; los faltantes históricos deben leerse junto con este avance.
+
+No hay commits nuevos desde el 16 de octubre. La sonda programada del 22 de octubre a las 14:32 UTC terminó correctamente; su alcance no equivale a una prueba funcional integral. Las issues Sonar #55 y #56 permanecen abiertas y sin asignar. MapsUTB es un proyecto distinto de ElMapita.
+
+**Próximos pasos:**
+- Publicar dirección institucional real iscoutb.dev manteniendo Firebase como alternativa si aplica.
+- Asignar/refactorizar complejidad y ternario de indice_busqueda.dart;52 cierres son Sonar, no52 funcionalidades.
+- Tabla operación→garantía; incluir caché interna grafo además HTTP y su invalidación; ADR reversión datos; arc42 §8.
+
+**Issues:** 2 abiertas y 52 cerradas; 2 abiertas sin responsable. Cierres: 52 completed. El estado del tablero no equivale a implementación verificada.
+
+**README/despliegue:** Externo. Firebase, no subdominio iscoutb.dev. MapsUTB NO es ElMapita. URL documentada: https://mapsutb.web.app/. Debe figurar la URL oficial exacta bajo iscoutb.dev, diferenciando interfaz y API cuando corresponda.
+
+[Fuentes y alcance de esta revisión](../seguimiento-s12-2026-10-22.md#mapsutb) · [Issues y estados](../seguimiento-issues-2026-10-22.md) · [URL y dominio](../seguimiento-despliegues-2026-10-22.md).

@@ -129,3 +129,15 @@ Issues al corte de consulta: **0 abiertas, 0 cerradas, 0 en total**. Sin cierres
 README y despliegue: **Sin URL vigente**. Declara URL definitiva pendiente en Dokploy.
 
 Consulta el [recuento y análisis de issues](../seguimiento-issues-2026-10-20.md) y la [revisión de URL/dominio](../seguimiento-despliegues-2026-10-20.md). El requisito docente es publicar la URL oficial en el README con subdominio iscoutb.dev; una URL de API no sustituye la del sitio cuando sean diferentes. El bloqueo de la consulta automatizada no demuestra caída. Este seguimiento no modifica notas ni matrices históricas.
+
+## Seguimiento actual · 22 de octubre de 2026 · S12 abierta
+
+Esta actualización orienta el trabajo pendiente hasta el final del 25 de octubre en Colombia. No modifica calificaciones ni matrices anteriores; los faltantes históricos deben leerse junto con este avance.
+
+Hay avance nuevo: PR #1 fusionada el 21 de octubre, rediseño del frontend, proxy interno same-origin y corrección de la URL pública usada al compilar. El README ya publica una URL sslip concreta, pero aún falta el subdominio iscoutb.dev exigido. En el último run pasan frontend y backend, incluidos contrato y pruebas; falla únicamente el scanner Sonar al consultar metadatos JRE con HTTP403. No atribuir este run a un Quality Gate Reliability B: no llega a acreditar ese análisis. Revisar la configuración/permisos del scanner sin publicar credenciales. Para S12, añadir garantías por operación y contrastar dos rutas actuales, preservar la decisión de no cachear en el proxy y explicar refresco tras escritura; comparar decisiones de datos por costo de reversión y reunirlo en arc42 §8. Sin issues registradas no significa sin trabajo: convertir pendientes de despliegue, scanner y S12 en tareas verificables.
+
+**Issues:** 0 abiertas y 0 cerradas; 0 abiertas sin responsable. El estado del tablero no equivale a implementación verificada.
+
+**README/despliegue:** Externo. Ahora publica URL sslip concreta; falta dominio institucional. URL documentada: https://tiendautb-sistema-n0ojjk-fde272-144-24-4-187.sslip.io/. Debe figurar la URL oficial exacta bajo iscoutb.dev, diferenciando interfaz y API cuando corresponda.
+
+[Fuentes y alcance de esta revisión](../seguimiento-s12-2026-10-22.md#tienda-virtual-utb) · [Issues y estados](../seguimiento-issues-2026-10-22.md) · [URL y dominio](../seguimiento-despliegues-2026-10-22.md).

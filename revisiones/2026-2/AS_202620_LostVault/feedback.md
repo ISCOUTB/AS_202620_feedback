@@ -113,3 +113,20 @@ Issues al corte de consulta: **0 abiertas, 1 cerradas, 1 en total**. Los 1 cierr
 README y despliegue: **Sin URL vigente**. No publica dirección HTTP/HTTPS de despliegue.
 
 Consulta el [recuento y análisis de issues](../seguimiento-issues-2026-10-20.md) y la [revisión de URL/dominio](../seguimiento-despliegues-2026-10-20.md). El requisito docente es publicar la URL oficial en el README con subdominio iscoutb.dev; una URL de API no sustituye la del sitio cuando sean diferentes. El bloqueo de la consulta automatizada no demuestra caída. Este seguimiento no modifica notas ni matrices históricas.
+
+## Seguimiento actual · 22 de octubre de 2026 · S12 abierta
+
+Esta actualización orienta el trabajo pendiente hasta el final del 25 de octubre en Colombia. No modifica calificaciones ni matrices anteriores; los faltantes históricos deben leerse junto con este avance.
+
+La PR #19 se fusionó el 20 de octubre: agrega una API FastAPI con JWT, salud, Dockerfile, Idempotency-Key de 24 horas y lock. api/app/store.py conserva datos en diccionarios RAM: no aporta durabilidad al reinicio ni coordinación multirréplica. Los tres workflows aparecen verdes, pero Backend checks ejecuta backend/test_api.py y no la nueva suite api/tests.
+
+**Próximos pasos:**
+- Integrar api/tests en CI y aclarar relación api/ frente backend/ y cliente Flutter.
+- Publicar URL real iscoutb.dev en raíz, no local ni inventada.
+- Tabla garantías con límites de proceso/reinicio; caché o no caché razonado; ADR almacenamiento más costoso, C4 y arc42 §8 coherentes.
+
+**Issues:** 0 abiertas y 1 cerradas; 0 abiertas sin responsable. Cierres: 1 completed. El estado del tablero no equivale a implementación verificada.
+
+**README/despliegue:** Sin URL concreta. README raíz sin URL pública. Nueva api/ no implica despliegue. Debe figurar la URL oficial exacta bajo iscoutb.dev, diferenciando interfaz y API cuando corresponda.
+
+[Fuentes y alcance de esta revisión](../seguimiento-s12-2026-10-22.md#lostvault) · [Issues y estados](../seguimiento-issues-2026-10-22.md) · [URL y dominio](../seguimiento-despliegues-2026-10-22.md).

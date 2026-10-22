@@ -131,3 +131,15 @@ Issues al corte de consulta: **3 abiertas, 4 cerradas, 7 en total**. Los 4 cierr
 README y despliegue: **Externo**. Actualizar URL oficial; el docente confirmó avance y despliegue funcionando. Dirección(es) documentada(s): http://taia-sistema-jkbo9i-ec2cd4-144-24-4-187.sslip.io ; https://taia-backend-latest.onrender.com/health.
 
 Consulta el [recuento y análisis de issues](../seguimiento-issues-2026-10-20.md) y la [revisión de URL/dominio](../seguimiento-despliegues-2026-10-20.md). El requisito docente es publicar la URL oficial en el README con subdominio iscoutb.dev; una URL de API no sustituye la del sitio cuando sean diferentes. El bloqueo de la consulta automatizada no demuestra caída. Este seguimiento no modifica notas ni matrices históricas.
+
+## Seguimiento actual · 22 de octubre de 2026 · S12 abierta
+
+Esta actualización orienta el trabajo pendiente hasta el final del 25 de octubre en Colombia. No modifica calificaciones ni matrices anteriores; los faltantes históricos deben leerse junto con este avance.
+
+Se reconoce la presentación y el despliegue funcionando confirmados por el docente. El README ya publica la API en https://taia-sistema.iscoutb.dev y sus rutas de salud/documentación; es evidencia del backend, no de una aplicación Flutter ya entregada. CI y CD del último commit terminaron correctamente. No se mantienen como vigentes las comprobaciones fallidas sobre el antiguo dominio sslip. Para S12, completar la tabla operación→garantía, acotar las transacciones de confirmación y notificación frente a crear tareas/enviar Telegram, justificar no usar caché o definir invalidación, y seleccionar comparativamente la decisión de datos más costosa de revertir. Anotar PostgreSQL en C4 nivel2 y consolidar consistencia/caché en arc42 §8. Actualizar las tres issues abiertas antiguas y asignar las dos sin responsable; su antigüedad no niega el avance demostrado.
+
+**Issues:** 3 abiertas y 4 cerradas; 2 abiertas sin responsable. Cierres: 4 completed. El estado del tablero no equivale a implementación verificada.
+
+**README/despliegue:** Institucional. Ahora publica API institucional, salud y documentación; no acredita entrega de una interfaz Flutter. Despliegue funcionando confirmado por docente. URL documentada: https://taia-sistema.iscoutb.dev ; https://taia-sistema.iscoutb.dev/health ; https://taia-sistema.iscoutb.dev/docs ; https://taia-backend-latest.onrender.com/health. Debe figurar la URL oficial exacta bajo iscoutb.dev, diferenciando interfaz y API cuando corresponda.
+
+[Fuentes y alcance de esta revisión](../seguimiento-s12-2026-10-22.md#taia_-task-artificial-intelligence-assistant) · [Issues y estados](../seguimiento-issues-2026-10-22.md) · [URL y dominio](../seguimiento-despliegues-2026-10-22.md).

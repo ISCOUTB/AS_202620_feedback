@@ -112,3 +112,23 @@ Issues al corte de consulta: **0 abiertas, 0 cerradas, 0 en total**. Sin cierres
 README y despliegue: **Institucional**. Presentación confirmada por docente; no se infiere demostración funcional adicional. Dirección(es) documentada(s): https://recobra.iscoutb.dev ; https://recobra.iscoutb.dev/app/.
 
 Consulta el [recuento y análisis de issues](../seguimiento-issues-2026-10-20.md) y la [revisión de URL/dominio](../seguimiento-despliegues-2026-10-20.md). El requisito docente es publicar la URL oficial en el README con subdominio iscoutb.dev; una URL de API no sustituye la del sitio cuando sean diferentes. El bloqueo de la consulta automatizada no demuestra caída. Este seguimiento no modifica notas ni matrices históricas.
+
+## Seguimiento actual · 22 de octubre de 2026 · S12 abierta
+
+Esta actualización orienta el trabajo pendiente hasta el final del 25 de octubre en Colombia. No modifica calificaciones ni matrices anteriores; los faltantes históricos deben leerse junto con este avance.
+
+Avance sustancial del 21 de octubre: ADR0025 documenta caché HTTP/ETag e invalidación; ADR0026 define cuatro eventos, tres reintentos, cola de fallidos y reproceso cada cinco minutos; ADR0027 compara seis decisiones y estima reversión en 6–9 días-persona. arc42 §8 contiene la tabla de garantías y C4 corrige coincidencias en memoria. El CI incluye backend, Flutter, adaptadores contra PostgreSQL real, scanner y Quality Gate exitosos. Se contrastaron middleware, pruebas de caché, entrega de eventos y persistencia de la cola.
+
+El docente confirmó presentación.
+
+**Próximos pasos:**
+- Extender suite PostgreSQL de 7/9 adaptadores a Reclamaciones/Sesiones y e2e completos; hoy estos últimos RAM.
+- Conservar límites: EventEmitter no durable; publicacion.creada fuera del nuevo contrato sin recálculo de coincidencias; fallo al guardar cola depende conciliación de 3 días y cola de 7 días.
+- Corregir afirmación 'despliegue invalida lugares': navegador con max-age=3600 puede conservar durante 1 hora; TTL de 60 s miniaturas tras borrado aceptado explícitamente, no invalidación inmediata.
+- Añadir evidencia de backup/restauración y alerta cola; son próximos pasos, no negar que ahora existen caché, ADR y arc42 §8.
+
+**Issues:** 0 abiertas y 0 cerradas; 0 abiertas sin responsable. El estado del tablero no equivale a implementación verificada.
+
+**README/despliegue:** Institucional. Docente confirmó presentación, no una certificación de funcionamiento por auditoría. URL documentada: https://recobra.iscoutb.dev ; https://recobra.iscoutb.dev/app/. Debe figurar la URL oficial exacta bajo iscoutb.dev, diferenciando interfaz y API cuando corresponda.
+
+[Fuentes y alcance de esta revisión](../seguimiento-s12-2026-10-22.md#recobra) · [Issues y estados](../seguimiento-issues-2026-10-22.md) · [URL y dominio](../seguimiento-despliegues-2026-10-22.md).

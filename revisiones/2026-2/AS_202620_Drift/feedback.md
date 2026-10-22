@@ -106,3 +106,20 @@ Issues al corte de consulta: **5 abiertas, 15 cerradas, 20 en total**. Los 15 ci
 README y despliegue: **Institucional**. Frontend y backend; Vercel/Azure como alternativas. Dirección(es) documentada(s): https://drift.iscoutb.dev.
 
 Consulta el [recuento y análisis de issues](../seguimiento-issues-2026-10-20.md) y la [revisión de URL/dominio](../seguimiento-despliegues-2026-10-20.md). El requisito docente es publicar la URL oficial en el README con subdominio iscoutb.dev; una URL de API no sustituye la del sitio cuando sean diferentes. El bloqueo de la consulta automatizada no demuestra caída. Este seguimiento no modifica notas ni matrices históricas.
+
+## Seguimiento actual · 22 de octubre de 2026 · S12 abierta
+
+Esta actualización orienta el trabajo pendiente hasta el final del 25 de octubre en Colombia. No modifica calificaciones ni matrices anteriores; los faltantes históricos deben leerse junto con este avance.
+
+PR #31 merge 21 de octubre aporta arc42 §8.13 seis operaciones/garantías, §8.14 actualización/invalidación por fuente y ADR 0010 de costo comparativo (Propuesto). Código rechaza sync vacío conservando catálogo, usa lock para replace/lectura y TTL single-flight. CI success. Evidencia de latencia está explícitamente simulada y usó shim en vez de httpx.
+
+**Próximos pasos:**
+- Revisar/aceptar ADR 0010 con equipo; su conclusión es identidad/contrato público del juego, no persistencia, como decisión actual más costosa.
+- Repetir experimento con dependencias reales y enlazar run/resultado, manteniendo separación de simulación, red real y latencia HTTP extremo a extremo.
+- Probar y decidir límites de edad/aviso para tasa stale, catálogo por instancia/reinicio y respuesta vacía sin aviso si falta fallback; conservar pruebas de sync atómico y TTL.
+
+**Issues:** 5 abiertas y 15 cerradas; 5 abiertas sin responsable. Cierres: 15 completed. El estado del tablero no equivale a implementación verificada.
+
+**README/despliegue:** Institucional. URL institucional para frontend/backend; no se repitió prueba funcional del sitio. URL documentada: https://drift.iscoutb.dev. Debe figurar la URL oficial exacta bajo iscoutb.dev, diferenciando interfaz y API cuando corresponda.
+
+[Fuentes y alcance de esta revisión](../seguimiento-s12-2026-10-22.md#drift) · [Issues y estados](../seguimiento-issues-2026-10-22.md) · [URL y dominio](../seguimiento-despliegues-2026-10-22.md).

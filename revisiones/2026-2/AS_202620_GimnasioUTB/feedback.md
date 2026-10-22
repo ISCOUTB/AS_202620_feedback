@@ -123,3 +123,20 @@ Issues al corte de consulta: **16 abiertas, 0 cerradas, 16 en total**. Sin cierr
 README y despliegue: **Institucional**. URL del backend, no prueba de interfaz pública. Dirección(es) documentada(s): https://gimnasio-utb.iscoutb.dev.
 
 Consulta el [recuento y análisis de issues](../seguimiento-issues-2026-10-20.md) y la [revisión de URL/dominio](../seguimiento-despliegues-2026-10-20.md). El requisito docente es publicar la URL oficial en el README con subdominio iscoutb.dev; una URL de API no sustituye la del sitio cuando sean diferentes. El bloqueo de la consulta automatizada no demuestra caída. Este seguimiento no modifica notas ni matrices históricas.
+
+## Seguimiento actual · 22 de octubre de 2026 · S12 abierta
+
+Esta actualización orienta el trabajo pendiente hasta el final del 25 de octubre en Colombia. No modifica calificaciones ni matrices anteriores; los faltantes históricos deben leerse junto con este avance.
+
+El 20 de octubre se documentaron endpoints y ejemplos de uso; el CI de la punta consultada terminó correctamente. El README todavía niega integración funcional aunque ya existen llamadas HTTP desde Flutter: corregir esa contradicción documental.
+
+**Próximos pasos:**
+- Tabla de garantías de consulta/entrada/salida y contraste con transacción PostgreSQL.
+- Decidir caché e invalidación del contador o justificar no caché; ADR decisión de datos más costosa y arc42 §8.
+- Actualizar README/C4 con integración Flutter; llevar test:postgres a CI. Los 16 tickets abiertos no equivalen a 16 tareas no implementadas: conciliar evidencia y backlog.
+
+**Issues:** 16 abiertas y 0 cerradas; 0 abiertas sin responsable. El estado del tablero no equivale a implementación verificada.
+
+**README/despliegue:** Institucional. Backend, no URL web de Flutter demostrada. README sigue negando integración funcional aunque ya existen llamadas HTTP de Flutter. URL documentada: https://gimnasio-utb.iscoutb.dev. Debe figurar la URL oficial exacta bajo iscoutb.dev, diferenciando interfaz y API cuando corresponda.
+
+[Fuentes y alcance de esta revisión](../seguimiento-s12-2026-10-22.md#gimnasioutb) · [Issues y estados](../seguimiento-issues-2026-10-22.md) · [URL y dominio](../seguimiento-despliegues-2026-10-22.md).

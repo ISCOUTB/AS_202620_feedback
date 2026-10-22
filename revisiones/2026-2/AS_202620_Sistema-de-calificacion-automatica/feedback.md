@@ -124,3 +124,20 @@ Issues al corte de consulta: **0 abiertas, 0 cerradas, 0 en total**. Sin cierres
 README y despliegue: **Externo**. Frontend y API en Render. Dirección(es) documentada(s): https://quantia-utb.onrender.com ; https://quantia-utb-api.onrender.com/health.
 
 Consulta el [recuento y análisis de issues](../seguimiento-issues-2026-10-20.md) y la [revisión de URL/dominio](../seguimiento-despliegues-2026-10-20.md). El requisito docente es publicar la URL oficial en el README con subdominio iscoutb.dev; una URL de API no sustituye la del sitio cuando sean diferentes. El bloqueo de la consulta automatizada no demuestra caída. Este seguimiento no modifica notas ni matrices históricas.
+
+## Seguimiento actual · 22 de octubre de 2026 · S12 abierta
+
+Esta actualización orienta el trabajo pendiente hasta el final del 25 de octubre en Colombia. No modifica calificaciones ni matrices anteriores; los faltantes históricos deben leerse junto con este avance.
+
+Sin commits nuevos desde 20 de octubre; CI success. README sigue con Render y riesgos reconocidos de almacén efímero.
+
+**Próximos pasos:**
+- Tabla recepción/encolado/consumo → garantía, distinguir bitácora, BLPOP sin ack y deduplicación TTL de persistencia durable.
+- Decidir caché o no caché con motivo e invalidación tras cambios de examen/carga, no confundir marca de deduplicación con caché de lectura.
+- ADR comparativo de decisión de datos/reversión, cerrar R-06 y reflejar consistencia/caché en arc42 §8.
+
+**Issues:** 0 abiertas y 0 cerradas; 0 abiertas sin responsable. El estado del tablero no equivale a implementación verificada.
+
+**README/despliegue:** Externo. Frontend y API en Render, fuera del dominio requerido. URL documentada: https://quantia-utb.onrender.com ; https://quantia-utb-api.onrender.com/health. Debe figurar la URL oficial exacta bajo iscoutb.dev, diferenciando interfaz y API cuando corresponda.
+
+[Fuentes y alcance de esta revisión](../seguimiento-s12-2026-10-22.md#sistema-de-calificacion-automatica) · [Issues y estados](../seguimiento-issues-2026-10-22.md) · [URL y dominio](../seguimiento-despliegues-2026-10-22.md).

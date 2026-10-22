@@ -114,3 +114,22 @@ Issues al corte de consulta: **0 abiertas, 0 cerradas, 0 en total**. Sin cierres
 README y despliegue: **Institucional**. Backend; avance presentado confirmado por docente. Dirección(es) documentada(s): https://routb.iscoutb.dev.
 
 Consulta el [recuento y análisis de issues](../seguimiento-issues-2026-10-20.md) y la [revisión de URL/dominio](../seguimiento-despliegues-2026-10-20.md). El requisito docente es publicar la URL oficial en el README con subdominio iscoutb.dev; una URL de API no sustituye la del sitio cuando sean diferentes. El bloqueo de la consulta automatizada no demuestra caída. Este seguimiento no modifica notas ni matrices históricas.
+
+## Seguimiento actual · 22 de octubre de 2026 · S12 abierta
+
+Esta actualización orienta el trabajo pendiente hasta el final del 25 de octubre en Colombia. No modifica calificaciones ni matrices anteriores; los faltantes históricos deben leerse junto con este avance.
+
+Master no cambia desde el 18 de octubre y no hay PR abiertas. Existe un CI exitoso del 22 de octubre en otra rama: no se atribuye a master. La purga programada del 22 de octubre terminó correctamente, lo que tampoco constituye una nueva validación integral del producto.
+
+El docente confirmó que entregó avance.
+
+**Próximos pasos:**
+- Tabla operación→garantía para creación/aceptación/rechazo, no solo ACID genérico.
+- Invalidación de geocodificación ante fuente/parámetros; TTL de 7 días no basta como política tras cambios relevantes; no confundir con cupos.
+- ADR mayor reversión de datos/costo y arc42 §8; actualizar guía desplegar Dokploy frente Render. Conciliar trabajo de ramas antes atribuir integración.
+
+**Issues:** 0 abiertas y 0 cerradas; 0 abiertas sin responsable. El estado del tablero no equivale a implementación verificada.
+
+**README/despliegue:** Institucional. Backend; README mantiene pasos antiguos de Render. Docente confirmó presentación. URL documentada: https://routb.iscoutb.dev. Debe figurar la URL oficial exacta bajo iscoutb.dev, diferenciando interfaz y API cuando corresponda.
+
+[Fuentes y alcance de esta revisión](../seguimiento-s12-2026-10-22.md#routb) · [Issues y estados](../seguimiento-issues-2026-10-22.md) · [URL y dominio](../seguimiento-despliegues-2026-10-22.md).

@@ -106,3 +106,20 @@ Issues al corte de consulta: **1 abiertas, 0 cerradas, 1 en total**. Sin cierres
 README y despliegue: **Institucional**. Cumple la API; frontend en GitHub Pages, cumplimiento parcial del sitio. Dirección(es) documentada(s): https://campusmarket.iscoutb.dev ; https://nnigarp.github.io/AS_202620_PROYECTO_CAMPUSMARKET/.
 
 Consulta el [recuento y análisis de issues](../seguimiento-issues-2026-10-20.md) y la [revisión de URL/dominio](../seguimiento-despliegues-2026-10-20.md). El requisito docente es publicar la URL oficial en el README con subdominio iscoutb.dev; una URL de API no sustituye la del sitio cuando sean diferentes. El bloqueo de la consulta automatizada no demuestra caída. Este seguimiento no modifica notas ni matrices históricas.
+
+## Seguimiento actual · 22 de octubre de 2026 · S12 abierta
+
+Esta actualización orienta el trabajo pendiente hasta el final del 25 de octubre en Colombia. No modifica calificaciones ni matrices anteriores; los faltantes históricos deben leerse junto con este avance.
+
+Sin commits nuevos; PR #60 abierta documental. CI backend y otros success, run de flujo real falla Android pero web-desktop/web-mobile success.
+
+**Próximos pasos:**
+- Tabla crear/cambiar estado/ocultar publicación → garantía, distinguiendo transacciones MySQL de compensación SQL/archivos.
+- Decidir caché o no caché de catálogo y actualización tras crear/cambiar visibilidad; incorporarlo a arc42 §8.
+- ADR de costo comparativo de reversión de datos; reproducir/corregir flujo Android y resolver PR #60 sin llamar todo CI verde.
+
+**Issues:** 1 abiertas y 0 cerradas; 1 abiertas sin responsable. El estado del tablero no equivale a implementación verificada.
+
+**README/despliegue:** Institucional. API institucional; frontend en GitHub Pages. Cumplimiento parcial del sitio. URL documentada: https://campusmarket.iscoutb.dev ; https://nnigarp.github.io/AS_202620_PROYECTO_CAMPUSMARKET/. Debe figurar la URL oficial exacta bajo iscoutb.dev, diferenciando interfaz y API cuando corresponda.
+
+[Fuentes y alcance de esta revisión](../seguimiento-s12-2026-10-22.md#proyecto_campusmarket) · [Issues y estados](../seguimiento-issues-2026-10-22.md) · [URL y dominio](../seguimiento-despliegues-2026-10-22.md).

@@ -144,3 +144,15 @@ Issues al corte de consulta: **0 abiertas, 0 cerradas, 0 en total**. Sin cierres
 README y despliegue: **Sin URL vigente**. Solo URLs locales; enlaza guía, pero no dirección pública en README raíz.
 
 Consulta el [recuento y análisis de issues](../seguimiento-issues-2026-10-20.md) y la [revisión de URL/dominio](../seguimiento-despliegues-2026-10-20.md). El requisito docente es publicar la URL oficial en el README con subdominio iscoutb.dev; una URL de API no sustituye la del sitio cuando sean diferentes. El bloqueo de la consulta automatizada no demuestra caída. Este seguimiento no modifica notas ni matrices históricas.
+
+## Seguimiento actual · 22 de octubre de 2026 · S12 abierta
+
+Esta actualización orienta el trabajo pendiente hasta el final del 25 de octubre en Colombia. No modifica calificaciones ni matrices anteriores; los faltantes históricos deben leerse junto con este avance.
+
+Se reconoce avance sustancial de S12: arc42 §8.6–8.9 ya contiene la tabla operación→garantía, contraste de crear/consultar, justificación de no usar caché de aplicación, diseño condicional e invalidación; ADR0012 compara cinco decisiones y argumenta el mayor costo de revertir contenido completo sin propietario. La revisión estática confirma INSERT/commit y lectura por otra conexión, seis pruebas de consistencia, refresh del historial tras POST y caché de estáticos nginx. El run Sonar del 22 de octubre registra 50 pruebas aprobadas y QUALITY GATE STATUS: PASSED; ya no corresponde afirmar que solo hay pings o scanner no verificado. Pendientes: publicar dominio iscoutb.dev con certificado válido; actualizar README que aún mezcla 20/44 pruebas y token Sonar pendiente; acotar la palabra linearizable al modelo y pruebas realmente observados, sin equiparar pruebas secuenciales a prueba de concurrencia. Alinear C4 con el proxy nginx de despliegue y continuar las mitigaciones SSRF/historial sin propietario declaradas pendientes, sin tratar el ADR como corrección de código.
+
+**Issues:** 0 abiertas y 0 cerradas; 0 abiertas sin responsable. El estado del tablero no equivale a implementación verificada.
+
+**README/despliegue:** Externo. URL pública HTTP sslip; falta dominio institucional con certificado válido. URL documentada: http://verifacts-sistema-ju3vi7-444522-144-24-4-187.sslip.io. Debe figurar la URL oficial exacta bajo iscoutb.dev, diferenciando interfaz y API cuando corresponda.
+
+[Fuentes y alcance de esta revisión](../seguimiento-s12-2026-10-22.md#verifacts) · [Issues y estados](../seguimiento-issues-2026-10-22.md) · [URL y dominio](../seguimiento-despliegues-2026-10-22.md).

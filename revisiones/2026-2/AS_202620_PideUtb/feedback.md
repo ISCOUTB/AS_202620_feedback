@@ -122,3 +122,22 @@ Issues al corte de consulta: **1 abiertas, 0 cerradas, 1 en total**. Sin cierres
 README y despliegue: **Institucional**. Sitio y API; actualización y despliegues confirmados por docente. Dirección(es) documentada(s): https://pideutb.iscoutb.dev ; https://api-pideutb.iscoutb.dev/docs.
 
 Consulta el [recuento y análisis de issues](../seguimiento-issues-2026-10-20.md) y la [revisión de URL/dominio](../seguimiento-despliegues-2026-10-20.md). El requisito docente es publicar la URL oficial en el README con subdominio iscoutb.dev; una URL de API no sustituye la del sitio cuando sean diferentes. El bloqueo de la consulta automatizada no demuestra caída. Este seguimiento no modifica notas ni matrices históricas.
+
+## Seguimiento actual · 22 de octubre de 2026 · S12 abierta
+
+Esta actualización orienta el trabajo pendiente hasta el final del 25 de octubre en Colombia. No modifica calificaciones ni matrices anteriores; los faltantes históricos deben leerse junto con este avance.
+
+La PR #28, fusionada el 20 de octubre, corrige el cálculo del ADR 0009: distingue una estimación de 704 MB, límites de 416 MB y una cuota de 512 MB. La PR #29 de interfaz institucional sigue abierta: su CI verde no convierte esos cambios en contenido integrado de master.
+
+El docente confirmó actualización presentada y despliegues.
+
+**Próximos pasos:**
+- Contrastar avance de estado con UPDATE condicionado al estado esperado y prueba de carrera; tabla actual sobrestima atomicidad.
+- ADR decisión de datos más costosa de revertir, no confundir con no extraer pagos; alinear sondeo5 s frente8 s y pasarela C4.
+- Revisar/integrar PR #29 según equipo; desglosar issue1 genérica en tareas con responsable y criterio.
+
+**Issues:** 1 abiertas y 0 cerradas; 1 abiertas sin responsable. El estado del tablero no equivale a implementación verificada.
+
+**README/despliegue:** Institucional. Docente confirmó actualización presentada y despliegues. URL documentada: https://pideutb.iscoutb.dev ; https://pideutb.iscoutb.dev/panel.html ; https://api-pideutb.iscoutb.dev/docs. Debe figurar la URL oficial exacta bajo iscoutb.dev, diferenciando interfaz y API cuando corresponda.
+
+[Fuentes y alcance de esta revisión](../seguimiento-s12-2026-10-22.md#pideutb) · [Issues y estados](../seguimiento-issues-2026-10-22.md) · [URL y dominio](../seguimiento-despliegues-2026-10-22.md).

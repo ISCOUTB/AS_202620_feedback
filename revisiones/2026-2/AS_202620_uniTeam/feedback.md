@@ -106,3 +106,15 @@ Issues al corte de consulta: **0 abiertas, 1 cerradas, 1 en total**. Los 1 cierr
 README y despliegue: **Externo**. Frontend y API en Render. Dirección(es) documentada(s): https://uniteam-web.onrender.com ; https://uniteam-api.onrender.com.
 
 Consulta el [recuento y análisis de issues](../seguimiento-issues-2026-10-20.md) y la [revisión de URL/dominio](../seguimiento-despliegues-2026-10-20.md). El requisito docente es publicar la URL oficial en el README con subdominio iscoutb.dev; una URL de API no sustituye la del sitio cuando sean diferentes. El bloqueo de la consulta automatizada no demuestra caída. Este seguimiento no modifica notas ni matrices históricas.
+
+## Seguimiento actual · 22 de octubre de 2026 · S12 abierta
+
+Esta actualización orienta el trabajo pendiente hasta el final del 25 de octubre en Colombia. No modifica calificaciones ni matrices anteriores; los faltantes históricos deben leerse junto con este avance.
+
+La rama principal sigue en el despliegue Dokploy integrado el 13 de octubre, pero el README conserva URLs Render y no publica un subdominio iscoutb.dev. La comprobación programada del 22 de octubre a las 07:38 Colombia falla en sus seis verificaciones de esos endpoints; es evidencia de ese sondeo, no una certificación de indisponibilidad permanente ni del estado de un dominio Dokploy no documentado. Para S12, completar la tabla de garantías para crear tarea y cambiar estado, aclarando el límite del bus en proceso ante fallos de consumidores; completar invalidación de JWKS y del flujo de estados en clientes abiertos, comparar costos de reversión de datos y terminar arc42 §8. La única issue cerrada es de prueba (hola mundo); registrar pendientes reales y enlazar evidencia.
+
+**Issues:** 0 abiertas y 1 cerradas; 0 abiertas sin responsable. Cierres: 1 completed. El estado del tablero no equivale a implementación verificada.
+
+**README/despliegue:** Externo. README conserva Render aunque hay configuración Dokploy; no inventar el dominio actual. URL documentada: https://uniteam-web.onrender.com ; https://uniteam-api.onrender.com ; https://uniteam-api.onrender.com/health. Debe figurar la URL oficial exacta bajo iscoutb.dev, diferenciando interfaz y API cuando corresponda.
+
+[Fuentes y alcance de esta revisión](../seguimiento-s12-2026-10-22.md#uniteam) · [Issues y estados](../seguimiento-issues-2026-10-22.md) · [URL y dominio](../seguimiento-despliegues-2026-10-22.md).

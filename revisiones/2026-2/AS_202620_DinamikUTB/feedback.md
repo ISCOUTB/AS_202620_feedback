@@ -122,3 +122,20 @@ Issues al corte de consulta: **2 abiertas, 15 cerradas, 17 en total**. Los 15 ci
 README y despliegue: **Externo**. Frontend y API fuera del dominio requerido. Dirección(es) documentada(s): https://iscoutb.github.io/AS_202620_DinamikUTB/ ; https://dinamikutb-api.onrender.com.
 
 Consulta el [recuento y análisis de issues](../seguimiento-issues-2026-10-20.md) y la [revisión de URL/dominio](../seguimiento-despliegues-2026-10-20.md). El requisito docente es publicar la URL oficial en el README con subdominio iscoutb.dev; una URL de API no sustituye la del sitio cuando sean diferentes. El bloqueo de la consulta automatizada no demuestra caída. Este seguimiento no modifica notas ni matrices históricas.
+
+## Seguimiento actual · 22 de octubre de 2026 · S12 abierta
+
+Esta actualización orienta el trabajo pendiente hasta el final del 25 de octubre en Colombia. No modifica calificaciones ni matrices anteriores; los faltantes históricos deben leerse junto con este avance.
+
+Master no cambió; PR #35 abierta en su rama de trabajo incorpora PostgreSQL 16 Compose, no MySQL 8.4 pese título. No equivale a despliegue fusionado. README declara expiración el 27 de octubre y plan recrear/resembrar el 25 de octubre, no verificado con proveedor.
+
+**Próximos pasos:**
+- Completar tabla GET/PUT de requisitos → garantía, probar concurrencia y evitar inferir serializabilidad del commit.
+- Justificar no caché o definir invalidación tras PUT, y reflejarlo en arc42 §8.
+- Comparar costo de revertir motor/esquema/persistencia en ADR; revisar PR #35 título/diff, respaldo y restauración antes del plazo declarado y publicar dominio institucional real.
+
+**Issues:** 2 abiertas y 15 cerradas; 1 abiertas sin responsable. Cierres: 15 completed. El estado del tablero no equivale a implementación verificada.
+
+**README/despliegue:** Externo. Frontend en GitHub Pages y API en Render. Expiración del 27/oct y plan del 25/oct declarados por el equipo, no verificados con el proveedor. URL documentada: https://iscoutb.github.io/AS_202620_DinamikUTB/ ; https://dinamikutb-api.onrender.com. Debe figurar la URL oficial exacta bajo iscoutb.dev, diferenciando interfaz y API cuando corresponda.
+
+[Fuentes y alcance de esta revisión](../seguimiento-s12-2026-10-22.md#dinamikutb) · [Issues y estados](../seguimiento-issues-2026-10-22.md) · [URL y dominio](../seguimiento-despliegues-2026-10-22.md).

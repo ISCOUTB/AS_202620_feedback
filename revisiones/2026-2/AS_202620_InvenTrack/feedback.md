@@ -113,3 +113,20 @@ Issues al corte de consulta: **0 abiertas, 7 cerradas, 7 en total**. Los 7 cierr
 README y despliegue: **Institucional**. Servicio/API institucional y alternativa Render; distinguir interfaz de API. Dirección(es) documentada(s): https://inventrack.iscoutb.dev ; https://inventrack-api.onrender.com.
 
 Consulta el [recuento y análisis de issues](../seguimiento-issues-2026-10-20.md) y la [revisión de URL/dominio](../seguimiento-despliegues-2026-10-20.md). El requisito docente es publicar la URL oficial en el README con subdominio iscoutb.dev; una URL de API no sustituye la del sitio cuando sean diferentes. El bloqueo de la consulta automatizada no demuestra caída. Este seguimiento no modifica notas ni matrices históricas.
+
+## Seguimiento actual · 22 de octubre de 2026 · S12 abierta
+
+Esta actualización orienta el trabajo pendiente hasta el final del 25 de octubre en Colombia. No modifica calificaciones ni matrices anteriores; los faltantes históricos deben leerse junto con este avance.
+
+La punta no cambia desde el 19 de octubre y Run Tests termina correctamente. La API utiliza RAM como almacén primario, no como caché; el despliegue de la interfaz Flutter continúa pendiente en la documentación.
+
+**Próximos pasos:**
+- Tabla entrada/salida/consulta → garantía real; lock local no da durabilidad ni coordinación entre réplicas.
+- Justificar no caché o declarar invalidación por stock/producto; ADR costo de reversión.
+- Corregir C4: RAM pertenece al proceso API, SQL futuro no desplegado; actualizar backlog S12 aunquesiete issues cerradas.
+
+**Issues:** 0 abiertas y 7 cerradas; 0 abiertas sin responsable. Cierres: 7 completed. El estado del tablero no equivale a implementación verificada.
+
+**README/despliegue:** Institucional. API únicamente, Flutter pendiente; RAM almacén primario, no caché. URL documentada: https://inventrack.iscoutb.dev ; https://inventrack-api.onrender.com. Debe figurar la URL oficial exacta bajo iscoutb.dev, diferenciando interfaz y API cuando corresponda.
+
+[Fuentes y alcance de esta revisión](../seguimiento-s12-2026-10-22.md#inventrack) · [Issues y estados](../seguimiento-issues-2026-10-22.md) · [URL y dominio](../seguimiento-despliegues-2026-10-22.md).
