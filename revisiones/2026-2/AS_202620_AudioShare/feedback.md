@@ -125,3 +125,20 @@ Sin commits nuevos desde 20 de octubre. Audio de pista y pausa/reanudación ya c
 **README/despliegue:** Institucional. URL institucional del cliente legado; no acredita despliegue de Flutter web. URL documentada: https://audioshare.iscoutb.dev. Debe figurar la URL oficial exacta bajo iscoutb.dev, diferenciando interfaz y API cuando corresponda.
 
 [Fuentes y alcance de esta revisión](../seguimiento-s12-2026-10-22.md#audioshare) · [Issues y estados](../seguimiento-issues-2026-10-22.md) · [URL y dominio](../seguimiento-despliegues-2026-10-22.md).
+
+## Seguimiento actual · 24 de octubre de 2026 · S12 abierta
+
+Seguimiento de trabajo, sin cambios de calificación. S12 sigue abierta hasta el final del 25 de octubre en Colombia; leer los pendientes históricos junto con esta actualización.
+
+La rama principal y el README no cambian respecto al seguimiento del 22 de octubre. Se mantienen la pista compartida y los controles de pausa/reanudación, con CI, Flutter y publicación de imagen exitosos para esa misma punta. La URL institucional sigue sirviendo el cliente legado según el README; no atribuirle automáticamente el build Flutter web.
+
+**Próximos pasos:**
+- Tabla crear sala/PLAY/pausa → garantía, separando transacción SQLite y publicación NDJSON; declarar comportamiento si falla entre ambos.
+- Definir invalidación o URL versionada de /track (max-age=3600), y actualizar arc42 §8 que aún describe MockAudioService.
+- ADR de decisión de datos más costosa de revertir con comparación y garantías de entrega/reconexión de eventos.
+
+**Issues:** 2 abiertas y 2 cerradas; 2 abiertas sin responsable. Cierres: 2 completed. El estado registrado no acredita por sí solo implementación.
+
+**README:** Institucional. Endpoint institucional; la imagen publicada sirve cliente legado, no Flutter web. URL documentada: https://audioshare.iscoutb.dev. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-24.md#audioshare) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).

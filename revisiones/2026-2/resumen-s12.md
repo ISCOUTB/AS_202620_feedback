@@ -1,5 +1,7 @@
 # Resumen de feedback · S12 · avance preliminar, entrega abierta
 
+**Seguimiento vigente del 24/oct:** [avances y próximos pasos de los 23 equipos](seguimiento-s12-2026-10-24.md), [issues](seguimiento-issues-2026-10-24.md) y [README/despliegues](seguimiento-despliegues-2026-10-24.md). S12 sigue abierta hasta el final del 25/oct en Colombia. Las matrices y cifras anteriores conservan su fecha y no se recalculan aquí.
+
 **Actualización de trabajo del 22/oct:** [seguimiento actual de los 23 equipos](seguimiento-s12-2026-10-22.md), [issues](seguimiento-issues-2026-10-22.md) y [README/despliegues](seguimiento-despliegues-2026-10-22.md). S12 continúa abierta hasta el final del 25/oct en Colombia. Las cifras y matrices que siguen conservan su snapshot del 19/oct: no se recalculan ni describen por sí solas los avances posteriores. Para pendientes vigentes, consultar el seguimiento fechado.
 
 Revisión completa de los 23 repositorios en su rama principal. S11: límite exclusivo **2026-10-19T05:00:00Z**, fin del 18 de octubre en Colombia. S12: observación **2026-10-19T21:35:00Z**, con cierre exclusivo **2026-10-26T05:00:00Z**, fin del 25 en Colombia.

@@ -123,3 +123,20 @@ Se mantiene la documentación de idempotencia/sincronización del 18 de octubre 
 **README/despliegue:** Externo. Backend Render, fuera del dominio requerido. URL documentada: https://xald-backend.onrender.com ; https://xald-backend.onrender.com/health. Debe figurar la URL oficial exacta bajo iscoutb.dev, diferenciando interfaz y API cuando corresponda.
 
 [Fuentes y alcance de esta revisión](../seguimiento-s12-2026-10-22.md#xald) · [Issues y estados](../seguimiento-issues-2026-10-22.md) · [URL y dominio](../seguimiento-despliegues-2026-10-22.md).
+
+## Seguimiento actual · 24 de octubre de 2026 · S12 abierta
+
+Seguimiento de trabajo, sin cambios de calificación. S12 sigue abierta hasta el final del 25 de octubre en Colombia; leer los pendientes históricos junto con esta actualización.
+
+No hay cambios en la rama principal desde el seguimiento del 22 de octubre; el último CI consultado continúa exitoso y corresponde a esa misma punta. Se mantiene la documentación de idempotencia/sincronización, sin que seis issues cerradas acrediten todos los pendientes S12: cinco cierres son completed y uno duplicate.
+
+**Próximos pasos:**
+- Convertir la tabla de idempotencia en operación→garantía y contrastar guardar local/registrar remoto, acotando memoria, durabilidad y convergencia.
+- Justificar no caché o definir invalidación; comparar costo de reversión de datos y distinguir memoria actual de Room futuro en C4 y arc42 §8.
+- Publicar URL exacta bajo iscoutb.dev y registrar tareas S12 verificables, sin inferir avance por el número de cierres.
+
+**Issues:** 0 abiertas y 6 cerradas; 0 abiertas sin responsable. Cierres: 5 completed; 1 duplicate. El estado registrado no acredita por sí solo implementación.
+
+**README:** Externo. Backend Render, fuera del dominio institucional. URL documentada: https://xald-backend.onrender.com ; https://xald-backend.onrender.com/health. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-24.md#xald) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).

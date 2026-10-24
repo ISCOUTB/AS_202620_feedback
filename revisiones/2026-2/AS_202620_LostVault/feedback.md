@@ -130,3 +130,20 @@ La PR #19 se fusionó el 20 de octubre: agrega una API FastAPI con JWT, salud, D
 **README/despliegue:** Sin URL concreta. README raíz sin URL pública. Nueva api/ no implica despliegue. Debe figurar la URL oficial exacta bajo iscoutb.dev, diferenciando interfaz y API cuando corresponda.
 
 [Fuentes y alcance de esta revisión](../seguimiento-s12-2026-10-22.md#lostvault) · [Issues y estados](../seguimiento-issues-2026-10-22.md) · [URL y dominio](../seguimiento-despliegues-2026-10-22.md).
+
+## Seguimiento actual · 24 de octubre de 2026 · S12 abierta
+
+Seguimiento de trabajo, sin cambios de calificación. S12 sigue abierta hasta el final del 25 de octubre en Colombia; leer los pendientes históricos junto con esta actualización.
+
+La rama principal no cambió desde el seguimiento anterior. Se mantiene la API FastAPI incorporada con JWT, lock e Idempotency-Key, pero el almacenamiento continúa en RAM. Los workflows publicados siguen verdes; Backend checks prueba backend/test_api.py, no la suite api/tests de la nueva API. El README raíz sigue describiendo el corte Flutter y no publica una URL desplegada.
+
+**Próximos pasos:**
+- Incluir api/tests en CI y aclarar el enlace entre api/, backend/ y el cliente Flutter.
+- Publicar URL real iscoutb.dev en el README raíz sin inventar dominio.
+- Completar tabla de garantías y dos operaciones, caché o exclusión razonada, ADR comparativo y C4/arc42 §8 coherentes con límites de proceso y reinicio.
+
+**Issues:** 0 abiertas y 1 cerradas; 0 abiertas sin responsable. Cierres: 1 completed. El estado registrado no acredita por sí solo implementación.
+
+**README:** Sin URL concreta. README raíz sin URL pública concreta. La nueva API no prueba por sí sola despliegue. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-24.md#lostvault) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).

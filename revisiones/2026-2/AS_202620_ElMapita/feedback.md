@@ -130,3 +130,22 @@ Sin commits desde 20 de octubre; CI success. Presentación y funcionamiento conf
 **README/despliegue:** Sin URL concreta. Solo localhost y un placeholder de Supabase. El docente confirmó presentación y funcionamiento; falta reflejar la URL. Debe figurar la URL oficial exacta bajo iscoutb.dev, diferenciando interfaz y API cuando corresponda.
 
 [Fuentes y alcance de esta revisión](../seguimiento-s12-2026-10-22.md#elmapita) · [Issues y estados](../seguimiento-issues-2026-10-22.md) · [URL y dominio](../seguimiento-despliegues-2026-10-22.md).
+
+## Seguimiento actual · 24 de octubre de 2026 · S12 abierta
+
+Seguimiento de trabajo, sin cambios de calificación. S12 sigue abierta hasta el final del 25 de octubre en Colombia; leer los pendientes históricos junto con esta actualización.
+
+La rama principal y el README no cambian respecto al 22 de octubre; el CI de esa punta continúa registrado como exitoso. Se conserva la confirmación docente de presentación y funcionamiento. Falta publicar la dirección exacta del despliegue bajo iscoutb.dev: localhost y un ejemplo de Supabase no satisfacen el requisito documental.
+
+Presentación y funcionamiento confirmados por el docente.
+
+**Próximos pasos:**
+- Publicar URL exacta iscoutb.dev del despliegue mostrado, sin inventar host.
+- Tabla operaciones reales (cargar edificio/registro o rol) → garantía y dos recorridos de código; definir invalidación/versionado al reemplazar modelo, no solo TTL.
+- ADR comparativo del costo de revertir datos y llevar consistencia/caché a arc42 §8, hoy solo errores/privacidad/internacionalización.
+
+**Issues:** 1 abiertas y 0 cerradas; 1 abiertas sin responsable. El estado registrado no acredita por sí solo implementación.
+
+**README:** Sin URL concreta. README solo localhost y placeholder Supabase. Presentación y funcionamiento confirmados por el docente; brecha documental, no ausencia de despliegue. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-24.md#elmapita) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).

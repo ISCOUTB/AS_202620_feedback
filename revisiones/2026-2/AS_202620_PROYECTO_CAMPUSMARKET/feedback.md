@@ -123,3 +123,20 @@ Sin commits nuevos; PR #60 abierta documental. CI backend y otros success, run d
 **README/despliegue:** Institucional. API institucional; frontend en GitHub Pages. Cumplimiento parcial del sitio. URL documentada: https://campusmarket.iscoutb.dev ; https://nnigarp.github.io/AS_202620_PROYECTO_CAMPUSMARKET/. Debe figurar la URL oficial exacta bajo iscoutb.dev, diferenciando interfaz y API cuando corresponda.
 
 [Fuentes y alcance de esta revisión](../seguimiento-s12-2026-10-22.md#proyecto_campusmarket) · [Issues y estados](../seguimiento-issues-2026-10-22.md) · [URL y dominio](../seguimiento-despliegues-2026-10-22.md).
+
+## Seguimiento actual · 24 de octubre de 2026 · S12 abierta
+
+Seguimiento de trabajo, sin cambios de calificación. S12 sigue abierta hasta el final del 25 de octubre en Colombia; leer los pendientes históricos junto con esta actualización.
+
+No hay cambios en la rama principal respecto al 22 de octubre. La PR #60 permanece abierta, sin incorporación a master. Se mantienen los workflows exitosos de Compose/persistencia y contrato del cliente, y el fallo del workflow de flujo real observado previamente en Android. La documentación del despliegue distingue correctamente API institucional y frontend Pages; no anunciar toda la validación como verde.
+
+**Próximos pasos:**
+- Tabla crear/cambiar estado/ocultar publicación → garantía, distinguiendo transacciones MySQL de compensación SQL/archivos.
+- Decidir caché o no caché de catálogo y actualización tras crear/cambiar visibilidad; incorporarlo a arc42 §8.
+- ADR de costo comparativo de reversión de datos; reproducir/corregir flujo Android y resolver PR #60 sin llamar todo CI verde.
+
+**Issues:** 1 abiertas y 0 cerradas; 1 abiertas sin responsable. El estado registrado no acredita por sí solo implementación.
+
+**README:** Institucional. API institucional, interfaz Flutter en GitHub Pages: cumplimiento parcial del sitio. Azure aparece solo como histórico. URL documentada: https://campusmarket.iscoutb.dev ; https://nnigarp.github.io/AS_202620_PROYECTO_CAMPUSMARKET/. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-24.md#proyecto_campusmarket) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).

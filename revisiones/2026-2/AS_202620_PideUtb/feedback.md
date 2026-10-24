@@ -141,3 +141,22 @@ El docente confirmó actualización presentada y despliegues.
 **README/despliegue:** Institucional. Docente confirmó actualización presentada y despliegues. URL documentada: https://pideutb.iscoutb.dev ; https://pideutb.iscoutb.dev/panel.html ; https://api-pideutb.iscoutb.dev/docs. Debe figurar la URL oficial exacta bajo iscoutb.dev, diferenciando interfaz y API cuando corresponda.
 
 [Fuentes y alcance de esta revisión](../seguimiento-s12-2026-10-22.md#pideutb) · [Issues y estados](../seguimiento-issues-2026-10-22.md) · [URL y dominio](../seguimiento-despliegues-2026-10-22.md).
+
+## Seguimiento actual · 24 de octubre de 2026 · S12 abierta
+
+Seguimiento de trabajo, sin cambios de calificación. S12 sigue abierta hasta el final del 25 de octubre en Colombia; leer los pendientes históricos junto con esta actualización.
+
+La PR de identidad visual ya se fusionó el 23 de octubre: integra el sistema de diseño, la hoja de estilos y el índice del README. El CI de master pasó contratos, dependencias y Pytest en Python 3.11/3.12 con comprobación de ejecución PostgreSQL. Atención al alcance: el job SonarCloud termina success, pero sus pasos de análisis, cobertura y espera del Quality Gate quedaron skipped; no acredita un Gate aprobado. La aceptación visual de las pantallas a 375 px, ambos temas y teclado no fue verificada en esta revisión. Se conserva la confirmación docente de presentación y despliegues.
+
+Actualización presentada y despliegues confirmados por el docente.
+
+**Próximos pasos:**
+- Verificar y registrar aceptación visual según su guía de diseño; el verde de pruebas backend no la sustituye.
+- Restablecer evidencia de análisis y Quality Gate reales o documentar el análisis omitido; no reportarlo aprobado por el nombre del job.
+- Para S12, distinguir el UPDATE condicional de marcar_pagado de actualizar_estado, que actualiza por id sin estado esperado; contrastar carreras y ajustar las garantías declaradas. Completar ADR comparativo de reversión y conciliar intervalos/documentación.
+
+**Issues:** 1 abiertas y 0 cerradas; 1 abiertas sin responsable. El estado registrado no acredita por sí solo implementación.
+
+**README:** Institucional. Sitio, panel y API institucionales. Presentación y despliegues confirmados por docente; sin nueva aceptación visual independiente. URL documentada: https://pideutb.iscoutb.dev ; https://pideutb.iscoutb.dev/panel.html ; https://api-pideutb.iscoutb.dev/docs. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-24.md#pideutb) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).

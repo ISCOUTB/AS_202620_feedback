@@ -143,3 +143,20 @@ Se mantiene el corte vertical de búsqueda con SQLite, pero la rama principal no
 **README/despliegue:** Sin URL concreta. Los campos URL Vercel/URL Render siguen sin completar. Debe figurar la URL oficial exacta bajo iscoutb.dev, diferenciando interfaz y API cuando corresponda.
 
 [Fuentes y alcance de esta revisión](../seguimiento-s12-2026-10-22.md#shareu) · [Issues y estados](../seguimiento-issues-2026-10-22.md) · [URL y dominio](../seguimiento-despliegues-2026-10-22.md).
+
+## Seguimiento actual · 24 de octubre de 2026 · S12 abierta
+
+Seguimiento de trabajo, sin cambios de calificación. S12 sigue abierta hasta el final del 25 de octubre en Colombia; leer los pendientes históricos junto con esta actualización.
+
+La rama principal no ha cambiado desde el seguimiento del 22 de octubre. Se mantiene el corte vertical de búsqueda SQLite, las PR #22 y #23 abiertas y el último workflow de pruebas fallido. No atribuir a master cambios que continúan en esas PR. Las diez issues abiertas incluyen cinco sin responsable; el tablero no certifica el estado de implementación.
+
+**Próximos pasos:**
+- Completar la tabla operación→garantía y contrastar dos operaciones reales; justificar no caché o definir invalidación de documentos/metadatos.
+- Comparar el costo de reversión de decisiones de datos en un ADR y consolidar consistencia/caché en arc42 §8.
+- Publicar URL oficial iscoutb.dev, resolver el pipeline y conciliar issues solapadas con evidencia.
+
+**Issues:** 10 abiertas y 10 cerradas; 5 abiertas sin responsable. Cierres: 10 completed. El estado registrado no acredita por sí solo implementación.
+
+**README:** Sin URL concreta. README mantiene placeholders Vercel/Render, no URL pública concreta. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-24.md#shareu) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).

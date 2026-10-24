@@ -156,3 +156,20 @@ Se reconoce avance sustancial de S12: arc42 §8.6–8.9 ya contiene la tabla ope
 **README/despliegue:** Externo. URL pública HTTP sslip; falta dominio institucional con certificado válido. URL documentada: http://verifacts-sistema-ju3vi7-444522-144-24-4-187.sslip.io. Debe figurar la URL oficial exacta bajo iscoutb.dev, diferenciando interfaz y API cuando corresponda.
 
 [Fuentes y alcance de esta revisión](../seguimiento-s12-2026-10-22.md#verifacts) · [Issues y estados](../seguimiento-issues-2026-10-22.md) · [URL y dominio](../seguimiento-despliegues-2026-10-22.md).
+
+## Seguimiento actual · 24 de octubre de 2026 · S12 abierta
+
+Seguimiento de trabajo, sin cambios de calificación. S12 sigue abierta hasta el final del 25 de octubre en Colombia; leer los pendientes históricos junto con esta actualización.
+
+El seguimiento S12 del 22 de octubre sigue respaldado por la misma tabla de garantías, política de no caché y ADR de costo de reversión. Se añadió un prototipo separado de mensajería con contrato, consumidor idempotente, reintentos y DLQ, y un ADR que decide no incorporarlo al sistema actual. El último run registra 66 pruebas aprobadas y Quality Gate PASSED. Los límites están explícitos: broker en memoria, reloj y proveedor simulados, carrera forzada sin concurrencia real, sin durabilidad ni medición real de latencia; el prototipo no modifica app ni integra el extractor real. No debe confundirse este taller con una nueva arquitectura productiva ni calificarse aquí.
+
+**Próximos pasos:**
+- Mantener separadas las garantías del producto y del prototipo; conservar límites de concurrencia, reinicios, retención y latencia al presentar evidencia.
+- Actualizar README: aún conserva cifras 20/44 y pendiente de token Sonar pese el run actual aprobado; publicar dominio iscoutb.dev con certificado válido.
+- Acotar afirmaciones de linearizabilidad al modelo demostrado; mantener pendientes las mitigaciones SSRF/historial y la alineación C4 con nginx, sin dar por corregido código por la sola existencia del ADR.
+
+**Issues:** 0 abiertas y 0 cerradas; 0 abiertas sin responsable. El estado registrado no acredita por sí solo implementación.
+
+**README:** Externo. HTTP sslip externo; falta dominio institucional con certificado válido. URL documentada: http://verifacts-sistema-ju3vi7-444522-144-24-4-187.sslip.io. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-24.md#verifacts) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).

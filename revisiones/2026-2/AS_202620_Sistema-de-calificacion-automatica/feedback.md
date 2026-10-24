@@ -141,3 +141,20 @@ Sin commits nuevos desde 20 de octubre; CI success. README sigue con Render y ri
 **README/despliegue:** Externo. Frontend y API en Render, fuera del dominio requerido. URL documentada: https://quantia-utb.onrender.com ; https://quantia-utb-api.onrender.com/health. Debe figurar la URL oficial exacta bajo iscoutb.dev, diferenciando interfaz y API cuando corresponda.
 
 [Fuentes y alcance de esta revisión](../seguimiento-s12-2026-10-22.md#sistema-de-calificacion-automatica) · [Issues y estados](../seguimiento-issues-2026-10-22.md) · [URL y dominio](../seguimiento-despliegues-2026-10-22.md).
+
+## Seguimiento actual · 24 de octubre de 2026 · S12 abierta
+
+Seguimiento de trabajo, sin cambios de calificación. S12 sigue abierta hasta el final del 25 de octubre en Colombia; leer los pendientes históricos junto con esta actualización.
+
+Hay avances nuevos en recepción de lotes: errores de almacenamiento/bitácora se reportan por hoja sin abortar todo el lote, el encolado tiene un presupuesto temporal de lote, las hojas se leen de una en una con límite de 20 MB y la confirmación pasa a un hilo fuera del event loop. Se reutiliza el cliente Redis y un timeout al consumir ya no se trata como cola vacía. También se corrigen equivalencias/distractores, mensajes de carga, límite diario y división por cero en el panel. CI actual registra frontend y backend exitosos, incluida la suite completa, contrato y modos de fallo. README y documentos de arquitectura no cambiaron: conservan deuda de almacenamiento efímero, falta de acuse en la cola y reintento no automatizado. Estas mejoras no acreditan persistencia durable ni cierran S12 por sí solas.
+
+**Próximos pasos:**
+- Actualizar la tabla operación→garantía para recibir, registrar y consumir hojas, diferenciando archivo/bitácora, publicación y BLPOP sin acuse; contrastar al menos dos recorridos con el código nuevo.
+- Volver a medir EC-07 con almacenamiento y Redis reales: el plazo de encolado no limita por sí solo la lectura/escritura completa del lote. Conservar límites de disco efímero, reconciliación y entrega ante pérdida del worker.
+- Resolver el ADR comparativo de persistencia/R-06 y justificar caché o no caché con política de invalidación; sincronizar README, arc42 §8 y C4 con la implementación actual. Publicar dominio institucional.
+
+**Issues:** 0 abiertas y 0 cerradas; 0 abiertas sin responsable. El estado registrado no acredita por sí solo implementación.
+
+**README:** Externo. Sitio y API en Render, sin subdominio institucional. URL documentada: https://quantia-utb.onrender.com ; https://quantia-utb-api.onrender.com/health. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-24.md#sistema-de-calificacion-automatica) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).

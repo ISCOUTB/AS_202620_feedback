@@ -137,3 +137,20 @@ Dos commits 21 de octubre añaden PostgreSQL/SQLAlchemy/Alembic para usuarios y 
 **README/despliegue:** Sin URL concreta. README declara contenedor desplegado, pero no publica dirección concreta. Debe figurar la URL oficial exacta bajo iscoutb.dev, diferenciando interfaz y API cuando corresponda.
 
 [Fuentes y alcance de esta revisión](../seguimiento-s12-2026-10-22.md#enagenda) · [Issues y estados](../seguimiento-issues-2026-10-22.md) · [URL y dominio](../seguimiento-despliegues-2026-10-22.md).
+
+## Seguimiento actual · 24 de octubre de 2026 · S12 abierta
+
+Seguimiento de trabajo, sin cambios de calificación. S12 sigue abierta hasta el final del 25 de octubre en Colombia; leer los pendientes históricos junto con esta actualización.
+
+No hay cambios en la rama principal respecto al 22 de octubre. Se conserva el avance de registro/login y usuarios PostgreSQL, mientras Invitaciones sigue en memoria. El CI de esa punta sigue fallido y Pages figura exitoso; esto no equivale a pruebas aprobadas ni demuestra la disponibilidad del backend. El README todavía no describe el nuevo módulo ni una URL pública concreta.
+
+**Próximos pasos:**
+- Corregir CI y agregar pruebas registro/login/migración; diferenciar persistencia PostgreSQL de Usuarios y memoria de Invitaciones.
+- Tabla registrar usuario/crear y responder invitaciones → garantías, incluida atomicidad de lote y concurrencia; contrastar dos operaciones.
+- Decidir caché/no caché, ADR comparativo persistencia/identidad, actualizar C4/arc42 §8 y README con URL pública iscoutb.dev real.
+
+**Issues:** 1 abiertas y 0 cerradas; 0 abiertas sin responsable. El estado registrado no acredita por sí solo implementación.
+
+**README:** Sin URL concreta. Declara contenedor Dokploy desplegado, pero URL pública pendiente; no hay host concreto. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-24.md#enagenda) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).

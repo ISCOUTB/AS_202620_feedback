@@ -118,3 +118,20 @@ La rama principal sigue en el despliegue Dokploy integrado el 13 de octubre, per
 **README/despliegue:** Externo. README conserva Render aunque hay configuración Dokploy; no inventar el dominio actual. URL documentada: https://uniteam-web.onrender.com ; https://uniteam-api.onrender.com ; https://uniteam-api.onrender.com/health. Debe figurar la URL oficial exacta bajo iscoutb.dev, diferenciando interfaz y API cuando corresponda.
 
 [Fuentes y alcance de esta revisión](../seguimiento-s12-2026-10-22.md#uniteam) · [Issues y estados](../seguimiento-issues-2026-10-22.md) · [URL y dominio](../seguimiento-despliegues-2026-10-22.md).
+
+## Seguimiento actual · 24 de octubre de 2026 · S12 abierta
+
+Seguimiento de trabajo, sin cambios de calificación. S12 sigue abierta hasta el final del 25 de octubre en Colombia; leer los pendientes históricos junto con esta actualización.
+
+Las PR #6, #7 y #8 se fusionaron; hay ajustes de código/nginx y cambio a análisis automático de SonarCloud. El README ya publica dominios DuckDNS. El CI vigente pasa pruebas MySQL, compilación frontend e imágenes; conserva generación de cobertura con --cov, pero eliminó su publicación y el job Sonar con espera del Quality Gate. El README afirma que no existe CI, en contradicción con workflow y run actuales. El sondeo del 24 de octubre falla seis verificaciones, pero sigue consultando Render: ese resultado no demuestra caída de los dominios DuckDNS.
+
+**Próximos pasos:**
+- Alinear sonda, README y guía con los dominios reales; publicar el subdominio iscoutb.dev requerido sin inventarlo.
+- Restablecer trazabilidad de análisis/cobertura y verificar por separado el Quality Gate; no equiparar CI verde con gate aprobado.
+- Completar tabla de garantías de crear tarea/cambiar estado y límites del bus en proceso; invalidación de JWKS y clientes abiertos, ADR comparativo de reversión y arc42 §8.
+
+**Issues:** 0 abiertas y 1 cerradas; 0 abiertas sin responsable. Cierres: 1 completed. El estado registrado no acredita por sí solo implementación.
+
+**README:** Externo. README ahora publica DuckDNS, no Render ni iscoutb.dev. La sonda aún apunta a Render. URL documentada: https://uniteam-web.duckdns.org ; https://uniteam-api.duckdns.org ; https://uniteam-api.duckdns.org/health. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-24.md#uniteam) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).

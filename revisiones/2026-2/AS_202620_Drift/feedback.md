@@ -123,3 +123,20 @@ PR #31 merge 21 de octubre aporta arc42 §8.13 seis operaciones/garantías, §8.
 **README/despliegue:** Institucional. URL institucional para frontend/backend; no se repitió prueba funcional del sitio. URL documentada: https://drift.iscoutb.dev. Debe figurar la URL oficial exacta bajo iscoutb.dev, diferenciando interfaz y API cuando corresponda.
 
 [Fuentes y alcance de esta revisión](../seguimiento-s12-2026-10-22.md#drift) · [Issues y estados](../seguimiento-issues-2026-10-22.md) · [URL y dominio](../seguimiento-despliegues-2026-10-22.md).
+
+## Seguimiento actual · 24 de octubre de 2026 · S12 abierta
+
+Seguimiento de trabajo, sin cambios de calificación. S12 sigue abierta hasta el final del 25 de octubre en Colombia; leer los pendientes históricos junto con esta actualización.
+
+La rama principal no cambia respecto al 22 de octubre; continúan disponibles la matriz de seis operaciones y garantías, la invalidación por fuente y el ADR 0010 sobre costo de reversión. Los runs de CI y Azure de esa punta figuran exitosos. Se conserva la distinción entre evidencia simulada con sustituto de httpx y rendimiento real de producción; no volver a marcar esos artefactos S12 como ausentes.
+
+**Próximos pasos:**
+- Revisar/aceptar ADR 0010 con equipo; su conclusión es identidad/contrato público del juego, no persistencia, como decisión actual más costosa.
+- Repetir experimento con dependencias reales y enlazar run/resultado, manteniendo separación de simulación, red real y latencia HTTP extremo a extremo.
+- Probar y decidir límites de edad/aviso para tasa stale, catálogo por instancia/reinicio y respuesta vacía sin aviso si falta fallback; conservar pruebas de sync atómico y TTL.
+
+**Issues:** 5 abiertas y 15 cerradas; 5 abiertas sin responsable. Cierres: 15 completed. El estado registrado no acredita por sí solo implementación.
+
+**README:** Institucional. Frontend/backend institucionales y alternativas Azure/Vercel documentadas. No se repitió prueba funcional. URL documentada: https://drift.iscoutb.dev ; https://drift-utb-202620-g5fvchdcgpcthkeg.mexicocentral-01.azurewebsites.net ; https://drift-frontend-as202620.vercel.app. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-24.md#drift) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).

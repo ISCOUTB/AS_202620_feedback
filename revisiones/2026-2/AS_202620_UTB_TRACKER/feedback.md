@@ -126,3 +126,20 @@ Los hotfix del 20 de octubre son posteriores al corte previo, pero el último CI
 **README/despliegue:** Sin URL concreta. Solo localhost; falta URL pública concreta. Debe figurar la URL oficial exacta bajo iscoutb.dev, diferenciando interfaz y API cuando corresponda.
 
 [Fuentes y alcance de esta revisión](../seguimiento-s12-2026-10-22.md#utb_tracker) · [Issues y estados](../seguimiento-issues-2026-10-22.md) · [URL y dominio](../seguimiento-despliegues-2026-10-22.md).
+
+## Seguimiento actual · 24 de octubre de 2026 · S12 abierta
+
+Seguimiento de trabajo, sin cambios de calificación. S12 sigue abierta hasta el final del 25 de octubre en Colombia; leer los pendientes históricos junto con esta actualización.
+
+Se reconoce la corrección del bloqueo observado el 22 de octubre: el run de hoy registra 48 pruebas aprobadas contra PostgreSQL y deploy exitoso. Hay nuevos módulos de salones/horarios, autenticación/roles, migración Alembic y cliente Flutter. Las fixtures ya siembran sin IDs explícitos y evitan el desfase previo de secuencias. El job Sonar fue retirado, por lo que el verde actual no acredita análisis ni Quality Gate; tampoco prueba visualmente el cliente Flutter. El README permanece antiguo y sin URL pública.
+
+**Próximos pasos:**
+- Actualizar README con PostgreSQL, Alembic, módulos y resultado vigente; publicar URL oficial iscoutb.dev y evidencia separada de frontend y análisis estático.
+- Para S12, explicitar garantías de crear/devolver préstamo y operaciones de salones, con pruebas concurrentes: las secuenciales no demuestran ausencia de carreras. Completar caché/no caché, ADR de reversión y arc42 §8.
+- Proteger las pruebas destructivas: la fixture usa DATABASE_URL si falta TEST_DATABASE_URL antes de drop_all/create_all; exigir una base de pruebas identificada y rechazar cualquier destino de producción.
+
+**Issues:** 1 abiertas y 0 cerradas; 1 abiertas sin responsable. El estado registrado no acredita por sí solo implementación.
+
+**README:** Sin URL concreta. README raíz solo publica localhost; su cifra de siete pruebas y SQLite en CI está desactualizada. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-24.md#utb_tracker) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).

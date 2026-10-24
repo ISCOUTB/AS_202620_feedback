@@ -143,3 +143,22 @@ Se reconoce la presentación y el despliegue funcionando confirmados por el doce
 **README/despliegue:** Institucional. Ahora publica API institucional, salud y documentación; no acredita entrega de una interfaz Flutter. Despliegue funcionando confirmado por docente. URL documentada: https://taia-sistema.iscoutb.dev ; https://taia-sistema.iscoutb.dev/health ; https://taia-sistema.iscoutb.dev/docs ; https://taia-backend-latest.onrender.com/health. Debe figurar la URL oficial exacta bajo iscoutb.dev, diferenciando interfaz y API cuando corresponda.
 
 [Fuentes y alcance de esta revisión](../seguimiento-s12-2026-10-22.md#taia_-task-artificial-intelligence-assistant) · [Issues y estados](../seguimiento-issues-2026-10-22.md) · [URL y dominio](../seguimiento-despliegues-2026-10-22.md).
+
+## Seguimiento actual · 24 de octubre de 2026 · S12 abierta
+
+Seguimiento de trabajo, sin cambios de calificación. S12 sigue abierta hasta el final del 25 de octubre en Colombia; leer los pendientes históricos junto con esta actualización.
+
+Desde el corte previo se actualizaron Dockerfile y documentación de Dokploy, conservando la URL institucional de la API. Se mantiene la confirmación docente de presentación y despliegue funcionando. No hay run de CI/CD para la punta nueva entre los runs consultados: los últimos exitosos corresponden al 20 de octubre, no al commit actual. El filtro paths agregado al workflow se interpreta como una cadena, no como lista YAML, por falta de espacio tras los guiones; además las rutas de workflow deben apuntar a su ubicación real. Esto requiere corregir el disparador y obtener evidencia nueva, sin concluir que el sitio esté caído.
+
+Presentación y despliegue funcionando confirmados por el docente.
+
+**Próximos pasos:**
+- Corregir paths en CI y verificar un run sobre la punta actual, distinguiendo validación del repositorio y funcionamiento del despliegue.
+- Completar tabla de garantías y dos operaciones contrastadas: límites transaccionales de confirmar/notificar frente a crear tarea y enviar Telegram.
+- Justificar caché/no caché, comparar costo de reversión en ADR y alinear PostgreSQL en C4 y consistencia/caché en arc42 §8.
+
+**Issues:** 3 abiertas y 4 cerradas; 2 abiertas sin responsable. Cierres: 4 completed. El estado registrado no acredita por sí solo implementación.
+
+**README:** Institucional. API institucional; Flutter sigue descrito como arquitectura objetivo. Presentación y funcionamiento confirmados por el docente. URL documentada: https://taia-sistema.iscoutb.dev ; https://taia-sistema.iscoutb.dev/health ; https://taia-sistema.iscoutb.dev/docs ; https://taia-backend-latest.onrender.com/health. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-24.md#taia_-task-artificial-intelligence-assistant) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).

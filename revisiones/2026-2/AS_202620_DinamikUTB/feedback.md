@@ -139,3 +139,20 @@ Master no cambió; PR #35 abierta en su rama de trabajo incorpora PostgreSQL 16 
 **README/despliegue:** Externo. Frontend en GitHub Pages y API en Render. Expiración del 27/oct y plan del 25/oct declarados por el equipo, no verificados con el proveedor. URL documentada: https://iscoutb.github.io/AS_202620_DinamikUTB/ ; https://dinamikutb-api.onrender.com. Debe figurar la URL oficial exacta bajo iscoutb.dev, diferenciando interfaz y API cuando corresponda.
 
 [Fuentes y alcance de esta revisión](../seguimiento-s12-2026-10-22.md#dinamikutb) · [Issues y estados](../seguimiento-issues-2026-10-22.md) · [URL y dominio](../seguimiento-despliegues-2026-10-22.md).
+
+## Seguimiento actual · 24 de octubre de 2026 · S12 abierta
+
+Seguimiento de trabajo, sin cambios de calificación. S12 sigue abierta hasta el final del 25 de octubre en Colombia; leer los pendientes históricos junto con esta actualización.
+
+Hay avance importante integrado mediante las PR #36 y #37: autenticación JWT, roles y restricciones de acceso, auditoría de cambios, pantallas de login/perfil/gestión y preparación de API/Compose con PostgreSQL y CORS. La PR #35 está cerrada sin fusionar; no confundirla con las integraciones posteriores. El CI actual registra backend, frontend y scanner Sonar exitosos, además de Pages. README y arc42 todavía dicen que Usuarios no tiene código y mantienen F7 pendiente: recrear/resembrar la base de demostración antes del 25 de octubre. El Compose y el build de Pages no prueban que esa operación se haya realizado; expiración del 27 de octubre y condiciones del proveedor son afirmaciones del equipo, no verificadas aquí.
+
+**Próximos pasos:**
+- Atender y documentar F7 antes del plazo declarado del 25/oct: evidencia de recreación/resembrado o migración y verificación de datos/health. No darlo por resuelto por CI o Compose; usar solamente datos sintéticos de demo.
+- Actualizar README, C4 y arc42 para reconocer autenticación/roles y la implementación de Usuarios. Publicar URL institucional real y aclarar cuál entorno sirve la API.
+- Completar tabla de garantías y contrastar consulta/actualización: el servicio sigue leyendo y haciendo commit sin control de versión, con última escritura ganadora. Justificar caché/no caché e invalidación; ADR comparativo del costo de reversión y arc42 §8.
+
+**Issues:** 2 abiertas y 15 cerradas; 1 abiertas sin responsable. Cierres: 15 completed. El estado registrado no acredita por sí solo implementación.
+
+**README:** Externo. README mantiene frontend Pages y backend Render; no publica URL institucional. F7 sigue pendiente en la documentación. URL documentada: https://iscoutb.github.io/AS_202620_DinamikUTB/ ; https://dinamikutb-api.onrender.com. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-24.md#dinamikutb) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).

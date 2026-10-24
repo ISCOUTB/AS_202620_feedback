@@ -132,3 +132,22 @@ El docente confirmó presentación.
 **README/despliegue:** Institucional. Docente confirmó presentación, no una certificación de funcionamiento por auditoría. URL documentada: https://recobra.iscoutb.dev ; https://recobra.iscoutb.dev/app/. Debe figurar la URL oficial exacta bajo iscoutb.dev, diferenciando interfaz y API cuando corresponda.
 
 [Fuentes y alcance de esta revisión](../seguimiento-s12-2026-10-22.md#recobra) · [Issues y estados](../seguimiento-issues-2026-10-22.md) · [URL y dominio](../seguimiento-despliegues-2026-10-22.md).
+
+## Seguimiento actual · 24 de octubre de 2026 · S12 abierta
+
+Seguimiento de trabajo, sin cambios de calificación. S12 sigue abierta hasta el final del 25 de octubre en Colombia; leer los pendientes históricos junto con esta actualización.
+
+Sin nuevos commits respecto al seguimiento del 22 de octubre. Se mantienen los avances S12 ya reconocidos: caché HTTP/ETag, estrategia de eventos y ADR comparativo de reversión. El CI de esa punta continúa exitoso; no se presenta como una nueva ejecución de hoy. Siguen siendo relevantes los límites declarados de EventEmitter no durable y la cobertura PostgreSQL de siete de nueve adaptadores; los e2e completos aún usan RAM. Presentación confirmada por el docente.
+
+El docente confirmó presentación.
+
+**Próximos pasos:**
+- Extender pruebas PostgreSQL a Reclamaciones y Sesiones y a los e2e completos.
+- Corregir la afirmación de que desplegar invalida lugares: un navegador puede conservar la respuesta durante max-age; mantener explícito el TTL de miniaturas tras borrado.
+- Conservar límites de cola/eventos, y aportar evidencia de restauración de backups y alertas operativas sin negar los artefactos S12 existentes.
+
+**Issues:** 0 abiertas y 0 cerradas; 0 abiertas sin responsable. El estado registrado no acredita por sí solo implementación.
+
+**README:** Institucional. Vitrina y app institucionales. Docente confirmó presentación; no se añadió una auditoría funcional. URL documentada: https://recobra.iscoutb.dev ; https://recobra.iscoutb.dev/app/. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-24.md#recobra) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).

@@ -141,3 +141,20 @@ Hay avance nuevo: PR #1 fusionada el 21 de octubre, rediseño del frontend, prox
 **README/despliegue:** Externo. Ahora publica URL sslip concreta; falta dominio institucional. URL documentada: https://tiendautb-sistema-n0ojjk-fde272-144-24-4-187.sslip.io/. Debe figurar la URL oficial exacta bajo iscoutb.dev, diferenciando interfaz y API cuando corresponda.
 
 [Fuentes y alcance de esta revisión](../seguimiento-s12-2026-10-22.md#tienda-virtual-utb) · [Issues y estados](../seguimiento-issues-2026-10-22.md) · [URL y dominio](../seguimiento-despliegues-2026-10-22.md).
+
+## Seguimiento actual · 24 de octubre de 2026 · S12 abierta
+
+Seguimiento de trabajo, sin cambios de calificación. S12 sigue abierta hasta el final del 25 de octubre en Colombia; leer los pendientes históricos junto con esta actualización.
+
+Hay avance sustancial desde el 22 de octubre: frontend v4 y pnpm, migraciones Alembic, esquema PostgreSQL, bloqueo optimista y políticas RLS con rol de aplicación. arc42 §8 ya describe propiedad de tablas y pruebas reales contra PostgreSQL; no corresponde seguir diciendo que la persistencia no existe. El CI actual tiene frontend y backend exitosos, mientras Sonar falla al consultar metadatos JRE con HTTP403; no es un fallo de pruebas ni un Quality Gate evaluado. Los endpoints de pedidos y saga siguen explícitamente como diseño, aunque existan sus tablas.
+
+**Próximos pasos:**
+- Completar la tabla operación→garantía con catálogo/inventario reales y contrastar dos rutas; distinguir esquema disponible de endpoint implementado.
+- Preservar no-store del proxy y explicar refresco/invalidez tras escritura; comparar en ADR el costo de revertir decisiones de datos, no solo enumerar nuevas migraciones.
+- Ratificar ADR propuestos; documentar exportación previa y restauración antes de aplicar la migración que elimina tablas antiguas; corregir Sonar y publicar dominio iscoutb.dev.
+
+**Issues:** 0 abiertas y 0 cerradas; 0 abiertas sin responsable. El estado registrado no acredita por sí solo implementación.
+
+**README:** Externo. Sitio sslip externo; dominio definitivo pendiente. No se verificó redespliegue ni aceptación visual. URL documentada: https://tiendautb-sistema-n0ojjk-fde272-144-24-4-187.sslip.io/. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-24.md#tienda-virtual-utb) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).

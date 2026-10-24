@@ -149,3 +149,20 @@ Punta 20 de octubre actualiza registro IA solamente; publicaciones siguen InMemo
 **README/despliegue:** Sin URL concreta. Sin URL pública concreta en el README raíz. Debe figurar la URL oficial exacta bajo iscoutb.dev, diferenciando interfaz y API cuando corresponda.
 
 [Fuentes y alcance de esta revisión](../seguimiento-s12-2026-10-22.md#clubs_utb) · [Issues y estados](../seguimiento-issues-2026-10-22.md) · [URL y dominio](../seguimiento-despliegues-2026-10-22.md).
+
+## Seguimiento actual · 24 de octubre de 2026 · S12 abierta
+
+Seguimiento de trabajo, sin cambios de calificación. S12 sigue abierta hasta el final del 25 de octubre en Colombia; leer los pendientes históricos junto con esta actualización.
+
+La rama principal y el README permanecen sin cambios respecto al 22 de octubre. Los dos workflows consultados continúan fallidos y la PR #1 sigue abierta; no se atribuye integración por la existencia de la PR. Sigue siendo necesario conciliar las afirmaciones de PostgreSQL/Supabase con el adaptador en memoria conectado al flujo de publicaciones, y documentar la URL pública real.
+
+**Próximos pasos:**
+- Contrastar crear/listar publicaciones y declarar garantía real en memoria, no atribuir transacción PostgreSQL al adaptador conectado.
+- Definir caché/no caché y política tras escritura; sincronizar C4 con almacén real y estado planeado de PostgreSQL/Dokploy.
+- ADR comparativo de decisión de datos/reversión; actualizar arc42 §8 y documentar URL iscoutb.dev.
+
+**Issues:** 0 abiertas y 0 cerradas; 0 abiertas sin responsable. El estado registrado no acredita por sí solo implementación.
+
+**README:** Sin URL concreta. README raíz sin URL pública concreta. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-24.md#clubs_utb) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).

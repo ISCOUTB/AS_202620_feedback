@@ -118,3 +118,20 @@ No hay commits nuevos desde el 16 de octubre. La sonda programada del 22 de octu
 **README/despliegue:** Externo. Firebase, no subdominio iscoutb.dev. MapsUTB NO es ElMapita. URL documentada: https://mapsutb.web.app/. Debe figurar la URL oficial exacta bajo iscoutb.dev, diferenciando interfaz y API cuando corresponda.
 
 [Fuentes y alcance de esta revisión](../seguimiento-s12-2026-10-22.md#mapsutb) · [Issues y estados](../seguimiento-issues-2026-10-22.md) · [URL y dominio](../seguimiento-despliegues-2026-10-22.md).
+
+## Seguimiento actual · 24 de octubre de 2026 · S12 abierta
+
+Seguimiento de trabajo, sin cambios de calificación. S12 sigue abierta hasta el final del 25 de octubre en Colombia; leer los pendientes históricos junto con esta actualización.
+
+La rama principal permanece sin cambios desde el 16 de octubre. La sonda de disponibilidad del 24 de octubre a las 12:36 UTC terminó correctamente; es un sondeo, no una prueba integral. Las issues Sonar de complejidad y ternario siguen abiertas y sin responsable. El README publica Firebase, todavía sin dirección institucional; no confundir este proyecto con ElMapita.
+
+**Próximos pasos:**
+- Asignar y resolver las dos issues Sonar con evidencia de cierre.
+- Publicar URL institucional exacta, manteniendo Firebase como alternativa si corresponde.
+- Completar tabla de operaciones/garantías, invalidación de caché interna del grafo además de HTTP, ADR de reversión y arc42 §8.
+
+**Issues:** 2 abiertas y 52 cerradas; 2 abiertas sin responsable. Cierres: 52 completed. El estado registrado no acredita por sí solo implementación.
+
+**README:** Externo. Sitio Firebase, fuera de iscoutb.dev; distinto de ElMapita. URL documentada: https://mapsutb.web.app/. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-24.md#mapsutb) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).

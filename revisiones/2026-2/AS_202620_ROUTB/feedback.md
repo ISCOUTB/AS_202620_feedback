@@ -133,3 +133,22 @@ El docente confirmó que entregó avance.
 **README/despliegue:** Institucional. Backend; README mantiene pasos antiguos de Render. Docente confirmó presentación. URL documentada: https://routb.iscoutb.dev. Debe figurar la URL oficial exacta bajo iscoutb.dev, diferenciando interfaz y API cuando corresponda.
 
 [Fuentes y alcance de esta revisión](../seguimiento-s12-2026-10-22.md#routb) · [Issues y estados](../seguimiento-issues-2026-10-22.md) · [URL y dominio](../seguimiento-despliegues-2026-10-22.md).
+
+## Seguimiento actual · 24 de octubre de 2026 · S12 abierta
+
+Seguimiento de trabajo, sin cambios de calificación. S12 sigue abierta hasta el final del 25 de octubre en Colombia; leer los pendientes históricos junto con esta actualización.
+
+La PR de S12 se fusionó el 23 de octubre e incorpora cambios reales de mapas en Flutter, paradas de solicitudes y retiro del endpoint y de geocode_cache del backend mediante migración. Ya hay tabla de operaciones y ADR de costo de reversión, pero arc42 §8.6–8.7, ADR0020 y la política de invalidación describen la caché retirada como vigente. Corregir esa contradicción; route_cache es otra caché que permanece. El CI de master pasó migraciones, pruebas, contrato y build; el job titulado SonarCloud Scan & Quality Gate solo ejecuta un mensaje de reserva sin scanner, por lo que no acredita análisis ni Gate. El docente confirmó avance presentado.
+
+El docente confirmó entrega de avance.
+
+**Próximos pasos:**
+- Actualizar arc42, ADR0020, política de caché y C4 a la geocodificación en cliente y distinguirla de route_cache.
+- Contrastar dos operaciones de solicitudes/cupos; el chequeo previo antes de INSERT no basta por sí solo para prometer ausencia de duplicados concurrentes: citar restricción y prueba o acotar garantía.
+- Sustituir la reserva de Sonar por evidencia real de análisis/Gate; actualizar instrucciones de despliegue Render frente a Dokploy.
+
+**Issues:** 0 abiertas y 0 cerradas; 0 abiertas sin responsable. El estado registrado no acredita por sí solo implementación.
+
+**README:** Institucional. Backend institucional. README conserva instrucciones antiguas de Render; docente confirmó avance presentado. URL documentada: https://routb.iscoutb.dev. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-24.md#routb) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).

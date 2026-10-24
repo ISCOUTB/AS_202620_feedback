@@ -129,3 +129,21 @@ La punta no cambia desde el 19 de octubre. Ya existe portal de tienda y catálog
 **README/despliegue:** Sin URL concreta. README declara Azure retirado13-oct y Dokploy actual, dice URL arriba sin darla. No afirmar ausencia de despliegue: CI Deploy Dokploy success. Debe figurar la URL oficial exacta bajo iscoutb.dev, diferenciando interfaz y API cuando corresponda.
 
 [Fuentes y alcance de esta revisión](../seguimiento-s12-2026-10-22.md#laplacita) · [Issues y estados](../seguimiento-issues-2026-10-22.md) · [URL y dominio](../seguimiento-despliegues-2026-10-22.md).
+
+## Seguimiento actual · 24 de octubre de 2026 · S12 abierta
+
+Seguimiento de trabajo, sin cambios de calificación. S12 sigue abierta hasta el final del 25 de octubre en Colombia; leer los pendientes históricos junto con esta actualización.
+
+Avance sustancial S12: ya existe tabla de 14 operaciones, caché de catálogo write-through, política tras escritura, C4 sin Redis y ADR de identidad del pedido como decisión de datos más costosa de revertir. La creación ahora espera confirmación de PostgreSQL y el seguimiento exige token o sesión del dueño; se contrastaron esas rutas con código. La cola incorpora reintentos y DLQ, pero ambas son en memoria y no garantizan entrega tras caída del proceso. La PR de actualización de Next/React está fusionada. El CI y el despliegue Dokploy figuran exitosos; el job de despliegue pasó pruebas con base real, contrato y health check.
+
+**Próximos pasos:**
+- Publicar la URL institucional vigente y corregir frases históricas del README que aún llaman al frontend placeholder y a la persistencia pendiente.
+- Añadir prueba de caída de PostgreSQL durante actualizarProducto para demostrar que no cambia la caché; mantener explícito el límite de un solo proceso y la ausencia de invalidación entre réplicas.
+- Ratificar ADR0024, hoy propuesto, y actualizar su alternativa SERIAL que todavía dice que esperar la base contradice la creación, pese al cambio de ADR0026.
+- Acotar at-least-once a reintentos/cola volátil, probar recuperación o documentar pérdida de pendientes/DLQ tras reinicio; no equiparar polling con un plazo extremo a extremo garantizado.
+
+**Issues:** 0 abiertas y 14 cerradas; 0 abiertas sin responsable. Cierres: 14 completed. El estado registrado no acredita por sí solo implementación.
+
+**README:** Sin URL concreta. README raíz aún sin URL vigente concreta. Azure figura retirado; el CI de Dokploy exitoso no sustituye publicar la dirección. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-24.md#laplacita) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).

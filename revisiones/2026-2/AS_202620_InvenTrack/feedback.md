@@ -130,3 +130,20 @@ La punta no cambia desde el 19 de octubre y Run Tests termina correctamente. La 
 **README/despliegue:** Institucional. API únicamente, Flutter pendiente; RAM almacén primario, no caché. URL documentada: https://inventrack.iscoutb.dev ; https://inventrack-api.onrender.com. Debe figurar la URL oficial exacta bajo iscoutb.dev, diferenciando interfaz y API cuando corresponda.
 
 [Fuentes y alcance de esta revisión](../seguimiento-s12-2026-10-22.md#inventrack) · [Issues y estados](../seguimiento-issues-2026-10-22.md) · [URL y dominio](../seguimiento-despliegues-2026-10-22.md).
+
+## Seguimiento actual · 24 de octubre de 2026 · S12 abierta
+
+Seguimiento de trabajo, sin cambios de calificación. S12 sigue abierta hasta el final del 25 de octubre en Colombia; leer los pendientes históricos junto con esta actualización.
+
+Hay avance S12: docs/aspectos.md incorpora una tabla de cinco operaciones y garantías, con límites explícitos de memoria, una instancia y ausencia de deduplicación durable. La lectura de registrar_entrada y registrar_salida confirma el lock por SKU; esto no aporta durabilidad ni coordinación entre réplicas. También se refactorizó el router para centralizar errores. El CI vigente ejecutó Pytest con cobertura, validación del contrato y el paso de scanner correctamente; no se infiere un Quality Gate independiente solo del scanner.
+
+**Próximos pasos:**
+- Añadir rutas y pruebas concretas a la tabla para dejar trazables dos operaciones; no confundir respuestas HTTP distintas con pérdida automática de idempotencia del efecto.
+- Justificar no caché o definir diseño e invalidación; documentar comparativamente la decisión de datos más costosa de revertir.
+- Llevar consistencia/caché a arc42 §8 y alinear C4 con RAM dentro del proceso, diferenciando SQL futuro.
+
+**Issues:** 0 abiertas y 7 cerradas; 0 abiertas sin responsable. Cierres: 7 completed. El estado registrado no acredita por sí solo implementación.
+
+**README:** Institucional. API institucional y alternativa Render; frontend Flutter sigue pendiente en el README. URL documentada: https://inventrack.iscoutb.dev ; https://inventrack-api.onrender.com. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-24.md#inventrack) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).
