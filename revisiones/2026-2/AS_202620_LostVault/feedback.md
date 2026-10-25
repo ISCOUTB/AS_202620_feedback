@@ -147,3 +147,22 @@ La rama principal no cambió desde el seguimiento anterior. Se mantiene la API F
 **README:** Sin URL concreta. README raíz sin URL pública concreta. La nueva API no prueba por sí sola despliegue. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-24.md#lostvault) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).
+
+
+
+## Seguimiento actual · 25 de octubre de 2026 · S12 abierta
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Sin cambios en main ni nuevas ejecuciones desde el corte del 24. PR #19 permanece integrada; la nueva API con JWT/idempotencia y almacenamiento RAM no equivale a persistencia ni despliegue. Los tres workflows de la misma punta siguen exitosos; se conserva la limitación previamente verificada: Backend checks prueba backend/test_api.py, no api/tests. README no publica una URL vigente.
+
+**Próximos pasos:**
+- Incluir api/tests en CI y documentar la relación api/backend/Flutter.
+- Publicar URL real iscoutb.dev y separar API de cliente.
+- Completar garantías por operación y límites ante reinicio, caché/no caché y ADR de reversión.
+
+**Issues GitHub:** 0 abiertas y 1 cerradas; 0 abiertas sin asignar. Cierres: 1 completed. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Sin URL concreta. README sin URL pública concreta; no implica ausencia de trabajo o despliegue.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-25.md#lostvault) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).

@@ -135,3 +135,22 @@ Las PR #6, #7 y #8 se fusionaron; hay ajustes de código/nginx y cambio a análi
 **README:** Externo. README ahora publica DuckDNS, no Render ni iscoutb.dev. La sonda aún apunta a Render. URL documentada: https://uniteam-web.duckdns.org ; https://uniteam-api.duckdns.org ; https://uniteam-api.duckdns.org/health. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-24.md#uniteam) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).
+
+
+
+## Seguimiento actual · 25 de octubre de 2026 · S12 abierta
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Sin cambios de punta, README o PR desde el corte previo. La sonda más reciente falla, pero sigue apuntando a Render mientras el README publica DuckDNS: no prueba una caída del dominio actual. Se mantiene separado el CI exitoso del código de la comprobación de despliegue fallida; no se verificó funcionamiento en vivo.
+
+**Próximos pasos:**
+- Actualizar la sonda a los destinos documentados y publicar subdominios iscoutb.dev.
+- Alinear la afirmación del README sobre CI con el workflow existente y recuperar trazabilidad de cobertura/Quality Gate.
+- Completar garantías por operación, invalidación y ADR de reversión con evidencia concreta.
+
+**Issues GitHub:** 0 abiertas y 1 cerradas; 0 abiertas sin asignar. Cierres: 1 completed. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Externo. Frontend y API DuckDNS. Sonda sigue consultando Render; su fallo no determina disponibilidad de DuckDNS.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-25.md#uniteam) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).

@@ -140,3 +140,22 @@ No hay cambios en la rama principal desde el seguimiento del 22 de octubre; el �
 **README:** Externo. Backend Render, fuera del dominio institucional. URL documentada: https://xald-backend.onrender.com ; https://xald-backend.onrender.com/health. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-24.md#xald) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).
+
+
+
+## Seguimiento actual · 25 de octubre de 2026 · S12 abierta
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Nuevo avance documental S12: arc42 incorpora siete operaciones con garantías y límites, más dos contrastes de implementación (API LWW y escritura/lectura local). La lectura de código y pruebas respalda los recorridos citados, sin nueva implementación ni pruebas añadidas en este delta. El CI de la punta pasa Android/backend, contrato y el paso de health tras hook Render. No confundir esto con persistencia durable o aceptación móvil: el estado sigue en memoria, el almacenamiento local no es idempotente y la prueba LWW procesa secuencialmente, no prueba concurrencia real.
+
+**Próximos pasos:**
+- Conservar la tabla y los dos contrastes ya incorporados; añadir prueba propia del rechazo de montos y del caso de uso completo.
+- Precisar garantías ante reinicios, relojes desajustados, confirmación de envíos y duplicados locales; no llamar concurrente a la prueba secuencial.
+- Completar caché/no caché, comparación de costo de reversión y alineación C4 con memoria actual/Room futuro; publicar dominio institucional.
+
+**Issues GitHub:** 0 abiertas y 6 cerradas; 0 abiertas sin asignar. Cierres: 5 completed; 1 duplicate. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Externo. Backend Render. El CI incluye paso de health exitoso; no es verificación funcional propia ni evidencia de frontend institucional.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-25.md#xald) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).

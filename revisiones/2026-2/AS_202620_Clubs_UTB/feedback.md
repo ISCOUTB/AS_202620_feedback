@@ -166,3 +166,22 @@ La rama principal y el README permanecen sin cambios respecto al 22 de octubre. 
 **README:** Sin URL concreta. README raíz sin URL pública concreta. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-24.md#clubs_utb) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).
+
+
+
+## Seguimiento actual · 25 de octubre de 2026 · S12 abierta
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Avance integrado en master: nuevos modelos PostgreSQL, autenticación JWT local y feed Flutter; la ruta de publicaciones usa ahora SQLAlchemy directamente, por lo que ya no corresponde describirla solo como adaptador en memoria. Sin embargo, publicacion_router.py:135 contiene el operador ??, inválido en Python; el código guarda y compara la contraseña sin hash en auth_router.py:62,81 y usa un valor JWT predeterminado si falta configuración. La cabecera de idempotencia se recibe pero no se aplica al guardar en las rutas nuevas. Los dos workflows del head fallan sin jobs devueltos; no se atribuye esa ausencia de jobs al error de Python sin evidencia del run. README aún describe Supabase y no publica URL concreta. La nueva tabla de consistencia expresa propuestas, no prueba su implementación.
+
+**Próximos pasos:**
+- Corregir sintaxis del router y obtener ejecución de pruebas/contrato sobre el head, separando fallo del workflow de defectos estáticos.
+- Aplicar hash de contraseñas y verificación segura, exigir configuración JWT sin valor predeterminado y probar autenticación.
+- Restituir idempotencia efectiva en la ruta PostgreSQL con restricción/transacción; alinear tabla S12, contrato, C4/arc42 y README, incluida URL iscoutb.dev.
+
+**Issues GitHub:** 0 abiertas y 0 cerradas; 0 abiertas sin asignar. Cierres: —. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Sin URL concreta. README sin URL pública concreta; no implica ausencia de despliegue.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-25.md#clubs_utb) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).

@@ -140,3 +140,22 @@ No hay cambios en la rama principal respecto al 22 de octubre. La PR #60 permane
 **README:** Institucional. API institucional, interfaz Flutter en GitHub Pages: cumplimiento parcial del sitio. Azure aparece solo como histórico. URL documentada: https://campusmarket.iscoutb.dev ; https://nnigarp.github.io/AS_202620_PROYECTO_CAMPUSMARKET/. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-24.md#proyecto_campusmarket) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).
+
+
+
+## Seguimiento actual · 25 de octubre de 2026 · S12 abierta
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Sin cambios en master desde el corte previo. #60 sigue abierta y no integrada. En la punta actual pasan Compose/persistencia, contrato cliente, backend y Flutter; Flujo real Web y Android conserva failure. API institucional y frontend GitHub Pages permanecen separados; no afirmar todo CI verde.
+
+**Próximos pasos:**
+- Corregir/reproducir el flujo Android y resolver #60.
+- Publicar frontend bajo iscoutb.dev; API institucional no completa ese requisito.
+- Completar garantías de publicación, política de caché y ADR de costo de reversión.
+
+**Issues GitHub:** 1 abiertas y 0 cerradas; 1 abiertas sin asignar. Cierres: —. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Institucional. Cumplimiento parcial: API institucional, frontend externo GitHub Pages. Azure es histórico.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-25.md#proyecto_campusmarket) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).

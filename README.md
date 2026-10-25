@@ -14,6 +14,14 @@ Este material vive en [`ISCOUTB/AS_202620_feedback`](https://github.com/ISCOUTB/
 abierto para que puedas leerlo, citarlo y proponer cambios. Si tienes delante una copia descargada,
 la versión que manda es la de ahí.
 
+## Seguimiento actualizado · 25 de octubre de 2026
+
+- [Avances y próximos pasos de los 23 proyectos](revisiones/2026-2/seguimiento-s12-2026-10-25.md).
+- [Issues y motivos de cierre](revisiones/2026-2/seguimiento-issues-2026-10-25.md): 45 abiertas y 130 cerradas.
+- [README y despliegues](revisiones/2026-2/seguimiento-despliegues-2026-10-25.md): 9 institucional; 7 sin url concreta; 7 externo.
+
+Seguimiento documental con S12 abierta, sin cambiar calificaciones, planillas ni matrices históricas.
+
 ## Seguimiento actualizado · 24 de octubre de 2026
 
 - [Avances y retroalimentación actual de los 23 proyectos](revisiones/2026-2/seguimiento-s12-2026-10-24.md).
@@ -433,4 +441,5 @@ en la conversación.
 Dos reglas de forma que evitan que el kit envejezca mal: **no se escriben pesos ni fechas**, que
 ya viven en el aula y se desincronizan en cuanto cambian; y las comprobaciones que se repiten en
 todas las entregas están en el contrato, no copiadas en cada ficha.
+
 

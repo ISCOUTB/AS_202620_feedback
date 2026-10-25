@@ -157,3 +157,21 @@ Sin cambios en la rama principal desde el seguimiento del 22 de octubre. El CI p
 **README:** Institucional. Backend institucional; no acredita interfaz Flutter pública. URL documentada: https://gimnasio-utb.iscoutb.dev. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-24.md#gimnasioutb) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).
+
+
+
+## Seguimiento actual · 25 de octubre de 2026 · S12 abierta
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Sin nueva punta ni cambio de README desde el 24/oct. CI exitoso de la misma punta; no añade evidencia PostgreSQL o aceptación funcional respecto al informe anterior. README sigue documentando backend institucional y pendiente de integración Flutter, aunque el informe previo reconoce llamadas HTTP existentes; no inferir ausencia de código por documentación rezagada.
+
+**Próximos pasos:**
+- Incorporar y acreditar pruebas PostgreSQL en CI; actualizar README y backlog según evidencia.
+- Mantener pendientes de garantías por operación, caché/no caché y ADR comparativo del 24/oct.
+
+**Issues GitHub:** 16 abiertas y 0 cerradas; 0 abiertas sin asignar. Cierres: —. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Institucional. Backend; interfaz Flutter pública no acreditada
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-25.md#gimnasioutb) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).

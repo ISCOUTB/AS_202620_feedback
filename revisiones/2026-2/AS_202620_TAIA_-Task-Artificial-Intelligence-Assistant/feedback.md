@@ -162,3 +162,22 @@ Presentación y despliegue funcionando confirmados por el docente.
 **README:** Institucional. API institucional; Flutter sigue descrito como arquitectura objetivo. Presentación y funcionamiento confirmados por el docente. URL documentada: https://taia-sistema.iscoutb.dev ; https://taia-sistema.iscoutb.dev/health ; https://taia-sistema.iscoutb.dev/docs ; https://taia-backend-latest.onrender.com/health. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-24.md#taia_-task-artificial-intelligence-assistant) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).
+
+
+
+## Seguimiento actual · 25 de octubre de 2026 · S12 abierta
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Sin cambios de punta, README, issues o PR relevantes desde el corte anterior. La API institucional permanece documentada y se conserva la confirmación docente de presentación y funcionamiento. No aparece un run para la punta actual: los últimos CI/CD exitosos son de otra revisión. El workflow mantiene paths sin espacio tras los guiones y rutas que requieren alineación, por lo que no se da por corregido el disparador ni se infiere caída del servicio.
+
+**Próximos pasos:**
+- Corregir paths en CI y verificar un run sobre la punta actual.
+- Completar garantías por operación y pruebas de confirmar/notificar frente a crear tarea y Telegram.
+- Justificar caché/no caché y costo de reversión; mantener PostgreSQL, C4 y arc42 alineados.
+
+**Issues GitHub:** 3 abiertas y 4 cerradas; 2 abiertas sin asignar. Cierres: 4 completed. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Institucional. API institucional; Render como respaldo. Flutter es arquitectura objetivo, no frontend web verificado. Presentación y funcionamiento confirmados por docente.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-25.md#taia_-task-artificial-intelligence-assistant) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).

@@ -156,3 +156,21 @@ Hay avance importante integrado mediante las PR #36 y #37: autenticación JWT, r
 **README:** Externo. README mantiene frontend Pages y backend Render; no publica URL institucional. F7 sigue pendiente en la documentación. URL documentada: https://iscoutb.github.io/AS_202620_DinamikUTB/ ; https://dinamikutb-api.onrender.com. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-24.md#dinamikutb) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).
+
+
+
+## Seguimiento actual · 25 de octubre de 2026 · S12 abierta
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Sin nueva punta ni cambio de README desde el 24/oct. F7 continúa marcada pendiente en README/arc42: el equipo fijó recrear y resembrar antes del 25/oct; hoy no se encontró evidencia de esa operación. No se infiere que no se haya realizado ni que la base esté caída. Los runs CI/Pages del head son exitosos pero no acreditan recreación, condiciones del proveedor ni despliegue institucional.
+
+**Próximos pasos:**
+- Documentar resultado de recreación/resembrado o migración de la BD demo y verificación de datos/health; no cerrar F7 solo por CI.
+- Actualizar documentación de Usuarios/autenticación y garantías; publicar URL institucional real.
+
+**Issues GitHub:** 2 abiertas y 15 cerradas; 1 abiertas sin asignar. Cierres: 15 completed. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Externo. Frontend; API
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-25.md#dinamikutb) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).

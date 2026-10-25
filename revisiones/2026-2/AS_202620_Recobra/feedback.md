@@ -151,3 +151,22 @@ El docente confirmó presentación.
 **README:** Institucional. Vitrina y app institucionales. Docente confirmó presentación; no se añadió una auditoría funcional. URL documentada: https://recobra.iscoutb.dev ; https://recobra.iscoutb.dev/app/. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-24.md#recobra) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).
+
+
+
+## Seguimiento actual · 25 de octubre de 2026 · S12 abierta
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Dos commits posteriores al corte anterior responden al feedback: se corrigió la invalidación de /lugares (el despliegue no borra caché del navegador), se ampliaron los adaptadores PostgreSQL a nueve de nueve, se añadió verificación de respaldo/restauración y alerta de cola de fallidos. El run exacto la revisión citada registra 37 pruebas de adaptadores aprobadas y restauración de 23 filas en nueve tablas sin diferencias; Quality Gate aprobado. Los e2e nuevos prueban mensajes en la aplicación con fallos simulados; los e2e generales siguen en memoria. No confundir procedimiento CI con respaldos programados de producción: estos siguen pendientes, igual que alerta hacia personas y RTO real. README ahora separa explícitamente vitrina, Flutter Web y API. Presentación confirmada por docente.
+
+**Próximos pasos:**
+- Configurar y evidenciar respaldo programado de producción y ensayo controlado con tiempos; CI valida procedimiento, no operación productiva.
+- Conectar alerta de cola a una notificación operativa; hoy solo log/métrica.
+- Mantener explícitos límites de EventEmitter, una instancia y e2e en memoria; complementar cobertura del flujo completo contra PostgreSQL.
+
+**Issues GitHub:** 0 abiertas y 0 cerradas; 0 abiertas sin asignar. Cierres: —. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Institucional. README aclara vitrina, Flutter Web y API en mismo host institucional; no se añade auditoría funcional.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-25.md#recobra) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).

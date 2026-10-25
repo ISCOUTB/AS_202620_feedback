@@ -160,3 +160,22 @@ La rama principal no ha cambiado desde el seguimiento del 22 de octubre. Se mant
 **README:** Sin URL concreta. README mantiene placeholders Vercel/Render, no URL pública concreta. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-24.md#shareu) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).
+
+
+
+## Seguimiento actual · 25 de octubre de 2026 · S12 abierta
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Sin cambios en master, README, PR ni último CI respecto al corte anterior. #22 y #23 siguen abiertas; no atribuir sus propuestas a master. El último workflow de la punta permanece fallido y diez issues siguen abiertas, cinco sin responsable. README conserva placeholders Vercel/Render.
+
+**Próximos pasos:**
+- Resolver pipeline y conciliar issues con evidencia; no contar propuesta de PR como integrada.
+- Sustituir placeholders con URL oficial iscoutb.dev.
+- Completar garantías por operación, caché/no caché y ADR de reversión.
+
+**Issues GitHub:** 10 abiertas y 10 cerradas; 5 abiertas sin asignar. Cierres: 10 completed. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Sin URL concreta. Placeholders Vercel/Render y localhost, no URL pública concreta vigente.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-25.md#shareu) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).

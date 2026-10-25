@@ -143,3 +143,23 @@ Se reconoce la corrección del bloqueo observado el 22 de octubre: el run de hoy
 **README:** Sin URL concreta. README raíz solo publica localhost; su cifra de siete pruebas y SQLite en CI está desactualizada. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-24.md#utb_tracker) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).
+
+
+
+## Seguimiento actual · 25 de octubre de 2026 · S12 abierta
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Nuevas migraciones y ajustes de API/configuración; el cliente Android incorpora empaquetado, R8 y desactivación de copias/HTTP claro. Se publicó app-release.apk en release v1.0.2, y la punta main registra 48 pruebas backend y deploy exitosos. Esto acredita construcción/publicación del APK, no aceptación funcional en un dispositivo. README raíz sigue sin URL pública concreta; el código del cliente apunta a HTTPS nip.io, no al dominio institucional. Persiste la fixture que recurre a DATABASE_URL antes de drop_all/create_all: no está resuelto el riesgo de destino de pruebas incorrecto.
+
+**Próximos pasos:**
+- Actualizar README con URL iscoutb.dev, API, cliente Android/release y arquitectura vigente; el enlace dentro del código no sustituye el README.
+- Exigir TEST_DATABASE_URL de una base aislada y rechazar destinos de producción antes de operaciones destructivas.
+- Validar el APK con recorridos reales y firma de distribución apropiada: build.gradle.kts aún usa firma debug en release.
+- Completar garantías/concurrencia, caché/no caché y costo de reversión de S12; un CI exitoso no reemplaza análisis estático ni aceptación móvil.
+
+**Issues GitHub:** 1 abiertas y 0 cerradas; 1 abiertas sin asignar. Cierres: —. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Sin URL concreta. README raíz sin endpoint público vigente. Solo en código: https://129-80-171-141.nip.io; release APK v1.0.2 publicado, no prueba de sitio institucional.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-25.md#utb_tracker) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).

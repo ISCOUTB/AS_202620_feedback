@@ -173,3 +173,22 @@ El seguimiento S12 del 22 de octubre sigue respaldado por la misma tabla de gara
 **README:** Externo. HTTP sslip externo; falta dominio institucional con certificado válido. URL documentada: http://verifacts-sistema-ju3vi7-444522-144-24-4-187.sslip.io. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-24.md#verifacts) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).
+
+
+
+## Seguimiento actual · 25 de octubre de 2026 · S12 abierta
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Atiende tres pendientes documentales mediante issues #1–#3 creadas y cerradas completed: README actualizado a 66 pruebas y prototipo aislado; C4 distingue Traefik/nginx del modo local; arc42 acota la consistencia a visibilidad tras commit en un nodo y no afirma linearizabilidad general. El delta es documental, no nuevas mitigaciones de producto. La punta registra Tests y smoke de imagen exitosos, 66 pruebas y Quality Gate PASSED confirmado en log. El README reconoce que iscoutb.dev/certificado siguen pendientes y conserva los límites del prototipo.
+
+**Próximos pasos:**
+- No volver a pedir las tres correcciones documentales ya verificadas; conservar separación entre garantías del producto y prototipo.
+- Publicar URL exacta bajo iscoutb.dev y certificado válido, distinguiendo frontend y API.
+- Atender mitigaciones SSRF/historial y resiliencia declaradas pendientes; añadir pruebas/build frontend y mediciones reales sin confundirlas con simulaciones.
+
+**Issues GitHub:** 0 abiertas y 3 cerradas; 0 abiertas sin asignar. Cierres: 3 completed. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Externo. Referencia HTTP sslip. README declara pendiente dominio institucional/certificado; frontend / y API /docs,/health separados conceptualmente.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-25.md#verifacts) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).

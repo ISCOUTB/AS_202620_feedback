@@ -149,3 +149,21 @@ Presentación y funcionamiento confirmados por el docente.
 **README:** Sin URL concreta. README solo localhost y placeholder Supabase. Presentación y funcionamiento confirmados por el docente; brecha documental, no ausencia de despliegue. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-24.md#elmapita) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).
+
+
+
+## Seguimiento actual · 25 de octubre de 2026 · S12 abierta
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Sin nueva punta ni cambio de README desde el 24/oct, con CI exitoso de ese head. Se conserva presentación y funcionamiento confirmados por el docente. Sigue faltando la URL pública concreta del despliegue en README; localhost y placeholder Supabase no la sustituyen.
+
+**Próximos pasos:**
+- Publicar en README la URL iscoutb.dev exacta del despliegue mostrado, sin inventar host.
+- Mantener pendientes S12 del 24/oct sobre garantías, invalidación/versionado de modelos y ADR comparativo.
+
+**Issues GitHub:** 1 abiertas y 0 cerradas; 1 abiertas sin asignar. Cierres: —. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Sin URL concreta. README sin URL pública concreta; no implica ausencia de despliegue.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-25.md#elmapita) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).

@@ -154,3 +154,22 @@ No hay cambios en la rama principal respecto al 22 de octubre. Se conserva el av
 **README:** Sin URL concreta. Declara contenedor Dokploy desplegado, pero URL pública pendiente; no hay host concreto. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-24.md#enagenda) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).
+
+
+
+## Seguimiento actual · 25 de octubre de 2026 · S12 abierta
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Avance integrado: panel del organizador, creación de eventos e invitaciones por evento con modelos/migraciones PostgreSQL. Los casos de uso bloquean filas con FOR UPDATE antes de contar y escribir, con límites de cuatro eventos activos y treinta invitados. En app/web.py conviven las nuevas rutas /eventos/invitacion/<token> sobre PostgreSQL y las rutas heredadas /invitacion y /api/v1/invitaciones sobre memoria: no declarar toda Invitaciones persistida ni toda Invitaciones en memoria. El CI falla durante colección de cuatro módulos porque DATABASE_URL no está configurada; contrato y build Docker se omiten. Pages exitoso es publicación estática, no aceptación del backend. README no se actualizó ni publica URL concreta.
+
+**Próximos pasos:**
+- Configurar una base aislada de pruebas y migraciones en CI antes de ejecutar la suite; verificar contrato y build omitidos.
+- Probar concurrencia y límites de eventos/invitados contra PostgreSQL y documentar coexistencia o migración de rutas heredadas en memoria.
+- Actualizar README, C4/arc42 y URL iscoutb.dev; no confundir Pages con despliegue funcional del backend.
+
+**Issues GitHub:** 1 abiertas y 0 cerradas; 0 abiertas sin asignar. Cierres: —. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Sin URL concreta. README sin URL pública concreta; no implica ausencia de despliegue.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-25.md#enagenda) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).

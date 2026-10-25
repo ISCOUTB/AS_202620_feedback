@@ -152,3 +152,22 @@ El docente confirmó entrega de avance.
 **README:** Institucional. Backend institucional. README conserva instrucciones antiguas de Render; docente confirmó avance presentado. URL documentada: https://routb.iscoutb.dev. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-24.md#routb) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).
+
+
+
+## Seguimiento actual · 25 de octubre de 2026 · S12 abierta
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Sin cambios en master desde el corte anterior. Nueva ejecución programada de purga pasó, pero no es nuevo despliegue ni aceptación funcional. CI de la misma punta permanece exitoso; se conservan límites documentados en la revisión previa sobre job Sonar placeholder y documentación de geocode_cache retirada. Docente confirmó avance entregado.
+
+**Próximos pasos:**
+- Conciliar arc42, ADR y caché con geocodificación en cliente y route_cache vigente.
+- Obtener análisis/Gate reales y actualizar guía Render frente a Dokploy.
+- Contrastar garantías de solicitudes/cupos con restricciones y pruebas concurrentes.
+
+**Issues GitHub:** 0 abiertas y 0 cerradas; 0 abiertas sin asignar. Cierres: —. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Institucional. Backend institucional; instrucciones Render antiguas aún presentes; avance docente preservado.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-25.md#routb) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).

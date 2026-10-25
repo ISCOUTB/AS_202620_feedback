@@ -158,3 +158,23 @@ Hay avance sustancial desde el 22 de octubre: frontend v4 y pnpm, migraciones Al
 **README:** Externo. Sitio sslip externo; dominio definitivo pendiente. No se verificó redespliegue ni aceptación visual. URL documentada: https://tiendautb-sistema-n0ojjk-fde272-144-24-4-187.sslip.io/. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-24.md#tienda-virtual-utb) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).
+
+
+
+## Seguimiento actual · 25 de octubre de 2026 · S12 abierta
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Avance sustancial: el stack API 0.4.0–0.5.0 ya está fusionado, con registro/login JWT, escrituras de inventario, pedidos idempotentes con ciclo de vida y cancelación, permisos/RLS por tienda y frontend conectado a datos reales. La PR #12 reúne carrito, apartados e historial en /pedidos y deja /cuenta para perfil/carnet. El equipo documenta despliegue de 0.5.0 y E2E, sin aceptación independiente aquí. El CI exacto pasa frontend y backend; sonarcloud figura success pero todos sus pasos de análisis están skipped, por lo que no acredita análisis ni Quality Gate. Ya no corresponde afirmar que los endpoints de pedidos son solo diseño.
+
+**Próximos pasos:**
+- Verificar el despliegue con el dominio institucional y certificado válido; registrar aceptación funcional separada de los E2E reportados por el equipo.
+- Resolver cobertura/análisis Sonar y verificar su Quality Gate, no solo el estado del job omitido.
+- Confirmar SEED_ON_DEPLOY=false tras sembrar y programar el vencimiento de pedidos; probar respaldo/restauración y revisar seguridad de sesión según pendientes.
+- Completar evidencia S12 de garantías y reversión usando las operaciones ahora implementadas, sin tratar diseño previo como estado actual.
+
+**Issues GitHub:** 0 abiertas y 0 cerradas; 0 abiertas sin asignar. Cierres: —. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Externo. Frontend sslip temporal; el equipo documenta certificado autofirmado pendiente y despliegue 0.5.0. No se sorteó aviso TLS ni se verificó el sitio en vivo.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-25.md#tienda-virtual-utb) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).

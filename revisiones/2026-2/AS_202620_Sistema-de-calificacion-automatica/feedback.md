@@ -158,3 +158,22 @@ Hay avances nuevos en recepción de lotes: errores de almacenamiento/bitácora s
 **README:** Externo. Sitio y API en Render, sin subdominio institucional. URL documentada: https://quantia-utb.onrender.com ; https://quantia-utb-api.onrender.com/health. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-24.md#sistema-de-calificacion-automatica) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).
+
+
+
+## Seguimiento actual · 25 de octubre de 2026 · S12 abierta
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Se sincronizan README, arc42, aspectos y modos de fallo con los arreglos ya implementados: se documenta R-21 cerrado y las cifras vigentes de pruebas. El delta desde el corte del 24 es documental, no una nueva implementación. El CI de la punta actual confirma 156 pruebas backend y 72 frontend, además de contrato y modos de fallo. Se mantienen declaradas la falta de acuse de la cola, persistencia efímera y detección de cargas duplicadas; no se cierra S12 ni se acredita un nuevo despliegue.
+
+**Próximos pasos:**
+- Conservar la sincronización documental conseguida y completar operación→garantía para recepción, bitácora y consumo sin acuse.
+- Repetir EC-07 con almacenamiento y Redis reales; el plazo de encolado no acota toda la lectura y escritura del lote.
+- Completar la decisión comparativa de persistencia y política de caché/no caché; publicar frontend y API bajo iscoutb.dev.
+
+**Issues GitHub:** 0 abiertas y 0 cerradas; 0 abiertas sin asignar. Cierres: —. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Externo. Frontend y API Render; no dominio institucional. Sin sondeo directo en esta revisión.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-25.md#sistema-de-calificacion-automatica) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).

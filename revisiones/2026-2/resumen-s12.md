@@ -1,5 +1,7 @@
 # Resumen de feedback · S12 · avance preliminar, entrega abierta
 
+**Seguimiento vigente del 25/oct:** [avances y próximos pasos](seguimiento-s12-2026-10-25.md), [issues](seguimiento-issues-2026-10-25.md) y [README/despliegues](seguimiento-despliegues-2026-10-25.md). S12 continúa abierta; las matrices y cifras históricas no se recalculan.
+
 **Seguimiento vigente del 24/oct:** [avances y próximos pasos de los 23 equipos](seguimiento-s12-2026-10-24.md), [issues](seguimiento-issues-2026-10-24.md) y [README/despliegues](seguimiento-despliegues-2026-10-24.md). S12 sigue abierta hasta el final del 25/oct en Colombia. Las matrices y cifras anteriores conservan su fecha y no se recalculan aquí.
 
 **Actualización de trabajo del 22/oct:** [seguimiento actual de los 23 equipos](seguimiento-s12-2026-10-22.md), [issues](seguimiento-issues-2026-10-22.md) y [README/despliegues](seguimiento-despliegues-2026-10-22.md). S12 continúa abierta hasta el final del 25/oct en Colombia. Las cifras y matrices que siguen conservan su snapshot del 19/oct: no se recalculan ni describen por sí solas los avances posteriores. Para pendientes vigentes, consultar el seguimiento fechado.
@@ -191,3 +193,4 @@ Se leyeron documentación, código, pruebas e historial sin ejecutar software es
 El docente confirmó presentaciones/avances de TAIA, ElMapita, ROUTB, PideUtb y Recobra, con el alcance individual registrado en [avances presentados](avances-presentados-2026-10-20.md). TAIA y ElMapita funcionan según esa confirmación; PideUtb tiene despliegues. Esto complementa el seguimiento sin alterar la matriz, el corte de consulta o las notas preliminares anteriores.
 
 Se añaden [issues de los 23 equipos](seguimiento-issues-2026-10-20.md) y [URL de README y dominio iscoutb.dev](seguimiento-despliegues-2026-10-20.md). No confundir un tablero desactualizado, una URL ausente o el bloqueo de Cloudflare con ausencia de trabajo o caída del servicio.
+

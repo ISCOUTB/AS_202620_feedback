@@ -147,3 +147,22 @@ Hay avance S12: docs/aspectos.md incorpora una tabla de cinco operaciones y gara
 **README:** Institucional. API institucional y alternativa Render; frontend Flutter sigue pendiente en el README. URL documentada: https://inventrack.iscoutb.dev ; https://inventrack-api.onrender.com. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-24.md#inventrack) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).
+
+
+
+## Seguimiento actual · 25 de octubre de 2026 · S12 abierta
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Avance documental S12 en docs/aspectos.md: declara política efectiva sin caché para el MVP en memoria y diseño futuro cache-aside Redis, claves versionadas, TTL e invalidación tras escritura con tratamiento de fallo. Es diseño condicionado a persistencia compartida, no Redis implementado. El nuevo run ejecuta Pytest con cobertura, contrato y scanner exitosamente; scanner no demuestra por sí solo Quality Gate. README sin cambios: API institucional, Flutter pendiente.
+
+**Próximos pasos:**
+- Reconocer el diseño de caché nuevo sin pedirlo como ausente; mantener diferenciada política actual sin caché y evolución Redis.
+- Resolver trazabilidad de dos operaciones, ADR comparativo de costo de reversión y alineación de arc42 §8/C4 con RAM actual.
+- Probar carreras entre repoblación e invalidación y fallos cuando se implemente caché; TTL/Redis por sí solos no garantizan lectura fuerte.
+
+**Issues GitHub:** 0 abiertas y 7 cerradas; 0 abiertas sin asignar. Cierres: 7 completed. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Institucional. API; API alternativa
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-25.md#inventrack) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).

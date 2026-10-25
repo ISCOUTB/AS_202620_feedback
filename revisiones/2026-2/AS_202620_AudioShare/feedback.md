@@ -142,3 +142,21 @@ La rama principal y el README no cambian respecto al seguimiento del 22 de octub
 **README:** Institucional. Endpoint institucional; la imagen publicada sirve cliente legado, no Flutter web. URL documentada: https://audioshare.iscoutb.dev. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-24.md#audioshare) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).
+
+
+
+## Seguimiento actual · 25 de octubre de 2026 · S12 abierta
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Sin nueva punta ni cambio de README desde el 24/oct. CI, Flutter y publicación de imagen de la misma punta continúan exitosos. README distingue la URL institucional y el cliente legado servido por la imagen de Flutter web compilado en CI.
+
+**Próximos pasos:**
+- Mantener pendientes S12 del 24/oct: tabla por operación, separación SQLite/NDJSON, invalidación de /track y ADR de costo de reversión.
+- Actualizar contradicciones del README sobre audio simulado/real y conservar alcance de cliente legado.
+
+**Issues GitHub:** 2 abiertas y 2 cerradas; 2 abiertas sin asignar. Cierres: 2 completed. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Institucional. API y cliente legado; no Flutter web en imagen
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-25.md#audioshare) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).

@@ -147,3 +147,22 @@ Avance sustancial S12: ya existe tabla de 14 operaciones, caché de catálogo wr
 **README:** Sin URL concreta. README raíz aún sin URL vigente concreta. Azure figura retirado; el CI de Dokploy exitoso no sustituye publicar la dirección. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-24.md#laplacita) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).
+
+
+
+## Seguimiento actual · 25 de octubre de 2026 · S12 abierta
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Avance real incorporado después del corte del 24: almacenamiento de imágenes del catálogo con módulo Garage S3 y referencias PostgreSQL; rutas de pago exigen dueño y se retiraron las dos mutaciones públicas legacy de entrega. Se añadió auditoría de dependencias a CI, STRIDE y transcripción Markdown del plan. Los ADR 0024–0026 ya constan aceptados por el equipo, no pendientes de validación. El run exacto de master pasa frontend, pruebas, contrato y audit; log Sonar confirma QUALITY GATE STATUS: PASSED. Las ocho PR de dependencias #16–23 siguen abiertas, no son funcionalidades integradas. README todavía solo tiene la URL Azure retirada, no publica URL vigente. La integración Garage/recorrido desplegado se reporta por el equipo; esta revisión no ejecutó una prueba funcional en vivo.
+
+**Próximos pasos:**
+- Publicar en README las URL vigentes separando API y PWA bajo iscoutb.dev; retirar la referencia ambigua «URL arriba».
+- Distinguir configuración real de Garage del modo memoria sin GARAGE_* y aportar prueba de persistencia tras reinicio; mantener deuda de limpieza de objetos huérfanos.
+- Completar lecturas por dueño, validación del modelo STRIDE y aceptación móvil; revisar las PR de dependencias sin atribuir al master sus fallos.
+
+**Issues GitHub:** 0 abiertas y 14 cerradas; 0 abiertas sin asignar. Cierres: 14 completed. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Sin URL concreta. Solo Azure explícitamente retirado; ninguna URL pública vigente concreta en README raíz.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-25.md#laplacita) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).

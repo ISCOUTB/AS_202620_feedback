@@ -140,3 +140,21 @@ La rama principal no cambia respecto al 22 de octubre; continúan disponibles la
 **README:** Institucional. Frontend/backend institucionales y alternativas Azure/Vercel documentadas. No se repitió prueba funcional. URL documentada: https://drift.iscoutb.dev ; https://drift-utb-202620-g5fvchdcgpcthkeg.mexicocentral-01.azurewebsites.net ; https://drift-frontend-as202620.vercel.app. Debe publicar la URL oficial exacta bajo iscoutb.dev y distinguir interfaz de API cuando corresponda.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-24.md#drift) · [Issues y estados](../seguimiento-issues-2026-10-24.md) · [URL y dominio](../seguimiento-despliegues-2026-10-24.md).
+
+
+
+## Seguimiento actual · 25 de octubre de 2026 · S12 abierta
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Sin nueva punta ni cambio de README desde el 24/oct. CI y Azure de la misma punta continúan exitosos. Se mantienen los artefactos S12 y sus límites ya registrados: evidencia simulada no equivale a rendimiento real. README distingue frontend/API institucionales y alternativas Azure/Vercel; no se hizo nueva prueba funcional.
+
+**Próximos pasos:**
+- Mantener límites del experimento simulado y repetir con dependencias reales antes de atribuir rendimiento productivo.
+- Conservar pendientes del 24/oct sobre ADR0010, fallback/stale y catálogo por instancia/reinicio.
+
+**Issues GitHub:** 5 abiertas y 15 cerradas; 5 abiertas sin asignar. Cierres: 15 completed. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Institucional. Frontend y API /api; API alternativa; Frontend alternativo
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-25.md#drift) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).
