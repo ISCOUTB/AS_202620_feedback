@@ -174,3 +174,21 @@ Sin nueva punta ni cambio de README desde el 24/oct. F7 continúa marcada pendie
 **README:** Externo. Frontend; API
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-25.md#dinamikutb) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).
+
+
+## Seguimiento actual · 26 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Añade historial transaccional, documentación S12 y API institucional en README. ADR0012 cambia el plan: laboratorio como referencia y Render como respaldo temporal sin recrear su BD; el equipo reporta comprobación externa del 26/oct con health 200, sin verificación independiente aquí. F7 aún conserva el plan viejo de recreación y debe reconciliarse. CI backend: 84 pruebas pasan y una falla porque el monkeypatch del modelo sigue activo al consultar historial; el log no demuestra pérdida de atomicidad. Frontend y Pages pasan, Sonar se omite. El frontend sigue documentado en GitHub Pages: contar API institucional no equivale a frontend institucional ni a demostrar el cambio efectivo de API_BASE_URL.
+
+**Próximos pasos:**
+- Reconciliar F7 con ADR0012: documentar transición efectiva a laboratorio y retiro de Render, sin exigir el plan antiguo de recreación.
+- Restaurar el monkeypatch antes de consultar historial y repetir CI backend/atomicidad.
+- Verificar API_BASE_URL del frontend, acceso externo y respaldos del volumen; publicar frontend bajo iscoutb.dev.
+
+**Issues GitHub:** 2 abiertas y 15 cerradas; 1 abiertas sin asignar. Cierres: 15 completed. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Institucional. Nuevo subdominio institucional solo para API; frontend Pages externo. README dice despliegue en curso y ADR0012 reporta verificación externa: reconciliar fechas. No comprobación funcional propia.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-26.md#dinamikutb) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).

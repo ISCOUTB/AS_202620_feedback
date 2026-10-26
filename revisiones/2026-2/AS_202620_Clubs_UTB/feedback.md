@@ -185,3 +185,21 @@ Avance integrado en master: nuevos modelos PostgreSQL, autenticación JWT local 
 **README:** Sin URL concreta. README sin URL pública concreta; no implica ausencia de despliegue.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-25.md#clubs_utb) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).
+
+
+## Seguimiento actual · 26 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Corrige el operador Python inválido señalado ayer y ahora pasa Idempotency-Key al caso de uso/repositorio PostgreSQL de publicaciones, en lugar de ignorarlo. Añade recursos/feed y prototipo de mensajería con outbox en memoria. Persisten almacenamiento/comparación directa de contraseña sin hash y secreto JWT predeterminado; no se reproduce su valor. La búsqueda de idempotencia no compara autor ni payload antes de devolver una publicación previa: revisar alcance y conflicto de claves. Los dos workflows actuales siguen fallando sin jobs disponibles; no se demuestra que las pruebas hayan corrido. README actualizado afirma despliegue HTTPS, pero no publica una URL concreta.
+
+**Próximos pasos:**
+- Usar hash de contraseñas y rechazar arranque inseguro sin configuración JWT.
+- Aislar claves de idempotencia por autor/operación, validar payload y probar duplicados concurrentes/conflictivos.
+- Resolver workflows fallidos y publicar URL exacta de frontend/API en README.
+
+**Issues GitHub:** 0 abiertas y 0 cerradas; 0 abiertas sin asignar. Cierres: —. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Sin URL concreta. Declara HTTPS/Dokploy, pero sin URL pública concreta del sitio en README.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-26.md#clubs_utb) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).

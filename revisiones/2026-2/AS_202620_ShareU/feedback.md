@@ -179,3 +179,20 @@ Sin cambios en master, README, PR ni último CI respecto al corte anterior. #22 
 **README:** Sin URL concreta. Placeholders Vercel/Render y localhost, no URL pública concreta vigente.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-25.md#shareu) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).
+
+
+## Seguimiento actual · 26 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Nuevo commit incorpora repositorio Firestore para documentos, ADR0010–0012, modos de fallo y pruebas con sustitución del cliente. El README sigue describiendo SQLite/datos reiniciados y placeholders de despliegue: hay deriva documental respecto del nuevo repositorio. El run de la punta falla y no devuelve jobs ejecutados; no acredita pruebas aprobadas ni permite atribuir esta falla actual exclusivamente a Sonar. PR #22 y #23 siguen abiertas y sus propuestas no están integradas. No se verificó persistencia real en Firebase ni despliegue.
+
+**Próximos pasos:**
+- Conciliar README/C4/ADR con Firestore actual y publicar URL institucional concreta de frontend/API.
+- Corregir y ejecutar el workflow con evidencia de pruebas del repositorio y resiliencia; validar persistencia en el entorno objetivo sin dar por real la simulación de cliente.
+
+**Issues GitHub:** 10 abiertas y 10 cerradas; 5 abiertas sin asignar. Cierres: 10 completed. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Sin URL concreta. Placeholders Vercel/Render y localhost, no URL pública concreta vigente.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-26.md#shareu) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).

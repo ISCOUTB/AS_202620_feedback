@@ -173,3 +173,21 @@ Avance integrado: panel del organizador, creación de eventos e invitaciones por
 **README:** Sin URL concreta. README sin URL pública concreta; no implica ausencia de despliegue.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-25.md#enagenda) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).
+
+
+## Seguimiento actual · 26 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+PR3 integra documentación de consistencia y prototipo aislado de envío automático de invitaciones, con proveedor simulado, deduplicación, reintentos y DLQ en memoria. Su workflow específico ejecuta pruebas y demo con éxito; no envía correos reales ni integra Flask/BD/Dokploy. El CI general ahora falla al recolectar test_simulador.py por import relativo sin paquete reconocido, no por el error DATABASE_URL del corte anterior; contrato y Docker quedan omitidos. Pages publica documentación estática, no aceptación de la API. README mantiene host pendiente, sin URL pública concreta.
+
+**Próximos pasos:**
+- Corregir empaquetado/import del prototipo para que pytest general pueda recolectarlo y repetir contrato/build.
+- Mantener separada evidencia de correo simulado de envío real; definir persistencia/proveedor antes de integrar.
+- Documentar URL institucional concreta y alcance de rutas PostgreSQL frente a las heredadas en memoria.
+
+**Issues GitHub:** 1 abiertas y 0 cerradas; 0 abiertas sin asignar. Cierres: —. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Sin URL concreta. README sin URL pública concreta; no implica ausencia de despliegue.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-26.md#enagenda) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).

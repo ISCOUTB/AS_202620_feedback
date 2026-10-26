@@ -177,3 +177,21 @@ Se sincronizan README, arc42, aspectos y modos de fallo con los arreglos ya impl
 **README:** Externo. Frontend y API Render; no dominio institucional. Sin sondeo directo en esta revisión.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-25.md#sistema-de-calificacion-automatica) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).
+
+
+## Seguimiento actual · 26 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Avance real desde el 25/oct: separa hoja_id de trabajo_id, implementa caché de propuestas con invalidación y contrato 1.4.0, y sustituye la cola sin acuse por consumo Redis con acuse, reintentos, recuperación y lista de fallidos. El CI exacto acredita 193 pruebas backend, 73 frontend y un paso específico de 17 pruebas de mensajería. Por tanto, ya no corresponde mantener «sin acuse» como pendiente vigente. El ensayo documentado es local; el procesamiento aún abre/registra imágenes (no OMR), supone un solo worker y Redis sin persistencia sigue siendo un riesgo.
+
+**Próximos pasos:**
+- Validar el consumidor actualizado en el entorno desplegado y documentar la revisión exacta, sin confundir ensayo local con Render.
+- Resolver persistencia de Redis/almacén y estrategia antes de añadir un segundo worker; conservar explícito que OMR aún no está implementado.
+- Publicar frontend y API bajo iscoutb.dev.
+
+**Issues GitHub:** 0 abiertas y 0 cerradas; 0 abiertas sin asignar. Cierres: —. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Externo. Frontend y API Render; no dominio institucional. Sin sondeo directo en esta revisión.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-26.md#sistema-de-calificacion-automatica) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).

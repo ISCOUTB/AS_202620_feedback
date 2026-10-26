@@ -175,3 +175,20 @@ Sin nueva punta ni cambio de README desde el 24/oct. CI exitoso de la misma punt
 **README:** Institucional. Backend; interfaz Flutter pública no acreditada
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-25.md#gimnasioutb) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).
+
+
+## Seguimiento actual · 26 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Integra S12/ADR0006 y taller asíncrono aislado. El run actual pasa 12 pruebas base, 11 de contrato y nueve de mensajería, además de auditorías de arquitectura y dependencias; el fallo antiguo de auditoría está superado. La cola, deduplicación y DLQ son volátiles y el endpoint de aforo permanece síncrono; caché/event-log son diseños, no integración productiva. El workflow no configura PostgreSQL ni ejecuta su prueba específica: no atribuirle validación de esa base. README sigue describiendo backend institucional.
+
+**Próximos pasos:**
+- Ejecutar integración PostgreSQL con base aislada y evidenciar el recorrido Flutter/API.
+- Conservar límites del prototipo y no afirmar durabilidad, broker ni caché operativa a partir del diseño.
+
+**Issues GitHub:** 16 abiertas y 0 cerradas; 0 abiertas sin asignar. Cierres: —. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Institucional. Backend; interfaz Flutter pública no acreditada
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-26.md#gimnasioutb) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).

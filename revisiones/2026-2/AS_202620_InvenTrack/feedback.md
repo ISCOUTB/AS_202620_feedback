@@ -166,3 +166,21 @@ Avance documental S12 en docs/aspectos.md: declara política efectiva sin caché
 **README:** Institucional. API; API alternativa
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-25.md#inventrack) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).
+
+
+## Seguimiento actual · 26 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Integra auditoría asíncrona en las rutas reales de entradas/salidas mediante BackgroundTasks y simulador local, con correlación, métricas, deduplicación y reintentos; CI ejecuta 29 pruebas y contrato con éxito. ADR0015 completa almacenamiento en memoria y costos de reversión estimados. No es broker durable ni despliegue verificado. La clave X-Idempotency-Key se usa en el evento después de modificar stock: la deduplicación del consumidor no evita repetir la operación HTTP de inventario. Scanner exitoso no acredita por sí solo Quality Gate.
+
+**Próximos pasos:**
+- Probar repetición de POST con la misma clave y separar idempotencia de operación de deduplicación de auditoría.
+- Documentar/validar pérdida tras reinicio y ventana entre actualización de stock y publicación, antes de exigir durabilidad.
+- Acreditar despliegue de esta punta y frontend institucional por separado.
+
+**Issues GitHub:** 0 abiertas y 7 cerradas; 0 abiertas sin asignar. Cierres: 7 completed. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Institucional. API; API alternativa
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-26.md#inventrack) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).

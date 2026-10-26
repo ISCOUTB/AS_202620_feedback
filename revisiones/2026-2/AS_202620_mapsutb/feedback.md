@@ -154,3 +154,20 @@ Sin cambios en master desde el 16 de octubre. Nueva sonda programada del 25 de o
 **README:** Externo. Frontend Firebase externo; sonda CI disponible, sin nueva aceptación funcional propia.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-25.md#mapsutb) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).
+
+
+## Seguimiento actual · 26 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Se incorporó ADR0018 y evidencia S12 de datos/caché; una lectura fallida de zonas o grafo ya no queda cacheada. La fijación de firebase-tools 15.34.0 supera el error previo del despliegue: el run exacto ejecutó pruebas Flutter, build, publicación Firebase y URL/health con éxito. Las issues #55 y #56 están cerradas completed. Las sondas programadas posteriores pasan, sin equivaler a aceptación manual integral. README sigue en Firebase, fuera del dominio institucional; no confundir este proyecto con ElMapita.
+
+**Próximos pasos:**
+- Mantener la evidencia del arreglo y los cierres; verificar comportamiento de recarga/reintento del grafo con escenarios reproducibles.
+- Publicar frontend bajo iscoutb.dev y actualizar README; distinguir disponibilidad de sonda de aceptación del recorrido funcional.
+
+**Issues GitHub:** 0 abiertas y 54 cerradas; 0 abiertas sin asignar. Cierres: 54 completed. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Externo. Frontend Firebase externo; sonda CI disponible, sin nueva aceptación funcional propia.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-26.md#mapsutb) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).

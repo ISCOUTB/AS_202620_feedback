@@ -158,3 +158,20 @@ Sin nueva punta ni cambio de README desde el 24/oct. CI y Azure de la misma punt
 **README:** Institucional. Frontend y API /api; API alternativa; Frontend alternativo
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-25.md#drift) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).
+
+
+## Seguimiento actual · 26 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+PR32 integrado: actualiza S12, ADR0010, arc42 y C4 con almacenamiento de navegador y ausencia de brokers; explicita costo de reversión de datos. CI y despliegue Azure ejecutados con éxito para la punta actual. Esto no convierte las mediciones simuladas previas en rendimiento real ni acredita aceptación funcional en el dominio institucional.
+
+**Próximos pasos:**
+- Validar recorrido real en el despliegue institucional y conservar evidencias separadas de Azure.
+- Repetir mediciones relevantes con dependencias reales y distinguir decisiones de datos de implementación.
+
+**Issues GitHub:** 5 abiertas y 15 cerradas; 5 abiertas sin asignar. Cierres: 15 completed. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Institucional. Frontend y API /api; API alternativa; Frontend alternativo
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-26.md#drift) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).

@@ -166,3 +166,20 @@ Avance real incorporado después del corte del 24: almacenamiento de imágenes d
 **README:** Sin URL concreta. Solo Azure explícitamente retirado; ninguna URL pública vigente concreta en README raíz.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-25.md#laplacita) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).
+
+
+## Seguimiento actual · 26 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Sin nueva punta ni README desde el corte del 25. Se mantienen la integración Garage/PostgreSQL, protecciones de pago/entrega y evidencia de CI de la misma punta. Las ocho PR de dependencias #16–23 siguen abiertas; no se cuentan como funcionalidades fusionadas. README continúa sin URL pública vigente concreta. No se repitió aceptación funcional en vivo.
+
+**Próximos pasos:**
+- Publicar en README la URL vigente de frontend y API bajo iscoutb.dev, diferenciándola del despliegue Azure retirado.
+- Cerrar las deudas de persistencia de idempotencia y reintentos con evidencia ejecutada; revisar las actualizaciones de dependencias sin confundirlas con avances integrados.
+
+**Issues GitHub:** 0 abiertas y 14 cerradas; 0 abiertas sin asignar. Cierres: 14 completed. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Sin URL concreta. Solo Azure explícitamente retirado; ninguna URL pública vigente concreta en README raíz.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-26.md#laplacita) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).

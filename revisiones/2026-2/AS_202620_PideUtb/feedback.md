@@ -179,3 +179,20 @@ Sin cambio de punta ni nueva ejecución respecto al 24. PR #29 de identidad visu
 **README:** Institucional. Frontend/panel y API institucionales; docente confirma presentación/despliegues; sin nueva verificación visual.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-25.md#pideutb) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).
+
+
+## Seguimiento actual · 26 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Sin cambios de punta, README ni CI desde el 25. Se conserva la identidad visual integrada en PR #29 y el workflow exitoso de la misma revisión; los pasos Sonar/análisis/Quality Gate omitidos no acreditan un gate aprobado. El docente confirmó actualización presentada y despliegues. README mantiene sitio y API institucionales, sin nueva prueba manual de esta revisión.
+
+**Próximos pasos:**
+- Conservar la separación de frontend/API documentados y aportar evidencia funcional del rediseño, no inferida de pruebas backend.
+- Ejecutar análisis y Quality Gate reales y atender las deudas S12 pendientes con pruebas trazables.
+
+**Issues GitHub:** 1 abiertas y 0 cerradas; 1 abiertas sin asignar. Cierres: —. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Institucional. Frontend/panel y API institucionales; docente confirma presentación/despliegues; sin nueva verificación visual.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-26.md#pideutb) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).

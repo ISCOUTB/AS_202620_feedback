@@ -181,3 +181,20 @@ Sin cambios de punta, README, issues o PR relevantes desde el corte anterior. La
 **README:** Institucional. API institucional; Render como respaldo. Flutter es arquitectura objetivo, no frontend web verificado. Presentación y funcionamiento confirmados por docente.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-25.md#taia_-task-artificial-intelligence-assistant) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).
+
+
+## Seguimiento actual · 26 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Corrige el disparador YAML de CI, construye y arranca la imagen contra PostgreSQL de prueba, incorpora comprobación del Quality Gate para el commit y alinea despliegue/C4 con Dokploy mediante ADR-0010. Retira Terraform histórico y añade consistencia y decisión de no cachear lecturas. CI/CD exitosos consultados corresponden a la revisión citada, no a la punta documental posterior; el CD acredita solicitud por webhook, no finalización ni salud del despliegue. Se conserva funcionamiento y presentación confirmados por el docente.
+
+**Próximos pasos:**
+- Verificar en Dokploy la revisión efectivamente desplegada y su salud; el webhook exitoso no lo acredita por sí solo.
+- Reconciliar README y ADR sobre respaldo Render/TLS, y mantener la distinción entre API entregada y Flutter objetivo.
+
+**Issues GitHub:** 3 abiertas y 4 cerradas; 2 abiertas sin asignar. Cierres: 4 completed. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Institucional. API institucional; README también enlaza Render como alternativa histórica, sin confirmar respaldo activo. Flutter sigue arquitectura objetivo. Funcionamiento confirmado por docente; webhook CD no acredita fin del despliegue.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-26.md#taia_-task-artificial-intelligence-assistant) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).

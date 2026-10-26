@@ -171,3 +171,20 @@ Sin cambios en master desde el corte anterior. Nueva ejecución programada de pu
 **README:** Institucional. Backend institucional; instrucciones Render antiguas aún presentes; avance docente preservado.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-25.md#routb) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).
+
+
+## Seguimiento actual · 26 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+PR #53 y #54 integradas: garantía de solicitud activa única, migración 010 y pruebas de concurrencia; documentación alineada con Dokploy; taller de notificaciones con contrato, deduplicación, reintentos y DLQ. CI de la punta pasa pruebas/contrato, ciclo Alembic y build Docker. El bot Sonar sí publica Quality Gate aprobado para ambas PR (en #54 informa tres issues nuevas); esta evidencia es distinta del job Actions que sigue siendo un echo. El taller es aislado y en memoria, no mensajería productiva durable. La evidencia declara migración 010 aún no aplicada a Supabase desarrollo/producción; el CI no prueba aplicación en ese entorno. Se conserva avance entregado según docente.
+
+**Próximos pasos:**
+- Aplicar y verificar la migración 010 en el entorno autorizado antes de atribuir la garantía de unicidad al despliegue real.
+- Mantener explícita la pérdida de cola en reinicio del prototipo y su no integración productiva; resolver observaciones Sonar y aportar aceptación funcional.
+
+**Issues GitHub:** 0 abiertas y 0 cerradas; 0 abiertas sin asignar. Cierres: —. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Institucional. Backend institucional y guía actualizada a Dokploy; aplicación de migración 010 al entorno objetivo aún no confirmada.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-26.md#routb) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).

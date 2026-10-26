@@ -159,3 +159,20 @@ Sin cambios en master desde el corte previo. #60 sigue abierta y no integrada. E
 **README:** Institucional. Cumplimiento parcial: API institucional, frontend externo GitHub Pages. Azure es histórico.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-25.md#proyecto_campusmarket) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).
+
+
+## Seguimiento actual · 26 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+PR #61–65 fusionadas: estrategia de datos S12, correcciones de evidencia/C4 y estabilización del flujo Android, más taller aislado de mensajería. La punta actual pasa backend, Flutter, Compose/persistencia, contrato público y flujo real Web/Android; el job Android ejecutó el emulador y no fue omitido. Esto supera fallos de revisiones anteriores, sin transferirles el resultado. El taller usa SQLite, deduplicación, reintentos/DLQ y backoff real con sleeper inyectable; no integra broker ni outbox productivo. README distingue API iscoutb.dev y frontend GitHub Pages: el requisito de dominio de toda la solución sigue parcial.
+
+**Próximos pasos:**
+- Conservar evidencia exacta del flujo Web/Android reparado y separar CI controlado de aceptación manual del despliegue.
+- Mover/documentar el frontend bajo iscoutb.dev y mantener explícito el carácter aislado del taller frente a MySQL productivo.
+
+**Issues GitHub:** 1 abiertas y 0 cerradas; 1 abiertas sin asignar. Cierres: —. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Institucional. Cumplimiento parcial: API institucional, frontend externo GitHub Pages. Azure es histórico.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-26.md#proyecto_campusmarket) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).

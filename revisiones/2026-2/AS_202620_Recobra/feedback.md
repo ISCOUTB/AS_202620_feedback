@@ -170,3 +170,20 @@ Dos commits posteriores al corte anterior responden al feedback: se corrigió la
 **README:** Institucional. README aclara vitrina, Flutter Web y API en mismo host institucional; no se añade auditoría funcional.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-25.md#recobra) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).
+
+
+## Seguimiento actual · 26 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Sin nuevos commits, README ni runs desde el 25. Se conserva la evidencia del run exacto: 37 pruebas de adaptadores PostgreSQL y restauración de 23 filas en nueve tablas, además del Quality Gate previamente verificado. Los e2e de mensajería inyectan fallos y el resto de e2e usa memoria; no acreditan respaldos programados productivos ni alertas recibidas por personas. README distingue vitrina, Flutter Web y API. Se conserva la presentación confirmada por el docente.
+
+**Próximos pasos:**
+- Validar programación real de respaldos, restauración y RTO en el entorno objetivo, sin presentar la prueba CI como operación productiva.
+- Completar alerta hacia personas y aceptación del recorrido desplegado con fuentes verificables.
+
+**Issues GitHub:** 0 abiertas y 0 cerradas; 0 abiertas sin asignar. Cierres: —. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Institucional. README aclara vitrina, Flutter Web y API en mismo host institucional; no se añade auditoría funcional.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-26.md#recobra) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).

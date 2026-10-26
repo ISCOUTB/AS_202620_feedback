@@ -178,3 +178,20 @@ Avance sustancial: el stack API 0.4.0–0.5.0 ya está fusionado, con registro/l
 **README:** Externo. Frontend sslip temporal; el equipo documenta certificado autofirmado pendiente y despliegue 0.5.0. No se sorteó aviso TLS ni se verificó el sitio en vivo.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-25.md#tienda-virtual-utb) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).
+
+
+## Seguimiento actual · 26 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Entrega documentación S12 de consistencia y caché, ADR de transacción compartida pedidos/inventario y mejoras de navegación de pedidos. Corrige la importación de legado: acepta un nombre JSON controlado, rechaza rutas y enlaces simbólicos, y agrega pruebas. El CI exacto pasa frontend/backend, contrato, RLS y comprobación Alembic; Sonar aparece success con análisis omitido, no acredita Quality Gate. La caché Redis sigue propuesta, mientras la lectura actual del catálogo usa no-store; no presentar diseño como implementación.
+
+**Próximos pasos:**
+- Implementar y medir la caché propuesta solo tras validar invalidación y concurrencia; mantener inventario y autorización fuera de ella.
+- Restablecer ejecución verificable de Sonar/Quality Gate y reemplazar URL temporal por subdominio institucional con TLS válido.
+
+**Issues GitHub:** 0 abiertas y 0 cerradas; 0 abiertas sin asignar. Cierres: —. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Externo. Frontend sslip temporal; el equipo documenta certificado autofirmado pendiente y despliegue 0.5.0. No se sorteó aviso TLS ni se verificó el sitio en vivo.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-26.md#tienda-virtual-utb) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).

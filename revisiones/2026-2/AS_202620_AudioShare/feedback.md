@@ -160,3 +160,20 @@ Sin nueva punta ni cambio de README desde el 24/oct. CI, Flutter y publicación 
 **README:** Institucional. API y cliente legado; no Flutter web en imagen
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-25.md#audioshare) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).
+
+
+## Seguimiento actual · 26 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Integra PR7 y PR9: decisiones de persistencia/consistencia y prototipo aislado de sincronización por mensajes, con deduplicación, reintentos y DLQ volátiles. El CI de Node y la publicación de imagen pasan; Flutter falla en analyze, por lo que sus pruebas y build web quedan omitidos. El README ahora dice que Docker compila Flutter Web, pero también reporta que el dominio aún sirve el cliente legado y /rooms devuelve 404: es observación del equipo, no prueba independiente de este corte; publicar imagen no acredita redespliegue.
+
+**Próximos pasos:**
+- Corregir flutter analyze y repetir pruebas/build del mismo commit.
+- Redesplegar y verificar /rooms, cliente Flutter y recorrido real; conservar límites del simulador volátil.
+
+**Issues GitHub:** 2 abiertas y 2 cerradas; 2 abiertas sin asignar. Cierres: 2 completed. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Institucional. Mismo origen institucional para API/cliente; el equipo reporta que todavía sirve legado y requiere redespliegue. La imagen nueva no prueba activación.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-26.md#audioshare) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).

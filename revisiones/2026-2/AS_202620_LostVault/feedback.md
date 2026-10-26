@@ -166,3 +166,20 @@ Sin cambios en main ni nuevas ejecuciones desde el corte del 24. PR #19 permanec
 **README:** Sin URL concreta. README sin URL pública concreta; no implica ausencia de trabajo o despliegue.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-25.md#lostvault) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).
+
+
+## Seguimiento actual · 26 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+PR #20 y #22 integradas: nueva estrategia S12, middleware Cache-Control y validación de expiración JWT en backend/main.py; taller de mensajería con outbox transaccional SQLite, consumidor idempotente, reintentos y fallidos. En la punta actual CI ejecuta y aprueba 27 pruebas backend y 18 del taller, además de la demo; Flutter y Build pasan. Es simulador local de un proceso, sin red ni conexión a la API desplegada; backend sigue en memoria y PostgreSQL permanece propuesto. Backend checks continúa sin probar la implementación separada api/. PR #21 sigue abierta; no incorporar su contenido como fusionado. README no documenta URL pública vigente.
+
+**Próximos pasos:**
+- Conectar persistencia y eventos al flujo real solo tras implementar y validar PostgreSQL; mantener explícito que el taller SQLite no es mensajería productiva.
+- Añadir cobertura de api/ o aclarar cuál implementación se despliega; publicar frontend/API institucionales y comprobar autorización y consistencia multiinstancia.
+
+**Issues GitHub:** 0 abiertas y 1 cerradas; 0 abiertas sin asignar. Cierres: 1 completed. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Sin URL concreta. README sin URL pública concreta; no implica ausencia de trabajo o despliegue.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-26.md#lostvault) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).

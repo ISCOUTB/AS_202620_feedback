@@ -167,3 +167,20 @@ Sin nueva punta ni cambio de README desde el 24/oct, con CI exitoso de ese head.
 **README:** Sin URL concreta. README sin URL pública concreta; no implica ausencia de despliegue.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-25.md#elmapita) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).
+
+
+## Seguimiento actual · 26 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Sin nueva punta ni cambio del README respecto al 25/oct. CI de esa punta continúa exitoso. Se conserva la presentación y funcionamiento confirmados por el docente; sigue faltando URL pública concreta en README y no se infiere falta de despliegue por ese vacío documental.
+
+**Próximos pasos:**
+- Publicar URL exacta del despliegue operativo en README bajo iscoutb.dev.
+- Conservar y completar evidencia S12 sin confundir ausencia documental con ausencia de avance.
+
+**Issues GitHub:** 1 abiertas y 0 cerradas; 1 abiertas sin asignar. Cierres: —. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Sin URL concreta. README sin URL pública concreta; no implica ausencia de despliegue.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-26.md#elmapita) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).

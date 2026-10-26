@@ -159,3 +159,21 @@ Nuevo avance documental S12: arc42 incorpora siete operaciones con garantías y 
 **README:** Externo. Backend Render. El CI incluye paso de health exitoso; no es verificación funcional propia ni evidencia de frontend institucional.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-25.md#xald) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).
+
+
+## Seguimiento actual · 26 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Incorpora sincronización HTTP con contrato versionado, correlación, deduplicación, backoff y fallidos en los módulos del producto, además de ADR y documentación de límites. CI exacto pasa 21 pruebas backend, pruebas Gradle de módulos, contrato y paso de health tras hook Render. No obstante, la documentación reconoce que nadie invoca automáticamente procesarPendientes: el envío se dispara en pruebas, no como tarea automática de la app. Cola y deduplicación siguen en memoria; la evidencia E2E es local con fallo inyectado y conserva placeholders de commit/run.
+
+**Próximos pasos:**
+- Conectar procesarPendientes a un ejecutor real con conectividad y persistir cola/marcas antes de prometer entrega tras reinicios.
+- Completar referencias de commit/run en evidencia y distinguir E2E local del funcionamiento en dispositivo/Render.
+- Publicar el endpoint bajo iscoutb.dev y verificar persistencia y sincronización de extremo a extremo.
+
+**Issues GitHub:** 0 abiertas y 6 cerradas; 0 abiertas sin asignar. Cierres: 5 completed; 1 duplicate. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Externo. Backend Render. El CI incluye paso de health exitoso; no es verificación funcional propia ni evidencia de frontend institucional.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-26.md#xald) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).

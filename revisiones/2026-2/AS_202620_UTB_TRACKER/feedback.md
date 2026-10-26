@@ -163,3 +163,21 @@ Nuevas migraciones y ajustes de API/configuración; el cliente Android incorpora
 **README:** Sin URL concreta. README raíz sin endpoint público vigente. Solo en código: https://129-80-171-141.nip.io; release APK v1.0.2 publicado, no prueba de sitio institucional.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-25.md#utb_tracker) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).
+
+
+## Seguimiento actual · 26 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Fusiona outbox, worker idempotente y reintentos del taller, junto con documentación de consistencia/caché y avances de administración de salones, roles y cliente. El bloqueo transitorio de múltiples cabezas Alembic ya fue corregido; la punta actual acredita 78 pruebas de tests/ sobre PostgreSQL 16 aislado y deploy con migraciones/reinicio exitosos. Ese comando excluye app/tests/ y no prueba todo el cliente. El notificador sigue simulado y el worker requiere operación separada; la caché es diseño no implementado. Persiste el fallback a DATABASE_URL de la fixture fuera de CI antes de borrar/recrear tablas.
+
+**Próximos pasos:**
+- Eliminar el fallback destructivo a DATABASE_URL o exigir validación inequívoca de BD de pruebas antes de drop_all.
+- Documentar y verificar operación del worker y notificación real si se pretende incluirla en el despliegue; conservar el alcance tests/ de CI.
+- Publicar URL exacta institucional en README y validar los flujos nuevos del cliente; no presentar caché propuesta como activa.
+
+**Issues GitHub:** 1 abiertas y 0 cerradas; 1 abiertas sin asignar. Cierres: —. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Sin URL concreta. README raíz sin endpoint público vigente. Solo en código: https://129-80-171-141.nip.io; release APK v1.0.2 publicado, no prueba de sitio institucional.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-26.md#utb_tracker) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).

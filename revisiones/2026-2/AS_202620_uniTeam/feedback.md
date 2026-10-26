@@ -154,3 +154,21 @@ Sin cambios de punta, README o PR desde el corte previo. La sonda más reciente 
 **README:** Externo. Frontend y API DuckDNS. Sonda sigue consultando Render; su fallo no determina disponibilidad de DuckDNS.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-25.md#uniteam) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).
+
+
+## Seguimiento actual · 26 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Integra PR #9 y #10: taller de mensajería SQLite con contrato, deduplicación, reintentos y fallidos, explícitamente aislado de la API/auditoría real, más estrategia de consistencia y ADR que conserva MySQL como fuente de verdad. CI de la punta pasa. La sonda de despliegue más reciente falla contra direcciones Render antiguas; el README publica DuckDNS, por lo que ese fallo no demuestra caída del despliegue actual. Las políticas de caché propuestas no deben darse por habilitadas.
+
+**Próximos pasos:**
+- Actualizar las sondas a las direcciones desplegadas vigentes y completar migración a iscoutb.dev.
+- Mantener aislado el taller; si se integra, diseñar publicación atómica con la tarea y aceptación del efecto externo.
+- Distinguir política de caché/documentación de controles efectivamente habilitados.
+
+**Issues GitHub:** 0 abiertas y 1 cerradas; 0 abiertas sin asignar. Cierres: 1 completed. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Externo. Frontend y API DuckDNS. Sonda sigue consultando Render; su fallo no determina disponibilidad de DuckDNS.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-26.md#uniteam) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).

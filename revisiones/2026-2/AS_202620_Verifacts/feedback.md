@@ -192,3 +192,20 @@ Atiende tres pendientes documentales mediante issues #1–#3 creadas y cerradas 
 **README:** Externo. Referencia HTTP sslip. README declara pendiente dominio institucional/certificado; frontend / y API /docs,/health separados conceptualmente.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-25.md#verifacts) · [Issues](../seguimiento-issues-2026-10-25.md) · [URL y dominio](../seguimiento-despliegues-2026-10-25.md).
+
+
+## Seguimiento actual · 26 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Sin cambio de punta ni README desde el corte del 25/oct. Se mantienen tres issues cerradas completed y la evidencia anterior de 66 pruebas, smoke de imagen y SonarCloud exitosos para la misma revisión. No hay nueva implementación que permita retirar los límites documentados: prototipo de mensajería aislado y dominio institucional/certificado pendientes. El cierre documental de issues no equivale a aceptación funcional.
+
+**Próximos pasos:**
+- Completar dominio iscoutb.dev y certificado, diferenciando interfaz y API.
+- Mantener explícito qué mensajería es prototipo y aportar aceptación funcional del sistema integrado antes de cerrar pendientes.
+
+**Issues GitHub:** 0 abiertas y 3 cerradas; 0 abiertas sin asignar. Cierres: 3 completed. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Externo. Referencia HTTP sslip. README declara pendiente dominio institucional/certificado; frontend / y API /docs,/health separados conceptualmente.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-26.md#verifacts) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).
