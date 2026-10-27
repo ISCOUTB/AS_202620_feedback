@@ -1,5 +1,7 @@
 # Resumen de feedback · S12 · avance preliminar, entrega abierta
 
+**Seguimiento vigente del 27/oct:** [avances y próximos pasos](seguimiento-s12-2026-10-27.md), [issues](seguimiento-issues-2026-10-27.md) y [README/despliegues](seguimiento-despliegues-2026-10-27.md). S12 no se cierra automáticamente; las matrices y cifras históricas no se recalculan. Las menciones anteriores a entrega abierta describen sus cortes fechados; este seguimiento posterior al plazo documentado no constituye cierre ni evaluación definitiva.
+
 **Seguimiento vigente del 26/oct:** [avances y próximos pasos](seguimiento-s12-2026-10-26.md), [issues](seguimiento-issues-2026-10-26.md) y [README/despliegues](seguimiento-despliegues-2026-10-26.md). S12 no se cierra automáticamente; las matrices y cifras históricas no se recalculan. Las menciones anteriores a entrega abierta describen sus cortes fechados; este seguimiento posterior al plazo documentado no constituye cierre ni evaluación definitiva.
 
 **Seguimiento vigente del 25/oct:** [avances y próximos pasos](seguimiento-s12-2026-10-25.md), [issues](seguimiento-issues-2026-10-25.md) y [README/despliegues](seguimiento-despliegues-2026-10-25.md). S12 continúa abierta; las matrices y cifras históricas no se recalculan.

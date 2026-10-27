@@ -196,3 +196,21 @@ Sin cambios de punta, README ni CI desde el 25. Se conserva la identidad visual 
 **README:** Institucional. Frontend/panel y API institucionales; docente confirma presentación/despliegues; sin nueva verificación visual.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-26.md#pideutb) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).
+
+
+## Seguimiento actual · 27 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+La rama principal y su README no cambian, pero PR #30 permanece abierta con carrito multiproducto, migración 004, catálogo y contrato 3.0.0. El CI del head de la PR ejecuta Python 3.11/3.12, contrato y auditoría: el log Python 3.12 acredita 407 pruebas aprobadas y tres omitidas, además, una ejecución focalizada de 103 pruebas de repositorios y autenticación para comprobar PostgreSQL (subconjunto reejecutado, no 103 casos adicionales). Sonar bot informa gate aprobado con siete issues nuevas y 0% de cobertura nueva; es evidencia separada de los pasos Sonar omitidos en Actions. La pasarela es simulada, no aceptación de cobros reales ni despliegue confirmado de la PR. R-11 mantiene rechazo indistinguible de pendiente para el comprador; R-12 exige desactivar el simulador antes de cobros reales. Se conserva actualización presentada y despliegues confirmados por docente.
+
+**Próximos pasos:**
+- Revisar e integrar PR #30 con migración 004 y contrato 3.0.0 solo tras validar la compatibilidad y el recorrido objetivo; el CI de la rama no prueba despliegue.
+- Exponer al comprador el estado del intento/rechazo (R-11) y verificar que PIDEUTB_URL_PASARELA_SIMULADA esté desactivada antes de cobros reales (R-12); la demostración no es pasarela real.
+- Revisar las siete issues Sonar y el alcance de cobertura, separando el gate del bot del scanner omitido en Actions.
+
+**Issues GitHub:** 1 abiertas y 0 cerradas; 1 abiertas sin asignar. Cierres: —. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Institucional. Frontend/panel y API institucionales; docente confirma presentación/despliegues; sin nueva verificación visual.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-27.md#pideutb) · [Issues](../seguimiento-issues-2026-10-27.md) · [URL y dominio](../seguimiento-despliegues-2026-10-27.md).

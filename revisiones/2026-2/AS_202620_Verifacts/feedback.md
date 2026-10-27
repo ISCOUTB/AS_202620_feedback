@@ -209,3 +209,21 @@ Sin cambio de punta ni README desde el corte del 25/oct. Se mantienen tres issue
 **README:** Externo. Referencia HTTP sslip. README declara pendiente dominio institucional/certificado; frontend / y API /docs,/health separados conceptualmente.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-26.md#verifacts) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).
+
+
+## Seguimiento actual · 27 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Agrega script aceptar.bat, entradas de prueba y evidencia-aceptacion.txt del 26/oct contra el despliegue sslip: health e interfaz 200; análisis por texto/URL e historial 200; URL inválida 400, vacío 422 e identificador inexistente 404. Es evidencia aportada por el equipo del flujo principal, más amplia que el prototipo de mensajería, no ejecución independiente ni aceptación completa de navegador. El CI exacto de la nueva punta pasa 66 pruebas, build/smoke de contenedor y análisis SonarCloud; no prueba redespliegue ni acredita por sí solo un nuevo Quality Gate. README y dominio externo no cambian, y el prototipo de mensajería sigue aislado.
+
+**Próximos pasos:**
+- Completar subdominio iscoutb.dev y certificado, diferenciando interfaz y API.
+- Conservar script y resultados de los ocho casos con revisión/entorno trazables; añadir recorrido real del navegador y validar persistencia tras reinicio si se pretende acreditar aceptación integral.
+- No presentar la mensajería aislada como integración productiva.
+
+**Issues GitHub:** 0 abiertas y 3 cerradas; 0 abiertas sin asignar. Cierres: 3 completed. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Externo. Referencia HTTP sslip. README declara pendiente dominio institucional/certificado; frontend / y API /docs,/health separados conceptualmente.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-27.md#verifacts) · [Issues](../seguimiento-issues-2026-10-27.md) · [URL y dominio](../seguimiento-despliegues-2026-10-27.md).
