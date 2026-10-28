@@ -227,3 +227,22 @@ Agrega script aceptar.bat, entradas de prueba y evidencia-aceptacion.txt del 26/
 **README:** Externo. Referencia HTTP sslip. README declara pendiente dominio institucional/certificado; frontend / y API /docs,/health separados conceptualmente.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-27.md#verifacts) · [Issues](../seguimiento-issues-2026-10-27.md) · [URL y dominio](../seguimiento-despliegues-2026-10-27.md).
+
+
+## Seguimiento actual · 28 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Cuatro commits documentales posteriores al corte anterior formalizan consistencia/caché/costo de reversión (S12) y amenazas, dependencias y privacidad (S13), sin cambios de código ni README. Se documentan controles pendientes de SSRF, límites de carga, timeout, protección del historial y TLS; la retención de 30 días y delete_analysis siguen siendo propuestas, no capacidades presentes en el repositorio consultado. El documento declara auditoría SCA, pero el workflow revisado no ejecuta pip-audit ni npm audit y la tabla de versiones no coincide con el entorno instalado en el CI actual: hace falta un reporte reproducible, no asumir dependencias libres de vulnerabilidades. El CI de la punta pasa 66 pruebas, build/smoke de imagen y análisis Sonar; no acredita redespliegue ni un nuevo Quality Gate. Se conserva la evidencia de ocho casos HTTP aportada por el equipo, sin nueva aceptación independiente; dominio HTTP sslip y mensajería aislada no cambian.
+
+**Próximos pasos:**
+- Aportar salidas fechadas de pip-audit y npm audit con revisión y versiones resueltas; reconciliar la tabla SCA y no presentar el análisis Sonar como auditoría de dependencias.
+- Implementar y probar los controles de mayor riesgo del modelo de amenazas; marcar retención y supresión como diseño hasta que existan código, operación y evidencia.
+- Mantener separadas caché estática activa, propuestas de caché de backend y garantías de SQLite en un nodo; las seis pruebas de consistencia existentes no son código nuevo de este incremento.
+- Completar subdominio iscoutb.dev y TLS; conservar trazabilidad de los ocho casos HTTP previos y añadir recorrido de navegador/persistencia si se pretende aceptación integral.
+
+**Issues GitHub:** 0 abiertas y 3 cerradas; 0 abiertas sin asignar. Cierres: 3 completed. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Externo. Referencia HTTP sslip. README declara pendiente dominio institucional/certificado; frontend / y API /docs,/health separados conceptualmente.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-28.md#verifacts) · [Issues](../seguimiento-issues-2026-10-28.md) · [URL y dominio](../seguimiento-despliegues-2026-10-28.md).

@@ -192,3 +192,21 @@ Añade historial transaccional, documentación S12 y API institucional en README
 **README:** Institucional. Nuevo subdominio institucional solo para API; frontend Pages externo. README dice despliegue en curso y ADR0012 reporta verificación externa: reconciliar fechas. No comprobación funcional propia.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-26.md#dinamikutb) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).
+
+
+## Seguimiento actual · 28 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Integra nuevas pantallas administrativas, currículo y gestión de cuentas, además de imagen Flutter/Nginx para el laboratorio. El README de frontend separa https://dinamikutb.iscoutb.dev (web) y https://api.dinamikutb.iscoutb.dev (API), sujetos a aprovisionamiento; ADR0006 marca GitHub Pages como reemplazado. El README raíz sigue describiendo el primer dominio como API y conserva enlaces anteriores: hay desalineación documental. Publicar la imagen GHCR termina correctamente, pero no acredita redeploy en Dokploy. CI de la misma punta falla: pytest no recolecta por ImportError de RequisitoPrograma; Flutter registra 20 pruebas aprobadas y cuatro fallidas (tres de validación de correo y una de registro de estudiantes); SonarCloud queda omitido. Los routers nuevos de currículo, programas y reportes no se incorporan en app/main.py consultado; su existencia no demuestra rutas disponibles. No se verificó funcionamiento en vivo.
+
+**Próximos pasos:**
+- Resolver el ImportError de RequisitoPrograma y las cuatro pruebas Flutter; repetir CI en la misma punta.
+- Integrar y probar los routers nuevos antes de afirmar disponibilidad de currículo, programas y reportes.
+- Unificar README raíz y frontend con los dominios realmente provisionados; distinguir API/web, retirar referencias vigentes obsoletas y acreditar redeploy Dokploy con recorrido funcional.
+
+**Issues GitHub:** 2 abiertas y 15 cerradas; 1 abiertas sin asignar. Cierres: 15 completed. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Institucional. README raíz y frontend discrepan en roles/dominios. GHCR acredita imagen, no despliegue ni DNS/TLS o aceptación; no se prescribe recrear la base antigua de Render.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-28.md#dinamikutb) · [Issues](../seguimiento-issues-2026-10-28.md) · [URL y dominio](../seguimiento-despliegues-2026-10-28.md).

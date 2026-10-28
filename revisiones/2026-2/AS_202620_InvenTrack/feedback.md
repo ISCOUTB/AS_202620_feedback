@@ -184,3 +184,21 @@ Integra auditoría asíncrona en las rutas reales de entradas/salidas mediante B
 **README:** Institucional. API; API alternativa
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-26.md#inventrack) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).
+
+
+## Seguimiento actual · 28 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Corrige la brecha de idempotencia HTTP: reserva/serializa la clave antes de modificar stock, conserva fingerprint y resultado, devuelve replay sin nuevo movimiento/evento y responde 409 ante payload incompatible. ADR0017 explicita almacenamiento volátil por proceso y la ventana stock/publicación sin outbox. El CI de la punta actual pasa 32 pruebas y vuelve a ejecutar una prueba de contrato incluida en el conjunto, no 33 pruebas distintas; el scanner Sonar termina, sin acreditar por sí solo Quality Gate. La nueva evidencia de despliegue del equipo reporta que el 27/oct no pudo resolver DNS/TLS institucional y obtuvo 503 en /health y /metrics de Render. Esto entra en tensión con las declaraciones anteriores de despliegue/verificación del README. Son observaciones del equipo, no una prueba independiente actual ni demostración de inexistencia de despliegue; falta publicar/verificar esta punta en servicio. El documento de CI cita todavía la revisión anterior.
+
+**Próximos pasos:**
+- Actualizar evidencia de CI al run actual y vincular Quality Gate al análisis correspondiente.
+- Acreditar hash desplegado, /health, /metrics y recorrido funcional institucional; distinguir API de frontend.
+- Mantener explícitos límites de idempotencia en memoria, reinicios y varias réplicas; adoptar registro/outbox durable cuando se requiera recuperación.
+
+**Issues GitHub:** 0 abiertas y 7 cerradas; 0 abiertas sin asignar. Cierres: 7 completed. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Institucional. README conserva API institucional y alternativa Render. Evidencia del equipo del 27/oct reporta DNS/TLS institucional no verificable y 503 en health/metrics de Render; no es comprobación independiente del corte. Hay que reconciliar ese reporte con las declaraciones previas de despliegue/verificación del README.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-28.md#inventrack) · [Issues](../seguimiento-issues-2026-10-28.md) · [URL y dominio](../seguimiento-despliegues-2026-10-28.md).

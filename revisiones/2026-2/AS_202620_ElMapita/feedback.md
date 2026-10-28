@@ -184,3 +184,21 @@ Sin nueva punta ni cambio del README respecto al 25/oct. CI de esa punta contin�
 **README:** Sin URL concreta. README sin URL pública concreta; no implica ausencia de despliegue.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-26.md#elmapita) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).
+
+
+## Seguimiento actual · 28 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Integra caché TTL/LRU del backend, invalidación de POIs, limpieza de versiones de modelos del cliente y mensajería en memoria con reintentos, DLQ y auditoría. Añade reconciliación al arrancar y cada diez minutos desde POIs persistidos para reconstruir la proyección de auditoría: mitigación específica, no outbox ni bus durable. El CI global aparece exitoso y confirma 56 pruebas unitarias backend; sin embargo, el E2E GET / falla (404 frente a 200 esperado) y su error se neutraliza con echo. SonarCloud falla por autorización/proyecto no encontrado y omite Quality Gate; es no bloqueante. El README continúa sin URL pública concreta. Se conserva la confirmación docente de que ElMapita presentó y funciona; no se atribuye esa aceptación a esta punta ni se verificó su nuevo despliegue.
+
+**Próximos pasos:**
+- Corregir el E2E y hacer explícitos/bloqueantes los checks necesarios; resolver autorización/configuración de SonarCloud.
+- Documentar en README URLs reales de frontend/API bajo iscoutb.dev y el commit desplegado, sin sustituir la aceptación docente previa por CI.
+- Validar recuperación tras reinicio y límites del reconciliador; no presentar auditoría en memoria como durabilidad del bus.
+
+**Issues GitHub:** 1 abiertas y 0 cerradas; 1 abiertas sin asignar. Cierres: —. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Sin URL concreta. README sin URL pública concreta; no implica ausencia de despliegue.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-28.md#elmapita) · [Issues](../seguimiento-issues-2026-10-28.md) · [URL y dominio](../seguimiento-despliegues-2026-10-28.md).
