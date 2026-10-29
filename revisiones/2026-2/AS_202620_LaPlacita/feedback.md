@@ -183,3 +183,21 @@ Sin nueva punta ni README desde el corte del 25. Se mantienen la integración Ga
 **README:** Sin URL concreta. Solo Azure explícitamente retirado; ninguna URL pública vigente concreta en README raíz.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-26.md#laplacita) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).
+
+
+## Seguimiento actual · 29 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Integra PR #24 y un complemento posterior: controles de sesión/rol en escrituras de tienda y notificaciones, auditoría de dependencias, aviso de privacidad, procedimiento de rotación documentado y decisión explícita de no implementar ETag ni LISTEN/NOTIFY con una instancia. El CI actual pasa sus cinco jobs. El workflow de despliegue también figura success, pero el log del webhook responde «Branch Not Match» antes de comprobar health=200: esa salud no identifica el commit servido y NO acredita redespliegue de la revisión. Las comprobaciones HTTP y de interfaz descritas por el equipo son locales, no aceptación independiente de producción. README continúa sin URL pública vigente concreta. Las PR de dependencias abiertas no son cambios fusionados.
+
+**Próximos pasos:**
+- Corregir la selección de rama del webhook y aportar evidencia de que Dokploy sirve esta revisión; validar controles y cabeceras en el entorno objetivo.
+- Documentar en README las URL exactas de frontend y API bajo iscoutb.dev; no reutilizar el enlace Azure retirado.
+- Completar límites de uso, protección de secretos, constancia/versionado del consentimiento y reconciliar privacidad con el flujo real; el procedimiento de rotación escrito no es un ensayo ejecutado.
+
+**Issues GitHub:** 0 abiertas y 14 cerradas; 0 abiertas sin asignar. Cierres: 14 completed. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Sin URL concreta. Solo Azure explícitamente retirado; ninguna URL pública vigente concreta en README raíz.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-29.md#laplacita) · [Issues](../seguimiento-issues-2026-10-29.md) · [URL y dominio](../seguimiento-despliegues-2026-10-29.md).

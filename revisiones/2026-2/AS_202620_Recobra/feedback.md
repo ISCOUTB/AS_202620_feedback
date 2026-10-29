@@ -187,3 +187,21 @@ Sin nuevos commits, README ni runs desde el 25. Se conserva la evidencia del run
 **README:** Institucional. README aclara vitrina, Flutter Web y API en mismo host institucional; no se añade auditoría funcional.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-26.md#recobra) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).
+
+
+## Seguimiento actual · 29 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Incorpora seguridad S13: límites de uso, CSP y CORS, tratamiento del origen detrás de Cloudflare, auditoría y avisos operativos, controles de dependencias/secretos y documentación de privacidad que reconoce a Cloudflare. Los seis jobs de la punta pasan; los logs backend acreditan 215 pruebas unitarias, 124 e2e y 10 de contrato. La auditoría verde no significa ausencia de vulnerabilidades: acepta 13 avisos individuales con alcance documentado y vencimiento al 15/dic, mientras npm informa siete paquetes afectados de producción. Los ajustes observados en producción son reportes del equipo, no pruebas repetidas por este seguimiento. Siguen pendientes acciones operativas de protección/rotación y respaldo programado descritas por el equipo; CI no demuestra que se hayan ejecutado. Las diez PR nuevas de Dependabot están abiertas, no fusionadas. README conserva vitrina, Flutter Web y API institucionales. Se mantiene presentación confirmada por docente.
+
+**Próximos pasos:**
+- Acreditar las acciones operativas pendientes y el respaldo programado sin publicar credenciales ni datos personales.
+- Revisar y probar las PR de dependencias; conservar la distinción entre avisos aceptados y mitigados y cumplir su vencimiento.
+- Validar límites, origen del cliente, cabeceras y entrega de avisos en el despliegue actual; aportar evidencia de aceptación funcional independiente del CI.
+
+**Issues GitHub:** 0 abiertas y 0 cerradas; 0 abiertas sin asignar. Cierres: —. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Institucional. README aclara vitrina, Flutter Web y API en mismo host institucional; no se añade auditoría funcional.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-29.md#recobra) · [Issues](../seguimiento-issues-2026-10-29.md) · [URL y dominio](../seguimiento-despliegues-2026-10-29.md).

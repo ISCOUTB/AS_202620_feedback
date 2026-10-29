@@ -177,3 +177,22 @@ Incorpora sincronización HTTP con contrato versionado, correlación, deduplicac
 **README:** Externo. Backend Render. El CI incluye paso de health exitoso; no es verificación funcional propia ni evidencia de frontend institucional.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-26.md#xald) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).
+
+
+## Seguimiento actual · 29 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+La rama principal master y su README permanecen sin cambios desde el 28/oct, con CI exacto exitoso. Como actividad lateral, experimental recibió una resolución de conflicto el 29/oct; el compare contra master muestra diferencias solo en dos documentos arc42 de riesgos/fallos de integración, no nueva implementación. El CI de esa rama pasa backend, módulos Android y contrato; deploy-backend está omitido. No hay PR abierta ni integración de este delta en master, por lo que no se presenta como entrega principal ni redespliegue. Sigue pendiente activar y verificar procesarPendientes en operación real, con persistencia de cola/deduplicación; el envío disparado en pruebas y un health exitoso no acreditan el recorrido completo en dispositivo.
+
+**Próximos pasos:**
+- Conciliar la documentación de experimental con master antes de proponer integración: evitar reintroducir descripciones obsoletas del cliente HTTP y mantener las mitigaciones pendientes explícitas.
+- Conectar procesarPendientes a un ejecutor real con conectividad y persistir cola/marcas antes de prometer entrega tras reinicios.
+- Completar referencias de commit/run en evidencia y distinguir E2E local del funcionamiento en dispositivo/Render.
+- Publicar el endpoint bajo iscoutb.dev y verificar persistencia y sincronización de extremo a extremo.
+
+**Issues GitHub:** 0 abiertas y 6 cerradas; 0 abiertas sin asignar. Cierres: 5 completed; 1 duplicate. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Externo. Backend Render. El CI incluye paso de health exitoso; no es verificación funcional propia ni evidencia de frontend institucional.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-29.md#xald) · [Issues](../seguimiento-issues-2026-10-29.md) · [URL y dominio](../seguimiento-despliegues-2026-10-29.md).

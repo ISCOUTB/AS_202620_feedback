@@ -202,3 +202,21 @@ Integra caché TTL/LRU del backend, invalidación de POIs, limpieza de versiones
 **README:** Sin URL concreta. README sin URL pública concreta; no implica ausencia de despliegue.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-28.md#elmapita) · [Issues](../seguimiento-issues-2026-10-28.md) · [URL y dominio](../seguimiento-despliegues-2026-10-28.md).
+
+
+## Seguimiento actual · 29 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Añade configuración reproducible de Dokploy en deploy/compose.lab.yaml, ejemplo de variables y exclusión de deploy/.env. El Compose despliega solo la API NestJS, no Flutter, y mantiene Supabase externo; el dominio institucional que figura como FRONTEND_URL es configuración y no acredita un frontend ni despliegue activo. El README sigue sin URL pública concreta. El nuevo CI global figura exitoso: confirma 56 pruebas unitarias backend y construcción de imagen, pero el E2E GET / vuelve a fallar (404 frente a 200 esperado) y el workflow neutraliza su error con echo. SonarCloud falla por autorización/proyecto no encontrado y omite su Quality Gate; no bloquea el resultado global. Se conserva la confirmación docente de que ElMapita presentó y funciona, sin atribuirla a esta nueva punta ni a una verificación en vivo de este corte.
+
+**Próximos pasos:**
+- Publicar en README la URL institucional exacta y distinguir API NestJS de frontend Flutter; validar el dominio y hash realmente desplegados, no inferirlos del ejemplo de variables.
+- Corregir el E2E y hacer bloqueantes las verificaciones necesarias; resolver acceso/configuración de SonarCloud y acreditar su Quality Gate.
+- Conservar explícitos los límites de mensajería en memoria y reconciliación, sin presentarlos como outbox o broker durable.
+
+**Issues GitHub:** 1 abiertas y 0 cerradas; 1 abiertas sin asignar. Cierres: —. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Sin URL concreta. README sin URL pública concreta. Compose nuevo solo para API; FRONTEND_URL en configuración no prueba frontend ni despliegue activo. Se conserva aceptación docente previa, distinta de la publicación de esta punta.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-29.md#elmapita) · [Issues](../seguimiento-issues-2026-10-29.md) · [URL y dominio](../seguimiento-despliegues-2026-10-29.md).

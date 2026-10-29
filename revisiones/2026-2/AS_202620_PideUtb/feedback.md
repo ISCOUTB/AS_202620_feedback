@@ -214,3 +214,21 @@ La rama principal y su README no cambian, pero PR #30 permanece abierta con carr
 **README:** Institucional. Frontend/panel y API institucionales; docente confirma presentación/despliegues; sin nueva verificación visual.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-27.md#pideutb) · [Issues](../seguimiento-issues-2026-10-27.md) · [URL y dominio](../seguimiento-despliegues-2026-10-27.md).
+
+
+## Seguimiento actual · 29 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+PR #30–34 ya fusionadas: catálogo y carrito multiproducto, promociones, migraciones 004–007, contrato 4.0.0 y autorización de consulta; se publica el estado del intento de pago para distinguir rechazo de espera, por lo que la limitación R-11 descrita antes queda corregida en código. También se integran radios accesibles, validación de URL de pasarela y revalidación de caché/tema claro. El CI de la punta acredita 454 pruebas aprobadas y tres omitidas; las 103 pruebas focalizadas PostgreSQL son un subconjunto reejecutado, no casos adicionales. PR32 aún señala configuración incorrecta del panel: la fusión no demuestra que se haya corregido ni activado el simulador. PR34 documenta servicios legados activos con riesgo de autorización reportado por el equipo, sin exposición efectiva de datos comprobada en este seguimiento; la corrección del repositorio actual no demuestra retiro o mitigación del legado. No se sondearon esos servicios. Los recorridos de navegador son reportes del equipo, no validación independiente ni aceptación de cobros reales. Se conserva presentación y despliegues confirmados por docente.
+
+**Próximos pasos:**
+- Aportar evidencia del valor corregido en el panel y de la revisión efectivamente publicada; verificar recorrido y revalidación de archivos tras el despliegue, sin confundir pago simulado con cobro real.
+- Gestionar por responsables autorizados el retiro o mitigación de los servicios legados y dejar evidencia; no dar por cerrado el riesgo solo por fusionar código o documentación.
+- Mantener el simulador desactivado antes de habilitar cobros reales y completar la evidencia de migraciones y contrato 4.0.0 en el entorno objetivo.
+
+**Issues GitHub:** 1 abiertas y 0 cerradas; 1 abiertas sin asignar. Cierres: —. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Institucional. Frontend/panel y API institucionales; docente confirma presentación/despliegues; sin nueva verificación visual.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-29.md#pideutb) · [Issues](../seguimiento-issues-2026-10-29.md) · [URL y dominio](../seguimiento-despliegues-2026-10-29.md).
