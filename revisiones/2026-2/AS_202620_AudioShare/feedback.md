@@ -177,3 +177,21 @@ Integra PR7 y PR9: decisiones de persistencia/consistencia y prototipo aislado d
 **README:** Institucional. Mismo origen institucional para API/cliente; el equipo reporta que todavía sirve legado y requiere redespliegue. La imagen nueva no prueba activación.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-26.md#audioshare) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).
+
+
+## Seguimiento actual · 30 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Incorpora identificadores únicos de receptores, reingreso idempotente a una sala y rechazo 409 si se reutiliza un identificador con otro rol. Añade descarga temporal completa de MP3 con validación, limpieza y reintento en plataformas nativas; en web conserva reproducción desde URL, por lo que no debe atribuirse descarga local a ese cliente. El estado de pista y volumen se gestionan por receptor. El fallo Flutter del corte anterior queda superado: el CI de esta punta pasa analyze, 36 pruebas con una omitida y build web; backend pasa 44 pruebas y la publicación de imagen termina con éxito. No se acredita redespliegue: el README conserva el reporte del equipo del 26/oct sobre cliente legado y /rooms 404, y explica que Dokploy construye desde Compose, sin consumir la imagen Docker Hub publicada. Sin verificación funcional en vivo en este corte.
+
+**Próximos pasos:**
+- Redesplegar la revisión actual mediante el flujo Dokploy documentado y adjuntar evidencia fechada de frontend, API y sincronización entre receptores en el dominio institucional.
+- Separar validación nativa de descarga local y reproducción web por URL; probar fallo de descarga, reintento y reingreso conservando rol.
+- Documentar el motivo y alcance de la prueba Flutter omitida; no equiparar imagen publicada con versión servida.
+
+**Issues GitHub:** 2 abiertas y 2 cerradas; 2 abiertas sin asignar. Cierres: 2 completed. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Institucional. README documenta https://audioshare.iscoutb.dev como origen compartido de frontend y API. Conserva observación del equipo del 26/oct: cliente legado y GET /rooms 404. El CI actual compila Flutter y publica imagen, pero Dokploy construye desde Compose y no consume esa imagen Docker Hub. Redespliegue y funcionamiento actual no verificados.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-30.md#audioshare) · [Issues](../seguimiento-issues-2026-10-30.md) · [URL y dominio](../seguimiento-despliegues-2026-10-30.md).

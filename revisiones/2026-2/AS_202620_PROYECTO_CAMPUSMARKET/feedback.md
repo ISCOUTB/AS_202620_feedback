@@ -176,3 +176,22 @@ PR #61–65 fusionadas: estrategia de datos S12, correcciones de evidencia/C4 y 
 **README:** Institucional. Cumplimiento parcial: API institucional, frontend externo GitHub Pages. Azure es histórico.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-26.md#proyecto_campusmarket) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).
+
+
+## Seguimiento actual · 30 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Integra PR #66–75: Idempotency-Key transaccional para crear publicaciones, reutilización ante reintentos y rechazo de la misma clave con otro contenido; Flutter conserva la clave durante el reintento. Las cinco ejecuciones de CI de la punta pasan: los logs acreditan 87 pruebas backend y cuatro de contrato separadas, más siete Flutter, así como flujos Chrome desktop/mobile y Android en emulador. Se implementa trazabilidad de imagen, exportación del artefacto probado y publicación GHCR; el run la revisión citada confirma publicación de la imagen cuya revisión fuente es la revisión citada, no la punta documental actual. El ensayo manual la revisión citada ejecutado desde la revisión citada acredita descarga autenticada por digest, identidad OCI, MySQL, degradación/recuperación, persistencia SQL y archivos tras recreación y limpieza aislada. Esto supera el pendiente antiguo del cuerpo de PR73; PR74 corrige el digest y PR75 actualiza su evidencia. La decisión operativa mantiene aplazada la promoción GHCR en Dokploy hasta acreditar respaldo recuperable, montajes, acceso desde servidor y rollback. El CI de contrato público sigue observando la etiqueta de revisión la revisión citada, no prueba que se sirva la punta actual; no se atribuye a esa cabecera una auditoría del código desplegado. No se introducen pagos ni se acredita una migración productiva. README mantiene API institucional y frontend externo GitHub Pages.
+
+**Próximos pasos:**
+- Acreditar respaldo y restauración de MySQL/uploads, montajes reales, acceso GHCR desde Dokploy e imagen anterior recuperable antes de promover el digest; conservar la separación entre ensayo aislado y producción.
+- Vincular el commit, digest y cabecera del servicio realmente publicado; la etiqueta observada por el contrato público no acredita automáticamente la revisión fusionada.
+- Publicar y documentar el frontend bajo iscoutb.dev, manteniendo explícita la separación respecto del dominio API.
+- Mantener evidencia de concurrencia, reintentos y conflicto de Idempotency-Key en el entorno objetivo, sin equiparar pruebas de CI con aceptación de usuarios.
+
+**Issues GitHub:** 1 abiertas y 0 cerradas; 1 abiertas sin asignar. Cierres: —. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Institucional. Cumplimiento parcial: API bajo iscoutb.dev, frontend GitHub Pages externo. CI público registra health/catálogo y etiqueta antigua; no es aceptación independiente ni acredita promoción GHCR en Dokploy. Azure es histórico.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-30.md#proyecto_campusmarket) · [Issues](../seguimiento-issues-2026-10-30.md) · [URL y dominio](../seguimiento-despliegues-2026-10-30.md).

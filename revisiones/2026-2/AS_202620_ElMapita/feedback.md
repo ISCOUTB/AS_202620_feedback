@@ -220,3 +220,21 @@ Añade configuración reproducible de Dokploy en deploy/compose.lab.yaml, ejempl
 **README:** Sin URL concreta. README sin URL pública concreta. Compose nuevo solo para API; FRONTEND_URL en configuración no prueba frontend ni despliegue activo. Se conserva aceptación docente previa, distinta de la publicación de esta punta.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-29.md#elmapita) · [Issues](../seguimiento-issues-2026-10-29.md) · [URL y dominio](../seguimiento-despliegues-2026-10-29.md).
+
+
+## Seguimiento actual · 30 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Integra mapa 3D del campus con capas, selección de destino, animaciones, georreferencia, ubicación y avisos de llegada por vibración; incorpora navegación entre mapa/lugares e idiomas español/inglés. El código y las pruebas están en main, aunque docs/ia.md todavía describe una parte como sin commit: debe reconciliarse esa bitácora. El CI de la punta pasa 30 pruebas Flutter, build web y 56 pruebas unitarias backend. El verde global sigue siendo parcial: flutter analyze informa 28 hallazgos; E2E GET / falla con 404 frente a 200 y se neutraliza con echo; SonarCloud falla por autorización/proyecto no encontrado y omite el gate. El equipo documenta comprobaciones en teléfono y calibración aproximada con OpenStreetMap, no verificadas independientemente aquí. El README continúa sin URL pública concreta y Compose sigue dirigido al backend. Se conserva la confirmación docente de que ElMapita presentó y funciona, sin atribuir aceptación de estas nuevas funciones a este corte.
+
+**Próximos pasos:**
+- Documentar en README la URL exacta bajo iscoutb.dev, separando API y frontend; aportar evidencia fechada del despliegue de esta punta.
+- Hacer vinculante el E2E de backend, atender los 28 hallazgos de analyze y restablecer SonarCloud/Quality Gate antes de describir el CI como completo.
+- Reconciliar docs/ia.md con los commits publicados y validar en dispositivos reales permisos de ubicación, guía de llegada, calibración y cambio de idioma.
+
+**Issues GitHub:** 1 abiertas y 0 cerradas; 1 abiertas sin asignar. Cierres: —. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Sin URL concreta. README sin URL pública concreta. Compose nuevo solo para API; FRONTEND_URL en configuración no prueba frontend ni despliegue activo. Se conserva aceptación docente previa, distinta de la publicación de esta punta.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-30.md#elmapita) · [Issues](../seguimiento-issues-2026-10-30.md) · [URL y dominio](../seguimiento-despliegues-2026-10-30.md).

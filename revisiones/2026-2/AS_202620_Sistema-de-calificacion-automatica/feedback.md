@@ -195,3 +195,22 @@ Avance real desde el 25/oct: separa hoja_id de trabajo_id, implementa caché de 
 **README:** Externo. Frontend y API Render; no dominio institucional. Sin sondeo directo en esta revisión.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-26.md#sistema-de-calificacion-automatica) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).
+
+
+## Seguimiento actual · 30 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Cinco commits nuevos en master añaden infraestructura del laboratorio: Compose con API, worker separado, Redis con AOF y volúmenes nombrados para cola, imágenes y bitácora; corrigen el seguimiento de mensajes con prefijos del panel y empates de tiempo por intento. El CI exacto acredita 196 pruebas backend y 73 Flutter, compilación web y publicación efectiva de la rama despliegue, verificada en la revisión citada. Esa publicación no demuestra que Dokploy haya terminado ni valida el recorrido público. El código de despliegue documenta frontend https://calificacion.iscoutb.dev y API https://api-calificacion.iscoutb.dev, pero README sigue sin cambios con Render: desfase documental, no falta de trabajo ni inexistencia de despliegue. El equipo reporta uso de una hoja sintética en el laboratorio; no se repitió esa aceptación. No corresponde seguir describiendo Redis sin persistencia como el único diseño actual: AOF/volúmenes ya están en Compose, mientras su recuperación operativa y respaldo requieren evidencia. El alcance OMR y la operación con múltiples workers siguen pendientes.
+
+**Próximos pasos:**
+- Actualizar README con las URLs institucionales exactas del frontend y API, la rama despliegue y la relación vigente con Render; reconciliar las decisiones históricas sin borrarlas.
+- Acreditar la revisión realmente servida por Dokploy y el recorrido frontend → API → worker con datos sintéticos. Publicar una rama compilada no equivale a finalizar el despliegue.
+- Probar reinicio, recuperación y respaldo de cola e imágenes/bitácora en el entorno objetivo; documentar el límite de AOF everysec y validar concurrencia antes de añadir más workers.
+- Conservar explícito que procesamiento de imágenes no implica OMR implementado y separar evidencia del equipo de aceptación independiente.
+
+**Issues GitHub:** 0 abiertas y 0 cerradas; 0 abiertas sin asignar. Cierres: —. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Externo. README todavía enlaza Render. Fuera del README, deploy/compose.lab.yaml y CI documentan https://calificacion.iscoutb.dev (frontend) y https://api-calificacion.iscoutb.dev (API). Se verificó publicación de rama despliegue, no ejecución final en Dokploy ni funcionamiento público. Ausencia de esos enlaces en README no significa ausencia de trabajo o de despliegue.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-30.md#sistema-de-calificacion-automatica) · [Issues](../seguimiento-issues-2026-10-30.md) · [URL y dominio](../seguimiento-despliegues-2026-10-30.md).

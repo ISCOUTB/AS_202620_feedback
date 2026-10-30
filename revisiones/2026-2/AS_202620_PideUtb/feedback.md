@@ -232,3 +232,22 @@ PR #30–34 ya fusionadas: catálogo y carrito multiproducto, promociones, migra
 **README:** Institucional. Frontend/panel y API institucionales; docente confirma presentación/despliegues; sin nueva verificación visual.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-29.md#pideutb) · [Issues](../seguimiento-issues-2026-10-29.md) · [URL y dominio](../seguimiento-despliegues-2026-10-29.md).
+
+
+## Seguimiento actual · 30 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Integra PR #35–38: migración 008 y configuración por defecto para alinear el mostrador con el establecimiento de los pedidos; activos CSS/JS con huella para evitar mezclas de caché; recuperación del pedido y su token en localStorage con caducidad de seis horas, confirmación antes de perder un código y sondeo hasta el estado final. También incorpora validación/codificación de identificadores y referencias, contraste de productos agotados, controles táctiles y reducción del alfabeto de canje para evitar caracteres confundibles. El CI de la punta acredita 556 pruebas Python aprobadas y tres omitidas, más 26 recorridos de navegador contra servicios locales del runner; las 103 PostgreSQL son un subconjunto reejecutado. La imagen del sitio se construye y verifica sus referencias con huella, sin demostrar publicación ni despliegue. El check externo SonarCloud Code Analysis pasa; el job Actions SonarCloud omite el análisis por configuración, por lo que su verde no lo acredita. El gate fallido de PR37 queda superado por el comentario actualizado aprobado y las validaciones añadidas, no se presenta como fallo vigente. PR35 enumera configuración, migración y redespliegue en Dokploy aún sin evidencia operativa independiente en este corte. PR37 reporta Render legado con no-server: no se verificó aquí su retiro definitivo ni el estado de los demás servicios legados, y no se ha acreditado exposición efectiva. La demo del 3/nov es un plan del equipo. Se conserva presentación y despliegues confirmados por docente, sin nueva aceptación de producción ni cobros reales.
+
+**Próximos pasos:**
+- Aportar evidencia del commit servido y de la configuración/migración 008 en el entorno objetivo; repetir allí el recorrido cliente–pasarela de pruebas–mostrador antes de la demo que el equipo anuncia para el 3/nov, manteniendo el reinicio de demo restringido al entorno de prueba.
+- Verificar retiro o mitigación de todos los servicios legados con evidencia operativa, sin darlo por acreditado solo por una respuesta no-server reportada por el equipo.
+- Conservar pruebas de recarga/retorno, caducidad y limpieza del pedido/token, y medir accesibilidad con los activos realmente desplegados; el almacenamiento persistente requiere mantener las defensas documentadas.
+- Reconciliar el resumen del PR38 con su código final: el alfabeto ya se redujo y la suite vigente ejecuta 556 aprobadas/3 omitidas. No sumar las reejecuciones de PostgreSQL ni las dos versiones Python como pruebas nuevas.
+
+**Issues GitHub:** 1 abiertas y 0 cerradas; 1 abiertas sin asignar. Cierres: —. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Institucional. README documenta frontend/panel y API bajo iscoutb.dev. Docente confirma presentación/despliegues; no se repitió verificación funcional de producción. Pruebas de navegador verificadas en CI usan localhost y pasarela simulada, no cobros reales.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-30.md#pideutb) · [Issues](../seguimiento-issues-2026-10-30.md) · [URL y dominio](../seguimiento-despliegues-2026-10-30.md).

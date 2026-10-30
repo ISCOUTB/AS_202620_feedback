@@ -14,6 +14,14 @@ Este material vive en [`ISCOUTB/AS_202620_feedback`](https://github.com/ISCOUTB/
 abierto para que puedas leerlo, citarlo y proponer cambios. Si tienes delante una copia descargada,
 la versión que manda es la de ahí.
 
+## Seguimiento actualizado · 30 de octubre de 2026
+
+- [Avances y próximos pasos de los 23 proyectos](revisiones/2026-2/seguimiento-s12-2026-10-30.md).
+- [Issues y motivos de cierre](revisiones/2026-2/seguimiento-issues-2026-10-30.md): 43 abiertas y 132 cerradas.
+- [README y despliegues](revisiones/2026-2/seguimiento-despliegues-2026-10-30.md): 10 con algún endpoint institucional; 6 con enlaces externos; 7 sin URL pública concreta.
+
+Seguimiento documental sin cierre automático de S12, sin cambiar calificaciones, planillas ni matrices históricas.
+
 ## Seguimiento actualizado · 29 de octubre de 2026
 
 - [Avances y próximos pasos de los 23 proyectos](revisiones/2026-2/seguimiento-s12-2026-10-29.md).
