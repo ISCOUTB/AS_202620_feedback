@@ -195,3 +195,23 @@ Integra PR #66–75: Idempotency-Key transaccional para crear publicaciones, reu
 **README:** Institucional. Cumplimiento parcial: API bajo iscoutb.dev, frontend GitHub Pages externo. CI público registra health/catálogo y etiqueta antigua; no es aceptación independiente ni acredita promoción GHCR en Dokploy. Azure es histórico.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-30.md#proyecto_campusmarket) · [Issues](../seguimiento-issues-2026-10-30.md) · [URL y dominio](../seguimiento-despliegues-2026-10-30.md).
+
+
+## Seguimiento actual · 31 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Revalidación del 31/oct: master y README conservan la punta del 30/oct; las cinco ejecuciones de esa punta siguen exitosas. Se mantienen la idempotencia integrada y los ensayos GHCR previamente acreditados, distintos de una promoción productiva. La novedad es PR #76, abierta y draft en la revisión citada: prepara Flutter Web precompilado para /app/ dentro del contenedor FastAPI existente, sin cambiar el Compose activo ni fusionar la propuesta. Sus seis workflows oficiales terminan success. El run Web institucional aislada acredita 16 pruebas seleccionadas, siete Flutter y diez criterios PASS de configuración, identidad, SQL, rutas, CORS, navegador, navegación, recursos, exportación y limpieza. Ese ensayo ejecuta la referencia de merge de prueba indicada en las fuentes y exporta la imagen como artefacto; no equivale a publicación en GHCR ni despliegue. El flujo Web/Android acaba aprobado en intento 2 a las 19:45 UTC del 30/oct; el job Android confirma dos pruebas, no queda fallido por el intento inicial. La cabecera pública registrada en la evidencia anterior no acredita la punta fusionada. Siguen pendientes respaldo/restauración, montajes, acceso desde Dokploy, rollback y autorización de promoción. README principal mantiene API institucional y frontend GitHub Pages externo: /app/ es candidato pendiente, no despliegue acreditado.
+
+**Próximos pasos:**
+- Revisar PR #76 aún draft y conciliar su cuerpo/README de rama, que citan el ensayo del fork, con los checks oficiales finales y sus referencias exactas; no presentar el merge de prueba como fusión a master.
+- Acreditar respaldo y restauración de MySQL/uploads, montajes reales, acceso GHCR desde Dokploy e imagen anterior recuperable antes de promover; separar ensayo aislado, publicación de imagen y despliegue.
+- Vincular commit, digest y cabecera del servicio realmente publicado, preservando la imagen probada y evitando reconstrucciones no verificadas.
+- Publicar y aceptar funcionalmente el frontend bajo iscoutb.dev solo en el entorno autorizado; mantener GitHub Pages como frontend vigente documentado hasta entonces.
+- Mantener evidencia de concurrencia, reintentos y conflicto de Idempotency-Key en el entorno objetivo, sin equiparar CI con aceptación de usuarios.
+
+**Issues GitHub:** 1 abiertas y 0 cerradas; 1 abiertas sin asignar. Cierres: —. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Institucional. Cumplimiento parcial: API bajo iscoutb.dev y frontend GitHub Pages externo. PR #76 prepara /app/ pero continúa draft, sin merge ni despliegue acreditado. CI/ensayos aislados no prueban promoción en Dokploy; Azure es histórico.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-31.md#proyecto_campusmarket) · [Issues](../seguimiento-issues-2026-10-31.md) · [URL y dominio](../seguimiento-despliegues-2026-10-31.md).

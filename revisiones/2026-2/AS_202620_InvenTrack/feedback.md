@@ -202,3 +202,22 @@ Corrige la brecha de idempotencia HTTP: reserva/serializa la clave antes de modi
 **README:** Institucional. README conserva API institucional y alternativa Render. Evidencia del equipo del 27/oct reporta DNS/TLS institucional no verificable y 503 en health/metrics de Render; no es comprobación independiente del corte. Hay que reconciliar ese reporte con las declaraciones previas de despliegue/verificación del README.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-28.md#inventrack) · [Issues](../seguimiento-issues-2026-10-28.md) · [URL y dominio](../seguimiento-despliegues-2026-10-28.md).
+
+
+## Seguimiento actual · 31 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Añade inventario de activos y superficies de entrada, matriz de diez amenazas priorizadas y tratamiento de privacidad S13, alineados con arc42. La documentación reconoce que autenticación/autorización, identidad del actor, retención de logs y persistencia durable siguen pendientes; no se incorporan nuevos controles de aplicación en este delta. El equipo reporta 18 hallazgos de pip-audit en tres paquetes (incluidos identificadores repetidos), no vulnerabilidades explotables verificadas aquí: no cambian dependencias ni se incorpora ese escaneo al CI. La mejora verificable está en calidad: el workflow espera ahora el Quality Gate de SonarCloud y el log de la punta actual confirma PASSED. Pasa 32 pruebas y vuelve a ejecutar una de contrato ya incluida, no 33 distintas. README y evidencia S12 de despliegue permanecen iguales: la API institucional y alternativa Render están declaradas, pero el reporte del equipo del 27/oct sobre DNS/TLS y 503 sigue sin actualizar, al igual que el run anterior citado en ese documento. El CI y su gate no acreditan redespliegue ni funcionamiento público de esta punta; no se realizaron pruebas en vivo.
+
+**Próximos pasos:**
+- Actualizar docs/evidencia-despliegue-s12.md con el run actual y su Quality Gate aprobado, y aportar hash desplegado, /health, /metrics y recorrido funcional institucional, distinguiendo API de frontend.
+- Priorizar autenticación/autorización y restricciones de métricas/documentación antes de habilitar datos o usuarios reales; vincular responsables y evidencia a las amenazas S13.
+- Reproducir y remediar el reporte de dependencias con versiones compatibles, regenerar el lockfile y añadir escaneo verificable al CI; no confundir el gate de calidad con un escaneo de dependencias.
+- Mantener explícitos los límites de idempotencia, locks, broker y DLQ en memoria; definir persistencia/outbox durable y retención de logs cuando se requiera recuperación.
+
+**Issues GitHub:** 0 abiertas y 7 cerradas; 0 abiertas sin asignar. Cierres: 7 completed. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Institucional. README mantiene API institucional y alternativa Render; no cambia en este delta. El documento S12 conserva observaciones del equipo del 27/oct (DNS/TLS institucional no verificable y 503 en health/metrics de Render), que no son prueba independiente actual. Quality Gate aprobado en CI no demuestra redespliegue ni aceptación funcional. Sin verificación en vivo.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-31.md#inventrack) · [Issues](../seguimiento-issues-2026-10-31.md) · [URL y dominio](../seguimiento-despliegues-2026-10-31.md).

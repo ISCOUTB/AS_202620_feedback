@@ -201,3 +201,22 @@ Integra PR #24 y un complemento posterior: controles de sesión/rol en escritura
 **README:** Sin URL concreta. Solo Azure explícitamente retirado; ninguna URL pública vigente concreta en README raíz.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-29.md#laplacita) · [Issues](../seguimiento-issues-2026-10-29.md) · [URL y dominio](../seguimiento-despliegues-2026-10-29.md).
+
+
+## Seguimiento actual · 31 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Revisión del 31/oct frente al 30/oct: tres commits nuevos formalizan ADR-0031 (sin ETag ni LISTEN/NOTIFY mientras exista una instancia), aceptan ADR-0030 del lado backend, documentan la rotación JWT, preparan la demo y la sesión STRIDE del 31/oct, y añaden guía de límites por IP/tamaño y un script de medición de carga. La validación grupal, el ensayo de rotación y la aplicación del límite siguen pendientes; la agenda y el procedimiento no prueban su ejecución. El equipo reporta 100 lecturas exitosas en el entorno, pero no se repitió esa prueba y la fase de escritura continúa bloqueada hasta el límite por IP. Sonar ahora se ejecuta solo en push, no en PR; la punta pasa cinco jobs, con 134 pruebas aprobadas y una omitida de 135, 34 de contrato y Quality Gate PASSED. Las reejecuciones de esas pruebas no se suman como pruebas distintas. El último workflow de despliegue corresponde a un commit anterior y vuelve a registrar «Branch Not Match» seguido de health=200: no identifica el código servido ni acredita un redespliegue. README conserva el mismo blob, sin URL pública vigente concreta, aunque la guía nueva sí cita hosts institucionales. Las diez PR abiertas de dependencias siguen sin integrar.
+
+**Próximos pasos:**
+- Corregir la selección de rama del webhook y aportar evidencia del commit realmente servido; no cerrar despliegue con un health=200 posterior a «Branch Not Match».
+- Llevar al README las URL exactas de frontend y API bajo iscoutb.dev; no reutilizar el enlace Azure retirado.
+- Acreditar la sesión STRIDE, la validación grupal de ADR-0030/0031 y el ensayo de rotación; distinguirlos de las guías ya escritas.
+- Aplicar y verificar el límite por IP/tamaño antes de medir escrituras; cerrar protección de secretos, fijación de dependencias/acciones y versionado del consentimiento con evidencia real.
+
+**Issues GitHub:** 0 abiertas y 14 cerradas; 0 abiertas sin asignar. Cierres: 14 completed. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Sin URL concreta. Solo Azure explícitamente retirado; ninguna URL pública vigente concreta en README raíz.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-31.md#laplacita) · [Issues](../seguimiento-issues-2026-10-31.md) · [URL y dominio](../seguimiento-despliegues-2026-10-31.md).

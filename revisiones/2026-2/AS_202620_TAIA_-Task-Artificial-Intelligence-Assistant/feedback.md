@@ -198,3 +198,22 @@ Corrige el disparador YAML de CI, construye y arranca la imagen contra PostgreSQ
 **README:** Institucional. API institucional; README también enlaza Render como alternativa histórica, sin confirmar respaldo activo. Flutter sigue arquitectura objetivo. Funcionamiento confirmado por docente; webhook CD no acredita fin del despliegue.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-26.md#taia_-task-artificial-intelligence-assistant) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).
+
+
+## Seguimiento actual · 31 de octubre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega. Los informes históricos conservan su fecha; para pendientes actuales, leer este corte.
+
+Frente al 30/oct, 26 commits y la PR de frontend fusionada incorporan un cliente Flutter inicial de splash/bienvenida, webhook Telegram protegido, límites de login y mensajes al asistente, métricas con JWT, separación de instrucciones/texto del usuario, auditoría de dependencias y respaldo Gemini→Groq. El CI del padre inmediato de la punta documental acredita 283 pruebas backend, build/smoke, ambos locks sin vulnerabilidades conocidas y Quality Gate OK; no ejecuta las pruebas Flutter. El CD solicita el webhook de Dokploy, sin acreditar por sí solo finalización. README sigue intacto y ADR-0011 aún dice implementación pendiente pese al código y pruebas del respaldo. La activación y comprobaciones de producción son reportes del equipo; no se repitieron. Se conserva que TAIA presentó y funciona, confirmado por el docente. Siguen pendientes consentimiento, renovación/revocación y alertas; el respaldo incorpora riesgo de latencia y no convierte el inicio Flutter en app funcional completa.
+
+**Próximos pasos:**
+- Actualizar README y ADR-0011 con el alcance real del cliente inicial, webhook, autenticación de métricas y respaldo implementado; conciliar su estado con las pruebas y reportes del equipo, sin borrar el histórico.
+- Agregar ejecución verificable de pruebas/análisis Flutter al pipeline y validar en dispositivo los flujos funcionales cuando existan; tres pruebas de splash no acreditan una app académica integrada.
+- Cerrar el consentimiento documentado en RF-USR-10, renovación/revocación y alertas con código y evidencia; mantener explícitos los riesgos aceptados y sus disparadores de revisión.
+- Vincular la revisión efectivamente servida por Dokploy con evidencia de salud y recorrido; medir latencia del respaldo, conservar la limitación de la evaluación con árbol modificado y distinguir comprobación del equipo de aceptación independiente.
+
+**Issues GitHub:** 3 abiertas y 4 cerradas; 2 abiertas sin asignar. Cierres: 4 completed. No son estados de un tablero Projects ni prueba automática de implementación.
+
+**README:** Institucional. API institucional. README conserva Render como alternativa y la descripción antigua de Flutter; ahora hay splash/bienvenida en código, no evidencia de app integrada ni de frontend público. El equipo documenta TLS y activación del respaldo; el webhook CD solo acredita solicitud. Presentación y funcionamiento confirmados por el docente, sin nueva prueba viva propia.
+
+[Fuentes y alcance](../seguimiento-s12-2026-10-31.md#taia_-task-artificial-intelligence-assistant) · [Issues](../seguimiento-issues-2026-10-31.md) · [URL y dominio](../seguimiento-despliegues-2026-10-31.md).
