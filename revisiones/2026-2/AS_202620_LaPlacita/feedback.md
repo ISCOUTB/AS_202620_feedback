@@ -220,3 +220,17 @@ Revisión del 31/oct frente al 30/oct: tres commits nuevos formalizan ADR-0031 (
 **README:** Sin URL concreta. Solo Azure explícitamente retirado; ninguna URL pública vigente concreta en README raíz.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-31.md#laplacita) · [Issues](../seguimiento-issues-2026-10-31.md) · [URL y dominio](../seguimiento-despliegues-2026-10-31.md).
+
+
+## Seguimiento actual · 1 de noviembre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega.
+
+Misma punta master y mismo README que el 31/oct. La novedad está en dependencias sin integrar: PR #29 cerrada sin fusión, #30 abierta (38 actualizaciones frontend) y #28 rebasada (3 actualizaciones backend). Sus diffs solo modifican package.json/package-lock.json de cada componente. Los nuevos runs de #28 y #30 pasan test, frontend (lint/build), contract-test y audit; sonar se omite en ambas PR. Continúan diez PR abiertas de dependencias. No hay nuevo despliegue ni cambio del código integrado: el último deploy sigue siendo 41068478596 de otra revisión, con el límite ya señalado en el informe del 31/oct.
+
+**Próximos pasos:**
+- Revisar compatibilidad de #28/#30 y el resto de PR abiertas; no atribuir sus checks a master ni presentar sonar omitido como Quality Gate nuevo.
+- Corregir selección de rama del webhook y vincular commit servido; health=200 tras «Branch Not Match» no acredita redespliegue.
+- Publicar frontend/API vigentes bajo iscoutb.dev en README y acreditar sesión STRIDE, validación de ADR, rotación y límites antes de medir escrituras.
+
+[Fuentes y alcance](../seguimiento-s12-2026-11-01.md#laplacita) · [Issues](../seguimiento-issues-2026-11-01.md) · [URL y dominio](../seguimiento-despliegues-2026-11-01.md).

@@ -217,3 +217,19 @@ Frente al 30/oct, 26 commits y la PR de frontend fusionada incorporan un cliente
 **README:** Institucional. API institucional. README conserva Render como alternativa y la descripción antigua de Flutter; ahora hay splash/bienvenida en código, no evidencia de app integrada ni de frontend público. El equipo documenta TLS y activación del respaldo; el webhook CD solo acredita solicitud. Presentación y funcionamiento confirmados por el docente, sin nueva prueba viva propia.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-31.md#taia_-task-artificial-intelligence-assistant) · [Issues](../seguimiento-issues-2026-10-31.md) · [URL y dominio](../seguimiento-despliegues-2026-10-31.md).
+
+
+## Seguimiento actual · 1 de noviembre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega.
+
+19 commits incorporan seis alertas de aplicación en memoria y logs con runbook, validación estructural reproducible del modelo de amenazas y verificación del lock Dart/OSV en CI. El job de pruebas de la punta exacta acredita 324 pruebas Python, build/smoke, auditoría de ambos locks Python y consulta OSV de paquetes Pub sin avisos. Sin embargo, Quality Gate termina ERROR por new_security_rating=3 frente a umbral 1; CI failure y CD skipped. README y PR/issues sin cambio. Se conserva que TAIA presentó y funciona, confirmado por el docente; no se verificó en vivo ni se acredita despliegue de esta punta.
+
+**Próximos pasos:**
+- Diagnosticar y resolver los hallazgos de seguridad de Sonar y aportar Quality Gate OK de la revisión corregida; no confundir 324 pruebas exitosas con CI íntegro verde.
+- Actualizar README y ADR-0011 para reflejar cliente inicial, webhook, métricas JWT, respaldo y alertas reales; conservar antecedentes.
+- Conservar alcance de alertas en memoria/por proceso, sin notificación externa, y validar operación y recuperación de alertas en el entorno servido; el runbook declara riesgo residual medio.
+- Agregar pruebas/análisis Flutter al pipeline y validar flujos integrados en dispositivo; el verificador de dependencias Dart no ejecuta Flutter.
+- Mantener abiertos consentimiento T-02 y renovación/revocación T-08; vincular revisión efectivamente servida con evidencia de recorrido.
+
+[Fuentes y alcance](../seguimiento-s12-2026-11-01.md#taia_-task-artificial-intelligence-assistant) · [Issues](../seguimiento-issues-2026-11-01.md) · [URL y dominio](../seguimiento-despliegues-2026-11-01.md).

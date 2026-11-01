@@ -221,3 +221,18 @@ Añade inventario de activos y superficies de entrada, matriz de diez amenazas p
 **README:** Institucional. README mantiene API institucional y alternativa Render; no cambia en este delta. El documento S12 conserva observaciones del equipo del 27/oct (DNS/TLS institucional no verificable y 503 en health/metrics de Render), que no son prueba independiente actual. Quality Gate aprobado en CI no demuestra redespliegue ni aceptación funcional. Sin verificación en vivo.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-31.md#inventrack) · [Issues](../seguimiento-issues-2026-10-31.md) · [URL y dominio](../seguimiento-despliegues-2026-10-31.md).
+
+
+## Seguimiento actual · 1 de noviembre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega.
+
+Desde el 31/oct integra tres commits: actualiza dependencias y lockfile, añade pip-audit con hashes al CI e incorpora política de exposición en producción. Sin token, /metrics y documentación interna responden 404; /productos e /inventario quedan deshabilitados con 503 por defecto. Compose y Render fijan producción y negocio deshabilitado; el token interno no implementa usuarios/roles. La punta pasa 34 pruebas (dos nuevas de política), reejecuta una de contrato ya incluida, supera Quality Gate y pip-audit no encuentra vulnerabilidades conocidas. README cambia para describir restricciones pero mantiene API institucional/Render; no se verificó redespliegue ni funcionamiento público. La evidencia S13 añade responsables, pero conserva pasajes de escaneo pendiente y hallazgos previos; S12 de despliegue no cambia y aún cita el corte anterior.
+
+**Próximos pasos:**
+- Actualizar evidencia S13 y tabla de amenazas con dependencias/lock/run actuales y retirar afirmaciones obsoletas de escaneo pendiente; conciliar también README que más abajo sigue declarando /docs y /metrics disponibles.
+- Aportar hash realmente servido y comprobaciones fechadas de /health, 404 sin token, acceso interno autorizado y 503 previsto en rutas de negocio. No confundir el bloqueo preventivo con una caída ni con autenticación/autorización completa.
+- Conservar negocio deshabilitado hasta identidad/roles, auditoría de actor y pruebas negativas; documentar gestión del token interno y ampliar cobertura de /redoc, /openapi.json y rutas /inventario.
+- Mantener límites de persistencia, idempotencia, locks, broker y DLQ en memoria; completar recuperación durable y retención/redacción de logs antes de datos reales.
+
+[Fuentes y alcance](../seguimiento-s12-2026-11-01.md#inventrack) · [Issues](../seguimiento-issues-2026-11-01.md) · [URL y dominio](../seguimiento-despliegues-2026-11-01.md).

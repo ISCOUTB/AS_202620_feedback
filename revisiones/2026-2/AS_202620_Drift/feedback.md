@@ -175,3 +175,19 @@ PR32 integrado: actualiza S12, ADR0010, arc42 y C4 con almacenamiento de navegad
 **README:** Institucional. Frontend y API /api; API alternativa; Frontend alternativo
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-26.md#drift) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).
+
+
+## Seguimiento actual · 1 de noviembre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega.
+
+Desde el 31/oct integra 18 commits y siete PR (#33–36 y #49–51): actualiza dependencias/acciones y locks, incorpora auditorías pip-audit/npm audit al CI, token administrativo para sincronización y métricas, límite de tasa por IP, CORS acotado, registro de sincronización y documentación STRIDE/privacidad con aviso en el frontend. La punta pasa cuatro jobs CI: 207 pruebas backend y 163 casos de contrato, en conteos separados (el contrato advierte desajuste de validación en tres operaciones); build/smoke frontend local; auditorías sin vulnerabilidades conocidas; Quality Gate PASSED. La corrida Sonar repite 201 pruebas de la suite, no suma casos distintos. Azure CD confirma el paquete ./backend desplegado con éxito en el slot Production; esto no verifica frontend/API institucional ni aceptación funcional en vivo. Las PR #37–48 están cerradas sin merge individual: #51 integra actualizaciones compatibles y rechaza pydantic-core independiente. PR #52 permanece abierta con CI fallido exclusivamente en Sonar por autorización/organización, no es el CI de master. README mantiene los mismos endpoints y añade configuración de seguridad.
+
+**Próximos pasos:**
+- Acreditar configuración de DRIFT_ADMIN_TOKEN y proxy confiable en Azure/Dokploy, y registrar pruebas positivas/negativas de sincronización, métricas y límite de tasa junto al recorrido frontend/API institucional. El éxito Azure no sustituye ese recorrido.
+- Resolver el acceso Sonar para PR de Dependabot sin eludir controles y regenerar/ensayar requirements.lock al evaluar PR #52; sus cambios de requirements.txt no quedan probados por jobs que instalan versiones fijas.
+- Revisar los avisos de Schemathesis en búsqueda, sincronización y compatibilidad: el verde contractual incluye rechazo mayoritario de datos generados en esas tres operaciones. Conservar conteos separados de casos contractuales, suite pytest y reejecución de cobertura.
+- Reconciliar la afirmación de retención máxima de IP de 60 segundos con la limpieza efectiva: security.py depura una clave cuando vuelve a usarse y limpia inactivas al alcanzar max_clients, no hay caducidad global cada 60 s. Mantener explícitos los límites por proceso y el backend Vercel sin limitador.
+- Definir retención/redacción de logs y resolver el pendiente de registro de consultas; el aviso/documento es evidencia del equipo, no validación jurídica ni aceptación funcional.
+
+[Fuentes y alcance](../seguimiento-s12-2026-11-01.md#drift) · [Issues](../seguimiento-issues-2026-11-01.md) · [URL y dominio](../seguimiento-despliegues-2026-11-01.md).
