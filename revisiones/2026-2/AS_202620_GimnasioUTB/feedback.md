@@ -192,3 +192,18 @@ Integra S12/ADR0006 y taller asíncrono aislado. El run actual pasa 12 pruebas b
 **README:** Institucional. Backend; interfaz Flutter pública no acreditada
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-26.md#gimnasioutb) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).
+
+
+## Seguimiento actual · 2 de noviembre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega.
+
+Desde el 1/nov integra cinco commits mediante PR #19 y #31: token compartido de operador para escrituras, CORS acotado, cabeceras y límite de cuerpo, cliente Flutter adaptado y documentación de amenazas/privacidad. Sin token configurado o con longitud insuficiente, escritura falla cerrada con 503; token inválido devuelve 401. CI de la punta pasa 19 pruebas de aplicación, 14 de contrato y 9 del prototipo, además de fitness functions, auditoría sin hallazgos y 129 firmas de registro verificadas. No ejecuta Flutter ni acredita integración PostgreSQL real. El documento deja configurar OPERADOR_TOKEN en Dokploy como pendiente que bloquea la demo de registro. Once PR de dependencias quedan abiertas; los 16 issues continúan abiertos. API institucional sin cambios.
+
+**Próximos pasos:**
+- Configurar/rotar el token de operador como secreto en Dokploy y demostrar lecturas, rechazo sin credencial y escritura autorizada sobre el despliegue actual; no compartir el secreto en evidencia.
+- Ejecutar las pruebas Flutter añadidas e integración PostgreSQL con base aislada, además del recorrido de extremo a extremo.
+- Mantener límites del token compartido (sin identidad individual), completar timeout del pool y control de tasa/proxy, y verificar retención de logs.
+- Reducir dependencias Flutter no usadas y revisar las PR propuestas; no inferir durabilidad ni broker de producción a partir del prototipo.
+
+[Fuentes y alcance](../seguimiento-s12-2026-11-02.md#gimnasioutb) · [Issues](../seguimiento-issues-2026-11-02.md) · [URL y dominio](../seguimiento-despliegues-2026-11-02.md).

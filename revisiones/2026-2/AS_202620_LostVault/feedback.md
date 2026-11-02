@@ -183,3 +183,17 @@ PR #20 y #22 integradas: nueva estrategia S12, middleware Cache-Control y valida
 **README:** Sin URL concreta. README sin URL pública concreta; no implica ausencia de trabajo o despliegue.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-26.md#lostvault) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).
+
+
+## Seguimiento actual · 2 de noviembre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega.
+
+PR #23/#24 integradas: documento S13 de amenazas, dependencias y privacidad adaptado al servidor institucional; único archivo modificado. README sin cambios y sin endpoint concreto de frontend/API. Los tres workflows de la punta aprueban; Build incluye scanner Sonar y Quality Gate ejecutados. El documento hace análisis manual de dependencias, no ejecución pip-audit, y declara persistencia, identidad, tasa, workers y configuración operativa por confirmar.
+
+**Próximos pasos:**
+- Publicar en README URLs concretas y roles de frontend/API del despliegue institucional; no usar el panel de administración como URL de aplicación.
+- Convertir el análisis manual de dependencias en auditoría reproducible de CI con versiones instaladas, decisiones de actualización y regresiones.
+- Priorizar identidad real y persistencia de reclamaciones; verificar configuración, workers, acceso, retención y respaldos del entorno autorizado. No repetir carga contra el panel sin autorización.
+
+[Fuentes y alcance](../seguimiento-s12-2026-11-02.md#lostvault) · [Issues](../seguimiento-issues-2026-11-02.md) · [URL y dominio](../seguimiento-despliegues-2026-11-02.md).

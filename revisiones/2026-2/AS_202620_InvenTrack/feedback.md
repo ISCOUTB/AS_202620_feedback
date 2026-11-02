@@ -236,3 +236,18 @@ Desde el 31/oct integra tres commits: actualiza dependencias y lockfile, añade 
 - Mantener límites de persistencia, idempotencia, locks, broker y DLQ en memoria; completar recuperación durable y retención/redacción de logs antes de datos reales.
 
 [Fuentes y alcance](../seguimiento-s12-2026-11-01.md#inventrack) · [Issues](../seguimiento-issues-2026-11-01.md) · [URL y dominio](../seguimiento-despliegues-2026-11-01.md).
+
+
+## Seguimiento actual · 2 de noviembre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega.
+
+Desde el 1/nov integra siete commits: concilia README y evidencia S12/S13 con restricciones internas y auditoría vigente, añade Dependabot, completa hashes condicionales y amplía las pruebas de /redoc, /openapi.json y rutas de inventario. CI vuelve a pasar 34 pruebas, una contractual reejecutada, Quality Gate y pip-audit sin vulnerabilidades conocidas. El equipo documenta comprobación pública anterior de /health 200, superficies internas 404 y negocio 503, y aclara expresamente que no demuestra redespliegue de los commits posteriores ni acceso autorizado en producción. No se realizó prueba viva en esta auditoría. Cuatro PR de dependencias nuevas quedan abiertas; siete issues cerrados sin cambios.
+
+**Próximos pasos:**
+- Acreditar el commit realmente servido después del redespliegue con /health y estados esperados, conservando separado el 503 preventivo de una caída; comprobar acceso interno autorizado sin revelar el token.
+- Revisar las cuatro PR de dependencias, mantener hashes completos y ejecutar suite y auditoría antes de integrar.
+- Conservar negocio deshabilitado hasta identidad/roles y auditoría de actor; el token interno no sustituye autorización de usuarios.
+- Completar persistencia/recuperación durables y retención/redacción de logs; mantener explícitos los límites de locks, idempotencia, broker y DLQ en memoria.
+
+[Fuentes y alcance](../seguimiento-s12-2026-11-02.md#inventrack) · [Issues](../seguimiento-issues-2026-11-02.md) · [URL y dominio](../seguimiento-despliegues-2026-11-02.md).

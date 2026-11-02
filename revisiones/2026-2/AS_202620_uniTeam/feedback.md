@@ -172,3 +172,18 @@ Integra PR #9 y #10: taller de mensajería SQLite con contrato, deduplicación, 
 **README:** Externo. Frontend y API DuckDNS. Sonda sigue consultando Render; su fallo no determina disponibilidad de DuckDNS.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-26.md#uniteam) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).
+
+
+## Seguimiento actual · 2 de noviembre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega.
+
+Quince commits añaden modelado de amenazas/privacidad, ADR, Dependabot y auditorías; actualizan dependencias y workflows mediante PR. CI de la punta exacta pasa pruebas MySQL, frontend e imágenes. seguridad-dependencias figura success, pero pip-audit reporta 48 entradas de vulnerabilidad en cuatro paquetes y su salida se canaliza a tee sin pipefail: verde no equivale a ausencia de hallazgos. npm audit reporta cero en el alcance examinado. La última sonda del 2/nov vuelve a fallar sus seis comprobaciones contra Render antiguo; no prueba una caída de las URL DuckDNS del README. README e issue sin cambios; 10 PR quedan abiertos.
+
+**Próximos pasos:**
+- Hacer bloqueante la auditoría preservando el código de salida (pipefail o mecanismo equivalente) y resolver/justificar hallazgos Python con evidencia reproducible.
+- Actualizar la sonda a las URL DuckDNS vigentes y repetir las seis comprobaciones antes de interpretar salud.
+- Implementar y probar controles de seguridad que los ADR/modelo describen como pendientes; distinguir documentación, actualización de dependencias y mitigación efectiva.
+- Publicar frontend y API institucionales; conservar caché como propuesta y taller SQLite separado.
+
+[Fuentes y alcance](../seguimiento-s12-2026-11-02.md#uniteam) · [Issues](../seguimiento-issues-2026-11-02.md) · [URL y dominio](../seguimiento-despliegues-2026-11-02.md).

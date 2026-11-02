@@ -196,3 +196,18 @@ La rama principal master y su README permanecen sin cambios desde el 28/oct, con
 **README:** Externo. Backend Render. El CI incluye paso de health exitoso; no es verificación funcional propia ni evidencia de frontend institucional.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-29.md#xald) · [Issues](../seguimiento-issues-2026-10-29.md) · [URL y dominio](../seguimiento-despliegues-2026-10-29.md).
+
+
+## Seguimiento actual · 2 de noviembre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega.
+
+PR #27 integra 25 commits de S13 en master: modelo STRIDE/privacidad, Dependabot, auditoría pip/OSV, actualizaciones, rotación de llaves, rechazo de fechas futuras, límite de cuerpo y exclusión de backups Android. CI de la punta exacta pasa Android, 28 pruebas backend y auditoría: sin avisos en el entorno Python auditado ni en 151 dependencias Maven resueltas. deploy-backend invoca Render y registra health HTTP 200; eso no demuestra por sí solo qué revisión sirve ni un recorrido móvil completo. README conserva Render y experimental no cambia. Se abren 14 PR Dependabot; seis issues cerradas conservan sus razones, una duplicate.
+
+**Próximos pasos:**
+- Validar controles y sincronización en dispositivo con trazabilidad a la revisión servida; health 200 no sustituye la validación del deploy ni del flujo completo.
+- Mantener pendientes ejecutor real de procesarPendientes y persistencia de cola/deduplicación hasta aportar evidencia; no inferirlos de la entrega de seguridad.
+- Revisar y probar los 14 PR de dependencias antes de integrarlos; conservar análisis reproducible sobre lo que realmente se despliega.
+- Publicar API institucional y conciliar experimental con master sin restaurar documentación obsoleta.
+
+[Fuentes y alcance](../seguimiento-s12-2026-11-02.md#xald) · [Issues](../seguimiento-issues-2026-11-02.md) · [URL y dominio](../seguimiento-despliegues-2026-11-02.md).

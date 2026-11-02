@@ -203,3 +203,18 @@ Corrige el operador Python inválido señalado ayer y ahora pasa Idempotency-Key
 **README:** Sin URL concreta. Declara HTTPS/Dokploy, pero sin URL pública concreta del sitio en README.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-26.md#clubs_utb) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).
+
+
+## Seguimiento actual · 2 de noviembre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega.
+
+Desde el 1/nov integra cinco commits: ajusta pruebas y contrato a tipos de migración, valida encuestas sin opciones, exige sesión para subir imágenes, actualiza PyJWT y python-multipart y agrega amenazas, dependencias y privacidad. El equipo documenta un reescaneo sin hallazgos tras 36 registros iniciales (24 avisos distintos), pero no aporta ejecución CI de auditoría. Ambos workflows de la nueva punta siguen fallidos y sus colecciones de jobs están vacías: no se acredita una suite ejecutada en esa punta ni se atribuye una causa no verificada. README aún no incluye URL pública concreta. No hay issues reales (los tres ítems del endpoint son PR); PR sin novedades.
+
+**Próximos pasos:**
+- Restablecer ambos workflows y aportar pruebas/backend, contrato y escaneo reproducible posteriores a las actualizaciones; no dar por corregido el CI por cambios en los tests.
+- Priorizar hash de contraseñas y fallo de arranque sin JWT_SECRET; la autenticación de upload no resuelve límites de tamaño, SVG ni validación de contenido.
+- Corregir idempotencia por autor/operación, exposición de matrícula y permisos por rol; conciliar privacidad que aún describe subida sin sesión con el cambio implementado.
+- Completar decisiones y marcadores de privacidad/retención, y publicar URL exacta de frontend/API en README.
+
+[Fuentes y alcance](../seguimiento-s12-2026-11-02.md#clubs_utb) · [Issues](../seguimiento-issues-2026-11-02.md) · [URL y dominio](../seguimiento-despliegues-2026-11-02.md).

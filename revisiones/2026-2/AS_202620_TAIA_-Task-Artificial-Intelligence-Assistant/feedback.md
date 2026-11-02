@@ -233,3 +233,18 @@ Actualización documental sin recalificar ni cerrar la entrega.
 - Mantener abiertos consentimiento T-02 y renovación/revocación T-08; vincular revisión efectivamente servida con evidencia de recorrido.
 
 [Fuentes y alcance](../seguimiento-s12-2026-11-01.md#taia_-task-artificial-intelligence-assistant) · [Issues](../seguimiento-issues-2026-11-01.md) · [URL y dominio](../seguimiento-despliegues-2026-11-01.md).
+
+
+## Seguimiento actual · 2 de noviembre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega.
+
+Diez commits incorporan sesiones con renovación rotativa, detección de reutilización y cierre de sesión, y consentimiento obligatorio con fecha/versión, migración y pruebas; T-02 y T-08 pasan de pendientes a implementadas en el repositorio, no demostradas en producción. El job test de la punta exacta acredita 340 pruebas (antes 324), auditoría de ambos locks Python sin avisos y comprobación Dart/OSV. Sigue fallando el Quality Gate: new_security_rating=3 frente a umbral 1; CI failure y CD skipped. README cambia para enlazar la política, pero conserva descripciones desactualizadas sobre Flutter/integraciones. Issues y PR sin cambios. Se preserva la confirmación del docente: TAIA presentó y funciona; no se recalifica ni se verifica en vivo esta revisión.
+
+**Próximos pasos:**
+- Resolver los hallazgos de seguridad de Sonar y obtener Quality Gate OK de la revisión corregida; 340 pruebas exitosas no significan CI completo verde.
+- Validar sesiones, renovación/revocación y consentimiento en la revisión servida, incluida migración de cuentas existentes; no seguir marcando T-02/T-08 como ausentes en código.
+- Actualizar README y ADR-0011 para reflejar cliente, webhook, métricas JWT, respaldo y alertas reales; mantener límites de alertas en memoria y ausencia de notificación externa.
+- Añadir pruebas/análisis Flutter al pipeline y recorridos integrados en dispositivo; la verificación Dart/OSV no ejecuta Flutter.
+
+[Fuentes y alcance](../seguimiento-s12-2026-11-02.md#taia_-task-artificial-intelligence-assistant) · [Issues](../seguimiento-issues-2026-11-02.md) · [URL y dominio](../seguimiento-despliegues-2026-11-02.md).

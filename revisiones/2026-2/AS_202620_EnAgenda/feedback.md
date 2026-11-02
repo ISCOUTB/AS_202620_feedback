@@ -191,3 +191,18 @@ PR3 integra documentación de consistencia y prototipo aislado de envío automá
 **README:** Sin URL concreta. README sin URL pública concreta; no implica ausencia de despliegue.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-26.md#enagenda) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).
+
+
+## Seguimiento actual · 2 de noviembre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega.
+
+La punta master y su README no cambian frente al 1/nov. Hay trabajo nuevo no integrado: PR #5 abierta añade seguridad/privacidad y cambia la restricción de pytest; PR #4 cierra sin merge. El documento de #5 declara auditoría limpia y 12 pruebas aprobadas/2 fallidas localmente, pero el CI real de la PR falla antes, durante colección, por import relativo sin paquete en test_simulador; contrato y build se omiten. El workflow separado de mensajería pasa, sin convertir la suite general en verde. Issues sin cambios y README default aún sin URL pública concreta.
+
+**Próximos pasos:**
+- Corregir el empaquetado/import de test_simulador y reejecutar CI completo de la PR, incluidos contrato y build, antes de integrar.
+- Conciliar las dos fallas de salud/métricas declaradas localmente con el resultado reproducible de CI; adjuntar auditoría fechada posterior al cambio de pytest.
+- Mantener claramente separado lo propuesto en PR de lo integrado en master, y el correo simulado del envío real.
+- Documentar URL institucional concreta y alcance PostgreSQL frente a rutas heredadas en memoria.
+
+[Fuentes y alcance](../seguimiento-s12-2026-11-02.md#enagenda) · [Issues](../seguimiento-issues-2026-11-02.md) · [URL y dominio](../seguimiento-despliegues-2026-11-02.md).

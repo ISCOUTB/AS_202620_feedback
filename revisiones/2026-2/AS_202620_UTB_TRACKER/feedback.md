@@ -181,3 +181,18 @@ Fusiona outbox, worker idempotente y reintentos del taller, junto con documentac
 **README:** Sin URL concreta. README raíz sin endpoint público vigente. Solo en código: https://129-80-171-141.nip.io; release APK v1.0.2 publicado, no prueba de sitio institucional.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-26.md#utb_tracker) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).
+
+
+## Seguimiento actual · 2 de noviembre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega.
+
+PR #5 fusionado: dos commits incorporan documentación S13 (amenazas, privacidad, ADR de acceso, análisis de dependencias y SBOM) y un paso bloqueante pip-audit. Las 78 pruebas vuelven a pasar; después la auditoría reporta 29 entradas de vulnerabilidad en dos paquetes (Starlette 0.50.0 y PyJWT 2.12.1, con identificadores repetidos en la salida), falla y omite deploy. Es un bloqueo nuevo de dependencias, no la antigua falla Alembic. README raíz sigue sin URL pública concreta y la única issue permanece abierta.
+
+**Próximos pasos:**
+- Actualizar dependencias vulnerables con compatibilidad verificada y repetir pruebas y pip-audit; deduplicar identificadores al priorizar, sin confundir las 29 entradas reportadas con 29 vulnerabilidades únicas.
+- Conservar el gate bloqueante; no acreditar despliegue de esta punta mientras deploy está omitido.
+- Eliminar fallback destructivo a DATABASE_URL o validar inequívocamente la base de pruebas; actualizar README con URL pública y estado PostgreSQL/pruebas.
+- Distinguir ADR/propuestas de controles implementados; acreditar worker/notificación y flujos cliente sin reabrir el bloqueo Alembic resuelto.
+
+[Fuentes y alcance](../seguimiento-s12-2026-11-02.md#utb_tracker) · [Issues](../seguimiento-issues-2026-11-02.md) · [URL y dominio](../seguimiento-despliegues-2026-11-02.md).

@@ -238,3 +238,18 @@ Integra mapa 3D del campus con capas, selección de destino, animaciones, georre
 **README:** Sin URL concreta. README sin URL pública concreta. Compose nuevo solo para API; FRONTEND_URL en configuración no prueba frontend ni despliegue activo. Se conserva aceptación docente previa, distinta de la publicación de esta punta.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-30.md#elmapita) · [Issues](../seguimiento-issues-2026-10-30.md) · [URL y dominio](../seguimiento-despliegues-2026-10-30.md).
+
+
+## Seguimiento actual · 2 de noviembre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega.
+
+Desde el 1/nov integra tres commits: añade guard y roles a endpoints privilegiados, mueve roles del backend a app_metadata, amplía redacción de logs, agrega pruebas y análisis de seguridad/privacidad, Dependabot y auditoría. La punta pasa 78 pruebas backend y 30 Flutter; E2E falla (espera 200 y recibe 404) pero se tolera, analyze conserva 28 hallazgos y Sonar falla por autorización/proyecto, dejando Quality Gate omitido aunque CI global figura verde. Auditoría de producción reporta cuatro hallazgos (dos altos y dos moderados); bloquea solo críticos. Dieciséis PR de dependencias nuevas quedan abiertas. README sigue sin URL pública concreta. Se preserva la confirmación docente de que presentó y funciona; no se recalifica por esta revalidación.
+
+**Próximos pasos:**
+- Completar migración de roles existentes a app_metadata y alinear el cliente Flutter, que aún lee userMetadata; verificar acceso administrativo después del cambio.
+- Hacer vinculantes E2E y análisis relevante, resolver los 28 hallazgos y restaurar Sonar/Quality Gate; no presentar el verde agregado como todas las comprobaciones aprobadas.
+- Revisar los cuatro hallazgos de producción y sus excepciones, sincronizar documentos que aún describen roles/redacción anteriores y probar las PR antes de integrar.
+- Añadir URL exacta institucional en README, separando frontend/API, y evidencia fechada de la revisión actual sin invalidar la confirmación docente previa.
+
+[Fuentes y alcance](../seguimiento-s12-2026-11-02.md#elmapita) · [Issues](../seguimiento-issues-2026-11-02.md) · [URL y dominio](../seguimiento-despliegues-2026-11-02.md).

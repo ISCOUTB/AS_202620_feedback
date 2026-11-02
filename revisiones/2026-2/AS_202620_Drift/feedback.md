@@ -191,3 +191,18 @@ Desde el 31/oct integra 18 commits y siete PR (#33–36 y #49–51): actualiza d
 - Definir retención/redacción de logs y resolver el pendiente de registro de consultas; el aviso/documento es evidencia del equipo, no validación jurídica ni aceptación funcional.
 
 [Fuentes y alcance](../seguimiento-s12-2026-11-01.md#drift) · [Issues](../seguimiento-issues-2026-11-01.md) · [URL y dominio](../seguimiento-despliegues-2026-11-01.md).
+
+
+## Seguimiento actual · 2 de noviembre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega.
+
+Desde el 1/nov integra cuatro commits mediante PR #54 y #56: actualiza dependencias y lock, alinea instalación CI/CD con requirements.txt y actualiza README/registro IA. #52, #53 y #55 cierran sin merge individual; no quedan PR abiertas. CI de la punta pasa 207 pruebas backend, 176 casos contractuales y build/smoke frontend local; la reejecución Sonar de 201 casos no se suma como pruebas distintas. Auditorías sin vulnerabilidades conocidas y Quality Gate PASSED. El contrato advierte que sincronización solo recibe 401 y búsqueda/compatibilidad mayoritariamente 429, dejando lógica sin cubrir. Azure CD pasa para el backend, no prueba aceptación funcional del dominio institucional. Issues y URLs sin cambios.
+
+**Próximos pasos:**
+- Completar casos contractuales autenticados para sincronización y ajustar tasa/aislamiento para ejecutar la lógica de búsqueda y compatibilidad, manteniendo pruebas negativas de 401/429.
+- Demostrar configuración del token administrativo/proxy y recorrido frontend/API institucional de la revisión desplegada; Azure CD no sustituye esa aceptación.
+- Mantener requirements y lock sincronizados y probar las versiones efectivamente desplegadas; documentar excepciones de Dependabot cerradas sin merge.
+- Conservar como pendientes la retención/redacción de logs y la discrepancia entre retención declarada de IP y limpieza efectiva del limitador.
+
+[Fuentes y alcance](../seguimiento-s12-2026-11-02.md#drift) · [Issues](../seguimiento-issues-2026-11-02.md) · [URL y dominio](../seguimiento-despliegues-2026-11-02.md).

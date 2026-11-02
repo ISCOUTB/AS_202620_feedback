@@ -188,3 +188,17 @@ PR #53 y #54 integradas: garantía de solicitud activa única, migración 010 y 
 **README:** Institucional. Backend institucional y guía actualizada a Dokploy; aplicación de migración 010 al entorno objetivo aún no confirmada.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-26.md#routb) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).
+
+
+## Seguimiento actual · 2 de noviembre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega.
+
+PR #55/#56 integradas: autocompletado/caché del cliente y S13 con STRIDE, privacidad, ADR y auditoría automatizada de dependencias. CI del master actual aprobado en pruebas/migraciones, pip-audit y construcción de imagen; job Sonar sigue siendo un echo, no scanner. Doce nuevas PR de dependencias #57–68 quedan abiertas: #67 falla en migraciones Alembic por módulo psycopg ausente, sin contaminar el estado verde de master. Purga programada aprobada; despliegue y migración productiva no revalidados.
+
+**Próximos pasos:**
+- Revisar incompatibilidad de #67 (SQLAlchemy) y dependencia del controlador antes de integrar; mantener estados de cada rama separados de master.
+- Verificar en entorno autorizado migración 010, imagen servida y aceptación funcional de autocompletado/privacidad; las pruebas CI no prueban aplicación productiva.
+- Mantener el alcance real del nuevo pip-audit y la distinción entre job Sonar echo y análisis/gate externo; conservar límites del prototipo de mensajería y cola en memoria.
+
+[Fuentes y alcance](../seguimiento-s12-2026-11-02.md#routb) · [Issues](../seguimiento-issues-2026-11-02.md) · [URL y dominio](../seguimiento-despliegues-2026-11-02.md).

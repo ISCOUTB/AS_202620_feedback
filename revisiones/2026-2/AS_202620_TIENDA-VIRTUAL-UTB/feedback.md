@@ -195,3 +195,18 @@ Entrega documentación S12 de consistencia y caché, ADR de transacción compart
 **README:** Externo. Frontend sslip temporal; el equipo documenta certificado autofirmado pendiente y despliegue 0.5.0. No se sorteó aviso TLS ni se verificó el sitio en vivo.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-26.md#tienda-virtual-utb) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).
+
+
+## Seguimiento actual · 2 de noviembre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega.
+
+PR #13 fusionado: dos commits agregan documento de amenazas priorizadas, auditoría de dependencias y privacidad, enlazado desde README; no cambian código ni dependencias. El documento reporta auditoría local del 1/nov con Python sin hallazgos y 13 hallazgos npm fuera del runtime productivo, con mitigaciones pendientes. CI de la punta exacta pasa frontend/backend, pero el job SonarCloud figura success con sus pasos de descarga/análisis omitidos: no hay Quality Gate nuevo acreditado. URL temporal sslip sin cambio; sin issues.
+
+**Próximos pasos:**
+- Implementar y probar las mitigaciones priorizadas: limitación de intentos, protección de sesión/cabeceras, restricciones del proxy y consentimiento persistido.
+- Integrar SCA reproducible y bloqueante sobre las dependencias reales; resolver hallazgos de herramientas de build/pruebas sin presentarlos como inexistentes.
+- Restablecer análisis Sonar/Quality Gate realmente ejecutado; sustituir URL temporal por dominio institucional y verificar respaldo/restauración.
+- Mantener caché como propuesta; medir invalidación/concurrencia antes de atribuir implementación.
+
+[Fuentes y alcance](../seguimiento-s12-2026-11-02.md#tienda-virtual-utb) · [Issues](../seguimiento-issues-2026-11-02.md) · [URL y dominio](../seguimiento-despliegues-2026-11-02.md).

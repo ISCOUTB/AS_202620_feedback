@@ -234,3 +234,17 @@ Misma punta master y mismo README que el 31/oct. La novedad está en dependencia
 - Publicar frontend/API vigentes bajo iscoutb.dev en README y acreditar sesión STRIDE, validación de ADR, rotación y límites antes de medir escrituras.
 
 [Fuentes y alcance](../seguimiento-s12-2026-11-01.md#laplacita) · [Issues](../seguimiento-issues-2026-11-01.md) · [URL y dominio](../seguimiento-despliegues-2026-11-01.md).
+
+
+## Seguimiento actual · 2 de noviembre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega.
+
+PR #31–33 integradas: cierre S13, versión de aviso de privacidad persistida, acciones/imágenes fijadas y README actualizado con frontend/panel/API institucionales. CI de master aprobado, con análisis Sonar ejecutado y auditoría/SBOM en verde. Workflow Dokploy corregido para exigir HTTP 200; run de despliegue aprobado sobre la integración #31 y versión nueva reportada por el equipo. No equivale a nueva aceptación funcional. Siguen pendientes validación grupal STRIDE y retiro efectivo del Azure legado (3/nov), límite de tasa (4/nov) y ensayo real de rotación.
+
+**Próximos pasos:**
+- En la reunión del 3/nov, validar matriz STRIDE y ADR pendientes; revisar compatibilidad de #28/#30 y registrar resultado antes de integrar. Son compromisos del equipo, no plazos docentes nuevos.
+- Acreditar apagado o mitigación del Azure legado; su retiro del diseño no acredita retiro operativo. Aplicar y verificar rate-limit en entorno autorizado según compromiso del 4/nov.
+- Registrar ensayo real de rotación y evidencia fechada que vincule versión servida con integración; distinguir activación de protección de secretos reportada, CI y prueba funcional.
+
+[Fuentes y alcance](../seguimiento-s12-2026-11-02.md#laplacita) · [Issues](../seguimiento-issues-2026-11-02.md) · [URL y dominio](../seguimiento-despliegues-2026-11-02.md).

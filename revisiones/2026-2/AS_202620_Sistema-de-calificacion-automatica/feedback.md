@@ -214,3 +214,17 @@ Cinco commits nuevos en master añaden infraestructura del laboratorio: Compose 
 **README:** Externo. README todavía enlaza Render. Fuera del README, deploy/compose.lab.yaml y CI documentan https://calificacion.iscoutb.dev (frontend) y https://api-calificacion.iscoutb.dev (API). Se verificó publicación de rama despliegue, no ejecución final en Dokploy ni funcionamiento público. Ausencia de esos enlaces en README no significa ausencia de trabajo o de despliegue.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-30.md#sistema-de-calificacion-automatica) · [Issues](../seguimiento-issues-2026-10-30.md) · [URL y dominio](../seguimiento-despliegues-2026-10-30.md).
+
+
+## Seguimiento actual · 2 de noviembre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega.
+
+Quince commits incorporan documentación del despliegue institucional, modelo STRIDE y privacidad, análisis OSV en CI, actualización de certifi y presupuesto de carga (250 hojas por lote, 256 MB diarios y 100 MB por petición). El README ya publica frontend/API institucionales y revisión servida: cambia de Externo a Institucional. La punta exacta pasa 213 pruebas backend y 73 Flutter; OSV no reporta avisos en los dos manifiestos examinados y la publicación de la rama despliegue termina bien. Se aporta evidencia versionada del recorrido API→worker del 30/oct, no una comprobación en vivo del 2/nov ni de la revisión actual. Issues y PR sin cambios.
+
+**Próximos pasos:**
+- Vincular revision.txt y un recorrido frontend→API→worker a la revisión efectivamente servida; la evidencia incorporada describe una revisión del 30/oct.
+- Resolver autenticación y autorización antes de cargar datos reales; conservar los límites declarados del presupuesto por proceso y validar concurrencia y recuperación.
+- Acreditar respaldo/restauración y EC-07 con el lote objetivo en el entorno servido; no confundir ingesta/worker con calificación OMR integral.
+
+[Fuentes y alcance](../seguimiento-s12-2026-11-02.md#sistema-de-calificacion-automatica) · [Issues](../seguimiento-issues-2026-11-02.md) · [URL y dominio](../seguimiento-despliegues-2026-11-02.md).

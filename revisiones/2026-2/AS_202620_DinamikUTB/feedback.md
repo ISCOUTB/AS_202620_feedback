@@ -210,3 +210,20 @@ Integra nuevas pantallas administrativas, currículo y gestión de cuentas, adem
 **README:** Institucional. README raíz y frontend discrepan en roles/dominios. GHCR acredita imagen, no despliegue ni DNS/TLS o aceptación; no se prescribe recrear la base antigua de Render.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-28.md#dinamikutb) · [Issues](../seguimiento-issues-2026-10-28.md) · [URL y dominio](../seguimiento-despliegues-2026-10-28.md).
+
+
+## Seguimiento actual · 2 de noviembre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega.
+
+Desde el 1/nov integra 74 commits: corrige RequisitoPrograma y conecta routers de programas, currículo y reportes; amplía gestión de estudiantes/cuentas, historial, recuperación asistida de un solo uso y revocación de sesiones tras cambio de contraseña; incorpora pantalla de bienvenida Flutter y documentación STRIDE/privacidad/ADR13-14. CI de la punta pasa 100 pruebas backend y 25 Flutter; analyze sin incidencias. Sonar envía análisis correctamente, pero la evidencia revisada no acredita un Quality Gate vinculante. Pip-audit del 2/nov 12:02 informa cero vulnerabilidades conocidas. La construcción de imagen frontend llega al push, que falla por permiso GHCR write_package. README corrige roles de URLs: web dinamikutb.iscoutb.dev, API api.dinamikutb.iscoutb.dev; Render se declara retirado. La documentación incorpora comprobación externa del equipo, sin hash servido/fecha detallada ni prueba viva independiente en esta revisión. Persisten discrepancias: historial no integrado en dos rutas de actualización, contraseña temporal compartida activable sin cambio obligatorio, recuperación por correo incondicionalmente deshabilitada y afirmación de hashes de dependencias no respaldada por requirements. Once PR abiertas nuevas; issues sin cambios.
+
+**Próximos pasos:**
+- Resolver el permiso GHCR write_package y repetir publicación de la misma punta; después documentar digest/commit efectivamente servido y recorrido navegador web/API institucional, sin confundir CI con despliegue.
+- Eliminar la contraseña temporal compartida o impedir activación/login hasta completar establecimiento de clave de un solo uso. Añadir prueba negativa de activación previa al cambio y validar roles/datos académicos en actualizaciones.
+- Conectar /auth/mi-perfil y /estudiantes/{codigo}/administrativo al servicio transaccional de historial, conservando actor, y probar esos endpoints; retirar el porcentaje de cumplimiento fijo 75 de estadísticas.
+- Corregir S13/arc42: /password/recuperar responde 503 siempre (no SMTP operativo); requirements fija versiones sin hashes; /metrics exige token o queda 404 en producción. No atribuir CSP de la API a la protección del frontend sin evidenciar cabeceras reales del sitio.
+- Añadir evidencia de Quality Gate con resultado específico de esta revisión; mantener separados scan enviado y gate aprobado. Verificar concurrencia sobre PostgreSQL y restauración de respaldos antes de considerar cerrada la deuda.
+- Probar y definir tratamiento de JWT anteriores sin sig: el condicional actual solo comprueba la firma de contraseña cuando sig tiene valor; las sesiones legadas no quedan cubiertas por la nueva revocación.
+
+[Fuentes y alcance](../seguimiento-s12-2026-11-02.md#dinamikutb) · [Issues](../seguimiento-issues-2026-11-02.md) · [URL y dominio](../seguimiento-despliegues-2026-11-02.md).

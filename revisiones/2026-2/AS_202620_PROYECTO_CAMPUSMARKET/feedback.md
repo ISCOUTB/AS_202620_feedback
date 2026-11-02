@@ -215,3 +215,17 @@ Revalidación del 31/oct: master y README conservan la punta del 30/oct; las cin
 **README:** Institucional. Cumplimiento parcial: API bajo iscoutb.dev y frontend GitHub Pages externo. PR #76 prepara /app/ pero continúa draft, sin merge ni despliegue acreditado. CI/ensayos aislados no prueban promoción en Dokploy; Azure es histórico.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-31.md#proyecto_campusmarket) · [Issues](../seguimiento-issues-2026-10-31.md) · [URL y dominio](../seguimiento-despliegues-2026-10-31.md).
+
+
+## Seguimiento actual · 2 de noviembre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega.
+
+PR #77–80 integradas: preparación/promoción por digest, cierre documental de Flutter Web institucional en /app/, S13 y consolidación del README. Cinco workflows del HEAD aprobados. Auditoría Python del merge S13 aprobada tras remediación; no se ejecuta otra vez por el HEAD solo documental debido al filtro de rutas. El cierre reporta actualización dirigida de API sin recrear MySQL y verificaciones públicas del 1/nov; no acredita backup independiente, restauración ni rollback aplicado al servidor. La imagen de retorno se validó con MySQL sintético. Producción conserva el digest anterior a las remediaciones S13.
+
+**Próximos pasos:**
+- Conservar promoción institucional documentada y separar pruebas reportadas del equipo, CI y comprobación funcional nueva; #76 sigue abierta y no debe contarse como nueva integración adicional.
+- Antes de nuevos cambios, acreditar respaldo independiente de SQL/fotos y ensayo de restauración controlado; el rollback sintético de imagen no sustituye recuperación del servidor. No redesplegar por una actualización documental.
+- Vincular futuras remediaciones S13 a imagen/digest servido mediante promoción autorizada y verificar regresiones; cerrar brechas de auditoría Dart/imagen, privacidad y scanner del contrato sin convertir CI verde en cumplimiento automático.
+
+[Fuentes y alcance](../seguimiento-s12-2026-11-02.md#proyecto_campusmarket) · [Issues](../seguimiento-issues-2026-11-02.md) · [URL y dominio](../seguimiento-despliegues-2026-11-02.md).

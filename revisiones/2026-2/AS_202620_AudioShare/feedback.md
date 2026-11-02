@@ -195,3 +195,18 @@ Incorpora identificadores únicos de receptores, reingreso idempotente a una sal
 **README:** Institucional. README documenta https://audioshare.iscoutb.dev como origen compartido de frontend y API. Conserva observación del equipo del 26/oct: cliente legado y GET /rooms 404. El CI actual compila Flutter y publica imagen, pero Dokploy construye desde Compose y no consume esa imagen Docker Hub. Redespliegue y funcionamiento actual no verificados.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-30.md#audioshare) · [Issues](../seguimiento-issues-2026-10-30.md) · [URL y dominio](../seguimiento-despliegues-2026-10-30.md).
+
+
+## Seguimiento actual · 2 de noviembre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega.
+
+Desde el 1/nov integra dos commits de seguridad y privacidad: prioriza amenazas, publica evidencias de dependencias y corrige body-parser y transitivas en el lock. El escaneo de producción versionado pasa de un hallazgo alto a cero; el árbol completo conserva seis hallazgos (tres moderados, uno alto y dos críticos), también reportados al instalar en CI. La punta pasa 44 pruebas backend y 36 Flutter con una omitida, analyze y build web; la imagen se publica, pero el README aún exige redespliegue Dokploy y conserva el reporte de cliente legado. Autenticación, límites de uso, borrado y retención siguen propuestos, no implementados. Issues y PR sin cambios.
+
+**Próximos pasos:**
+- Redesplegar mediante el flujo Dokploy y demostrar frontend, API y sincronización entre dispositivos; publicar imagen Docker Hub no acredita la revisión servida.
+- Implementar y probar controles de acceso por sala, cuotas de subida y límites de tasa; acompañar borrado/caducidad con una política y aviso que no prometan supresión ya operativa.
+- Integrar auditoría de producción al CI y resolver o justificar con análisis completo los seis hallazgos de desarrollo; actualizar la acción Sonar que emite advertencia de seguridad.
+- Documentar la prueba Flutter omitida y validar descarga, reintento y reingreso en dispositivos reales.
+
+[Fuentes y alcance](../seguimiento-s12-2026-11-02.md#audioshare) · [Issues](../seguimiento-issues-2026-11-02.md) · [URL y dominio](../seguimiento-despliegues-2026-11-02.md).
