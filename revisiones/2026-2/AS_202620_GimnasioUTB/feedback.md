@@ -207,3 +207,19 @@ Desde el 1/nov integra cinco commits mediante PR #19 y #31: token compartido de 
 - Reducir dependencias Flutter no usadas y revisar las PR propuestas; no inferir durabilidad ni broker de producción a partir del prototipo.
 
 [Fuentes y alcance](../seguimiento-s12-2026-11-02.md#gimnasioutb) · [Issues](../seguimiento-issues-2026-11-02.md) · [URL y dominio](../seguimiento-despliegues-2026-11-02.md).
+
+
+## Seguimiento actual · 3 de noviembre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega.
+
+Main y README no cambian desde el 2/nov, pero la PR #25 de Dependabot actualiza su punta a 55391e4: propone pg 8.23.1 y dependency-cruiser 18.7.0 mediante package.json y lock. Dos ejecuciones CI, push y pull_request, pasan sobre esa misma revisión; los logs de cada una repiten 19 pruebas de aplicación, 14 contractuales y nueve del prototipo, fitness functions, auditoría sin hallazgos y 129 firmas verificadas. Son ejecuciones de la PR, no cambios integrados ni pruebas de PostgreSQL real o Flutter. Continúan once PR abiertas y dieciséis issues abiertos con responsables, sin cambios de estado. README conserva la API institucional; no acredita una interfaz Flutter pública ni el token configurado en Dokploy.
+
+**Próximos pasos:**
+- Revisar PR #25 con pg 8.23.1 y dependency-cruiser 18.7.0 y comprobar regresión PostgreSQL real antes de integrarla; CI verde de la rama no acredita main.
+- Configurar/rotar el token de operador como secreto en Dokploy y demostrar lecturas, rechazo sin credencial y escritura autorizada sobre el despliegue actual; no compartir el secreto en evidencia.
+- Ejecutar las pruebas Flutter añadidas e integración PostgreSQL con base aislada, además del recorrido de extremo a extremo.
+- Mantener límites del token compartido (sin identidad individual), completar timeout del pool y control de tasa/proxy, y verificar retención de logs.
+- Reducir dependencias Flutter no usadas y revisar las PR propuestas; no inferir durabilidad ni broker de producción a partir del prototipo.
+
+[Fuentes y alcance](../seguimiento-s12-2026-11-03.md#gimnasioutb) · [Issues](../seguimiento-issues-2026-11-03.md) · [URL y dominio](../seguimiento-despliegues-2026-11-03.md).

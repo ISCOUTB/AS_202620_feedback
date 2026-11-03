@@ -227,3 +227,21 @@ Desde el 1/nov integra 74 commits: corrige RequisitoPrograma y conecta routers d
 - Probar y definir tratamiento de JWT anteriores sin sig: el condicional actual solo comprueba la firma de contraseña cuando sig tiene valor; las sesiones legadas no quedan cubiertas por la nueva revocación.
 
 [Fuentes y alcance](../seguimiento-s12-2026-11-02.md#dinamikutb) · [Issues](../seguimiento-issues-2026-11-02.md) · [URL y dominio](../seguimiento-despliegues-2026-11-02.md).
+
+
+## Seguimiento actual · 3 de noviembre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega.
+
+Desde el 2/nov incorpora dos commits, ambos limitados a frontend/lib/usuarios/welcome_screen.dart: modifica tiempos y arranque de la animación, centra un panel translúcido desplegable, ajusta dimensiones del título y cambia la insignia a PORTAL UNIVERSITARIO UTB. No cambia backend, README, issues ni PR. La nueva punta pasa 100 pruebas backend y 25 Flutter, con analyze sin incidencias; la repetición de las 100 pruebas para Sonar no se suma como casos distintos. Pip-audit vuelve a informar cero vulnerabilidades conocidas. El build web termina, pero la publicación frontend vuelve a fallar al hacer push a GHCR por permission_denied: write_package. Sonar envía el análisis, sin evidencia de Quality Gate vinculante en estos logs. Se mantienen las URLs institucionales web/API y los pendientes de seguridad e historial señalados el 2/nov; los dos cambios visuales no los resuelven. No se hizo prueba viva ni se acredita una revisión servida nueva.
+
+**Próximos pasos:**
+- Resolver el permiso GHCR write_package y repetir publicación de la misma punta; después documentar digest/commit efectivamente servido y recorrido navegador web/API institucional, sin confundir CI con despliegue.
+- Validar la bienvenida en tamaños de pantalla reducidos, carga lenta/fallida de la imagen y preferencia de animaciones reducidas; añadir pruebas de esa interacción antes de afirmar aceptación visual.
+- Eliminar la contraseña temporal compartida o impedir activación/login hasta completar establecimiento de clave de un solo uso. Añadir prueba negativa de activación previa al cambio y validar roles/datos académicos en actualizaciones.
+- Conectar /auth/mi-perfil y /estudiantes/{codigo}/administrativo al servicio transaccional de historial, conservando actor, y probar esos endpoints; retirar el porcentaje de cumplimiento fijo 75 de estadísticas.
+- Corregir S13/arc42: /password/recuperar responde 503 siempre (no SMTP operativo); requirements fija versiones sin hashes; /metrics exige token o queda 404 en producción. No atribuir CSP de la API a la protección del frontend sin evidenciar cabeceras reales del sitio.
+- Añadir evidencia de Quality Gate con resultado específico de esta revisión; mantener separados scan enviado y gate aprobado. Verificar concurrencia sobre PostgreSQL y restauración de respaldos antes de considerar cerrada la deuda.
+- Probar y definir tratamiento de JWT anteriores sin sig: el condicional actual solo comprueba la firma de contraseña cuando sig tiene valor; las sesiones legadas no quedan cubiertas por la nueva revocación.
+
+[Fuentes y alcance](../seguimiento-s12-2026-11-03.md#dinamikutb) · [Issues](../seguimiento-issues-2026-11-03.md) · [URL y dominio](../seguimiento-despliegues-2026-11-03.md).

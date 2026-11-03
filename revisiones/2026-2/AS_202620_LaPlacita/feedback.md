@@ -248,3 +248,17 @@ PR #31–33 integradas: cierre S13, versión de aviso de privacidad persistida, 
 - Registrar ensayo real de rotación y evidencia fechada que vincule versión servida con integración; distinguir activación de protección de secretos reportada, CI y prueba funcional.
 
 [Fuentes y alcance](../seguimiento-s12-2026-11-02.md#laplacita) · [Issues](../seguimiento-issues-2026-11-02.md) · [URL y dominio](../seguimiento-despliegues-2026-11-02.md).
+
+
+## Seguimiento actual · 3 de noviembre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega.
+
+PR #34–36 integradas desde el 2/nov: acceso del personal al panel y confirmación de pagos, pedido por tienda con varios productos y un código/PIN, cancelación lógica exclusiva de admin y separación de pedidos actuales/anteriores. README y contrato actualizados; ADR0032/0033 siguen propuestos, pendientes de validación grupal. Logs del HEAD: 161 pruebas pasan y 1 omitida, contrato 34/34, lint/build, auditoría/SBOM y scanner/gate Sonar aprobados. Deploy de backend registra Dokploy200 y health200, pero no prueba por sí solo el SHA servido ni el frontend manual. No hay evidencia nueva que cierre Azure legado y sesión STRIDE previstos para el 3/nov, rate-limit del 4/nov o ensayo real de rotación; son compromisos del equipo, no plazos docentes añadidos.
+
+**Próximos pasos:**
+- Validar en equipo STRIDE y ADR0030–0033, conservando el estado propuesto donde corresponda; revisar #28/#30 antes de integrar.
+- Acreditar retiro o mitigación de Azure legado y resultado de la sesión prevista para el 3/nov; aplicar y comprobar rate-limit previsto para el 4/nov y registrar ensayo real de rotación.
+- Verificar con autorización que backend nuevo preceda al frontend manual, vincular SHA servido y probar agrupación multitienda, compatibilidad v1, cancelación por admin, aislamiento y conservación de pedidos. Un webhook y health200 no equivalen a aceptación integral.
+
+[Fuentes y alcance](../seguimiento-s12-2026-11-03.md#laplacita) · [Issues](../seguimiento-issues-2026-11-03.md) · [URL y dominio](../seguimiento-despliegues-2026-11-03.md).

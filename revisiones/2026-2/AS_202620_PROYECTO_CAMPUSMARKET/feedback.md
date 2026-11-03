@@ -229,3 +229,19 @@ PR #77–80 integradas: preparación/promoción por digest, cierre documental de
 - Vincular futuras remediaciones S13 a imagen/digest servido mediante promoción autorizada y verificar regresiones; cerrar brechas de auditoría Dart/imagen, privacidad y scanner del contrato sin convertir CI verde en cumplimiento automático.
 
 [Fuentes y alcance](../seguimiento-s12-2026-11-02.md#proyecto_campusmarket) · [Issues](../seguimiento-issues-2026-11-02.md) · [URL y dominio](../seguimiento-despliegues-2026-11-02.md).
+
+
+## Seguimiento actual · 3 de noviembre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega.
+
+PR81–91 fusionados después del baseline. PR81 añade doce universidades de Cartagena, universidad opcional en registro/perfil y publicaciones, catálogo filtrable Toda Cartagena/Mi universidad. La afiliación es declarada, no identidad institucional verificada; universidad de publicación nueva se toma del perfil al crearla, sin reasignación retroactiva. PR82 promueve primera imagen universitaria por digest; PR83 corrige referencia productiva fija de S10; PR84 consolida trazabilidad. El histórico S10 8/9 se explica por referencia de revisión anterior, sin retirar criterios. PR85 incorpora Favoritos persistentes, mensajería comprador-vendedor y universidad visible. Mensajería HTTP/JSON con refresco manual; no implica tiempo real, push ni cifrado extremo a extremo. PR86 separa contrato desplegado/candidato y revisión de ejecución (elimina dependencia HEAD^1); PR87 promueve digest 11d92aa9b66f1a4c6b879a6e8cd62cc3c102a37c034a44cbde27442b73694fa7; PR88 versiona construcción y ensayos; PR89/91 documentan cierre limitado; PR90 actualiza referencia S10 a 46ede525. HEAD actual d5b8b50 tiene cinco workflows y siete jobs success, con logs leídos. No confundir con ocho checks del commit anterior 494c433 documentados en README. S10 del HEAD confirma 9/9 criterios, 58 solicitudes, 9 comprobaciones de salud, revisión 46ede525 y catálogo de 5 publicaciones antes/después con hash idéntico. Esto sí es evidencia de CI sobre endpoint público, no una inspección operativa viva realizada por esta auditoría. La aceptación manual del despliegue se declara en los documentos, sin capturas del operador incorporadas al repositorio; backup independiente, restauración y rollback productivos siguen sin acreditarse. No se repitió pip-audit en los cinco workflows del HEAD documental.
+
+**Próximos pasos:**
+- Completar evidencia operativa pospromoción: healthy e ID de db, Image ID/configuración efectiva y montajes de api y db. El health público pasó en S10, pero no acredita esos datos internos.
+- Acreditar copia externa independiente y restauración verificable de MySQL y fotografías; conservar abierto T13-10. Un dump dentro del contenedor o persistencia tras recreación en CI no equivalen a recuperación independiente.
+- Documentar rollback productivo solo si se realiza de forma autorizada y con recuperación segura: actualmente se acredita ensayo sintético, no ejecución productiva.
+- Aportar evidencia accesible y redactada de un anuncio nuevo con universidad declarada no nula y, para aceptación UI, persistencia de Favoritos tras nuevo login. No convertir afiliación declarada en identidad verificada.
+- Conservar trazabilidad y distinguir SHA de orquestación HEAD del SHA productivo; mantener checks verdes y no recalificar ni cerrar semanas por estos incrementos posteriores a S13.
+
+[Fuentes y alcance](../seguimiento-s12-2026-11-03.md#proyecto_campusmarket) · [Issues](../seguimiento-issues-2026-11-03.md) · [URL y dominio](../seguimiento-despliegues-2026-11-03.md).

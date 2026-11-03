@@ -202,3 +202,17 @@ PR #55/#56 integradas: autocompletado/caché del cliente y S13 con STRIDE, priva
 - Mantener el alcance real del nuevo pip-audit y la distinción entre job Sonar echo y análisis/gate externo; conservar límites del prototipo de mensajería y cola en memoria.
 
 [Fuentes y alcance](../seguimiento-s12-2026-11-02.md#routb) · [Issues](../seguimiento-issues-2026-11-02.md) · [URL y dominio](../seguimiento-despliegues-2026-11-02.md).
+
+
+## Seguimiento actual · 3 de noviembre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega.
+
+Master y README no cambian desde el 2/nov. Nueva PR dependabot #69 (pytest9.0.3→9.2.0), abierta: son 13 PR abiertas, #57–69. Su CI aprueba 107 pruebas y 2 de contrato; build de imagen se omite en esa PR y Sonar sigue siendo un echo sin scanner. La falla de #67 continúa en su run ya conocido; no es falla nueva de master ni integración. Se renueva purga programada exitosa. Master conserva su CI de push aprobado, sin acreditar nueva migración/despliegue productivo; rama Changes observada en fe11e5b.
+
+**Próximos pasos:**
+- Revisar las 13 PR #57–69 por compatibilidad y riesgo antes de integrar; #67 sigue requiriendo resolver controlador psycopg/migración, y éxito de #69 no equivale a integración ni build de imagen en esa PR.
+- Acreditar en entorno autorizado migración010, imagen/SHA realmente servido y aceptación funcional de autocompletado/privacidad; README referencia Changes para despliegue, distinta de master.
+- Mantener alcance real de pip-audit y distinguir job Sonar echo de análisis/gate; conservar límites del prototipo de mensajería/cola en memoria y evidencia operativa de purga.
+
+[Fuentes y alcance](../seguimiento-s12-2026-11-03.md#routb) · [Issues](../seguimiento-issues-2026-11-03.md) · [URL y dominio](../seguimiento-despliegues-2026-11-03.md).

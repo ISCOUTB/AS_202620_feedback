@@ -196,3 +196,19 @@ PR #5 fusionado: dos commits incorporan documentación S13 (amenazas, privacidad
 - Distinguir ADR/propuestas de controles implementados; acreditar worker/notificación y flujos cliente sin reabrir el bloqueo Alembic resuelto.
 
 [Fuentes y alcance](../seguimiento-s12-2026-11-02.md#utb_tracker) · [Issues](../seguimiento-issues-2026-11-02.md) · [URL y dominio](../seguimiento-despliegues-2026-11-02.md).
+
+
+## Seguimiento actual · 3 de noviembre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega.
+
+Se fusionan PR #6, #7 y #8: seis commits llevan main de c76288e a fb7378d e incorporan validaciones de duración/fechas y autocancelación de préstamos de salones, manejo de errores Flutter y ajustes de seguridad/estilo. La suite del run 41554222766 vuelve a pasar 78 pruebas. El CI ahora figura success, pero no hay remediación de dependencias: el lock conserva Starlette 0.50.0 y PyJWT 2.12.1; pip-audit añade 20 identificadores de exclusión y continue-on-error: true. Su log informa una vulnerabilidad conocida restante (PYSEC-2026-176 en PyJWT), con 28 entradas ignoradas. El documento sigue proponiendo actualizar la mayoría de esos hallazgos y describiendo un gate bloqueante que ya no coincide con el workflow. Deploy SSH sí termina, registra checkout fb7378d, Alembic y reinicio systemd, sin health/smoke posterior. Release APK publica v1.0.3; compilar/publicar no acredita el recorrido en dispositivo. README raíz e issue abierta no cambian: sigue Ausente la URL pública y desactualizada la descripción SQLite/Alembic. Persiste el fallback de pruebas a DATABASE_URL seguido de drop_all; el notificador sigue siendo simulado.
+
+**Próximos pasos:**
+- Restablecer una auditoría bloqueante, retirar continue-on-error y actualizar Starlette/PyJWT con compatibilidad verificada; revisar y documentar cada excepción, responsable y vencimiento. No confundir 28 entradas ignoradas con correcciones ni ocultar PYSEC-2026-176.
+- Alinear el documento de dependencias con el workflow real: hoy afirma bloqueo y actualización mientras CI excluye hallazgos y continúa ante el error.
+- Eliminar el fallback destructivo a DATABASE_URL o validar inequívocamente una base aislada antes de drop_all; el comentario que promete no tocar producción contradice el código.
+- Añadir health/smoke y trazabilidad tras deploy; probar préstamos, autocancelación y expiración con cliente/APK v1.0.3 en entorno servido. El notificador simulado no acredita entrega externa.
+- Publicar URL pública en README y corregir SQLite/Alembic desactualizados; convertir el aviso de claves inseguras en un rechazo verificable en producción y revisar datos personales escritos en logs.
+
+[Fuentes y alcance](../seguimiento-s12-2026-11-03.md#utb_tracker) · [Issues](../seguimiento-issues-2026-11-03.md) · [URL y dominio](../seguimiento-despliegues-2026-11-03.md).

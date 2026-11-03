@@ -211,3 +211,18 @@ PR #27 integra 25 commits de S13 en master: modelo STRIDE/privacidad, Dependabot
 - Publicar API institucional y conciliar experimental con master sin restaurar documentación obsoleta.
 
 [Fuentes y alcance](../seguimiento-s12-2026-11-02.md#xald) · [Issues](../seguimiento-issues-2026-11-02.md) · [URL y dominio](../seguimiento-despliegues-2026-11-02.md).
+
+
+## Seguimiento actual · 3 de noviembre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega.
+
+master (a79a608), README, experimental (7676801) y seis issues cerradas no cambian frente al 2/nov; se conservan cinco cierres completed y uno duplicate. Se abre PR Dependabot #42 para uvicorn 0.30.0→0.54.0, elevando los PR abiertos de catorce a quince; su ejecución Android CI 41544247152 termina success, sin que eso implique integración. La última ejecución de master sigue siendo 41375620434 del 2/nov, exitosa en Android, backend, auditoría y deploy-backend, ya revisada el día anterior. No hay publicación nueva de master acreditada en este corte. README mantiene la API Render y clasificación Externo. Persisten la validación integrada en dispositivo y trazabilidad de revisión servida, así como los pendientes de ejecución de cola y deduplicación; no se infieren resueltos por una actualización Dependabot sin fusionar.
+
+**Próximos pasos:**
+- Validar controles y sincronización en dispositivo con trazabilidad a la revisión servida; health 200 no sustituye la validación del deploy ni del flujo completo.
+- Mantener pendientes ejecutor real de procesarPendientes y persistencia de cola/deduplicación hasta aportar evidencia; no inferirlos de la entrega de seguridad.
+- Revisar y probar los 15 PR de dependencias antes de integrarlos; conservar análisis reproducible sobre lo que realmente se despliega.
+- Publicar API institucional y conciliar experimental con master sin restaurar documentación obsoleta.
+
+[Fuentes y alcance](../seguimiento-s12-2026-11-03.md#xald) · [Issues](../seguimiento-issues-2026-11-03.md) · [URL y dominio](../seguimiento-despliegues-2026-11-03.md).

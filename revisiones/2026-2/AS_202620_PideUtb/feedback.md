@@ -251,3 +251,17 @@ Integra PR #35–38: migración 008 y configuración por defecto para alinear el
 **README:** Institucional. README documenta frontend/panel y API bajo iscoutb.dev. Docente confirma presentación/despliegues; no se repitió verificación funcional de producción. Pruebas de navegador verificadas en CI usan localhost y pasarela simulada, no cobros reales.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-30.md#pideutb) · [Issues](../seguimiento-issues-2026-10-30.md) · [URL y dominio](../seguimiento-despliegues-2026-10-30.md).
+
+
+## Seguimiento actual · 3 de noviembre de 2026 · sin cierre automático de S12
+
+Actualización documental sin recalificar ni cerrar la entrega.
+
+PR #39/#40 integradas desde el 2/nov: migración009 y 25 fotografías para los 37 productos (12 conservan marcador), y animaciones limitadas a cambios reales con soporte de movimiento reducido. README corrige conteo a 587 pruebas. CI nuevo del HEAD comprobado en logs: 584 pasan/3 omitidas en cada Python3.11/3.12, 26 recorridos de navegador locales aprobados, contrato e imagen aprobados. Revalidación de límites: SonarCloud termina verde porque omite análisis al faltar SONAR_TOKEN; auditoría de producción no encuentra vulnerabilidades conocidas, pero auditoría del lock CI detecta certifi/pytest y continúa sin bloquear. No se acredita aplicación productiva de migración009 ni despliegue/aceptación nueva por estos resultados.
+
+**Próximos pasos:**
+- Antes de la demo prevista para el 3/nov, acreditar SHA servido y aplicación de migraciones008/009; verificar 25 fotos correctas, 12 marcadores y recorrido cliente–pasarela de pruebas–mostrador en el entorno objetivo.
+- Configurar o acreditar análisis/gate Sonar real: el job verde actual omite el scanner. Revisar los hallazgos certifi/pytest del lock CI y su excepción no bloqueante sin confundirlos con dependencia productiva.
+- Conservar pruebas de retorno, caducidad, limpieza y animación accesible; distinguir 584/3 por versión Python y 26 E2E locales de evidencia productiva. Verificar retiro o mitigación de todos los servicios legados.
+
+[Fuentes y alcance](../seguimiento-s12-2026-11-03.md#pideutb) · [Issues](../seguimiento-issues-2026-11-03.md) · [URL y dominio](../seguimiento-despliegues-2026-11-03.md).
