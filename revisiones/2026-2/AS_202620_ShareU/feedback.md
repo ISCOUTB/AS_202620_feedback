@@ -196,3 +196,32 @@ Nuevo commit incorpora repositorio Firestore para documentos, ADR0010–0012, mo
 **README:** Sin URL concreta. Placeholders Vercel/Render y localhost, no URL pública concreta vigente.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-26.md#shareu) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).
+
+
+## Revisión retrospectiva · S11, S12 y S13 · 3 de noviembre de 2026
+
+Cierres al final del domingo en Colombia. Esta revisión documental no modifica las notas ni las matrices anteriores. Las evidencias posteriores a cada plazo se mantienen separadas.
+
+### S11 · domingo 2026-10-18
+
+S11 conserva el commit del 28/sept: no hay nuevo código integrado en esa ventana. La línea base contiene búsqueda y decisiones de modularidad, pero no se encontró todavía la evidencia específica de fallos e idempotencia ni ADR de no extracción exigidos para S11.
+
+**URL de despliegue en README:** README solo contiene URLs locales, no despliegue público concreto ni iscoutb.dev.
+
+[Contraste, pendientes y fuentes](../revision-s11-cierre-2026-10-18.md#as-202620-shareu).
+
+### S12 · domingo 2026-10-25
+
+S12 integra adaptador Firestore detrás del módulo de documentos y decisiones sobre identidad de datos. Las pruebas utilizan un cliente falso; el ADR de Firestore sigue rotulado propuesto, y arc42 conserva referencias a SQLite que deben reconciliarse con la implementación.
+
+**URL de despliegue en README:** README solo contiene URLs locales, no despliegue público concreto ni iscoutb.dev.
+
+[Contraste, pendientes y fuentes](../revision-s12-cierre-2026-10-25.md#as-202620-shareu).
+
+### S13 · domingo 2026-11-01
+
+S13 tiene el mismo hash de S12, sin nuevas incorporaciones en principal. No se encontró un modelo STRIDE específico con priorización, dueños y estados ni un resultado revisado de auditoría de dependencias en el conjunto revisado; persisten inconsistencias entre documentación de SQLite y código Firestore.
+
+**URL de despliegue en README:** README solo contiene URLs locales, no despliegue público concreto ni iscoutb.dev.
+
+[Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-shareu).

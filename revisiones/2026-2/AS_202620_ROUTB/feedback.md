@@ -216,3 +216,32 @@ Master y README no cambian desde el 2/nov. Nueva PR dependabot #69 (pytest9.0.3�
 - Mantener alcance real de pip-audit y distinguir job Sonar echo de análisis/gate; conservar límites del prototipo de mensajería/cola en memoria y evidencia operativa de purga.
 
 [Fuentes y alcance](../seguimiento-s12-2026-11-03.md#routb) · [Issues](../seguimiento-issues-2026-11-03.md) · [URL y dominio](../seguimiento-despliegues-2026-11-03.md).
+
+
+## Revisión retrospectiva · S11, S12 y S13 · 3 de noviembre de 2026
+
+Cierres al final del domingo en Colombia. Esta revisión documental no modifica las notas ni las matrices anteriores. Las evidencias posteriores a cada plazo se mantienen separadas.
+
+### S11 · domingo 2026-10-18
+
+S11 identifica fallos en las integraciones de movilidad y formaliza no extraer el módulo de solicitudes, preservando la atomicidad local del control de cupos. Hay API institucional documentada y CI del commit de corte aprobado.
+
+**URL de despliegue en README:** README documenta API https://routb.iscoutb.dev; no URL de frontend web independiente acreditada.
+
+[Contraste, pendientes y fuentes](../revision-s11-cierre-2026-10-18.md#as-202620-routb).
+
+### S12 · domingo 2026-10-25
+
+S12 incorpora una comparación del costo de reversión del esquema de estados/cupos, refuerza concurrencia y documenta notificaciones asíncronas. El árbol también incluye la retirada de geocode_cache, por lo que los ADR y textos antiguos de caché deben leerse como historia.
+
+**URL de despliegue en README:** README documenta API https://routb.iscoutb.dev; no URL de frontend web independiente acreditada.
+
+[Contraste, pendientes y fuentes](../revision-s12-cierre-2026-10-25.md#as-202620-routb).
+
+### S13 · domingo 2026-11-01
+
+S13 añade STRIDE sobre C4, prioridades, responsables, privacidad y un ADR de seguridad. La revisión de dependencias concluye actualizando cuatro paquetes; el job pip-audit del commit final termina aprobado antes del cierre dominical.
+
+**URL de despliegue en README:** README documenta API https://routb.iscoutb.dev; no URL de frontend web independiente acreditada.
+
+[Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-routb).

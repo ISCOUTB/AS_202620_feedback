@@ -1,5 +1,7 @@
 # Resumen de feedback · S12 · avance preliminar, entrega abierta
 
+**Revisión retrospectiva del 3/nov:** [estado al cierre dominical de S12](revision-s12-cierre-2026-10-25.md) e [índice S11 → S12 → S13](revision-semanas-11-13-2026-11-03.md). El contenido histórico siguiente conserva su fecha y calificación; no sustituye el nuevo contraste documental. El título «entrega abierta» describe el diagnóstico preliminar del 19/oct; el plazo de S12 terminó el domingo 25/oct. Los seguimientos diarios posteriores no amplían ese plazo.
+
 **Seguimiento vigente del 3/nov:** [avances y próximos pasos](seguimiento-s12-2026-11-03.md), [issues](seguimiento-issues-2026-11-03.md) y [README/despliegues](seguimiento-despliegues-2026-11-03.md). S12 no se cierra automáticamente; las matrices y cifras históricas no se recalculan.
 
 **Seguimiento vigente del 2/nov:** [avances y próximos pasos](seguimiento-s12-2026-11-02.md), [issues](seguimiento-issues-2026-11-02.md) y [README/despliegues](seguimiento-despliegues-2026-11-02.md). S12 no se cierra automáticamente; las matrices y cifras históricas no se recalculan.

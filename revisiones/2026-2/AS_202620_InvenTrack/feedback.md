@@ -251,3 +251,32 @@ Desde el 1/nov integra siete commits: concilia README y evidencia S12/S13 con re
 - Completar persistencia/recuperación durables y retención/redacción de logs; mantener explícitos los límites de locks, idempotencia, broker y DLQ en memoria.
 
 [Fuentes y alcance](../seguimiento-s12-2026-11-02.md#inventrack) · [Issues](../seguimiento-issues-2026-11-02.md) · [URL y dominio](../seguimiento-despliegues-2026-11-02.md).
+
+
+## Revisión retrospectiva · S11, S12 y S13 · 3 de noviembre de 2026
+
+Cierres al final del domingo en Colombia. Esta revisión documental no modifica las notas ni las matrices anteriores. Las evidencias posteriores a cada plazo se mantienen separadas.
+
+### S11 · domingo 2026-10-18
+
+Entrega análisis de fallos, decisión de no extraer inventario e idempotencia/sagas. ADR-0011 reconoce que los comandos aún no son idempotentes; esto corrige conceptualmente la tabla que atribuye deduplicación al lock porSKU. La serialización impide carreras, pero no evita repetir dos descuentos válidos.
+
+**URL de despliegue en README:** README documenta API https://inventrack.iscoutb.dev y alternativa Render; no frontend web independiente.
+
+[Contraste, pendientes y fuentes](../revision-s11-cierre-2026-10-18.md#as-202620-inventrack).
+
+### S12 · domingo 2026-10-25
+
+Mantiene repositorios en memoria y decisiones explícitas de almacenamiento, con comparación de alternativas/costo de reversión. Integra eventos de auditoría de movimientos con broker simulado, reintentos y deduplicación; sus garantías siguen limitadas al proceso, sin almacenamiento durable ni coordinación entre réplicas.
+
+**URL de despliegue en README:** README documenta API https://inventrack.iscoutb.dev y alternativa Render; no frontend web independiente.
+
+[Contraste, pendientes y fuentes](../revision-s12-cierre-2026-10-25.md#as-202620-inventrack).
+
+### S13 · domingo 2026-11-01
+
+Añade idempotencia HTTP en memoria, amenazas priorizadas, responsables y revisión de dependencias con auditoría en CI. Reconoce como riesgo crítico que operaciones de inventario son públicas sin autenticación y que reinicios pierden stock, historial, eventos y claves. El reporte de despliegue distingue API pública de una versión nueva aún por acreditar.
+
+**URL de despliegue en README:** README documenta API https://inventrack.iscoutb.dev y alternativa Render; no frontend web independiente.
+
+[Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-inventrack).

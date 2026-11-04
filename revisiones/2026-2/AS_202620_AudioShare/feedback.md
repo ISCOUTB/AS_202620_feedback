@@ -210,3 +210,32 @@ Desde el 1/nov integra dos commits de seguridad y privacidad: prioriza amenazas,
 - Documentar la prueba Flutter omitida y validar descarga, reintento y reingreso en dispositivos reales.
 
 [Fuentes y alcance](../seguimiento-s12-2026-11-02.md#audioshare) · [Issues](../seguimiento-issues-2026-11-02.md) · [URL y dominio](../seguimiento-despliegues-2026-11-02.md).
+
+
+## Revisión retrospectiva · S11, S12 y S13 · 3 de noviembre de 2026
+
+Cierres al final del domingo en Colombia. Esta revisión documental no modifica las notas ni las matrices anteriores. Las evidencias posteriores a cada plazo se mantienen separadas.
+
+### S11 · domingo 2026-10-18
+
+Documenta fallos concretos del flujo Flutter–API–SQLite y decide mantener el monolito. El diseño distingue la idempotencia deseada del comportamiento actual: PLAY puede repetirse y cambiar startAt; crear sala tampoco es idempotente. Hay recuperación y pruebas previstas, pero no todas las mitigaciones están implementadas.
+
+**URL de despliegue en README:** README documenta https://audioshare.iscoutb.dev como aplicación pública; el backend sirve la interfaz web y API. No se verificó retrospectivamente funcionamiento ni versión publicada.
+
+[Contraste, pendientes y fuentes](../revision-s11-cierre-2026-10-18.md#as-202620-audioshare).
+
+### S12 · domingo 2026-10-25
+
+Añade garantías por operación y contraste de crear sala, PLAY y subir MP3. SQLite confirma crear sala en transacción y la pista usa archivo temporal/renombrado; la caché HTTP revalida el demo y evita almacenar pistas de sala. Reconoce que PLAY puede divergir en memoria si falla la persistencia y que los eventos NDJSON no tienen replay.
+
+**URL de despliegue en README:** README documenta https://audioshare.iscoutb.dev como aplicación pública; el backend sirve la interfaz web y API. No se verificó retrospectivamente funcionamiento ni versión publicada.
+
+[Contraste, pendientes y fuentes](../revision-s12-cierre-2026-10-25.md#as-202620-audioshare).
+
+### S13 · domingo 2026-11-01
+
+Entrega amenazas priorizadas, privacidad y análisis de dependencias con decisiones explícitas. Reporta cero avisos en producción tras corregir body-parser, pero seis en el árbol completo, incluidos dos críticos de desarrollo aceptados con plan de migración. La API continúa con riesgos de autorización y subida de archivos; la publicación de imagen no acredita que la instancia pública haya sido redeplegada.
+
+**URL de despliegue en README:** README documenta https://audioshare.iscoutb.dev como aplicación pública; el backend sirve la interfaz web y API. No se verificó retrospectivamente funcionamiento ni versión publicada.
+
+[Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-audioshare).

@@ -14,6 +14,16 @@ Este material vive en [`ISCOUTB/AS_202620_feedback`](https://github.com/ISCOUTB/
 abierto para que puedas leerlo, citarlo y proponer cambios. Si tienes delante una copia descargada,
 la versión que manda es la de ahí.
 
+## Revisión ordenada de S11, S12 y S13 · 3 de noviembre de 2026
+
+[Índice cronológico de los 23 proyectos](revisiones/2026-2/revision-semanas-11-13-2026-11-03.md).
+
+- **S11: domingo 2026-10-18, 23:59:59 Colombia.** [Revisión del cierre](revisiones/2026-2/revision-s11-cierre-2026-10-18.md).
+- **S12: domingo 2026-10-25, 23:59:59 Colombia.** [Revisión del cierre](revisiones/2026-2/revision-s12-cierre-2026-10-25.md).
+- **S13: domingo 2026-11-01, 23:59:59 Colombia.** [Revisión del cierre](revisiones/2026-2/revision-s13-cierre-2026-11-01.md).
+
+Las revisiones separan evidencia del cierre y cambios posteriores, sin recalificar ni modificar matrices o planillas. Los seguimientos antiguos mantienen sus nombres y fechas: el rótulo S12 de los archivos posteriores al 25/oct no extiende el plazo ni los convierte en evidencia de esa semana.
+
 ## Seguimiento actualizado · 3 de noviembre de 2026
 
 - [Avances y próximos pasos de los 23 proyectos](revisiones/2026-2/seguimiento-s12-2026-11-03.md).

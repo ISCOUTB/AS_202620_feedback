@@ -265,3 +265,32 @@ PR #39/#40 integradas desde el 2/nov: migración009 y 25 fotografías para los 3
 - Conservar pruebas de retorno, caducidad, limpieza y animación accesible; distinguir 584/3 por versión Python y 26 E2E locales de evidencia productiva. Verificar retiro o mitigación de todos los servicios legados.
 
 [Fuentes y alcance](../seguimiento-s12-2026-11-03.md#pideutb) · [Issues](../seguimiento-issues-2026-11-03.md) · [URL y dominio](../seguimiento-despliegues-2026-11-03.md).
+
+
+## Revisión retrospectiva · S11, S12 y S13 · 3 de noviembre de 2026
+
+Cierres al final del domingo en Colombia. Esta revisión documental no modifica las notas ni las matrices anteriores. Las evidencias posteriores a cada plazo se mantienen separadas.
+
+### S11 · domingo 2026-10-18
+
+S11 identifica fallos parciales del flujo de pago y panel, integra pruebas e idempotencia, y argumenta por qué no extraer pagos. La conciliación reconoce la ventana entre escrituras; el despliegue y los filtros externos se distinguen de la lógica en proceso.
+
+**URL de despliegue en README:** README documenta frontend https://pideutb.iscoutb.dev y API https://api-pideutb.iscoutb.dev.
+
+[Contraste, pendientes y fuentes](../revision-s11-cierre-2026-10-18.md#as-202620-pideutb).
+
+### S12 · domingo 2026-10-25
+
+S12 documenta garantías por operación y una decisión argumentada de no añadir caché de dominio, respaldada por mediciones del equipo. La notificación efectiva del panel es sondeo; el bus en proceso sin suscriptores no equivale a entrega de eventos al navegador.
+
+**URL de despliegue en README:** README documenta frontend https://pideutb.iscoutb.dev y API https://api-pideutb.iscoutb.dev.
+
+[Contraste, pendientes y fuentes](../revision-s12-cierre-2026-10-25.md#as-202620-pideutb).
+
+### S13 · domingo 2026-11-01
+
+S13 presenta STRIDE aplicado a sus componentes, tratamiento mínimo de datos y una auditoría que separa dependencias de producción de herramientas de pruebas. El job de dependencias del hash de corte sí terminó correctamente; también el recorrido con navegador en CI.
+
+**URL de despliegue en README:** README documenta frontend https://pideutb.iscoutb.dev y API https://api-pideutb.iscoutb.dev.
+
+[Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-pideutb).

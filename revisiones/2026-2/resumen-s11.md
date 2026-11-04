@@ -1,5 +1,7 @@
 # Resumen de feedback · S11 · definitiva sobre el estado de cierre
 
+**Revisión retrospectiva del 3/nov:** [estado al cierre dominical de S11](revision-s11-cierre-2026-10-18.md) e [índice S11 → S12 → S13](revision-semanas-11-13-2026-11-03.md). El contenido histórico siguiente conserva su fecha y calificación; no sustituye el nuevo contraste documental.
+
 Revisión completa de los 23 repositorios en su rama principal. S11: límite exclusivo **2026-10-19T05:00:00Z**, fin del 18 de octubre en Colombia. S12: observación **2026-10-19T21:35:00Z**, con cierre exclusivo **2026-10-26T05:00:00Z**, fin del 25 en Colombia.
 
 La fórmula publicada es 1 + 4 × (Cumple/9), redondeada a un decimal. Cada cifra es una **propuesta al docente; la nota final se fija en Moodle**. La matriz transversal no integra ese cálculo. La evaluación se congela al cierre y separa las correcciones posteriores.

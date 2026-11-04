@@ -223,3 +223,32 @@ Main y README no cambian desde el 2/nov, pero la PR #25 de Dependabot actualiza 
 - Reducir dependencias Flutter no usadas y revisar las PR propuestas; no inferir durabilidad ni broker de producción a partir del prototipo.
 
 [Fuentes y alcance](../seguimiento-s12-2026-11-03.md#gimnasioutb) · [Issues](../seguimiento-issues-2026-11-03.md) · [URL y dominio](../seguimiento-despliegues-2026-11-03.md).
+
+
+## Revisión retrospectiva · S11, S12 y S13 · 3 de noviembre de 2026
+
+Cierres al final del domingo en Colombia. Esta revisión documental no modifica las notas ni las matrices anteriores. Las evidencias posteriores a cada plazo se mantienen separadas.
+
+### S11 · domingo 2026-10-18
+
+Documenta fallos de app–API–PostgreSQL, incluidos commit incierto, reintentos y contención. La transacción con bloqueo por fila está implementada; idempotencia, timeouts y notificaciones/outbox permanecen diseño. ADR-0005 razona no extraer notificaciones todavía.
+
+**URL de despliegue en README:** README documenta API https://gimnasio-utb.iscoutb.dev; no es evidencia de frontend web.
+
+[Contraste, pendientes y fuentes](../revision-s11-cierre-2026-10-18.md#as-202620-gimnasioutb).
+
+### S12 · domingo 2026-10-25
+
+Define garantías por operación: escrituras del aforo serializadas y lectura con frescura objetivo de 2 s. Diseña caché write-through versionada y log append-only PostgreSQL como historial/idempotencia y fuente futura de eventos. El contador transaccional existe, pero la caché, log e idempotencia descritos no se presentan como implementados.
+
+**URL de despliegue en README:** README documenta API https://gimnasio-utb.iscoutb.dev; no es evidencia de frontend web.
+
+[Contraste, pendientes y fuentes](../revision-s12-cierre-2026-10-25.md#as-202620-gimnasioutb).
+
+### S13 · domingo 2026-11-01
+
+Entrega STRIDE concreto, priorización, responsables y riesgos residuales; agrega autenticación de operador, controles de cuerpo/CORS, ADR-0007 y auditoría npm en CI. Documenta la corrección deqs y resultado sin avisos, además de privacidad. El token compartido sigue sin identidad individual y persisten timeouts, límite de tasa en proxy y limpieza de dependencias Flutter pendientes.
+
+**URL de despliegue en README:** README documenta API https://gimnasio-utb.iscoutb.dev; no es evidencia de frontend web.
+
+[Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-gimnasioutb).

@@ -228,3 +228,32 @@ Quince commits incorporan documentación del despliegue institucional, modelo ST
 - Acreditar respaldo/restauración y EC-07 con el lote objetivo en el entorno servido; no confundir ingesta/worker con calificación OMR integral.
 
 [Fuentes y alcance](../seguimiento-s12-2026-11-02.md#sistema-de-calificacion-automatica) · [Issues](../seguimiento-issues-2026-11-02.md) · [URL y dominio](../seguimiento-despliegues-2026-11-02.md).
+
+
+## Revisión retrospectiva · S11, S12 y S13 · 3 de noviembre de 2026
+
+Cierres al final del domingo en Colombia. Esta revisión documental no modifica las notas ni las matrices anteriores. Las evidencias posteriores a cada plazo se mantienen separadas.
+
+### S11 · domingo 2026-10-18
+
+Documenta los fallos de Redis, proveedor LLM y cliente con mitigaciones trazables y ADR que justifica no extraer módulos. El worker deduplica temporalmente; perder el trabajo tras BLPOP y marcar antes de procesar siguen siendo límites reconocidos, no garantías de procesamiento de calificaciones.
+
+**URL de despliegue en README:** README publica frontend/API en Render, sin dominio iscoutb.dev.
+
+[Contraste, pendientes y fuentes](../revision-s11-cierre-2026-10-18.md#as-202620-sistema-de-calificacion-automatica).
+
+### S12 · domingo 2026-10-25
+
+La entrega de datos ya incluye tabla de consistencia, identidad de hoja derivada de bitácora, caché de propuestas e invalidación. Redis pasa a entrega al menos una vez con trabajos en curso, confirmación, reintentos y fallidos; la documentación reconoce que un único consumidor y Redis sin persistencia limitan la garantía.
+
+**URL de despliegue en README:** README publica frontend/API en Render, sin dominio iscoutb.dev.
+
+[Contraste, pendientes y fuentes](../revision-s12-cierre-2026-10-25.md#as-202620-sistema-de-calificacion-automatica).
+
+### S13 · domingo 2026-11-01
+
+Presenta STRIDE ligado a C4, prioridades, responsables, estado de mitigaciones, privacidad y riesgos del componente generativo. OSV-Scanner está incorporado en CI y se documenta el hallazgo de certifi y su corrección. No equivale a seguridad terminada: autenticación antes de usar hojas reales, escaneo de imágenes y aislamiento efectivo de Redis siguen condicionados o pendientes.
+
+**URL de despliegue en README:** README publica frontend https://calificacion.iscoutb.dev y API https://api-calificacion.iscoutb.dev.
+
+[Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-sistema-de-calificacion-automatica).

@@ -206,3 +206,32 @@ La punta master y su README no cambian frente al 1/nov. Hay trabajo nuevo no int
 - Documentar URL institucional concreta y alcance PostgreSQL frente a rutas heredadas en memoria.
 
 [Fuentes y alcance](../seguimiento-s12-2026-11-02.md#enagenda) · [Issues](../seguimiento-issues-2026-11-02.md) · [URL y dominio](../seguimiento-despliegues-2026-11-02.md).
+
+
+## Revisión retrospectiva · S11, S12 y S13 · 3 de noviembre de 2026
+
+Cierres al final del domingo en Colombia. Esta revisión documental no modifica las notas ni las matrices anteriores. Las evidencias posteriores a cada plazo se mantienen separadas.
+
+### S11 · domingo 2026-10-18
+
+Permanece en la base del 11/oct, con flujo de invitaciones y controles previos. No se acredita una entrega específica S11 con tabla de fallos, diseño completo de idempotencia y ADR de extracción. El estado anterior no permite atribuirle la persistencia y taller incorporados la semana siguiente.
+
+**URL de despliegue en README:** README conserva host-asignado y localhost; no URL de despliegue concreta ni iscoutb.dev.
+
+[Contraste, pendientes y fuentes](../revision-s11-cierre-2026-10-18.md#as-202620-enagenda).
+
+### S12 · domingo 2026-10-25
+
+Integra PostgreSQL/SQLAlchemy y migraciones para usuarios, eventos e invitaciones, con tabla de garantías y contraste de rollback y límites. Decide no introducir caché ni broker de negocio; ADR de persistencia compara costo de reversión. Mantiene un flujo heredado en memoria y un taller de mensajes aislado, por lo que no debe describirse todo el sistema como durable.
+
+**URL de despliegue en README:** README conserva host-asignado y localhost; no URL de despliegue concreta ni iscoutb.dev.
+
+[Contraste, pendientes y fuentes](../revision-s12-cierre-2026-10-25.md#as-202620-enagenda).
+
+### S13 · domingo 2026-11-01
+
+La rama principal no cambia respecto al corte S12. No se acredita nueva entrega S13 de amenazas priorizadas, privacidad y dependencias; el trabajo de seguridad posterior o sin integrar no puede sumarse al domingo. Continúan las limitaciones de concurrencia real, restauración y despliegue documentadas en S12.
+
+**URL de despliegue en README:** README conserva host-asignado y localhost; no URL de despliegue concreta ni iscoutb.dev.
+
+[Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-enagenda).

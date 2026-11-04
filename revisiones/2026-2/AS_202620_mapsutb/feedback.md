@@ -171,3 +171,32 @@ Se incorporó ADR0018 y evidencia S12 de datos/caché; una lectura fallida de zo
 **README:** Externo. Frontend Firebase externo; sonda CI disponible, sin nueva aceptación funcional propia.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-26.md#mapsutb) · [Issues](../seguimiento-issues-2026-10-26.md) · [URL y dominio](../seguimiento-despliegues-2026-10-26.md).
+
+
+## Revisión retrospectiva · S11, S12 y S13 · 3 de noviembre de 2026
+
+Cierres al final del domingo en Colombia. Esta revisión documental no modifica las notas ni las matrices anteriores. Las evidencias posteriores a cada plazo se mantienen separadas.
+
+### S11 · domingo 2026-10-18
+
+La S11 analiza las integraciones del mapa y mantiene los módulos en el mismo despliegue con una decisión explícita de no extracción. Existe cliente web con búsqueda de zonas, espacios y salones; el CI y el despliegue Firebase del hash de corte concluyeron antes del domingo.
+
+**URL de despliegue en README:** README documenta frontend https://mapsutb.web.app, externo a iscoutb.dev.
+
+[Contraste, pendientes y fuentes](../revision-s11-cierre-2026-10-18.md#as-202620-mapsutb).
+
+### S12 · domingo 2026-10-25
+
+S12 aporta garantías de siete operaciones, cachés diferenciadas e invalidación por despliegue y recarga; además corrige la retención de lecturas fallidas mediante evict. El ADR compara decisiones y explica el costo de revertir los datos del campus de solo lectura derivados de OSM.
+
+**URL de despliegue en README:** README documenta frontend https://mapsutb.web.app, externo a iscoutb.dev.
+
+[Contraste, pendientes y fuentes](../revision-s12-cierre-2026-10-25.md#as-202620-mapsutb).
+
+### S13 · domingo 2026-11-01
+
+S13 conserva exactamente el mismo commit de S12. En el árbol revisado no se encontró una evidencia específica S13 ni una tabla STRIDE con responsables, prioridades y resultados revisados de análisis de dependencias; el análisis estático existente no sustituye esos entregables.
+
+**URL de despliegue en README:** README documenta frontend https://mapsutb.web.app, externo a iscoutb.dev.
+
+[Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-mapsutb).

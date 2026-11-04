@@ -262,3 +262,32 @@ PR #34–36 integradas desde el 2/nov: acceso del personal al panel y confirmaci
 - Verificar con autorización que backend nuevo preceda al frontend manual, vincular SHA servido y probar agrupación multitienda, compatibilidad v1, cancelación por admin, aislamiento y conservación de pedidos. Un webhook y health200 no equivalen a aceptación integral.
 
 [Fuentes y alcance](../seguimiento-s12-2026-11-03.md#laplacita) · [Issues](../seguimiento-issues-2026-11-03.md) · [URL y dominio](../seguimiento-despliegues-2026-11-03.md).
+
+
+## Revisión retrospectiva · S11, S12 y S13 · 3 de noviembre de 2026
+
+Cierres al final del domingo en Colombia. Esta revisión documental no modifica las notas ni las matrices anteriores. Las evidencias posteriores a cada plazo se mantienen separadas.
+
+### S11 · domingo 2026-10-18
+
+La integración cliente–API y PostgreSQL tiene modos de fallo, diseño de idempotencia y decisión razonada de no extraer servicios. La idempotencia de creación de pedidos ya se implementó dentro del proceso; no equivale a durabilidad entre reinicios ni a protección de varios procesos.
+
+**URL de despliegue en README:** README documenta API externa Azure; no documenta en raíz un dominio propio iscoutb.dev para la solución.
+
+[Contraste, pendientes y fuentes](../revision-s11-cierre-2026-10-18.md#as-202620-laplacita).
+
+### S12 · domingo 2026-10-25
+
+La evidencia S12 ya contiene tabla de operaciones y garantías, estrategia de caché, decisión de identidad del pedido y confirmación de creación después de PostgreSQL. Distingue la lectura desde Maps, la durabilidad en PostgreSQL y el desfase del sondeo; el diseño depende de una sola instancia.
+
+**URL de despliegue en README:** README documenta API externa Azure; no documenta en raíz un dominio propio iscoutb.dev para la solución.
+
+[Contraste, pendientes y fuentes](../revision-s12-cierre-2026-10-25.md#as-202620-laplacita).
+
+### S13 · domingo 2026-11-01
+
+Al cierre S13 están integrados el modelo STRIDE, prioridades, responsables y estados, privacidad y decisiones de reducción de superficie pública. CI verifica pruebas, contratos, construcción y auditoría de dependencias del backend y frontend; el README ya distingue los dos dominios institucionales.
+
+**URL de despliegue en README:** README documenta frontend https://laplacita-app.iscoutb.dev y API https://laplacita-test.iscoutb.dev/api/v1.
+
+[Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-laplacita).

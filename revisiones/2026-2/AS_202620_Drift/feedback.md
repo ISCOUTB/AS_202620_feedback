@@ -206,3 +206,32 @@ Desde el 1/nov integra cuatro commits mediante PR #54 y #56: actualiza dependenc
 - Conservar como pendientes la retención/redacción de logs y la discrepancia entre retención declarada de IP y limpieza efectiva del limitador.
 
 [Fuentes y alcance](../seguimiento-s12-2026-11-02.md#drift) · [Issues](../seguimiento-issues-2026-11-02.md) · [URL y dominio](../seguimiento-despliegues-2026-11-02.md).
+
+
+## Revisión retrospectiva · S11, S12 y S13 · 3 de noviembre de 2026
+
+Cierres al final del domingo en Colombia. Esta revisión documental no modifica las notas ni las matrices anteriores. Las evidencias posteriores a cada plazo se mantienen separadas.
+
+### S11 · domingo 2026-10-18
+
+Analiza resiliencia de las fuentes externas, especialmente Steam, con timeout, reintentos acotados, validación y respaldo. ADR-0009 compara extracción y permanencia, conserva el monolito y justifica que saga/outbox no aplican al flujo actual. Quedan por medir latencia degradada y revisar registros del despliegue.
+
+**URL de despliegue en README:** README documenta frontend https://drift.iscoutb.dev y API bajo /api; Azure y Vercel son despliegues externos separados.
+
+[Contraste, pendientes y fuentes](../revision-s11-cierre-2026-10-18.md#as-202620-drift).
+
+### S12 · domingo 2026-10-25
+
+Consolida consistencia y cachés locales por fuente, e incorpora evidencia de Steam degradado y C4 actualizado. ADR-0010 compara alternativas y concluye que el contrato público/identidad del juego es más costoso de revertir que el almacenamiento RAM actual. No declara MySQL implementado y mantiene separados datos curados, datos externos y perfil local del navegador.
+
+**URL de despliegue en README:** README documenta frontend https://drift.iscoutb.dev y API bajo /api; Azure y Vercel son despliegues externos separados.
+
+[Contraste, pendientes y fuentes](../revision-s12-cierre-2026-10-25.md#as-202620-drift).
+
+### S13 · domingo 2026-11-01
+
+Integra antes del cierre el modelo STRIDE, privacidad, autenticación administrativa y limitación de tasa, con ADR-0011/0012 y análisis de dependencias en CI. El reporte revisa avisos corregidos y riesgos aceptados; permanece pendiente decidir la retención/desactivación del access log. Se excluye PR #56, integrado después del domingo, aunque sus commits tengan fecha anterior.
+
+**URL de despliegue en README:** README documenta frontend https://drift.iscoutb.dev y API bajo /api; Azure y Vercel son despliegues externos separados.
+
+[Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-drift).

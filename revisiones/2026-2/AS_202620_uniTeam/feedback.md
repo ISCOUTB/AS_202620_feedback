@@ -187,3 +187,32 @@ Quince commits añaden modelado de amenazas/privacidad, ADR, Dependabot y audito
 - Publicar frontend y API institucionales; conservar caché como propuesta y taller SQLite separado.
 
 [Fuentes y alcance](../seguimiento-s12-2026-11-02.md#uniteam) · [Issues](../seguimiento-issues-2026-11-02.md) · [URL y dominio](../seguimiento-despliegues-2026-11-02.md).
+
+
+## Revisión retrospectiva · S11, S12 y S13 · 3 de noviembre de 2026
+
+Cierres al final del domingo en Colombia. Esta revisión documental no modifica las notas ni las matrices anteriores. Las evidencias posteriores a cada plazo se mantienen separadas.
+
+### S11 · domingo 2026-10-18
+
+La aplicación y las integraciones existen, pero la entrega específica de fallos parciales permanece incompleta: falta tabla de tres modos, diseño de idempotencia de creación de tareas y decisión explícita de extraer o no. Tanto CI como el comprobador de despliegue consultados fallan.
+
+**URL de despliegue en README:** README publica frontend/API Render, sin iscoutb.dev.
+
+[Contraste, pendientes y fuentes](../revision-s11-cierre-2026-10-18.md#as-202620-uniteam).
+
+### S12 · domingo 2026-10-25
+
+El cierre incorpora garantías de datos por operación, MySQL como fuente de verdad y una decisión justificada de no cachear proyectos, tareas ni membresías. Se distingue esa decisión de la caché técnica JWKS y se compara el costo de migrar los datos mediante ADR-0016; el taller local de mensajería permanece separado del flujo real.
+
+**URL de despliegue en README:** README publica frontend/API DuckDNS, sin iscoutb.dev.
+
+[Contraste, pendientes y fuentes](../revision-s12-cierre-2026-10-25.md#as-202620-uniteam).
+
+### S13 · domingo 2026-11-01
+
+Tiene amenazas STRIDE por componente, prioridades, responsables, privacidad y ADR de mitigaciones. El scanner de dependencias corre en verde, pero el informe conserva placeholders de URL, fecha, commit y hallazgos: no acredita revisión de resultados. Muchas mitigaciones prioritarias siguen pendientes; el plan admite que se hizo primero el escaneo por bajo costo.
+
+**URL de despliegue en README:** README publica frontend/API DuckDNS, sin iscoutb.dev.
+
+[Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-uniteam).

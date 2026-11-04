@@ -248,3 +248,32 @@ Diez commits incorporan sesiones con renovación rotativa, detección de reutili
 - Añadir pruebas/análisis Flutter al pipeline y recorridos integrados en dispositivo; la verificación Dart/OSV no ejecuta Flutter.
 
 [Fuentes y alcance](../seguimiento-s12-2026-11-02.md#taia_-task-artificial-intelligence-assistant) · [Issues](../seguimiento-issues-2026-11-02.md) · [URL y dominio](../seguimiento-despliegues-2026-11-02.md).
+
+
+## Revisión retrospectiva · S11, S12 y S13 · 3 de noviembre de 2026
+
+Cierres al final del domingo en Colombia. Esta revisión documental no modifica las notas ni las matrices anteriores. Las evidencias posteriores a cada plazo se mantienen separadas.
+
+### S11 · domingo 2026-10-18
+
+La tabla de fallos cubre Gemini y Telegram con timeout, traducción de errores y decisión razonada de conservar el monolito. El reclamo atómico evita ejecutar dos veces la misma confirmación, pero no vuelve atómica la posterior escritura de tarea; el envío de Telegram puede duplicarse y se reconoce como pendiente.
+
+**URL de despliegue en README:** README publica API provisional sslip.io y referencia Render, sin iscoutb.dev.
+
+[Contraste, pendientes y fuentes](../revision-s11-cierre-2026-10-18.md#as-202620-taia--task-artificial-intelligence-assistant).
+
+### S12 · domingo 2026-10-25
+
+arc42 ya declara garantías por operación y compara confirmación del asistente, recordatorios y lecturas contra el código. No usar caché de negocio está razonado; también se diseña la invalidación para una eventual caché. ADR-0009 identifica la base compartida y las referencias lógicas entre módulos como decisión de datos difícil de revertir.
+
+**URL de despliegue en README:** README publica API https://taia-sistema.iscoutb.dev; no equivale a frontend web.
+
+[Contraste, pendientes y fuentes](../revision-s12-cierre-2026-10-25.md#as-202620-taia--task-artificial-intelligence-assistant).
+
+### S13 · domingo 2026-11-01
+
+Incluye modelo de amenazas priorizado, controles de sesiones, límites de uso, consentimiento, privacidad y riesgos de IA. Documenta auditoría Python y Dart y actualización de dependencias; el CI del commit de cierre falla y CD está omitido, por lo que los cambios fusionados no acreditan publicación de esa revisión.
+
+**URL de despliegue en README:** README publica API https://taia-sistema.iscoutb.dev; no equivale a frontend web.
+
+[Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-taia--task-artificial-intelligence-assistant).

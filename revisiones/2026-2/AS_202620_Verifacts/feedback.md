@@ -246,3 +246,32 @@ Cuatro commits documentales posteriores al corte anterior formalizan consistenci
 **README:** Externo. Referencia HTTP sslip. README declara pendiente dominio institucional/certificado; frontend / y API /docs,/health separados conceptualmente.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-28.md#verifacts) · [Issues](../seguimiento-issues-2026-10-28.md) · [URL y dominio](../seguimiento-despliegues-2026-10-28.md).
+
+
+## Revisión retrospectiva · S11, S12 y S13 · 3 de noviembre de 2026
+
+Cierres al final del domingo en Colombia. Esta revisión documental no modifica las notas ni las matrices anteriores. Las evidencias posteriores a cada plazo se mantienen separadas.
+
+### S11 · domingo 2026-10-18
+
+La entrega identifica integración, modos de fallo, diseño de idempotencia y decisión de no extraer análisis. Varias promesas de timeout, códigos HTTP y WAL/reintentos no coinciden todavía con la implementación; deben quedar como pendientes explícitos y enlazarse desde riesgos y aspectos.
+
+**URL de despliegue en README:** README sin URL pública de despliegue identificada; remite a documentos de despliegue.
+
+[Contraste, pendientes y fuentes](../revision-s11-cierre-2026-10-18.md#as-202620-verifacts).
+
+### S12 · domingo 2026-10-25
+
+Ya documenta consistencia por operación, decisión de no usar caché con alternativas e invalidación, y costo comparativo de conservar contenido completo sin propietario en SQLite. El guardado confirma antes de responder; la recarga de historial puede quedar desactualizada y no se promete una instantánea global entre páginas.
+
+**URL de despliegue en README:** README publica HTTP sslip.io, no iscoutb.dev.
+
+[Contraste, pendientes y fuentes](../revision-s12-cierre-2026-10-25.md#as-202620-verifacts).
+
+### S13 · domingo 2026-11-01
+
+Presenta amenazas priorizadas y privacidad, reconociendo como pendientes SSRF, límites de extracción, timeouts, exposición del historial y TLS del laboratorio. El documento describe análisis de dependencias, pero los workflows inspeccionados no ejecutan pip-audit/npm audit: los runs Tests/SonarCloud verdes no prueban ese criterio.
+
+**URL de despliegue en README:** README publica HTTP sslip.io, no iscoutb.dev.
+
+[Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-verifacts).

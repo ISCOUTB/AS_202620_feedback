@@ -218,3 +218,32 @@ Desde el 1/nov integra cinco commits: ajusta pruebas y contrato a tipos de migra
 - Completar decisiones y marcadores de privacidad/retención, y publicar URL exacta de frontend/API en README.
 
 [Fuentes y alcance](../seguimiento-s12-2026-11-02.md#clubs_utb) · [Issues](../seguimiento-issues-2026-11-02.md) · [URL y dominio](../seguimiento-despliegues-2026-11-02.md).
+
+
+## Revisión retrospectiva · S11, S12 y S13 · 3 de noviembre de 2026
+
+Cierres al final del domingo en Colombia. Esta revisión documental no modifica las notas ni las matrices anteriores. Las evidencias posteriores a cada plazo se mantienen separadas.
+
+### S11 · domingo 2026-10-18
+
+Identifica fallos de LinkClub, propone idempotencia para publicaciones y adopta ADR-0008 de no extraer. La tabla de fallos aún es general y las mitigaciones declaradas necesitan contrastarse contra cada ruta; una clave única no sustituye el tratamiento completo de reintentos y errores.
+
+**URL de despliegue en README:** README solo muestra localhost; no URL pública concreta ni subdominio institucional documentado.
+
+[Contraste, pendientes y fuentes](../revision-s11-cierre-2026-10-18.md#as-202620-clubs-utb).
+
+### S12 · domingo 2026-10-25
+
+Avanza en publicaciones, imágenes y cabecera de idempotencia; agrega tabla de garantías y ADR de persistencia multimedia. La tabla describe validaciones y restricciones, pero no define con precisión la garantía de lectura/escritura ni demuestra dos operaciones transaccionales completas. Debe concretar caché e invalidación y reconciliar documentación con las rutas reales.
+
+**URL de despliegue en README:** README solo muestra localhost; no URL pública concreta ni subdominio institucional documentado. ADR-0009 usa api-linkclub.iscoutb.dev en un ejemplo de archivo estático, pero no sustituye una URL de despliegue vigente documentada en README ni prueba funcionamiento.
+
+[Contraste, pendientes y fuentes](../revision-s12-cierre-2026-10-25.md#as-202620-clubs-utb).
+
+### S13 · domingo 2026-11-01
+
+Añade amenazas con probabilidad, impacto, responsables y estado, además de privacidad y revisión de dependencias. El código confirma el riesgo principal: auth_router guarda y compara contraseñas sin hash. La subida ya exige sesión, pero faltan límites, roles y otros controles; la privacidad todavía contiene decisiones y canales por completar.
+
+**URL de despliegue en README:** README solo muestra localhost; no URL pública concreta ni subdominio institucional documentado. ADR-0009 usa api-linkclub.iscoutb.dev en un ejemplo de archivo estático, pero no sustituye una URL de despliegue vigente documentada en README ni prueba funcionamiento.
+
+[Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-clubs-utb).

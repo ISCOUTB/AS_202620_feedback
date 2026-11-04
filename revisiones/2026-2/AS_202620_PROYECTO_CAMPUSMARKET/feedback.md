@@ -245,3 +245,32 @@ PR81–91 fusionados después del baseline. PR81 añade doce universidades de Ca
 - Conservar trazabilidad y distinguir SHA de orquestación HEAD del SHA productivo; mantener checks verdes y no recalificar ni cerrar semanas por estos incrementos posteriores a S13.
 
 [Fuentes y alcance](../seguimiento-s12-2026-11-03.md#proyecto_campusmarket) · [Issues](../seguimiento-issues-2026-11-03.md) · [URL y dominio](../seguimiento-despliegues-2026-11-03.md).
+
+
+## Revisión retrospectiva · S11, S12 y S13 · 3 de noviembre de 2026
+
+Cierres al final del domingo en Colombia. Esta revisión documental no modifica las notas ni las matrices anteriores. Las evidencias posteriores a cada plazo se mantienen separadas.
+
+### S11 · domingo 2026-10-18
+
+S11 identifica Flutter→FastAPI→MySQL como integración principal y distingue las llamadas internas de Catálogo. Documenta fallos, propone idempotencia transaccional y justifica mantener Catálogo en el monolito; las mitigaciones pendientes no se publican como implementadas.
+
+**URL de despliegue en README:** README documenta API https://campusmarket.iscoutb.dev; frontend GitHub Pages externo.
+
+[Contraste, pendientes y fuentes](../revision-s11-cierre-2026-10-18.md#as-202620-proyecto-campusmarket).
+
+### S12 · domingo 2026-10-25
+
+S12 registra operaciones reales y garantías limitadas a transacciones locales; decide no agregar caché de dominio ni proyecciones asíncronas y justifica MySQL como fuente de verdad. Las pruebas del taller de mensajes son aisladas y no introducen un broker productivo.
+
+**URL de despliegue en README:** README documenta API https://campusmarket.iscoutb.dev; frontend GitHub Pages externo.
+
+[Contraste, pendientes y fuentes](../revision-s12-cierre-2026-10-25.md#as-202620-proyecto-campusmarket).
+
+### S13 · domingo 2026-11-01
+
+S13 integra el modelo de amenazas con prioridad, estado y responsables; añade auditoría Python y decisiones sobre los hallazgos. La corrección de dependencias y la consolidación de arc42 están fusionadas antes del cierre; el README ya documenta Flutter Web en /app/ y la API institucional.
+
+**URL de despliegue en README:** README documenta API https://campusmarket.iscoutb.dev y frontend https://campusmarket.iscoutb.dev/app/.
+
+[Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-proyecto-campusmarket).

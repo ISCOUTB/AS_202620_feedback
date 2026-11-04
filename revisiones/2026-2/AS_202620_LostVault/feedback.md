@@ -197,3 +197,32 @@ PR #23/#24 integradas: documento S13 de amenazas, dependencias y privacidad adap
 - Priorizar identidad real y persistencia de reclamaciones; verificar configuración, workers, acceso, retención y respaldos del entorno autorizado. No repetir carga contra el panel sin autorización.
 
 [Fuentes y alcance](../seguimiento-s12-2026-11-02.md#lostvault) · [Issues](../seguimiento-issues-2026-11-02.md) · [URL y dominio](../seguimiento-despliegues-2026-11-02.md).
+
+
+## Revisión retrospectiva · S11, S12 y S13 · 3 de noviembre de 2026
+
+Cierres al final del domingo en Colombia. Esta revisión documental no modifica las notas ni las matrices anteriores. Las evidencias posteriores a cada plazo se mantienen separadas.
+
+### S11 · domingo 2026-10-18
+
+La S11 documenta fallos de reclamación HTTP y justifica mantener verificación de identidad dentro del monolito. La API incorpora repetición idempotente y exclusión dentro de un proceso, mientras el cliente Flutter todavía utiliza adaptadores en memoria.
+
+**URL de despliegue en README:** README sin URL pública concreta de la solución; no se acredita dominio iscoutb.dev documentado.
+
+[Contraste, pendientes y fuentes](../revision-s11-cierre-2026-10-18.md#as-202620-lostvault).
+
+### S12 · domingo 2026-10-25
+
+S12 diferencia la garantía fuerte pretendida de reclamación de la garantía efectiva dentro de un solo proceso, y documenta caché CDN de consultas con ventana máxima declarada de 90 segundos. PostgreSQL y el outbox son decisiones/diseños, no prueba de persistencia desplegada.
+
+**URL de despliegue en README:** README sin URL pública concreta de la solución; no se acredita dominio iscoutb.dev documentado.
+
+[Contraste, pendientes y fuentes](../revision-s12-cierre-2026-10-25.md#as-202620-lostvault).
+
+### S13 · domingo 2026-11-01
+
+S13 añade amenazas priorizadas, responsables, privacidad y revisión documental de dependencias. El propio documento deja pendientes la verificación real de identidad, persistencia compartida, limitación de tasa y actualización de PyJWT; no acredita una auditoría automatizada de dependencias en el pipeline.
+
+**URL de despliegue en README:** README sin URL pública concreta de solución; no confundir panel.iscoutb.dev con aplicación.
+
+[Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-lostvault).

@@ -226,3 +226,32 @@ master (a79a608), README, experimental (7676801) y seis issues cerradas no cambi
 - Publicar API institucional y conciliar experimental con master sin restaurar documentación obsoleta.
 
 [Fuentes y alcance](../seguimiento-s12-2026-11-03.md#xald) · [Issues](../seguimiento-issues-2026-11-03.md) · [URL y dominio](../seguimiento-despliegues-2026-11-03.md).
+
+
+## Revisión retrospectiva · S11, S12 y S13 · 3 de noviembre de 2026
+
+Cierres al final del domingo en Colombia. Esta revisión documental no modifica las notas ni las matrices anteriores. Las evidencias posteriores a cada plazo se mantienen separadas.
+
+### S11 · domingo 2026-10-18
+
+Documenta fallos y mitigaciones de sincronización, idempotencia y decisión razonada de no extraer el módulo Gemini. El código deduplica por identificador y versión solo mientras vive el proceso; memoria, reinicios y pruebas secuenciales limitan la garantía.
+
+**URL de despliegue en README:** README publica API https://xald-backend.onrender.com, no frontend ni iscoutb.dev.
+
+[Contraste, pendientes y fuentes](../revision-s11-cierre-2026-10-18.md#as-202620-xald).
+
+### S12 · domingo 2026-10-25
+
+arc42 incorpora garantías por operación, diseño de caché e invalidación y sincronización con reintentos. Distingue memoria vigente de Room/SQLCipher futuros; la cola aún se pierde al morir el proceso y falta el Worker periódico. No se localiza un ADR que compare cuál decisión de datos sería la más costosa de revertir.
+
+**URL de despliegue en README:** README publica API https://xald-backend.onrender.com, no frontend ni iscoutb.dev.
+
+[Contraste, pendientes y fuentes](../revision-s12-cierre-2026-10-25.md#as-202620-xald).
+
+### S13 · domingo 2026-11-01
+
+Entrega STRIDE relacionado con conectores/C4, amenazas priorizadas, privacidad y riesgos de Gemini. La auditoría de dependencias documenta hallazgos, correcciones y runs fallidos/recuperados; CI del cierre pasa. Persisten condiciones importantes: autenticación del móvil, validación del origen SMS, consentimiento informado y almacenamiento persistente/cifrado no quedan resueltos solo por el diseño.
+
+**URL de despliegue en README:** README publica API https://xald-backend.onrender.com, no frontend ni iscoutb.dev.
+
+[Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-xald).

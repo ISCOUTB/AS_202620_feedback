@@ -245,3 +245,32 @@ Desde el 2/nov incorpora dos commits, ambos limitados a frontend/lib/usuarios/we
 - Probar y definir tratamiento de JWT anteriores sin sig: el condicional actual solo comprueba la firma de contraseña cuando sig tiene valor; las sesiones legadas no quedan cubiertas por la nueva revocación.
 
 [Fuentes y alcance](../seguimiento-s12-2026-11-03.md#dinamikutb) · [Issues](../seguimiento-issues-2026-11-03.md) · [URL y dominio](../seguimiento-despliegues-2026-11-03.md).
+
+
+## Revisión retrospectiva · S11, S12 y S13 · 3 de noviembre de 2026
+
+Cierres al final del domingo en Colombia. Esta revisión documental no modifica las notas ni las matrices anteriores. Las evidencias posteriores a cada plazo se mantienen separadas.
+
+### S11 · domingo 2026-10-18
+
+Analiza Flutter–FastAPI y base de datos, con timeout/reintentos e idempotencia del cambio de estado. ADR-0010 compara extraer requisitos, extraer alertas o mantener el monolito y justifica no extraer por transacción única, costo y ausencia de carga diferenciada.
+
+**URL de despliegue en README:** README: frontend GitHub Pages y API Render externos; sin iscoutb.dev.
+
+[Contraste, pendientes y fuentes](../revision-s11-cierre-2026-10-18.md#as-202620-dinamikutb).
+
+### S12 · domingo 2026-10-25
+
+Incorpora historial transaccional de cambios de requisitos: estado e historial comparten commit y prueba de rollback. Explicita que no usa caché de dominio ni broker, distingue logs de auditoría durable y compara el costo de revertir el historial. La pantalla reúne consultas sin snapshot común; persisten última escritura gana, referencias sin FK y respaldo sin demostrar.
+
+**URL de despliegue en README:** README añade https://dinamikutb.iscoutb.dev como despliegue del laboratorio y /health; no confundir con frontend separado, aún conserva Pages/Render.
+
+[Contraste, pendientes y fuentes](../revision-s12-cierre-2026-10-25.md#as-202620-dinamikutb).
+
+### S13 · domingo 2026-11-01
+
+Amplía gestión e historial y documenta por separado frontend y API institucionales. Sin embargo, el material S13 está incompleto: arc42 enlaza docs/modelado-de-amenazas.md, que no existe en el snapshot, y la sección de riesgos vuelve a afirmar que usuarios e historial están pendientes pese al código incorporado. La auditoría de dependencias falla antes del cierre.
+
+**URL de despliegue en README:** README distingue frontend https://dinamikutb.iscoutb.dev y API https://api.dinamikutb.iscoutb.dev.
+
+[Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-dinamikutb).

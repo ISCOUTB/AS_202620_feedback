@@ -210,3 +210,32 @@ PR #13 fusionado: dos commits agregan documento de amenazas priorizadas, auditor
 - Mantener caché como propuesta; medir invalidación/concurrencia antes de atribuir implementación.
 
 [Fuentes y alcance](../seguimiento-s12-2026-11-02.md#tienda-virtual-utb) · [Issues](../seguimiento-issues-2026-11-02.md) · [URL y dominio](../seguimiento-despliegues-2026-11-02.md).
+
+
+## Revisión retrospectiva · S11, S12 y S13 · 3 de noviembre de 2026
+
+Cierres al final del domingo en Colombia. Esta revisión documental no modifica las notas ni las matrices anteriores. Las evidencias posteriores a cada plazo se mantienen separadas.
+
+### S11 · domingo 2026-10-18
+
+La decisión de no extraer y el diseño de idempotencia/saga están presentes y distinguen propuesta de implementación. La tabla de fallos todavía se apoya en operaciones futuras y describe módulos como reservados; necesita cubrir no respuesta, demora y duplicación en la integración real de catálogo e inventario.
+
+**URL de despliegue en README:** README sin URL pública de despliegue identificada.
+
+[Contraste, pendientes y fuentes](../revision-s11-cierre-2026-10-18.md#as-202620-tienda-virtual-utb).
+
+### S12 · domingo 2026-10-25
+
+La tabla de consistencia cubre compras, cancelación, vencimiento y catálogo con transacciones y control de concurrencia. La caché de catálogo es un diseño explícitamente no implementado, con invalidación posterior al commit y recuperación por TTL. ADR-0018 explica el costo de separar la transacción compartida de pedidos e inventario.
+
+**URL de despliegue en README:** README publica URL sslip.io, no iscoutb.dev.
+
+[Contraste, pendientes y fuentes](../revision-s12-cierre-2026-10-25.md#as-202620-tienda-virtual-utb).
+
+### S13 · domingo 2026-11-01
+
+Aporta amenazas priorizadas, inventario de privacidad y una revisión concreta de dependencias: declara cero hallazgos Python y trece npm, con exposición y decisiones. Sin embargo, los workflows del corte no incluyen pip-audit ni npm/pnpm audit; la auditoría documentada es local y no satisface por sí sola ejecución en pipeline.
+
+**URL de despliegue en README:** README publica URL sslip.io, no iscoutb.dev.
+
+[Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-tienda-virtual-utb).

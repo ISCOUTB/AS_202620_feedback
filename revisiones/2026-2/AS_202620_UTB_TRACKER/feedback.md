@@ -212,3 +212,32 @@ Se fusionan PR #6, #7 y #8: seis commits llevan main de c76288e a fb7378d e inco
 - Publicar URL pública en README y corregir SQLite/Alembic desactualizados; convertir el aviso de claves inseguras en un rechazo verificable en producción y revisar datos personales escritos en logs.
 
 [Fuentes y alcance](../seguimiento-s12-2026-11-03.md#utb_tracker) · [Issues](../seguimiento-issues-2026-11-03.md) · [URL y dominio](../seguimiento-despliegues-2026-11-03.md).
+
+
+## Revisión retrospectiva · S11, S12 y S13 · 3 de noviembre de 2026
+
+Cierres al final del domingo en Colombia. Esta revisión documental no modifica las notas ni las matrices anteriores. Las evidencias posteriores a cada plazo se mantienen separadas.
+
+### S11 · domingo 2026-10-18
+
+Hay idempotencia de préstamos, utilidades de resiliencia y ADR para conservar el monolito. Falta una tabla completa de no respuesta, respuesta tardía y duplicación con mitigación por caso; el pipeline del corte falla, de modo que no se acredita suite verde.
+
+**URL de despliegue en README:** README contiene instrucciones locales, sin URL pública de despliegue.
+
+[Contraste, pendientes y fuentes](../revision-s11-cierre-2026-10-18.md#as-202620-utb-tracker).
+
+### S12 · domingo 2026-10-25
+
+La entrega de S12 entra antes del cierre mediante PR #4 y documenta garantías por operación, brechas de concurrencia, diseño de caché e invalidación y costo de los identificadores enteros. El outbox se escribe con el préstamo, pero el propio análisis distingue duplicados, ausencia de orden y necesidad de operar el worker.
+
+**URL de despliegue en README:** README contiene instrucciones locales, sin URL pública de despliegue.
+
+[Contraste, pendientes y fuentes](../revision-s12-cierre-2026-10-25.md#as-202620-utb-tracker).
+
+### S13 · domingo 2026-11-01
+
+Al cierre conserva la base de S12 y mejoras de administración, pero no contiene la entrega específica S13 de amenazas, dependencias y privacidad. Esta aparece en PR #5 fusionado el lunes 2 de noviembre a las 00:08 COT, después del domingo; debe registrarse como avance posterior y no atribuirse al cierre.
+
+**URL de despliegue en README:** README contiene instrucciones locales, sin URL pública de despliegue.
+
+[Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-utb-tracker).

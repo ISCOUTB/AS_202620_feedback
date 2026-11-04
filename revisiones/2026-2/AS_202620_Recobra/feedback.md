@@ -205,3 +205,32 @@ Incorpora seguridad S13: límites de uso, CSP y CORS, tratamiento del origen det
 **README:** Institucional. README aclara vitrina, Flutter Web y API en mismo host institucional; no se añade auditoría funcional.
 
 [Fuentes y alcance](../seguimiento-s12-2026-10-29.md#recobra) · [Issues](../seguimiento-issues-2026-10-29.md) · [URL y dominio](../seguimiento-despliegues-2026-10-29.md).
+
+
+## Revisión retrospectiva · S11, S12 y S13 · 3 de noviembre de 2026
+
+Cierres al final del domingo en Colombia. Esta revisión documental no modifica las notas ni las matrices anteriores. Las evidencias posteriores a cada plazo se mantienen separadas.
+
+### S11 · domingo 2026-10-18
+
+S11 documenta modos de fallo e idempotencia/reconciliación y conserva la decisión de no extraer Emparejamiento. Ya hay cuentas, reclamaciones, moderación y privacidad en el snapshot, por lo que los ADR anteriores deben leerse con sus enmiendas y no como descripción íntegra del estado actual.
+
+**URL de despliegue en README:** README documenta https://recobra.iscoutb.dev y cliente /app/, además de endpoints API.
+
+[Contraste, pendientes y fuentes](../revision-s11-cierre-2026-10-18.md#as-202620-recobra).
+
+### S12 · domingo 2026-10-25
+
+S12 añade diseño de caché e invalidación, reintentos y cola de eventos fallidos, y compara decisiones para identificar PostgreSQL y sus escrituras atómicas como el mayor costo de reversión. Separa las garantías de una sentencia de la consistencia eventual entre contextos.
+
+**URL de despliegue en README:** README documenta https://recobra.iscoutb.dev y cliente /app/, además de endpoints API.
+
+[Contraste, pendientes y fuentes](../revision-s12-cierre-2026-10-25.md#as-202620-recobra).
+
+### S13 · domingo 2026-11-01
+
+S13 modela amenazas sobre C4, incorpora controles de uso, cabeceras y privacidad, y deja revisadas las decisiones sobre dependencias con vencimiento. En el run exacto funcionan los jobs de seguridad y el Quality Gate, además de pruebas contra PostgreSQL y de cliente.
+
+**URL de despliegue en README:** README documenta https://recobra.iscoutb.dev y cliente /app/, además de endpoints API.
+
+[Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-recobra).

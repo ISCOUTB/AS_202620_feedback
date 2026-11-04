@@ -253,3 +253,32 @@ Desde el 1/nov integra tres commits: añade guard y roles a endpoints privilegia
 - Añadir URL exacta institucional en README, separando frontend/API, y evidencia fechada de la revisión actual sin invalidar la confirmación docente previa.
 
 [Fuentes y alcance](../seguimiento-s12-2026-11-02.md#elmapita) · [Issues](../seguimiento-issues-2026-11-02.md) · [URL y dominio](../seguimiento-despliegues-2026-11-02.md).
+
+
+## Revisión retrospectiva · S11, S12 y S13 · 3 de noviembre de 2026
+
+Cierres al final del domingo en Colombia. Esta revisión documental no modifica las notas ni las matrices anteriores. Las evidencias posteriores a cada plazo se mantienen separadas.
+
+### S11 · domingo 2026-10-18
+
+El snapshot de cierre conserva el trabajo previo de mapas/visor 3D y no contiene ADR-0008 ni la documentación específica de extracción añadida después. Por ello no corresponde atribuir a S11 los avances S12. La confirmación docente posterior de presentación y funcionamiento se conserva como evidencia de ese momento, no retroactiva.
+
+**URL de despliegue en README:** README no contiene URL pública concreta; tu-proyecto.supabase.co es ejemplo, no despliegue.
+
+[Contraste, pendientes y fuentes](../revision-s11-cierre-2026-10-18.md#as-202620-elmapita).
+
+### S12 · domingo 2026-10-25
+
+El snapshot fechado el 25/oct incorpora cache-aside con TTL, invalidación de POIs tras escritura, modelos 3D inmutables por versión y propagación de errores de base como 503. La tabla distingue garantías efectivas y reconoce POST no idempotente, lecturas sin snapshot y offline incompleto; ADR-0010 justifica PostgreSQL/PostGIS. Su integración exacta antes del cierre no queda acreditada: el CI disponible es del 28/oct.
+
+**URL de despliegue en README:** README no contiene URL pública concreta; tu-proyecto.supabase.co es ejemplo, no despliegue.
+
+[Contraste, pendientes y fuentes](../revision-s12-cierre-2026-10-25.md#as-202620-elmapita).
+
+### S13 · domingo 2026-11-01
+
+Llega al corte con mejoras de mapa 3D, selección, ubicación y doble pestaña/idiomas integradas en octubre, pero sin los cambios de seguridad del 2/nov. No se encontraron en este snapshot una entrega STRIDE/privacidad y análisis de dependencias S13 completos. Se conserva la confirmación docente de que presentó y funciona, sin convertirla en validación de seguridad.
+
+**URL de despliegue en README:** README no contiene URL pública concreta; tu-proyecto.supabase.co es ejemplo, no despliegue.
+
+[Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-elmapita).
