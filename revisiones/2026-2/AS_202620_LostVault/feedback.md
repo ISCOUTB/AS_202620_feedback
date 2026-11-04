@@ -226,3 +226,17 @@ S13 añade amenazas priorizadas, responsables, privacidad y revisión documental
 **URL de despliegue en README:** README sin URL pública concreta de solución; no confundir panel.iscoutb.dev con aplicación.
 
 [Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-lostvault).
+
+
+## Seguimiento actual · 4 de noviembre de 2026 · posterior al cierre de S13
+
+Actualización documental sin recalificar ni reabrir entregas cerradas.
+
+PR #25 integrada en main añade inicio de sesión JWT temporal de usuario único configurado, alta de objetos y borrado permitido solo a quien los reportó, con validación 422 y puerto configurable. El contrato OpenAPI se actualiza en la punta posterior. El almacenamiento sigue en memoria y DATABASE_URL se declara pero aún no se usa; no es autenticación multiusuario ni persistencia productiva. Tres workflows de la punta aprueban; el log Backend checks acredita 27 pruebas de API y 18 de mensajería. README raíz sigue sin URL pública concreta del proyecto; el panel de administración no equivale a frontend/API publicado. No se acredita despliegue ni aceptación funcional nueva.
+
+**Próximos pasos:**
+- Documentar en README URL institucional exacta y distinguir frontend/API; comprobar el recorrido de login, creación, reclamación y borrado en el despliegue.
+- Sustituir usuario único temporal y almacenamiento en memoria por autenticación y persistencia apropiadas, con pruebas y recuperación verificables.
+- Reconciliar instrucciones de api/README.md que aún remiten a api/.env.example, eliminado por la PR25.
+
+[Fuentes y alcance](../seguimiento-2026-11-04.md#lostvault) · [Issues](../seguimiento-issues-2026-11-04.md) · [URL y dominio](../seguimiento-despliegues-2026-11-04.md).

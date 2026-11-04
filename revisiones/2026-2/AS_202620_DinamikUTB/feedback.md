@@ -274,3 +274,19 @@ Amplía gestión e historial y documenta por separado frontend y API institucion
 **URL de despliegue en README:** README distingue frontend https://dinamikutb.iscoutb.dev y API https://api.dinamikutb.iscoutb.dev.
 
 [Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-dinamikutb).
+
+
+## Seguimiento actual · 4 de noviembre de 2026 · posterior al cierre de S13
+
+Actualización documental sin recalificar ni reabrir entregas cerradas.
+
+Cambia la ruta automática de publicación: deploy-pages se activa con push a master y publish-frontend-image queda solo manual. Pages construye y publica correctamente la punta actual (run 41697699386; log de publicación a las 18:53 UTC del 3/nov), con CNAME dinamikutb.iscoutb.dev y API institucional como destino. CI de master y auditoría pasan. Esto no corrige ni demuestra resuelto el antiguo permiso GHCR: el Compose de Dokploy continúa consumiendo FRONTEND_IMAGE y el workflow Pages no actualiza esa imagen ni dispara Dokploy. README mantiene web/API institucionales y afirma entorno Dokploy activo, por lo que conviene aclarar cuál sirve el dominio. La sonda web no entregó respuesta; una comprobación independiente posterior en navegador (4/nov, 13:01:39–13:02:12 UTC) mostró «404 page not found» en frontend y «upstream connect error…remote connection failure» en API/health. No se capturaron códigos HTTP ni hash servido: son errores observados en esa sesión, no prueba de caída global ni fallo del workflow Pages. La PR #40 actualiza checkout, sigue sin integrar y falla Sonar aunque backend/Flutter y auditoría pasan; no debe confundirse con el CI verde de master. No se atribuyen estos cambios posteriores al cierre a S13.
+
+**Próximos pasos:**
+- Unificar la documentación y el destino efectivo del dominio: aclarar frontend en Pages frente al servicio web de Dokploy que aún consume GHCR.
+- Verificar DNS/TLS, carga real de Flutter y comunicación con API, incluyendo login y recorrido de negocio; publicar evidencia de la revisión realmente servida.
+- Revisar el fallo Sonar de la PR #40 antes de integrarla; conservar la distinción con master aprobado.
+- Añadir evidencia de Quality Gate con resultado específico de esta revisión; mantener separados scan enviado y gate aprobado. Verificar concurrencia sobre PostgreSQL y restauración de respaldos antes de considerar cerrada la deuda.
+- Probar y definir tratamiento de JWT anteriores sin sig: el condicional actual solo comprueba la firma de contraseña cuando sig tiene valor; las sesiones legadas no quedan cubiertas por la nueva revocación.
+
+[Fuentes y alcance](../seguimiento-2026-11-04.md#dinamikutb) · [Issues](../seguimiento-issues-2026-11-04.md) · [URL y dominio](../seguimiento-despliegues-2026-11-04.md).

@@ -294,3 +294,17 @@ S13 presenta STRIDE aplicado a sus componentes, tratamiento mínimo de datos y u
 **URL de despliegue en README:** README documenta frontend https://pideutb.iscoutb.dev y API https://api-pideutb.iscoutb.dev.
 
 [Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-pideutb).
+
+
+## Seguimiento actual · 4 de noviembre de 2026 · posterior al cierre de S13
+
+Actualización documental sin recalificar ni reabrir entregas cerradas.
+
+Master y README no cambian. Se abren PR #41 (documentación y ADR del costo de separar el esquema de datos, destino master) y #42 (corrección propuesta del avance concurrente de pedidos), apilada sobre la rama de #41, no directamente sobre master. La lectura del diff confirma que #42 añade estado esperado al UPDATE y respuesta 409 si otra operación ganó; no se ejecutó una reproducción propia ni se acredita incidente productivo. Su CI de rama aprueba: log Python3.11 registra 589 pruebas aprobadas y 3 omitidas, más 107 con PostgreSQL. El job Sonar vuelve a omitir el análisis por ausencia de SONAR_TOKEN: verde no acredita Quality Gate de esa revisión. Las dos PR siguen abiertas, de modo que cambios, conteo 592 y afirmaciones del equipo no son implementación fusionada ni despliegue. Se conserva la presentación y despliegues confirmados por el docente.
+
+**Próximos pasos:**
+- Revisar e integrar en orden PR41 y PR42; verificar el destino efectivo de la segunda antes de fusionar.
+- Validar concurrencia en PostgreSQL y recorrido del mostrador sin retroceso de estado; documentar después la revisión realmente desplegada.
+- Distinguir la consulta pública de Sonar reportada por el equipo del scanner omitido en este CI; acreditar Quality Gate sobre la revisión evaluada.
+
+[Fuentes y alcance](../seguimiento-2026-11-04.md#pideutb) · [Issues](../seguimiento-issues-2026-11-04.md) · [URL y dominio](../seguimiento-despliegues-2026-11-04.md).

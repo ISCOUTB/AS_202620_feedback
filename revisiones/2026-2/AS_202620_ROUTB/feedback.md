@@ -245,3 +245,17 @@ S13 añade STRIDE sobre C4, prioridades, responsables, privacidad y un ADR de se
 **URL de despliegue en README:** README documenta API https://routb.iscoutb.dev; no URL de frontend web independiente acreditada.
 
 [Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-routb).
+
+
+## Seguimiento actual · 4 de noviembre de 2026 · posterior al cierre de S13
+
+Actualización documental sin recalificar ni reabrir entregas cerradas.
+
+PR #70/#71 integradas en master después del cierre S13: ajustes de Dependabot y aislamiento de pruebas con advisory lock PostgreSQL, coordenadas aisladas y OSRM simulado. El test anterior de 50 respuestas se reduce a una respuesta contractual por caso: no acredita rendimiento con 50 solicitudes. CI de la punta aprueba 108 pruebas y 2 de contrato, auditoría y construcción de imagen; Sonar sigue siendo un echo de reserva, sin scanner/Quality Gate real. Las 13 PR de dependencias antes abiertas figuran cerradas sin merge. PR #72 de rediseño visual se fusionó únicamente en Changes, no en master: no debe atribuirse a la versión principal ni al sitio. README mantiene routb.iscoutb.dev como API, sin nuevo frontend institucional acreditado. Se conserva avance confirmado por el docente, sin reabrir S13.
+
+**Próximos pasos:**
+- Integrar o validar por separado el rediseño que permanece en Changes y documentar qué revisión se despliega.
+- Restablecer medición reproducible de rendimiento si se pretende mantener la afirmación de 50 solicitudes; la prueba contractual aislada no la sustituye.
+- Activar y acreditar análisis Sonar real y comprobar recorrido funcional sobre despliegue institucional, separándolo de build de imagen y purga programada.
+
+[Fuentes y alcance](../seguimiento-2026-11-04.md#routb) · [Issues](../seguimiento-issues-2026-11-04.md) · [URL y dominio](../seguimiento-despliegues-2026-11-04.md).

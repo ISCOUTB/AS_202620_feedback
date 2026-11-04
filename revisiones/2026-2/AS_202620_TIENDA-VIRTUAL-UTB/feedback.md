@@ -239,3 +239,17 @@ Aporta amenazas priorizadas, inventario de privacidad y una revisión concreta d
 **URL de despliegue en README:** README publica URL sslip.io, no iscoutb.dev.
 
 [Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-tienda-virtual-utb).
+
+
+## Seguimiento actual · 4 de noviembre de 2026 · posterior al cierre de S13
+
+Actualización documental sin recalificar ni reabrir entregas cerradas.
+
+El cambio de documentación modifica únicamente docs/seguridad-amenazas-privacidad.md: retira la tabla de ocho brechas entre promesas de privacidad y código, y conserva el apartado de derechos e incidentes. No contiene cambios de implementación que acrediten subsanar consentimiento, supresión, rectificación o retención; eliminar la tabla no cierra esos pendientes. El nuevo run 41651885651 pasa frontend y backend, pero el job Sonar figura success con checkout, cobertura y análisis skipped, por lo que no demuestra un nuevo análisis ni Quality Gate. README mantiene frontend sslip.io externo y no documenta dominio institucional. Cero issues y trece PR fusionadas permanecen sin cambios.
+
+**Próximos pasos:**
+- Conservar trazabilidad de las brechas de privacidad y acreditar cada corrección en código y pruebas; la eliminación de la tabla no sustituye la solución.
+- Restablecer análisis Sonar efectivo y auditoría SCA reproducible bloqueante; separar resultado del job de pasos realmente ejecutados.
+- Documentar URL institucional en README y verificar respaldo/restauración y recorrido funcional de pedidos.
+
+[Fuentes y alcance](../seguimiento-2026-11-04.md#tienda-virtual-utb) · [Issues](../seguimiento-issues-2026-11-04.md) · [URL y dominio](../seguimiento-despliegues-2026-11-04.md).

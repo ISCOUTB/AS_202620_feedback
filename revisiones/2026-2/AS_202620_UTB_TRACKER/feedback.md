@@ -241,3 +241,18 @@ Al cierre conserva la base de S12 y mejoras de administración, pero no contiene
 **URL de despliegue en README:** README contiene instrucciones locales, sin URL pública de despliegue.
 
 [Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-utb-tracker).
+
+
+## Seguimiento actual · 4 de noviembre de 2026 · posterior al cierre de S13
+
+Actualización documental sin recalificar ni reabrir entregas cerradas.
+
+Avance sustantivo en la revisión actual: dependencias actualizadas (Starlette 1.3.1 y PyJWT 2.15.1), retiradas las exclusiones y continue-on-error de pip-audit, aislamiento de tests sin fallback a DATABASE_URL y notificador real Firebase Admin/SMTP en código. El run 41785768543 pasa 79 pruebas, incluida concurrencia PostgreSQL con una reserva aceptada y otra rechazada, y pip-audit informa cero vulnerabilidades conocidas. Sin embargo, el análisis Sonar falla por «Not authorized or project not found»: es un bloqueo de acceso/configuración antes de obtener Quality Gate; deploy de esa punta queda skipped. El run anterior 41784349055 sí registra checkout de la revisión anterior, migraciones, reinicio y /salud con database connected tras un reintento por 502, por lo que el 502 previo no se mantiene como caída vigente. Una lectura independiente actual también observa salud OK, sin hash servido ni validación funcional del flujo completo. README añade API nip.io externa, no iscoutb.dev. La entrega push al dispositivo y operación permanente del worker aún requieren evidencia específica.
+
+**Próximos pasos:**
+- Verificar correspondencia y permisos del token/proyecto/organización Sonar, actualizar la acción obsoleta y obtener análisis y Quality Gate reales antes de desplegar la punta actual.
+- Publicar URL de API bajo iscoutb.dev en README y diferenciarla de la app Android.
+- Demostrar worker persistente, envío FCM/SMTP real, reintento e idempotencia en dispositivo; el código y los tests no acreditan entrega de mensajes en producción.
+- Vincular revisión servida con el commit y completar recorrido funcional, más allá del endpoint de salud.
+
+[Fuentes y alcance](../seguimiento-2026-11-04.md#utb_tracker) · [Issues](../seguimiento-issues-2026-11-04.md) · [URL y dominio](../seguimiento-despliegues-2026-11-04.md).

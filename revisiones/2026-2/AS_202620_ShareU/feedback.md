@@ -225,3 +225,17 @@ S13 tiene el mismo hash de S12, sin nuevas incorporaciones en principal. No se e
 **URL de despliegue en README:** README solo contiene URLs locales, no despliegue público concreto ni iscoutb.dev.
 
 [Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-shareu).
+
+
+## Seguimiento actual · 4 de noviembre de 2026 · posterior al cierre de S13
+
+Actualización documental sin recalificar ni reabrir entregas cerradas.
+
+Desde el 3/nov se incorpora el sitio extraído en shareuwensite-main (archivos HTML/JS y configuración Firebase) y configuración Docker/Dokploy. Dockploy/compose.lab.yml prevé shareu.iscoutb.dev para web y api-shareu.iscoutb.dev para API, pero apunta a deploy/Dockerfile.api y ../../deploy/Dockerfile.web: el árbol de esa revisión solo contiene los Dockerfiles en Dockploy/. Es una discrepancia de rutas comprobada por lectura, no un despliegue fallido reproducido. Además el servicio web construye app/frontend (Next.js), no automáticamente el sitio HTML recién incorporado. README raíz conserva placeholders Vercel/Render, por lo que no documenta aún URL pública concreta. Workflow de la punta termina failure sin jobs devueltos; no permite atribuir la causa a Sonar ni acreditar publicación. Se mantienen 10 issues abiertas/10 cerradas y PR22/23 abiertas. En comprobación independiente de navegador del 4/nov 13:01:39–13:02:12 UTC, las raíces https://shareu.iscoutb.dev y https://api-shareu.iscoutb.dev mostraron «404 page not found». Es contenido visible, sin captura del código HTTP ni del hash servido; la raíz de la API no sustituye su endpoint de salud.
+
+**Próximos pasos:**
+- Unificar rutas reales de Dockerfiles y compose y precisar qué frontend se pretende publicar; validar construcción en el flujo del equipo.
+- Documentar en README las URLs institucionales exactas una vez configuradas, distinguiendo API/frontend y dominios previstos de servicio verificado.
+- Recuperar diagnóstico del workflow fallido sin jobs y registrar revisión desplegada, salud y recorrido funcional; no sustituirlo por una mera configuración o por CI omitido.
+
+[Fuentes y alcance](../seguimiento-2026-11-04.md#shareu) · [Issues](../seguimiento-issues-2026-11-04.md) · [URL y dominio](../seguimiento-despliegues-2026-11-04.md).

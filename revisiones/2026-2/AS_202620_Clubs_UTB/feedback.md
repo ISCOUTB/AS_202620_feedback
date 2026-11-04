@@ -247,3 +247,18 @@ Añade amenazas con probabilidad, impacto, responsables y estado, además de pri
 **URL de despliegue en README:** README solo muestra localhost; no URL pública concreta ni subdominio institucional documentado. ADR-0009 usa api-linkclub.iscoutb.dev en un ejemplo de archivo estático, pero no sustituye una URL de despliegue vigente documentada en README ni prueba funcionamiento.
 
 [Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-clubs-utb).
+
+
+## Seguimiento actual · 4 de noviembre de 2026 · posterior al cierre de S13
+
+Actualización documental sin recalificar ni reabrir entregas cerradas.
+
+Corrige backend/Dockerfile encadenando mkdir, chown y chmod mediante && en una sola instrucción RUN. Es una corrección de construcción, no una funcionalidad ni un despliegue acreditado. Las nuevas ejecuciones de backend-tests y contrato figuran failure y ambas devuelven cero jobs: no se puede afirmar que las pruebas hayan corrido ni atribuir la causa sin logs. README sigue sin URL pública concreta; cero issues reales y PR #1 pendiente. Los cambios son posteriores al cierre dominical de S13.
+
+**Próximos pasos:**
+- Revisar la validación de los workflows y obtener una ejecución verificable con jobs/logs, además de comprobar la construcción del contenedor.
+- Documentar URL exacta de frontend y API en iscoutb.dev dentro de README y demostrar la revisión publicada.
+- Corregir idempotencia por autor/operación, exposición de matrícula y permisos por rol; conciliar privacidad que aún describe subida sin sesión con el cambio implementado.
+- Completar decisiones y marcadores de privacidad/retención, y publicar URL exacta de frontend/API en README.
+
+[Fuentes y alcance](../seguimiento-2026-11-04.md#clubs_utb) · [Issues](../seguimiento-issues-2026-11-04.md) · [URL y dominio](../seguimiento-despliegues-2026-11-04.md).
