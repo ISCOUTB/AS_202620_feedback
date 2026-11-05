@@ -200,3 +200,9 @@ S13 conserva exactamente el mismo commit de S12. En el árbol revisado no se enc
 **URL de despliegue en README:** README documenta frontend https://mapsutb.web.app, externo a iscoutb.dev.
 
 [Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-mapsutb).
+
+## Seguimiento · 5 de noviembre de 2026
+
+Las sondas programadas pasan, sin cambios de código o publicación nueva. Publiquen el frontend institucional y mantengan pruebas de recarga/reintento del grafo. El README declara que no hay backend propio; la sonda no sustituye aceptación funcional.
+
+Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#mapsutb) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).

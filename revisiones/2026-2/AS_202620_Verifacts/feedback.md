@@ -275,3 +275,9 @@ Presenta amenazas priorizadas y privacidad, reconociendo como pendientes SSRF, l
 **URL de despliegue en README:** README publica HTTP sslip.io, no iscoutb.dev.
 
 [Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-verifacts).
+
+## Seguimiento · 5 de noviembre de 2026
+
+El README ya documenta el dominio institucional y CI acredita 66 pruebas y Quality Gate aprobado. Es un avance documental, sin cambios de implementación ni prueba viva de despliegue. Retiren las instrucciones antiguas que recomiendan HTTP/desactivar HTTPS y validen frontend, API y persistencia con revisión servida. Mantengan visibles los controles de seguridad pendientes.
+
+Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#verifacts) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).

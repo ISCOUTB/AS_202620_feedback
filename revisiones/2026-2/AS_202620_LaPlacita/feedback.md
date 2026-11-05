@@ -291,3 +291,9 @@ Al cierre S13 están integrados el modelo STRIDE, prioridades, responsables y es
 **URL de despliegue en README:** README documenta frontend https://laplacita-app.iscoutb.dev y API https://laplacita-test.iscoutb.dev/api/v1.
 
 [Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-laplacita).
+
+## Seguimiento · 5 de noviembre de 2026
+
+Se reconoce la cancelación por dueño, mejoras de imágenes/UX y despliegue automatizado con huella frontend coincidente en el log. CI y Quality Gate pasan; quedan ocho hallazgos moderados frontend. Actualicen el párrafo obsoleto de publicación manual y aporten validación funcional/mediciones. Azure, rate-limit, rotación y reunión STRIDE siguen pendientes; este run no volvió a desplegar backend.
+
+Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#laplacita) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).

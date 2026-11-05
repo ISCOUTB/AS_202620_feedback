@@ -282,3 +282,9 @@ Llega al corte con mejoras de mapa 3D, selección, ubicación y doble pestaña/i
 **URL de despliegue en README:** README no contiene URL pública concreta; tu-proyecto.supabase.co es ejemplo, no despliegue.
 
 [Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-elmapita).
+
+## Seguimiento · 5 de noviembre de 2026
+
+La revisión de hoy conserva la misma punta y los pendientes del seguimiento anterior. Completar migración de roles existentes a app_metadata y alinear el cliente Flutter, que aún lee userMetadata; verificar acceso administrativo después del cambio. Hacer vinculantes E2E y análisis relevante, resolver los 28 hallazgos y restaurar Sonar/Quality Gate; no presentar el verde agregado como todas las comprobaciones aprobadas.
+
+Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#elmapita) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).

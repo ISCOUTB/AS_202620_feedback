@@ -252,3 +252,9 @@ Entrega STRIDE concreto, priorización, responsables y riesgos residuales; agreg
 **URL de despliegue en README:** README documenta API https://gimnasio-utb.iscoutb.dev; no es evidencia de frontend web.
 
 [Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-gimnasioutb).
+
+## Seguimiento · 5 de noviembre de 2026
+
+La revisión de hoy conserva la misma punta y los pendientes del seguimiento anterior. Revisar PR #25 con pg 8.23.1 y dependency-cruiser 18.7.0 y comprobar regresión PostgreSQL real antes de integrarla; CI verde de la rama no acredita main. Configurar/rotar el token de operador como secreto en Dokploy y demostrar lecturas, rechazo sin credencial y escritura autorizada sobre el despliegue actual; no compartir el secreto en evidencia.
+
+Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#gimnasioutb) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).

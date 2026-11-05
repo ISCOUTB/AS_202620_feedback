@@ -277,3 +277,9 @@ Incluye modelo de amenazas priorizado, controles de sesiones, límites de uso, c
 **URL de despliegue en README:** README publica API https://taia-sistema.iscoutb.dev; no equivale a frontend web.
 
 [Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-taia--task-artificial-intelligence-assistant).
+
+## Seguimiento · 5 de noviembre de 2026
+
+La revisión de hoy conserva la misma punta y los pendientes del seguimiento anterior. Resolver los hallazgos de seguridad de Sonar y obtener Quality Gate OK de la revisión corregida; 340 pruebas exitosas no significan CI completo verde. Validar sesiones, renovación/revocación y consentimiento en la revisión servida, incluida migración de cuentas existentes; no seguir marcando T-02/T-08 como ausentes en código.
+
+Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#taia_-task-artificial-intelligence-assistant) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).

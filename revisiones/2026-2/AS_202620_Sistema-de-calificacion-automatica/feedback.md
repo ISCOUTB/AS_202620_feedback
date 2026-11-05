@@ -257,3 +257,9 @@ Presenta STRIDE ligado a C4, prioridades, responsables, estado de mitigaciones, 
 **URL de despliegue en README:** README publica frontend https://calificacion.iscoutb.dev y API https://api-calificacion.iscoutb.dev.
 
 [Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-sistema-de-calificacion-automatica).
+
+## Seguimiento · 5 de noviembre de 2026
+
+La revisión de hoy conserva la misma punta y los pendientes del seguimiento anterior. Vincular revision.txt y un recorrido frontend→API→worker a la revisión efectivamente servida; la evidencia incorporada describe una revisión del 30/oct. Resolver autenticación y autorización antes de cargar datos reales; conservar los límites declarados del presupuesto por proceso y validar concurrencia y recuperación.
+
+Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#sistema-de-calificacion-automatica) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).

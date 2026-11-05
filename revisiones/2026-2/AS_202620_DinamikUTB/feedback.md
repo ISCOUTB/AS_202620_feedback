@@ -290,3 +290,9 @@ Cambia la ruta automática de publicación: deploy-pages se activa con push a ma
 - Probar y definir tratamiento de JWT anteriores sin sig: el condicional actual solo comprueba la firma de contraseña cuando sig tiene valor; las sesiones legadas no quedan cubiertas por la nueva revocación.
 
 [Fuentes y alcance](../seguimiento-2026-11-04.md#dinamikutb) · [Issues](../seguimiento-issues-2026-11-04.md) · [URL y dominio](../seguimiento-despliegues-2026-11-04.md).
+
+## Seguimiento · 5 de noviembre de 2026
+
+La portada en Pages ya se ve y la publicación está acreditada. La API nueva aún mostró «404 page not found» en la comprobación de hoy; validen health, CORS y login. Las pruebas backend/Flutter pasan, pero el Quality Gate falla: corrijan también la afirmación de README. Ya no se mantiene el pendiente de imagen GHCR en Compose de laboratorio, porque esa ruta se retiró. La discrepancia 8080/80 solo corresponde a la alternativa Docker.
+
+Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#dinamikutb) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).

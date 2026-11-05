@@ -308,3 +308,9 @@ Master y README no cambian. Se abren PR #41 (documentación y ADR del costo de s
 - Distinguir la consulta pública de Sonar reportada por el equipo del scanner omitido en este CI; acreditar Quality Gate sobre la revisión evaluada.
 
 [Fuentes y alcance](../seguimiento-2026-11-04.md#pideutb) · [Issues](../seguimiento-issues-2026-11-04.md) · [URL y dominio](../seguimiento-despliegues-2026-11-04.md).
+
+## Seguimiento · 5 de noviembre de 2026
+
+La revisión de hoy conserva la misma punta y los pendientes del seguimiento anterior. Revisar e integrar en orden PR41 y PR42; verificar el destino efectivo de la segunda antes de fusionar. Validar concurrencia en PostgreSQL y recorrido del mostrador sin retroceso de estado; documentar después la revisión realmente desplegada.
+
+Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#pideutb) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).

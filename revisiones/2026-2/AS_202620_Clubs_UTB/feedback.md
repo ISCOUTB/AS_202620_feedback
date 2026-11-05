@@ -262,3 +262,9 @@ Corrige backend/Dockerfile encadenando mkdir, chown y chmod mediante && en una s
 - Completar decisiones y marcadores de privacidad/retención, y publicar URL exacta de frontend/API en README.
 
 [Fuentes y alcance](../seguimiento-2026-11-04.md#clubs_utb) · [Issues](../seguimiento-issues-2026-11-04.md) · [URL y dominio](../seguimiento-despliegues-2026-11-04.md).
+
+## Seguimiento · 5 de noviembre de 2026
+
+La revisión de hoy conserva la misma punta y los pendientes del seguimiento anterior. Revisar la validación de los workflows y obtener una ejecución verificable con jobs/logs, además de comprobar la construcción del contenedor. Documentar URL exacta de frontend y API en iscoutb.dev dentro de README y demostrar la revisión publicada.
+
+Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#clubs_utb) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).

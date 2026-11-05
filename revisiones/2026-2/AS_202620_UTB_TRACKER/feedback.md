@@ -256,3 +256,9 @@ Avance sustantivo en la revisión actual: dependencias actualizadas (Starlette 1
 - Vincular revisión servida con el commit y completar recorrido funcional, más allá del endpoint de salud.
 
 [Fuentes y alcance](../seguimiento-2026-11-04.md#utb_tracker) · [Issues](../seguimiento-issues-2026-11-04.md) · [URL y dominio](../seguimiento-despliegues-2026-11-04.md).
+
+## Seguimiento · 5 de noviembre de 2026
+
+La revisión de hoy conserva la misma punta y los pendientes del seguimiento anterior. Verificar correspondencia y permisos del token/proyecto/organización Sonar, actualizar la acción obsoleta y obtener análisis y Quality Gate reales antes de desplegar la punta actual. Publicar URL de API bajo iscoutb.dev en README y diferenciarla de la app Android.
+
+Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#utb_tracker) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).

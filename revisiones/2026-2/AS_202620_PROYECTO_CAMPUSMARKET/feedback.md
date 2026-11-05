@@ -274,3 +274,9 @@ S13 integra el modelo de amenazas con prioridad, estado y responsables; añade a
 **URL de despliegue en README:** README documenta API https://campusmarket.iscoutb.dev y frontend https://campusmarket.iscoutb.dev/app/.
 
 [Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-proyecto-campusmarket).
+
+## Seguimiento · 5 de noviembre de 2026
+
+La revisión de hoy conserva la misma punta y los pendientes del seguimiento anterior. Completar evidencia operativa pospromoción: healthy e ID de db, Image ID/configuración efectiva y montajes de api y db. El health público pasó en S10, pero no acredita esos datos internos. Acreditar copia externa independiente y restauración verificable de MySQL y fotografías; conservar abierto T13-10. Un dump dentro del contenedor o persistencia tras recreación en CI no equivalen a recuperación independiente.
+
+Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#proyecto_campusmarket) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).

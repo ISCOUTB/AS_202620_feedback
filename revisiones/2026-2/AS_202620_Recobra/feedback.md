@@ -234,3 +234,9 @@ S13 modela amenazas sobre C4, incorpora controles de uso, cabeceras y privacidad
 **URL de despliegue en README:** README documenta https://recobra.iscoutb.dev y cliente /app/, además de endpoints API.
 
 [Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-recobra).
+
+## Seguimiento · 5 de noviembre de 2026
+
+Las nuevas propuestas de dependencias aún no cambian master. Los CI verdes de las PR omiten Quality Gate y los scanners comprobados fallan por autorización con salida tolerada. Revisen compatibilidad y obtengan análisis real antes de dar ese punto por resuelto. Se mantiene la presentación confirmada por el docente.
+
+Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#recobra) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).

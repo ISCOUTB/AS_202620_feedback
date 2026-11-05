@@ -280,3 +280,9 @@ Añade idempotencia HTTP en memoria, amenazas priorizadas, responsables y revisi
 **URL de despliegue en README:** README documenta API https://inventrack.iscoutb.dev y alternativa Render; no frontend web independiente.
 
 [Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-inventrack).
+
+## Seguimiento · 5 de noviembre de 2026
+
+La revisión de hoy conserva la misma punta y los pendientes del seguimiento anterior. Acreditar el commit realmente servido después del redespliegue con /health y estados esperados, conservando separado el 503 preventivo de una caída; comprobar acceso interno autorizado sin revelar el token. Revisar las cuatro PR de dependencias, mantener hashes completos y ejecutar suite y auditoría antes de integrar.
+
+Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#inventrack) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).

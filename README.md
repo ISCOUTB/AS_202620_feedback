@@ -24,6 +24,14 @@ la versión que manda es la de ahí.
 
 Las revisiones separan evidencia del cierre y cambios posteriores, sin recalificar ni modificar matrices o planillas. Los seguimientos antiguos mantienen sus nombres y fechas: el rótulo S12 de los archivos posteriores al 25/oct no extiende el plazo ni los convierte en evidencia de esa semana.
 
+## Seguimiento actualizado · 5 de noviembre de 2026
+
+- [Avances y próximos pasos de los 23 proyectos](revisiones/2026-2/seguimiento-2026-11-05.md).
+- [Issues y motivos de cierre](revisiones/2026-2/seguimiento-issues-2026-11-05.md): 43 abiertas y 132 cerradas, excluyendo PR.
+- [README y despliegues](revisiones/2026-2/seguimiento-despliegues-2026-11-05.md): 13 con algún endpoint institucional; 5 con enlaces externos; 5 sin URL pública concreta.
+
+Seguimiento posterior al cierre S13. Dinamik publica frontend en Pages externo y documenta API institucional nueva; LaPlacita aporta trazabilidad de publicación frontend y Verifacts documenta dominio institucional. Se distinguen CI, publicación y comprobaciones vivas limitadas, sin cambiar calificaciones, planillas ni matrices históricas.
+
 ## Seguimiento actualizado · 4 de noviembre de 2026
 
 - [Avances y próximos pasos de los 23 proyectos](revisiones/2026-2/seguimiento-2026-11-04.md).

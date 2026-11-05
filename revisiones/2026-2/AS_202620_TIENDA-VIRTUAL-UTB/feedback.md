@@ -253,3 +253,9 @@ El cambio de documentación modifica únicamente docs/seguridad-amenazas-privaci
 - Documentar URL institucional en README y verificar respaldo/restauración y recorrido funcional de pedidos.
 
 [Fuentes y alcance](../seguimiento-2026-11-04.md#tienda-virtual-utb) · [Issues](../seguimiento-issues-2026-11-04.md) · [URL y dominio](../seguimiento-despliegues-2026-11-04.md).
+
+## Seguimiento · 5 de noviembre de 2026
+
+La revisión de hoy conserva la misma punta y los pendientes del seguimiento anterior. Conservar trazabilidad de las brechas de privacidad y acreditar cada corrección en código y pruebas; la eliminación de la tabla no sustituye la solución. Restablecer análisis Sonar efectivo y auditoría SCA reproducible bloqueante; separar resultado del job de pasos realmente ejecutados.
+
+Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#tienda-virtual-utb) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).

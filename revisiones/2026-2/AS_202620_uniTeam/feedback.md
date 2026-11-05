@@ -216,3 +216,9 @@ Tiene amenazas STRIDE por componente, prioridades, responsables, privacidad y AD
 **URL de despliegue en README:** README publica frontend/API DuckDNS, sin iscoutb.dev.
 
 [Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-uniteam).
+
+## Seguimiento · 5 de noviembre de 2026
+
+Las cuatro nuevas sondas vuelven a fallar sobre los destinos Render antiguos, no los DuckDNS documentados. Actualicen la configuración antes de interpretar disponibilidad; hagan bloqueante la auditoría y acrediten resolución de sus hallazgos.
+
+Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#uniteam) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).

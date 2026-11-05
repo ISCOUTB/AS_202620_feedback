@@ -235,3 +235,9 @@ Integra antes del cierre el modelo STRIDE, privacidad, autenticación administra
 **URL de despliegue en README:** README documenta frontend https://drift.iscoutb.dev y API bajo /api; Azure y Vercel son despliegues externos separados.
 
 [Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-drift).
+
+## Seguimiento · 5 de noviembre de 2026
+
+La revisión de hoy conserva la misma punta y los pendientes del seguimiento anterior. Completar casos contractuales autenticados para sincronización y ajustar tasa/aislamiento para ejecutar la lógica de búsqueda y compatibilidad, manteniendo pruebas negativas de 401/429. Demostrar configuración del token administrativo/proxy y recorrido frontend/API institucional de la revisión desplegada; Azure CD no sustituye esa aceptación.
+
+Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#drift) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).

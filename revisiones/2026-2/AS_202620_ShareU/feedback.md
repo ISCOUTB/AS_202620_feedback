@@ -239,3 +239,9 @@ Desde el 3/nov se incorpora el sitio extraído en shareuwensite-main (archivos H
 - Recuperar diagnóstico del workflow fallido sin jobs y registrar revisión desplegada, salud y recorrido funcional; no sustituirlo por una mera configuración o por CI omitido.
 
 [Fuentes y alcance](../seguimiento-2026-11-04.md#shareu) · [Issues](../seguimiento-issues-2026-11-04.md) · [URL y dominio](../seguimiento-despliegues-2026-11-04.md).
+
+## Seguimiento · 5 de noviembre de 2026
+
+La revisión de hoy conserva la misma punta y los pendientes del seguimiento anterior. Unificar rutas reales de Dockerfiles y compose y precisar qué frontend se pretende publicar; validar construcción en el flujo del equipo. Documentar en README las URLs institucionales exactas una vez configuradas, distinguiendo API/frontend y dominios previstos de servicio verificado.
+
+Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#shareu) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).

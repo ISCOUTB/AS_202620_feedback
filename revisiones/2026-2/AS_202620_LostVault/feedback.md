@@ -240,3 +240,9 @@ PR #25 integrada en main añade inicio de sesión JWT temporal de usuario único
 - Reconciliar instrucciones de api/README.md que aún remiten a api/.env.example, eliminado por la PR25.
 
 [Fuentes y alcance](../seguimiento-2026-11-04.md#lostvault) · [Issues](../seguimiento-issues-2026-11-04.md) · [URL y dominio](../seguimiento-despliegues-2026-11-04.md).
+
+## Seguimiento · 5 de noviembre de 2026
+
+La revisión de hoy conserva la misma punta y los pendientes del seguimiento anterior. Documentar en README URL institucional exacta y distinguir frontend/API; comprobar el recorrido de login, creación, reclamación y borrado en el despliegue. Sustituir usuario único temporal y almacenamiento en memoria por autenticación y persistencia apropiadas, con pruebas y recuperación verificables.
+
+Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#lostvault) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).

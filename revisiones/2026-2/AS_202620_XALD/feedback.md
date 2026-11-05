@@ -255,3 +255,9 @@ Entrega STRIDE relacionado con conectores/C4, amenazas priorizadas, privacidad y
 **URL de despliegue en README:** README publica API https://xald-backend.onrender.com, no frontend ni iscoutb.dev.
 
 [Contraste, pendientes y fuentes](../revision-s13-cierre-2026-11-01.md#as-202620-xald).
+
+## Seguimiento · 5 de noviembre de 2026
+
+La revisión de hoy conserva la misma punta y los pendientes del seguimiento anterior. Validar controles y sincronización en dispositivo con trazabilidad a la revisión servida; health 200 no sustituye la validación del deploy ni del flujo completo. Mantener pendientes ejecutor real de procesarPendientes y persistencia de cola/deduplicación hasta aportar evidencia; no inferirlos de la entrega de seguridad.
+
+Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#xald) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).

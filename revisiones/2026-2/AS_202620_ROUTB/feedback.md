@@ -259,3 +259,9 @@ PR #70/#71 integradas en master después del cierre S13: ajustes de Dependabot y
 - Activar y acreditar análisis Sonar real y comprobar recorrido funcional sobre despliegue institucional, separándolo de build de imagen y purga programada.
 
 [Fuentes y alcance](../seguimiento-2026-11-04.md#routb) · [Issues](../seguimiento-issues-2026-11-04.md) · [URL y dominio](../seguimiento-despliegues-2026-11-04.md).
+
+## Seguimiento · 5 de noviembre de 2026
+
+La nueva purga programada pasa, pero no acredita publicación nueva. El rediseño sigue en Changes, no master; validen su integración y revisión servida por separado. Mantengan pendiente Sonar real y medición de carga si afirman 50 solicitudes. Se conserva el avance entregado confirmado por el docente.
+
+Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#routb) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).
