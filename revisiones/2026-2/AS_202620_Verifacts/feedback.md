@@ -281,3 +281,18 @@ Presenta amenazas priorizadas y privacidad, reconociendo como pendientes SSRF, l
 El README ya documenta el dominio institucional y CI acredita 66 pruebas y Quality Gate aprobado. Es un avance documental, sin cambios de implementación ni prueba viva de despliegue. Retiren las instrucciones antiguas que recomiendan HTTP/desactivar HTTPS y validen frontend, API y persistencia con revisión servida. Mantengan visibles los controles de seguridad pendientes.
 
 Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#verifacts) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).
+
+
+
+## Seguimiento actual · 6 de noviembre de 2026 · posterior al cierre de S13
+
+Actualización documental sin recalificar ni reabrir entregas.
+
+El nuevo commit modifica únicamente docs/arc42/11-riesgos-y-deuda-tecnica.md y añade docs/entregas/entrega-medicion-escenario-revision-pares.md. Documenta mediciones y observaciones de pares, y marca TLS/arranque en frío como mitigados. Son declaraciones documentales: no se añadieron muestras crudas, scripts, código de producto, infraestructura ni pruebas en ese commit. No se da por verificada independientemente la medición de Dokploy ni el cierre de los riesgos. README y dominio institucional se conservan. Tests confirma 66 passed y 3 warnings; build y smoke de imagen pasan, Sonar ejecuta análisis y confirma Quality Gate PASSED en la misma punta. CI no acredita publicación. Persisten las mitigaciones pendientes de SSRF, historial global, tamaño, timeout e idempotencia/WAL.
+
+**Próximos pasos:**
+- Adjuntar muestras crudas, fecha, revisión servida y comando reproducible para la medición de Dokploy; diferenciar medición de inferencia y evidencia de cada hallazgo de pares.
+- Verificar dominio/TLS, frontend/API y persistencia, y conciliar las instrucciones heredadas de HTTP en docs/despliegue.md.
+- Implementar y probar las mitigaciones pendientes de SSRF, privacidad del historial, tamaño, timeout e idempotencia/WAL; aportar SCA reproducible.
+
+[Fuentes y alcance](../seguimiento-2026-11-06.md#verifacts).

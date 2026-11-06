@@ -24,6 +24,14 @@ la versión que manda es la de ahí.
 
 Las revisiones separan evidencia del cierre y cambios posteriores, sin recalificar ni modificar matrices o planillas. Los seguimientos antiguos mantienen sus nombres y fechas: el rótulo S12 de los archivos posteriores al 25/oct no extiende el plazo ni los convierte en evidencia de esa semana.
 
+## Seguimiento actualizado · 6 de noviembre de 2026
+
+- [Avances y próximos pasos de los 23 proyectos](revisiones/2026-2/seguimiento-2026-11-06.md).
+- [Issues y motivos](revisiones/2026-2/seguimiento-issues-2026-11-06.md): 43 abiertas y 132 cerradas, excluyendo PR.
+- [README y despliegues](revisiones/2026-2/seguimiento-despliegues-2026-11-06.md): 13 con endpoint institucional, 5 externos y 5 sin URL concreta.
+
+Seguimiento documental sin cambiar notas, planillas ni matrices históricas. La comprobación viva de Verifacts se limita a portada y salud; no acredita aceptación integral.
+
 ## Seguimiento actualizado · 5 de noviembre de 2026
 
 - [Avances y próximos pasos de los 23 proyectos](revisiones/2026-2/seguimiento-2026-11-05.md).
@@ -539,5 +547,6 @@ en la conversación.
 Dos reglas de forma que evitan que el kit envejezca mal: **no se escriben pesos ni fechas**, que
 ya viven en el aula y se desincronizan en cuanto cambian; y las comprobaciones que se repiten en
 todas las entregas están en el contrato, no copiadas en cada ficha.
+
 
 

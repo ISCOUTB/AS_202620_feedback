@@ -280,3 +280,22 @@ S13 integra el modelo de amenazas con prioridad, estado y responsables; añade a
 La revisión de hoy conserva la misma punta y los pendientes del seguimiento anterior. Completar evidencia operativa pospromoción: healthy e ID de db, Image ID/configuración efectiva y montajes de api y db. El health público pasó en S10, pero no acredita esos datos internos. Acreditar copia externa independiente y restauración verificable de MySQL y fotografías; conservar abierto T13-10. Un dump dentro del contenedor o persistencia tras recreación en CI no equivalen a recuperación independiente.
 
 Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#proyecto_campusmarket) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).
+
+
+
+## Seguimiento actual · 6 de noviembre de 2026 · posterior al cierre de S13
+
+Actualización documental sin recalificar ni reabrir entregas.
+
+PR92 se fusionó en master el 6/nov a las 00:38:57 UTC. Integra instrumentación aislada de EC-01, resultados versionados, documentación y corrección de exportación de imagen en CI; no modifica código funcional ni acredita despliegue nuevo. El README enlaza el ensayo y mantiene explícitos sus límites. Los cinco workflows de la nueva punta terminan success, pero Compose distingue job compose aprobado de s14-ec01 omitido: no se repitió la medición EC-01 en este push. El ensayo HTTP/MySQL versionado usa 1.000 publicaciones sintéticas, mientras la experiencia visible Flutter sigue no concluyente. La revisión auténtica entre pares continúa pendiente; no se transforma ese estado en calificación. S10 sí vuelve a comprobar el endpoint público con 58 solicitudes entre 00:39:12 y 00:39:29 UTC del 6/nov: sus nueve checks son true, el health responde 200 y la revisión observada continúa siendo la revisión citada en el informe, distinta del HEAD de orquestación. Esta es evidencia del workflow, no prueba propia nueva ni aceptación integral de UI.
+
+**Próximos pasos:**
+- Resolver la preparación/observación del estímulo Flutter y contrastar respuesta visible sin equiparar timeout del observador con latencia de la API.
+- Recibir y documentar revisión auténtica entre pares con origen, observación, respuesta y estado, sin inventarla.
+- Conservar separados SHA de orquestación, imagen/runtime y revisión pública; job s14-ec01 omitido no demuestra nueva medición.
+- Completar evidencia operativa pospromoción: healthy e ID de db, Image ID/configuración efectiva y montajes de api y db. El health público pasó en S10, pero no acredita esos datos internos.
+- Acreditar copia externa independiente y restauración verificable de MySQL y fotografías; conservar abierto T13-10. Un dump dentro del contenedor o persistencia tras recreación en CI no equivalen a recuperación independiente.
+- Documentar rollback productivo solo si se realiza de forma autorizada y con recuperación segura: actualmente se acredita ensayo sintético, no ejecución productiva.
+- Aportar evidencia accesible y redactada de un anuncio nuevo con universidad declarada no nula y, para aceptación UI, persistencia de Favoritos tras nuevo login. No convertir afiliación declarada en identidad verificada.
+
+[Fuentes y alcance](../seguimiento-2026-11-06.md#proyecto_campusmarket).
