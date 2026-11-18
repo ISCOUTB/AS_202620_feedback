@@ -270,3 +270,9 @@ Integra catálogo de salones, disponibilidad y equipos fijos, permisos por rol y
 **Siguiente comprobación:** Comprobar catálogo, roles y flujo móvil en la versión servida; conciliar issues #10–#13 abiertas con implementación fusionada y documentar subdominio institucional.
 
 [Fuentes, estado de CI y límites de verificación](../seguimiento-2026-11-17.md). Sin nuevas calificaciones ni cambio de matrices o planillas.
+
+## Seguimiento documental S13, S14 y S15 · 17 de noviembre de 2026
+
+La [reconstrucción factual de este proyecto](../revision-semanas-14-15-2026-11-17.md#utb_tracker) distingue el corte S14 (8/nov, 23:59:59 Colombia) del seguimiento S15 (15/nov, 23:59:59 Colombia). S15 no se presenta como entrega oficial. Los [estados de issues y PR](../revision-issues-pr-s14-s15.md) se separan del seguimiento actual. No se modifican calificaciones ni matrices de evaluación.
+
+La [actualización factual S13](../actualizacion-s13-2026-11-17.md) concilia fuentes y conserva el corte del 1/nov sin sobrescribir la revisión histórica.

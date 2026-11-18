@@ -14,6 +14,15 @@ Este material vive en [`ISCOUTB/AS_202620_feedback`](https://github.com/ISCOUTB/
 abierto para que puedas leerlo, citarlo y proponer cambios. Si tienes delante una copia descargada,
 la versión que manda es la de ahí.
 
+## Semanas 13, 14 y 15 · seguimiento documental
+
+- **S13:** [actualización y conciliación al cierre del 1/nov](revisiones/2026-2/actualizacion-s13-2026-11-17.md), con el informe histórico preservado.
+- **S14:** [evidencia hasta el 8/nov](revisiones/2026-2/revision-semanas-14-15-2026-11-17.md), separada de avances posteriores.
+- **S15:** [seguimiento hasta el 15/nov](revisiones/2026-2/revision-semanas-14-15-2026-11-17.md), sin crear una entrega oficial ni una nueva rúbrica.
+- [Issues y PR reconstruidos por corte](revisiones/2026-2/revision-issues-pr-s14-s15.md).
+
+Documentación factual de los 23 proyectos; no es publicación de notas ni cierre automático de semanas. Matrices, planillas y calificaciones permanecen intactas.
+
 ## Revisión ordenada de S11, S12 y S13 · 3 de noviembre de 2026
 
 [Índice cronológico de los 23 proyectos](revisiones/2026-2/revision-semanas-11-13-2026-11-03.md).

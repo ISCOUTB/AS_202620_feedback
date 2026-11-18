@@ -241,3 +241,9 @@ La rama principal no cambia respecto al corte S12. No se acredita nueva entrega 
 La revisión de hoy conserva la misma punta y los pendientes del seguimiento anterior. Corregir el empaquetado/import de test_simulador y reejecutar CI completo de la PR, incluidos contrato y build, antes de integrar. Conciliar las dos fallas de salud/métricas declaradas localmente con el resultado reproducible de CI; adjuntar auditoría fechada posterior al cambio de pytest.
 
 Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#enagenda) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).
+
+## Seguimiento documental S13, S14 y S15 · 17 de noviembre de 2026
+
+La [reconstrucción factual de este proyecto](../revision-semanas-14-15-2026-11-17.md#enagenda) distingue el corte S14 (8/nov, 23:59:59 Colombia) del seguimiento S15 (15/nov, 23:59:59 Colombia). S15 no se presenta como entrega oficial. Los [estados de issues y PR](../revision-issues-pr-s14-s15.md) se separan del seguimiento actual. No se modifican calificaciones ni matrices de evaluación.
+
+La [actualización factual S13](../actualizacion-s13-2026-11-17.md) concilia fuentes y conserva el corte del 1/nov sin sobrescribir la revisión histórica.
