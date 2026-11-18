@@ -261,3 +261,11 @@ Entrega STRIDE relacionado con conectores/C4, amenazas priorizadas, privacidad y
 La revisión de hoy conserva la misma punta y los pendientes del seguimiento anterior. Validar controles y sincronización en dispositivo con trazabilidad a la revisión servida; health 200 no sustituye la validación del deploy ni del flujo completo. Mantener pendientes ejecutor real de procesarPendientes y persistencia de cola/deduplicación hasta aportar evidencia; no inferirlos de la entrega de seguridad.
 
 Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#xald) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).
+
+## Seguimiento documental · 17 de noviembre de 2026
+
+Integra sincronización remota PostgreSQL, worker diferido y cliente IA; añade cambios de validación/límites del backend y pruebas, además de ajustes Gradle y ofuscación release. PR #45 fusionada tiene destino experimental, no es la prueba de integración a master; la punta master se verificó separadamente.
+
+**Siguiente comprobación:** Documentar host institucional y demostrar sincronización, persistencia y recuperación desde APK con la revisión servida, sin exponer claves.
+
+[Fuentes, estado de CI y límites de verificación](../seguimiento-2026-11-17.md). Sin nuevas calificaciones ni cambio de matrices o planillas.

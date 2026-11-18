@@ -283,3 +283,11 @@ Incluye modelo de amenazas priorizado, controles de sesiones, límites de uso, c
 La revisión de hoy conserva la misma punta y los pendientes del seguimiento anterior. Resolver los hallazgos de seguridad de Sonar y obtener Quality Gate OK de la revisión corregida; 340 pruebas exitosas no significan CI completo verde. Validar sesiones, renovación/revocación y consentimiento en la revisión servida, incluida migración de cuentas existentes; no seguir marcando T-02/T-08 como ausentes en código.
 
 Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#taia_-task-artificial-intelligence-assistant) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).
+
+## Seguimiento documental · 17 de noviembre de 2026
+
+La única diferencia respecto al corte anterior es docs/evidencia_s14.md, agregado el 8/nov: resume mediciones preexistentes. No se reproduce aquí su autoevaluación ni sus notas. El documento distingue extracción del modelo de persistencia, y latencia del modelo de extremo a extremo; además cita como revisado un commit anterior a la punta actual. No hay nuevo run para la revisión indicada en las ejecuciones consultadas: el último CI visible sigue siendo failure sobre la revisión indicada (1/nov), con CD skipped. No se atribuye ese run a la nueva punta. Se conserva la confirmación docente de presentación y funcionamiento, no una validación nueva.
+
+**Siguiente comprobación:** Obtener CI de la revisión actual y comprobar medición del recorrido completo y persistencia, sin convertir métricas parciales en aceptación integral.
+
+[Fuentes, estado de CI y límites de verificación](../seguimiento-2026-11-17.md). Sin nuevas calificaciones ni cambio de matrices o planillas.

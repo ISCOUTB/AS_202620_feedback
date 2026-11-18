@@ -246,3 +246,11 @@ PR #25 integrada en main añade inicio de sesión JWT temporal de usuario único
 La revisión de hoy conserva la misma punta y los pendientes del seguimiento anterior. Documentar en README URL institucional exacta y distinguir frontend/API; comprobar el recorrido de login, creación, reclamación y borrado en el despliegue. Sustituir usuario único temporal y almacenamiento en memoria por autenticación y persistencia apropiadas, con pruebas y recuperación verificables.
 
 Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#lostvault) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).
+
+## Seguimiento documental · 17 de noviembre de 2026
+
+PR26 fusionado incorpora scripts, resultados crudos y medición del Escenario 4 sobre Vercel, más riesgos R11–R13. El equipo reporta diferencias entre primera ráfaga y estado estable, y reconoce sesgo de un solo navegador. Se leyó evidencia, no se repitió carga. Flutter checks, Backend checks y Build pasan en HEAD.
+
+**Siguiente comprobación:** Documentar URLs frontend/API en README bajo iscoutb.dev; repetir medición con instrumento independiente y comprobar caché/escalado.
+
+[Fuentes, estado de CI y límites de verificación](../seguimiento-2026-11-17.md). Sin nuevas calificaciones ni cambio de matrices o planillas.

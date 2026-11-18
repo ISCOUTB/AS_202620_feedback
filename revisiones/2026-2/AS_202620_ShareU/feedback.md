@@ -245,3 +245,11 @@ Desde el 3/nov se incorpora el sitio extraído en shareuwensite-main (archivos H
 La revisión de hoy conserva la misma punta y los pendientes del seguimiento anterior. Unificar rutas reales de Dockerfiles y compose y precisar qué frontend se pretende publicar; validar construcción en el flujo del equipo. Documentar en README las URLs institucionales exactas una vez configuradas, distinguiendo API/frontend y dominios previstos de servicio verificado.
 
 Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#shareu) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).
+
+## Seguimiento documental · 17 de noviembre de 2026
+
+Se fusionaron PR #23 (división de arc42) y #29 (PyYAML). La punta incorpora cambios en autenticación de escritura, outbox, búsqueda/caché, documentación, scripts de medición y Compose local. El workflow Tests la revisión indicada pasa pruebas/contrato, medición y auditorías; SonarCloud quedó skipped. La medición publicada se identifica como local ASGI, no rendimiento demostrado del despliegue. Siguen seis PR abiertas, incluida #22, aunque ya existe CI verde en master. La issue #20 continúa abierta pese al merge de #23: estado de issue e implementación no son equivalentes.
+
+**Siguiente comprobación:** Comprobar publicación y revisión servida de los dos dominios; habilitar Sonar; reconciliar issues con cambios fusionados. Revisar referencia Dockploy/compose.lab.yml en Compose: el árbol contiene compose.lab.yaml.
+
+[Fuentes, estado de CI y límites de verificación](../seguimiento-2026-11-17.md). Sin nuevas calificaciones ni cambio de matrices o planillas.

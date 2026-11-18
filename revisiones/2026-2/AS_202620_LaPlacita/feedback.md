@@ -297,3 +297,11 @@ Al cierre S13 están integrados el modelo STRIDE, prioridades, responsables y es
 Se reconoce la cancelación por dueño, mejoras de imágenes/UX y despliegue automatizado con huella frontend coincidente en el log. CI y Quality Gate pasan; quedan ocho hallazgos moderados frontend. Actualicen el párrafo obsoleto de publicación manual y aporten validación funcional/mediciones. Azure, rate-limit, rotación y reunión STRIDE siguen pendientes; este run no volvió a desplegar backend.
 
 Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#laplacita) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).
+
+## Seguimiento documental · 17 de noviembre de 2026
+
+PR47 integra correcciones de cabeceras/topes y pruebas de laboratorio; PR48 integra documentación y muestras crudas de rendimiento/QoS, incluidos fallos, recuperación PostgreSQL y red degradada simulada. Laboratorio Podman aislado, no Dokploy ni BD del equipo. CI punta aprueba backend, frontend, auditoría/SBOM, contrato y análisis Sonar. No acredita nueva publicación ni QoS productiva.
+
+**Siguiente comprobación:** Mantener separación laboratorio/producción y comprobar versión servida; revisar PR de dependencias abiertos.
+
+[Fuentes, estado de CI y límites de verificación](../seguimiento-2026-11-17.md). Sin nuevas calificaciones ni cambio de matrices o planillas.

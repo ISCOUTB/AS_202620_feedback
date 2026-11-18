@@ -268,3 +268,11 @@ Corrige backend/Dockerfile encadenando mkdir, chown y chmod mediante && en una s
 La revisión de hoy conserva la misma punta y los pendientes del seguimiento anterior. Revisar la validación de los workflows y obtener una ejecución verificable con jobs/logs, además de comprobar la construcción del contenedor. Documentar URL exacta de frontend y API en iscoutb.dev dentro de README y demostrar la revisión publicada.
 
 Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#clubs_utb) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).
+
+## Seguimiento documental · 17 de noviembre de 2026
+
+Cambios en API y tests de UUID, login/registro, publicación, seguridad e idempotencia, ajustes de Docker y pantallas móviles de eventos. Los workflows que fallaban en el corte anterior ahora pasan.
+
+**Siguiente comprobación:** Contrastar registro/login y permisos con el servicio publicado, y comprobar pantallas móviles en dispositivo; mantener documentación alineada con contrato y esquema desplegados.
+
+[Fuentes, estado de CI y límites de verificación](../seguimiento-2026-11-17.md). Sin nuevas calificaciones ni cambio de matrices o planillas.

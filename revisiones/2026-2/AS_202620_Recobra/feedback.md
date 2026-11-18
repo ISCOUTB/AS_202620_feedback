@@ -240,3 +240,11 @@ S13 modela amenazas sobre C4, incorpora controles de uso, cabeceras y privacidad
 Las nuevas propuestas de dependencias aún no cambian master. Los CI verdes de las PR omiten Quality Gate y los scanners comprobados fallan por autorización con salida tolerada. Revisen compatibilidad y obtengan análisis real antes de dar ese punto por resuelto. Se mantiene la presentación confirmada por el docente.
 
 Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#recobra) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).
+
+## Seguimiento documental · 17 de noviembre de 2026
+
+Desde el corte anterior cambian cinco archivos documentales: README enlaza docs/medicion-s14.md, con datos versionados en docs/evidencia/medicion-s14-dokploy.json; arc42 añade observaciones externas RV-01 a RV-15. Es evidencia reportada por el equipo, no una repetición propia. El run de master la revisión indicada pasa backend, Flutter, adapters contra PostgreSQL, respaldo/restauración, seguridad y, a diferencia del antecedente, el paso de análisis y el Quality Gate están ejecutados con success. Esto no acredita despliegue nuevo. Hay 11 PR abiertas de dependencias; #11 cerró sin merge y fue sustituida por #13.
+
+**Siguiente comprobación:** Mantener separación entre medición documentada, CI y aceptación del servicio; revisar dependencias propuestas y verificar runtime/despliegue sin dar por integradas las PR abiertas.
+
+[Fuentes, estado de CI y límites de verificación](../seguimiento-2026-11-17.md). Sin nuevas calificaciones ni cambio de matrices o planillas.

@@ -245,3 +245,11 @@ Entrega amenazas priorizadas, privacidad y análisis de dependencias con decisio
 La revisión de hoy conserva la misma punta y los pendientes del seguimiento anterior. Redesplegar mediante el flujo Dokploy y demostrar frontend, API y sincronización entre dispositivos; publicar imagen Docker Hub no acredita la revisión servida. Implementar y probar controles de acceso por sala, cuotas de subida y límites de tasa; acompañar borrado/caducidad con una política y aviso que no prometan supresión ya operativa.
 
 Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#audioshare) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).
+
+## Seguimiento documental · 17 de noviembre de 2026
+
+Se incorporan códigos de sala de seis dígitos, caducidad, llave de emisor, control de intentos, expulsión/salida, eventos y seek, junto con cliente Flutter actualizado. Se añade workflow APK y corrección compileSdk 36. docs/despliegue.md registra incidente transitorio de almacenamiento y pruebas del equipo; no son pruebas propias.
+
+**Siguiente comprobación:** Acreditar SHA servido y contrastar README con redespliegue; verificar caducidad, IP detrás de proxy y sincronización/audio entre dispositivos. APK compilado no equivale a prueba en dispositivo.
+
+[Fuentes, estado de CI y límites de verificación](../seguimiento-2026-11-17.md). Sin nuevas calificaciones ni cambio de matrices o planillas.

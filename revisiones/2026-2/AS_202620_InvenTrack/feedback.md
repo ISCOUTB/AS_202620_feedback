@@ -286,3 +286,11 @@ Añade idempotencia HTTP en memoria, amenazas priorizadas, responsables y revisi
 La revisión de hoy conserva la misma punta y los pendientes del seguimiento anterior. Acreditar el commit realmente servido después del redespliegue con /health y estados esperados, conservando separado el 503 preventivo de una caída; comprobar acceso interno autorizado sin revelar el token. Revisar las cuatro PR de dependencias, mantener hashes completos y ejecutar suite y auditoría antes de integrar.
 
 Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#inventrack) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).
+
+## Seguimiento documental · 17 de noviembre de 2026
+
+Añade frontend Flutter/plataformas móviles, sincronización de catálogo y correcciones de contrato/router; configura token interno y separa datos de negocio. README aclara que la punta requiere redespliegue/verificación pública y mantiene datos de negocio deshabilitados hasta completar autenticación/autorización. CI aprueba tests, análisis Sonar, contrato y pip-audit; ejecutar análisis no equivale a verificar Quality Gate.
+
+**Siguiente comprobación:** Comprobar redespliegue y restricciones de acceso antes de habilitar datos; documentar interfaz Flutter separada de las API.
+
+[Fuentes, estado de CI y límites de verificación](../seguimiento-2026-11-17.md). Sin nuevas calificaciones ni cambio de matrices o planillas.

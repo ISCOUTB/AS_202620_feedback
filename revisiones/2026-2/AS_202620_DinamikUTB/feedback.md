@@ -296,3 +296,11 @@ Cambia la ruta automática de publicación: deploy-pages se activa con push a ma
 La portada en Pages ya se ve y la publicación está acreditada. La API nueva aún mostró «404 page not found» en la comprobación de hoy; validen health, CORS y login. Las pruebas backend/Flutter pasan, pero el Quality Gate falla: corrijan también la afirmación de README. Ya no se mantiene el pendiente de imagen GHCR en Compose de laboratorio, porque esa ruta se retiró. La discrepancia 8080/80 solo corresponde a la alternativa Docker.
 
 Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#dinamikutb) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).
+
+## Seguimiento documental · 17 de noviembre de 2026
+
+Fija Flutter 3.47.5 en CI/Pages, actualiza dependencias, retira servicio web del Compose y añade usuario de demostración administrador con prueba de creación. PR40 cerrado sin merge; aparecen PR49–51 abiertas.
+
+**Siguiente comprobación:** Resolver Quality Gate y acreditar publicación exacta del frontend y API; probar login/CORS y documentar frontend institucional si se exige web bajo iscoutb.dev.
+
+[Fuentes, estado de CI y límites de verificación](../seguimiento-2026-11-17.md). Sin nuevas calificaciones ni cambio de matrices o planillas.

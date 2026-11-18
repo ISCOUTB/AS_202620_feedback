@@ -24,6 +24,14 @@ la versión que manda es la de ahí.
 
 Las revisiones separan evidencia del cierre y cambios posteriores, sin recalificar ni modificar matrices o planillas. Los seguimientos antiguos mantienen sus nombres y fechas: el rótulo S12 de los archivos posteriores al 25/oct no extiende el plazo ni los convierte en evidencia de esa semana.
 
+## Seguimiento actualizado · 17 de noviembre de 2026
+
+- [Avances de los 23 proyectos](revisiones/2026-2/seguimiento-2026-11-17.md).
+- [Issues y motivos](revisiones/2026-2/seguimiento-issues-2026-11-17.md): 41 abiertas y 138 cerradas, excluyendo PR.
+- [README y despliegues](revisiones/2026-2/seguimiento-despliegues-2026-11-17.md): 15 con endpoint institucional, 5 externos y 3 sin URL concreta.
+
+Seguimiento factual; se distinguen API, frontend, CI, publicación y comprobaciones vivas limitadas. Sin cambios de calificaciones, planillas ni matrices históricas.
+
 ## Seguimiento actualizado · 6 de noviembre de 2026
 
 - [Avances y próximos pasos de los 23 proyectos](revisiones/2026-2/seguimiento-2026-11-06.md).

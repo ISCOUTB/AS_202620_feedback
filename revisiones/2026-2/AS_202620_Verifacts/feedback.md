@@ -296,3 +296,11 @@ El nuevo commit modifica únicamente docs/arc42/11-riesgos-y-deuda-tecnica.md y 
 - Implementar y probar las mitigaciones pendientes de SSRF, privacidad del historial, tamaño, timeout e idempotencia/WAL; aportar SCA reproducible.
 
 [Fuentes y alcance](../seguimiento-2026-11-06.md#verifacts).
+
+## Seguimiento documental · 17 de noviembre de 2026
+
+Único cambio desde el corte previo: convierte el endpoint POST /analysis en enlace Markdown en README. No cambia código funcional ni infraestructura; no se atribuye nueva medición o aceptación.
+
+**Siguiente comprobación:** Mantener diferenciada la evidencia documental del estado servido y los flujos funcionales; el cambio de enlace no resuelve ni vuelve a evaluar pendientes anteriores.
+
+[Fuentes, estado de CI y límites de verificación](../seguimiento-2026-11-17.md). Sin nuevas calificaciones ni cambio de matrices o planillas.

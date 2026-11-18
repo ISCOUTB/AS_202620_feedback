@@ -206,3 +206,11 @@ S13 conserva exactamente el mismo commit de S12. En el árbol revisado no se enc
 Las sondas programadas pasan, sin cambios de código o publicación nueva. Publiquen el frontend institucional y mantengan pruebas de recarga/reintento del grafo. El README declara que no hay backend propio; la sonda no sustituye aceptación funcional.
 
 Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#mapsutb) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).
+
+## Seguimiento documental · 17 de noviembre de 2026
+
+Añade documentación de amenazas/privacidad, contrato y prototipo aislado de mensajería, análisis del escenario 6 por ventanas de siete días, mediciones y revisión de pares reportadas por el equipo. El prototipo no se presenta como mensajería integrada en el producto. Continúan PR abiertas de pantalla y dependencias.
+
+**Siguiente comprobación:** Separar resultados reportados, disponibilidad de la sonda y prueba funcional de mapas; documentar URL institucional y revisar PR abiertas.
+
+[Fuentes, estado de CI y límites de verificación](../seguimiento-2026-11-17.md). Sin nuevas calificaciones ni cambio de matrices o planillas.

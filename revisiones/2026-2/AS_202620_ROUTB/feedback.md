@@ -265,3 +265,11 @@ PR #70/#71 integradas en master después del cierre S13: ajustes de Dependabot y
 La nueva purga programada pasa, pero no acredita publicación nueva. El rediseño sigue en Changes, no master; validen su integración y revisión servida por separado. Mantengan pendiente Sonar real y medición de carga si afirman 50 solicitudes. Se conserva el avance entregado confirmado por el docente.
 
 Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#routb) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).
+
+## Seguimiento documental · 17 de noviembre de 2026
+
+El PR #79 se fusionó hacia master el 15/nov a las 02:45:17 UTC. La rama principal ya incorpora cambios de rutas, solicitudes, perfil/vehículo, notificaciones y cliente Flutter que antes permanecían separados en Changes. Añade scripts/medir_rendimiento.py y scripts/sembrar_viajes_medicion.py, con medición enlazada desde README. CI de la punta aprobó pruebas backend/contrato/migraciones, Flutter, auditoría pip y construcción Docker. El job Sonar solo ejecutó un mensaje de reserva sin token: no acredita análisis ni Quality Gate. La purga programada también pasó, pero no prueba publicación de interfaz. PR #80 de FastAPI sigue abierto hacia Changes, con CI fallido en su propia revisión, no en master.
+
+**Siguiente comprobación:** Verificar revisión realmente desplegada y recorrido cliente/API; habilitar análisis Sonar efectivo y revisar compatibilidad del PR #80 antes de integrarlo.
+
+[Fuentes, estado de CI y límites de verificación](../seguimiento-2026-11-17.md). Sin nuevas calificaciones ni cambio de matrices o planillas.

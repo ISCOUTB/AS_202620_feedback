@@ -314,3 +314,11 @@ Master y README no cambian. Se abren PR #41 (documentación y ADR del costo de s
 La revisión de hoy conserva la misma punta y los pendientes del seguimiento anterior. Revisar e integrar en orden PR41 y PR42; verificar el destino efectivo de la segunda antes de fusionar. Validar concurrencia en PostgreSQL y recorrido del mostrador sin retroceso de estado; documentar después la revisión realmente desplegada.
 
 Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#pideutb) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).
+
+## Seguimiento documental · 17 de noviembre de 2026
+
+PR41, PR42 y PR43 fusionados: coste de separación, corrección de transiciones del mostrador, recogida programada y avisos/comprobante. PR44 permanece abierto con fotografías/carta y cambios visuales/idioma: CI pasa, todavía no integrado. CI HEAD master pasa incluido recorrido Playwright ahora ejecutado, pytest 3.11/3.12, imagen, contrato y dependencias. Job SonarCloud success pero análisis y Quality Gate skipped: no describir como Sonar aprobado. Se conserva confirmación docente de presentación/despliegues, sin nueva aceptación funcional.
+
+**Siguiente comprobación:** Revisar PR44 sin atribuir fotos a master; comprobar publicación y recorridos de recogida/avisos reales y configuración de Sonar.
+
+[Fuentes, estado de CI y límites de verificación](../seguimiento-2026-11-17.md). Sin nuevas calificaciones ni cambio de matrices o planillas.

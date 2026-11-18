@@ -299,3 +299,11 @@ PR92 se fusionó en master el 6/nov a las 00:38:57 UTC. Integra instrumentación
 - Aportar evidencia accesible y redactada de un anuncio nuevo con universidad declarada no nula y, para aceptación UI, persistencia de Favoritos tras nuevo login. No convertir afiliación declarada en identidad verificada.
 
 [Fuentes y alcance](../seguimiento-2026-11-06.md#proyecto_campusmarket).
+
+## Seguimiento documental · 17 de noviembre de 2026
+
+PR93 fusionado actualiza trazabilidad, arc42/C4 y descargas verificadas Gradle/Gitleaks para CI. README registra lectura del 8/nov: /app y /docs 200, /health ok, /universidades 500. Es evidencia histórica del equipo, no prueba repetida hoy. HEAD documental se separa del runtime productivo. Flujo real Web y Android pasa en tres jobs web-desktop, web-mobile y android; el job Android sí ejecutó emulador, los pasos omitidos corresponden a otras plataformas de la matriz.
+
+**Siguiente comprobación:** Revalidar /universidades sin inferir salud global de /health; conservar separados HEAD documental y runtime, y verificar recuperación/backup independiente.
+
+[Fuentes, estado de CI y límites de verificación](../seguimiento-2026-11-17.md). Sin nuevas calificaciones ni cambio de matrices o planillas.

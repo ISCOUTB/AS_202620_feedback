@@ -258,3 +258,11 @@ Entrega STRIDE concreto, priorización, responsables y riesgos residuales; agreg
 La revisión de hoy conserva la misma punta y los pendientes del seguimiento anterior. Revisar PR #25 con pg 8.23.1 y dependency-cruiser 18.7.0 y comprobar regresión PostgreSQL real antes de integrarla; CI verde de la rama no acredita main. Configurar/rotar el token de operador como secreto en Dokploy y demostrar lecturas, rechazo sin credencial y escritura autorizada sobre el despliegue actual; no compartir el secreto en evidencia.
 
 Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#gimnasioutb) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).
+
+## Seguimiento documental · 17 de noviembre de 2026
+
+Integra autenticación/perfiles Supabase, migración y reconciliación de identidades, QR y validación PostgreSQL/TLS. CI de la punta falla en auditoría de dependencias altas/críticas; pruebas unitarias/integración, contrato, mensajería y fitness functions pasan. Firmas/procedencia omitida tras fallo.
+
+**Siguiente comprobación:** Revisar auditoría de dependencias y comprobar versión desplegada y flujo QR/autenticación; código integrado no acredita publicación.
+
+[Fuentes, estado de CI y límites de verificación](../seguimiento-2026-11-17.md). Sin nuevas calificaciones ni cambio de matrices o planillas.

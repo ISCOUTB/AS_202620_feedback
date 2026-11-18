@@ -222,3 +222,11 @@ Tiene amenazas STRIDE por componente, prioridades, responsables, privacidad y AD
 Las cuatro nuevas sondas vuelven a fallar sobre los destinos Render antiguos, no los DuckDNS documentados. Actualicen la configuración antes de interpretar disponibilidad; hagan bloqueante la auditoría y acrediten resolución de sus hallazgos.
 
 Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#uniteam) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).
+
+## Seguimiento documental · 17 de noviembre de 2026
+
+PR #33 y #34 fusionadas: WebSocket con rutas/pruebas y actualización del tablero, seguida por rediseño frontend. README publica DuckDNS, pero la sonda de disponibilidad aún consulta los antiguos hosts Render.
+
+**Siguiente comprobación:** Alinear sonda y README con los dominios activos; documentar subdominio institucional y verificar autenticación, pertenencia y notificación WebSocket en despliegue.
+
+[Fuentes, estado de CI y límites de verificación](../seguimiento-2026-11-17.md). Sin nuevas calificaciones ni cambio de matrices o planillas.

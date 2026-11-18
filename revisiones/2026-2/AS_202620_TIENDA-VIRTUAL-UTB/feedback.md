@@ -259,3 +259,11 @@ El cambio de documentación modifica únicamente docs/seguridad-amenazas-privaci
 La revisión de hoy conserva la misma punta y los pendientes del seguimiento anterior. Conservar trazabilidad de las brechas de privacidad y acreditar cada corrección en código y pruebas; la eliminación de la tabla no sustituye la solución. Restablecer análisis Sonar efectivo y auditoría SCA reproducible bloqueante; separar resultado del job de pasos realmente ejecutados.
 
 Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#tienda-virtual-utb) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).
+
+## Seguimiento documental · 17 de noviembre de 2026
+
+Los PR #14 y #15 fusionan documentación de medición del escenario 4, observaciones de pares y estado de señalamientos en arc42 §11. La diferencia con el corte anterior se limita a siete archivos documentales. PR #16 de registro de IA sigue abierta. Pruebas la revisión indicada pasa frontend, backend, contrato, RLS y migraciones en la punta actual, mientras todos los pasos del job Sonar están skipped aunque el job figure success. No hay nueva publicación ni funcionamiento vivo constatados por esta revisión.
+
+**Siguiente comprobación:** Documentar URL institucional y contrastar servicio publicado; activar análisis Sonar real y mantener trazabilidad entre cambios documentales y correcciones implementadas.
+
+[Fuentes, estado de CI y límites de verificación](../seguimiento-2026-11-17.md). Sin nuevas calificaciones ni cambio de matrices o planillas.

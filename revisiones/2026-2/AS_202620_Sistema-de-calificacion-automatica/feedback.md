@@ -263,3 +263,11 @@ Presenta STRIDE ligado a C4, prioridades, responsables, estado de mitigaciones, 
 La revisión de hoy conserva la misma punta y los pendientes del seguimiento anterior. Vincular revision.txt y un recorrido frontend→API→worker a la revisión efectivamente servida; la evidencia incorporada describe una revisión del 30/oct. Resolver autenticación y autorización antes de cargar datos reales; conservar los límites declarados del presupuesto por proceso y validar concurrencia y recuperación.
 
 Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#sistema-de-calificacion-automatica) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).
+
+## Seguimiento documental · 17 de noviembre de 2026
+
+Hay implementación nueva de lectura óptica de hojas, procesamiento de cola, calificación contra clave y revisión manual, junto con pantallas de exámenes/resultados/revisión y contrato API 1.8.0. Se versionan herramientas y muestras de medición; no se ejecutaron aquí. El último commit restringe selección de URL de API a una lista fija. CI la revisión indicada pasa pruebas backend y Flutter, escenarios de integración, OSV y compila/publica rama despliegue. Publicar esa rama es evidencia de preparación/publicación de artefactos, no constatación independiente de que Dokploy sirve la revisión. El README reconoce ausencia de revisión entre pares, sin atribuirle motivo en este seguimiento.
+
+**Siguiente comprobación:** Consultar revision.txt y salud para contrastar revisión servida, y validar recorrido de carga/lectura/revisión manual con datos autorizados; mantener diferencias entre medición local, pruebas y aceptación funcional.
+
+[Fuentes, estado de CI y límites de verificación](../seguimiento-2026-11-17.md). Sin nuevas calificaciones ni cambio de matrices o planillas.

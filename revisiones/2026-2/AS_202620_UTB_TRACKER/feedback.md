@@ -262,3 +262,11 @@ Avance sustantivo en la revisión actual: dependencias actualizadas (Starlette 1
 La revisión de hoy conserva la misma punta y los pendientes del seguimiento anterior. Verificar correspondencia y permisos del token/proyecto/organización Sonar, actualizar la acción obsoleta y obtener análisis y Quality Gate reales antes de desplegar la punta actual. Publicar URL de API bajo iscoutb.dev en README y diferenciarla de la app Android.
 
 Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#utb_tracker) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).
+
+## Seguimiento documental · 17 de noviembre de 2026
+
+Integra catálogo de salones, disponibilidad y equipos fijos, permisos por rol y perfil/correo institucional. PR #18 y #19 fusionadas; la última incorpora migración idempotente para cargar 59 salones faltantes. No se infiere que el catálogo esté visible en todas las sesiones únicamente por el merge.
+
+**Siguiente comprobación:** Comprobar catálogo, roles y flujo móvil en la versión servida; conciliar issues #10–#13 abiertas con implementación fusionada y documentar subdominio institucional.
+
+[Fuentes, estado de CI y límites de verificación](../seguimiento-2026-11-17.md). Sin nuevas calificaciones ni cambio de matrices o planillas.

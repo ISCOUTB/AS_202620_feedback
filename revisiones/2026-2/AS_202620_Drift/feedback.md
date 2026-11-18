@@ -241,3 +241,11 @@ Integra antes del cierre el modelo STRIDE, privacidad, autenticación administra
 La revisión de hoy conserva la misma punta y los pendientes del seguimiento anterior. Completar casos contractuales autenticados para sincronización y ajustar tasa/aislamiento para ejecutar la lógica de búsqueda y compatibilidad, manteniendo pruebas negativas de 401/429. Demostrar configuración del token administrativo/proxy y recorrido frontend/API institucional de la revisión desplegada; Azure CD no sustituye esa aceptación.
 
 Se mantienen los antecedentes y pendientes no resueltos; esta revisión no recalifica ni cierra semanas. [Evidencia y próximos pasos](../seguimiento-2026-11-05.md#drift) · [Issues y motivos](../seguimiento-issues-2026-11-05.md) · [README y despliegues](../seguimiento-despliegues-2026-11-05.md).
+
+## Seguimiento documental · 17 de noviembre de 2026
+
+PR60/61 integran documentación y mediciones; PR62 integra cuentas Google, favoritos, alertas, PostgreSQL, Xbox, IsThereAnyDeal y página Explorar. PR65 corrige pruebas de sesión que dependían de fecha fija. PR63/64 permanecen abiertas, además de PR57.
+
+**Siguiente comprobación:** Verificar migración/datos y OAuth en el despliegue institucional; enlazar revisión servida y evidencia de favoritos/alertas/proveedores.
+
+[Fuentes, estado de CI y límites de verificación](../seguimiento-2026-11-17.md). Sin nuevas calificaciones ni cambio de matrices o planillas.
