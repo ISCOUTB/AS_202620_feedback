@@ -310,3 +310,9 @@ Fija Flutter 3.47.5 en CI/Pages, actualiza dependencias, retira servicio web del
 La [reconstrucción factual de este proyecto](../revision-semanas-14-15-2026-11-17.md#dinamikutb) distingue el corte S14 (8/nov, 23:59:59 Colombia) del seguimiento S15 (15/nov, 23:59:59 Colombia). S15 no se presenta como entrega oficial. Los [estados de issues y PR](../revision-issues-pr-s14-s15.md) se separan del seguimiento actual. No se modifican calificaciones ni matrices de evaluación.
 
 La [actualización factual S13](../actualizacion-s13-2026-11-17.md) concilia fuentes y conserva el corte del 1/nov sin sobrescribir la revisión histórica.
+
+## Reevaluación S12 al cierre · 23 de noviembre de 2026
+
+La revisión del 19/oct era un avance. La [matriz al cierre](reevaluacion-s12-cierre-2026-11-23.md) verifica la tabla de consistencia, el contraste con código, la decisión documentada de no cachear datos de dominio, su política de refresco, el ADR de reversión y su reflejo en C4 y arc42. No se exige broker en una integración deliberadamente síncrona.
+
+Siguiente paso: reparar la prueba de rollback para que pueda consultar el historial con el modelo restaurado y volver a presentar el resultado de CI. El frontend publicado en Pages no verifica el rollback ni el despliegue del backend.

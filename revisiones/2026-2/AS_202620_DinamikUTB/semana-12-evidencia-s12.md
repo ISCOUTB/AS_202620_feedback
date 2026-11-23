@@ -1,5 +1,7 @@
 # DinamikUTB · Evidencia S12 · PRELIMINAR, avance no final
 
+> **Antecedente histórico del 19/oct.** Para consultar la revisión y propuesta de nota al cierre de DinamikUTB, ver la [reevaluación S12](reevaluacion-s12-cierre-2026-11-23.md).
+
 [Árbol completo de la instantánea evaluada](https://github.com/ISCOUTB/AS_202620_DinamikUTB/tree/37872ff7dbb08be833b92c0a4b6d1ca3152464a1) · [Ficha S12](../../../fichas/semana-12-evidencia-s12.md)
 
 - Repositorio público: https://github.com/ISCOUTB/AS_202620_DinamikUTB

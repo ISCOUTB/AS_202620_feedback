@@ -1,5 +1,7 @@
 # Resumen de feedback · S12 · avance preliminar, entrega abierta
 
+**Reevaluación puntual del 23/nov:** [DinamikUTB al cierre](AS_202620_DinamikUTB/reevaluacion-s12-cierre-2026-11-23.md), **9/9 · 5,0 sugerido**, no nota oficial. La fila del 19/oct se conserva como antecedente; no se reevaluaron otros equipos ni se cerró la semana globalmente.
+
 **Revisión retrospectiva del 3/nov:** [estado al cierre dominical de S12](revision-s12-cierre-2026-10-25.md) e [índice S11 → S12 → S13](revision-semanas-11-13-2026-11-03.md). El contenido histórico siguiente conserva su fecha y calificación; no sustituye el nuevo contraste documental. El título «entrega abierta» describe el diagnóstico preliminar del 19/oct; el plazo de S12 terminó el domingo 25/oct. Los seguimientos diarios posteriores no amplían ese plazo.
 
 **Seguimiento vigente del 3/nov:** [avances y próximos pasos](seguimiento-s12-2026-11-03.md), [issues](seguimiento-issues-2026-11-03.md) y [README/despliegues](seguimiento-despliegues-2026-11-03.md). S12 no se cierra automáticamente; las matrices y cifras históricas no se recalculan.
@@ -36,7 +38,7 @@ La fórmula publicada es 1 + 4 × (Cumple/9), redondeada a un decimal. Cada cifr
 | Calificación automática (Quantia) | [S12](AS_202620_Sistema-de-calificacion-automatica/semana-12-evidencia-s12.md) | `98a9dcc8f22c77ac5d0dfcea4055865e7727a21e` | 2/9 | 1.9 preliminar | 0 commits |
 | CampusMarket | [S12](AS_202620_PROYECTO_CAMPUSMARKET/semana-12-evidencia-s12.md) | `a237dd2f22b02bb547f87a07d15b6d31ea0dc758` | 3/9 | 2.3 preliminar | 0 commits |
 | Clubs UTB | [S12](AS_202620_Clubs_UTB/semana-12-evidencia-s12.md) | `1642a9c1a0a99ef766cd6e27460d9b8b8cd3312f` | 1/9 | 1.4 preliminar | 0 commits |
-| DinamikUTB | [S12](AS_202620_DinamikUTB/semana-12-evidencia-s12.md) | `37872ff7dbb08be833b92c0a4b6d1ca3152464a1` | 3/9 | 2.3 preliminar | 0 commits |
+| DinamikUTB | [S12](AS_202620_DinamikUTB/semana-12-evidencia-s12.md) | `37872ff7dbb08be833b92c0a4b6d1ca3152464a1` | 3/9 | 2.3 preliminar histórico | 0 commits |
 | Drift | [S12](AS_202620_Drift/semana-12-evidencia-s12.md) | `1cead90c02d284f9261addd19e5979ab114b9aea` | 3/9 | 2.3 preliminar | 0 commits |
 | ElMapita | [S12](AS_202620_ElMapita/semana-12-evidencia-s12.md) | `0421885424d13478cf33c717fdd933a4748d9025` | 3/9 | 2.3 preliminar | 2 commits |
 | EnAgenda | [S12](AS_202620_EnAgenda/semana-12-evidencia-s12.md) | `4bec22f3821493014e8352ece8274bb2950e97db` | 2/9 | 1.9 preliminar | 0 commits |
