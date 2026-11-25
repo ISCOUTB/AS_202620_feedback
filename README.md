@@ -339,6 +339,8 @@ pasan a evaluarse sobre el repositorio, aquí faltará su ficha.
 
 ## Evaluaciones publicadas · 2026-2
 
+**Corte final de entrega (25/nov):** [informe técnico de los 23 proyectos](revisiones/2026-2/resumen-corte-final-2026-11-25.md), definitivo al corte y sujeto a comentarios sustentados.
+
 **S16, sustentación final (23/nov):** [evaluación técnica y matrices de los 23 proyectos](revisiones/2026-2/resumen-s16.md). La evidencia en GitHub es distinta de la demostración en vivo; la nota final y el registro en SAVIO siguen a cargo del docente.
 
 Aquí está la revisión de cada equipo, tal como salió del barrido. Cada carpeta trae cuatro cosas:

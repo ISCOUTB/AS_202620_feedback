@@ -1,0 +1,688 @@
+{
+  "label": "Definitivo al corte del 25 de noviembre de 2026, sujeto a comentarios de los estudiantes",
+  "date": "2026-11-25",
+  "timezone": "America/Bogota",
+  "calendar_s16": "2026-11-23T05:00:00Z",
+  "calendar_s17": "2026-11-30T05:00:00Z",
+  "official_wednesday_deadline_verified": false,
+  "projects": [
+    {
+      "project": "AS_202620_AudioShare",
+      "branch": "master",
+      "observed_at": "2026-11-25T21:52:35.996Z",
+      "sha": "b528cc26579d2b0c933ac6de119401f9adb05d6c",
+      "s16_reference_sha": "47a380ec3c4e8597a9aa6f02b19daab7a9d77faa",
+      "ci": [
+        {
+          "id": 45299635833,
+          "name": "APK de Android",
+          "c": "success",
+          "status": "completed",
+          "event": "push"
+        },
+        {
+          "id": 45299635849,
+          "name": "CI",
+          "c": "success",
+          "status": "completed",
+          "event": "push"
+        },
+        {
+          "id": 45299635820,
+          "name": "Publicar imagen",
+          "c": "success",
+          "status": "completed",
+          "event": "push"
+        },
+        {
+          "id": 45299635798,
+          "name": "Flutter",
+          "c": "success",
+          "status": "completed",
+          "event": "push"
+        }
+      ],
+      "sonar": {
+        "instance": "SonarQube Cloud",
+        "project_key": "ISCOUTB_AS_202620_AudioShare",
+        "check_url": "https://github.com/ISCOUTB/AS_202620_AudioShare/runs/138128893511",
+        "check_completed_at": "2026-11-24T00:45:17Z",
+        "gate": "failure",
+        "serious_open_inventory_verified": false
+      },
+      "architecture": "Discrepancia"
+    },
+    {
+      "project": "AS_202620_Clubs_UTB",
+      "branch": "master",
+      "observed_at": "2026-11-25T21:52:35.888Z",
+      "sha": "d49859834981d421b2ac995dfe5aec5bbef1f798",
+      "s16_reference_sha": "d49859834981d421b2ac995dfe5aec5bbef1f798",
+      "ci": [
+        {
+          "id": 45114446592,
+          "name": "Backend tests",
+          "c": "success",
+          "status": "completed",
+          "event": "push"
+        },
+        {
+          "id": 45114446581,
+          "name": "contrato",
+          "c": "success",
+          "status": "completed",
+          "event": "push"
+        }
+      ],
+      "sonar": {
+        "instance": "SonarQube Cloud",
+        "project_key": "ISCOUTB_AS_202620_Clubs_UTB",
+        "check_url": "https://github.com/ISCOUTB/AS_202620_Clubs_UTB/runs/137494085022",
+        "check_completed_at": "2026-11-23T04:53:35Z",
+        "gate": "success",
+        "serious_open_inventory_verified": false
+      },
+      "architecture": "Discrepancia de configuración"
+    },
+    {
+      "project": "AS_202620_DinamikUTB",
+      "branch": "master",
+      "observed_at": "2026-11-25T21:52:35.911Z",
+      "sha": "fa14e6ad79f190f9654768d6a4c1b95c66ecba54",
+      "s16_reference_sha": "2dd324ea6a9f53d5be48f20ababd21a541c83d52",
+      "ci": [
+        {
+          "id": 45428557812,
+          "name": "Deploy frontend (GitHub Pages)",
+          "c": "success",
+          "status": "completed",
+          "event": "push"
+        },
+        {
+          "id": 45428557747,
+          "name": "Auditoría de dependencias",
+          "c": "success",
+          "status": "completed",
+          "event": "push"
+        },
+        {
+          "id": 45428558154,
+          "name": "CI",
+          "c": "success",
+          "status": "completed",
+          "event": "push"
+        }
+      ],
+      "sonar": {
+        "instance": "SonarQube Cloud",
+        "project_key": "ISCOUTB_AS_202620_DinamikUTB",
+        "check_url": "https://github.com/ISCOUTB/AS_202620_DinamikUTB/runs/138570446678",
+        "check_completed_at": "2026-11-24T15:46:56Z",
+        "gate": "success",
+        "serious_open_inventory_verified": false
+      },
+      "architecture": "Coincide en el alcance comparado"
+    },
+    {
+      "project": "AS_202620_Drift",
+      "branch": "master",
+      "observed_at": "2026-11-25T21:52:35.956Z",
+      "sha": "6220c8613b84080764513fb2dbd6f2a6c7cb2de9",
+      "s16_reference_sha": "b841450ce273f440d12d8fe6b5dd75c78e7b9bfb",
+      "ci": [
+        {
+          "id": 45296721038,
+          "name": "CI",
+          "c": "success",
+          "status": "completed",
+          "event": "push"
+        }
+      ],
+      "sonar": {
+        "instance": "SonarQube Cloud",
+        "project_key": "ISCOUTB_AS_202620_Drift",
+        "check_url": "https://github.com/ISCOUTB/AS_202620_Drift/runs/138120265587",
+        "check_completed_at": "2026-11-24T00:26:12Z",
+        "gate": "success",
+        "serious_open_inventory_verified": false
+      },
+      "architecture": "Coincide en el alcance comparado"
+    },
+    {
+      "project": "AS_202620_ElMapita",
+      "branch": "main",
+      "observed_at": "2026-11-25T21:52:35.888Z",
+      "sha": "834a79c2db765f93c38fc41840e09ead5001c6df",
+      "s16_reference_sha": "834a79c2db765f93c38fc41840e09ead5001c6df",
+      "ci": [
+        {
+          "id": 45077520811,
+          "name": "CI",
+          "c": "failure",
+          "status": "completed",
+          "event": "push"
+        }
+      ],
+      "sonar": {
+        "instance": "SonarQube Cloud",
+        "project_key": "ISCOUTB_AS_202620_ElMapita",
+        "check_url": "https://github.com/ISCOUTB/AS_202620_ElMapita/runs/137378137090",
+        "check_completed_at": "2026-11-22T22:24:46Z",
+        "gate": "failure",
+        "serious_open_inventory_verified": false
+      },
+      "architecture": "Coincide en topología; faltan pruebas de ejecución"
+    },
+    {
+      "project": "AS_202620_EnAgenda",
+      "branch": "master",
+      "observed_at": "2026-11-25T21:52:35.903Z",
+      "sha": "bbd3e01a06aefb220b2a74cce40a4b4a7f4a9086",
+      "s16_reference_sha": "a6dde3025c6864eb8c2871c6e9732b205f68001b",
+      "ci": [
+        {
+          "id": 45243353421,
+          "name": "Auditoria de dependencias",
+          "c": "success",
+          "status": "completed",
+          "event": "push"
+        },
+        {
+          "id": 45243353564,
+          "name": "Taller mensajes y consistencia",
+          "c": "success",
+          "status": "completed",
+          "event": "push"
+        },
+        {
+          "id": 45243353549,
+          "name": "CI",
+          "c": "success",
+          "status": "completed",
+          "event": "push"
+        }
+      ],
+      "sonar": {
+        "instance": "SonarQube Cloud",
+        "project_key": "ISCOUTB_AS_202620_EnAgenda",
+        "check_url": "https://github.com/ISCOUTB/AS_202620_EnAgenda/runs/137933880914",
+        "check_completed_at": "2026-11-23T18:55:16Z",
+        "gate": "failure",
+        "serious_open_inventory_verified": false
+      },
+      "architecture": "Coincide en persistencia; faltan pruebas de ejecución"
+    },
+    {
+      "project": "AS_202620_GimnasioUTB",
+      "branch": "main",
+      "observed_at": "2026-11-25T21:52:35.872Z",
+      "sha": "5a1044133267d7018714741211e0f3c0354815ec",
+      "s16_reference_sha": "5a1044133267d7018714741211e0f3c0354815ec",
+      "ci": [
+        {
+          "id": 45114911596,
+          "name": "CI",
+          "c": "success",
+          "status": "completed",
+          "event": "push"
+        }
+      ],
+      "sonar": {
+        "instance": "SonarQube Cloud",
+        "project_key": "ISCOUTB_AS_202620_GimnasioUTB",
+        "check_url": "https://github.com/ISCOUTB/AS_202620_GimnasioUTB/runs/137495617699",
+        "check_completed_at": "2026-11-23T04:58:50Z",
+        "gate": "success",
+        "serious_open_inventory_verified": false
+      },
+      "architecture": "Coincide en el alcance comparado"
+    },
+    {
+      "project": "AS_202620_InvenTrack",
+      "branch": "main",
+      "observed_at": "2026-11-25T21:52:35.892Z",
+      "sha": "51f353704cabdd0100c082d6af3912d18dc83795",
+      "s16_reference_sha": "51f353704cabdd0100c082d6af3912d18dc83795",
+      "ci": [
+        {
+          "id": 45112616914,
+          "name": "Run Tests",
+          "c": "success",
+          "status": "completed",
+          "event": "push"
+        },
+        {
+          "id": 45112590983,
+          "name": "Run Tests",
+          "c": "success",
+          "status": "completed",
+          "event": "push"
+        }
+      ],
+      "sonar": {
+        "instance": "SonarQube Cloud",
+        "project_key": "ISCOUTB_AS_202620_InvenTrack",
+        "check_url": "https://github.com/ISCOUTB/AS_202620_InvenTrack/runs/137488541611",
+        "check_completed_at": "2026-11-23T04:35:13Z",
+        "gate": "success",
+        "serious_open_inventory_verified": false
+      },
+      "architecture": "Coincide en el alcance comparado"
+    },
+    {
+      "project": "AS_202620_LaPlacita",
+      "branch": "master",
+      "observed_at": "2026-11-25T21:52:36.493Z",
+      "sha": "69c2b5b84c95e7b96f993dc616b9d6b00b530022",
+      "s16_reference_sha": "69c2b5b84c95e7b96f993dc616b9d6b00b530022",
+      "ci": [
+        {
+          "id": 45081133410,
+          "name": "CI LaPlacita",
+          "c": "success",
+          "status": "completed",
+          "event": "push"
+        }
+      ],
+      "sonar": {
+        "instance": "SonarQube Cloud",
+        "project_key": "ISCOUTB_AS_202620_LaPlacita",
+        "check_url": "https://github.com/ISCOUTB/AS_202620_LaPlacita/runs/137390243983",
+        "check_completed_at": "2026-11-22T23:06:41Z",
+        "gate": "success",
+        "serious_open_inventory_verified": false
+      },
+      "architecture": "Discrepancia de alcance"
+    },
+    {
+      "project": "AS_202620_LostVault",
+      "branch": "main",
+      "observed_at": "2026-11-25T21:52:36.480Z",
+      "sha": "4b8b463acffa1f677ae1f1511da46adc7f73dfe4",
+      "s16_reference_sha": "c54471bfb164c3825010d51b9ad9a246fad99ff7",
+      "ci": [
+        {
+          "id": 45243938178,
+          "name": "Backend checks",
+          "c": "success",
+          "status": "completed",
+          "event": "push"
+        },
+        {
+          "id": 45243938437,
+          "name": "Flutter checks",
+          "c": "success",
+          "status": "completed",
+          "event": "push"
+        },
+        {
+          "id": 45243938388,
+          "name": "Build",
+          "c": "success",
+          "status": "completed",
+          "event": "push"
+        }
+      ],
+      "sonar": {
+        "instance": "SonarQube Cloud",
+        "project_key": "ISCOUTB_AS_202620_LostVault",
+        "check_url": "https://github.com/ISCOUTB/AS_202620_LostVault/runs/137937129164",
+        "check_completed_at": "2026-11-23T19:00:36Z",
+        "gate": "success",
+        "serious_open_inventory_verified": false
+      },
+      "architecture": "Discrepancia"
+    },
+    {
+      "project": "AS_202620_PROYECTO_CAMPUSMARKET",
+      "branch": "master",
+      "observed_at": "2026-11-25T21:52:36.431Z",
+      "sha": "5f8928c266e83175a18d99e56c7fd6fe61244c4d",
+      "s16_reference_sha": "c79c73d47936790b0f248bdea5c0a700ce8fe017",
+      "ci": [
+        {
+          "id": 45395636436,
+          "name": "Pruebas del backend",
+          "c": "success",
+          "status": "completed",
+          "event": "push"
+        },
+        {
+          "id": 45395636479,
+          "name": "Compose y persistencia del MVP",
+          "c": "success",
+          "status": "completed",
+          "event": "push"
+        },
+        {
+          "id": 45395636283,
+          "name": "S10 contrato del cliente en despliegue publico",
+          "c": "failure",
+          "status": "completed",
+          "event": "push"
+        },
+        {
+          "id": 45395636376,
+          "name": "Validación Flutter MVP",
+          "c": "success",
+          "status": "completed",
+          "event": "push"
+        },
+        {
+          "id": 45395636342,
+          "name": "Flujo real Web y Android",
+          "c": "success",
+          "status": "completed",
+          "event": "push"
+        }
+      ],
+      "sonar": {
+        "instance": "SonarQube Cloud",
+        "project_key": "ISCOUTB_AS_202620_PROYECTO_CAMPUSMARKET",
+        "check_url": "https://github.com/ISCOUTB/AS_202620_PROYECTO_CAMPUSMARKET/runs/138450759483",
+        "check_completed_at": "2026-11-24T12:39:55Z",
+        "gate": "success",
+        "serious_open_inventory_verified": false
+      },
+      "architecture": "Coincide diseño; ejecución con discrepancia"
+    },
+    {
+      "project": "AS_202620_PideUtb",
+      "branch": "master",
+      "observed_at": "2026-11-25T21:52:36.507Z",
+      "sha": "b5f20dce5e1643da632f5a6b5d903b5f699426bb",
+      "s16_reference_sha": "e5f40775dc255ed5db8b1b32eb3c2e56610316db",
+      "ci": [
+        {
+          "id": 45218510456,
+          "name": "CI",
+          "c": "success",
+          "status": "completed",
+          "event": "push"
+        }
+      ],
+      "sonar": {
+        "instance": "SonarQube Cloud",
+        "project_key": "ISCOUTB_AS_202620_PideUtb",
+        "check_url": "https://github.com/ISCOUTB/AS_202620_PideUtb/runs/137847393864",
+        "check_completed_at": "2026-11-23T16:37:43Z",
+        "gate": "success",
+        "serious_open_inventory_verified": false
+      },
+      "architecture": "Coincide en el alcance comparado"
+    },
+    {
+      "project": "AS_202620_ROUTB",
+      "branch": "master",
+      "observed_at": "2026-11-25T21:52:36.493Z",
+      "sha": "eb38d11f34fdf647c840072d47fea49df7a845d1",
+      "s16_reference_sha": "eb38d11f34fdf647c840072d47fea49df7a845d1",
+      "ci": [
+        {
+          "id": 45113237913,
+          "name": "CI ROUTB",
+          "c": "success",
+          "status": "completed",
+          "event": "push"
+        }
+      ],
+      "sonar": {
+        "instance": "SonarQube Cloud",
+        "project_key": "ISCOUTB_AS_202620_ROUTB",
+        "check_url": "https://github.com/ISCOUTB/AS_202620_ROUTB/runs/137490311821",
+        "check_completed_at": "2026-11-23T04:40:51Z",
+        "gate": "success",
+        "serious_open_inventory_verified": false
+      },
+      "architecture": "Discrepancia de alcance"
+    },
+    {
+      "project": "AS_202620_Recobra",
+      "branch": "master",
+      "observed_at": "2026-11-25T21:52:36.379Z",
+      "sha": "8aeffba5675ba4a9e3466a98cfac7408d2cd8049",
+      "s16_reference_sha": "703d44471795910de17d8b2b8d57df5ae5df7d50",
+      "ci": [
+        {
+          "id": 45193701084,
+          "name": "ci",
+          "c": "success",
+          "status": "completed",
+          "event": "push"
+        }
+      ],
+      "sonar": {
+        "instance": "SonarQube Cloud",
+        "project_key": "ISCOUTB_AS_202620_Recobra",
+        "check_url": "https://github.com/ISCOUTB/AS_202620_Recobra/runs/137759120476",
+        "check_completed_at": "2026-11-23T14:24:40Z",
+        "gate": "success",
+        "serious_open_inventory_verified": false
+      },
+      "architecture": "Coincidencia con condición operativa"
+    },
+    {
+      "project": "AS_202620_ShareU",
+      "branch": "master",
+      "observed_at": "2026-11-25T21:52:36.477Z",
+      "sha": "b17bf46daccad539020f521ccdb1ecb9765c28a3",
+      "s16_reference_sha": "869a47c05be71adbc77af4cce9c57e1cc6de4fa4",
+      "ci": [
+        {
+          "id": 45120218890,
+          "name": "Tests",
+          "c": "success",
+          "status": "completed",
+          "event": "push"
+        }
+      ],
+      "sonar": {
+        "instance": "SonarQube Cloud",
+        "project_key": "ISCOUTB_AS_202620_ShareU",
+        "check_url": "https://github.com/ISCOUTB/AS_202620_ShareU/runs/137512221552",
+        "check_completed_at": "2026-11-23T05:50:31Z",
+        "gate": "success",
+        "serious_open_inventory_verified": false
+      },
+      "architecture": "Coincide la topología; falta traza verificable"
+    },
+    {
+      "project": "AS_202620_Sistema-de-calificacion-automatica",
+      "branch": "master",
+      "observed_at": "2026-11-25T21:52:36.435Z",
+      "sha": "e8de66ab21828bb4bca3fc5441231d5608cae864",
+      "s16_reference_sha": "9c4e27831bca32a896254daa4ab135e0186ed0ed",
+      "ci": [
+        {
+          "id": 45198295412,
+          "name": "CI",
+          "c": "success",
+          "status": "completed",
+          "event": "push"
+        }
+      ],
+      "sonar": {
+        "instance": "SonarQube Cloud",
+        "project_key": "ISCOUTB_AS_202620_Sistema-de-calificacion-automatica",
+        "check_url": "https://github.com/ISCOUTB/AS_202620_Sistema-de-calificacion-automatica/runs/137774941353",
+        "check_completed_at": "2026-11-23T14:49:47Z",
+        "gate": "success",
+        "serious_open_inventory_verified": false
+      },
+      "architecture": "Coincide en el alcance comparado"
+    },
+    {
+      "project": "AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant",
+      "branch": "main",
+      "observed_at": "2026-11-25T21:52:36.923Z",
+      "sha": "b221d26112ef256ddc2ae0548f1d333c2d680bcd",
+      "s16_reference_sha": "bd3db97fd53469d8e1f9e397b69fc63acb21ccfa",
+      "ci": [],
+      "sonar": {
+        "instance": "SonarQube Cloud",
+        "project_key": "ISCOUTB_AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant",
+        "check_url": "https://github.com/ISCOUTB/AS_202620_TAIA_-Task-Artificial-Intelligence-Assistant/runs/138232210092",
+        "check_completed_at": "2026-11-24T05:07:40Z",
+        "gate": "success",
+        "serious_open_inventory_verified": false
+      },
+      "architecture": "Coincide en el alcance comparado"
+    },
+    {
+      "project": "AS_202620_TIENDA-VIRTUAL-UTB",
+      "branch": "main",
+      "observed_at": "2026-11-25T21:52:36.970Z",
+      "sha": "56e4597a96d067113a6e2d377cf8fdbfbaee036f",
+      "s16_reference_sha": "6bd72149d51f81285145bccf65719abcdba0dd42",
+      "ci": [
+        {
+          "id": 45323945257,
+          "name": "Pruebas",
+          "c": "success",
+          "status": "completed",
+          "event": "push"
+        }
+      ],
+      "sonar": {
+        "instance": "SonarQube Cloud",
+        "project_key": "ISCOUTB_AS_202620_TIENDA-VIRTUAL-UTB",
+        "check_url": "https://github.com/ISCOUTB/AS_202620_TIENDA-VIRTUAL-UTB/runs/138209134764",
+        "check_completed_at": "2026-11-24T04:06:11Z",
+        "gate": "success",
+        "serious_open_inventory_verified": false
+      },
+      "architecture": "Coincide en el alcance comparado"
+    },
+    {
+      "project": "AS_202620_UTB_TRACKER",
+      "branch": "main",
+      "observed_at": "2026-11-25T21:52:36.924Z",
+      "sha": "d7b3c78996ef00bff9443e440bfcccea295ecccf",
+      "s16_reference_sha": "2510dfc50292a4d85cd651403146120a495688e3",
+      "ci": [
+        {
+          "id": 45231776814,
+          "name": "UTB Tracker CI",
+          "c": "success",
+          "status": "completed",
+          "event": "push"
+        }
+      ],
+      "sonar": {
+        "instance": "SonarQube Cloud",
+        "project_key": "ISCOUTB_AS_202620_UTB_TRACKER",
+        "check_url": "https://github.com/ISCOUTB/AS_202620_UTB_TRACKER/runs/137893193795",
+        "check_completed_at": "2026-11-23T17:49:50Z",
+        "gate": "success",
+        "serious_open_inventory_verified": false
+      },
+      "architecture": "Discrepancia operativa"
+    },
+    {
+      "project": "AS_202620_Verifacts",
+      "branch": "master",
+      "observed_at": "2026-11-25T21:52:36.947Z",
+      "sha": "96538d855c16d4f8c7ed8bb161d59823c34cc442",
+      "s16_reference_sha": "96538d855c16d4f8c7ed8bb161d59823c34cc442",
+      "ci": [
+        {
+          "id": 44844061979,
+          "name": "Tests",
+          "c": "success",
+          "status": "completed",
+          "event": "push"
+        },
+        {
+          "id": 44844062023,
+          "name": "SonarCloud",
+          "c": "success",
+          "status": "completed",
+          "event": "push"
+        }
+      ],
+      "sonar": {
+        "instance": "SonarQube Cloud",
+        "project_key": "ISCOUTB_AS_202620_Verifacts",
+        "check_url": "https://github.com/ISCOUTB/AS_202620_Verifacts/runs/136659729655",
+        "check_completed_at": "2026-11-21T00:29:40Z",
+        "gate": "success",
+        "serious_open_inventory_verified": false
+      },
+      "architecture": "Coincide en el alcance comparado"
+    },
+    {
+      "project": "AS_202620_XALD",
+      "branch": "master",
+      "observed_at": "2026-11-25T21:52:36.991Z",
+      "sha": "166693dee5d49e408782cfb0fcd278320338dd27",
+      "s16_reference_sha": "166693dee5d49e408782cfb0fcd278320338dd27",
+      "ci": [
+        {
+          "id": 45113474971,
+          "name": "Android CI",
+          "c": "success",
+          "status": "completed",
+          "event": "push"
+        }
+      ],
+      "sonar": {
+        "instance": "SonarQube Cloud",
+        "project_key": "ISCOUTB_AS_202620_XALD",
+        "check_url": "https://github.com/ISCOUTB/AS_202620_XALD/runs/137491088379",
+        "check_completed_at": "2026-11-23T04:43:27Z",
+        "gate": "success",
+        "serious_open_inventory_verified": false
+      },
+      "architecture": "Discrepancia documental"
+    },
+    {
+      "project": "AS_202620_mapsutb",
+      "branch": "master",
+      "observed_at": "2026-11-25T21:52:36.918Z",
+      "sha": "26543815f2e67a5033e1add02e615918484c162c",
+      "s16_reference_sha": "0e21bd155c2c989bcd6fc0f9380e7faabab5460e",
+      "ci": [],
+      "sonar": {
+        "instance": "SonarQube Cloud",
+        "project_key": "ISCOUTB_AS_202620_mapsutb",
+        "check_url": "https://github.com/ISCOUTB/AS_202620_mapsutb/runs/137960363580",
+        "check_completed_at": "2026-11-23T19:38:23Z",
+        "gate": "success",
+        "serious_open_inventory_verified": false
+      },
+      "architecture": "Coincide en el alcance comparado"
+    },
+    {
+      "project": "AS_202620_uniTeam",
+      "branch": "master",
+      "observed_at": "2026-11-25T21:52:36.959Z",
+      "sha": "0e2044f8fb815c490a553ce8c4ed5c53928620fc",
+      "s16_reference_sha": "469517a59d8bb1f8a1c31db118bfac2934b44624",
+      "ci": [
+        {
+          "id": 45115373646,
+          "name": "seguridad-dependencias",
+          "c": "success",
+          "status": "completed",
+          "event": "push"
+        },
+        {
+          "id": 45115373553,
+          "name": "CI",
+          "c": "success",
+          "status": "completed",
+          "event": "push"
+        }
+      ],
+      "sonar": {
+        "instance": "SonarQube Cloud",
+        "project_key": "ISCOUTB_AS_202620_uniTeam",
+        "check_url": "https://github.com/ISCOUTB/AS_202620_uniTeam/runs/137497085020",
+        "check_completed_at": "2026-11-23T05:03:42Z",
+        "gate": "success",
+        "serious_open_inventory_verified": false
+      },
+      "architecture": "Coincide en el alcance comparado"
+    }
+  ]
+}
